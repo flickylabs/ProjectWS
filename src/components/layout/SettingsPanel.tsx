@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getSettings, updateSettings, loadSave } from '../../hooks/useLocalStorage'
 import { checkConnection, getProviderName } from '../../engine/llmClient'
+import { isSoundEnabled, setSoundEnabled } from '../../engine/soundEngine'
 
 interface Props {
   onClose: () => void
@@ -43,6 +44,12 @@ export default function SettingsPanel({ onClose }: Props) {
 
           {/* 게임 설정 */}
           <Section title="게임 설정">
+            <Toggle
+              label="효과음"
+              desc="Phase 전환, 붕괴, 증거 등 효과음"
+              checked={isSoundEnabled()}
+              onChange={(v) => setSoundEnabled(v)}
+            />
             <Toggle
               label="행동 징후 표시"
               desc="캐릭터의 심리 상태 힌트를 표시합니다"

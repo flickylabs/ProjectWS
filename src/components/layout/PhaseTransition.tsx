@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
+import { playPhaseTransition } from '../../engine/soundEngine'
 
 const PHASE_INFO: Record<GamePhase, { title: string; subtitle: string; icon: string } | null> = {
   [GamePhase.Phase0_CaseIntro]: null,
@@ -24,6 +25,7 @@ export default function PhaseTransition() {
       const info = PHASE_INFO[currentPhase]
       if (info) {
         setVisible(true)
+        playPhaseTransition()
         const timer = setTimeout(() => setVisible(false), 1800)
         setLastPhase(currentPhase)
         return () => clearTimeout(timer)

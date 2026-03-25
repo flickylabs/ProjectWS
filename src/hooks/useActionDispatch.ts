@@ -3,6 +3,7 @@ import { useGameStore } from '../store/useGameStore'
 import { resolveDialogue } from '../engine/dialogueResolver'
 import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
+import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
 
 /** LLM 모드 플래그 — App에서 설정 */
 let useLLMMode = false
@@ -48,6 +49,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
 
   const newUnlocks = state.presentEvidence(action.evidenceId, action.target)
 
+  playEvidencePresent()
   state.addDialogue({ speaker: 'system', text: `📄 증거 제시: ${evDef.name}`, relatedDisputes: evDef.proves, turn: state.turnCount })
 
   const trigger = evDef.reliability === 'hard' ? 'hard_evidence' : 'soft_evidence'
@@ -60,7 +62,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
 
   for (const id of newUnlocks) {
     const def = state.evidenceDefinitions.find((e) => e.id === id)
-    if (def) state.addDialogue({ speaker: 'system', text: `🔓 새로운 증거 확보: ${def.name}`, relatedDisputes: def.proves, turn: state.turnCount })
+    if (def) { playEvidenceUnlock(); state.addDialogue({ speaker: 'system', text: `🔓 새로운 증거 확보: ${def.name}`, relatedDisputes: def.proves, turn: state.turnCount }) }
   }
 
   // 증거 조합 격상 체크
@@ -73,6 +75,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
         const combo = caseData.evidenceCombinations.find((c) => c.requires.join('+') === comboKey)
         if (combo) {
           const names = combo.requires.map((id) => caseData.evidence.find((e) => e.id === id)?.name ?? id).join(' + ')
+          playEvidenceUpgrade()
           freshEvidenceState.addDialogue({
             speaker: 'system',
             text: `⚡ 증거 조합 격상! ${names} → Hard 등급으로 신뢰도 상승`,
@@ -269,6 +272,7 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     S5: '더 이상 부정하지 않습니다',
   }
   if (newState && labels[newState]) {
+    if (newState === 'S5') playLieCollapse()
     state.addDialogue({ speaker: 'system', text: `⚡ ${name}이(가) "${dispute?.name}" 쟁점에서 ${labels[newState]}`, relatedDisputes: [disputeId], turn: state.turnCount })
   }
 }

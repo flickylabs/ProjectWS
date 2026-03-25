@@ -19,6 +19,7 @@ import ResultScreen from '../components/result/ResultScreen'
 import HistoryPanel from '../components/layout/HistoryPanel'
 import { phase1Dialogues } from '../data/dialogues/phase1'
 import { phase2Dialogues } from '../data/dialogues/phase2'
+import { buildGenericPhase1, buildGenericPhase2 } from '../data/dialogues/generic-phase1'
 
 export default function App() {
   const currentPhase = useGameStore((s) => s.currentPhase)
@@ -174,24 +175,31 @@ function getActionPanel(phase: GamePhase) {
   const llmMode = isLLMMode()
 
   switch (phase) {
-    case GamePhase.Phase1_InitialStatement:
+    case GamePhase.Phase1_InitialStatement: {
+      // 하드코딩 사건은 전용 대사, 생성 사건은 범용 대사 또는 LLM
+      const isHardcoded = caseData?.caseId === 'case-001'
+      const fallback = isHardcoded ? phase1Dialogues : (caseData ? buildGenericPhase1(caseData) : phase1Dialogues)
       return (
         <AutoDialoguePhase
-          dialogues={phase1Dialogues}
+          dialogues={fallback}
           llmGenerator={llmMode && caseData ? () => generatePhase1Dialogues(caseData) : undefined}
           nextPhase={GamePhase.Phase2_Rebuttal}
           nextLabel="반박 단계로"
         />
       )
-    case GamePhase.Phase2_Rebuttal:
+    }
+    case GamePhase.Phase2_Rebuttal: {
+      const isHardcoded = caseData?.caseId === 'case-001'
+      const fallback = isHardcoded ? phase2Dialogues : (caseData ? buildGenericPhase2(caseData) : phase2Dialogues)
       return (
         <AutoDialoguePhase
-          dialogues={phase2Dialogues}
+          dialogues={fallback}
           llmGenerator={llmMode && caseData ? () => generatePhase2Dialogues(caseData) : undefined}
           nextPhase={GamePhase.Phase3_Interrogation}
           nextLabel="심문 시작"
         />
       )
+    }
     case GamePhase.Phase3_Interrogation:
     case GamePhase.Phase4_Evidence:
     case GamePhase.Phase5_ReExamination:

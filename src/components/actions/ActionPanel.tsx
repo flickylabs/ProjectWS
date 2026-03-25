@@ -175,21 +175,91 @@ export default function ActionPanel() {
       {activeTab === 'trust' && <TrustActionPanel target={target} onAction={handleTrustAction} />}
       {activeTab === 'skill' && <SkillPanel target={target} onUseSkill={handleSkill} disputes={disputes} />}
       {activeTab === 'advance' && (
-        <div className="flex items-center justify-between py-2">
-          <div className="text-xs text-gray-400">
-            {canAdvance ? '다음 단계 준비 완료.' : '최소 턴 수를 채워야 합니다.'}
-          </div>
-          <button
-            onClick={handleAdvance}
-            disabled={!canAdvance}
-            className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-              canAdvance ? 'bg-amber-600 hover:bg-amber-500 text-gray-950' : 'bg-gray-800 text-gray-600 cursor-not-allowed'
-            }`}
-          >
-            다음 단계 →
-          </button>
-        </div>
+        <AdvanceTab
+          canAdvance={canAdvance}
+          onAdvance={handleAdvance}
+          currentPhase={currentPhase}
+        />
       )}
+    </div>
+  )
+}
+
+function AdvanceTab({ canAdvance, onAdvance, currentPhase }: { canAdvance: boolean; onAdvance: () => void; currentPhase: GamePhase }) {
+  const agentA = useGameStore((s) => s.agentA)
+  const agentB = useGameStore((s) => s.agentB)
+  const evidenceStates = useGameStore((s) => s.evidenceStates)
+  const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
+  const turnCount = useGameStore((s) => s.turnCount)
+
+  // 진행 상황 계산
+  const allLies = [...Object.values(agentA.lieStateMap), ...Object.values(agentB.lieStateMap)]
+  const collapsed = allLies.filter((e) => e.currentState === 'S5').length
+  const totalLies = allLies.length
+  const presentedCount = Object.values(evidenceStates).filter((e) => e.presented).length
+  const unlockedCount = evidenceDefinitions.filter((e) => evidenceStates[e.id]?.unlocked).length
+  const totalEvidence = evidenceDefinitions.length
+
+  const phaseLabels: Record<string, string> = {
+    [GamePhase.Phase3_Interrogation]: '증거 제시 단계',
+    [GamePhase.Phase4_Evidence]: '재심문 단계',
+    [GamePhase.Phase5_ReExamination]: '중재안 단계',
+  }
+  const nextLabel = phaseLabels[currentPhase] ?? '다음 단계'
+
+  // 상황별 힌트
+  const hints: string[] = []
+  if (collapsed === 0) hints.push('아직 붕괴된 쟁점이 없습니다. 증거를 제시하거나 질문을 이어가세요.')
+  else if (collapsed < totalLies) hints.push(`${collapsed}/${totalLies} 쟁점 붕괴. 남은 쟁점을 더 파고들 수 있습니다.`)
+  else hints.push('모든 쟁점이 붕괴되었습니다. 판결로 넘어가도 좋습니다.')
+
+  if (presentedCount === 0 && currentPhase === GamePhase.Phase3_Interrogation) {
+    hints.push('증거 탭에서 증거를 제시해보세요.')
+  }
+  if (unlockedCount > presentedCount) {
+    hints.push(`미제시 증거가 ${unlockedCount - presentedCount}개 남아 있습니다.`)
+  }
+
+  return (
+    <div className="space-y-3 py-1">
+      {/* 진행 요약 */}
+      <div className="grid grid-cols-3 gap-2">
+        <MiniStat label="쟁점 붕괴" value={`${collapsed}/${totalLies}`} good={collapsed > 0} />
+        <MiniStat label="증거 제시" value={`${presentedCount}/${totalEvidence}`} good={presentedCount > 0} />
+        <MiniStat label="진행 턴" value={`${turnCount}`} good={true} />
+      </div>
+
+      {/* 힌트 */}
+      <div className="space-y-1">
+        {hints.map((h, i) => (
+          <div key={i} className="text-xs text-gray-500 flex items-start gap-1">
+            <span className="text-amber-600 shrink-0">💡</span>
+            <span>{h}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* 전환 버튼 */}
+      <div className="flex justify-end">
+        <button
+          onClick={onAdvance}
+          disabled={!canAdvance}
+          className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+            canAdvance ? 'bg-amber-600 hover:bg-amber-500 text-gray-950' : 'bg-gray-800 text-gray-600 cursor-not-allowed'
+          }`}
+        >
+          {nextLabel} →
+        </button>
+      </div>
+    </div>
+  )
+}
+
+function MiniStat({ label, value, good }: { label: string; value: string; good: boolean }) {
+  return (
+    <div className="bg-gray-800/40 rounded px-2 py-1.5 text-center">
+      <div className="text-xs text-gray-500">{label}</div>
+      <div className={`text-sm font-bold ${good ? 'text-emerald-400' : 'text-gray-600'}`}>{value}</div>
     </div>
   )
 }
