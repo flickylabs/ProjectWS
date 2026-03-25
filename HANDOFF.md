@@ -122,6 +122,8 @@ npm install
 ```
 VITE_OPENAI_API_KEY=sk-proj-...  # OpenAI API 키
 ```
+**API 키 확인**: 유저에게 직접 물어보세요. 또는 https://platform.openai.com → API keys에서 발급.
+기존 키는 이전 대화에서 노출되어 교체가 필요할 수 있습니다.
 
 ### 실행
 ```bash
