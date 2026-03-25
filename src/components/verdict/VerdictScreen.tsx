@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import { calculateVerdict } from '../../engine/verdictEngine'
@@ -8,7 +9,18 @@ import ResponsibilitySlider from './ResponsibilitySlider'
 import SolutionPicker from './SolutionPicker'
 import EvidenceLegality from './EvidenceLegality'
 
+type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'legality' | 'confirm'
+
+const STEPS: { id: VerdictStep; label: string; icon: string }[] = [
+  { id: 'fact', label: '사실 인정', icon: '①' },
+  { id: 'responsibility', label: '책임 배분', icon: '②' },
+  { id: 'solution', label: '해결책', icon: '③' },
+  { id: 'legality', label: '증거 정당성', icon: '④' },
+  { id: 'confirm', label: '확정', icon: '⚖️' },
+]
+
 export default function VerdictScreen() {
+  const [step, setStep] = useState<VerdictStep>('fact')
   const caseData = useGameStore((s) => s.caseData)
   const verdictInput = useGameStore((s) => s.verdictInput)
   const setVerdictScore = useGameStore((s) => s.setVerdictScore)
@@ -19,57 +31,117 @@ export default function VerdictScreen() {
 
   if (!caseData) return null
 
+  const currentIdx = STEPS.findIndex((s) => s.id === step)
   const hasFactFindings = Object.keys(verdictInput.factFindings).length > 0
+  const hasLegalityIssue = caseData.evidence.some(
+    (e) => e.legitimacy !== 'lawful' && evidenceStates[e.id]?.presented,
+  )
 
   const handleSubmit = () => {
     const score = calculateVerdict({
-      disputes: caseData.disputes,
-      evidence: caseData.evidence,
-      evidenceStates,
-      input: verdictInput,
-      turnsUsed: turnCount,
-      courtControlRemaining: resources.courtControl,
+      disputes: caseData.disputes, evidence: caseData.evidence, evidenceStates,
+      input: verdictInput, turnsUsed: turnCount, courtControlRemaining: resources.courtControl,
     })
     setVerdictScore(score)
-    if (caseData) {
-      recordGameComplete(caseData.caseId, score.total)
-      recordHistory({
-        caseId: caseData.caseId, score: score.total,
-        relationshipType: caseData.duo.relationshipType,
-        nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name,
-      })
-    }
+    recordGameComplete(caseData.caseId, score.total)
+    recordHistory({
+      caseId: caseData.caseId, score: score.total,
+      relationshipType: caseData.duo.relationshipType,
+      nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name,
+    })
     advancePhase(GamePhase.Result)
   }
 
+  const goNext = () => {
+    const nextIdx = currentIdx + 1
+    if (STEPS[nextIdx]?.id === 'legality' && !hasLegalityIssue) {
+      setStep('confirm')
+    } else if (nextIdx < STEPS.length) {
+      setStep(STEPS[nextIdx].id)
+    }
+  }
+
+  const goPrev = () => {
+    const prevIdx = currentIdx - 1
+    if (STEPS[prevIdx]?.id === 'legality' && !hasLegalityIssue) {
+      setStep('solution')
+    } else if (prevIdx >= 0) {
+      setStep(STEPS[prevIdx].id)
+    }
+  }
+
+  const visibleSteps = STEPS.filter((s) => s.id !== 'legality' || hasLegalityIssue)
+
   return (
-    <div className="max-w-lg mx-auto py-4 px-3 space-y-6 overflow-y-auto max-h-[calc(100vh-100px)]">
-      <div className="text-center">
-        <div className="text-amber-500 text-sm font-semibold tracking-widest">판결</div>
-        <h2 className="text-xl font-bold mt-1">최종 판결을 내려주십시오</h2>
-        <p className="text-xs text-gray-500 mt-1">사실 인정, 책임 배분, 해결책 선택, 증거 정당성 판단을 완료하세요.</p>
+    <div className="flex flex-col">
+      {/* 스텝 표시기 */}
+      <div className="flex items-center justify-center gap-1 py-2 border-b border-gray-800">
+        {visibleSteps.map((s, i) => (
+          <div key={s.id} className="flex items-center gap-1">
+            <button
+              onClick={() => setStep(s.id)}
+              className={`text-xs px-2 py-0.5 rounded-full transition-colors ${
+                step === s.id ? 'bg-amber-600 text-gray-950 font-bold' :
+                STEPS.findIndex((x) => x.id === s.id) < currentIdx ? 'bg-gray-700 text-gray-300' :
+                'bg-gray-800 text-gray-500'
+              }`}
+            >
+              {s.icon}
+            </button>
+            {i < visibleSteps.length - 1 && <span className="text-gray-700 text-xs">›</span>}
+          </div>
+        ))}
       </div>
 
-      <FactChecklist />
-      <ResponsibilitySlider />
-      <SolutionPicker />
-      <EvidenceLegality />
+      {/* 스텝 내용 */}
+      <div className="overflow-y-auto px-1 py-2 max-h-[30vh]">
+        {step === 'fact' && <FactChecklist />}
+        {step === 'responsibility' && <ResponsibilitySlider />}
+        {step === 'solution' && <SolutionPicker />}
+        {step === 'legality' && <EvidenceLegality />}
+        {step === 'confirm' && (
+          <div className="space-y-3 px-2">
+            <div className="text-center">
+              <div className="text-2xl mb-1">⚖️</div>
+              <h3 className="text-xs font-bold text-amber-400">판결 요약</h3>
+            </div>
+            {caseData.disputes.map((d) => {
+              const f = verdictInput.factFindings[d.id]
+              const r = verdictInput.responsibility[d.id]
+              return (
+                <div key={d.id} className="bg-gray-800/40 rounded px-2.5 py-1.5 text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-gray-300">{d.name}</span>
+                    <span className={f === 'true' ? 'text-emerald-400' : f === 'false' ? 'text-red-400' : 'text-gray-500'}>
+                      {f === 'true' ? '사실' : f === 'false' ? '거짓' : f === 'pending' ? '보류' : '미판단'}
+                    </span>
+                  </div>
+                  {r && <div className="text-gray-600">{caseData.duo.partyA.name} {r.a}% / {caseData.duo.partyB.name} {r.b}%</div>}
+                </div>
+              )
+            })}
+            {verdictInput.selectedSolutions.length > 0 && (
+              <div className="text-xs text-gray-500">해결책 {verdictInput.selectedSolutions.length}개 선택</div>
+            )}
+          </div>
+        )}
+      </div>
 
-      {/* 제출 */}
-      <div className="border-t border-gray-800 pt-6 text-center">
-        <button
-          onClick={handleSubmit}
-          disabled={!hasFactFindings}
-          className={`px-10 py-3 rounded-lg font-bold text-lg transition-colors ${
-            hasFactFindings
-              ? 'bg-amber-600 hover:bg-amber-500 text-gray-950'
-              : 'bg-gray-800 text-gray-600 cursor-not-allowed'
-          }`}
-        >
-          ⚖️ 판결 확정
+      {/* 네비게이션 */}
+      <div className="flex items-center justify-between px-2 py-2 border-t border-gray-800">
+        <button onClick={goPrev} disabled={currentIdx === 0}
+          className={`text-xs px-3 py-1.5 rounded-lg ${currentIdx === 0 ? 'text-gray-700' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}>
+          ← 이전
         </button>
-        {!hasFactFindings && (
-          <p className="text-xs text-gray-600 mt-2">최소 하나의 쟁점에 대해 사실 인정을 해야 판결할 수 있습니다.</p>
+        {step === 'confirm' ? (
+          <button onClick={handleSubmit} disabled={!hasFactFindings}
+            className={`text-xs px-5 py-2 rounded-lg font-bold ${hasFactFindings ? 'bg-amber-600 hover:bg-amber-500 text-gray-950' : 'bg-gray-800 text-gray-600'}`}>
+            ⚖️ 판결 확정
+          </button>
+        ) : (
+          <button onClick={goNext} className="text-xs px-3 py-1.5 rounded-lg bg-amber-700 hover:bg-amber-600 text-white">
+            다음 →
+          </button>
         )}
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { SkillType, PartyId } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
 import { SKILL_COSTS, SKILL_LIMITS } from '../../utils/constants'
@@ -64,9 +65,38 @@ export default function SkillPanel({ target, onUseSkill, disputes }: Props) {
   const canUseSkill = useGameStore((s) => s.canUseSkill)
   const resources = useGameStore((s) => s.resources)
   const skillUseCounts = useGameStore((s) => s.skillUseCounts)
+  const [confirmSkill, setConfirmSkill] = useState<{ type: SkillType; disputeId?: string } | null>(null)
 
   if (!target) {
     return <div className="text-gray-500 text-sm">먼저 대상을 선택하세요.</div>
+  }
+
+  const handleSkillClick = (skillType: SkillType, disputeId?: string) => {
+    const cost = SKILL_COSTS[skillType]
+    if (cost && cost.amount >= 2) {
+      setConfirmSkill({ type: skillType, disputeId })
+    } else {
+      onUseSkill(skillType, disputeId)
+    }
+  }
+
+  if (confirmSkill) {
+    const cost = SKILL_COSTS[confirmSkill.type]
+    const skill = SKILLS.find((s) => s.type === confirmSkill.type)
+    return (
+      <div className="space-y-3 text-center py-2">
+        <div className="text-lg">{skill?.icon}</div>
+        <div className="text-sm font-bold text-amber-400">{skill?.label}</div>
+        <div className="text-xs text-gray-400">{skill?.desc}</div>
+        <div className="text-xs text-orange-400">
+          비용: {cost?.resource === 'skillPoints' ? '⚡' : '🔍'}{cost?.amount} 소모됩니다
+        </div>
+        <div className="flex gap-2 justify-center">
+          <button onClick={() => setConfirmSkill(null)} className="text-xs px-4 py-1.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700">취소</button>
+          <button onClick={() => { onUseSkill(confirmSkill.type, confirmSkill.disputeId); setConfirmSkill(null) }} className="text-xs px-4 py-1.5 rounded bg-amber-700 text-white hover:bg-amber-600 font-bold">사용</button>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -112,7 +142,7 @@ export default function SkillPanel({ target, onUseSkill, disputes }: Props) {
                     <button
                       key={d.id}
                       disabled={!available}
-                      onClick={() => onUseSkill(skill.type, d.id)}
+                      onClick={() => handleSkillClick(skill.type, d.id)}
                       className={`text-xs px-2 py-0.5 rounded transition-colors ${
                         available
                           ? 'bg-gray-700 hover:bg-amber-700 text-gray-300 hover:text-white'
@@ -126,7 +156,7 @@ export default function SkillPanel({ target, onUseSkill, disputes }: Props) {
               ) : (
                 <button
                   disabled={!available}
-                  onClick={() => onUseSkill(skill.type)}
+                  onClick={() => handleSkillClick(skill.type)}
                   className={`text-xs px-3 py-1 rounded transition-colors ${
                     available
                       ? 'bg-amber-700 hover:bg-amber-600 text-white'

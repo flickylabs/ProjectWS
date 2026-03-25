@@ -123,7 +123,18 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
 
   // 분리심문 턴 소모
   const sepState = useGameStore.getState()
-  if (sepState.separationTarget) sepState.tickSeparation()
+  if (sepState.separationTarget) {
+    const prevTurns = sepState.separationTurns
+    sepState.tickSeparation()
+    if (prevTurns <= 1) {
+      useGameStore.getState().addDialogue({
+        speaker: 'system',
+        text: '🚪 분리심문이 종료되었습니다. 상대방이 복귀합니다.',
+        relatedDisputes: [],
+        turn: useGameStore.getState().turnCount,
+      })
+    }
+  }
 
   // 상대방 끼어들기 (분리심문 중이면 차단)
   const opponent: PartyId = action.target === 'a' ? 'b' : 'a'

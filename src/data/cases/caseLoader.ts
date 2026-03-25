@@ -7,8 +7,10 @@ import type { CaseData, LieConfig } from '../../types'
 // JSON 파일들을 정적 import (Vite는 JSON import 지원)
 import spouse01 from './generated/spouse-01.json'
 import spouse02 from './generated/spouse-02.json'
+import spouse03 from './generated/spouse-03.json'
+import spouse04 from './generated/spouse-04.json'
 
-const RAW_CASES = [spouse01, spouse02]
+const RAW_CASES = [spouse01, spouse02, spouse03, spouse04]
 
 /** JSON 사건을 CaseData로 정규화 */
 function normalizeCaseData(raw: any): CaseData {
