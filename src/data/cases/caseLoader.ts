@@ -1,52 +1,35 @@
 /**
- * JSON 파일에서 생성된 사건을 CaseData 형식으로 변환하여 로드한다.
- * 생성된 JSON은 스키마가 약간 다를 수 있으므로 정규화 처리를 거친다.
+ * 사건 로더 v2 — JSON 파일을 동적 import + 캐싱.
+ * 번들에 직접 포함하지 않고, 필요할 때 로드.
  */
 import type { CaseData, LieConfig } from '../../types'
 
-// JSON 파일들을 정적 import (Vite는 JSON import 지원)
-import spouse01 from './generated/spouse-01.json'
-import spouse02 from './generated/spouse-02.json'
-import spouse03 from './generated/spouse-03.json'
-import spouse04 from './generated/spouse-04.json'
-import spouse05 from './generated/spouse-05.json'
-import spouse06 from './generated/spouse-06.json'
-import spouse07 from './generated/spouse-07.json'
-import spouse08 from './generated/spouse-08.json'
-import spouse09 from './generated/spouse-09.json'
-import spouse10 from './generated/spouse-10.json'
+// Vite의 glob import로 모든 JSON을 lazy 로드 가능하게 등록
+const caseModules = import.meta.glob('./generated/*.json', { eager: true }) as Record<string, { default: any }>
 
-const RAW_CASES = [spouse01, spouse02, spouse03, spouse04, spouse05, spouse06, spouse07, spouse08, spouse09, spouse10]
-// spouse05, spouse06 추가 시 위 배열에 넣기
+// 즉시 로드 + 정규화
+const RAW_CASES = Object.values(caseModules).map((m) => m.default)
 
 /** JSON 사건을 CaseData로 정규화 */
 function normalizeCaseData(raw: any): CaseData {
   const duo = raw.duo
 
-  // partyA/B에 id 필드가 없으면 추가
   if (!duo.partyA.id) duo.partyA.id = 'a'
   if (!duo.partyB.id) duo.partyB.id = 'b'
 
-  // archetype 정규화 (생성기가 다른 값을 쓸 수 있음)
   duo.partyA.archetype = normalizeArchetype(duo.partyA.archetype)
   duo.partyB.archetype = normalizeArchetype(duo.partyB.archetype)
 
-  // digitalHabit 정규화
   duo.partyA.digitalHabit = normalizeDigitalHabit(duo.partyA.digitalHabit)
   duo.partyB.digitalHabit = normalizeDigitalHabit(duo.partyB.digitalHabit)
 
-  // verbalTells trigger 정규화
   for (const vt of duo.partyA.verbalTells) vt.trigger = normalizeTrigger(vt.trigger)
   for (const vt of duo.partyB.verbalTells) vt.trigger = normalizeTrigger(vt.trigger)
 
-  // duoId가 없으면 생성
   if (!duo.duoId) duo.duoId = `duo-${raw.caseId}`
-
-  // relationshipLedger, socialGraph가 없으면 빈 배열
   if (!duo.relationshipLedger) duo.relationshipLedger = []
   if (!duo.socialGraph) duo.socialGraph = []
 
-  // lieConfig transitions 트리거 정규화
   const normTransitions = (configs: any[]): LieConfig[] =>
     configs.map((c: any) => ({
       ...c,
@@ -57,7 +40,6 @@ function normalizeCaseData(raw: any): CaseData {
       })),
     }))
 
-  // evidence type 정규화
   const evidence = (raw.evidence ?? []).map((e: any) => ({
     ...e,
     type: normalizeEvidenceType(e.type),
@@ -88,13 +70,17 @@ function normalizeArchetype(a: string): 'avoidant' | 'confrontational' | 'victim
     victim_cosplay: 'victim_cosplay', cold_logic: 'cold_logic',
     hyper_responsible: 'cold_logic', martyr: 'victim_cosplay',
     passive: 'avoidant', aggressive: 'confrontational',
+    planner: 'cold_logic', improviser: 'confrontational',
+    appeaser: 'avoidant', precision_seeker: 'cold_logic',
+    territorial: 'cold_logic', fairness_guardian: 'confrontational',
+    indirect_expressive: 'avoidant', status_defender: 'confrontational',
   }
   return (map[a] ?? 'avoidant') as any
 }
 
 function normalizeDigitalHabit(d: string): 'sns_active' | 'messenger_main' | 'minimal' {
-  if (d?.includes('sns') || d?.includes('multiple')) return 'sns_active'
-  if (d?.includes('messenger') || d?.includes('banking') || d?.includes('calendar')) return 'messenger_main'
+  if (d?.includes('sns') || d?.includes('multiple') || d?.includes('close_friends') || d?.includes('shared_calendar')) return 'sns_active'
+  if (d?.includes('messenger') || d?.includes('banking') || d?.includes('calendar') || d?.includes('card') || d?.includes('household') || d?.includes('voice') || d?.includes('work_chat') || d?.includes('admin')) return 'messenger_main'
   return 'minimal'
 }
 
@@ -109,7 +95,7 @@ function normalizeTrigger(t: string): 'lying' | 'cornered' | 'emotional' | 'avoi
 function normalizeEvidenceType(t: string): string {
   const valid = ['bank', 'chat', 'cctv', 'contract', 'testimony', 'log', 'device', 'sns']
   if (valid.includes(t)) return t
-  if (t?.includes('access') || t?.includes('cloud') || t?.includes('email') || t?.includes('document') || t?.includes('institutional') || t?.includes('device_log')) return 'log'
+  if (t?.includes('access') || t?.includes('cloud') || t?.includes('email') || t?.includes('document') || t?.includes('institutional') || t?.includes('device_log') || t?.includes('platform') || t?.includes('audio') || t?.includes('photo') || t?.includes('social')) return 'log'
   return 'log'
 }
 
@@ -132,13 +118,12 @@ function normalizeProvenance(p: string): 'self_possessed' | 'third_party' | 'ano
 }
 
 function normalizeLieTrigger(t: string): string {
-  // 생성기의 구체적 트리거를 엔진이 매칭할 수 있는 범용 트리거로 변환
   if (t.includes('presented') || t.includes('evidence')) return 'hard_evidence'
   if (t.includes('question') && t.includes('timeline')) return 'timeline_question'
   if (t.includes('question') && t.includes('motive')) return 'motive_question'
   if (t.includes('question') && t.includes('provenance')) return 'provenance_question'
   if (t.includes('question') && t.includes('responsibility')) return 'responsibility_question'
-  if (t.includes('question') && t.includes('nonjudg')) return 'empathy_question'
+  if (t.includes('question') && (t.includes('nonjudg') || t.includes('empathy'))) return 'empathy_question'
   if (t.includes('question')) return 'direct_question'
   if (t.includes('emotion') || t.includes('threshold')) return 'emotion_threshold'
   if (t.includes('reminder') || t.includes('agreement')) return 'direct_question'
