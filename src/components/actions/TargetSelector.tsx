@@ -10,28 +10,33 @@ export default function TargetSelector({ selected, onSelect }: Props) {
   const caseData = useGameStore((s) => s.caseData)
   if (!caseData) return null
 
-  const parties: { id: PartyId; name: string; color: string }[] = [
-    { id: 'a', name: caseData.duo.partyA.name, color: 'blue' },
-    { id: 'b', name: caseData.duo.partyB.name, color: 'rose' },
-  ]
-
   return (
-    <div className="flex gap-2">
-      {parties.map((p) => {
-        const isSelected = selected === p.id
-        const base = p.color === 'blue'
-          ? isSelected ? 'bg-blue-600 text-white border-blue-500' : 'bg-gray-800 text-blue-400 border-gray-700 hover:border-blue-600'
-          : isSelected ? 'bg-rose-600 text-white border-rose-500' : 'bg-gray-800 text-rose-400 border-gray-700 hover:border-rose-600'
-        return (
-          <button
-            key={p.id}
-            onClick={() => onSelect(p.id)}
-            className={`border rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${base}`}
-          >
-            {p.name}
-          </button>
-        )
-      })}
+    <div className="flex gap-1 shrink-0">
+      <TargetBtn
+        id="a" name={caseData.duo.partyA.name} selected={selected === 'a'}
+        activeClass="bg-blue-600/90 text-white ring-1 ring-blue-400/50"
+        inactiveClass="text-blue-400/70 hover:bg-blue-950/40"
+        onSelect={() => onSelect('a')}
+      />
+      <TargetBtn
+        id="b" name={caseData.duo.partyB.name} selected={selected === 'b'}
+        activeClass="bg-rose-600/90 text-white ring-1 ring-rose-400/50"
+        inactiveClass="text-rose-400/70 hover:bg-rose-950/40"
+        onSelect={() => onSelect('b')}
+      />
     </div>
+  )
+}
+
+function TargetBtn({ name, selected, activeClass, inactiveClass, onSelect }: {
+  id: string; name: string; selected: boolean; activeClass: string; inactiveClass: string; onSelect: () => void
+}) {
+  return (
+    <button
+      onClick={onSelect}
+      className={`text-xs px-2.5 py-1.5 rounded-lg font-semibold transition-all ${selected ? activeClass : inactiveClass}`}
+    >
+      {name}
+    </button>
   )
 }

@@ -146,27 +146,25 @@ export default function ActionPanel() {
 
   return (
     <div className="space-y-2">
-      {/* 대상 선택 */}
+      {/* 대상 선택 + 탭 바 통합 행 */}
       <div className="flex items-center gap-2">
-        <span className="text-xs text-gray-500 shrink-0">대상:</span>
         <TargetSelector selected={target} onSelect={setTarget} />
-      </div>
-
-      {/* 탭 바 */}
-      <div className="flex gap-1 border-b border-gray-800 pb-1">
-        {TABS.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`text-xs px-2 py-1 rounded-t transition-colors ${
-              activeTab === tab.id
-                ? 'bg-amber-600 text-gray-950 font-semibold'
-                : 'bg-gray-800/50 text-gray-500 hover:text-gray-300'
-            }`}
-          >
-            {tab.icon} {tab.label}
-          </button>
-        ))}
+        <div className="h-4 w-px bg-gray-800 shrink-0" />
+        <div className="flex gap-0.5 flex-1 overflow-x-auto scrollbar-hide">
+          {TABS.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`shrink-0 text-xs px-2.5 py-1.5 rounded-lg transition-all ${
+                activeTab === tab.id
+                  ? 'bg-amber-600 text-gray-950 font-bold shadow-sm shadow-amber-600/20'
+                  : 'text-gray-500 hover:text-gray-300 hover:bg-gray-800/50'
+              }`}
+            >
+              {tab.icon} {tab.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* 탭 내용 */}

@@ -84,87 +84,71 @@ function TitleScreen() {
   }
 
   return (
-    <div className="h-screen bg-gray-950 text-gray-100 flex flex-col items-center justify-center px-4 max-w-lg mx-auto">
-      <div className="text-center space-y-5 w-full">
-        <div className="text-5xl">⚖️</div>
-        <h1 className="text-3xl font-bold text-amber-400">솔로몬</h1>
-        <p className="text-xs text-gray-500">AI 둘의 싸움을 인간의 지혜로 재판하는 게임</p>
+    <div className="h-screen bg-gray-950 text-gray-100 flex flex-col max-w-lg mx-auto">
+      {showHistory && <HistoryPanel onClose={() => setShowHistory(false)} />}
 
-        {/* LLM 상태 */}
-        <div className={`border rounded-lg p-2.5 text-xs ${
-          llmStatus === null ? 'border-gray-700' :
-          llmStatus.connected ? 'border-emerald-800 bg-emerald-950/30' : 'border-yellow-800 bg-yellow-950/30'
-        }`}>
-          {llmStatus === null && <span className="text-gray-500">LLM 연결 확인 중...</span>}
-          {llmStatus?.connected && (
-            <span className="text-emerald-400">✓ {getProviderName()} 연결됨 {llmStatus.modelId && <span className="text-gray-500 ml-1">({llmStatus.modelId})</span>}</span>
-          )}
-          {llmStatus && !llmStatus.connected && (
-            <div className="space-y-1.5">
-              <span className="text-yellow-400">⚠ {llmStatus.error}</span>
-              <button onClick={handleRetry} disabled={loading} className="block w-full bg-gray-800 hover:bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs">
-                {loading ? '확인 중...' : '다시 연결'}
-              </button>
-            </div>
-          )}
+      {/* 히어로 영역 */}
+      <div className="flex-1 flex flex-col items-center justify-center px-6 bg-gradient-to-b from-amber-950/20 via-gray-950 to-gray-950">
+        <div className="text-center space-y-3 w-full">
+          <div className="text-6xl animate-pulse-glow inline-block">⚖️</div>
+          <h1 className="text-3xl font-bold text-amber-400 tracking-tight">솔로몬</h1>
+          <p className="text-sm text-gray-500 leading-relaxed">AI 둘의 싸움을<br />인간의 지혜로 재판하는 게임</p>
         </div>
+      </div>
 
-        {/* 사건 수 */}
-        <div className="text-xs text-gray-600">
-          등록된 사건: {caseCount}개
-          {caseCount > 1 && <span className="ml-1">({Object.entries(caseCounts).map(([k, v]) => `${RELATION_LABELS[k] ?? k} ${v}`).join(', ')})</span>}
-        </div>
+      {/* 하단 액션 영역 */}
+      <div className="px-5 pb-8 space-y-3">
+        {/* 메인 버튼 */}
+        <button
+          onClick={() => handleStart()}
+          className="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-gray-950 font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-amber-600/20 active:scale-95"
+        >
+          ⚖️ 재판 시작
+          <span className="block text-xs font-normal opacity-60 mt-0.5">사건 {caseCount}개 중 랜덤 선택</span>
+        </button>
 
-        {/* 모드 선택 */}
-        <div className="space-y-2">
-          <button
-            onClick={() => handleStart()}
-            className="w-full bg-amber-600 hover:bg-amber-500 text-gray-950 font-bold py-3 rounded-lg transition-colors"
-          >
-            ⚖️ 빠른 시작
-            <span className="block text-xs font-normal opacity-70">랜덤 사건으로 바로 시작</span>
-          </button>
+        <div className="grid grid-cols-2 gap-2">
           <button
             onClick={() => setShowCampaign(true)}
-            className="w-full bg-gray-800 hover:bg-gray-700 text-gray-200 font-bold py-3 rounded-lg transition-colors border border-gray-700"
+            className="bg-gray-800/60 hover:bg-gray-700/60 text-gray-300 font-semibold py-3 rounded-xl transition-colors ring-1 ring-gray-700/50 text-sm"
           >
-            📖 캠페인 모드
-            <span className="block text-xs font-normal text-gray-500">Stage 1~10 순서대로 도전</span>
+            📖 캠페인
           </button>
           <button
             onClick={() => setShowHistory(true)}
-            className="w-full bg-gray-800/50 hover:bg-gray-700/50 text-gray-400 py-2 rounded-lg transition-colors text-sm border border-gray-800"
+            className="bg-gray-800/60 hover:bg-gray-700/60 text-gray-300 font-semibold py-3 rounded-xl transition-colors ring-1 ring-gray-700/50 text-sm"
           >
             📜 판결 기록
           </button>
         </div>
 
-        {showHistory && <HistoryPanel onClose={() => setShowHistory(false)} />}
-
-        {/* 관계 유형 선택 (사건 2개 이상일 때) */}
+        {/* 관계 유형 선택 */}
         {caseCount > 1 && (
-          <div className="space-y-2">
-            <div className="text-xs text-gray-500">또는 관계 유형 선택:</div>
-            <div className="flex flex-wrap gap-1.5 justify-center">
-              {Object.entries(caseCounts).map(([type, count]) => (
-                <button
-                  key={type}
-                  onClick={() => handleStart(type)}
-                  className="text-xs bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-1.5 rounded-lg transition-colors"
-                >
-                  {RELATION_LABELS[type] ?? type} ({count})
-                </button>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-1.5 justify-center pt-1">
+            {Object.entries(caseCounts).map(([type, count]) => (
+              <button
+                key={type}
+                onClick={() => handleStart(type)}
+                className="text-xs text-gray-500 hover:text-gray-300 hover:bg-gray-800/50 px-2.5 py-1 rounded-full transition-colors"
+              >
+                {RELATION_LABELS[type] ?? type} {count}
+              </button>
+            ))}
           </div>
         )}
 
-        {/* LLM 없을 때 안내 */}
-        {llmStatus && !llmStatus.connected && (
-          <div className="text-xs text-gray-600">
-            LLM 없이도 플레이 가능합니다. 연결하면 AI가 더 자연스러운 대사를 생성합니다.
-          </div>
-        )}
+        {/* LLM + 상태 */}
+        <div className="flex items-center justify-center gap-2 pt-1">
+          {llmStatus === null && <span className="text-xs text-gray-600">연결 확인 중...</span>}
+          {llmStatus?.connected && (
+            <span className="text-xs text-emerald-500/70">● AI 연결됨</span>
+          )}
+          {llmStatus && !llmStatus.connected && (
+            <button onClick={handleRetry} disabled={loading} className="text-xs text-gray-600 hover:text-gray-400">
+              {loading ? '확인 중...' : '● AI 미연결 (탭하여 재시도)'}
+            </button>
+          )}
+        </div>
       </div>
     </div>
   )
