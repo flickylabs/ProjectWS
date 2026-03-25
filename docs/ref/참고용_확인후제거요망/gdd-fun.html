@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omnibus GDD — 재미 장치</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="gdd-index.html">🎭 <span>Omnibus</span> GDD</a>
+  <span class="topbar-title">재미 장치</span>
+  <div class="topbar-sections">
+    <a class="topbar-sec-link" href="#resonance">감정 공명</a>
+    <a class="topbar-sec-link" href="#replay-hooks">리플레이 동기</a>
+    <a class="topbar-sec-link" href="#challenge">도전 & 보상</a>
+    <a class="topbar-sec-link" href="#social">소셜 & 공유</a>
+  </div>
+  <div class="topbar-meta">
+    <span>v2.1</span>
+    <span>2026-03-24</span>
+  </div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-vision.html"><span class="icon">📋</span><span class="label">게임 비전</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-structure.html"><span class="icon">⚙️</span><span class="label">게임 구조</span></a>
+      <a class="sidebar-link active" href="gdd-fun.html"><span class="icon">✨</span><span class="label">재미 장치</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">콘텐츠</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-world.html"><span class="icon">🌍</span><span class="label">세계관</span></a>
+      <a class="sidebar-link" href="gdd-characters.html"><span class="icon">👥</span><span class="label">캐릭터</span></a>
+      <a class="sidebar-link" href="gdd-relations.html"><span class="icon">🕸️</span><span class="label">관계 & 시나리오</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-production.html"><span class="icon">🔧</span><span class="label">프로덕션</span></a>
+      <a class="sidebar-link" href="gdd-execution.html"><span class="icon">🗺️</span><span class="label">실행 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+  <h1>재미 장치 <span class="badge">GDD v2.1</span></h1>
+  <p class="subtitle">감정 공명, 리플레이 동기, 도전 & 보상, 소셜 기능, 마이크로 시스템</p>
+
+  <!-- A. 감정 공명 -->
+  <h2 id="resonance">감정 공명 시스템</h2>
+  <p>시점 교차의 핵심 재미는 "아까 내가 했던 행동의 결과를 다른 몸으로 직접 맞닥뜨리는 순간"이다. 이 순간을 시스템적으로 설계하고 연출해야 게임이 단순한 텍스트 분기를 넘어선다.</p>
+
+  <h3>공명 순간이란</h3>
+  <p>플레이어가 이전 스테이지에서 한 선택의 결과가 현재 캐릭터의 장면에 직접적으로 영향을 미치는 순간을 <strong>"공명 순간"</strong>이라고 부른다. 이때 플레이어는 자기가 만든 상황의 반대편을 직접 겪게 된다.</p>
+
+  <div class="card-grid">
+    <div class="card"><div class="card-title">거울 반복</div><p>이전 스테이지에서 플레이어가 선택한 행동과 <strong>구조적으로 동일한 상황</strong>이 현재 캐릭터에게 역으로 일어난다. 예: A로 택시에서 라이더에게 욕했는데, B가 되어 택시기사에게 같은 구조의 욕을 듣는다. 단, 너무 직접적이면 작위적이므로, 상황의 골격만 유사하고 맥락은 다르게 변형한다.</p></div>
+    <div class="card"><div class="card-title">파문 가시화</div><p>선택의 여파가 다음 캐릭터에게 도달했을 때, 짧은 <strong>플래시백 연출</strong>(이전 장면의 핵심 문장 1줄)을 보여준다. "아까 그 말이 여기까지 왔구나"를 시각적으로 체감시킨다. 연출은 0.5~1초의 화면 떨림이나 색상 변화 정도로 충분하다.</p></div>
+    <div class="card"><div class="card-title">아이러니 독백</div><p>공명 순간에 현재 캐릭터의 독백이 이전 캐릭터가 했던 자기합리화와 <strong>대칭적으로 울린다.</strong> 예: A가 "이 정도는 말해줘야 알아듣지"라고 했는데, B가 "그냥 지나갈 수 없잖아"라고 같은 구조의 합리화를 한다. 플레이어는 자기가 양쪽에서 같은 논리를 쓰고 있다는 것을 자각한다.</p></div>
+    <div class="card"><div class="card-title">선택 공간 체감</div><p>이전 캐릭터가 강하게 분출한 사건의 상대방이 되면, <strong>선택지 자체가 줄어든 채</strong> 시작한다. "참기" 옵션이 회색으로 잠겨 있거나, "이미 너무 화가 나서" 배려 선택이 비활성화된 상태로 등장. 내가 만든 압박이 상대의 자유를 빼앗았다는 것을 UI로 직접 보여준다.</p></div>
+  </div>
+
+  <h3>공명의 강도 설계</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>강도</th><th>조건</th><th>연출</th><th>빈도</th></tr></thead>
+    <tbody>
+      <tr><td>약한 공명</td><td>이전 선택이 간접적으로 분위기에 영향</td><td>배경 분위기 텍스트 변화, NPC 태도 미세 변화</td><td>매 스테이지 1~2회</td></tr>
+      <tr><td>중간 공명</td><td>이전 선택의 직접적 결과가 현재 장면의 조건을 바꿈</td><td>플래시백 1줄 + 시작 스트레스 보정 + 선택지 변형</td><td>2~3 스테이지마다 1회</td></tr>
+      <tr><td>강한 공명</td><td>이전 캐릭터가 직접 NPC로 재등장하며 과거 행동이 재현됨</td><td>거울 반복 연출 + 대칭 독백 + 선택 공간 잠금 UI</td><td>런 전체에서 2~3회</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>공명의 핵심 원칙</strong><br>
+    공명은 "벌"이 아니라 "깨달음"이어야 한다. 플레이어가 "내가 당해도 싸지"가 아니라 "아, 이쪽에서는 이렇게 느껴지는구나"로 도착해야 한다. 따라서 공명 순간에는 항상 상대의 속사정 힌트를 함께 노출한다.
+  </div></div>
+
+  <h3>마이크로 공명 시스템 (v2.1 신규)</h3>
+  <p>큰 공명 장치 외에, 짧고 빈번하게 작동하는 마이크로 시스템 8종을 추가한다. 각각은 가볍지만 누적되면 체감이 커진다.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">속말 잔상 (Inner Voice Remnant)</div>
+      <p><strong>발동 조건:</strong> 스트레스 > 60이고, 직전 선택이 경계 또는 배려였을 때만 발동.<br>
+      <strong>연출:</strong> 선택 직후 0.8초간 이전 캐릭터의 속말이 현재 캐릭터의 독백 위에 겹쳐서 떠오른다. "...참은 건가, 참은 거야?" 같은 한 줄.<br>
+      <strong>효과:</strong> 참았지만 괜찮았던 건 아니라는 것을 보여줌. 배려가 공짜가 아니라는 체감 강화.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">대화 끼어들기 (Conversation Interrupt)</div>
+      <p><strong>발동 조건:</strong> 오너 사건 중 1~2회, NPC 대사 도중 선택지가 갑자기 나타남.<br>
+      <strong>연출:</strong> NPC가 말하는 도중 화면 하단에 선택지가 슬라이드 인. 3초 안에 고르지 않으면 자동으로 "듣기"로 처리.<br>
+      <strong>효과:</strong> 대화의 템포감. 끼어들면 분출 효과, 듣기로 넘기면 경계/배려 효과.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">리플레이 증거물 (Replay Evidence)</div>
+      <p><strong>형태:</strong> CCTV 스타일 카드. 이전 런에서 이 장소에서 일어났던 사건의 흔적이 장면 배경에 남아있음.<br>
+      <strong>빈도:</strong> 런당 최대 2~3개. 같은 장소를 다른 캐릭터로 재방문했을 때만 발동.<br>
+      <strong>효과:</strong> "아 여기서 아까 그 일이 있었구나" — 세계의 밀도 체감.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">관찰자 한 줄 (Observer One-liner)</div>
+      <p><strong>발동 조건:</strong> 큰 사건 직후, 목격자 태그가 있는 NPC가 한 줄 코멘트.<br>
+      <strong>연출:</strong> 화면 상단에 말풍선으로 0.5초간 표시. 예: "(옆 테이블 손님) 와... 저런다 저래."<br>
+      <strong>효과:</strong> 당사자는 진지한데 주변은 황당한 온도차. 코미디 강화 + 목격자 시스템 체감.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">말끝 선택 (Tone Modifier)</div>
+      <p><strong>발동 조건:</strong> 3축 선택(분출/경계/배려) 직후, 말투 톤을 추가로 고름.<br>
+      <strong>선택지:</strong> 정색 / 비꼼 / 지친 — 같은 경계 선택이라도 톤에 따라 상대의 반응이 미세하게 달라짐.<br>
+      <strong>효과:</strong> "뭘 말하는가" 외에 "어떻게 말하는가"도 게임 변수. 캐릭터 연기 감각 추가.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">도미노 시각화 (Domino Visualization)</div>
+      <p><strong>발동 조건:</strong> 런 종료 결과 화면에서 자동 재생.<br>
+      <strong>연출:</strong> 첫 사건부터 마지막까지 감정 전이 경로를 도미노 타일이 넘어지는 애니메이션으로 보여줌. 각 타일 = 하나의 선택.<br>
+      <strong>효과:</strong> 내 선택들이 연쇄적으로 어떻게 번졌는지 한눈에 체감. 리플레이 욕구 자극.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">기억 왜곡 (Memory Distortion)</div>
+      <p><strong>원칙:</strong> 공개층(사실 기록)은 절대 왜곡되지 않음. 오직 체감층(감정/기억)만 왜곡 대상.<br>
+      <strong>발동 조건:</strong> 같은 공유 사건을 상대 캐릭터로 다시 볼 때, 이전 캐릭터의 기억과 현재 캐릭터의 기억이 미세하게 다름.<br>
+      <strong>연출:</strong> "그 사람이 소리를 질렀다" vs "그 사람이 차갑게 말했다" — 같은 대사의 다른 기억 버전.<br>
+      <strong>효과:</strong> 객관적 사실과 주관적 기억의 괴리. "누가 맞는 거지?"라는 질문 유발.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">압박 알림 카드 (Pressure Notification)</div>
+      <p><strong>발동 조건:</strong> 장면과 장면 사이 전환 시, 카드 형태로 표시.<br>
+      <strong>형태:</strong> 핸드폰 알림 스타일. 예: "💬 엄마: 밥 먹었어?" / "⭐ 배달 평점이 4.2로 하락했습니다" / "⏰ 미팅까지 12분"<br>
+      <strong>효과:</strong> 캐릭터의 배경 압박을 자연스럽게 전달. 왜 이 캐릭터가 예민한지 설명 없이 체감.</p>
+    </div>
+  </div>
+
+  <!-- B. 리플레이 동기 -->
+  <h2 id="replay-hooks">리플레이 동기 장치</h2>
+  <p>한 런이 끝났을 때 "한 번 더"를 누르게 만드는 장치들. 단순 반복이 아니라, 매번 새로운 발견이 있다는 확신을 심어야 한다.</p>
+
+  <div class="card-grid">
+    <div class="card"><div class="card-title">숨겨진 연결선 발견</div><p>캐릭터들 사이에는 런 중에는 드러나지 않는 <strong>이면 관계</strong>가 있다. 예: 과속형 운전자의 딸이 폭발형 청년의 같은 반 친구. 이 관계는 양쪽 캐릭터를 모두 플레이한 후에만 결과 화면에서 해금된다. 연결선마다 짧은 에피소드 텍스트가 붙어서 세계관 깊이를 더한다.</p></div>
+    <div class="card"><div class="card-title">캐릭터 해금</div><p>MVP에서는 6명만 플레이 가능하지만, 특정 조건을 만족하면 숨겨진 캐릭터가 해금된다. 예: "목격자 수가 일정 이상 쌓인 런"을 완료하면 공개심판형 기록자가 해금. 해금 조건 자체가 게임의 메시지를 체화시키는 장치가 된다.</p></div>
+    <div class="card"><div class="card-title">세계선 수집</div><p>같은 공유 사건이라도 오너가 누구인지, 어떤 선택을 했는지에 따라 결과가 갈린다. 세계선 수집 화면에서 "이 사건의 발견된 분기"를 지도처럼 펼쳐 보여주면 아직 보지 못한 갈래가 궁금해진다. 모든 분기를 채울 필요는 없고, 존재만 알려줘서 상상하게 만든다.</p></div>
+    <div class="card"><div class="card-title">일일 시나리오</div><p>매일 다른 <strong>시간대 + 캐릭터 조합 + 특수 조건</strong>이 등장하는 "오늘의 반나절"을 제공한다. 예: "오늘은 심야 타임, 수면 부족 캐릭터 위주, 소음 사건 비율 2배." 가벼운 로그라이크 감각으로 매일 접속 동기를 만든다.</p></div>
+  </div>
+
+  <h3>런 종료 후 "다음 런 유도" 상세 설계</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>유도 장치</th><th>조건</th><th>표시 방식</th></tr></thead>
+    <tbody>
+      <tr><td>NPC 추천</td><td>이번 런에서 NPC였지만 파장이 큰 인물 2~3명</td><td>"이 사람의 속사정이 궁금하지 않으세요?" + 실루엣 + 핵심 갈등 힌트</td></tr>
+      <tr><td>미발견 분기</td><td>이번 공유 사건에서 플레이어가 고르지 않은 큰 분기</td><td>"만약 그때 ___했다면?" 형태의 질문 카드</td></tr>
+      <tr><td>숨겨진 연결선 힌트</td><td>캐릭터 간 이면 관계 중 아직 해금되지 않은 것</td><td>"A와 D 사이에는 아직 모르는 이야기가 있습니다" + 잠금 아이콘</td></tr>
+      <tr><td>도전 모드 해금</td><td>일반 런 3회 이상 클리어</td><td>새로운 도전 조건 카드가 해금됐다는 알림</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-success"><span class="alert-icon">&#10003;</span><div>
+    <strong>리플레이의 핵심 감각</strong><br>
+    "아직 발견하지 못한 것이 있다"는 느낌이 중요하다. 모든 것을 보여주면 재방문 이유가 사라진다. 항상 60~70%만 공개하고, 나머지는 다음 런에서 채울 수 있게 남겨둔다.
+  </div></div>
+
+  <!-- C. 도전 & 보상 -->
+  <h2 id="challenge">도전 & 보상 시스템</h2>
+  <p>도전은 도덕 점수가 아니라, "이번에는 다른 전략으로 플레이해볼까?"라는 실험 동기를 자극하는 장치다.</p>
+
+  <h3>감정 DNA 프로필</h3>
+  <p>여러 런에 걸쳐 플레이어의 <strong>선택 패턴을 축적</strong>해 고유한 감정 DNA를 만든다. 이것은 선악 점수가 아니라 <strong>반응 스타일의 지문</strong>이다.</p>
+  <div class="card-grid">
+    <div class="card"><div class="card-title">반응 성향</div><p>분출 / 경계 / 배려 비율의 레이더 차트. 시간에 따라 어떻게 변화했는지도 추적한다.</p></div>
+    <div class="card"><div class="card-title">트리거 민감도</div><p>어떤 종류의 사건에서 분출 비율이 높아지는지. "소음에 약함", "새치기에 강함" 등의 태그가 자동 생성된다.</p></div>
+    <div class="card"><div class="card-title">파급 지수</div><p>내 선택이 평균적으로 몇 명의 캐릭터에게 영향을 미쳤는지. 선택의 무게를 체감시키는 수치.</p></div>
+  </div>
+
+  <div class="alert alert-warning"><span class="alert-icon">&#9888;</span><div>
+    <strong>감정 DNA의 톤 가이드</strong><br>
+    이 프로필은 절대 "당신은 나쁜 사람입니다"로 읽히면 안 된다. 대신 "당신은 이런 상황에서 이렇게 반응하는 경향이 있습니다"라는 중립적 관찰 톤을 유지한다. MBTI처럼 흥미롭되, 판단하지 않는다.
+  </div></div>
+
+  <h3>도전 모드</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>도전</th><th>규칙</th><th>성공 시 보상</th><th>디자인 의도</th></tr></thead>
+    <tbody>
+      <tr><td>제로 임계 런</td><td>어떤 캐릭터도 스트레스 임계치에 도달하지 않게 클리어</td><td>숨겨진 "평화 세계선" 엔딩 해금</td><td>배려형 플레이의 난이도와 보람을 극대화</td></tr>
+      <tr><td>도미노 런</td><td>첫 캐릭터에서 의도적으로 최대 파장을 만들고 마지막까지 추적</td><td>파급 시각화 특별 리포트 해금</td><td>연쇄 효과의 규모를 직접 실험하게 함</td></tr>
+      <tr><td>고리 차단 런</td><td>이전 런에서 발생한 감정 연쇄의 특정 고리를 정확히 차단</td><td>해당 캐릭터의 히든 속사정 전체 해금</td><td>정밀한 전략 플레이를 유도</td></tr>
+      <tr><td>역방향 런</td><td>이전 런의 마지막 캐릭터부터 역순으로 플레이</td><td>평행 세계선 비교 화면 해금</td><td>같은 사건을 반대 순서로 보는 신선한 경험</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>시크릿 엔딩</h3>
+  <p>특정 조건을 만족했을 때만 나타나는 <strong>숨겨진 결말</strong>이 런 전체의 마무리를 바꾼다. 시크릿 엔딩은 "좋은 결말"이 아니라 <strong>시점 전환</strong>을 제공하는 것이 핵심이다. 도덕적 판단보다 관점의 변화에 초점을 맞춘다.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">제3자의 하루</div>
+      <p>모든 공유 사건에서 목격자 역할이었던 무관한 행인의 시점으로 하루를 돌아본다. 플레이어가 만든 소동이 무관한 사람에게 어떤 풍경이었는지 보여준다.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">고리 차단 런</div>
+      <p>이전 런에서 가장 큰 감정 연쇄가 시작된 시점으로 돌아가, 정확히 그 고리 하나를 다르게 선택했을 때의 세계선을 빠르게 시뮬레이션한다.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">역방향 런</div>
+      <p>마지막 캐릭터부터 첫 캐릭터 순서로 사건을 재생. 결과를 먼저 보고 원인을 역추적하는 경험.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">"5초만 멈췄다면"</div>
+      <p>모든 공유 사건의 1차 반응을 5초 멈춤으로 치환한 가상 세계선을 빠르게 재생한다. 작은 변화의 누적이 만드는 전혀 다른 하루.</p>
+    </div>
+  </div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>이스터에그 엔딩</strong><br>
+    "완벽한 하루"와 "불꽃의 날"은 정식 시크릿 엔딩이 아닌 <strong>개그/이스터에그 엔딩</strong>으로만 존재한다. 극단적 조건(전원 배려 100% 또는 전원 분출 100%)을 달성했을 때 짧은 코미디 씬으로 보상.
+  </div></div>
+
+  <!-- D. 소셜 & 공유 -->
+  <h2 id="social">소셜 & 공유 기능</h2>
+  <p>혼자 플레이하는 게임이지만, 결과를 공유하고 비교하는 순간이 "나도 이런 사람이구나"라는 자각을 강화한다.</p>
+
+  <div class="card-grid">
+    <div class="card"><div class="card-title">런 결과 카드</div><p>한 런이 끝나면 <strong>공유용 이미지 카드</strong>가 자동 생성된다. 감정 DNA 요약 + 가장 인상적인 공명 순간 + 파급 지수를 한 장에 담는다. SNS에 바로 올릴 수 있는 1:1 정사각형 포맷. "내 감정 DNA는 이런 모양이었다" 자체가 화제가 된다.</p></div>
+    <div class="card"><div class="card-title">선택 비교</div><p>같은 시나리오를 플레이한 친구(또는 전체 유저)와 <strong>핵심 분기점에서의 선택을 비교</strong>한다. "그 순간 62%는 분출을 골랐고, 당신은 배려를 골랐습니다." 나와 다른 선택을 한 사람의 비율을 보는 것만으로 자기 패턴에 대한 자각이 생긴다.</p></div>
+    <div class="card"><div class="card-title">주간 커뮤니티 통계</div><p>이번 주 가장 많이 플레이된 캐릭터, 가장 분출이 많았던 사건, 가장 배려가 많았던 장면 등을 주간 리포트로 제공한다. 커뮤니티 전체의 감정 트렌드를 보여줘서 "다른 사람들은 어떻게 반응했을까?"에 대한 답을 준다.</p></div>
+    <div class="card"><div class="card-title">익명 한 줄 감상</div><p>런 종료 후 익명으로 한 줄 감상을 남길 수 있다. 다른 플레이어의 감상은 같은 시나리오를 플레이한 직후에만 열람 가능. "아 나만 이렇게 느낀 게 아니었구나"라는 공감 효과가 리텐션을 높인다.</p></div>
+  </div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>소셜 기능의 원칙</strong><br>
+    실시간 멀티플레이나 경쟁 요소는 이 게임의 메시지와 충돌한다. 소셜 기능은 반드시 <strong>비동기적 ·비경쟁적</strong>이어야 하며, "나만의 경험"이 다른 사람의 경험과 어떻게 다른지를 조용히 비교하는 수준에 머물러야 한다.
+  </div></div>
+</main>
+
+<script>
+const topbarLinks = [...document.querySelectorAll('.topbar-sec-link')];
+const sections = topbarLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = '#' + entry.target.id;
+    topbarLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+  });
+}, { rootMargin: '-10% 0px -80% 0px', threshold: 0.01 });
+sections.forEach(s => observer.observe(s));
+
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => {
+  document.body.classList.toggle('sidebar-collapsed');
+});
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+document.querySelectorAll('.sidebar-section-title').forEach(title => {
+  title.addEventListener('click', () => title.closest('.sidebar-section').classList.toggle('collapsed'));
+});
+</script>
+</body>
+</html>

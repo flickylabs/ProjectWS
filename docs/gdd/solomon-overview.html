@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>솔로몬 GDD — 게임 개요</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/solomon.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="solomon-index.html">⚖️ <span>솔로몬</span> GDD</a>
+  <span class="topbar-title">게임 개요</span>
+  <div class="topbar-sections">
+    <a class="topbar-sec-link" href="#summary">프로젝트 요약</a>
+    <a class="topbar-sec-link" href="#usp">USP & 포지셔닝</a>
+    <a class="topbar-sec-link" href="#design">디자인 원칙</a>
+  </div>
+  <div class="topbar-meta">
+    <span>v1.3</span>
+    <span>2026-03-25</span>
+  </div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link active" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">사건 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-case.html"><span class="icon">🧱</span><span class="label">사건 구조</span></a>
+      <a class="sidebar-link" href="solomon-generator.html"><span class="icon">⚙️</span><span class="label">생성 엔진</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">AI 에이전트</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-ai.html"><span class="icon">🤖</span><span class="label">에이전트 설계</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">플레이 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-mechanics.html"><span class="icon">🎮</span><span class="label">플레이 메커닉</span></a>
+      <a class="sidebar-link" href="solomon-content.html"><span class="icon">📈</span><span class="label">콘텐츠 &amp; 밸런스</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+
+  <h1>게임 개요 <span class="badge">GDD v1.3</span></h1>
+  <p class="subtitle">LLM 심문 추리 게임 · Procedural Case Drama</p>
+  <p>
+    서로를 비난하는 두 AI 당사자, 불완전한 진술, 편집된 증거, 감정적인 말싸움.
+    플레이어는 재판관이 되어 거짓과 오인을 가르고,
+    사실·책임·해결책을 판결해 명성을 쌓는다.
+  </p>
+
+  <div class="tag-row">
+    <span class="badge badge-brand">장르: 심문 추리 / 서사 시뮬레이션</span>
+    <span class="badge badge-sub">플랫폼: PC / 모바일 / 웹</span>
+    <span class="badge badge-info">세션 길이: 10~15분</span>
+    <span class="badge badge-warning">핵심 가치: 반복 플레이 / 드라마 / 판단력</span>
+  </div>
+
+
+  <!-- ── 프로젝트 요약 ───────────────────────────── -->
+  <h2 id="summary">프로젝트 요약</h2>
+  <p>생활 밀착형 분쟁을 중심으로 한 드라마형 추리 게임. 법률 시뮬레이터보다 '판단력과 통찰의 재미'에 집중한다.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="badge badge-sub">장르 정의</span>
+      <div class="card-title mt-sm">심문 추리 × 서사 시뮬레이션</div>
+      <p>플레이어는 두 당사자의 진술과 증거를 대조하고, 질문을 통해 모순을 끌어내며 최종 판결을 내린다.</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-warning">핵심 플레이 판타지</span>
+      <div class="card-title mt-sm">"둘 다 믿을 수 없지만, 나는 꿰뚫어본다."</div>
+      <p>말빨과 감정에 휘둘리지 않고, 사실·오인·정당화를 분리해 지혜로운 결론을 내리는 쾌감을 준다.</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-success">반복 플레이 강점</span>
+      <div class="card-title mt-sm">매번 새로운 사건 조합</div>
+      <p>같은 관계 템플릿도 사건 발생 원인, 제3자, 동기, 증거 구성, 거짓말 전략이 바뀌기 때문에 경험이 매번 달라진다.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">프로젝트 한 줄 요약</div>
+    <ul>
+      <li><strong>반복 플레이 중심</strong> — 인물 조합과 관계는 유지되지만, 사건·동기·증거·트위스트가 매번 달라진다.</li>
+      <li><strong>정답은 사실만이 아니다</strong> — 무슨 일이 있었는지뿐 아니라, 누가 얼마나 책임이 있고 어떤 해결책이 현명한지도 판정한다.</li>
+      <li><strong>LLM는 연기, 룰 엔진은 진실</strong> — 대화는 생동감 있게 생성하되, 사건의 정답과 모순 판정은 구조화된 시스템이 관리한다.</li>
+    </ul>
+  </div>
+
+
+  <!-- ── USP & 핵심 포지셔닝 ──────────────────────── -->
+  <h2 id="usp">USP &amp; 핵심 포지셔닝</h2>
+
+  <div class="card-grid">
+    <div class="card"><div class="stat"><div class="k">USP 01</div><div class="v">같은 관계, 다른 사건</div></div></div>
+    <div class="card"><div class="stat"><div class="k">USP 02</div><div class="v">진실 3층 구조</div></div></div>
+    <div class="card"><div class="stat"><div class="k">USP 03</div><div class="v">AI 말싸움 중재</div></div></div>
+  </div>
+
+  <div class="alert alert-info"><span class="alert-icon">⚖️</span><div>
+    <strong>핵심 포지셔닝</strong><br>
+    "AI 둘의 싸움을 인간의 지혜로 재판하는 리플레이형 추리 게임"
+  </div></div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>핵심 차별점:</strong> 이 게임의 반복성은 단순한 랜덤이 아니라,
+    <strong>"같은 인물/관계 아키타입 위에 전혀 다른 사건이 올라가는 구조"</strong>에서 나온다.
+    플레이어는 익숙한 관계의 긴장감은 유지한 채, 새로운 진실과 새로운 심문 패턴을 매번 경험한다.
+  </div></div>
+
+
+  <!-- ── 디자인 원칙 ────────────────────────────────── -->
+  <h2 id="design">디자인 원칙</h2>
+  <p>대화의 재미와 게임 규칙의 명확성을 동시에 확보하기 위한 핵심 원칙.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">① 신뢰 불가능한 화자</div>
+      <p>두 당사자는 모두 자신에게 유리하게 말한다. 거짓말, 오인, 누락, 과장이 섞여 있어야 플레이가 성립한다.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">② 사건은 절대 구조화</div>
+      <p>대화는 자유로워 보여도 실제 사건의 진실, 쟁점, 증거, 지식 상태는 시스템이 명확하게 보유한다.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">③ 판결은 3단계</div>
+      <p>사실 인정 → 책임 판단 → 해결책 제시. 이 셋이 분리되어야 "솔로몬"다운 지혜 판정이 살아난다.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">④ 매 판 다른 사건</div>
+      <p>동일한 관계와 성격 조합도 사건 모듈이 달라지도록 설계해, 플레이어가 패턴만 외워서 이기지 못하게 한다.</p>
+    </div>
+  </div>
+
+  <blockquote>
+    솔로몬은 "범인을 찍는 게임"이 아니라, <strong>불완전한 진실 속에서 가장 현명한 판단을 내리는 게임</strong>이다.
+  </blockquote>
+
+  <h3>원칙별 시스템 연결</h3>
+  <div class="table-wrap"><table>
+    <thead>
+      <tr><th>원칙</th><th>플레이어 체감</th><th>시스템 구현 방식</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>① 신뢰 불가능한 화자</td>
+        <td>"둘 다 거짓말인 것 같은데 누가 더 심각한가?"</td>
+        <td>각 쟁점마다 거짓말 유형(LT)과 강도(L)를 독립적으로 설정. LLM은 할당된 lie_state만큼만 거짓말한다.</td>
+      </tr>
+      <tr>
+        <td>② 사건은 절대 구조화</td>
+        <td>"AI가 즉흥적으로 말하는 것 같은데 사건은 일관되다."</td>
+        <td>CaseSeed가 진실을 고정. LLM은 연기만 하고 룰 엔진이 모순·붕괴를 판정한다.</td>
+      </tr>
+      <tr>
+        <td>③ 판결은 3단계</td>
+        <td>"사실만 맞춰도 안 되고, 해결책까지 맞아야 점수가 오른다."</td>
+        <td>통찰(사실), 권위(심문), 지혜(해결책) 3축으로 명성을 별도 계산한다.</td>
+      </tr>
+      <tr>
+        <td>④ 매 판 다른 사건</td>
+        <td>"이 캐릭터는 알겠는데 이번 사건은 처음이다."</td>
+        <td>관계·캐릭터 아키타입은 고정, 갈등 씨앗·변수 모듈·반전 모듈을 런타임 조합으로 생성한다.</td>
+      </tr>
+    </tbody>
+  </table></div>
+
+</main>
+
+<script>
+const topbarLinks = [...document.querySelectorAll('.topbar-sec-link')];
+const sections = topbarLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = '#' + entry.target.id;
+    topbarLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+  });
+}, { rootMargin: '-10% 0px -80% 0px', threshold: 0.01 });
+sections.forEach(s => observer.observe(s));
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => document.body.classList.toggle('sidebar-collapsed'));
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+document.querySelectorAll('.sidebar-section-title').forEach(title => {
+  title.addEventListener('click', () => title.closest('.sidebar-section').classList.toggle('collapsed'));
+});
+</script>
+</body>
+</html>

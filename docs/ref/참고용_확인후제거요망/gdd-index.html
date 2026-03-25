@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omnibus GDD — 홈</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .index-hero { text-align: center; margin-bottom: 36px; }
+    .index-hero h1 { font-size: 2rem; }
+    .index-hero .subtitle { font-size: 1rem; max-width: 700px; margin: 0 auto 24px; }
+    .index-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin: 14px 0; }
+    .index-card { background: var(--bg-white); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 24px 26px; border: 1px solid rgba(45,41,38,0.05); transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease); text-decoration: none; color: var(--text); display: block; }
+    .index-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .index-card .card-icon { font-size: 2rem; margin-bottom: 8px; }
+    .index-card .card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+    .index-card .card-desc { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+    .index-card .card-links { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .index-card .card-links span { font-size: 0.72rem; background: var(--brand-light); color: var(--brand-dark); padding: 2px 8px; border-radius: 12px; }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="gdd-index.html">🎭 <span>Omnibus</span> GDD</a>
+  <span class="topbar-title">홈</span>
+  <div class="topbar-sections"></div>
+  <div class="topbar-meta">
+    <span>v2.1</span>
+    <span>2026-03-24</span>
+  </div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-vision.html"><span class="icon">📋</span><span class="label">게임 비전</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-structure.html"><span class="icon">⚙️</span><span class="label">게임 구조</span></a>
+      <a class="sidebar-link" href="gdd-fun.html"><span class="icon">✨</span><span class="label">재미 장치</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">콘텐츠</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-world.html"><span class="icon">🌍</span><span class="label">세계관</span></a>
+      <a class="sidebar-link" href="gdd-characters.html"><span class="icon">👥</span><span class="label">캐릭터</span></a>
+      <a class="sidebar-link" href="gdd-relations.html"><span class="icon">🕸️</span><span class="label">관계 & 시나리오</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-production.html"><span class="icon">🔧</span><span class="label">프로덕션</span></a>
+      <a class="sidebar-link" href="gdd-execution.html"><span class="icon">🗺️</span><span class="label">실행 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+  <div class="index-hero">
+    <h1>🎭 옴니버스 — 감정 전이 웹게임 <span class="badge">GDD v2.1</span></h1>
+    <p class="subtitle">같은 반나절, 다른 사람의 몸으로 — 내가 남긴 상처가 다음 사람의 선택을 바꾸는 코믹 블랙코미디 감정 전략 게임</p>
+  </div>
+
+  <div class="index-cards">
+    <a class="index-card" href="gdd-vision.html">
+      <div class="card-icon">📋</div>
+      <div class="card-title">게임 비전</div>
+      <div class="card-desc">한 줄 정의, 장르, 플랫폼, 핵심 감정 4가지, 게임 철학과 디자인 원칙을 정리합니다.</div>
+      <div class="card-links"><span>게임 개요</span><span>게임 철학</span></div>
+    </a>
+
+    <a class="index-card" href="gdd-structure.html">
+      <div class="card-icon">⚙️</div>
+      <div class="card-title">게임 구조</div>
+      <div class="card-desc">런 구조, 코어 시스템(스트레스/시간 압박/불씨), 공유 사건 핑퐁 설계, 선택 3축을 다룹니다.</div>
+      <div class="card-links"><span>런 구조</span><span>코어 시스템</span><span>공유 사건</span><span>선택 설계</span></div>
+    </a>
+
+    <a class="index-card" href="gdd-fun.html">
+      <div class="card-icon">✨</div>
+      <div class="card-title">재미 장치</div>
+      <div class="card-desc">감정 공명, 리플레이 동기, 도전 & 보상, 소셜 공유 기능, 그리고 새로운 마이크로 시스템 8종을 설계합니다.</div>
+      <div class="card-links"><span>감정 공명</span><span>리플레이 동기</span><span>도전 & 보상</span><span>소셜 & 공유</span></div>
+    </a>
+
+    <a class="index-card" href="gdd-world.html">
+      <div class="card-icon">🌍</div>
+      <div class="card-title">세계관</div>
+      <div class="card-desc">코믹 캐주얼 톤, 세계의 과장 법칙, 13개 장소 카탈로그를 정의합니다.</div>
+      <div class="card-links"><span>톤 & 무드</span><span>세계 법칙</span><span>장소 카탈로그</span></div>
+    </a>
+
+    <a class="index-card" href="gdd-characters.html">
+      <div class="card-icon">👥</div>
+      <div class="card-title">캐릭터</div>
+      <div class="card-desc">16명의 플레이어블 캐릭터. 겉모습, 속사정, 트리거, 코미디 기믹, 히든 약점, 인간 장면까지.</div>
+      <div class="card-links"><span>박기사</span><span>진우</span><span>수아</span><span>영숙여사</span><span>+12명</span></div>
+    </a>
+
+    <a class="index-card" href="gdd-relations.html">
+      <div class="card-icon">🕸️</div>
+      <div class="card-title">관계 & 시나리오</div>
+      <div class="card-desc">캐릭터 관계망, 장소 매트릭스, 타임라인, 아이템 20종, 사건 템플릿 10종을 설계합니다.</div>
+      <div class="card-links"><span>관계망</span><span>장소 매트릭스</span><span>타임라인</span><span>아이템</span><span>사건 템플릿</span></div>
+    </a>
+
+    <a class="index-card" href="gdd-production.html">
+      <div class="card-icon">🔧</div>
+      <div class="card-title">프로덕션</div>
+      <div class="card-desc">웹 UX, AI 활용 전략(LLM 5+5 원칙), 기술 스택, 수익화 설계, MVP 범위를 정의합니다.</div>
+      <div class="card-links"><span>웹 UX</span><span>AI 활용</span><span>기술 스택</span><span>수익화</span><span>MVP 범위</span></div>
+    </a>
+
+    <a class="index-card" href="gdd-execution.html">
+      <div class="card-icon">🗺️</div>
+      <div class="card-title">실행 계획</div>
+      <div class="card-desc">제작 로드맵, 리스크 대응, 예시 런 시나리오, 다음 결정 사항을 정리합니다.</div>
+      <div class="card-links"><span>로드맵</span><span>리스크</span><span>예시 런</span><span>다음 결정</span></div>
+    </a>
+  </div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>한 줄 결론</strong><br>
+    이 프로젝트의 성공 포인트는 "좋은 사람 되기"가 아니라, <strong>내가 남긴 상처와 여유가 어떻게 다음 사람의 선택 공간을 바꾸는지</strong>를 짧고 날카롭게 체험하게 만드는 데 있다.
+  </div></div>
+</main>
+
+<script>
+document.querySelectorAll('.sidebar-section-title').forEach(title => {
+  title.addEventListener('click', () => title.closest('.sidebar-section').classList.toggle('collapsed'));
+});
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => {
+  document.body.classList.toggle('sidebar-collapsed');
+});
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+</script>
+</body>
+</html>

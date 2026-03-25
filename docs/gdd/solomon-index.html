@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>솔로몬 GDD — 홈</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/solomon.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="solomon-index.html">⚖️ <span>솔로몬</span> GDD</a>
+  <span class="topbar-title">홈</span>
+  <div class="topbar-sections"></div>
+  <div class="topbar-meta">
+    <span>v1.3</span>
+    <span>2026-03-25</span>
+  </div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">사건 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-case.html"><span class="icon">🧱</span><span class="label">사건 구조</span></a>
+      <a class="sidebar-link" href="solomon-generator.html"><span class="icon">⚙️</span><span class="label">생성 엔진</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">AI 에이전트</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-ai.html"><span class="icon">🤖</span><span class="label">에이전트 설계</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">플레이 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-mechanics.html"><span class="icon">🎮</span><span class="label">플레이 메커닉</span></a>
+      <a class="sidebar-link" href="solomon-content.html"><span class="icon">📈</span><span class="label">콘텐츠 &amp; 밸런스</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+  <div class="index-hero">
+    <h1>⚖️ 솔로몬 <span class="badge">GDD v1.3</span></h1>
+    <p class="subtitle">LLM 심문 추리 게임 · Procedural Case Drama — AI 둘의 싸움을 인간의 지혜로 재판하는 리플레이형 추리 게임</p>
+  </div>
+
+  <div class="index-cards">
+    <a class="index-card" href="solomon-overview.html">
+      <div class="card-icon">⚖️</div>
+      <div class="card-title">게임 개요</div>
+      <div class="card-desc">프로젝트 한 줄 요약, USP & 핵심 포지셔닝, 4가지 디자인 원칙을 정리합니다.</div>
+      <div class="card-tags"><span>프로젝트 요약</span><span>USP</span><span>디자인 원칙</span></div>
+    </a>
+
+    <a class="index-card" href="solomon-case.html">
+      <div class="card-icon">🧱</div>
+      <div class="card-title">사건 구조</div>
+      <div class="card-desc">상황 모듈 시스템, 인과 그래프, 지식 비대칭 매트릭스, 공동 책임 스펙트럼을 설계합니다.</div>
+      <div class="card-tags"><span>상황 모듈</span><span>인과 그래프</span><span>지식 비대칭</span><span>공동 책임</span></div>
+    </a>
+
+    <a class="index-card" href="solomon-generator.html">
+      <div class="card-icon">⚙️</div>
+      <div class="card-title">생성 엔진</div>
+      <div class="card-desc">동적 사건 생성 시스템, 증거 의존성 그래프, 반복 방지 메커니즘, 8단계 파이프라인, 데이터 모델을 정의합니다.</div>
+      <div class="card-tags"><span>동적 생성</span><span>증거 의존성</span><span>반복 방지</span><span>파이프라인</span></div>
+    </a>
+
+    <a class="index-card" href="solomon-ai.html">
+      <div class="card-icon">🤖</div>
+      <div class="card-title">에이전트 설계</div>
+      <div class="card-desc">거짓말 전략 트리, 감정 곡선, 발언 결정 로직, 상호 대응 로직, LLM 프롬프트 구조를 고도화합니다.</div>
+      <div class="card-tags"><span>거짓말 전략</span><span>감정 곡선</span><span>발언 결정</span><span>LLM 프롬프트</span></div>
+    </a>
+
+    <a class="index-card" href="solomon-mechanics.html">
+      <div class="card-icon">🎮</div>
+      <div class="card-title">플레이 메커닉</div>
+      <div class="card-desc">진실 3층 구조, 쟁점 & 거짓말 붕괴 규칙, 핵심 플레이 루프, 행동 세트 & 특수 스킬, 증거 및 판결 시스템을 다룹니다.</div>
+      <div class="card-tags"><span>진실 3층</span><span>플레이 루프</span><span>특수 스킬</span><span>판결 시스템</span></div>
+    </a>
+
+    <a class="index-card" href="solomon-content.html">
+      <div class="card-icon">📈</div>
+      <div class="card-title">콘텐츠 &amp; 밸런스</div>
+      <div class="card-desc">캠페인 10 Stage 진행 구조, 콘텐츠 카테고리, 반복 플레이 예시, 샘플 사건, 밸런스 원칙을 정리합니다.</div>
+      <div class="card-tags"><span>진행 구조</span><span>카테고리</span><span>샘플 사건</span><span>밸런스</span></div>
+    </a>
+
+    <a class="index-card" href="solomon-production.html">
+      <div class="card-icon">🔧</div>
+      <div class="card-title">제작 계획</div>
+      <div class="card-desc">UX / 화면 구조, 주요 리스크 대응, MVP 범위 제안을 다룹니다.</div>
+      <div class="card-tags"><span>UX / 화면</span><span>리스크</span><span>MVP 범위</span></div>
+    </a>
+  </div>
+
+  <div class="alert alert-info"><span class="alert-icon">⚖️</span><div>
+    <strong>핵심 포지셔닝</strong><br>
+    "AI 둘의 싸움을 인간의 지혜로 재판하는 리플레이형 추리 게임" — 같은 관계, 매번 다른 사건으로 수백 가지 경우의 수를 만드는 Procedural Case Drama.
+  </div></div>
+</main>
+
+<script>
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => document.body.classList.toggle('sidebar-collapsed'));
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+document.querySelectorAll('.sidebar-section-title').forEach(title => {
+  title.addEventListener('click', () => title.closest('.sidebar-section').classList.toggle('collapsed'));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omnibus GDD — 게임 비전</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="gdd-index.html">🎭 <span>Omnibus</span> GDD</a>
+  <span class="topbar-title">게임 비전</span>
+  <div class="topbar-sections">
+    <a class="topbar-sec-link" href="#overview">게임 개요</a>
+    <a class="topbar-sec-link" href="#philosophy">게임 철학</a>
+  </div>
+  <div class="topbar-meta">
+    <span>v2.1</span>
+    <span>2026-03-24</span>
+  </div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link active" href="gdd-vision.html"><span class="icon">📋</span><span class="label">게임 비전</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-structure.html"><span class="icon">⚙️</span><span class="label">게임 구조</span></a>
+      <a class="sidebar-link" href="gdd-fun.html"><span class="icon">✨</span><span class="label">재미 장치</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">콘텐츠</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-world.html"><span class="icon">🌍</span><span class="label">세계관</span></a>
+      <a class="sidebar-link" href="gdd-characters.html"><span class="icon">👥</span><span class="label">캐릭터</span></a>
+      <a class="sidebar-link" href="gdd-relations.html"><span class="icon">🕸️</span><span class="label">관계 & 시나리오</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-production.html"><span class="icon">🔧</span><span class="label">프로덕션</span></a>
+      <a class="sidebar-link" href="gdd-execution.html"><span class="icon">🗺️</span><span class="label">실행 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+  <h1>게임 비전 <span class="badge">GDD v2.1</span></h1>
+  <p class="subtitle">옴니버스 감정 전이 웹게임의 핵심 정의와 디자인 철학</p>
+
+  <h2 id="overview">게임 개요</h2>
+
+  <div class="two-col">
+    <div>
+      <h3>한 줄 정의</h3>
+      <p><strong>"같은 반나절을 여러 몸으로 갈아타며, 조금 전의 내가 다음 장면의 상대역으로 다시 나타나는 옴니버스 감정 전이 게임."</strong></p>
+
+      <h3>장르 정의</h3>
+      <p>
+        선택지 기반 내러티브 게임이지만, 단순한 비주얼노벨이나 도덕 퀴즈가 아니다.
+        플레이어는 매 장면에서 감정 ·시간 · 목표를 조정하고,
+        이미 기록된 타인의 행동에 영향을 받으며,
+        자신의 선택이 다음 인물의 선택 공간을 바꾸는 구조를 체험한다.
+      </p>
+
+      <h3>플랫폼</h3>
+      <p>
+        1차 목표 플랫폼은 <strong>모바일 웹 / 데스크톱 웹</strong>이다.
+        짧은 런과 높은 재플레이성을 우선하며, 별도 설치 없이 진입 가능한 포맷을 채택한다.
+        웹 완성 후 <strong>Capacitor</strong>로 iOS/Android 네이티브 앱을 래핑하여 앱스토어에 출시한다.
+        인앱 결제(IAP)와 광고는 네이티브 앱에서 Capacitor 플러그인으로 연동한다.
+      </p>
+    </div>
+    <div>
+      <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+        <strong>핵심 목표</strong><br>
+        빌런 캐릭터를 소비하는 게임이 아니라, "누군가를 이상한 사람으로 만드는 것은 상황과 압박, 그리고 이전에 받은 상처의 축적일 수 있다"는 체감을 플레이어에게 남긴다.
+      </div></div>
+      <div class="alert alert-success"><span class="alert-icon">&#10003;</span><div>
+        <strong>세션 설계 기준</strong><br>
+        한 판은 가볍고 빠르게 끝나야 한다. 대신 한 런이 끝난 뒤 "같은 사건을 다른 인물로 다시 보고 싶다"는 욕구를 남겨야 한다.
+      </div></div>
+    </div>
+  </div>
+
+  <h3>목표 플레이 타임</h3>
+  <ul>
+    <li><strong>이상적 정식 런:</strong> 등장인물 20명 중 10명 플레이, 12~18분 내외</li>
+    <li><strong>MVP 런:</strong> 등장인물 12명 중 6명 플레이, 8~12분 내외</li>
+    <li><strong>스테이지 단위:</strong> 한 캐릭터당 3~5분, 4개 안팎의 장면</li>
+  </ul>
+
+  <h3>플레이어가 느껴야 하는 4개의 감정</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">아차</div>
+      <p>내가 방금 던진 말과 행동이 다음 인물의 하루를 망가뜨렸다는 사실을 뒤늦게 체감한다.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">어라</div>
+      <p>아까는 우스꽝스럽거나 짜증나는 인물로 보였지만, 막상 그 인물이 되었을 때 예민해질 수밖에 없는 속사정을 본다.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">뜨끔</div>
+      <p>특정 집단을 조롱하는 대신, 플레이어가 자기 안의 반응 패턴을 떠올리게 된다. 나도 저럴 수 있겠구나.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">재도전 욕구</div>
+      <p>"이번엔 어디서 고리를 끊을 수 있었을까?" "그 장면을 다르게 말했다면 이후가 얼마나 바뀔까?"</p>
+    </div>
+  </div>
+
+  <h2 id="philosophy">게임 철학</h2>
+  <p>이 게임이 주는 메시지는 설교처럼 들리면 안 된다. 감정과 결과를 통해 자연스럽게 도착해야 한다.</p>
+
+  <h3>철학의 3축</h3>
+  <div class="table-wrap"><table>
+    <thead>
+      <tr><th>축</th><th>플레이어 문장</th><th>시스템으로 구현하는 방식</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>반성</td>
+        <td>"내가 이 사람을 이렇게 만들었구나."</td>
+        <td>내가 A로 했던 실제 선택이 이후 B의 시작 스트레스, 반응 폭, 후속 선택지에 반영된다.</td>
+      </tr>
+      <tr>
+        <td>역지사지</td>
+        <td>"이 사람은 이런 속사정이 있었구나."</td>
+        <td>각 캐릭터는 '오늘의 사정'과 '시간 압박'을 갖고 등장하며, 플레이어는 그 인물이 되어 같은 사건을 다른 무게로 겪는다.</td>
+      </tr>
+      <tr>
+        <td>자기 성찰</td>
+        <td>"혹시 나도 이런 사람이 아닐까?"</td>
+        <td>행동 원형 중심 캐릭터 설계와 자기합리화 독백을 통해 특정 집단 조롱이 아니라 보편적 반응 패턴으로 느끼게 한다.</td>
+      </tr>
+    </tbody>
+  </table></div>
+
+  <h3>디자인 원칙</h3>
+  <ul>
+    <li><strong>착한 선택이 공짜면 안 된다.</strong> 배려에는 여유와 시간이 필요하고, 때로는 내 목표를 희생해야 한다.</li>
+    <li><strong>못된 선택이 즉시 효율적이어야 한다.</strong> 그래야 유혹이 생기고, 나중에 돌아오는 파장이 의미를 갖는다.</li>
+    <li><strong>단순한 카르마 서사가 아니라 시점 교차여야 한다.</strong> 추상적인 업보 대신, "과거의 나"가 NPC가 되어 다시 등장해야 한다.</li>
+    <li><strong>캐릭터는 낙인이 아니라 행동 원형이어야 한다.</strong> 그래야 공감이 가능하고, 확장성도 생긴다.</li>
+  </ul>
+
+  <div class="alert alert-warning"><span class="alert-icon">&#9888;</span><div>
+    <strong>콘텐츠 톤 가이드</strong><br>
+    지나친 혐오 낙인, 특정 집단 조롱, 노골적인 도덕 훈화는 지양한다. 대신 블랙코미디, 불편한 현실감, 작은 뜨끔함, 뒤늦은 이해를 중심 톤으로 삼는다.
+  </div></div>
+</main>
+
+<script>
+const topbarLinks = [...document.querySelectorAll('.topbar-sec-link')];
+const sections = topbarLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = '#' + entry.target.id;
+    topbarLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+  });
+}, { rootMargin: '-10% 0px -80% 0px', threshold: 0.01 });
+sections.forEach(s => observer.observe(s));
+
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => {
+  document.body.classList.toggle('sidebar-collapsed');
+});
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+document.querySelectorAll('.sidebar-section-title').forEach(title => {
+  title.addEventListener('click', () => title.closest('.sidebar-section').classList.toggle('collapsed'));
+});
+</script>
+</body>
+</html>

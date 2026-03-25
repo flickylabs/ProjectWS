@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omnibus GDD — 실행 계획</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="gdd-index.html">🎭 <span>Omnibus</span> GDD</a>
+  <span class="topbar-title">실행 계획</span>
+  <div class="topbar-sections">
+    <a class="topbar-sec-link" href="#roadmap">로드맵</a>
+    <a class="topbar-sec-link" href="#risks">리스크</a>
+    <a class="topbar-sec-link" href="#example-run">예시 런</a>
+    <a class="topbar-sec-link" href="#next-steps">다음 결정</a>
+  </div>
+  <div class="topbar-meta">
+    <span>v2.1</span>
+    <span>2026-03-24</span>
+  </div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-vision.html"><span class="icon">📋</span><span class="label">게임 비전</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-structure.html"><span class="icon">⚙️</span><span class="label">게임 구조</span></a>
+      <a class="sidebar-link" href="gdd-fun.html"><span class="icon">✨</span><span class="label">재미 장치</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">콘텐츠</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-world.html"><span class="icon">🌍</span><span class="label">세계관</span></a>
+      <a class="sidebar-link" href="gdd-characters.html"><span class="icon">👥</span><span class="label">캐릭터</span></a>
+      <a class="sidebar-link" href="gdd-relations.html"><span class="icon">🕸️</span><span class="label">관계 & 시나리오</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-production.html"><span class="icon">🔧</span><span class="label">프로덕션</span></a>
+      <a class="sidebar-link active" href="gdd-execution.html"><span class="icon">🗺️</span><span class="label">실행 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+  <h1>실행 계획 <span class="badge">GDD v2.1</span></h1>
+  <p class="subtitle">로드맵, 리스크 대응, 예시 런, 다음 결정 사항</p>
+
+  <h2 id="roadmap">제작 로드맵</h2>
+  <p>초기엔 시각적 완성도보다 사건망과 감정 리듬의 정확성을 먼저 검증한다.</p>
+  <h3>단계별 제안</h3>
+  <div class="timeline">
+    <div class="step"><div class="num">A</div><h5>문서 잠금</h5><p>캐릭터 원형, 상태값, 공유 사건 규칙, 아이템 범위를 확정한다.</p></div>
+    <div class="step"><div class="num">B</div><h5>텍스트 프로토타입</h5><p>비주얼 없이 사건망과 선택 결과만 있는 브라우저 프로토타입을 만든다.</p></div>
+    <div class="step"><div class="num">C</div><h5>AI 대사 레이어 추가</h5><p>룰이 안정된 뒤 캐릭터별 말투와 독백을 AI로 입힌다.</p></div>
+    <div class="step"><div class="num">D</div><h5>UX/모네타이즈 통합</h5><p>광고 보상, 결과 화면, 재도전 흐름, 모바일 레이아웃을 다듬는다.</p></div>
+    <div class="step"><div class="num">E</div><h5>Capacitor 래핑 & 출시</h5><p>웹앱을 Capacitor로 네이티브 래핑. IAP ·AdMob 연동. iOS/Android 앱스토어 심사 제출.</p></div>
+  </div>
+  <h3>권장 개발 순서</h3>
+  <ol>
+    <li>공유 사건 3종만으로 핑퐁과 기록 구조 검증</li>
+    <li>플레이어블 4명만으로 옴니버스 흐름 테스트</li>
+    <li>후속층 선택이 실제로 다음 캐릭터에 영향을 주는지 디버깅</li>
+    <li><strong>공명 순간 프로토타입 — 거울 반복과 선택 공간 잠금 UI 검증</strong></li>
+    <li>아이템 4종 추가</li>
+    <li>결과 리포트와 평행 로그 비교 추가</li>
+    <li><strong>감정 DNA와 런 결과 카드 구현</strong></li>
+    <li>이후에만 캐릭터와 템플릿 확장</li>
+  </ol>
+
+  <h2 id="risks">주요 리스크와 대응</h2>
+  <p>이 장르는 구조적으로 위험한 지점이 분명하다. 초기에 가드레일을 잡아두면 훨씬 오래 가는 프로젝트가 된다.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>리스크</th><th>왜 생기는가</th><th>대응 방향</th></tr></thead>
+    <tbody>
+      <tr><td>후반부 수동성</td><td>공유 사건이 많아질수록 자동재생이 늘어나기 쉽다.</td><td>한 공유 사건은 한 번만 풀 핑퐁, 나중에는 체감층 ·후속층만 플레이</td></tr>
+      <tr><td>반복감</td><td>유사한 말싸움이 계속 나오면 금방 질린다.</td><td>작은 생활 장면, 혼자 있는 장면, 회복 리듬, 사건 템플릿 변주 추가</td></tr>
+      <tr><td>혐오 낙인화</td><td>현실 집단 이름을 그대로 쓰면 공감보다 조롱이 앞선다.</td><td>행동 원형 설계, 속사정 공개, 라벨 대신 패턴 중심 캐릭터화</td></tr>
+      <tr><td>분기 폭증</td><td>양쪽 시점 모두에서 사건을 풀컨트롤하면 로그가 꼬인다.</td><td>사건 오너 구조, 공개층 고정, 개변 아이템은 희귀화</td></tr>
+      <tr><td>도덕 게임화</td><td>선악 점수로 보이기 시작하면 메시지가 납작해진다.</td><td>행복 지수보다 고리 차단 수, 파장 요약 중심 결과 화면</td></tr>
+      <tr><td>공명 피로</td><td>매 장면마다 "네가 했잖아"를 반복하면 설교처럼 느껴진다.</td><td>공명 빈도를 제한하고, 강한 공명은 런당 2~3회로 고정</td></tr>
+      <tr><td>소셜 기능 악용</td><td>공유 카드나 감상이 특정 플레이 스타일을 조롱하는 데 쓰일 수 있다.</td><td>감정 DNA는 중립적 톤 유지, 익명 감상은 신고 기능 탑재</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2 id="example-run">예시 런 — "보리차가 비워진 아침"</h2>
+  <p>박기사의 보리차 한 모금에서 시작된 출근길 도미노. 9명 플레이, 08:00~14:00.</p>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div><strong>한 줄 요약</strong><br>보리차 한 모금 &#8594; 교차로 욕설 &#8594; 킥보드 급브레이크 &#8594; 편의점 진상 &#8594; 배달 리뷰 테러 &#8594; 유모차 전쟁 &#8594; 스쿨존 과속+문콕 발견 &#8594; 공원 대형견 난동 &#8594; 헬스장 셀카 전쟁. 마지막에 보리차가 다시 등장할 때, 웃다가 멈춘다.</div></div>
+
+  <details><summary>Stage 1 — 박기사 (08:10)</summary><div class="details-body">
+    <p><strong>압박:</strong> 수면 4시간. 첫 콜. 뒷좌석 영숙여사 "빨리요~!!"</p>
+    <p><strong>사건:</strong> 교차로에서 진우 오토바이 끼어듦. 보리차 출렁.</p>
+    <ul><li>분출: "(창문 열고) 야!! 면허를 어디서!! ...아이고 손님 죄송합니다~ (영숙에게 전환)"</li><li>배려: "(보리차 꿀꺽, 심호흡) ...저 친구도 급하겠지."</li></ul>
+    <p>분출을 골랐다면: 진우의 시작 스트레스 +3, 수아의 아빠 관련 이벤트 플래그 ON.</p>
+  </div></details>
+
+  <details><summary>Stage 2 — 수아 (08:25)</summary><div class="details-body">
+    <p><strong>압박:</strong> 알람 5개 다 끔. 지각 확정. 킥보드 배터리 38%.</p>
+    <p><strong>사건:</strong> 학교 앞에서 상훈 할아버지가 길 막고 잔소리.</p>
+    <p><strong>공명:</strong> 아빠(박기사)가 도로에서 소리 지르는 것과 상훈이 자기한테 소리 지르는 것이 구조적으로 동일.</p>
+  </div></details>
+
+  <details><summary>Stage 3 — 민정 (09:00)</summary><div class="details-body">
+    <p><strong>압박:</strong> 야간 근무 끝. 교대 알바가 안 옴. 연장 확정.</p>
+    <p><strong>사건:</strong> 영숙여사가 편의점에서 "이거 유통기한 지난 거 아니에요?!" 볼륨 MAX. 안 꺾이는 창 vs 안 뚫리는 방패.</p>
+  </div></details>
+
+  <details><summary>Stage 4 — 진우 (08:15, 시간 겹침)</summary><div class="details-body">
+    <p><strong>사건:</strong> 교차로 장면 재방문 — 진우 시점. 공개층 고정 재생.</p>
+    <p>박기사가 분출을 골랐다면: 진우의 "차분하게 넘긴다" 선택지가 잠겨있음.</p>
+    <p><strong>후속:</strong> 배달 도착. 지윤의 집 현관. 음식 미지근. 별1 리뷰 작성 시작.</p>
+  </div></details>
+
+  <details><summary>Stage 5 — 지윤 (10:30)</summary><div class="details-body">
+    <p><strong>압박:</strong> 아침 배달 국물이 미지근했음. 오늘의 기대가 무너짐.</p>
+    <p><strong>공명:</strong> 회사에서 상사에게 "지윤 씨 디자인 다시" 당했던 기억이 플래시백. 자기가 지금 하고 있는 것이 상사가 했던 것과 같다는 걸 자각하는 순간.</p>
+  </div></details>
+
+  <details><summary>Stage 6 — 은미 (11:00)</summary><div class="details-body">
+    <p><strong>압박:</strong> 아기 예방접종 예약 11:30. 유모차 끌고 이동 중.</p>
+    <p><strong>사건:</strong> 미래의원 엘리베이터 앞. 상훈이 먼저 타려고 함. 양쪽 다 양보 안 함.</p>
+  </div></details>
+
+  <details><summary>Stage 7 — 성민 (08:40, 시간 겹침)</summary><div class="details-body">
+    <p><strong>압박:</strong> 오전 미팅 3개. 스쿨존 통과 필수.</p>
+    <p><strong>사건:</strong> 스쿨존에서 60km/h로 달리다 수아의 킥보드를 간발의 차로 스침.</p>
+    <p><strong>공명:</strong> 한 발만 늦었으면 수아를 쳤을 수 있었다. 미팅 도착 후 화장실에서 손이 떨리는 걸 봄.</p>
+  </div></details>
+
+  <details><summary>Stage 8 — 미란 (10:00)</summary><div class="details-body">
+    <p><strong>사건:</strong> 공원에서 목줄 없이 복실이 방목. 은미의 유모차 쪽으로 돌진. "안 물어요~!" vs "아기가 있는데!!"</p>
+    <p><strong>런 마무리:</strong> 대기실 TV 뉴스: 오늘 플레이어가 만든 소동들이 뉴스 자막으로 스쳐감.</p>
+  </div></details>
+
+  <details><summary>Stage 9 — 건우 (09:30)</summary><div class="details-body">
+    <p><strong>압박:</strong> 인스타 사진 좋아요가 평소의 절반. "작아진 것 같은데..." 불안.</p>
+    <p><strong>공명:</strong> 하은의 필터 의존과 건우의 거울 의존이 구조적으로 동일. 둘 다 "진짜 나"를 보는 게 무서움.</p>
+  </div></details>
+
+  <h3>결과 리포트</h3>
+  <div class="card-grid">
+    <div class="card"><div class="card-title">도미노 결과</div><p>"보리차 한 모금 &#8594; 13단 연쇄. 당신의 최초 분출이 최종적으로 영향을 미친 사람: 15명. 그중 11명은 당신을 모릅니다."</p></div>
+    <div class="card"><div class="card-title">감정 DNA</div><p>"분출 61% / 경계 22% / 배려 17%. 여성 캐릭터 플레이 시 배려 비율이 올라가는 특이 패턴이 관찰됩니다."</p></div>
+    <div class="card"><div class="card-title">해금</div><p>"숨겨진 관계 4개 해금: 박기사=수아의 아빠, 진우=재현의 게임 길드 형, 성민=동혁의 같은 아파트, 수진=미란의 옛 동기."</p></div>
+    <div class="card"><div class="card-title">추천</div><p>"건우의 거울 앞 밤 장면을 아직 못 보셨습니다. '왜 거울을 멈출 수 없는지' 궁금하지 않으세요?"</p></div>
+  </div>
+
+  <h2 id="next-steps">다음에 잠가야 할 결정</h2>
+  <p>이 기획서를 바탕으로 바로 프로토타입에 들어가려면 아래 항목들을 우선 결정해야 한다.</p>
+
+  <h3>즉시 결정 목록</h3>
+  <ol>
+    <li><strong>MVP 플레이어블 수:</strong> 6명으로 확정할지, 8명까지 넓힐지</li>
+    <li><strong>첫 배경 시간대:</strong> 출근 반나절 / 점심~저녁 / 심야 중 무엇을 택할지</li>
+    <li><strong>첫 사건 템플릿 세트:</strong> 도로, 줄, 소음, 클레임, 온라인 중 무엇을 우선 구현할지</li>
+    <li><strong>첫 아이템 세트:</strong> 숨 고르기, 다시 말하기, 표정 읽기, 평행 메모를 기본 4종으로 갈지</li>
+    <li><strong>결과 화면 톤:</strong> 서늘한 리포트형 / 블랙코미디형 / 따뜻한 회고형 중 어느 방향</li>
+    <li><strong>공명 연출 수위:</strong> 플래시백 텍스트만 / 화면 효과 포함 / 사운드까지 포함</li>
+    <li><strong>소셜 기능 범위:</strong> MVP에서 런 결과 카드만 넣을지, 선택 비교까지 넣을지</li>
+  </ol>
+
+  <h3>권장 다음 작업물</h3>
+  <div class="card-grid">
+    <div class="card"><div class="card-title">캐릭터 시트 10장</div><p>각 원형의 말투, 오늘의 사정, 트리거, 고유 장면, 연결 가능한 사건 템플릿을 정리한다.</p></div>
+    <div class="card"><div class="card-title">사건 카드 20장</div><p>공유 사건 템플릿별로 실제 장면 카드와 선택지, 종료 장치, 후속층 효과를 적는다.</p></div>
+    <div class="card"><div class="card-title">상태값 표</div><p>스트레스/시간 압박/불씨/목격자/잠금치가 어떤 수치 범위에서 어떻게 변화하는지 룰 테이블로 고정한다.</p></div>
+    <div class="card"><div class="card-title">공명 연출 시트</div><p>각 공유 사건 템플릿에서 발생 가능한 공명 순간의 유형, 트리거 조건, 연출 방식을 정리한다.</p></div>
+    <div class="card"><div class="card-title">감정 DNA 설계서</div><p>어떤 태그를 추적할지, 프로필을 어떤 형태로 시각화할지, 결과 카드 레이아웃을 확정한다.</p></div>
+    <div class="card"><div class="card-title">텍스트 프로토타입</div><p>시각 요소를 최소화한 HTML 프로토타입으로 실제 런 구조와 재미를 먼저 검증한다.</p></div>
+  </div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>한 줄 결론</strong><br>
+    이 프로젝트의 성공 포인트는 "좋은 사람 되기"가 아니라, <strong>내가 남긴 상처와 여유가 어떻게 다음 사람의 선택 공간을 바꾸는지</strong>를 짧고 날카롭게 체험하게 만드는 데 있다. 그리고 그 체험을 <strong>반복하고 싶게 만드는 장치</strong>가 게임의 수명을 결정한다.
+  </div></div>
+</main>
+
+<script>
+const topbarLinks = [...document.querySelectorAll('.topbar-sec-link')];
+const sections = topbarLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = '#' + entry.target.id;
+    topbarLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+  });
+}, { rootMargin: '-10% 0px -80% 0px', threshold: 0.01 });
+sections.forEach(s => observer.observe(s));
+
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => {
+  document.body.classList.toggle('sidebar-collapsed');
+});
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+document.querySelectorAll('.sidebar-section-title').forEach(title => {
+  title.addEventListener('click', () => title.closest('.sidebar-section').classList.toggle('collapsed'));
+});
+</script>
+</body>
+</html>

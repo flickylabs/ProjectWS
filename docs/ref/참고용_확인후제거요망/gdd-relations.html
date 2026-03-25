@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omnibus GDD — 관계 & 시나리오</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="gdd-index.html">🎭 <span>Omnibus</span> GDD</a>
+  <span class="topbar-title">관계 & 시나리오</span>
+  <div class="topbar-sections">
+    <a class="topbar-sec-link" href="#relations">관계망</a>
+    <a class="topbar-sec-link" href="#location-matrix">장소 매트릭스</a>
+    <a class="topbar-sec-link" href="#char-timeline">타임라인</a>
+    <a class="topbar-sec-link" href="#items">아이템 · 광고</a>
+    <a class="topbar-sec-link" href="#event-templates">사건 템플릿</a>
+  </div>
+  <div class="topbar-meta">
+    <span>v2.1</span>
+    <span>2026-03-24</span>
+  </div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-vision.html"><span class="icon">📋</span><span class="label">게임 비전</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-structure.html"><span class="icon">⚙️</span><span class="label">게임 구조</span></a>
+      <a class="sidebar-link" href="gdd-fun.html"><span class="icon">✨</span><span class="label">재미 장치</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">콘텐츠</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-world.html"><span class="icon">🌍</span><span class="label">세계관</span></a>
+      <a class="sidebar-link" href="gdd-characters.html"><span class="icon">👥</span><span class="label">캐릭터</span></a>
+      <a class="sidebar-link active" href="gdd-relations.html"><span class="icon">🕸️</span><span class="label">관계 & 시나리오</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-production.html"><span class="icon">🔧</span><span class="label">프로덕션</span></a>
+      <a class="sidebar-link" href="gdd-execution.html"><span class="icon">🗺️</span><span class="label">실행 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+  <h1>관계 & 시나리오 <span class="badge">GDD v2.1</span></h1>
+  <p class="subtitle">캐릭터 관계망, 장소 매트릭스, 타임라인, 아이템, 사건 템플릿</p>
+
+  <h2 id="relations">캐릭터 관계망</h2>
+  <p>16명의 캐릭터가 사건과 장소를 통해 충돌한다. 숨겨진 관계는 양쪽을 플레이해야 해금.</p>
+
+  <h3>직접 충돌 맵</h3>
+  <details>
+    <summary>직접 충돌 맵 전체 보기 (40+ 사건)</summary>
+    <div class="details-body">
+    <div class="table-wrap"><table class="compact">
+      <thead><tr><th>A</th><th>B</th><th>장소</th><th>사건</th><th>코미디 포인트</th></tr></thead>
+      <tbody>
+        <tr><td>박기사</td><td>진우</td><td>서현 교차로</td><td>끼어들기</td><td>둘 다 "상대가 먼저"라고 200% 확신. 둘 다 여자 앞에선 다른 사람.</td></tr>
+        <tr><td>박기사</td><td>수아</td><td>스쿨존 근처</td><td>부녀 모르게 마주침</td><td>아빠가 딸의 킥보드를 클랙슨으로 위협. 서로 못 알아봄. 게임 최강 공명 포인트.</td></tr>
+        <tr><td>박기사</td><td>영숙</td><td>택시 안</td><td>경로 시비</td><td>박기사가 여자 승객이라 친절 모드인데, 영숙의 볼륨에 모드 유지 실패.</td></tr>
+        <tr><td>박기사</td><td>성민</td><td>서현 교차로</td><td>도로 시비</td><td>성민 과속으로 끼어듦. 보리차 출렁. "야!! 벤츠라고 다냐!!"</td></tr>
+        <tr><td>진우</td><td>수아</td><td>학교 앞</td><td>배달중 킥보드 접촉</td><td>진우 "야 위험하게 타지 마!" 수아 (속으로) "아저씨가 더 위험하잖아..."</td></tr>
+        <tr><td>진우</td><td>동혁</td><td>횡단보도</td><td>무단횡단 급정거</td><td>"야!! 미쳤나!!" 동혁 "차 없었잖아."</td></tr>
+        <tr><td>수아</td><td>성민</td><td>스쿨존</td><td>과속 vs 킥보드 스침</td><td>둘 다 맞는 말.</td></tr>
+        <tr><td>수아</td><td>재현</td><td>학교 앞</td><td>킥보드 vs 픽시</td><td>둘 다 브레이크 없는 겁쟁이의 치킨게임.</td></tr>
+        <tr><td>영숙</td><td>상훈</td><td>지하철</td><td>소음 대전</td><td>스피커폰 vs 스피커폰. 칸 전체가 소음 지옥.</td></tr>
+        <tr><td>영숙</td><td>건우</td><td>지하철</td><td>자리 시비</td><td>"좀 비켜요!" "이건 체형이에요..."</td></tr>
+        <tr><td>민정</td><td>영숙</td><td>편의점</td><td>진상 응대</td><td>안 꺾이는 창 vs 안 뚫리는 방패.</td></tr>
+        <tr><td>민정</td><td>은미</td><td>편의점</td><td>유모차+전자레인지</td><td>"아기가 있는데 직접 해주셔야죠!" vs "(속: 9,860원에 이것까지?)"</td></tr>
+        <tr><td>하은</td><td>건우</td><td>카페/공원</td><td>셀카 전쟁</td><td>둘 다 자기 외모에 몰두.</td></tr>
+        <tr><td>하은</td><td>지윤</td><td>온라인</td><td>인스타 악성 댓글</td><td>지윤 "여기 맛없던데 별1" 하은 ON: "소중한 피드백 감사~" OFF: "누구야"</td></tr>
+        <tr><td>미란</td><td>은미</td><td>공원</td><td>대형견 vs 유모차</td><td>"안 물어요~!" vs "아기가 있는데!!" 최강 공포+분노.</td></tr>
+        <tr><td>미란</td><td>상훈</td><td>공원</td><td>개 산책 참견</td><td>둘 다 30분 독백. 서로 안 들으면서 각자 얘기.</td></tr>
+        <tr><td>지윤</td><td>진우</td><td>온라인/현관</td><td>배달 별1 리뷰</td><td>지윤의 별1 &#8594; 진우 평점 하락 &#8594; 다음 배달에서 더 거칠어짐.</td></tr>
+        <tr><td>지윤</td><td>정자</td><td>전화/온라인</td><td>리뷰+전화 에스컬레이션</td><td>둘 다 안 꺾임.</td></tr>
+        <tr><td>정자</td><td>상훈</td><td>분식집</td><td>30년 단골의 일상</td><td>"나때는 이 국수가..." "또 시작이야." 근데 서로 없으면 허전.</td></tr>
+        <tr><td>정자</td><td>수진</td><td>분식집/전화</td><td>항의 전화</td><td>"사장님 바꿔주세요" "내가 사장인데." "그 위에 분은요?" "없어."</td></tr>
+        <tr><td>은미</td><td>수진</td><td>병원 대기실</td><td>순서 시비</td><td>"아기 급해요 먼저 좀!" "저도 급한데요?"</td></tr>
+        <tr><td>성민</td><td>동혁</td><td>아파트 주차장</td><td>담배 냄새+이중주차</td><td>동혁 새벽 담배 &#8594; 성민 차에 냄새.</td></tr>
+        <tr><td>건우</td><td>진우</td><td>편의점</td><td>허세 대결</td><td>둘 다 허세인데 서로 모름.</td></tr>
+      </tbody>
+    </table></div>
+    </div>
+  </details>
+
+  <h3>숨겨진 이면 관계</h3>
+  <div class="card-grid">
+    <div class="card"><div class="card-title">박기사 = 수아의 아빠</div><p>수아가 "아빠 택시 안 탈거야"라고 한 딸. 게임 최강 공명 포인트.</p></div>
+    <div class="card"><div class="card-title">영숙 = 지윤의 엄마</div><p>영숙의 대성통화 상대 중 하나가 지윤. "밥은 먹었냐" 전화인데 지윤은 안 받음.</p></div>
+    <div class="card"><div class="card-title">진우 = 재현의 게임 길드 형</div><p>"물류 스타트업 다닌다"고 한 형이 진우.</p></div>
+    <div class="card"><div class="card-title">민정 = 하은의 대학 동기</div><p>같은 과였는데 민정은 자퇴, 하은은 인플루언서로 떴음.</p></div>
+    <div class="card"><div class="card-title">상훈 = 정자 분식집 30년 단골</div><p>아내 살아있을 때부터 다닌 단골. 상훈 아내의 기일에 정자가 국밥 싸줌.</p></div>
+    <div class="card"><div class="card-title">은미 = 미란의 같은 아파트 다른 동</div><p>맘카페에서 "대형견 풀어놓는 사람 신고해야 하나" 글 올렸는데 댓글 달아준 게 미란.</p></div>
+    <div class="card"><div class="card-title">건우 = 수아 학교 근처 헬스장</div><p>수아가 헬스장 앞에서 킥보드 넘어졌을 때 건우가 도와준 적 있음.</p></div>
+    <div class="card"><div class="card-title">성민 = 동혁 같은 아파트</div><p>쪽지 전쟁 중. 같은 엘리베이터 탄 적 있는데, 서로 눈도 안 마주침.</p></div>
+    <div class="card"><div class="card-title">수진 = 미란의 옛 직장 동기</div><p>30년 전 같은 회사. 공원에서 "목줄 하세요" 항의. 서로 못 알아봄.</p></div>
+    <div class="card"><div class="card-title">정자 = 영숙 오래된 단골</div><p>20년 단골. 둘 다 세게 말하지만 실은 서로 챙기는 사이.</p></div>
+    <div class="card"><div class="card-title">건우 = 진우 같은 편의점 단골</div><p>서로 "저 사람 맨날 오네" 인식은 있지만 말 안 해봄.</p></div>
+    <div class="card"><div class="card-title">동혁 = 상훈의 아들과 같은 건설현장</div><p>상훈의 아들이 건설업체 관리직. 동혁이 일하는 현장의 원청.</p></div>
+  </div>
+
+  <h2 id="location-matrix">캐릭터 x 장소 매트릭스</h2>
+  <p>각 캐릭터가 어디서 활동하고, 어떤 사건을 일으키는지 한눈에 보는 맵. &#9679; = 핵심 활동 장소, &#9675; = 간접 관여.</p>
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>가장 많은 캐릭터가 겹치는 장소: 편의점(7명), 공원(6명), 온라인(6명). 이 장소들이 사건의 교차점.</div></div>
+  <details>
+    <summary>전체 매트릭스 보기 (16명 x 11장소)</summary>
+    <div class="details-body">
+    <div class="table-wrap"><table class="compact">
+      <thead><tr><th>캐릭터</th><th>교차로</th><th>지하철</th><th>학교앞</th><th>편의점</th><th>카페</th><th>분식집</th><th>병원</th><th>공원</th><th>주차장</th><th>헬스장</th><th>온라인</th></tr></thead>
+      <tbody>
+        <tr><td>박기사</td><td>&#9679;</td><td></td><td>&#9679;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>진우</td><td>&#9679;</td><td></td><td>&#9679;</td><td>&#9679;</td><td></td><td></td><td></td><td></td><td></td><td></td><td>&#9679;</td></tr>
+        <tr><td>수아</td><td></td><td></td><td>&#9679;</td><td></td><td></td><td></td><td></td><td>&#9679;</td><td></td><td>&#9675;</td><td></td></tr>
+        <tr><td>영숙</td><td></td><td>&#9679;</td><td></td><td>&#9679;</td><td></td><td>&#9679;</td><td>&#9679;</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>상훈</td><td></td><td>&#9679;</td><td>&#9679;</td><td></td><td>&#9679;</td><td>&#9679;</td><td></td><td>&#9679;</td><td></td><td></td><td></td></tr>
+        <tr><td>민정</td><td></td><td></td><td></td><td>&#9679;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>하은</td><td></td><td></td><td></td><td>&#9679;</td><td>&#9679;</td><td>&#9679;</td><td></td><td></td><td></td><td></td><td>&#9679;</td></tr>
+        <tr><td>재현</td><td></td><td>&#9679;</td><td>&#9679;</td><td>&#9679;</td><td></td><td></td><td></td><td></td><td></td><td></td><td>&#9679;</td></tr>
+        <tr><td>지윤</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>&#9679;</td></tr>
+        <tr><td>은미</td><td></td><td></td><td></td><td>&#9679;</td><td></td><td></td><td>&#9679;</td><td>&#9679;</td><td></td><td></td><td>&#9679;</td></tr>
+        <tr><td>동혁</td><td>&#9679;</td><td></td><td></td><td></td><td></td><td></td><td></td><td>&#9679;</td><td>&#9679;</td><td>&#9675;</td><td></td></tr>
+        <tr><td>정자</td><td></td><td></td><td></td><td></td><td></td><td>&#9679;</td><td></td><td></td><td></td><td></td><td>&#9679;</td></tr>
+        <tr><td>성민</td><td>&#9679;</td><td></td><td>&#9679;</td><td></td><td></td><td>&#9675;</td><td></td><td></td><td>&#9679;</td><td></td><td></td></tr>
+        <tr><td>수진</td><td></td><td></td><td></td><td>&#9675;</td><td></td><td>&#9675;</td><td>&#9679;</td><td>&#9679;</td><td></td><td></td><td>&#9675;</td></tr>
+        <tr><td>미란</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>&#9679;</td><td></td><td></td><td></td></tr>
+        <tr><td>건우</td><td></td><td>&#9679;</td><td></td><td>&#9679;</td><td>&#9679;</td><td></td><td></td><td>&#9679;</td><td></td><td>&#9679;</td><td></td></tr>
+      </tbody>
+    </table></div>
+    </div>
+  </details>
+
+  <h2 id="char-timeline">캐릭터별 하루 타임라인</h2>
+  <p>각 캐릭터가 반나절(08:00~14:00) 동안 겪는 이벤트 일람. 모든 캐릭터가 최소 5개 이상의 사건을 경험한다.</p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>캐릭터</th><th>이벤트 수</th><th>공유사건</th><th>개인장면</th><th>주요 활동 장소</th></tr></thead>
+    <tbody>
+      <tr><td>박기사</td><td>6</td><td>5</td><td>1</td><td>도로, 스쿨존, 택시 안</td></tr>
+      <tr><td>진우</td><td>7</td><td>5</td><td>2</td><td>도로, 편의점, 현관</td></tr>
+      <tr><td>수아</td><td>6</td><td>5</td><td>1</td><td>학교 앞, 공원, 인도</td></tr>
+      <tr><td>영숙</td><td>6</td><td>5</td><td>1</td><td>택시, 지하철, 편의점, 분식집</td></tr>
+      <tr><td>상훈</td><td>7</td><td>7</td><td>0</td><td>공원, 지하철, 분식집</td></tr>
+      <tr><td>민정</td><td>6</td><td>6</td><td>0</td><td>편의점</td></tr>
+      <tr><td>하은</td><td>6</td><td>5</td><td>1</td><td>카페, 편의점, 분식집, 온라인</td></tr>
+      <tr><td>재현</td><td>6</td><td>4</td><td>2</td><td>학교 앞, 지하철, 편의점, 온라인</td></tr>
+      <tr><td>지윤</td><td>6</td><td>5</td><td>1</td><td>현관, 온라인, 방 안</td></tr>
+      <tr><td>은미</td><td>6</td><td>6</td><td>0</td><td>인도, 편의점, 공원, 병원</td></tr>
+      <tr><td>동혁</td><td>6</td><td>6</td><td>0</td><td>주차장, 횡단보도, 공원</td></tr>
+      <tr><td>정자</td><td>6</td><td>6</td><td>0</td><td>전화, 분식집</td></tr>
+      <tr><td>성민</td><td>7</td><td>7</td><td>0</td><td>주차장, 도로, 스쿨존, 분식집 앞</td></tr>
+      <tr><td>수진</td><td>6</td><td>6</td><td>0</td><td>전화, 공원, 병원, 온라인</td></tr>
+      <tr><td>미란</td><td>6</td><td>6</td><td>0</td><td>공원</td></tr>
+      <tr><td>건우</td><td>7</td><td>6</td><td>1</td><td>헬스장, 지하철, 카페, 공원, 편의점</td></tr>
+    </tbody>
+  </table></div>
+
+  <details><summary>박기사 — 6개 사건</summary><div class="details-body"><div class="table-wrap"><table class="compact"><thead><tr><th>시간</th><th>장소</th><th>사건</th><th>상대</th><th>유형</th></tr></thead><tbody><tr><td>08:05</td><td>택시 안</td><td>영숙여사 승객 탑승, 경로 시비 시작</td><td>영숙</td><td>공유사건</td></tr><tr><td>08:10</td><td>서현 교차로</td><td>진우 오토바이 끼어들기</td><td>진우</td><td>공유사건 [오너]</td></tr><tr><td>08:20</td><td>스쿨존</td><td>수아 킥보드 클랙슨 위협 (부녀 모르게)</td><td>수아</td><td>공유사건</td></tr><tr><td>08:35</td><td>서현 교차로</td><td>성민 벤츠와 도로 시비</td><td>성민</td><td>공유사건</td></tr><tr><td>08:45</td><td>횡단보도</td><td>동혁 무단횡단 급정거</td><td>동혁</td><td>공유사건</td></tr><tr><td>09:00</td><td>택시 안</td><td>혼자 독백, 보리차 잔량 확인, 딸 생각</td><td>—</td><td>개인장면</td></tr></tbody></table></div></div></details>
+
+  <details><summary>진우 — 7개 사건</summary><div class="details-body"><div class="table-wrap"><table class="compact"><thead><tr><th>시간</th><th>장소</th><th>사건</th><th>상대</th><th>유형</th></tr></thead><tbody><tr><td>08:10</td><td>서현 교차로</td><td>박기사 택시와 끼어들기</td><td>박기사</td><td>공유사건</td></tr><tr><td>08:20</td><td>학교 앞</td><td>수아 킥보드 접촉 위기</td><td>수아</td><td>공유사건</td></tr><tr><td>08:30</td><td>횡단보도</td><td>동혁 무단횡단으로 급정거</td><td>동혁</td><td>공유사건</td></tr><tr><td>09:15</td><td>서현 교차로</td><td>성민 벤츠와 끼어들기 시비</td><td>성민</td><td>공유사건</td></tr><tr><td>10:00</td><td>지윤의 현관</td><td>배달 도착 &#8594; 별1 리뷰</td><td>지윤</td><td>공유사건</td></tr><tr><td>12:00</td><td>편의점</td><td>건우와 허세 대결</td><td>건우</td><td>개인장면</td></tr><tr><td>12:30</td><td>편의점 벤치</td><td>혼자 삼각김밥, SNS 허세 포스팅</td><td>—</td><td>개인장면</td></tr></tbody></table></div></div></details>
+
+  <details><summary>나머지 캐릭터 타임라인</summary><div class="details-body"><p>수아(6개), 영숙(6개), 상훈(7개), 민정(6개), 하은(6개), 재현(6개), 지윤(6개), 은미(6개), 동혁(6개), 정자(6개), 성민(7개), 수진(6개), 미란(6개), 건우(7개) — 각 캐릭터의 상세 타임라인은 반나절(08:00~14:00) 동안의 공유사건과 개인장면으로 구성된다. 총 100+ 사건이 16명의 캐릭터 사이에서 교차한다.</p></div></details>
+
+  <h2 id="items">아이템과 광고 보상 구조</h2>
+  <p>아이템은 단순 회복제가 아니라, 감정과 사건 편집에 개입하는 도구여야 한다. 광고 역시 체력 충전이 아니라 개입권 지급 장치로 설계한다.</p>
+
+  <h3>아이템 설계 원칙</h3>
+  <ul>
+    <li><strong>현재를 버티는 도구</strong>, <strong>말과 행동을 고치는 도구</strong>, <strong>상대를 이해하는 도구</strong>, <strong>세계선을 비트는 도구</strong>의 4계열로 나눈다.</li>
+    <li>강한 아이템은 "실수 삭제"가 아니라 <strong>평행 분기</strong>를 연다.</li>
+    <li>이미 끝난 감정은 지우지 않고, 앞으로 펼쳐질 스테이지의 파장만 바꾼다.</li>
+  </ul>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>아이템과 인간 장면의 연결 (v2.1 업데이트)</strong><br>
+    아이템은 단순 스탯 보너스가 아니라, 캐릭터의 <strong>"인간 장면"을 해금</strong>하는 열쇠이기도 하다. 예시:
+    <ul>
+      <li><strong>파스</strong> &#8594; 허리 장면 (정자가 새벽에 허리 붙이며 육수 끓이는 장면 해금)</li>
+      <li><strong>신문</strong> &#8594; 세계 사연 (상훈이 신문 읽으며 아내와의 기억을 떠올리는 장면 해금)</li>
+      <li><strong>초코바</strong> &#8594; 자가 진정 장면 (수아가 화장실에서 초코바 먹으며 마음 가라앉히는 장면 해금)</li>
+    </ul>
+    이렇게 아이템이 캐릭터의 숨겨진 면을 드러내는 장치가 되면, 아이템 수집 동기가 스탯 최적화가 아니라 이야기 탐색이 된다.
+  </div></div>
+
+  <h3>아이템 20종 초안</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>분류</th><th>아이템</th><th>효과</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="5">현재를 버티기</td><td>숨 고르기</td><td>스트레스 감소, 이번 사건에서 경계 선택 강화</td></tr>
+      <tr><td>물 한 모금</td><td>불씨 1단계 하락, 대신 시간 1칸 소모</td></tr>
+      <tr><td>이어폰</td><td>도발 태그 1회 반감, 대신 주변 단서 1개 놓침</td></tr>
+      <tr><td>자리 피하기</td><td>현재 사건 즉시 이탈, 대신 목표 진행 손해</td></tr>
+      <tr><td>메모장</td><td>화풀이를 기록으로 전환, 내 스트레스 소폭 감소</td></tr>
+      <tr><td rowspan="5">말과 행동 수정</td><td>다시 말하기</td><td>방금 고른 대사 1회 재선택</td></tr>
+      <tr><td>5초 멈춤</td><td>상대의 즉시 반격을 약화시키고 마무리 선택으로 넘어감</td></tr>
+      <tr><td>톤다운 필터</td><td>공격적 대사를 단호하지만 덜 상처 주는 버전으로 치환</td></tr>
+      <tr><td>거리두기 선언</td><td>현재 사건을 한 줄 뒤에 강제 종료</td></tr>
+      <tr><td>녹화 버튼</td><td>기록 ·목격자 추가, 폭주 확률은 줄지만 수치심 태그는 증가</td></tr>
+      <tr><td rowspan="5">상대 이해</td><td>표정 읽기</td><td>상대의 현재 스트레스 구간과 트리거 태그 공개</td></tr>
+      <tr><td>직전 메시지</td><td>상대가 방금 받은 연락이나 사정 단서 공개</td></tr>
+      <tr><td>일정표 조각</td><td>상대의 오늘 목표와 시간 압박을 확인</td></tr>
+      <tr><td>군중 시선</td><td>이 사건이 목격자에게 어떻게 보일지 미리 보여줌</td></tr>
+      <tr><td>반대입장 리허설</td><td>지금 장면을 상대 시점으로 짧게 미리 보고 공감 선택지 해금</td></tr>
+      <tr><td rowspan="5">세계선 개변</td><td>타임슬립 조각</td><td>현재 사건을 첫 반응 시점까지 되감기</td></tr>
+      <tr><td>대사 교체권</td><td>이미 기록된 과거 공유 사건의 공개 대사 1개를 다른 버전으로 분기</td></tr>
+      <tr><td>반응 교체권</td><td>과거에 당했던 사건의 저해상도 반응 슬롯 변경</td></tr>
+      <tr><td>평행 메모</td><td>과거 사건의 다른 결과를 우선 시뮬레이션만 해봄</td></tr>
+      <tr><td>세계선 선택권</td><td>시뮬레이션한 평행 사건을 채택해 아직 플레이하지 않은 스테이지에 반영</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>광고 보상 설계</h3>
+  <div class="two-col">
+    <div class="card"><div class="card-title">광고의 역할</div><p>광고는 스트레스를 바로 지우는 치료제가 아니라, "다르게 개입할 기회"를 주는 장치다.</p></div>
+    <div class="card"><div class="card-title">추천 보상 구조</div><p>광고 1회는 일반 개입권 1개, 광고 누적 3회는 평행 메모 조각, 조각 3개는 희귀 개변 아이템 제작으로 연결한다.</p></div>
+  </div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div><strong>과거 개변의 원칙</strong><br>과거는 삭제되지 않는다. 원본 로그는 항상 남고, 아이템은 새로운 평행 세계선을 여는 방식으로만 사용된다.</div></div>
+
+  <h2 id="event-templates">공유 사건 템플릿 10종</h2>
+  <p>장면을 매번 새로 쓰지 않고, 재사용 가능한 사건 틀에 캐릭터 ·장소 ·시간 압박을 끼워 넣는다.</p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>템플릿</th><th>예시</th><th>오너 핵심 선택</th><th>외부 종료 장치</th></tr></thead>
+    <tbody>
+      <tr><td>도로/통로 끼어들기</td><td>차와 오토바이, 자전거와 보행자</td><td>욕설, 경고, 넘김</td><td>신호 변경, 뒤차 압박, 호출</td></tr>
+      <tr><td>출입문 길막</td><td>지하철 문, 엘리베이터, 매장 입구</td><td>눈치주기, 요청, 우회</td><td>문 닫힘, 인파 몰림</td></tr>
+      <tr><td>줄/순서 침범</td><td>병원 대기, 픽업 줄, 결제 줄</td><td>공개 지적, 낮은 경고, 참기</td><td>직원 개입, 번호 호출</td></tr>
+      <tr><td>자리/공간 점유</td><td>좌석, 테이블, 콘센트</td><td>요구, 비꼼, 포기</td><td>정차, 매장 규칙, 제3자 개입</td></tr>
+      <tr><td>소음/통화/라이브</td><td>큰 통화, 스피커폰, 라이브 방송</td><td>공개 비난, 조용한 요청, 피해감</td><td>배터리 부족, 자리 이동</td></tr>
+      <tr><td>부딪힘/쏟음/발 밟음</td><td>커피 쏟기, 어깨 충돌</td><td>과잉 분노, 정리, 웃고 넘김</td><td>직원 중재, 보상</td></tr>
+      <tr><td>서비스 지연/클레임</td><td>배달 늦음, 주문 누락</td><td>평점 압박, 사실 확인, 기다림</td><td>취소, 환불, 완료</td></tr>
+      <tr><td>참견/훈계/반말</td><td>예절 훈계, 복장 참견</td><td>훈계, 선 긋기, 무시</td><td>떠남, 제3자 끼어듦</td></tr>
+      <tr><td>촬영/박제/SNS 업로드</td><td>스토리 업로드, 후기 캡처</td><td>올림, 확인 요청, 삭제</td><td>업로드 완료, 신고</td></tr>
+      <tr><td>온라인 꼬리물기</td><td>댓글, DM, 단톡, 리뷰 분쟁</td><td>비꼼, 설명, 차단</td><td>차단, 관리자 개입</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>템플릿의 실제 사용 방식</h3>
+  <ul>
+    <li>템플릿은 상황 골격만 제공한다. 캐릭터별 말투와 동기는 AI가 문장화한다.</li>
+    <li>판정은 룰 기반으로 고정하고, 대사 표현만 유연하게 바꾼다.</li>
+    <li>공유 사건 1개당 완전 핑퐁은 한 번만 허용한다.</li>
+  </ul>
+</main>
+
+<script>
+const topbarLinks = [...document.querySelectorAll('.topbar-sec-link')];
+const sections = topbarLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = '#' + entry.target.id;
+    topbarLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+  });
+}, { rootMargin: '-10% 0px -80% 0px', threshold: 0.01 });
+sections.forEach(s => observer.observe(s));
+
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => {
+  document.body.classList.toggle('sidebar-collapsed');
+});
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+document.querySelectorAll('.sidebar-section-title').forEach(title => {
+  title.addEventListener('click', () => title.closest('.sidebar-section').classList.toggle('collapsed'));
+});
+</script>
+</body>
+</html>

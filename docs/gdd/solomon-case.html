@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>솔로몬 GDD — 사건 구조</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/solomon.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="solomon-index.html">⚖️ <span>솔로몬</span> GDD</a>
+  <span class="topbar-title">사건 구조</span>
+  <div class="topbar-sections">
+    <a class="topbar-sec-link" href="#modules">상황 모듈</a>
+    <a class="topbar-sec-link" href="#causal">인과 그래프</a>
+    <a class="topbar-sec-link" href="#knowledge">지식 비대칭</a>
+    <a class="topbar-sec-link" href="#responsibility">공동 책임</a>
+  </div>
+  <div class="topbar-meta">
+    <span>v1.3</span>
+    <span>2026-03-25</span>
+  </div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">사건 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link active" href="solomon-case.html"><span class="icon">🧱</span><span class="label">사건 구조</span></a>
+      <a class="sidebar-link" href="solomon-generator.html"><span class="icon">⚙️</span><span class="label">생성 엔진</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">AI 에이전트</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-ai.html"><span class="icon">🤖</span><span class="label">에이전트 설계</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">플레이 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-mechanics.html"><span class="icon">🎮</span><span class="label">플레이 메커닉</span></a>
+      <a class="sidebar-link" href="solomon-content.html"><span class="icon">📈</span><span class="label">콘텐츠 &amp; 밸런스</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+
+  <h1>사건 구조 <span class="badge">GDD v1.3</span></h1>
+  <p class="subtitle">상황 모듈 · 인과 그래프 · 지식 비대칭 · 공동 책임 스펙트럼</p>
+  <p>각 사건은 고정 시나리오가 아니라, 구조화된 레이어들의 조합으로 생성된다. 이 페이지는 사건을 구성하는 4가지 핵심 설계 요소를 다룬다.</p>
+
+
+  <!-- ── 상황 모듈 시스템 ──────────────────────── -->
+  <h2 id="modules">상황 모듈 시스템</h2>
+  <p>
+    <strong>관계는 고정된 프레임이고, 사건은 모듈의 조합이다.</strong>
+    부부·직장 상사-부하·동업자 등의 관계 템플릿은 고정으로 두고,
+    그 위에 올라가는 분쟁의 내용은 독립된 모듈들의 조합으로 생성된다.
+    같은 관계를 수십 번 반복 플레이해도 매번 새로운 경험이 가능한 이유가 여기서 나온다.
+  </p>
+
+  <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
+    <strong>핵심 설계 원칙:</strong>
+    Stage의 각 상황은 고정 시나리오가 아니다.
+    관계 타입과 학습 목표만 고정하고, 실제 사건은 모듈 조합으로 런타임에 생성된다.
+  </div></div>
+
+  <h3>사건 조합 공식</h3>
+  <div class="formula-bar">
+    <div class="formula-block fixed">
+      <div class="fb-label">고정 · Fixed</div>
+      <div class="fb-title">관계 템플릿</div>
+      <div class="fb-sub">7가지 (부부·이웃·직장…)</div>
+    </div>
+    <div class="formula-op">×</div>
+    <div class="formula-block variable">
+      <div class="fb-label">Layer 1 · 필수</div>
+      <div class="fb-title">갈등 씨앗 1개</div>
+      <div class="fb-sub">CS-1 ~ CS-6</div>
+    </div>
+    <div class="formula-op">×</div>
+    <div class="formula-block variable">
+      <div class="fb-label">Layer 2 · 가변</div>
+      <div class="fb-title">변수 모듈 1~2개</div>
+      <div class="fb-sub">VM-A ~ VM-E</div>
+    </div>
+    <div class="formula-op">×</div>
+    <div class="formula-block twist">
+      <div class="fb-label">Layer 3 · 선택</div>
+      <div class="fb-title">반전 모듈 0~1개</div>
+      <div class="fb-sub">TW-1 ~ TW-5</div>
+    </div>
+  </div>
+
+  <h3>이론적 경우의 수</h3>
+  <div class="count-calc">
+    <div class="count-block">
+      <div class="count-n">7</div>
+      <div class="count-label">관계 템플릿</div>
+    </div>
+    <div class="count-op">×</div>
+    <div class="count-block">
+      <div class="count-n">6</div>
+      <div class="count-label">갈등 씨앗</div>
+    </div>
+    <div class="count-op">×</div>
+    <div class="count-block">
+      <div class="count-n">15</div>
+      <div class="count-label">변수 조합<small>1개:5종 + 2개:C(5,2)=10종</small></div>
+    </div>
+    <div class="count-op">×</div>
+    <div class="count-block">
+      <div class="count-n">6</div>
+      <div class="count-label">반전<small>(없음 포함 6가지)</small></div>
+    </div>
+    <div class="count-op">=</div>
+    <div class="count-result">
+      <div class="count-n">3,780</div>
+      <div class="count-label">이론적 조합 수<br>유효 조합 수백 가지 이상</div>
+    </div>
+  </div>
+
+  <h3>Layer 1 · 갈등 씨앗 모듈 (Conflict Seed)</h3>
+  <p>사건의 핵심 주제. 각 사건은 반드시 <strong>1개</strong>의 갈등 씨앗을 선택한다.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>코드</th><th>모듈명</th><th>핵심 갈등</th><th>적합 관계</th><th>기본 증거 유형</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge badge-brand">CS-1</span></td><td>재정 은닉</td><td>공유 재산의 비밀 지출·손실</td><td>부부·동업자·가족</td><td>거래 기록, 영수증, 잔액</td></tr>
+      <tr><td><span class="badge badge-brand">CS-2</span></td><td>성과 가로채기</td><td>공동 결과물의 공 분쟁</td><td>직장·동업자</td><td>타임스탬프, 메일 기록</td></tr>
+      <tr><td><span class="badge badge-brand">CS-3</span></td><td>공간·권한 침범</td><td>영역이나 권한을 넘어선 행동</td><td>이웃·직장·가족</td><td>CCTV, 목격 진술</td></tr>
+      <tr><td><span class="badge badge-brand">CS-4</span></td><td>신뢰 배신</td><td>내부 비밀의 외부 유출</td><td>모든 관계</td><td>발언 기록, 제3자 진술</td></tr>
+      <tr><td><span class="badge badge-brand">CS-5</span></td><td>명예 훼손</td><td>허위 소문이나 공개 망신</td><td>이웃·직장·가족</td><td>SNS, 목격 진술</td></tr>
+      <tr><td><span class="badge badge-brand">CS-6</span></td><td>계약·약속 파기</td><td>구두·서면 합의의 일방 위반</td><td>동업자·세입자·가족</td><td>계약서, 메시지 이력</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Layer 2 · 변수 모듈 (Variable Module)</h3>
+  <p>사건에 덧씌워지는 복잡성 요소. <strong>1~2개</strong>를 선택해 사건의 두께를 조절한다.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>코드</th><th>모듈명</th><th>추가되는 요소</th><th>시스템 연동 효과</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge badge-sub">VM-A</span></td><td>제3자 개입</td><td>배후 조종자 또는 공모자 등장</td><td>지식 매트릭스 '둘 다 모름' 필수 추가</td></tr>
+      <tr><td><span class="badge badge-sub">VM-B</span></td><td>증거 조작·누락</td><td>편집된 증거 혹은 맥락 삭제</td><td>함정 증거 1개 필수 → 증거 그래프 복잡도 ↑</td></tr>
+      <tr><td><span class="badge badge-sub">VM-C</span></td><td>오해 기반</td><td>한 쪽이 사실을 잘못 해석</td><td>지식 매트릭스에 A-only 또는 B-only 필수</td></tr>
+      <tr><td><span class="badge badge-sub">VM-D</span></td><td>공동 책임</td><td>둘 다 잘못이 있음</td><td>책임 스펙트럼 40~60% 범위 → 판결 난이도 ↑</td></tr>
+      <tr><td><span class="badge badge-sub">VM-E</span></td><td>과거 소환</td><td>이전 사건이 현재에 영향</td><td>과거 증거 1종 추가 → 인과 그래프 Layer 0 확장</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Layer 3 · 반전 모듈 (Twist Module)</h3>
+  <p>게임 후반 반전 요소. <strong>0~1개</strong>. 반전이 없어도 사건은 완성되어야 하며, 있을 경우 플레이어가 심문을 통해 스스로 발견하도록 설계한다.</p>
+  <div class="card-grid">
+    <div class="card"><span class="badge badge-warning">TW-1</span><div class="card-title mt-sm">피해자 반전</div><p>피해자로 보였던 쪽이 사실상 가해자이거나 공모자였음.</p></div>
+    <div class="card"><span class="badge badge-warning">TW-2</span><div class="card-title mt-sm">배후 반전</div><p>분쟁 자체가 제3자의 이간질로 조작된 것. VM-A와 조합 필수.</p></div>
+    <div class="card"><span class="badge badge-warning">TW-3</span><div class="card-title mt-sm">공모 반전</div><p>둘이 실제로 공모해 플레이어를 함께 속이고 있음. 최고 난이도.</p></div>
+    <div class="card"><span class="badge badge-warning">TW-4</span><div class="card-title mt-sm">증거 위조 반전</div><p>결정적 증거가 위조·편집된 것. VM-B와 조합 필수.</p></div>
+    <div class="card"><span class="badge badge-warning">TW-5</span><div class="card-title mt-sm">사전 합의 반전</div><p>이미 비공식 합의가 있었음에도 한 쪽이 번복한 것.</p></div>
+  </div>
+
+  <h3>모듈 시너지 & 호환 규칙</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>갈등 씨앗</th><th>권장 변수</th><th>권장 반전</th><th>생성되는 사건 유형</th></tr></thead>
+    <tbody>
+      <tr><td>CS-1 재정 은닉</td><td>VM-A (제3자)</td><td>TW-1 (피해자 반전)</td><td>사기 공모 의심 사건</td></tr>
+      <tr><td>CS-2 성과 가로채기</td><td>VM-B (증거 조작)</td><td>TW-4 (증거 위조)</td><td>자료 위조 + 공 분쟁</td></tr>
+      <tr><td>CS-3 공간·권한 침범</td><td>VM-C (오해 기반)</td><td>없음</td><td>선의의 월권 오해 분쟁</td></tr>
+      <tr><td>CS-4 신뢰 배신</td><td>VM-E (과거 소환)</td><td>TW-2 (배후 반전)</td><td>이간질로 비롯된 배신 사건</td></tr>
+      <tr><td>CS-5 명예 훼손</td><td>VM-D (공동 책임)</td><td>TW-3 (공모 반전)</td><td>상호 비방 + 공모 의심</td></tr>
+      <tr><td>CS-6 계약 파기</td><td>VM-C + VM-D</td><td>TW-5 (사전 합의)</td><td>합의 번복 + 해석 갈등</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>반복 방지와의 연계:</strong> 반복 방지 메커니즘은 이 모듈 코드 조합을 태그로 기록한다.
+    동일한 <code>[CS + VM + TW]</code> 코드 조합은 최근 3판 내에 재사용하지 않는다.
+  </div></div>
+
+
+  <!-- ── 인과 그래프 설계 ───────────────────────── -->
+  <h2 id="causal">인과 그래프 설계</h2>
+  <p>사건의 "왜"를 4개 층위로 분리한다. 이 체인이 있어야 LLM에게 <strong>"이 캐릭터가 왜 이 거짓말을 하는지"</strong> 맥락을 줄 수 있고, 발언이 자연스럽게 일관된다.</p>
+
+  <div class="causal-chain">
+    <div class="causal-node">
+      <div class="layer-label">Layer 0 · 근본 원인</div>
+      <h4>숨겨진 동기</h4>
+      <p>당사자도 인정하기 싫은 진짜 이유. 재정 불안, 소통 단절, 권력 욕구, 자존심 손상 등.</p>
+    </div>
+    <div class="causal-node">
+      <div class="layer-label">Layer 1 · 촉발 사건</div>
+      <h4>방아쇠</h4>
+      <p>근본 원인이 행동으로 터져 나온 사건. 도박, 외부 접촉, 문서 조작, 고의적 무시 등.</p>
+    </div>
+    <div class="causal-node">
+      <div class="layer-label">Layer 2 · 표면 갈등</div>
+      <h4>법정에 온 이유</h4>
+      <p>당사자들이 싸우는 표면적 내용. 돈 손실, 신뢰 배신, 명예 훼손, 공간 침해 등.</p>
+    </div>
+    <div class="causal-node">
+      <div class="layer-label">Layer 3 · 프레이밍</div>
+      <h4>각자의 서사</h4>
+      <p>A와 B가 자신에게 유리하게 사건을 재구성한 버전. 법정 발언의 실질 재료.</p>
+    </div>
+  </div>
+
+  <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
+    <strong>설계 규칙:</strong> 플레이어는 Layer 2~3만 처음에 보인다.
+    Layer 0~1은 심문을 통해 역방향으로 추적해야 드러난다.
+    Layer 0(근본 원인)을 밝히는 것은 필수가 아니지만, 밝혔을 때 <strong>지혜 점수</strong>가 높아진다.
+  </div></div>
+
+  <h3>인과 그래프 예시</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>근본 원인</th><th>촉발 사건</th><th>표면 갈등</th><th>A 프레이밍</th><th>B 프레이밍</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>재정 불안 (A)</td>
+          <td>공동통장 인출 → 도박</td>
+          <td>돈 손실 + 외도 의심</td>
+          <td>"일시적 실수, 갚을 생각이었다"</td>
+          <td>"외도를 감추려고 돈을 뺐다"</td>
+        </tr>
+        <tr>
+          <td>권력 욕구 (A)</td>
+          <td>팀원 실적 데이터 조작</td>
+          <td>성과 가로채기 의혹</td>
+          <td>"내가 전략을 짠 것이 맞다"</td>
+          <td>"문서를 사후에 수정했다"</td>
+        </tr>
+        <tr>
+          <td>소통 단절 (양방)</td>
+          <td>A 음주운전 은폐 시도</td>
+          <td>사고 책임 공방</td>
+          <td>"B가 평소 과잉 반응한다"</td>
+          <td>"A가 증거를 없앴다"</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ── 지식 비대칭 매트릭스 ──────────────────── -->
+  <h2 id="knowledge">지식 비대칭 매트릭스</h2>
+  <p>현재 설계의 <code>knowledge_state</code>는 단순 리스트다. 각 사실 항목을 <strong>4분면 매트릭스</strong>로 분류하면 정보 공개의 드라마 구조를 정밀하게 설계할 수 있다.</p>
+
+  <div class="knowledge-matrix">
+    <div class="km-cell">
+      <div class="km-label">A가 앎 / B가 앎</div>
+      <div class="km-title">공통 사실 — 다투어야 할 것</div>
+      <p>양쪽이 알고 있지만 해석이 다름. 심문 초반부터 충돌하며 감정 온도를 올린다.</p>
+    </div>
+    <div class="km-cell">
+      <div class="km-label">A가 모름 / B가 앎</div>
+      <div class="km-title">B의 비밀 카드</div>
+      <p>B가 활용할 수 있는 정보. 플레이어가 B를 심문해야 끌어낼 수 있다.</p>
+    </div>
+    <div class="km-cell">
+      <div class="km-label">A가 앎 / B가 모름</div>
+      <div class="km-title">A의 숨길 것</div>
+      <p>A가 들키면 안 되는 정보. 직접 질문과 증거로만 붕괴시킬 수 있다.</p>
+    </div>
+    <div class="km-cell highlight">
+      <div class="km-label">A도 모름 / B도 모름</div>
+      <div class="km-title">제3자 비밀 — 가장 강력한 반전</div>
+      <p>플레이어가 제3자 증거나 로그로 먼저 발견할 수 있음. 두 당사자 모두 충격받는 순간을 연출한다.</p>
+    </div>
+  </div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>설계 원칙:</strong> 모든 사건에 <strong>"둘 다 모르는 사실" 1개</strong>를 삽입할 것을 권장한다.
+    플레이어가 이것을 발견했을 때 법정 분위기가 완전히 반전되는 연출이 솔로몬의 클라이맥스 중 하나다.
+  </div></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>분면</th><th>게임 기능</th><th>플레이어 접근법</th><th>드라마 효과</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>공통 사실</td><td>충돌의 기반</td><td>비교 심문</td><td>초반 긴장 형성</td></tr>
+        <tr><td>B의 비밀 카드</td><td>B의 반격 재료</td><td>B 집중 심문</td><td>중반 반전</td></tr>
+        <tr><td>A의 숨길 것</td><td>붕괴의 핵심 타깃</td><td>증거 제시 + 직접 질문</td><td>거짓말 붕괴 쾌감</td></tr>
+        <tr><td>제3자 비밀</td><td>최대 반전 장치</td><td>로그/외부 증거 수집</td><td>양쪽 모두 충격, 게임 클라이맥스</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ── 공동 책임 스펙트럼 ─────────────────────── -->
+  <h2 id="responsibility">공동 책임 스펙트럼</h2>
+  <p>단일 슬라이더 방식의 한계를 극복하기 위해 <strong>쟁점별 독립 책임 구조</strong>를 도입한다. 판결이 훨씬 정교해진다.</p>
+
+  <div class="two-col">
+    <div class="card">
+      <span class="badge badge-danger">현재 방식의 한계</span>
+      <div class="card-title mt-sm">A 60% : B 40% — 단일 슬라이더</div>
+      <p>사건 전체에 대한 단일 비율. "A가 더 잘못"이라는 판단은 가능하지만,
+      어떤 부분에서 누가 잘못했는지는 반영되지 않는다.
+      판결의 지혜 축을 충분히 평가하기 어렵다.</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-success">개선된 방식</span>
+      <div class="card-title mt-sm">쟁점별 독립 책임 + 가중치</div>
+      <p>각 쟁점마다 A와 B의 책임 비율과 모호성 여부를 따로 설정한다.
+      플레이어는 쟁점 단위로 책임을 배분한 뒤, 이를 종합해 최종 판결을 내린다.</p>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>쟁점</th><th>A 책임</th><th>B 책임</th><th>모호성</th><th>가중치</th><th>설계 의도</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>공동통장 무단 인출</td>
+          <td>100%</td>
+          <td>0%</td>
+          <td>없음</td>
+          <td>높음</td>
+          <td>명확한 사실 확정으로 플레이어에게 기준점 제공</td>
+        </tr>
+        <tr>
+          <td>도박 사용</td>
+          <td>100%</td>
+          <td>0%</td>
+          <td>없음</td>
+          <td>높음</td>
+          <td>A의 핵심 책임 추가 확정</td>
+        </tr>
+        <tr>
+          <td>외도 의혹 유포</td>
+          <td>20%</td>
+          <td>80%</td>
+          <td>낮음</td>
+          <td>중간</td>
+          <td>A가 의심받을 빌미를 제공했으나 B의 과장이 더 큼</td>
+        </tr>
+        <tr>
+          <td>휴대폰 무단 열람</td>
+          <td>0%</td>
+          <td>100%</td>
+          <td>없음</td>
+          <td>중간</td>
+          <td>B도 잘못이 있음을 플레이어가 직접 판정해야 함</td>
+        </tr>
+        <tr>
+          <td>관계 회복 가능성</td>
+          <td>50%</td>
+          <td>50%</td>
+          <td>높음</td>
+          <td>낮음</td>
+          <td>정답 없는 지혜 판단 영역. 플레이어의 해결책 선택에 영향</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>채점 방식:</strong> 가중치가 높은 쟁점의 책임 판단이 틀리면 큰 페널티.
+    모호성이 높은 쟁점에서 신중하게 "판단 보류"를 선택해도 지혜 점수가 유지된다.
+    "A가 나쁜 놈이니까 다 A 책임"으로 밀어붙이면 지혜 점수가 크게 떨어진다.
+  </div></div>
+
+</main>
+
+<script>
+const topbarLinks = [...document.querySelectorAll('.topbar-sec-link')];
+const sections = topbarLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = '#' + entry.target.id;
+    topbarLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+  });
+}, { rootMargin: '-10% 0px -80% 0px', threshold: 0.01 });
+sections.forEach(s => observer.observe(s));
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => document.body.classList.toggle('sidebar-collapsed'));
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+document.querySelectorAll('.sidebar-section-title').forEach(title => {
+  title.addEventListener('click', () => title.closest('.sidebar-section').classList.toggle('collapsed'));
+});
+</script>
+</body>
+</html>

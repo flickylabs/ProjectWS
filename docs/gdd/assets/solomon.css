@@ -1,0 +1,119 @@
+/* ── Solomon GDD 전용 컴포넌트 ──────────────────────────────── */
+
+/* 태그 행 */
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; }
+
+/* 플로우 스텝 (파이프라인, 4열 x 2행) */
+.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 14px 0; }
+.flow-step { padding: 14px; border-radius: var(--radius); background: var(--bg-white); border: 1px solid rgba(45,41,38,0.06); box-shadow: var(--shadow-sm); border-top: 3px solid var(--brand); }
+.flow-step .n { font-size: 0.68rem; color: var(--brand); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 3px; }
+.flow-step h4 { margin: 2px 0 4px; font-size: 0.88rem; }
+.flow-step p  { margin: 0; font-size: 0.78rem; color: var(--text-light); }
+
+/* 인과 그래프 체인 (4열 화살표) */
+.causal-chain { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 14px 0; }
+.causal-node { position: relative; padding: 16px 14px 16px 18px; background: var(--bg-white); border: 1px solid rgba(45,41,38,0.07); box-shadow: var(--shadow-sm); }
+.causal-node:first-child { border-radius: var(--radius) 0 0 var(--radius); border-left: 4px solid var(--brand); }
+.causal-node:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+.causal-node:not(:last-child)::after { content: "▶"; position: absolute; right: -10px; top: 50%; transform: translateY(-50%); color: var(--brand); font-size: 0.85rem; z-index: 2; background: var(--bg-cream); padding: 2px; }
+.causal-node .layer-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 4px; }
+.causal-node h4 { margin: 0 0 4px; font-size: 0.88rem; }
+.causal-node p  { margin: 0; font-size: 0.78rem; color: var(--text-light); }
+
+/* 지식 매트릭스 2×2 그리드 */
+.knowledge-matrix { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 14px 0; background: rgba(45,41,38,0.08); border-radius: var(--radius); overflow: hidden; }
+.km-cell { padding: 18px 20px; background: var(--bg-white); }
+.km-cell.highlight { background: var(--brand-light); }
+.km-cell .km-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); margin-bottom: 6px; }
+.km-cell .km-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+.km-cell p { margin: 0; font-size: 0.82rem; color: var(--text-light); }
+
+/* 거짓말 상태 트리 (흐름) */
+.lie-flow { display: flex; align-items: flex-start; gap: 0; margin: 14px 0; overflow-x: auto; }
+.lie-node { flex: 1 1 120px; min-width: 110px; padding: 12px 14px; background: var(--bg-white); border: 1px solid rgba(45,41,38,0.07); box-shadow: var(--shadow-sm); position: relative; }
+.lie-node:not(:last-child)::after { content: "→"; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); color: var(--brand); font-weight: 700; z-index: 2; }
+.lie-node .state { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--brand-dark); margin-bottom: 4px; }
+.lie-node .label { font-size: 0.85rem; font-weight: 600; margin-bottom: 3px; }
+.lie-node p { margin: 0; font-size: 0.75rem; color: var(--text-light); }
+
+/* 스테이지 그리드 (캠페인 10단계, 5열) */
+.stage-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 14px 0; }
+.stage { padding: 14px; background: var(--bg-white); border-radius: var(--radius); box-shadow: var(--shadow-sm); border-top: 3px solid var(--brand); }
+.stage .num { display: inline-flex; width: 22px; height: 22px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brand-light); color: var(--brand-dark); font-weight: 700; font-size: 0.75rem; margin-bottom: 6px; }
+.stage h4 { margin: 0 0 4px; font-size: 0.85rem; }
+.stage p  { margin: 0; font-size: 0.78rem; color: var(--text-light); }
+
+/* LLM 처리 흐름 행 */
+.flow-row { display: grid; grid-template-columns: 160px 1fr; gap: 12px; align-items: center; padding: 10px 14px; border-radius: var(--radius-sm); background: var(--bg-white); border: 1px solid rgba(45,41,38,0.05); box-shadow: var(--shadow-sm); margin: 6px 0; }
+.flow-row .step-label { font-weight: 700; color: var(--brand-dark); font-size: 0.85rem; border-right: 1px solid rgba(45,41,38,0.08); padding-right: 12px; }
+.flow-row .step-desc  { color: var(--text); font-size: 0.85rem; }
+
+/* USP 스탯 */
+.stat .k { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 3px; }
+.stat .v { font-size: 1rem; font-weight: 700; }
+
+/* 사건 조합 공식 바 */
+.formula-bar { display: flex; align-items: stretch; gap: 0; flex-wrap: wrap; margin: 14px 0; background: rgba(45,41,38,0.06); border-radius: var(--radius); overflow: hidden; }
+.formula-block { flex: 1 1 140px; padding: 14px 16px; text-align: center; border-right: 2px solid rgba(45,41,38,0.07); }
+.formula-block:last-child { border-right: none; }
+.formula-block.fixed    { background: var(--brand-light); }
+.formula-block.variable { background: rgba(80,170,120,0.09); }
+.formula-block.twist    { background: rgba(190,100,80,0.08); }
+.formula-block .fb-label { font-size: 0.63rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 4px; }
+.formula-block .fb-title { font-size: 0.92rem; font-weight: 700; margin-bottom: 3px; }
+.formula-block .fb-sub  { font-size: 0.72rem; color: var(--text-light); }
+.formula-op { display: flex; align-items: center; justify-content: center; padding: 0 4px; font-size: 1.2rem; color: var(--text-muted); font-weight: 700; flex-shrink: 0; }
+
+/* 경우의 수 계산 바 */
+.count-calc { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 14px 0; }
+.count-block { text-align: center; padding: 10px 18px; background: var(--bg-white); border-radius: var(--radius); border: 1px solid rgba(45,41,38,0.07); box-shadow: var(--shadow-sm); }
+.count-block .count-n { font-size: 1.7rem; font-weight: 800; color: var(--brand); line-height: 1; }
+.count-block .count-label { font-size: 0.68rem; color: var(--text-muted); margin-top: 3px; }
+.count-block .count-label small { display: block; font-size: 0.62rem; }
+.count-op { font-size: 1.3rem; color: var(--text-muted); font-weight: 700; flex-shrink: 0; }
+.count-result { padding: 12px 24px; background: var(--brand-light); border-radius: var(--radius); border: 2px solid var(--brand); text-align: center; }
+.count-result .count-n { font-size: 2rem; font-weight: 800; color: var(--brand-dark); line-height: 1; }
+.count-result .count-label { font-size: 0.72rem; color: var(--brand-dark); margin-top: 4px; }
+
+/* 특수 스킬 카드 */
+.skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin: 14px 0; }
+.skill-card { background: var(--bg-white); border-radius: var(--radius); border: 1px solid rgba(45,41,38,0.07); box-shadow: var(--shadow-sm); padding: 16px 18px; border-left: 4px solid var(--brand); }
+.skill-card .sk-name { font-size: 0.95rem; font-weight: 700; margin-bottom: 3px; }
+.skill-card .sk-cost { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--brand-dark); background: var(--brand-light); padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 8px; }
+.skill-card .sk-effect { font-size: 0.82rem; color: var(--text); margin: 0 0 6px; }
+.skill-card .sk-tip { font-size: 0.75rem; color: var(--brand-dark); font-style: italic; border-top: 1px solid rgba(45,41,38,0.06); padding-top: 6px; margin: 0; }
+
+/* 에이전트 상태 배지 */
+.agent-label-a { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 0.7rem; font-weight: 700; background: rgba(229,115,115,0.15); color: #C62828; }
+.agent-label-b { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 0.7rem; font-weight: 700; background: rgba(100,181,246,0.18); color: #1565C0; }
+
+/* 인덱스 카드 (홈 페이지) */
+.index-hero { text-align: center; margin-bottom: 36px; }
+.index-hero h1 { font-size: 2rem; }
+.index-hero .subtitle { font-size: 1rem; max-width: 700px; margin: 0 auto 24px; color: var(--text-light); }
+.index-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin: 14px 0; }
+.index-card { background: var(--bg-white); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 24px 26px; border: 1px solid rgba(45,41,38,0.05); transition: transform 0.15s, box-shadow 0.15s; text-decoration: none; color: var(--text); display: block; }
+.index-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.index-card .card-icon { font-size: 2rem; margin-bottom: 8px; }
+.index-card .card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+.index-card .card-desc { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+.index-card .card-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+.index-card .card-tags span { font-size: 0.72rem; background: var(--brand-light); color: var(--brand-dark); padding: 2px 8px; border-radius: 12px; }
+
+/* 반응형 */
+@media (max-width: 1080px) {
+  .flow          { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .causal-chain  { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .causal-node:not(:last-child)::after { display: none; }
+  .causal-node:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+  .causal-node:last-child  { border-radius: 0 0 var(--radius) var(--radius); }
+  .stage-grid    { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .flow          { grid-template-columns: 1fr; }
+  .causal-chain  { grid-template-columns: 1fr; }
+  .knowledge-matrix { grid-template-columns: 1fr; }
+  .stage-grid    { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flow-row      { grid-template-columns: 1fr; }
+  .flow-row .step-label { border-right: none; border-bottom: 1px solid rgba(45,41,38,0.08); padding-right: 0; padding-bottom: 6px; }
+}

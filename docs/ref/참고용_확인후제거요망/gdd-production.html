@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omnibus GDD — 프로덕션</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="gdd-index.html">🎭 <span>Omnibus</span> GDD</a>
+  <span class="topbar-title">프로덕션</span>
+  <div class="topbar-sections">
+    <a class="topbar-sec-link" href="#ux">웹 UX</a>
+    <a class="topbar-sec-link" href="#ai">AI 활용</a>
+    <a class="topbar-sec-link" href="#tech-stack">기술 스택</a>
+    <a class="topbar-sec-link" href="#monetization">수익화</a>
+    <a class="topbar-sec-link" href="#mvp">MVP 범위</a>
+  </div>
+  <div class="topbar-meta">
+    <span>v2.1</span>
+    <span>2026-03-24</span>
+  </div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-vision.html"><span class="icon">📋</span><span class="label">게임 비전</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-structure.html"><span class="icon">⚙️</span><span class="label">게임 구조</span></a>
+      <a class="sidebar-link" href="gdd-fun.html"><span class="icon">✨</span><span class="label">재미 장치</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">콘텐츠</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="gdd-world.html"><span class="icon">🌍</span><span class="label">세계관</span></a>
+      <a class="sidebar-link" href="gdd-characters.html"><span class="icon">👥</span><span class="label">캐릭터</span></a>
+      <a class="sidebar-link" href="gdd-relations.html"><span class="icon">🕸️</span><span class="label">관계 & 시나리오</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link active" href="gdd-production.html"><span class="icon">🔧</span><span class="label">프로덕션</span></a>
+      <a class="sidebar-link" href="gdd-execution.html"><span class="icon">🗺️</span><span class="label">실행 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+  <h1>프로덕션 <span class="badge">GDD v2.1</span></h1>
+  <p class="subtitle">웹 UX, AI 활용 전략, 기술 스택, 수익화, MVP 범위</p>
+
+  <h2 id="ux">웹 UX 구조</h2>
+  <p>짧게 플레이하고, 즉시 이해하고, 공유하기 쉬운 화면 구성이 필요하다.</p>
+  <h3>페이지 구조</h3>
+  <div class="two-col">
+    <div><h4>좌측</h4><p>현재 캐릭터 정보 / 오늘의 목표 / 스트레스 / 시간 압박 / 보유 개입권 / 사건 로그 요약</p></div>
+    <div><h4>우측</h4><p>장면 텍스트 / 인물 초상 또는 아이콘 / 대화 카드 / 선택지 버튼 / 직후 독백 / 후속 결과</p></div>
+  </div>
+  <h3>장면 UI 가이드</h3>
+  <ul>
+    <li>한 화면에 너무 많은 정보를 쌓지 않는다. 장면당 핵심 선택 1회, 마무리 선택 1회 정도가 적당하다.</li>
+    <li>NPC의 감정은 숫자보다 표정, 말줄임, 손떨림, 속도감 있는 문장으로 전달한다.</li>
+    <li>이전 스테이지의 "과거의 나"가 등장할 때는 별도 배지나 로그 태그로 표시하면 이해가 쉬워진다.</li>
+  </ul>
+  <h3>결과 화면</h3>
+  <div class="card-grid">
+    <div class="card"><div class="card-title">이번 런 리포트</div><p>누가 임계치까지 갔는지, 어디서 고리가 끊겼는지, 어떤 사건이 가장 크게 번졌는지 요약한다.</p></div>
+    <div class="card"><div class="card-title">속사정 해금</div><p>이번에 플레이한 인물들의 숨겨진 맥락을 열어줘, 첫인상과 실제 체감의 차이를 복습하게 만든다.</p></div>
+    <div class="card"><div class="card-title">원본 vs 평행 로그</div><p>과거 개변을 사용했다면, 어떤 세계선이 어떻게 달라졌는지 비교 카드로 보여준다.</p></div>
+    <div class="card"><div class="card-title">다음 런 유도</div><p>이번에 NPC였던 인물 중 파장이 큰 2~3명을 추천하여 다음 런에서 플레이해 보게 한다.</p></div>
+  </div>
+  <div class="alert alert-success"><span class="alert-icon">&#10003;</span><div><strong>모바일 대응 원칙</strong><br>사이드바는 모바일에서 슬라이드 메뉴로 접고, 장면 텍스트와 선택지는 한 손으로 누르기 쉬운 카드 형태로 정리한다.</div></div>
+
+  <h2 id="ai">AI 활용 전략</h2>
+  <p>AI는 세계의 법칙을 정하는 역할이 아니라, 이미 정해진 법칙을 사람처럼 보이게 만드는 역할로 쓰는 편이 안전하고 완성도가 높다.</p>
+
+  <h3>LLM을 쓰는 5가지 영역</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">1. 속말 잔상</div>
+      <p>경계/배려 선택 직후, 이전 캐릭터의 내면 독백을 LLM이 캐릭터 성향에 맞게 한 줄 생성. 스트레스 > 60일 때만 발동.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">2. 기억 왜곡 / 목격자 버전</div>
+      <p>같은 공유 사건을 다른 캐릭터 시점으로 재구성할 때, 공개층 사실은 유지하면서 체감층의 기억을 캐릭터 성향에 맞게 왜곡.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">3. 라디오 / 알림 / 사연</div>
+      <p>장면 전환 시 배경 라디오 멘트, 핸드폰 알림 텍스트, 커뮤니티 사연 글 등 분위기 텍스트를 현재 세계선 상태에 맞게 생성.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">4. 런 종료 한 줄</div>
+      <p>결과 화면에서 "이번 런을 한 줄로 요약하면?" 형태의 서술형 피드백. 감정 DNA 데이터를 입력으로 받아 생성.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">5. 숨겨진 연결선</div>
+      <p>캐릭터 간 이면 관계가 해금될 때, 그 관계를 설명하는 짧은 에피소드 텍스트를 양쪽 캐릭터 플레이 데이터를 바탕으로 생성.</p>
+    </div>
+  </div>
+
+  <h3>LLM을 쓰지 않는 5가지 영역</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>영역</th><th>이유</th><th>대안</th></tr></thead>
+    <tbody>
+      <tr><td><strong>선택지 구조</strong></td><td>분출/경계/배려 3축은 게임 밸런스의 뼈대. LLM이 만들면 밸런스 붕괴.</td><td>룰 기반으로 선택지 구조 고정, 텍스트 표현만 AI 보조</td></tr>
+      <tr><td><strong>수치 판정</strong></td><td>스트레스, 불씨, 잠금치 계산은 deterministic해야 함.</td><td>JSON 상태 머신으로 관리</td></tr>
+      <tr><td><strong>다음 캐릭터 선정</strong></td><td>스테이지 순서는 가중치 랜덤이지만 공정해야 함.</td><td>가중치 알고리즘으로 고정</td></tr>
+      <tr><td><strong>아이템 효과</strong></td><td>아이템 발동 결과가 예측 불가능하면 전략성 상실.</td><td>효과 테이블로 고정</td></tr>
+      <tr><td><strong>공개층 로그</strong></td><td>같은 사건의 사실 기록은 시점에 관계없이 동일해야 함.</td><td>이벤트 로그 DB에 고정 기록</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-warning"><span class="alert-icon">&#9888;</span><div>
+    <strong>핵심 원칙</strong><br>
+    AI에게 선택지 구조나 승패 판정까지 맡기면 밸런싱이 무너진다. 이 게임은 <strong>시스템이 뼈대, AI가 표정과 살</strong>이어야 한다.
+  </div></div>
+
+  <h3>LLM 운용 전략</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>전략</th><th>설명</th><th>적용 영역</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Structured Output (JSON Schema)</strong></td><td>LLM 응답을 JSON 스키마로 강제하여 파싱 실패 방지. 독백, 기억 왜곡 등 모두 구조화된 출력.</td><td>모든 LLM 호출</td></tr>
+      <tr><td><strong>Prompt Caching</strong></td><td>캐릭터 프로필, 세계관 규칙, 현재 세계선 상태를 캐시하여 반복 호출 비용 절감.</td><td>속말 잔상, 기억 왜곡</td></tr>
+      <tr><td><strong>Streaming as Game Tempo</strong></td><td>LLM 스트리밍 출력을 게임의 텍스트 타이핑 연출로 직접 사용. 로딩 대기가 아니라 연출의 일부.</td><td>독백, 런 종료 한 줄</td></tr>
+      <tr><td><strong>Batch API for Offline</strong></td><td>일일 시나리오, 라디오 멘트 등 실시간이 아닌 콘텐츠는 Batch API로 미리 생성해두고 캐시.</td><td>라디오/알림, 일일 시나리오</td></tr>
+      <tr><td><strong>Model Tiering</strong></td><td>Haiku: 턴 중 즉시 반응(속말, 알림). Sonnet: 런 종료 리포트. Opus: 저작 도구(사건 카드 초안, 캐릭터 대사 뱅크).</td><td>비용 최적화</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2 id="tech-stack">기술 스택</h2>
+  <p>웹 우선 개발 후 Capacitor로 네이티브 앱을 래핑하는 전략.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>레이어</th><th>기술</th><th>역할</th></tr></thead>
+    <tbody>
+      <tr><td>프론트엔드</td><td><strong>React + Tailwind CSS</strong></td><td>카드 UI, 장면 렌더링, 선택지, 결과 화면. 모바일 반응형</td></tr>
+      <tr><td>상태 관리</td><td><strong>Zustand</strong></td><td>공유사건 핑퐁 상태, 세계선 기록, 스트레스/불씨 계산</td></tr>
+      <tr><td>네이티브 래핑</td><td><strong>Capacitor</strong></td><td>웹앱을 iOS/Android 네이티브 앱으로 변환</td></tr>
+      <tr><td>인앱 결제</td><td><strong>Capacitor IAP 플러그인</strong></td><td>Apple IAP + Google Play Billing 통합</td></tr>
+      <tr><td>광고</td><td><strong>AdMob (Capacitor 플러그인)</strong></td><td>보상형 광고, 인터스티셜</td></tr>
+      <tr><td>백엔드</td><td><strong>Supabase</strong></td><td>Auth, DB, Edge Functions</td></tr>
+      <tr><td>AI</td><td><strong>Supabase Edge Functions &#8594; Claude API</strong></td><td>캐릭터 대사 변형, 독백 생성, 런 리포트 요약</td></tr>
+      <tr><td>웹 배포</td><td><strong>Vercel</strong></td><td>프론트엔드 호스팅, 프리뷰 배포, CDN</td></tr>
+      <tr><td>앱 배포</td><td><strong>Capacitor &#8594; Xcode / Android Studio</strong></td><td>App Store, Google Play 제출</td></tr>
+    </tbody>
+  </table></div>
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div><strong>핵심 원칙</strong><br>웹에서 먼저 완성하고, Capacitor로 감싼다. 네이티브 전용 기능(IAP, AdMob)만 Capacitor 플러그인으로 추가. 게임 로직은 100% 웹 코드.</div></div>
+
+  <h2 id="monetization">수익화 설계</h2>
+  <p>무료로 핵심 재미를 충분히 경험하게 하되, 더 깊이 파고들고 싶은 순간에 자연스럽게 유료 전환이 발생하는 구조.</p>
+  <h3>무료 / 유료 경계선</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>구분</th><th>내용</th><th>제한</th></tr></thead>
+    <tbody>
+      <tr><td><strong>무료 플레이</strong></td><td>매일 런 2회, 기본 캐릭터 6명, 기본 아이템 3종</td><td>핵심 루프 체험에 충분</td></tr>
+      <tr><td><strong>광고 보상</strong></td><td>추가 런 1회 / 아이템 획득 / 상세 리포트 열람</td><td>보상형 광고 시청 후 지급</td></tr>
+      <tr><td><strong>IAP — 소모품</strong></td><td>개입권 패키지</td><td>소진 시 재구매</td></tr>
+      <tr><td><strong>IAP — 콘텐츠</strong></td><td>캐릭터 팩 (4명 묶음), 프리미엄 아이템</td><td>1회 구매, 영구 해금</td></tr>
+      <tr><td><strong>IAP — 구독</strong></td><td>무제한 런 패스 (월정액) + 광고 제거 + 일일 프리미엄 아이템 1개</td><td>월간/연간 구독</td></tr>
+    </tbody>
+  </table></div>
+  <h3>결제와 게임 메시지의 균형</h3>
+  <ul>
+    <li><strong>Pay-to-Win 방지:</strong> 유료 아이템은 "다른 시점을 더 볼 수 있는" 도구이지, "더 좋은 결과를 만드는" 도구가 아니다.</li>
+    <li><strong>공명 순간은 무료:</strong> 게임의 핵심 경험은 무료 범위에서 반드시 체험 가능해야 한다.</li>
+    <li><strong>광고는 개입권:</strong> 광고를 "추가 기회를 얻는 행위"로 프레이밍.</li>
+    <li><strong>구독은 편의:</strong> 무제한 런 + 광고 제거.</li>
+  </ul>
+
+  <h2 id="mvp">MVP 범위</h2>
+  <p>최초 버전은 "복잡한 구조를 실제로 재미있게 느끼는가"를 검증하는 데 집중해야 한다.</p>
+  <h3>추천 MVP 스코프</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>정식 목표</th><th>MVP 권장</th></tr></thead>
+    <tbody>
+      <tr><td>등장인물</td><td>20명</td><td>12명</td></tr>
+      <tr><td>플레이 인물 수</td><td>10명</td><td>6명</td></tr>
+      <tr><td>공유 사건 템플릿</td><td>10종 이상</td><td>5~6종</td></tr>
+      <tr><td>아이템</td><td>20종</td><td>8~10종</td></tr>
+      <tr><td>배경 시간대</td><td>여러 반나절 패턴</td><td>하나의 반나절만</td></tr>
+      <tr><td>세계선 개변</td><td>평행우주 시스템 완비</td><td>현재 되감기 + 평행 메모 정도만</td></tr>
+    </tbody>
+  </table></div>
+  <h3>MVP에서 꼭 검증해야 할 것</h3>
+  <ul>
+    <li>같은 사건을 다른 인물로 다시 겪을 때 실제로 신선하고 아픈가</li>
+    <li>풀 핑퐁 1회 + 후속층 플레이 구조가 지루하지 않은가</li>
+    <li>배려가 손해 같지만 의미 있게 느껴지는가</li>
+    <li>광고/아이템이 메시지를 해치지 않고 오히려 전략성을 높이는가</li>
+    <li><strong>공명 순간이 실제로 전율을 주는가</strong></li>
+    <li><strong>한 런 후 재도전 의사가 발생하는가</strong></li>
+  </ul>
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div><strong>MVP 성공 기준</strong><br>플레이어가 한 런 뒤에 "이번에는 다른 인물로 저 사건을 다시 보고 싶다"라고 느끼면 구조는 성공이다.</div></div>
+</main>
+
+<script>
+const topbarLinks = [...document.querySelectorAll('.topbar-sec-link')];
+const sections = topbarLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = '#' + entry.target.id;
+    topbarLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+  });
+}, { rootMargin: '-10% 0px -80% 0px', threshold: 0.01 });
+sections.forEach(s => observer.observe(s));
+
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => {
+  document.body.classList.toggle('sidebar-collapsed');
+});
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+document.querySelectorAll('.sidebar-section-title').forEach(title => {
+  title.addEventListener('click', () => title.closest('.sidebar-section').classList.toggle('collapsed'));
+});
+</script>
+</body>
+</html>
