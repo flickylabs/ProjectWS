@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+/* ── 솔로몬 컬러 팔레트 CSS 변수 ── */
+:root {
+  --solomon-primary: #d97706;
+  --solomon-primary-light: #f59e0b;
+  --solomon-bg: #030712;
+  --solomon-surface: #111827;
+  --solomon-border: #1f2937;
+  --solomon-text: #f3f4f6;
+  --solomon-text-sub: #6b7280;
+  --solomon-party-a: #60a5fa;
+  --solomon-party-b: #fb7185;
+  --solomon-judge: #fbbf24;
+  --solomon-success: #34d399;
+  --solomon-warning: #facc15;
+  --solomon-danger: #f87171;
+}
+
+/* ── 애니메이션 ── */
 @keyframes fade-in-out {
   0% { opacity: 0; }
   20% { opacity: 1; }
@@ -12,6 +30,16 @@
   100% { transform: scale(1); opacity: 1; }
 }
 
+@keyframes slide-up {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+  50% { box-shadow: 0 0 12px 2px rgba(217, 119, 6, 0.15); }
+}
+
 .animate-fade {
   animation: fade-in-out 1.8s ease-in-out forwards;
 }
@@ -20,11 +48,51 @@
   animation: scale-in 0.4s ease-out forwards;
 }
 
-/* 스크롤바 숨기기 */
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ── 스크롤바 ── */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* 커스텀 스크롤바 (어두운 테마) */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* ── 글로벌 터치 최적화 ── */
+button, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* ── 선택 방지 (게임 UI) ── */
+.select-none-deep, .select-none-deep * {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ── 활성 버튼 피드백 ── */
+button:active:not(:disabled) {
+  transform: scale(0.97);
 }

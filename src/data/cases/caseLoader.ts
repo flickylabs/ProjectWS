@@ -9,11 +9,14 @@ import spouse01 from './generated/spouse-01.json'
 import spouse02 from './generated/spouse-02.json'
 import spouse03 from './generated/spouse-03.json'
 import spouse04 from './generated/spouse-04.json'
-// spouse-05, spouse-06은 유저가 JSON 파일을 넣으면 주석 해제
-// import spouse05 from './generated/spouse-05.json'
-// import spouse06 from './generated/spouse-06.json'
+import spouse05 from './generated/spouse-05.json'
+import spouse06 from './generated/spouse-06.json'
+import spouse07 from './generated/spouse-07.json'
+import spouse08 from './generated/spouse-08.json'
+import spouse09 from './generated/spouse-09.json'
+import spouse10 from './generated/spouse-10.json'
 
-const RAW_CASES = [spouse01, spouse02, spouse03, spouse04]
+const RAW_CASES = [spouse01, spouse02, spouse03, spouse04, spouse05, spouse06, spouse07, spouse08, spouse09, spouse10]
 // spouse05, spouse06 추가 시 위 배열에 넣기
 
 /** JSON 사건을 CaseData로 정규화 */
