@@ -162,6 +162,24 @@ npm run dev    # http://localhost:5173
 - `"caseId"` 로 검색 → 두 번째 `"caseId"` 바로 앞의 `},{` 에서 분리
 - 또는 배열 통째로 저장 후 Claude에게 분리 요청
 
+### 파일명 규칙 (전체)
+
+모두 `src/data/cases/generated/` 폴더에 저장. 코드 수정 불필요 (glob import 자동 인식).
+
+| 세션 | 관계 | 파일명 | 프롬프트 |
+|------|------|--------|----------|
+| 1 | 부부 | `spouse-01.json` ~ `spouse-12.json` | session1-spouse-A~F.md |
+| 2 | 이웃 | `neighbor-01.json` ~ `neighbor-12.json` | session2-neighbor-A~F.md |
+| 3 | 직장 | `work-01.json` ~ `work-12.json` | session3-workplace-A~F.md |
+| 4 | 동업 | `partner-01.json` ~ `partner-10.json` | session4-partnership-A~E.md |
+| 5 | 가족 | `family-01.json` ~ `family-12.json` | session5-family-A~B.md |
+| 6 | 세입자 | `tenant-01.json` ~ `tenant-10.json` | session6-tenant-A~B.md |
+| 7 | 친구 | `friend-01.json` ~ `friend-10.json` | session7-friend-A~B.md |
+
+각 배치(A, B, C...)는 2개씩 생성. 배치 A → 01, 02 / 배치 B → 03, 04 / 배치 C → 05, 06 ...
+
+**저장 경로**: `e:\GameProject\ProjectWS\src\data\cases\generated\`
+
 ---
 
 ## 7. 알려진 이슈 & 주의사항
