@@ -10,90 +10,103 @@ export default function Phase0_CaseIntro() {
   const { duo, context } = caseData
 
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 py-6 overflow-y-auto max-w-lg mx-auto">
-      <div className="w-full space-y-4">
-        {/* 헤더 */}
-        <div className="text-center space-y-2">
-          <div className="text-amber-500 text-sm font-semibold tracking-widest">사건 개요</div>
-          <h2 className="text-2xl font-bold">{duo.partyA.name} vs {duo.partyB.name}</h2>
-          <div className="text-gray-500 text-sm">{getRelationLabel(duo.relationshipType)} · {context.contextType === 'holiday' ? '추석 직전' : context.description}</div>
+    <div className="flex flex-col h-full overflow-y-auto max-w-lg mx-auto">
+      {/* 히어로 영역 — 그라데이션 배경 */}
+      <div className="relative px-5 pt-8 pb-6 bg-gradient-to-b from-amber-950/30 via-gray-950 to-gray-950">
+        <div className="text-center space-y-1">
+          <div className="text-amber-500/80 text-xs font-semibold tracking-[0.2em] uppercase">사건 개요</div>
+          <div className="text-xs text-gray-600">{getRelationLabel(duo.relationshipType)}</div>
         </div>
 
-        {/* 인물 카드 */}
-        <div className="grid grid-cols-2 gap-4">
+        {/* VS 인물 카드 */}
+        <div className="flex items-stretch gap-3 mt-5">
           <PersonCard
             name={duo.partyA.name}
             age={duo.partyA.age}
             occupation={duo.partyA.occupation}
             trait={getArchetypeLabel(duo.partyA.archetype)}
+            emoji="👨"
             color="blue"
           />
+          <div className="flex flex-col items-center justify-center shrink-0 w-8">
+            <div className="w-px h-6 bg-gradient-to-b from-blue-600 to-transparent" />
+            <div className="text-xs font-black text-gray-500 my-1">VS</div>
+            <div className="w-px h-6 bg-gradient-to-b from-transparent to-rose-600" />
+          </div>
           <PersonCard
             name={duo.partyB.name}
             age={duo.partyB.age}
             occupation={duo.partyB.occupation}
             trait={getArchetypeLabel(duo.partyB.archetype)}
+            emoji="👩"
             color="rose"
           />
         </div>
+      </div>
 
-        {/* 배경 맥락 */}
-        <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
-          <div className="text-xs text-amber-500 font-semibold mb-2">배경 상황</div>
+      {/* 정보 영역 */}
+      <div className="px-4 pb-6 space-y-3">
+        {/* 배경 상황 */}
+        <InfoSection icon="📍" title="배경 상황">
           <p className="text-sm text-gray-300 leading-relaxed">{context.description}</p>
-        </div>
+        </InfoSection>
 
         {/* 쟁점 */}
-        <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3">
-          <div className="text-xs text-amber-500 font-semibold mb-2">쟁점 ({caseData.disputes.length}개)</div>
+        <InfoSection icon="⚡" title={`쟁점 (${caseData.disputes.length}개)`}>
           <div className="flex flex-wrap gap-1.5">
             {caseData.disputes.map((d) => (
-              <span key={d.id} className={`text-xs px-2 py-0.5 rounded-full ${
-                d.weight === 'high' ? 'bg-red-900/40 text-red-400 border border-red-800/40' :
-                d.weight === 'medium' ? 'bg-yellow-900/40 text-yellow-400 border border-yellow-800/40' :
-                'bg-gray-700 text-gray-400 border border-gray-600'
+              <span key={d.id} className={`text-xs px-2.5 py-1 rounded-full font-medium ${
+                d.weight === 'high' ? 'bg-red-500/15 text-red-400 ring-1 ring-red-500/20' :
+                d.weight === 'medium' ? 'bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/20' :
+                'bg-gray-500/15 text-gray-400 ring-1 ring-gray-500/20'
               }`}>{d.name}</span>
             ))}
           </div>
-        </div>
+        </InfoSection>
 
-        {/* 관계 이력 힌트 (활성화된 것만) */}
+        {/* 관계 이력 */}
         {duo.relationshipLedger.length > 0 && (
-          <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3">
-            <div className="text-xs text-amber-500 font-semibold mb-2">과거 이력</div>
-            <div className="space-y-1.5">
+          <InfoSection icon="📂" title="과거 이력">
+            <div className="space-y-2">
               {duo.relationshipLedger
                 .filter((l) => caseData.activeLedgerEntries.includes(l.id) || l.connectionToCurrent === 'direct')
                 .slice(0, 2)
                 .map((l) => (
-                  <div key={l.id} className="text-xs text-gray-400 flex items-start gap-1.5">
-                    <span className="shrink-0">{l.category === 'confirmed' ? '📌' : l.category === 'distorted' ? '🔄' : '🤐'}</span>
-                    <span>{l.description}</span>
+                  <div key={l.id} className="flex items-start gap-2 text-xs">
+                    <span className={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs ${
+                      l.category === 'confirmed' ? 'bg-emerald-500/15 text-emerald-400' :
+                      l.category === 'distorted' ? 'bg-amber-500/15 text-amber-400' :
+                      'bg-gray-500/15 text-gray-400'
+                    }`}>{l.category === 'confirmed' ? '✓' : l.category === 'distorted' ? '?' : '…'}</span>
+                    <span className="text-gray-400 leading-relaxed">{l.description}</span>
                   </div>
                 ))}
             </div>
-          </div>
+          </InfoSection>
         )}
 
-        {/* 제3자 힌트 */}
+        {/* 관련 인물 */}
         {duo.socialGraph.length > 0 && (
-          <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3">
-            <div className="text-xs text-amber-500 font-semibold mb-2">관련 인물</div>
+          <InfoSection icon="👥" title="관련 인물">
             <div className="flex flex-wrap gap-2">
               {duo.socialGraph.slice(0, 3).map((tp) => (
-                <span key={tp.id} className="text-xs bg-gray-700 text-gray-400 px-2 py-1 rounded">
-                  {tp.name}
-                </span>
+                <div key={tp.id} className="flex items-center gap-1.5 text-xs bg-gray-800/60 ring-1 ring-gray-700/50 rounded-full px-3 py-1">
+                  <span className={`w-1.5 h-1.5 rounded-full ${
+                    tp.bias === 'pro_a' ? 'bg-blue-400' :
+                    tp.bias === 'pro_b' ? 'bg-rose-400' : 'bg-gray-400'
+                  }`} />
+                  <span className="text-gray-300">{tp.name}</span>
+                </div>
               ))}
             </div>
-          </div>
+          </InfoSection>
         )}
 
         {/* 시작 버튼 */}
-        <div className="text-center">
+        <div className="pt-3 text-center">
           <button
             onClick={() => advancePhase(GamePhase.Phase1_InitialStatement)}
-            className="bg-amber-600 hover:bg-amber-500 text-gray-950 font-bold px-8 py-3 rounded-lg transition-colors"
+            className="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-gray-950 font-bold px-10 py-3 rounded-xl transition-all shadow-lg shadow-amber-600/20 active:scale-95"
           >
             초기 진술 듣기 →
           </button>
@@ -103,16 +116,39 @@ export default function Phase0_CaseIntro() {
   )
 }
 
-function PersonCard({ name, age, occupation, trait, color }: {
-  name: string; age: number; occupation: string; trait: string; color: string
-}) {
-  const borderColor = color === 'blue' ? 'border-blue-800' : 'border-rose-800'
-  const textColor = color === 'blue' ? 'text-blue-400' : 'text-rose-400'
+function InfoSection({ icon, title, children }: { icon: string; title: string; children: React.ReactNode }) {
   return (
-    <div className={`border ${borderColor} rounded-lg p-4 bg-gray-900/60`}>
-      <div className={`font-bold ${textColor}`}>{name} <span className="text-gray-500 text-xs font-normal">({age}세)</span></div>
-      <div className="text-xs text-gray-400 mt-1">{occupation}</div>
-      <div className="text-xs text-gray-500 mt-1">성향: {trait}</div>
+    <div className="bg-gray-900/60 border border-gray-800/60 rounded-xl p-3.5">
+      <div className="flex items-center gap-1.5 mb-2.5">
+        <span className="text-sm">{icon}</span>
+        <span className="text-xs font-semibold text-gray-300">{title}</span>
+      </div>
+      {children}
+    </div>
+  )
+}
+
+function PersonCard({ name, age, occupation, trait, emoji, color }: {
+  name: string; age: number; occupation: string; trait: string; emoji: string; color: string
+}) {
+  const ring = color === 'blue' ? 'ring-blue-500/40' : 'ring-rose-500/40'
+  const bg = color === 'blue' ? 'bg-blue-950/40' : 'bg-rose-950/40'
+  const nameColor = color === 'blue' ? 'text-blue-400' : 'text-rose-400'
+  const gradient = color === 'blue' ? 'from-blue-600/20 to-transparent' : 'from-rose-600/20 to-transparent'
+
+  return (
+    <div className={`flex-1 rounded-xl p-3 ring-1 ${ring} ${bg} bg-gradient-to-b ${gradient}`}>
+      <div className="flex items-center gap-2 mb-2">
+        <div className={`w-10 h-10 rounded-full bg-gray-800 ring-2 ${ring} flex items-center justify-center text-lg`}>
+          {emoji}
+        </div>
+        <div>
+          <div className={`text-sm font-bold ${nameColor}`}>{name}</div>
+          <div className="text-xs text-gray-500">{age}세</div>
+        </div>
+      </div>
+      <div className="text-xs text-gray-400">{occupation}</div>
+      <div className="text-xs text-gray-500 mt-0.5">{trait}</div>
     </div>
   )
 }

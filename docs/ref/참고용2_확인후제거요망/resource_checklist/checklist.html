@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyPeb 이미지 리소스 체크리스트</title>
+<style>
+:root{--bg:#FFFDF8;--side:#FFFBF2;--card:#FFF;--bdr:#F0E4CC;--acc:#FFD666;--acc2:#F5C842;--peach:#FFB5A7;--txt:#3D3328;--t2:#8A7E6B;--t3:#C4BAA8;--ok:#81C995;--okbg:#EEFBF0;--warn:#F28B82;--wbg:#FFF0F0;--blu:#7EB8E0;--blubg:#EDF6FF;--pur:#B39DDB;--purbg:#F3EEFF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Pretendard',-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--txt);display:flex;height:100vh;overflow:hidden}
+
+/* ── Sidebar ── */
+.sb-wrap{position:relative;display:flex;flex-shrink:0}
+.sb{width:260px;min-width:260px;background:var(--side);border-right:1.5px solid var(--bdr);display:flex;flex-direction:column;overflow:hidden;transition:width .2s,min-width .2s,opacity .2s}
+.sb.collapsed{width:0;min-width:0;border-right:none;opacity:0;pointer-events:none}
+.sb-toggle{position:absolute;top:50%;right:-14px;transform:translateY(-50%);z-index:10;width:14px;height:48px;background:var(--side);border:1.5px solid var(--bdr);border-left:none;border-radius:0 8px 8px 0;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--t2);padding:0}
+.sb-toggle:hover{background:#FFF8EA;color:var(--txt)}
+.sb-hd{padding:14px 14px 10px;border-bottom:1px solid var(--bdr)}
+.sb-hd h1{font-size:14px;margin-bottom:6px}
+.sb-hd .bar{height:6px;background:var(--bdr);border-radius:3px;overflow:hidden}
+.sb-hd .fill{height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));border-radius:3px;transition:width .3s}
+.sb-hd .info{font-size:11px;color:var(--t2);margin-top:4px;display:flex;justify-content:space-between}
+.sb-nav{flex:1;overflow-y:auto;padding:6px 0}
+.ng{margin-bottom:1px}
+.ng-t{display:flex;align-items:center;gap:5px;padding:7px 14px;font-size:12px;font-weight:700;cursor:pointer;user-select:none;color:var(--txt)}
+.ng-t:hover{background:#FFF8EA}
+.ng-t .ar{font-size:9px;transition:transform .2s;width:12px}
+.ng-t .ar.op{transform:rotate(90deg)}
+.ng-t .gp{margin-left:auto;font-size:10px;font-weight:400;color:var(--t2);white-space:nowrap}
+.ni-wrap{overflow:hidden;max-height:0;transition:max-height .25s ease}
+.ni-wrap.op{max-height:800px}
+.ni{display:flex;align-items:center;gap:5px;padding:5px 14px 5px 28px;font-size:11px;cursor:pointer;color:var(--t2);border-left:3px solid transparent;transition:all .15s}
+.ni:hover{background:#FFF8EA;color:var(--txt)}
+.ni.act{background:#FFF8EA;color:var(--txt);border-left-color:var(--acc);font-weight:600}
+.ni .sp{margin-left:auto;font-size:10px;background:var(--bdr);padding:1px 5px;border-radius:8px;white-space:nowrap}
+.ni .sp.dn{background:var(--okbg);color:var(--ok)}
+/* Summary nav special */
+.nav-summary{display:flex;align-items:center;gap:6px;padding:9px 14px;font-size:13px;font-weight:700;cursor:pointer;border-bottom:1px solid var(--bdr);color:var(--acc2)}
+.nav-summary:hover,.nav-summary.act{background:#FFF8EA}
+.sb-ft{padding:8px 12px;border-top:1px solid var(--bdr);display:flex;gap:5px;flex-wrap:wrap}
+.sb-ft button{flex:1;padding:4px 0;border:1px solid var(--bdr);border-radius:14px;background:var(--card);font-size:10px;cursor:pointer;font-family:inherit}
+.sb-ft button:hover{background:var(--acc);border-color:var(--acc2)}
+.sb-ft .dg:hover{background:var(--wbg);border-color:var(--warn);color:var(--warn)}
+
+/* ── Main ── */
+.mn{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.topbar{display:flex;align-items:center;gap:10px;padding:8px 16px;border-bottom:1px solid var(--bdr);background:var(--card);min-height:44px}
+.topbar h2{font-size:14px;white-space:nowrap}
+.topbar .bc{font-size:11px;color:var(--t2)}
+.topbar input{flex:1;max-width:260px;padding:5px 12px;border:1px solid var(--bdr);border-radius:18px;font-size:11px;background:var(--bg);margin-left:auto}
+.topbar select{padding:5px 10px;border:1px solid var(--bdr);border-radius:18px;font-size:11px;background:var(--bg)}
+.ct{flex:1;overflow-y:auto;padding:12px 16px 40px}
+
+/* ── Guide ── */
+.guide{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;margin-bottom:14px;font-size:12px;line-height:1.7;color:var(--t2)}
+.guide h3{font-size:13px;color:var(--txt);margin-bottom:6px}
+.guide .hl{color:var(--txt);font-weight:600}
+.guide code{background:#FFF8EA;padding:1px 6px;border-radius:4px;font-size:11px}
+
+/* ── Progress bar ── */
+.sp-box{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding:8px 12px;background:var(--card);border:1px solid var(--bdr);border-radius:10px}
+.sp-box .bar{flex:1;height:7px;background:var(--bdr);border-radius:4px;overflow:hidden}
+.sp-box .fill{height:100%;background:var(--acc);border-radius:4px;transition:width .3s}
+.sp-box .tx{font-size:12px;font-weight:700;white-space:nowrap}
+
+/* ── Table ── */
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:12px}
+thead th{position:sticky;top:0;background:var(--side);border-bottom:2px solid var(--bdr);padding:7px 8px;text-align:left;font-size:11px;font-weight:700;color:var(--t2);white-space:nowrap;z-index:2}
+thead th:first-child{width:32px;text-align:center}
+tbody tr{transition:opacity .15s}
+tbody tr:hover{background:#FFFAF0}
+tbody tr.ck{opacity:.4}
+tbody tr.ck td.cn{text-decoration:line-through}
+tbody td{padding:6px 8px;border-bottom:1px solid #F5F0E5;vertical-align:top}
+td.cc{text-align:center;width:32px}
+td.cc input{width:15px;height:15px;accent-color:var(--acc);cursor:pointer}
+td.cp{width:48px;text-align:center}
+td.cp .emoji{font-size:20px}
+td.cp img{width:40px;height:40px;object-fit:contain;border-radius:4px;border:1px solid var(--bdr);cursor:pointer;transition:transform .15s}
+td.cp img:hover{transform:scale(1.2)}
+td.cn{font-weight:600;min-width:100px;white-space:nowrap}
+td.cf{font-size:11px;color:var(--t2);max-width:150px;word-break:break-all;font-family:'Consolas','Courier New',monospace}
+td.cs{font-size:11px;color:var(--t2);white-space:nowrap}
+td.cm{font-size:11px;white-space:nowrap}
+td.cu{font-size:11px;color:var(--txt);max-width:280px;line-height:1.5}
+td.cmo{width:130px}
+td.cmo textarea{width:100%;min-height:26px;max-height:56px;border:1px solid var(--bdr);border-radius:5px;padding:3px 7px;font-size:10px;font-family:inherit;resize:vertical;background:var(--card);color:var(--txt)}
+td.cmo textarea::placeholder{color:var(--t3)}
+
+/* Tags */
+.tg{display:inline-block;padding:1px 6px;border-radius:4px;font-size:9px;font-weight:700}
+.tg.emoji{background:#FFF0E0;color:#E68A00}
+.tg.png{background:var(--blubg);color:var(--blu)}
+.tg.none{background:var(--wbg);color:var(--warn)}
+.tg.ok{background:var(--okbg);color:var(--ok)}
+.tg.css{background:#F0F0F0;color:#888}
+
+/* Tooltip ? icon */
+.tip{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:var(--bdr);color:var(--t2);font-size:9px;font-weight:700;cursor:help;position:relative;vertical-align:middle;margin-left:4px;flex-shrink:0}
+.tip:hover .tip-box{display:block}
+.tip-box{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--txt);color:#fff;padding:8px 12px;border-radius:8px;font-size:11px;font-weight:400;line-height:1.5;white-space:normal;width:260px;z-index:100;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.tip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--txt)}
+
+/* Swatch */
+.sw{display:inline-block;width:24px;height:24px;border-radius:5px;border:1px solid var(--bdr);vertical-align:middle}
+.sw-pair{display:inline-flex;gap:2px;vertical-align:middle}
+.sw-pair .sw{width:18px;height:18px;border-radius:3px}
+
+/* ── Lightbox ── */
+.lb-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(61,51,40,.6);z-index:999;align-items:center;justify-content:center;cursor:pointer}
+.lb-overlay.show{display:flex}
+.lb-overlay img{max-width:80vw;max-height:80vh;object-fit:contain;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.3);background:var(--card);padding:12px}
+
+/* ── Summary ── */
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:20px}
+.sum-card{background:var(--card);border:1.5px solid var(--bdr);border-radius:12px;padding:14px;cursor:pointer;transition:all .15s}
+.sum-card:hover{border-color:var(--acc);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.sum-card .sc-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.sum-card .sc-icon{font-size:20px}
+.sum-card .sc-title{font-size:13px;font-weight:700}
+.sum-card .sc-bar{height:6px;background:var(--bdr);border-radius:3px;overflow:hidden;margin-bottom:4px}
+.sum-card .sc-fill{height:100%;background:var(--acc);border-radius:3px;transition:width .3s}
+.sum-card .sc-stat{font-size:11px;color:var(--t2);display:flex;justify-content:space-between}
+.sum-card .sc-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.sum-card .sc-tag{font-size:10px;padding:2px 7px;border-radius:6px}
+/* Comment tables */
+.cmt-section{margin-top:20px}
+.cmt-section h3{font-size:14px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.cmt-section h3 .cmt-icon{font-size:16px}
+.cmt-tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:12px;margin-bottom:16px}
+.cmt-tbl thead th{background:var(--side);border-bottom:2px solid var(--bdr);padding:8px 10px;text-align:left;font-size:11px;font-weight:700;color:var(--t2)}
+.cmt-tbl thead th:first-child{width:32px;text-align:center}
+.cmt-tbl thead th:nth-child(2){min-width:180px}
+.cmt-tbl tbody td{padding:6px 8px;border-bottom:1px solid #F5F0E5;vertical-align:top}
+.cmt-tbl tbody td:first-child{text-align:center;font-weight:700;color:var(--t2);width:32px}
+.cmt-tbl tbody td textarea{width:100%;min-height:32px;max-height:80px;border:1px solid var(--bdr);border-radius:6px;padding:5px 8px;font-size:11px;font-family:inherit;resize:vertical;background:var(--card);color:var(--txt)}
+.cmt-tbl tbody td textarea::placeholder{color:var(--t3)}
+.cmt-tbl tbody td textarea.c1{background:#FFF8EA}
+.cmt-tbl tbody td textarea.c2{background:#EDF6FF}
+.cmt-tbl tbody td textarea.c3{background:#F3EEFF}
+.cmt-add{display:inline-flex;align-items:center;gap:4px;padding:4px 14px;border:1px dashed var(--bdr);border-radius:8px;background:transparent;font-size:11px;color:var(--t2);cursor:pointer;font-family:inherit;margin-top:2px}
+.cmt-add:hover{border-color:var(--acc);color:var(--txt);background:#FFF8EA}
+.cmt-rm{width:22px;height:22px;border:1px solid var(--bdr);border-radius:6px;background:transparent;color:var(--t3);cursor:pointer;font-size:14px;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;padding:0}
+.cmt-rm:hover{border-color:var(--warn);color:var(--warn);background:var(--wbg)}
+/* ── Palette ── */
+.pal-wrap{display:flex;gap:16px;align-items:flex-start}
+.pal-left{flex:1;min-width:0;overflow-y:auto;max-height:calc(100vh - 120px)}
+.pal-right{width:340px;min-width:340px;position:sticky;top:0}
+.pal-section{margin-bottom:20px}
+.pal-section h3{font-size:13px;margin-bottom:8px;color:var(--txt)}
+.pal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:8px}
+.pal-card{background:var(--card);border:1.5px solid var(--bdr);border-radius:10px;overflow:hidden;transition:border-color .15s}
+.pal-card:hover{border-color:var(--acc)}
+.pal-swatch{height:48px;position:relative;cursor:pointer}
+.pal-swatch-pair{display:flex;height:48px}
+.pal-swatch-pair>div{flex:1}
+.pal-info{padding:8px 10px}
+.pal-name{font-size:11px;font-weight:700;margin-bottom:1px}
+.pal-use{font-size:9px;color:var(--t2);line-height:1.4;margin-bottom:4px}
+.pal-hex-row{display:flex;align-items:center;gap:3px}
+.pal-hex-input{width:76px;padding:2px 5px;border:1px solid var(--bdr);border-radius:5px;font-size:10px;font-family:'Consolas','Courier New',monospace;color:var(--txt);background:var(--bg)}
+.pal-hex-input:focus{border-color:var(--acc);outline:none}
+.pal-hex-label{font-size:8px;color:var(--t3);margin-right:1px}
+.pal-mini-sw{width:14px;height:14px;border-radius:3px;border:1px solid var(--bdr);flex-shrink:0}
+.pal-item-reset{border:none;background:transparent;color:var(--t3);cursor:pointer;font-size:9px;padding:1px 4px;font-family:inherit;white-space:nowrap;border-radius:4px}
+.pal-item-reset:hover{color:var(--warn);background:var(--wbg)}
+.pal-item-reset.hidden{display:none}
+/* Preview */
+.pal-preview{background:var(--card);border:1.5px solid var(--bdr);border-radius:14px;padding:14px;margin-bottom:10px}
+.pal-pv-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.pal-pv-header h3{font-size:12px;margin:0}
+.pal-pv-tools{display:flex;gap:4px;align-items:center}
+.pal-pv-tools button{border:1px solid var(--bdr);border-radius:8px;background:var(--bg);cursor:pointer;font-family:inherit;font-size:10px;padding:3px 8px;color:var(--txt)}
+.pal-pv-tools button:hover{border-color:var(--acc);background:#FFF8EA}
+.pal-pv-tools .active{border-color:var(--acc);background:var(--acc);font-weight:700}
+.pal-pv-nav{display:flex;align-items:center;gap:6px;margin-bottom:8px;justify-content:center}
+.pal-pv-nav button{width:28px;height:28px;border:1px solid var(--bdr);border-radius:50%;background:var(--card);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;color:var(--txt)}
+.pal-pv-nav button:hover{background:#FFF8EA;border-color:var(--acc)}
+.pal-pv-nav .pv-label{font-size:10px;color:var(--t2);min-width:80px;text-align:center}
+.pal-reset-btn{padding:3px 10px;border:1px solid var(--bdr);border-radius:10px;background:var(--bg);font-size:9px;cursor:pointer;font-family:inherit;color:var(--warn)}
+.pal-reset-btn:hover{background:var(--wbg);border-color:var(--warn)}
+.pal-pv-app{border-radius:10px;padding:12px;min-height:140px;transition:background .2s}
+.pal-pv-card{border-radius:10px;padding:10px;margin-bottom:8px;transition:all .2s}
+.pal-pv-bar{height:6px;border-radius:3px;margin-bottom:4px;transition:background .2s}
+.pal-pv-btn{display:inline-block;padding:5px 16px;border-radius:20px;font-size:10px;font-weight:700;cursor:default;transition:all .2s;margin-right:5px;margin-bottom:4px}
+.pal-pv-stat{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:600;margin-right:4px;margin-bottom:4px;transition:all .2s}
+/* Enlarged preview overlay */
+.pal-enlarge{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(61,51,40,.5);z-index:998;align-items:center;justify-content:center;cursor:pointer}
+.pal-enlarge.show{display:flex}
+.pal-enlarge-inner{width:420px;max-width:90vw;max-height:90vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:20px;box-shadow:0 8px 40px rgba(0,0,0,.25);cursor:default}
+/* Google Sheets save */
+.gs-setup{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;margin-top:16px}
+.gs-setup h4{font-size:13px;margin-bottom:8px}
+.gs-setup .gs-input{width:100%;padding:6px 10px;border:1px solid var(--bdr);border-radius:8px;font-size:11px;font-family:inherit;background:var(--bg);color:var(--txt)}
+.gs-setup .gs-input::placeholder{color:var(--t3)}
+.gs-setup .gs-hint{font-size:10px;color:var(--t2);margin-top:4px;line-height:1.6}
+.gs-setup code{background:#FFF8EA;padding:1px 5px;border-radius:3px;font-size:10px}
+.gs-status{font-size:11px;margin-top:6px;padding:4px 8px;border-radius:6px;display:inline-block}
+.gs-status.ok{background:var(--okbg);color:var(--ok)}
+.gs-status.err{background:var(--wbg);color:var(--warn)}
+/* Version panel */
+.ver-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(61,51,40,.4);z-index:997;align-items:center;justify-content:center}
+.ver-overlay.show{display:flex}
+.ver-panel{width:480px;max-width:90vw;max-height:80vh;background:var(--card);border-radius:16px;padding:20px;box-shadow:0 8px 40px rgba(0,0,0,.2);overflow-y:auto}
+.ver-panel h3{font-size:14px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.ver-panel .ver-close{border:none;background:transparent;font-size:18px;cursor:pointer;color:var(--t2)}
+.ver-list{list-style:none}
+.ver-list li{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-bottom:1px solid #F5F0E5;font-size:12px}
+.ver-list li:last-child{border-bottom:none}
+.ver-list .ver-time{color:var(--txt);font-weight:600}
+.ver-list .ver-info{color:var(--t2);font-size:10px}
+.ver-list button{padding:3px 12px;border:1px solid var(--bdr);border-radius:8px;background:var(--bg);font-size:10px;cursor:pointer;font-family:inherit;color:var(--txt)}
+.ver-list button:hover{background:#FFF8EA;border-color:var(--acc)}
+.ver-empty{text-align:center;color:var(--t3);font-size:12px;padding:20px}
+#importFile{display:none}
+</style>
+</head>
+<body>
+
+<!-- Lightbox -->
+<div class="lb-overlay" id="lb" onclick="this.classList.remove('show')"><img id="lbImg" src="" /></div>
+<!-- Version panel -->
+<div class="ver-overlay" id="verOverlay" onclick="if(event.target===this)this.classList.remove('show')"><div class="ver-panel" id="verPanel"></div></div>
+<!-- Palette enlarge -->
+<div class="pal-enlarge" id="palEnlarge" onclick="if(event.target===this)this.classList.remove('show')"><div class="pal-enlarge-inner" id="palEnlargeInner"></div></div>
+
+<div class="sb-wrap">
+  <aside class="sb" id="sidebar">
+    <div class="sb-hd">
+      <h1>MyPeb 리소스 체크리스트</h1>
+      <div class="bar"><div class="fill" id="tFill"></div></div>
+      <div class="info"><span id="tTxt">0/0</span><span id="tPct">0%</span></div>
+    </div>
+    <div class="nav-summary" id="navSum" onclick="showSummary()"><span>📊 Summary</span></div>
+    <nav class="sb-nav" id="nav"></nav>
+    <div class="sb-ft">
+      <button onclick="saveToSheet()" id="btnSave">저장</button>
+      <button onclick="showVersions()" id="btnVer">버전</button>
+      <button class="dg" onclick="rstAll()">초기화</button>
+    </div>
+  </aside>
+  <button class="sb-toggle" id="sbToggle" onclick="toggleSidebar()">◀</button>
+</div>
+
+<div class="mn">
+  <div class="topbar">
+    <span class="bc" id="bc"></span>
+    <h2 id="pt">Summary</h2>
+    <input type="text" id="sBox" placeholder="검색...">
+    <select id="fSel" onchange="flt()"><option value="all">전체</option><option value="uc">미완료</option><option value="c">완료</option></select>
+  </div>
+  <div class="ct" id="ct"></div>
+</div>
+
+<script>
+const A='../../apps/mobile/assets/';
+
+// ═══════════════════════════════════════
+// DATA — brief: 디자이너 설명 / tip: 기술 상세(호버)
+// ═══════════════════════════════════════
+const D=[
+// ── 1. 날씨 위젯 ──
+{id:'weather',title:'날씨 위젯 아이콘',icon:'🌤️',subs:[
+{id:'w-day',title:'기본 날씨 (낮)',items:[
+{id:'wd01',n:'맑음 (낮)',pv:'☀️',f:'weather-icons/lottie/clear-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'구름 없는 맑은 하늘. 태양 중심의 밝은 디자인',tip:'WMO code 0. 홈 위젯 현재 날씨, 시간별 예보 영역에 표시'},
+{id:'wd02',n:'대체로 맑음',pv:'🌤️',f:'weather-icons/lottie/mostly-clear-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'태양 + 얇은 구름 살짝 걸침',tip:'WMO 1. 위젯 시간별 예보, 현재 날씨 영역'},
+{id:'wd03',n:'부분 흐림',pv:'⛅',f:'weather-icons/lottie/partly-cloudy-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'구름 절반 + 태양 절반. 맑음과 흐림의 중간',tip:'WMO 2. 위젯 현재 날씨 영역'},
+{id:'wd04',n:'흐림',pv:'☁️',f:'weather-icons/lottie/overcast-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'두꺼운 구름, 태양 안보임',tip:'WMO 3. 위젯+홈 날씨바에서 가장 빈번한 날씨 중 하나'},
+{id:'wd05',n:'안개',pv:'🌫️',f:'weather-icons/lottie/fog-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'뿌옇게 퍼진 안개. 부드러운 회색 레이어',tip:'WMO 45. 아침 출근시간(05-09시) P2 알림에도 사용'},
+{id:'wd06',n:'짙은 안개',pv:'🌫️',f:'weather-icons/lottie/fog-dense-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'안개+결빙 느낌. 일반 안개보다 더 위험한 느낌',tip:'WMO 48. P0 위험 알림 아이콘으로도 사용. 빨간 배경 대비 필요'},
+{id:'wd07',n:'이슬비',pv:'🌧️',f:'weather-icons/lottie/drizzle-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'가는 빗줄기. 약한 비와 구분되는 섬세한 표현',tip:'WMO 51/53/55. 약한 비(61)와 다른 디자인 필요'},
+{id:'wd08',n:'결빙 이슬비',pv:'🌧️',f:'weather-icons/lottie/freezing-drizzle-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'가는 빗줄기 + 얼음 결정 느낌',tip:'WMO 56/57. 겨울철 도로 결빙 경고 시 표시'},
+{id:'wd09',n:'약한 비',pv:'🌧️',f:'weather-icons/lottie/rain-light-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'일반적인 비. 가장 자주 보게 되는 비 아이콘',tip:'WMO 61. 가장 빈번한 비 표시'},
+{id:'wd10',n:'보통 비',pv:'🌧️',f:'weather-icons/lottie/rain-mod-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'약한 비보다 빗줄기가 굵고 많음',tip:'WMO 63'},
+{id:'wd11',n:'강한 비',pv:'🌧️',f:'weather-icons/lottie/rain-heavy-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'굵은 빗줄기 + 바람 느낌. 위험한 분위기',tip:'WMO 65. 시간당 30mm 이상이면 P0 위험 알림'},
+{id:'wd12',n:'결빙 비',pv:'🌧️',f:'weather-icons/lottie/freezing-rain-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'비 + 얼음 느낌. 겨울 한정',tip:'WMO 66/67'},
+{id:'wd13',n:'약한 눈',pv:'🌨️',f:'weather-icons/lottie/snow-light-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'소복소복 내리는 눈. 포근한 느낌',tip:'WMO 71'},
+{id:'wd14',n:'보통 눈',pv:'🌨️',f:'weather-icons/lottie/snow-mod-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'눈발이 꽤 많이 날리는 느낌',tip:'WMO 73'},
+{id:'wd15',n:'폭설',pv:'🌨️',f:'weather-icons/lottie/snow-heavy-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'눈 많이 + 바람. 무거운 눈 느낌',tip:'WMO 75. 시간당 5cm 이상이면 P0 위험'},
+{id:'wd16',n:'싸락눈',pv:'🌨️',f:'weather-icons/lottie/snow-grains-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'작은 얼음 알갱이. 눈과 구분되는 딱딱한 입자',tip:'WMO 77. 드물게 표시'},
+{id:'wd17',n:'가벼운 소나기',pv:'🌦️',f:'weather-icons/lottie/shower-light-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'태양 + 비 동시 표현. 일시적 비',tip:'WMO 80'},
+{id:'wd18',n:'강한 소나기',pv:'🌦️',f:'weather-icons/lottie/shower-heavy-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'태양 + 세찬 비',tip:'WMO 81/82'},
+{id:'wd19',n:'눈소나기',pv:'🌨️',f:'weather-icons/lottie/snow-shower-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'갑자기 쏟아지는 눈',tip:'WMO 85/86'},
+{id:'wd20',n:'뇌우',pv:'⛈️',f:'weather-icons/lottie/thunderstorm-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'번개 + 비. 위험한 분위기 강조',tip:'WMO 95. P0 위험 알림에도 사용'},
+{id:'wd21',n:'뇌우+우박',pv:'⛈️',f:'weather-icons/lottie/thunder-hail-day.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'번개 + 얼음 덩어리. 가장 극단적인 날씨',tip:'WMO 96/99. P0 위험'},
+]},
+{id:'w-night',title:'기본 날씨 (밤)',items:[
+{id:'wn01',n:'맑음 (밤)',pv:'🌙',f:'weather-icons/lottie/clear-night.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'달 + 별. 낮의 "맑음"과 세트로 제작',tip:'18시 이후 표시. 낮 아이콘과 톤 통일'},
+{id:'wn02',n:'대체로 맑음 (밤)',pv:'🌙',f:'weather-icons/lottie/mostly-clear-night.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'달 + 얇은 구름',tip:'밤 시간대 위젯에서 자주 표시'},
+{id:'wn03',n:'부분 흐림 (밤)',pv:'🌙',f:'weather-icons/lottie/partly-cloudy-night.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'달 + 구름 반반',tip:''},
+{id:'wn04',n:'이슬비 (밤)',pv:'🌧️',f:'weather-icons/lottie/drizzle-night.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'어두운 하늘 + 가는 비. 야간 톤',tip:''},
+{id:'wn05',n:'비 (밤)',pv:'🌧️',f:'weather-icons/lottie/rain-night.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'어두운 하늘 + 비',tip:''},
+{id:'wn06',n:'눈 (밤)',pv:'🌨️',f:'weather-icons/lottie/snow-night.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'어두운 하늘 + 눈',tip:''},
+{id:'wn07',n:'소나기 (밤)',pv:'🌧️',f:'weather-icons/lottie/shower-night.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'달 + 비',tip:''},
+{id:'wn08',n:'뇌우 (밤)',pv:'⛈️',f:'weather-icons/lottie/thunderstorm-night.json',tg:'ok',sz:'64×64',fm:'PNG 투명배경',brief:'어두운 하늘 + 번개',tip:''},
+]},
+{id:'w-alert',title:'특수 날씨 알림 (P0)',items:[
+{id:'wa01',n:'태풍',pv:'🌀',f:'weather/alert_typhoon',tg:'none',sz:'48×48',fm:'PNG 투명배경',brief:'강한 소용돌이/바람 표현. 빨간 배경 위에 올라감',tip:'풍속≥90km/h + 강우≥30mm/h. 최우선 위험 알림'},
+{id:'wa02',n:'지진',pv:'💥',f:'weather/alert_earthquake',tg:'none',sz:'48×48',fm:'PNG 투명배경',brief:'지진파 / 건물 흔들림 느낌',tip:'USGS 지진 API 연동'},
+{id:'wa03',n:'폭염',pv:'🔥',f:'weather/alert_heatwave',tg:'none',sz:'48×48',fm:'PNG 투명배경',brief:'뜨거운 태양 or 온도계 꽉 참 느낌',tip:'≥33°C+체감≥35°C. 4단계(주의→경고→위험→극심)'},
+{id:'wa04',n:'한파',pv:'🥶',f:'weather/alert_coldwave',tg:'none',sz:'48×48',fm:'PNG 투명배경',brief:'얼음/눈결정. 차갑고 위험한 느낌',tip:'≤-12°C. 4단계'},
+{id:'wa05',n:'호우',pv:'💧',f:'weather/alert_heavyrain',tg:'none',sz:'48×48',fm:'PNG 투명배경',brief:'물폭탄/침수 느낌. 구름에서 쏟아지는 물',tip:'시간당 ≥30mm. 4단계'},
+{id:'wa06',n:'대설',pv:'❄️',f:'weather/alert_heavysnow',tg:'none',sz:'48×48',fm:'PNG 투명배경',brief:'무거운 눈 느낌. 가벼운 눈과 차별화',tip:'시간당 ≥5cm'},
+{id:'wa07',n:'미세먼지 매우나쁨',pv:'😷',f:'weather/alert_air_very_bad',tg:'none',sz:'48×48',fm:'PNG 투명배경',brief:'마스크 / 먼지 입자 표현',tip:'PM2.5≥76 or PM10≥151'},
+{id:'wa08',n:'강풍',pv:'💨',f:'weather/alert_wind',tg:'none',sz:'48×48',fm:'PNG 투명배경',brief:'바람에 나무 흔들리는 느낌',tip:'≥40km/h or 돌풍≥60km/h'},
+]},
+{id:'w-info',title:'보조 알림 (P1~P2)',items:[
+{id:'wi01',n:'곧 비 예보',pv:'🌂',f:'weather/info_rain_soon',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'우산 챙기세요 느낌',tip:'강수확률≥50%. P1 주황 배경 알림 카드에 표시'},
+{id:'wi02',n:'비 가능성',pv:'☂️',f:'weather/info_rain_later',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'우산 모양. "곧 비"보다 약한 톤',tip:'강수 30-49%. P2 노란 배경'},
+{id:'wi03',n:'기온 급락',pv:'🌡️',f:'weather/info_temp_drop',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'온도계 + 하향 화살표',tip:'현재보다 5°C 이상 떨어질 때'},
+{id:'wi04',n:'기온 급상승',pv:'🌡️',f:'weather/info_temp_rise',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'온도계 + 상향 화살표',tip:'현재보다 +7°C'},
+{id:'wi05',n:'어제보다 추움',pv:'🧊',f:'weather/info_yesterday_cold',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'얼음 / 한기 느낌',tip:'어제 대비 -5°C'},
+{id:'wi06',n:'어제보다 더움',pv:'☀️',f:'weather/info_yesterday_hot',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'태양 + 열기',tip:'어제 대비 +5°C'},
+{id:'wi07',n:'UV 강함',pv:'☀️',f:'weather/info_uv_high',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'태양 + 자외선 표시',tip:'UV≥6. 낮에만 표시(05-18시)'},
+{id:'wi08',n:'UV 매우 강함',pv:'☀️',f:'weather/info_uv_very_high',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'태양 + 자외선 강조 (빨간 느낌)',tip:'UV≥8. P1 알림'},
+{id:'wi09',n:'미세먼지 나쁨',pv:'😷',f:'weather/info_air_bad',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'먼지 입자 / 마스크 느낌 (P0보다 약한 톤)',tip:'PM2.5≥36. P2'},
+{id:'wi10',n:'체감온도 차이',pv:'🌡️',f:'weather/info_feels_gap',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'온도계 + "?" 또는 바람 표시',tip:'실제-체감 차이 ≥5°C'},
+{id:'wi11',n:'큰 일교차',pv:'↕️',f:'weather/info_diurnal',tg:'none',sz:'32×32',fm:'PNG 투명배경',brief:'위아래 화살표 / 온도 그래프 느낌',tip:'최고-최저 ≥13°C'},
+]},
+]},
+
+// ── 2. 미니게임 ──
+{id:'minigame',title:'미니게임 아이콘',icon:'🎮',subs:[
+{id:'mg-food',title:'먹이잡기 (FoodCatch)',items:[
+{id:'mf01',n:'사과',pv:'🍎',f:'icons/kenney/food-apple.png',tg:'ok',sz:'48×48',fm:'PNG 투명배경',brief:'Kenney Food Kit (CC0). 귀여운 플랫 스타일 사과',tip:'게이지 2% 회복. 화면 위에서 떨어지는 음식을 캐릭터로 받는 30초 게임'},
+{id:'mf02',n:'피자',pv:'🍕',f:'icons/kenney/food-pizza.png',tg:'ok',sz:'48×48',fm:'PNG 투명배경',brief:'Kenney Food Kit (CC0). 한 조각 피자',tip:'게이지 2.5%'},
+{id:'mf03',n:'햄버거',pv:'🍔',f:'icons/kenney/food-burger.png',tg:'ok',sz:'48×48',fm:'PNG 투명배경',brief:'Kenney Food Kit (CC0). 햄버거',tip:'게이지 3%'},
+{id:'mf04',n:'케이크',pv:'🍰',f:'icons/kenney/food-cake.png',tg:'ok',sz:'48×48',fm:'PNG 투명배경',brief:'Kenney Food Kit (CC0). 한 조각 케이크',tip:'게이지 3.5%'},
+{id:'mf05',n:'치킨',pv:'🍗',f:'icons/kenney/food-chicken.png',tg:'ok',sz:'48×48',fm:'PNG 투명배경',brief:'Kenney Food Kit (CC0). 닭다리',tip:'게이지 4%'},
+{id:'mf06',n:'타코',pv:'🌮',f:'icons/kenney/food-taco.png',tg:'ok',sz:'48×48',fm:'PNG 투명배경',brief:'Kenney Food Kit (CC0). 타코',tip:'게이지 4.5%'},
+{id:'mf07',n:'초밥',pv:'🍣',f:'icons/kenney/food-sushi.png',tg:'ok',sz:'48×48',fm:'PNG 투명배경',brief:'Kenney Food Kit (CC0). 초밥',tip:'게이지 5%'},
+{id:'mf08',n:'생일케이크',pv:'🎂',f:'icons/kenney/food-birthday.png',tg:'ok',sz:'48×48',fm:'PNG 투명배경',brief:'Kenney Food Kit (CC0). 생일 케이크. 다른 음식보다 약간 크게',tip:'게이지 6%. 특별 아이템'},
+{id:'mf09',n:'폭탄',pv:'💣',f:'icons/fluent-emoji/bomb.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 클래식 둥근 폭탄. 닿으면 안 되는 아이템',tip:'닿으면 게이지 감소'},
+{id:'mf10',n:'폭죽',pv:'🧨',f:'icons/fluent-emoji/firecracker.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 빨간 폭죽. 폭탄과 구분되는 디자인',tip:'감점 아이템'},
+{id:'mf11',n:'해골',pv:'☠️',f:'icons/fluent-emoji/skull.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 해골. 위험 느낌',tip:'감점 아이템. 가장 큰 감점'},
+{id:'mf12',n:'잡기 캐릭터',pv:'🐱',f:'minigame/food_catcher',tg:'emoji',sz:'64×64',fm:'PNG 투명배경',brief:'펫 캐릭터(EA03)를 기반으로 한 잡기 캐릭터',tip:'화면 하단에서 좌우 이동하며 음식을 받음'},
+]},
+{id:'mg-mem',title:'기억력 (ToysMemory)',items:[
+{id:'mm01',n:'곰인형',pv:'🧸',f:'icons/fluent-emoji/teddy-bear.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 봉제 곰인형. 6종 카드가 같은 스타일로 통일',tip:'3×4 카드 매칭. 6종×2장=12장. 3라운드'},
+{id:'mm02',n:'리본',pv:'🎀',f:'icons/fluent-emoji/ribbon.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 리본/나비넥타이. 곰인형과 같은 톤',tip:''},
+{id:'mm03',n:'서커스텐트',pv:'🎪',f:'icons/fluent-emoji/circus-tent.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 빨간 줄무늬 텐트',tip:''},
+{id:'mm04',n:'관람차',pv:'🎡',f:'icons/fluent-emoji/ferris-wheel.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 관람차',tip:''},
+{id:'mm05',n:'회전목마',pv:'🎠',f:'icons/fluent-emoji/carousel-horse.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 회전목마 말',tip:''},
+{id:'mm06',n:'풍선',pv:'🎈',f:'icons/fluent-emoji/balloon.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 빨간 풍선',tip:''},
+{id:'mm07',n:'카드 뒷면',pv:'❓',f:'minigame/mem_card_back',tg:'css',sz:'48×48',fm:'PNG or 패턴',brief:'뒤집기 전 카드. 브랜드 로고/패턴 넣으면 좋음',tip:'현재 CSS 단색 처리'},
+]},
+{id:'mg-wash',title:'목욕시키기 (CareWash)',items:[
+{id:'mw01',n:'샤워기',pv:'🚿',f:'icons/fluent-emoji/shower.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 샤워 헤드. 물 뿌리기 도구',tip:'4단계 목욕 게임의 Step 1(물뿌리기) + Step 3(헹구기)'},
+{id:'mw02',n:'비누',pv:'🧼',f:'icons/fluent-emoji/soap.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 비누 + 거품',tip:'Step 2(비누칠). 드래그하여 펫에게 문지르기'},
+{id:'mw03',n:'드라이어',pv:'💨',f:'icons/fluent-emoji/dashing-away.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 헤어드라이어',tip:'Step 4(말리기)'},
+{id:'mw04',n:'스펀지',pv:'🧽',f:'icons/fluent-emoji/sponge.png',tg:'png',sz:'48×48',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 세척용 스펀지',tip:'문질러 씻기 도구'},
+]},
+{id:'mg-clean',title:'발자국 청소 (CleanFootprints)',items:[
+{id:'mc01',n:'발바닥 (동물)',pv:'🐾',f:'icons/fluent-emoji/paw-prints.png',tg:'png',sz:'40×40',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 동물 발자국. 3종 중 1종',tip:'30초간 화면에 나타나는 발자국을 탭하여 지우기'},
+{id:'mc02',n:'발자국 (사람)',pv:'👣',f:'icons/fluent-emoji/footprints.png',tg:'png',sz:'40×40',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 사람 발자국 한 쌍',tip:'3종 랜덤 출현'},
+{id:'mc03',n:'발 (한 쪽)',pv:'🦶',f:'icons/fluent-emoji/foot.png',tg:'png',sz:'40×40',fm:'PNG 투명배경',brief:'Fluent UI Emoji (MIT). 발바닥 하나',tip:''},
+]},
+{id:'mg-massage',title:'마사지 (Massage)',items:[
+{id:'ms01',n:'머리',pv:'💆',f:'minigame/massage_head',tg:'emoji',sz:'40×40',fm:'PNG 투명배경',brief:'마사지 손 / 머리 부위 표시',tip:'15초간 하이라이트된 부위를 순서대로 빠르게 탭하는 게임. 6존'},
+{id:'ms02',n:'왼쪽 어깨',pv:'🤚',f:'minigame/massage_shoulder_l',tg:'emoji',sz:'40×40',fm:'PNG 투명배경',brief:'어깨 부위',tip:''},
+{id:'ms03',n:'오른쪽 어깨',pv:'🤚',f:'minigame/massage_shoulder_r',tg:'emoji',sz:'40×40',fm:'PNG 투명배경',brief:'어깨 부위',tip:''},
+{id:'ms04',n:'배',pv:'✋',f:'minigame/massage_belly',tg:'emoji',sz:'40×40',fm:'PNG 투명배경',brief:'배 부위',tip:''},
+{id:'ms05',n:'왼쪽 다리',pv:'👋',f:'minigame/massage_leg_l',tg:'emoji',sz:'40×40',fm:'PNG 투명배경',brief:'다리 부위',tip:''},
+{id:'ms06',n:'오른쪽 다리',pv:'👋',f:'minigame/massage_leg_r',tg:'emoji',sz:'40×40',fm:'PNG 투명배경',brief:'다리 부위',tip:''},
+]},
+{id:'mg-badge',title:'게임 결과 뱃지',items:[
+{id:'mb01',n:'SUCCESS',pv:A+'ui/badges/badge_success.png',f:'ui/badges/badge_success',tg:'png',sz:'240×240',fm:'PNG 투명배경',brief:'현재보다 2배 크게. 화면 중앙에 크게 팝업. 화려한 성공 연출',tip:'게이지 100%. 게임 종료 후 오버레이. 게임 일시정지 상태에서 표시'},
+{id:'mb02',n:'GOOD (→ 텍스트형)',pv:A+'ui/badges/badge_good.png',f:'ui/badges/badge_good',tg:'png',sz:'240×48',fm:'PNG 투명배경',brief:'가로로 긴 텍스트 배너 형태. 반투명 배경. 플레이 중 방해 안 되게',tip:'게이지 70-99%. 플레이 도중 상단/중앙에 잠깐 떴다 사라짐 (1초)'},
+{id:'mb03',n:'MISS (→ 텍스트형)',pv:A+'ui/badges/badge_miss.png',f:'ui/badges/badge_miss',tg:'png',sz:'240×48',fm:'PNG 투명배경',brief:'가로로 긴 텍스트 배너 형태. 반투명 배경. GOOD보다 약한 톤',tip:'게이지 40-69%. 플레이 도중 잠깐 표시'},
+{id:'mb04',n:'FAIL',pv:A+'ui/badges/badge_fail.png',f:'ui/badges/badge_fail',tg:'png',sz:'240×240',fm:'PNG 투명배경',brief:'현재보다 2배 크게. 화면 중앙 팝업. 실패 느낌',tip:'게이지 40% 미만. 게임 종료 후 오버레이'},
+]},
+{id:'mg-char',title:'미니게임 플레이 캐릭터',items:[
+{id:'mgc01',n:'기본 (플레이 중)',pv:'🐱',f:'minigame/char_default',tg:'none',sz:'80×80',fm:'PNG 투명배경',brief:'미니게임 플레이 중 표시되는 펫 캐릭터. EA03 기반',tip:'각 미니게임 화면 내에서 표시. 먹이잡기 하단, 목욕 중앙 등'},
+{id:'mgc02',n:'GOOD 표정',pv:'😊',f:'minigame/char_good',tg:'none',sz:'80×80',fm:'PNG 투명배경',brief:'기쁜/만족 표정. GOOD 판정 시 잠깐 전환',tip:'GOOD/SUCCESS 판정 시 0.5초간 표시 후 기본으로 복귀'},
+{id:'mgc03',n:'MISS 표정',pv:'😣',f:'minigame/char_miss',tg:'none',sz:'80×80',fm:'PNG 투명배경',brief:'아쉬운/찡그린 표정. MISS 판정 시 잠깐 전환',tip:'MISS/BAD 판정 시 0.5초간 표시'},
+{id:'mgc04',n:'BAD 표정',pv:'😵',f:'minigame/char_bad',tg:'none',sz:'80×80',fm:'PNG 투명배경',brief:'폭탄 맞았을 때 등 타격 표정',tip:'폭탄/감점 아이템 접촉 시'},
+{id:'mgc05',n:'SUCCESS 표정',pv:'🥳',f:'minigame/char_success',tg:'none',sz:'80×80',fm:'PNG 투명배경',brief:'게임 클리어 환호 표정. SUCCESS 뱃지와 함께 표시',tip:'게이지 100% 달성 시'},
+{id:'mgc06',n:'FAIL 표정',pv:'😭',f:'minigame/char_fail',tg:'none',sz:'80×80',fm:'PNG 투명배경',brief:'실패 시 울상. FAIL 뱃지와 함께 표시',tip:'게임 종료 시 게이지 40% 미만'},
+]},
+]},
+
+// ── 3. 상점 아이템 ──
+{id:'shop',title:'상점 아이템 (32종)',icon:'🛒',subs:[
+{id:'sh-food',title:'음식 (FOOD)',items:[
+{id:'sf01',n:'풀잎 간식',pv:'🌿',f:'shop/food_leaf_snack',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'초록 잎사귀를 감싼 간식. 가장 소박한 음식',tip:'HP+10. 10골드. 상점 목록, 인벤토리, 사용 모달에 표시'},
+{id:'sf02',n:'햇빛 꿀',pv:'🍯',f:'shop/food_sun_honey',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'투명한 꿀병. 빛나는 골드 색감',tip:'HP+20. 40골드'},
+{id:'sf03',n:'꽃잎 떡',pv:'🌸',f:'shop/food_petal_cake',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'분홍 꽃잎이 올려진 하얀 떡',tip:'HP+25, AP+5. 60골드'},
+{id:'sf04',n:'모닥불 간식',pv:'🔥',f:'shop/food_bonfire_snack',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'모닥불에 구운 따뜻한 간식. 최고급 음식',tip:'HP+40. 110골드'},
+]},
+{id:'sh-drink',title:'음료 (DRINK)',items:[
+{id:'sd01',n:'이슬 한 방울',pv:'💧',f:'shop/drink_dewdrop',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'투명한 물방울 하나',tip:'HP+8. 10골드'},
+{id:'sd02',n:'따뜻한 차',pv:'🍵',f:'shop/drink_warm_tea',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'김이 나는 찻잔',tip:'HP+15. 25골드'},
+{id:'sd03',n:'온기 수프',pv:'🍲',f:'shop/drink_warmth_soup',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'따뜻한 수프 그릇',tip:'HP+30. 70골드'},
+{id:'sd04',n:'별빛 이슬',pv:'✨',f:'shop/drink_starlight_dew',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'반짝이는 보라빛 병. 프리미엄 느낌',tip:'HP+30, MP+10. 90골드'},
+]},
+{id:'sh-massage',title:'마사지 (MASSAGE)',items:[
+{id:'sm01',n:'손 마사지',pv:'🤲',f:'shop/massage_hand',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'따뜻한 두 손. 부드러운 느낌',tip:'AP+12, MP+3. 25골드'},
+{id:'sm02',n:'따뜻한 돌 찜질',pv:'♨️',f:'shop/massage_hot_stone',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'핫스톤/온돌 느낌의 따뜻한 돌',tip:'AP+20. 50골드'},
+{id:'sm03',n:'이끼 마사지',pv:'🌿',f:'shop/massage_moss',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'초록 이끼 + 자연 힐링 느낌',tip:'AP+25, MP+5. 70골드'},
+{id:'sm04',n:'깊은 마사지',pv:'💆',f:'shop/massage_deep',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'깊은 휴식. 최고급 마사지',tip:'AP+35. 110골드'},
+]},
+{id:'sh-sleep',title:'수면 (SLEEP)',items:[
+{id:'ss01',n:'나뭇잎 이불',pv:'🍃',f:'shop/sleep_leaf_blanket',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'커다란 나뭇잎으로 덮은 이불',tip:'AP+10. 15골드'},
+{id:'ss02',n:'달빛 자장가',pv:'🌙',f:'shop/sleep_moonlight',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'달 + 음표. 포근한 느낌',tip:'AP+22. 55골드'},
+{id:'ss03',n:'깊은 낮잠',pv:'😴',f:'shop/sleep_deep_nap',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'Zzz 표현. 깊이 잠든 느낌',tip:'AP+30. 80골드'},
+{id:'ss04',n:'구름 안개 담요',pv:'☁️',f:'shop/sleep_cloud_blanket',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'구름 위에서 자는 느낌. 최고급',tip:'AP+40. 130골드'},
+]},
+{id:'sh-wash',title:'씻기 (WASH)',items:[
+{id:'sw01',n:'맑은 물 한 줌',pv:'💧',f:'shop/wash_clear_water',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'깨끗한 물방울 여러개',tip:'CP+10. 10골드'},
+{id:'sw02',n:'시냇물 목욕',pv:'🏊',f:'shop/wash_stream_bath',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'자연 시냇물 / 작은 연못',tip:'CP+18. 40골드'},
+{id:'sw03',n:'꽃잎 비누',pv:'🧼',f:'shop/wash_petal_soap',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'분홍 꽃잎이 섞인 비누',tip:'CP+25. 65골드'},
+{id:'sw04',n:'온천 목욕',pv:'♨️',f:'shop/wash_hot_spring',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'김이 나는 온천. 최고급',tip:'CP+40, AP+10. 150골드'},
+]},
+{id:'sh-brush',title:'빗질 (BRUSH)',items:[
+{id:'sb01',n:'이끼 솔',pv:'🪥',f:'shop/brush_moss_brush',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'자연 소재의 작은 솔',tip:'CP+10. 15골드'},
+{id:'sb02',n:'조약돌 빗',pv:'🪮',f:'shop/brush_pebble_comb',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'조약돌 모양의 귀여운 빗',tip:'CP+15, MP+5. 45골드'},
+{id:'sb03',n:'깃털 먼지털이',pv:'🪶',f:'shop/brush_feather',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'부드러운 깃털 먼지떨이',tip:'CP+20. 50골드'},
+{id:'sb04',n:'폭포 샤워',pv:'🌊',f:'shop/brush_waterfall',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'시원한 폭포. 최고급',tip:'CP+28, MP+5. 85골드'},
+]},
+{id:'sh-toy',title:'장난감 (TOY)',items:[
+{id:'st01',n:'동글 돌멩이',pv:'🪨',f:'shop/toy_round_stone',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'매끈한 둥근 돌멩이',tip:'MP+10. 15골드'},
+{id:'st02',n:'나무 퍼즐',pv:'🧩',f:'shop/toy_wood_puzzle',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'나무 질감의 퍼즐 조각',tip:'MP+18. 35골드'},
+{id:'st03',n:'모래 그림',pv:'🏖️',f:'shop/toy_sand_art',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'모래 위에 그린 그림',tip:'MP+25. 60골드'},
+{id:'st04',n:'무지개 구슬',pv:'🔮',f:'shop/toy_rainbow_marble',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'반짝이는 무지개빛 구슬. 최고급',tip:'MP+35. 100골드'},
+]},
+{id:'sh-walk',title:'산책 (WALK)',items:[
+{id:'sk01',n:'뒷마당 산책',pv:'🌱',f:'shop/walk_backyard',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'새싹/작은 정원 느낌',tip:'MP+12, HP+3. 20골드'},
+{id:'sk02',n:'바람개비 언덕',pv:'🌀',f:'shop/walk_windmill_hill',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'바람개비가 돌아가는 언덕',tip:'MP+20, HP-3(체력소모). 45골드'},
+{id:'sk03',n:'숲속 탐험',pv:'🌲',f:'shop/walk_forest',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'울창한 숲 사이 오솔길',tip:'MP+28, HP+5. 75골드'},
+{id:'sk04',n:'작은 모험',pv:'🗺️',f:'shop/walk_adventure',tg:'emoji',sz:'48×48',fm:'PNG 투명배경',brief:'보물지도/나침반 느낌. 최고급',tip:'MP+38, HP+10. 140골드'},
+]},
+]},
+
+// ── 4. 인앱 아이콘 ──
+{id:'inapp',title:'인앱 아이콘',icon:'📱',subs:[
+{id:'in-ui',title:'UI 기본 아이콘',items:[
+{id:'iu01',n:'코인 (골드)',pv:A+'ui/icons/coin.png',f:'ui/icons/coin',tg:'png',sz:'24×24',fm:'PNG 투명배경',brief:'골드 동전. 앱 전체에서 재화 표시용',tip:'화면 우상단 재화 표시, 상점 가격, 보상 팝업'},
+{id:'iu02',n:'사파이어 (젬)',pv:A+'ui/icons/sapphire.png',f:'ui/icons/sapphire',tg:'png',sz:'24×24',fm:'PNG 투명배경',brief:'보라빛 보석. 프리미엄 재화',tip:'코인 옆에 표시. 프리미엄 아이템 가격'},
+{id:'iu03',n:'홈',pv:A+'ui/icons/home.png',f:'ui/icons/home',tg:'png',sz:'24×24',fm:'PNG 투명배경',brief:'집 모양 아이콘',tip:'하단 네비게이션 홈 버튼'},
+{id:'iu04',n:'설정',pv:A+'ui/icons/settings.png',f:'ui/icons/settings',tg:'png',sz:'24×24',fm:'PNG 투명배경',brief:'톱니바퀴',tip:'홈 화면 좌상단'},
+{id:'iu05',n:'뒤로가기',pv:A+'ui/icons/back.png',f:'ui/icons/back',tg:'png',sz:'24×24',fm:'PNG 투명배경',brief:'왼쪽 화살표',tip:'모든 화면 좌상단 헤더'},
+{id:'iu06',n:'닫기',pv:A+'ui/icons/close.png',f:'ui/icons/close',tg:'png',sz:'24×24',fm:'PNG 투명배경',brief:'X 아이콘',tip:'모달/팝업/바텀시트 우상단'},
+{id:'iu07',n:'별 (활성)',pv:A+'ui/icons/star_on.png',f:'ui/icons/star_on',tg:'png',sz:'24×24',fm:'PNG 투명배경',brief:'채워진 노란 별',tip:'즐겨찾기 활성 상태'},
+{id:'iu08',n:'별 (비활성)',pv:A+'ui/icons/star_off.png',f:'ui/icons/star_off',tg:'png',sz:'24×24',fm:'PNG 투명배경',brief:'비어있는 별 테두리',tip:'즐겨찾기 비활성'},
+{id:'iu09',n:'즐겨찾기',pv:A+'ui/icons/fav_empty.png',f:'ui/icons/fav_empty',tg:'png',sz:'24×24',fm:'PNG 투명배경',brief:'빈 하트',tip:'인벤토리 즐겨찾기'},
+{id:'iu10',n:'삭제',pv:A+'ui/icons/remove.png',f:'ui/icons/remove',tg:'png',sz:'20×20',fm:'PNG 투명배경',brief:'마이너스 or 휴지통',tip:'태그 제거, 아이템 삭제'},
+{id:'iu11',n:'화살표 위',pv:A+'ui/icons/arrow_up.png',f:'ui/icons/arrow_up',tg:'png',sz:'16×16',fm:'PNG 투명배경',brief:'상향 화살표',tip:'정렬, 스탯 증가 표시'},
+{id:'iu12',n:'화살표 아래',pv:A+'ui/icons/arrow_down.png',f:'ui/icons/arrow_down',tg:'png',sz:'16×16',fm:'PNG 투명배경',brief:'하향 화살표',tip:'정렬, 스탯 감소 표시'},
+{id:'iu13',n:'캐럿',pv:A+'ui/icons/expand_caret_small.png',f:'ui/icons/expand_caret_small',tg:'png',sz:'16×16',fm:'PNG 투명배경',brief:'V자 펼침 화살표',tip:'드롭다운/아코디언 펼치기'},
+]},
+{id:'in-arc',title:'아크 메뉴 아이콘',items:[
+{id:'ar01',n:'상태보기',pv:'😊',f:'arc/status',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'펫 상태 확인 버튼. 스탯 보여주는 느낌',tip:'홈 화면 펫 좌측 원형 메뉴(Arc Menu)'},
+{id:'ar02',n:'ID카드',pv:'🪪',f:'arc/id_card',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'카드/신분증 느낌',tip:'좌측 아크. 펫 프로필 시트 열기'},
+{id:'ar03',n:'채팅',pv:'💬',f:'arc/chat',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'말풍선',tip:'좌측 아크. AI 채팅 화면 이동'},
+{id:'ar04',n:'식사',pv:'🍽️',f:'arc/meal',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'접시+커트러리. 음식/음료 서브메뉴 열기',tip:'우측 아크 1번. 대분류'},
+{id:'ar05',n:'밥주기',pv:'🍚',f:'arc/feed',tg:'emoji',sz:'28×28',fm:'PNG 투명배경',brief:'밥그릇',tip:'식사 서브. FOOD 케어 패널 열기'},
+{id:'ar06',n:'음료',pv:'🥤',f:'arc/snack',tg:'emoji',sz:'28×28',fm:'PNG 투명배경',brief:'음료컵',tip:'식사 서브. DRINK 패널'},
+{id:'ar07',n:'휴식',pv:'💆',f:'arc/rest',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'쉬는 느낌. 마사지+수면 서브메뉴',tip:'우측 아크 2번. 대분류'},
+{id:'ar08',n:'재우기',pv:'💤',f:'arc/sleep',tg:'emoji',sz:'28×28',fm:'PNG 투명배경',brief:'Zzz / 달 느낌',tip:'휴식 서브. SLEEP 패널'},
+{id:'ar09',n:'마사지',pv:'💆',f:'arc/massage',tg:'emoji',sz:'28×28',fm:'PNG 투명배경',brief:'마사지하는 손',tip:'휴식 서브. MASSAGE 패널'},
+{id:'ar10',n:'위생',pv:'🧼',f:'arc/clean',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'비누/거품. 씻기+빗질 서브메뉴',tip:'우측 아크 3번. 대분류'},
+{id:'ar11',n:'목욕',pv:'🛁',f:'arc/bath',tg:'emoji',sz:'28×28',fm:'PNG 투명배경',brief:'욕조',tip:'위생 서브. WASH 패널'},
+{id:'ar12',n:'청소',pv:'🧹',f:'arc/clean_up',tg:'emoji',sz:'28×28',fm:'PNG 투명배경',brief:'빗자루',tip:'위생 서브. BRUSH 패널'},
+{id:'ar13',n:'놀기',pv:'🎮',f:'arc/play',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'게임패드. 장난감+산책 서브메뉴',tip:'우측 아크 4번. 대분류'},
+{id:'ar14',n:'장난감',pv:'🎾',f:'arc/play_with',tg:'emoji',sz:'28×28',fm:'PNG 투명배경',brief:'공/장난감',tip:'놀기 서브. TOY 패널'},
+{id:'ar15',n:'산책',pv:'🚶',f:'arc/walk',tg:'emoji',sz:'28×28',fm:'PNG 투명배경',brief:'걸어가는 사람/동물',tip:'놀기 서브. WALK 패널'},
+]},
+{id:'in-sc',title:'홈 바로가기',items:[
+{id:'is01',n:'MyDay',pv:'📔',f:'shortcut/myday',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'다이어리/수첩 느낌',tip:'홈 화면 상단 가로 스크롤 바로가기. 하루 일과 관리'},
+{id:'is02',n:'MyNow',pv:'📝',f:'shortcut/mynow',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'메모/사진 느낌',tip:'사진 일기 기능'},
+{id:'is03',n:'Chat',pv:'💬',f:'shortcut/chat',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'말풍선',tip:'AI 채팅'},
+{id:'is04',n:'Weather',pv:'🌤️',f:'shortcut/weather',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'구름+태양',tip:'날씨 상세 화면'},
+{id:'is05',n:'ToDo',pv:'✓',f:'shortcut/todo',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'체크 표시/체크리스트',tip:'할일 목록'},
+{id:'is06',n:'Missions',pv:'🎯',f:'shortcut/missions',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'과녁/타겟',tip:'일일/주간 미션'},
+{id:'is07',n:'Album',pv:'📸',f:'shortcut/album',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'카메라/사진첩',tip:'MyNow 사진 앨범'},
+{id:'is08',n:'PetCard',pv:'🐾',f:'shortcut/petcard',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'발자국/프로필',tip:'펫 ID 카드'},
+{id:'is09',n:'Mailbox',pv:'📮',f:'shortcut/mailbox',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'우체통/편지함',tip:'펫이 보내는 편지함'},
+{id:'is10',n:'Alarm',pv:'⏰',f:'shortcut/alarm',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'알람 시계',tip:'알람 설정'},
+{id:'is11',n:'Exercise',pv:'💪',f:'shortcut/exercise',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'운동/근육',tip:'운동 관리'},
+{id:'is12',n:'Diet',pv:'🥗',f:'shortcut/diet',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'샐러드/건강식',tip:'식단 기록'},
+{id:'is13',n:'Study',pv:'📚',f:'shortcut/study',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'책/공부',tip:'학습 기록'},
+{id:'is14',n:'Work',pv:'💼',f:'shortcut/work',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'서류가방',tip:'업무 관리'},
+{id:'is15',n:'Finance',pv:'💰',f:'shortcut/finance',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'돈주머니/동전',tip:'가계부'},
+{id:'is16',n:'Health',pv:'❤️',f:'shortcut/health',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'하트',tip:'건강 체크'},
+{id:'is17',n:'Skins',pv:'🎨',f:'shortcut/skins',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'팔레트/옷',tip:'펫 스킨 갤러리(미래 기능)'},
+{id:'is18',n:'Minigame',pv:'🎮',f:'shortcut/minigame',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'게임패드',tip:'미니게임 선택 화면'},
+]},
+{id:'in-stat',title:'스탯 & 상태',items:[
+{id:'it01',n:'HP (체력)',pv:'🍚',f:'stat/hp',tg:'emoji',sz:'24×24',fm:'PNG 투명배경',brief:'밥/음식 느낌. 색상 #F28B82 (분홍)',tip:'스탯바, 위젯, 케어 패널에서 HP 표시'},
+{id:'it02',n:'AP (활력)',pv:'💛',f:'stat/ap',tg:'emoji',sz:'24×24',fm:'PNG 투명배경',brief:'수면/에너지 느낌. 색상 #B39DDB (보라)',tip:'위젯, 케어 패널에서 AP 표시'},
+{id:'it03',n:'CP (청결)',pv:'🧹',f:'stat/cp',tg:'emoji',sz:'24×24',fm:'PNG 투명배경',brief:'빗자루/물방울 느낌. 색상 #7EB8E0 (파랑)',tip:'위젯, 케어 패널에서 CP 표시'},
+{id:'it04',n:'MP (기분)',pv:'🎮',f:'stat/mp',tg:'emoji',sz:'24×24',fm:'PNG 투명배경',brief:'게임/놀이 느낌. 색상 #FFCA58 (노랑)',tip:'위젯, 케어 패널에서 MP 표시'},
+{id:'im01',n:'행복 상태',pv:'😊',f:'mood/happy',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'기쁜 표정',tip:'스탯 합계 ≥16. 홈화면, 위젯 헤더'},
+{id:'im02',n:'보통 상태',pv:'😐',f:'mood/normal',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'무표정/평온',tip:'스탯 합계 13-15'},
+{id:'im03',n:'나쁨 상태',pv:'😢',f:'mood/bad',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'슬픈 표정',tip:'스탯 합계 10-12'},
+{id:'im04',n:'아픔 상태',pv:'🤒',f:'mood/sick',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'아픈/힘없는 표정',tip:'스탯 합계 6-9 또는 최소스탯≤1'},
+{id:'im05',n:'사망 상태',pv:'💀',f:'mood/dead',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'해골/사망 표현',tip:'최소스탯=0 & 합계≤5. 리셋 필요'},
+]},
+{id:'in-misc',title:'기타 이모지',items:[
+{id:'ix01',n:'출석 스트릭',pv:'🔥',f:'misc/fire',tg:'emoji',sz:'24×24',fm:'PNG 투명배경',brief:'작은 불꽃',tip:'홈 화면 출석 카운터 옆. 연속 출석 강조'},
+{id:'ix02',n:'스파클',pv:'✨',f:'misc/sparkle',tg:'emoji',sz:'24×24',fm:'PNG 투명배경',brief:'반짝이는 별 2-3개',tip:'강조 효과. 빗질 완료, 위젯, 하이라이트 카드 등 다수'},
+{id:'ix03',n:'축하',pv:'🎉',f:'misc/celebration',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'폭죽/파티 폭발',tip:'마일스톤 달성, 출석 보너스 팝업'},
+{id:'ix04',n:'잠금',pv:'🔒',f:'misc/lock',tg:'emoji',sz:'24×24',fm:'PNG 투명배경',brief:'자물쇠',tip:'미해금 기능 버튼 위에 오버레이'},
+{id:'ix05',n:'준비중',pv:'🚧',f:'misc/coming_soon',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'공사중 표지판',tip:'개발 중 기능 안내'},
+{id:'ix06',n:'트로피',pv:'🏆',f:'misc/trophy',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'금색 트로피',tip:'앨범 마일스톤 뱃지'},
+{id:'ix07',n:'다이아몬드',pv:'💎',f:'misc/diamond',tg:'emoji',sz:'24×24',fm:'PNG 투명배경',brief:'보라빛 보석',tip:'관계 레벨5, 프리미엄 표시'},
+{id:'ix08',n:'고양이 얼굴',pv:'🐱',f:'misc/cat_face',tg:'emoji',sz:'32×32',fm:'PNG 투명배경',brief:'귀여운 고양이 얼굴 (펫 간략 표현)',tip:'데일리 퀘스천 모달 상단'},
+]},
+{id:'in-mynow',title:'MyNow 태그',items:[
+{id:'in01',n:'핀',pv:'📌',f:'mynow/pin',tg:'emoji',sz:'20×20',fm:'PNG 투명배경',brief:'빨간 핀. 고정/중요 표시',tip:'MyNow 사진 일기 태그 옵션'},
+{id:'in02',n:'체크',pv:'✅',f:'mynow/check',tg:'emoji',sz:'20×20',fm:'PNG 투명배경',brief:'초록 체크',tip:'완료 태그'},
+{id:'in03',n:'목표',pv:'🎯',f:'mynow/target',tg:'emoji',sz:'20×20',fm:'PNG 투명배경',brief:'과녁/타겟',tip:'"해냈다!" 태그'},
+{id:'in04',n:'사람들',pv:'👥',f:'mynow/people',tg:'emoji',sz:'20×20',fm:'PNG 투명배경',brief:'두 사람 실루엣',tip:'함께한 사람 태그'},
+{id:'in05',n:'음식',pv:'🍽️',f:'mynow/food',tg:'emoji',sz:'20×20',fm:'PNG 투명배경',brief:'접시 + 커트러리',tip:'음식 사진 태그'},
+{id:'in06',n:'잎 (기본)',pv:'🌿',f:'mynow/leaf',tg:'emoji',sz:'20×20',fm:'PNG 투명배경',brief:'초록 잎사귀. 기본/폴백용',tip:'태그 미분류 시 표시'},
+{id:'in07',n:'카메라',pv:'📸',f:'mynow/camera',tg:'emoji',sz:'20×20',fm:'PNG 투명배경',brief:'카메라',tip:'사진 촬영 버튼'},
+]},
+{id:'in-app',title:'앱 아이콘',items:[
+{id:'ia01',n:'앱 아이콘',pv:A+'icon.png',f:'icon.png',tg:'png',sz:'1024×1024',fm:'PNG',brief:'앱 스토어 & 홈화면 아이콘',tip:'iOS/Android 공용. 1024 원본 제작'},
+{id:'ia02',n:'적응형 (Android)',pv:A+'adaptive-icon.png',f:'adaptive-icon.png',tg:'png',sz:'1024×1024',fm:'PNG',brief:'Android용. 전경+배경 분리 권장',tip:'둥근/사각/물방울 등 다양한 모양 적용됨'},
+{id:'ia03',n:'스플래시',pv:A+'splash-icon.png',f:'splash-icon.png',tg:'png',sz:'512×512',fm:'PNG 투명배경',brief:'앱 시작 로딩 중앙 로고',tip:''},
+{id:'ia04',n:'파비콘',pv:A+'favicon.png',f:'favicon.png',tg:'png',sz:'48×48',fm:'PNG',brief:'브라우저 탭 작은 아이콘',tip:'웹 버전용'},
+]},
+]},
+
+// ── 5. 캐릭터 ──
+{id:'char',title:'캐릭터 에셋',icon:'🐾',subs:[
+{id:'ch-exist',title:'EA03 기존 애니메이션',items:[
+{id:'ce01',n:'idle_breathe (숨쉬기)',pv:A+'pets/EA03/base/anim/idle/idle_breathe_000.png',f:'pets/EA03/.../idle/',tg:'png',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'기본 대기 상태. 숨쉬는 동작. 31프레임 완비',tip:'항상 재생. 가장 많이 보이는 애니메이션. @1x~@3x 밀도별 보유'},
+{id:'ce02',n:'idle_look (둘러보기)',pv:A+'pets/EA03/base/anim/idle/idle_look_000.png',f:'pets/EA03/.../idle/',tg:'png',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'좌우로 둘러보기. 15프레임 완비',tip:'대기 중 랜덤 재생. @1x~@3x 보유'},
+{id:'ce03',n:'hatch (부화)',pv:A+'pets/EA03/base/anim/hatch/hatch_001.png',f:'pets/EA03/.../hatch/',tg:'png',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'알에서 부화하는 시퀀스. 40프레임. @2x/@3x 미보유',tip:'최초 펫 생성 시 1회 재생. 고해상도 버전 필요'},
+]},
+{id:'ch-anim',title:'EA03 추가 애니메이션',items:[
+{id:'cn01',n:'idle_stretch (스트레칭)',pv:'🙆',f:'pets/EA03/.../idle/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'기지개 펴는 동작의 최고점 포즈 제작 → AI로 중간 프레임 생성 예정',tip:'HAPPY/NORMAL 무드 대기 풀에 등록. 15-30프레임. 기지개 펴는 동작'},
+{id:'cn02',n:'idle_bounce (깡충)',pv:'⬆️',f:'pets/EA03/.../idle/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'최고점 점프 포즈 + 착지 포즈 제작 → AI로 보간',tip:'HAPPY 무드 + 높은 친밀도(450+)에서만 재생. 깡충깡충 뛰는 동작'},
+{id:'cn03',n:'idle_dance (춤)',pv:'💃',f:'pets/EA03/.../idle/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'춤 핵심 포즈 2-3장 제작 → AI로 중간 프레임 생성',tip:'HAPPY + 높은 친밀도. 흥겨운 율동'},
+{id:'cn04',n:'idle_happy (행복)',pv:'😊',f:'pets/EA03/.../idle/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'양팔 벌리는 등의 기쁜 최고점 포즈 제작 → AI 보간',tip:'높은 친밀도 전용 기쁜 표현'},
+{id:'cn05',n:'idle_avoid (회피)',pv:'😒',f:'pets/EA03/.../idle/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'고개 돌리는 포즈 + 몸 살짝 비트는 포즈 → AI 보간',tip:'낮은 친밀도(0-100). 유저를 피하는 동작'},
+{id:'cn06',n:'idle_neutral (무관심)',pv:'😐',f:'pets/EA03/.../idle/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'무덤덤하게 서있는 포즈 1-2장',tip:'낮은 친밀도. 무덤덤한 동작'},
+]},
+{id:'ch-pose',title:'EA03 포즈 (정적 1장씩)',items:[
+{id:'cp01',n:'idle_01 (서있기)',pv:'🧍',f:'pets/EA03/base/pose/',tg:'none',sz:'256×256',fm:'PNG 투명배경',brief:'기본 서있기. 위젯/ID카드/프로필에 사용되는 대표 이미지',tip:'정적 이미지로 위젯, ID카드, 프로필 표시'},
+{id:'cp02',n:'sit_01 (앉기)',pv:'🪑',f:'pets/EA03/base/pose/',tg:'none',sz:'256×256',fm:'PNG 투명배경',brief:'앉은 자세',tip:'쉬는 상태, 채팅 화면 프로필'},
+{id:'cp03',n:'idle_02~08',pv:'🎭',f:'pets/EA03/base/pose/',tg:'none',sz:'256×256',fm:'PNG 투명배경',brief:'다양한 포즈 7종. 각각 1장씩',tip:'무드별 대기 풀에 등록'},
+]},
+{id:'ch-face',title:'EA03 표정 오버레이',items:[
+{id:'cf01',n:'happy (행복)',pv:'😊',f:'pets/EA03/base/face/',tg:'none',sz:'128×128',fm:'PNG 투명배경',brief:'기쁜 눈+입 표정. 몸체 위에 겹쳐 표시되는 투명 레이어',tip:'높은 친밀도'},
+{id:'cf02',n:'neutral (기본)',pv:'😐',f:'pets/EA03/base/face/',tg:'none',sz:'128×128',fm:'PNG 투명배경',brief:'평온한 기본 표정',tip:'보통 친밀도'},
+{id:'cf03',n:'sad (슬픔)',pv:'😢',f:'pets/EA03/base/face/',tg:'none',sz:'128×128',fm:'PNG 투명배경',brief:'슬픈 눈+처진 입',tip:'BAD_MOOD 상태'},
+{id:'cf04',n:'sick (아픔)',pv:'🤒',f:'pets/EA03/base/face/',tg:'none',sz:'128×128',fm:'PNG 투명배경',brief:'힘없는/아픈 표정',tip:'VERY_SICK_SIGN 상태'},
+]},
+{id:'ch-react',title:'EA03 탭 리액션',items:[
+{id:'cr01',n:'react_tap',pv:'👆',f:'pets/EA03/base/anim/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'놀라는 포즈 + 반응 포즈 → AI 보간',tip:'유저가 펫 탭 시 재생. 10-20프레임'},
+{id:'cr02',n:'react_love',pv:'❤️',f:'pets/EA03/base/anim/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'하트 뿜는 포즈 제작 → AI 보간',tip:'높은 친밀도 탭 반응. 하트 이펙트 동반'},
+{id:'cr03',n:'react_neutral',pv:'😑',f:'pets/EA03/base/anim/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'시큰둥하게 쳐다보는 포즈 1-2장',tip:'낮은 친밀도. 무덤덤한 반응'},
+]},
+{id:'ch-need',title:'EA03 니즈 표현',items:[
+{id:'cd01',n:'need_food (배고픔)',pv:'🍚',f:'pets/EA03/base/anim/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'배 부여잡는 포즈 → AI 보간',tip:'HP≤1 긴급 상태. 말풍선에 음식 아이콘'},
+{id:'cd02',n:'need_sleep (졸림)',pv:'😴',f:'pets/EA03/base/anim/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'꾸벅꾸벅 조는 포즈. Zzz 표현',tip:'AP≤1'},
+{id:'cd03',n:'need_clean (더러움)',pv:'🧹',f:'pets/EA03/base/anim/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'먼지 묻은/지저분한 상태 포즈',tip:'CP≤1. 먼지/파리 이펙트 동반'},
+{id:'cd04',n:'need_play (심심함)',pv:'🎮',f:'pets/EA03/base/anim/',tg:'none',sz:'256×256',fm:'PNG 투명배경 시퀀스',brief:'축 처진 자세. 기운 없는 포즈',tip:'MP≤1'},
+]},
+{id:'ch-sticker',title:'EA03 스티커 (MyNow)',items:[
+{id:'cs01',n:'신남',pv:A+'images/stickers/pebby_sticker_excited.png',f:'stickers/pebby_sticker_excited',tg:'png',sz:'200×200',fm:'PNG 투명배경',brief:'현재 보유. 리뉴얼 여부 확인',tip:'MyNow 사진 꾸미기. 드래그/확대/회전. 최대 5개 배치'},
+{id:'cs02',n:'행복',pv:A+'images/stickers/pebby_sticker_happy.png',f:'stickers/pebby_sticker_happy',tg:'png',sz:'200×200',fm:'PNG 투명배경',brief:'현재 보유',tip:'MyNow 스티커'},
+{id:'cs03',n:'사랑',pv:A+'images/stickers/pebby_sticker_love.png',f:'stickers/pebby_sticker_love',tg:'png',sz:'200×200',fm:'PNG 투명배경',brief:'현재 보유',tip:'MyNow 스티커'},
+{id:'cs04',n:'졸림',pv:A+'images/stickers/pebby_sticker_sleepy.png',f:'stickers/pebby_sticker_sleepy',tg:'png',sz:'200×200',fm:'PNG 투명배경',brief:'현재 보유',tip:'MyNow 스티커'},
+{id:'cs05',n:'놀람',pv:A+'images/stickers/pebby_sticker_surprised.png',f:'stickers/pebby_sticker_surprised',tg:'png',sz:'200×200',fm:'PNG 투명배경',brief:'현재 보유',tip:'MyNow 스티커'},
+]},
+{id:'ch-new',title:'신규 캐릭터 2종',items:[
+{id:'cx01',n:'캐릭터 B 컨셉',pv:'❓',f:'(정의 필요)',tg:'none',sz:'-',fm:'컨셉 시트',brief:'2번째 펫 캐릭터. 종/성격/색상 기획 필요',tip:'EA03과 동일한 에셋 구조로 제작'},
+{id:'cx02',n:'캐릭터 B 기본 애니',pv:'❓',f:'pets/EB01/base/anim/',tg:'none',sz:'256×256',fm:'PNG 시퀀스',brief:'idle_breathe(31f) + idle_look(15f) + hatch(40f) 키포즈 제작',tip:'AI로 보간. 최소 필수 3종 애니메이션'},
+{id:'cx03',n:'캐릭터 B 스티커',pv:'❓',f:'stickers/charB_*',tg:'none',sz:'200×200',fm:'PNG 투명배경',brief:'5종 세트: 신남/행복/사랑/졸림/놀람',tip:'MyNow 사진 꾸미기용'},
+{id:'cx04',n:'캐릭터 C 컨셉',pv:'❓',f:'(정의 필요)',tg:'none',sz:'-',fm:'컨셉 시트',brief:'3번째 펫 캐릭터. 종/성격/색상 기획 필요',tip:''},
+{id:'cx05',n:'캐릭터 C 기본 애니',pv:'❓',f:'pets/EC01/base/anim/',tg:'none',sz:'256×256',fm:'PNG 시퀀스',brief:'B와 동일 구조: 3종 키포즈',tip:''},
+{id:'cx06',n:'캐릭터 C 스티커',pv:'❓',f:'stickers/charC_*',tg:'none',sz:'200×200',fm:'PNG 투명배경',brief:'5종 세트',tip:''},
+]},
+]},
+
+// ── 6. 테마 & 컬러 (palette mode) ──
+{id:'theme',title:'테마 & 컬러',icon:'🎨',palette:true,subs:[
+{id:'th-all',title:'컬러 팔레트',items:[]},
+]},
+
+// ── 7. 위젯 ──
+{id:'widget',title:'위젯 프리뷰',icon:'📐',subs:[
+{id:'wg-prev',title:'위젯 프리뷰 이미지',items:[
+{id:'wp01',n:'Mini',pv:A+'widget_preview_mini.png',f:'widget_preview_mini.png',tg:'png',sz:'위젯 크기',fm:'PNG',brief:'위젯 선택 화면 썸네일. 리뉴얼 후 재캡처',tip:''},
+{id:'wp02',n:'Standard',pv:A+'widget_preview_standard.png',f:'widget_preview_standard.png',tg:'png',sz:'위젯 크기',fm:'PNG',brief:'위젯 선택 화면 썸네일',tip:''},
+{id:'wp03',n:'Vertical',pv:A+'widget_preview_vertical.png',f:'widget_preview_vertical.png',tg:'png',sz:'위젯 크기',fm:'PNG',brief:'위젯 선택 화면 썸네일',tip:''},
+{id:'wp04',n:'Dashboard',pv:A+'widget_preview_dashboard.png',f:'widget_preview_dashboard.png',tg:'png',sz:'위젯 크기',fm:'PNG',brief:'위젯 선택 화면 썸네일',tip:''},
+]},
+]},
+];
+
+// ══════════ REQUESTS ══════════
+const CMT_SECTIONS=[
+{title:'스타일 & 방향',icon:'🎨',key:'s'},
+{title:'작업 범위 & 수량',icon:'📋',key:'w'},
+{title:'캐릭터 & 애니메이션',icon:'🐾',key:'c'},
+{title:'일정 & 기타',icon:'📅',key:'g'},
+];
+function cmtCount(key){return S.r['_cnt_'+key]||2;}
+function cmtSetCount(key,n){S.r['_cnt_'+key]=n;sv();}
+
+// ══════════ STATE ══════════
+const SK='mypeb_rc_v5';
+let S;
+function ld(){try{S=JSON.parse(localStorage.getItem(SK))||{}}catch{S={}} if(!S.c)S.c={};if(!S.n)S.n={};if(!S.r)S.r={};}
+function sv(){S.t=new Date().toISOString();localStorage.setItem(SK,JSON.stringify(S));uTP();}
+ld();
+let curView=null; // null=summary, or {gid,sid}
+
+// ══════════ COUNTS ══════════
+function sc(sub){let t=sub.items.length,d=0;sub.items.forEach(i=>{if(S.c[i.id])d++});return{t,d};}
+function gc(g){let t=0,d=0;g.subs.forEach(s=>{const c=sc(s);t+=c.t;d+=c.d});return{t,d};}
+function allCount(){let t=0,d=0;D.forEach(g=>{if(!g.palette){const c=gc(g);t+=c.t;d+=c.d;}});return{t,d};}
+function tagCount(tag){let c=0;D.forEach(g=>g.subs.forEach(s=>s.items.forEach(i=>{if(i.tg===tag)c++})));return c;}
+
+// ══════════ SIDEBAR ══════════
+function rNav(){
+  let h='';
+  D.forEach(g=>{
+    const c=gc(g);const gpLabel=g.palette?'팔레트':`${c.d}/${c.t}`;
+    h+=`<div class="ng" data-g="${g.id}"><div class="ng-t" onclick="tg('${g.id}')"><span class="ar" id="a-${g.id}">▶</span><span>${g.icon} ${g.title}</span><span class="gp">${gpLabel}</span></div><div class="ni-wrap" id="w-${g.id}">`;
+    g.subs.forEach(s=>{
+      const sc2=sc(s);const dn=sc2.d===sc2.t&&sc2.t>0?'dn':'';
+      h+=`<div class="ni" data-s="${s.id}" onclick="show('${g.id}','${s.id}')">${s.title}<span class="sp ${dn}">${sc2.d}/${sc2.t}</span></div>`;
+    });
+    h+=`</div></div>`;
+  });
+  document.getElementById('nav').innerHTML=h;
+}
+function tg(gid){
+  const w=document.getElementById('w-'+gid),a=document.getElementById('a-'+gid);
+  const op=w.classList.contains('op');
+  document.querySelectorAll('.ni-wrap').forEach(e=>e.classList.remove('op'));
+  document.querySelectorAll('.ar').forEach(e=>e.classList.remove('op'));
+  if(!op){w.classList.add('op');a.classList.add('op');}
+}
+
+// ══════════ SUMMARY ══════════
+function showSummary(){
+  curView=null;
+  document.querySelectorAll('.ni').forEach(e=>e.classList.remove('act'));
+  document.getElementById('navSum').classList.add('act');
+  document.getElementById('bc').textContent='';
+  document.getElementById('pt').textContent='Summary';
+
+  const ac=allCount();const pct=ac.t?Math.round(ac.d/ac.t*100):0;
+  let h=`<div class="sp-box"><span class="tx">전체 ${ac.d}/${ac.t} (${pct}%)</span><div class="bar"><div class="fill" style="width:${pct}%"></div></div></div>`;
+
+  // Section cards
+  h+=`<div class="sum-grid">`;
+  D.forEach(g=>{
+    const c=gc(g);const p=c.t?Math.round(c.d/c.t*100):0;
+    // count tags
+    let emj=0,png=0,none=0;
+    g.subs.forEach(s=>s.items.forEach(i=>{if(i.tg==='emoji')emj++;if(i.tg==='png')png++;if(i.tg==='none')none++;}));
+    h+=`<div class="sum-card" onclick="tg('${g.id}');show('${g.id}','${g.subs[0].id}')">`;
+    h+=`<div class="sc-head"><span class="sc-icon">${g.icon}</span><span class="sc-title">${g.title}</span></div>`;
+    h+=`<div class="sc-bar"><div class="sc-fill" style="width:${p}%"></div></div>`;
+    if(g.palette){
+      h+=`<div class="sc-stat"><span>컬러 팔레트</span><span>편집 가능</span></div>`;
+      h+=`<div class="sc-tags"><span class="tg ok">라이브 프리뷰</span></div>`;
+    } else {
+      h+=`<div class="sc-stat"><span>${c.d}/${c.t} 완료</span><span>${p}%</span></div>`;
+      h+=`<div class="sc-tags">`;
+      if(emj) h+=`<span class="tg emoji">${emj} Emoji</span>`;
+      if(png) h+=`<span class="tg png">${png} PNG</span>`;
+      if(none) h+=`<span class="tg none">${none} 없음</span>`;
+      h+=`</div>`;
+    }
+    h+=`</div>`;
+  });
+  h+=`</div>`;
+
+  // Guide
+  h+=`<div class="guide"><h3>사이즈 안내</h3><p>
+  사이즈 예시: <code>64×64</code> = 가로 64px × 세로 64px<br>
+  모바일은 화면 해상도에 따라 여러 크기가 필요합니다:<br>
+  • <span class="hl">@1x</span> = 기본 크기 (예: 64px). 저해상도용<br>
+  • <span class="hl">@2x</span> = 2배 (128px). 일반 스마트폰<br>
+  • <span class="hl">@3x</span> = 3배 (192px). 고해상도 스마트폰<br>
+  → <span class="hl">@3x (가장 큰 사이즈)로 제작하면</span> 축소해서 나머지 생성 가능합니다.
+  </p></div>`;
+
+  // Comment tables
+  CMT_SECTIONS.forEach(sec=>{
+    const cnt=cmtCount(sec.key);
+    h+=`<div class="cmt-section"><h3><span class="cmt-icon">${sec.icon}</span> ${sec.title}</h3>`;
+    h+=`<table class="cmt-tbl"><thead><tr><th>#</th><th>주제</th><th>Comment 1</th><th>Comment 2</th><th>Comment 3</th><th style="width:28px"></th></tr></thead><tbody>`;
+    for(let i=0;i<cnt;i++){
+      const rk=sec.key+(i+1);
+      const topic=S.r[rk+'_t']||'';
+      const c1=S.r[rk+'_1']||'';
+      const c2=S.r[rk+'_2']||'';
+      const c3=S.r[rk+'_3']||'';
+      h+=`<tr><td>${i+1}</td>`;
+      h+=`<td><textarea data-rk="${rk}_t" placeholder="주제 입력..." oninput="onReq(this)">${topic}</textarea></td>`;
+      h+=`<td><textarea class="c1" data-rk="${rk}_1" placeholder="" oninput="onReq(this)">${c1}</textarea></td>`;
+      h+=`<td><textarea class="c2" data-rk="${rk}_2" placeholder="" oninput="onReq(this)">${c2}</textarea></td>`;
+      h+=`<td><textarea class="c3" data-rk="${rk}_3" placeholder="" oninput="onReq(this)">${c3}</textarea></td>`;
+      h+=`<td style="text-align:center">${cnt>1?`<button class="cmt-rm" onclick="cmtRm('${sec.key}',${i})" title="행 삭제">−</button>`:''}</td>`;
+      h+=`</tr>`;
+    }
+    h+=`</tbody></table>`;
+    h+=`<button class="cmt-add" onclick="cmtAdd('${sec.key}')">+ 행 추가</button>`;
+    h+=`</div>`;
+  });
+
+  // Google Sheets status
+  h+=`<div class="gs-setup"><h4>💾 Google Sheets 저장 연동</h4>`;
+  h+=`<div class="gs-status ok">연동됨</div>`;
+  h+=`<div class="gs-hint" style="margin-top:6px">`;
+  h+=`좌측 하단 <b>저장</b> → 현재 상태를 Sheets에 타임스탬프와 함께 기록<br>`;
+  h+=`좌측 하단 <b>버전</b> → 이전 저장 이력 보기 & 복원<br>`;
+  h+=`Sheets 연동 실패 시 JSON 파일 다운로드로 자동 전환됩니다.`;
+  h+=`</div></div>`;
+
+  document.getElementById('ct').innerHTML=h;
+}
+
+function onReq(ta){S.r[ta.dataset.rk]=ta.value;clearTimeout(mt);mt=setTimeout(sv,400);}
+function cmtAdd(key){const n=cmtCount(key);cmtSetCount(key,n+1);showSummary();}
+function cmtRm(key,idx){
+  const n=cmtCount(key);if(n<=1)return;
+  // shift data from idx+1..n down by 1
+  for(let i=idx;i<n-1;i++){
+    const from=key+(i+2),to=key+(i+1);
+    ['_t','_1','_2','_3'].forEach(suf=>{S.r[to+suf]=S.r[from+suf]||'';});
+  }
+  // clear last row
+  const last=key+n;
+  ['_t','_1','_2','_3'].forEach(suf=>{delete S.r[last+suf];});
+  cmtSetCount(key,n-1);showSummary();
+}
+
+
+// ══════════ PALETTE DATA ══════════
+const PAL=[
+{group:'배경 (Background)',items:[
+{id:'p-bg-app',name:'BG.app',color:'#FFFDF8',use:'앱 전체 배경'},
+{id:'p-bg-window',name:'BG.window',color:'#FFFBF2',use:'패널/사이드바 배경'},
+{id:'p-bg-sub',name:'BG.sub',color:'#FFF8EA',use:'서브 영역, 비활성 탭'},
+{id:'p-bg-card',name:'BG.card',color:'#FFFFFF',use:'카드, 모달'},
+{id:'p-bg-border',name:'BG.border',color:'#F0E4CC',use:'보더, 구분선'},
+]},
+{group:'액센트 (Accent)',items:[
+{id:'p-acc-primary',name:'ACCENT.primary',color:'#FFD666',use:'브랜드 메인. CTA 버튼, 활성 탭'},
+{id:'p-acc-muted',name:'ACCENT.muted',color:'#F5C842',use:'호버/프레스 상태'},
+{id:'p-acc-bright',name:'ACCENT.bright',color:'#FFECB8',use:'하이라이트 배경'},
+]},
+{group:'세컨더리 (Secondary)',items:[
+{id:'p-sec-primary',name:'SECONDARY.primary',color:'#FFB5A7',use:'피치 핑크. 보조 버튼'},
+{id:'p-sec-deep',name:'SECONDARY.deep',color:'#F28B82',use:'딥 핑크. HP색상, 경고'},
+]},
+{group:'텍스트 (Text)',items:[
+{id:'p-txt-primary',name:'TEXT.primary',color:'#3D3328',use:'본문 텍스트'},
+{id:'p-txt-secondary',name:'TEXT.secondary',color:'#8A7E6B',use:'보조 텍스트, 설명'},
+{id:'p-txt-disabled',name:'TEXT.disabled',color:'#C4BAA8',use:'비활성, 플레이스홀더'},
+{id:'p-txt-on-accent',name:'TEXT.onAccent',color:'#3D2E0A',use:'노란 버튼 위 텍스트'},
+{id:'p-txt-on-sec',name:'TEXT.onSecondary',color:'#5C2A24',use:'핑크 버튼 위 텍스트'},
+]},
+{group:'스탯 (Stats)',dual:true,items:[
+{id:'p-stat-hp',name:'HP (체력)',color:'#F28B82',bg:'#FFF0F0',use:'체력 바, HP 관련 UI'},
+{id:'p-stat-ap',name:'AP (활력)',color:'#B39DDB',bg:'#F3EEFF',use:'활력 바, AP 관련 UI'},
+{id:'p-stat-cp',name:'CP (청결)',color:'#7EB8E0',bg:'#EDF6FF',use:'청결 바, CP 관련 UI'},
+{id:'p-stat-mp',name:'MP (기분)',color:'#FFCA58',bg:'#FFF8E6',use:'기분 바, MP 관련 UI'},
+]},
+{group:'시맨틱 (Semantic)',items:[
+{id:'p-sem-success',name:'success',color:'#81C995',use:'완료, 성공'},
+{id:'p-sem-warning',name:'warning',color:'#F28B82',use:'경고, 실패'},
+{id:'p-sem-gold',name:'priceGold',color:'#D4A020',use:'가격 표시'},
+]},
+{group:'게임 (Game)',items:[
+{id:'p-gm-area',name:'GAME.areaBg',color:'#E8F4FD',use:'미니게임 배경'},
+{id:'p-gm-btn',name:'GAME.button',color:'#7EBDE0',use:'게임 버튼'},
+{id:'p-gm-act',name:'GAME.buttonActive',color:'#FFD666',use:'게임 버튼 활성'},
+]},
+{group:'파스텔 (Pastel)',dual:true,items:[
+{id:'p-pas-purple',name:'purple',color:'#C5B0F0',bg:'#EDE4FF',use:'다양한 장식'},
+{id:'p-pas-blue',name:'blue',color:'#8EC5E8',bg:'#E3F0FF',use:''},
+{id:'p-pas-green',name:'green',color:'#81C995',bg:'#E0F2E4',use:''},
+{id:'p-pas-pink',name:'pink',color:'#FFB5A7',bg:'#FFE8E5',use:''},
+{id:'p-pas-yellow',name:'yellow',color:'#FFD666',bg:'#FFF8EA',use:''},
+]},
+{group:'UI 토큰',items:[
+{id:'p-ui-panel',name:'Panel R:20',color:'',use:'메인 패널 둥근 모서리 20px',val:'20px'},
+{id:'p-ui-card',name:'Card R:12',color:'',use:'카드 둥근 모서리 12px',val:'12px'},
+{id:'p-ui-btn',name:'Button R:24',color:'',use:'알약형 버튼 24px',val:'24px'},
+{id:'p-ui-spacing',name:'Spacing',color:'',use:'xs:4 sm:8 md:12 lg:16 xl:20 xxl:24',val:'4px 기본'},
+]},
+];
+
+function getP(id){return S.r['pal_'+id]||null;}
+function setP(id,val){S.r['pal_'+id]=val;sv();}
+function palColor(item,field){return getP(item.id+(field||''))||item[field||'color']||'';}
+
+let pvIdx=0;
+const PV_NAMES=['홈 화면','상점','케어 패널','채팅','위젯 (날씨)','위젯 (ToDo)','미니게임','모달/팝업','토스트/알림','말풍선'];
+
+function showPalette(){
+  const g=D.find(x=>x.id==='theme');
+  document.getElementById('bc').textContent=g.icon+' '+g.title+' ›';
+  document.getElementById('pt').textContent='컬러 팔레트';
+
+  let h=`<div class="pal-wrap">`;
+  // Left
+  h+=`<div class="pal-left">`;
+  PAL.forEach(grp=>{
+    h+=`<div class="pal-section"><h3>${grp.group}</h3><div class="pal-grid">`;
+    grp.items.forEach(item=>{
+      const c=palColor(item,'color');
+      const bg=item.bg?palColor(item,'bg'):'';
+      const changed=getP(item.id)!==null||(item.bg&&getP(item.id+'bg')!==null);
+      h+=`<div class="pal-card">`;
+      if(!c&&item.val){
+        h+=`<div class="pal-swatch" style="background:var(--bdr);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--t2)">${item.val}</div>`;
+      } else if(grp.dual&&bg){
+        h+=`<div class="pal-swatch-pair"><div style="background:${bg}"></div><div style="background:${c}"></div></div>`;
+      } else {
+        h+=`<div class="pal-swatch" style="background:${c}"></div>`;
+      }
+      h+=`<div class="pal-info"><div class="pal-name" style="display:flex;justify-content:space-between;align-items:center">${item.name}<button class="pal-item-reset ${changed?'':'hidden'}" onclick="resetPalItem('${item.id}',${!!item.bg})">↺ 색상 원래대로</button></div>`;
+      if(item.use) h+=`<div class="pal-use">${item.use}</div>`;
+      if(c){
+        h+=`<div class="pal-hex-row"><div class="pal-mini-sw" id="msw-${item.id}" style="background:${c}"></div><input class="pal-hex-input" type="text" value="${c}" data-pid="${item.id}" data-field="color" oninput="onPalInput(this)" /></div>`;
+      }
+      if(bg){
+        h+=`<div class="pal-hex-row" style="margin-top:3px"><div class="pal-mini-sw" id="msw-${item.id}-bg" style="background:${bg}"></div><span class="pal-hex-label">bg</span><input class="pal-hex-input" type="text" value="${bg}" data-pid="${item.id}" data-field="bg" oninput="onPalInput(this)" /></div>`;
+      }
+      h+=`</div></div>`;
+    });
+    h+=`</div></div>`;
+  });
+  h+=`</div>`;
+  // Right
+  h+=`<div class="pal-right"><div class="pal-preview">`;
+  h+=`<div class="pal-pv-header"><h3>라이브 프리뷰</h3><div class="pal-pv-tools"><button class="pal-reset-btn" onclick="resetPal()">↺ 전체 색상 원래대로</button><button onclick="enlargePV()">확대</button></div></div>`;
+  h+=`<div class="pal-pv-nav"><button onclick="pvNav(-1)">◀</button><span class="pv-label" id="pvLabel">${PV_NAMES[pvIdx]}</span><button onclick="pvNav(1)">▶</button></div>`;
+  h+=`<div id="palPVInner"></div>`;
+  h+=`</div></div>`;
+  h+=`</div>`;
+  document.getElementById('ct').innerHTML=h;
+  updatePalPreview();
+}
+
+function pvNav(dir){pvIdx=(pvIdx+dir+PV_NAMES.length)%PV_NAMES.length;const l=document.getElementById('pvLabel');if(l)l.textContent=PV_NAMES[pvIdx];updatePalPreview();}
+function enlargePV(){const el=document.getElementById('palPVInner');if(!el)return;document.getElementById('palEnlargeInner').innerHTML=el.innerHTML;document.getElementById('palEnlarge').classList.add('show');}
+
+function resetPal(){
+  if(!confirm('모든 컬러를 기본값으로 되돌립니까?'))return;
+  PAL.forEach(grp=>grp.items.forEach(item=>{delete S.r['pal_'+item.id];if(item.bg)delete S.r['pal_'+item.id+'bg'];}));
+  sv();showPalette();
+}
+function resetPalItem(id,hasBg){
+  delete S.r['pal_'+id];if(hasBg)delete S.r['pal_'+id+'bg'];
+  sv();showPalette();
+}
+
+function onPalInput(inp){
+  const v=inp.value.trim(),pid=inp.dataset.pid,field=inp.dataset.field;
+  setP(pid+(field==='bg'?'bg':''),v);
+  const isValid=/^#[0-9A-Fa-f]{3,8}$/.test(v);
+  const msw=document.getElementById('msw-'+pid+(field==='bg'?'-bg':''));
+  if(msw&&isValid)msw.style.background=v;
+  const card=inp.closest('.pal-card');
+  if(card&&isValid){
+    const sw=card.querySelector('.pal-swatch'),swp=card.querySelector('.pal-swatch-pair');
+    if(field==='bg'&&swp)swp.children[0].style.background=v;
+    else if(sw)sw.style.background=v;
+    else if(swp)swp.children[1].style.background=v;
+    // show reset button
+    const rb=card.querySelector('.pal-item-reset');if(rb)rb.classList.remove('hidden');
+  }
+  clearTimeout(mt);mt=setTimeout(updatePalPreview,150);
+}
+
+function pv(id,field){return palColor(PAL.flatMap(g=>g.items).find(i=>i.id===id),field);}
+
+function updatePalPreview(){
+  const el=document.getElementById('palPVInner');if(!el)return;
+  const bg=pv('p-bg-app','color'),win=pv('p-bg-window','color'),sub=pv('p-bg-sub','color'),
+    card=pv('p-bg-card','color'),bdr=pv('p-bg-border','color'),
+    acc=pv('p-acc-primary','color'),acc2=pv('p-acc-muted','color'),bright=pv('p-acc-bright','color'),
+    sec=pv('p-sec-primary','color'),secD=pv('p-sec-deep','color'),
+    txt=pv('p-txt-primary','color'),txt2=pv('p-txt-secondary','color'),txt3=pv('p-txt-disabled','color'),
+    txA=pv('p-txt-on-accent','color'),txS=pv('p-txt-on-sec','color'),
+    hp=pv('p-stat-hp','color'),hpB=pv('p-stat-hp','bg'),ap=pv('p-stat-ap','color'),apB=pv('p-stat-ap','bg'),
+    cp=pv('p-stat-cp','color'),cpB=pv('p-stat-cp','bg'),mp=pv('p-stat-mp','color'),mpB=pv('p-stat-mp','bg'),
+    ok=pv('p-sem-success','color'),wr=pv('p-sem-warning','color'),gld=pv('p-sem-gold','color'),
+    gmBg=pv('p-gm-area','color'),gmBtn=pv('p-gm-btn','color'),gmAct=pv('p-gm-act','color');
+  const previews=[
+  // 0: 홈 화면
+  `<div class="pal-pv-app" style="background:${bg};border:1.5px solid ${bdr}">
+    <div style="font-size:12px;font-weight:700;margin-bottom:8px;color:${txt}">홈 화면</div>
+    <div class="pal-pv-card" style="background:${card};border:1.5px solid ${bdr}">
+      <div style="padding:4px 8px;background:${win};border-radius:8px;margin-bottom:6px"><span style="font-size:11px;font-weight:700;color:${txt}">펫 상태</span><span style="font-size:9px;color:${txt2};margin-left:6px">Lv.5</span></div>
+      <div style="margin-bottom:6px"><span class="pal-pv-stat" style="background:${hpB};color:${hp}">HP 75</span><span class="pal-pv-stat" style="background:${apB};color:${ap}">AP 60</span><span class="pal-pv-stat" style="background:${cpB};color:${cp}">CP 85</span><span class="pal-pv-stat" style="background:${mpB};color:${mp}">MP 50</span></div>
+      <div class="pal-pv-bar" style="background:${bdr}"><div style="width:75%;height:100%;background:${hp};border-radius:3px"></div></div>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0"><span class="pal-pv-btn" style="background:${acc};color:${txA}">밥 주기</span><span class="pal-pv-btn" style="background:${sec};color:${txS}">씻기기</span><span class="pal-pv-btn" style="background:transparent;border:1.5px solid ${bdr};color:${txt}">더보기</span></div>
+    <div class="pal-pv-card" style="background:${sub};border:1px solid ${bdr}"><span style="font-size:10px;color:${txt}">서브 영역</span><span style="font-size:9px;color:${txt3};margin-left:6px">비활성 텍스트</span></div>
+  </div>`,
+  // 1: 상점
+  `<div class="pal-pv-app" style="background:${bg};border:1.5px solid ${bdr}">
+    <div style="font-size:12px;font-weight:700;margin-bottom:8px;color:${txt}">상점</div>
+    <div style="display:flex;gap:4px;margin-bottom:8px"><span class="pal-pv-btn" style="background:${acc};color:${txA};font-size:9px">음식</span><span class="pal-pv-btn" style="background:${sub};color:${txt2};font-size:9px">음료</span><span class="pal-pv-btn" style="background:${sub};color:${txt2};font-size:9px">장난감</span></div>
+    <div class="pal-pv-card" style="background:${card};border:1px solid ${bdr};display:flex;gap:10px;align-items:center">
+      <div style="width:36px;height:36px;background:${bright};border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">🌿</div>
+      <div style="flex:1"><div style="font-size:11px;font-weight:600;color:${txt}">풀잎 간식</div><div style="font-size:9px;color:${txt2}">HP +10</div></div>
+      <div style="font-size:11px;font-weight:700;color:${gld}">10 🪙</div>
+    </div>
+    <div class="pal-pv-card" style="background:${card};border:1px solid ${bdr};display:flex;gap:10px;align-items:center;margin-top:4px">
+      <div style="width:36px;height:36px;background:${bright};border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">🍯</div>
+      <div style="flex:1"><div style="font-size:11px;font-weight:600;color:${txt}">햇빛 꿀</div><div style="font-size:9px;color:${txt2}">HP +20</div></div>
+      <div style="font-size:11px;font-weight:700;color:${gld}">40 🪙</div>
+    </div>
+    <div style="margin-top:8px;text-align:center"><span class="pal-pv-btn" style="background:${acc};color:${txA}">구매하기</span></div>
+  </div>`,
+  // 2: 케어 패널
+  `<div class="pal-pv-app" style="background:${bg};border:1.5px solid ${bdr}">
+    <div style="font-size:12px;font-weight:700;margin-bottom:8px;color:${txt}">케어 패널</div>
+    <div style="display:flex;gap:4px;margin-bottom:6px"><span class="pal-pv-stat" style="background:${hpB};color:${hp};font-weight:700">HP</span><span class="pal-pv-stat" style="background:${sub};color:${txt3}">AP</span><span class="pal-pv-stat" style="background:${sub};color:${txt3}">CP</span><span class="pal-pv-stat" style="background:${sub};color:${txt3}">MP</span></div>
+    <div class="pal-pv-card" style="background:${card};border:1px solid ${bdr}">
+      <div style="font-size:10px;font-weight:600;color:${txt};margin-bottom:4px">음식 / 음료</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <div style="width:48px;height:48px;background:${sub};border:1px solid ${bdr};border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px">🌿</div>
+        <div style="width:48px;height:48px;background:${sub};border:1px solid ${bdr};border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px">🍯</div>
+        <div style="width:48px;height:48px;background:${bright};border:2px solid ${acc};border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px">🌸</div>
+      </div>
+    </div>
+    <div style="margin-top:6px;text-align:center"><span class="pal-pv-btn" style="background:${acc};color:${txA}">사용하기</span><span class="pal-pv-btn" style="background:${sub};color:${txt3}">쿨다운 중</span></div>
+  </div>`,
+  // 3: 채팅
+  `<div class="pal-pv-app" style="background:${bg};border:1.5px solid ${bdr}">
+    <div style="font-size:12px;font-weight:700;margin-bottom:8px;color:${txt}">채팅</div>
+    <div style="padding:8px 12px;background:${card};border:1px solid ${sec};border-radius:12px 12px 12px 2px;margin-bottom:6px;max-width:80%"><span style="font-size:10px;color:${txt}">오늘 기분이 좋아 보여! 🎉</span></div>
+    <div style="padding:8px 12px;background:${bright};border-radius:12px 12px 2px 12px;margin-bottom:6px;max-width:80%;margin-left:auto"><span style="font-size:10px;color:${txt}">고마워~ 오늘 날씨가 좋아서!</span></div>
+    <div style="padding:8px 12px;background:${card};border:1px solid ${sec};border-radius:12px 12px 12px 2px;max-width:80%"><span style="font-size:10px;color:${txt}">그렇구나! 산책 갈까? 🌤️</span></div>
+    <div style="margin-top:8px;display:flex;gap:6px"><div style="flex:1;padding:6px 10px;border:1px solid ${bdr};border-radius:16px;font-size:10px;color:${txt3}">메시지 입력...</div><span class="pal-pv-btn" style="background:${acc};color:${txA};margin:0">전송</span></div>
+  </div>`,
+  // 4: 위젯 (날씨)
+  `<div style="background:${card};border:1.5px solid ${bdr};border-radius:14px;padding:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-size:11px;font-weight:700;color:${txt}">🐾 Pebby</span><span style="font-size:9px;color:${txt2}">😊 HAPPY</span></div>
+    <div style="background:#EDF6FF;border-radius:8px;padding:10px;margin-bottom:6px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-size:16px;font-weight:700;color:${txt}">☀️ 22°C</span><span style="font-size:10px;color:${txt2}">비 10%</span></div>
+      <div style="display:flex;gap:10px;overflow:hidden">
+        <div style="text-align:center"><div style="font-size:9px;color:${txt3}">09</div><div style="font-size:14px">☀️</div><div style="font-size:9px;color:${txt}">20°</div></div>
+        <div style="text-align:center"><div style="font-size:9px;color:${txt3}">10</div><div style="font-size:14px">🌤️</div><div style="font-size:9px;color:${txt}">22°</div></div>
+        <div style="text-align:center"><div style="font-size:9px;color:${txt3}">11</div><div style="font-size:14px">⛅</div><div style="font-size:9px;color:${txt}">23°</div></div>
+        <div style="text-align:center"><div style="font-size:9px;color:${txt3}">12</div><div style="font-size:14px">☁️</div><div style="font-size:9px;color:${txt}">24°</div></div>
+      </div>
+    </div>
+    <div style="background:${sub};border-radius:6px;padding:6px 8px;font-size:9px;color:${txt2}">☀️ 자외선 보통 — 자외선차단제 권장</div>
+  </div>`,
+  // 5: 위젯 (ToDo)
+  `<div style="background:${card};border:1.5px solid ${bdr};border-radius:14px;padding:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-size:11px;font-weight:700;color:${txt}">🐾 Pebby</span><span style="font-size:9px;color:${txt2}">😊 22°C ☀️</span></div>
+    <div style="display:flex;gap:6px;margin-bottom:8px"><span class="pal-pv-stat" style="background:${hpB};color:${hp};font-size:9px">HP 75</span><span class="pal-pv-stat" style="background:${apB};color:${ap};font-size:9px">AP 60</span><span class="pal-pv-stat" style="background:${cpB};color:${cp};font-size:9px">CP 85</span><span class="pal-pv-stat" style="background:${mpB};color:${mp};font-size:9px">MP 50</span></div>
+    <div style="background:${sub};border-radius:8px;padding:8px 10px">
+      <div style="font-size:10px;font-weight:600;color:${txt};margin-bottom:4px">오늘의 할일</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="color:${ok};font-size:12px">✓</span><span style="font-size:10px;color:${txt3};text-decoration:line-through">아침 운동</span></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="color:${bdr};font-size:12px">○</span><span style="font-size:10px;color:${txt}">프로젝트 미팅</span></div>
+      <div style="display:flex;align-items:center;gap:6px"><span style="color:${bdr};font-size:12px">○</span><span style="font-size:10px;color:${txt}">장보기</span></div>
+    </div>
+  </div>`,
+  // 6: 미니게임
+  `<div class="pal-pv-app" style="background:${gmBg};border:1.5px solid ${bdr}">
+    <div style="font-size:12px;font-weight:700;margin-bottom:6px;color:${txt}">미니게임</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div style="font-size:10px;color:${txt2}">⏱ 25초</div>
+      <div class="pal-pv-bar" style="background:${bdr};flex:1;margin:0 8px;height:8px"><div style="width:65%;height:100%;background:${ok};border-radius:3px"></div></div>
+      <div style="font-size:10px;color:${txt2}">65%</div>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:8px">
+      <div style="font-size:28px">🍎</div><div style="font-size:28px">💣</div><div style="font-size:28px">🍕</div>
+    </div>
+    <div style="text-align:center;margin-bottom:6px"><span style="padding:4px 20px;background:rgba(129,201,149,0.25);border-radius:16px;font-size:11px;font-weight:700;color:${ok}">GOOD!</span></div>
+    <div style="display:flex;gap:6px;justify-content:center"><span class="pal-pv-btn" style="background:${gmBtn};color:#FFF">일시정지</span><span class="pal-pv-btn" style="background:${gmAct};color:${txA}">계속하기</span></div>
+  </div>`,
+  // 7: 모달/팝업
+  `<div style="position:relative;min-height:220px;background:${bg};border:1.5px solid ${bdr};border-radius:10px;padding:12px">
+    <div style="font-size:10px;color:${txt3};margin-bottom:8px">배경 화면 (dimmed)</div>
+    <div class="pal-pv-card" style="background:${card};border:1px solid ${bdr};opacity:.4"><span style="font-size:10px;color:${txt}">홈 화면 내용...</span></div>
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:85%;background:${card};border-radius:16px;padding:16px;box-shadow:0 4px 20px rgba(61,51,40,.15)">
+      <div style="font-size:12px;font-weight:700;color:${txt};margin-bottom:6px;text-align:center">아이템 사용 🌿</div>
+      <div style="font-size:10px;color:${txt2};text-align:center;margin-bottom:10px">풀잎 간식을 사용할까요?</div>
+      <div style="display:flex;gap:4px;margin-bottom:8px;justify-content:center"><span class="pal-pv-stat" style="background:${hpB};color:${hp}">HP +10</span></div>
+      <div style="display:flex;gap:6px;justify-content:center">
+        <span class="pal-pv-btn" style="background:${acc};color:${txA}">사용하기</span>
+        <span class="pal-pv-btn" style="background:transparent;border:1.5px solid ${bdr};color:${txt}">취소</span>
+      </div>
+    </div>
+  </div>`,
+  // 8: 토스트/알림
+  `<div class="pal-pv-app" style="background:${bg};border:1.5px solid ${bdr}">
+    <div style="font-size:12px;font-weight:700;margin-bottom:10px;color:${txt}">토스트 & 알림</div>
+    <div style="padding:8px 12px;background:${ok}22;border:1px solid ${ok};border-radius:10px;margin-bottom:6px;display:flex;align-items:center;gap:6px">
+      <span style="font-size:14px">✅</span><span style="font-size:10px;color:${txt}">아이템 사용 완료!</span>
+    </div>
+    <div style="padding:8px 12px;background:${wr}22;border:1px solid ${wr};border-radius:10px;margin-bottom:6px;display:flex;align-items:center;gap:6px">
+      <span style="font-size:14px">⚠️</span><span style="font-size:10px;color:${txt}">HP가 위험 수준입니다</span>
+    </div>
+    <div style="padding:8px 12px;background:${bright};border:1px solid ${acc};border-radius:10px;margin-bottom:6px;display:flex;align-items:center;gap:6px">
+      <span style="font-size:14px">🔥</span><span style="font-size:10px;color:${txt}">출석 5일차! 보너스 20 🪙</span>
+    </div>
+    <div style="padding:8px 12px;background:${sub};border:1px solid ${bdr};border-radius:10px;display:flex;align-items:center;gap:6px">
+      <span style="font-size:14px">💬</span><span style="font-size:10px;color:${txt2}">Pebby가 편지를 보냈습니다</span>
+    </div>
+  </div>`,
+  // 9: 말풍선(펫)
+  `<div class="pal-pv-app" style="background:${bg};border:1.5px solid ${bdr}">
+    <div style="font-size:12px;font-weight:700;margin-bottom:10px;color:${txt}">펫 말풍선 & 아크 메뉴</div>
+    <div style="display:flex;align-items:flex-end;gap:8px;margin-bottom:10px">
+      <div style="width:48px;height:48px;background:${sub};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;border:1.5px solid ${bdr}">🐱</div>
+      <div style="padding:8px 12px;background:${card};border:1px solid ${sec};border-radius:12px 12px 12px 2px;position:relative;max-width:65%">
+        <span style="font-size:10px;color:${txt}">오늘 날씨 좋다~ 산책 가자! ☀️</span>
+        <div style="position:absolute;bottom:-3px;left:8px;width:8px;height:8px;background:${card};border-bottom:1px solid ${sec};border-left:1px solid ${sec};transform:rotate(-45deg)"></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+      <div style="width:44px;height:44px;background:${card};border:1px solid ${bdr};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">😊</div>
+      <div style="width:44px;height:44px;background:${card};border:1px solid ${bdr};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">🪪</div>
+      <div style="width:44px;height:44px;background:${card};border:1px solid ${bdr};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">💬</div>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <div style="width:44px;height:44px;background:${card};border:1px solid ${bdr};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">🍽️</div>
+      <div style="width:44px;height:44px;background:${card};border:1px solid ${bdr};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">💆</div>
+      <div style="width:44px;height:44px;background:${card};border:1px solid ${bdr};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">🧼</div>
+      <div style="width:44px;height:44px;background:${card};border:1px solid ${bdr};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">🎮</div>
+    </div>
+  </div>`,
+  ];
+  el.innerHTML=previews[pvIdx]||previews[0];
+}
+
+// ══════════ TABLE VIEW ══════════
+function show(gid,sid){
+  // Palette mode
+  if(gid==='theme'){
+    curView={gid,sid};
+    document.getElementById('navSum').classList.remove('act');
+    document.querySelectorAll('.ni').forEach(e=>e.classList.remove('act'));
+    const ni=document.querySelector(`.ni[data-s="${sid}"]`);if(ni)ni.classList.add('act');
+    document.getElementById('w-'+gid).classList.add('op');
+    document.getElementById('a-'+gid).classList.add('op');
+    showPalette();
+    return;
+  }
+
+  curView={gid,sid};
+  document.getElementById('navSum').classList.remove('act');
+  document.querySelectorAll('.ni').forEach(e=>e.classList.remove('act'));
+  const ni=document.querySelector(`.ni[data-s="${sid}"]`);if(ni)ni.classList.add('act');
+  document.getElementById('w-'+gid).classList.add('op');
+  document.getElementById('a-'+gid).classList.add('op');
+
+  const g=D.find(x=>x.id===gid),sub=g.subs.find(x=>x.id===sid);
+  const c=sc(sub),pct=c.t?Math.round(c.d/c.t*100):0;
+  document.getElementById('bc').textContent=g.icon+' '+g.title+' ›';
+  document.getElementById('pt').textContent=sub.title;
+
+  let h=`<div class="sp-box"><span class="tx">${c.d}/${c.t} (${pct}%)</span><div class="bar"><div class="fill" style="width:${pct}%"></div></div></div>`;
+
+  h+=`<table><thead><tr><th>✓</th><th>현재</th><th>이름</th><th>파일명</th><th>사이즈</th><th>포맷</th><th>디자인 가이드</th><th>메모</th></tr></thead><tbody>`;
+
+  sub.items.forEach(item=>{
+    const ck=S.c[item.id]||false;
+    const nt=S.n[item.id]||'';
+    // Preview
+    let pvH;
+    if(item.pv&&item.pv.startsWith('../../')){
+      pvH=`<img src="${item.pv}" onclick="openLb(this.src)" onerror="this.outerHTML='<span class=emoji>📁</span>'" />`;
+    } else {
+      pvH=`<span class="emoji">${item.pv||'-'}</span>`;
+    }
+    // Tip
+    const tipH=item.tip?`<span class="tip">?<span class="tip-box">${item.tip}</span></span>`:'';
+
+    h+=`<tr class="${ck?'ck':''}" data-i="${item.id}"><td class="cc"><input type="checkbox" data-id="${item.id}" ${ck?'checked':''} onchange="chk(this)"></td><td class="cp">${pvH}</td><td class="cn">${item.n} <span class="tg ${item.tg}">${{'emoji':'Emoji','png':'PNG','none':'없음','ok':'OK','css':'CSS'}[item.tg]||item.tg}</span></td><td class="cf">${item.f}</td><td class="cs">${item.sz}</td><td class="cm">${item.fm}</td><td class="cu">${item.brief}${tipH}</td><td class="cmo"><textarea data-id="${item.id}" placeholder="메모..." oninput="memo(this)">${nt}</textarea></td></tr>`;
+  });
+  h+=`</tbody></table>`;
+  document.getElementById('ct').innerHTML=h;
+  flt();
+}
+
+// ══════════ LIGHTBOX ══════════
+function openLb(src){document.getElementById('lbImg').src=src;document.getElementById('lb').classList.add('show');}
+
+// ══════════ ACTIONS ══════════
+function chk(cb){
+  S.c[cb.dataset.id]=cb.checked;
+  cb.closest('tr').classList.toggle('ck',cb.checked);
+  sv();rNav();
+  if(curView){
+    const ni=document.querySelector(`.ni[data-s="${curView.sid}"]`);if(ni)ni.classList.add('act');
+    document.getElementById('w-'+curView.gid).classList.add('op');
+    document.getElementById('a-'+curView.gid).classList.add('op');
+  }
+  uSP();
+}
+function uSP(){
+  const b=document.querySelector('.sp-box');if(!b)return;
+  const cbs=document.querySelectorAll('#ct input[type="checkbox"]');
+  let t=cbs.length,d=0;cbs.forEach(c=>{if(c.checked)d++});
+  const p=t?Math.round(d/t*100):0;
+  b.querySelector('.tx').textContent=`${d}/${t} (${p}%)`;
+  b.querySelector('.fill').style.width=p+'%';
+}
+let mt;function memo(ta){S.n[ta.dataset.id]=ta.value;clearTimeout(mt);mt=setTimeout(sv,400);}
+
+// ══════════ TOTAL ══════════
+function uTP(){
+  const ac=allCount();const p=ac.t?Math.round(ac.d/ac.t*100):0;
+  document.getElementById('tFill').style.width=p+'%';
+  document.getElementById('tTxt').textContent=ac.d+'/'+ac.t;
+  document.getElementById('tPct').textContent=p+'%';
+}
+
+// ══════════ FILTER ══════════
+document.addEventListener('DOMContentLoaded',()=>{
+  rNav();uTP();showSummary();
+  document.getElementById('sBox').addEventListener('input',flt);
+});
+function flt(){
+  const q=document.getElementById('sBox').value.toLowerCase();
+  const f=document.getElementById('fSel').value;
+  document.querySelectorAll('#ct tbody tr').forEach(tr=>{
+    const txt=tr.textContent.toLowerCase();
+    const ck=tr.querySelector('input[type="checkbox"]')?.checked;
+    let ok=true;
+    if(q&&!txt.includes(q))ok=false;
+    if(f==='c'&&!ck)ok=false;
+    if(f==='uc'&&ck)ok=false;
+    tr.style.display=ok?'':'none';
+  });
+}
+
+// ══════════ IO ══════════
+function toggleSidebar(){
+  const sb=document.getElementById('sidebar');
+  sb.classList.toggle('collapsed');
+  document.getElementById('sbToggle').textContent=sb.classList.contains('collapsed')?'▶':'◀';
+}
+
+const GS_URL='https://script.google.com/macros/s/AKfycbz-UC2mMsDfWIBIgJRG0bG8GS6X__6yn7ihn1Lhar5Va3EUg7OoIknEfEd9b5DNJRc/exec';
+
+// ── Save: open script URL directly (100% reliable) ──
+function compact(s){
+  const o={};
+  if(s.c){const a=Object.keys(s.c).filter(k=>s.c[k]);if(a.length)o.c=a;}
+  if(s.n){const n={};Object.entries(s.n).forEach(([k,v])=>{if(v&&v.trim())n[k]=v;});if(Object.keys(n).length)o.n=n;}
+  if(s.r){const r={};Object.entries(s.r).forEach(([k,v])=>{if(v&&String(v).trim())r[k]=v;});if(Object.keys(r).length)o.r=r;}
+  return o;
+}
+
+// ── JSONP helper (for list/load — small GET responses) ──
+function gsJsonp(params){
+  return new Promise((resolve,reject)=>{
+    const cb='_gs_'+Date.now()+'_'+Math.random().toString(36).slice(2,6);
+    window[cb]=function(data){delete window[cb];if(sc.parentNode)sc.parentNode.removeChild(sc);resolve(data);};
+    params.callback=cb;
+    const qs=Object.entries(params).map(([k,v])=>k+'='+encodeURIComponent(v)).join('&');
+    const sc=document.createElement('script');
+    sc.src=GS_URL+'?'+qs;
+    sc.onerror=function(){delete window[cb];if(sc.parentNode)sc.parentNode.removeChild(sc);reject(new Error('network'));};
+    document.head.appendChild(sc);
+    setTimeout(()=>{if(window[cb]){delete window[cb];if(sc.parentNode)sc.parentNode.removeChild(sc);reject(new Error('timeout'));}},15000);
+  });
+}
+
+// ── Save: prompt for memo → iframe GET ──
+function saveToSheet(){
+  const memo=prompt('저장 설명을 입력하세요:','');
+  if(memo===null)return; // cancelled
+  const btn=document.getElementById('btnSave');
+  btn.textContent='저장 중...';btn.disabled=true;
+  const data=encodeURIComponent(JSON.stringify(compact(S)));
+  const memoEnc=encodeURIComponent(memo);
+  const ifr=document.createElement('iframe');
+  ifr.style.display='none';
+  ifr.src=GS_URL+'?action=save&memo='+memoEnc+'&data='+data;
+  ifr.onload=function(){
+    btn.textContent='저장됨 ✓';
+    setTimeout(()=>{btn.textContent='저장';btn.disabled=false;try{document.body.removeChild(ifr);}catch(e){}},2000);
+  };
+  ifr.onerror=function(){
+    btn.textContent='실패 ✗';btn.disabled=false;
+    setTimeout(()=>{btn.textContent='저장';},1500);
+  };
+  document.body.appendChild(ifr);
+}
+
+// ── Versions: JSONP list → in-page popup ──
+async function showVersions(){
+  const panel=document.getElementById('verPanel');
+  const overlay=document.getElementById('verOverlay');
+  panel.innerHTML=`<h3>버전 관리<button class="ver-close" onclick="document.getElementById('verOverlay').classList.remove('show')">✕</button></h3><div class="ver-empty">불러오는 중...</div>`;
+  overlay.classList.add('show');
+  try{
+    const res=await gsJsonp({action:'list'});
+    if(!res||!res.ok||!res.versions||res.versions.length===0){
+      panel.querySelector('.ver-empty').textContent='저장된 버전이 없습니다.';return;
+    }
+    let h=`<h3>버전 관리 (${res.versions.length}개)<button class="ver-close" onclick="document.getElementById('verOverlay').classList.remove('show')">✕</button></h3><ul class="ver-list">`;
+    res.versions.slice().reverse().forEach((v,i)=>{
+      const row=res.versions.length-i;
+      const d=new Date(v.time);
+      const timeStr=d.toLocaleDateString('ko-KR')+' '+d.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'});
+      const memo=v.memo||'';
+      h+=`<li><div><div class="ver-time">v${row} — ${timeStr}</div>`;
+      if(memo) h+=`<div class="ver-info">${memo}</div>`;
+      h+=`</div><button onclick="loadVersion(${row})">복원</button></li>`;
+    });
+    h+=`</ul>`;
+    panel.innerHTML=h;
+  }catch(e){
+    panel.querySelector('.ver-empty').textContent='불러오기 실패: '+e.message;
+  }
+}
+
+// ── Load: JSONP get → apply state ──
+async function loadVersion(row){
+  if(!confirm('v'+row+'로 복원합니까? 현재 상태를 덮어씁니다.'))return;
+  try{
+    const res=await gsJsonp({action:'load',row:String(row)});
+    if(res&&res.ok&&res.state){
+      S=typeof res.state==='string'?JSON.parse(res.state):res.state;
+      // restore from compact format
+      if(Array.isArray(S.c)){const obj={};S.c.forEach(k=>{obj[k]=true;});S.c=obj;}
+      if(!S.c)S.c={};if(!S.n)S.n={};if(!S.r)S.r={};
+      sv();rNav();
+      document.getElementById('verOverlay').classList.remove('show');
+      if(curView)show(curView.gid,curView.sid);else showSummary();
+      alert('v'+row+' 복원 완료!');
+    }else{
+      alert('데이터를 불러올 수 없습니다.');
+    }
+  }catch(e){alert('복원 실패: '+e.message);}
+}
+
+function impJ(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();r.onload=ev=>{try{S=JSON.parse(ev.target.result);sv();rNav();
+  if(curView)show(curView.gid,curView.sid);else showSummary();
+  document.getElementById('verOverlay').classList.remove('show');
+  alert('불러오기 완료!')}catch{alert('파싱 실패')}};r.readAsText(f);e.target.value='';
+}
+
+function rstAll(){if(!confirm('모든 체크/메모/답변 초기화?'))return;localStorage.removeItem(SK);S={c:{},n:{},r:{}};rNav();uTP();showSummary();}
+</script>
+</body>
+</html>
