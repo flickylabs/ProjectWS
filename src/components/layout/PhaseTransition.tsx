@@ -17,6 +17,7 @@ const PHASE_INFO: Record<GamePhase, { title: string; subtitle: string; icon: str
 
 export default function PhaseTransition() {
   const currentPhase = useGameStore((s) => s.currentPhase)
+  const caseData = useGameStore((s) => s.caseData)
   const [visible, setVisible] = useState(false)
   const [lastPhase, setLastPhase] = useState(currentPhase)
 
@@ -39,12 +40,22 @@ export default function PhaseTransition() {
   const info = PHASE_INFO[currentPhase]
   if (!info) return null
 
+  const nameA = caseData?.duo.partyA.name
+  const nameB = caseData?.duo.partyB.name
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/80 animate-fade pointer-events-none">
-      <div className="text-center space-y-2 animate-scale-in">
-        <div className="text-4xl">{info.icon}</div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/85 animate-fade pointer-events-none">
+      <div className="text-center space-y-2 animate-scale-in px-8">
+        <div className="text-5xl mb-1">{info.icon}</div>
         <div className="text-xl font-bold text-amber-400">{info.title}</div>
         <div className="text-sm text-gray-400">{info.subtitle}</div>
+        {nameA && nameB && (
+          <div className="text-xs text-gray-600 pt-1">
+            <span className="text-blue-400/60">{nameA}</span>
+            <span className="mx-1.5">vs</span>
+            <span className="text-rose-400/60">{nameB}</span>
+          </div>
+        )}
       </div>
     </div>
   )

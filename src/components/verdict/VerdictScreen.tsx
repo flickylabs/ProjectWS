@@ -4,6 +4,7 @@ import { GamePhase } from '../../types'
 import { calculateVerdict } from '../../engine/verdictEngine'
 import { recordGameComplete } from '../../hooks/useLocalStorage'
 import { recordHistory } from '../layout/HistoryPanel'
+import { completeStage } from '../../data/campaign'
 import FactChecklist from './FactChecklist'
 import ResponsibilitySlider from './ResponsibilitySlider'
 import SolutionPicker from './SolutionPicker'
@@ -49,6 +50,13 @@ export default function VerdictScreen() {
       relationshipType: caseData.duo.relationshipType,
       nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name,
     })
+    // 캠페인 Stage 진행 (관계 유형으로 매칭)
+    const stageMap: Record<string, number> = {
+      neighbor: 1, spouse: 2, boss_employee: 3, partnership: 4,
+      family: 5, tenant_landlord: 6,
+    }
+    const stage = stageMap[caseData.duo.relationshipType]
+    if (stage) completeStage(stage, score.total)
     advancePhase(GamePhase.Result)
   }
 

@@ -28,12 +28,12 @@ export default function ResultScreen() {
 
   return (
     <div className="h-full flex flex-col">
-      {/* 헤더 */}
-      <div className="text-center pt-6 pb-3 px-4">
-        <div className="text-4xl mb-2">⚖️</div>
-        <h2 className="text-lg font-bold">판결이 완료되었습니다</h2>
-        <div className="text-2xl font-bold text-amber-400 mt-1">{verdictScore.total}점</div>
-        <div className="text-xs text-gray-500">{getRating(verdictScore.total)}</div>
+      {/* 히어로 헤더 — 애니메이션 */}
+      <div className="text-center pt-8 pb-4 px-4 bg-gradient-to-b from-amber-950/20 to-transparent">
+        <div className="text-5xl mb-3 animate-scale-in">⚖️</div>
+        <h2 className="text-lg font-bold animate-slide-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>판결이 완료되었습니다</h2>
+        <div className="text-3xl font-bold text-amber-400 mt-2 animate-slide-up" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>{verdictScore.total}<span className="text-lg text-amber-500/60 ml-1">점</span></div>
+        <div className="text-sm text-gray-400 mt-1 animate-slide-up" style={{ animationDelay: '0.7s', animationFillMode: 'both' }}>{getRating(verdictScore.total)}</div>
       </div>
 
       {/* 탭 */}
