@@ -17,10 +17,12 @@
   <div class="topbar-sections">
     <a class="topbar-sec-link" href="#summary">프로젝트 요약</a>
     <a class="topbar-sec-link" href="#usp">USP & 포지셔닝</a>
+    <a class="topbar-sec-link" href="#architecture">3층 데이터 아키텍처</a>
     <a class="topbar-sec-link" href="#design">디자인 원칙</a>
+    <a class="topbar-sec-link" href="#llm">LLM 분업 구조</a>
   </div>
   <div class="topbar-meta">
-    <span>v1.3</span>
+    <span>v2.0</span>
     <span>2026-03-25</span>
   </div>
 </header>
@@ -62,7 +64,7 @@
 
 <main class="content">
 
-  <h1>게임 개요 <span class="badge">GDD v1.3</span></h1>
+  <h1>게임 개요 <span class="badge">GDD v2.0</span></h1>
   <p class="subtitle">LLM 심문 추리 게임 · Procedural Case Drama</p>
   <p>
     서로를 비난하는 두 AI 당사자, 불완전한 진술, 편집된 증거, 감정적인 말싸움.
@@ -73,7 +75,7 @@
   <div class="tag-row">
     <span class="badge badge-brand">장르: 심문 추리 / 서사 시뮬레이션</span>
     <span class="badge badge-sub">플랫폼: PC / 모바일 / 웹</span>
-    <span class="badge badge-info">세션 길이: 10~15분</span>
+    <span class="badge badge-info">세션 길이: 10~20분</span>
     <span class="badge badge-warning">핵심 가치: 반복 플레이 / 드라마 / 판단력</span>
   </div>
 
@@ -85,27 +87,32 @@
   <div class="card-grid">
     <div class="card">
       <span class="badge badge-sub">장르 정의</span>
-      <div class="card-title mt-sm">심문 추리 × 서사 시뮬레이션</div>
-      <p>플레이어는 두 당사자의 진술과 증거를 대조하고, 질문을 통해 모순을 끌어내며 최종 판결을 내린다.</p>
+      <div class="card-title mt-sm">심문 추리 x 서사 시뮬레이션</div>
+      <p>플레이어는 두 당사자의 진술과 증거를 대조하고, 질문을 통해 모순을 끌어내며 최종 판결을 내린다.
+      단순히 "누가 거짓말했는가"가 아니라 "왜 거짓말했는가", "어디까지가 오해인가", "어떤 해결이 현명한가"까지 판단한다.</p>
     </div>
     <div class="card">
       <span class="badge badge-warning">핵심 플레이 판타지</span>
       <div class="card-title mt-sm">"둘 다 믿을 수 없지만, 나는 꿰뚫어본다."</div>
-      <p>말빨과 감정에 휘둘리지 않고, 사실·오인·정당화를 분리해 지혜로운 결론을 내리는 쾌감을 준다.</p>
+      <p>말빨과 감정에 휘둘리지 않고, 사실·오인·정당화를 분리해 지혜로운 결론을 내리는 쾌감을 준다.
+      때로는 강하게 몰아붙이고, 때로는 신뢰를 주어 말문을 여는 — 두 가지 루트의 판사 판타지.</p>
     </div>
     <div class="card">
       <span class="badge badge-success">반복 플레이 강점</span>
-      <div class="card-title mt-sm">매번 새로운 사건 조합</div>
-      <p>같은 관계 템플릿도 사건 발생 원인, 제3자, 동기, 증거 구성, 거짓말 전략이 바뀌기 때문에 경험이 매번 달라진다.</p>
+      <div class="card-title mt-sm">같은 사람, 다른 사건</div>
+      <p>반복 등장하는 인물쌍(DuoSeed)의 성격·관계·과거 이력은 유지되지만,
+      그 위에 올라오는 사건·동기·증거·트위스트는 매번 달라진다.
+      플레이어는 "이 사람은 이런 타입"이라는 관계 학습을 하면서도, 사건 자체는 처음 접한다.</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title">프로젝트 한 줄 요약</div>
+    <div class="card-title">프로젝트 핵심 구조</div>
     <ul>
-      <li><strong>반복 플레이 중심</strong> — 인물 조합과 관계는 유지되지만, 사건·동기·증거·트위스트가 매번 달라진다.</li>
-      <li><strong>정답은 사실만이 아니다</strong> — 무슨 일이 있었는지뿐 아니라, 누가 얼마나 책임이 있고 어떤 해결책이 현명한지도 판정한다.</li>
-      <li><strong>LLM는 연기, 룰 엔진은 진실</strong> — 대화는 생동감 있게 생성하되, 사건의 정답과 모순 판정은 구조화된 시스템이 관리한다.</li>
+      <li><strong>인물이 먼저, 사건은 그 다음</strong> — 반복 등장하는 인물쌍(DuoSeed)과 그들의 관계·이력·사회관계망이 있고, 그 생활 위에서 사건(CaseSeed)이 발생한다. 증거와 거짓말은 사건의 결과가 아니라 그 생활의 부산물이다.</li>
+      <li><strong>정답은 사실만이 아니다</strong> — 무슨 일이 있었는지뿐 아니라, 누가 얼마나 책임이 있고, 증거는 정당하게 얻어진 것인지, 어떤 해결책이 현명한지까지 판정한다.</li>
+      <li><strong>압박만이 길이 아니다</strong> — 몰아붙여서 거짓말을 붕괴시킬 수도 있지만, 신뢰와 보호를 통해 스스로 말문을 열게 만들 수도 있다. 어떤 루트를 택하느냐가 판사의 성격이 된다.</li>
+      <li><strong>LLM은 연기, 룰 엔진은 진실</strong> — 대화는 생동감 있게 생성하되, 사건의 정답과 모순 판정은 구조화된 시스템이 관리한다.</li>
     </ul>
   </div>
 
@@ -114,48 +121,130 @@
   <h2 id="usp">USP &amp; 핵심 포지셔닝</h2>
 
   <div class="card-grid">
-    <div class="card"><div class="stat"><div class="k">USP 01</div><div class="v">같은 관계, 다른 사건</div></div></div>
-    <div class="card"><div class="stat"><div class="k">USP 02</div><div class="v">진실 3층 구조</div></div></div>
-    <div class="card"><div class="stat"><div class="k">USP 03</div><div class="v">AI 말싸움 중재</div></div></div>
+    <div class="card"><div class="stat"><div class="k">USP 01</div><div class="v">같은 인물, 다른 사건</div></div>
+      <p class="text-sm">반복 등장하는 인물쌍(DuoSeed)의 성격·이력·사회관계는 유지되지만, 사건·증거·트위스트는 매번 새롭게 조합된다. "이 사람은 알겠는데 이번 사건은 처음이다."</p>
+    </div>
+    <div class="card"><div class="stat"><div class="k">USP 02</div><div class="v">진실 3층 구조</div></div>
+      <p class="text-sm">실제 진실 / 각자의 인지와 오해 / 법정에서의 발언이 분리되어 있다. "누가 틀렸는가"가 아니라 "누가 속였는가 / 누가 오해했는가 / 누가 일부만 말했는가"를 판별한다.</p>
+    </div>
+    <div class="card"><div class="stat"><div class="k">USP 03</div><div class="v">AI 말싸움 중재</div></div>
+      <p class="text-sm">두 AI 에이전트가 각자의 동기·감정·거짓말 전략으로 연기한다. 같은 캐릭터도 쟁점마다 다른 거짓말 유형과 동기를 가지며, 고유한 말버릇까지 있다.</p>
+    </div>
+    <div class="card"><div class="stat"><div class="k">USP 04</div><div class="v">압박과 신뢰, 두 가지 길</div></div>
+      <p class="text-sm">증거로 몰아붙여 거짓말을 붕괴시킬 수도, 비공개 진술과 공감 질문으로 스스로 말문을 열게 할 수도 있다. 수치심·공포·보호 본능까지 읽어야 진짜 진실에 닿는다.</p>
+    </div>
+    <div class="card"><div class="stat"><div class="k">USP 05</div><div class="v">판결이 아니라 지혜</div></div>
+      <p class="text-sm">사실 확정 후에도 게임은 끝나지 않는다. 증거의 정당성, 관계별 맞춤 해결책, 중재안 제시까지 — 탐정이 아니라 솔로몬이 되는 게임.</p>
+    </div>
   </div>
 
   <div class="alert alert-info"><span class="alert-icon">⚖️</span><div>
     <strong>핵심 포지셔닝</strong><br>
-    "AI 둘의 싸움을 인간의 지혜로 재판하는 리플레이형 추리 게임"
+    "반복 등장하는 인물쌍의 생활 위에서 사건이 발생하고, 플레이어는 사실뿐 아니라 오해와 체면, 수치심과 보호 본능, 정당한 증거와 부당한 증거, 판결과 중재 사이를 가르며 '지혜'를 증명하는 리플레이형 추리 게임."
   </div></div>
 
   <div class="alert alert-info"><span class="alert-icon">💡</span><div>
     <strong>핵심 차별점:</strong> 이 게임의 반복성은 단순한 랜덤이 아니라,
-    <strong>"같은 인물/관계 아키타입 위에 전혀 다른 사건이 올라가는 구조"</strong>에서 나온다.
-    플레이어는 익숙한 관계의 긴장감은 유지한 채, 새로운 진실과 새로운 심문 패턴을 매번 경험한다.
+    <strong>"반복 등장하는 인물쌍(DuoSeed)과 그들의 관계 이력·사회관계망·현재 맥락(ContextSeed) 위에서 전혀 다른 사건(CaseSeed)이 올라가는 3층 구조"</strong>에서 나온다.
+    플레이어는 익숙한 인물의 성격과 말버릇을 기억하면서도, 사건 자체는 매번 처음 접하는 경험을 한다.
   </div></div>
+
+
+  <!-- ── 3층 데이터 아키텍처 ─────────────────────── -->
+  <h2 id="architecture">3층 데이터 아키텍처</h2>
+  <p>솔로몬의 모든 콘텐츠는 3개의 독립된 데이터 계층으로 구성된다. 이 분리가 "같은 인물, 다른 사건"의 핵심이다.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="badge badge-sub">Layer 1 · 고정</span>
+      <div class="card-title mt-sm">DuoSeed — 인물쌍</div>
+      <p>반복 등장하는 두 인물의 고정 정보. 이름·나이·직업·소득대·거주 형태, 성격 아키타입·말투·자존심·취약점, 관계 이력(Relationship Ledger), 사회관계망(Social Graph), 거짓말 버릇(Verbal Tell).</p>
+      <p class="text-sm"><strong>수명:</strong> 게임 전체에 걸쳐 유지된다. 플레이어가 이 인물들을 "안다"고 느끼는 기반.</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-warning">Layer 2 · 가변</span>
+      <div class="card-title mt-sm">ContextSeed — 배경 압박</div>
+      <p>이번 판에만 적용되는 시기적·상황적 압박. 명절 직전, 인사평가 시즌, 전세 갱신, 병원비 부담, 시험 기간, 장마철 등. 같은 인물쌍이라도 맥락이 달라지면 감정 온도와 동기가 완전히 바뀐다.</p>
+      <p class="text-sm"><strong>수명:</strong> 한 판(세션)에만 적용되고 사라진다.</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-brand">Layer 3 · 생성</span>
+      <div class="card-title mt-sm">CaseSeed — 이번 사건</div>
+      <p>이번 판의 사건 자체. 갈등 씨앗, 인과 그래프, 쟁점, 지식 비대칭 매트릭스, 증거 의존성 그래프(4축), 거짓말 전략(유형 x 강도 x 동기), 48시간 이벤트 타임라인, 공동 책임 스펙트럼, 반전 모듈.</p>
+      <p class="text-sm"><strong>수명:</strong> 한 판에만 존재한다. 매번 새롭게 생성.</p>
+    </div>
+  </div>
+
+  <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
+    <strong>핵심 원칙:</strong> 사건(CaseSeed)의 증거와 거짓말은 독립적으로 생성되는 것이 아니라,
+    <strong>인물쌍(DuoSeed)의 생활 루틴·디지털 습관·사회관계망과 배경 압박(ContextSeed)에서 파생</strong>된다.
+    계좌 내역은 실제 돈 이동 이벤트에서, CCTV는 실제 위치 이벤트에서, 채팅 캡처는 실제 메시지 교환에서 나온다.
+    이 파생 구조가 증거의 개연성과 심문의 깊이를 만든다.
+  </div></div>
+
+  <h3>3층 구조가 만드는 플레이 경험</h3>
+  <div class="table-wrap"><table>
+    <thead>
+      <tr><th>계층</th><th>플레이어 체감</th><th>반복 플레이 기여</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>DuoSeed</strong></td>
+        <td>"이 사람은 원래 이런 성격이고, 저런 말버릇이 있다."</td>
+        <td>관계 학습 축적. 캐릭터 애착과 예측의 재미. 하지만 메타 지식만으로는 사건을 풀 수 없다.</td>
+      </tr>
+      <tr>
+        <td><strong>ContextSeed</strong></td>
+        <td>"이번에는 명절 직전이라 평소보다 예민하구나."</td>
+        <td>같은 인물이라도 맥락이 다르면 감정 톤이 완전히 달라짐. 적은 비용으로 사건 다양성을 크게 확장.</td>
+      </tr>
+      <tr>
+        <td><strong>CaseSeed</strong></td>
+        <td>"이번 사건은 완전히 새로운데, 증거가 생활에서 자연스럽게 나온다."</td>
+        <td>인과 그래프·증거 의존성·거짓말 전략이 매번 달라져 추리 루트가 새로움.</td>
+      </tr>
+    </tbody>
+  </table></div>
 
 
   <!-- ── 디자인 원칙 ────────────────────────────────── -->
   <h2 id="design">디자인 원칙</h2>
-  <p>대화의 재미와 게임 규칙의 명확성을 동시에 확보하기 위한 핵심 원칙.</p>
+  <p>대화의 재미와 게임 규칙의 명확성, 그리고 생활형 분쟁의 개연성을 동시에 확보하기 위한 핵심 원칙.</p>
 
   <div class="card-grid">
     <div class="card">
       <div class="card-title">① 신뢰 불가능한 화자</div>
-      <p>두 당사자는 모두 자신에게 유리하게 말한다. 거짓말, 오인, 누락, 과장이 섞여 있어야 플레이가 성립한다.</p>
+      <p>두 당사자는 모두 자신에게 유리하게 말한다. 거짓말, 오인, 누락, 과장이 섞여 있어야 플레이가 성립한다. 같은 거짓말이라도 <strong>자기 보호, 체면, 제3자 보호, 수치심 회피</strong> 등 동기가 다르면 심문 반응이 달라진다.</p>
     </div>
     <div class="card">
       <div class="card-title">② 사건은 절대 구조화</div>
-      <p>대화는 자유로워 보여도 실제 사건의 진실, 쟁점, 증거, 지식 상태는 시스템이 명확하게 보유한다.</p>
+      <p>대화는 자유로워 보여도 실제 사건의 진실, 쟁점, 증거, 지식 상태는 시스템이 명확하게 보유한다. CaseSeed가 진실을 고정하고, LLM은 연기만 하며, 룰 엔진이 모순과 붕괴를 판정한다.</p>
     </div>
     <div class="card">
-      <div class="card-title">③ 판결은 3단계</div>
-      <p>사실 인정 → 책임 판단 → 해결책 제시. 이 셋이 분리되어야 "솔로몬"다운 지혜 판정이 살아난다.</p>
+      <div class="card-title">③ 판결은 3단계 + 중재</div>
+      <p>사실 인정 → 책임 판단 → 해결책 제시. 여기에 <strong>관계별 맞춤 중재안</strong>이 추가된다. 부부에게는 계좌 분리와 상환 계획, 이웃에게는 시간대 합의와 비용 분담, 직장에서는 공로 재기록과 분리 배치. 탐정이 아니라 솔로몬이 되는 게임.</p>
     </div>
     <div class="card">
-      <div class="card-title">④ 매 판 다른 사건</div>
-      <p>동일한 관계와 성격 조합도 사건 모듈이 달라지도록 설계해, 플레이어가 패턴만 외워서 이기지 못하게 한다.</p>
+      <div class="card-title">④ 인물이 먼저, 사건은 그 다음</div>
+      <p>사건은 랜덤 생성이 아니라, 반복 등장하는 인물쌍(DuoSeed)의 생활·이력·사회관계망·현재 맥락 위에서 파생된다. 증거도 그 생활의 부산물이다. 이 구조가 개연성과 반복 플레이의 핵심.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⑤ 증거는 진실뿐 아니라 정당성까지</div>
+      <p>증거는 하드/소프트만이 아니라 <strong>신뢰도·완전성·출처성·정당성</strong> 4축으로 평가된다. 휴대폰 몰래 본 채팅은 사실일 수 있지만 정당성이 낮다. "진실은 맞지만 써도 되는 증거인가?"라는 지혜의 문제가 판결의 깊이를 만든다.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⑥ 압박뿐 아니라 신뢰로도</div>
+      <p>모든 진실이 몰아붙여서 나오는 것은 아니다. 수치심 때문에 버티는 거짓말은 비공개 진술 보호와 공감 질문에서 무너진다. 보복이 두려워 숨기는 진실은 보복 우려 확인과 감정 안정화에서 나온다. <strong>압박 루트와 신뢰 루트 — 플레이어가 어떤 판사가 되느냐의 문제.</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-title">⑦ 시스템이 플레이어도 읽는다</div>
+      <p>플레이어의 판단 습관(감정적 당사자 과신, 하드 증거 맹신, 한쪽 편향 등)을 추적하고, 다음 사건 생성 시 한 요소만 그 편향을 역이용한다. "내가 AI를 읽는 줄 알았는데, 시스템이 나를 읽고 있었다"는 감각.</p>
     </div>
   </div>
 
   <blockquote>
     솔로몬은 "범인을 찍는 게임"이 아니라, <strong>불완전한 진실 속에서 가장 현명한 판단을 내리는 게임</strong>이다.
+    사실을 밝히는 것은 시작일 뿐, 그 사실 위에서 어떤 해결을 내리느냐가 진짜 게임이다.
   </blockquote>
 
   <h3>원칙별 시스템 연결</h3>
@@ -166,26 +255,86 @@
     <tbody>
       <tr>
         <td>① 신뢰 불가능한 화자</td>
-        <td>"둘 다 거짓말인 것 같은데 누가 더 심각한가?"</td>
-        <td>각 쟁점마다 거짓말 유형(LT)과 강도(L)를 독립적으로 설정. LLM은 할당된 lie_state만큼만 거짓말한다.</td>
+        <td>"둘 다 거짓말인 것 같은데, 이유가 다르다."</td>
+        <td>쟁점별 거짓말 유형(LT) x 강도(L) x 동기(LM). 동기에 따라 붕괴 트리거가 달라진다. 희생 진술(LT-7)로 작은 잘못을 먼저 인정해 신뢰를 사는 전략까지.</td>
       </tr>
       <tr>
         <td>② 사건은 절대 구조화</td>
         <td>"AI가 즉흥적으로 말하는 것 같은데 사건은 일관되다."</td>
-        <td>CaseSeed가 진실을 고정. LLM은 연기만 하고 룰 엔진이 모순·붕괴를 판정한다.</td>
+        <td>CaseSeed가 진실을 고정. 48시간 이벤트 타임라인에서 증거가 파생. LLM은 연기만 하고 룰 엔진이 모순·붕괴를 판정.</td>
       </tr>
       <tr>
-        <td>③ 판결은 3단계</td>
-        <td>"사실만 맞춰도 안 되고, 해결책까지 맞아야 점수가 오른다."</td>
-        <td>통찰(사실), 권위(심문), 지혜(해결책) 3축으로 명성을 별도 계산한다.</td>
+        <td>③ 판결은 3단계 + 중재</td>
+        <td>"사실만 맞춰도 안 되고, 해결책까지 맞아야 한다."</td>
+        <td>통찰(사실) x 권위(심문) x 지혜(해결책) 3축 명성. 관계별 중재안 프레임으로 지혜 축을 구체화.</td>
       </tr>
       <tr>
-        <td>④ 매 판 다른 사건</td>
+        <td>④ 인물이 먼저</td>
         <td>"이 캐릭터는 알겠는데 이번 사건은 처음이다."</td>
-        <td>관계·캐릭터 아키타입은 고정, 갈등 씨앗·변수 모듈·반전 모듈을 런타임 조합으로 생성한다.</td>
+        <td>DuoSeed(인물쌍) + ContextSeed(맥락 압박) + CaseSeed(사건) 3층 분리. 관계 이력과 사회관계망에서 사건이 파생.</td>
+      </tr>
+      <tr>
+        <td>⑤ 증거의 정당성</td>
+        <td>"이 증거가 맞긴 한데... 써도 되는 건가?"</td>
+        <td>증거 4축: 신뢰도 / 완전성 / 출처성 / 정당성. 메타데이터 확인, 편집 흔적 검사, 출처 추적 등 하위 조사 액션.</td>
+      </tr>
+      <tr>
+        <td>⑥ 압박과 신뢰</td>
+        <td>"몰아붙여도 안 나오더니 비공개 보장하니까 말한다."</td>
+        <td>당사자별 trust_toward_judge / fear_of_exposure / retaliation_worry 상태. 비공개 진술 보호, 감정 안정화, 보복 우려 확인 등 신뢰 행동.</td>
+      </tr>
+      <tr>
+        <td>⑦ 플레이어 편향 역이용</td>
+        <td>"매번 내가 당했던 패턴을 의식하게 된다."</td>
+        <td>최근 판 판단 패턴(감정 과신, 증거 맹신, 편향 등) 카운터 추적. 다음 사건에서 한 요소만 역이용.</td>
       </tr>
     </tbody>
   </table></div>
+
+
+  <!-- ── LLM 분업 구조 ───────────────────────────── -->
+  <h2 id="llm">LLM 분업 구조</h2>
+  <p>솔로몬은 두 종류의 LLM을 역할에 맞게 분업한다. 생성 비용과 실시간 품질을 동시에 확보하는 구조.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="badge badge-sub">생성 단계</span>
+      <div class="card-title mt-sm">로컬 LLM</div>
+      <p>사건 시작 전에 한 번 무겁게 돌린다. DuoSeed 초기 생성, ContextSeed 파라미터 설정, CaseSeed 전체 생성(인과 그래프, 지식 매트릭스, 48h 이벤트 타임라인, 증거 의존성 그래프, 거짓말 전략 배정, 공동 책임 스펙트럼), 해결성 검증까지 모두 로컬에서 처리한다.</p>
+      <p class="text-sm"><strong>장점:</strong> 토큰 소비 부담 최소화. 풍부한 데이터 생성이 비용 걱정 없이 가능.</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-warning">진행 단계</span>
+      <div class="card-title mt-sm">클라우드 API (OpenAI)</div>
+      <p>실시간 플레이 중에만 호출한다. 당사자 연기 LLM 발화(자연스러운 대사, 감정 표현, 실언, 말 바꾸기), 상호 대응 발화, 플레이어 질문에 대한 자연어 응답 등 고도화된 커뮤니케이션을 담당한다.</p>
+      <p class="text-sm"><strong>장점:</strong> 최신 모델의 연기력과 자연어 품질 확보. 턴당 호출이므로 비용 예측 가능.</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-success">판정 레이어</span>
+      <div class="card-title mt-sm">룰 엔진 (LLM 불필요)</div>
+      <p>거짓말 상태 머신 전이, 감정 곡선 업데이트, 증거 잠금 해제 / 조합 격상, 모순 판정, 판결 채점 — 이 모든 판정은 구조화된 서버 로직으로 처리한다. LLM에 위임하지 않는다.</p>
+      <p class="text-sm"><strong>장점:</strong> 일관성 100% 보장. 할루시네이션 위험 제로.</p>
+    </div>
+  </div>
+
+  <div class="table-wrap"><table>
+    <thead>
+      <tr><th>처리 단계</th><th>담당</th><th>시점</th><th>비용 구조</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>DuoSeed 생성</td><td>로컬 LLM</td><td>최초 1회 (인물쌍 등록 시)</td><td>로컬 처리, 비용 없음</td></tr>
+      <tr><td>ContextSeed + CaseSeed 생성</td><td>로컬 LLM</td><td>매 판 시작 전 1회</td><td>로컬 처리, 비용 없음</td></tr>
+      <tr><td>해결성 검증 + 드라마 비트 검증</td><td>로컬 LLM + 룰 엔진</td><td>매 판 시작 전</td><td>로컬 처리, 비용 없음</td></tr>
+      <tr><td>당사자 발화 생성</td><td>클라우드 API</td><td>매 턴 (플레이 중)</td><td>턴당 API 호출</td></tr>
+      <tr><td>상태 전이 / 모순 판정 / 채점</td><td>룰 엔진</td><td>매 턴 (플레이 중)</td><td>서버 로직, 비용 없음</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>설계 원칙:</strong> 로컬 LLM은 사건 시작 전에 풍부한 데이터를 만들고 끝낸다.
+    플레이 중에는 클라우드 API만 턴 단위로 호출하므로 <strong>플레이어 체감 지연이 최소화</strong>된다.
+    룰 엔진은 LLM과 독립적으로 작동해 사건 일관성을 보장한다.
+  </div></div>
 
 </main>
 

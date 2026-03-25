@@ -16,14 +16,17 @@
   <span class="topbar-title">플레이 메커닉</span>
   <div class="topbar-sections">
     <a class="topbar-sec-link" href="#truth">진실 3층</a>
-    <a class="topbar-sec-link" href="#disputes">쟁점 &amp; 붕괴</a>
+    <a class="topbar-sec-link" href="#disputes">쟁점 & 붕괴</a>
     <a class="topbar-sec-link" href="#loop">플레이 루프</a>
-    <a class="topbar-sec-link" href="#actions">행동 &amp; 스킬</a>
+    <a class="topbar-sec-link" href="#questions">질문 시스템</a>
+    <a class="topbar-sec-link" href="#trust-actions">신뢰/보호 행동</a>
+    <a class="topbar-sec-link" href="#skills">스킬 시스템</a>
     <a class="topbar-sec-link" href="#evidence">증거 시스템</a>
-    <a class="topbar-sec-link" href="#verdict">판결 시스템</a>
+    <a class="topbar-sec-link" href="#mediation">중재안 Phase</a>
+    <a class="topbar-sec-link" href="#verdict">판결 & 명성</a>
   </div>
   <div class="topbar-meta">
-    <span>v1.3</span>
+    <span>v2.0</span>
     <span>2026-03-25</span>
   </div>
 </header>
@@ -65,321 +68,250 @@
 
 <main class="content">
 
-  <h1>플레이 메커닉 <span class="badge">GDD v1.3</span></h1>
-  <p class="subtitle">진실 3층 구조 · 쟁점 & 거짓말 붕괴 · 핵심 플레이 루프 · 행동 세트 & 특수 스킬 · 증거 시스템 · 판결 시스템</p>
-  <p>플레이어가 법정에서 실제로 경험하는 모든 메커닉을 다룬다.</p>
+  <h1>플레이 메커닉 <span class="badge">GDD v2.0</span></h1>
+  <p class="subtitle">진실 3층 · 쟁점 & 붕괴 · 플레이 루프 · 질문 6종 · 신뢰/보호 행동 · 스킬 · 증거 · 중재안 · 판결</p>
+  <p>플레이어가 법정에서 실제로 경험하는 모든 메커닉을 다룬다. v2.0에서는 <strong>압박과 신뢰 두 루트, 질문 유형 세분화, 중재안 Phase, 주장 그래프</strong>가 핵심 추가.</p>
 
 
   <!-- ── 진실 3층 구조 ─────────────────────────── -->
   <h2 id="truth">진실 3층 구조</h2>
-  <p>사건의 실제 진실과 각 인물의 인식, 법정에서의 진술을 분리해야 게임이 추리로 작동한다.</p>
-
   <div class="card-grid">
-    <div class="card">
-      <span class="badge badge-sub">Layer 1</span>
-      <div class="card-title mt-sm">실제 진실</div>
-      <p>실제로 무슨 일이 일어났는지에 대한 절대 데이터. 플레이 중 변하지 않으며, 채점 기준이 된다.</p>
-    </div>
-    <div class="card">
-      <span class="badge badge-warning">Layer 2</span>
-      <div class="card-title mt-sm">각자의 인지와 오해</div>
-      <p>당사자가 진짜 알고 있는 것, 착각하고 있는 것, 듣기만 한 것, 일부만 아는 것이 여기에 속한다.</p>
-    </div>
-    <div class="card">
-      <span class="badge badge-danger">Layer 3</span>
-      <div class="card-title mt-sm">법정에서의 발언</div>
-      <p>같은 사실이라도 숨기거나, 과장하거나, 왜곡하거나, 책임을 밀어내는 식으로 표현될 수 있다.</p>
-    </div>
+    <div class="card"><span class="badge badge-sub">Truth Layer 1 · 진실 1층</span><div class="card-title mt-sm">실제 진실</div><p>실제로 무슨 일이 일어났는지에 대한 절대 데이터. 48h 타임라인에 기록. 채점 기준.</p></div>
+    <div class="card"><span class="badge badge-warning">Truth Layer 2 · 진실 2층</span><div class="card-title mt-sm">각자의 인지와 오해</div><p>당사자가 진짜 알고 있는 것, 착각하고 있는 것, 듣기만 한 것. Relationship Ledger의 왜곡된 과거도 여기에 포함.</p></div>
+    <div class="card"><span class="badge badge-danger">Truth Layer 3 · 진실 3층</span><div class="card-title mt-sm">법정에서의 발언</div><p>같은 사실이라도 숨기거나, 과장하거나, 왜곡. 거짓말 동기(Lie Motive)에 따라 왜곡 방식이 달라진다.</p></div>
   </div>
 
-  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
-    이 구조 덕분에 플레이어는 단순히 <strong>"누가 틀렸는가"</strong>가 아니라,
-    <strong>"누가 속였는가 / 누가 오해했는가 / 누가 일부만 말했는가"</strong>를 판별하게 된다.
+  <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div>
+    <strong>진실 3층(Truth Layers)과 인과 4층(Causal Layers)은 별개 체계다.</strong> 진실 3층은 "정보가 어떻게 왜곡되는가"(사실→인지→발언)를 다루고, 인과 4층은 "사건이 왜 일어났는가"(동기→촉발→갈등→프레이밍)를 다룬다. 사건 구조 페이지의 인과 그래프를 참고할 것.
   </div></div>
 
 
-  <!-- ── 쟁점 항목 & 거짓말 붕괴 규칙 ─────────── -->
+  <!-- ── 쟁점 & 붕괴 ─────────────────────────── -->
   <h2 id="disputes">쟁점 항목 &amp; 거짓말 붕괴 규칙</h2>
-  <p>거짓말은 사건 전체에 대해 한 번에 무너지지 않고, 쟁점 단위로 붕괴한다.</p>
-
-  <div class="two-col">
-    <div class="card">
-      <span class="badge badge-sub">쟁점 항목 예시</span>
-      <div class="card-title mt-sm">사건을 4~7개 질문으로 쪼갠다</div>
-      <p class="text-sm">예: 공동 통장 무단 인출 / 도박 사용 여부 / 외도 여부 / 휴대폰 무단 열람 / 과장 유포 / 몸싸움 여부</p>
-    </div>
-    <div class="card">
-      <span class="badge badge-warning">거짓말은 항목별로 관리</span>
-      <div class="card-title mt-sm">숨김 → 주장 → 충돌 → 붕괴 → 재프레이밍</div>
-      <p>사실 항목은 증거로 무너지지만, 해석 싸움은 이후에도 이어진다. 그래서 드라마가 꺼지지 않는다.</p>
-    </div>
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>상태</th><th>설명</th><th>AI 행동</th><th>플레이어 체감</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>숨김</td><td>아직 그 쟁점이 공개되지 않음</td><td>관련 질문을 피하거나 화제를 돌림</td><td>뭔가 감추고 있다는 느낌</td></tr>
-        <tr><td>주장</td><td>사실처럼 단정하거나 부인함</td><td>자신감 있게 반복 주장</td><td>양측 버전이 충돌하기 시작함</td></tr>
-        <tr><td>충돌</td><td>증거나 상대 진술 때문에 흔들림</td><td>말 바꾸기, 세부 회피, 감정적 반발</td><td>모순이 보이기 시작함</td></tr>
-        <tr><td>붕괴</td><td>더는 거짓말을 유지할 수 없음</td><td>인정하거나 침묵, 다른 프레임으로 이동</td><td>사실 하나가 확정되는 쾌감</td></tr>
-        <tr><td>재프레이밍</td><td>사실은 인정하되 책임과 해석을 바꿈</td><td>"맞지만 이유가 있었다" 식 방어</td><td>후반부 지혜 판결의 핵심 구간</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-title">하드 증거</div>
-      <p>원본 계좌 내역, 메타데이터가 보존된 전문 대화, 원본 계약서, 연속 CCTV. 1개만으로도 붕괴 가능.</p>
-    </div>
-    <div class="card">
-      <div class="card-title">소프트 증거</div>
-      <p>부분 녹취, 목격 진술, 잘린 화면, 단편 메시지. 2개 이상 또는 타임라인 결합으로 설득력 상승.</p>
-    </div>
-    <div class="card">
-      <div class="card-title">논리 모순</div>
-      <p>동시다발 알리바이, 날짜·장소 불가능성, 이미 고정된 진술과 충돌하는 내용. 하드 증거 없이도 붕괴 유도 가능.</p>
-    </div>
-  </div>
-
-
-  <!-- ── 핵심 플레이 루프 ─────────────────────── -->
-  <h2 id="loop">핵심 플레이 루프</h2>
-  <p>한 사건은 약 10~15분. 플레이어는 제한된 질문과 조사 자원을 써서 핵심 쟁점을 확정한다.</p>
-
-  <h3>전체 Phase 흐름</h3>
-  <div class="flow">
-    <div class="flow-step">
-      <div class="n">Phase 0</div>
-      <h4>사건 개요 카드</h4>
-      <p>플레이어만 확인. 관계 유형, 갈등 씨앗 코드, 분쟁 주제. 진실은 숨겨진 채로 시작.</p>
-    </div>
-    <div class="flow-step">
-      <div class="n">Phase 1</div>
-      <h4>초기 진술</h4>
-      <p>A → B 순서로 자신의 프레이밍 버전을 제시. 둘 다 피해자임을 주장.</p>
-    </div>
-    <div class="flow-step">
-      <div class="n">Phase 2</div>
-      <h4>즉각 반박</h4>
-      <p>자동으로 1라운드 반박 교환. 감정 온도가 높아지며 첫 번째 모순 힌트가 노출.</p>
-    </div>
-    <div class="flow-step">
-      <div class="n">Phase 3</div>
-      <h4>심문 개시</h4>
-      <p>플레이어가 날짜·금액·동기·행동을 좁혀 묻는다. 발언 기록 → 모순 체크 대상 등록.</p>
-    </div>
-    <div class="flow-step">
-      <div class="n">Phase 4</div>
-      <h4>증거 제시</h4>
-      <p>획득 증거 공개 → 에이전트 반응 유발. 거짓말 붕괴와 감정 폭발의 핵심 구간.</p>
-    </div>
-    <div class="flow-step">
-      <div class="n">Phase 5</div>
-      <h4>재심문</h4>
-      <p>붕괴 항목 기반으로 책임 비율·동기를 파고든다. 해석 싸움 강화.</p>
-    </div>
-    <div class="flow-step">
-      <div class="n">Phase 6</div>
-      <h4>판결</h4>
-      <p>사실 인정 → 책임 배분 → 해결책. 명성과 칭호 피드백.</p>
-    </div>
-    <div class="flow-step">
-      <div class="n">결과</div>
-      <h4>판결 리뷰</h4>
-      <p>숨겨진 진실과 비교. "이걸 놓쳤군" 체감 → 재도전 동기 유발.</p>
-    </div>
-  </div>
-
-  <h3>Phase 0 — 사건 발단 & 초기 진술 설계</h3>
-  <p>게임이 어떻게 시작되느냐는 플레이어의 첫인상 편향을 결정한다. 초기 진술은 신중하게 설계해야 한다.</p>
+  <p>거짓말은 사건 전체에 대해 한 번에 무너지지 않고, <strong>쟁점 단위로 붕괴</strong>한다. 붕괴 경로는 <strong>압박 루트와 신뢰 루트</strong> 두 가지.</p>
 
   <div class="table-wrap"><table>
-    <thead><tr><th>단계</th><th>발생 내용</th><th>설계 원칙</th></tr></thead>
+    <thead><tr><th>상태</th><th>설명</th><th>압박 루트 AI 행동</th><th>신뢰 루트 AI 행동</th></tr></thead>
     <tbody>
-      <tr>
-        <td><strong>사건 개요 카드</strong></td>
-        <td>플레이어에게만 표시. 관계 타입, 갈등 씨앗 코드, 분쟁의 표면 주제 (Layer 2 수준).</td>
-        <td>진실(Layer 0~1)은 절대 공개하지 않는다. 플레이어도 처음엔 표면만 안다.</td>
-      </tr>
-      <tr>
-        <td><strong>A의 첫 진술</strong></td>
-        <td>자신이 피해자임을 주장. CaseSeed의 <code>framing.party_a</code> 기반. 감정 상태: 분노 또는 억울함.</td>
-        <td>거짓말 상태는 S0 (전면 부정). 아직 증거 없으니 자신감 있게 주장.</td>
-      </tr>
-      <tr>
-        <td><strong>B의 첫 진술</strong></td>
-        <td>동일하게 피해자 주장. A 진술과 일부 겹치되, 핵심 해석이 다름. 한 군데 이상 자연스럽게 반박.</td>
-        <td>A의 진술을 직접 언급해 충돌 포인트를 만든다. 플레이어가 즉시 "누가 맞지?"를 느끼도록.</td>
-      </tr>
-      <tr>
-        <td><strong>자동 반박 1R</strong></td>
-        <td>A와 B가 한 마디씩 서로 반박. 감정 온도 상승. 이 과정에서 첫 번째 모순 힌트가 1개 노출.</td>
-        <td>플레이어는 개입 불가. 관찰자로서 양측을 동시에 보며 첫 인상 편향이 형성됨.</td>
-      </tr>
-      <tr>
-        <td><strong>심문 개시 선언</strong></td>
-        <td>플레이어가 첫 질문을 선택. 이때부터 조사 토큰/스킬 포인트/법정 통제력이 소모 가능.</td>
-        <td>첫 질문 대상(A or B)과 주제 선택이 이후 정보 노출 순서를 결정한다.</td>
-      </tr>
+      <tr><td>숨김</td><td>아직 쟁점이 공개되지 않음</td><td>관련 질문 피하기/화제 돌리기</td><td>신뢰가 높으면 간접적 힌트 제공</td></tr>
+      <tr><td>주장</td><td>사실처럼 단정하거나 부인</td><td>자신감 있는 반복 주장</td><td>공감 질문에 살짝 흔들림</td></tr>
+      <tr><td>충돌</td><td>증거/진술로 흔들림</td><td>말 바꾸기, 감정적 반발</td><td>비공개 보장 시 부분 인정 가능</td></tr>
+      <tr><td>붕괴</td><td>더는 거짓말 유지 불가</td><td>인정 또는 침묵</td><td>자발적 고백 + 재프레이밍</td></tr>
+      <tr><td>재프레이밍</td><td>사실은 인정, 해석을 바꿈</td><td>"맞지만 이유가 있었다"</td><td>"사실 말씀드리고 싶었는데..."</td></tr>
     </tbody>
   </table></div>
 
-  <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
-    <strong>초기 진술 설계 원칙:</strong>
-    A와 B의 첫 진술은 서로 완전히 상반된 내용이어서는 안 된다.
-    <strong>70%는 같은 사실을 다른 해석으로 말하고, 30%만 실질적 모순</strong>으로 구성해야
-    플레이어가 "어느 쪽이 맞는가"를 추적하는 재미가 생긴다.
-  </div></div>
 
+  <!-- ── 플레이 루프 ─────────────────────────── -->
+  <h2 id="loop">핵심 플레이 루프 (v2.0)</h2>
+  <p>한 사건은 약 10~20분. v2.0에서 <strong>중재안 Phase</strong>가 추가되어 판결 전 선택적 중재가 가능하다.</p>
 
-  <!-- ── 플레이어 행동 세트 ────────────────────── -->
-  <h2 id="actions">플레이어 행동 세트 &amp; 특수 스킬</h2>
-  <p>행동 수가 지나치게 많지 않도록, 플레이어의 주요 액션은 6종으로 압축한다.</p>
-
-  <div class="card-grid">
-    <div class="card"><div class="card-title">직접 질문</div><p>예/아니오, 날짜, 금액, 장소, 동기처럼 답변의 범위를 좁혀 모순을 만들기 쉽게 한다.</p></div>
-    <div class="card"><div class="card-title">타임라인 고정</div><p>특정 시간대에 무엇을 했는지 명시하게 하여 이후 발언과 비교한다.</p></div>
-    <div class="card"><div class="card-title">비교 심문</div><p>같은 질문을 양측에 반복해 답변 차이를 드러낸다.</p></div>
-    <div class="card"><div class="card-title">분리 심문</div><p>상대를 잠시 제외하고 개별 질문을 던져, 상대가 없는 상황에서의 진술 변화를 본다.</p></div>
-    <div class="card"><div class="card-title">증거 요청 / 공개</div><p>조사 토큰을 사용해 새 증거를 요청하거나, 확보한 증거를 법정에서 공개한다.</p></div>
-    <div class="card"><div class="card-title">법정 통제</div><p>과열된 말싸움을 진정시키거나 일부러 방치해 감정 섞인 실언을 유도한다.</p></div>
+  <div class="flow">
+    <div class="flow-step"><div class="n">Phase 0</div><h4>사건 개요 카드</h4><p>DuoSeed 인물 소개 + ContextSeed 배경. 진실은 숨겨진 채 시작.</p></div>
+    <div class="flow-step"><div class="n">Phase 1</div><h4>초기 진술</h4><p>A → B 순서로 자신의 프레이밍 버전 제시. 초기 인상 균형 보장.</p></div>
+    <div class="flow-step"><div class="n">Phase 2</div><h4>즉각 반박</h4><p>자동 1라운드 반박 교환. 감정 온도 상승. 첫 번째 모순 힌트 노출.</p></div>
+    <div class="flow-step"><div class="n">Phase 3</div><h4>심문 개시</h4><p>질문 6종 시스템으로 심문. 주장 그래프에 발언 자동 기록.</p></div>
+    <div class="flow-step"><div class="n">Phase 4</div><h4>증거 제시 & 조사</h4><p>증거 공개 + 4축 조사 하위 액션. 거짓말 붕괴의 핵심 구간.</p></div>
+    <div class="flow-step"><div class="n">Phase 5</div><h4>재심문 & 신뢰 루트</h4><p>붕괴 항목 기반 재심문 + 신뢰/보호 행동 5종. 비공개 진술 획득 구간.</p></div>
+    <div class="flow-step"><div class="n">Phase 6</div><h4>중재안 Phase (선택적)</h4><p>즉시 판결 / 조건부 조정안 / 추가 조사 보류 / 사실 확정 + 해결책 우선 중 선택.</p></div>
+    <div class="flow-step"><div class="n">Phase 7</div><h4>판결</h4><p>사실 인정 → 책임 배분 → 해결책 선택. 명성과 칭호 피드백.</p></div>
+    <div class="flow-step"><div class="n">결과</div><h4>판결 리뷰</h4><p>숨겨진 진실과 비교. 48h 타임라인 공개. 재도전 동기 유발.</p></div>
   </div>
 
-  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
-    <strong>추천 리소스:</strong> 사건당 <strong>조사 토큰 3개</strong>, <strong>스킬 포인트 4점</strong>, <strong>법정 통제력 3단계</strong>.
-    자원이 제한되어야 플레이어가 전략적으로 질문 순서를 설계하게 된다.
+
+  <!-- ── 질문 시스템 ─────────────────────────── -->
+  <h2 id="questions">질문 6종 시스템</h2>
+  <p>질문의 의도와 결과물이 선명해야 손맛이 산다. 플레이어 질문을 6가지 유형으로 분류한다.</p>
+
+  <div class="card-grid">
+    <div class="card"><div class="card-title">사실 고정 질문</div><p>날짜, 금액, 위치, 행위를 확정한다. "정확히 언제", "얼마를", "어디서" — 답변이 이후 모순의 기준이 된다.</p></div>
+    <div class="card"><div class="card-title">타임라인 질문</div><p>순서와 동선을 확정한다. "그 다음엔?", "그때 어디 있었나?" — 48h 타임라인과 대조 가능.</p></div>
+    <div class="card"><div class="card-title">동기 질문</div><p>왜 그랬는지를 묻는다. "왜 그때 그 선택을?", "다른 방법은 없었나?" — 인과 그래프 Layer 0~1 추적.</p></div>
+    <div class="card"><div class="card-title">맥락 확장 질문</div><p>그 전후 상황을 확인한다. "그 전에는 무슨 일이?", "그 후에 어떻게 됐나?" — Relationship Ledger 이력 활성화 트리거.</p></div>
+    <div class="card"><div class="card-title">출처 질문</div><p>"그걸 어떻게 알았나?", "누가 말해줬나?" — 증거의 출처성·정당성 확인. Social Graph 제3자 발견 경로.</p></div>
+    <div class="card"><div class="card-title">공감 질문</div><p>"말하기 어려운 건 이해합니다. 왜 지금 말하기 힘든가요?" — trust_toward_judge 상승. 신뢰 루트의 핵심 도구.</p></div>
+  </div>
+
+  <h3>주장 그래프 (Claim Graph)</h3>
+  <p>누가 / 어떤 쟁점에 대해 / 무엇을 / 어느 정도 확신으로 말했는지를 <strong>자동 요약</strong>하는 UI. 텍스트 피로를 크게 줄이는 핵심 장치.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>기능</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td>발언 자동 등록</td><td>각 에이전트 발언이 관련 쟁점에 자동으로 태깅·요약된다.</td></tr>
+      <tr><td>충돌 표시</td><td>같은 쟁점에 대한 A/B 발언이 모순되면 빨간색 표시.</td></tr>
+      <tr><td>변경 추적</td><td>이전 발언과 달라진 내용이 있으면 노란색 표시.</td></tr>
+      <tr><td>정식 기록 하이라이트</td><td>"정식 기록 채택" 스킬로 고정된 발언은 파란색 표시.</td></tr>
+      <tr><td>붕괴 표시</td><td>거짓말 붕괴된 쟁점은 취소선 + 실제 사실 병기.</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <!-- ── 신뢰/보호 행동 ─────────────────────── -->
+  <h2 id="trust-actions">신뢰/보호 행동 5종</h2>
+  <p>압박만이 길이 아니다. 수치심, 공포, 보호 본능으로 숨기는 진실은 <strong>신뢰와 안전감</strong>을 줘야 나온다.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">비공개 진술 보호</div>
+      <p>"이 내용은 상대방에게 공개하지 않겠습니다." trust_toward_judge +20. 비공개 진술은 내부 단서가 되지만 공개 판결 근거는 안 된다.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">끼어들기 금지 선언</div>
+      <p>상대 에이전트의 개입을 일시 차단. 분리 심문의 경량 버전. retaliation_worry -10. 안전한 발언 환경 조성.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">보복 우려 확인</div>
+      <p>"말씀하신 후에 불이익이 걱정되시나요?" retaliation_worry -25. 직장/가족 관계에서 특히 효과적.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">감정 안정화</div>
+      <p>과열된 감정을 진정시킨 후 재질문. 분노/공포 상태에서 동요/체념으로 전환 촉진. 전환 후 신뢰 루트 효과 극대화.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">공개 전 사전 확인</div>
+      <p>"이 내용을 법정에서 공개해도 괜찮겠습니까?" 비공개 진술을 공개 진술로 격상시키는 절차. trust가 충분히 높아야 수용.</p>
+    </div>
+  </div>
+
+  <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
+    <strong>밸런스 규칙:</strong> 비공개 진술은 <strong>공적 판결 근거가 될 수 없다</strong>. 진실을 알게 되는 것과 그것을 판결에 쓸 수 있는 것은 다르다. 공개 전 사전 확인을 거치거나, 별도 공개 증거를 찾아야 한다. 이것이 신뢰 루트가 만능이 되는 것을 방지한다.
   </div></div>
+
+
+  <!-- ── 스킬 시스템 ─────────────────────────── -->
+  <h2 id="skills">특수 스킬 시스템 (리테마이징)</h2>
+  <p>"초능력"이 아니라 <strong>"판사/중재자의 기술"</strong>로 표현한다. 내부 시스템은 동일하되, 플레이어가 느끼는 표면 언어를 현실적으로 바꾼다.</p>
+
+  <div class="skill-grid">
+    <div class="skill-card">
+      <div class="sk-name">즉답 요구</div>
+      <div class="sk-cost">스킬 포인트 3 · 판당 1회</div>
+      <p class="sk-effect">지목한 에이전트에게 다음 1개 질문에 대해 거짓말 불가 상태를 강제. lie_state가 즉시 S5로 이동.</p>
+      <p class="sk-tip">어떤 질문에 쓰느냐가 전부다. 사전에 어느 쟁점이 L4 강도인지 파악 후 사용.</p>
+    </div>
+    <div class="skill-card">
+      <div class="sk-name">교차 대질</div>
+      <div class="sk-cost">스킬 포인트 2 · 판당 2회</div>
+      <p class="sk-effect">A와 B를 동시에 같은 쟁점에 대해 발언하게 한다. 자동 모순 노출 판정.</p>
+      <p class="sk-tip">LT-3(맥락 왜곡)이나 LT-4(책임 전가) 유형에 특히 강력.</p>
+    </div>
+    <div class="skill-card">
+      <div class="sk-name">회피 신호 판독</div>
+      <div class="sk-cost">스킬 포인트 1 · 제한 없음</div>
+      <p class="sk-effect">대상 에이전트의 현재 <strong>행동 징후</strong>를 텍스트로 공개. 어느 쟁점이 불안정한지 힌트 제공. 숫자는 보이지 않는다.</p>
+      <p class="sk-tip">중반 이후 어디를 집중 공략할지 판단할 때. 신뢰 루트 타이밍 판단에도 유용.</p>
+    </div>
+    <div class="skill-card">
+      <div class="sk-name">이전 진술 대조</div>
+      <div class="sk-cost">스킬 포인트 1 · 판당 3회</div>
+      <p class="sk-effect">주장 그래프에서 모순 가능성이 있는 발언 1개를 자동 하이라이트. 완벽한 답을 주지는 않는다.</p>
+      <p class="sk-tip">대화가 길어져 힌트를 놓쳤을 때.</p>
+    </div>
+    <div class="skill-card">
+      <div class="sk-name">제3자 소환</div>
+      <div class="sk-cost">조사 토큰 2 · 판당 1회</div>
+      <p class="sk-effect">Social Graph에서 활성화된 제3자를 법정에 불러 1회 질문. 배후 반전(TW-2) 해금의 열쇠.</p>
+      <p class="sk-tip">제3자 존재가 의심될 때만 사용. 없는 사건에서 사용하면 토큰만 낭비.</p>
+    </div>
+    <div class="skill-card">
+      <div class="sk-name">질서 유지 경고</div>
+      <div class="sk-cost">법정 통제력 -1 · 제한 없음</div>
+      <p class="sk-effect">대상 에이전트의 emotional_arc를 1단계 가속. 빨리 체념에 도달시키고 싶을 때.</p>
+      <p class="sk-tip">법정 통제력이 0이 되면 역효과. 에이전트가 반발하거나 발언 거부.</p>
+    </div>
+    <div class="skill-card">
+      <div class="sk-name">정식 기록 채택</div>
+      <div class="sk-cost">스킬 포인트 1 · 제한 없음</div>
+      <p class="sk-effect">에이전트 발언 중 하나를 "공식 진술"로 고정. 이후 모순 발언 시 자동 붕괴 표시. 주장 그래프에 파란색 표시.</p>
+      <p class="sk-tip">증거 제시 직전에 관련 발언을 고정해두면 붕괴 효과 극대화.</p>
+    </div>
+  </div>
 
   <h3>리소스 통합 설계</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>리소스</th><th>기본 보유</th><th>획득 방법</th><th>주요 소모처</th></tr></thead>
     <tbody>
-      <tr><td><strong>조사 토큰 🔍</strong></td><td>3개</td><td>기본 지급 / 명성 소모 추가 구매</td><td>분리 심문, 증거 요청, 제3자 소환 스킬</td></tr>
-      <tr><td><strong>스킬 포인트 ⚡</strong></td><td>4점</td><td>기본 지급 / 특정 심문 성공 시 +1</td><td>진실의 서약, 교차 대질, 기억 소환, 진술 봉인</td></tr>
-      <tr><td><strong>법정 통제력 ⚖️</strong></td><td>3단계</td><td>기본 지급 / 과열 방치 시 감소</td><td>법정 압박 스킬, 방치 선택 (1단계 소모)</td></tr>
+      <tr><td><strong>조사 토큰</strong></td><td>3개</td><td>기본 지급 / 명성 소모 추가 구매</td><td>분리 심문, 증거 요청, 제3자 소환</td></tr>
+      <tr><td><strong>스킬 포인트</strong></td><td>5점</td><td>기본 지급 / 특정 심문 성공 시 +1</td><td>즉답 요구, 교차 대질, 회피 신호 판독, 이전 진술 대조, 정식 기록 채택</td></tr>
+      <tr><td><strong>법정 통제력</strong></td><td>3단계</td><td>기본 지급 / 과열 방치 시 감소</td><td>질서 유지 경고, 방치 선택 (1단계 소모)</td></tr>
     </tbody>
   </table></div>
 
-  <h3>특수 스킬 시스템</h3>
-  <p>기본 행동만으로는 돌파하기 어려운 상황을 위한 고급 행동 세트. 리소스를 소모하며, 전략적 타이밍이 핵심이다.</p>
 
-  <div class="skill-grid">
-    <div class="skill-card">
-      <div class="sk-name">⚡ 진실의 서약</div>
-      <div class="sk-cost">스킬 포인트 3 · 판당 1회</div>
-      <p class="sk-effect">지목한 에이전트에게 다음 1개 질문에 대해 거짓말 불가 상태를 강제한다. 해당 쟁점의 <code>lie_state</code>가 즉시 S5로 이동.</p>
-      <p class="sk-tip">💡 어떤 질문에 쓰느냐가 전부다. 사전에 어느 쟁점이 L4 강도인지 파악 후 사용.</p>
-    </div>
-    <div class="skill-card">
-      <div class="sk-name">⚡ 교차 대질</div>
-      <div class="sk-cost">스킬 포인트 2 · 판당 2회</div>
-      <p class="sk-effect">A와 B를 동시에 같은 쟁점에 대해 발언하게 한다. 자동 모순 노출 판정. 상대 발언에 즉각 반응하며 감정 상태가 빠르게 변화.</p>
-      <p class="sk-tip">💡 LT-3(맥락 왜곡)이나 LT-4(책임 전가) 유형에 특히 강력.</p>
-    </div>
-    <div class="skill-card">
-      <div class="sk-name">⚡ 감정 스캔</div>
-      <div class="sk-cost">스킬 포인트 1 · 제한 없음</div>
-      <p class="sk-effect">대상 에이전트의 현재 <code>emotional_state</code>와 <code>lie_stability</code> 수치를 수치로 공개. 어느 쟁점이 불안정한지 힌트 제공.</p>
-      <p class="sk-tip">💡 중반 이후 어디를 집중 공략할지 판단할 때 사용.</p>
-    </div>
-    <div class="skill-card">
-      <div class="sk-name">⚡ 기억 소환</div>
-      <div class="sk-cost">스킬 포인트 1 · 판당 3회</div>
-      <p class="sk-effect">지금까지의 발언 로그 중 모순 가능성이 있는 발언 1개를 자동으로 하이라이트. 플레이어가 직접 찾아야 할 모순을 보조.</p>
-      <p class="sk-tip">💡 대화가 길어져 힌트를 놓쳤을 때. 완벽한 답을 주지는 않는다.</p>
-    </div>
-    <div class="skill-card">
-      <div class="sk-name">🔍 제3자 소환</div>
-      <div class="sk-cost">조사 토큰 2 · 판당 1회</div>
-      <p class="sk-effect">VM-A(제3자 개입) 모듈 포함 사건에서 제3자를 법정에 불러 1회 질문할 수 있다. 배후 반전(TW-2) 해금의 열쇠.</p>
-      <p class="sk-tip">💡 제3자 존재가 의심될 때만 사용. 없는 사건에서 사용하면 토큰만 낭비.</p>
-    </div>
-    <div class="skill-card">
-      <div class="sk-name">⚖️ 법정 압박</div>
-      <div class="sk-cost">법정 통제력 -1 · 제한 없음</div>
-      <p class="sk-effect">대상 에이전트를 심리적으로 압박해 <code>emotional_arc</code>를 1단계 가속. 빨리 체념 단계에 도달시키고 싶을 때.</p>
-      <p class="sk-tip">💡 법정 통제력이 0이 되면 역효과. 에이전트가 반발하거나 발언 거부 상태 돌입.</p>
-    </div>
-    <div class="skill-card">
-      <div class="sk-name">⚡ 진술 봉인</div>
-      <div class="sk-cost">스킬 포인트 1 · 제한 없음</div>
-      <p class="sk-effect">에이전트의 발언 중 하나를 "공식 진술"로 고정 등록. 이후 해당 내용과 모순되는 발언이 나오면 시스템이 자동으로 붕괴 표시.</p>
-      <p class="sk-tip">💡 증거 제시 직전에 관련 발언을 봉인해두면 붕괴 효과가 극대화.</p>
-    </div>
+  <!-- ── 증거 시스템 ─────────────────────────── -->
+  <h2 id="evidence">증거 시스템 (4축)</h2>
+  <p>증거는 정답 버튼이 아니라, 진술을 흔들고 해석 싸움을 재구성하는 장치. 4축(신뢰도/완전성/출처성/정당성) 평가가 핵심.</p>
+
+  <div class="card-grid">
+    <div class="card"><span class="badge badge-sub">하드</span><h4>계좌 내역 / 원본 계약서</h4><p>기관에서 제공하는 원본 데이터. 4축 모두 높음. 1개만으로도 붕괴 가능.</p></div>
+    <div class="card"><span class="badge badge-warning">소프트</span><h4>채팅 캡처 / 목격 진술</h4><p>완전성·출처성에 의문 가능. 2개 이상 또는 맥락 복원으로 신뢰도 상승.</p></div>
+    <div class="card"><span class="badge badge-danger">정당성 의심</span><h4>몰래 열람 / 불법 녹취</h4><p>사실일 수 있지만 정당성이 낮다. 판결 근거로 쓰면 권위 점수 하락.</p></div>
   </div>
 
-  <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
-    <strong>스킬 밸런스 원칙:</strong>
-    스킬은 "정답을 알려주는" 장치가 아니라 <strong>"추리 루트를 확장하는"</strong> 장치여야 한다.
-    가장 강력한 스킬(진실의 서약)도 어떤 질문에 사용하는지를 플레이어가 스스로 판단해야 의미가 있다.
+  <p>증거 조사 하위 액션: 원본 제출 요구 / 메타데이터 확인 / 앞뒤 맥락 복원 / 출처 확인 / 편집 흔적 검사 / 취득 경위 질문. (상세는 <a href="solomon-generator.html#evidence-system">생성 엔진 &gt; 증거 4축</a> 참조)</p>
+
+
+  <!-- ── 중재안 Phase ─────────────────────── -->
+  <h2 id="mediation">중재안 Phase</h2>
+  <p>솔로몬의 진짜 클라이맥스. "누가 더 잘못했는가"만이 아니라 <strong>"어떻게 정리하는 것이 가장 현명한가"</strong>.</p>
+
+  <div class="alert alert-info"><span class="alert-icon">⚖️</span><div>
+    <strong>진입 방식:</strong> Phase 5(재심문) 종료 후, 플레이어는 아래 4가지 중 하나를 선택한다.
+    즉시 판결을 원하면 중재안을 건너뛸 수 있다.
   </div></div>
 
-
-  <!-- ── 증거 시스템 ───────────────────────────── -->
-  <h2 id="evidence">증거 시스템</h2>
-  <p>증거는 정답 버튼이 아니라, 진술을 흔들고 해석 싸움을 재구성하는 장치여야 한다.</p>
-
   <div class="card-grid">
-    <div class="card"><span class="badge badge-sub">하드</span><h4>계좌 내역</h4><p>지출/송금/출금의 사실을 강하게 입증. 금전 분쟁의 핵심.</p></div>
-    <div class="card"><span class="badge badge-sub">하드</span><h4>원본 계약서</h4><p>약속의 기준점. 직장, 동업, 집주인-세입자 분쟁에 효과적.</p></div>
-    <div class="card"><span class="badge badge-warning">소프트</span><h4>메신저 캡처</h4><p>전문이 아니면 맥락이 잘릴 수 있다. 오해나 조작의 여지를 남긴다.</p></div>
-    <div class="card"><span class="badge badge-warning">소프트</span><h4>목격 진술</h4><p>진짜를 봤어도 오해할 수 있다. 감정과 편견에 쉽게 휘둘린다.</p></div>
+    <div class="card"><div class="card-title">즉시 판결</div><p>중재안 없이 바로 Phase 7로. 확신이 있을 때.</p></div>
+    <div class="card"><div class="card-title">조건부 조정안 제시</div><p>양측에 조건을 제시하고 반응을 본다. 에이전트가 수용/거부/수정 요청으로 반응.</p></div>
+    <div class="card"><div class="card-title">추가 조사 후 보류</div><p>부분 해결 사건에서 유효. 확정 가능한 것만 확정하고 나머지는 보류. 지혜 점수 유지 또는 소폭 상승.</p></div>
+    <div class="card"><div class="card-title">사실 확정 + 해결책 우선</div><p>사실 인정을 먼저 하고, 해결책 논의를 별도로 진행. 복잡한 공동 책임 사건에 적합.</p></div>
   </div>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>증거 타입</th><th>강점</th><th>한계</th><th>드라마 효과</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>전체 CCTV</td><td>시간·위치 입증</td><td>소리/동기/맥락은 부족</td><td>알리바이 붕괴</td></tr>
-        <tr><td>녹취</td><td>표현과 뉘앙스 파악</td><td>편집 가능성, 앞뒤 맥락 결여</td><td>감정 폭발 유도</td></tr>
-        <tr><td>채팅 전문</td><td>오해 해소와 은폐 폭로</td><td>암시적 표현 해석이 필요</td><td>외도/직장 소문 관련 강력</td></tr>
-        <tr><td>회사 로그</td><td>출입, 수정 이력 확인</td><td>행동의 이유는 불명확</td><td>성과 가로채기나 문서 조작 입증</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <h3>관계별 해결 프레임</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>관계</th><th>해결 옵션 예시</th><th>지혜 평가 요소</th></tr></thead>
+    <tbody>
+      <tr><td>부부/연인</td><td>공동 계좌 분리 / 상환 계획 / 디지털 경계 재설정 / 양가 개입 차단 / 관계 지속·별거·종료 권고</td><td>사실 확정도, 취약자 보호, 재발 가능성</td></tr>
+      <tr><td>이웃</td><td>생활 시간대 합의 / 비용 분담 / 사과 범위 / 공용 공간 규칙 / 관리사무소 개입</td><td>실질적 해결 가능성, 공정성</td></tr>
+      <tr><td>직장</td><td>공로 재기록 / 공동 사과·공식 정정 / 접근 권한 재설정 / HR 보고 / 분리 배치</td><td>증거 신뢰도, 조직 구조 이해</td></tr>
+      <tr><td>동업자</td><td>지분 재조정 / 계약 재작성 / 역할 재분배 / 공동 사과 / 동업 해지 조건</td><td>재정적 공정성, 계약 이행도</td></tr>
+      <tr><td>가족</td><td>간병 분담 재조정 / 재정 투명화 / 소통 규칙 / 개인 자율 보장 / 전문 상담 권고</td><td>취약자 보호, 감정 고려, 장기적 관계</td></tr>
+    </tbody>
+  </table></div>
 
 
-  <!-- ── 판결 시스템 & 명성 ────────────────────── -->
+  <!-- ── 판결 & 명성 ─────────────────────── -->
   <h2 id="verdict">판결 시스템 &amp; 명성</h2>
-  <p>게임의 클라이맥스. 판결은 정답 여부뿐 아니라 통찰, 권위, 지혜를 동시에 평가한다.</p>
+  <p>판결은 정답 여부뿐 아니라 통찰, 권위, 지혜를 동시에 평가한다.</p>
 
   <div class="card-grid">
-    <div class="card"><span class="badge badge-sub">평가 축 1</span><div class="card-title mt-sm">통찰</div><p>핵심 사실을 얼마나 정확하게 짚었는가. 가장 중요한 쟁점을 놓치면 큰 페널티.</p></div>
-    <div class="card"><span class="badge badge-warning">평가 축 2</span><div class="card-title mt-sm">권위</div><p>심문 과정에서 법정을 얼마나 잘 통제했는가. 너무 방치해도, 너무 억압해도 손해.</p></div>
-    <div class="card"><span class="badge badge-success">평가 축 3</span><div class="card-title mt-sm">지혜</div><p>사실과 책임에 맞는 해결책을 내렸는가. 후반으로 갈수록 단순 승패보다 더 중요해진다.</p></div>
+    <div class="card"><span class="badge badge-sub">평가 축 1</span><div class="card-title mt-sm">통찰</div><p>핵심 사실을 얼마나 정확하게 짚었는가. 부분 해결 사건에서 "판단 보류"는 패널티 없음.</p></div>
+    <div class="card"><span class="badge badge-warning">평가 축 2</span><div class="card-title mt-sm">권위</div><p>심문 과정에서 법정을 얼마나 잘 통제했는가. 위법 증거를 그대로 쓰면 감점.</p></div>
+    <div class="card"><span class="badge badge-success">평가 축 3</span><div class="card-title mt-sm">지혜</div><p>사실과 책임에 맞는 해결책을 내렸는가. 중재안의 적절성, 취약자 보호, 재발 방지를 평가.</p></div>
   </div>
 
-  <div class="two-col">
-    <div class="card">
-      <div class="card-title">판결 입력 항목</div>
-      <p class="text-sm">① 쟁점별 사실 인정 체크리스트 ② 쟁점별 책임 비율(A/B) ③ 처분/해결책 선택 또는 조합</p>
-    </div>
-    <div class="card">
-      <div class="card-title">보상 구조</div>
-      <p class="text-sm">명성 상승, 칭호 해금, 신규 관계 템플릿/사건 모듈 해금, 하드 모드 개방</p>
-    </div>
-  </div>
+  <h3>판결 입력 & 결과</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>입력 단계</th><th>내용</th><th>채점 연결</th></tr></thead>
+    <tbody>
+      <tr><td>사실 인정</td><td>쟁점별 체크리스트에서 사실/거짓/보류 선택</td><td>통찰 점수</td></tr>
+      <tr><td>책임 배분</td><td>쟁점별 A/B 슬라이더 또는 단계형 선택</td><td>통찰 + 지혜 점수</td></tr>
+      <tr><td>해결책 선택</td><td>관계별 해결 프레임에서 택1 또는 조합</td><td>지혜 점수</td></tr>
+      <tr><td>증거 정당성 판단</td><td>위법 취득 증거 사용 여부 결정</td><td>권위 점수</td></tr>
+    </tbody>
+  </table></div>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>결과 예시</th><th>명성 변화</th><th>의도</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>핵심 사실 적중 + 해결책 적절</td><td>대폭 상승</td><td>정확성과 지혜를 동시에 보상</td></tr>
-        <tr><td>핵심 사실은 맞췄지만 해결책이 과격</td><td>소폭 상승 / 지혜 감소</td><td>사실만 맞춘 플레이를 견제</td></tr>
-        <tr><td>한쪽의 감정에 휘둘려 오판</td><td>하락</td><td>언변보다 구조적 판단을 장려</td></tr>
-        <tr><td>증거 부족 사건에서 신중하게 보류</td><td>유지 또는 소폭 상승</td><td>신중함도 하나의 실력으로 인정</td></tr>
-        <tr><td>제3자 비밀까지 밝혀내고 판결</td><td>대폭 상승 + 보너스 칭호</td><td>최고 난도 추리를 특별 보상</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>결과 예시</th><th>명성 변화</th><th>의도</th></tr></thead>
+    <tbody>
+      <tr><td>핵심 사실 적중 + 해결책 적절</td><td>대폭 상승</td><td>정확성과 지혜를 동시에 보상</td></tr>
+      <tr><td>핵심 사실은 맞췄지만 해결책이 과격</td><td>소폭 상승 / 지혜 감소</td><td>사실만 맞춘 플레이를 견제</td></tr>
+      <tr><td>한쪽 감정에 휘둘려 오판</td><td>하락</td><td>언변보다 구조적 판단 장려</td></tr>
+      <tr><td>증거 부족에서 신중하게 보류</td><td>유지 또는 소폭 상승</td><td>신중함도 실력으로 인정</td></tr>
+      <tr><td>위법 증거를 판결 근거로 사용</td><td>통찰 상승 / 권위 하락</td><td>진실을 알더라도 정당한 절차 장려</td></tr>
+      <tr><td>제3자 비밀까지 밝히고 적절한 중재안</td><td>대폭 상승 + 보너스</td><td>최고 난도 추리 + 지혜를 특별 보상</td></tr>
+    </tbody>
+  </table></div>
 
 </main>
 

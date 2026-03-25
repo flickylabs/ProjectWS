@@ -16,11 +16,12 @@
   <span class="topbar-title">제작 계획</span>
   <div class="topbar-sections">
     <a class="topbar-sec-link" href="#ux">UX / 화면</a>
+    <a class="topbar-sec-link" href="#tech">기술 스택</a>
     <a class="topbar-sec-link" href="#risks">리스크</a>
     <a class="topbar-sec-link" href="#mvp">MVP 범위</a>
   </div>
   <div class="topbar-meta">
-    <span>v1.3</span>
+    <span>v2.0</span>
     <span>2026-03-25</span>
   </div>
 </header>
@@ -28,9 +29,7 @@
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
     <div class="sidebar-section-title">게임 비전</div>
-    <div class="sidebar-items">
-      <a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
-    </div>
+    <div class="sidebar-items"><a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a></div>
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-title">사건 설계</div>
@@ -41,9 +40,7 @@
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-title">AI 에이전트</div>
-    <div class="sidebar-items">
-      <a class="sidebar-link" href="solomon-ai.html"><span class="icon">🤖</span><span class="label">에이전트 설계</span></a>
-    </div>
+    <div class="sidebar-items"><a class="sidebar-link" href="solomon-ai.html"><span class="icon">🤖</span><span class="label">에이전트 설계</span></a></div>
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-title">플레이 설계</div>
@@ -54,148 +51,156 @@
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-title">프로덕션</div>
-    <div class="sidebar-items">
-      <a class="sidebar-link active" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a>
-    </div>
+    <div class="sidebar-items"><a class="sidebar-link active" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a></div>
   </div>
 </nav>
 
 <main class="content">
 
-  <h1>제작 계획 <span class="badge">GDD v1.3</span></h1>
-  <p class="subtitle">UX / 화면 구조 · 주요 리스크 대응 · MVP 범위 제안</p>
-  <p>플레이어가 경험하는 화면 구조, 생성형 게임의 주요 리스크와 대응 방안, 최소 기능 제품의 범위를 정의한다.</p>
+  <h1>제작 계획 <span class="badge">GDD v2.0</span></h1>
+  <p class="subtitle">UX / 화면 · 기술 스택 · 리스크 · MVP 범위</p>
 
 
   <!-- ── UX / 화면 구조 ────────────────────────── -->
   <h2 id="ux">UX / 화면 구조</h2>
-  <p>정보가 많아도 플레이어가 압도되지 않도록, 핵심 정보는 말싸움과 증거 보드 두 축으로 보여준다.</p>
 
   <div class="two-col">
     <div class="card">
       <div class="card-title">메인 법정 화면</div>
       <ul>
-        <li>좌측 A, 우측 B의 초상/감정 상태 아이콘</li>
+        <li>좌측 A, 우측 B의 초상 + <strong>행동 징후 아이콘</strong> (숫자 아닌 표정/동작)</li>
         <li>중앙 실시간 대화 로그</li>
-        <li>하단 질문 버튼 및 증거 공개 버튼</li>
-        <li>상단 법정 통제력 / 조사 토큰 / 명성 영향 예고</li>
+        <li>하단 <strong>질문 6종 선택 패널</strong> + 증거 공개 버튼 + <strong>신뢰/보호 행동 패널</strong></li>
+        <li>상단 법정 통제력 / 조사 토큰 / 스킬 포인트 / 명성 영향 예고</li>
       </ul>
     </div>
     <div class="card">
       <div class="card-title">보조 정보 화면</div>
       <ul>
-        <li>고정된 타임라인</li>
-        <li>확보 증거 보드 (잠금/해제 상태 표시)</li>
-        <li>쟁점 체크리스트 (상태별 색상 표시)</li>
-        <li>붕괴한 거짓말과 남은 의혹 구분 표시</li>
+        <li><strong>주장 그래프 (Claim Graph)</strong> — 자동 요약, 충돌 표시, 변경 추적, 정식 기록 하이라이트</li>
+        <li><strong>관계별 미니 보드</strong> — 부부: 돈 흐름 / 이웃: 건물 배치 / 직장: 문서 비교</li>
+        <li>확보 증거 보드 (잠금/해제 + <strong>4축 속성 표시</strong>)</li>
+        <li>쟁점 체크리스트 (상태별 색상: 숨김/주장/충돌/붕괴/재프레이밍)</li>
+        <li>48h 타임라인 (확인된 이벤트만 점진적 공개)</li>
       </ul>
     </div>
   </div>
 
-  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
-    UI는 복잡한 조사 게임처럼 보이기보다, <strong>"두 사람이 내 앞에서 싸우고 있다"</strong>는 현장감을 중심에 두는 편이 좋다.
-  </div></div>
-
   <h3>화면 구성 원칙</h3>
   <div class="card-grid">
-    <div class="card">
-      <div class="card-title">정보 계층 분리</div>
-      <p>즉시 필요한 정보(대화 로그, 리소스)와 참조 정보(타임라인, 증거 보드)를 레이어로 분리한다. 한 번에 모두 보여주지 않는다.</p>
-    </div>
-    <div class="card">
-      <div class="card-title">감정 상태 가시화</div>
-      <p>캐릭터 초상 옆에 감정 아이콘 또는 색상 변화를 적용한다. 플레이어가 언제 압박하면 실언이 나오는지 직관적으로 파악할 수 있어야 한다.</p>
-    </div>
-    <div class="card">
-      <div class="card-title">쟁점 상태 표시</div>
-      <p>각 쟁점의 현재 상태(숨김/주장/충돌/붕괴)를 색상으로 구분하는 체크리스트를 제공한다. 무엇이 확정되었고 무엇이 남아 있는지 한눈에 보인다.</p>
-    </div>
-    <div class="card">
-      <div class="card-title">리소스 가시성</div>
-      <p>조사 토큰, 스킬 포인트, 법정 통제력을 상시 노출한다. 자원 부족 경고와 획득 피드백을 즉각적으로 제공해야 한다.</p>
-    </div>
+    <div class="card"><div class="card-title">정보 계층 분리</div><p>즉시 필요한 정보(대화 로그, 리소스)와 참조 정보(주장 그래프, 증거 보드)를 레이어로 분리. 한 번에 모두 보여주지 않는다.</p></div>
+    <div class="card"><div class="card-title">행동 징후 가시화</div><p>캐릭터 초상 옆에 행동 징후 아이콘/표현 변화. 숫자가 아닌 "답변 전 호흡이 길어진다", "말을 끊으려 한다" 등 텍스트 힌트.</p></div>
+    <div class="card"><div class="card-title">주장 그래프 상시 접근</div><p>텍스트 피로 해소의 핵심. 누가 어떤 쟁점에 무엇을 주장했는지 한눈에 보이는 요약 보드.</p></div>
+    <div class="card"><div class="card-title">질문 의도 선명화</div><p>6종 질문 유형을 아이콘+짧은 설명으로 표시. 플레이어가 "어떤 질문이 어떤 효과를 내는지" 직관적으로 파악.</p></div>
   </div>
 
-  <h3>판결 화면</h3>
+  <h3>판결 & 중재 화면</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>단계</th><th>입력 내용</th><th>UX 설계 원칙</th></tr></thead>
     <tbody>
-      <tr><td>사실 인정</td><td>쟁점별 체크리스트에서 사실/거짓 여부 선택</td><td>이미 붕괴된 쟁점은 자동 하이라이트. 미확정 쟁점은 별도 경고.</td></tr>
-      <tr><td>책임 배분</td><td>쟁점별 A/B 슬라이더 또는 단계형 선택</td><td>모호성이 높은 쟁점은 "판단 보류" 옵션 제공.</td></tr>
-      <tr><td>해결책 선택</td><td>미리 설계된 해결책 옵션 중 택1 또는 조합</td><td>각 선택지의 예상 효과를 짧게 설명. 지혜 점수에 영향 예고.</td></tr>
-      <tr><td>최종 확인</td><td>판결 요약 확인 후 제출</td><td>제출 전 전체 요약을 한번 더 보여줘 실수를 방지.</td></tr>
+      <tr><td>중재안 선택</td><td>즉시 판결 / 조건부 조정 / 보류 / 사실+해결 분리</td><td>각 선택지의 예상 효과 짧게 설명</td></tr>
+      <tr><td>사실 인정</td><td>쟁점별 체크리스트 (사실/거짓/보류)</td><td>붕괴된 쟁점 자동 하이라이트. 미확정 경고.</td></tr>
+      <tr><td>책임 배분</td><td>쟁점별 A/B 슬라이더</td><td>모호성 높은 쟁점은 "판단 보류" 옵션</td></tr>
+      <tr><td>증거 정당성</td><td>위법 증거 사용 여부 결정</td><td>"이 증거를 판결 근거로 사용하시겠습니까?" 별도 확인</td></tr>
+      <tr><td>해결책 선택</td><td>관계별 해결 프레임에서 택1/조합</td><td>각 선택지 효과 + 지혜 점수 영향 예고</td></tr>
+      <tr><td>최종 확인</td><td>판결 요약 확인 후 제출</td><td>전체 요약 한번 더 표시. 실수 방지.</td></tr>
     </tbody>
   </table></div>
 
 
-  <!-- ── 주요 리스크와 대응 ────────────────────── -->
+  <!-- ── 기술 스택 ────────────────────────── -->
+  <h2 id="tech">기술 스택 (LLM 분업 구조)</h2>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>컴포넌트</th><th>권장 기술</th><th>역할</th><th>비용 구조</th></tr></thead>
+    <tbody>
+      <tr><td>프론트엔드</td><td>React / Vue + TypeScript</td><td>법정 UI, 주장 그래프, 관계별 보드, 판결/중재 화면</td><td>고정 개발비</td></tr>
+      <tr><td>룰 엔진</td><td>Node.js 또는 Python FastAPI</td><td>거짓말 상태 머신, 감정 곡선, 증거 잠금 해제, 모순 판정, 채점</td><td>서버 운영비</td></tr>
+      <tr><td><strong>사건 생성 LLM</strong></td><td><strong>로컬 LLM (Llama 3, Mistral 등)</strong></td><td>DuoSeed/ContextSeed/CaseSeed 전체 생성, 48h 타임라인, 드라마 비트 검증</td><td><strong>로컬 처리, API 비용 없음</strong></td></tr>
+      <tr><td><strong>실시간 연기 LLM</strong></td><td><strong>OpenAI API (GPT-4o 이상)</strong></td><td>당사자 발화 생성, 감정 표현, Verbal Tell, 신뢰 루트 반응</td><td><strong>턴당 API 호출</strong></td></tr>
+      <tr><td>데이터 저장</td><td>JSON + 세션 DB (PostgreSQL/SQLite)</td><td>DuoSeed 영구 저장, CaseSeed 세션 저장, 플레이 이력 저장</td><td>DB 운영비</td></tr>
+      <tr><td>반복 방지 + 편향 추적</td><td>Redis 또는 로컬 스토리지</td><td>최근 N판 태그, 편향 카운터 빠르게 읽기/쓰기</td><td>최소</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>LLM 분업의 핵심:</strong> 로컬 LLM은 사건 시작 전에 한 번 무겁게 돌리고 끝.
+    플레이 중에는 클라우드 API만 턴당 호출. 로컬에서 풍부한 데이터(DuoSeed, 48h 타임라인, 증거 그래프)를 만들고,
+    클라우드 API는 그 데이터 위에서 자연스러운 연기만 담당. 비용 효율과 품질을 동시에 확보.
+  </div></div>
+
+
+  <!-- ── 리스크 ────────────────────────── -->
   <h2 id="risks">주요 리스크와 대응</h2>
-  <p>생성형 게임에서 가장 흔한 문제를 사전에 구조적으로 막는다.</p>
 
   <div class="card-grid">
     <div class="card">
       <div class="card-title">리스크: 사건 반복감</div>
-      <p class="text-sm" style="color:var(--danger); margin-bottom:8px;">자주 같은 패턴처럼 느껴질 수 있다.</p>
-      <p><strong>대응:</strong> 반복 방지 메커니즘으로 패턴 다양성 보장. 최근 3판의 태그를 추적해 가중치 패널티 부여.</p>
+      <p><strong>대응:</strong> DuoSeed/ContextSeed/CaseSeed 3층 분리 + 반복 방지 메커니즘(8종 태그) + 편향 디렉터(카운터 기반). 같은 인물이라도 맥락과 사건이 항상 다르다.</p>
     </div>
     <div class="card">
       <div class="card-title">리스크: LLM 할루시네이션</div>
-      <p class="text-sm" style="color:var(--danger); margin-bottom:8px;">이미 정해진 사실과 다른 내용을 즉흥적으로 말할 수 있다.</p>
-      <p><strong>대응:</strong> 룰 엔진이 <code>lie_state_map</code>으로 발언 허용 범위 관리. LLM은 연기, 진실 판정은 룰 엔진.</p>
+      <p><strong>대응:</strong> 룰 엔진이 lie_state_map + lie_motive로 발언 허용 범위 관리. LLM은 연기만, 진실 판정은 룰 엔진. Verbal Tell도 구조화된 지시로만 발현.</p>
     </div>
     <div class="card">
       <div class="card-title">리스크: 풀 수 없는 사건</div>
-      <p class="text-sm" style="color:var(--danger); margin-bottom:8px;">증거가 부족해 플레이어가 억울함을 느낄 수 있다.</p>
-      <p><strong>대응:</strong> Step 8 해결성 검증으로 입증 루트 최소 1개 보장. 패널티 합산 임계값 초과 시 재생성.</p>
+      <p><strong>대응:</strong> 드라마 비트 검증(앵커 진실 필수), 해결성 검증(입증 루트 최소 1개), 초기 인상 균형 점수. 부분 해결 사건도 앵커 진실 1개는 보장.</p>
     </div>
     <div class="card">
-      <div class="card-title">리스크: 지나친 텍스트 피로</div>
-      <p class="text-sm" style="color:var(--danger); margin-bottom:8px;">말이 많아지면 플레이 템포가 느려질 수 있다.</p>
-      <p><strong>대응:</strong> 짧은 라운드 구조, 자동 요약, 쟁점 하이라이트, 감정 아이콘 제공.</p>
+      <div class="card-title">리스크: 텍스트 피로</div>
+      <p><strong>대응:</strong> 주장 그래프 자동 요약, 관계별 미니 보드, 행동 징후 아이콘, 질문 6종 패널로 정보 접근 최적화. 대화만 읽지 않아도 상태 파악 가능.</p>
     </div>
     <div class="card">
       <div class="card-title">리스크: 감정 조작에 취약한 판결</div>
-      <p class="text-sm" style="color:var(--danger); margin-bottom:8px;">LLM의 설득력 있는 발언에 플레이어가 편향될 수 있다.</p>
-      <p><strong>대응:</strong> 채점 시 증거 기반 판단에 높은 가중치. 감정적 발언에 휘둘린 판결은 지혜 점수 감소.</p>
+      <p><strong>대응:</strong> 증거 기반 판단에 높은 가중치. 감정 편향 판결은 지혜 점수 감소. 편향 디렉터가 감정 과신 패턴을 역이용.</p>
     </div>
     <div class="card">
-      <div class="card-title">리스크: 조합 불균형</div>
-      <p class="text-sm" style="color:var(--danger); margin-bottom:8px;">일부 모듈 조합이 너무 어렵거나 너무 쉬울 수 있다.</p>
-      <p><strong>대응:</strong> Stage별 허용 모듈 풀을 단계적으로 개방. 난이도 곡선을 캠페인에서 먼저 검증.</p>
+      <div class="card-title">리스크: 압박 일변도 플레이</div>
+      <p><strong>대응:</strong> collapse_via_trust 진실이 모든 사건에 1개 이상. 신뢰 루트를 안 쓰면 최고 점수에 도달 불가. 두 루트 모두 유효한 밸런스.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">리스크: 로컬 LLM 생성 품질</div>
+      <p><strong>대응:</strong> 11단계 파이프라인의 Step 10~11 검증이 안전망. 드라마 비트, 해결성, 초기 인상 균형, 동선 정합성 모두 검증 후 통과된 사건만 플레이에 투입. 실패 시 자동 재생성.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">리스크: 증거 정당성 시스템의 복잡도</div>
+      <p><strong>대응:</strong> Stage 6부터 단계적 도입. 초반 Stage에서는 모든 증거가 적법. 후반으로 갈수록 정당성 쟁점 비중 상승. 캠페인이 자연스러운 튜토리얼 역할.</p>
     </div>
   </div>
 
-  <h3>기술 스택 권장</h3>
-  <div class="table-wrap"><table>
-    <thead><tr><th>컴포넌트</th><th>권장 기술</th><th>이유</th></tr></thead>
-    <tbody>
-      <tr><td>프론트엔드</td><td>React / Vue + TypeScript</td><td>상태 관리와 컴포넌트 분리가 복잡한 게임 상태에 적합</td></tr>
-      <tr><td>룰 엔진</td><td>Node.js 또는 Python FastAPI</td><td>게임 상태 머신과 LLM 오케스트레이션</td></tr>
-      <tr><td>LLM API</td><td>Claude API (claude-sonnet-4-6)</td><td>장문 대화와 역할극에 최적화</td></tr>
-      <tr><td>데이터 저장</td><td>JSON 기반 CaseSeed + 세션 DB</td><td>구조적 사건 데이터와 플레이 이력 분리 관리</td></tr>
-      <tr><td>반복 방지 이력</td><td>Redis 또는 로컬 스토리지</td><td>최근 N판 태그를 빠르게 읽고 쓰기</td></tr>
-    </tbody>
-  </table></div>
 
-
-  <!-- ── MVP 범위 제안 ─────────────────────────── -->
-  <h2 id="mvp">MVP 범위 제안</h2>
-  <p>최소 기능 제품은 "재미의 핵심"만 검증해야 한다. 동적 생성과 판결의 손맛이 우선이다.</p>
+  <!-- ── MVP 범위 ────────────────────────── -->
+  <h2 id="mvp">MVP 범위</h2>
+  <p>재미 요소는 모두 갖추고, 디자인만 조금 아쉬운 수준. 시스템은 전부 작동하되, 콘텐츠 볼륨과 비주얼 폴리시가 v2에서 확장.</p>
 
   <div class="two-col">
     <div class="card">
-      <div class="card-title">필수 포함</div>
+      <div class="card-title">필수 포함 (전체 시스템)</div>
       <ul class="text-sm">
-        <li>관계 3종 (부부, 이웃, 직장)</li>
-        <li>사건 모듈 15종 (CS 6종 + VM 5종 + TW 5종 — 없음 포함)</li>
-        <li>증거 타입 8종 (bank, chat, cctv, contract, testimony, log + 조합 2종)</li>
-        <li>캠페인 10 Stage</li>
-        <li>무한 사건 생성 모드</li>
-        <li>기본 명성 시스템 (통찰/권위/지혜 3축)</li>
-        <li>인과 그래프 + 거짓말 상태 머신 + 증거 의존성 그래프</li>
-        <li>Party A / B 연기 LLM</li>
-        <li>반복 방지 메커니즘</li>
-        <li>기본 특수 스킬 4종 (진실의 서약, 교차 대질, 기억 소환, 진술 봉인)</li>
+        <li><strong>3층 데이터 아키텍처:</strong> DuoSeed / ContextSeed / CaseSeed</li>
+        <li><strong>DuoSeed 5쌍</strong> (관계 5종: 부부, 이웃, 직장, 동업, 가족)</li>
+        <li><strong>Relationship Ledger</strong> (DuoSeed당 3~5개 이력)</li>
+        <li><strong>Social Graph</strong> (DuoSeed당 3~5명 제3자)</li>
+        <li><strong>Context Pack 9종</strong></li>
+        <li><strong>사건 모듈 17종:</strong> CS 6종 + VM 5종 + TW 6종(TW-6 포함)</li>
+        <li><strong>48h 이벤트 타임라인</strong> (블록 기반)</li>
+        <li><strong>증거 4축 시스템</strong> + 조사 하위 액션 6종</li>
+        <li><strong>거짓말 2축:</strong> 유형 7종(LT-7 포함) x 동기 7종</li>
+        <li><strong>Verbal Tell</strong> (캐릭터당 3~4개)</li>
+        <li><strong>질문 6종 시스템</strong></li>
+        <li><strong>신뢰/보호 행동 5종</strong></li>
+        <li><strong>스킬 7종</strong> (리테마이징 완료)</li>
+        <li><strong>주장 그래프 UI</strong></li>
+        <li><strong>중재안 Phase</strong> + 관계별 해결 프레임</li>
+        <li><strong>드라마 비트 템플릿</strong> + 초기 인상 균형</li>
+        <li><strong>편향 디렉터</strong> (카운터 기반)</li>
+        <li><strong>반복 방지 메커니즘</strong> (8종 태그)</li>
+        <li><strong>명성 3축</strong> (통찰/권위/지혜)</li>
+        <li><strong>캠페인 10 Stage</strong> + 무한 사건 모드</li>
+        <li><strong>부분 해결 사건</strong> (Stage 8~10)</li>
+        <li><strong>11단계 생성 파이프라인</strong></li>
+        <li><strong>LLM 분업:</strong> 로컬(생성) + 클라우드 API(연기) + 룰 엔진(판정)</li>
+        <li><strong>관계별 미니 보드</strong> (범용 컴포넌트 + 탭 구성 차이)</li>
       </ul>
     </div>
     <div class="card">
@@ -207,29 +212,30 @@
         <li>플레이어 커스텀 법정 테마</li>
         <li>커뮤니티 공유 씨드 (사건 코드 공유)</li>
         <li>멀티엔딩 시네마틱</li>
-        <li>감정 곡선 고도화 (7단계 이상)</li>
-        <li>제3자 풀 소환 (VM-A 특화 확장)</li>
+        <li>관계별 미니 보드 전용 아트 리소스</li>
+        <li>DuoSeed 추가 확장 (관계 7종 → 10종+)</li>
         <li>데일리 챌린지 사건</li>
+        <li>시즌 이벤트 (명절 특별 사건 등)</li>
       </ul>
     </div>
   </div>
 
   <div class="alert alert-info"><span class="alert-icon">🎯</span><div>
     <strong>MVP 검증 질문:</strong>
-    플레이어가 5판 이상 연속으로 플레이하면서도 "다음 판에는 또 무슨 사건이 나올까?"라는 기대를 유지하는가?
+    <ol style="margin:0;padding-left:20px;">
+      <li>플레이어가 5판 이상 연속 플레이하면서도 "다음 판에는 또 무슨 사건이 나올까?"라는 기대를 유지하는가?</li>
+      <li>같은 DuoSeed의 2번째·3번째 사건에서 "이 사람은 알겠는데 이번 사건은 처음이다"를 느끼는가?</li>
+      <li>압박 루트와 신뢰 루트를 <strong>둘 다 시도해보고 싶은</strong> 동기가 생기는가?</li>
+      <li>판결 후 "이 증거를 쓰는 게 맞았나?", "중재안이 적절했나?"를 <strong>되돌아보게</strong> 되는가?</li>
+    </ol>
   </div></div>
 
   <hr>
 
   <div class="card" style="margin-top: 28px;">
     <div class="card-title">결론</div>
-    <p>솔로몬의 성공 포인트는 자유로운 말싸움 그 자체가 아니라,
-    <strong>인과 그래프가 결정하는 사건 논리, 지식 비대칭이 만드는 정보 긴장감,
-    적응형 거짓말 전략이 연출하는 드라마, 증거 의존성이 만드는 추리 루트</strong>가
-    하나의 구조로 맞물려 돌아가는 데 있다.
-    이 구조 위에서 같은 관계와 같은 캐릭터를 반복해서 만나도,
-    사건·증거·오해·트위스트가 달라지면 플레이는 매번 새로워진다.
-    이 반복성이 솔로몬의 가장 큰 상품 가치이자 장르적 정체성이다.</p>
+    <p>솔로몬 v2.0의 핵심은 <strong>반복 등장하는 인물쌍(DuoSeed)과 그들의 생활 루틴·과거 이력·사회관계망·현재 맥락(ContextSeed) 위에서 사건(CaseSeed)이 발생하며, 증거와 거짓말은 그 사건의 결과가 아니라 그 생활의 부산물로 생성된다</strong>는 구조에 있다.</p>
+    <p>그 위에서 플레이어는 사실뿐 아니라, 오해와 체면, 수치심과 보호 본능, 정당한 증거와 부당한 증거, 판결과 중재 사이를 가르며 '지혜'를 증명한다. 이 다층적 판단이 솔로몬의 정체성이자 장기 플레이의 동력이다.</p>
   </div>
 
 </main>

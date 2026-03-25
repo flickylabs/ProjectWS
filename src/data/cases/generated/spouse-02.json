@@ -1,0 +1,100 @@
+{
+  "caseId": "case-spouse-02",
+  "meta": {
+    "relationshipType": "spouse",
+    "conflictSeed": "CS-4",
+    "variableModules": ["VM-E"],
+    "twistModule": "TW-1",
+    "difficulty": "hard",
+    "anchorTruth": "나희주의 과거 상담 종결서 일부를 학교와 학부모 채널에 흘린 출발점은 강도윤의 보조 이메일과 스캔 기록이었다.",
+    "emotionalBait": "공유 프린터에서 나온 희주의 학교 메일 초안 때문에, 처음에는 희주가 먼저 남편을 학교에서 배제하려 한 가해자로 보인다.",
+    "resolutionDilemma": "도윤이 '아이를 지키려 했다'고 주장하더라도 배우자의 과거 정신건강 기록을 무기화한 행위를 어디까지 용인할 수 있는지, 또 희주의 무단 열람을 어떻게 함께 다뤄야 할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "나희주", "age": 34, "occupation": "소아병동 간호사",
+      "incomeBracket": "mid", "archetype": "cold_logic",
+      "speechStyle": "감정을 억누른 채 핵심 문장부터 짧게 말하고, 불안해지면 확인된 사실과 추정을 엄격히 구분하려 든다. 그러나 억울함이 커지면 갑자기 속도가 빨라진다.",
+      "pride": 8, "fear": "엄마 자격과 돌봄 안정성을 의심받는 것", "riskAppetite": 3,
+      "digitalHabit": "minimal",
+      "dailyRoutine": "새벽 출근과 교대근무 사이에 아이 입학 서류를 정리하고, 밤에는 메모앱으로 다음 날 동선을 체크한다.",
+      "sensitivePoints": ["과거 상담 기록", "양육 적합성", "아이 앞에서의 체면"],
+      "verbalTells": [
+        {"type": "over_precision", "trigger": "lying", "pattern": "말을 시작한 뒤 '아니, 정확히는'이라고 스스로 정정하며 표현 수위를 낮춘다."},
+        {"type": "topic_switch", "trigger": "cornered", "pattern": "'확인한 것'과 '열람한 것'을 구분하며 행위의 명칭을 축소한다."},
+        {"type": "repetition", "trigger": "emotional", "pattern": "대답 전 숨을 세 번 고르고 짧게 끊어 답한다."}
+      ]
+    },
+    "partyB": {
+      "name": "강도윤", "age": 37, "occupation": "교육 스타트업 영업팀장",
+      "incomeBracket": "high", "archetype": "victim_cosplay",
+      "speechStyle": "자신이 참고 버틴 시간을 길게 설명하며 피해자의 호흡을 만든다. 곤란해지면 '난 아이 생각만 했다'는 문장으로 감정을 덮는다.",
+      "pride": 8, "fear": "좋은 아빠라는 이미지와 학교 네트워크에서의 평판을 잃는 것", "riskAppetite": 7,
+      "digitalHabit": "sns_active",
+      "dailyRoutine": "출근 전 아이 등교 루틴을 시뮬레이션하고, 점심시간에는 학부모 채팅방과 학교 공지를 수시로 확인한다.",
+      "sensitivePoints": ["아버지 역할 평가", "직장 평판", "과거 별거 위기"],
+      "verbalTells": [
+        {"type": "detail_flood", "trigger": "lying", "pattern": "'내가 병원도 다니고 설명회도 갔고'처럼 희생 목록을 길게 쌓아 의심을 눌러버린다."},
+        {"type": "moral_leap", "trigger": "avoiding", "pattern": "본론 전에 '이런 말 또 해야 하네'라고 미리 상처받은 표정을 만든다."},
+        {"type": "topic_switch", "trigger": "cornered", "pattern": "배신을 추궁받으면 '그건 보호였지 공격이 아니야'라고 도덕 프레임을 바꾼다."}
+      ]
+    },
+    "relationshipLedger": [
+      {"id": "ledger-1", "category": "confirmed", "description": "2023년 별거 직전 두 사람은 과거의 상처와 상담 기록을 새로운 싸움의 무기로 쓰지 않겠다고 합의했다.", "isReal": true, "whoRemembersAccurately": "both", "whoDistorts": "none", "distortionDirection": "", "currentlyResolved": "surface_only", "emotionalResidue": "strong", "connectionToCurrent": "direct"},
+      {"id": "ledger-2", "category": "distorted", "description": "아이 유치원 마지막 발표회 때 도윤이 보호자 대표처럼 나섰던 일을 두 사람은 정반대로 해석한다.", "isReal": true, "whoRemembersAccurately": "both", "whoDistorts": "both", "distortionDirection": "A: '내 말을 끊고 혼자 결정했다' / B: '네가 힘들어 보여 내가 대신했다'", "currentlyResolved": "unresolved", "emotionalResidue": "mild", "connectionToCurrent": "indirect"},
+      {"id": "ledger-3", "category": "silenced", "description": "희주가 산후불안으로 상담을 받던 시기 도윤이 관련 서류를 대신 보관해주겠다고 했던 일은 고마움과 원망이 섞인 채 묻혀 있다.", "isReal": true, "whoRemembersAccurately": "both", "whoDistorts": "none", "distortionDirection": "", "currentlyResolved": "surface_only", "emotionalResidue": "strong", "connectionToCurrent": "direct"}
+    ],
+    "socialGraph": [
+      {"id": "tp-1", "slot": "family_1", "name": "문정자 (도윤의 어머니)", "relationTo": "b", "knowledgeScope": "도윤이 손주의 입학 문제에 과몰입해 있다는 점과 희주의 과거 상담 사실 일부를 안다.", "witnessedDirectly": false, "bias": "pro_b", "distortionRisk": "unconscious"},
+      {"id": "tp-2", "slot": "acquaintance_1", "name": "백소라 (희주의 병원 동료)", "relationTo": "a", "knowledgeScope": "희주가 익명 글을 본 뒤 극도로 불안해하며 도윤 메일을 확인한 경위를 안다.", "witnessedDirectly": false, "bias": "pro_a", "distortionRisk": "accurate"},
+      {"id": "tp-3", "slot": "institutional", "name": "정해린 (학교 학부모지원 담당)", "relationTo": "both", "knowledgeScope": "익명 제보 메일, 보호자 연락처 변경 관련 문의, 파일 보류 사유를 원본 로그 기준으로 확인할 수 있다.", "witnessedDirectly": true, "bias": "neutral", "distortionRisk": "accurate"}
+    ]
+  },
+  "context": {
+    "contextType": "exam",
+    "description": "아이의 초등학교 입학을 열흘 앞두고 보호자 연락처, 전입 확인, 학부모 오리엔테이션 명단이 한꺼번에 확정되는 시기였다. 학교와 다른 부모들의 시선이 동시에 걸린 상황에서, 오래 덮어둔 과거 기록이 다시 소환되며 누가 아이를 더 안전하게 돌볼 사람이냐는 프레임이 생겼다.",
+    "emotionalPressure": 9, "affects": "both",
+    "triggerAmplifier": "입학 직전이라 작은 평판 훼손도 바로 아이의 자리와 보호자 권한 문제로 번졌고, 과거 상처를 끌어오는 말 한 번이 현재의 자격 싸움으로 확대됐다."
+  },
+  "disputes": [
+    {"id": "d-1", "name": "도윤의 상담기록 무단 전달", "truth": true, "truthDescription": "도윤은 희주의 과거 상담 종결서 일부를 동의 없이 학교 학부모지원 담당에게 전달해 희주의 양육 안정성에 의문을 심게 했다.", "quadrant": "b_only", "requiredEvidence": ["e-4", "e-5"], "correctResponsibility": {"a": 10, "b": 90}, "ambiguity": "none", "weight": "high", "mediationLink": "신뢰회복", "legitimacyIssue": true},
+    {"id": "d-2", "name": "희주의 무단 열람과 제한 요청 초안", "truth": true, "truthDescription": "희주는 공유 노트북에서 도윤의 메일 계정과 프린터 기록을 무단 확인했고, 학교에 도윤을 임시 연락망에서 빼달라는 초안을 작성했다.", "quadrant": "a_only", "requiredEvidence": ["e-1", "e-2"], "correctResponsibility": {"a": 75, "b": 25}, "ambiguity": "low", "weight": "high", "mediationLink": "사생활경계", "legitimacyIssue": true},
+    {"id": "d-3", "name": "익명 학부모방 경고글의 출처", "truth": true, "truthDescription": "외부 학부모의 오해처럼 보였던 익명 경고글과 첨부 파일의 실질적 출처는 도윤이 사용한 보조 계정과 스캔 기록으로 이어진다.", "quadrant": "b_only", "requiredEvidence": ["e-3", "e-4", "e-5"], "correctResponsibility": {"a": 15, "b": 85}, "ambiguity": "low", "weight": "high", "mediationLink": "학교절차복구", "legitimacyIssue": true},
+    {"id": "d-4", "name": "과거 상처 비무기화 약속의 파기", "truth": true, "truthDescription": "두 사람은 과거 상처를 새 갈등에 끌어오지 않기로 했지만, 도윤은 상담 기록을 유포했고 희주는 도윤의 예전 별거 위기 발언을 학교 초안에 적어 넣으며 약속을 깼다.", "quadrant": "both_know", "requiredEvidence": ["e-2", "e-4"], "correctResponsibility": {"a": 40, "b": 60}, "ambiguity": "none", "weight": "medium", "mediationLink": "과거청산", "legitimacyIssue": false},
+    {"id": "d-5", "name": "입학 파일 보류의 실제 원인", "truth": true, "truthDescription": "아이 입학 파일이 보류된 직접 원인은 배우자 신고가 아니라 관리사무소가 전입 확인서에 구 동호수를 기재한 행정 오류였다.", "quadrant": "neither_knows", "requiredEvidence": ["e-6"], "correctResponsibility": {"a": 35, "b": 65}, "ambiguity": "none", "weight": "high", "mediationLink": "학교절차복구", "legitimacyIssue": false}
+  ],
+  "evidence": [
+    {"id": "e-1", "name": "공유 프린터에서 나온 학교 메일 초안", "description": "희주가 작성한 '도윤을 임시 연락망에서 제외해달라'는 학교 이메일 초안 출력물이다.", "type": "log", "reliability": "soft", "completeness": "partial", "provenance": "self_possessed", "legitimacy": "privacy_concern", "proves": ["d-2"], "isTrap": true, "requires": [], "investigationResults": {"request_original": "출력물만 남아 있고 발송 완료 메일은 없다.", "check_metadata": "프린트 시각은 밤 11시 52분으로 저장돼 있다.", "restore_context": "문장 일부에 '익명 글 확인 후'라는 문구가 보여 선행 사건이 있었음을 암시한다.", "verify_source": "가정용 프린터 로그와 용지 일련번호가 일치한다.", "check_edits": "손글씨 수정은 없고 출력본만 존재한다.", "question_acquisition": "공유 프린터에서 발견됐지만 개인 의도가 담긴 초안이라 사생활 침해 우려가 있다."}},
+    {"id": "e-2", "name": "초안 메일 버전기록과 계정 접근 로그", "description": "초안 메일이 실제 발송되지 않았고, 희주의 무단 열람이 익명 글 노출 이후에 일어났음을 보여주는 클라우드 버전기록과 로그인 로그다.", "type": "log", "reliability": "hard", "completeness": "original", "provenance": "institutional", "legitimacy": "lawful", "proves": ["d-2", "d-4"], "isTrap": false, "requires": ["e-1"], "investigationResults": {"request_original": "메일 초안 버전과 로그인 IP 원본이 보존돼 있다.", "check_metadata": "희주의 접근은 익명 글 캡처가 유포된 뒤 37분 후로 찍힌다.", "restore_context": "초안은 저장 후 발송되지 않았고 다음 날 삭제 시도도 있었다.", "verify_source": "메일 플랫폼 보안기록으로 출처가 검증된다.", "check_edits": "버전 이력상 본문 수정은 두 차례뿐이다.", "question_acquisition": "플랫폼 제공 로그라 적법하지만 타인의 계정 접속 사실 자체는 별도 위법 소지가 있다."}},
+    {"id": "e-3", "name": "입학 예정 학부모방 익명 글 캡처", "description": "희주의 과거 불안 증세를 암시하는 익명 글과 상담서 일부 이미지가 올라온 폐쇄형 학부모방 캡처다.", "type": "chat", "reliability": "soft", "completeness": "partial", "provenance": "third_party", "legitimacy": "privacy_concern", "proves": ["d-3"], "isTrap": false, "requires": [], "investigationResults": {"request_original": "방 관리자 전체 내역은 받지 못했고 회원이 전달한 캡처만 있다.", "check_metadata": "이미지 파일 생성 시각은 오리엔테이션 명단 공지 직후다.", "restore_context": "익명 작성자는 '보호자 한쪽의 과거 기록'이라는 표현을 써 내부 사정을 아는 사람처럼 보인다.", "verify_source": "방 관리자 진술로 실제 게시가 있었음은 확인됐다.", "check_edits": "크롭과 블러가 있어 단독 증거력은 약하다.", "question_acquisition": "폐쇄형 단체방 자료라 사적 커뮤니티 침해 문제가 남는다."}},
+    {"id": "e-4", "name": "학교 학부모지원 담당의 메일 헤더 회신", "description": "학교가 받은 익명 제보 메일의 헤더와 첨부 파일 해시값, 그리고 도윤의 보조 이메일로 이어지는 복구 정보가 담긴 회신이다.", "type": "log", "reliability": "hard", "completeness": "original", "provenance": "institutional", "legitimacy": "lawful", "proves": ["d-1", "d-3", "d-4"], "isTrap": false, "requires": ["e-3"], "investigationResults": {"request_original": "학교 서버에 남은 원본 헤더가 제출됐다.", "check_metadata": "발신 보조계정의 복구 이메일과 전화번호 일부가 도윤 정보와 일치한다.", "restore_context": "메일 본문은 '학교가 미리 알아야 할 사정'이라는 표현으로 희주의 기록을 소개한다.", "verify_source": "학교 정보보호 담당 확인이 끝났다.", "check_edits": "서버 추출본이라 편집 흔적이 없다.", "question_acquisition": "기관이 비식별 처리 후 제공해 적법하다."}},
+    {"id": "e-5", "name": "가정용 복합기 스캔 기록과 가족클라우드 동기화 이력", "description": "도윤 로그인 상태에서 희주의 상담 종결서가 스캔돼 가족클라우드 임시폴더로 올라간 기록이다.", "type": "device", "reliability": "soft", "completeness": "original", "provenance": "self_possessed", "legitimacy": "lawful", "proves": ["d-1", "d-3"], "isTrap": false, "requires": [], "investigationResults": {"request_original": "복합기 관리자 로그와 클라우드 접속 이력이 일치한다.", "check_metadata": "스캔 시각은 익명 글 게시 사흘 전이다.", "restore_context": "파일명은 'school_ref'로 바뀌어 자동 동기화됐다.", "verify_source": "가정용 장비 관리자 계정으로 직접 확인됐다.", "check_edits": "문서 원본 스캔 후 자르기만 있었고 본문 조작은 없다.", "question_acquisition": "공유 장비 기록이라 적법성은 상대적으로 높지만 의료정보가 포함돼 취급 제한이 필요하다."}},
+    {"id": "e-6", "name": "관리사무소 정정서와 학교 파일 보류 메모", "description": "전입 확인서의 구 동호수 기재 오류를 정정한 관리사무소 문서와, 학교가 그 오류 때문에 파일을 보류했다는 내부 메모다.", "type": "log", "reliability": "hard", "completeness": "original", "provenance": "institutional", "legitimacy": "lawful", "proves": ["d-5"], "isTrap": false, "requires": ["e-4"], "investigationResults": {"request_original": "관리사무소 정정 공문과 학교 보류 메모 원본이 제출됐다.", "check_metadata": "보류 처리 시각이 익명 메일 도착보다 앞선다.", "restore_context": "학교는 주소 불일치가 해소될 때까지 자동 보류 절차를 밟았다.", "verify_source": "관리사무소와 학교 행정실 양측 확인이 일치한다.", "check_edits": "기관 문서라 편집 흔적이 없다.", "question_acquisition": "아동 입학 행정자료이므로 사용 범위는 분쟁 해결로 한정돼야 한다."}}
+  ],
+  "evidenceCombinations": [{"requires": ["e-3", "e-5"], "upgradesTo": "hard", "proves": ["d-1", "d-3"]}],
+  "truthTable": [
+    {"id": "t-1", "fact": "학교에 전달된 희주의 상담 기록 일부는 도윤의 보조 이메일과 연결된다.", "isTrue": true, "weight": 10, "quadrant": "b_only"},
+    {"id": "t-2", "fact": "희주의 학교 메일은 초안으로만 존재했고 실제 발송되지는 않았다.", "isTrue": true, "weight": 8, "quadrant": "a_only"},
+    {"id": "t-3", "fact": "익명 학부모방 글과 첨부 파일은 도윤 쪽 스캔 기록과 이어진다.", "isTrue": true, "weight": 9, "quadrant": "b_only"},
+    {"id": "t-4", "fact": "두 사람은 과거 상처와 상담 기록을 새 분쟁에 쓰지 않겠다고 합의했었다.", "isTrue": true, "weight": 7, "quadrant": "both_know"},
+    {"id": "t-5", "fact": "입학 파일 보류의 직접 원인은 관리사무소의 주소 확인 오류였다.", "isTrue": true, "weight": 10, "quadrant": "neither_knows"}
+  ],
+  "lieConfigA": [
+    {"disputeId": "d-2", "lieType": "LT-2", "lieIntensity": "L2", "lieMotive": "self_protection", "initialState": "S0", "collapseViaTrust": false, "transitions": [{"from": "S0", "to": "S1", "trigger": "direct_question"}, {"from": "S1", "to": "S2", "trigger": "soft_evidence"}, {"from": "S2", "to": "S3", "trigger": "provenance_question"}, {"from": "S3", "to": "S5", "trigger": "hard_evidence"}]},
+    {"disputeId": "d-4", "lieType": "LT-3", "lieIntensity": "L1", "lieMotive": "face_saving", "initialState": "S0", "collapseViaTrust": false, "transitions": [{"from": "S0", "to": "S1", "trigger": "direct_question"}, {"from": "S1", "to": "S2", "trigger": "motive_question"}, {"from": "S2", "to": "S5", "trigger": "responsibility_question"}]},
+    {"disputeId": "d-5", "lieType": "LT-4", "lieIntensity": "L1", "lieMotive": "shame_avoidance", "initialState": "S0", "collapseViaTrust": false, "transitions": [{"from": "S0", "to": "S1", "trigger": "direct_question"}, {"from": "S1", "to": "S2", "trigger": "hard_evidence"}, {"from": "S2", "to": "S5", "trigger": "timeline_question"}]}
+  ],
+  "lieConfigB": [
+    {"disputeId": "d-1", "lieType": "LT-1", "lieIntensity": "L3", "lieMotive": "career_preservation", "initialState": "S0", "collapseViaTrust": true, "transitions": [{"from": "S0", "to": "S1", "trigger": "direct_question"}, {"from": "S1", "to": "S2", "trigger": "soft_evidence"}, {"from": "S2", "to": "S4", "trigger": "empathy_question"}, {"from": "S4", "to": "S5", "trigger": "hard_evidence"}]},
+    {"disputeId": "d-3", "lieType": "LT-4", "lieIntensity": "L2", "lieMotive": "self_protection", "initialState": "S0", "collapseViaTrust": false, "transitions": [{"from": "S0", "to": "S1", "trigger": "direct_question"}, {"from": "S1", "to": "S2", "trigger": "soft_evidence"}, {"from": "S2", "to": "S3", "trigger": "provenance_question"}, {"from": "S3", "to": "S5", "trigger": "hard_evidence"}]},
+    {"disputeId": "d-4", "lieType": "LT-7", "lieIntensity": "L2", "lieMotive": "relationship_maintenance", "initialState": "S0", "collapseViaTrust": false, "transitions": [{"from": "S0", "to": "S1", "trigger": "direct_question"}, {"from": "S1", "to": "S2", "trigger": "motive_question"}, {"from": "S2", "to": "S3", "trigger": "provenance_question"}, {"from": "S3", "to": "S5", "trigger": "responsibility_question"}]}
+  ],
+  "solutions": {
+    "신뢰회복": ["도윤이 학교와 희주에게 각각 기록 유포 사실을 인정하고 회수 요청을 먼저 한다.", "희주의 무단 열람 사과와 도윤의 기록 유포 사과를 분리해 받고, 재발 방지 문구를 공동 합의문으로 남긴다.", "치료·상담 기록을 다시 무기화할 경우 양육 의사결정에서 일정 기간 배제하는 강한 경계 규칙을 둔다."],
+    "사생활경계": ["공유 노트북과 프린터를 가족용·개인용으로 분리하고 로그인 자동저장을 해제한다.", "학교 관련 계정과 개인 계정을 분리하며, 상대 계정 열람이 필요하면 제3자 입회하에만 확인한다.", "재차 무단 열람이나 계정 위장이 발생하면 별거 상태의 디지털 경계 규약을 적용한다."],
+    "학교절차복구": ["관리사무소 정정서를 먼저 제출해 보류를 해소하고, 학교에는 부부 갈등과 별개로 사실만 정정한다.", "학부모지원 담당과 면담해 익명 제보 및 보호자 연락체계를 모두 원점에서 재설정한다.", "학교 커뮤니티에 남은 허위 암시가 반복되면 정식 정정 요청과 법적 보존조치를 함께 밟는다."],
+    "과거청산": ["별거 위기와 상담 시기를 다시 꺼낼 때 사용할 금지 표현 목록을 정한다.", "과거 사건은 상담실에서만 다루고 학교·가족 앞에서는 언급하지 않는 분리 규칙을 세운다.", "과거 상처를 현재 양육 자격 공격에 사용하면 즉시 조정 절차와 외부 상담 개입을 발동한다."]
+  },
+  "activeLedgerEntries": ["ledger-1", "ledger-3"],
+  "activeThirdParties": ["tp-3", "tp-1"]
+}

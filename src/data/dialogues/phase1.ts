@@ -1,0 +1,108 @@
+import type { DialogueEntry } from '../../types'
+
+/** Phase 1: 초기 진술 — A와 B가 서로 끼어들며 핑퐁. */
+export const phase1Dialogues: Omit<DialogueEntry, 'id'>[] = [
+  {
+    speaker: 'system',
+    text: '양측의 초기 진술을 듣겠습니다. 먼저 민준 씨부터 말씀해 주십시오.',
+    relatedDisputes: [],
+    turn: 0,
+  },
+  {
+    speaker: 'a',
+    text: '재판관님, 저는 억울합니다. 아내가 저를 외도범으로 몰고 있는데, 저는 가족을 위해 일한 것뿐입니다.',
+    relatedDisputes: ['d-3'],
+    turn: 0,
+    behaviorHint: '시선을 아래로 향하고 신중하게 말한다.',
+  },
+  {
+    speaker: 'b',
+    text: '가족을 위해요? 가족을 위하는 사람이 공동통장에서 300만원을 몰래 빼가요?',
+    relatedDisputes: ['d-1'],
+    turn: 0,
+    behaviorHint: '참지 못하고 끼어든다. 목소리가 높다.',
+  },
+  {
+    speaker: 'a',
+    text: '서연 씨, 지금 제 차례입니다. 재판관님, 공동통장 건은... 사정이 있었습니다. 추석도 다가오고 여러 가지가 겹쳤어요.',
+    relatedDisputes: ['d-1'],
+    turn: 0,
+    behaviorHint: '"사정이 있었습니다"에서 잠시 멈칫한다.',
+  },
+  {
+    speaker: 'b',
+    text: '사정? 무슨 사정인지 한번 말해보세요. 어디다 썼는지.',
+    relatedDisputes: ['d-1'],
+    turn: 0,
+    behaviorHint: '팔짱을 끼고 쏘아본다.',
+  },
+  {
+    speaker: 'a',
+    text: '그건... 지금 여기서 다 말씀드리기 어렵습니다. 그것보다 더 중요한 건, 아내가 제 휴대폰을 몰래 봤다는 겁니다. 이건 명백한 사생활 침해입니다.',
+    relatedDisputes: ['d-4'],
+    turn: 0,
+    behaviorHint: '화제를 전환한다. Verbal Tell 발동.',
+  },
+  {
+    speaker: 'b',
+    text: '사생활 침해요? 남편이 한밤중에 누구랑 "오늘 저녁에 만나요 ♥" 이런 문자 주고받는데 가만히 있으라고요?!',
+    relatedDisputes: ['d-3', 'd-4'],
+    turn: 0,
+    behaviorHint: '"분명히"를 강조하며 목소리가 높아진다.',
+  },
+  {
+    speaker: 'a',
+    text: '그 메시지는 맥락이 있습니다! 일부만 캡처해서 왜곡한 겁니다!',
+    relatedDisputes: ['d-3'],
+    turn: 0,
+    behaviorHint: '처음으로 목소리가 올라간다.',
+  },
+  {
+    speaker: 'b',
+    text: '왜곡? 카페에서 2인분 결제한 것도 왜곡인가요? 정확히 세 번! 같은 카페에서!',
+    relatedDisputes: ['d-3'],
+    turn: 0,
+    behaviorHint: '손가락 세 개를 펴 보인다.',
+  },
+  {
+    speaker: 'a',
+    text: '그건 업무... 미팅이었습니다.',
+    relatedDisputes: ['d-3'],
+    turn: 0,
+    behaviorHint: '말이 짧아지고 시선을 피한다.',
+  },
+  {
+    speaker: 'b',
+    text: '이 사람은 3년 전에도 몰래 보증 서서 500만원 날렸잖아요. 매번 이 모양이에요. 숨기고, 거짓말하고, 들키면 변명하고!',
+    relatedDisputes: ['d-1'],
+    turn: 0,
+    behaviorHint: '과거 이력을 끌어오며 감정이 폭발한다. "매번"을 반복.',
+  },
+  {
+    speaker: 'a',
+    text: '3년 전 일은 이미 해결된 겁니다. 왜 자꾸 과거를 —',
+    relatedDisputes: ['d-1'],
+    turn: 0,
+    behaviorHint: '말을 끊기며 당황한다.',
+  },
+  {
+    speaker: 'b',
+    text: '해결? 사과 한마디 제대로 한 적 없으면서요!',
+    relatedDisputes: ['d-1'],
+    turn: 0,
+    behaviorHint: '눈이 붉어진다.',
+  },
+  {
+    speaker: 'system',
+    text: '양측 모두 진정해 주십시오. 서연 씨, 정리해서 말씀해 주시겠습니까.',
+    relatedDisputes: [],
+    turn: 0,
+  },
+  {
+    speaker: 'b',
+    text: '... 정리하면요. 이 사람이 공동통장에서 300만원을 빼갔고, 외도가 의심되는 문자가 있고, 물어보면 숨기기만 해요. 저는 진실을 알 권리가 있습니다.',
+    relatedDisputes: ['d-1', 'd-3'],
+    turn: 0,
+    behaviorHint: '감정을 누르며 또렷하게 정리한다.',
+  },
+]

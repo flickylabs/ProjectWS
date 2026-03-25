@@ -16,13 +16,14 @@
   <span class="topbar-title">콘텐츠 &amp; 밸런스</span>
   <div class="topbar-sections">
     <a class="topbar-sec-link" href="#progression">진행 구조</a>
-    <a class="topbar-sec-link" href="#categories">카테고리</a>
+    <a class="topbar-sec-link" href="#context">Context Pack</a>
+    <a class="topbar-sec-link" href="#boards">관계별 보드</a>
     <a class="topbar-sec-link" href="#examples">반복 예시</a>
     <a class="topbar-sec-link" href="#sample">샘플 사건</a>
     <a class="topbar-sec-link" href="#balance">밸런스</a>
   </div>
   <div class="topbar-meta">
-    <span>v1.3</span>
+    <span>v2.0</span>
     <span>2026-03-25</span>
   </div>
 </header>
@@ -30,9 +31,7 @@
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
     <div class="sidebar-section-title">게임 비전</div>
-    <div class="sidebar-items">
-      <a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
-    </div>
+    <div class="sidebar-items"><a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a></div>
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-title">사건 설계</div>
@@ -43,9 +42,7 @@
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-title">AI 에이전트</div>
-    <div class="sidebar-items">
-      <a class="sidebar-link" href="solomon-ai.html"><span class="icon">🤖</span><span class="label">에이전트 설계</span></a>
-    </div>
+    <div class="sidebar-items"><a class="sidebar-link" href="solomon-ai.html"><span class="icon">🤖</span><span class="label">에이전트 설계</span></a></div>
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-title">플레이 설계</div>
@@ -56,207 +53,172 @@
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-title">프로덕션</div>
-    <div class="sidebar-items">
-      <a class="sidebar-link" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a>
-    </div>
+    <div class="sidebar-items"><a class="sidebar-link" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a></div>
   </div>
 </nav>
 
 <main class="content">
 
-  <h1>콘텐츠 &amp; 밸런스 <span class="badge">GDD v1.3</span></h1>
-  <p class="subtitle">진행 구조 · 콘텐츠 카테고리 · 반복 플레이 예시 · 샘플 사건 · 밸런스 원칙</p>
-  <p>캠페인 구조, 사건 다양성, 실제 생성 예시, 게임 균형 원칙을 다룬다.</p>
+  <h1>콘텐츠 &amp; 밸런스 <span class="badge">GDD v2.0</span></h1>
+  <p class="subtitle">진행 구조 · Context Pack · 관계별 보드 · 반복 예시 · 샘플 사건 · 밸런스</p>
 
 
   <!-- ── 진행 구조 ─────────────────────────────── -->
   <h2 id="progression">진행 구조</h2>
-  <p>캠페인과 반복 플레이 모드를 함께 제공한다. 캠페인은 규칙 학습, 무한 모드는 사건 다양성 중심.</p>
 
   <div class="two-col">
     <div class="card">
       <span class="badge badge-sub">메인 모드</span>
       <div class="card-title mt-sm">캠페인 10 Stage</div>
-      <p>각 스테이지는 새로운 관계, 증거 개념, 거짓말 붕괴 패턴, 공동 책임 구조를 하나씩 가르친다.</p>
+      <p>각 스테이지는 새로운 시스템을 하나씩 가르친다. Stage 5부터 편향 디렉터 활성화. Stage 8~10에 부분 해결 사건 등장.</p>
     </div>
     <div class="card">
       <span class="badge badge-success">리플레이 모드</span>
       <div class="card-title mt-sm">무한 사건 모드</div>
-      <p>관계 템플릿과 사건 씨드 조합으로 끝없이 생성되는 모드. 랭킹이나 데일리 사건과도 연결 가능하다.</p>
+      <p>DuoSeed + ContextSeed + CaseSeed 조합으로 끝없이 생성. 랭킹/데일리 챌린지 연결 가능.</p>
     </div>
   </div>
-
-  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
-    <strong>Stage 설계 원칙:</strong> 각 Stage는 <strong>관계 타입과 학습 목표만 고정</strong>하고,
-    실제 사건은 지정된 모듈 풀에서 런타임에 조합 생성된다.
-    플레이어가 같은 Stage를 재도전해도 다른 사건을 경험한다.
-  </div></div>
 
   <div class="stage-grid">
-    <div class="stage">
-      <div class="num">1</div>
-      <h4>이웃 관계</h4>
-      <p><strong>학습:</strong> 거짓말 vs 오인 구분, 단순 증거 사용법</p>
-      <p style="margin-top:6px;font-size:0.72rem;color:var(--brand-dark)">CS-3 단독 · 변수 없음 · 반전 없음</p>
-    </div>
-    <div class="stage">
-      <div class="num">2</div>
-      <h4>부부 관계</h4>
-      <p><strong>학습:</strong> 감정 발언과 사실 발언 분리</p>
-      <p style="margin-top:6px;font-size:0.72rem;color:var(--brand-dark)">CS-1 또는 CS-4 · VM-C · 반전 없음</p>
-    </div>
-    <div class="stage">
-      <div class="num">3</div>
-      <h4>직장 관계</h4>
-      <p><strong>학습:</strong> 타임라인 재구성, 기록 증거</p>
-      <p style="margin-top:6px;font-size:0.72rem;color:var(--brand-dark)">CS-2 · VM-B · 반전 없음</p>
-    </div>
-    <div class="stage">
-      <div class="num">4</div>
-      <h4>동업자 관계</h4>
-      <p><strong>학습:</strong> 공동 책임 판정, 해석 싸움</p>
-      <p style="margin-top:6px;font-size:0.72rem;color:var(--brand-dark)">CS-1 또는 CS-6 · VM-D · 반전 없음</p>
-    </div>
-    <div class="stage">
-      <div class="num">5</div>
-      <h4>가족 관계</h4>
-      <p><strong>학습:</strong> 감정적 진실 vs 사실적 진실</p>
-      <p style="margin-top:6px;font-size:0.72rem;color:var(--brand-dark)">CS-1 또는 CS-4 · VM-E · 반전 없음</p>
-    </div>
-    <div class="stage">
-      <div class="num">6</div>
-      <h4>세입자·이웃 관계</h4>
-      <p><strong>학습:</strong> 편집 증거, 누락 맥락 탐지</p>
-      <p style="margin-top:6px;font-size:0.72rem;color:var(--brand-dark)">CS-3 또는 CS-6 · VM-B · 반전 없음</p>
-    </div>
-    <div class="stage">
-      <div class="num">7</div>
-      <h4>이웃 관계</h4>
-      <p><strong>학습:</strong> 제3자 목격 신뢰도 평가</p>
-      <p style="margin-top:6px;font-size:0.72rem;color:var(--brand-dark)">CS-3 · VM-A · TW-1 가능</p>
-    </div>
-    <div class="stage">
-      <div class="num">8</div>
-      <h4>직장 관계</h4>
-      <p><strong>학습:</strong> 하드 증거 부족 상황 판단</p>
-      <p style="margin-top:6px;font-size:0.72rem;color:var(--brand-dark)">CS-5 · VM-C + VM-D · TW-3 가능</p>
-    </div>
-    <div class="stage">
-      <div class="num">9</div>
-      <h4>가족 관계</h4>
-      <p><strong>학습:</strong> 자유 vs 보호 충돌, 지혜 판정</p>
-      <p style="margin-top:6px;font-size:0.72rem;color:var(--brand-dark)">CS-1 + CS-4 · VM-A · TW-2 필수</p>
-    </div>
-    <div class="stage">
-      <div class="num">10</div>
-      <h4>관계 자유 선택</h4>
-      <p><strong>학습:</strong> 복합 사건 종합 심문</p>
-      <p style="margin-top:6px;font-size:0.72rem;color:var(--brand-dark)">전체 CS 풀 · VM 2개 · TW 필수</p>
-    </div>
+    <div class="stage"><div class="num">1</div><h4>이웃 관계</h4><p><strong>학습:</strong> 거짓말 vs 오인 구분, 단순 증거, 질문 6종 기초</p><p class="text-sm">CS-3 · 변수 없음 · 반전 없음 · 신뢰 루트 미개방</p></div>
+    <div class="stage"><div class="num">2</div><h4>부부 관계</h4><p><strong>학습:</strong> 감정 발언과 사실 분리, Verbal Tell 첫 등장, 공감 질문 도입</p><p class="text-sm">CS-1 또는 CS-4 · VM-C · 반전 없음</p></div>
+    <div class="stage"><div class="num">3</div><h4>직장 관계</h4><p><strong>학습:</strong> 타임라인 재구성, 기록 증거, 증거 완전성 개념 도입</p><p class="text-sm">CS-2 · VM-B · 반전 없음</p></div>
+    <div class="stage"><div class="num">4</div><h4>동업자 관계</h4><p><strong>학습:</strong> 공동 책임 판정, 해석 싸움, 중재안 Phase 첫 등장</p><p class="text-sm">CS-1 또는 CS-6 · VM-D · 반전 없음</p></div>
+    <div class="stage"><div class="num">5</div><h4>가족 관계</h4><p><strong>학습:</strong> Relationship Ledger 활용, 과거 소환, Lie Motive(수치심) 도입. <strong>편향 디렉터 활성화.</strong></p><p class="text-sm">CS-1 또는 CS-4 · VM-E · 반전 없음</p></div>
+    <div class="stage"><div class="num">6</div><h4>세입자·집주인</h4><p><strong>학습:</strong> 증거 정당성 개념, 위법 취득 증거, 출처 질문 활용</p><p class="text-sm">CS-3 또는 CS-6 · VM-B · 반전 없음</p></div>
+    <div class="stage"><div class="num">7</div><h4>이웃 (심화)</h4><p><strong>학습:</strong> Social Graph 제3자 소환, 목격 진술 신뢰도, 비공개 진술 보호</p><p class="text-sm">CS-3 · VM-A · TW-1 가능</p></div>
+    <div class="stage"><div class="num">8</div><h4>직장 (심화)</h4><p><strong>학습:</strong> 하드 증거 부족 상황, 희생 진술(LT-7) 첫 등장, <strong>부분 해결 사건 가능</strong></p><p class="text-sm">CS-5 · VM-C + VM-D · TW-3 가능</p></div>
+    <div class="stage"><div class="num">9</div><h4>가족 (심화)</h4><p><strong>학습:</strong> TW-6(공유 오해) 첫 등장, 신뢰 루트 필수 사건, 복합 중재안</p><p class="text-sm">CS-1 + CS-4 · VM-A + VM-E · TW-2 또는 TW-6</p></div>
+    <div class="stage"><div class="num">10</div><h4>관계 자유 선택</h4><p><strong>학습:</strong> 전체 시스템 종합, <strong>부분 해결 사건 필수</strong>, 최고 난도</p><p class="text-sm">전체 CS 풀 · VM 2개 · TW 필수 · 편향 역이용 필수</p></div>
   </div>
 
 
-  <!-- ── 콘텐츠 카테고리 제안 ─────────────────── -->
-  <h2 id="categories">콘텐츠 카테고리 제안</h2>
-  <p>생활형 분쟁을 기본으로 두되, 후반부로 갈수록 도덕적 회색지대와 제3자 개입 비중을 늘린다.</p>
+  <!-- ── Context Pack ─────────────────────── -->
+  <h2 id="context">Context Pack (ContextSeed 맥락 풀)</h2>
+  <p>같은 인물쌍이 반복 등장할 때 사건 톤을 바꾸는 핵심 장치. 적은 비용으로 콘텐츠 다양성을 크게 늘린다.</p>
 
   <div class="card-grid">
-    <div class="card"><div class="card-title">부부 / 연인</div><p>외도 의심, 도박, 재산 은닉, 휴대폰 감시, 양가 가족 개입.</p></div>
-    <div class="card"><div class="card-title">이웃</div><p>층간소음, 보복, 반려동물, 사생활 침해, 주차, 공동공간 점유.</p></div>
-    <div class="card"><div class="card-title">직장</div><p>성과 가로채기, 책임 전가, 소문 유포, 부당한 야근 압박, 데이터 은폐.</p></div>
-    <div class="card"><div class="card-title">가족 / 동업</div><p>간병비, 상속 예고, 공금 사용, 계약 위반, 신뢰 배신.</p></div>
+    <div class="card"><div class="card-title">명절 직전</div><p>가족 개입 증가, 체면 압박 극대화, 지출 스트레스. 부부·가족 관계에 최적.</p></div>
+    <div class="card"><div class="card-title">인사평가 시즌</div><p>성과 압박, 책임 공방 격화, 문서 접근 민감. 직장 관계에 최적.</p></div>
+    <div class="card"><div class="card-title">전세/월세 갱신</div><p>재정 불안 극대화, 계약 해석 충돌. 세입자·동업자 관계에 최적.</p></div>
+    <div class="card"><div class="card-title">병원비 부담</div><p>재정 + 감정 이중 압박, 간병 분담 갈등. 가족·부부 관계에 최적.</p></div>
+    <div class="card"><div class="card-title">시험/입학 직전</div><p>자녀 관련 긴장, 교육비 갈등, 부모 역할 충돌. 부부·가족에 최적.</p></div>
+    <div class="card"><div class="card-title">장마철/재난</div><p>소음·누수·시설 갈등 격화, 공용 공간 마찰. 이웃 관계에 최적.</p></div>
+    <div class="card"><div class="card-title">회사 감사 시즌</div><p>문서 추적 민감, 책임 소재 급부상, 내부 고발 위험. 직장에 최적.</p></div>
+    <div class="card"><div class="card-title">이사 주간</div><p>공간·물건·보증금 갈등, 이별/시작의 감정. 이웃·세입자에 최적.</p></div>
+    <div class="card"><div class="card-title">반려동물 치료</div><p>비용 분담, 돌봄 책임, 감정적 애착. 이웃·부부에 최적.</p></div>
   </div>
 
 
-  <!-- ── 반복 플레이 예시 ─────────────────────── -->
-  <h2 id="examples">같은 관계에서 다른 사건이 나오는 예시</h2>
-  <p>반복 플레이 설계를 한눈에 보여주는 샘플. 같은 캐릭터 성향이라도 사건 구조는 완전히 달라진다.</p>
+  <!-- ── 관계별 미니 보드 ─────────────────── -->
+  <h2 id="boards">관계별 전용 미니 보드</h2>
+  <p>"사건만 다르고 조사 방식은 늘 같다"는 느낌을 깨는 장치. 동일한 범용 컴포넌트에 <strong>관계별 기본 탭 구성만 달리</strong> 한다.</p>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>관계/캐릭터</th><th>사건 A</th><th>사건 B</th><th>사건 C</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>부부 / A 회피형, B 직선형</td>
-          <td>공동 통장 돈이 도박으로 사라짐</td>
-          <td>외도 의심이 사실은 보험 상담 오해였음</td>
-          <td>A가 사이비 종교에 빠져 집안 재산을 이동</td>
-        </tr>
-        <tr>
-          <td>이웃 / A 예민형, B 뻔뻔형</td>
-          <td>층간소음과 보복 주차</td>
-          <td>반려견 사고 책임 공방</td>
-          <td>공용 복도 CCTV 사생활 침해 분쟁</td>
-        </tr>
-        <tr>
-          <td>상사-부하 / A 냉정형, B 피해자형</td>
-          <td>실적 가로채기</td>
-          <td>사내 비밀 문서 유출 의심</td>
-          <td>허위 보고와 책임 전가</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
-    플레이어가 "이 캐릭터는 이런 성향이구나"를 기억할수록 몰입은 깊어지지만,
-    사건 자체는 계속 달라지므로 <strong>메타 학습만으로는 정답에 도달할 수 없다</strong>.
-  </div></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>관계</th><th>기본 노출 탭</th><th>핵심 정보</th></tr></thead>
+    <tbody>
+      <tr><td>부부/연인</td><td>돈 흐름 보드</td><td>공동/개인 계좌 입출금, 카드 내역, 보험/대출 현황</td></tr>
+      <tr><td>부부/연인</td><td>신뢰 훼손 타임라인</td><td>의심 시작점, 확인 행동, 감정 변화 포인트</td></tr>
+      <tr><td>이웃</td><td>건물/공간 배치도</td><td>호수, 주차 위치, 공용 공간, CCTV 위치</td></tr>
+      <tr><td>이웃</td><td>시간대별 기록</td><td>소음 발생 시간, 민원 이력, 관리사무소 접수 기록</td></tr>
+      <tr><td>직장</td><td>문서 버전 비교</td><td>파일 수정 이력, 접근 권한, 최종 수정자</td></tr>
+      <tr><td>직장</td><td>조직도/보고 체계</td><td>누가 누구에게 보고하는지, 접근 권한 범위</td></tr>
+      <tr><td>가족</td><td>간병/돌봄 스케줄</td><td>누가 언제 얼마나, 비용 분담 현황</td></tr>
+      <tr><td>가족</td><td>지출 분담표</td><td>가족 공동 비용, 개인 부담, 미정산 항목</td></tr>
+    </tbody>
+  </table></div>
 
 
-  <!-- ── 샘플 생성 사건 ─────────────────────────── -->
-  <h2 id="sample">샘플 생성 사건</h2>
-  <p>"부부" 관계에서 생성된 하나의 예시. 실제 게임에서는 같은 부부 템플릿에서도 전혀 다른 사건이 재생성된다.</p>
+  <!-- ── 반복 플레이 예시 ─────────────────── -->
+  <h2 id="examples">같은 DuoSeed에서 다른 사건이 나오는 예시</h2>
+  <p>DuoSeed + ContextSeed + CaseSeed 3층 구조가 어떻게 반복 플레이를 만드는지 보여준다.</p>
 
+  <div class="table-wrap"><table>
+    <thead><tr><th>DuoSeed</th><th>Context</th><th>사건</th><th>핵심 쟁점</th><th>반전</th></tr></thead>
+    <tbody>
+      <tr>
+        <td rowspan="3">부부 · 민준(회피형) & 서연(직선형)<br><small>Ledger: 3년 전 보증 손해, 작년 이메일 열람</small></td>
+        <td>명절 직전</td><td>공동 통장 돈이 도박으로 사라짐</td><td>재정 은닉 + 외도 의심(B의 오해)</td><td>TW-6 공유 오해: 보험 상담을 외도로 오인</td>
+      </tr>
+      <tr>
+        <td>병원비 부담</td><td>서연 부모 간병비를 민준이 몰래 빼돌림</td><td>간병비 횡령 + 과거 보증 사건 재소환</td><td>없음 (Ledger 활성화로 충분한 드라마)</td>
+      </tr>
+      <tr>
+        <td>시험 직전</td><td>아이 학원비 분쟁에서 민준의 숨겨진 빚 발각</td><td>재정 은닉 + 양육 책임 공방</td><td>TW-1 피해자 반전: 서연도 몰래 대출</td>
+      </tr>
+    </tbody>
+  </table></div>
+
+
+  <!-- ── 샘플 생성 사건 ─────────────────────── -->
+  <h2 id="sample">샘플 생성 사건 (DuoSeed 기반)</h2>
+
+  <h3>DuoSeed</h3>
   <div class="two-col">
     <div class="card" style="border-left: 4px solid var(--sub);">
-      <span class="badge badge-sub">Party A</span>
-      <div class="card-title mt-sm">민준 — 회피형, 체면 중시</div>
-      <ul>
-        <li>진실: 공동 통장에서 돈을 빼 도박에 사용</li>
-        <li>오해 유도: 늦은 귀가의 이유를 외도처럼 보이게 숨김</li>
-        <li>거짓말 전략: S0(전면 부정) → 계좌 내역 제시 시 S2(부분 인정) → S3(B가 먼저 의심했다)</li>
-        <li>감정 곡선: 방어적 → 자신감 → 동요 → 체념</li>
+      <span class="badge badge-sub">Party A · 민준</span>
+      <div class="card-title mt-sm">회피형 · 체면 중시 · pride 8/10</div>
+      <ul class="text-sm">
+        <li>직업: 중소기업 과장, 소득 중간, 아파트 거주</li>
+        <li>디지털 습관: 메신저 위주, SNS 최소</li>
+        <li>민감 포인트: 돈, 체면, 직장 평판</li>
+        <li>Verbal Tell: 거짓말 시 과잉 정밀("정확히 7시 42분"), 궁지에서 도덕 비약</li>
       </ul>
     </div>
     <div class="card" style="border-left: 4px solid var(--danger);">
-      <span class="badge badge-danger">Party B</span>
-      <div class="card-title mt-sm">서연 — 직선형, 의심이 빠름</div>
-      <ul>
-        <li>진실: 휴대폰을 무단 열람했고 부모에게 과장 전달</li>
-        <li>오해: 보험 상담 채팅을 외도 증거로 확신</li>
-        <li>거짓말 전략: S0(외도라고 단정) → 채팅 전문 공개 시 S2(인정) → S4(감정 호소)</li>
-        <li>감정 곡선: 분노 → 확신 → 혼란 → 슬픔</li>
+      <span class="badge badge-danger">Party B · 서연</span>
+      <div class="card-title mt-sm">정면돌파형 · 의심 빠름 · pride 6/10</div>
+      <ul class="text-sm">
+        <li>직업: 프리랜서 디자이너, 소득 중-하, 아파트 거주</li>
+        <li>디지털 습관: SNS 활발, 메신저 다수 활용</li>
+        <li>민감 포인트: 신뢰, 사생활, 자녀</li>
+        <li>Verbal Tell: 감정 시 문장 반복, 핵심 회피 시 화제 전환</li>
       </ul>
     </div>
   </div>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>쟁점</th><th>실제 진실</th><th>지식 분면</th><th>입증 수단</th><th>책임 비율</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>공동 통장 무단 인출</td><td>사실</td><td>A만 앎</td><td>E1 계좌 내역 (Hard)</td><td>A 100%</td></tr>
-        <tr><td>도박 사용</td><td>사실</td><td>A만 앎</td><td>E1 → E2 베팅 기록 (Hard)</td><td>A 100%</td></tr>
-        <tr><td>외도</td><td>거짓 (B의 오인)</td><td>B만 앎(오해)</td><td>E3+E4 조합 → Hard 격상</td><td>A 20% / B 80%</td></tr>
-        <tr><td>휴대폰 무단 열람</td><td>사실</td><td>B만 앎</td><td>E5 기기 접근 로그 (Hard)</td><td>B 100%</td></tr>
-        <tr><td>보험 상담 (제3자 비밀)</td><td>사실</td><td>둘 다 모름</td><td>E6 보험사 로그 (Hard) — E5 이후 잠금 해제</td><td>반전 포인트</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <h3>Relationship Ledger</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>분류</th><th>이력</th><th>활성화</th></tr></thead>
+    <tbody>
+      <tr><td>확정</td><td>3년 전 민준이 서연 몰래 친구 보증을 섰다가 500만원 손해</td><td>이번 사건에 직접 연결</td></tr>
+      <tr><td>왜곡</td><td>작년 서연이 민준 이메일 열람. 민준은 침해, 서연은 불안 때문</td><td>감정 배경으로 활성화</td></tr>
+      <tr><td>침묵</td><td>민준이 2년 전 온라인 도박 빚을 갚은 적 있음. 둘 다 언급 회피.</td><td>비활성 (이번 사건에서 터지면 폭발)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>ContextSeed: 명절 직전</h3>
+  <p>양가 방문 예정. 서연 측 가족에 대한 민준의 경제력 체면 압박. 명절 비용 + 선물비 급증.</p>
+
+  <h3>CaseSeed 요약</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>쟁점</th><th>실제 진실</th><th>지식 분면</th><th>입증 수단</th><th>책임 비율</th><th>거짓말 동기</th></tr></thead>
+    <tbody>
+      <tr><td>공동 통장 무단 인출</td><td>사실</td><td>A만 앎</td><td>E1 계좌 내역 (Hard, 적법)</td><td>A 100%</td><td>LM-2 체면 + LM-5 수치심</td></tr>
+      <tr><td>도박 사용</td><td>사실</td><td>A만 앎</td><td>E2 베팅 기록 (Hard, 적법)</td><td>A 100%</td><td>LM-5 수치심</td></tr>
+      <tr><td>외도 의혹</td><td>거짓 (B의 오인)</td><td>공유 오해(TW-6)</td><td>E3 채팅 캡처(Soft, 부분, B소지, 사생활 침해) + E4 출입기록 조합 → Hard</td><td>A 20% / B 80%</td><td>B: LM-1 자기보호</td></tr>
+      <tr><td>휴대폰 무단 열람</td><td>사실</td><td>B만 앎</td><td>E5 기기 접근 로그 (Hard, 적법)</td><td>B 100%</td><td>B: LM-7 관계유지</td></tr>
+      <tr><td>보험 상담 (제3자 비밀)</td><td>사실</td><td>둘 다 모름</td><td>E6 보험사 로그 (Hard) — E5 이후 잠금 해제</td><td>반전 포인트</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>신뢰 루트 핵심:</strong> 민준의 도박 사실은 수치심(LM-5)이 방어 동기이므로 하드 증거로 붕괴시킬 수도 있지만,
+    <strong>비공개 진술 보호 + 공감 질문</strong>으로 자발적 고백을 이끌어낼 수도 있다. 이 경우 민준은 "제가 사실은..."으로 시작하며
+    과거 도박 빚(Ledger의 침묵된 과거)까지 함께 고백할 수 있다. 압박 루트보다 더 많은 정보를 얻는 보너스.
+  </div></div>
 
 
-  <!-- ── 밸런스 원칙 ───────────────────────────── -->
+  <!-- ── 밸런스 원칙 ─────────────────────────── -->
   <h2 id="balance">밸런스 원칙</h2>
-  <p>언제나 해결 가능한 사건이어야 하지만, 항상 단순하지는 않아야 한다.</p>
 
   <div class="card-grid">
-    <div class="card"><div class="card-title">핵심 사실 1~2개는 확정 가능</div><p>플레이어가 아무리 못해도 사건의 축 하나는 파악할 수 있어야 좌절감이 줄어든다.</p></div>
-    <div class="card"><div class="card-title">부가 쟁점은 회색지대 허용</div><p>모든 항목이 명쾌할 필요는 없다. 일부는 해결책의 지혜를 시험하는 용도로 남겨도 된다.</p></div>
-    <div class="card"><div class="card-title">감정 과열은 정보 생산 장치</div><p>말싸움이 길어지는 것은 지루함이 아니라 실언과 모순 생산으로 이어져야 한다.</p></div>
+    <div class="card"><div class="card-title">앵커 진실은 반드시 확정 가능</div><p>플레이어가 아무리 못해도 사건의 축 하나는 파악할 수 있어야 좌절감이 줄어든다.</p></div>
+    <div class="card"><div class="card-title">부가 쟁점은 회색지대 허용</div><p>후반 Stage에서는 부분 해결 사건이 등장한다. 판단 보류도 지혜로 인정한다.</p></div>
+    <div class="card"><div class="card-title">감정 과열은 정보 생산 장치</div><p>말싸움이 길어지면 실언과 모순이 나와야 한다. 감정만 높고 정보는 없는 구간이 없도록.</p></div>
+    <div class="card"><div class="card-title">압박과 신뢰의 밸런스</div><p>모든 사건에서 두 루트 모두 유효해야 한다. 압박 전용 사건이나 신뢰 전용 사건은 없다. 비율만 다를 뿐.</p></div>
+    <div class="card"><div class="card-title">증거 정당성은 딜레마</div><p>위법 증거를 쓰면 사실을 밝힐 수 있지만 권위가 떨어진다. 항상 트레이드오프가 있어야 한다.</p></div>
+    <div class="card"><div class="card-title">편향 디렉터는 1회 1요소</div><p>플레이어 습관 역이용은 한 판에 하나만. 많으면 부당함을 느낀다.</p></div>
   </div>
 
 </main>

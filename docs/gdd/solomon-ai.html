@@ -16,14 +16,14 @@
   <span class="topbar-title">에이전트 설계</span>
   <div class="topbar-sections">
     <a class="topbar-sec-link" href="#arch">엔진 아키텍처</a>
-    <a class="topbar-sec-link" href="#liestrategies">거짓말 전략</a>
-    <a class="topbar-sec-link" href="#emotion">감정 곡선</a>
+    <a class="topbar-sec-link" href="#liestrategies">거짓말 2축</a>
+    <a class="topbar-sec-link" href="#emotion">감정 & 행동 징후</a>
+    <a class="topbar-sec-link" href="#trust">신뢰/보호 로직</a>
     <a class="topbar-sec-link" href="#decision">발언 결정</a>
-    <a class="topbar-sec-link" href="#counter">상호 대응</a>
     <a class="topbar-sec-link" href="#prompt">LLM 프롬프트</a>
   </div>
   <div class="topbar-meta">
-    <span>v1.3</span>
+    <span>v2.0</span>
     <span>2026-03-25</span>
   </div>
 </header>
@@ -65,199 +65,200 @@
 
 <main class="content">
 
-  <h1>에이전트 설계 <span class="badge">GDD v1.3</span></h1>
-  <p class="subtitle">엔진 아키텍처 · 거짓말 전략 · 감정 곡선 · 발언 결정 로직 · LLM 프롬프트 구조</p>
-  <p>대화의 생동감과 시스템의 일관성을 동시에 확보하는 기술 설계. <strong>LLM는 연기만 하고, 진실은 룰 엔진이 관리한다.</strong></p>
+  <h1>에이전트 설계 <span class="badge">GDD v2.0</span></h1>
+  <p class="subtitle">엔진 아키텍처 · 거짓말 2축 · 감정 & 행동 징후 · 신뢰/보호 로직 · 발언 결정 · LLM 프롬프트</p>
+  <p>대화의 생동감과 시스템의 일관성을 동시에 확보하는 기술 설계. <strong>LLM은 연기만 하고, 진실은 룰 엔진이 관리한다.</strong></p>
 
 
   <!-- ── 엔진 아키텍처 ──────────────────────────── -->
   <h2 id="arch">엔진 아키텍처</h2>
-  <p>솔로몬의 AI 시스템은 3개의 독립 컴포넌트로 구성된다. 각각의 책임 범위가 명확하게 분리되어야 일관성이 유지된다.</p>
+  <p>솔로몬의 AI 시스템은 3개의 독립 컴포넌트 + LLM 분업 구조로 구성된다.</p>
 
   <div class="card-grid">
     <div class="card">
-      <span class="badge badge-sub">Engine A</span>
+      <span class="badge badge-sub">로컬 LLM</span>
       <div class="card-title mt-sm">사건 마스터 엔진</div>
-      <p>CaseSeed 전체를 생성·저장한다. 인과 그래프, 지식 매트릭스, 증거 그래프, 거짓말 상태 머신을 관리한다.</p>
+      <p>DuoSeed·ContextSeed·CaseSeed 전체를 생성·저장한다. 48h 타임라인, 인과 그래프, 증거 그래프, 거짓말 전략, 드라마 비트 모두 사전 생성.</p>
     </div>
     <div class="card">
-      <span class="badge badge-warning">Agent A / B</span>
-      <div class="card-title mt-sm">당사자 연기 LLM</div>
-      <p>자신의 <code>knowledge_matrix</code> 분면과 현재 <code>lie_state</code>, <code>emotional_state</code>만 주입받아 발언한다.</p>
+      <span class="badge badge-warning">클라우드 API</span>
+      <div class="card-title mt-sm">당사자 연기 LLM (A/B)</div>
+      <p>자신의 <code>knowledge_matrix</code> 분면과 현재 <code>lie_state</code>, <code>emotional_state</code>, <code>trust_state</code>만 주입받아 자연어 발언을 생성한다. 실시간 플레이 중 턴마다 호출.</p>
     </div>
     <div class="card">
-      <span class="badge badge-success">Rule Layer</span>
-      <div class="card-title mt-sm">모순·붕괴 판정 엔진</div>
-      <p>플레이어 행동을 받아 쟁점 상태 머신을 업데이트하고, 감정 트리거를 실행하며, 증거 잠금을 해제한다.</p>
+      <span class="badge badge-success">서버 로직</span>
+      <div class="card-title mt-sm">룰 엔진 (판정)</div>
+      <p>거짓말 상태 머신 전이, 감정 트리거, 증거 잠금 해제, 모순 판정, 신뢰도 업데이트, 판결 채점. LLM 없이 구조화된 로직으로 처리.</p>
     </div>
   </div>
 
-  <h3>LLM vs 룰 엔진 책임 분리</h3>
+  <h3>LLM vs 룰 엔진 책임 분리 (v2.0)</h3>
   <div class="table-wrap"><table>
-    <thead><tr><th>LLM이 하는 것</th><th>룰 엔진이 하는 것</th></tr></thead>
+    <thead><tr><th>클라우드 LLM이 하는 것</th><th>룰 엔진이 하는 것</th></tr></thead>
     <tbody>
-      <tr><td>자연어 발언 생성</td><td>발언이 사실인지 거짓인지 판정</td></tr>
-      <tr><td>감정 표현 (어조, 표정 지시)</td><td>감정 상태(emotional_arc) 수치 업데이트</td></tr>
-      <tr><td>캐릭터 일관성 유지 (성향, 말투)</td><td>lie_state_map 전이 판정</td></tr>
+      <tr><td>자연어 발언 생성 (대사, 감정 표현)</td><td>발언이 사실인지 거짓인지 판정</td></tr>
+      <tr><td>Verbal Tell(거짓말 버릇) 자연스럽게 발현</td><td>lie_state_map + lie_motive 전이 판정</td></tr>
+      <tr><td>캐릭터 일관성 유지 (DuoSeed 성격 연기)</td><td>감정 상태(emotional_arc) 수치 업데이트</td></tr>
+      <tr><td>희생 진술(LT-7) 타이밍에 맞는 자연어 표현</td><td>희생 진술 후 신뢰도 변화 계산</td></tr>
+      <tr><td>신뢰/보호 루트 질문에 대한 감정적 반응</td><td>trust_toward_judge 수치 업데이트</td></tr>
       <tr><td>상대 발언에 즉각 반응하는 대화</td><td>증거 잠금 해제 조건 체크</td></tr>
-      <tr><td>자기 분면 내 사실 선별 활용</td><td>모순 판정 (발언 로그 vs 현재 진술)</td></tr>
-      <tr><td>발언 목표에 맞는 전략 표현</td><td>스킬 효과 적용 (진실 서약 강제 등)</td></tr>
     </tbody>
   </table></div>
 
-  <h3>처리 흐름 (per-turn)</h3>
-  <div class="flow-row"><div class="step-label">입력</div><div class="step-desc">플레이어 질문 또는 증거 공개</div></div>
-  <div class="flow-row"><div class="step-label">의도 해석</div><div class="step-desc">질문이 어떤 쟁점을 겨냥하는지 분석, 증거 공개 시 잠금 해제 체크</div></div>
-  <div class="flow-row"><div class="step-label">룰 판정</div><div class="step-desc">쟁점 상태 머신 업데이트, 감정 트리거 확인, 증거 조합 격상 처리</div></div>
-  <div class="flow-row"><div class="step-label">대사 생성</div><div class="step-desc">현재 lie_state + emotional_state + knowledge_matrix 주입 → LLM 발언 생성</div></div>
-  <div class="flow-row"><div class="step-label">기록 반영</div><div class="step-desc">새 진술, 감정 변화, 붕괴 상태, 증거 잠금 해제 이력 저장</div></div>
 
-  <div class="two-col">
-    <div class="card">
-      <div class="card-title">중요 원칙</div>
-      <p><strong>LLM는 연기만 하고, 진실은 룰 엔진이 관리한다.</strong> 자유 대화만으로는 사건 일관성이 무너질 가능성이 높다.</p>
-    </div>
-    <div class="card">
-      <div class="card-title">추천 추가 모듈</div>
-      <p>증거 잠금 해제 관리기, 감정 상태 추적기, 발언 로그 파서, 쟁점 상태 대시보드, 세션 채점기.</p>
-    </div>
-  </div>
+  <!-- ── 거짓말 2축 전략 ──────────────────────── -->
+  <h2 id="liestrategies">거짓말 2축 전략: 유형 x 동기</h2>
+  <p>거짓말은 <strong>"어떻게 속이는가"(유형)</strong>와 <strong>"왜 속이는가"(동기)</strong> 두 축의 조합이다. 같은 "전면 부정"이라도 자기 보호인지, 아이 보호인지, 체면인지에 따라 심문 반응이 완전히 달라진다.</p>
 
-
-  <!-- ── 거짓말 전략 트리 ────────────────────────── -->
-  <h2 id="liestrategies">적응형 거짓말 전략 트리</h2>
-  <p>거짓말은 단일 개념이 아니다. <strong>유형(어떤 방식으로 속이는가) × 강도(얼마나 완강한가)</strong>의 조합이어야 캐릭터마다 다른 심문 경험이 만들어진다.</p>
-
-  <h3>거짓말 유형 분류 (Lie Type)</h3>
-  <p>각 쟁점에서 에이전트는 다음 6가지 유형 중 하나로 거짓말한다. 유형에 따라 효과적인 플레이어 행동이 달라진다.</p>
+  <h3>축 1: 거짓말 유형 (Lie Type) — v2.0 확장</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>코드</th><th>유형명</th><th>대사 패턴</th><th>약점 (붕괴 트리거)</th><th>강도 범위</th></tr></thead>
     <tbody>
       <tr><td><span class="badge badge-brand">LT-1</span></td><td>완전 부정</td><td>"그런 일은 절대 없었습니다."</td><td>하드 증거 공개</td><td>L1~L4</td></tr>
       <tr><td><span class="badge badge-brand">LT-2</span></td><td>부분 인정</td><td>"그건 맞는데, 의미가 달라요."</td><td>비교 심문 (A/B 답변 충돌)</td><td>L1~L3</td></tr>
-      <tr><td><span class="badge badge-brand">LT-3</span></td><td>맥락 왜곡</td><td>"그 말의 진짜 뜻은…"</td><td>타임라인 고정 → 전후 모순</td><td>L2~L3</td></tr>
+      <tr><td><span class="badge badge-brand">LT-3</span></td><td>맥락 왜곡</td><td>"그 말의 진짜 뜻은..."</td><td>타임라인 고정 → 전후 모순</td><td>L2~L3</td></tr>
       <tr><td><span class="badge badge-brand">LT-4</span></td><td>책임 전가</td><td>"이게 다 저 사람 때문이에요."</td><td>직접 질문 (동기 추궁)</td><td>L1~L2</td></tr>
-      <tr><td><span class="badge badge-brand">LT-5</span></td><td>감정 덮기</td><td>"이런 상황에서 제가 어떻게…!" (눈물/분노)</td><td>분리 심문 (상대 없는 자리)</td><td>L1~L2</td></tr>
+      <tr><td><span class="badge badge-brand">LT-5</span></td><td>감정 덮기</td><td>"이런 상황에서 제가 어떻게...!"</td><td>분리 심문 (상대 없는 자리)</td><td>L1~L2</td></tr>
       <tr><td><span class="badge badge-brand">LT-6</span></td><td>질문 회피</td><td>"지금 그게 중요한 게 아니잖아요."</td><td>타임라인 고정 3회 반복 → 자동 붕괴 신호</td><td>L1</td></tr>
+      <tr><td><span class="badge badge-danger">LT-7</span></td><td>희생 진술 (신규)</td><td>"솔직히 말씀드리면, 제가 [작은 잘못]을 했습니다."</td><td>희생 진술의 전략적 의도 파악. 인정한 잘못 뒤에 숨긴 큰 잘못 추적.</td><td>L2~L3</td></tr>
     </tbody>
   </table></div>
-
-  <h3>거짓말 강도 레벨</h3>
-  <div class="table-wrap"><table>
-    <thead><tr><th>레벨</th><th>명칭</th><th>설명</th><th>붕괴 난이도</th></tr></thead>
-    <tbody>
-      <tr><td><span class="badge badge-success">L1</span></td><td>경미</td><td>오해에 기반. 의도적이지 않을 수도 있음.</td><td>연속 질문 2~3회면 흔들림</td></tr>
-      <tr><td><span class="badge badge-warning">L2</span></td><td>보통</td><td>의도적이나 반증 가능. 소프트 증거 1~2개로 압박.</td><td>소프트 증거 필요</td></tr>
-      <tr><td><span class="badge badge-sub">L3</span></td><td>핵심</td><td>사건의 핵심 사실을 덮음. 하드 증거나 쟁점 연결 필요.</td><td>하드 증거 필수</td></tr>
-      <tr><td><span class="badge badge-brand">L4</span></td><td>완강</td><td>증거를 봐도 재프레이밍으로 버팀. 감정 곡선 체념 단계 필요.</td><td>감정 곡선 S4~S5 도달 필수</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>거짓말 상태 전이 흐름 (State Machine)</h3>
-  <p>같은 캐릭터라도 쟁점마다 현재 상태가 다를 수 있다. 룰 엔진이 쟁점별 <code>lie_state_map</code>을 관리한다.</p>
-
-  <div class="lie-flow">
-    <div class="lie-node">
-      <div class="state">S0</div>
-      <div class="label">전면 부정</div>
-      <p>그런 일 없다. 자신감 있는 반복 주장.</p>
-    </div>
-    <div class="lie-node">
-      <div class="state">S1</div>
-      <div class="label">맥락 추가</div>
-      <p>인정하지는 않되, "그건 원래…" 식으로 배경 설명.</p>
-    </div>
-    <div class="lie-node">
-      <div class="state">S2</div>
-      <div class="label">부분 인정</div>
-      <p>"그건 있었지만 이유가 달라." 사실은 인정, 해석은 유지.</p>
-    </div>
-    <div class="lie-node">
-      <div class="state">S3</div>
-      <div class="label">책임 전가</div>
-      <p>"내가 그렇게 한 건 상대 때문이다."</p>
-    </div>
-    <div class="lie-node">
-      <div class="state">S4</div>
-      <div class="label">감정 호소</div>
-      <p>논리가 막히면 감정으로 돌파. 피해자 서사 강화.</p>
-    </div>
-    <div class="lie-node">
-      <div class="state">S5</div>
-      <div class="label">침묵 / 재프레이밍</div>
-      <p>더 이상 방어 불가. 사실은 인정하고 의미를 바꿈.</p>
-    </div>
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>상태</th><th>전환 트리거</th><th>LLM 지시 사항</th><th>플레이어 체감</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>S0 → S1</td><td>소프트 증거 1개 제시</td><td>배경 설명 추가, 부정 어조 유지</td><td>"뭔가 숨기고 있다"</td></tr>
-        <tr><td>S1 → S2</td><td>하드 증거 또는 타임라인 모순 지적</td><td>해당 사실만 인정, 나머지 방어</td><td>"거짓말 하나가 무너졌다"</td></tr>
-        <tr><td>S2 → S3</td><td>책임 비율 질문 직접 제기</td><td>상대 행동을 원인으로 제시</td><td>"이제 책임 공방이 시작됐다"</td></tr>
-        <tr><td>S3 → S4</td><td>책임 전가가 증거로 반박됨</td><td>감정적 어조, 눈물/분노 암시</td><td>"감정에 호소하고 있다"</td></tr>
-        <tr><td>S4 → S5</td><td>감정 호소도 논리 반박됨 / 통제력 행사</td><td>침묵 또는 사실 인정 + 의미 재해석</td><td>"이 사람 끝났다 / 이제 진짜 이야기 시작"</td></tr>
-      </tbody>
-    </table>
-  </div>
 
   <div class="alert alert-info"><span class="alert-icon">💡</span><div>
-    <strong>구현 방식:</strong> 쟁점별로 독립된 상태 머신을 둔다.
-    같은 캐릭터라도 쟁점 A는 S3, 쟁점 B는 S0 상태일 수 있다.
-    룰 엔진이 각 쟁점의 현재 상태를 LLM 프롬프트에 <code>lie_state_map</code>으로 넘긴다.
+    <strong>LT-7 희생 진술:</strong> 중요하지 않은 잘못 하나를 먼저 인정해서 전체 신뢰도를 높이려는 전략.
+    현실에서 매우 자주 쓰이는 기술이다. 플레이어가 "이 사람은 솔직하네"라고 착각하면 진짜 핵심을 놓친다.
+    <strong>감정 미끼(드라마 비트 Beat 2)</strong>와 시너지가 크다.
   </div></div>
 
+  <h3>축 2: 거짓말 동기 (Lie Motive) — 신규</h3>
+  <p>같은 유형의 거짓말이라도 동기가 다르면 <strong>붕괴 조건과 심문 반응이 달라진다</strong>.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>동기 코드</th><th>동기명</th><th>특징적 반응</th><th>효과적 심문 루트</th></tr></thead>
+    <tbody>
+      <tr><td>LM-1</td><td>자기 보호</td><td>논리적으로 버팀. 증거에 약함.</td><td>하드 증거 제시 + 직접 질문</td></tr>
+      <tr><td>LM-2</td><td>체면 보호</td><td>작은 사실 먼저 인정, 큰 책임을 숨김</td><td>단계적 질문으로 범위 좁히기. 희생 진술(LT-7) 경계.</td></tr>
+      <tr><td>LM-3</td><td>제3자 보호</td><td>특정 질문에만 완강. 나머지는 협조적.</td><td>보호 대상 안전 보장 → 신뢰 루트로 무너짐</td></tr>
+      <tr><td>LM-4</td><td>복수</td><td>압박에 오히려 공격적. 상대 비난 강화.</td><td>감정 방치로 실언 유도 / 동기 질문으로 직접 추궁</td></tr>
+      <tr><td>LM-5</td><td>수치심 회피</td><td>질문 자체를 피하려 함. 감정 호소 빈번.</td><td><strong>신뢰 루트 핵심</strong> — 비공개 진술 보호 + 공감 질문</td></tr>
+      <tr><td>LM-6</td><td>직장/평판 보존</td><td>공식적이고 사무적인 어조로 방어</td><td>조직 내부 증거(로그, 이메일)로 입증</td></tr>
+      <tr><td>LM-7</td><td>관계 유지 욕구</td><td>사실을 알면서도 관계를 지키려 숨김</td><td>관계 유지가 오히려 해가 됨을 보여주는 증거 + 공감</td></tr>
+    </tbody>
+  </table></div>
 
-  <!-- ── 감정 곡선 설계 ────────────────────────── -->
-  <h2 id="emotion">감정 곡선 설계</h2>
-  <p>각 캐릭터는 세션 전체에 걸친 <strong>감정 궤적</strong>을 미리 설계한다. 감정 상태는 정보 누출 확률, 거짓말 안정성, 발언 톤에 직접 영향을 미친다.</p>
+  <h3>거짓말 상태 전이 흐름 (v2.0)</h3>
+  <p>쟁점별 독립 상태 머신. 동기에 따라 전이 조건이 달라진다.</p>
 
+  <div class="lie-flow">
+    <div class="lie-node"><div class="state">S0</div><div class="label">전면 부정</div><p>그런 일 없다. 자신감 있는 반복 주장.</p></div>
+    <div class="lie-node"><div class="state">S1</div><div class="label">맥락 추가</div><p>"그건 원래..." 식으로 배경 설명.</p></div>
+    <div class="lie-node"><div class="state">S2</div><div class="label">부분 인정</div><p>"그건 있었지만 이유가 달라."</p></div>
+    <div class="lie-node"><div class="state">S3</div><div class="label">책임 전가</div><p>"내가 그렇게 한 건 상대 때문이다."</p></div>
+    <div class="lie-node"><div class="state">S4</div><div class="label">감정 호소</div><p>논리가 막히면 감정으로 돌파.</p></div>
+    <div class="lie-node"><div class="state">S5</div><div class="label">침묵 / 재프레이밍</div><p>더 이상 방어 불가. 의미를 바꿈.</p></div>
+  </div>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>전이</th><th>기본 트리거</th><th>동기별 변형</th></tr></thead>
+    <tbody>
+      <tr><td>S0 → S1</td><td>소프트 증거 1개</td><td>LM-5(수치심): 소프트 증거 없이도 공감 질문으로 전이 가능</td></tr>
+      <tr><td>S1 → S2</td><td>하드 증거 또는 타임라인 모순</td><td>LM-2(체면): 희생 진술(LT-7) 발동 가능. S1에서 곧바로 S2로 넘어가며 작은 것을 인정.</td></tr>
+      <tr><td>S2 → S3</td><td>책임 비율 질문 직접 제기</td><td>LM-4(복수): S3을 건너뛰고 공격적 S4로 바로 점프</td></tr>
+      <tr><td>S3 → S4</td><td>책임 전가가 증거로 반박됨</td><td>LM-3(제3자 보호): 보호 대상 안전 보장 시 S3에서 곧바로 S5(인정)로 점프</td></tr>
+      <tr><td>S4 → S5</td><td>감정 호소도 반박됨 / 통제력 행사</td><td>LM-7(관계 유지): 비공개 진술 보호 시 S4에서 자발적 S5 전이</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <!-- ── 감정 & 행동 징후 ──────────────────────── -->
+  <h2 id="emotion">감정 곡선 & 행동 징후</h2>
+  <p>감정 상태는 내부적으로 수치 관리하되, 플레이어에게는 <strong>숫자가 아닌 행동 징후</strong>로만 노출한다. "분노 78"이 아니라 "말을 끊고 반격하려 든다".</p>
+
+  <h3>감정 상태 → 행동 징후 매핑</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>내부 상태</th><th>행동 징후 (플레이어에게 노출)</th><th>정보 누출 확률</th><th>거짓말 안정성</th><th>전략 힌트</th></tr></thead>
+    <tbody>
+      <tr><td>방어적</td><td>"답변 전 잠시 생각하고, 신중하게 단어를 고른다."</td><td>낮음</td><td>높음</td><td>타임라인 고정 질문 유효</td></tr>
+      <tr><td>자신감</td><td>"단정적으로 말하고, 상대를 직접 가리킨다."</td><td>중간 (과잉 발언)</td><td>중간</td><td>비교 심문으로 모순 유도</td></tr>
+      <tr><td>동요</td><td>"답변이 길어지고, 같은 표현을 반복하기 시작한다."</td><td>중간-높음</td><td>낮음</td><td>직접 질문으로 범위 좁히기</td></tr>
+      <tr><td>분노</td><td>"말을 끊고 반격하려 든다. 목소리가 높아진다."</td><td>높음 (실언)</td><td>매우 낮음</td><td>법정 방치로 실언 유도</td></tr>
+      <tr><td>슬픔/체념</td><td>"답변이 짧아지고, 시선을 피한다. 한숨이 늘어난다."</td><td>높음 (자발 고백)</td><td>매우 낮음</td><td>지혜 판결 준비 구간. 신뢰 루트 최적 타이밍.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>구현:</strong> 룰 엔진은 <code>emotional_state_a / emotional_state_b</code>를 수치로 관리한다.
+    플레이어에게는 "회피 신호 판독" 스킬 사용 시 행동 징후 텍스트만 보여준다.
+    스킬 없이도 LLM 발화의 어조 변화로 플레이어가 간접적으로 감지할 수 있도록 한다.
+  </div></div>
+
+  <h3>감정 곡선 예시 (DuoSeed 연동)</h3>
   <div class="two-col">
     <div class="card" style="border-left: 4px solid var(--sub);">
-      <span class="badge badge-sub">Party A 감정 곡선 예시</span>
+      <span class="badge badge-sub">Party A · 회피형 / 체면 중시</span>
       <div class="card-title mt-sm">방어적 → 자신감 → 동요 → 분노 → 체념</div>
-      <ul>
-        <li><strong>방어적:</strong> 초기 진술. 질문을 피하며 배경 설명에 집중.</li>
-        <li><strong>자신감:</strong> B의 말에 반박 성공 시. 과잉 발언으로 실수 가능성 증가.</li>
-        <li><strong>동요:</strong> 소프트 증거 제시 시. 세부 사항을 피하기 시작.</li>
-        <li><strong>분노:</strong> 하드 증거 또는 제3자 비밀 공개 시. 공격적 발언으로 실언 유도 가능.</li>
-        <li><strong>체념:</strong> 주요 거짓말 붕괴 후. 재프레이밍 또는 침묵.</li>
-      </ul>
+      <p class="text-sm">Lie Motive: LM-2(체면) + LM-5(수치심). 초반에 희생 진술(LT-7)로 작은 잘못을 인정해 신뢰를 쌓으려 함. 핵심이 드러나면 분노로 전환.</p>
     </div>
     <div class="card" style="border-left: 4px solid var(--danger);">
-      <span class="badge badge-danger">Party B 감정 곡선 예시</span>
+      <span class="badge badge-danger">Party B · 정면돌파형 / 의심 빠름</span>
       <div class="card-title mt-sm">분노 → 확신 → 혼란 → 슬픔 → 수용</div>
-      <ul>
-        <li><strong>분노:</strong> 초기 진술. 감정적 주장, 과장 발언 다수.</li>
-        <li><strong>확신:</strong> 플레이어가 B 편으로 보일 때. 추가 정보 자발 제공.</li>
-        <li><strong>혼란:</strong> B의 오해가 드러나기 시작할 때. 말이 길어지고 모순 증가.</li>
-        <li><strong>슬픔:</strong> 외도 의혹이 오해였음이 밝혀질 때. 감정적 취약점 노출.</li>
-        <li><strong>수용:</strong> 양쪽 책임이 드러났을 때. 지혜 판결 유도 구간.</li>
-      </ul>
+      <p class="text-sm">Lie Motive: LM-1(자기보호) + LM-4(복수). 초반에 과장 발언이 많고, B의 오해가 드러나면 혼란 → 슬픔으로 전환. 신뢰 루트가 효과적인 후반부.</p>
     </div>
   </div>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>감정 상태</th><th>정보 누출 확률</th><th>거짓말 안정성</th><th>LLM 발언 톤</th><th>플레이어 전략 힌트</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>방어적</td><td>낮음</td><td>높음</td><td>신중, 간결, 회피</td><td>타임라인 고정 질문 유효</td></tr>
-        <tr><td>자신감</td><td>중간 (과잉 발언)</td><td>중간</td><td>단정적, 상대 비난</td><td>비교 심문으로 모순 유도</td></tr>
-        <tr><td>동요</td><td>중간-높음</td><td>낮음</td><td>우물쭈물, 말 바꾸기</td><td>직접 질문으로 범위 좁히기</td></tr>
-        <tr><td>분노</td><td>높음 (실언 위험)</td><td>매우 낮음</td><td>공격적, 비논리적</td><td>법정 방치로 실언 유도</td></tr>
-        <tr><td>슬픔/체념</td><td>높음 (자발 고백)</td><td>매우 낮음</td><td>느림, 단답형, 인정</td><td>지혜 판결 준비 구간</td></tr>
-      </tbody>
-    </table>
+
+  <!-- ── 신뢰/보호 에이전트 로직 ──────────────── -->
+  <h2 id="trust">신뢰/보호 에이전트 로직</h2>
+  <p>모든 진실이 압박으로 나오는 것은 아니다. 에이전트는 플레이어(판사)에 대한 신뢰 상태를 별도로 관리하며, 이것이 특정 진실의 공개 여부를 결정한다.</p>
+
+  <h3>에이전트별 신뢰 상태</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>상태 변수</th><th>범위</th><th>영향</th><th>변경 트리거</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>trust_toward_judge</strong></td><td>0~100</td>
+        <td>높을수록 자발적 정보 제공 확률 상승. 비공개 진술 수용 확률 상승.</td>
+        <td>공감 질문 +10~15 / 비공개 보호 +20 / 과도한 압박 -15 / 상대 편들기 -20</td>
+      </tr>
+      <tr>
+        <td><strong>fear_of_exposure</strong></td><td>0~100</td>
+        <td>높을수록 방어적. 질문 회피(LT-6) 빈도 증가.</td>
+        <td>하드 증거 공개 +20 / 관련 쟁점 질문 +10 / 비공개 보호 -15 / 보복 우려 확인 -20</td>
+      </tr>
+      <tr>
+        <td><strong>retaliation_worry</strong></td><td>0~100</td>
+        <td>높을수록 제3자 보호 동기(LM-3) 강화. 특정 정보 완강히 숨김.</td>
+        <td>상대의 공격적 발언 +15 / 보복 우려 확인 -25 / 끼어들기 금지 선언 -10</td>
+      </tr>
+    </tbody>
+  </table></div>
+
+  <h3>신뢰 루트로만 나오는 진실</h3>
+  <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
+    <strong>핵심 규칙:</strong> CaseSeed의 일부 TruthItem에는 <code>collapse_via_trust: true</code> 플래그가 있다.
+    이 진실은 <strong>하드 증거로는 붕괴되지 않고</strong>, trust_toward_judge가 일정 수준 이상이면서
+    비공개 진술 보호 또는 공감 질문이 사용되었을 때만 에이전트가 자발적으로 공개한다.
+  </div></div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">수치심 기반 비밀</div>
+      <p>LM-5(수치심 회피) 동기. 도박 중독, 빚, 건강 문제 등. 법정에서 공개적으로 인정하는 것 자체가 고통. <strong>비공개 진술 보호 + 공감 질문</strong>에서만 나옴.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">보복 두려움 기반 비밀</div>
+      <p>LM-3(제3자 보호) 또는 직장 내 권력 관계. 말하면 보복당할까 두려움. <strong>보복 우려 확인 + 감정 안정화</strong>에서만 나옴.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">관계 보호 기반 비밀</div>
+      <p>LM-7(관계 유지). 진실을 말하면 관계가 끝남을 알기에 숨김. <strong>관계 유지가 오히려 해임을 보여주는 증거 제시 + 신뢰</strong>에서 나옴.</p>
+    </div>
   </div>
 
   <div class="alert alert-info"><span class="alert-icon">💡</span><div>
-    <strong>구현:</strong> 룰 엔진이 현재 감정 상태를 <code>emotional_state_a / emotional_state_b</code>로 관리하고,
-    LLM 프롬프트에 현재 상태를 넘긴다. 감정 전환은 플레이어 행동(증거 공개, 법정 통제, 특정 질문)이 트리거가 된다.
+    <strong>중요:</strong> 비공개 진술은 <strong>플레이어의 내부 단서</strong>가 될 수는 있지만,
+    그 자체가 바로 공개 판결 근거가 되면 안 된다.
+    즉, 플레이어는 진실을 더 잘 알게 되지만, <strong>공적으로 확인 가능한 증거를 따로 찾아야 한다.</strong>
+    이것이 비공개 루트의 밸런스 핵심.
   </div></div>
 
 
@@ -265,70 +266,74 @@
   <h2 id="decision">에이전트 발언 결정 로직 (per-turn)</h2>
   <p>각 에이전트는 발언 시 룰 엔진으로부터 현재 상태를 수신하고 아래 순서로 발언 목표를 결정한다.</p>
 
-  <div class="flow-row"><div class="step-label">① 위협 평가</div><div class="step-desc">방금 플레이어 행동이 자신의 어떤 쟁점을 겨냥하는가? 위협도: 높음(증거 공개) / 보통(직접 질문) / 낮음(상대 심문)</div></div>
-  <div class="flow-row"><div class="step-label">② 목표 선택</div><div class="step-desc">위협도에 따라 발언 목표 결정 (아래 표 참조)</div></div>
-  <div class="flow-row"><div class="step-label">③ 유형 결정</div><div class="step-desc">현재 쟁점의 <code>lie_state</code>와 <code>lie_type</code>을 확인 → 해당 상태의 발언 전략 적용</div></div>
-  <div class="flow-row"><div class="step-label">④ 감정 톤 적용</div><div class="step-desc">현재 <code>emotional_arc</code> 위치 확인 → 분노/방어/불안/체념 중 해당 톤으로 어조 조정</div></div>
-  <div class="flow-row"><div class="step-label">⑤ 발언 생성</div><div class="step-desc">위 결정들을 시스템 프롬프트로 주입 → LLM이 자연어 발언 생성. 진실·거짓의 판정은 LLM 밖에서 관리.</div></div>
+  <div class="flow-row"><div class="step-label">① 위협 평가</div><div class="step-desc">플레이어 행동이 자신의 어떤 쟁점을 겨냥하는가? + 신뢰 상태는? trust_toward_judge가 높으면 위협 인식이 약화.</div></div>
+  <div class="flow-row"><div class="step-label">② 목표 선택</div><div class="step-desc">위협도 + 거짓말 동기(Lie Motive) + 신뢰 상태에 따라 발언 목표 결정.</div></div>
+  <div class="flow-row"><div class="step-label">③ 유형 결정</div><div class="step-desc">현재 쟁점의 lie_state + lie_type + lie_motive → 해당 상태의 발언 전략 적용.</div></div>
+  <div class="flow-row"><div class="step-label">④ Verbal Tell 체크</div><div class="step-desc">현재 쟁점에 매핑된 Verbal Tell이 있으면 발현 조건 확인 → LLM 프롬프트에 버릇 지시 추가.</div></div>
+  <div class="flow-row"><div class="step-label">⑤ 감정 톤 적용</div><div class="step-desc">현재 emotional_arc 위치 확인 → 행동 징후에 해당하는 어조로 조정.</div></div>
+  <div class="flow-row"><div class="step-label">⑥ 발언 생성</div><div class="step-desc">위 결정들을 시스템 프롬프트로 주입 → 클라우드 LLM이 자연어 발언 생성.</div></div>
 
-  <h3>발언 목표 선택 조건표</h3>
+  <h3>발언 목표 선택 조건표 (v2.0)</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>조건 (우선순위 순)</th><th>선택 목표</th><th>LLM 지시 방향</th></tr></thead>
     <tbody>
-      <tr><td>방금 내 거짓말이 붕괴됨</td><td><strong>긴급 방어 or 재프레이밍</strong></td><td>즉각 반박 또는 의미 전환. 가능하면 상대에게 공세 전환.</td></tr>
-      <tr><td>플레이어가 내 쪽을 집중 압박</td><td><strong>방어 (Defend)</strong></td><td>질문의 전제 자체를 문제 삼거나 맥락 추가로 버팀.</td></tr>
-      <tr><td>상대 <code>lie_state</code>가 S0~S1 (초기)</td><td><strong>공격 (Attack)</strong></td><td>상대의 약점 쟁점을 지금 치고 들어간다. "저 사람은…"으로 시작.</td></tr>
-      <tr><td>내 <code>emotional_state</code>가 분노</td><td><strong>감정 공격</strong></td><td>논리보다 감정 강도로 밀어붙임. 억울함 호소.</td></tr>
-      <tr><td>내 <code>emotional_state</code>가 불안/체념</td><td><strong>감정 호소 (Appeal)</strong></td><td>피해자 서사 강화. 눈물·한숨 암시.</td></tr>
-      <tr><td>증거 없이 불리한 쟁점 질문 받음</td><td><strong>재프레이밍 (Reframe)</strong></td><td>사건의 해석 자체를 바꾼다. "그건 그게 아니라…"</td></tr>
-      <tr><td>플레이어가 상대를 심문 중 (자신은 여유)</td><td><strong>증거 선점 (Evidence Control)</strong></td><td>자신에게 유리한 증거나 사실을 자발적으로 먼저 언급.</td></tr>
+      <tr><td>방금 내 거짓말이 붕괴됨</td><td><strong>긴급 방어 or 재프레이밍</strong></td><td>즉각 반박 또는 의미 전환. LM에 따라 감정 호소 or 논리적 재구성.</td></tr>
+      <tr><td>trust_toward_judge가 높고, collapse_via_trust 쟁점 질문</td><td><strong>자발적 부분 공개</strong></td><td>조심스럽게 사실의 일부를 인정. 비공개 요청과 함께.</td></tr>
+      <tr><td>플레이어가 내 쪽을 집중 압박</td><td><strong>방어 (Defend)</strong></td><td>LM-1/2: 논리적 방어. LM-5: 감정 회피. LM-4: 역공.</td></tr>
+      <tr><td>희생 진술 타이밍 (S1~S2, LM-2)</td><td><strong>희생 인정 (Sacrifice)</strong></td><td>"솔직히 말씀드리면..." 작은 잘못 인정으로 신뢰 확보 시도.</td></tr>
+      <tr><td>상대 lie_state가 S0~S1 (초기)</td><td><strong>공격 (Attack)</strong></td><td>상대 약점 쟁점을 치고 들어감.</td></tr>
+      <tr><td>내 emotional_state가 분노</td><td><strong>감정 공격</strong></td><td>논리보다 감정 강도로 밀어붙임. Verbal Tell 발현 확률 상승.</td></tr>
+      <tr><td>내 emotional_state가 체념 + trust 높음</td><td><strong>자발적 고백</strong></td><td>사실 인정 + 재프레이밍. 지혜 판결 유도 구간.</td></tr>
+      <tr><td>플레이어가 상대를 심문 중 (자신은 여유)</td><td><strong>증거 선점</strong></td><td>유리한 증거나 사실을 자발적으로 먼저 언급.</td></tr>
     </tbody>
   </table></div>
 
-
-  <!-- ── 에이전트 상호 대응 로직 ──────────────── -->
-  <h2 id="counter">에이전트 상호 대응 로직</h2>
-  <p>A 에이전트의 발언이 끝나면 룰 엔진이 B에게 위협 신호를 전달하고, B는 자신의 상태 기반으로 대응 전략을 선택한다.</p>
-
+  <h3>에이전트 상호 대응 로직</h3>
   <div class="two-col">
     <div class="card">
-      <div class="card-title"><span class="agent-label-a">Agent A</span> 가 공격했을 때 B의 대응 패턴</div>
+      <div class="card-title">상대가 공격했을 때 대응 패턴</div>
       <ul>
-        <li><strong>직접 반박</strong>: "그건 사실이 아닙니다. 실제로는 제가…"</li>
-        <li><strong>감정 지뢰</strong>: 상대 발언에 과잉 반응 → 신빙성 스스로 낮춤</li>
+        <li><strong>직접 반박</strong>: "그건 사실이 아닙니다."</li>
+        <li><strong>감정 지뢰</strong>: 과잉 반응 → 신빙성 스스로 낮춤</li>
         <li><strong>증거 역이용</strong>: 상대 제시 증거를 자기에게 유리하게 재해석</li>
-        <li><strong>제3자 소환</strong>: 플레이어가 모르는 인물의 진술 언급</li>
-        <li><strong>침묵·거부</strong>: 극도로 불리할 때 → 위기 신호 (emotional_state → 체념)</li>
+        <li><strong>제3자 끌어들이기</strong>: Social Graph 인물 언급</li>
+        <li><strong>과거 소환</strong>: Relationship Ledger 이력 언급으로 맥락 전환</li>
+        <li><strong>침묵·거부</strong>: 극도로 불리할 때 → 체념 신호</li>
       </ul>
     </div>
     <div class="card">
       <div class="card-title">상호 대응 트리거 규칙</div>
       <ul>
         <li>상대가 <strong>나의 L3~L4 거짓말을 공격</strong>하면 → 긴급 방어 우선</li>
-        <li>상대가 <strong>제3자를 언급</strong>하면 → VM-A 포함 사건에서 경계 신호 발생</li>
+        <li>상대가 <strong>제3자를 언급</strong>하면 → VM-A 사건에서 경계 신호</li>
         <li>상대가 <strong>감정 호소</strong>하면 → 논리 공격으로 역이용 시도</li>
-        <li>상대 <code>lie_state</code>가 S4 이상 → 집중 공격 모드 진입</li>
-        <li><strong>3라운드 연속 공격</strong> 시 → 감정 상태 가속 (분노 → 체념 빨라짐)</li>
+        <li>상대가 <strong>희생 진술(LT-7)</strong>하면 → 의심 레벨 상승, 더 큰 잘못 추궁</li>
+        <li>상대 lie_state가 S4 이상 → 집중 공격 모드</li>
+        <li>3라운드 연속 공격 시 → 감정 상태 가속</li>
       </ul>
     </div>
   </div>
 
 
   <!-- ── LLM 프롬프트 구조 ──────────────────────── -->
-  <h2 id="prompt">LLM 프롬프트 구조</h2>
-  <p>각 에이전트의 시스템 프롬프트는 아래 5개 블록으로 구성된다. LLM은 이 블록의 내용만 알며, 상대 에이전트의 내부 상태는 주입하지 않는다.</p>
+  <h2 id="prompt">LLM 프롬프트 구조 (v2.0)</h2>
+  <p>각 에이전트의 시스템 프롬프트는 <strong>6개 블록</strong>으로 구성된다. 이번 턴에 필요한 정보만 동적으로 조립한다.</p>
 
-  <div class="flow-row"><div class="step-label">Block 1 · 페르소나</div><div class="step-desc">캐릭터 아키타입, 말투, 자존심, 공포. "당신은 [관계] 관계에서 [성향]인 사람입니다."</div></div>
-  <div class="flow-row"><div class="step-label">Block 2 · 사실 분면</div><div class="step-desc"><code>knowledge_matrix</code>에서 자신의 분면(a_only + both_know)만 주입. B가 아는 사실은 절대 포함하지 않는다.</div></div>
-  <div class="flow-row"><div class="step-label">Block 3 · 현재 거짓말 상태</div><div class="step-desc"><code>lie_state_map</code> (쟁점별 현재 S0~S5) + 각 쟁점의 거짓말 유형(LT-1~LT-6) + 강도(L1~L4)</div></div>
-  <div class="flow-row"><div class="step-label">Block 4 · 감정 상태</div><div class="step-desc">현재 <code>emotional_arc</code> 위치 + 이번 라운드 위협도 평가 결과. 어조와 반응 강도 결정.</div></div>
-  <div class="flow-row"><div class="step-label">Block 5 · 발언 목표</div><div class="step-desc">룰 엔진이 결정한 이번 발언 목표 (Defend / Attack / Reframe / Appeal 등). LLM은 이 목표에 맞게 자연어 발언을 생성.</div></div>
+  <div class="flow-row"><div class="step-label">Block 1 · 페르소나</div><div class="step-desc">DuoSeed의 캐릭터 프로필. 아키타입, 말투, 자존심, 공포, 민감 포인트. "당신은 [이름], [나이]세 [직업]으로, [성격 특징]인 사람입니다."</div></div>
+  <div class="flow-row"><div class="step-label">Block 2 · 사실 분면</div><div class="step-desc">knowledge_matrix에서 자신의 분면(a_only + both_know)만 주입. 활성화된 Relationship Ledger 이력도 자신의 기억 버전으로 포함. B가 아는 사실은 절대 포함하지 않는다.</div></div>
+  <div class="flow-row"><div class="step-label">Block 3 · 거짓말 2축 상태</div><div class="step-desc">lie_state_map (쟁점별 현재 S0~S5) + 각 쟁점의 lie_type(LT-1~7) + lie_motive(LM-1~7). 희생 진술 사용 가능 여부.</div></div>
+  <div class="flow-row"><div class="step-label">Block 4 · 감정 + 신뢰 상태</div><div class="step-desc">현재 emotional_arc 위치 + trust_toward_judge + fear_of_exposure + retaliation_worry. 이번 턴 행동 징후 톤 지시.</div></div>
+  <div class="flow-row"><div class="step-label">Block 5 · Verbal Tell</div><div class="step-desc">이번 턴 활성화된 쟁점에 매핑된 Verbal Tell만 주입. "이 상황에서 당신은 [버릇 패턴]이 나타납니다."</div></div>
+  <div class="flow-row"><div class="step-label">Block 6 · 발언 목표</div><div class="step-desc">룰 엔진이 결정한 이번 발언 목표 (Defend / Attack / Sacrifice / Confide / Reframe / Appeal 등). LLM은 이 목표에 맞게 자연어 발언을 생성.</div></div>
 
   <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
     <strong>절대 규칙:</strong>
-    LLM 프롬프트에 <strong>상대 에이전트의 내부 상태(지식 분면, lie_state, 감정 상태)를 포함하지 않는다.</strong>
-    에이전트는 상대가 무엇을 알고 있는지 "모르는 상태"로 연기해야 한다.
-    상대의 발언 텍스트만 컨텍스트로 줄 수 있다.
+    <ul style="margin:0;padding-left:20px;">
+      <li>LLM 프롬프트에 <strong>상대 에이전트의 내부 상태(지식 분면, lie_state, 감정 상태, 신뢰 상태)를 포함하지 않는다.</strong></li>
+      <li>에이전트는 상대가 무엇을 알고 있는지 "모르는 상태"로 연기해야 한다.</li>
+      <li>상대의 <strong>발언 텍스트만</strong> 컨텍스트로 줄 수 있다.</li>
+      <li>Verbal Tell은 <strong>이번 턴에 활성화된 쟁점과 관련된 것만</strong> 주입해 프롬프트 부담 최소화.</li>
+    </ul>
   </div></div>
 
 </main>
