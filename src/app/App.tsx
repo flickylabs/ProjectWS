@@ -29,7 +29,14 @@ import ProfilePage from '../components/profile/ProfilePage'
 import { phase1Dialogues } from '../data/dialogues/phase1'
 import { phase2Dialogues } from '../data/dialogues/phase2'
 import { buildGenericPhase1, buildGenericPhase2 } from '../data/dialogues/generic-phase1'
-import { loadPhase1Script, loadPhase2Script } from '../data/dialogues/phaseScriptLoader'
+import { loadPhase1Script, loadPhase2Script, getScriptCounts } from '../data/dialogues/phaseScriptLoader'
+
+// 디버그: 스크립트 로드 확인
+if (typeof window !== 'undefined') {
+  const counts = getScriptCounts()
+  console.log(`[Solomon] Script loader — Phase1: ${counts.phase1}, Phase2: ${counts.phase2}`)
+}
+
 // prefetch는 AutoDialoguePhase 내부에서 직접 소비
 import { triggerDialogueTap } from '../components/phase/AutoDialoguePhase'
 
@@ -221,6 +228,7 @@ function getActionPanel(phase: GamePhase) {
     case GamePhase.Phase1_InitialStatement: {
       // Phase 1: 사건별 사전 생성 스크립트 우선 → 없으면 범용 폴백
       const caseScript = caseData ? loadPhase1Script(caseData.caseId) : null
+      if (caseData) console.log(`[Phase1] caseId=${caseData.caseId}, script=${caseScript ? `loaded(${caseScript.length} entries)` : 'NOT FOUND → fallback'}`)
       const fallback = caseScript ?? (caseData ? buildGenericPhase1(caseData) : phase1Dialogues)
       return (
         <AutoDialoguePhase

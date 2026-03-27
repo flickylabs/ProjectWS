@@ -34,24 +34,35 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
     startedRef.current = true
 
     const init = async () => {
-      // 1. prefetch 확인
-      const prefetched = phaseKey === 'phase1' ? consumePrefetchedPhase1()
-        : phaseKey === 'phase2' ? consumePrefetchedPhase2()
-        : null
+      // dialogues prop이 이미 사건별 스크립트를 포함하고 있으므로 그대로 사용
+      // prefetch(LLM 생성)는 스크립트가 없는 사건용 폴백으로만 동작
+      if (dialogues.length > 0) {
+        // 스크립트 로더가 제공한 dialogues를 직접 사용
+        resolvedDialogues.current = dialogues
+        setTotalCount(dialogues.length)
+        // prefetch 결과는 버림
+        if (phaseKey === 'phase1') consumePrefetchedPhase1()
+        if (phaseKey === 'phase2') consumePrefetchedPhase2()
+      } else {
+        // 스크립트가 없는 경우에만 prefetch/LLM 사용
+        const prefetched = phaseKey === 'phase1' ? consumePrefetchedPhase1()
+          : phaseKey === 'phase2' ? consumePrefetchedPhase2()
+          : null
 
-      if (prefetched && prefetched.length > 0) {
-        resolvedDialogues.current = prefetched
-        setTotalCount(prefetched.length)
-      } else if (llmGenerator) {
-        setLoading(true)
-        try {
-          const generated = await llmGenerator()
-          if (generated.length > 0) {
-            resolvedDialogues.current = generated
-            setTotalCount(generated.length)
-          }
-        } catch { /* 폴백 */ }
-        setLoading(false)
+        if (prefetched && prefetched.length > 0) {
+          resolvedDialogues.current = prefetched
+          setTotalCount(prefetched.length)
+        } else if (llmGenerator) {
+          setLoading(true)
+          try {
+            const generated = await llmGenerator()
+            if (generated.length > 0) {
+              resolvedDialogues.current = generated
+              setTotalCount(generated.length)
+            }
+          } catch { /* 폴백 */ }
+          setLoading(false)
+        }
       }
 
       // 첫 대사

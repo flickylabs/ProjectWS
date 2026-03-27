@@ -15,17 +15,27 @@ interface PhaseScript {
 }
 
 // Vite의 import.meta.glob으로 모든 Phase 1/2 JSON을 빌드 시점에 번들
-const phase1Modules = import.meta.glob<PhaseScript>('./phase1/*.json', { eager: true, import: 'default' })
-const phase2Modules = import.meta.glob<PhaseScript>('./phase2/*.json', { eager: true, import: 'default' })
+// JSON은 default export 없이 전체 모듈로 로드됨
+const phase1Modules = import.meta.glob<PhaseScript>('./phase1/*.json', { eager: true })
+const phase2Modules = import.meta.glob<PhaseScript>('./phase2/*.json', { eager: true })
 
-function buildIndex(modules: Record<string, PhaseScript>): Map<string, PhaseScript> {
+function buildIndex(modules: Record<string, unknown>): Map<string, PhaseScript> {
   const map = new Map<string, PhaseScript>()
-  for (const [, mod] of Object.entries(modules)) {
-    if (mod?.caseId) {
-      map.set(mod.caseId, mod)
+  for (const [path, mod] of Object.entries(modules)) {
+    // JSON glob은 { default: {...} } 또는 직접 {...} 형태로 올 수 있음
+    const data = (mod as any)?.default ?? mod
+    if (data?.caseId && data?.dialogues) {
+      map.set(data.caseId, data as PhaseScript)
     }
   }
   return map
+}
+
+// 디버그: 로드 결과 로그
+if (typeof window !== 'undefined') {
+  const p1 = Object.keys(phase1Modules).length
+  const p2 = Object.keys(phase2Modules).length
+  console.log(`[ScriptLoader] Phase 1: ${p1} files, Phase 2: ${p2} files`)
 }
 
 const phase1Index = buildIndex(phase1Modules)
