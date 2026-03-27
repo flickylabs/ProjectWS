@@ -11,9 +11,11 @@ import type { QuestionToggles } from './QuestionSelector'
 import EvidencePresenter from './EvidencePresenter'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
 
+import Emoji from '../common/Emoji'
+
 type ActionTab = 'question' | 'evidence' | 'skill' | null
 
-const EMOJI: Record<string, string> = { defensive: '😐', confident: '😤', shaken: '😰', angry: '😡', resigned: '😞' }
+const EMOTION_EMOJI: Record<string, string> = { defensive: '😐', confident: '😤', shaken: '😰', angry: '😡', resigned: '😞' }
 
 /* ── Phase별 해금 설정 ─────────────────────── */
 
@@ -234,17 +236,17 @@ export default function ActionPanel() {
       {/* 고정 패널 */}
       <div className="grid grid-cols-2 gap-2 h-11">
         <button onClick={() => setTarget('a')} className={`flex items-center justify-center gap-2 rounded-xl text-sm font-bold active:scale-95 ${target === 'a' ? 'bg-blue-600/90 text-white ring-2 ring-blue-400/50' : 'bg-gray-800/60 text-blue-400 ring-1 ring-blue-800/30'}`}>
-          <span>{EMOJI[agentA.emotionalState.phase] ?? '😐'}</span>{caseData.duo.partyA.name}
+          <Emoji char={EMOTION_EMOJI[agentA.emotionalState.phase] ?? '😐'} size={18} /><span className="ml-1">{caseData.duo.partyA.name}</span>
         </button>
         <button onClick={() => setTarget('b')} className={`flex items-center justify-center gap-2 rounded-xl text-sm font-bold active:scale-95 ${target === 'b' ? 'bg-rose-600/90 text-white ring-2 ring-rose-400/50' : 'bg-gray-800/60 text-rose-400 ring-1 ring-rose-800/30'}`}>
-          <span>{EMOJI[agentB.emotionalState.phase] ?? '😐'}</span>{caseData.duo.partyB.name}
+          <Emoji char={EMOTION_EMOJI[agentB.emotionalState.phase] ?? '😐'} size={18} /><span className="ml-1">{caseData.duo.partyB.name}</span>
         </button>
       </div>
 
       <div className="flex gap-1.5 mt-2 h-10">
         <button onClick={() => handleTabClick('question')}
           className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 ${activeTab === 'question' ? 'bg-amber-600 text-gray-950' : 'bg-gray-800/60 text-gray-400 hover:text-gray-200'}`}>
-          ❓ 심문
+          <Emoji char="❓" size={14} /> 심문
         </button>
         <button onClick={() => handleTabClick('evidence')}
           className={`flex-1 text-xs rounded-xl font-semibold ${
@@ -252,11 +254,11 @@ export default function ActionPanel() {
               : activeTab === 'evidence' ? 'bg-amber-600 text-gray-950 active:scale-95'
               : 'bg-gray-800/60 text-gray-400 hover:text-gray-200 active:scale-95'
           }`}>
-          {evLocked ? '🔒 증거' : '📄 증거'}
+          {evLocked ? <><Emoji char="🔒" size={14} /> 증거</> : <><Emoji char="📄" size={14} /> 증거</>}
         </button>
         <button onClick={() => handleTabClick('skill')}
           className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 ${activeTab === 'skill' ? 'bg-amber-600 text-gray-950' : 'bg-gray-800/60 text-gray-400 hover:text-gray-200'}`}>
-          ⚡ 스킬
+          <Emoji char="⚡" size={14} /> 스킬
         </button>
       </div>
 

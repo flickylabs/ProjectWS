@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import type { DialogueEntry as DialogueEntryType } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
+import Emoji, { replaceEmojisInText } from '../common/Emoji'
 
 interface Props {
   entry: DialogueEntryType
@@ -63,7 +64,7 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
         <div className="flex justify-center my-2.5">
           <button onClick={onTestimonyClick}
             className="text-xs px-4 py-2 rounded-xl bg-cyan-950/40 text-cyan-300 ring-1 ring-cyan-600/30 hover:ring-cyan-500/50 hover:bg-cyan-900/40 transition-all active:scale-95 flex items-center gap-2">
-            <span className="text-base">📋</span>
+            <Emoji char="📋" size={16} />
             <span>분석 완료 — 탭해서 확인</span>
           </button>
         </div>
@@ -78,7 +79,7 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
           isMultiHit ? 'bg-purple-950/50 text-purple-400 ring-1 ring-purple-500/20' :
           'bg-gray-800/50 text-gray-500'
         }`}>
-          {displayText}
+          {replaceEmojisInText(displayText, 14)}
         </div>
       </div>
     )
@@ -116,7 +117,7 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
       {/* 이름 + 아바타 */}
       <div className={`flex items-center gap-1.5 mb-1 ${isB ? 'flex-row-reverse' : ''}`}>
         <div className={`w-7 h-7 rounded-full bg-gray-800 ring-2 ${config.avatarRing} flex items-center justify-center text-sm transition-all duration-300`}>
-          {avatar}
+          <Emoji char={avatar} size={18} />
         </div>
         <span className={`text-xs font-semibold ${config.nameColor}`}>{name}</span>
         {emotionPhase && emotionPhase !== 'defensive' && (
