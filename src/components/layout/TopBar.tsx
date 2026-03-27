@@ -1,13 +1,33 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
+import ResourcePopup from '../shop/ResourcePopup'
 import Emoji from '../common/Emoji'
 
 export default function TopBar() {
   const [showSettings, setShowSettings] = useState(false)
   const [showExitConfirm, setShowExitConfirm] = useState(false)
+  const [showResource, setShowResource] = useState<'invest' | 'skill' | null>(null)
+
+  const globalInvest = useGameStore((s) => s.globalInvestTokens)
+  const maxInvest = useGameStore((s) => s.maxInvestTokens)
+  const globalSkill = useGameStore((s) => s.globalSkillPoints)
+  const maxSkill = useGameStore((s) => s.maxSkillPoints)
+  const adCountInvest = useGameStore((s) => s.adWatchCountInvest)
+  const adCountSkill = useGameStore((s) => s.adWatchCountSkill)
+  const tickRecharge = useGameStore((s) => s.tickInvestRecharge)
+  const getCountdown = useGameStore((s) => s.getNextRechargeCountdown)
+  const watchAdInvest = useGameStore((s) => s.watchAdForInvest)
+  const watchAdSkill = useGameStore((s) => s.watchAdForSkill)
+
+  // 1분마다 자동 충전 체크
+  useEffect(() => {
+    tickRecharge()
+    const timer = setInterval(tickRecharge, 60_000)
+    return () => clearInterval(timer)
+  }, [tickRecharge])
 
   const handleExit = () => {
     // 게임 상태 초기화 → 홈으로 돌아감
@@ -25,10 +45,45 @@ export default function TopBar() {
             ← 나가기
           </button>
           <PhaseIndicator />
-          <button onClick={() => setShowSettings(true)} className="text-gray-500 hover:text-white text-sm ml-2 shrink-0"><Emoji char="⚙️" size={16} /></button>
+          <div className="flex items-center gap-2 ml-2 shrink-0">
+            {/* 돋보기 (조사 토큰) */}
+            <button onClick={() => setShowResource('invest')} className="flex items-center gap-0.5 text-xs text-amber-400 hover:text-amber-300 active:scale-95">
+              <Emoji char="🔍" size={14} />
+              <span className="font-bold">{globalInvest}</span>
+            </button>
+            {/* 번개 (스킬 포인트) */}
+            <button onClick={() => setShowResource('skill')} className="flex items-center gap-0.5 text-xs text-blue-400 hover:text-blue-300 active:scale-95">
+              <Emoji char="⚡" size={14} />
+              <span className="font-bold">{globalSkill}</span>
+            </button>
+            <button onClick={() => setShowSettings(true)} className="text-gray-500 hover:text-white"><Emoji char="⚙️" size={16} /></button>
+          </div>
         </div>
       </header>
       {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
+
+      {/* 돋보기/번개 팝업 */}
+      {showResource === 'invest' && (
+        <ResourcePopup
+          type="invest"
+          current={globalInvest}
+          max={maxInvest}
+          countdown={getCountdown()}
+          adRemaining={5 - adCountInvest}
+          onWatchAd={watchAdInvest}
+          onClose={() => setShowResource(null)}
+        />
+      )}
+      {showResource === 'skill' && (
+        <ResourcePopup
+          type="skill"
+          current={globalSkill}
+          max={maxSkill}
+          adRemaining={2 - adCountSkill}
+          onWatchAd={watchAdSkill}
+          onClose={() => setShowResource(null)}
+        />
+      )}
 
       {/* 나가기 확인 */}
       {showExitConfirm && (

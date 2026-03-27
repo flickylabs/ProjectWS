@@ -544,16 +544,35 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
 
   const ev = lockedRelated[0]
 
-  // 증거 해금
+  // 미니게임 트리거 — 성공 시 증거 해금
+  const clues: [string, string, string] = [
+    ev.description?.slice(0, 30) ?? '단서 1',
+    dispute?.name ?? '단서 2',
+    name + '의 진술에서 발견',
+  ]
+  state.setPendingMinigame({ type: 'evidence_discovery', evidenceId: ev.id, clues })
+  return // 미니게임 결과에서 actuallyDiscoverEvidence 호출
+}
+
+/** 미니게임 성공 시 실제 증거 해금 */
+export function actuallyDiscoverEvidence(evidenceId: string) {
+  const state = useGameStore.getState()
+  if (!state.caseData) return
+
+  const ev = state.evidenceDefinitions.find(e => e.id === evidenceId)
+  if (!ev) return
+
+  const name = 'NPC'
+  const lieState = 'S2'
+
   useGameStore.setState((prev) => ({
     evidenceStates: {
       ...prev.evidenceStates,
-      [ev.id]: { ...prev.evidenceStates[ev.id], unlocked: true },
+      [evidenceId]: { ...prev.evidenceStates[evidenceId], unlocked: true },
     },
   }))
 
-  // 증거 유형 + 거짓말 상태에 따른 개연성 있는 발견 메시지
-  const reason = getDiscoveryReason(ev, name, lieEntry?.currentState ?? 'S0', dispute?.name ?? '')
+  const reason = getDiscoveryReason(ev, name, lieState, ev.proves[0] ?? '')
 
   playEvidenceUnlock()
   state.trackMetric('evidenceDiscovered')

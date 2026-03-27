@@ -5,6 +5,8 @@ import TopBar from './TopBar'
 import PartyStatusBar from '../court/PartyStatusBar'
 import DialogueLog from '../court/DialogueLog'
 import TestimonyModal from '../court/TestimonyModal'
+import MemoryPuzzle from '../minigame/MemoryPuzzle'
+import { actuallyDiscoverEvidence } from '../../hooks/useActionDispatch'
 import DisputeChecklist from '../info/DisputeChecklist'
 import ClaimGraph from '../info/ClaimGraph'
 import EvidenceBoard from '../info/EvidenceBoard'
@@ -49,6 +51,9 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
       style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
     >
       {showTestimony && <TestimonyModal onClose={() => setShowTestimony(false)} />}
+
+      {/* 미니게임 모달 */}
+      <MinigameOverlay />
       <div className="flex items-center shrink-0">
         <div className="flex-1"><TopBar /></div>
         {!isDialoguePhase && (
@@ -169,4 +174,32 @@ function PhaseOverlay() {
       <div className="text-4xl font-black text-amber-400/50 animate-fade-in tracking-wider">{label}</div>
     </div>
   )
+}
+
+/** 미니게임 오버레이 — pendingMinigame이 있으면 모달 표시 */
+function MinigameOverlay() {
+  const mg = useGameStore((s) => s.pendingMinigame)
+  const clearMg = useGameStore((s) => s.setPendingMinigame)
+
+  if (!mg) return null
+
+  if (mg.type === 'evidence_discovery') {
+    return (
+      <MemoryPuzzle
+        clues={mg.clues}
+        onSuccess={() => {
+          actuallyDiscoverEvidence(mg.evidenceId)
+          clearMg(null)
+        }}
+        onFail={() => clearMg(null)}
+        onWatchAd={() => {
+          // 광고 보기 → 즉시 성공
+          actuallyDiscoverEvidence(mg.evidenceId)
+          clearMg(null)
+        }}
+      />
+    )
+  }
+
+  return null
 }

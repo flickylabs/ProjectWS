@@ -1,10 +1,12 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 import { createPhaseSlice, type PhaseSlice } from './slices/phaseSlice'
 import { createAgentSlice, type AgentSlice } from './slices/agentSlice'
 import { createResourceSlice, type ResourceSlice } from './slices/resourceSlice'
 import { createEvidenceSlice, type EvidenceSlice } from './slices/evidenceSlice'
 import { createDialogueSlice, type DialogueSlice } from './slices/dialogueSlice'
 import { createVerdictSlice, type VerdictSlice } from './slices/verdictSlice'
+import { createShopSlice, type ShopSlice } from './slices/shopSlice'
 import type { CaseData, ProcessMetrics } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
@@ -15,7 +17,7 @@ const EMPTY_METRICS: ProcessMetrics = {
   freeQuestionsRelevant: 0, togglesUsed: 0, bothSidesQuestioned: false, confidentialUsed: 0,
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -31,6 +33,9 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   setTestimonyAnalysis: (analysis: TestimonyAnalysis | null) => void
   calledWitnesses: string[]
   addCalledWitness: (witnessId: string) => void
+  /** 미니게임 대기 (UI에서 모달 표시) */
+  pendingMinigame: { type: 'evidence_discovery'; evidenceId: string; clues: [string, string, string] } | null
+  setPendingMinigame: (mg: GameStore['pendingMinigame']) => void
   /** 심문 이력: party → disputeId → 질문 기록 */
   interrogationHistory: Record<string, Record<string, { questionTypes: string[]; turns: number[]; revealed: boolean }>>
   trackInterrogation: (party: 'a' | 'b', disputeId: string, questionType: string, turn: number) => void
@@ -49,6 +54,7 @@ export const useGameStore = create<GameStore>()((...args) => {
     ...createEvidenceSlice(...args),
     ...createDialogueSlice(...args),
     ...createVerdictSlice(...args),
+    ...createShopSlice(...args),
 
     caseData: null,
     lieConfigs: null,
@@ -63,6 +69,8 @@ export const useGameStore = create<GameStore>()((...args) => {
     setTestimonyAnalysis: (analysis) => set({ testimonyAnalysis: analysis }),
     calledWitnesses: [],
     addCalledWitness: (witnessId) => set((prev) => ({ calledWitnesses: [...prev.calledWitnesses, witnessId] })),
+    pendingMinigame: null,
+    setPendingMinigame: (mg) => set({ pendingMinigame: mg }),
 
     interrogationHistory: { a: {}, b: {} },
     trackInterrogation: (party, disputeId, questionType, turn) => set((prev) => {
@@ -129,7 +137,7 @@ export const useGameStore = create<GameStore>()((...args) => {
       }
 
       // 사건 데이터 저장 + 분리심문 초기화
-      set({ caseData, lieConfigs: { a: caseData.lieConfigA, b: caseData.lieConfigB }, separationTarget: null, separationTurns: 0, isLLMLoading: false, processMetrics: { ...EMPTY_METRICS }, testimonyAnalysis: null, calledWitnesses: [], interrogationHistory: { a: {}, b: {} } })
+      set({ caseData, lieConfigs: { a: caseData.lieConfigA, b: caseData.lieConfigB }, separationTarget: null, separationTurns: 0, isLLMLoading: false, processMetrics: { ...EMPTY_METRICS }, testimonyAnalysis: null, calledWitnesses: [], interrogationHistory: { a: {}, b: {} }, pendingMinigame: null })
 
       // Phase 초기화
       store.setPhase(GamePhase.Phase0_CaseIntro)
