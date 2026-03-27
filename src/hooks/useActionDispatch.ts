@@ -700,55 +700,64 @@ function applyTrustEffect(actionType: string, target: PartyId) {
 
 function buildQuestionText(type: QuestionType, target: PartyId, disputeId: string): string {
   const s = useGameStore.getState()
-  const name = target === 'a' ? s.caseData?.duo.partyA.name : s.caseData?.duo.partyB.name
-  const dispute = s.caseData?.disputes.find((d) => d.id === disputeId)
-  const topic = dispute?.name ?? '해당 사안'
+  if (!s.caseData) return '말씀해 주십시오.'
+  const myName = target === 'a' ? s.caseData.duo.partyA.name : s.caseData.duo.partyB.name
+  const opName = target === 'a' ? s.caseData.duo.partyB.name : s.caseData.duo.partyA.name
+  const dispute = s.caseData.disputes.find((d) => d.id === disputeId)
   const agent = target === 'a' ? s.agentA : s.agentB
   const lieEntry = agent.lieStateMap[disputeId]
   const lieState = lieEntry?.currentState ?? 'S0'
   const turn = s.turnCount
 
-  // 상황에 따라 다양한 질문 생성
-  const factQuestions = [
-    `${name} 씨, ${topic}에 대해 사실대로 말씀해 주십시오.`,
-    `${name} 씨, ${topic}에 대해 정확히 어떤 일이 있었습니까?`,
-    `${name} 씨, 아까 ${topic} 관련해서 하신 말씀, 좀 더 자세히 설명해 주시겠습니까?`,
-    `${name} 씨, ${topic}에 대해 빠뜨린 부분이 있지 않습니까?`,
-    `${name} 씨, 방금 말씀하신 내용과 ${topic}이 어떻게 연결됩니까?`,
-  ]
-  const motiveQuestions = [
-    `${name} 씨, ${topic}에 대해 왜 그런 선택을 하셨습니까?`,
-    `${name} 씨, ${topic} 당시 어떤 사정이 있었는지 말씀해 주십시오.`,
-    `${name} 씨, ${topic}을 그렇게 처리한 이유가 있을 텐데요?`,
-    `${name} 씨, 그때 다른 방법은 없었습니까? 왜 하필 그렇게 하셨는지요.`,
-    `${name} 씨, ${topic}의 배경을 좀 더 설명해 주시겠습니까?`,
-  ]
-  const empathyQuestions = [
-    `${name} 씨, ${topic}에 대해 말하기 어려우시면 천천히 하셔도 됩니다.`,
-    `${name} 씨, ${topic} 당시 심정이 어떠셨는지 편하게 말씀해 주세요.`,
-    `${name} 씨, ${topic}으로 많이 힘드셨을 것 같습니다. 괜찮으시면 말씀해 주세요.`,
-    `${name} 씨, 이 부분은 민감할 수 있지만, ${topic}에 대한 솔직한 마음을 듣고 싶습니다.`,
-    `${name} 씨, 지금까지 말씀 잘 들었습니다. ${topic}에 대해 한 가지만 더 여쭤봐도 될까요?`,
-  ]
-
-  // lie state에 따라 강도 조절
-  const pool = type === 'fact_pursuit' ? factQuestions
-    : type === 'motive_search' ? motiveQuestions
-    : empathyQuestions
-
-  // 턴 + lieState 기반으로 변형 선택 (같은 쟁점 재질문 시 다른 문장)
-  const idx = (turn + disputeId.charCodeAt(disputeId.length - 1)) % pool.length
-  let question = pool[idx]
-
-  // S3 이상(책임전가/감정호소)에서는 더 강하게
-  if (lieState >= 'S3' && type === 'fact_pursuit') {
-    question = `${name} 씨, 계속 돌려 말씀하시는데, ${topic}에 대해 정직하게 답해 주십시오.`
+  // 쟁점명에서 대상 이름을 제거하고 자연스러운 주제로 변환
+  // "세린의 새벽 휴대폰 열람" → 대상이 세린이면 "새벽에 휴대폰을 보신 것"
+  // "지석의 비밀 송금 280만원" → 대상이 지석이면 "비밀 송금 280만원"
+  const rawTopic = dispute?.name ?? '해당 사안'
+  const myGiven = myName.slice(1)  // 성 제거
+  const opGiven = opName.slice(1)
+  let topic = rawTopic
+  // 대상 본인의 이름이 쟁점에 있으면 제거 → "~에 대해"가 자연스러움
+  if (topic.includes(myGiven + '의 ')) {
+    topic = topic.replace(myGiven + '의 ', '')
+  } else if (topic.includes(myGiven + '이 ') || topic.includes(myGiven + '가 ')) {
+    topic = topic.replace(new RegExp(myGiven + '[이가] '), '')
   }
-  if (lieState >= 'S3' && type === 'motive_search') {
-    question = `${name} 씨, 상대방 탓만 하지 마시고, ${topic}에 대한 본인의 책임을 말씀해 주십시오.`
+  // 상대 이름은 "상대방의"로 치환
+  if (topic.includes(opGiven + '의 ')) {
+    topic = topic.replace(opGiven + '의 ', '상대방의 ')
   }
 
-  return question
+  // 질문 유형별 + lieState별 질문
+  if (type === 'fact_pursuit') {
+    if (lieState >= 'S3') return `${myName} 씨, 계속 돌려 말씀하시는데 — ${topic}, 정직하게 답해 주십시오.`
+    const pool = [
+      `${myName} 씨, ${topic}에 대해 사실대로 말씀해 주십시오.`,
+      `${myName} 씨, ${topic} 당시 정확히 어떤 일이 있었습니까?`,
+      `${myName} 씨, ${topic}에 대해 빠뜨린 부분이 있지 않습니까?`,
+      `${myName} 씨, 아까 말씀하신 내용 중 ${topic}과 맞지 않는 부분이 있습니다. 설명해 주시겠습니까?`,
+    ]
+    return pool[(turn + disputeId.charCodeAt(disputeId.length - 1)) % pool.length]
+  }
+
+  if (type === 'motive_search') {
+    if (lieState >= 'S3') return `${myName} 씨, 상대방 탓만 하지 마시고 ${topic}에 대한 본인의 생각을 말씀해 주십시오.`
+    const pool = [
+      `${myName} 씨, ${topic}을 왜 그렇게 하셨습니까?`,
+      `${myName} 씨, ${topic} 당시 어떤 사정이 있었습니까?`,
+      `${myName} 씨, 다른 방법도 있었을 텐데 왜 하필 그렇게 하셨는지 말씀해 주십시오.`,
+      `${myName} 씨, ${topic}의 배경을 좀 더 설명해 주시겠습니까?`,
+    ]
+    return pool[(turn + disputeId.charCodeAt(disputeId.length - 1)) % pool.length]
+  }
+
+  // 공감 접근 — 부드럽지만 동정이 아닌 진심으로
+  const pool = [
+    `${myName} 씨, ${topic}에 대해서 — 그때 어떤 마음이셨는지 솔직하게 말씀해 주시겠습니까.`,
+    `${myName} 씨, ${topic} 당시 심정이 어떠셨습니까? 편하게 말씀해 주세요.`,
+    `${myName} 씨, ${topic}에 대한 솔직한 마음을 듣고 싶습니다.`,
+    `${myName} 씨, 이 부분이 쉽지 않으시겠지만 — ${topic}에 대한 본심을 말씀해 주시겠습니까.`,
+  ]
+  return pool[(turn + disputeId.charCodeAt(disputeId.length - 1)) % pool.length]
 }
 
 function buildTrustActionText(actionType: string, target: PartyId): string {

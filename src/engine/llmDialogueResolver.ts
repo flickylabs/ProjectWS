@@ -362,22 +362,29 @@ function buildFallbackJudgeQuestion(
   target: PartyId,
   dispute?: CaseData['disputes'][number],
 ): string {
-  const name = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
-  const topic = dispute?.name ?? '해당 사안'
+  const myName = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+  const opName = target === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
+
+  // 쟁점명에서 대상 이름 제거
+  let topic = dispute?.name ?? '해당 사안'
+  const myGiven = myName.slice(1)
+  const opGiven = opName.slice(1)
+  if (topic.includes(myGiven + '의 ')) topic = topic.replace(myGiven + '의 ', '')
+  if (topic.includes(opGiven + '의 ')) topic = topic.replace(opGiven + '의 ', '상대방의 ')
 
   if (action.type === 'question') {
     const templates: Record<string, string[]> = {
       fact_pursuit: [
-        `${name} 씨, ${topic}에 대해 사실대로 말씀해 주십시오.`,
-        `${name} 씨, ${topic}에 대해 좀 더 구체적으로 설명해 주시겠습니까?`,
+        `${myName} 씨, ${topic}에 대해 사실대로 말씀해 주십시오.`,
+        `${myName} 씨, ${topic}에 대해 좀 더 구체적으로 설명해 주시겠습니까?`,
       ],
       motive_search: [
-        `${name} 씨, ${topic}에 대해 왜 그런 선택을 하셨습니까?`,
-        `${name} 씨, 그때 어떤 사정이 있었는지 말씀해 주십시오.`,
+        `${myName} 씨, ${topic}을 왜 그렇게 하셨습니까?`,
+        `${myName} 씨, 그때 어떤 사정이 있었는지 말씀해 주십시오.`,
       ],
       empathy_approach: [
-        `${name} 씨, ${topic}에 대해 편하게 말씀해 주세요.`,
-        `${name} 씨, 그때 심정이 어떠셨는지 듣고 싶습니다.`,
+        `${myName} 씨, ${topic}에 대한 솔직한 마음을 듣고 싶습니다.`,
+        `${myName} 씨, ${topic} 당시 심정이 어떠셨습니까?`,
       ],
     }
     const pool = templates[action.questionType] ?? templates.fact_pursuit
@@ -385,7 +392,7 @@ function buildFallbackJudgeQuestion(
   }
 
   if (action.type === 'evidence_present') {
-    return `${name} 씨, 이 증거에 대해 어떻게 생각하십니까?`
+    return `${myName} 씨, 이 증거에 대해 어떻게 생각하십니까?`
   }
 
   if (action.type === 'trust_action') {
