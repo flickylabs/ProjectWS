@@ -35,7 +35,8 @@ export async function processFreeQuestion(
 
   const disputeList = caseData.disputes.map(d => `${d.id}: ${d.name}`).join('\n')
 
-  const myCall = getMyCall(caseData.duo, target)
+  const rawCall = getMyCall(caseData.duo, target)
+  const myCall = rawCall === '자기' ? '자기야' : rawCall
   const judgeRef = getJudgeReference(caseData.duo, target)
   const angryCall = getAngryCall(caseData.duo, target)
 

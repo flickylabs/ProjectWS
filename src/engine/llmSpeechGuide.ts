@@ -47,7 +47,8 @@ export function getHonorifics(duo: CaseData['duo']): Honorifics {
   if (aCall && bCall) return { aCallsB: aCall, bCallsA: bCall }
 
   // 폴백: 관계 유형별 기본값
-  if (duo.relationshipType === 'spouse') return { aCallsB: '자기', bCallsA: '자기' }
+  // 부부 기본: "자기야" (호출형). callTerms가 있으면 우선.
+  if (duo.relationshipType === 'spouse') return { aCallsB: '자기야', bCallsA: '자기야' }
   if (duo.relationshipType === 'friend') {
     const aGiven = duo.partyA.name.slice(1)
     const bGiven = duo.partyB.name.slice(1)

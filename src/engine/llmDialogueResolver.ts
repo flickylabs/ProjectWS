@@ -106,28 +106,35 @@ function buildSystemPrompt(
   presentedEvidence: CaseData['evidence'],
   currentPhase: GamePhase,
 ): string {
-  const lines: string[] = []
-
-  /* ① 페르소나 */
-  lines.push(`당신은 "${me.name}"(${me.age}세, ${me.occupation}).`)
-  lines.push(``)
-  lines.push(`## 성격과 말투 (반드시 반영)`)
-  lines.push(me.speechStyle)
-  lines.push(``)
-  lines.push(`## 상황`)
-  lines.push(`법정에서 ${gwawa(opponent.name)} 분쟁 중.`)
-  lines.push(`배경: ${caseData.context.description}`)
-
-  /* 호칭 안내 — 더 강조 */
   const myCall = getMyCall(caseData.duo, party)
   const judgeRef = getJudgeReference(caseData.duo, party)
   const angryCall = getAngryCall(caseData.duo, party)
-  lines.push(``)
-  lines.push(`## 호칭 (엄격히 지키세요)`)
-  lines.push(`- 상대에게: "${myCall}" (매 문장 시작에 호칭을 넣지 마세요. 자연스럽게.)`)
-  lines.push(`- 재판관에게 상대 언급: "${judgeRef}"`)
-  lines.push(`- 감정 폭발 시: "${angryCall}"`)
-  lines.push(`- ⚠️ 매번 "${myCall},"로 시작하면 로봇 같습니다. 호칭 없이 바로 본론으로 들어가는 문장도 섞으세요.`)
+  const isInformal = ['spouse', 'family', 'friend'].includes(caseData.duo.relationshipType ?? '')
+  // 부부 "자기" → "자기야"로 호출 교정
+  const callForm = myCall === '자기' ? '자기야' : myCall
+
+  const lines: string[] = []
+
+  lines.push(`당신은 한국 법정 갈등 시뮬레이션 게임의 NPC "${me.name}"(${me.age}세)입니다.
+상대: ${opponent.name}. 관계: ${getRelationLabel(caseData.duo.relationshipType ?? '')}
+배경: ${caseData.context.description}
+
+## 말투
+${me.speechStyle}
+
+## 호칭 (가장 중요)
+- 상대를 부를 때: "${callForm}" (호칭은 3문장 중 1번만. 매번 넣지 마.)
+- 재판관에게 상대 언급: "${judgeRef}"
+- 감정 폭발: "${angryCall}"
+${isInformal ? `- 상대에게: 반말 (~야, ~잖아, ~거야)` : `- 상대에게: 존댓말 (~요, ~습니다)`}
+- 재판관에게: 항상 존댓말 ("재판관님, ~입니다")
+
+## 대화 규칙 (반드시 지켜)
+1. 한 답변에 재판관에게 1문장 + 상대에게 1문장을 섞어라. 한쪽에게만 말하지 마.
+   예: "재판관님, 그건 사실이 아닙니다. ${callForm}, 왜 그때 먼저 말 안 했어?"
+2. 같은 말을 반복하지 마. 이전 대화에서 안 한 새로운 내용을 꺼내.
+3. 자기에게 불리한 사실을 먼저 꺼내지 마. 방어하거나 상대를 추궁해.
+4. 2~3문장. 짧은 문장 1개 + 긴 문장 1개로 리듬감.`)
 
   /* ①-b 현재 단계별 태도 (Phase 깊이) */
   lines.push(getPhaseDepthGuide(currentPhase))
@@ -241,32 +248,29 @@ function buildSystemPrompt(
     }
   } catch { /* store 접근 실패 시 무시 */ }
 
-  /* ⑦ 질문 유형별 지침 */
-  lines.push(`\n## 질문 유형별 답변 지침`)
-  lines.push(`- 사실 추궁: 구체적 사실(날짜, 금액, 장소)로 답하거나 방어. "그런 일 없다" 같은 단순 부정 금지.`)
-  lines.push(`- 동기 탐색: "왜 그랬는지"에 대해 자기 입장에서 설명. 감정적 배경과 당시 상황을 섞어서.`)
-  lines.push(`- 공감 접근: 재판관이 부드럽게 다가옴. 경계를 낮추고 솔직한 감정. 평소 못 했던 말을 꺼낼 수 있음.`)
-  lines.push(``)
-  lines.push(`## 자연스러운 대화를 위한 규칙`)
-  lines.push(`1. 같은 문장 구조를 반복하지 마세요. ("그건... ~입니다" 패턴 금지)`)
-  lines.push(`2. 2~3문장으로 답하되 한 문장은 짧게(10자 이내), 한 문장은 길게 — 리듬감을 주세요.`)
-  lines.push(`3. 말버릇(verbalTells)이 있으면 자연스럽게 섞되 매번 넣지 마세요. 3~4턴에 한 번.`)
-  lines.push(`4. 재판관의 질문을 그대로 반복하지 마세요. 자기 방식으로 재해석해서 답하세요.`)
-  lines.push(`5. "~입니다/~습니다"와 "~야/~잖아"를 한 답변 안에서 혼합하지 마세요.`)
+  /* ⑦ 질문 유형 */
+  lines.push(`\n## 질문 유형`)
+  lines.push(`- 사실 추궁 → 구체적 사실(날짜/금액)로 답하거나 "그건 맥락이 다릅니다"로 방어`)
+  lines.push(`- 동기 탐색 → 당시 상황+감정 배경을 자기 관점에서 설명`)
+  lines.push(`- 공감 접근 → 경계를 낮추고 솔직하게. "사실은..." 가능`)
 
-  /* ⑧ 말투 규칙 (공용 모듈) */
-  lines.push(`\n${buildSpeechGuide(caseData.duo, 'interrogation', party)}`)
+  /* ⑧ 말투 — 핵심만 (프롬프트 길이 절약) */
+  if (isInformal) {
+    lines.push(`\n말투: 상대에게 반말, 재판관에게 존댓말. "~냐?" 금지→"~야?" 사용.`)
+  } else {
+    lines.push(`\n말투: 상대에게 존댓말(~씨), 재판관에게 존댓말. 격해지면 반말 가능.`)
+  }
 
-  /* ⑨ 출력 형식 */
-  lines.push(`\n## 출력 형식 (JSON만, 다른 텍스트 없이)`)
-  lines.push(`{"judgeQuestion":"재판관 질문 (1~2문장, ~주십시오/~습니까 존댓말)","npcResponse":"${me.name}의 대사 (2~3문장, 괄호 행동묘사 넣지 마)","behaviorHint":"행동 묘사 (1문장, ~한다 체)"}`)
-  lines.push(``)
-  lines.push(`규칙:`)
-  lines.push(`- judgeQuestion: 반드시 내용이 있어야 함. 빈 문자열 금지. 이전 대화를 이어받아 구체적으로.`)
-  lines.push(`  나쁜 예: "말씀해 주세요." (너무 범용)`)
-  lines.push(`  좋은 예: "${opponent.name} 씨가 방금 ${dispute?.name ?? '그 부분'}에 대해 말한 내용, 사실입니까?"`)
-  lines.push(`- npcResponse: 캐릭터 성격(speechStyle)대로. 같은 패턴 반복 금지. 대사만, 괄호 넣지 마.`)
-  lines.push(`- behaviorHint: "손을 떤다", "시선을 피한다" 같은 관찰 가능한 행동만.`)
+  /* ⑨ 출력 (짧게) */
+  lines.push(`
+## 출력 (JSON만)
+{"judgeQuestion":"재판관 질문","npcResponse":"NPC 대사","behaviorHint":"행동묘사"}
+
+judgeQuestion 예시: "${me.name} 씨, ${dispute?.name ?? '그 부분'}에 대해 정확히 말씀해 주시겠습니까?"
+npcResponse 예시: "재판관님, 그건 오해입니다. ${callForm}, 그때 왜 나한테 먼저 말 안 했어?"
+behaviorHint 예시: "시선을 피하며 손을 꽉 쥔다."
+
+금지: npcResponse에 괄호 행동묘사 넣기, judgeQuestion 빈 문자열, 같은 패턴 반복`)
 
   return lines.join('\n')
 }
