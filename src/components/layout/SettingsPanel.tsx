@@ -139,35 +139,69 @@ function CheatSection() {
   const gain = useGameStore((s) => s.gain)
   const caseData = useGameStore((s) => s.caseData)
 
+  // 대기 중인 변경사항 (확인 누르기 전까지 적용 안 됨)
+  const [pending, setPending] = useState<{ invest: number; skill: number; court: number }>({ invest: 0, skill: 0, court: 0 })
+  const hasPending = pending.invest !== 0 || pending.skill !== 0 || pending.court !== 0
+
+  const addPending = (key: 'invest' | 'skill' | 'court', amount: number) => {
+    setPending(prev => ({ ...prev, [key]: prev[key] + amount }))
+  }
+
+  const applyPending = () => {
+    if (pending.invest > 0) gain('investigationTokens', pending.invest)
+    if (pending.skill > 0) gain('skillPoints', pending.skill)
+    if (pending.court > 0) gain('courtControl', pending.court)
+    setPending({ invest: 0, skill: 0, court: 0 })
+  }
+
+  const resetPending = () => setPending({ invest: 0, skill: 0, court: 0 })
+
   return (
     <Section title={<><Emoji char="🛠" size={14} /> DEV 치트키</>}>
       <div className="bg-yellow-950/20 border border-yellow-800/30 rounded-lg p-2.5 space-y-2">
         <p className="text-xs text-yellow-600">테스트용 — 출시 시 제거 예정</p>
 
         <div className="flex items-center justify-between">
-          <span className="text-xs text-gray-300"><Emoji char="🔍" size={12} /> 조사 토큰: {resources.investigationTokens}</span>
+          <span className="text-xs text-gray-300">
+            <Emoji char="🔍" size={12} /> 조사 토큰: {resources.investigationTokens}
+            {pending.invest > 0 && <span className="text-emerald-400"> (+{pending.invest})</span>}
+          </span>
           <div className="flex gap-1">
-            <button onClick={() => gain('investigationTokens', 1)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+1</button>
-            <button onClick={() => gain('investigationTokens', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
-            <button onClick={() => gain('investigationTokens', 99)} className="px-2 py-0.5 text-xs rounded bg-amber-800 hover:bg-amber-700 text-amber-200 active:scale-95">MAX</button>
+            <button onClick={() => addPending('invest', 1)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+1</button>
+            <button onClick={() => addPending('invest', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
+            <button onClick={() => addPending('invest', 99)} className="px-2 py-0.5 text-xs rounded bg-amber-800 hover:bg-amber-700 text-amber-200 active:scale-95">MAX</button>
           </div>
         </div>
 
         <div className="flex items-center justify-between">
-          <span className="text-xs text-gray-300"><Emoji char="⚡" size={12} /> 스킬 포인트: {resources.skillPoints}</span>
+          <span className="text-xs text-gray-300">
+            <Emoji char="⚡" size={12} /> 스킬 포인트: {resources.skillPoints}
+            {pending.skill > 0 && <span className="text-emerald-400"> (+{pending.skill})</span>}
+          </span>
           <div className="flex gap-1">
-            <button onClick={() => gain('skillPoints', 1)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+1</button>
-            <button onClick={() => gain('skillPoints', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
-            <button onClick={() => gain('skillPoints', 99)} className="px-2 py-0.5 text-xs rounded bg-amber-800 hover:bg-amber-700 text-amber-200 active:scale-95">MAX</button>
+            <button onClick={() => addPending('skill', 1)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+1</button>
+            <button onClick={() => addPending('skill', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
+            <button onClick={() => addPending('skill', 99)} className="px-2 py-0.5 text-xs rounded bg-amber-800 hover:bg-amber-700 text-amber-200 active:scale-95">MAX</button>
           </div>
         </div>
 
         {caseData && (
           <div className="flex items-center justify-between">
-            <span className="text-xs text-gray-300"><Emoji char="⚖️" size={12} /> 법정 통제력: {resources.courtControl}</span>
+            <span className="text-xs text-gray-300">
+              <Emoji char="⚖️" size={12} /> 법정 통제력: {resources.courtControl}
+              {pending.court > 0 && <span className="text-emerald-400"> (+{pending.court})</span>}
+            </span>
             <div className="flex gap-1">
-              <button onClick={() => gain('courtControl', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
+              <button onClick={() => addPending('court', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
             </div>
+          </div>
+        )}
+
+        {/* 확인/취소 버튼 — 변경사항이 있을 때만 표시 */}
+        {hasPending && (
+          <div className="flex gap-2 pt-1 border-t border-yellow-800/20">
+            <button onClick={resetPending} className="flex-1 py-1.5 text-xs rounded bg-gray-800 text-gray-400 hover:bg-gray-700 active:scale-95">취소</button>
+            <button onClick={applyPending} className="flex-1 py-1.5 text-xs rounded bg-emerald-700 text-white font-bold hover:bg-emerald-600 active:scale-95">확인 적용</button>
           </div>
         )}
       </div>
