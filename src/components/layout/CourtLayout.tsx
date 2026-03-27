@@ -8,6 +8,7 @@ import TestimonyModal from '../court/TestimonyModal'
 import DisputeChecklist from '../info/DisputeChecklist'
 import ClaimGraph from '../info/ClaimGraph'
 import EvidenceBoard from '../info/EvidenceBoard'
+import Emoji from '../common/Emoji'
 
 interface Props {
   actionPanel?: ReactNode
@@ -57,7 +58,7 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
               infoOpen ? 'bg-amber-600 text-gray-950 font-bold' : 'bg-gray-800/80 text-gray-400 hover:text-white ring-1 ring-gray-700/50'
             }`}
           >
-            {infoOpen ? '✕' : '📋'}
+            {infoOpen ? <Emoji char="✕" size={12} /> : <Emoji char="📋" size={12} />}
           </button>
         )}
       </div>
@@ -89,7 +90,7 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
               ]).map(tab => (
                 <button key={tab.id} onClick={() => setInfoTab(tab.id)}
                   className={`flex-1 py-1.5 text-xs font-semibold rounded-lg ${infoTab === tab.id ? 'bg-amber-600/15 text-amber-400 ring-1 ring-amber-500/20' : 'text-gray-500'}`}
-                >{tab.icon} {tab.label}</button>
+                ><Emoji char={tab.icon} size={12} /> {tab.label}</button>
               ))}
             </div>
             <div className="overflow-y-auto px-3 pb-3" style={{ maxHeight: 'calc(55vh - 60px)' }}>
@@ -128,7 +129,7 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
             <div className="bg-gray-900/95 border-t border-gray-800/60 px-2 py-1">
               <button onClick={() => setActionOpen(true)}
                 className="w-full text-xs py-2 rounded-xl bg-amber-600/90 text-gray-950 font-bold shadow-lg shadow-amber-600/20 active:scale-95"
-              >⚖️ 행동 선택</button>
+              ><Emoji char="⚖️" size={14} /> 행동 선택</button>
             </div>
           )}
         </div>

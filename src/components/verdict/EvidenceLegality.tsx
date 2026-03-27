@@ -1,4 +1,5 @@
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 export default function EvidenceLegality() {
   const caseData = useGameStore((s) => s.caseData)
@@ -62,7 +63,7 @@ export default function EvidenceLegality() {
                 </button>
               </div>
               {allowed === true && (
-                <div className="text-xs text-purple-400 mt-2">⚠️ 비공개 약속을 어기면 권위 점수가 크게 감소합니다.</div>
+                <div className="text-xs text-purple-400 mt-2"><Emoji char="⚠️" size={12} /> 비공개 약속을 어기면 권위 점수가 크게 감소합니다.</div>
               )}
             </div>
           )
@@ -103,7 +104,7 @@ export default function EvidenceLegality() {
                 </button>
               </div>
               {allowed === true && (
-                <div className="text-xs text-orange-400 mt-2">⚠️ 위법 증거 사용 시 권위 점수가 감소합니다.</div>
+                <div className="text-xs text-orange-400 mt-2"><Emoji char="⚠️" size={12} /> 위법 증거 사용 시 권위 점수가 감소합니다.</div>
               )}
             </div>
           )

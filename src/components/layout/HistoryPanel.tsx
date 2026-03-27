@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import type { ExtendedHistoryEntry } from '../../types'
 import { loadExtendedHistory, addHistoryEntry, ensureProfile } from '../../data/leaderboard'
 import { getCurrentSeason } from '../../data/seasons'
+import Emoji from '../common/Emoji'
 
 /** 판결 완료 시 호출 — VerdictScreen에서 사용 */
 export function recordHistory(entry: {
@@ -55,7 +56,7 @@ export default function HistoryPanel({ onClose }: Props) {
       <div className="bg-gray-900 border border-gray-700 rounded-xl w-full max-w-md max-h-[80vh] flex flex-col">
         <div className="flex items-center justify-between p-4 border-b border-gray-800">
           <h2 className="text-sm font-bold text-amber-400">판결 기록</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-white text-lg">✕</button>
+          <button onClick={onClose} className="text-gray-500 hover:text-white text-lg"><Emoji char="✕" size={16} /></button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-4">

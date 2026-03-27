@@ -1,5 +1,6 @@
 import type { PartyId } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 interface Props {
   party: PartyId
@@ -38,7 +39,7 @@ export default function PartyPortrait({ party }: Props) {
           emotionColors[agent.emotionalState.phase]
         }`}
       >
-        {isA ? '👨' : '👩'}
+        <Emoji char={isA ? '👨' : '👩'} size={24} />
       </div>
 
       {/* 이름 + 관계 */}
@@ -52,7 +53,7 @@ export default function PartyPortrait({ party }: Props) {
 
       {/* 감정 상태 */}
       <div className={`text-xs px-2 py-1 rounded bg-gray-800/50 max-w-[160px] ${isA ? 'text-left' : 'text-right'}`}>
-        <span className="mr-1">{emotionEmoji[agent.emotionalState.phase]}</span>
+        <Emoji char={emotionEmoji[agent.emotionalState.phase]} size={14} className="mr-1" />
         <span className="text-gray-400">{agent.emotionalState.behaviorHint || '평온한 상태.'}</span>
       </div>
     </div>

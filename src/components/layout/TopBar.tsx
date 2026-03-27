@@ -3,6 +3,7 @@ import { useGameStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
+import Emoji from '../common/Emoji'
 
 export default function TopBar() {
   const [showSettings, setShowSettings] = useState(false)
@@ -24,7 +25,7 @@ export default function TopBar() {
             ← 나가기
           </button>
           <PhaseIndicator />
-          <button onClick={() => setShowSettings(true)} className="text-gray-500 hover:text-white text-sm ml-2 shrink-0">⚙️</button>
+          <button onClick={() => setShowSettings(true)} className="text-gray-500 hover:text-white text-sm ml-2 shrink-0"><Emoji char="⚙️" size={16} /></button>
         </div>
       </header>
       {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}

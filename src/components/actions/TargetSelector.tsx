@@ -1,5 +1,6 @@
 import type { PartyId } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 interface Props {
   selected: PartyId | null
@@ -35,7 +36,7 @@ export default function TargetSelector({ selected, onSelect }: Props) {
             : 'text-blue-400/70 hover:bg-blue-950/40 ring-1 ring-blue-800/30'
         }`}
       >
-        <span className="text-sm">{emoA}</span>
+        <Emoji char={emoA} size={14} />
         {caseData.duo.partyA.name}
       </button>
       <button
@@ -46,7 +47,7 @@ export default function TargetSelector({ selected, onSelect }: Props) {
             : 'text-rose-400/70 hover:bg-rose-950/40 ring-1 ring-rose-800/30'
         }`}
       >
-        <span className="text-sm">{emoB}</span>
+        <Emoji char={emoB} size={14} />
         {caseData.duo.partyB.name}
       </button>
     </div>

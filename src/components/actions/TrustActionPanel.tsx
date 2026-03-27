@@ -1,5 +1,6 @@
 import type { TrustActionType, PartyId } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 interface Props {
   target: PartyId | null
@@ -60,7 +61,7 @@ export default function TrustActionPanel({ target, onAction }: Props) {
               }`}
             >
               <div className="flex items-center gap-1.5 mb-1">
-                <span className="text-sm">{action.icon}</span>
+                <Emoji char={action.icon} size={14} />
                 <span className="text-xs font-semibold">{action.label}</span>
               </div>
               <div className="text-xs text-gray-500">{action.desc}</div>

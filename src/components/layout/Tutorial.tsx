@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 interface TutorialStep {
   phase: GamePhase
@@ -126,7 +127,7 @@ export default function Tutorial() {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="text-center space-y-3">
-          <div className="text-3xl">{currentStep.icon}</div>
+          <div className="text-3xl"><Emoji char={currentStep.icon} size={30} /></div>
           <div className="text-sm font-bold text-amber-400">{currentStep.title}</div>
           <p className="text-xs text-gray-300 leading-relaxed">{currentStep.message}</p>
           <button

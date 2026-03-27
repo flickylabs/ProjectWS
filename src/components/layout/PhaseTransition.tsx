@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
 import { playPhaseTransition } from '../../engine/soundEngine'
+import Emoji, { replaceEmojisInText } from '../common/Emoji'
 
 const PHASE_INFO: Record<GamePhase, { title: string; subtitle: string; icon: string; unlocks?: string[] } | null> = {
   [GamePhase.Phase0_CaseIntro]: null,
@@ -46,13 +47,13 @@ export default function PhaseTransition() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/85 animate-fade pointer-events-none">
       <div className="text-center space-y-2 animate-scale-in px-8">
-        <div className="text-5xl mb-1">{info.icon}</div>
+        <div className="text-5xl mb-1"><Emoji char={info.icon} size={48} /></div>
         <div className="text-xl font-bold text-amber-400">{info.title}</div>
         <div className="text-sm text-gray-400">{info.subtitle}</div>
         {info.unlocks && info.unlocks.length > 0 && (
           <div className="pt-2 space-y-0.5">
             {info.unlocks.map((u, i) => (
-              <div key={i} className="text-xs text-emerald-400/90">{u}</div>
+              <div key={i} className="text-xs text-emerald-400/90">{replaceEmojisInText(u, 12)}</div>
             ))}
           </div>
         )}

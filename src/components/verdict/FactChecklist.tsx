@@ -1,6 +1,7 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { playClick } from '../../engine/soundEngine'
+import Emoji from '../common/Emoji'
 
 export default function FactChecklist() {
   const caseData = useGameStore((s) => s.caseData)
@@ -57,7 +58,7 @@ export default function FactChecklist() {
           {/* 붕괴 여부 */}
           {collapsed && (
             <div className="text-xs text-emerald-400 bg-emerald-950/30 border border-emerald-800/30 rounded-lg px-2 py-1 mb-3">
-              ⚡ 심문 중 거짓말이 붕괴된 쟁점
+              <Emoji char="⚡" size={12} /> 심문 중 거짓말이 붕괴된 쟁점
             </div>
           )}
 
@@ -120,7 +121,7 @@ function SwipeButton({ label, icon, active, onClick }: {
           : 'bg-gray-800/60 text-gray-400 border-gray-700 hover:border-amber-600 hover:bg-amber-950/20'
       }`}
     >
-      <div className="text-lg">{icon}</div>
+      <div className="text-lg"><Emoji char={icon} size={18} /></div>
       <div className="text-xs mt-0.5">{label}</div>
     </button>
   )

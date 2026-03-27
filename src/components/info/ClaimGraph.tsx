@@ -1,5 +1,6 @@
 import { useGameStore } from '../../store/useGameStore'
 import type { ClaimStatus } from '../../types'
+import Emoji from '../common/Emoji'
 
 const STATUS_STYLE: Record<ClaimStatus, { border: string; icon: string }> = {
   normal: { border: 'border-gray-700', icon: '' },
@@ -47,7 +48,7 @@ export default function ClaimGraph() {
               return (
                 <div key={c.id} className={`border rounded px-2 py-1 ${style.border} bg-gray-800/30`}>
                   <div className="flex items-center gap-1">
-                    {style.icon && <span className="text-xs">{style.icon}</span>}
+                    {style.icon && <Emoji char={style.icon} size={12} />}
                     <span className={`text-xs font-semibold ${nameColor}`}>{name}</span>
                   </div>
                   <div className={`text-xs text-gray-400 ${c.status === 'collapsed' ? 'line-through' : ''}`}>

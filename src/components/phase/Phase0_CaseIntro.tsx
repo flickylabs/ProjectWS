@@ -4,6 +4,7 @@ import { GamePhase } from '../../types'
 import type { DialogueEntry } from '../../types'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import { generatePhase1Dialogues, generatePhase2Dialogues } from '../../engine/llmPhaseDialogue'
+import Emoji from '../common/Emoji'
 
 type Step = 'parties' | 'context' | 'disputes' | 'history' | 'ready'
 const STEPS: Step[] = ['parties', 'context', 'disputes', 'history', 'ready']
@@ -134,7 +135,7 @@ export default function Phase0_CaseIntro() {
           {step === 'context' && (
             <div className="space-y-4">
               <div className="text-center">
-                <span className="text-3xl">📍</span>
+                <Emoji char="📍" size={30} />
                 <h3 className="text-sm font-bold text-gray-300 mt-2">배경 상황</h3>
               </div>
               <p className="text-sm text-gray-300 leading-relaxed bg-gray-900/60 border border-gray-800/60 rounded-xl p-4">
@@ -142,13 +143,13 @@ export default function Phase0_CaseIntro() {
               </p>
               {context.triggerAmplifier && (
                 <p className="text-xs text-amber-400/70 bg-amber-950/20 border border-amber-800/20 rounded-lg p-3 leading-relaxed">
-                  ⚡ {context.triggerAmplifier}
+                  <Emoji char="⚡" size={12} /> {context.triggerAmplifier}
                 </p>
               )}
               {/* 관련 인물 */}
               {duo.socialGraph.length > 0 && (
                 <div className="pt-2">
-                  <div className="text-xs text-gray-500 mb-2">👥 관련 인물</div>
+                  <div className="text-xs text-gray-500 mb-2"><Emoji char="👥" size={12} /> 관련 인물</div>
                   <div className="flex flex-wrap gap-2">
                     {duo.socialGraph.slice(0, 3).map((tp) => (
                       <div key={tp.id} className="flex items-center gap-1.5 text-xs bg-gray-800/60 ring-1 ring-gray-700/50 rounded-full px-3 py-1.5">
@@ -168,7 +169,7 @@ export default function Phase0_CaseIntro() {
           {step === 'disputes' && (
             <div className="space-y-3">
               <div className="text-center">
-                <span className="text-3xl">⚡</span>
+                <Emoji char="⚡" size={30} />
                 <h3 className="text-sm font-bold text-gray-300 mt-2">쟁점 {caseData.disputes.length}개</h3>
                 <p className="text-xs text-gray-600 mt-1">심문을 통해 각 쟁점의 진실을 밝혀야 합니다</p>
               </div>
@@ -211,7 +212,7 @@ export default function Phase0_CaseIntro() {
           {step === 'history' && (
             <div className="space-y-3">
               <div className="text-center">
-                <span className="text-3xl">📂</span>
+                <Emoji char="📂" size={30} />
                 <h3 className="text-sm font-bold text-gray-300 mt-2">과거 이력</h3>
                 <p className="text-xs text-gray-600 mt-1">두 사람 사이에 쌓인 감정의 역사</p>
               </div>
@@ -244,7 +245,7 @@ export default function Phase0_CaseIntro() {
           {step === 'ready' && (
             <div className="text-center space-y-6">
               <div>
-                <span className="text-5xl">⚖️</span>
+                <Emoji char="⚖️" size={48} />
                 <h3 className="text-lg font-bold text-amber-400 mt-3">재판 준비 완료</h3>
                 <p className="text-sm text-gray-500 mt-2">
                   {duo.partyA.name}과 {duo.partyB.name}의<br />초기 진술을 들을 준비가 되셨습니까?
@@ -313,7 +314,7 @@ function PersonCard({ name, age, occupation, trait, emoji, color, side }: {
     <div className={`rounded-xl p-4 ring-1 ${ring} ${bg} bg-gradient-to-b ${gradient}`}>
       <div className="flex items-center gap-3">
         <div className={`w-12 h-12 rounded-full bg-gray-800 ring-2 ${ring} flex items-center justify-center text-xl`}>
-          {emoji}
+          <Emoji char={emoji} size={20} />
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2">

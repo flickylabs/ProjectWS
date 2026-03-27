@@ -5,6 +5,7 @@ import ScoreboardTab from './ScoreboardTab'
 import HallOfFame from './HallOfFame'
 import StatsPanel from './StatsPanel'
 import PlayerProfile from './PlayerProfile'
+import Emoji from '../common/Emoji'
 
 type Tab = 'scoreboard' | 'halloffame' | 'stats'
 
@@ -32,10 +33,10 @@ export default function LeaderboardScreen({ onClose }: Props) {
       {/* 헤더 */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-800">
         <div className="flex items-center gap-2">
-          <span className="text-lg">🏆</span>
+          <Emoji char="🏆" size={18} />
           <h2 className="text-sm font-bold text-amber-400">리더보드</h2>
         </div>
-        <button onClick={onClose} className="text-gray-500 hover:text-white text-lg">✕</button>
+        <button onClick={onClose} className="text-gray-500 hover:text-white text-lg"><Emoji char="✕" size={16} /></button>
       </div>
 
       {/* 시즌 배너 */}
@@ -66,7 +67,7 @@ export default function LeaderboardScreen({ onClose }: Props) {
                 : 'text-gray-500 hover:text-gray-300'
             }`}
           >
-            {t.icon} {t.label}
+            <Emoji char={t.icon} size={12} /> {t.label}
           </button>
         ))}
       </div>

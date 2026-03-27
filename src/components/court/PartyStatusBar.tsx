@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 const EMOTION_EMOJI: Record<string, string> = {
   defensive: '😐', confident: '😤', shaken: '😰', angry: '😡', resigned: '😞',
@@ -28,7 +29,7 @@ export default function PartyStatusBar() {
           onClick={() => setShowInfo('a')}
           className={`flex items-center gap-2 active:scale-95 transition-all ${aExcluded ? 'opacity-30' : ''}`}
         >
-          <span className="text-xl">{aExcluded ? '🚪' : (EMOTION_EMOJI[phaseA] ?? '😐')}</span>
+          <Emoji char={aExcluded ? '🚪' : (EMOTION_EMOJI[phaseA] ?? '😐')} size={20} />
           <span className="text-sm font-bold text-blue-400">{caseData.duo.partyA.name}</span>
         </button>
 
@@ -44,7 +45,7 @@ export default function PartyStatusBar() {
           className={`flex items-center gap-2 active:scale-95 transition-all ${bExcluded ? 'opacity-30' : ''}`}
         >
           <span className="text-sm font-bold text-rose-400">{caseData.duo.partyB.name}</span>
-          <span className="text-xl">{bExcluded ? '🚪' : (EMOTION_EMOJI[phaseB] ?? '😐')}</span>
+          <Emoji char={bExcluded ? '🚪' : (EMOTION_EMOJI[phaseB] ?? '😐')} size={20} />
         </button>
       </div>
 
@@ -64,7 +65,7 @@ export default function PartyStatusBar() {
 function StatPill({ icon, value, color }: { icon: string; value: number; color: string }) {
   return (
     <div className="flex items-center gap-1">
-      <span className="text-sm">{icon}</span>
+      <Emoji char={icon} size={14} />
       <span className={`text-sm font-bold ${color}`}>{value}</span>
     </div>
   )
@@ -91,13 +92,13 @@ function CharacterPopup({ party, caseData, agent, onClose }: {
         {/* 헤더 */}
         <div className="flex items-center gap-3 mb-4">
           <div className={`w-11 h-11 rounded-full bg-gray-800 ring-2 ${ringColor} flex items-center justify-center text-xl`}>
-            {EMOTION_EMOJI[emo.phase] ?? '😐'}
+            <Emoji char={EMOTION_EMOJI[emo.phase] ?? '😐'} size={20} />
           </div>
           <div className="flex-1">
             <h3 className={`text-base font-bold ${nameColor}`}>{profile.name}</h3>
             <p className="text-xs text-gray-500">{profile.age}세 · {profile.occupation}</p>
           </div>
-          <button onClick={onClose} className="text-gray-500 hover:text-white text-lg">✕</button>
+          <button onClick={onClose} className="text-gray-500 hover:text-white text-lg"><Emoji char="✕" size={16} /></button>
         </div>
 
         {/* 기본 정보 — 항상 표시 */}
@@ -170,7 +171,7 @@ function InfoRow({ label, value }: { label: string; value: string }) {
 function LockedRow({ label, hint }: { label: string; hint: string }) {
   return (
     <div className="text-xs text-gray-600 py-1.5 border-b border-gray-800/40">
-      <span className="font-semibold">{label}:</span> 🔒 <span className="text-gray-700">{hint}</span>
+      <span className="font-semibold">{label}:</span> <Emoji char="🔒" size={12} /> <span className="text-gray-700">{hint}</span>
     </div>
   )
 }

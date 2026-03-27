@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { evaluateTitles, saveUnlockedTitles, loadUnlockedTitles, type Title } from '../../data/titles'
+import Emoji from '../common/Emoji'
 
 export default function TitleReveal() {
   const verdictScore = useGameStore((s) => s.verdictScore)
@@ -68,7 +69,7 @@ export default function TitleReveal() {
         {titles.map((t) => (
           <div key={t.id} className={`border rounded-lg p-3 ${rarityColor[t.rarity]} ${newTitles.has(t.id) ? 'ring-1 ring-amber-500' : ''}`}>
             <div className="flex items-center gap-2">
-              <span className="text-xl">{t.icon}</span>
+              <Emoji char={t.icon} size={20} />
               <div className="flex-1">
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-bold text-gray-200">{t.name}</span>

@@ -4,6 +4,7 @@ import { useGameStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import { getAvailableWitnesses } from '../../engine/witnessEngine'
 import { playClick, playEvidenceUnlock } from '../../engine/soundEngine'
+import Emoji from '../common/Emoji'
 
 interface Props {
   target: PartyId | null
@@ -91,7 +92,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, llmMo
       )}
       {locked.length > 0 && (
         <div className="text-xs text-gray-600 bg-gray-800/20 rounded-xl px-3 py-2">
-          🔒 미확보 증거 {locked.length}개 (선행 증거 필요)
+          <Emoji char="🔒" size={14} /> 미확보 증거 {locked.length}개 (선행 증거 필요)
         </div>
       )}
 
@@ -121,7 +122,7 @@ function WitnessSection({ dispatch, resources }: { dispatch: (a: any) => void; r
 
   const canAfford = resources.investigationTokens >= 1
 
-  const biasIcon = (bias: string) => {
+  const biasChar = (bias: string) => {
     if (bias.startsWith('pro_a')) return '🔵'
     if (bias.startsWith('pro_b')) return '🔴'
     if (bias === 'neutral') return '⚪'
@@ -135,7 +136,7 @@ function WitnessSection({ dispatch, resources }: { dispatch: (a: any) => void; r
         className="w-full text-left flex items-center justify-between px-1 py-1"
       >
         <div className="flex items-center gap-2">
-          <span className="text-sm">🧑‍⚖️</span>
+          <Emoji char="🧑‍⚖️" size={14} />
           <span className="text-xs font-semibold text-purple-300">
             증인 소환 {available.length > 0 && `(${available.length}명 가능)`}
           </span>
@@ -154,7 +155,7 @@ function WitnessSection({ dispatch, resources }: { dispatch: (a: any) => void; r
               <div key={w.id} className="border border-purple-800/30 rounded-lg bg-purple-950/10 px-3 py-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs">{biasIcon(w.bias)}</span>
+                    <Emoji char={biasChar(w.bias)} size={12} />
                     <div>
                       <div className="text-xs font-semibold text-purple-200">{shortName}</div>
                       <div className="text-xs text-gray-500">{role}{wp ? ` · ${wp.age}세 · ${wp.occupation}` : ''}</div>
@@ -169,7 +170,7 @@ function WitnessSection({ dispatch, resources }: { dispatch: (a: any) => void; r
                         : 'bg-gray-800 text-gray-600 cursor-not-allowed'
                     }`}
                   >
-                    소환 🔍1
+                    소환 <Emoji char="🔍" size={12} />1
                   </button>
                 </div>
                 {wp && (
@@ -187,7 +188,7 @@ function WitnessSection({ dispatch, resources }: { dispatch: (a: any) => void; r
               <div className="text-xs text-gray-600 mt-1">소환 완료 ({called.length})</div>
               {called.map(w => (
                 <div key={w.id} className="text-xs text-gray-500 px-3 py-1 bg-gray-900/20 rounded-lg flex items-center gap-2">
-                  <span>✓</span>
+                  <Emoji char="✓" size={12} />
                   <span>{w.name.split('(')[0].trim()}</span>
                 </div>
               ))}
@@ -275,12 +276,12 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
       {/* 헤더 */}
       <button onClick={onToggle} className="w-full text-left px-3 py-2.5 flex items-center justify-between">
         <div className="flex items-center gap-2 min-w-0">
-          <span className="text-lg">{TYPE_ICON[ev.type] ?? '📄'}</span>
+          <Emoji char={TYPE_ICON[ev.type] ?? '📄'} size={18} />
           <div className="min-w-0">
             <div className="flex items-center gap-1.5">
               <span className="text-sm text-gray-200 truncate font-medium">{ev.name}</span>
-              {state?.presented && <span className="text-emerald-500 text-xs">✓제시</span>}
-              {legWarning && <span className="text-orange-400 text-xs">⚠</span>}
+              {state?.presented && <span className="text-emerald-500 text-xs"><Emoji char="✓" size={10} />제시</span>}
+              {legWarning && <Emoji char="⚠" size={12} />}
             </div>
             <div className="flex items-center gap-2 mt-0.5">
               <span className={`text-xs ${ev.reliability === 'hard' ? 'text-emerald-500/60' : 'text-yellow-500/60'}`}>
@@ -331,18 +332,18 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
                     : 'bg-gray-800/30 text-gray-600 cursor-not-allowed'
                 }`}
               >
-                🔍 조사 ({investigatedCount}/3) {canInvestigate ? '· 토큰 1' : '· 토큰 부족'}
+                <Emoji char="🔍" size={12} /> 조사 ({investigatedCount}/3) {canInvestigate ? '· 토큰 1' : '· 토큰 부족'}
               </button>
             )}
             {fullyInvestigated && (
-              <div className="flex-1 text-xs py-2 text-center text-emerald-400/60">✓ 조사 완료</div>
+              <div className="flex-1 text-xs py-2 text-center text-emerald-400/60"><Emoji char="✓" size={12} /> 조사 완료</div>
             )}
             {canPresent && onPresent && !showPresent && (
               <button
                 onClick={() => { if (llmMode && onConfront) setShowPresent(true); else onPresent() }}
                 className="flex-1 text-xs py-2 rounded-xl font-bold bg-amber-700 hover:bg-amber-600 text-white transition-all active:scale-95"
               >
-                📤 제시
+                <Emoji char="📤" size={12} /> 제시
               </button>
             )}
           </div>
@@ -358,7 +359,7 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
                     onClick={() => { onConfront?.(q); setShowPresent(false); setConfrontText('') }}
                     className="w-full text-left text-xs px-3 py-2 rounded-lg bg-gray-800/60 border border-gray-700/40 hover:border-amber-600 hover:bg-amber-950/20 text-gray-300 transition-all active:scale-[0.98]"
                   >
-                    💬 {q}
+                    <Emoji char="💬" size={12} /> {q}
                   </button>
                 ))}
               </div>
@@ -379,7 +380,7 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
                   onClick={() => { if (confrontText.trim().length >= 2 && onConfront) { onConfront(confrontText.trim()); setShowPresent(false); setConfrontText('') } }}
                   disabled={confrontText.trim().length < 2}
                   className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${confrontText.trim().length >= 2 ? 'bg-amber-600 text-gray-950' : 'bg-gray-800 text-gray-600'}`}
-                >⚔️</button>
+                ><Emoji char="⚔️" size={14} /></button>
               </div>
 
               {/* 질문 없이 제시 */}

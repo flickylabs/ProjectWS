@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import type { SortCategory } from '../../types'
 import { getLeaderboard } from '../../data/leaderboard'
 import { getCurrentSeason, getAllPastSeasons } from '../../data/seasons'
+import Emoji from '../common/Emoji'
 
 const SORT_OPTIONS: { key: SortCategory; label: string; icon: string }[] = [
   { key: 'total', label: '종합', icon: '⚖️' },
@@ -57,7 +58,7 @@ export default function ScoreboardTab() {
               sortBy === opt.key ? 'bg-amber-600 text-gray-950 font-bold' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
             }`}
           >
-            {opt.icon} {opt.label}
+            <Emoji char={opt.icon} size={12} /> {opt.label}
           </button>
         ))}
       </div>

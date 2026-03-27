@@ -3,6 +3,7 @@ import type { QuestionType, PartyId } from '../../types'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
 import { useValidActions } from '../../hooks/useValidActions'
 import FreeQuestionInput from './FreeQuestionInput'
+import Emoji from '../common/Emoji'
 
 export interface QuestionToggles {
   confidential: { unlocked: boolean; on: boolean }
@@ -65,7 +66,7 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
           ← 다른 질문 선택
         </button>
         <div className="text-xs text-gray-400 mb-1">
-          {q.icon} <span className="font-semibold">{q.label}</span> — 어떤 쟁점에 대해?
+          <Emoji char={q.icon} size={14} /> <span className="font-semibold">{q.label}</span> — 어떤 쟁점에 대해?
         </div>
         <div className="grid grid-cols-1 gap-1.5">
           {q.disputes.map((d) => (
@@ -108,7 +109,7 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
                     : 'bg-gray-900/20 border-gray-800/20 text-gray-600 opacity-50'
               }`}
             >
-              🔍 회피 판독 {toggles!.evasionReading.on ? 'ON' : ''} <span className="text-gray-600">⚡1</span>
+              <Emoji char="🔍" size={12} /> 회피 판독 {toggles!.evasionReading.on ? 'ON' : ''} <span className="text-gray-600"><Emoji char="⚡" size={12} />1</span>
             </button>
           )}
           {toggles!.confidential.unlocked && (
@@ -120,7 +121,7 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
                   : 'bg-gray-800/40 border-gray-700/40 text-gray-400 hover:border-emerald-700'
               }`}
             >
-              🔒 비공개 {toggles!.confidential.on ? 'ON' : ''}
+              <Emoji char="🔒" size={12} /> 비공개 {toggles!.confidential.on ? 'ON' : ''}
             </button>
           )}
         </div>
@@ -141,7 +142,7 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
                   : 'border-gray-800/30 from-gray-900/30 to-gray-950/30 opacity-40 cursor-not-allowed'
               }`}
             >
-              <div className="text-xl mb-1">{q.icon}</div>
+              <div className="text-xl mb-1"><Emoji char={q.icon} size={20} /></div>
               <div className={`text-xs font-bold ${q.anyEnabled ? 'text-gray-200' : 'text-gray-600'}`}>{q.label}</div>
               <div className="text-xs text-gray-500 mt-0.5 leading-snug">{effect}</div>
             </button>
@@ -153,7 +154,7 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
             onClick={() => setSelectedCard('free_question')}
             className={`text-left rounded-xl border p-3 bg-gradient-to-br transition-all active:scale-95 ${CARD_COLORS.free_question.border} ${CARD_COLORS.free_question.bg} hover:shadow-lg ${CARD_COLORS.free_question.glow} hover:scale-[1.02]`}
           >
-            <div className="text-xl mb-1">✍️</div>
+            <div className="text-xl mb-1"><Emoji char="✍️" size={20} /></div>
             <div className="text-xs font-bold text-gray-200">직접 입력</div>
             <div className="text-xs text-gray-500 mt-0.5 leading-snug">{CARD_EFFECTS.free_question}</div>
           </button>

@@ -3,6 +3,7 @@ import { getSettings, updateSettings, loadSave } from '../../hooks/useLocalStora
 import { checkConnection, getProviderName } from '../../engine/llmClient'
 import { isSoundEnabled, setSoundEnabled } from '../../engine/soundEngine'
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 interface Props {
   onClose: () => void
@@ -28,7 +29,7 @@ export default function SettingsPanel({ onClose }: Props) {
       <div className="bg-gray-900 border border-gray-700 rounded-xl w-full max-w-md max-h-[80vh] overflow-y-auto">
         <div className="flex items-center justify-between p-4 border-b border-gray-800">
           <h2 className="text-sm font-bold text-amber-400">설정</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-white text-lg">✕</button>
+          <button onClick={onClose} className="text-gray-500 hover:text-white text-lg"><Emoji char="✕" size={16} /></button>
         </div>
 
         <div className="p-4 space-y-5">
@@ -97,7 +98,7 @@ export default function SettingsPanel({ onClose }: Props) {
   )
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({ title, children }: { title: React.ReactNode; children: React.ReactNode }) {
   return (
     <div>
       <div className="text-xs text-gray-500 font-semibold mb-2">{title}</div>
@@ -139,12 +140,12 @@ function CheatSection() {
   const caseData = useGameStore((s) => s.caseData)
 
   return (
-    <Section title="🛠 DEV 치트키">
+    <Section title={<><Emoji char="🛠" size={14} /> DEV 치트키</>}>
       <div className="bg-yellow-950/20 border border-yellow-800/30 rounded-lg p-2.5 space-y-2">
         <p className="text-xs text-yellow-600">테스트용 — 출시 시 제거 예정</p>
 
         <div className="flex items-center justify-between">
-          <span className="text-xs text-gray-300">🔍 조사 토큰: {resources.investigationTokens}</span>
+          <span className="text-xs text-gray-300"><Emoji char="🔍" size={12} /> 조사 토큰: {resources.investigationTokens}</span>
           <div className="flex gap-1">
             <button onClick={() => gain('investigationTokens', 1)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+1</button>
             <button onClick={() => gain('investigationTokens', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
@@ -153,7 +154,7 @@ function CheatSection() {
         </div>
 
         <div className="flex items-center justify-between">
-          <span className="text-xs text-gray-300">⚡ 스킬 포인트: {resources.skillPoints}</span>
+          <span className="text-xs text-gray-300"><Emoji char="⚡" size={12} /> 스킬 포인트: {resources.skillPoints}</span>
           <div className="flex gap-1">
             <button onClick={() => gain('skillPoints', 1)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+1</button>
             <button onClick={() => gain('skillPoints', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
@@ -163,7 +164,7 @@ function CheatSection() {
 
         {caseData && (
           <div className="flex items-center justify-between">
-            <span className="text-xs text-gray-300">⚖️ 법정 통제력: {resources.courtControl}</span>
+            <span className="text-xs text-gray-300"><Emoji char="⚖️" size={12} /> 법정 통제력: {resources.courtControl}</span>
             <div className="flex gap-1">
               <button onClick={() => gain('courtControl', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
             </div>

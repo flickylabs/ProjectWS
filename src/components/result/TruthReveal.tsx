@@ -1,4 +1,5 @@
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 export default function TruthReveal() {
   const caseData = useGameStore((s) => s.caseData)
@@ -23,8 +24,8 @@ export default function TruthReveal() {
             <div key={d.id} className="bg-gray-800/60 border border-gray-700 rounded-lg p-3">
               <div className="flex items-center justify-between mb-1">
                 <span className="text-sm font-semibold text-gray-200">{d.name}</span>
-                {playerCorrect === true && <span className="text-xs text-emerald-400 font-bold">✓ 정확</span>}
-                {playerCorrect === false && <span className="text-xs text-red-400 font-bold">✗ 오답</span>}
+                {playerCorrect === true && <span className="text-xs text-emerald-400 font-bold"><Emoji char="✓" size={10} /> 정확</span>}
+                {playerCorrect === false && <span className="text-xs text-red-400 font-bold"><Emoji char="✗" size={10} /> 오답</span>}
                 {playerCorrect === null && <span className="text-xs text-gray-500">— 보류</span>}
               </div>
 

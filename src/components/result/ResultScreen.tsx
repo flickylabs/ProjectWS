@@ -7,6 +7,7 @@ import TruthReveal from './TruthReveal'
 import Aftermath from './Aftermath'
 import TitleReveal from './TitleReveal'
 import ShareResult from './ShareResult'
+import Emoji from '../common/Emoji'
 
 type ResultTab = 'score' | 'truth' | 'titles' | 'aftermath' | 'share'
 
@@ -49,7 +50,7 @@ export default function ResultScreen() {
     <div className="h-full flex flex-col">
       {/* 히어로 헤더 — 애니메이션 */}
       <div className="text-center pt-8 pb-4 px-4 bg-gradient-to-b from-amber-950/20 to-transparent">
-        <div className="text-5xl mb-3 animate-scale-in">⚖️</div>
+        <div className="text-5xl mb-3 animate-scale-in"><Emoji char="⚖️" size={48} /></div>
         <h2 className="text-lg font-bold animate-slide-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>판결이 완료되었습니다</h2>
         <div className="text-3xl font-bold text-amber-400 mt-2 animate-slide-up" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>{verdictScore.total}<span className="text-lg text-amber-500/60 ml-1">점</span></div>
         <div className="text-sm text-gray-400 mt-1 animate-slide-up" style={{ animationDelay: '0.7s', animationFillMode: 'both' }}>{getRating(verdictScore.total)}</div>
@@ -86,20 +87,20 @@ export default function ResultScreen() {
             onClick={handleHome}
             className="flex-1 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold py-2.5 rounded-xl transition-colors text-sm"
           >
-            🏠 홈으로
+            <Emoji char="🏠" size={14} /> 홈으로
           </button>
           <button
             onClick={handleReplay}
             className="flex-1 bg-amber-600 hover:bg-amber-500 text-gray-950 font-bold py-2.5 rounded-xl transition-colors text-sm"
           >
-            ⚖️ 다음 재판
+            <Emoji char="⚖️" size={14} /> 다음 재판
           </button>
         </div>
         <button
           onClick={handleRetry}
           className="w-full text-xs py-1.5 text-gray-500 hover:text-gray-300 transition-colors"
         >
-          🔄 다시 판결하기
+          <Emoji char="🔄" size={12} /> 다시 판결하기
         </button>
       </div>
     </div>

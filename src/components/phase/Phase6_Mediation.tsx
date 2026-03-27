@@ -3,6 +3,7 @@ import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
 import { chatCompletion } from '../../engine/llmClient'
 import { isLLMMode } from '../../hooks/useActionDispatch'
+import Emoji from '../common/Emoji'
 
 type MediationPath = 'immediate' | 'conditional' | 'postpone' | 'fact_first'
 
@@ -115,7 +116,7 @@ export default function Phase6_Mediation() {
               className="w-full text-left border border-gray-700 bg-gray-800/50 hover:border-amber-600 rounded-lg p-3 transition-colors"
             >
               <div className="flex items-center gap-2">
-                <span className="text-lg">{p.icon}</span>
+                <Emoji char={p.icon} size={18} />
                 <div>
                   <div className="text-sm font-semibold text-gray-200">{p.label}</div>
                   <div className="text-xs text-gray-500">{p.desc}</div>

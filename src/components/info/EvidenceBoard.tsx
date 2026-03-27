@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import type { EvidenceNode } from '../../types'
+import Emoji from '../common/Emoji'
 
 const SUB_ACTIONS: { key: string; label: string; icon: string }[] = [
   { key: 'request_original', label: '원본 요청', icon: '📋' },
@@ -46,7 +47,7 @@ export default function EvidenceBoard() {
                   {ev.reliability === 'hard' ? 'H' : 'S'}
                 </span>
                 <span className="text-xs text-gray-200 truncate">{ev.name}</span>
-                {state?.presented && <span className="text-emerald-500 text-xs">✓</span>}
+                {state?.presented && <Emoji char="✓" size={10} />}
               </div>
               <span className="text-gray-600 text-xs">{isExpanded ? '▲' : '▼'}</span>
             </button>
@@ -56,7 +57,7 @@ export default function EvidenceBoard() {
                 <p className="text-xs text-gray-400 mt-1.5">{ev.description}</p>
                 <div className="flex flex-wrap gap-1 text-xs">
                   {ev.legitimacy !== 'lawful' && (
-                    <span className="text-orange-400">⚠ {ev.legitimacy === 'privacy_concern' ? '사생활 침해' : '위법'}</span>
+                    <span className="text-orange-400"><Emoji char="⚠" size={12} /> {ev.legitimacy === 'privacy_concern' ? '사생활 침해' : '위법'}</span>
                   )}
                   <span className="text-gray-600">완전성: {ev.completeness}</span>
                 </div>
@@ -78,7 +79,7 @@ export default function EvidenceBoard() {
                             : 'bg-gray-700 hover:bg-amber-800 text-gray-400 hover:text-white'
                         }`}
                       >
-                        {sa.icon} {alreadyDone ? '✓' : sa.label}
+                        <Emoji char={sa.icon} size={12} /> {alreadyDone ? <Emoji char="✓" size={10} /> : sa.label}
                       </button>
                     )
                   })}
@@ -91,7 +92,7 @@ export default function EvidenceBoard() {
 
       {locked.map((ev) => (
         <div key={ev.id} className="text-xs text-gray-600 bg-gray-800/20 rounded px-2.5 py-1.5 flex items-center gap-1.5">
-          <span>🔒</span>
+          <Emoji char="🔒" size={12} />
           <span>??? (선행 증거 필요)</span>
         </div>
       ))}

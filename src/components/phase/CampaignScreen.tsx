@@ -1,4 +1,5 @@
 import { CAMPAIGN_STAGES, loadCampaignProgress, type StageDefinition } from '../../data/campaign'
+import Emoji from '../common/Emoji'
 
 interface Props {
   onSelectStage: (stage: StageDefinition) => void
@@ -71,7 +72,7 @@ export default function CampaignScreen({ onSelectStage, onBack }: Props) {
               )}
 
               {!unlocked && (
-                <p className="text-xs text-gray-600 mt-1">🔒 이전 Stage를 완료하면 해금</p>
+                <p className="text-xs text-gray-600 mt-1"><Emoji char="🔒" size={12} /> 이전 Stage를 완료하면 해금</p>
               )}
             </button>
           )

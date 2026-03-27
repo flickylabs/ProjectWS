@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { getHallOfFameForSeason } from '../../data/leaderboard'
 import { getAllPastSeasons } from '../../data/seasons'
+import Emoji from '../common/Emoji'
 
 const MEDAL = ['', '🥇', '🥈', '🥉', '4th', '5th']
 
@@ -31,7 +32,7 @@ export default function HallOfFame() {
             return (
               <div key={e.rank} className={`border rounded-xl p-3 ${borderColor} ${isTop3 ? 'bg-gray-800/70' : 'bg-gray-800/30'}`}>
                 <div className="flex items-center gap-3">
-                  <span className="text-xl w-8 text-center">{MEDAL[e.rank]}</span>
+                  <span className="text-xl w-8 text-center">{MEDAL[e.rank] && e.rank <= 3 ? <Emoji char={MEDAL[e.rank]} size={20} /> : MEDAL[e.rank]}</span>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span className={`text-sm font-bold ${e.rank === 1 ? 'text-amber-400' : 'text-gray-200'}`}>{e.playerName}</span>

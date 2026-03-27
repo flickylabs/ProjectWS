@@ -9,6 +9,7 @@ import type { StageDefinition } from '../data/campaign'
 import { loadProfile, loadExtendedHistory, getPlayerStats } from '../data/leaderboard'
 import { getCurrentSeason, getRemainingDays } from '../data/seasons'
 import { loadCampaignProgress } from '../data/campaign'
+import Emoji from '../components/common/Emoji'
 import CourtLayout from '../components/layout/CourtLayout'
 import PhaseTransition from '../components/layout/PhaseTransition'
 import Tutorial from '../components/layout/Tutorial'
@@ -149,11 +150,11 @@ function TitleScreen() {
       <div className="flex items-center justify-between px-4 pt-3 pb-2 shrink-0">
         <button onClick={() => setShowProfile(true)}
           className="flex items-center gap-2 bg-gray-900/60 hover:bg-gray-800/60 border border-gray-800/40 rounded-full px-3 py-1.5 transition-all active:scale-95">
-          <span className="text-sm">👑</span>
+          <Emoji char="👑" size={14} />
           <span className="text-xs font-semibold text-gray-300">{profile.playerName}</span>
           <span className="text-xs text-amber-400 font-bold">{reputation.toLocaleString()}</span>
         </button>
-        <button onClick={() => setShowSettings(true)} className="text-gray-600 hover:text-gray-300 text-lg">⚙️</button>
+        <button onClick={() => setShowSettings(true)} className="text-gray-600 hover:text-gray-300 text-lg"><Emoji char="⚙️" size={18} /></button>
       </div>
 
       {/* 중앙 — 타이틀 + 버튼 */}
@@ -167,7 +168,7 @@ function TitleScreen() {
 
         {/* 타이틀 */}
         <div className="text-center relative z-10 mb-10">
-          <div className="text-6xl mb-3 animate-pulse-glow">⚖️</div>
+          <div className="text-6xl mb-3 animate-pulse-glow"><Emoji char="⚖️" size={56} /></div>
           <h1 className="text-4xl font-black text-amber-400 tracking-tight mb-2">솔로몬</h1>
           <p className="text-sm text-gray-500 leading-relaxed">AI 둘의 싸움을<br/>인간의 지혜로 재판하는 게임</p>
         </div>
@@ -178,17 +179,17 @@ function TitleScreen() {
             onClick={() => setShowCaseMap(true)}
             className="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-gray-950 font-bold py-4 rounded-2xl transition-all shadow-lg shadow-amber-600/25 active:scale-95"
           >
-            <span className="text-lg">⚖️ 사건 시작</span>
+            <span className="text-lg"><Emoji char="⚖️" size={18} /> 사건 시작</span>
           </button>
 
           <div className="grid grid-cols-2 gap-2">
             <button onClick={() => setShowLeaderboard(true)}
               className="bg-gray-900/80 hover:bg-gray-800/80 text-gray-300 font-semibold py-3 rounded-xl transition-colors border border-gray-800/50 text-sm">
-              🏆 리더보드
+              <Emoji char="🏆" size={14} /> 리더보드
             </button>
             <button onClick={() => setShowHistory(true)}
               className="bg-gray-900/80 hover:bg-gray-800/80 text-gray-300 font-semibold py-3 rounded-xl transition-colors border border-gray-800/50 text-sm">
-              📊 내 기록
+              <Emoji char="📊" size={14} /> 내 기록
             </button>
           </div>
         </div>

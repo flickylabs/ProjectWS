@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { loadProfile, saveProfile, loadExtendedHistory, getPlayerStats } from '../../data/leaderboard'
 import { loadCampaignProgress, CAMPAIGN_STAGES } from '../../data/campaign'
+import Emoji from '../common/Emoji'
 
 interface Props {
   onBack: () => void
@@ -257,12 +258,12 @@ export default function ProfilePage({ onBack }: Props) {
                       <span className="text-xs text-emerald-400 font-bold">
                         {ch.bestScore}점
                       </span>
-                      {ch.bestScore >= 90 && <span className="text-xs">⭐</span>}
+                      {ch.bestScore >= 90 && <Emoji char="⭐" size={12} />}
                     </>
                   ) : ch.unlocked ? (
                     <span className="text-xs text-gray-600">미완료</span>
                   ) : (
-                    <span className="text-xs text-gray-700">🔒</span>
+                    <Emoji char="🔒" size={12} />
                   )}
                 </div>
               </div>

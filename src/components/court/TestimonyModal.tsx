@@ -1,4 +1,5 @@
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 interface Props {
   onClose: () => void
@@ -19,10 +20,10 @@ export default function TestimonyModal({ onClose }: Props) {
         {/* 헤더 */}
         <div className="flex items-center justify-between px-4 pt-4 pb-2 border-b border-gray-800">
           <div className="flex items-center gap-2">
-            <span className="text-lg">📋</span>
+            <Emoji char="📋" size={18} />
             <h3 className="text-sm font-bold text-amber-400">진술 분석 결과</h3>
           </div>
-          <button onClick={onClose} className="text-gray-500 hover:text-white text-lg">✕</button>
+          <button onClick={onClose} className="text-gray-500 hover:text-white text-lg"><Emoji char="✕" size={16} /></button>
         </div>
 
         <div className="p-4 space-y-4">
@@ -93,7 +94,7 @@ function AnalysisSection({ icon, title, items, color }: {
   return (
     <div className={`border ${c.border} ${c.bg} rounded-xl p-3`}>
       <div className="flex items-center gap-1.5 mb-2">
-        <span className="text-sm">{icon}</span>
+        <Emoji char={icon} size={14} />
         <span className={`text-xs font-bold ${c.text}`}>{title}</span>
       </div>
       <div className="space-y-1.5">

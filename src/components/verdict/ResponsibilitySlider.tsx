@@ -1,4 +1,5 @@
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 export default function ResponsibilitySlider() {
   const caseData = useGameStore((s) => s.caseData)
@@ -57,7 +58,7 @@ export default function ResponsibilitySlider() {
                 </div>
 
                 {/* ⚖️ 중심 */}
-                <div className="absolute text-lg z-10">⚖️</div>
+                <div className="absolute text-lg z-10"><Emoji char="⚖️" size={18} /></div>
               </div>
 
               {/* 이름 + 비율 — 귀책 방향 표시 */}
@@ -89,7 +90,7 @@ export default function ResponsibilitySlider() {
               </div>
 
               {d.ambiguity === 'high' && (
-                <div className="text-xs text-amber-500/60 mt-1">⚠️ 모호성이 높은 쟁점</div>
+                <div className="text-xs text-amber-500/60 mt-1"><Emoji char="⚠️" size={12} /> 모호성이 높은 쟁점</div>
               )}
             </div>
           )

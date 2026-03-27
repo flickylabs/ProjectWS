@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { VerdictScore } from '../../types'
+import Emoji from '../common/Emoji'
 
 interface Props {
   score: VerdictScore
@@ -53,7 +54,7 @@ function AnimatedGauge({ label, value, icon, desc, delay }: {
 
   return (
     <div className="bg-gray-800/60 border border-gray-700 rounded-lg p-3 text-center">
-      <div className="text-lg mb-1">{icon}</div>
+      <div className="text-lg mb-1"><Emoji char={icon} size={18} /></div>
       <div className="text-xs text-gray-400 mb-1">{label}</div>
       <div className="text-2xl font-bold" style={{ color: barColorHex }}>{displayed}</div>
       <div className="w-full bg-gray-700 rounded-full h-1.5 mt-2 overflow-hidden">

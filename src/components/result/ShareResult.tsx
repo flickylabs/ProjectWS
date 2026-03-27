@@ -1,4 +1,5 @@
 import { useGameStore } from '../../store/useGameStore'
+import Emoji from '../common/Emoji'
 
 export default function ShareResult() {
   const verdictScore = useGameStore((s) => s.verdictScore)
@@ -44,14 +45,14 @@ export default function ShareResult() {
           onClick={handleCopy}
           className="flex-1 bg-gray-700 hover:bg-gray-600 text-gray-200 py-2 rounded-lg text-xs font-semibold transition-colors"
         >
-          📋 복사
+          <Emoji char="📋" size={12} /> 복사
         </button>
         {typeof navigator.share === 'function' && (
           <button
             onClick={handleShare}
             className="flex-1 bg-amber-700 hover:bg-amber-600 text-white py-2 rounded-lg text-xs font-semibold transition-colors"
           >
-            📤 공유
+            <Emoji char="📤" size={12} /> 공유
           </button>
         )}
       </div>

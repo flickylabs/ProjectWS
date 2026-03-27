@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import Emoji from '../common/Emoji'
 
 const INTRO_KEY = 'solomon-intro-seen'
 
@@ -117,7 +118,7 @@ export default function IntroSlides({ onComplete }: Props) {
       <div className="flex-1 flex flex-col items-center justify-center px-8">
         <div className="text-center space-y-5 transition-opacity duration-300">
           {slide.icon && (
-            <div className="text-7xl mb-2 animate-pulse">{slide.icon}</div>
+            <div className="text-7xl mb-2 animate-pulse"><Emoji char={slide.icon} size={64} /></div>
           )}
           {slide.title && (
             <h1 className="text-3xl font-bold text-amber-400 tracking-tight font-[Pretendard]">

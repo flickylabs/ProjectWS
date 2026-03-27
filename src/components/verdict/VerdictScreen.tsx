@@ -10,6 +10,7 @@ import FactChecklist from './FactChecklist'
 import ResponsibilitySlider from './ResponsibilitySlider'
 import SolutionPicker from './SolutionPicker'
 import EvidenceLegality from './EvidenceLegality'
+import Emoji from '../common/Emoji'
 
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'legality' | 'confirm'
 
@@ -101,7 +102,7 @@ export default function VerdictScreen() {
                 'bg-gray-800 text-gray-500'
               }`}
             >
-              {s.icon}
+              {s.id === 'confirm' ? <Emoji char={s.icon} size={12} /> : s.icon}
             </button>
             {i < visibleSteps.length - 1 && <span className="text-gray-700 text-xs">›</span>}
           </div>
@@ -117,7 +118,7 @@ export default function VerdictScreen() {
         {step === 'confirm' && (
           <div className="space-y-3 px-2">
             <div className="text-center">
-              <div className="text-4xl mb-2 animate-pulse-glow">⚖️</div>
+              <div className="text-4xl mb-2 animate-pulse-glow"><Emoji char="⚖️" size={36} /></div>
               <h3 className="text-sm font-bold text-amber-400">판결을 선언합니다</h3>
               <p className="text-xs text-gray-600 mt-1">아래 내용으로 확정됩니다</p>
             </div>
@@ -152,7 +153,7 @@ export default function VerdictScreen() {
         {step === 'confirm' ? (
           <button onClick={handleSubmit} disabled={!allFactsJudged}
             className={`text-xs px-5 py-2 rounded-lg font-bold ${allFactsJudged ? 'bg-amber-600 hover:bg-amber-500 text-gray-950' : 'bg-gray-800 text-gray-600'}`}>
-            {allFactsJudged ? '⚖️ 판결 확정' : `⚖️ 모든 쟁점을 판단하세요 (${factCount}/${caseData.disputes.length})`}
+            {allFactsJudged ? <><Emoji char="⚖️" size={12} /> 판결 확정</> : <><Emoji char="⚖️" size={12} /> 모든 쟁점을 판단하세요 ({factCount}/{caseData.disputes.length})</>}
           </button>
         ) : (
           <button onClick={goNext} className="text-xs px-3 py-1.5 rounded-lg bg-amber-700 hover:bg-amber-600 text-white">

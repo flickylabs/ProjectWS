@@ -1,6 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from 'react'
 import type { CaseData } from '../../types'
 import { loadGeneratedCases } from '../../data/cases/caseLoader'
+import Emoji from '../common/Emoji'
 
 interface Props {
   onSelectCase: (caseData: CaseData) => void
@@ -85,8 +86,8 @@ export default function CaseMap({ onSelectCase, onBack }: Props) {
       <div className="flex items-center justify-between px-4 py-3 shrink-0 border-b border-gray-800/50">
         <button onClick={onBack} className="text-gray-400 hover:text-white text-sm">← 홈</button>
         <div className="text-center">
-          <span className="text-sm font-bold text-amber-400">{chapter.icon} {chapter.label}</span>
-          <div className="text-xs text-gray-500">{chapterStats.cleared}/{chapterStats.total} 클리어 · ★{chapterStats.stars}</div>
+          <span className="text-sm font-bold text-amber-400"><Emoji char={chapter.icon} size={14} /> {chapter.label}</span>
+          <div className="text-xs text-gray-500">{chapterStats.cleared}/{chapterStats.total} 클리어 · <Emoji char="★" size={10} />{chapterStats.stars}</div>
         </div>
         <div className="w-10" />
       </div>
@@ -102,7 +103,7 @@ export default function CaseMap({ onSelectCase, onBack }: Props) {
               } ${unlocked ? 'bg-gray-800/60' : 'bg-gray-900/40 opacity-40'}`}
               style={chapterIdx === i ? { backgroundColor: ch.color + '30' } : {}}
             >
-              {unlocked ? ch.icon : '🔒'}
+              <Emoji char={unlocked ? ch.icon : '🔒'} size={18} />
             </button>
           )
         })}
@@ -112,7 +113,7 @@ export default function CaseMap({ onSelectCase, onBack }: Props) {
       <div ref={scrollRef} className={`flex-1 overflow-y-auto bg-gradient-to-b ${chapter.bg} to-gray-950`}>
         {cases.length === 0 ? (
           <div className="flex items-center justify-center h-full text-center">
-            <div><div className="text-4xl mb-2">🚧</div><div className="text-sm text-gray-600">사건 준비 중</div></div>
+            <div><div className="text-4xl mb-2"><Emoji char="🚧" size={36} /></div><div className="text-sm text-gray-600">사건 준비 중</div></div>
           </div>
         ) : (
           <div className="relative py-6 px-4">
@@ -172,13 +173,13 @@ export default function CaseMap({ onSelectCase, onBack }: Props) {
                       borderColor: cleared ? chapter.color : unlocked ? '#374151' : '#1f2937',
                     }}>
                       {!unlocked ? (
-                        <span className="text-lg text-gray-600">🔒</span>
+                        <Emoji char="🔒" size={18} />
                       ) : cleared ? (
                         <>
                           <span className="text-white text-sm">{i + 1}</span>
                           <div className="flex -mt-0.5">
                             {[1, 2, 3].map(s => (
-                              <span key={s} className={`text-[8px] ${s <= stars ? 'text-amber-300' : 'text-white/30'}`}>★</span>
+                              <Emoji key={s} char="★" size={8} className={s <= stars ? 'opacity-100' : 'opacity-30'} />
                             ))}
                           </div>
                         </>
@@ -219,10 +220,10 @@ export default function CaseMap({ onSelectCase, onBack }: Props) {
           <div className="bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-sm p-5 animate-fade-in" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <span className="text-xl">{chapter.icon}</span>
+                <Emoji char={chapter.icon} size={20} />
                 <span className="text-sm font-bold text-gray-200">{selectedCase.disputes[0]?.name?.slice(0, 20) ?? '사건'}</span>
               </div>
-              <button onClick={() => setSelectedCase(null)} className="text-gray-500 text-lg">✕</button>
+              <button onClick={() => setSelectedCase(null)} className="text-gray-500 text-lg"><Emoji char="✕" size={16} /></button>
             </div>
 
             <p className="text-xs text-gray-400 leading-relaxed mb-3">
@@ -230,7 +231,7 @@ export default function CaseMap({ onSelectCase, onBack }: Props) {
             </p>
 
             <div className="flex items-center gap-3 mb-3 text-xs text-gray-500">
-              <span>난이도: {selectedCase.meta?.difficulty === 'easy' ? '⭐' : selectedCase.meta?.difficulty === 'hard' ? '⭐⭐⭐' : '⭐⭐'}</span>
+              <span>난이도: {selectedCase.meta?.difficulty === 'easy' ? <Emoji char="⭐" size={12} /> : selectedCase.meta?.difficulty === 'hard' ? <><Emoji char="⭐" size={12} /><Emoji char="⭐" size={12} /><Emoji char="⭐" size={12} /></> : <><Emoji char="⭐" size={12} /><Emoji char="⭐" size={12} /></>}</span>
               <span>쟁점 {selectedCase.disputes.length}개</span>
               <span>증거 {selectedCase.evidence.length}개</span>
             </div>
@@ -240,7 +241,7 @@ export default function CaseMap({ onSelectCase, onBack }: Props) {
                 <div className="flex items-center justify-between">
                   <div className="flex gap-0.5">
                     {[1, 2, 3].map(s => (
-                      <span key={s} className={`text-lg ${s <= (progress[selectedCase.caseId]?.stars ?? 0) ? 'text-amber-400' : 'text-gray-700'}`}>★</span>
+                      <Emoji key={s} char="★" size={18} className={s <= (progress[selectedCase.caseId]?.stars ?? 0) ? 'opacity-100' : 'opacity-30'} />
                     ))}
                   </div>
                   <span className="text-sm font-bold text-amber-400">{progress[selectedCase.caseId].bestScore}점</span>
@@ -254,7 +255,7 @@ export default function CaseMap({ onSelectCase, onBack }: Props) {
               <button onClick={() => { onSelectCase(selectedCase); setSelectedCase(null) }}
                 className="flex-1 text-xs py-2.5 rounded-xl font-bold text-white shadow-lg active:scale-95"
                 style={{ backgroundColor: chapter.color }}>
-                🔍 도전하기
+                <Emoji char="🔍" size={14} /> 도전하기
               </button>
             </div>
           </div>

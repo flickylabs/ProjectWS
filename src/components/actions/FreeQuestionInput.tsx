@@ -4,6 +4,7 @@ import { useGameStore } from '../../store/useGameStore'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import { processFreeQuestion } from '../../engine/llmFreeQuestion'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
+import Emoji from '../common/Emoji'
 
 interface Props {
   target: PartyId | null
@@ -47,7 +48,7 @@ export default function FreeQuestionInput({ target, onResult }: Props) {
     <div className="space-y-2">
       {!target && (
         <div className="text-center py-3">
-          <span className="text-2xl">👈👉</span>
+          <span className="text-2xl"><Emoji char="👈" size={24} /><Emoji char="👉" size={24} /></span>
           <p className="text-gray-500 text-xs mt-2">먼저 질문할 대상을 선택하세요</p>
         </div>
       )}
@@ -88,7 +89,7 @@ export default function FreeQuestionInput({ target, onResult }: Props) {
           {/* 비용 안내 */}
           <div className="flex items-center justify-between text-xs">
             <div className="flex items-center gap-1 text-gray-600">
-              <span>🔍</span>
+              <Emoji char="🔍" size={12} />
               <span>조사 토큰 1개 소모</span>
               <span className={hasTokens ? 'text-emerald-500' : 'text-red-400'}>
                 (잔여: {resources.investigationTokens})
@@ -102,7 +103,7 @@ export default function FreeQuestionInput({ target, onResult }: Props) {
           {/* 팁 */}
           <div className="bg-gray-800/30 border border-gray-700/20 rounded-lg px-3 py-2">
             <div className="text-xs text-gray-600 space-y-0.5">
-              <div>💡 구체적인 질문이 효과적입니다</div>
+              <div><Emoji char="💡" size={12} /> 구체적인 질문이 효과적입니다</div>
               <div className="text-gray-700">예: "그날 밤 10시에 어디 있었나요?" "왜 숨긴 거죠?"</div>
             </div>
           </div>

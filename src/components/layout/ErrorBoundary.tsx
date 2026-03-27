@@ -1,4 +1,5 @@
 import { Component, type ReactNode, type ErrorInfo } from 'react'
+import Emoji from '../common/Emoji'
 
 interface Props {
   children: ReactNode
@@ -30,7 +31,7 @@ export default class ErrorBoundary extends Component<Props, State> {
       return (
         <div className="h-screen bg-gray-950 text-gray-100 flex items-center justify-center px-4">
           <div className="text-center space-y-4 max-w-sm">
-            <div className="text-4xl">⚠️</div>
+            <div className="text-4xl"><Emoji char="⚠️" size={36} /></div>
             <h1 className="text-lg font-bold text-red-400">오류가 발생했습니다</h1>
             <p className="text-xs text-gray-500">
               {this.state.error?.message ?? '알 수 없는 오류'}
