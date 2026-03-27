@@ -16,7 +16,7 @@
   <span class="topbar-title">홈</span>
   <div class="topbar-sections"></div>
   <div class="topbar-meta">
-    <span>v3.0</span>
+    <span>v4.0</span>
     <span>2026-03-28</span>
   </div>
 </header>
@@ -59,7 +59,7 @@
 
 <main class="content">
   <div class="index-hero">
-    <h1>⚖️ 솔로몬 <span class="badge">GDD v3.0</span></h1>
+    <h1>⚖️ 솔로몬 <span class="badge">GDD v4.0</span></h1>
     <p class="subtitle">LLM 심문 추리 게임 · Procedural Case Drama — 반복 등장하는 인물쌍의 생활 위에서 사건이 발생하고, 플레이어는 사실과 오해, 압박과 신뢰, 판결과 중재 사이를 가르며 '지혜'를 증명하는 리플레이형 추리 게임</p>
   </div>
 
@@ -67,8 +67,8 @@
     <a class="index-card" href="solomon-concept.html">
       <div class="card-icon">🎭</div>
       <div class="card-title">세계관 & 컨셉</div>
-      <div class="card-desc">게임 정체성, 세계관, 플레이어 역할, 톤 & 분위기, 언어/호칭 규칙, 비주얼 아이덴티티, 레퍼런스.</div>
-      <div class="card-tags"><span>세계관</span><span>톤</span><span>호칭 규칙</span><span>비주얼</span></div>
+      <div class="card-desc">게임 정체성, 세계관, 플레이어 역할, 톤 & 분위기, 언어/호칭 규칙(callTerms), 비주얼 아이덴티티(MS Fluent Emoji 81종), 레퍼런스.</div>
+      <div class="card-tags"><span>세계관</span><span>톤</span><span>callTerms 호칭</span><span>Fluent Emoji</span></div>
     </a>
 
     <a class="index-card" href="solomon-overview.html">
@@ -81,43 +81,43 @@
     <a class="index-card" href="solomon-case.html">
       <div class="card-icon">🧱</div>
       <div class="card-title">사건 구조</div>
-      <div class="card-desc">DuoSeed 스키마, Relationship Ledger, Social Graph, 상황 모듈 시스템, 인과 그래프, 지식 비대칭 매트릭스, 공동 책임 스펙트럼, TW-6 공유 오해 반전을 설계합니다.</div>
-      <div class="card-tags"><span>DuoSeed</span><span>관계 이력</span><span>Social Graph</span><span>인과 그래프</span><span>TW-6</span></div>
+      <div class="card-desc">84개 사건 스키마, callTerms 호칭 시스템, 504개 증거(hard 341/soft 163/trap 85), 253명 증인, unlockCondition, 증거 조합 격상, CaseMeta 타입.</div>
+      <div class="card-tags"><span>84사건</span><span>504증거</span><span>253증인</span><span>callTerms</span></div>
     </a>
 
     <a class="index-card" href="solomon-generator.html">
       <div class="card-icon">⚙️</div>
       <div class="card-title">생성 엔진</div>
-      <div class="card-desc">동적 사건 생성 시스템, 48h 이벤트 타임라인, 증거 4축 시스템, 드라마 비트 템플릿, 편향 디렉터, 반복 방지, 확장 파이프라인, CaseSeed v2 데이터 모델을 정의합니다.</div>
-      <div class="card-tags"><span>48h 타임라인</span><span>증거 4축</span><span>드라마 비트</span><span>편향 디렉터</span></div>
+      <div class="card-desc">사건 생성 파이프라인, 48h 이벤트 타임라인, 증거 4축 시스템, 증거 조사 6종 하위액션, 드라마 비트 템플릿, 편향 디렉터, 반복 방지, CaseSeed v2 데이터 모델.</div>
+      <div class="card-tags"><span>48h 타임라인</span><span>증거 4축</span><span>조사 6종</span><span>편향 디렉터</span></div>
     </a>
 
     <a class="index-card" href="solomon-ai.html">
       <div class="card-icon">🤖</div>
       <div class="card-title">에이전트 설계</div>
-      <div class="card-desc">거짓말 2축, Verbal Tell, Phase별 깊이 가이드, 공용 말투 모듈, 이름 플레이스홀더, AI 진술 분석, LLM 프롬프트 9블록 구조.</div>
-      <div class="card-tags"><span>Phase별 깊이</span><span>말투 모듈</span><span>진술 분석</span><span>프롬프트 구조</span></div>
+      <div class="card-desc">거짓말 6단계 상태머신(S0-S5), 253명 증인 시스템, callTerms LLM 주입, 교차 당사자 자동반응, 심문 이력 추적, 9블록 LLM 프롬프트, Phase별 깊이 가이드.</div>
+      <div class="card-tags"><span>S0-S5 상태머신</span><span>증인 시스템</span><span>교차 반응</span><span>프롬프트 9블록</span></div>
     </a>
 
     <a class="index-card" href="solomon-mechanics.html">
       <div class="card-icon">🎮</div>
       <div class="card-title">플레이 메커닉</div>
-      <div class="card-desc">Phase별 해금, 질문 3종+자유질문, 토글/액티브 스킬, 증거 대질, 심문 중 증거 발견, 과정 점수 보너스, Phase별 LLM 깊이를 다룹니다.</div>
-      <div class="card-tags"><span>Phase별 해금</span><span>토글/액티브 스킬</span><span>증거 대질</span><span>과정 점수</span></div>
+      <div class="card-desc">Phase 0-7 + 결과, 질문 3종+자유질문, 토글/액티브 스킬, 증거 대질, 증인 소환, 리소스 시스템(게임 내+글로벌), 미니게임(기억 퍼즐), 보상 시스템.</div>
+      <div class="card-tags"><span>Phase 0-7</span><span>토글/액티브 스킬</span><span>리소스</span><span>미니게임</span></div>
     </a>
 
     <a class="index-card" href="solomon-content.html">
       <div class="card-icon">📈</div>
       <div class="card-title">콘텐츠 &amp; 밸런스</div>
-      <div class="card-desc">CaseMap 7챕터×12스테이지, 84개 사건, 리더보드/시즌/프로필, 명성 티어, Context Pack 9종, 밸런스 원칙.</div>
-      <div class="card-tags"><span>CaseMap</span><span>84사건</span><span>리더보드</span><span>명성 티어</span></div>
+      <div class="card-desc">CaseMap 7챕터x12스테이지, 84개 사건, 리더보드/시즌/프로필, 명성 티어 6단계, 보상 시스템, 상점/글로벌 리소스, 밸런스 원칙.</div>
+      <div class="card-tags"><span>CaseMap</span><span>84사건</span><span>리더보드</span><span>보상/상점</span></div>
     </a>
 
     <a class="index-card" href="solomon-production.html">
       <div class="card-icon">🔧</div>
       <div class="card-title">제작 계획</div>
-      <div class="card-desc">React+Vite+Zustand 기술스택, 모바일 퍼스트 UI, GPT 사전생성+런타임 LLM, 구현 완료/후순위 목록.</div>
-      <div class="card-tags"><span>기술스택</span><span>모바일 UI</span><span>구현현황</span><span>후순위</span></div>
+      <div class="card-desc">React+Vite+Zustand 기술스택, 모바일 퍼스트 UI, Phase 1/2 사전생성 JSON + Phase 3-5 GPT-4o-mini, 168개 대사 스크립트, DEV 치트 설정, 구현 현황.</div>
+      <div class="card-tags"><span>기술스택</span><span>168 스크립트</span><span>구현현황</span><span>DEV 도구</span></div>
     </a>
   </div>
 

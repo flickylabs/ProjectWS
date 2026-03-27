@@ -21,9 +21,12 @@
     <a class="topbar-sec-link" href="#trust">신뢰/보호 로직</a>
     <a class="topbar-sec-link" href="#decision">발언 결정</a>
     <a class="topbar-sec-link" href="#prompt">LLM 프롬프트</a>
+    <a class="topbar-sec-link" href="#witness">증인 시스템</a>
+    <a class="topbar-sec-link" href="#crossparty">교차 반응</a>
+    <a class="topbar-sec-link" href="#interrogation-history">심문 이력</a>
   </div>
   <div class="topbar-meta">
-    <span>v3.0</span>
+    <span>v4.0</span>
     <span>2026-03-28</span>
   </div>
 </header>
@@ -66,9 +69,9 @@
 
 <main class="content">
 
-  <h1>에이전트 설계 <span class="badge">GDD v3.0</span></h1>
-  <p class="subtitle">엔진 아키텍처 · 거짓말 2축 · 감정 & 행동 징후 · 신뢰/보호 로직 · 발언 결정 · LLM 프롬프트 · Phase별 깊이 · 진술 분석</p>
-  <p>대화의 생동감과 시스템의 일관성을 동시에 확보하는 기술 설계. <strong>LLM은 연기만 하고, 진실은 룰 엔진이 관리한다.</strong> v3.0에서 Phase별 응답 깊이 차등, 공용 말투 모듈, 이름 플레이스홀더, AI 진술 분석 추가.</p>
+  <h1>에이전트 설계 <span class="badge">GDD v4.0</span></h1>
+  <p class="subtitle">엔진 아키텍처 · 거짓말 6단계 상태머신 · 감정 & 행동 징후 · 신뢰/보호 로직 · 발언 결정 · 증인 시스템 · 교차 반응 · 심문 이력 · LLM 프롬프트 9블록 · callTerms · Phase별 깊이</p>
+  <p>대화의 생동감과 시스템의 일관성을 동시에 확보하는 기술 설계. <strong>LLM은 연기만 하고, 진실은 룰 엔진이 관리한다.</strong> v4.0에서 253명 증인 시스템, 교차 당사자 자동반응, 심문 이력 추적, callTerms LLM 주입 추가.</p>
 
 
   <!-- ── 엔진 아키텍처 ──────────────────────────── -->
@@ -360,8 +363,111 @@
       <li>에이전트는 상대가 무엇을 알고 있는지 "모르는 상태"로 연기.</li>
       <li>상대의 <strong>발언 텍스트만</strong> 컨텍스트로 줄 수 있다.</li>
       <li>Phase별 깊이 가이드가 같은 질문에 대한 답변 깊이를 차등화한다.</li>
+      <li><strong>callTerms</strong>가 프롬프트에 주입되어 호칭 일관성을 보장한다.</li>
+      <li><strong>"매번 호칭으로 시작 금지"</strong> 안티-반복 규칙 적용.</li>
+      <li><strong>behaviorHint는 대사 텍스트와 엄격히 분리.</strong></li>
     </ul>
   </div></div>
+
+
+  <!-- ── 증인 시스템 ──────────────────────────── -->
+  <h2 id="witness">증인 시스템 (v4.0 신규)</h2>
+  <p>84개 사건에 걸쳐 <strong>총 253명의 증인</strong>이 등록되어 있다. 사건당 평균 3명(3~4명). Phase 4부터 조사 토큰 1개를 소모해 소환할 수 있다.</p>
+
+  <h3>witnessProfile 구조</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>필드</th><th>타입</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td><code>age</code></td><td>number</td><td>증인 나이</td></tr>
+      <tr><td><code>occupation</code></td><td>string</td><td>직업</td></tr>
+      <tr><td><code>relationToA</code></td><td>string</td><td>A와의 관계</td></tr>
+      <tr><td><code>relationToB</code></td><td>string</td><td>B와의 관계</td></tr>
+      <tr><td><code>sentimentToA</code></td><td>number (-100~100)</td><td>A에 대한 감정 (양수=호감, 음수=적대)</td></tr>
+      <tr><td><code>sentimentToB</code></td><td>number (-100~100)</td><td>B에 대한 감정</td></tr>
+      <tr><td><code>speechStyle</code></td><td>string</td><td>말투 특성</td></tr>
+      <tr><td><code>addressJudge</code></td><td>string</td><td>재판관 호칭</td></tr>
+      <tr><td><code>addressA</code></td><td>string</td><td>A 호칭</td></tr>
+      <tr><td><code>addressB</code></td><td>string</td><td>B 호칭</td></tr>
+      <tr><td><code>hiddenAgenda</code></td><td>string | null</td><td>숨겨진 목적 (있을 경우)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>증인 편향 유형</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>편향</th><th>설명</th><th>비율</th></tr></thead>
+    <tbody>
+      <tr><td><code>pro_a</code></td><td>A 편향 증언</td><td>~25%</td></tr>
+      <tr><td><code>pro_b</code></td><td>B 편향 증언</td><td>~25%</td></tr>
+      <tr><td><code>neutral</code></td><td>중립적 증언</td><td>~20%</td></tr>
+      <tr><td><code>self_interest</code></td><td>자기 이익 추구</td><td>~15%</td></tr>
+      <tr><td><code>anti_a / anti_b / against_both</code></td><td>적대적 증언</td><td>~15%</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>왜곡 위험도 (Distortion Risk)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>유형</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td><code>accurate</code></td><td>정확한 증언 (19%)</td></tr>
+      <tr><td><code>unconscious</code></td><td>무의식적 왜곡 — 편향에 의한 기억 변형</td></tr>
+      <tr><td><code>intentional</code></td><td>의도적 왜곡 — 특정 편을 위해 사실 변형</td></tr>
+      <tr><td><code>strategic</code></td><td>전략적 왜곡 — 자기 이익을 위한 계산된 증언</td></tr>
+    </tbody>
+  </table></div>
+
+  <p><strong>81%가 직접 증인(direct witness).</strong> LLM이 witnessProfile의 편향/왜곡 정보를 프롬프트로 받아 증언을 생성한다.</p>
+
+  <h3>증인 소환 메커닉</h3>
+  <ul>
+    <li>Phase 4부터 이용 가능, 조사 토큰 1개 소모</li>
+    <li>증인 증언은 거짓말 상태 전이(S0-S2 → 다음 상태)를 유발할 수 있다</li>
+    <li>UI: EvidencePresenter 내 증거 탭 하위 섹션에서 소환</li>
+    <li>증언 결과는 TestimonyModal로 표시</li>
+    <li><code>witnessEngine.ts</code>에서 LLM 증언 생성 처리</li>
+  </ul>
+
+
+  <!-- ── 교차 당사자 자동반응 ──────────────── -->
+  <h2 id="crossparty">교차 당사자 자동반응 시스템 (v4.0 신규)</h2>
+  <p>한쪽 당사자의 거짓말 상태가 변하면, 상대방이 자동으로 반응하는 시스템. 법정의 생동감과 정보 밀도를 높인다.</p>
+
+  <h3>강제 반응 (100% 확률)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>트리거</th><th>반응 유형</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td>Lie S3 (책임 전가)</td><td>강제 반박 끼어들기</td><td>"그건 사실이 아닙니다!" — 상대방이 참지 못하고 반박</td></tr>
+      <tr><td>Lie S4/S5 (비밀 폭로)</td><td>강제 충격 반응</td><td>"뭐라고?!" — 상대방이 충격을 받은 반응</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>확률적 반응</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Phase</th><th>기본 끼어들기 확률</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td>Phase 3</td><td>25%</td><td>심문 초기, 양쪽 모두 긴장</td></tr>
+      <tr><td>Phase 4</td><td>감소</td><td>증거 앞에서 위축</td></tr>
+      <tr><td>Phase 5</td><td>감소</td><td>최종 심문, 체념 단계</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <!-- ── 심문 이력 추적 ──────────────────── -->
+  <h2 id="interrogation-history">심문 이력 추적 시스템 (v4.0 신규)</h2>
+  <p><strong>당사자별 x 쟁점별</strong> 심문 이력을 추적하여 LLM 프롬프트에 컨텍스트로 주입한다.</p>
+
+  <h3>추적 항목</h3>
+  <ul>
+    <li><strong>첫 질문 감지:</strong> 특정 쟁점에 대해 처음 질문하는지 감지 → "이미 말했다" 방지</li>
+    <li><strong>이전 질문 유형과 횟수:</strong> fact_pursuit 3회, empathy_approach 1회 등</li>
+    <li><strong>상대방의 폭로된 비밀:</strong> A가 S4에서 폭로한 정보를 B의 프롬프트에 주입</li>
+    <li><strong>교차 쟁점 일관성:</strong> 다른 쟁점에서 한 말과 모순되지 않도록 강제</li>
+  </ul>
+
+  <h3>질문 순서 의존성</h3>
+  <p>같은 쟁점에 반복 질문하면 더 깊은 답변이 나온다. LLM 프롬프트에 이전 답변 요약이 주입되어, NPC가 점진적으로 방어를 풀어간다.</p>
+
+  <h3>폴백 재판관 질문 생성</h3>
+  <p><code>buildFallbackJudgeQuestion()</code>: LLM이 재판관 질문을 생성하지 못했을 때, 현재 쟁점과 질문 유형에 기반한 기본 질문을 자동 생성한다.</p>
 
 </main>
 

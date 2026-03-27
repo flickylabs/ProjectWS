@@ -16,6 +16,8 @@
   <span class="topbar-title">콘텐츠 &amp; 밸런스</span>
   <div class="topbar-sections">
     <a class="topbar-sec-link" href="#progression">진행 구조</a>
+    <a class="topbar-sec-link" href="#scoring">점수 & 티어</a>
+    <a class="topbar-sec-link" href="#resources">리소스 & 보상</a>
     <a class="topbar-sec-link" href="#context">Context Pack</a>
     <a class="topbar-sec-link" href="#boards">관계별 보드</a>
     <a class="topbar-sec-link" href="#examples">반복 예시</a>
@@ -23,7 +25,7 @@
     <a class="topbar-sec-link" href="#balance">밸런스</a>
   </div>
   <div class="topbar-meta">
-    <span>v3.0</span>
+    <span>v4.0</span>
     <span>2026-03-28</span>
   </div>
 </header>
@@ -61,8 +63,8 @@
 
 <main class="content">
 
-  <h1>콘텐츠 &amp; 밸런스 <span class="badge">GDD v2.0</span></h1>
-  <p class="subtitle">진행 구조 · Context Pack · 관계별 보드 · 반복 예시 · 샘플 사건 · 밸런스</p>
+  <h1>콘텐츠 &amp; 밸런스 <span class="badge">GDD v4.0</span></h1>
+  <p class="subtitle">진행 구조 · 점수 & 티어 · 리소스 & 보상 · Context Pack · 관계별 보드 · 반복 예시 · 샘플 사건 · 밸런스</p>
 
 
   <!-- ── 진행 구조 ─────────────────────────────── -->
@@ -71,35 +73,101 @@
   <div class="two-col">
     <div class="card">
       <span class="badge badge-sub">메인 모드</span>
-      <div class="card-title mt-sm">CaseMap — 7챕터 × 12스테이지</div>
+      <div class="card-title mt-sm">CaseMap — 7챕터 x 12스테이지</div>
       <p>캔디크러시 스타일 스테이지 맵. 각 챕터 = 관계 유형 1개. SVG 베지어 곡선으로 노드 연결. 좌우 지그재그 배치.</p>
-      <p><strong>별 시스템:</strong> ⭐(40+점) ⭐⭐(60+점) ⭐⭐⭐(80+점)</p>
-      <p><strong>명성:</strong> 50(90+), 35(75+), 20(60+), 10(40+), 5(&lt;40)</p>
+      <p><strong>stageMap 순서:</strong> spouse(1) → neighbor(2) → workplace(3) → partnership(4) → family(5) → tenant(6) → friend(7)</p>
+      <p><strong>별 시스템:</strong> 1star(40+점) 2star(60+점) 3star(80+점)</p>
+      <p><strong>해금:</strong> 챕터 순서대로 진행. 이전 챕터 일정 스테이지 클리어 시 다음 챕터 해금.</p>
     </div>
     <div class="card">
       <span class="badge badge-success">부가 시스템</span>
       <div class="card-title mt-sm">리더보드 + 시즌 + 프로필</div>
       <p>시즌 30일 단위 자동 계산. 로컬 리더보드(Phase 1). 스코어보드/명예의전당/통계 탭. 프로필 페이지에 명성 티어 표시.</p>
-      <p><strong>티어:</strong> 수습 → 견습 → 정식 → 숙련 → 원로 → 솔로몬</p>
     </div>
   </div>
 
   <h3>7 챕터 구성</h3>
   <div class="stage-grid">
-    <div class="stage"><div class="num">1</div><h4>⚖️ 부부</h4><p>12 사건. 반말+"자기" 호칭. 감정 vs 사실 분리 학습.</p></div>
-    <div class="stage"><div class="num">2</div><h4>🏠 이웃</h4><p>12 사건. 존댓말 기본. 소음/시설/공간 갈등.</p></div>
-    <div class="stage"><div class="num">3</div><h4>💼 직장</h4><p>12 사건. 직급 호칭. 타임라인/문서 증거 중심.</p></div>
-    <div class="stage"><div class="num">4</div><h4>🤝 동업</h4><p>12 사건. 공동 책임, 자금 추적.</p></div>
-    <div class="stage"><div class="num">5</div><h4>👨‍👩‍👧 가족</h4><p>12 사건. 관계 호칭(형/누나/동생). 간병/상속/과거 소환.</p></div>
-    <div class="stage"><div class="num">6</div><h4>🏢 세입자</h4><p>12 사건. 보증금/시설관리. 증거 정당성 개념.</p></div>
-    <div class="stage"><div class="num">7</div><h4>🫂 친구</h4><p>12 사건. 반말. 금전/신뢰/배신감.</p></div>
+    <div class="stage"><div class="num">1</div><h4>⚖️ 부부 (spouse)</h4><p>12 사건. callTerms로 자기야/오빠/여보 호칭. 감정 vs 사실 분리 학습.</p></div>
+    <div class="stage"><div class="num">2</div><h4>🏠 이웃 (neighbor)</h4><p>12 사건. ~씨 존댓말 기본. 소음/시설/공간 갈등.</p></div>
+    <div class="stage"><div class="num">3</div><h4>💼 직장 (workplace)</h4><p>12 사건. 직급 호칭. 타임라인/문서 증거 중심.</p></div>
+    <div class="stage"><div class="num">4</div><h4>🤝 동업 (partnership)</h4><p>12 사건. 공동 책임, 자금 추적.</p></div>
+    <div class="stage"><div class="num">5</div><h4>👨‍👩‍👧 가족 (family)</h4><p>12 사건. 관계 호칭(형/누나/동생/어머니). 간병/상속/과거 소환.</p></div>
+    <div class="stage"><div class="num">6</div><h4>🏢 임대 (tenant)</h4><p>12 사건. 보증금/시설관리. 증거 정당성 개념.</p></div>
+    <div class="stage"><div class="num">7</div><h4>🫂 친구 (friend)</h4><p>12 사건. 이름 반말. 금전/신뢰/배신감.</p></div>
   </div>
 
   <div class="alert alert-info"><span class="alert-icon">📁</span><div>
     <strong>사건 데이터:</strong> <code>src/data/cases/generated/*.json</code> (84개)<br>
-    <strong>Phase 1 대사:</strong> <code>src/data/dialogues/phase1/*.json</code> (GPT 생성 → Claude Code 보정)<br>
+    <strong>Phase 1/2 대사:</strong> <code>src/data/dialogues/phase1/*.json</code> (168개 스크립트, NO LLM)<br>
+    <strong>사건 로더:</strong> <code>src/data/cases/caseLoader.ts</code> + <code>index.ts</code><br>
+    <strong>스크립트 로더:</strong> <code>phaseScriptLoader.ts</code> (import.meta.glob 사용)<br>
     <strong>진행 저장:</strong> <code>localStorage: solomon-case-progress</code>
   </div></div>
+
+
+  <!-- ── 점수 & 명성 티어 ─────────────────── -->
+  <h2 id="scoring">점수 & 명성 티어</h2>
+
+  <h3>3축 평가</h3>
+  <div class="card-grid">
+    <div class="card"><span class="badge badge-sub">통찰 (insight)</span><div class="card-title mt-sm">사실 적중도</div><p>핵심 사실 정확도, 책임 비율 정확도. 모호 쟁점 보류는 패널티 없음.</p></div>
+    <div class="card"><span class="badge badge-warning">권위 (authority)</span><div class="card-title mt-sm">절차 통제</div><p>법정 통제력 잔여량, 턴 효율성, 위법 증거 사용 여부, 비공개 약속 준수.</p></div>
+    <div class="card"><span class="badge badge-success">지혜 (wisdom)</span><div class="card-title mt-sm">판단 적절성</div><p>해결책 선택, 극단적 판결 회피, 모호한 쟁점의 적절한 보류.</p></div>
+  </div>
+
+  <h3>총점 = insight + authority + wisdom + processBonus</h3>
+
+  <h3>명성 티어 (6단계)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>티어</th><th>조건</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td><strong>수습</strong></td><td>시작</td><td>처음 시작하는 재판관</td></tr>
+      <tr><td><strong>견습</strong></td><td>누적 명성 달성</td><td>기본기를 익힌 재판관</td></tr>
+      <tr><td><strong>정식</strong></td><td>—</td><td>독립적으로 판결 가능</td></tr>
+      <tr><td><strong>숙련</strong></td><td>—</td><td>복잡한 사건도 해결</td></tr>
+      <tr><td><strong>원로</strong></td><td>—</td><td>후배 재판관의 본보기</td></tr>
+      <tr><td><strong>솔로몬</strong></td><td>최고 등급</td><td>지혜의 화신</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>명성 포인트 부여</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>총점</th><th>명성</th></tr></thead>
+    <tbody>
+      <tr><td>90+ 점</td><td>+50</td></tr>
+      <tr><td>75+ 점</td><td>+35</td></tr>
+      <tr><td>60+ 점</td><td>+20</td></tr>
+      <tr><td>40+ 점</td><td>+10</td></tr>
+      <tr><td>&lt;40 점</td><td>+5</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <!-- ── 리소스 & 보상 ─────────────────── -->
+  <h2 id="resources">리소스 & 보상 시스템</h2>
+
+  <h3>글로벌 리소스 (shopSlice.ts)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>리소스</th><th>무료 캡</th><th>자동 충전</th><th>유료 최대</th><th>광고 보상</th></tr></thead>
+    <tbody>
+      <tr><td><strong>돋보기 (invest)</strong></td><td>10개</td><td>1개/시간 (10+ 시 중지)</td><td>99개 (purple)</td><td>5개/일 (자정 리셋)</td></tr>
+      <tr><td><strong>번개 (skill)</strong></td><td>10개</td><td>이벤트 보상만</td><td>99개 (purple)</td><td>2개/일 (자정 리셋)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>보상 시스템 (rewardEngine.ts)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>보상</th><th>조건</th><th>내용</th><th>횟수</th></tr></thead>
+    <tbody>
+      <tr><td>첫 클리어</td><td>사건 최초 완료</td><td>+3 스킬 포인트</td><td>사건당 1회</td></tr>
+      <tr><td>일일 접속</td><td>하루 첫 접속</td><td>+2 조사 토큰</td><td>매일 (자정 리셋)</td></tr>
+      <tr><td>3스타 달성</td><td>85점 이상</td><td>+1 스킬 포인트</td><td>사건당 1회</td></tr>
+    </tbody>
+  </table></div>
+
+  <p><strong>추적:</strong> 일회성 보상은 <code>localStorage</code>에 기록. 일일 보상은 자정에 리셋.</p>
+  <p><strong>ResourcePopup UI:</strong> 바 시각화, 카운트다운 타이머, 보너스 바(purple, 무료 캡 초과 시).</p>
 
 
   <!-- ── Context Pack ─────────────────────── -->
@@ -107,15 +175,15 @@
   <p>같은 인물쌍이 반복 등장할 때 사건 톤을 바꾸는 핵심 장치. 적은 비용으로 콘텐츠 다양성을 크게 늘린다.</p>
 
   <div class="card-grid">
-    <div class="card"><div class="card-title">명절 직전</div><p>가족 개입 증가, 체면 압박 극대화, 지출 스트레스. 부부·가족 관계에 최적.</p></div>
+    <div class="card"><div class="card-title">명절 직전</div><p>가족 개입 증가, 체면 압박 극대화, 지출 스트레스. 부부/가족 관계에 최적.</p></div>
     <div class="card"><div class="card-title">인사평가 시즌</div><p>성과 압박, 책임 공방 격화, 문서 접근 민감. 직장 관계에 최적.</p></div>
-    <div class="card"><div class="card-title">전세/월세 갱신</div><p>재정 불안 극대화, 계약 해석 충돌. 세입자·동업자 관계에 최적.</p></div>
-    <div class="card"><div class="card-title">병원비 부담</div><p>재정 + 감정 이중 압박, 간병 분담 갈등. 가족·부부 관계에 최적.</p></div>
-    <div class="card"><div class="card-title">시험/입학 직전</div><p>자녀 관련 긴장, 교육비 갈등, 부모 역할 충돌. 부부·가족에 최적.</p></div>
-    <div class="card"><div class="card-title">장마철/재난</div><p>소음·누수·시설 갈등 격화, 공용 공간 마찰. 이웃 관계에 최적.</p></div>
+    <div class="card"><div class="card-title">전세/월세 갱신</div><p>재정 불안 극대화, 계약 해석 충돌. 세입자/동업자 관계에 최적.</p></div>
+    <div class="card"><div class="card-title">병원비 부담</div><p>재정 + 감정 이중 압박, 간병 분담 갈등. 가족/부부 관계에 최적.</p></div>
+    <div class="card"><div class="card-title">시험/입학 직전</div><p>자녀 관련 긴장, 교육비 갈등, 부모 역할 충돌. 부부/가족에 최적.</p></div>
+    <div class="card"><div class="card-title">장마철/재난</div><p>소음/누수/시설 갈등 격화, 공용 공간 마찰. 이웃 관계에 최적.</p></div>
     <div class="card"><div class="card-title">회사 감사 시즌</div><p>문서 추적 민감, 책임 소재 급부상, 내부 고발 위험. 직장에 최적.</p></div>
-    <div class="card"><div class="card-title">이사 주간</div><p>공간·물건·보증금 갈등, 이별/시작의 감정. 이웃·세입자에 최적.</p></div>
-    <div class="card"><div class="card-title">반려동물 치료</div><p>비용 분담, 돌봄 책임, 감정적 애착. 이웃·부부에 최적.</p></div>
+    <div class="card"><div class="card-title">이사 주간</div><p>공간/물건/보증금 갈등, 이별/시작의 감정. 이웃/세입자에 최적.</p></div>
+    <div class="card"><div class="card-title">반려동물 치료</div><p>비용 분담, 돌봄 책임, 감정적 애착. 이웃/부부에 최적.</p></div>
   </div>
 
 
@@ -172,6 +240,7 @@
         <li>디지털 습관: 메신저 위주, SNS 최소</li>
         <li>민감 포인트: 돈, 체면, 직장 평판</li>
         <li>Verbal Tell: 거짓말 시 과잉 정밀("정확히 7시 42분"), 궁지에서 도덕 비약</li>
+        <li>callTerms.toPartner: "자기야" / angry: "야!"</li>
       </ul>
     </div>
     <div class="card" style="border-left: 4px solid var(--danger);">
@@ -182,11 +251,12 @@
         <li>디지털 습관: SNS 활발, 메신저 다수 활용</li>
         <li>민감 포인트: 신뢰, 사생활, 자녀</li>
         <li>Verbal Tell: 감정 시 문장 반복, 핵심 회피 시 화제 전환</li>
+        <li>callTerms.toPartner: "오빠" / angry: "당신!"</li>
       </ul>
     </div>
   </div>
 
-  <h3>Relationship Ledger</h3>
+  <h3>Relationship Ledger (3개)</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>분류</th><th>이력</th><th>활성화</th></tr></thead>
     <tbody>
@@ -196,16 +266,13 @@
     </tbody>
   </table></div>
 
-  <h3>ContextSeed: 명절 직전</h3>
-  <p>양가 방문 예정. 서연 측 가족에 대한 민준의 경제력 체면 압박. 명절 비용 + 선물비 급증.</p>
-
-  <h3>CaseSeed 요약</h3>
+  <h3>CaseSeed 요약 (5개 쟁점, 6개 증거)</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>쟁점</th><th>실제 진실</th><th>지식 분면</th><th>입증 수단</th><th>책임 비율</th><th>거짓말 동기</th></tr></thead>
     <tbody>
       <tr><td>공동 통장 무단 인출</td><td>사실</td><td>A만 앎</td><td>E1 계좌 내역 (Hard, 적법)</td><td>A 100%</td><td>LM-2 체면 + LM-5 수치심</td></tr>
       <tr><td>도박 사용</td><td>사실</td><td>A만 앎</td><td>E2 베팅 기록 (Hard, 적법)</td><td>A 100%</td><td>LM-5 수치심</td></tr>
-      <tr><td>외도 의혹</td><td>거짓 (B의 오인)</td><td>공유 오해(TW-6)</td><td>E3 채팅 캡처(Soft, 부분, B소지, 사생활 침해) + E4 출입기록 조합 → Hard</td><td>A 20% / B 80%</td><td>B: LM-1 자기보호</td></tr>
+      <tr><td>외도 의혹</td><td>거짓 (B의 오인)</td><td>공유 오해(TW-6)</td><td>E3 채팅 캡처(Soft, 사생활 침해) + E4 출입기록 조합 → Hard</td><td>A 20% / B 80%</td><td>B: LM-1 자기보호</td></tr>
       <tr><td>휴대폰 무단 열람</td><td>사실</td><td>B만 앎</td><td>E5 기기 접근 로그 (Hard, 적법)</td><td>B 100%</td><td>B: LM-7 관계유지</td></tr>
       <tr><td>보험 상담 (제3자 비밀)</td><td>사실</td><td>둘 다 모름</td><td>E6 보험사 로그 (Hard) — E5 이후 잠금 해제</td><td>반전 포인트</td><td>—</td></tr>
     </tbody>
@@ -228,6 +295,8 @@
     <div class="card"><div class="card-title">압박과 신뢰의 밸런스</div><p>모든 사건에서 두 루트 모두 유효해야 한다. 압박 전용 사건이나 신뢰 전용 사건은 없다. 비율만 다를 뿐.</p></div>
     <div class="card"><div class="card-title">증거 정당성은 딜레마</div><p>위법 증거를 쓰면 사실을 밝힐 수 있지만 권위가 떨어진다. 항상 트레이드오프가 있어야 한다.</p></div>
     <div class="card"><div class="card-title">편향 디렉터는 1회 1요소</div><p>플레이어 습관 역이용은 한 판에 하나만. 많으면 부당함을 느낀다.</p></div>
+    <div class="card"><div class="card-title">증인은 항상 편향</div><p>중립 증인도 무의식적 왜곡이 있을 수 있다. 증인 증언을 그대로 믿으면 점수가 떨어진다.</p></div>
+    <div class="card"><div class="card-title">리소스는 전략적 선택</div><p>조사 토큰과 스킬 포인트가 제한적이므로 모든 증거를 조사하거나 모든 스킬을 사용할 수 없다. 선택과 집중이 필요.</p></div>
   </div>
 
 </main>

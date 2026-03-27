@@ -22,9 +22,12 @@
     <a class="topbar-sec-link" href="#causal">인과 그래프</a>
     <a class="topbar-sec-link" href="#knowledge">지식 비대칭</a>
     <a class="topbar-sec-link" href="#responsibility">공동 책임</a>
+    <a class="topbar-sec-link" href="#callterms">callTerms</a>
+    <a class="topbar-sec-link" href="#casemeta">CaseMeta</a>
+    <a class="topbar-sec-link" href="#evidence-detail">증거 상세</a>
   </div>
   <div class="topbar-meta">
-    <span>v3.0</span>
+    <span>v4.0</span>
     <span>2026-03-28</span>
   </div>
 </header>
@@ -67,9 +70,21 @@
 
 <main class="content">
 
-  <h1>사건 구조 <span class="badge">GDD v3.0</span></h1>
-  <p class="subtitle">DuoSeed · 관계 이력 · Social Graph · 상황 모듈 · 인과 그래프 · 지식 비대칭 · 공동 책임</p>
+  <h1>사건 구조 <span class="badge">GDD v4.0</span></h1>
+  <p class="subtitle">DuoSeed · 84사건 · 504증거 · 253증인 · callTerms · 관계 이력 · Social Graph · 상황 모듈 · 인과 그래프 · 지식 비대칭 · 공동 책임</p>
   <p>사건은 랜덤 조합이 아니라, <strong>반복 등장하는 인물쌍(DuoSeed)의 생활·이력·관계망 위에서 파생</strong>된다. 이 페이지는 사건을 구성하는 모든 구조적 요소를 정의한다.</p>
+
+  <div class="alert alert-info"><span class="alert-icon">📊</span><div>
+    <strong>v4.0 현재 콘텐츠 수량:</strong>
+    <ul style="margin:0;padding-left:20px;">
+      <li><strong>84개 사건</strong> = 7 관계 유형 x 12 사건 (<code>src/data/cases/generated/*.json</code>)</li>
+      <li><strong>504개 증거</strong> = 사건당 6개. Hard 341개, Soft 163개, 함정(trap) 85개</li>
+      <li><strong>253명 증인</strong> = 사건당 평균 3명 (3~4명)</li>
+      <li><strong>420개 쟁점</strong> = 사건당 5개</li>
+      <li><strong>252개 관계 이력</strong> = 사건당 3개 (Relationship Ledger)</li>
+      <li><strong>168개 Phase 1/2 대사 스크립트</strong> = 사건당 2개 (<code>src/data/dialogues/phase1/*.json</code>)</li>
+    </ul>
+  </div></div>
 
 
   <!-- ── DuoSeed — 인물쌍 정의 ────────────────────── -->
@@ -536,6 +551,88 @@
       <li><strong>중재 연결 태그</strong>와 실제 선택한 해결책의 정합성이 지혜 점수에 반영된다.</li>
     </ul>
   </div></div>
+
+
+  <!-- ── callTerms 호칭 시스템 ──────────────── -->
+  <h2 id="callterms">callTerms 호칭 시스템 (v4.0)</h2>
+  <p>사건 JSON마다 <code>callTerms</code> 객체가 포함된다. 관계/나이/성격에 따른 호칭을 사전 정의하며, LLM 프롬프트와 사전생성 대사 모두에서 사용한다.</p>
+
+  <h3>callTerms 스키마</h3>
+  <pre style="background:var(--bg-card);padding:16px;border-radius:8px;overflow-x:auto;font-size:13px;">
+{
+  "callTerms": {
+    "a": { "toPartner": "자기야", "toJudge": "재판관님", "angry": "야!" },
+    "b": { "toPartner": "오빠",  "toJudge": "재판관님", "angry": "당신!" }
+  }
+}
+  </pre>
+
+  <h3>관계별 toPartner 결정 규칙</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>관계</th><th>결정 기준</th><th>예시 값</th></tr></thead>
+    <tbody>
+      <tr><td>부부</td><td>나이차 + 성격 (personality)</td><td>자기야, 오빠, 여보, 이름씨</td></tr>
+      <tr><td>이웃</td><td>~씨 기본</td><td>김씨, 옆집 분</td></tr>
+      <tr><td>직장</td><td>직급 관계</td><td>부장님(부하→상사), 지석씨(상사→부하)</td></tr>
+      <tr><td>가족</td><td>관계 호칭</td><td>형, 누나, 동생, 어머니</td></tr>
+      <tr><td>친구</td><td>이름 반말</td><td>지석아, 야</td></tr>
+      <tr><td>동업</td><td>~씨 존댓말</td><td>한 대표님</td></tr>
+      <tr><td>임대</td><td>~씨 존댓말</td><td>사장님</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <!-- ── CaseMeta 타입 ──────────────────── -->
+  <h2 id="casemeta">CaseMeta 타입 (v4.0)</h2>
+  <p>각 사건 JSON의 메타데이터를 정의하는 타입. 사건 로더와 캠페인 시스템에서 사용.</p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>필드</th><th>타입</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td><code>relationshipType</code></td><td>string</td><td>7개 관계 유형 중 하나</td></tr>
+      <tr><td><code>conflictSeed</code></td><td>string</td><td>CS-1~CS-6 갈등 씨앗</td></tr>
+      <tr><td><code>variableModules</code></td><td>string[]</td><td>VM-A~VM-E 변수 모듈</td></tr>
+      <tr><td><code>twistModule</code></td><td>string | null</td><td>TW-1~TW-6 반전 모듈</td></tr>
+      <tr><td><code>difficulty</code></td><td>number</td><td>난이도 (1~5)</td></tr>
+      <tr><td><code>anchorTruth</code></td><td>string</td><td>반드시 확정 가능한 핵심 사실</td></tr>
+      <tr><td><code>emotionalBait</code></td><td>string</td><td>감정 미끼 (Beat 2)</td></tr>
+      <tr><td><code>resolutionDilemma</code></td><td>string</td><td>해결 딜레마 (Beat 4)</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <!-- ── Dispute unlockCondition ──────── -->
+  <h2 id="unlock">Dispute unlockCondition (v4.0)</h2>
+  <p>쟁점(Dispute)에 선행 조건을 부여하여 심문 순서에 자연스러운 흐름을 만든다.</p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>unlockCondition 유형</th><th>설명</th><th>예시</th></tr></thead>
+    <tbody>
+      <tr><td><code>null</code> (없음)</td><td>처음부터 질문 가능</td><td>핵심 갈등 쟁점</td></tr>
+      <tr><td>특정 쟁점 붕괴</td><td>다른 쟁점이 S3 이상이어야 해금</td><td>"도박 사용" → "외도 의혹" 해금 후 추가 심문 가능</td></tr>
+      <tr><td>특정 증거 확보</td><td>특정 증거를 확보해야 해금</td><td>E5 기기 접근 로그 확보 → "보험 상담" 쟁점 해금</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <!-- ── 증거 상세 ──────────────────── -->
+  <h2 id="evidence-detail">증거 시스템 상세 (v4.0)</h2>
+
+  <h3>증거 조사 6종 하위 액션</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>액션 코드</th><th>액션명</th><th>효과</th></tr></thead>
+    <tbody>
+      <tr><td><code>request_original</code></td><td>원본 제출 요구</td><td>캡처가 아닌 원본 확인. 완전성 축 검증.</td></tr>
+      <tr><td><code>check_metadata</code></td><td>메타데이터 확인</td><td>파일 생성일/수정일/기기 정보 확인.</td></tr>
+      <tr><td><code>restore_context</code></td><td>맥락 복원</td><td>잘린 메시지의 전후 문맥 요청.</td></tr>
+      <tr><td><code>verify_source</code></td><td>출처 확인</td><td>"이 증거를 어디서 어떻게 얻었는가?"</td></tr>
+      <tr><td><code>check_edits</code></td><td>편집 흔적 검사</td><td>수정/삭제/합성 여부 판정.</td></tr>
+      <tr><td><code>question_acquisition</code></td><td>취득 경위 질문</td><td>적법 취득 여부 확인. 정당성 축.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>증거 조합 격상</h3>
+  <p>사건 JSON의 <code>evidenceCombinations</code> 배열에 정의된 Soft 증거 조합이 모두 제시되면 Hard로 자동 격상된다.</p>
 
 </main>
 

@@ -23,9 +23,12 @@
     <a class="topbar-sec-link" href="#evidence">증거 시스템</a>
     <a class="topbar-sec-link" href="#mediation">중재안</a>
     <a class="topbar-sec-link" href="#verdict">판결 & 과정점수</a>
+    <a class="topbar-sec-link" href="#witness-mechanic">증인 소환</a>
+    <a class="topbar-sec-link" href="#minigame">미니게임</a>
+    <a class="topbar-sec-link" href="#rewards">보상</a>
   </div>
   <div class="topbar-meta">
-    <span>v3.0</span>
+    <span>v4.0</span>
     <span>2026-03-28</span>
   </div>
 </header>
@@ -68,9 +71,9 @@
 
 <main class="content">
 
-  <h1>플레이 메커닉 <span class="badge">GDD v3.0</span></h1>
-  <p class="subtitle">진실 3층 · 쟁점 & 붕괴 · Phase별 해금 · 질문 3종 + 자유질문 · 토글/액티브 스킬 · 증거 대질 · 과정 점수 · 판결</p>
-  <p>플레이어가 실제로 경험하는 모든 메커닉을 다룬다. v3.0 핵심 변경: <strong>Phase별 액션 해금, 스킬 2분류(토글+액티브), 증거 대질, 심문 중 증거 발견, 과정 점수 보너스, Phase별 LLM 응답 깊이 차등</strong>.</p>
+  <h1>플레이 메커닉 <span class="badge">GDD v4.0</span></h1>
+  <p class="subtitle">진실 3층 · 쟁점 & 붕괴 · Phase 0-7 + 결과 · 질문 3종 + 자유질문 · 토글/액티브 스킬 · 증거 대질 · 증인 소환 · 리소스(게임 내+글로벌) · 미니게임 · 보상 · 판결 & 과정 점수</p>
+  <p>플레이어가 실제로 경험하는 모든 메커닉을 다룬다. v4.0 핵심 변경: <strong>Phase 1/2 사전생성 JSON(NO LLM), 증인 소환, 글로벌 리소스(상점/광고), 기억 퍼즐 미니게임, 보상 시스템, 교차 당사자 자동반응</strong>.</p>
 
 
   <!-- ── 진실 3층 구조 ─────────────────────────── -->
@@ -108,20 +111,24 @@
 
   <div class="flow">
     <div class="flow-step"><div class="n">Phase 0</div><h4>사건 개요</h4><p>인물 소개 + 배경. 진실은 숨겨진 채 시작.</p></div>
-    <div class="flow-step"><div class="n">Phase 1</div><h4>초기 진술</h4><p>사전 생성된 스크립트(8~10개 대사). A→B 핑퐁 구조.</p></div>
-    <div class="flow-step"><div class="n">Phase 2</div><h4>즉각 반박</h4><p>LLM 생성. 감정 격화 + 첫 모순 힌트.</p></div>
-    <div class="flow-step"><div class="n">Phase 3</div><h4>심문</h4>
-      <p>🔓 질문 3종 + 자유질문(AI) + 이의제기·분리심문</p>
+    <div class="flow-step"><div class="n">Phase 1</div><h4>초기 진술</h4><p><strong>사전 생성 JSON 스크립트 (NO LLM)</strong>. 84개 사건별 Phase 1 스크립트. phaseScriptLoader.ts로 로드.</p></div>
+    <div class="flow-step"><div class="n">Phase 2</div><h4>즉각 반박</h4><p><strong>사전 생성 JSON 스크립트 (NO LLM)</strong>. 84개 사건별 Phase 2 스크립트. 감정 격화 + 첫 모순 힌트.</p></div>
+    <div class="flow-step"><div class="n">Phase 3</div><h4>심문 (LLM, min 3턴)</h4>
+      <p>🔓 질문 3종(fact_pursuit, motive_search, empathy_approach) + 자유질문(AI)</p>
+      <p>🔓 이의제기(Phase 3+), 분리심문(Phase 3+)</p>
       <p>🔒 증거 잠김 / 즉답요구·회피판독·비공개보호 잠김</p>
       <p>NPC 태도: 경계심 높음, 표면적 답변. 심문으로 거짓말 동요 시 <strong>증거 자동 발견</strong> 가능.</p>
+      <p>교차 반응: 25% 기본 끼어들기 확률. S3 책임전가 시 100% 강제 반박.</p>
     </div>
-    <div class="flow-step"><div class="n">Phase 4</div><h4>증거 심리</h4>
-      <p>🔓 증거 제시·대질 해금 + 즉답요구·회피판독(토글) 해금</p>
+    <div class="flow-step"><div class="n">Phase 4</div><h4>증거 심리 (LLM, min 1턴)</h4>
+      <p>🔓 증거 제시·대질 해금 + 즉답요구(Phase 4+) · 회피판독(토글, Phase 4+) 해금</p>
+      <p>🔓 <strong>증인 소환</strong> 해금 (조사 토큰 1개 소모)</p>
       <p>NPC 태도: 증거 앞에 흔들림, 새 정보 흘림. 증거 조합 격상.</p>
     </div>
-    <div class="flow-step"><div class="n">Phase 5</div><h4>최종 심문</h4>
-      <p>🔓 비공개보호(토글) 해금 + AI 진술분석 해금</p>
+    <div class="flow-step"><div class="n">Phase 5</div><h4>최종 심문 (LLM, min 2턴)</h4>
+      <p>🔓 비공개보호(토글, Phase 5+) 해금 + AI 진술분석 해금</p>
       <p>NPC 태도: 방어 느슨, 깊은 고백 가능. "사실은..." "솔직히 말하면..."</p>
+      <p>S4/S5 비밀 폭로 시 100% 충격 반응.</p>
     </div>
     <div class="flow-step"><div class="n">Phase 6</div><h4>중재안 (선택적)</h4><p>즉시 판결 / 조건부 조정안 / 추가 조사 보류 / 사실+해결책 우선.</p></div>
     <div class="flow-step"><div class="n">Phase 7</div><h4>최종 판단</h4><p>사실 인정 → 책임 배분 → 해결책 선택 → 증거 정당성 판단.</p></div>
@@ -226,15 +233,25 @@
     </div>
   </div>
 
-  <h3>리소스 설계</h3>
+  <h3>게임 내 리소스 (판당 초기화)</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>리소스</th><th>기본</th><th>주요 소모처</th></tr></thead>
     <tbody>
-      <tr><td><strong>🔍 조사 토큰</strong></td><td>3개</td><td>자유질문, 분리 심문, 증거 조사, AI 진술분석</td></tr>
+      <tr><td><strong>🔍 조사 토큰</strong></td><td>6개</td><td>자유질문, 분리 심문, 증거 조사, 증인 소환, AI 진술분석</td></tr>
       <tr><td><strong>⚡ 스킬 포인트</strong></td><td>5점</td><td>이의 제기, 즉답 요구, 회피 판독</td></tr>
-      <tr><td><strong>⚖️ 법정 통제력</strong></td><td>10</td><td>권위 점수 계산에 반영. 턴 초과 시 감소.</td></tr>
+      <tr><td><strong>⚖️ 법정 통제력</strong></td><td>3</td><td>권위 점수 계산에 반영. 턴 초과 시 감소.</td></tr>
     </tbody>
   </table></div>
+
+  <h3>글로벌 리소스 (영구 — shopSlice.ts)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>리소스</th><th>무료 캡</th><th>자동 충전</th><th>유료 최대</th><th>광고 보상</th></tr></thead>
+    <tbody>
+      <tr><td><strong>🔍 돋보기 (invest)</strong></td><td>10개</td><td>1개/시간 (10 이상이면 중지)</td><td>99개 (purple 색상)</td><td>5개/일 (자정 리셋)</td></tr>
+      <tr><td><strong>⚡ 번개 (skill)</strong></td><td>10개</td><td>이벤트 보상만</td><td>99개 (purple 색상)</td><td>2개/일 (자정 리셋)</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>ResourcePopup UI:</strong> 바 시각화 + 카운트다운 타이머 + 보너스 바(purple, 무료 캡 초과 시)</p>
 
   <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
     <strong>밸런스 규칙:</strong> 비공개 진술은 <strong>판결 근거가 될 수 없다</strong>. 진실을 알게 되는 것과 판결에 쓸 수 있는 것은 다르다. 별도 공개 증거를 찾아야 한다. 이것이 신뢰 루트가 만능이 되는 것을 방지한다.
@@ -365,7 +382,66 @@
       <tr><td>공유</td><td>결과 공유 카드</td></tr>
     </tbody>
   </table></div>
-  <p>하단 버튼: <strong>🏠 홈으로 | ⚖️ 다음 재판</strong> (큰 버튼) + 🔄 다시 판결하기 (작은 버튼)</p>
+  <p>하단 버튼: <strong>홈으로 | 다음 재판</strong> (큰 버튼) + 다시 판결하기 (작은 버튼)</p>
+
+
+  <!-- ── 증인 소환 메커닉 ─────────────────── -->
+  <h2 id="witness-mechanic">증인 소환 메커닉 (v4.0 신규)</h2>
+  <p>Phase 4부터 이용 가능. 사건당 3~4명의 증인 중 선택해 소환한다.</p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>해금 Phase</td><td>Phase 4 (증거 심리)</td></tr>
+      <tr><td>비용</td><td>조사 토큰 1개</td></tr>
+      <tr><td>증인 수</td><td>사건당 3~4명 (총 253명)</td></tr>
+      <tr><td>증언 생성</td><td>LLM (witnessEngine.ts) — 편향/왜곡 정보가 프롬프트에 주입</td></tr>
+      <tr><td>효과</td><td>거짓말 상태 전이 유발 가능 (S0-S2 → 다음 상태)</td></tr>
+      <tr><td>UI 위치</td><td>EvidencePresenter 내 증거 탭 하위 섹션</td></tr>
+      <tr><td>결과 표시</td><td>TestimonyModal</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
+    <strong>설계 원칙:</strong> 증인은 항상 편향이 있다. pro_a, pro_b, neutral, self_interest, anti_a, anti_b, against_both 중 하나의 편향을 가지며, 왜곡 위험도(accurate, unconscious, intentional, strategic)도 달라진다. 플레이어는 증인의 편향을 감안하여 증언을 평가해야 한다.
+  </div></div>
+
+
+  <!-- ── 미니게임 시스템 ─────────────────── -->
+  <h2 id="minigame">미니게임: 기억 퍼즐 (v4.0 신규)</h2>
+  <p>증거 발견 확률 이벤트 시 트리거되는 간단한 미니게임.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">MemoryPuzzle — "기억 조각 맞추기"</div>
+      <ul>
+        <li><strong>트리거:</strong> 증거 발견 확률 이벤트 발생 시</li>
+        <li><strong>진행:</strong> 3개의 단서 조각이 1.5초간 표시 → 셔플</li>
+        <li><strong>조건:</strong> 3초 이내에 올바른 순서로 탭</li>
+        <li><strong>성공:</strong> 증거 해금</li>
+        <li><strong>실패:</strong> 광고 시청으로 즉시 성공 가능 / 또는 포기</li>
+        <li><strong>보너스:</strong> 성공 시 과정 점수(processBonus) 추가</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ── 보상 시스템 ─────────────────── -->
+  <h2 id="rewards">보상 시스템 (v4.0 신규)</h2>
+  <p>플레이어의 진행과 성취에 따른 보상을 제공한다. rewardEngine.ts에서 조건 판정 및 지급 처리.</p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>보상 유형</th><th>조건</th><th>보상 내용</th><th>횟수</th></tr></thead>
+    <tbody>
+      <tr><td>첫 클리어</td><td>해당 사건 최초 완료</td><td>+3 스킬 포인트</td><td>사건당 1회 (localStorage 추적)</td></tr>
+      <tr><td>일일 접속</td><td>하루 첫 접속</td><td>+2 조사 토큰</td><td>매일 (자정 리셋)</td></tr>
+      <tr><td>3스타 달성</td><td>85점 이상 획득</td><td>+1 스킬 포인트</td><td>사건당 1회</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>추적:</strong> 일회성 보상은 <code>localStorage</code>에 기록되어 중복 지급을 방지한다. 일일 보상은 자정에 리셋된다.
+  </div></div>
 
 </main>
 
