@@ -1,17 +1,19 @@
 /**
  * 돋보기/번개 클릭 시 나타나는 상태 팝업.
- * - 현재 보유량 / 최대치
- * - 다음 충전까지 카운트다운 (돋보기만)
- * - 광고 보기 버튼
+ * - 보유량 / 무료 상한(10)
+ * - 10 초과 시 보너스 색상(보라) 표시
+ * - 10 미만일 때만 카운트다운 표시
+ * - 광고 보기 (10까지만)
  */
 import { useState, useEffect } from 'react'
 import Emoji from '../common/Emoji'
 
+const FREE_CAP = 10
+
 interface Props {
   type: 'invest' | 'skill'
   current: number
-  max: number
-  /** 다음 충전까지 남은 초 (invest만) */
+  /** 다음 충전까지 남은 초 (invest, current < 10일 때만 의미 있음) */
   countdown?: number
   /** 오늘 남은 광고 횟수 */
   adRemaining: number
@@ -19,25 +21,27 @@ interface Props {
   onClose: () => void
 }
 
-export default function ResourcePopup({ type, current, max, countdown, adRemaining, onWatchAd, onClose }: Props) {
+export default function ResourcePopup({ type, current, countdown, adRemaining, onWatchAd, onClose }: Props) {
   const [countdownSec, setCountdownSec] = useState(countdown ?? 0)
   const [adResult, setAdResult] = useState<string | null>(null)
 
-  // 카운트다운 틱
+  const isOverCap = current > FREE_CAP
+  const isAtCap = current >= FREE_CAP
+  const displayCurrent = current
+  const baseAmount = Math.min(current, FREE_CAP)
+  const bonusAmount = Math.max(0, current - FREE_CAP)
+
   useEffect(() => {
-    if (type !== 'invest' || !countdown) return
+    if (type !== 'invest' || isAtCap || !countdown) return
     setCountdownSec(countdown)
     const timer = setInterval(() => {
       setCountdownSec(prev => {
-        if (prev <= 1) {
-          clearInterval(timer)
-          return 0
-        }
+        if (prev <= 1) { clearInterval(timer); return 0 }
         return prev - 1
       })
     }, 1000)
     return () => clearInterval(timer)
-  }, [type, countdown])
+  }, [type, countdown, isAtCap])
 
   const formatTime = (sec: number) => {
     const m = Math.floor(sec / 60)
@@ -47,7 +51,7 @@ export default function ResourcePopup({ type, current, max, countdown, adRemaini
 
   const icon = type === 'invest' ? '🔍' : '⚡'
   const label = type === 'invest' ? '조사 토큰' : '스킬 포인트'
-  const rechargeInfo = type === 'invest' ? '1시간마다 1개 자동 충전' : '이벤트 보상으로 획득'
+  const baseColor = type === 'invest' ? 'amber' : 'blue'
 
   const handleAd = () => {
     const success = onWatchAd()
@@ -55,7 +59,7 @@ export default function ResourcePopup({ type, current, max, countdown, adRemaini
       setAdResult('충전 완료!')
       setTimeout(() => setAdResult(null), 1500)
     } else {
-      setAdResult(current >= max ? '이미 가득 찼습니다' : '오늘 광고 횟수를 모두 사용했습니다')
+      setAdResult(isAtCap ? '무료 상한에 도달했습니다' : '오늘 광고 횟수를 모두 사용했습니다')
       setTimeout(() => setAdResult(null), 2000)
     }
   }
@@ -68,61 +72,81 @@ export default function ResourcePopup({ type, current, max, countdown, adRemaini
           <Emoji char={icon} size={32} />
           <div>
             <div className="text-sm font-bold text-white">{label}</div>
-            <div className="text-xs text-gray-500">{rechargeInfo}</div>
+            <div className="text-xs text-gray-500">
+              {type === 'invest' ? '1시간마다 자동 충전 (10까지)' : '이벤트/광고로 획득 (10까지)'}
+            </div>
           </div>
         </div>
 
-        {/* 보유량 바 */}
+        {/* 보유량 표시 */}
         <div className="mb-3">
           <div className="flex justify-between text-xs mb-1">
             <span className="text-gray-400">보유량</span>
-            <span className="text-amber-400 font-bold">{current} / {max}</span>
+            <span className={`font-bold ${isOverCap ? 'text-purple-400' : `text-${baseColor}-400`}`}>
+              {displayCurrent}{isOverCap && <span className="text-gray-500"> / {FREE_CAP}+{bonusAmount}</span>}
+              {!isOverCap && <span className="text-gray-500"> / {FREE_CAP}</span>}
+            </span>
           </div>
-          <div className="w-full bg-gray-800 rounded-full h-2.5">
-            <div
-              className={`h-2.5 rounded-full transition-all ${type === 'invest' ? 'bg-amber-500' : 'bg-blue-500'}`}
-              style={{ width: `${(current / max) * 100}%` }}
-            />
-          </div>
-          {/* 개별 칸 표시 */}
-          <div className="flex gap-0.5 mt-1">
-            {Array.from({ length: max }, (_, i) => (
-              <div key={i} className={`flex-1 h-1 rounded-sm ${i < current ? (type === 'invest' ? 'bg-amber-500' : 'bg-blue-500') : 'bg-gray-800'}`} />
+
+          {/* 10칸 기본 바 */}
+          <div className="flex gap-0.5">
+            {Array.from({ length: FREE_CAP }, (_, i) => (
+              <div key={i} className={`flex-1 h-2 rounded-sm transition-all ${
+                i < baseAmount
+                  ? (type === 'invest' ? 'bg-amber-500' : 'bg-blue-500')
+                  : 'bg-gray-800'
+              }`} />
             ))}
           </div>
+
+          {/* 보너스 바 (10 초과분) — 보라색 */}
+          {isOverCap && (
+            <div className="mt-1">
+              <div className="text-xs text-purple-400 mb-0.5">보너스 +{bonusAmount}</div>
+              <div className="flex gap-0.5">
+                {Array.from({ length: Math.min(bonusAmount, 20) }, (_, i) => (
+                  <div key={i} className="flex-1 h-2 rounded-sm bg-purple-500" />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* 카운트다운 (돋보기만) */}
-        {type === 'invest' && current < max && (
+        {/* 카운트다운 — 10 미만일 때만 */}
+        {type === 'invest' && !isAtCap && (
           <div className="text-center mb-3 py-2 bg-gray-800/60 rounded-lg">
             <div className="text-xs text-gray-500">다음 충전까지</div>
             <div className="text-lg font-bold text-amber-400">{formatTime(countdownSec)}</div>
           </div>
         )}
-        {type === 'invest' && current >= max && (
+        {type === 'invest' && isAtCap && !isOverCap && (
           <div className="text-center mb-3 py-2 bg-emerald-950/30 rounded-lg">
-            <div className="text-xs text-emerald-400">가득 찼습니다</div>
+            <div className="text-xs text-emerald-400">무료 상한 도달 — 충전 정지</div>
+          </div>
+        )}
+        {type === 'invest' && isOverCap && (
+          <div className="text-center mb-3 py-2 bg-purple-950/30 rounded-lg">
+            <div className="text-xs text-purple-400">보너스 보유 중 — 충전 정지</div>
           </div>
         )}
 
-        {/* 광고 보기 */}
+        {/* 광고 보기 — 10까지만 */}
         <button
           onClick={handleAd}
-          disabled={adRemaining <= 0 || current >= max}
+          disabled={adRemaining <= 0 || isAtCap}
           className={`w-full py-2.5 rounded-xl text-sm font-bold transition-all active:scale-95 ${
-            adRemaining > 0 && current < max
-              ? 'bg-amber-600 text-gray-950 hover:bg-amber-500'
+            adRemaining > 0 && !isAtCap
+              ? `bg-${baseColor}-600 text-gray-950 hover:bg-${baseColor}-500`
               : 'bg-gray-800 text-gray-600 cursor-not-allowed'
           }`}
         >
-          {adRemaining > 0 ? `광고 보고 충전 (${adRemaining}회 남음)` : '오늘 광고 소진'}
+          {isAtCap ? '무료 상한 도달' : adRemaining > 0 ? `광고 보고 충전 (${adRemaining}회 남음)` : '오늘 광고 소진'}
         </button>
 
         {adResult && (
           <div className="text-center text-xs text-amber-400 mt-2 animate-fade-in">{adResult}</div>
         )}
 
-        {/* 닫기 */}
         <button onClick={onClose} className="w-full mt-2 py-1.5 text-xs text-gray-500 hover:text-gray-300">
           닫기
         </button>
