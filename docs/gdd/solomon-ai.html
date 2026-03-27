@@ -26,7 +26,7 @@
     <a class="topbar-sec-link" href="#interrogation-history">심문 이력</a>
   </div>
   <div class="topbar-meta">
-    <span>v4.0</span>
+    <span>v4.1</span>
     <span>2026-03-28</span>
   </div>
 </header>
@@ -69,9 +69,9 @@
 
 <main class="content">
 
-  <h1>에이전트 설계 <span class="badge">GDD v4.0</span></h1>
+  <h1>에이전트 설계 <span class="badge">GDD v4.1</span></h1>
   <p class="subtitle">엔진 아키텍처 · 거짓말 6단계 상태머신 · 감정 & 행동 징후 · 신뢰/보호 로직 · 발언 결정 · 증인 시스템 · 교차 반응 · 심문 이력 · LLM 프롬프트 9블록 · callTerms · Phase별 깊이</p>
-  <p>대화의 생동감과 시스템의 일관성을 동시에 확보하는 기술 설계. <strong>LLM은 연기만 하고, 진실은 룰 엔진이 관리한다.</strong> v4.0에서 253명 증인 시스템, 교차 당사자 자동반응, 심문 이력 추적, callTerms LLM 주입 추가.</p>
+  <p>대화의 생동감과 시스템의 일관성을 동시에 확보하는 기술 설계. <strong>LLM은 연기만 하고, 진실은 룰 엔진이 관리한다.</strong> v4.0에서 253명 증인 시스템, 교차 당사자 자동반응, 심문 이력 추적, callTerms LLM 주입 추가. v4.1에서 프롬프트 전면 압축, "자기"→"자기야" 강제 보정, 혼합 발화 규칙, 안티패턴 차단, 재판관 질문 이름 자동 제거.</p>
 
 
   <!-- ── 엔진 아키텍처 ──────────────────────────── -->
@@ -320,8 +320,8 @@
 
 
   <!-- ── LLM 프롬프트 구조 ──────────────────────── -->
-  <h2 id="prompt">LLM 프롬프트 구조 (v3.0)</h2>
-  <p>Phase 3~5 심문에서 재판관 질문 + NPC 응답을 한 번의 LLM 호출로 동시 생성한다. 시스템 프롬프트는 <strong>9개 블록</strong>으로 구성.</p>
+  <h2 id="prompt">LLM 프롬프트 구조 (v4.1 압축)</h2>
+  <p>Phase 3~5 심문에서 재판관 질문 + NPC 응답을 한 번의 LLM 호출로 동시 생성한다. 시스템 프롬프트는 <strong>9개 블록</strong>으로 구성. v4.1에서 산발적 지시를 핵심 규칙 중심으로 압축하고, 실제 한국어 대사 예시를 포함.</p>
 
   <div class="flow-row"><div class="step-label">① 페르소나</div><div class="step-desc">이름, 나이, 직업, 성격. 상대와의 분쟁 배경.</div></div>
   <div class="flow-row"><div class="step-label">①-b Phase 깊이 가이드</div><div class="step-desc"><strong>Phase 3:</strong> 경계심 높음, 표면적 답변. <strong>Phase 4:</strong> 증거 앞에 흔들림, 새 정보 흘림. <strong>Phase 5:</strong> 방어 느슨, 깊은 고백 가능.</div></div>
@@ -330,15 +330,15 @@
   <div class="flow-row"><div class="step-label">④ 감정 + 말버릇</div><div class="step-desc">현재 감정 상태 + 활성화된 Verbal Tell 패턴.</div></div>
   <div class="flow-row"><div class="step-label">⑤ 제시된 증거</div><div class="step-desc">이미 공개된 증거 목록. 부정하기 어려운 증거가 있으면 대응을 바꾸도록 지시.</div></div>
   <div class="flow-row"><div class="step-label">⑥ 최근 대화</div><div class="step-desc">최근 5개 대화 히스토리. 흐름을 끊지 않고 이어가도록 지시.</div></div>
-  <div class="flow-row"><div class="step-label">⑦ 질문 유형별 지침</div><div class="step-desc">사실추궁/동기탐색/공감접근/공격적 질문에 대한 응답 방향.</div></div>
-  <div class="flow-row"><div class="step-label">⑧ 말투 규칙</div><div class="step-desc">공용 모듈(llmSpeechGuide.ts)에서 관계별 호칭·반말/존댓말 규칙을 자동 생성하여 주입.</div></div>
+  <div class="flow-row"><div class="step-label">⑦ 질문 유형별 지침</div><div class="step-desc">사실추궁/동기탐색/공감접근/공격적 질문에 대한 응답 방향. (v4.1: 3줄로 압축)</div></div>
+  <div class="flow-row"><div class="step-label">⑧ 말투 규칙</div><div class="step-desc">공용 모듈(llmSpeechGuide.ts)에서 관계별 호칭·반말/존댓말 규칙을 자동 생성하여 주입. (v4.1: 중복 제거, "자기"→"자기야" 강제 보정)</div></div>
   <div class="flow-row"><div class="step-label">⑨ 출력 형식</div><div class="step-desc">JSON: {"judgeQuestion":"재판관 질문", "npcResponse":"NPC 답변 (행동묘사)", "behaviorHint":"행동묘사"}</div></div>
 
   <h3>공용 모듈 (v3.0 신규)</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>모듈</th><th>파일</th><th>역할</th></tr></thead>
     <tbody>
-      <tr><td>말투 가이드</td><td>llmSpeechGuide.ts</td><td>관계별 호칭·반말/존댓말 규칙을 buildSpeechGuide()로 자동 생성. 부부="자기", ~냐?금지 등.</td></tr>
+      <tr><td>말투 가이드</td><td>llmSpeechGuide.ts</td><td>관계별 호칭·반말/존댓말 규칙을 buildSpeechGuide()로 자동 생성. 부부="자기야"(v4.1: "자기"→"자기야" 강제 보정), ~냐?금지 등. 중복 규칙 제거.</td></tr>
       <tr><td>이름 플레이스홀더</td><td>korean.ts · resolveNameTemplate()</td><td>{A}, {B}, {A:이}, {B:은} → 런타임에 이름+조사 자동 치환.</td></tr>
       <tr><td>speaker 정규화</td><td>llmPhaseDialogue.ts · normalizeSpeaker()</td><td>LLM이 반환하는 "A"/"한지석" 등을 "a"/"b"/"system"으로 변환.</td></tr>
     </tbody>
@@ -368,6 +368,35 @@
       <li><strong>behaviorHint는 대사 텍스트와 엄격히 분리.</strong></li>
     </ul>
   </div></div>
+
+  <h3>v4.1 프롬프트 핵심 변경사항</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">프롬프트 구조 압축</div>
+      <p>산발적 지시 → 핵심 규칙 중심 압축. 질문 유형 지침 3줄로 축약. 출력 예시에 실제 한국어 대사 포함.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">"자기" → "자기야" 강제 보정</div>
+      <p>llmSpeechGuide, llmDialogueResolver, llmFreeQuestion 전 모듈에서 부부 관계 호칭 "자기"를 "자기야"로 강제 보정. 자연스러운 대화톤 확보.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">혼합 발화 규칙</div>
+      <p><strong>"재판관에게 1문장 + 상대에게 1문장 섞어라"</strong> — NPC가 재판관에게만 말하거나 상대에게만 말하는 단조로운 패턴 방지.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">안티패턴 규칙</div>
+      <p><strong>자기 불리한 정보를 먼저 꺼내지 마라.</strong> 같은 내용을 반복하지 마라. — LLM이 자발적으로 불리한 정보를 노출하는 패턴 차단.</p>
+    </div>
+  </div>
+
+  <h3>재판관 질문 이름 자동 제거 (v4.1)</h3>
+  <p>쟁점명에 대상 당사자의 이름이 포함된 경우 자동 제거하여 자연스러운 질문을 생성한다.</p>
+  <ul>
+    <li><strong>대상 이름 제거:</strong> "세린의 새벽 휴대폰 열람" → "새벽 휴대폰 열람" (세린에게 질문 시)</li>
+    <li><strong>상대 이름 → "상대방의":</strong> "민준의 계좌 인출" → "상대방의 계좌 인출" (세린에게 질문 시)</li>
+    <li><strong>공감 접근 톤:</strong> "동정" 표현 → "솔직한 마음/본심" 표현으로 변경</li>
+    <li><code>buildFallbackJudgeQuestion()</code>에도 동일한 이름 제거 로직 적용</li>
+  </ul>
 
 
   <!-- ── 증인 시스템 ──────────────────────────── -->

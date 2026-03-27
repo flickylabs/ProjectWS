@@ -23,7 +23,7 @@
     <a class="topbar-sec-link" href="#mvp">구현 현황</a>
   </div>
   <div class="topbar-meta">
-    <span>v4.0</span>
+    <span>v4.1</span>
     <span>2026-03-28</span>
   </div>
 </header>
@@ -61,7 +61,7 @@
 
 <main class="content">
 
-  <h1>제작 계획 <span class="badge">GDD v4.0</span></h1>
+  <h1>제작 계획 <span class="badge">GDD v4.1</span></h1>
   <p class="subtitle">UX / 화면 · 기술 스택 · 엔진 모듈 · DEV 도구 · 리스크 · 구현 현황</p>
 
 
@@ -122,7 +122,7 @@
       <tr><td>프론트엔드</td><td><strong>React + TypeScript + Vite + Tailwind CSS v4</strong></td><td>모바일 퍼스트 UI, 채팅 기반 대화, 토스트 액션 패널</td></tr>
       <tr><td>상태 관리</td><td><strong>Zustand (useGameStore)</strong></td><td>게임 상태, 거짓말 머신, 감정, 증거, 대화 로그, 과정 메트릭, 상점</td></tr>
       <tr><td>사건 데이터</td><td><strong>정적 JSON (GPT Pro 사전 생성 + Claude Code 정제)</strong></td><td>84개 사건 x 7유형. 런타임 생성 아님.</td></tr>
-      <tr><td>Phase 1/2 대사</td><td><strong>사전 생성 JSON (168개 스크립트, NO LLM)</strong></td><td>phaseScriptLoader.ts → import.meta.glob으로 로드</td></tr>
+      <tr><td>Phase 1/2 대사</td><td><strong>사전 생성 JSON (168개 스크립트, NO LLM)</strong></td><td>phaseScriptLoader.ts → import.meta.glob + 로버스트 폴백. caseId 매핑 검증 완료 (0 mismatch)</td></tr>
       <tr><td>런타임 LLM</td><td><strong>OpenAI GPT-4o-mini</strong></td><td>Phase 3~5 대화, 자유질문, 증거 대질, 증인 증언, 진술 분석</td></tr>
       <tr><td>개발 LLM</td><td><strong>Claude Code Opus</strong></td><td>코드 작성, 사건 데이터 정제, 대사 보정</td></tr>
       <tr><td>비주얼</td><td><strong>MS Fluent Emoji (81종 PNG, 256x256)</strong></td><td>모든 이모지를 이미지로 교체. Emoji 컴포넌트.</td></tr>
@@ -138,17 +138,17 @@
 
 
   <!-- ── 엔진 모듈 ────────────────────────── -->
-  <h2 id="engines">엔진 모듈 구조 (v4.0)</h2>
+  <h2 id="engines">엔진 모듈 구조 (v4.1)</h2>
   <p>게임의 핵심 로직을 처리하는 엔진 모듈 목록.</p>
 
   <div class="table-wrap"><table>
     <thead><tr><th>파일</th><th>역할</th><th>비고</th></tr></thead>
     <tbody>
-      <tr><td><code>llmPhaseDialogue.ts</code></td><td>Phase 1~2 대사 생성</td><td>사전 생성 스크립트 우선, LLM은 폴백</td></tr>
-      <tr><td><code>llmDialogueResolver.ts</code></td><td>Phase 3~5 심문 대화</td><td>재판관 질문 + NPC 응답 동시 생성</td></tr>
-      <tr><td><code>llmFreeQuestion.ts</code></td><td>자유질문 처리</td><td>질문 유형 자동 분류 + NPC 응답</td></tr>
+      <tr><td><code>llmPhaseDialogue.ts</code></td><td>Phase 1~2 대사 생성</td><td>사전 생성 스크립트 우선 (dialogues prop 우선), LLM은 폴백. [ScriptLoader] [Phase1] 디버그 로그</td></tr>
+      <tr><td><code>llmDialogueResolver.ts</code></td><td>Phase 3~5 심문 대화</td><td>재판관 질문 + NPC 응답 동시 생성. 프롬프트 압축. "자기"→"자기야" 보정.</td></tr>
+      <tr><td><code>llmFreeQuestion.ts</code></td><td>자유질문 처리</td><td>질문 유형 자동 분류 + NPC 응답. "자기"→"자기야" 보정.</td></tr>
       <tr><td><code>llmTestimonyAnalysis.ts</code></td><td>Phase 5 진술 분석</td><td>전체 대화 요약 + 모순 탐지</td></tr>
-      <tr><td><code>llmSpeechGuide.ts</code></td><td>말투 규칙 모듈</td><td>7개 관계 유형별 호칭/반말/존댓말 + callTerms</td></tr>
+      <tr><td><code>llmSpeechGuide.ts</code></td><td>말투 규칙 모듈</td><td>7개 관계 유형별 호칭/반말/존댓말 + callTerms. "자기"→"자기야" 강제 보정. 중복 제거.</td></tr>
       <tr><td><code>witnessEngine.ts</code></td><td>증인 증언 생성</td><td>LLM 기반, 편향/왜곡 프롬프트 주입</td></tr>
       <tr><td><code>rewardEngine.ts</code></td><td>보상 조건 판정 및 지급</td><td>첫 클리어, 일일, 3스타 보상</td></tr>
       <tr><td><code>lieStateMachine.ts</code></td><td>거짓말 6단계 상태머신</td><td>S0-S5 전이 + 동기별 숏컷</td></tr>
@@ -177,7 +177,7 @@
     <tbody>
       <tr><td><code>src/data/cases/caseLoader.ts</code></td><td>사건 JSON 로드 (84개)</td></tr>
       <tr><td><code>src/data/cases/index.ts</code></td><td>사건 인덱스 및 유틸</td></tr>
-      <tr><td><code>phaseScriptLoader.ts</code></td><td>Phase 1/2 대사 스크립트 로드 (168개, import.meta.glob)</td></tr>
+      <tr><td><code>phaseScriptLoader.ts</code></td><td>Phase 1/2 대사 스크립트 로드 (168개, import.meta.glob + 로버스트 폴백). caseId 매핑: partnership→case-partner, workplace→case-work 수정 완료.</td></tr>
     </tbody>
   </table></div>
 
@@ -213,11 +213,11 @@
     </div>
     <div class="card">
       <div class="card-title">리스크: LLM 반복 패턴</div>
-      <p><strong>대응:</strong> 심문 이력 추적 (첫 질문 감지, "이미 말했다" 방지), 교차 쟁점 일관성 강제, "매번 호칭으로 시작 금지" 안티-반복 규칙.</p>
+      <p><strong>대응:</strong> 심문 이력 추적 (첫 질문 감지, "이미 말했다" 방지), 교차 쟁점 일관성 강제, "매번 호칭으로 시작 금지" 안티-반복 규칙. v4.1: 프롬프트 압축 + 혼합 발화 규칙("재판관에게 1문장 + 상대에게 1문장") + 안티패턴("자기 불리한 정보 먼저 꺼내지 마라", "같은 내용 반복 금지").</p>
     </div>
     <div class="card">
       <div class="card-title">리스크: Phase 1/2 LLM 비용</div>
-      <p><strong>대응:</strong> Phase 1/2를 사전생성 JSON으로 완전 대체. 168개 스크립트로 LLM 호출 없이 초기 진술/반박 처리. LLM은 Phase 3부터만 사용.</p>
+      <p><strong>대응:</strong> Phase 1/2를 사전생성 JSON으로 완전 대체. 168개 스크립트로 LLM 호출 없이 초기 진술/반박 처리. LLM은 Phase 3부터만 사용. v4.1에서 import.meta.glob 로버스트 폴백 + caseId 매핑 수정으로 안정화 완료 (0 mismatch).</p>
     </div>
     <div class="card">
       <div class="card-title">리스크: 텍스트 피로</div>
@@ -231,7 +231,7 @@
 
 
   <!-- ── 구현 현황 ────────────────────────── -->
-  <h2 id="mvp">구현 현황 (v4.0)</h2>
+  <h2 id="mvp">구현 현황 (v4.1)</h2>
 
   <div class="two-col">
     <div class="card">
@@ -240,10 +240,10 @@
         <li><strong>84개 사건 데이터:</strong> 7 관계 유형 x 12개 (spouse, neighbor, workplace, partnership, family, tenant, friend)</li>
         <li><strong>504개 증거:</strong> Hard 341, Soft 163, 함정(trap) 85</li>
         <li><strong>253명 증인:</strong> 사건당 3~4명, 7종 편향, 4종 왜곡 위험도</li>
-        <li><strong>168개 Phase 1/2 대사 스크립트:</strong> phaseScriptLoader.ts (NO LLM)</li>
+        <li><strong>168개 Phase 1/2 대사 스크립트:</strong> phaseScriptLoader.ts (NO LLM). import.meta.glob + 로버스트 폴백. caseId 0 mismatch 검증.</li>
         <li><strong>callTerms 호칭 시스템:</strong> 관계/나이/성격별 호칭 (toPartner, toJudge, angry)</li>
         <li><strong>Phase 0-7 + 결과:</strong> 전체 Phase 플로우 완성</li>
-        <li><strong>질문 3종 + 자유질문(AI):</strong> fact_pursuit, motive_search, empathy_approach + FreeQuestionInput</li>
+        <li><strong>질문 3종 + 자유질문(AI):</strong> fact_pursuit, motive_search, empathy_approach + FreeQuestionInput. 쟁점명 이름 자동 제거 + "상대방의" 치환.</li>
         <li><strong>스킬 2분류:</strong> 토글(회피판독, 비공개보호) + 액티브(이의제기, 분리심문, 즉답요구)</li>
         <li><strong>증거 시스템:</strong> 6종 조사 하위액션, 조합 격상, 심문 중 자동 발견, 증거 대질(AI)</li>
         <li><strong>증인 소환:</strong> Phase 4+, LLM 증언 생성, 거짓말 전이 유발</li>
@@ -288,7 +288,7 @@
   </div>
 
   <div class="alert alert-info"><span class="alert-icon">📊</span><div>
-    <strong>v4.0 수치 요약:</strong>
+    <strong>v4.1 수치 요약:</strong>
     <ul style="margin:0;padding-left:20px;">
       <li>84 사건 · 504 증거 · 253 증인 · 420 쟁점 · 252 관계이력 · 168 대사 스크립트</li>
       <li>7 관계유형 · 8 Phase · 3 질문유형 · 5 스킬 · 6 조사액션 · 6 거짓말상태 · 7 동기</li>
@@ -300,7 +300,7 @@
 
   <div class="card" style="margin-top: 28px;">
     <div class="card-title">결론</div>
-    <p>솔로몬 v4.0은 <strong>84개 사건 전체 완성, 253명 증인 시스템, callTerms 호칭, 교차 반응, Phase 1/2 사전생성(NO LLM), 글로벌 리소스/보상/미니게임</strong>까지 구현된 상태이다. Phase 3-5 LLM 대화 품질 고도화와 비주얼 에셋 확보가 다음 단계의 핵심 과제다.</p>
+    <p>솔로몬 v4.1은 v4.0 기반에서 <strong>스크립트 로더 안정화 (caseId 매핑 수정, 168개 0 mismatch), LLM 프롬프트 전면 압축 ("자기"→"자기야" 강제 보정, 혼합 발화 규칙, 안티패턴 차단), 재판관 질문 이름 자동 제거, 글로벌 리소스 밸런스 확정 (무료 캡 10, 유료 99, 판당 조사 6/스킬 5/통제 3)</strong>을 완료한 상태이다. 비주얼 에셋 확보와 온라인 리더보드가 다음 단계의 핵심 과제다.</p>
   </div>
 
 </main>
