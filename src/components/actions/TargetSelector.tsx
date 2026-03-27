@@ -6,37 +6,49 @@ interface Props {
   onSelect: (target: PartyId) => void
 }
 
-export default function TargetSelector({ selected, onSelect }: Props) {
-  const caseData = useGameStore((s) => s.caseData)
-  if (!caseData) return null
-
-  return (
-    <div className="flex gap-1 shrink-0">
-      <TargetBtn
-        id="a" name={caseData.duo.partyA.name} selected={selected === 'a'}
-        activeClass="bg-blue-600/90 text-white ring-1 ring-blue-400/50"
-        inactiveClass="text-blue-400/70 hover:bg-blue-950/40"
-        onSelect={() => onSelect('a')}
-      />
-      <TargetBtn
-        id="b" name={caseData.duo.partyB.name} selected={selected === 'b'}
-        activeClass="bg-rose-600/90 text-white ring-1 ring-rose-400/50"
-        inactiveClass="text-rose-400/70 hover:bg-rose-950/40"
-        onSelect={() => onSelect('b')}
-      />
-    </div>
-  )
+function getEmotionEmoji(phase?: string): string {
+  switch (phase) {
+    case 'angry': return '😡'
+    case 'shaken': return '😰'
+    case 'confident': return '😤'
+    case 'resigned': return '😞'
+    default: return '😐'
+  }
 }
 
-function TargetBtn({ name, selected, activeClass, inactiveClass, onSelect }: {
-  id: string; name: string; selected: boolean; activeClass: string; inactiveClass: string; onSelect: () => void
-}) {
+export default function TargetSelector({ selected, onSelect }: Props) {
+  const caseData = useGameStore((s) => s.caseData)
+  const agentA = useGameStore((s) => s.agentA)
+  const agentB = useGameStore((s) => s.agentB)
+  if (!caseData) return null
+
+  const emoA = getEmotionEmoji(agentA?.emotionalState?.phase)
+  const emoB = getEmotionEmoji(agentB?.emotionalState?.phase)
+
   return (
-    <button
-      onClick={onSelect}
-      className={`text-xs px-2.5 py-1.5 rounded-lg font-semibold transition-all ${selected ? activeClass : inactiveClass}`}
-    >
-      {name}
-    </button>
+    <div className="flex gap-1.5 shrink-0">
+      <button
+        onClick={() => onSelect('a')}
+        className={`flex items-center gap-1.5 text-xs px-3 py-2 rounded-xl font-semibold transition-all active:scale-95 ${
+          selected === 'a'
+            ? 'bg-blue-600/90 text-white ring-2 ring-blue-400/50 shadow-lg shadow-blue-500/20'
+            : 'text-blue-400/70 hover:bg-blue-950/40 ring-1 ring-blue-800/30'
+        }`}
+      >
+        <span className="text-sm">{emoA}</span>
+        {caseData.duo.partyA.name}
+      </button>
+      <button
+        onClick={() => onSelect('b')}
+        className={`flex items-center gap-1.5 text-xs px-3 py-2 rounded-xl font-semibold transition-all active:scale-95 ${
+          selected === 'b'
+            ? 'bg-rose-600/90 text-white ring-2 ring-rose-400/50 shadow-lg shadow-rose-500/20'
+            : 'text-rose-400/70 hover:bg-rose-950/40 ring-1 ring-rose-800/30'
+        }`}
+      >
+        <span className="text-sm">{emoB}</span>
+        {caseData.duo.partyB.name}
+      </button>
+    </div>
   )
 }

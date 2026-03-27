@@ -1,0 +1,663 @@
+{
+  "caseId": "case-partner-06",
+  "meta": {
+    "relationshipType": "partnership",
+    "conflictSeed": "CS-3",
+    "variableModules": [
+      "VM-D"
+    ],
+    "twistModule": "",
+    "difficulty": "easy",
+    "anchorTruth": "문제의 리뉴얼 지연은 한쪽의 단독 월권이 아니라, 가람과 보라가 각자 상대 영역의 결정을 건드리며 승인선을 동시에 무너뜨린 공동 책임이었다.",
+    "emotionalBait": "간판 재발주, 카운터 위치 변경, 철거 일정 수정이 한꺼번에 터지며 상대 한 명이 내 영역을 침범해 오픈을 망쳤다는 인상이 강하게 남는다.",
+    "resolutionDilemma": "빠르게 매장을 다시 열어야 하는 압박 속에서 현장판단과 월권의 경계가 흐려졌기 때문에, 누가 먼저 넘었는지보다 어떤 변경부터 공동 승인으로 묶을지가 더 중요하다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "이가람",
+      "age": 34,
+      "occupation": "라이프스타일 편집숍 공동대표 겸 운영총괄",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "현장 상황이 얼마나 급했는지부터 먼저 말하며, 상대가 느린 승인 때문에 일을 키웠다고 단정하는 편이다. 불리한 사실이 나오면 '그때 매장을 본 사람은 나였다'며 현장 우선권을 강조한다.",
+      "pride": 7,
+      "fear": "현장을 모르는 운영총괄로 보이거나, 매장 오픈을 앞두고 기본 결정도 못 내리는 사람처럼 평가받는 것 — 그것이 두렵다.",
+      "riskAppetite": 7,
+      "digitalHabit": "vendor_calls_and_shared_sheets",
+      "dailyRoutine": "오전에는 발주와 인건비를 확인하고, 오후에는 시공 현장을 돌며, 밤에는 재오픈 일정표와 정산 시트를 다시 맞춘다.",
+      "sensitivePoints": [
+        "시공 일정 통제",
+        "예산 초과",
+        "현장 우선 판단"
+      ],
+      "verbalTells": [
+        {
+          "type": "urgency_assertion",
+          "trigger": "lying",
+          "pattern": "월권 여부를 묻는 질문에도 '당장 안 하면 오픈이 밀렸다'는 긴급성부터 앞세운다."
+        },
+        {
+          "type": "blame_snap",
+          "trigger": "cornered",
+          "pattern": "자신의 발주 변경이 드러나면 곧바로 상대의 느린 피드백을 한 문장으로 잘라 책임을 돌린다."
+        },
+        {
+          "type": "site_authority_claim",
+          "trigger": "emotional",
+          "pattern": "현장에 없던 사람은 판단할 자격이 없다는 식으로 경험 우위를 내세운다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "보라씨",
+        "toJudge": "제 동업자",
+        "angry": "최보라 씨!"
+      }
+    },
+    "partyB": {
+      "name": "최보라",
+      "age": 37,
+      "occupation": "라이프스타일 편집숍 공동대표 겸 브랜딩VMD총괄",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "문제를 디자인, 동선, 매출 전환율 같은 항목으로 잘게 나눠 설명한다. 그러나 궁지에 몰리면 자신의 변경은 '브랜드 일관성 유지'라고 축소하고 상대 변경은 운영 월권으로 크게 묘사한다.",
+      "pride": 8,
+      "fear": "브랜드 리뉴얼의 핵심을 운영 판단에 빼앗기고, 오픈 후 매장 완성도가 떨어진 책임까지 떠안는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "design_comments_and_floorplan_exports",
+      "dailyRoutine": "아침에는 매장 동선과 매출 데이터를 보고, 오후에는 시공·디자인 샘플을 확인하며, 밤에는 평면도와 사인물 카피를 수정한다.",
+      "sensitivePoints": [
+        "카운터 위치와 동선",
+        "브랜드 완성도",
+        "자기 영역 무시"
+      ],
+      "verbalTells": [
+        {
+          "type": "category_split",
+          "trigger": "lying",
+          "pattern": "실제론 일정까지 건드렸어도 자신의 지시는 '디자인 조정' 범주였다고 쪼개 말한다."
+        },
+        {
+          "type": "scope_narrowing",
+          "trigger": "cornered",
+          "pattern": "철거 일정 변경을 지적받으면 '나는 위치만 말했고 공정은 시공팀 판단'이라며 범위를 좁힌다."
+        },
+        {
+          "type": "clean_summary",
+          "trigger": "avoiding",
+          "pattern": "혼선이 생긴 장면을 한 줄 요약으로 정리해 복수 지시가 있었던 사실을 흐린다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "가람씨",
+        "toJudge": "제 동업자",
+        "angry": "이가람 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "지난 팝업스토어 이후 두 사람은 브랜딩·동선은 보라가, 예산·시공 일정은 가람이 맡되 300만원 이상 변경과 오픈 주간 공정 변경은 공동 승인하기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "작년 연말 팝업 때 진열장 파손이 누구의 급한 지시 때문이었는지를 두 사람 모두 자기에게 유리하게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '보라가 현장 확인 없이 무거운 집기를 밀어넣었다' / B: '가람이 일정에 쫓겨 안전 점검을 건너뛰었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "리뉴얼 시작 직전 관리소가 공사 시간을 더 빡빡하게 제한했을 때, 긴급 현장판단이 어디까지 허용되는지는 다시 정하지 못한 채 넘어갔다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "최나윤 (보라의 사촌, 오픈 초기에 VMD 보조)",
+        "relationTo": "b",
+        "knowledgeScope": "보라가 카운터 위치와 사인물 완성도를 브랜드 정체성의 핵심으로 여겨 막판까지 양보하지 않았다는 점을 안다.",
+        "witnessedDirectly": false,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 42,
+          "occupation": "보라의 사촌, 오픈 초기에 VMD 보조",
+          "relationToA": "이가람와는 이 사건을 통해 알게 됨",
+          "relationToB": "보라의 사촌, 오픈 초기에 VMD 보조",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "가람씨",
+          "addressB": "보라씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "박준형 (시공 PM)",
+        "relationTo": "both",
+        "knowledgeScope": "가람과 보라가 각각 어떤 변경 지시를 했고, 그 지시가 일정과 추가견적에 어떻게 반영됐는지 현장일지 기준으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 37,
+          "occupation": "시공 PM",
+          "relationToA": "이가람을 업무상 알고 있음",
+          "relationToB": "최보라을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "가람씨",
+          "addressB": "보라씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "한서진 (복합상가 관리소장)",
+        "relationTo": "both",
+        "knowledgeScope": "공사허가 변경 신청, 출입 게이트 기록, 추가 반입 승인 시간을 통해 누가 어떤 공정을 언제 바꿨는지 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 40,
+          "occupation": "복합상가 관리소장",
+          "relationToA": "이가람을 업무상 알고 있음",
+          "relationToB": "최보라을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "이가람씨",
+          "addressB": "최보라씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "store_renovation_conflict",
+    "description": "주말 재오픈을 앞두고 이틀 안에 간판, 집기, 카운터 동선, 철거 잔여 공정을 모두 마쳐야 하는 상황이었다. 임대료와 직원 인건비는 그대로 나가는 반면 문을 닫아둔 매출 공백이 커서, 둘 다 자기 판단을 미루면 손실이 커진다고 느끼고 있었다.",
+    "emotionalPressure": 7,
+    "affects": "both",
+    "triggerAmplifier": "매장 리뉴얼은 브랜딩과 운영이 동시에 걸리는 일이라 작은 변경도 곧 상대 영역 침범으로 느껴졌고, 현장에서는 늦은 승인보다 단독 결정이 더 쉬워 보였다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "가람의 집기·조명 대체 발주",
+      "truth": true,
+      "truthDescription": "가람은 보라의 최종 확인 없이 예산과 납기를 이유로 진열집기와 조명 일부를 다른 모델로 대체 발주했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 67,
+        "b": 33
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "승인선복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "보라의 카운터 위치·철거 일정 단독 변경",
+      "truth": true,
+      "truthDescription": "보라는 가람과 재확인하지 않은 채 시공팀에 카운터 위치를 다시 옮기고 철거 순서를 바꾸라고 지시했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 39,
+        "b": 61
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "승인선복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-3",
+      "name": "오픈 주간 변경승인 원칙의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 300만원 이상 변경과 오픈 주간 공정 수정은 공동 승인하기로 해 놓고도, 각자 상대 확인 없이 실행 지시를 내렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 51,
+        "b": 49
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "승인선복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "리뉴얼 지연은 한 사람의 월권만으로 생겼는가",
+      "truth": false,
+      "truthDescription": "양측 모두 상대의 월권만이 지연 원인이라고 말했지만, 실제 지연은 가람의 대체 발주와 보라의 동선 재지시가 서로 맞물리며 생긴 공동 결과였다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 48,
+        "b": 52
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공사범위재설계",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "직원·협력업체에 서로 다른 최종안을 전달한 혼선",
+      "truth": true,
+      "truthDescription": "가람과 보라는 각각 자신의 수정안을 최종안처럼 전달해 시공팀과 매장 직원들이 다른 일정표와 평면도를 동시에 참고하게 만들었다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "현장소통정리",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "집기 대체 발주서와 시공 PM 변경지시 로그",
+      "description": "가람이 기존 확정안과 다른 진열집기·조명 모델을 요청한 발주서, 통화 후 남긴 시공 PM의 변경지시 로그다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "발주 이메일 원본과 시공 PM가 작성한 현장 변경 로그가 함께 확보됐다.",
+        "check_metadata": "가람의 통화 직후 14분 안에 대체 모델 코드가 로그와 발주서에 연속 반영됐다.",
+        "restore_context": "가람은 납기 문제를 이유로 들었지만, 변경 대상은 보라가 브랜드 포인트로 강조하던 구역에 집중돼 있다.",
+        "verify_source": "발주처 메일 서버와 시공 PM의 ERP 기록이 서로 일치한다.",
+        "check_edits": "문서 히스토리에 후편집 흔적 없이 최초 발주 흐름이 남아 있다.",
+        "question_acquisition": "회사 발주 자료와 협력업체 로그라 적법하게 확보됐다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "브랜딩 툴 코멘트와 수정 평면도",
+      "description": "보라가 카운터 위치와 간판 시야를 바꾸기 위해 시공팀에 남긴 코멘트, 그리고 그 지시가 반영된 수정 평면도다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "디자인 협업 툴 원본 댓글과 자동저장된 평면도 버전이 확보됐다.",
+        "check_metadata": "보라 계정 댓글이 달린 뒤 22분 만에 철거 구역과 카운터 위치가 바뀐 버전이 생성됐다.",
+        "restore_context": "보라는 동선 조정이라고 표현했지만 실제 댓글에는 철거 순서를 먼저 바꾸라는 문구가 함께 들어 있다.",
+        "verify_source": "디자인 툴 활동 로그와 시공팀 알림 기록이 서로 맞는다.",
+        "check_edits": "댓글 수정 이력과 버전 비교에서 조작 흔적은 없다.",
+        "question_acquisition": "회사 공용 디자인 툴 자료라 적법하다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "부매니저 단톡 캡처",
+      "description": "부매니저가 '가람 대표님 말대로 간판 먼저 철거, 보라 대표님 표로는 카운터부터'라고 적은 단톡 캡처다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 단톡 내보내기는 제출되지 않았고 화면 캡처 한 장만 남아 있다.",
+        "check_metadata": "저장 시각은 철거 전날 밤이며, 다른 대화방 알림 일부가 잘린 흔적이 있다.",
+        "restore_context": "누가 최종안이라고 말했는지, 어떤 시점의 표를 본 것인지는 앞뒤 문장이 빠져 단독 증거로는 약하다.",
+        "verify_source": "부매니저의 실제 계정 화면은 맞지만 원본 전문은 아직 확인되지 않았다.",
+        "check_edits": "텍스트 변조 흔적은 없으나 선택적 크롭이 분명하다.",
+        "question_acquisition": "직원 개인 기기 캡처라 사생활 및 내부 대화 보호 이슈가 있다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "리뉴얼 역할분담 메모와 변경승인 시트",
+      "description": "브랜딩·동선과 예산·공정의 역할 분담, 300만원 이상 변경과 오픈 주간 공정 수정 시 공동 승인을 요구한 메모와 시트다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "노션 원본 문서와 전자서명된 승인 시트가 함께 확보됐다.",
+        "check_metadata": "마지막 업데이트는 리뉴얼 시작 5일 전이며 두 대표 모두 열람과 승인 표시를 남겼다.",
+        "restore_context": "예외적 현장판단 허용 범위는 적혀 있지 않아, 공동 승인 원칙이 더 중요하게 작동했음을 보여준다.",
+        "verify_source": "문서 히스토리와 전자서명 로그가 일치한다.",
+        "check_edits": "버전 기록상 후속 삭제나 조작은 없다.",
+        "question_acquisition": "회사 내부 운영문서라 적법하게 확보됐다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "관리소 공사허가 변경 기록과 출입 게이트 로그",
+      "description": "보라 요청으로 철거 허가 시간이 조정되고, 가람 요청으로 다른 집기 반입 슬롯이 따로 잡힌 상가 관리소 기록이다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "상가 관리소 허가 변경 신청서와 게이트 입출차 로그 원본이 함께 제출됐다.",
+        "check_metadata": "보라 측 변경 신청과 가람 측 반입 요청은 같은 날 서로 다른 시간대에 접수됐다.",
+        "restore_context": "양쪽 모두 자신의 안을 최종안처럼 외부 기관과 협력업체에 전달한 흔적이 남아 있다.",
+        "verify_source": "관리소 전산 로그와 발급 확인 도장이 일치한다.",
+        "check_edits": "기관 출력본이라 편집 흔적이 없다.",
+        "question_acquisition": "상가 관리 주체의 공식 기록이어서 적법하다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "시공 PM 현장일지와 추가견적서",
+      "description": "집기 재발주와 카운터 재이동이 겹치며 철거·설치 순서가 꼬였고, 이로 인해 하루 지연과 추가비용이 발생했다는 현장일지와 견적서다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "investigationResults": {
+        "request_original": "시공 PM의 일일 현장일지, 추가견적서, 자재 대기표가 한 세트로 확보됐다.",
+        "check_metadata": "지연 사유가 시간순으로 기록돼 있고, 두 대표 지시가 각각 어떤 공정 충돌을 만들었는지 구분돼 있다.",
+        "restore_context": "문제는 한 명의 단독 월권보다 서로 다른 변경이 동시에 적용되며 생긴 순서 충돌이었다는 점이 드러난다.",
+        "verify_source": "견적서 금액과 자재 대기표의 날짜, 관리소 출입 로그가 서로 일치한다.",
+        "check_edits": "원본 PDF와 사진 메타데이터상 조작 흔적이 없다.",
+        "question_acquisition": "협력업체 업무자료와 회사 결제자료라 적법하게 수집됐다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-5"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "가람은 보라의 최종 확인 없이 집기와 조명 일부를 대체 발주했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "보라는 가람과 다시 합의하지 않은 채 카운터 위치와 철거 순서를 바꾸라고 지시했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "두 사람 모두 오픈 주간 변경은 공동 승인하기로 한 원칙을 어겼다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-4",
+      "fact": "리뉴얼 지연은 한쪽의 단독 월권이 아니라 양쪽 변경이 겹친 공동 결과였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "직원과 협력업체는 서로 다른 최종안을 동시에 전달받아 혼선을 겪었다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "fixture_reorder_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "joint_signoff_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "delay_cause_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_reopen_pressure"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "counter_relocation_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "permit_change_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "conflicting_final_plan_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_staff_confusion"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-5_or_e-6_presented"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "승인선복구": [
+      "브랜딩과 운영 변경은 영역을 유지하되, 300만원 이상 비용과 오픈 주간 공정 수정은 체크리스트 한 장에 공동 서명해야만 실행한다.",
+      "현장 긴급 변경이 필요할 때도 먼저 상대에게 사진과 사유를 남기고 10분 안에 이견이 없을 때만 임시 집행하도록 규칙을 만든다.",
+      "같은 종류의 무통보 변경이 한 번 더 발생하면 그 주간에는 단독 발주권과 시공 지시권을 모두 외부 PM에게 임시 위임한다."
+    ],
+    "공사범위재설계": [
+      "이번 리뉴얼 잔여 공정은 집기, 동선, 간판, 철거 순서를 다시 분리해 어느 항목이 누구 승인인지 한 줄씩 재배정한다.",
+      "브랜드 완성도와 예산·납기 충돌이 생기면 우선순위를 숫자로 정해, 감정이 아니라 기준표에 따라 대체안을 선택한다.",
+      "추가 변경이 생기면 상대가 잘못했다는 논쟁보다 영향 범위와 오픈 지연 시간을 먼저 적어 공동 판단하게 한다."
+    ],
+    "현장소통정리": [
+      "직원과 협력업체에는 하나의 최종 일정표와 평면도만 배포하고, 이전 버전은 즉시 폐기 표시를 남긴다.",
+      "대표 둘 중 누구라도 외부에 변경을 말하면 관리소, 시공 PM, 매장 단톡에 같은 내용이 자동으로 공유되게 한다.",
+      "서로 다른 최종안이 또 돌면 그 변경은 무효로 보고 직전 공동 승인본으로 자동 복귀한다."
+    ],
+    "신뢰회복": [
+      "가람은 현장 급함을 이유로 보라 영역을 건드린 점을 인정하고, 보라는 디자인 명분으로 일정까지 바꾼 점을 인정해 사과 범위를 나눈다.",
+      "두 사람은 이번 지연 원인을 '상대 한 명의 월권'이 아니라 '승인선 붕괴'로 다시 정의한 공동 회의록을 남긴다.",
+      "다음 리뉴얼이나 팝업에서 다시 상대만의 책임으로 몰아가면, 준비 단계부터 외부 PM을 두는 조건을 자동 발동한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

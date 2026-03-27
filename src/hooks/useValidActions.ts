@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useGameStore } from '../store/useGameStore'
-import type { PartyId, QuestionType } from '../types'
+import type { PartyId, QuestionType, Dispute } from '../types'
 
 interface ValidDispute {
   id: string
@@ -37,12 +37,9 @@ export function useValidActions(target: PartyId | null) {
     const lieDisputes = new Set(Object.keys(agent.lieStateMap))
 
     const QUESTION_DEFS: { type: QuestionType; label: string; icon: string }[] = [
-      { type: 'fact_fixing', label: '사실 고정', icon: '📌' },
-      { type: 'timeline', label: '타임라인', icon: '🕐' },
-      { type: 'motive', label: '동기', icon: '🎯' },
-      { type: 'context_expansion', label: '맥락 확장', icon: '🔍' },
-      { type: 'provenance', label: '출처', icon: '📎' },
-      { type: 'empathy', label: '공감', icon: '🤝' },
+      { type: 'fact_pursuit', label: '사실 추궁', icon: '📌' },
+      { type: 'motive_search', label: '동기 탐색', icon: '🎯' },
+      { type: 'empathy_approach', label: '공감 접근', icon: '🤝' },
     ]
 
     const questions: ValidQuestion[] = QUESTION_DEFS.map((qDef) => {
@@ -56,26 +53,30 @@ export function useValidActions(target: PartyId | null) {
           return { id: d.id, name: d.name, enabled: false, reason: '이 대상과 무관한 쟁점' }
         }
 
-        // 이미 완전 붕괴 → 사실 고정/타임라인/동기는 비활성 (이미 인정함)
-        if (isCollapsed && ['fact_fixing', 'timeline', 'motive'].includes(qDef.type)) {
+        // 이미 완전 붕괴 → 사실 추궁/동기 탐색은 비활성 (이미 인정함)
+        if (isCollapsed && ['fact_pursuit', 'motive_search'].includes(qDef.type)) {
           return { id: d.id, name: d.name, enabled: false, reason: '이미 인정한 쟁점' }
         }
 
-        // 출처 질문은 증거가 하나라도 제시된 쟁점에서만 유효
-        if (qDef.type === 'provenance') {
-          const hasEvidence = caseData.evidence.some(
-            (e) => e.proves.includes(d.id) && evidenceStates[e.id]?.presented
-          )
-          if (!hasEvidence) {
-            return { id: d.id, name: d.name, enabled: false, reason: '관련 증거가 아직 제시되지 않음' }
+        // 해금 조건 체크
+        const unlock = (d as Dispute).unlockCondition
+        if (unlock) {
+          if (unlock.requireDispute) {
+            const reqEntry = agent.lieStateMap[unlock.requireDispute.id]
+            if (!reqEntry || reqEntry.currentState < unlock.requireDispute.minState) {
+              const reqDispute = disputes.find(x => x.id === unlock.requireDispute!.id)
+              return { id: d.id, name: d.name, enabled: false, reason: `선행: "${reqDispute?.name ?? '?'}" 추궁 필요` }
+            }
+          }
+          if (unlock.requireEvidence) {
+            const evState = evidenceStates[unlock.requireEvidence]
+            if (!evState?.presented) {
+              return { id: d.id, name: d.name, enabled: false, reason: '선행 증거 제시 필요' }
+            }
           }
         }
 
-        // 공감 질문은 항상 가능 (신뢰 루트)
-        // 맥락 확장은 S0~S1에서 주로 유효
-        if (qDef.type === 'context_expansion' && lieEntry && ['S4', 'S5'].includes(lieEntry.currentState)) {
-          return { id: d.id, name: d.name, enabled: false, reason: '이미 핵심이 드러난 쟁점' }
-        }
+        // 공감 접근은 항상 가능 (신뢰 루트)
 
         return { id: d.id, name: d.name, enabled: true }
       })

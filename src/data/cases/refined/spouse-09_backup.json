@@ -1,0 +1,678 @@
+{
+  "caseId": "case-spouse-09",
+  "meta": {
+    "relationshipType": "spouse",
+    "conflictSeed": "CS-1",
+    "variableModules": [
+      "VM-A",
+      "VM-E"
+    ],
+    "twistModule": "TW-1",
+    "difficulty": "hard",
+    "anchorTruth": "여성 이름으로 390만 원을 몰래 보낸 남편이 의심스럽지만, 수취인은 원무주임, 돈은 간병 선수금이었다. 동시에 선아는 보험금 930만 원을 오빠 계좌로 옮기고 침묵했다.",
+    "emotionalBait": "공동계좌에서 빠진 390만 원, 수취인 '최서정', 밤 9시 42분 이체, 10시 병원 주차 — 네 가지가 겹치면 도현이 병원비를 외도 상대에게 빼돌리는 것처럼 읽힌다.",
+    "resolutionDilemma": "2022년 숨긴 부채 전력이 있으니 선아가 보험금을 숨긴 동기는 이해된다. 하지만 이해가 면책은 아니다. 도현 390만 원과 선아 930만 원 — 먼저 숨긴 쪽이 더 나쁜 것인지 금액이 큰 쪽이 더 나쁜 것인지가 갈린다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "유선아",
+      "age": 37,
+      "occupation": "미술학원 부원장",
+      "incomeBracket": "mid",
+      "archetype": "precautionary_controller",
+      "speechStyle": "'경우가 두 가지야' 식으로 시나리오부터 꺼낸다. 몰리면 '쓴 게 아니라 맡겨 둔 거야'라며 행위를 밀리 단위로 쪼갠다 — 실행과 대비의 경계에서 선을 지켰다는 것이 방어의 전부다.",
+      "pride": 8,
+      "fear": "어머니 퇴원일이 잡히는데 계좌는 비어 있고, 2022년의 그 표정이 떠오르는 것. 남편 돈 문제에 또 끌려다니는 사람이 되는 것.",
+      "riskAppetite": 3,
+      "digitalHabit": "cloud_receipts",
+      "dailyRoutine": "오전에는 학원 운영과 상담을 보고, 점심시간에는 병원과 보험 전화를 돌리며, 밤에는 어머니 병동 일정과 영수증을 폴더별로 정리한다.",
+      "sensitivePoints": [
+        "어머니 간병비",
+        "비상금 통제",
+        "남편의 과거 숨긴 부채"
+      ],
+      "verbalTells": [
+        {
+          "type": "scope_split",
+          "trigger": "lying",
+          "pattern": "'쓴 게 아니라 맡겨 둔 거야, 오빠한테 보관만 시킨 건데' — 930만 원 이전을 추궁받으면 사용과 보관을 즉시 분리한다. 공유 약속을 깬 것 자체는 가려진다."
+        },
+        {
+          "type": "document_stack",
+          "trigger": "cornered",
+          "pattern": "'보험 지급결정서, 어머니 진단서, 간병 일정표' — 잘못 하나를 물으면 서류 세 묶음을 펼친다. '왜 숨겼는지'가 '얼마나 준비했는지'로 바뀌는 방어 패턴이다."
+        },
+        {
+          "type": "historic_justifier",
+          "trigger": "hurt",
+          "pattern": "'내가 왜 이러냐고? 2022년에 아버지 빚 몰래 막은 사람이 누군데' — 현재 은닉을 지적받으면 곧바로 과거를 소환해 방어를 공격으로 뒤집는다."
+        }
+      ]
+    },
+    "partyB": {
+      "name": "강도현",
+      "age": 40,
+      "occupation": "냉동물류 배차팀장",
+      "incomeBracket": "mid",
+      "archetype": "action_first_provider",
+      "speechStyle": "먼저 해결하고 나중에 설명한다. '일단 자리 확보해놓고 얘기하려고 했어.' 불리해지면 '퇴원이 당겨져서 시간이 없었어'라며 상황 긴급함으로 비밀 결정을 덮는다. 의도 설명은 끝까지 늦춘다.",
+      "pride": 7,
+      "fear": "병동 자리를 확보해 내밀려던 순간, 선아 눈에 비치는 건 '또 돈 숨긴 남편'뿐인 것 — 2022년 낙인이 영원히 따라붙는 것.",
+      "riskAppetite": 6,
+      "digitalHabit": "call_then_transfer",
+      "dailyRoutine": "새벽 배차를 보고 오전에는 물류 대응, 오후에는 거래처 이동, 저녁에는 병원과 집을 오가며 간병 인력과 퇴원 일정 전화를 처리한다.",
+      "sensitivePoints": [
+        "가장 역할",
+        "장모 간병 문제",
+        "처가 오빠의 개입"
+      ],
+      "verbalTells": [
+        {
+          "type": "task_listing",
+          "trigger": "lying",
+          "pattern": "'퇴원 얘기 나와서 병원 갔다가 주차하고 원무과 들렀다가...' 390만 원 이유를 물으면 자잘한 동선을 나열한다. '왜 먼저 말 안 했냐'는 동선에 묻힌다."
+        },
+        {
+          "type": "time_bargain",
+          "trigger": "shame",
+          "pattern": "'하루만 먼저 막아 두려던 거야', '내일 말하려고 했어' — 비밀 송금의 무게를 시간 단위로 깎는다. 하루가 이미 신뢰를 깨뜨렸다는 사실은 가볍게 넘긴다."
+        },
+        {
+          "type": "question_flip",
+          "trigger": "cornered",
+          "pattern": "'그럼 보험금 930만 원은? 오빠한테 옮긴 건?' — 자기 송금이 궁지에 몰리면 선아의 은닉으로 화살을 돌린다. 둘 다 숨겼으니 비기자는 논리를 깔고 있다."
+        }
+      ]
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "2022년 도현이 아버지 채무를 몰래 막았다가 들켰다. '대출·보험금·100만 원 이상은 같은 날 공유한다'는 약속을 만들었다. 이번에 둘 다 이걸 깼다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "작년 가을 어머니 외래 때 — 선아는 '내가 매번 데려갔다', 도현은 '약값도 대신 냈다'고 기억한다. 누가 더 짊어졌는지의 엇갈림이 지금에도 깔려 있다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '내가 예약과 보호자 서명을 다 했다' / B: '내가 차와 결제를 다 돌렸다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "선아는 비상자금을 남편과 완전히 섞는 게 아직 무섭다. 도현은 처가 의료 결정에서 늘 마지막에 통보받는다고 느끼지만 물러난다. 둘 다 말 못 한 채 각자 비밀 주머니를 만들었다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "유성민 (선아의 오빠)",
+        "relationTo": "a",
+        "knowledgeScope": "보험금 930만 원이 자기 계좌로 온 경위를 알고, 선아가 비공개를 요청한 사실도 안다. 은닉인지 타이밍 조절인지 판단하는 핵심 증인.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "strategic"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "김도희 (선아의 보험설계사)",
+        "relationTo": "a",
+        "knowledgeScope": "보험금 지급일, 지급 사유(간병·입원 특약), 선아가 상담만 문의했는지 사용처를 설명했는지 원본 기준으로 확인 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "최서정 (대학병원 통합간병 원무주임)",
+        "relationTo": "both",
+        "knowledgeScope": "도현의 390만 원이 간병 대기 선수금이었다는 것, 대기 순번, 선수금 안내 경위를 원본 기준으로 확인 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      }
+    ]
+  },
+  "context": {
+    "contextType": "medical_burden",
+    "description": "선아 어머니가 뇌경색 후 회복병동에 입원하면서 병원비와 간병비가 불어났다. 퇴원이 앞당겨질 수 있다는 연락에 간병 대기를 하루 안에 정해야 했다. 도현은 밤에 390만 원을 빼 선수금을 보냈고, 선아는 이틀 전 받은 보험금 930만 원을 43분 만에 오빠 계좌로 옮기고 침묵했다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "퇴원이 내일이 될 수도 있는 상태에서 하루 차이가 병상을 잃느냐를 가르는 시기였다. 2022년 숨긴 부채 기억이 살아나면서 390만 원 이체 한 건이 '또 시작됐다'는 공포로 번졌다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "도현의 390만 원 비밀 간병 선수금 송금",
+      "truth": true,
+      "truthDescription": "도현은 밤 9시 42분에 공동계좌에서 390만 원을 빼 원무주임 최서정에게 보냈다. 간병 대기 선수금이었고 확약서와 영수증이 연결된다. '같은 날 공유' 약속을 깬 것은 명백하다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 30,
+        "b": 70
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "재정투명화",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "선아의 930만 원 보험금 비밀 이전",
+      "truth": true,
+      "truthDescription": "선아는 보험금 930만 원 입금 43분 만에 오빠 계좌로 전액 옮기고, '도현한텐 나중에 말할게'라고 했다. 도현 송금보다 이틀 앞선 은닉이며 금액도 2.4배 크다. 약속을 먼저 깬 쪽이다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "보험금공개",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-3",
+      "name": "도현 송금 — 사적 유용 또는 외도였나",
+      "truth": false,
+      "truthDescription": "최서정은 병동 원무주임이며 병원 전산으로 직책이 확인된다. 도현의 밤 연락과 송금은 퇴원 앞당김 후 대기 확보를 위한 것이었다. 판단 포인트는 외도가 아니라 가족 의료비를 혼자 결정한 행위 자체다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "오해정리",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-4",
+      "name": "2022년 전력이 선아 은닉을 면책하는가",
+      "truth": false,
+      "truthDescription": "2022년 전력이 선아의 동기를 설명하지만 이해와 면책은 다르다. '100만 원 이상 같은 날 공유' 원칙을 930만 원 규모로 깬 것은 동기가 방어적이었어도 약속 위반을 없앨 수 없다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 65,
+        "b": 35
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거청산",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "병원비 공황 — 도현 단독 탓인가 쌍방 탓인가",
+      "truth": false,
+      "truthDescription": "390만 원이 빠진 것만으로 공황이 온 게 아니다. 930만 원이 오빠 계좌에 숨겨져 유동성이 사라진 상태에서 퇴원 일정과 대기 순번까지 바뀌며 세 가지가 동시에 터졌다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-1",
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "간병운영",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "공동생활비 계좌 이체내역과 병원 주차정산 기록",
+      "description": "공동계좌에서 밤 9시 42분 최서정 명의 390만 원 이체 은행 내역과 18분 뒤 병원 주차 정산 기록이다. 같은 밤 동선은 보이지만 목적은 이것만으로 구분 불가.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은행 발급 이체내역 PDF(거래일시·수취인·금액 포함)와 병원 지하주차장 정산 시스템 출력본이 각각의 원본 번호와 함께 확인됐다.",
+        "check_metadata": "이체 시각은 밤 21시 42분, 병원 주차 정산은 22시 00분 — 18분 간격이다. 송금 후 곧바로 병원에 간 동선이 시간 순서로 확인된다.",
+        "restore_context": "도현은 퇴원 일정 앞당김 연락 직후 병원으로 이동했다. 긴급 대응인지 사전 계획인지를 이 시간 흐름으로 판단해야 한다.",
+        "verify_source": "은행 고객센터의 거래원장 대조와 병원 주차관리 시스템 조회 양쪽 검증으로 진본성이 확보됐다. 두 기관 기록이 교차 확인된다.",
+        "check_edits": "은행 PDF와 주차 출력본 모두 기관 시스템 직출력이라 사후 편집이나 수정 흔적이 없다.",
+        "question_acquisition": "부부 공동 계좌 내역과 본인 차량 기록이라 절차 문제는 적다. 수취인 개인정보 포함으로 범위 제한 필요."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "통합간병 병동 대기확약서와 선수금 영수증",
+      "description": "대기확약서에 최서정이 원무주임으로 기재, 390만 원 영수증과 같은 예약번호로 연결된다. 간병 대기 목적을 입증하지만 선아 동의 없는 진행의 적절성까지는 보여주지 않는다.",
+      "type": "contract",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "병원 원무과 발행 대기확약서와 390만 원 선수금 영수증이 같은 예약번호로 연결된다. 두 문서가 동일 건임을 확인할 수 있다.",
+        "check_metadata": "확약서 생성 시각은 이체 직후이며 보호자란에 도현 번호가 등록돼 있다. 선아 아닌 도현 단독 진행 확인.",
+        "restore_context": "병동 공석 시 즉시 입실 위한 대기 확보 문서로 사적 유용과 무관하다. 다만 선아 동의 없는 진행은 이 문서가 해결해주지 않는다.",
+        "verify_source": "병원 전산 시스템의 예약 기록과 원무주임 최서정의 구두 설명이 일치했다. 기관 내부 기록과 담당자 확인이 모두 이루어진 자료다.",
+        "check_edits": "전자문서 서명 검증 결과 발행 이후 수정 흔적이 없다. 원무과 시스템에서 직접 출력된 원본 상태다.",
+        "question_acquisition": "환자 보호자(도현)가 정당하게 발급받은 서류다. 보호자 자격으로 확보한 것이므로 절차상 문제는 없다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "선아가 캡처한 도현-최서정 메신저 일부",
+      "description": "'밤 10시 전에 다시 봐요'와 '자리 빼놓겠습니다'가 잡힌 메신저 캡처다. 앞뒤 잘려 있어 병동 재방문인지 사적 약속인지 단정 불가.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 대화가 아닌 스크린샷 일부만 존재한다. 두 문장이 보이지만 전후 맥락은 잘려 있다.",
+        "check_metadata": "캡처 생성 새벽 1시 12분. 도현이 잠든 사이 알림을 보고 저장했다. 대화 시각과 캡처 사이에 수 시간 간격.",
+        "restore_context": "'다시 봐요'가 재방문인지 사적 약속인지 캡처만으로 단정 불가. 발신자 직책과 병원 안내가 크롭으로 빠졌다.",
+        "verify_source": "도현 계정의 메신저 대화창에서 직접 캡처된 것으로 확인된다. 스크린샷 메타데이터와 도현 기기 정보가 일치한다.",
+        "check_edits": "합성·조작 없다. 다만 선택적 크롭으로 발신자 직책란과 상단 안내가 빠져 최서정이 원무주임이라는 맥락이 사라졌다.",
+        "question_acquisition": "잠든 배우자 휴대폰 무단 열람으로 캡처한 자료다. 부부 사이라 해도 사생활 침해 소지가 크다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "간병보험금 지급결정서와 선아 개인계좌 입금내역",
+      "description": "보험사 지급결정서(930만 원, 간병·입원 특약)와 선아 계좌 입금 내역이다. 입금은 도현 송금 이틀 전. 보험금 존재를 확인시키지만 비공개 의도는 이 자료에 없다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "보험사 지급결정서(지급번호·금액·사유)와 선아 계좌 입금내역이 같은 지급번호로 연결된다.",
+        "check_metadata": "입금은 도현 송금보다 이틀 전 오전 10시 21분이다. 선아가 먼저 돈을 확보하고도 알리지 않은 것.",
+        "restore_context": "간병·입원 특약 일시금으로 생활비가 아닌 의료비 완충 자금이다. 선아가 '쓴' 게 아니라 '옮긴' 것이므로 유용과 보관의 구분이 중요.",
+        "verify_source": "보험사 고객센터의 지급 이력과 은행 거래원장 양쪽 교차 확인으로 진위가 확보됐다.",
+        "check_edits": "보험사와 은행 모두 기관 시스템 발급 문서로 사후 편집 흔적이 없다.",
+        "question_acquisition": "보험수익자인 선아 본인이 적법하게 제출한 자료다. 어머니 의료정보가 간접적으로 포함돼 있어 범위 외 활용에는 주의가 필요하다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "유성민 계좌 입금확인서와 남매 메신저",
+      "description": "선아→유성민 930만 원 이체 확인서와 '도현한텐 퇴원 정해지면 말할게' 남매 대화 원본이다. 입금 43분 뒤 전액 이전 시간 순서와 비공개 의도를 동시에 보여준다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "선아→유성민 930만 원 이체확인서와 남매 메신저 원본 대화가 같은 시간대에 이어진다. 이체 직후 비공개 요청 메시지가 전송된 순서가 확인된다.",
+        "check_metadata": "보험금 입금 10:21, 유성민 이체 11:04 — 43분 간격. '도현한텐 나중에'라는 메시지가 직후 전송. 받자마자 옮긴 속도가 판단 핵심.",
+        "restore_context": "선아는 오빠 계좌를 '병원비 보관처'라 표현했다. 목적은 비축이었지만 보험금 수령 자체를 공유하지 않았다.",
+        "verify_source": "선아 측 출금 기록과 유성민 측 입금 기록이 거래원장에서 교차 확인되며, 메신저 백업의 시간대도 일치한다.",
+        "check_edits": "삭제 복원 흔적 일부 있다. 핵심 문장은 남아 있지만 삭제된 메시지에 맥락을 바꿀 내용이 있었을 가능성은 배제 불가.",
+        "question_acquisition": "대화 당사자인 유성민과 계좌명의자 본인의 동의를 거쳐 확인된 자료다. 남매 간 대화이므로 제3자 사생활 침해 소지는 적다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "2022년 채무상환 합의서와 후속 공개원칙 메모",
+      "description": "2022년 채무상환 합의서와 '100만 원 이상은 같은 날 공유' 메모다. 이 메모가 양쪽 위반 기준선이 된다. 핵심 문장은 최초 작성 후 변경 없이 유지됐다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "2022년 도현 아버지 채무상환 합의서 원본과, 사건 직후 부부가 메모앱에 작성한 공개원칙 메모의 백업본이 함께 제출됐다.",
+        "check_metadata": "공개원칙 메모는 채무상환 합의서 작성과 같은 주에 생성된 것으로 메모앱 기록에 남아 있다. 사건 직후의 감정과 결심이 반영된 시점이다.",
+        "restore_context": "두 사람은 '100만 원 이상은 같은 날 공유' 규칙을 세웠다. 이 규칙이 양쪽 모두의 위반 기준선이 된다.",
+        "verify_source": "채무상환 합의서는 채권자 확인서로 진위가 확인됐고, 공개원칙 메모는 메모앱 버전 이력에서 생성일과 수정 기록이 확인된다.",
+        "check_edits": "수정 이력이 있으나 '100만 원 이상 같은 날 공유' 문장은 최초 작성 시점부터 변경 없이 유지돼 있다.",
+        "question_acquisition": "도현 아버지 채무 관련 금융문서 포함이므로 현재 분쟁 해결 목적으로만 사용해야 한다. 제3자 공개 부적절."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-2",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "도현은 공동생활비에서 390만원을 몰래 빼 간병 병동 대기 확보용 선수금으로 보냈다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "선아는 간병보험금 930만원을 받은 뒤 오빠 계좌로 옮겨 숨겼다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "최서정과의 늦은 밤 연락은 사적 관계가 아니라 통합간병 병동 대기 확보와 퇴원 설명 조율이었다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "2022년 숨긴 부채 사건은 현재 보험금 은닉을 이해하게 할 뿐 정당화하지는 못한다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "이번 병원비 공황은 한 번의 비밀 송금이 아니라 숨긴 보험금과 간병 일정 압박이 함께 만든 결과였다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L3",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "insurance_payment_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "brother_account_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "past_debt_reference"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "same_day_disclosure_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_boundary_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "cash_crisis_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_fear"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "who_held_the_money_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_budget_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "reservation_transfer_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "coordinator_identity_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-2_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "late_night_chat_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "message_context_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_discharge_panic"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-2_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "who_caused_shortage_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "did_you_know_about_insurance_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "보험금공개": [
+      "보험금이 들어오면 금액 전체보다 사용 목적과 보관 계좌를 같은 날 간단한 메모로 먼저 공유한다.",
+      "가족 의료비용 보험금은 개인계좌로 받아도 24시간 안에 공동 기록표에 등록하고, 제3자 계좌 보관은 상호 동의가 있을 때만 허용한다.",
+      "보험금·대출·의료 일시금 은닉이 다시 발생하면 일정 기간 공동계좌 접근권과 의료비 결제 권한을 분리한다."
+    ],
+    "간병운영": [
+      "병동 대기, 외부 간병사, 퇴원 일정은 누가 먼저 전화를 받더라도 그날 저녁 한 번에 정산한다.",
+      "간병비용은 예약금, 일당, 교통비를 분리해 누가 어떤 돈으로 결제했는지 표준 양식으로 적는다.",
+      "가족 간병에서 제3자 예약을 단독으로 잡는 행동이 반복되면 병원 원무주임 앞에서 공동 결정 절차를 의무화한다."
+    ],
+    "과거청산": [
+      "2022년 숨긴 부채 사건은 현재 결정의 면책 사유가 아니라 경고 신호로만 다루고, 다시 인용할 때는 해결 목적을 명시한다.",
+      "과거 금융 배신을 꺼낼 수 있는 상담 시간과 꺼내지 않는 실무 시간을 분리한다.",
+      "과거 사건을 현재 은닉의 이유로 반복 사용할 경우 부부상담과 별도 재무중재를 함께 진행한다."
+    ],
+    "제3자경계": [
+      "오빠, 보험설계사, 병원 담당자 등 제3자를 통할 때는 배우자에게 같은 날 이름과 역할을 남긴다.",
+      "가족 계좌를 임시 보관처로 쓰려면 사전에 상호 승인된 긴급 규칙 안에서만 허용한다.",
+      "무단으로 제3자 계좌나 담당자를 활용한 은닉이 다시 발생하면 의료비 집행은 제3의 중립 계좌로만 운영한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-1",
+    "tp-3"
+  ]
+}

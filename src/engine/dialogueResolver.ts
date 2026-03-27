@@ -88,8 +88,9 @@ export function resolveDialogue(
   if (emotionFallback) return { node: emotionFallback, target }
 
   // 4차: 최종 범용 폴백 (동적 생성)
+  const qt = action.type === 'question' ? action.questionType : undefined
   return {
-    node: generateDynamicFallback(target, agent, disputeId),
+    node: generateDynamicFallback(target, agent, disputeId, qt),
     target,
   }
 }
@@ -99,58 +100,70 @@ function generateDynamicFallback(
   target: PartyId,
   agent: AgentState,
   disputeId?: string,
+  questionType?: string,
 ): DialogueNode {
   const phase = agent.emotionalState.phase
   const lieEntry = disputeId ? agent.lieStateMap[disputeId] : undefined
   const lieState = lieEntry?.currentState ?? 'S0'
+  const qt = questionType ?? 'fact_pursuit'
 
-  // lieState + emotion에 기반한 자연스러운 폴백
-  const responses: Record<string, Record<string, string>> = {
+  // 질문 유형 × lieState × emotion 기반 폴백
+  // 사실 추궁: 사실/부정 중심
+  const factResponses: Record<string, Record<string, string>> = {
     S0: {
-      defensive: '그 부분에 대해서는... 제가 아는 바로는 그렇지 않습니다.',
-      confident: '그건 전혀 사실이 아닙니다. 확실히 말씀드릴 수 있습니다.',
-      shaken: '그건... 아닌데... 왜 그런 질문을 하시는 거죠?',
-      angry: '자꾸 그런 식으로 몰아가시면 곤란합니다!',
-      resigned: '... 그 질문에는 대답하고 싶지 않습니다.',
+      defensive: '그런 사실은 없습니다. 제가 아는 한 전혀 다릅니다.',
+      confident: '아닙니다, 절대 아닙니다. 확인해 보십시오.',
+      shaken: '그건... 사실이 아닌데요. 왜 그런 걸 묻는 거죠?',
+      angry: '아니라고 말씀드렸습니다! 없는 일을 있다고 하지 마세요!',
+      resigned: '... 아닙니다. 그건 사실이 아닙니다.',
     },
-    S1: {
-      defensive: '그 부분은... 좀 복잡한 사정이 있습니다.',
-      confident: '거기에는 나름의 이유가 있었습니다.',
-      shaken: '... 그래요, 뭔가가 있긴 했는데, 생각하시는 것과는 달라요.',
-      angry: '맥락을 모르시면서 단정 짓지 마세요!',
-      resigned: '... 네, 뭔가 있긴 있었습니다.',
-    },
-    S2: {
-      defensive: '인정하는 부분도 있지만, 전부는 아닙니다.',
-      confident: '그 부분은 맞습니다. 하지만 이유가 중요합니다.',
-      shaken: '... 맞아요. 근데 왜 그랬는지를 들어주세요.',
-      angry: '맞다고요! 하지만 상대도 잘못한 게 있잖아요!',
-      resigned: '... 네, 맞습니다. 그건 제 잘못입니다.',
-    },
-    S3: {
-      defensive: '제가 그렇게 한 건 상대방 때문입니다.',
-      confident: '누구라도 그 상황이면 그렇게 했을 겁니다.',
-      shaken: '저도 하고 싶어서 한 게 아니에요... 상대가 그렇게 만든 거예요.',
-      angry: '이게 다 저 사람 때문이라는 걸 왜 모르세요?!',
-      resigned: '... 어쩔 수 없었어요. 그 사람이 그렇게 만들었으니까요.',
-    },
-    S4: {
-      defensive: '이런 상황에서 제가 어떻게 해야 했겠습니까...',
-      confident: '제 입장에서 생각해 보세요. 정말 힘들었습니다.',
-      shaken: '... 제발 이해해 주세요. 저도 힘들었어요.',
-      angry: '저만 나쁜 사람인 건가요?! 저도 피해자예요!',
-      resigned: '... 더 이상 뭐라고 해야 할지 모르겠어요.',
-    },
-    S5: {
-      defensive: '... 네, 인정합니다.',
-      confident: '사실대로 말씀드리겠습니다.',
-      shaken: '... 맞아요. 다 맞아요.',
-      angry: '그래요, 맞습니다. 됐죠?',
-      resigned: '... 네. 말씀하신 대로입니다.',
-    },
+    S1: { defensive: '복잡한 사정이 있었습니다. 겉으로 보이는 것과 다릅니다.', confident: '사실은 그렇지 않습니다. 나름의 이유가 있었어요.', shaken: '뭔가 있긴 했는데... 생각하시는 그런 건 아닙니다.', angry: '상황도 모르면서 단정 짓지 마세요!', resigned: '... 네, 뭔가 있긴 했습니다.' },
+    S2: { defensive: '일부는 맞지만 전부는 아닙니다. 중요한 건 맥락입니다.', confident: '네, 그 부분은 인정합니다. 하지만 이유를 들어보세요.', shaken: '맞아요... 근데 전부를 말하기가 어렵습니다.', angry: '그래요 맞다고요! 그런데 상대는요?', resigned: '... 네, 맞습니다.' },
+    S3: { defensive: '제가 그랬다 해도, 원인은 상대에게 있습니다.', confident: '누구라도 그 상황이면 같은 선택을 했을 겁니다.', shaken: '저도 원해서 한 게 아니에요...', angry: '다 상대 때문이에요! 왜 그걸 모르세요!', resigned: '어쩔 수 없었어요.' },
+    S4: { defensive: '제 입장에서 어떻게 해야 했겠습니까...', confident: '제 상황을 한번 생각해 보세요.', shaken: '... 이해해 주세요. 정말 힘들었어요.', angry: '저만 나쁜 사람인가요?!', resigned: '... 더 할 말이 없습니다.' },
+    S5: { defensive: '... 네, 사실입니다.', confident: '사실대로 말씀드리겠습니다.', shaken: '... 맞아요, 다 맞아요.', angry: '그래요. 맞습니다. 됐습니까?', resigned: '... 네. 말씀하신 대로입니다.' },
   }
 
-  const stateResponses = responses[lieState] ?? responses['S0']
+  // 동기 탐색: 이유/동기 중심
+  const motiveResponses: Record<string, Record<string, string>> = {
+    S0: {
+      defensive: '그럴 이유가 없었습니다. 동기 자체가 존재하지 않아요.',
+      confident: '왜 그랬겠습니까? 그런 일 자체가 없었으니까요.',
+      shaken: '왜라뇨... 저는 그런 의도가 전혀 없었습니다.',
+      angry: '제가 왜 그래야 합니까! 이유를 만들지 마세요!',
+      resigned: '... 이유를 물으실 일이 아닙니다.',
+    },
+    S1: { defensive: '사정이 있었습니다. 단순하게 볼 문제가 아니에요.', confident: '나름의 이유가 있었지만, 지금은 말씀드리기 어렵습니다.', shaken: '... 그때는 그렇게 할 수밖에 없었어요.', angry: '제 사정을 알지도 못하면서!', resigned: '... 이유가 있긴 했습니다.' },
+    S2: { defensive: '이유를 말씀드리자면... 저도 궁지에 몰려 있었습니다.', confident: '인정합니다. 하지만 그때의 제 입장을 이해해 주세요.', shaken: '... 두려워서요. 솔직히 무서웠습니다.', angry: '이유요? 상대가 먼저 저를 밀어붙였으니까요!', resigned: '... 다른 방법이 없었어요.' },
+    S3: { defensive: '제가 그런 건 상대가 먼저 그랬기 때문입니다.', confident: '이유를 물으신다면, 상대에게 물어보세요.', shaken: '상대가 그렇게 만들어놓고...', angry: '다 그 사람 때문이라고요!', resigned: '... 어쩔 수 없었습니다.' },
+    S4: { defensive: '그때 저는... 정말 막막했습니다.', confident: '힘든 상황이었습니다. 그게 유일한 선택이었어요.', shaken: '... 무너지기 직전이었어요. 이해해 주세요.', angry: '저도 피해자예요! 왜 저한테만...', resigned: '... 지쳤어요. 그냥 지쳤습니다.' },
+    S5: { defensive: '... 솔직히 말씀드리면, 두려웠습니다.', confident: '이제 말할 수 있습니다. 그때 저는...', shaken: '... 숨기고 싶었어요. 부끄러웠으니까요.', angry: '알겠어요. 제가 그랬습니다. 이유는... 자격이 없다고 느꼈으니까요.', resigned: '... 제가 약해서 그랬습니다.' },
+  }
+
+  // 공감 접근: 감정/심경 중심, 더 부드러운 톤
+  const empathyResponses: Record<string, Record<string, string>> = {
+    S0: {
+      defensive: '... 감사합니다. 하지만 제가 할 말은 달라지지 않습니다.',
+      confident: '괜찮습니다. 저는 떳떳하니까요.',
+      shaken: '... 감사합니다. 그런데 정말 그런 일은 없었어요.',
+      angry: '동정은 필요 없습니다. 사실만 밝혀주세요.',
+      resigned: '... 고마운데요. 정말 아닙니다.',
+    },
+    S1: { defensive: '... 감사합니다. 사실 좀 힘들긴 합니다.', confident: '괜찮습니다만... 복잡한 사정이 있었어요.', shaken: '... 고맙습니다. 사실 잠을 못 자고 있어요.', angry: '... 지금 위로하시는 건가요, 심문하시는 건가요?', resigned: '... 네, 쉽지 않았습니다.' },
+    S2: { defensive: '... 인정하기 어렵지만, 제가 잘못한 부분이 있습니다.', confident: '감사합니다. 사실... 후회하고 있습니다.', shaken: '... 말하기 어렵지만... 제 잘못도 있어요.', angry: '... 고마워요. 근데 상대도 잘못한 건 알아주세요.', resigned: '... 네. 제가 잘못했습니다.' },
+    S3: { defensive: '... 저도 피해자라는 걸 알아주셨으면 합니다.', confident: '감사합니다. 사실 상대 때문에 그럴 수밖에 없었어요.', shaken: '... 저도 상처받았어요. 그걸 아무도 안 물어봤어요.', angry: '... 왜 저한테만 이래요. 저도 힘들었다고요.', resigned: '... 네, 둘 다 잘못했어요.' },
+    S4: { defensive: '... 감사합니다. 정말... 감사합니다.', confident: '... 솔직히 말하면, 많이 후회합니다.', shaken: '... (눈물) 이해해 주셔서 감사합니다.', angry: '... 감사한데요, 저는 억울해요.', resigned: '... 다 제 탓이에요.' },
+    S5: { defensive: '... 이제 솔직히 말씀드리겠습니다.', confident: '감사합니다. 숨기고 있던 게 있습니다.', shaken: '... 사실은요... (한참 뒤) 제가 그랬습니다.', angry: '... 그래요. 이제 다 말할게요.', resigned: '... 다 말씀드리겠습니다. 듣기 불편하실 수 있습니다.' },
+  }
+
+  const responseMap: Record<string, Record<string, Record<string, string>>> = {
+    fact_pursuit: factResponses,
+    motive_search: motiveResponses,
+    empathy_approach: empathyResponses,
+  }
+
+  const selectedResponses = responseMap[qt] ?? factResponses
+  const stateResponses = selectedResponses[lieState] ?? selectedResponses['S0']
   const text = stateResponses[phase] ?? stateResponses['defensive']
 
   const behaviorHints: Record<string, string> = {
@@ -189,9 +202,16 @@ function matchesCondition(
   }
 
   // questionType이 있는 노드는 반드시 question일 때만 매칭
+  // 새 타입(3종)이 레거시 값(대사 트리)과 매칭되도록 매핑
   if (cond.questionType) {
     if (action.type !== 'question') return false
-    if (cond.questionType !== action.questionType) return false
+    const legacyMap: Record<string, string[]> = {
+      fact_pursuit: ['fact_fixing', 'timeline'],
+      motive_search: ['motive', 'context_expansion'],
+      empathy_approach: ['empathy', 'provenance'],
+    }
+    const allowed = legacyMap[action.questionType] ?? [action.questionType]
+    if (!allowed.includes(cond.questionType) && cond.questionType !== action.questionType) return false
   }
 
   // lieState 매칭
@@ -234,7 +254,7 @@ export function resolveEvidenceReaction(
   for (const disputeId of disputeIds) {
     const fakeAction: PlayerAction = {
       type: 'question',
-      questionType: 'fact_fixing',
+      questionType: 'fact_pursuit',
       target,
       disputeId,
     }

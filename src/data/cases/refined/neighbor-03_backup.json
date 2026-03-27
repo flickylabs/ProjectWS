@@ -1,0 +1,685 @@
+{
+  "caseId": "case-neighbor-03",
+  "meta": {
+    "relationshipType": "neighbor",
+    "conflictSeed": "CS-3",
+    "variableModules": [
+      "VM-D",
+      "VM-B"
+    ],
+    "twistModule": "TW-4",
+    "difficulty": "hard",
+    "anchorTruth": "반려견 사고의 직접 원인은 한쪽 개의 공격성이 아니라, 강현우의 직원용 PIN 무단 사용과 진서아의 예약 없는 동시 입실이 겹치며 자동줄이 배수구 철망에 감긴 것이었고, 이후 결정적 CCTV는 편집된 위조본이었다.",
+    "emotionalBait": "작은 반려견의 비명, 귀에 묻은 피, 큰 개의 으르렁거림이 한 컷으로 겹치며 처음에는 대형견의 일방 공격처럼 보인다.",
+    "resolutionDilemma": "현우의 편집 영상 제출은 중대하지만, 서아도 출입 규칙과 리드줄 안전수칙을 어겼다. 다친 반려견에 대한 공감과 공동 책임, 그리고 위조 증거에 대한 제재를 어디까지 분리해 판단할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "강현우",
+      "age": 35,
+      "occupation": "헬스장 야간매니저",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "질문을 받으면 감정보다 규정 문구와 동선을 먼저 꺼낸다. 불리해지면 행동 자체보다 절차상 예외였는지 여부로 논점을 옮긴다.",
+      "pride": 8,
+      "fear": "반려견을 통제 못 하는 사람, 직원 권한을 빌려 사적으로 편의를 챙긴 사람으로 보이는 것",
+      "riskAppetite": 5,
+      "digitalHabit": "cctv_and_pet_app",
+      "dailyRoutine": "밤 근무를 마치고 새벽에 귀가한 뒤 반려견 산책과 발 세척을 한다. 비 오는 날엔 지하 세척실을 자주 확인하고 관리앱 공지를 꼼꼼히 읽는다.",
+      "sensitivePoints": [
+        "반려견 통제 능력",
+        "규정 위반 지적",
+        "특혜를 쓴 사람처럼 보이는 것"
+      ],
+      "verbalTells": [
+        {
+          "type": "rule_buffer",
+          "trigger": "lying",
+          "pattern": "자신이 한 선택을 설명할 때는 '원래 다들 급하면 그렇게 한다'며 예외를 관행처럼 말한다."
+        },
+        {
+          "type": "timestamp_chain",
+          "trigger": "cornered",
+          "pattern": "문이 열린 초 단위와 이동 순서를 촘촘히 나열해 핵심 위반을 흐린다."
+        },
+        {
+          "type": "affect_freeze",
+          "trigger": "avoiding",
+          "pattern": "반려견 상처를 말할 때도 표정을 굳히고 손상 부위와 거리만 숫자로 반복한다."
+        }
+      ]
+    },
+    "partyB": {
+      "name": "진서아",
+      "age": 32,
+      "occupation": "반려견 유치원 콘텐츠 판매자",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "억울함을 말할 때 먼저 강아지 울음과 피 묻은 장면을 길게 묘사한다. 공감이 형성되면 그 뒤에 규정 이야기를 붙이고, 불리한 질문은 자신이 얼마나 놀랐는지로 되받는다.",
+      "pride": 6,
+      "fear": "작은 개를 앞세워 감정적으로만 군다는 평가와, 기본 안전수칙도 지키지 못한 보호자로 보이는 것",
+      "riskAppetite": 6,
+      "digitalHabit": "messenger_and_pet_cam",
+      "dailyRoutine": "오전엔 온라인 강의와 주문 상담을 하고 저녁엔 반려견 산책 콘텐츠를 촬영한다. 비가 오면 산책 후 지하 세척실을 쓰려는 습관이 있다.",
+      "sensitivePoints": [
+        "반려견 부상",
+        "작은 개 보호자라는 편견",
+        "공용시설 이용 매너 지적"
+      ],
+      "verbalTells": [
+        {
+          "type": "injury_loop",
+          "trigger": "emotional",
+          "pattern": "불안해지면 '그때 애가 소리를 질렀고 피가 났고'를 반복해 장면의 충격을 먼저 고정한다."
+        },
+        {
+          "type": "tiny_words",
+          "trigger": "lying",
+          "pattern": "불리한 행동은 '잠깐', '살짝', '문만 조금 열었다' 같은 축소어로 바꿔 말한다."
+        },
+        {
+          "type": "blame_echo",
+          "trigger": "cornered",
+          "pattern": "질문을 받으면 '그쪽이 먼저'라는 문장을 되풀이하며 자기 선택 설명을 늦춘다."
+        }
+      ]
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "봄에 반려동물 냄새 민원이 난 뒤 두 사람은 지하 세척실을 예약 후 한 세대씩만 쓰고, 비상시에도 관리사무소 확인을 거치기로 했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "초여름 엘리베이터에서 서아가 현우의 개에게 진정 스프레이를 건네준 일을 현우는 간섭으로, 서아는 배려로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '내 개를 위험한 개 취급했다' / B: '서로 불안하지 말자고 챙겨준 것을 예민하게 받았다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "사고 2주 전 세척실 배수구 철망이 흔들린다는 말을 둘 다 경비원에게 흘렸지만, 정식 보수 요청서까지는 내지 않은 채 넘겼다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "김단비 (1102호, 산책모임 운영자)",
+        "relationTo": "both",
+        "knowledgeScope": "두 반려견의 평소 반응성과, 사고 직후 서아가 '문이 갑자기 닫혔다'고 말한 첫 반응을 들었다.",
+        "witnessedDirectly": false,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_2",
+        "name": "오세훈 (야간 경비원)",
+        "relationTo": "both",
+        "knowledgeScope": "세척실 임시 PIN 발급, 사고 직후 현장 사진, 원본 CCTV 백업 요청 시각을 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "백민지 (24시동물메디컬센터 수의사)",
+        "relationTo": "both",
+        "knowledgeScope": "상처가 물림인지 마찰 열상인지, 진료 접수 시각과 상처 분포를 원본 기록으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      }
+    ]
+  },
+  "context": {
+    "contextType": "pet_incident",
+    "description": "장대비가 내리던 밤, 지하 반려동물 세척실은 청소 마감 시간 직전이라 바닥이 젖어 있었고 출입이 제한돼 있었다. 그때 두 사람이 거의 동시에 세척실을 쓰려다 문 앞에서 동선이 겹치며 반려견 사고가 났고, 직후 돌기 시작한 CCTV 클립이 갈등을 폭발시켰다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "반려견의 상처와 울음은 보호자의 죄책감과 방어심을 동시에 자극했고, SNS와 입주민 채팅방에서 영상 한 장면이 곧 보호자 자격 전체를 판단하는 재료가 됐다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "현우의 직원용 PIN 무단 사용",
+      "truth": true,
+      "truthDescription": "현우는 청소용역에게 일시 발급된 세척실 PIN을 메모해 두었다가 사고 당일 관리 승인 없이 출입 제한 시간에 문을 열었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "공용공간경계",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-2",
+      "name": "서아의 예약 없는 동시 입실과 자동줄 방치",
+      "truth": true,
+      "truthDescription": "서아는 이미 누군가 세척실 안에 있는 상태에서 예약 없이 문을 열었고, 자동줄을 짧게 회수하지 않아 젖은 바닥과 문틈 쪽으로 길게 늘어뜨렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 40,
+        "b": 60
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "반려동물안전",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-3",
+      "name": "돌아다닌 CCTV 19초 클립은 원본인가",
+      "truth": false,
+      "truthDescription": "입주민 사이에 돌던 19초 클립은 원본이 아니며, 앞부분 8초가 삭제되고 재생속도와 타임스탬프 표기가 바뀐 위조본이었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 90,
+        "b": 10
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "증거절차",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-4",
+      "name": "반려견 상처의 직접 원인은 물림이었는가",
+      "truth": false,
+      "truthDescription": "상처의 직접 원인은 공격적 물림이 아니라, 자동줄이 배수구 철망과 문하부 레일에 걸리며 앞발 패드가 찢어진 마찰 열상이었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "반려동물안전",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "두 사람의 예약·원본 확인 절차 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 예전에 세척실은 예약 후 단독 이용하고, 사고 영상은 관리사무소 원본만 보기로 했지만 현우는 직원 PIN으로 먼저 들어갔고 서아는 원본 확인 전 단체방 추궁을 시작했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "중재절차",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "현우가 돌린 지하1층 CCTV 19초 클립",
+      "description": "서아가 세척실 문을 급히 열고 작은 반려견이 먼저 뛰어드는 장면만 담긴 휴대폰 전달본이다.",
+      "type": "video",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "unlawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "제출된 것은 메신저로 전달된 19초 파일뿐이고, 같은 카메라의 전후 구간은 포함되지 않았다.",
+        "check_metadata": "파일 생성 시각은 사고 34분 뒤이며, 휴대폰 화면녹화 형식으로 다시 인코딩된 흔적이 남아 있다.",
+        "restore_context": "문이 열리기 직전 누가 먼저 세척실에 들어갔는지와 바닥 상태는 이 클립만으로는 보이지 않는다.",
+        "verify_source": "화면 비율과 CCTV 앱 상단 아이콘이 단지 보안앱과 일치해 실제 CCTV를 찍은 파일임은 확인된다.",
+        "check_edits": "프레임 간 간격이 일정하지 않고 오버레이 글꼴이 원본 서버 글꼴과 다르다.",
+        "question_acquisition": "공용 CCTV를 개인이 무단 화면녹화해 유포한 자료라 취득과 사용 모두 정당성 문제가 크다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "세척실 출입 로그와 직원용 PIN 발급 기록",
+      "description": "사고 시각 세척실 문이 현우 계정이 아닌 청소용역 임시 PIN으로 열렸고, 그 PIN 일부가 현우 휴대폰 메모에 저장돼 있던 기록이다.",
+      "type": "device_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "출입서버 원본과 임시 PIN 발급대장이 함께 제출됐다.",
+        "check_metadata": "PIN 사용 시각과 사고 신고 시각 차이는 4분으로 기록된다.",
+        "restore_context": "해당 PIN은 원래 청소용역이 마감 청소용으로만 쓰는 코드였고 주민 예약권한과는 별개였다.",
+        "verify_source": "관리사무소 서버 로그와 오세훈 경비원의 인수인계 대장이 같은 번호를 가리킨다.",
+        "check_edits": "기관 원본 추출본이라 삭제나 덧붙이기 흔적이 없다.",
+        "question_acquisition": "공용시설 출입기록이라 적법하지만 개인 휴대폰 메모 대조는 분쟁 해결 범위로만 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "오세훈 경비원의 현장 사진과 사고보고 메모",
+      "description": "사고 직후 바닥의 물기, 길게 늘어난 자동줄, 옆으로 밀린 청소카트가 남은 상태를 찍은 사진과 경비원의 메모다.",
+      "type": "incident_report",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "현장 사진 3장과 손글씨 메모 원본이 제출됐다.",
+        "check_metadata": "사진 촬영 시각은 신고 접수 후 2분 뒤로 연속 저장돼 있다.",
+        "restore_context": "이미 사고가 끝난 뒤 촬영된 자료라 누가 먼저 문을 열었는지는 직접 담지 못하지만, 줄이 길게 늘어진 방향과 바닥 물기는 남아 있다.",
+        "verify_source": "경비실 단말기 업로드 시간과 사진 EXIF가 일치한다.",
+        "check_edits": "크롭은 있으나 이미지 합성 흔적은 없고 메모는 수정펜 흔적 없이 한 번에 작성됐다.",
+        "question_acquisition": "공용공간에서 직무상 촬영된 자료라 사용은 가능하지만 반려견 얼굴과 세대 식별 정보는 최소화해야 한다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "24시동물메디컬센터 상처도면과 진료소견",
+      "description": "서아의 반려견 앞발 패드 열상과 귀 표면 찰과상이 배수구 철망 접촉과 끌림에 가깝다고 본 진료기록이다.",
+      "type": "medical_record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "초진 차트와 상처 위치 도면, 세척 후 확대 사진이 함께 제출됐다.",
+        "check_metadata": "접수 시각은 사고 신고 후 27분 뒤로, 상처가 아직 젖어 있던 상태로 기록된다.",
+        "restore_context": "귀의 얕은 찰과상은 부딪힘으로도 생길 수 있고, 결정적 손상은 앞발 패드에 집중돼 있다.",
+        "verify_source": "병원 EMR 출력본과 수의사 서명이 일치한다.",
+        "check_edits": "의무기록 출력본이라 편집 흔적이 없다.",
+        "question_acquisition": "동물의료기록이므로 보호자 동의 범위 안에서만 공개돼야 한다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "원본 CCTV 4분 추출본과 해시·타임코드 비교보고",
+      "description": "서버에 저장된 원본 4분 영상과, 유포된 19초 클립이 앞부분 8초를 삭제하고 재생속도를 0.85배로 조정한 뒤 다른 타임스탬프 이미지를 덧씌웠다는 비교보고다.",
+      "type": "forensic_report",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "CCTV 서버 추출본과 포렌식 비교표, 해시값 목록이 한 세트로 제출됐다.",
+        "check_metadata": "원본은 사고 전후 4분 연속 영상이고, 유포본은 생성 시각이 그보다 뒤이며 재인코딩 로그가 남아 있다.",
+        "restore_context": "원본에는 현우가 먼저 들어가 세척실 안쪽에 서 있는 장면, 서아가 문을 열며 자동줄이 문 하부로 길게 뻗는 장면이 모두 이어서 보인다.",
+        "verify_source": "서버 해시와 백업 저장소 해시가 같고, 포렌식 대조 결과 컷 지점이 정확히 특정됐다.",
+        "check_edits": "유포본에는 프레임 삭제와 속도 변경, 오버레이 교체 흔적이 확인됐다.",
+        "question_acquisition": "기관 보존 원본이라 적법하지만 비교 과정에서 개인 휴대폰 제출 자료는 최소 범위만 사용해야 한다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "세척실 예약 부재 캡처와 사고 직후 단체방 전달본",
+      "description": "그날 세척실 예약이 비어 있던 화면 캡처와, 서아가 원본 확인 전 현우를 지목해 보낸 단체방·1:1 메시지 묶음이다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "예약 화면 캡처와 메신저 내보내기 파일이 함께 제출됐다.",
+        "check_metadata": "메시지 전송 시각은 관리사무소에 원본 요청이 들어가기 11분 전으로 찍혀 있다.",
+        "restore_context": "서아의 첫 메시지는 다친 반려견 상태를 설명하며 현우를 바로 특정하지만, 예약 여부나 원본 확인 언급은 빠져 있다.",
+        "verify_source": "예약 캡처의 시간대와 출입 로그 시각이 맞고, 채팅 내보내기 파일도 발신 계정과 일치한다.",
+        "check_edits": "채팅은 크롭본도 있으나 내보내기 원문 대조로 핵심 문장은 일치했다.",
+        "question_acquisition": "개인 대화가 포함된 자료라 제3자 이름과 세대 정보는 가리고 써야 한다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-5"
+      ]
+    },
+    {
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "현우는 청소용역 임시 PIN으로 출입 제한 시간의 세척실 문을 열었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "서아는 누군가 이미 안에 있는 상태에서 예약 없이 문을 열고 자동줄을 길게 둔 채 입실했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "입주민 사이에 돌던 CCTV 클립은 삭제·속도조정·타임스탬프 교체가 된 위조본이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "반려견의 핵심 상처는 물림이 아니라 자동줄과 배수구 철망에 의한 마찰 열상이었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 예약·원본 확인 절차를 어기고 각자 유리한 방식으로 사건을 먼저 퍼뜨렸다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "staff_pin_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "cleaning_time_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "authority_boundary_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "cctv_original_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "export_path_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "reservation_rule_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_not_call_management_first"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "leash_length_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_panic"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "bite_claim_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "wound_shape_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "management_first_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_shock"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "phone_forward_scope_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "공용공간경계": [
+      "세척실 출입 코드를 전면 재설정하고, 주민이 직원용 PIN을 알게 된 경위를 관리사무소가 기록으로 남긴다.",
+      "반려동물 세척실은 예약된 한 세대만 출입하도록 문앞 대기선을 표시하고, 마감 시간 전후엔 경비실 승인 후만 예외 출입을 허용한다.",
+      "다시 무단 출입이 발생하면 일정 기간 세척실 이용권을 정지하고 공용시설 위반 경고를 부과한다."
+    ],
+    "반려동물안전": [
+      "세척실 안에서는 자동줄을 금지하고 1m 이하 고정줄만 허용한다.",
+      "사고 후에는 물림 여부를 보호자 추정보다 병원 기록과 원본 영상으로 먼저 가리도록 표준 절차를 만든다.",
+      "배수구·문하부 레일 등 위험 지점을 즉시 보수하고, 재발 시 반려동물 시설 임시 폐쇄 후 안전점검을 의무화한다."
+    ],
+    "증거절차": [
+      "공용 CCTV는 개인 전달본이 아니라 관리사무소 원본 열람본만 증거로 인정한다.",
+      "유포된 편집 영상은 회수 요청과 함께 정정 공지를 같은 채널에 올리도록 한다.",
+      "다시 편집·위조 증거 제출이 확인되면 분쟁조정 절차와 별도로 공동체 규약 위반 제재를 적용한다."
+    ],
+    "중재절차": [
+      "사고 발생 시 보호자와 관리사무소, 경비원이 같은 날 타임라인을 함께 적어 1차 기록을 남긴다.",
+      "반려동물 사고는 감정 호소 메시지보다 접수번호, 병원 기록, 원본 영상 확보 순서로 처리하도록 통일한다.",
+      "같은 당사자 사이에서 반복 분쟁이 생기면 산책 동선과 공용시설 이용시간을 관리사무소 입회 하에 분리 조정한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

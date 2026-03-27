@@ -1,0 +1,612 @@
+{
+  "caseId": "case-work-12",
+  "meta": {
+    "relationshipType": "boss_employee",
+    "conflictSeed": "CS-3",
+    "variableModules": [
+      "VM-B"
+    ],
+    "twistModule": "",
+    "difficulty": "easy",
+    "anchorTruth": "백지훈은 회사 기준을 넘는 웹캠과 화면 캡처 요구로 수민을 과도하게 감시했고, 오수민은 그 와중에 마우스 지글러와 편집된 상태 스크린샷으로 실제 근무 공백을 숨겼다.",
+    "emotionalBait": "지훈이 HR에 낸 모니터링 PDF에는 수민의 긴 유휴시간과 응답 지연만 선명하게 남아 있고, 수민의 민원 메모에는 거실과 얼굴까지 찍힌 웹캠 요청이 적혀 있어 어느 한쪽만 명백한 가해자로 보이기 쉽다.",
+    "resolutionDilemma": "사생활을 침범한 감시와 실제로 존재한 근무 태만 및 편집 증거 중 무엇을 더 무겁게 볼지, 그리고 재택근무에서 성과 관리와 사생활 경계를 어떤 방식으로 다시 그을지가 핵심이다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "백지훈",
+      "age": 38,
+      "occupation": "고객지원운영 매니저",
+      "incomeBracket": "high",
+      "archetype": "cold_logic",
+      "speechStyle": "질문을 받으면 먼저 응답 SLA와 운영 공백부터 설명하며 감시 수단의 강도를 뒤로 미룬다. 불리해지면 성과 관리였을 뿐 사생활 감시는 아니었다고 말해 웹캠과 화면 캡처 요구의 범위를 축소한다.",
+      "pride": 7,
+      "fear": "재택 운영 통제가 무너진 팀장, 혹은 사생활을 침범한 관리자라는 두 낙인을 동시에 쓰는 것",
+      "riskAppetite": 5,
+      "digitalHabit": "attendance_dashboard_refresh",
+      "dailyRoutine": "아침에는 응답 대기열과 로그인 현황을 확인하고, 오후에는 품질 코칭과 일정 배치를 조정하며, 저녁에는 재택 인력의 상태창과 SLA 리포트를 다시 훑는다.",
+      "sensitivePoints": [
+        "응답 지연",
+        "재택 통제력",
+        "HR 민원"
+      ],
+      "verbalTells": [
+        {
+          "type": "metric_shield",
+          "trigger": "lying",
+          "pattern": "무엇을 얼마나 들여다봤는지 대신 SLA 숫자와 이탈률을 먼저 꺼내 감시 수단을 정당화한다."
+        },
+        {
+          "type": "policy_narrowing",
+          "trigger": "cornered",
+          "pattern": "웹캠 확인을 상시 촬영이 아니라 출석 확인 정도였다고 계속 낮춰 말한다."
+        },
+        {
+          "type": "outcome_jump",
+          "trigger": "avoiding",
+          "pattern": "감시 절차를 묻는 질문에 바로 업무 결과와 팀 불만 이야기로 점프한다."
+        }
+      ]
+    },
+    "partyB": {
+      "name": "오수민",
+      "age": 27,
+      "occupation": "재택 고객지원 사원",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "상대가 보낸 공지 문장을 그대로 읽어 주며 감시 범위를 따져 묻는다. 그러나 몰리면 자신의 유휴시간과 편집된 상태 캡처를 표현 문제로 돌리며 실제 근무 공백을 줄여 말한다.",
+      "pride": 6,
+      "fear": "집 안까지 통제당한 피해자 이미지도 잃고, 동시에 게으르고 속인 직원이라는 낙인이 굳는 것",
+      "riskAppetite": 4,
+      "digitalHabit": "status_screenshot_keeper",
+      "dailyRoutine": "오전에는 티켓 응답과 콜백을 처리하고, 오후에는 누적 문의를 정리하며, 집안일이 겹치는 시간대에는 상태창과 캘린더를 자주 손본다.",
+      "sensitivePoints": [
+        "웹캠 요구",
+        "근무 태만 낙인",
+        "재택 권리"
+      ],
+      "verbalTells": [
+        {
+          "type": "quote_back",
+          "trigger": "lying",
+          "pattern": "상대가 적은 지침을 그대로 읽어 주며 자신의 실제 공백 시간을 잠시 가린다."
+        },
+        {
+          "type": "wording_shrink",
+          "trigger": "cornered",
+          "pattern": "자리를 비운 것이 아니라 알림을 늦게 본 것이었다고 말해 문제 범위를 줄인다."
+        },
+        {
+          "type": "sharp_overlap",
+          "trigger": "emotional",
+          "pattern": "억울해지면 상대 말을 끊고 감시 문구를 반복해 대화 전체를 공격적으로 만든다."
+        }
+      ]
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "두 사람은 재택근무 중 응답 지연은 티켓 시스템과 상태창으로만 관리하고, 집 안 공간을 보이게 하는 상시 확인은 하지 않기로 알고 있었다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "지난달 지훈이 카메라 한 번만 보자고 했던 일을 두 사람은 다르게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: 출석 확인 차원의 예외 점검이었다 / B: 그때부터 집 안을 통제해도 된다는 신호로 받아들였다",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "지훈은 수민의 응답 지연을 오래 참고 있다가 어느 순간 갑자기 감시를 강화했고, 수민은 집안일과 외출로 비는 시간이 생기기 시작했지만 정식으로 workload 조정을 요청하지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "정소연 (운영총괄 디렉터)",
+        "relationTo": "a",
+        "knowledgeScope": "지훈이 재택 응답률 하락 때문에 압박을 받던 상황과, 정식 정책상 웹캠 상시 점검은 허용되지 않았다는 점을 안다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "박유진 (HR 비즈니스 파트너)",
+        "relationTo": "both",
+        "knowledgeScope": "수민의 사생활 침해 민원, 지훈의 근태 우려 메모, 코칭 일정과 역할 조정 흐름을 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "한기범 (IT 엔드포인트 관리자)",
+        "relationTo": "both",
+        "knowledgeScope": "모니터링 도구 설정, 원본 유휴 로그, 마우스 지글러 탐지, 제출 PDF와 raw export의 차이를 원본 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      }
+    ]
+  },
+  "context": {
+    "contextType": "remote_work_monitoring",
+    "description": "분기 말 응답 SLA가 흔들리자 고객지원팀은 재택 인력의 응답 시간과 접속 상태를 더 자주 보기 시작했다. 지훈은 몇 번의 지연 뒤 웹캠 확인과 화면 캡처를 일상화했고, 수민은 그 압박 속에서 상태창을 편집하고 기기를 흔들어 놓는 편법으로 버티며 갈등이 정면충돌했다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "재택 인력 한 명의 응답 공백이 곧 고객 불만과 팀 전체 성과로 이어지는 구조라, 감시 강화와 편법 은폐가 서로를 더 자극했다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "지훈의 과도한 재택 모니터링과 사생활 침범",
+      "truth": true,
+      "truthDescription": "지훈은 회사 지침을 넘겨 수민에게 수시 웹캠 확인, 화면 캡처, 집 안 배경이 보이는 상태 점검을 요구했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "모니터링경계",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-2",
+      "name": "수민의 근무 태만과 마우스 지글러 사용",
+      "truth": true,
+      "truthDescription": "수민은 일부 근무시간에 장시간 자리를 비우거나 개인 용무를 보면서도 마우스 지글러와 상태창 유지로 온라인 상태를 가장했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "근태검증정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-3",
+      "name": "지훈의 HR 제출 모니터링 요약은 과장 편집됐는가",
+      "truth": true,
+      "truthDescription": "지훈이 HR에 낸 요약 PDF는 수민의 유휴 구간만 선택적으로 붙인 편집본으로, 실제 raw export에 있던 정상 응답 구간과 과도한 웹캠 지시 문맥이 빠져 있었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "증거제출원본화",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "수민의 상태 스크린샷과 캘린더 편집",
+      "truth": true,
+      "truthDescription": "수민은 팀 상태창과 캘린더 화면을 편집한 캡처를 보내며 자리를 지킨 것처럼 보고했고, 동료에게 잠시 대신 답변해 달라고 부탁했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "근태검증정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "정식 개선 절차 대신 사적 감시와 편법으로 버틴 쌍방 책임",
+      "truth": true,
+      "truthDescription": "지훈은 성과 코칭과 정식 경고보다 사적 모니터링을 먼저 택했고, 수민은 workload 조정 요청 대신 편집 캡처와 장치 우회로 버티며 재택 규칙을 함께 무너뜨렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "재택규칙재설계",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "재택근무 운영지침과 지훈의 일일 웹캠 체크 공지",
+      "description": "재택근무 공식 지침과, 지훈이 팀 채널에 올린 수시 웹캠과 화면 확인 공지 묶음이다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "정책 문서 원본과 지훈이 올린 팀 채널 공지 전체를 함께 확인해야 한다.",
+        "check_metadata": "공식 지침에는 상태창과 티켓 로그만 명시돼 있고, 지훈의 공지는 그보다 넓은 웹캠 확인 요구를 담고 있다.",
+        "restore_context": "지훈이 응답률 악화를 이유로 추가 확인을 넣었지만, 정식 정책 업데이트 없이 개인 운영규칙을 먼저 적용한 흐름이 보인다.",
+        "verify_source": "HR 배포본과 팀 채널 공지 링크가 각각 원본 서버에서 일치한다.",
+        "check_edits": "정책 문서와 공지 원본이라 사후 편집 흔적이 없다.",
+        "question_acquisition": "업무 지침과 팀 공지라 적법하게 열람할 수 있다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "엔드포인트 유휴 로그와 마우스 지글러 탐지 기록",
+      "description": "수민의 유휴시간, 비정상 커서 이동 패턴, VPN 유지 상태를 보여주는 엔드포인트 로그다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약 그래프가 아니라 원본 유휴 로그와 장치 탐지 기록을 함께 열어야 한다.",
+        "check_metadata": "정상 타이핑 없이 반복적인 미세 이동 패턴과 장시간 응답 공백이 같은 시간대에 남아 있다.",
+        "restore_context": "단순 집중 업무 구간이라고 보기 어려운 빈도와 지속시간이라 실제 자리 비움 가능성이 높다.",
+        "verify_source": "엔드포인트 관리자 콘솔과 VPN 세션 로그가 같은 사용자 세션을 가리킨다.",
+        "check_edits": "자동 생성 로그라 사후 편집 흔적이 없다.",
+        "question_acquisition": "회사 단말 운영 로그라 조사 범위 내 적법하게 활용 가능하다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "지훈이 HR에 제출한 모니터링 요약 PDF",
+      "description": "수민의 유휴구간과 늦은 응답만 묶어 보여 주는 모니터링 요약 PDF다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "PDF 발췌본이 아니라 원천 export와 페이지 생성 순서를 함께 봐야 한다.",
+        "check_metadata": "정상 응답 구간, 지훈의 웹캠 지시 문장, 예외 사유 메모가 잘린 채 유휴시간 장면만 남아 있다.",
+        "restore_context": "이 자료만 보면 수민의 태만만 선명하지만, 지훈이 사용한 과도한 감시 수단과 일부 정상 근무 맥락은 사라진다.",
+        "verify_source": "플랫폼에서 내보낸 표 일부를 붙인 파일로 보이지만 공식 HR 첨부본 형식과는 다르다.",
+        "check_edits": "문장 변조는 없으나 선택적 절삭과 배열로 해석이 과장된다.",
+        "question_acquisition": "지훈이 자발 제출한 자료라 입수는 적법하지만 증거로는 원본 대조가 필요하다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "모니터링 도구 raw export와 관리자 설정 로그",
+      "description": "실제 캡처 주기, 웹캠 호출 빈도, raw 응답 데이터가 남아 있는 원본 export와 설정 로그다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "화면 요약본이 아니라 raw export CSV와 관리자 설정 스냅샷을 함께 열어야 한다.",
+        "check_metadata": "지훈 계정에서 정책상 허용치를 넘는 캡처 빈도와 수동 웹캠 호출이 설정됐고, raw export에는 PDF에서 빠진 정상 응답 구간이 남아 있다.",
+        "restore_context": "과도한 감시와 선택적 요약 제출이 각각 별개의 문제로 존재했음을 분리해 보여 준다.",
+        "verify_source": "IT 관리자 콘솔과 감사 로그가 같은 설정 변경 시각을 가리킨다.",
+        "check_edits": "플랫폼 원본 추출본이라 사후 편집 흔적이 없다.",
+        "question_acquisition": "시스템 설정 로그라 조사 목적 열람은 적법하다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "수민의 편집 상태 스크린샷과 동료 DM",
+      "description": "수민이 보낸 상태창과 캘린더 캡처, 그리고 동료에게 잠시 대신 응답해 달라고 부탁한 DM이다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "캡처 이미지뿐 아니라 원본 상태창 기록과 DM 앞뒤 메시지를 함께 확인해야 한다.",
+        "check_metadata": "캡처 생성 시각 직전 캘린더 블록이 급히 수정됐고, 동료에게 10분만 커버해 달라는 메시지가 이어진다.",
+        "restore_context": "수민은 잠깐 자리 비움이었다고 주장하지만, 보고용 화면을 꾸며 보낸 정황이 남는다.",
+        "verify_source": "동료 수신 단말과 수민 갤러리의 파일명이 서로 일치한다.",
+        "check_edits": "본문 변조 흔적은 약하지만 상태창과 일정 블록에 선택적 편집이 확인된다.",
+        "question_acquisition": "개인 단말과 사적 대화가 포함돼 있어 필요한 범위만 제한적으로 다뤄야 한다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "HR 코칭 메모와 응답 SLA 티켓 기록",
+      "description": "지훈의 코칭 내역과 수민의 반복 지연 티켓, 그리고 정식 개선 절차가 늦어진 흐름을 보여 주는 HR와 운영 기록이다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "코칭 요약본만이 아니라 SLA 티켓 원본과 개선계획 입력 여부를 함께 봐야 한다.",
+        "check_metadata": "응답 지연은 여러 차례 누적됐지만 정식 경고나 workload 조정은 늦었고, 그 사이 지훈의 사적 감시와 수민의 우회행동이 커졌다.",
+        "restore_context": "양측 모두 공식 개선 절차를 거치기보다 각자 편법으로 버틴 구조가 분명해진다.",
+        "verify_source": "HR 코칭 로그와 운영 티켓 시스템이 같은 날짜와 사건 번호를 공유한다.",
+        "check_edits": "기관 기록이라 사후 편집 흔적이 없다.",
+        "question_acquisition": "인사와 운영 자료라 분쟁 해결 목적 외 공개는 제한돼야 한다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "지훈은 정책을 넘어 웹캠과 화면 캡처로 수민을 과도하게 감시했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "수민은 마우스 지글러와 상태 유지로 실제 근무 공백을 숨겼다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "지훈의 HR 제출 요약은 raw export보다 수민에게 불리하게 편집돼 있었다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "수민은 편집된 상태 스크린샷과 동료 커버 요청으로 정상 근무처럼 보이게 했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 정식 개선 절차 대신 사적 감시와 편법을 택했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "monitoring_scope_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "webcam_background_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "hr_pdf_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_raw_export"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_or_crop_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "idle_log_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "mouse_jiggler_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-2",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "status_screenshot_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "small_admission_about_home_disruption"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "why_edit_calendar_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "모니터링경계": [
+      "재택근무 평가는 응답 SLA와 티켓 처리량 중심으로 하고, 상시 웹캠과 거실 배경 확인은 금지한다.",
+      "예외 점검이 필요하면 HR과 직원에게 목적과 기간을 먼저 알리고 한시적 화면 확인만 허용한다.",
+      "관리자가 정책 밖 모니터링을 반복하면 재택 인력 관리권과 도구 설정권을 분리한다."
+    ],
+    "근태검증정리": [
+      "온라인 상태는 상태창, 로그, 업무 산출물로 함께 보되, 마우스 지글러나 편집 캡처 사용은 명시적 금지 규정으로 넣는다.",
+      "응답 지연이 반복되면 즉시 workload 조정 또는 개선계획을 세우고, 개인 용무는 공식 break로 신고하게 한다.",
+      "근태 가장이 다시 발견되면 단계적 코칭을 거쳐 재택 자격을 재심한다."
+    ],
+    "증거제출원본화": [
+      "HR이나 분쟁 대응에는 cropped PDF가 아니라 raw export와 설정 로그만 증거로 인정한다.",
+      "관리자와 직원 모두 스크린샷 단독 제출을 금지하고 원본 타임스탬프와 생성경로를 함께 제출하게 한다.",
+      "증거 편집이 확인되면 본안과 별도로 보고 신뢰성 위반을 징계 항목으로 분리한다."
+    ],
+    "재택규칙재설계": [
+      "응답 지연, 휴식, 자리비움, 카메라 사용 범위를 재택 협약서에 다시 쓰고 양쪽 서명을 받는다.",
+      "감시 강화 전에 코칭과 업무량 조정을 선행하고, 직원은 겹치는 개인 일정이 생기면 즉시 공유하게 한다.",
+      "같은 갈등이 반복되면 일정 기간 출근 혼합근무로 전환해 통제와 자율의 균형을 다시 맞춘다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

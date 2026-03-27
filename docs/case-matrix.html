@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solomon Case Matrix</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Pretendard', -apple-system, sans-serif; background: #0f0f0f; color: #e0e0e0; padding: 20px; }
+h1 { text-align: center; color: #d97706; margin-bottom: 8px; font-size: 1.4rem; }
+.subtitle { text-align: center; color: #888; font-size: 0.8rem; margin-bottom: 20px; }
+.legend { display: flex; gap: 16px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; font-size: 0.75rem; }
+.legend span { display: flex; align-items: center; gap: 4px; }
+.legend .dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.dot-easy { background: #22c55e; }
+.dot-medium { background: #eab308; }
+.dot-hard { background: #ef4444; }
+.dot-real { background: #8b5cf6; }
+
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 1800px; font-size: 0.7rem; }
+th, td { border: 1px solid #333; padding: 6px 8px; vertical-align: top; }
+th { background: #1a1a1a; color: #d97706; font-weight: 600; position: sticky; top: 0; z-index: 2; white-space: nowrap; }
+th.row-header { position: sticky; left: 0; z-index: 3; background: #1a1a1a; min-width: 80px; }
+td.row-header { position: sticky; left: 0; z-index: 1; background: #111; font-weight: 600; color: #d97706; min-width: 80px; }
+td { background: #111; min-width: 130px; max-width: 180px; line-height: 1.4; }
+td.real { background: #1a1028; border-color: #4c1d95; }
+
+.cs { color: #60a5fa; font-weight: 600; }
+.tw { color: #f472b6; }
+.diff-easy { color: #22c55e; }
+.diff-medium { color: #eab308; }
+.diff-hard { color: #ef4444; }
+.desc { color: #999; display: block; margin-top: 3px; }
+.case-id { color: #666; font-size: 0.65rem; }
+.real-tag { display: inline-block; background: #7c3aed; color: white; font-size: 0.6rem; padding: 1px 4px; border-radius: 3px; margin-bottom: 3px; }
+
+.cs-ref { margin-top: 20px; display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; font-size: 0.7rem; color: #888; }
+.cs-ref div { background: #1a1a1a; padding: 8px 12px; border-radius: 6px; }
+.cs-ref .label { color: #60a5fa; font-weight: 600; }
+.tw-ref .label { color: #f472b6; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>Solomon Case Matrix</h1>
+<p class="subtitle">7 Relationship Types x (12 Fictional + 6~7 Real Reference Cases)</p>
+
+<div class="legend">
+  <span><span class="dot dot-easy"></span> Easy</span>
+  <span><span class="dot dot-medium"></span> Medium</span>
+  <span><span class="dot dot-hard"></span> Hard</span>
+  <span><span class="dot dot-real"></span> Real Case Reference</span>
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+  <th class="row-header">Relation</th>
+  <th>Case 01</th><th>Case 02</th><th>Case 03</th><th>Case 04</th><th>Case 05</th><th>Case 06</th>
+  <th>Case 07</th><th>Case 08</th><th>Case 09</th><th>Case 10</th><th>Case 11</th><th>Case 12</th>
+  <th>Real 1</th><th>Real 2</th><th>Real 3</th><th>Real 4</th><th>Real 5</th><th>Real 6</th><th>Real 7</th>
+</tr>
+</thead>
+<tbody>
+
+<!-- SPOUSE -->
+<tr>
+  <td class="row-header">Spouse<br><span style="color:#888;font-size:0.6rem">12 fictional<br>6 real</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">추석 직전, 비밀 송금과 외도 의심이 겹치는 오해 구조</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">아이 입학 직전, 피해자가 실은 가해자인 반전</span></td>
+  <td><span class="cs">CS-1</span><br><span class="diff-easy">easy</span><span class="desc">단순 재정 은닉, 소통 부재</span></td>
+  <td><span class="cs">CS-6</span> <span class="tw">TW-2</span><br><span class="diff-hard">hard</span><span class="desc">약속 파기 + 배후 반전</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">권한 침범 + 증거 위조</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">명예 훼손 + 공유 오해</span></td>
+  <td><span class="cs">CS-2</span><br><span class="diff-easy">easy</span><span class="desc">성과/기여 가로채기</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-5</span><br><span class="diff-hard">hard</span><span class="desc">신뢰 배신 + 사전 합의</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">재정 은닉 + 피해자 반전</span></td>
+  <td><span class="cs">CS-6</span><br><span class="diff-easy">easy</span><span class="desc">약속 파기, 단순 구조</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-3</span><br><span class="diff-hard">hard</span><span class="desc">권한 침범 + 공모 반전</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">명예 훼손 + 증거 위조</span></td>
+  <!-- real -->
+  <td class="real"><span class="real-tag">REAL</span><br><b>숨긴 빚 vs 숨긴 저축</b><span class="desc">양쪽 다 비밀 계좌. 남편은 빚, 아내는 자산 숨김</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>15년 별거 후 재산분할</b><span class="desc">별거 중 형성된 재산의 분할 여부</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>육아 방식 차이 (사교육)</b><span class="desc">사교육 vs 자연육아. 양쪽 다 아이를 위한 진심</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>전업주부 기여도 50%</b><span class="desc">해외 숨긴 자산 발견. 기여도 분쟁</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>일방적 재산 처분</b><span class="desc">남편 아파트 매각 vs 아내 보험 해약. 양쪽 무단 처분</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>채무초과 부부</b><span class="desc">도박빚 vs 명품지출. 공동채무/개인채무 구분</span></td>
+  <td></td>
+</tr>
+
+<!-- NEIGHBOR -->
+<tr>
+  <td class="row-header">Neighbor<br><span style="color:#888;font-size:0.6rem">12 fictional<br>6 real</span></td>
+  <td><span class="cs">CS-3</span><br><span class="diff-easy">easy</span><span class="desc">장마철, 층간소음/누수 오해</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-2</span><br><span class="diff-hard">hard</span><span class="desc">반상회 후 동대표가 배후인 소문</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">반려견 사고 + CCTV 위조</span></td>
+  <td><span class="cs">CS-6</span> <span class="tw">TW-1</span><br><span class="diff-medium">medium</span><span class="desc">주차 합의 파기 + 피해자 반전</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">택배 분실 + 공유 오해</span></td>
+  <td><span class="cs">CS-1</span><br><span class="diff-easy">easy</span><span class="desc">공용시설 수리비 분담</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">이사 직후 첫 충돌 + 과거 소환</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">CCTV 사생활 + 편집 영상</span></td>
+  <td><span class="cs">CS-6</span> <span class="tw">TW-5</span><br><span class="diff-hard">hard</span><span class="desc">방음공사 합의 번복</span></td>
+  <td><span class="cs">CS-4</span><br><span class="diff-easy">easy</span><span class="desc">아이들 갈등 → 부모 갈등</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-3</span><br><span class="diff-hard">hard</span><span class="desc">상가 공모 보상 구조</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">공동구매 돈 문제 + 피해자 반전</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>보복소음 우퍼스피커</b><span class="desc">피해자가 가해자로 전환. 손배 판결</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>방화문 분쟁</b><span class="desc">법 vs 감정의 괴리. 협박 쪽지</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>1층 화단 텃밭 분쟁</b><span class="desc">공용공간 사유화 vs 방치 공간 관리</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>반려견 짖음 소음</b><span class="desc">생활소음 피해 vs 동물권 공존</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>빌라 누수 수리비</b><span class="desc">공용배관 vs 전유배관 책임 대립</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>복도 적재 폭행</b><span class="desc">옳은 쪽이 폭력으로 가해자 역전</span></td>
+  <td></td>
+</tr>
+
+<!-- WORKPLACE -->
+<tr>
+  <td class="row-header">Workplace<br><span style="color:#888;font-size:0.6rem">12 fictional<br>6 real</span></td>
+  <td><span class="cs">CS-2</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">인사평가 시즌, 보고서 수정 로그 조작</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-2</span><br><span class="diff-hard">hard</span><span class="desc">감사 직전 비밀 유출, 제3자가 진범</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">사내 소문 + 공유 오해</span></td>
+  <td><span class="cs">CS-6</span><br><span class="diff-easy">easy</span><span class="desc">약속 파기, 단순 업무 분쟁</span></td>
+  <td><span class="cs">CS-2</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">성과 가로채기 + 피해자 반전</span></td>
+  <td><span class="cs">CS-3</span><br><span class="diff-medium">medium</span><span class="desc">접근 권한 남용</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-5</span><br><span class="diff-hard">hard</span><span class="desc">재정 은닉 + 사전 합의</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">명예 훼손 + 증거 위조</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">신뢰 배신 + 공유 오해</span></td>
+  <td><span class="cs">CS-6</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">약속 파기 + 피해자 반전</span></td>
+  <td><span class="cs">CS-2</span> <span class="tw">TW-3</span><br><span class="diff-hard">hard</span><span class="desc">성과 가로채기 + 공모 반전</span></td>
+  <td><span class="cs">CS-3</span><br><span class="diff-easy">easy</span><span class="desc">권한 침범, 단순 구조</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>질책 vs 괴롭힘 경계</b><span class="desc">"병신같이" 표현 섞인 업무 지적. 맞고소</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>25년 운전기사 폭언</b><span class="desc">위자료 6천만. "왜 안 떠났나" 쟁점</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>갑질 당하는 상사</b><span class="desc">MZ 역갑질. 상사가 정신과 치료</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>내부고발 보복 해고</b><span class="desc">고발자가 피고인. 진실을 말한 자 처벌</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>회식 불참 질책</b><span class="desc">중간관리자 딜레마. 구조적 압력 전파</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>"자만추" 성희롱 해고</b><span class="desc">가해자 인식 vs 피해자 경험 괴리</span></td>
+  <td></td>
+</tr>
+
+<!-- PARTNERSHIP -->
+<tr>
+  <td class="row-header">Partner<br><span style="color:#888;font-size:0.6rem">12 fictional<br>6 real</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-5</span><br><span class="diff-hard">hard</span><span class="desc">매출 하락기, 공금 갈등 + 합의 번복</span></td>
+  <td><span class="cs">CS-2</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">대형 계약 후 공로 분쟁 + 피해자 반전</span></td>
+  <td><span class="cs">CS-6</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">약속 파기 + 공유 오해</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">신뢰 배신 + 증거 위조</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-2</span><br><span class="diff-hard">hard</span><span class="desc">재정 은닉 + 배후 반전</span></td>
+  <td><span class="cs">CS-3</span><br><span class="diff-easy">easy</span><span class="desc">권한 침범, 단순 구조</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">명예 훼손 + 공유 오해</span></td>
+  <td><span class="cs">CS-6</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">약속 파기 + 피해자 반전</span></td>
+  <td><span class="cs">CS-2</span> <span class="tw">TW-3</span><br><span class="diff-hard">hard</span><span class="desc">지원금 공로 + 공모 반전</span></td>
+  <td><span class="cs">CS-4</span><br><span class="diff-easy">easy</span><span class="desc">채용 갈등, 소통 부재</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">사업 확장 독단 + 피해자 반전</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">업계 행사 후 와전된 험담</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>"너는 직원이었다"</b><span class="desc">구두 합의만. 동업 vs 고용 분쟁</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>카페 매출 부풀리기</b><span class="desc">권리금 2.4억. 컨설팅 공모</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>스타트업 퇴사 후 지분</b><span class="desc">초기 기여 vs 성장 기여 불일치</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>프랜차이즈 영업지역 침해</b><span class="desc">가맹점 보호 vs 본사 확장권</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>자본 vs 노동 수익배분</b><span class="desc">성공 후 경영권 주장. 고전적 갈등</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>조합원 제명 무효</b><span class="desc">실체 문제 있으나 절차 하자</span></td>
+  <td></td>
+</tr>
+
+<!-- FAMILY -->
+<tr>
+  <td class="row-header">Family<br><span style="color:#888;font-size:0.6rem">12 fictional<br>7 real</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">간병비 분담 + 피해자가 재산 빼돌림</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-2</span><br><span class="diff-hard">hard</span><span class="desc">명절 후 비밀 유출, 며느리/사위 배후</span></td>
+  <td><span class="cs">CS-6</span><br><span class="diff-easy">easy</span><span class="desc">용돈 약속 갈등</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">상속 준비 중 기부 오해</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">독립 갈등 + 편집된 녹취</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-2</span><br><span class="diff-hard">hard</span><span class="desc">가족 SNS + 과거 유출 배후</span></td>
+  <td><span class="cs">CS-2</span><br><span class="diff-easy">easy</span><span class="desc">가업 승계, 기여도 분쟁</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-5</span><br><span class="diff-hard">hard</span><span class="desc">요양원 입소 합의 번복</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-3</span><br><span class="diff-hard">hard</span><span class="desc">부동산 공모</span></td>
+  <td><span class="cs">CS-6</span><br><span class="diff-easy">easy</span><span class="desc">명절 분담, 소통 부재</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">양육 갈등, 개입자가 가해자</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">가족 카톡 캡처 편집</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>성년후견 청구 분쟁</b><span class="desc">부모 보호 vs 자기결정권 침해</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>부모 부양 거부</b><span class="desc">부양의무 vs 맞벌이 현실. 형평성</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>혼외자 부양료 소급</b><span class="desc">과거의 진실이 현재에 영향</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>뒤늦게 나타난 이부형제</b><span class="desc">몰랐던 형제 출현. neither_knows</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>유언장 장남 독식</b><span class="desc">부모 뜻 vs 형제 평등</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>손녀 상속 차별</b><span class="desc">전통 vs 법적 평등</span></td>
+  <td></td>
+</tr>
+
+<!-- TENANT -->
+<tr>
+  <td class="row-header">Tenant<br><span style="color:#888;font-size:0.6rem">12 fictional<br>6 real</span></td>
+  <td><span class="cs">CS-6</span><br><span class="diff-easy">easy</span><span class="desc">계약 만료, 보증금 반환 갈등</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">무단 출입 + 타임스탬프 조작</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-2</span><br><span class="diff-hard">hard</span><span class="desc">전세사기 + 중개사 배후</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">전세 전환 구두합의 오해</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">전 세입자 소문 + 피해자 반전</span></td>
+  <td><span class="cs">CS-3</span><br><span class="diff-medium">medium</span><span class="desc">옥상/지하 사용 범위 갈등</span></td>
+  <td><span class="cs">CS-6</span> <span class="tw">TW-5</span><br><span class="diff-hard">hard</span><span class="desc">재계약 인상률 번복</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">관리비 내역 조작</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-3</span><br><span class="diff-hard">hard</span><span class="desc">세입자+중개사 공모 보증금 부풀리기</span></td>
+  <td><span class="cs">CS-3</span><br><span class="diff-easy">easy</span><span class="desc">반려동물 제한, 계약 해석 차이</span></td>
+  <td><span class="cs">CS-2</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">인테리어 비용 부풀림 + 피해자 반전</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">관리인 말 와전된 소문 오해</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>상가 권리금 회수 방해</b><span class="desc">영업권 보호 vs 재산권·재건축</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>몰래 바뀐 집주인</b><span class="desc">3자 책임 전가. 보증금 3억</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>곰팡이 양쪽 과실</b><span class="desc">불법 증축 + 환기 소홀</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>원상복구 과다 청구</b><span class="desc">복구 의사 없이 보증금 공제 부당</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>실거주 퇴거 요구</b><span class="desc">실거주 증명 필요. 진위 판별</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>누수 3자 분쟁</b><span class="desc">노후배관 + 세탁기호스. 복합원인</span></td>
+  <td></td>
+</tr>
+
+<!-- FRIEND -->
+<tr>
+  <td class="row-header">Friend<br><span style="color:#888;font-size:0.6rem">12 fictional<br>6 real</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">여행 후 경비 정산 오해</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-2</span><br><span class="diff-hard">hard</span><span class="desc">동호회 비밀 폭로 + 이간질 배후</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-4</span><br><span class="diff-hard">hard</span><span class="desc">SNS 비방 + 편집 캡처</span></td>
+  <td><span class="cs">CS-6</span><br><span class="diff-easy">easy</span><span class="desc">공동구매 약속 해석 차이</span></td>
+  <td><span class="cs">CS-1</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">빌린 돈 + 피해자가 더 큰 빚</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">공동 작업물 수정 권한 오해</span></td>
+  <td><span class="cs">CS-4</span> <span class="tw">TW-5</span><br><span class="diff-hard">hard</span><span class="desc">비밀연애 폭로 + 합의 번복</span></td>
+  <td><span class="cs">CS-2</span><br><span class="diff-easy">easy</span><span class="desc">공동 프로젝트 기여도</span></td>
+  <td><span class="cs">CS-5</span> <span class="tw">TW-3</span><br><span class="diff-hard">hard</span><span class="desc">커뮤니티 갈등 + 공모</span></td>
+  <td><span class="cs">CS-6</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">결혼식 약속 기억 차이</span></td>
+  <td><span class="cs">CS-3</span> <span class="tw">TW-1</span><br><span class="diff-hard">hard</span><span class="desc">공유계정 + 먼저 무단 사용</span></td>
+  <td><span class="cs">CS-2</span> <span class="tw">TW-6</span><br><span class="diff-medium">medium</span><span class="desc">공동 창작물 크레딧 오해</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>경찰관 코인 사기</b><span class="desc">8.8억 폰지. 의도의 변질 과정</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>공동 투자 손실 분쟁</b><span class="desc">권유자 도의적 책임 vs 투자 자기책임</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>공동명의 부동산</b><span class="desc">3명 구매 후 1명 독점. 건축물 부합</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>지인 5천만원 대여</b><span class="desc">부부+친구 갈등 동시 발생</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>카페 동업 3,500만원</b><span class="desc">동업 vs 대여. 같은 카톡 다른 해석</span></td>
+  <td class="real"><span class="real-tag">REAL</span><br><b>차용증 없이 500만원</b><span class="desc">"준 것" vs "빌려준 것" 입증</span></td>
+  <td></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="cs-ref">
+  <div><span class="label">CS-1</span> 재정 은닉</div>
+  <div><span class="label">CS-2</span> 성과 가로채기</div>
+  <div><span class="label">CS-3</span> 권한 침범</div>
+  <div><span class="label">CS-4</span> 신뢰 배신</div>
+  <div><span class="label">CS-5</span> 명예 훼손</div>
+  <div><span class="label">CS-6</span> 약속 파기</div>
+</div>
+<div class="cs-ref tw-ref" style="margin-top:8px;">
+  <div><span class="label">TW-1</span> 피해자 반전</div>
+  <div><span class="label">TW-2</span> 배후 반전</div>
+  <div><span class="label">TW-3</span> 공모 반전</div>
+  <div><span class="label">TW-4</span> 증거 위조</div>
+  <div><span class="label">TW-5</span> 사전 합의</div>
+  <div><span class="label">TW-6</span> 공유 오해</div>
+</div>
+
+<p style="text-align:center; color:#555; font-size:0.65rem; margin-top:16px;">Total: 84 fictional cases + 45 real reference cases | Generated 2026-03-26</p>
+
+</body>
+</html>

@@ -1,30 +1,37 @@
 import { useState, useEffect } from 'react'
+import type { ExtendedHistoryEntry } from '../../types'
+import { loadExtendedHistory, addHistoryEntry, ensureProfile } from '../../data/leaderboard'
+import { getCurrentSeason } from '../../data/seasons'
 
-interface HistoryEntry {
+/** 판결 완료 시 호출 — VerdictScreen에서 사용 */
+export function recordHistory(entry: {
   caseId: string
   score: number
-  date: string
+  insight?: number
+  authority?: number
+  wisdom?: number
   relationshipType: string
   nameA: string
   nameB: string
-}
-
-const HISTORY_KEY = 'solomon-history'
-
-export function recordHistory(entry: Omit<HistoryEntry, 'date'>) {
-  try {
-    const history = loadHistory()
-    history.unshift({ ...entry, date: new Date().toISOString() })
-    if (history.length > 50) history.length = 50
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(history))
-  } catch { /* ignore */ }
-}
-
-export function loadHistory(): HistoryEntry[] {
-  try {
-    const raw = localStorage.getItem(HISTORY_KEY)
-    return raw ? JSON.parse(raw) : []
-  } catch { return [] }
+  titles?: string[]
+}) {
+  const profile = ensureProfile()
+  const season = getCurrentSeason()
+  addHistoryEntry({
+    caseId: entry.caseId,
+    score: entry.score,
+    insight: entry.insight ?? entry.score,
+    authority: entry.authority ?? entry.score,
+    wisdom: entry.wisdom ?? entry.score,
+    date: new Date().toISOString(),
+    relationshipType: entry.relationshipType,
+    nameA: entry.nameA,
+    nameB: entry.nameB,
+    seasonId: season.id,
+    playerId: profile.playerId,
+    playerName: profile.playerName,
+    titles: entry.titles ?? [],
+  })
 }
 
 interface Props {
@@ -37,10 +44,10 @@ const RELATION_LABELS: Record<string, string> = {
 }
 
 export default function HistoryPanel({ onClose }: Props) {
-  const [history, setHistory] = useState<HistoryEntry[]>([])
+  const [history, setHistory] = useState<ExtendedHistoryEntry[]>([])
 
   useEffect(() => {
-    setHistory(loadHistory())
+    setHistory(loadExtendedHistory())
   }, [])
 
   return (
@@ -70,8 +77,13 @@ export default function HistoryPanel({ onClose }: Props) {
                       </div>
                       <span className={`text-sm font-bold ${ratingColor}`}>{h.score}점</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-600">{new Date(h.date).toLocaleDateString('ko')}</span>
+                    <div className="flex items-center gap-3 mt-1">
+                      <span className="text-xs text-blue-400/70">통찰 {h.insight}</span>
+                      <span className="text-xs text-amber-400/70">권위 {h.authority}</span>
+                      <span className="text-xs text-emerald-400/70">지혜 {h.wisdom}</span>
+                    </div>
+                    <div className="flex items-center justify-between mt-1">
+                      <span className="text-xs text-gray-600">{new Date(h.date).toLocaleDateString('ko')} · {h.seasonId?.replace('s', '시즌 ')}</span>
                       <span className={`text-xs ${ratingColor}`}>{rating}</span>
                     </div>
                   </div>

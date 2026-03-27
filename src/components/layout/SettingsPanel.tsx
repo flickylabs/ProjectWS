@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { getSettings, updateSettings, loadSave } from '../../hooks/useLocalStorage'
 import { checkConnection, getProviderName } from '../../engine/llmClient'
 import { isSoundEnabled, setSoundEnabled } from '../../engine/soundEngine'
+import { useGameStore } from '../../store/useGameStore'
 
 interface Props {
   onClose: () => void
@@ -87,6 +88,9 @@ export default function SettingsPanel({ onClose }: Props) {
               <Stat label="최근 사건" value={`${save.recentCaseIds.length}개`} />
             </div>
           </Section>
+
+          {/* DEV: 치트키 (출시 시 제거) */}
+          <CheatSection />
         </div>
       </div>
     </div>
@@ -125,5 +129,47 @@ function Stat({ label, value }: { label: string; value: string }) {
       <div className="text-xs text-gray-500">{label}</div>
       <div className="text-sm font-bold text-gray-200">{value}</div>
     </div>
+  )
+}
+
+/** DEV 전용 — 출시 시 제거 */
+function CheatSection() {
+  const resources = useGameStore((s) => s.resources)
+  const gain = useGameStore((s) => s.gain)
+  const caseData = useGameStore((s) => s.caseData)
+
+  return (
+    <Section title="🛠 DEV 치트키">
+      <div className="bg-yellow-950/20 border border-yellow-800/30 rounded-lg p-2.5 space-y-2">
+        <p className="text-xs text-yellow-600">테스트용 — 출시 시 제거 예정</p>
+
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-gray-300">🔍 조사 토큰: {resources.investigationTokens}</span>
+          <div className="flex gap-1">
+            <button onClick={() => gain('investigationTokens', 1)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+1</button>
+            <button onClick={() => gain('investigationTokens', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
+            <button onClick={() => gain('investigationTokens', 99)} className="px-2 py-0.5 text-xs rounded bg-amber-800 hover:bg-amber-700 text-amber-200 active:scale-95">MAX</button>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-gray-300">⚡ 스킬 포인트: {resources.skillPoints}</span>
+          <div className="flex gap-1">
+            <button onClick={() => gain('skillPoints', 1)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+1</button>
+            <button onClick={() => gain('skillPoints', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
+            <button onClick={() => gain('skillPoints', 99)} className="px-2 py-0.5 text-xs rounded bg-amber-800 hover:bg-amber-700 text-amber-200 active:scale-95">MAX</button>
+          </div>
+        </div>
+
+        {caseData && (
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-gray-300">⚖️ 법정 통제력: {resources.courtControl}</span>
+            <div className="flex gap-1">
+              <button onClick={() => gain('courtControl', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
+            </div>
+          </div>
+        )}
+      </div>
+    </Section>
   )
 }

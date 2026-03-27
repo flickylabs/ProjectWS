@@ -9,38 +9,17 @@ interface Props {
 const TRUST_ACTIONS: { type: TrustActionType; label: string; icon: string; desc: string; effect: string }[] = [
   {
     type: 'confidential_protection',
-    label: '비공개 진술 보호',
+    label: '비공개 보호',
     icon: '🔒',
     desc: '이 내용은 상대에게 공개하지 않겠다고 약속',
     effect: '신뢰 +20, 공포 -15',
   },
   {
-    type: 'interruption_block',
-    label: '분리심문',
+    type: 'separation',
+    label: '분리 심문',
     icon: '🚪',
     desc: '상대를 3턴간 배제하고 1:1로 심문 (조사토큰 1)',
     effect: '보복 우려 -10, 3턴간 끼어들기 차단',
-  },
-  {
-    type: 'retaliation_check',
-    label: '보복 우려 확인',
-    icon: '🛡️',
-    desc: '말한 뒤 불이익이 걱정되는지 확인',
-    effect: '보복 우려 -25',
-  },
-  {
-    type: 'emotional_stabilization',
-    label: '감정 안정화',
-    icon: '🌿',
-    desc: '과열된 감정을 진정시킨 후 재질문',
-    effect: '신뢰 +8, 감정 진정',
-  },
-  {
-    type: 'pre_disclosure_consent',
-    label: '공개 전 사전 확인',
-    icon: '📋',
-    desc: '비공개 진술을 공개 진술로 격상',
-    effect: '신뢰 +5 (신뢰 60 이상 필요)',
   },
 ]
 
@@ -68,7 +47,7 @@ export default function TrustActionPanel({ target, onAction }: Props) {
 
       <div className="grid grid-cols-2 gap-2">
         {TRUST_ACTIONS.map((action) => {
-          const disabled = action.type === 'pre_disclosure_consent' && trust.trustTowardJudge < 60
+          const disabled = false
           return (
             <button
               key={action.type}

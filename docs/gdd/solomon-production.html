@@ -21,15 +21,17 @@
     <a class="topbar-sec-link" href="#mvp">MVP 범위</a>
   </div>
   <div class="topbar-meta">
-    <span>v2.0</span>
-    <span>2026-03-25</span>
+    <span>v3.0</span>
+    <span>2026-03-28</span>
   </div>
 </header>
 
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
     <div class="sidebar-section-title">게임 비전</div>
-    <div class="sidebar-items"><a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a></div>
+    <div class="sidebar-items"><a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
+      <a class="sidebar-link" href="solomon-concept.html"><span class="icon">🎭</span><span class="label">세계관 &amp; 컨셉</span></a>
+    </div>
   </div>
   <div class="sidebar-section">
     <div class="sidebar-section-title">사건 설계</div>
@@ -66,22 +68,23 @@
 
   <div class="two-col">
     <div class="card">
-      <div class="card-title">메인 법정 화면</div>
+      <div class="card-title">메인 게임 화면 (모바일 퍼스트)</div>
       <ul>
-        <li>좌측 A, 우측 B의 초상 + <strong>행동 징후 아이콘</strong> (숫자 아닌 표정/동작)</li>
-        <li>중앙 실시간 대화 로그</li>
-        <li>하단 <strong>질문 6종 선택 패널</strong> + 증거 공개 버튼 + <strong>신뢰/보호 행동 패널</strong></li>
-        <li>상단 법정 통제력 / 조사 토큰 / 스킬 포인트 / 명성 영향 예고</li>
+        <li>상단: TopBar (← 나가기 | PhaseIndicator | 📋 정보 | ⚙️ 설정)</li>
+        <li>상단바: PartyStatusBar (😐A이름 🔍3 ⚡5 B이름😤 — 감정 이모지 + 리소스)</li>
+        <li>중앙: 채팅 UI (좌=A 말풍선, 우=B 말풍선, 중앙=시스템 메시지)</li>
+        <li>하단 고정: ActionPanel (대상 선택 → [❓심문 | 📄증거 | ⚡스킬] 3탭)</li>
+        <li>토스트: 액션 상세 패널이 하단 위에 absolute로 팝업</li>
+        <li>max-width: lg (모바일 최적화)</li>
       </ul>
     </div>
     <div class="card">
-      <div class="card-title">보조 정보 화면</div>
+      <div class="card-title">보조 정보 (📋 버튼으로 토글)</div>
       <ul>
-        <li><strong>주장 그래프 (Claim Graph)</strong> — 자동 요약, 충돌 표시, 변경 추적, 정식 기록 하이라이트</li>
-        <li><strong>관계별 미니 보드</strong> — 부부: 돈 흐름 / 이웃: 건물 배치 / 직장: 문서 비교</li>
-        <li>확보 증거 보드 (잠금/해제 + <strong>4축 속성 표시</strong>)</li>
-        <li>쟁점 체크리스트 (상태별 색상: 숨김/주장/충돌/붕괴/재프레이밍)</li>
-        <li>48h 타임라인 (확인된 이벤트만 점진적 공개)</li>
+        <li><strong>쟁점 체크리스트</strong> — 쟁점별 거짓말 상태 + 감정 표시</li>
+        <li><strong>주장 그래프</strong> — 발언 요약, 충돌 표시</li>
+        <li><strong>증거 보드</strong> — 잠금/해제/제시 상태 + 조사 진행도</li>
+        <li><strong>진술 분석 팝업</strong> (Phase 5) — AI 분석 결과 모달</li>
       </ul>
     </div>
   </div>
@@ -112,21 +115,21 @@
   <h2 id="tech">기술 스택 (LLM 분업 구조)</h2>
 
   <div class="table-wrap"><table>
-    <thead><tr><th>컴포넌트</th><th>권장 기술</th><th>역할</th><th>비용 구조</th></tr></thead>
+    <thead><tr><th>컴포넌트</th><th>기술</th><th>역할</th></tr></thead>
     <tbody>
-      <tr><td>프론트엔드</td><td>React / Vue + TypeScript</td><td>법정 UI, 주장 그래프, 관계별 보드, 판결/중재 화면</td><td>고정 개발비</td></tr>
-      <tr><td>룰 엔진</td><td>Node.js 또는 Python FastAPI</td><td>거짓말 상태 머신, 감정 곡선, 증거 잠금 해제, 모순 판정, 채점</td><td>서버 운영비</td></tr>
-      <tr><td><strong>사건 생성 LLM</strong></td><td><strong>로컬 LLM (Llama 3, Mistral 등)</strong></td><td>DuoSeed/ContextSeed/CaseSeed 전체 생성, 48h 타임라인, 드라마 비트 검증</td><td><strong>로컬 처리, API 비용 없음</strong></td></tr>
-      <tr><td><strong>실시간 연기 LLM</strong></td><td><strong>OpenAI API (GPT-4o 이상)</strong></td><td>당사자 발화 생성, 감정 표현, Verbal Tell, 신뢰 루트 반응</td><td><strong>턴당 API 호출</strong></td></tr>
-      <tr><td>데이터 저장</td><td>JSON + 세션 DB (PostgreSQL/SQLite)</td><td>DuoSeed 영구 저장, CaseSeed 세션 저장, 플레이 이력 저장</td><td>DB 운영비</td></tr>
-      <tr><td>반복 방지 + 편향 추적</td><td>Redis 또는 로컬 스토리지</td><td>최근 N판 태그, 편향 카운터 빠르게 읽기/쓰기</td><td>최소</td></tr>
+      <tr><td>프론트엔드</td><td><strong>React + TypeScript + Vite 8 + Tailwind CSS v4</strong></td><td>모바일 퍼스트 UI, 채팅 기반 대화, 토스트 액션 패널</td></tr>
+      <tr><td>상태 관리</td><td><strong>Zustand</strong></td><td>게임 상태, 거짓말 머신, 감정, 증거, 대화 로그, 과정 메트릭</td></tr>
+      <tr><td>사건 데이터</td><td><strong>정적 JSON (GPT Pro 사전 생성 + Claude Code 정제)</strong></td><td>84개 사건 × 7유형. 런타임 생성 아님.</td></tr>
+      <tr><td>Phase 1 대사</td><td><strong>GPT Pro 사전 생성 + Claude Code 보정</strong></td><td>사건별 8~10개 초기 진술 스크립트. 이름 플레이스홀더 사용.</td></tr>
+      <tr><td>런타임 LLM</td><td><strong>OpenAI GPT-4o-mini</strong></td><td>Phase 2~5 대화 생성, 자유질문, 증거 대질, 진술 분석</td></tr>
+      <tr><td>데이터 저장 (Phase 1)</td><td><strong>localStorage</strong></td><td>플레이 이력, 캠페인 진행, 프로필, 리더보드</td></tr>
+      <tr><td>데이터 저장 (Phase 2)</td><td><strong>Supabase (예정)</strong></td><td>온라인 리더보드, 시즌 랭킹, 유저 프로필</td></tr>
     </tbody>
   </table></div>
 
   <div class="alert alert-info"><span class="alert-icon">💡</span><div>
-    <strong>LLM 분업의 핵심:</strong> 로컬 LLM은 사건 시작 전에 한 번 무겁게 돌리고 끝.
-    플레이 중에는 클라우드 API만 턴당 호출. 로컬에서 풍부한 데이터(DuoSeed, 48h 타임라인, 증거 그래프)를 만들고,
-    클라우드 API는 그 데이터 위에서 자연스러운 연기만 담당. 비용 효율과 품질을 동시에 확보.
+    <strong>LLM 미연결 시:</strong> 고정 대사 트리(dialogueResolver.ts)와 제네릭 Phase 1/2 대사(generic-phase1.ts)로 폴백.
+    AI 없이도 플레이 가능하지만, 자유질문·증거 대질·진술 분석은 AI 모드 전용.
   </div></div>
 
 
@@ -175,47 +178,39 @@
 
   <div class="two-col">
     <div class="card">
-      <div class="card-title">필수 포함 (전체 시스템)</div>
+      <div class="card-title">구현 완료 (v3.0 현재)</div>
       <ul class="text-sm">
-        <li><strong>3층 데이터 아키텍처:</strong> DuoSeed / ContextSeed / CaseSeed</li>
-        <li><strong>DuoSeed 5쌍</strong> (관계 5종: 부부, 이웃, 직장, 동업, 가족)</li>
-        <li><strong>Relationship Ledger</strong> (DuoSeed당 3~5개 이력)</li>
-        <li><strong>Social Graph</strong> (DuoSeed당 3~5명 제3자)</li>
-        <li><strong>Context Pack 9종</strong></li>
-        <li><strong>사건 모듈 17종:</strong> CS 6종 + VM 5종 + TW 6종(TW-6 포함)</li>
-        <li><strong>48h 이벤트 타임라인</strong> (블록 기반)</li>
-        <li><strong>증거 4축 시스템</strong> + 조사 하위 액션 6종</li>
-        <li><strong>거짓말 2축:</strong> 유형 7종(LT-7 포함) x 동기 7종</li>
-        <li><strong>Verbal Tell</strong> (캐릭터당 3~4개)</li>
-        <li><strong>질문 6종 시스템</strong></li>
-        <li><strong>신뢰/보호 행동 5종</strong></li>
-        <li><strong>스킬 7종</strong> (리테마이징 완료)</li>
-        <li><strong>주장 그래프 UI</strong></li>
-        <li><strong>중재안 Phase</strong> + 관계별 해결 프레임</li>
-        <li><strong>드라마 비트 템플릿</strong> + 초기 인상 균형</li>
-        <li><strong>편향 디렉터</strong> (카운터 기반)</li>
-        <li><strong>반복 방지 메커니즘</strong> (8종 태그)</li>
-        <li><strong>명성 3축</strong> (통찰/권위/지혜)</li>
-        <li><strong>캠페인 10 Stage</strong> + 무한 사건 모드</li>
-        <li><strong>부분 해결 사건</strong> (Stage 8~10)</li>
-        <li><strong>11단계 생성 파이프라인</strong></li>
-        <li><strong>LLM 분업:</strong> 로컬(생성) + 클라우드 API(연기) + 룰 엔진(판정)</li>
-        <li><strong>관계별 미니 보드</strong> (범용 컴포넌트 + 탭 구성 차이)</li>
+        <li><strong>84개 사건 데이터:</strong> 7 관계 유형 × 12개 (spouse, neighbor, workplace, family, friend, partnership, tenant)</li>
+        <li><strong>Phase별 해금 구조:</strong> Phase 3(심문) → 4(증거+스킬) → 5(토글+AI분석)</li>
+        <li><strong>질문 3종 + 자유질문(AI)</strong></li>
+        <li><strong>스킬 2분류:</strong> 토글(회피판독, 비공개보호) + 액티브(이의제기, 분리심문, 즉답요구)</li>
+        <li><strong>증거 시스템:</strong> 3단계 조사, 조합 격상, 심문 중 자동 발견, 증거 대질(AI)</li>
+        <li><strong>거짓말 상태 머신:</strong> S0~S5 × 동기 7종</li>
+        <li><strong>감정 엔진:</strong> defensive → confident → shaken → angry → resigned</li>
+        <li><strong>과정 점수:</strong> 결과 점수 + 심문 효율/증거 활용/AI 활용 보너스</li>
+        <li><strong>Phase별 LLM 응답 깊이</strong> (Phase 3 표면 → Phase 5 고백)</li>
+        <li><strong>AI 진술 분석</strong> (Phase 5, 전체 대화 요약 + 모순 탐지)</li>
+        <li><strong>CaseMap</strong> (7챕터 × 12스테이지, 별 시스템)</li>
+        <li><strong>리더보드 + 시즌제 + 프로필 + 명성</strong></li>
+        <li><strong>한국어 조사 자동 처리:</strong> korean.ts (이/가, 은/는, 을/를 등)</li>
+        <li><strong>이름 플레이스홀더:</strong> {A}, {B}, {A:이} → resolveNameTemplate()</li>
+        <li><strong>시스템 메시지 톤:</strong> 관찰자 톤 (~한다/~했다), 생동감</li>
       </ul>
     </div>
     <div class="card">
-      <div class="card-title">후순위 (v2+)</div>
+      <div class="card-title">후순위 / 미구현</div>
       <ul class="text-sm">
-        <li>음성 합성 (캐릭터별 목소리)</li>
-        <li>완전한 애니메이션 초상화</li>
-        <li>온라인 랭킹 시스템</li>
-        <li>플레이어 커스텀 법정 테마</li>
-        <li>커뮤니티 공유 씨드 (사건 코드 공유)</li>
-        <li>멀티엔딩 시네마틱</li>
-        <li>관계별 미니 보드 전용 아트 리소스</li>
-        <li>DuoSeed 추가 확장 (관계 7종 → 10종+)</li>
-        <li>데일리 챌린지 사건</li>
-        <li>시즌 이벤트 (명절 특별 사건 등)</li>
+        <li>Supabase 온라인 리더보드</li>
+        <li>캐릭터 실루엣/초상화 이미지</li>
+        <li>이벤트 씬 이미지 (84 × 3 = 252장)</li>
+        <li>BGM 3트랙 (AI 생성 추천)</li>
+        <li>Phase 이름 캐주얼화 (유저와 논의 중)</li>
+        <li>결과 등급 이름 변경 (유저와 논의 중)</li>
+        <li>"재판관" 대체 용어 (미확정)</li>
+        <li>커뮤니티 사건 코드 공유</li>
+        <li>데일리 챌린지</li>
+        <li>시즌 이벤트</li>
+        <li>BM: 다이아몬드 → 조사토큰/스킬포인트 구매</li>
       </ul>
     </div>
   </div>

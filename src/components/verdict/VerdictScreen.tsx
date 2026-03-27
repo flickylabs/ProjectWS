@@ -5,6 +5,7 @@ import { calculateVerdict } from '../../engine/verdictEngine'
 import { recordGameComplete } from '../../hooks/useLocalStorage'
 import { recordHistory } from '../layout/HistoryPanel'
 import { completeStage } from '../../data/campaign'
+import { playGavel } from '../../engine/soundEngine'
 import FactChecklist from './FactChecklist'
 import ResponsibilitySlider from './ResponsibilitySlider'
 import SolutionPicker from './SolutionPicker'
@@ -33,27 +34,33 @@ export default function VerdictScreen() {
   if (!caseData) return null
 
   const currentIdx = STEPS.findIndex((s) => s.id === step)
-  const hasFactFindings = Object.keys(verdictInput.factFindings).length > 0
+  const factCount = Object.keys(verdictInput.factFindings).length
+  const hasFactFindings = factCount > 0
+  const allFactsJudged = factCount >= caseData.disputes.length
   const hasLegalityIssue = caseData.evidence.some(
-    (e) => e.legitimacy !== 'lawful' && evidenceStates[e.id]?.presented,
+    (e) => (e.legitimacy !== 'lawful' || evidenceStates[e.id]?.confidentialSource) && evidenceStates[e.id]?.presented,
   )
 
   const handleSubmit = () => {
+    playGavel()
+    const processMetrics = useGameStore.getState().processMetrics
     const score = calculateVerdict({
       disputes: caseData.disputes, evidence: caseData.evidence, evidenceStates,
       input: verdictInput, turnsUsed: turnCount, courtControlRemaining: resources.courtControl,
+      processMetrics,
     })
     setVerdictScore(score)
     recordGameComplete(caseData.caseId, score.total)
     recordHistory({
       caseId: caseData.caseId, score: score.total,
+      insight: score.insight, authority: score.authority, wisdom: score.wisdom,
       relationshipType: caseData.duo.relationshipType,
       nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name,
     })
     // 캠페인 Stage 진행 (관계 유형으로 매칭)
     const stageMap: Record<string, number> = {
-      neighbor: 1, spouse: 2, boss_employee: 3, partnership: 4,
-      family: 5, tenant_landlord: 6,
+      spouse: 1, neighbor: 2, workplace: 3, boss_employee: 3,
+      partnership: 4, family: 5, tenant: 6, tenant_landlord: 6, friend: 7,
     }
     const stage = stageMap[caseData.duo.relationshipType]
     if (stage) completeStage(stage, score.total)
@@ -110,8 +117,9 @@ export default function VerdictScreen() {
         {step === 'confirm' && (
           <div className="space-y-3 px-2">
             <div className="text-center">
-              <div className="text-2xl mb-1">⚖️</div>
-              <h3 className="text-xs font-bold text-amber-400">판결 요약</h3>
+              <div className="text-4xl mb-2 animate-pulse-glow">⚖️</div>
+              <h3 className="text-sm font-bold text-amber-400">판결을 선언합니다</h3>
+              <p className="text-xs text-gray-600 mt-1">아래 내용으로 확정됩니다</p>
             </div>
             {caseData.disputes.map((d) => {
               const f = verdictInput.factFindings[d.id]
@@ -142,9 +150,9 @@ export default function VerdictScreen() {
           ← 이전
         </button>
         {step === 'confirm' ? (
-          <button onClick={handleSubmit} disabled={!hasFactFindings}
-            className={`text-xs px-5 py-2 rounded-lg font-bold ${hasFactFindings ? 'bg-amber-600 hover:bg-amber-500 text-gray-950' : 'bg-gray-800 text-gray-600'}`}>
-            ⚖️ 판결 확정
+          <button onClick={handleSubmit} disabled={!allFactsJudged}
+            className={`text-xs px-5 py-2 rounded-lg font-bold ${allFactsJudged ? 'bg-amber-600 hover:bg-amber-500 text-gray-950' : 'bg-gray-800 text-gray-600'}`}>
+            {allFactsJudged ? '⚖️ 판결 확정' : `⚖️ 모든 쟁점을 판단하세요 (${factCount}/${caseData.disputes.length})`}
           </button>
         ) : (
           <button onClick={goNext} className="text-xs px-3 py-1.5 rounded-lg bg-amber-700 hover:bg-amber-600 text-white">

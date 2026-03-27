@@ -1,0 +1,684 @@
+{
+"caseId": "case-neighbor-05",
+"meta": {
+"relationshipType": "neighbor",
+"conflictSeed": "CS-4",
+"variableModules": [
+"VM-A"
+],
+"twistModule": "TW-6",
+"difficulty": "medium",
+"anchorTruth": "두 사람이 서로 절도라고 의심한 분실 택배는 실제로 어느 쪽도 가져간 적이 없었고, CCTV에서 각자 자기 것이라고 확신한 흰 상자는 류다은 세대의 동일 포장 정기배송 상자였으며, 오서윤과 임재현의 택배는 젖은 송장 때문에 기사 단말에서 오배송 완료 처리된 뒤 대리점 보류함에 남아 있던 배송 사고였다.",
+"emotionalBait": "CCTV 속 흰 상자, 배송완료 알림, 서로 맡아주던 택배 신뢰가 한꺼번에 겹치며 상대가 일부러 가져간 듯 보인다.",
+"resolutionDilemma": "실제 절도는 없었지만 서윤의 CCTV 캡처 유포와 재현의 역소문 전파는 남는다. 없던 도둑을 만든 공개 의심을 어떻게 정정하고 공동수령 규칙을 어디까지 다시 세울지가 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "오서윤",
+"age": 34,
+"occupation": "웨딩소품·청첩장 디자이너",
+"incomeBracket": "mid",
+"archetype": "suspicious_guardian",
+"speechStyle": "추적번호와 배송시각을 먼저 꺼내며 자신의 의심이 합리적이었다고 밀어붙인다. 불리해지면 캡처 화면을 다시 들이민다.",
+"pride": 7,
+"fear": "업무용 자재를 허술하게 관리한 사람, 이웃을 근거 없이 도둑 취급한 사람으로 보이는 것",
+"riskAppetite": 6,
+"digitalHabit": "shopping_app_and_corridor_cam",
+"dailyRoutine": "오전엔 인쇄업체와 일정을 맞추고 오후엔 샘플을 포장한다. 저녁엔 택배실과 공동선반을 자주 확인한다.",
+"sensitivePoints": [
+"고가 자재",
+"택배 보안",
+"이웃과의 신뢰 약속"
+],
+"verbalTells": [
+{
+"type": "tracking_recital",
+"trigger": "lying",
+"pattern": "주문번호와 배송시각을 길게 읊어 추정을 사실처럼 만든다."
+},
+{
+"type": "screenshot_anchor",
+"trigger": "cornered",
+"pattern": "반박을 받으면 같은 캡처를 다시 보여주며 장면을 고정한다."
+},
+{
+"type": "certainty_jump",
+"trigger": "emotional",
+"pattern": "불안이 커지면 '그 정도면 누가 봐도'라고 단정으로 점프한다."
+}
+]
+},
+"partyB": {
+"name": "임재현",
+"age": 40,
+"occupation": "대학병원 원무행정 야간근무자",
+"incomeBracket": "mid",
+"archetype": "image_manager",
+"speechStyle": "평판 훼손을 먼저 말하고 감정은 짧게 누른다. 몰리면 자신이 받은 모욕을 길게 말하며 퍼뜨린 말의 범위를 줄인다.",
+"pride": 8,
+"fear": "남의 택배를 건드리는 사람, 야간근무를 핑계로 사각시간을 이용하는 사람으로 보이는 것",
+"riskAppetite": 4,
+"digitalHabit": "delivery_app_and_chat",
+"dailyRoutine": "새벽 근무를 마치고 귀가해 현관 앞 택배와 공동선반을 확인한다. 저녁 출근 전 단체방과 배송앱 알림을 정리한다.",
+"sensitivePoints": [
+"절도 누명",
+"층 주민 평판",
+"야간 출퇴근 동선"
+],
+"verbalTells": [
+{
+"type": "reputation_shield",
+"trigger": "lying",
+"pattern": "자기 말이 과했다는 질문에 먼저 평판 피해를 꺼낸다."
+},
+{
+"type": "detail_pruning",
+"trigger": "cornered",
+"pattern": "대화 전달 범위를 '몇 사람한테만' 같은 말로 줄여 말한다."
+},
+{
+"type": "reverse_question",
+"trigger": "avoiding",
+"pattern": "자신의 소문 전파를 묻는 질문에 먼저 올린 캡처를 되묻는다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "지난가을 엘리베이터 공사 때 두 사람은 같은 층 공동선반을 택배 임시보관용으로 쓰되, 상대 물건을 옮길 땐 반드시 메시지를 남기기로 합의했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "봄비 오던 날 재현이 서윤 문 앞 젖은 박스를 공동선반으로 옮긴 일을 서윤은 확인 욕구로, 재현은 배려로 기억한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '그때부터 남의 택배를 자연스럽게 만졌다' / B: '비 맞을까 옮겨준 걸 감시처럼 과장한다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "indirect"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "같은 오픈마켓 흰 상자가 다른 동에 잘못 놓인다는 말을 둘 다 했지만 정식 민원은 넣지 않은 채 넘긴 적이 있다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "mild",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "acquaintance_1",
+"name": "류다은 (1003호 주민)",
+"relationTo": "both",
+"knowledgeScope": "문제의 흰 상자가 자기 정기배송 상자였다는 점과 파란 스티커, 배송사진을 직접 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_2",
+"name": "송준호 (저녁 경비원)",
+"relationTo": "both",
+"knowledgeScope": "택배실 원본 CCTV, 배송기사 출입 시각, 공동선반 상태를 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "김세은 (택배대리점 팀장)",
+"relationTo": "both",
+"knowledgeScope": "단말 스캔 로그, 젖은 송장 예외 보고, 보류 상자 사진과 회수 경위를 원본 기준으로 설명할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "parcel_room_mixup",
+"description": "행사 직후 택배실이 포화된 날, 비에 젖은 같은 규격 흰 박스들이 여러 개 쌓였다. 서윤과 재현은 각자 자기 물건이 사라졌다고 느끼는 순간, CCTV에 찍힌 단 하나의 상자를 근거로 서로가 먼저 가져갔다고 확신했다.",
+"emotionalPressure": 8,
+"affects": "both",
+"triggerAmplifier": "업무용 자재와 개인 생활물품이었고 기존 신뢰관계가 있었기 때문에 작은 설명 누락도 곧바로 배신처럼 읽혔다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "서윤의 CCTV 캡처 유포와 절도 암시",
+"truth": true,
+"truthDescription": "서윤은 재현이 흰 상자를 드는 CCTV 캡처를 이웃들에게 보내며 그 상자가 자기 분실 택배일 수 있다는 절도 암시를 공개적으로 덧붙였다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-1"
+],
+"correctResponsibility": {
+"a": 80,
+"b": 20
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "사생활경계",
+"legitimacyIssue": true
+},
+{
+"id": "d-2",
+"name": "재현의 역소문 전파",
+"truth": true,
+"truthDescription": "재현은 확인 없이 서윤이 공동선반 택배를 먼저 챙기곤 하고 자신의 상자도 가져갔을 수 있다는 말을 1:1 대화와 층 대화방에 반복했다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-2"
+],
+"correctResponsibility": {
+"a": 25,
+"b": 75
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "평판회복",
+"legitimacyIssue": true
+},
+{
+"id": "d-3",
+"name": "서로의 분실 택배를 상대가 가져갔는가",
+"truth": false,
+"truthDescription": "어느 쪽도 상대 택배를 가져간 적이 없었고, 두 물건은 일괄 배송완료 선스캔과 젖은 송장 예외 처리 때문에 실제 하차되지 않은 채 대리점 보류함에 남아 있던 배송 사고였다.",
+"quadrant": "shared_misconception",
+"requiredEvidence": [
+"e-4",
+"e-5"
+],
+"correctResponsibility": {
+"a": 45,
+"b": 55
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "배송사고정리",
+"legitimacyIssue": false
+},
+{
+"id": "d-4",
+"name": "CCTV 속 흰 상자는 서윤 또는 재현의 분실 택배였는가",
+"truth": false,
+"truthDescription": "두 사람이 자기 것이라고 확신한 CCTV 속 흰 상자는 실제로 류다은 세대의 정기배송 상자였고, 파란 스티커와 배송완료 사진 대조로 그 사실이 확인됐다.",
+"quadrant": "neither_knows",
+"requiredEvidence": [
+"e-1",
+"e-3"
+],
+"correctResponsibility": {
+"a": 50,
+"b": 50
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "증거절차",
+"legitimacyIssue": false
+},
+{
+"id": "d-5",
+"name": "배송사 확인 전 공개 의심 금지 약속의 파기",
+"truth": true,
+"truthDescription": "예전 오배송 갈등 뒤 둘은 먼저 배송사와 관리사무소에 확인하고 공개 의심은 미루기로 했지만, 서윤은 CCTV 캡처를 돌렸고 재현은 절도 의심 역소문을 먼저 퍼뜨렸다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-2",
+"e-6"
+],
+"correctResponsibility": {
+"a": 50,
+"b": 50
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "공동수령규칙",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "서윤이 돌린 복도 CCTV 캡처와 전달문구",
+"description": "재현이 흰 박스를 들고 엘리베이터에서 내리는 장면의 캡처와, '제 상자 아닐까요'라고 덧붙인 서윤의 전달문구다.",
+"type": "cctv",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-1",
+"d-4"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "정지 캡처 두 장과 메신저 전달문구만 제출됐고 전후 원본 영상은 없다.",
+"check_metadata": "캡처 저장 시각은 배송완료 알림 직후 14분 뒤로 서윤 휴대폰 기록과 일치한다.",
+"restore_context": "화면에는 상자 크기와 이동만 보일 뿐 송장, 수취인, 같은 시간대 다른 박스 흐름은 보이지 않는다.",
+"verify_source": "화면비와 상단 아이콘이 단지 공동현관 CCTV 앱과 일치한다.",
+"check_edits": "합성 흔적은 없지만 수취인 식별 부분이 잘린 채 필요한 장면만 남아 있다.",
+"question_acquisition": "공용 CCTV를 개인이 캡처해 이웃에게 전송한 자료라 사생활 침해와 2차 유포 문제가 크다."
+}
+},
+{
+"id": "e-2",
+"name": "재현의 1:1 대화와 층 대화방 발언",
+"description": "재현이 '서윤씨가 공동선반 물건을 먼저 챙길 때가 있다'며 자기 상자도 가져갔을 수 있다고 말한 대화 캡처다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-2",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "단체대화 내보내기 파일과 1:1 대화 캡처가 함께 제출됐다.",
+"check_metadata": "같은 표현이 3개 대화방에 2시간 안에 반복 등장한다.",
+"restore_context": "재현은 절도라고 단정하진 않았지만 서윤이 남의 택배를 먼저 만진다는 평판이 사실인 듯 퍼뜨렸다.",
+"verify_source": "발신 계정과 전화번호가 재현 본인 것으로 확인됐다.",
+"check_edits": "크롭은 있으나 핵심 문장과 발신 시각은 원문과 일치한다.",
+"question_acquisition": "개인 대화 일부가 포함돼 있어 제3자 실명과 호수는 최소한으로만 공개해야 한다."
+}
+},
+{
+"id": "e-3",
+"name": "류다은의 배송완료 사진과 실제 수령 상자 대조",
+"description": "류다은 세대의 배송완료 사진, 상자 모서리 파란 스티커, 실제 수령 상자 사진을 대조한 자료다.",
+"type": "delivery_record",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-4"
+],
+"isTrap": false,
+"requires": [
+"e-1"
+],
+"investigationResults": {
+"request_original": "오픈마켓 배송완료 원본 사진과 류다은이 보관 중인 상자 사진이 함께 제출됐다.",
+"check_metadata": "배송완료 사진 시각은 CCTV 캡처 시각과 5분 차이 안에 있다.",
+"restore_context": "파란 스티커와 테이프 자국 위치가 캡처 속 상자와 일치해 두 사람이 자기 것이라 본 상자가 류다은 물건이었음이 드러난다.",
+"verify_source": "주문내역, 배송사진, 실제 상자 사진의 송장 일부가 서로 맞아떨어진다.",
+"check_edits": "사진 원본 EXIF가 남아 있고 비교 이미지도 크롭 외 편집 흔적이 없다.",
+"question_acquisition": "본인 상자와 배송완료 사진을 스스로 제출한 자료라 절차상 문제는 적지만 주문내역 노출은 최소화해야 한다."
+}
+},
+{
+"id": "e-4",
+"name": "택배대리점 단말 스캔 로그와 배송예외 보고서",
+"description": "서윤과 재현의 택배가 건물 도착 전에 일괄 배송완료로 먼저 스캔됐고, 젖은 송장 예외로 대리점 보류 상자에 남았다는 대리점 기록이다.",
+"type": "device_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-3"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "기사 단말 스캔 내역과 예외 처리 보고서, 보류함 인수표가 함께 제출됐다.",
+"check_metadata": "배송완료 스캔 시각이 실제 기사 동선보다 18분 빠르게 찍혀 있다.",
+"restore_context": "두 물건 모두 같은 시간대 같은 기사 단말에서 같은 예외코드로 묶여 있다.",
+"verify_source": "대리점 전산과 본사 조회 화면의 운송장 번호, 예외코드, 기사 ID가 일치한다.",
+"check_edits": "기관 출력본이라 편집 흔적이 없고 조회 이력도 남아 있다.",
+"question_acquisition": "운송장과 고객 정보가 포함된 물류 기록이므로 분쟁 해결 외 재유포는 제한돼야 한다."
+}
+},
+{
+"id": "e-5",
+"name": "기사 단말 GPS·콜센터 통화요약",
+"description": "기사의 실제 정차 위치와 고객센터 설명을 통해 두 상자가 문제 시각에 해당 동 택배실에 하차되지 않았음을 보여주는 자료다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-3",
+"d-4"
+],
+"isTrap": false,
+"requires": [
+"e-4"
+],
+"investigationResults": {
+"request_original": "단말 GPS 정차기록, 배송차량 운행요약, 고객센터 통화요약이 한 세트로 제출됐다.",
+"check_metadata": "문제 시각 차량 위치가 102동 앞이 아니라 104동 하역장 쪽으로 표시돼 있다.",
+"restore_context": "CCTV 속 흰 상자를 누가 들고 갔는지와 별개로 두 분실 택배는 애초 그 시간에 해당 층으로 올라오지 않았다.",
+"verify_source": "GPS 로그와 콜센터 사건번호가 같은 운송장 묶음을 가리킨다.",
+"check_edits": "요약문은 발췌지만 원 통화번호와 사건번호 대조가 가능하다.",
+"question_acquisition": "물류회사 내부 기록이라 적법하지만 기사 개인 위치정보는 필요한 시각대만 제한적으로 써야 한다."
+}
+},
+{
+"id": "e-6",
+"name": "과거 상호대리수령 약속 대화와 이번 의심 글 순서표",
+"description": "예전 오배송 뒤 '먼저 배송사 확인 후 서로에게 말하자'고 합의한 대화와, 이번 사건에서 누가 먼저 공개 의심을 시작했는지 정리한 시간표다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "작년 합의 대화 내보내기 파일과 이번 사건의 메신저 발신 순서표가 함께 제출됐다.",
+"check_metadata": "이번 사건의 첫 공개 의심은 배송사 문의 접수보다 앞서 있었다.",
+"restore_context": "두 사람은 이미 확인 우선 원칙을 알고 있었음에도 이번에는 바로 공개 추궁으로 갔다.",
+"verify_source": "메신저 원문과 관리사무소 수신시간이 서로 맞물린다.",
+"check_edits": "크롭본이 있었지만 원문 대조 결과 핵심 문장은 같다.",
+"question_acquisition": "사적 합의 대화가 포함된 자료라 필요한 문장만 활용하고 전체 재유포는 피해야 한다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-1",
+"e-3"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-4"
+]
+},
+{
+"requires": [
+"e-4",
+"e-5"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-3"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "서윤은 재현을 의심하게 만드는 CCTV 캡처를 이웃들에게 전달했다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "a_only"
+},
+{
+"id": "t-2",
+"fact": "재현은 확인 없이 서윤이 남의 택배를 먼저 챙긴다는 말을 퍼뜨렸다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "b_only"
+},
+{
+"id": "t-3",
+"fact": "두 분실 택배는 절도가 아니라 배송완료 선스캔과 젖은 송장 예외로 생긴 배송 사고였다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "shared_misconception"
+},
+{
+"id": "t-4",
+"fact": "두 사람이 자기 것이라 본 CCTV 속 흰 상자는 류다은 세대의 다른 상자였다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "neither_knows"
+},
+{
+"id": "t-5",
+"fact": "두 사람 모두 배송사 확인 전 공개 의심을 하지 않겠다는 기존 약속을 깼다.",
+"isTrue": true,
+"weight": 7,
+"quadrant": "both_know"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-1",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "cctv_share_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "neighbor_count_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "privacy_concern_followup"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-4",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "theft_basis_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-4_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "identical_box_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-7",
+"lieIntensity": "L1",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "old_verification_rule_reminder"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-6_presented"
+},
+{
+"from": "S2",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_work_material_stress"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-2",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "rumor_forward_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "share_scope_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "neighbor_name_followup"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-3",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "box_identity_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "blue_sticker_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-4",
+"lieIntensity": "L1",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "old_verification_rule_reminder"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "timeline_question"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "e-6_presented"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"solutions": {
+"사생활경계": [
+"공용 CCTV와 배송 스크린샷은 관리사무소·배송사 제출용으로만 쓰고 개인 대화방 전달은 금지한다.",
+"공동선반 자료를 쓸 때는 수취인과 제3자 정보를 먼저 가린다.",
+"재차 무단 캡처 유포가 발생하면 공동시설 영상 열람 권한을 제한한다."
+],
+"평판회복": [
+"서윤과 재현은 자신이 퍼뜨린 의심 문구 범위를 특정해 같은 채널에 철회·정정 메시지를 올린다.",
+"절도 암시와 '남의 택배를 먼저 챙긴다'는 평판 훼손 표현을 분리해 정정한다.",
+"정정 거부나 재유포가 반복되면 관리사무소 사실확인 공지와 보존조치를 함께 진행한다."
+],
+"배송사고정리": [
+"배송완료 알림만으로 도난을 단정하지 말고 기사 단말 스캔 로그와 예외 코드를 먼저 확인한다.",
+"비나 송장 훼손이 있는 날은 대리점 보류 상자 여부를 우선 조회한다.",
+"반복되는 동일 포장 오배송은 배송사에 하차 사진과 예외 설명을 요구한다."
+],
+"증거절차": [
+"동일 규격 상자를 근거로 자기 물건이라고 단정하지 말고 송장 일부, 표시, 배송사진을 함께 대조한다.",
+"제3자 상자가 사건의 핵심 오해였던 경우 그 사실을 먼저 확정한 뒤 비난 문구를 모두 회수한다.",
+"다시 비슷한 오해가 생기면 원본 CCTV 1분 단위 열람과 배송사진 대조를 표준화한다."
+],
+"공동수령규칙": [
+"같은 층 공동선반에 택배를 옮길 때는 반드시 메시지와 시간, 상자 특징을 남긴다.",
+"분실 의심이 생기면 먼저 배송사·관리사무소 확인 후 당사자 1:1로만 알리고 공개 추궁은 금지한다.",
+"반복 분쟁 시 공동선반 사용을 중단하고 문앞 수령 또는 보관함 수령으로 전환한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-1",
+"tp-3"
+]
+}

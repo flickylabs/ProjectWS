@@ -32,11 +32,15 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       nextPhase = PHASE_ORDER[currentIndex + 1]
     }
 
+    // Phase 전환: separationTarget/separationTurns는 GameStore 루트 상태이지만
+    // Zustand 슬라이스 간 상태 공유를 위해 여기서 직접 리셋 (의도적 타입 캐스트)
     set((state) => ({
       currentPhase: nextPhase,
       phaseHistory: [...state.phaseHistory, state.currentPhase],
       phaseTurnCount: 0,
-    }))
+      separationTarget: null,
+      separationTurns: 0,
+    } as Partial<typeof state>))
   },
 
   incrementTurn: () => {

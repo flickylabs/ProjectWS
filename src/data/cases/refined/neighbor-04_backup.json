@@ -1,0 +1,677 @@
+{
+  "caseId": "case-neighbor-04",
+  "meta": {
+    "relationshipType": "neighbor",
+    "conflictSeed": "CS-6",
+    "variableModules": [
+      "VM-E"
+    ],
+    "twistModule": "TW-1",
+    "difficulty": "medium",
+    "anchorTruth": "공용주차장 갈등의 핵심은 최도윤의 일방 괴롭힘이 아니라, 박서림이 아버지 재활이 끝난 뒤 오전 7시 20분 전에 비워주기로 한 탄력주차 합의를 반복해서 어긴 데 있었다.",
+    "emotionalBait": "구겨진 경고문, 긁힌 범퍼 사진, 과거 지팡이를 짚던 아버지 사정이 겹치며 처음에는 서림이 약자를 괴롭힘당하는 피해자로 보인다.",
+    "resolutionDilemma": "서림이 피해자처럼 보였어도 합의 위반과 공개 여론전을 먼저 키운 책임이 있고, 도윤의 사적 콘과 거친 쪽지도 분명한 문제다. 과거 돌봄 사정을 어디까지 참작하고 현재 약속 파기를 어떻게 바로잡을지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "박서림",
+      "age": 39,
+      "occupation": "보험 콜센터 상담원",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "불리한 질문이 와도 먼저 아버지 수술과 새벽 병원 동선을 길게 설명한다. 자신이 받은 불쾌한 쪽지와 시선을 앞세워 공감을 확보한 뒤, 핵심 약속 내용은 뒤로 미룬다.",
+      "pride": 7,
+      "fear": "가족 돌봄을 핑계로 규칙을 무시한 사람, 동네 여론을 이용한 사람처럼 보이는 것",
+      "riskAppetite": 6,
+      "digitalHabit": "community_chat_and_album",
+      "dailyRoutine": "새벽에 아버지 병원 동행 여부를 확인하고 출근 전 차량 위치를 자주 바꾼다. 저녁엔 단지 단체방과 관리앱 공지를 캡처해 저장해두는 편이다.",
+      "sensitivePoints": [
+        "아버지 재활 문제",
+        "가족 배려를 악용했다는 말",
+        "거짓 피해호소라는 지적"
+      ],
+      "verbalTells": [
+        {
+          "type": "sympathy_stack",
+          "trigger": "emotional",
+          "pattern": "본론 전에 '그때도 아버지가 힘들었고, 아침마다 내가 뛰었고'처럼 고생 장면을 먼저 길게 쌓는다."
+        },
+        {
+          "type": "omission_wrap",
+          "trigger": "lying",
+          "pattern": "자신에게 불리한 시간 약속이나 종료 시점을 빼고, 남이 남긴 쪽지와 태도만 전면에 둔다."
+        },
+        {
+          "type": "accusation_echo",
+          "trigger": "cornered",
+          "pattern": "추궁을 받으면 '그러는 그쪽은 왜 콘을 세웠는데요'처럼 질문을 그대로 되돌린다."
+        }
+      ]
+    },
+    "partyB": {
+      "name": "최도윤",
+      "age": 45,
+      "occupation": "중학교 과학교사",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "시간, 칸 번호, 규정 문구를 먼저 말하며 감정 표현을 최소화한다. 하지만 억울해지면 상대의 반복 위반 횟수를 세세하게 읊다가 자기 과잉 대응은 축소한다.",
+      "pride": 8,
+      "fear": "공용주차장을 사유화하는 사람, 약자를 몰아붙이는 냉정한 이웃으로 보이는 것",
+      "riskAppetite": 4,
+      "digitalHabit": "dashcam_and_calendar",
+      "dailyRoutine": "평일 아침엔 학교 출근 전에 아이 등교와 실험실 짐 이동 때문에 차를 일찍 뺀다. 밤에는 블랙박스와 주차 위치를 확인하고 관리규약을 자주 읽는다.",
+      "sensitivePoints": [
+        "공정성",
+        "학교 출근 동선",
+        "공개 망신"
+      ],
+      "verbalTells": [
+        {
+          "type": "clause_recital",
+          "trigger": "lying",
+          "pattern": "자신의 과한 대응을 묻는 질문에는 관리규약 문장을 길게 읽으며 행동의 수위를 흐린다."
+        },
+        {
+          "type": "timestamp_wall",
+          "trigger": "cornered",
+          "pattern": "몇 시 몇 분에 몇 번 칸이 비지 않았는지를 연속으로 말해 감정 논의를 차단한다."
+        },
+        {
+          "type": "affect_flattening",
+          "trigger": "avoiding",
+          "pattern": "상대 가족 사정을 물어도 어조를 거의 바꾸지 않아 공감 부족으로 보이게 만든다."
+        }
+      ]
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "지난가을 서림 아버지의 고관절 수술 직후 두 사람은 102동 앞 탄력주차면을 임시로 바꾸되, 재활이 끝나는 2월 말까지만 쓰고 평일 오전 7시 20분 전에는 원상복구하기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "겨울 폭설 때 도윤이 서림 차를 밀어 시동을 돕고 대신 자신의 차를 먼 칸에 댄 일을 서림은 생색의 시작으로, 도윤은 선의의 증거로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '그때부터 은근히 빚처럼 말한다' / B: '그 정도 배려를 해줬는데 최소한 약속은 지켜야 했다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "2년 전 도윤 배우자가 안정이 필요했던 임신 시기에 잠시 엘리베이터 가까운 칸을 더 자주 쓴 적이 있었고, 서림은 그 불균형을 기억하면서도 직접 문제 삼지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "윤미라 (101동 주민회계 총무)",
+        "relationTo": "both",
+        "knowledgeScope": "지난가을 주차 교환 합의 메시지와, 서림이 단체방에서 아버지 재활 사정을 여러 차례 언급한 흐름을 기억한다.",
+        "witnessedDirectly": false,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_2",
+        "name": "서진호 (야간 경비원)",
+        "relationTo": "both",
+        "knowledgeScope": "도윤이 개인 접이식 콘을 세운 시각, 경고문 부착 직후 순찰 상황, 새벽 주차면 CCTV를 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "한소정 (관리사무소 주차 담당 주임)",
+        "relationTo": "both",
+        "knowledgeScope": "탄력주차 규정, 임시 배려 종료일, 차량 번호인식 출입기록과 민원 접수 순서를 원본 기준으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      }
+    ]
+  },
+  "context": {
+    "contextType": "shared_parking",
+    "description": "새 학기가 시작된 뒤 출근 차량이 몰리는 아침 시간, 102동 앞 탄력주차면을 누가 언제 비워야 하는지가 다시 민감해졌다. 서림은 이미 끝난 재활 시기의 습관대로 차를 가까운 칸에 두었고, 도윤은 그 반복을 참지 못해 개인 콘과 경고문으로 맞서며 공용주차장 갈등이 터졌다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "차량 흠집과 쪽지는 물리적 피해처럼 보이기 쉬웠고, 과거 가족 돌봄 기억이 얹히면서 현재 약속 위반보다 감정적 서사가 먼저 확산됐다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "서림의 탄력주차 시간 약속 위반",
+      "truth": true,
+      "truthDescription": "서림은 아버지 재활 종료 뒤에도 102동 앞 탄력주차면을 평일 오전 7시 20분 전에 비워주기로 한 약속을 여러 차례 어기고 계속 점유했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "주차합의복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "도윤의 사적 콘 배치와 경고문 부착",
+      "truth": true,
+      "truthDescription": "도윤은 관리사무소 신고 전 개인 접이식 콘을 해당 칸 앞에 세우고 '약속 좀 지키라'는 경고문을 서림 차량 와이퍼에 끼웠다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 30,
+        "b": 70
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "공용공간경계",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-3",
+      "name": "범퍼 흠집은 도윤의 보복 때문이었는가",
+      "truth": false,
+      "truthDescription": "서림 차량 범퍼의 흠집은 그날 도윤의 보복이 아니라, 일주일 전 지하 기둥에 스친 뒤 이미 존재하던 손상이었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 65,
+        "b": 35
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "평판회복",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "재활 종료 후 원상복구하기로 한 과거 주차 합의",
+      "truth": true,
+      "truthDescription": "지난가을의 임시 배려는 아버지 재활이 끝나는 시점까지만 유효했고, 그 뒤에는 다시 원래의 탄력주차 순서로 돌아가기로 명시돼 있었다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거청산",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "관리사무소 확인 전 공개 비난 금지 약속의 파기",
+      "truth": true,
+      "truthDescription": "예전 접촉사고 뒤 둘은 관리사무소 확인 전 번호판·호수 지목과 자력 제재를 하지 않기로 했지만, 서림은 단체방에 피해자처럼 글을 올렸고 도윤은 개인 콘과 쪽지로 먼저 압박했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "중재절차",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "서림 차량 범퍼 사진과 구겨진 경고문",
+      "description": "서림이 찍어 단체방에 올린 범퍼 흠집 근접 사진과, 와이퍼에 꽂혀 있던 '약속 좀 지키세요' 메모 사진이다.",
+      "type": "photo",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "사진 두 장만 제출됐고, 차량 전체 위치나 전날 상태를 보여주는 연속 사진은 없다.",
+        "check_metadata": "촬영 시각은 오전 7시 41분으로, 서림이 단체방 글을 올리기 6분 전이다.",
+        "restore_context": "사진은 흠집과 메모를 강조하지만, 차가 어느 칸에 어떻게 서 있었는지와 흠집 발생 시점은 담지 않는다.",
+        "verify_source": "서림 휴대폰 EXIF와 메신저 업로드 시간이 일치한다.",
+        "check_edits": "색보정 외 합성 흔적은 없으나 근접 촬영이라 주변 맥락이 잘렸다.",
+        "question_acquisition": "개인 차량 사진이지만 번호판과 동선 정보가 포함돼 있어 재유포는 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "번호인식 출입기록과 새벽 주차면 CCTV 요약",
+      "description": "서림 차량이 합의 종료 후에도 102동 앞 탄력주차면을 평일 아침 7시 20분 이후까지 11차례 점유한 기록이다.",
+      "type": "security_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "차량 번호인식 로그와 해당 날짜들의 짧은 CCTV 요약 캡처가 함께 제출됐다.",
+        "check_metadata": "7시 20분 기준선 이후 출차한 날짜와 시각이 한 달 단위로 누적돼 있다.",
+        "restore_context": "한두 번의 실수가 아니라 합의 종료 뒤에도 반복 점유가 있었다는 흐름이 확인된다.",
+        "verify_source": "주차관제 서버와 CCTV 캡처 시각이 같은 차량번호를 가리킨다.",
+        "check_edits": "기관 추출본이라 수정 흔적이 없다.",
+        "question_acquisition": "공용주차장 관제자료라 적법하지만 특정 세대의 생활패턴 노출은 최소화해야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "지난가을 임시주차 합의 메시지와 종료 확인 문자",
+      "description": "서림과 도윤이 아버지 재활 기간까지만 칸을 바꾸고, 평일 오전 7시 20분 전에 비우며 2월 말 종료에 동의한 메신저 대화다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "대화 내보내기 파일과 캡처본이 함께 제출됐다.",
+        "check_metadata": "합의 문구는 수술 다음 날과 재활 종료 직전 두 차례에 걸쳐 반복 확인됐다.",
+        "restore_context": "배려의 이유는 분명히 가족 재활이었고, 종료 시점과 아침 반환 시각도 문자로 구체화돼 있다.",
+        "verify_source": "발신 계정, 전화번호, 대화방 생성일이 모두 양측 정보와 맞는다.",
+        "check_edits": "캡처는 일부 크롭됐지만 내보내기 원문 대조 결과 핵심 문장은 동일하다.",
+        "question_acquisition": "사적 메신저 대화라 공개 범위는 분쟁 해결 목적에 한정돼야 한다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "경비실 순찰일지와 개인 접이식 콘 회수 사진",
+      "description": "도윤이 개인 콘을 해당 칸 앞에 둔 장면과, 경비원이 이를 회수하며 와이퍼 메모를 확인한 기록이다.",
+      "type": "security_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "순찰일지 원본과 회수 사진, 메모 보관 사본이 함께 제출됐다.",
+        "check_metadata": "콘 배치 시각은 서림이 사진을 찍기 18분 전이고, 관리사무소 공식 민원 접수는 그보다 뒤다.",
+        "restore_context": "도윤은 정식 신고 전에 이미 자력 제재를 시작했고, 경비원이 이를 제지한 흐름이 보인다.",
+        "verify_source": "경비실 무전기 로그와 사진 업로드 기록이 일치한다.",
+        "check_edits": "기관 저장본이라 편집 흔적이 없다.",
+        "question_acquisition": "공용주차장 순찰기록이라 적법하지만 개인 메모 문구는 필요한 부분만 활용해야 한다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "보험 접수 이력과 일주일 전 블랙박스 충돌 영상",
+      "description": "서림 차량 범퍼 흠집이 사건 일주일 전 지하 기둥 접촉 때 이미 생겼음을 보여주는 보험 상담 이력과 블랙박스 영상이다.",
+      "type": "dashcam",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "블랙박스 원본 2분 영상과 보험사 상담 접수번호가 함께 제출됐다.",
+        "check_metadata": "영상 촬영일은 문제의 아침보다 7일 앞서고, 상담 접수 시각도 같은 날 오후로 남아 있다.",
+        "restore_context": "범퍼 오른쪽 하단 흠집의 위치와 길이가 사건 당일 사진과 동일해 새로운 손상으로 보기 어렵다.",
+        "verify_source": "블랙박스 파일 해시와 보험사 상담 녹취 요약의 날짜가 맞물린다.",
+        "check_edits": "원본 파일이라 프레임 삭제 흔적이 없고 보험 기록도 수정 이력이 없다.",
+        "question_acquisition": "사적 차량 기록이지만 자기 차량 자료와 보험 접수 정보라 제출 정당성은 상대적으로 높다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "단체방 게시 캡처와 관리사무소 통화 순서표",
+      "description": "서림이 자신이 괴롭힘당했다는 취지로 먼저 단체방에 글을 올리고, 관리사무소와 도윤이 그 뒤에 각각 대응한 순서를 보여주는 자료다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "방 관리자 내보내기 파일과 관리사무소 통화내역 요약표가 함께 제출됐다.",
+        "check_metadata": "서림의 게시 시각은 공식 민원 접수보다 9분 빠르고, 도윤의 통화는 그 뒤에 이어진다.",
+        "restore_context": "게시문에는 아버지 재활과 쪽지 이야기는 강조되지만 종료된 합의와 반복 점유 사실은 빠져 있다.",
+        "verify_source": "단체방 내보내기 파일과 관리사무소 수신기록의 시간대가 서로 맞다.",
+        "check_edits": "채팅 크롭본이 있었으나 내보내기 원문 대조로 핵심 표현이 확인됐다.",
+        "question_acquisition": "입주민 단체방 자료이므로 호수와 제3자 댓글은 가리고 사용해야 한다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-5"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "서림은 합의 종료 뒤에도 탄력주차면을 평일 오전 반환 시각 이후까지 반복 점유했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "도윤은 공식 신고보다 먼저 개인 콘과 경고문으로 자력 제재를 시도했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "서림이 주장한 범퍼 흠집은 그날 새로 생긴 것이 아니라 일주일 전 기둥 접촉 때 생긴 손상이었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-4",
+      "fact": "지난가을의 주차 배려는 재활 종료와 함께 끝나고, 평일 오전 7시 20분 전 반환 조건이 명시돼 있었다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "서림의 단체방 글은 종료된 합의와 자신의 반복 위반을 빼고 자신을 일방 피해자로 보이게 만들었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "parking_return_time_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "rehab_end_date_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "scratch_basis_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "repair_history_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "public_post_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_father_care"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "cone_or_note_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "self_help_vs_management_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_agreement_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "past_help_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "management_first_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "cone_before_complaint_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "주차합의복구": [
+      "탄력주차 예외 사유와 종료일, 아침 반환 시각을 관리사무소 양식으로 다시 문서화한다.",
+      "두 세대의 아침 동선을 기준으로 한 달 단위 주차 스케줄을 다시 짜고, 예외 사용은 전날 밤까지 앱에 등록하게 한다.",
+      "같은 약속 위반이 반복되면 특정 칸 사용권이 아니라 탄력주차 전체 우선권을 일정 기간 회수한다."
+    ],
+    "공용공간경계": [
+      "개인 콘, 손글씨 경고문, 자력 차단은 금지하고 모든 이의 제기는 경비실과 관리사무소를 통해서만 하게 한다.",
+      "차량 접촉이나 방해가 의심되면 사진만 올리지 말고 즉시 CCTV 확인 절차를 먼저 밟는다.",
+      "반복 자력 제재가 생기면 주차분쟁 당사자 간 직접 접촉을 중단하고 순찰 인계 방식으로만 전달한다."
+    ],
+    "평판회복": [
+      "서림은 단체방에 올린 피해자 서사에서 누락한 합의 종료와 반복 점유 사실을 같은 채널에 정정한다.",
+      "도윤은 자신이 남긴 메모와 콘 배치가 과했고 범퍼 손상과 무관했음을 분리해 인정한다.",
+      "정정 거부나 재유포가 이어지면 관리사무소 공지문과 분쟁조정 기록으로 사실관계를 공식화한다."
+    ],
+    "과거청산": [
+      "지난가을 재활 시기 배려가 언제 시작되고 끝났는지 타임라인으로 정리해 현재 분쟁과 분리한다.",
+      "2년 전 임신 시기, 이번 재활 시기처럼 과거의 예외 사용은 종료 절차까지 포함해 닫는 규칙을 만든다.",
+      "과거 도움을 현재 우위의 근거로 반복 소환하면 별도 중재 회의를 열어 정산과 사과를 분리 처리한다."
+    ],
+    "중재절차": [
+      "당사자 간 감정 메시지보다 관리사무소 접수번호와 CCTV 확인 결과를 먼저 공유하도록 절차를 고정한다.",
+      "호수·차량번호 암시 글을 올리기 전 최소 30분의 사실확인 유예를 두고, 경비실이 1차 안내문을 대체 발송한다.",
+      "반복 갈등 시 두 차량의 탄력주차 이용기록을 한 달간 관리사무소가 직접 모니터링하고 결과만 통보한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

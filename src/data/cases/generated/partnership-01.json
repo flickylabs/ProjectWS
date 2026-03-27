@@ -1,0 +1,714 @@
+{
+  "caseId": "case-partner-01",
+  "meta": {
+    "relationshipType": "partnership",
+    "conflictSeed": "CS-1",
+    "variableModules": [
+      "VM-D"
+    ],
+    "twistModule": "TW-5",
+    "difficulty": "hard",
+    "anchorTruth": "공동 법인계좌에서 빠진 1,800만원은 서준의 개인 빚이 아니라 두 사람이 이미 비공식적으로 합의했던 브리지 투자 예치금이었다.",
+    "emotionalBait": "법무사 신탁계좌 송금, '내 이름으로 돌려놓자'는 크롭 캡처, 컨설팅비로 잡힌 임시 분개가 겹치며 서준의 횡령처럼 보인다.",
+    "resolutionDilemma": "문서화 없이 공금을 움직인 서준과, 실패 가능성이 커지자 자신이 했던 구두 동의를 번복한 해나 중 누구의 잘못을 더 무겁게 볼지, 그리고 생존 모드의 구두 합의를 앞으로 어디까지 인정할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "이서준",
+      "age": 38,
+      "occupation": "생활용품 브랜드 공동대표 겸 운영총괄",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "질문을 받으면 감정 대신 숫자와 계약 단계부터 정리해 말한다. 불리해지면 '그건 구조상 불가피했다'며 판단의 여지를 줄이고, 상대의 감정적 표현을 절차 문제로 환원하려 한다.",
+      "pride": 8,
+      "fear": "회사를 살리려다 횡령한 대표처럼 보이거나, 자금 판단을 통제하지 못한 운영자로 평가받는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "erp_and_banking_split",
+      "dailyRoutine": "오전에는 재고와 정산표를 확인하고, 오후에는 세무사·법무사와 통화하며, 밤에는 매출 하락 구간의 현금흐름표를 다시 맞춘다.",
+      "sensitivePoints": [
+        "개인 채무 의심",
+        "공금 집행 권한",
+        "외부 투자 유치 실패"
+      ],
+      "verbalTells": [
+        {
+          "type": "clause_recital",
+          "trigger": "lying",
+          "pattern": "핵심 의도를 묻는 질문이 나오면 계약 문구와 숫자를 길게 인용해 본심 설명을 뒤로 미룬다."
+        },
+        {
+          "type": "sequence_lock",
+          "trigger": "cornered",
+          "pattern": "자신이 정한 시간순서대로만 답하겠다며 질문의 초점을 다시 배열하려 든다."
+        },
+        {
+          "type": "affect_flattening",
+          "trigger": "avoiding",
+          "pattern": "상대가 배신감을 말하면 '감정은 별개고 구조를 보자'며 정서적 쟁점을 절차 문제로 납작하게 만든다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "해나씨",
+        "toJudge": "제 동업자",
+        "angry": "윤해나 씨!"
+      }
+    },
+    "partyB": {
+      "name": "윤해나",
+      "age": 35,
+      "occupation": "생활용품 브랜드 공동대표 겸 영업브랜딩 총괄",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "처음에는 질문보다 결론을 앞세워 단정하고, 상대가 머뭇거리면 같은 문장을 어조만 바꿔 반복한다. 유리한 정황 하나를 잡으면 맥락 전체를 이미 증명한 듯 몰아붙인다.",
+      "pride": 7,
+      "fear": "매출 하락기에 회사 돈이 빠져나가는 걸 몰랐던 얼굴로 남거나, 공동대표인데도 최종 승인 없이 끌려갔다고 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 7,
+      "digitalHabit": "messenger_and_sales_dashboard",
+      "dailyRoutine": "오전엔 거래처 반품률과 광고 효율을 보고, 오후엔 라이브커머스·거래처 미팅을 돌며, 밤에는 직원 슬랙과 매출보드를 동시에 확인한다.",
+      "sensitivePoints": [
+        "승인 없는 자금 집행",
+        "직원들 앞 체면",
+        "자신도 동의했다는 기록"
+      ],
+      "verbalTells": [
+        {
+          "type": "headline_accusation",
+          "trigger": "lying",
+          "pattern": "세부 사실보다 '결국 돈을 뺐다는 거네' 같은 헤드라인 결론을 먼저 던진다."
+        },
+        {
+          "type": "pressure_repeat",
+          "trigger": "cornered",
+          "pattern": "같은 질문을 짧게 세 번쯤 반복하며 상대의 표정 변화로 빈틈을 찾으려 한다."
+        },
+        {
+          "type": "context_cut",
+          "trigger": "emotional",
+          "pattern": "불리한 앞뒤 맥락은 자르고 가장 자극적인 한 줄만 계속 되짚는다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "서준씨",
+        "toJudge": "제 동업자",
+        "angry": "이서준 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "작년 말 재고 손실 이후 두 사람은 준비금 1,000만원 이상을 움직일 때 최소한 공동 메신저 확인이나 서면 승인 한 가지는 남기기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "첫 번째 대형 프로모션이 실패했을 때 누가 공격적 집행을 더 밀어붙였는지를 두 사람 모두 자기에게 유리하게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '해나가 늘 선집행을 압박했다' / B: '서준이 숫자를 들이밀며 위험 집행을 정당화했다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "두 달 전 외부 브리지 투자 이야기가 처음 나왔을 때, 회사를 살리기 위해 어디까지 비공식 결정을 허용할지 결론을 내지 못한 채 말을 덮어둔 적이 있다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "윤지호 (해나의 오빠, 초창기 보증인)",
+        "relationTo": "b",
+        "knowledgeScope": "해나가 외부 투자 실패의 공동 책임자로 보이는 것을 극도로 두려워했다는 점과, 송금 직후 해나가 '내가 승인한 걸로 남으면 끝'이라고 말한 사실을 안다.",
+        "witnessedDirectly": false,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 38,
+          "occupation": "해나의 오빠, 초창기 보증인",
+          "relationToA": "이서준와는 이 사건을 통해 알게 됨",
+          "relationToB": "해나의 오빠, 초창기 보증인",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "서준씨",
+          "addressB": "해나씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "장세아 (브랜드 매니저)",
+        "relationTo": "both",
+        "knowledgeScope": "2주년 회식 직후 두 대표가 투자 준비금을 직원들에게는 컨설팅비처럼만 설명하자고 이야기한 분위기를 기억한다.",
+        "witnessedDirectly": false,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 38,
+          "occupation": "브랜드 매니저",
+          "relationToA": "이서준을 업무상 알고 있음",
+          "relationToB": "윤해나을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "서준씨",
+          "addressB": "해나씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "정민우 (법무사)",
+        "relationTo": "both",
+        "knowledgeScope": "예치금의 목적, 계약 초안, 신탁원장, 그리고 두 사람이 어느 시점까지 동일한 방향으로 움직였는지를 원본 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "법무사",
+          "relationToA": "이서준을 업무상 알고 있음",
+          "relationToB": "윤해나을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "이서준씨",
+          "addressB": "윤해나씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "anniversary_slump",
+    "description": "브랜드 2주년 행사를 막 끝낸 시점이었지만, 실제 매출은 석 달 연속 빠지고 있었다. 직원 사기와 거래처 신뢰를 동시에 붙잡아야 하는 압박 속에서 두 사람은 외부 자금 유치 준비를 비공식적으로 서두르다가, 결과가 흔들리자 서로가 먼저 책임을 떼어내려 들었다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "기념행사 직후라 겉으로는 성장 서사를 유지해야 했고, 내부적으로는 현금이 마르는 구간이어서 작은 은닉도 곧 횡령이나 배신처럼 보이게 됐다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "서준의 무단 예치금 송금",
+      "truth": true,
+      "truthDescription": "서준은 해나의 최종 서면 승인 없이 법인 준비금 1,800만원을 법무사 신탁계좌로 송금했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 68,
+        "b": 32
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "재정투명화",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "예치금은 서준의 개인 채무 상환이었는가",
+      "truth": false,
+      "truthDescription": "문제의 1,800만원은 서준의 개인 빚을 막은 돈이 아니라 외부 브리지 투자 검토를 위한 예치금과 법률 검토비였다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 42,
+        "b": 58
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "신뢰회복",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "해나의 사전 구두 동의 번복",
+      "truth": true,
+      "truthDescription": "해나는 2주년 회식 직후 원본 단톡과 음성메모에서 준비금 2,000만원 한도 내 예치 집행에 동의했지만, 투자 성사가 흔들리자 직원들 앞에서 그런 승인 자체가 없었다고 말했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 47,
+        "b": 53
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "계약복원",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "해나의 회계분류 지시 은폐",
+      "truth": true,
+      "truthDescription": "해나는 세무사에게 이 예치금을 당분간 '2주년 캠페인 컨설팅비'로 분개해 직원 불안을 막자고 제안했고, 이후 자신이 그런 제안을 했다는 점을 숨기며 서준의 단독 판단처럼 몰아갔다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 35,
+        "b": 65
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "운영권한재설계",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "비환급 법률검토비의 실제 규모",
+      "truth": true,
+      "truthDescription": "두 사람 모두 예치금 전액이 되돌아올 것처럼 말했지만, 계약 초안상 320만원은 자동으로 비환급 법률검토비로 전환되도록 되어 있었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 56,
+        "b": 44
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "계약복원",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "법인계좌 송금 내역서",
+      "description": "9월 3일 법인 준비금 계좌에서 정민우 법무사 신탁계좌로 1,800만원이 이체된 원본 거래내역이다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은행 원본에는 법인계좌 번호, 수취인 실명, 신탁계좌 식별명이 모두 남아 있다.",
+        "check_metadata": "이체 실행 단말은 서준의 태블릿이지만 공동승인 토큰은 사용되지 않았다.",
+        "restore_context": "송금 직전 정민우 법무사와 두 차례 통화한 기록이 이어진다.",
+        "verify_source": "은행 고객센터 확인 결과 발급본과 서버 원장이 일치했다.",
+        "check_edits": "편집 흔적이 없는 원본 PDF다.",
+        "question_acquisition": "법인계좌 자료이므로 열람 자체는 적법하지만, 공동대표 승인 방식의 적정성은 별도 쟁점이다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "브리지 투자 예치계약 초안과 신탁원장",
+      "description": "예치금의 목적이 외부 브리지 투자 독점검토와 법률 실사였음을 보여주는 계약 초안, 신탁원장, 비환급 검토비 조항이다.",
+      "type": "contract",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "원본 초안에는 예치금 총액과 비환급 법률검토비 320만원 조항이 함께 적혀 있다.",
+        "check_metadata": "작성 시간은 송금 43분 전이며 수정 이력의 마지막 열람자는 서준이다.",
+        "restore_context": "예치금은 개인 대여가 아니라 투자 검토 독점권을 잠시 확보하기 위한 장치로 설명돼 있다.",
+        "verify_source": "법무사 사무실 문서번호와 신탁원장 번호가 일치했다.",
+        "check_edits": "전자서명 검증 결과 편집 흔적이 없다.",
+        "question_acquisition": "기관 제출본이라 적법하지만 미완성 투자 조건이 포함돼 사용 범위는 분쟁 해결로 한정해야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "크롭된 메신저 캡처",
+      "description": "서준이 법무사에게 '일단 제 이름으로 돌려놓고 나중에 정리하죠'라고 말한 부분만 잘린 채 남은 캡처다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 대화는 제출되지 않았고 캡처 한 장만 남아 있다.",
+        "check_metadata": "해나 휴대폰 갤러리 생성 시각은 새벽 1시 14분이다.",
+        "restore_context": "앞뒤 문장이 잘려 있어 '제 이름'이 계좌 귀속인지, 파일명 정리인지 단정할 수 없다.",
+        "verify_source": "서준 계정 대화창을 촬영한 것으로 보이지만 원본 대화 내보내기는 없다.",
+        "check_edits": "문자열 조작 흔적은 없으나 선택적 크롭이 명확하다.",
+        "question_acquisition": "개인 단말에서 무단 확보된 자료라 사생활 및 업무비밀 침해 소지가 크다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "2주년 회식 후 원본 단톡과 음성메모 전사",
+      "description": "해나가 '준비금 2천 안에서 먼저 예치 가자'고 말하고, 직원들에게는 계약 전까지 컨설팅비처럼만 설명하자고 덧붙인 원본 대화와 음성메모 전사다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "양측 기기에서 동일한 음성메모와 대화 내보내기 파일이 확인됐다.",
+        "check_metadata": "작성 시각은 2주년 회식 종료 18분 후로 송금 하루 전이다.",
+        "restore_context": "문제의 예치금과 임시 회계표기가 같은 대화 흐름 안에서 함께 언급된다.",
+        "verify_source": "대화 해시와 음성파일 길이가 서로 일치했다.",
+        "check_edits": "삭제 복원 흔적은 있으나 본문 자체의 조작은 없다.",
+        "question_acquisition": "공동 경영 논의를 담은 자료라 제출 정당성은 높지만 사적 감정 대화 일부는 최소한으로만 사용해야 한다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "세무사 회계분개 지시 메일과 예정신고 메모",
+      "description": "해나가 세무사에게 예치금을 일단 2주년 캠페인 컨설팅비로 잡아달라고 보낸 메일과, 320만원 비환급 검토비가 반영된 예정신고 메모다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "세무사 보관 원본 메일에는 해나 발신 주소와 분개 요청 문구가 그대로 남아 있다.",
+        "check_metadata": "발신 시각은 송금 당일 오전이며 법률검토비 반영 메모는 그 이틀 뒤 작성됐다.",
+        "restore_context": "직원 불안을 막기 위한 임시 표기라는 설명이 함께 붙어 있어 단순 오기와 구분된다.",
+        "verify_source": "세무사 사무실 서버 보관본과 출력본이 일치했다.",
+        "check_edits": "기관 보관 메일이라 수정 흔적이 없다.",
+        "question_acquisition": "회사 회계자료라 적법하지만 미확정 투자 정보가 포함돼 외부 공개는 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "투자자 측 담당 확인 메일",
+      "description": "예치금이 개인 채무 상환이 아니라 브리지 투자 독점검토를 위한 비용이었고, 해나도 1차 브리핑에 참여했다는 투자자 측 담당의 확인 메일이다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "투자자 측 보관 원본에는 예치 목적과 브리핑 참석자 이름이 모두 적혀 있다.",
+        "check_metadata": "메일 헤더상 첫 발신은 투자 검토 개시 당일 오후다.",
+        "restore_context": "문제의 돈은 개인 계좌로 흐르지 않고 법무사 신탁계좌에만 머문 것으로 정리된다.",
+        "verify_source": "도메인 인증과 회신 경로가 실제 투자사 서버와 일치했다.",
+        "check_edits": "헤더 포함 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "제3자 확인자료라 적법하지만 투자사 내부 평가 문장은 비식별 처리돼 있다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2",
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "서준은 해나의 최종 서면 승인 없이 1,800만원을 신탁계좌로 보냈다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "문제의 송금은 개인 채무 상환이 아니라 브리지 투자 예치와 법률 검토 비용이었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-3",
+      "fact": "해나는 송금 전 준비금 예치와 임시 표기에 구두로 동의한 적이 있다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-4",
+      "fact": "해나는 세무사에게 임시 회계분류를 먼저 제안했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "예치금 전액 환급이 아니라 320만원 비환급 검토비 조항이 숨어 있었다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "escrow_transfer_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "written_approval_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-6",
+      "lieIntensity": "L3",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "cropped_chat_presented"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "personal_debt_question"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_investor_confidentiality"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-2_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "refund_clause_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S5",
+          "trigger": "e-5_or_shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "prior_approval_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "voice_note_identification_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_or_staff_meeting_reference"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "tax_coding_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "temporary_label_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "debt_rumor_origin_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "재정투명화": [
+      "향후 한 달간 준비금 300만원 이상 집행은 메신저 확인이 아닌 전자결재 한 줄 승인으로만 남긴다.",
+      "법인 준비금, 광고 집행비, 투자 검토비를 별도 계정으로 분리하고 주간 현금흐름표를 공동 서명한다.",
+      "재발 시 공동대표의 단독 이체 권한을 중단하고 외부 회계대리인 동시승인 체계로 전환한다."
+    ],
+    "신뢰회복": [
+      "해나는 개인 채무 프레임을 직원들 앞에서 정정하고, 서준은 문서화 없는 송금을 사과하는 방식으로 사과 대상을 분리한다.",
+      "양측이 크롭 캡처와 원본 대화의 차이를 함께 복기한 뒤, 내부 루머 정정문을 공동 명의로 배포한다.",
+      "재차 사적 추정으로 상대를 횡령자로 낙인찍을 경우 대표 간 직접조정이 아니라 외부 중재를 의무화한다."
+    ],
+    "계약복원": [
+      "구두 승인으로 시작된 투자 검토는 전부 서면 부속합의서로 다시 작성하고, 비환급 조항을 항목별로 재확인한다.",
+      "실패한 브리지 투자 관련 책임은 승인 단계별로 쪼개 정리하고, 이미 발생한 검토비는 공동 손실로 처리한다.",
+      "앞으로 비공식 합의로 시작한 대외거래는 모두 무효로 보고, 미문서 집행 시 자동 손해분담 규칙을 발동한다."
+    ],
+    "운영권한재설계": [
+      "영업 총괄과 운영 총괄의 권한을 유지하되, 회계분류 변경은 두 대표와 세무사가 동시에 확인하도록 바꾼다.",
+      "직원 불안을 이유로 사실과 다른 비용명목을 쓰지 못하도록 임시 표기 금지 규정을 만든다.",
+      "한쪽이 대외 설명을 독점하거나 회계표기를 단독 지시하면 그 분기 성과급 산정에서 자동 감점을 적용한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-3",
+    "tp-2"
+  ]
+}

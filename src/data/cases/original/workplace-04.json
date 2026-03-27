@@ -1,0 +1,611 @@
+{
+"caseId": "case-work-04",
+"meta": {
+"relationshipType": "boss_employee",
+"conflictSeed": "CS-6",
+"variableModules": [
+"VM-D"
+],
+"twistModule": "",
+"difficulty": "easy",
+"anchorTruth": "이번 마감 실패는 민석의 최종 승인 약속 미이행과 지우의 QA 완료 과장이 겹친 공동 책임이었다.",
+"emotionalBait": "민석의 '내가 최종 확인할게' 메시지와 지우의 'QA 끝났습니다' 체크표시가 남아 있어, 한 사람만 약속을 깬 것처럼 보인다.",
+"resolutionDilemma": "누가 먼저 약속을 어겼는지보다 막판 구두 약속과 과장 보고를 어떻게 나눠 책임지고, 다음 마감에서 무엇을 문서화할지가 핵심이다."
+},
+"duo": {
+"partyA": {
+"name": "서민석",
+"age": 40,
+"occupation": "프로덕트운영 매니저",
+"incomeBracket": "high",
+"archetype": "avoidant",
+"speechStyle": "문제가 생기면 전체 일정부터 설명하며 자신의 약속 시점을 흐린다. 불리해지면 '일단 넘기는 게 우선이었다'며 세부 책임보다 마감 압박을 앞세운다.",
+"pride": 7,
+"fear": "프로젝트 운영을 맡는 관리자임에도 막판 통제력을 잃었다는 평가를 받는 것",
+"riskAppetite": 5,
+"digitalHabit": "task_board_checker",
+"dailyRoutine": "아침에는 스탠드업으로 이슈를 모으고, 오후에는 클라이언트 승인과 일정 조율을 하며, 저녁에는 배포 직전 문구와 산출물을 훑는다.",
+"sensitivePoints": [
+"마감 통제력",
+"클라이언트 승인 지연",
+"범위 변경 책임"
+],
+"verbalTells": [
+{
+"type": "deadline_shield",
+"trigger": "lying",
+"pattern": "개별 약속을 묻는 질문에도 '그 시간엔 다들 급했다'며 전체 마감 상황을 방패로 쓴다."
+},
+{
+"type": "soft_promise_reframe",
+"trigger": "cornered",
+"pattern": "'내가 볼게'라는 말을 확정 약속이 아니라 협업 의사처럼 재정의한다."
+},
+{
+"type": "sequence_blur",
+"trigger": "avoiding",
+"pattern": "누가 먼저 놓쳤는지 대신 여러 이슈를 한꺼번에 나열해 순서를 흐린다."
+}
+]
+},
+"partyB": {
+"name": "배지우",
+"age": 27,
+"occupation": "QA 엔지니어",
+"incomeBracket": "mid",
+"archetype": "confrontational",
+"speechStyle": "상대가 약속한 문장을 그대로 되읽으며 책임을 분명히 하려 한다. 하지만 몰리면 자신이 한 과장 보고를 '표현 문제'로 축소하며 공격적으로 방어한다.",
+"pride": 6,
+"fear": "늘 마지막 검수에서 사고를 내는 사람으로 찍혀 성장 기회를 잃는 것",
+"riskAppetite": 4,
+"digitalHabit": "checklist_toggler",
+"dailyRoutine": "오전에는 버그 현황을 정리하고, 오후에는 테스트 케이스를 돌리며, 밤에는 배포 전 체크리스트와 로그를 맞춘다.",
+"sensitivePoints": [
+"QA 신뢰도",
+"막판 범위 추가",
+"보고 누락"
+],
+"verbalTells": [
+{
+"type": "quote_back",
+"trigger": "lying",
+"pattern": "상대의 한 문장을 그대로 읽어주며 자신의 과장을 잠시 가린다."
+},
+{
+"type": "term_shrink",
+"trigger": "cornered",
+"pattern": "'끝났다'를 '거의 끝났다'로 바꾸는 식으로 표현 범위를 뒤늦게 줄인다."
+},
+{
+"type": "speed_spike",
+"trigger": "emotional",
+"pattern": "억울함이 커지면 말속도가 빨라지고 문장 끝이 짧아져 공격적으로 들린다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "두 사람은 마감 주간의 역할 분담과 완료 보고를 반드시 task board와 회의록에 남기기로 합의해 왔다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "지난 스프린트에서 민석이 막판에 scope를 줄여 마감을 맞춘 일을 두 사람은 다르게 기억한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '내가 정리해줘서 지우가 살았다' / B: '원래 없던 변경을 만들고 내가 수습했다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "indirect"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "지우는 이번 마감 전에 회귀 테스트 시간이 부족하다고 두 번 말하려다 느린 사람처럼 보일까 봐 접었다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "김아람 (프로덕트 디렉터)",
+"relationTo": "a",
+"knowledgeScope": "마감 전 스탠드업에서 민석이 18시까지 클라이언트 확인과 최종 승인을 맡겠다고 말한 장면을 직접 들었다.",
+"witnessedDirectly": true,
+"bias": "pro_a",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "윤소정 (PM)",
+"relationTo": "both",
+"knowledgeScope": "task board 변경, 지우의 QA 진행 보고, 민석의 막판 문구 추가 요청 시점을 알고 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "정해민 (DevOps 운영 담당)",
+"relationTo": "both",
+"knowledgeScope": "배포 파이프라인, 테스트 실행 상태, 빌드 실패 시각과 원인을 원본 로그로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "project_deadline",
+"description": "클라이언트 데모를 하루 앞둔 밤, 팀은 0시 전 배포를 목표로 마지막 승인과 QA를 동시에 진행하고 있었다. 승인 메일이 늦어지고, 카피 수정이 뒤늦게 추가되고, 체크리스트가 서둘러 초록색으로 바뀌면서 누구 약속이 먼저 깨졌는지보다 누가 무엇을 실제로 끝냈는지가 더 중요해진 상황이었다.",
+"emotionalPressure": 8,
+"affects": "both",
+"triggerAmplifier": "클라이언트 데모가 다음 날 아침이라 한 단계라도 미완료 상태를 숨기면 곧바로 전체 마감 실패로 이어지는 구조였다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "민석의 최종 승인 약속 미이행",
+"truth": true,
+"truthDescription": "민석은 18시까지 클라이언트 확인과 최종 승인을 맡겠다고 했지만, 승인 메일과 최종 확인을 제때 끝내지 못했다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-1",
+"e-4"
+],
+"correctResponsibility": {
+"a": 75,
+"b": 25
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "약속기록화",
+"legitimacyIssue": false
+},
+{
+"id": "d-2",
+"name": "지우의 QA 완료 보고 과장",
+"truth": true,
+"truthDescription": "지우는 회귀 테스트 전체가 끝나지 않았는데도 체크리스트와 메시지에서 QA가 완료된 것처럼 표시했다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-2"
+],
+"correctResponsibility": {
+"a": 30,
+"b": 70
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "약속기록화",
+"legitimacyIssue": false
+},
+{
+"id": "d-3",
+"name": "마감 실패는 민석 한 사람의 약속 파기만으로 생겼는가",
+"truth": false,
+"truthDescription": "승인 지연만이 아니라 지우의 과장 보고와 미완료 QA, 그리고 양측의 미보고가 겹쳐 마감 실패가 발생했다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-1",
+"e-2",
+"e-5"
+],
+"correctResponsibility": {
+"a": 55,
+"b": 45
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "공동책임정산",
+"legitimacyIssue": false
+},
+{
+"id": "d-4",
+"name": "민석의 막판 범위 추가와 보드 미갱신",
+"truth": true,
+"truthDescription": "민석은 마감 직전 카피 수정과 파일 교체를 추가로 요청했지만 task board의 범위와 담당자 배정을 갱신하지 않았다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-3",
+"e-6"
+],
+"correctResponsibility": {
+"a": 80,
+"b": 20
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "범위고정",
+"legitimacyIssue": false
+},
+{
+"id": "d-5",
+"name": "문제 인지 후 양측의 미보고",
+"truth": true,
+"truthDescription": "민석과 지우는 20시대에 승인과 QA가 모두 완결되지 않았다는 신호를 받았지만, 각자 상대가 마무리하리라 보고 정식 에스컬레이션을 늦췄다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-1",
+"e-2",
+"e-5"
+],
+"correctResponsibility": {
+"a": 50,
+"b": 50
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "공동책임정산",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "스탠드업 회의록과 task board 약속 코멘트",
+"description": "민석이 18시까지 클라이언트 확인과 최종 승인을 맡겠다고 적힌 스탠드업 회의록과 보드 코멘트다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-1",
+"d-3",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "회의록 최종본뿐 아니라 작성 직후의 초안과 보드 코멘트 원문을 함께 봐야 한다.",
+"check_metadata": "민석의 '18시 전 승인 체크' 코멘트가 오후 4시 12분에 입력된 기록이 남아 있다.",
+"restore_context": "같은 기록 안에 QA 담당은 지우, 최종 승인 담당은 민석으로 역할이 분리돼 있다.",
+"verify_source": "캘린더 회의록과 task board 아카이브가 동일한 내용을 보여준다.",
+"check_edits": "버전 이력이 남아 있어 사후 덧붙이기 흔적이 없다.",
+"question_acquisition": "업무 문서라 분쟁 해결 용도로 적법하게 활용할 수 있다."
+}
+},
+{
+"id": "e-2",
+"name": "QA 체크리스트 내역과 테스트 실행 로그",
+"description": "지우가 체크리스트를 완료로 표시한 시점과 실제 테스트 러닝 상태를 보여주는 QA 내역이다.",
+"type": "access_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "platform",
+"legitimacy": "lawful",
+"proves": [
+"d-2",
+"d-3",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "체크리스트 화면 캡처가 아니라 QA 도구의 원본 실행 로그와 결과 파일을 요청해야 한다.",
+"check_metadata": "회귀 테스트 전체가 아니라 스모크 테스트만 종료된 상태에서 체크박스가 먼저 초록색으로 바뀌었다.",
+"restore_context": "지우는 파일 교체가 반복되자 우선 배포 가능 여부만 확인하고 전체 회귀는 뒤로 미뤘다.",
+"verify_source": "QA 도구 로그와 CI 서버 기록이 같은 실행 순서를 보여준다.",
+"check_edits": "자동 생성 로그라 사후 수정 흔적이 없다.",
+"question_acquisition": "테스트 결과와 체크리스트는 업무 기록이라 적법성이 높다."
+}
+},
+{
+"id": "e-3",
+"name": "막판 카피 수정 메신저 캡처",
+"description": "민석이 '카피 변경까지 같이 묶어 올리자, 내가 최종 확인할게'라고 보낸 회사 메신저 캡처다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "platform",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-1",
+"d-4"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "한 장짜리 캡처 말고 같은 스레드 전체와 앞선 문장을 함께 확인해야 한다.",
+"check_metadata": "캡처 시각은 오후 9시 6분이며, 바로 앞 대화 일부가 잘려 민석의 확정 약속 범위가 과장돼 보일 수 있다.",
+"restore_context": "앞줄에는 '회귀는 네가 끝내줘'라는 문장이 있어 QA 책임까지 민석이 모두 가져간 것은 아니었다.",
+"verify_source": "회사 메신저 내보내기 원본과 지우가 저장한 캡처 시간이 일치한다.",
+"check_edits": "문장 변조 흔적은 없지만 의도적 크롭으로 해석을 넓히기 쉽다.",
+"question_acquisition": "업무 대화라도 개인 반응 이모지와 읽음 정보가 포함돼 있어 제한적으로 다뤄야 한다."
+}
+},
+{
+"id": "e-4",
+"name": "클라이언트 승인 이메일 체인",
+"description": "승인 메일이 약속 시각보다 늦게 도착했고, 민석이 중간 확인을 지연한 사실을 보여주는 이메일 체인이다.",
+"type": "email",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-1"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "요약 캡처가 아니라 회신 전체 체인과 내부 전달 메일까지 확인해야 한다.",
+"check_metadata": "클라이언트 최종 회신은 20시 7분에 도착했고, 17시 22분 PM 리마인드가 먼저 발송돼 있었다.",
+"restore_context": "승인이 늦어졌더라도 민석이 중간 상태를 팀에 공유했어야 한다는 점이 함께 드러난다.",
+"verify_source": "메일 서버 아카이브와 개인 받은편지함이 같은 순서를 보인다.",
+"check_edits": "원본 이메일이라 사후 편집 흔적이 없다.",
+"question_acquisition": "업무 메일로 적법하게 확인 가능하다."
+}
+},
+{
+"id": "e-5",
+"name": "배포 파이프라인 실패 로그와 DevOps 사고 메모",
+"description": "배포가 실패한 시각, 누락 파일, 미완료 테스트 경고를 함께 보여주는 파이프라인 로그와 사고 메모다.",
+"type": "access_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "platform",
+"legitimacy": "lawful",
+"proves": [
+"d-3",
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-2"
+],
+"investigationResults": {
+"request_original": "사고 요약본이 아니라 파이프라인 raw log와 운영자 메모 원문을 봐야 한다.",
+"check_metadata": "20시 31분에 누락 파일 경고와 미완료 테스트 알림이 동시에 떴고, 두 사람 모두 이를 열람한 기록이 남아 있다.",
+"restore_context": "단순 승인 지연이 아니라 QA와 파일 교체가 겹치며 실패가 누적된 구조가 확인된다.",
+"verify_source": "DevOps 콘솔과 정해민의 사고 메모가 같은 오류 코드를 가리킨다.",
+"check_edits": "서버 추출본이라 사후 수정 흔적이 없다.",
+"question_acquisition": "운영 로그는 업무상 조사 범위 내에서 적법하게 열람할 수 있다."
+}
+},
+{
+"id": "e-6",
+"name": "task board 버전 이력과 scope freeze 변경 기록",
+"description": "민석이 마감 직전 scope freeze를 풀고 카피 수정 항목을 추가했지만 담당자 재배정을 하지 않은 기록이다.",
+"type": "document",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "platform",
+"legitimacy": "lawful",
+"proves": [
+"d-3",
+"d-4"
+],
+"isTrap": false,
+"requires": [
+"e-3"
+],
+"investigationResults": {
+"request_original": "현재 보드 화면이 아니라 버전 이력과 라벨 변경 로그를 함께 추출해야 한다.",
+"check_metadata": "19시 48분에 scope freeze 라벨이 해제되고 새 하위 작업이 추가됐지만 QA 담당 재배정은 이뤄지지 않았다.",
+"restore_context": "민석은 메신저로만 요청을 보냈고 공식 보드의 책임 구조는 업데이트하지 않았다.",
+"verify_source": "보드 감사 로그와 윤소정 PM의 변경 알림 메일이 일치한다.",
+"check_edits": "버전 이력 기반이라 사후 수정 흔적이 없다.",
+"question_acquisition": "프로젝트 운영 기록이라 적법하게 활용할 수 있다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-3",
+"e-6"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-4"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "민석은 맡기로 한 최종 승인과 중간 공유를 제때 끝내지 못했다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "both_know"
+},
+{
+"id": "t-2",
+"fact": "지우는 회귀 테스트가 남았는데도 QA가 끝난 것처럼 표시했다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "b_only"
+},
+{
+"id": "t-3",
+"fact": "마감 실패는 민석 혼자 때문이 아니라 승인 지연, QA 과장, 미보고가 겹친 공동 책임이었다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "both_know"
+},
+{
+"id": "t-4",
+"fact": "민석은 마감 직전 범위를 늘리면서도 공식 보드의 책임 배정을 갱신하지 않았다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "a_only"
+},
+{
+"id": "t-5",
+"fact": "두 사람 모두 문제 신호를 보고도 즉시 에스컬레이션하지 않았다.",
+"isTrue": true,
+"weight": 7,
+"quadrant": "both_know"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-1",
+"lieType": "LT-2",
+"lieIntensity": "L1",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "signoff_promise_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "e-4_presented"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-3",
+"lieIntensity": "L2",
+"lieMotive": "career_preservation",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "scope_change_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S4",
+"trigger": "e-6_presented"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "nonjudgmental_question_about_deadline_pressure"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-2",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "qa_complete_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "wording_of_done_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-7",
+"lieIntensity": "L1",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "escalation_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-5_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "why_no_report_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"solutions": {
+"약속기록화": [
+"마감 주간의 구두 약속은 30분 안에 task board와 회의록에 같은 문장으로 남긴다.",
+"최종 승인, QA, 배포 책임자를 하나의 체크리스트로 묶고 완료 전에는 누구도 '끝났다'고 보고하지 못하게 한다.",
+"반복되면 관리자와 실무자의 상호승인 없이는 마감 단계가 넘어가지 않는 워크플로를 적용한다."
+],
+"공동책임정산": [
+"마감 실패 시 누가 먼저 실수했는지보다 약속 누락, 과장 보고, 미보고를 따로 나눠 회고한다.",
+"한 사람 책임으로 단정하지 않고 약속-실행-보고 세 칸으로 책임 비율을 남긴다.",
+"공동 책임이 반복되면 개인평가와 별도로 프로젝트 운영점수에서 팀 전체 감점을 적용한다."
+],
+"범위고정": [
+"마감 24시간 전 신규 요청은 PM 승인 없이는 추가하지 않는다.",
+"막판 범위 변경이 필요하면 assignee와 검수 기준을 즉시 다시 배정한다.",
+"반복되면 마감 직전 범위 변경 권한을 관리자 단독이 아닌 PM·DevOps 공동승인으로 제한한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-2",
+"tp-3"
+]
+}

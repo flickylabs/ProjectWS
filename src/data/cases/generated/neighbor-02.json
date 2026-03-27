@@ -1,0 +1,713 @@
+{
+  "caseId": "case-neighbor-02",
+  "meta": {
+    "relationshipType": "neighbor",
+    "conflictSeed": "CS-5",
+    "variableModules": [
+      "VM-A"
+    ],
+    "twistModule": "TW-2",
+    "difficulty": "hard",
+    "anchorTruth": "익명 전단의 출발점은 민규도 유나도 아니었다. 동대표 최병규가 관리사무소 민원과 반상회 발언을 짜깁기해 공용프린터로 출력한 PDF가 원본이다.",
+    "emotionalBait": "택배실에서 남의 박스 앞에 선 CCTV 한 컷, 복도 악취의 원인으로 지목된 반려견. 두 장면이 겹치자 서로가 먼저 소문을 퍼뜨린 가해자라 확신하게 된다.",
+    "resolutionDilemma": "배후에 동대표의 조작이 있었더라도, 유나가 CCTV 캡처를 돌리고 민규가 무검증 악취 소문을 퍼뜨린 사실은 남는다. 명예 회복과 증거 사용 규칙을 어디까지 다시 세울지가 쟁점이다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "서유나",
+      "age": 33,
+      "occupation": "수제캔들 온라인 판매자",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "\"나 얼마나 참았는지 아세요?\" 식으로 동정부터 구한다. 지지 표현이 많고, 불리한 대목에선 \"저만 문제예요? 저쪽은요?\" 하고 즉시 되받는다.",
+      "pride": 7,
+      "fear": "엘리베이터에서 '그 개 키우는 집'이라는 수군거림이 들리고 택배 주문까지 꺼려지는 상황 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "community_chat_heavy",
+      "dailyRoutine": "이른 아침 반려견 산책 후 주문 포장과 클래스 준비를 한다. 저녁엔 택배실을 자주 오가며 공동현관 공지를 꼼꼼히 캡처한다.",
+      "sensitivePoints": [
+        "반려견 냄새 민원",
+        "집에서 하는 일에 대한 편견",
+        "공용 CCTV 시선"
+      ],
+      "verbalTells": [
+        {
+          "type": "sympathy_stack",
+          "trigger": "emotional",
+          "pattern": "\"작년에도 참았고, 봄에도 참았고\"—억울함이 올라오면 참았던 장면을 쌓아 동정부터 확보하려 한다."
+        },
+        {
+          "type": "selective_victimhood",
+          "trigger": "lying",
+          "pattern": "자기 행동은 빼고 \"왜 나만 표적이에요?\"라는 피해 서사만 남긴다. 책임 질문을 감정 호소로 바꾸는 패턴."
+        },
+        {
+          "type": "accusation_echo",
+          "trigger": "cornered",
+          "pattern": "질문이 오면 \"그쪽이 저한테 뭐라 했는지 아세요?\"로 되받아쳐 본론 진입을 늦추는 습관."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "민규씨",
+        "toJudge": "옆집 분",
+        "angry": "장민규 씨!"
+      }
+    },
+    "partyB": {
+      "name": "장민규",
+      "age": 41,
+      "occupation": "손해사정사",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "\"8시 42분에 택배실 들어가서 3분 뒤 나왔습니다\" 식으로 시각·동선부터 제시한다. 몰리면 상대 주장의 허점을 조목조목 세며 자기 책임은 축소한다.",
+      "pride": 8,
+      "fear": "'택배 뒤지는 집'이라는 소문이 실명으로 단체방에 고정되는 상황 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "cctv_and_logs",
+      "dailyRoutine": "출근 전 택배실과 분리수거장을 한 바퀴 돌며 놓인 물건을 확인한다. 밤에는 반상회 자료와 관리규약을 읽고 단체방 문의에 답한다.",
+      "sensitivePoints": [
+        "택배 도난 누명",
+        "동대표와의 알력",
+        "규정 위반자로 보이는 일"
+      ],
+      "verbalTells": [
+        {
+          "type": "clause_recital",
+          "trigger": "lying",
+          "pattern": "\"규약 제12조에 따르면…\" 식으로 관리규약을 길게 인용해 행동 자체보다 규정 해석으로 논점을 옮긴다."
+        },
+        {
+          "type": "timestamp_wall",
+          "trigger": "cornered",
+          "pattern": "시각과 동선을 분 단위로 나열해 감정 문제를 끼어들 틈을 주지 않는다. 데이터로 감정을 차단하는 패턴."
+        },
+        {
+          "type": "affect_flattening",
+          "trigger": "avoiding",
+          "pattern": "평판 피해를 말하면서도 표정이 거의 안 바뀐다. 건조한 어조로만 답해 공감 요구를 차단하는 방어 벽."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "유나씨",
+        "toJudge": "옆집 분",
+        "angry": "서유나 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "봄 오배송 분쟁 뒤 '호수 지목 전에 관리사무소 확인부터'로 합의했다. 이번에 둘 다 어겼다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "민규가 유나 문 앞 오배송 박스를 택배실로 옮긴 일을 유나는 '감시', 민규는 '정리'로 기억한다. 같은 행동, 정반대 해석.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '그때부터 내 문 앞을 유심히 봤다' / B: '오배송 박스를 정리한 일을 과장해 감시로 만든다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "반상회에서 둘 다 동대표의 CCTV 예산 처리에 이견을 냈지만, 회의 뒤 대화 없이 감정만 남겼다. 최병규의 표적이 된 배경.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "최병규 (동대표)",
+        "relationTo": "both",
+        "knowledgeScope": "반상회 발언·전단 문구·공용프린터 접근권을 모두 보유. 두 사람의 찬반 입장도 알고 있다.",
+        "witnessedDirectly": false,
+        "bias": "self_interest",
+        "distortionRisk": "intentional",
+        "witnessProfile": {
+          "age": 39,
+          "occupation": "동대표",
+          "relationToA": "서유나을 업무상 알고 있음",
+          "relationToB": "장민규을 업무상 알고 있음",
+          "sentimentToA": 0,
+          "sentimentToB": 0,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "유나씨",
+          "addressB": "민규씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_2",
+        "name": "박정호 (야간 경비원)",
+        "relationTo": "both",
+        "knowledgeScope": "오배송 처리 요청 메모, 택배실 CCTV 6분 원본, 전단 부착 새벽 시간대를 확인 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 39,
+          "occupation": "야간 경비원",
+          "relationToA": "서유나을 업무상 알고 있음",
+          "relationToB": "장민규을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "유나씨",
+          "addressB": "민규씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "임서현 (관리사무소 행정주임)",
+        "relationTo": "both",
+        "knowledgeScope": "악취 민원 원문, 프린터 스풀 로그, 회의록 수정 이력을 원본 기준으로 대조 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 42,
+          "occupation": "관리사무소 행정주임",
+          "relationToA": "서유나을 업무상 알고 있음",
+          "relationToB": "장민규을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "서유나씨",
+          "addressB": "장민규씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "resident_meeting_aftermath",
+    "description": "반상회에서 CCTV 증설·반려동물 악취·택배 분실이 한꺼번에 터지며 특정 호수가 공개 거론됐다. 다음 날 엘리베이터에 익명 전단이 붙고 단체방에 캡처가 돌자, 두 사람은 서로가 먼저 여론전을 걸었다고 확신했다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "반상회 직후라 찬반 기억이 생생하고, 택배·반려동물처럼 매일 마주치는 주제라 소문 하나가 곧바로 평판과 생활 동선에 타격을 줬다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "CCTV 캡처 무단 유포",
+      "truth": true,
+      "truthDescription": "유나는 택배실 CCTV 정지 화면 1장을 이웃 2인 이상에게 보내며 '자꾸 남의 박스 앞에 선다'는 문구를 덧붙였다. 원본 영상 확인 없이 캡처만 유포한 것이다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "평판회복",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-2",
+      "name": "악취 소문 무검증 전파",
+      "truth": true,
+      "truthDescription": "민규는 관리사무소 확인 없이 '307호 개봉투 냄새 또 난다'는 문구를 단체방과 1:1 대화에서 14시간 내 반복 전파했다. 실제 악취 원인은 찢어진 김치봉투였다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "평판회복",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "익명 전단의 실제 배후",
+      "truth": true,
+      "truthDescription": "익명 전단의 원본은 최병규가 관리사무소 민원 문구와 반상회 발언을 짜깁기해 만든 PDF다. 공용프린터 스풀 로그에 그의 계정으로 출력 27분 전 기록이 남아 있다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 40,
+        "b": 60
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공동체절차",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-4",
+      "name": "택배 절도 의심의 진위",
+      "truth": false,
+      "truthDescription": "CCTV 원본 6분을 보면 민규는 박스를 열지 않고 선반만 옮긴 뒤 나갔다. 경비원 박정호의 무전 요청 메모와 시각이 일치한다. 절도 의심은 사실이 아니다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "사생활경계",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-5",
+      "name": "선확인 약속 쌍방 파기",
+      "truth": true,
+      "truthDescription": "봄 합의를 둘 다 깼다. 유나는 CCTV 캡처를 사적으로 돌렸고, 민규는 악취 민원 문구를 확인 없이 재인용했다. 선확인 원칙을 서로 무시한 쌍방 위반이다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "공동체절차",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "유나가 돌린 택배실 CCTV 캡처",
+      "description": "민규가 박스 더미 앞에 선 CCTV 정지 화면 1장 + 유나의 '남의 박스 앞에 선다' 문구. 전후 영상은 없어 맥락 판단이 불가하다.",
+      "type": "cctv",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "제출물은 캡처 1장 + 전달 메시지뿐. 전후 영상이 없어 행위 맥락을 확인할 수 없다.",
+        "check_metadata": "저장 시각 반상회 다음 날 오전. 유나 휴대폰 메신저 내보내기 기록과 시각 일치.",
+        "restore_context": "정지 화면 1장으로는 박스를 열었는지, 옮겼는지, 기다렸는지 구분 불가.",
+        "verify_source": "화면비·시간표시 형식이 단지 CCTV 시스템과 일치. 외부 합성 가능성 낮음.",
+        "check_edits": "유나가 덧붙인 문구 외 이미지 픽셀 자체에 조작·보정 흔적 없음.",
+        "question_acquisition": "공용 CCTV를 개인이 캡처·전송한 자료. 사생활 침해 및 2차 유포 문제 소지 큼."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "경비실 오배송 처리대장과 원본 CCTV 6분 영상",
+      "description": "택배실 원본 CCTV 6분 + 경비원 무전 메모. 민규가 박스를 열지 않고 선반만 옮긴 전 과정이 담겨 절도 의심을 반박한다.",
+      "type": "security_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "원본 6분 영상 + 대장에 박정호 경비원의 '오배송 이동 요청' 메모 확인.",
+        "check_metadata": "무전·CCTV·대장 기재 시각이 2분 이내로 맞물린다. 동일 이벤트로 신뢰 가능.",
+        "restore_context": "영상상 민규는 박스 개봉 없이 선반만 옮긴 뒤 3분 내 퇴장. 절도 행위 없음.",
+        "verify_source": "CCTV 저장 서버와 경비실 백업본 해시 일치. 원본 무결성 확인됨.",
+        "check_edits": "NVR 직출력 원본. 프레임 누락·이어붙이기 흔적 없음.",
+        "question_acquisition": "공식 보안기록으로 적법. 타 주민 택배 송장 정보는 마스킹 후 사용 원칙."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "민규의 단체방·1:1 전달 캡처",
+      "description": "민규가 '307호 개봉투 냄새 또 난다'며 유나를 지목한 단체방·1:1 메시지 캡처. 14시간 내 같은 문구가 여러 대화방에 반복됐다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "단체방 내보내기 JSON + 1:1 채팅 캡처 세트 제출. 동일 문구 반복 확인 가능.",
+        "check_metadata": "반상회 종료 후 14시간 내 동일 문구가 단체방·1:1 다수 대화방에 반복 등장.",
+        "restore_context": "민규는 미확인 민원 표현을 사실로 단정해 전파. 관리사무소 확인 절차를 건너뛰었다.",
+        "verify_source": "발신 계정·전화번호가 민규 본인 확인. 대리 발송 가능성 없음.",
+        "check_edits": "상하 크롭 있으나 핵심 문장 '307호 개봉투 냄새'는 원본과 동일.",
+        "question_acquisition": "개인 대화 포함 자료. 제3자 이름·호수는 최소 노출 원칙 적용 필요."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "관리사무소 악취 민원 원문과 음식물수거 사고보고",
+      "description": "악취 민원 원문 + 찢어진 김치봉투 처리 사고보고서. 반려견 배변봉투는 현장에서 확인되지 않았다는 메모가 포함돼 있다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "민원 접수 원문 + 청소용역 사고보고서 원본 세트 제출. 악취 원인 추적 가능.",
+        "check_metadata": "악취 신고 시각이 유나 산책 시간과 불일치. 사고보고는 신고 20분 후 작성.",
+        "restore_context": "실제 악취 원인은 음식물수거통 옆 찢어진 김치봉투. 반려견 배변봉투는 미확인.",
+        "verify_source": "관리사무소 전산 기록과 청소용역 서명본 일치. 이중 확인 완료.",
+        "check_edits": "기관 전산 문서로 편집 이력 없음. 메모 추가 시각까지 기록돼 있다.",
+        "question_acquisition": "공동주택 민원 자료로 적법 확보. 세대 지목 표현 재유포는 제한."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "반상회 녹음 일부와 회의록 수정본",
+      "description": "최병규가 '공용질서를 흔드는 호수'라 호명한 반상회 녹음 3분 발췌본 + 표현을 순화한 회의록 수정본. 원본과 배포본의 차이가 드러난다.",
+      "type": "audio",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 18분 중 제출 발췌본은 문제 발언 전후 3분뿐. 전체 맥락 파악에 한계.",
+        "check_metadata": "녹음 파일 생성 시각이 회의록 배포본 작성보다 앞선다. 녹음이 1차 자료.",
+        "restore_context": "최병규가 공개석상에서 두 사람을 '공용질서를 흔드는 호수'로 묶어 호명한 장면이 담겨 있다.",
+        "verify_source": "참석자 2인의 개별 녹음과 발언 순서가 일치. 교차 검증 완료.",
+        "check_edits": "발췌본이라 단독 증거력은 약하나 음성 파형상 합성·이어붙이기 흔적 없음.",
+        "question_acquisition": "공개 회의 녹음으로 위법성 낮음. 참석자 음성 재유포 범위는 제한 필요."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "공용프린터 스풀 로그와 익명 전단 PDF",
+      "description": "익명 전단과 동일 문구·이미지의 임시 PDF가 최병규 계정으로 출력된 스풀 로그. 전단 부착 27분 전 출력 기록이 남아 있다.",
+      "type": "device_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "investigationResults": {
+        "request_original": "스풀 로그 원본 + 임시 PDF 해시값 + 출력 계정명 '최병규' 확인.",
+        "check_metadata": "출력 시각이 전단 부착보다 정확히 27분 앞선다. 제작→부착 동선이 성립.",
+        "restore_context": "PDF 내 반상회 발언과 민원 문구가 짜깁기돼 있어 우연한 중복 가능성은 극히 낮다.",
+        "verify_source": "행정주임 감사 기록과 프린터 서버 로그 일치. 최병규 계정 사용 확정.",
+        "check_edits": "서버 추출본에 삭제→복원 흔적은 있으나 PDF 본문 자체 조작은 없음.",
+        "question_acquisition": "기관 장비 로그로 적법 확보. 계정 접근 이력은 분쟁 해결 범위로만 한정 사용."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-5"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "유나는 민규가 의심스럽다는 설명을 붙여 택배실 CCTV 캡처를 이웃들에게 돌렸다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "민규는 확인 없이 유나의 반려견 악취·배변봉투 소문을 전파했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "익명 전단과 첫 단체방 문구의 배후에는 동대표 최병규가 있었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-4",
+      "fact": "민규가 화면에서 한 행동은 절도가 아니라 경비원 요청에 따른 오배송 박스 이동이었다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 관리사무소 확인 전 공개 비난 금지 약속을 어기고 평판 훼손을 키웠다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "cctv_share_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "share_scope_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "neighbor_count_followup"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "parcel_theft_basis_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "guard_request_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_management_first_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "why_not_verify_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "odor_rumor_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_meeting_humiliation"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "anonymous_flyer_origin_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "meeting_recording_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_management_first_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "why_forward_without_verifying"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "평판회복": [
+      "두 사람 모두 자신이 퍼뜨린 문구 범위를 특정해 철회하고, 같은 채널에 정정 문장을 먼저 올린다.",
+      "관리사무소 확인 전 퍼진 소문은 출처와 확산 범위를 표로 정리해 공동 정정문으로 묶는다.",
+      "정정 거부나 재유포가 반복되면 공동체 내부 절차를 넘어 명예훼손 보존조치와 공식 시정 요구를 동시에 진행한다."
+    ],
+    "사생활경계": [
+      "공용 CCTV 화면과 민원 캡처는 관리사무소 제출용으로만 쓰고 개인 전달을 금지한다.",
+      "택배실·분리수거장 관련 의심이 생기면 경비실 로그와 원본 영상 확인을 먼저 거친 뒤 말한다.",
+      "다시 개인 캡처 유포가 발생하면 호수 공개 제한과 분쟁조정위원회 개입을 즉시 발동한다."
+    ],
+    "공동체절차": [
+      "반상회 안건과 민원 자료는 회의록·관리사무소 원본으로만 확인하고 익명 전단은 증거로 쓰지 않는다.",
+      "동대표, 관리사무소, 당사자 입회 하에 소문 생성 경로와 문구를 재구성해 절차 위반자를 분리한다.",
+      "직함이나 공용장비 권한을 이용한 여론전이 재발하면 직책 배제, 공용프린터 접근 제한, 외부 감사 요청까지 포함한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-1",
+    "tp-3"
+  ]
+}

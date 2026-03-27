@@ -1,0 +1,726 @@
+{
+  "caseId": "case-neighbor-08",
+  "meta": {
+    "relationshipType": "neighbor",
+    "conflictSeed": "CS-5",
+    "variableModules": [
+      "VM-B"
+    ],
+    "twistModule": "TW-4",
+    "difficulty": "hard",
+    "anchorTruth": "27초 클립은 원본이 아니다. 프리뷰 6초와 다른 시점 영상을 이어붙인 위조본이었고, 실제 문제는 초반 이틀간 촬영각이 맞은편 도어매트까지 넓었던 점이다.",
+    "emotionalBait": "문 열리는 순간 번지는 실내 불빛, 따라붙는 듯한 줌 효과, 단체방에 올라온 '스토킹'이라는 단어 — 세 가지가 겹치면 민석이 의도적으로 사생활을 훔쳐봤다고 믿게 된다.",
+    "resolutionDilemma": "하린의 위조 클립 유포는 중대하지만, 민석도 초반 촬영각을 넓게 두었고 방어한다며 하린의 귀가 시간표를 주민방에 올렸다. 진짜 사생활 불안과 허위 낙인을 어디서 끊어 수습할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "황민석",
+      "age": 38,
+      "occupation": "홈네트워크 보안업체 원격지원 엔지니어",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "'고정렌즈 160도, 프레임레이트 15fps, SD카드 기본 저장입니다' — 장비 사양부터 깔고 감정은 거의 꺼내지 않는다. 불리해지면 기술 설명을 길게 늘어놓아 핵심 책임을 뒤로 미룬다.",
+      "pride": 8,
+      "fear": "카메라 뒤에 숨어 몰래 지켜보는 사람, 기술을 방패 삼아 이웃 사생활을 침범한 사람이라는 낙인 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "doorcam_app_and_hash_logs",
+      "dailyRoutine": "낮에는 원격 지원 콜을 받고 밤에는 집 앞 배달과 우편 상태를 카메라 앱으로 확인한다. 장비 설정값과 보관기간을 꼼꼼히 저장하는 습관이 있다.",
+      "sensitivePoints": [
+        "장비 준수 여부",
+        "스토커 낙인",
+        "직업 신뢰"
+      ],
+      "verbalTells": [
+        {
+          "type": "spec_recital",
+          "trigger": "lying",
+          "pattern": "'렌즈 160도 고정, 프레임레이트 15fps, 로컬 SD 저장' — 사양을 길게 읊어 문제의 체감 심각도를 낮춘다."
+        },
+        {
+          "type": "log_wall",
+          "trigger": "cornered",
+          "pattern": "설치 과정을 묻자 '14시 03분 전원 연결, 14시 07분 앱 페어링, 14시 12분 각도 세팅' — 초 단위 로그를 늘어놓아 끼어들 틈을 없앤다."
+        },
+        {
+          "type": "empathy_skip",
+          "trigger": "avoiding",
+          "pattern": "하린이 불안했다고 말해도 '원본을 보시면 안 그렇습니다'로 즉시 반박한다. 감정 공감을 통째로 건너뛴다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "하린씨",
+        "toJudge": "옆집 분",
+        "angry": "주하린 씨!"
+      }
+    },
+    "partyB": {
+      "name": "주하린",
+      "age": 35,
+      "occupation": "필라테스 강사",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "'문을 여는데 빨간 불이 켜져 있고, 화면이 따라오는 것 같았어요' — 불쾌감을 먼저 길게 풀고 공감을 얻은 뒤 규정 위반을 붙인다. 불리한 질문엔 '얼마나 무서웠는지 아세요?'로 되돌아간다.",
+      "pride": 7,
+      "fear": "지나치게 예민한 사람, 증거를 조작해서 이웃을 망신 준 사람이라는 시선이 가장 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "resident_chat_and_story_capture",
+      "dailyRoutine": "새벽 수업과 저녁 수업 사이에 집을 오가며 복도에서 마주치는 시간을 예민하게 기억한다. 단지앱 캡처와 영상 저장을 자주 하는 편이다.",
+      "sensitivePoints": [
+        "현관 앞 사생활",
+        "이웃의 시선",
+        "수업·고객 평판"
+      ],
+      "verbalTells": [
+        {
+          "type": "fear_loop",
+          "trigger": "emotional",
+          "pattern": "'문을 열었는데 빨간 불이 켜져 있었고, 화면이 따라왔고, 안쪽 불빛까지 보였고' — 같은 장면을 반복해 공포감을 먼저 고정한다."
+        },
+        {
+          "type": "overlabel",
+          "trigger": "lying",
+          "pattern": "'이건 감시가 아니라 스토킹이에요' — 상대 행동을 묘사할 때마다 한 단계 더 강한 낙인어로 격상시킨다."
+        },
+        {
+          "type": "audience_check",
+          "trigger": "cornered",
+          "pattern": "불리해지면 '다른 주민도 다 불편해했어요'라며 자기 감정을 공동체 의견으로 부풀린다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "민석씨",
+        "toJudge": "옆집 분",
+        "angry": "황민석 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "여름 전단지 분실 뒤 라인 주민들이 '도어벨카메라는 관리실 사전 통보, 문틀 바깥 촬영 최소화'로 합의한 적이 있다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "설치 당일 하린이 '안쪽까진 안 보이죠?'라고 묻자 민석은 테스트 화면을 잠깐 보여줬다. 민석은 설명 완료로, 하린은 반대가 무시된 순간으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '미리 보여주고 넘어간 문제였다' / B: '싫다고 했는데 기술 얘기로 밀어붙였다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "작년 다른 층 현관 카메라로 밤 방문객 소문이 난 일을 하린은 크게 불안해했지만 말하지 않았고, 민석은 과장이라 여기며 넘겼다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "정우석 (도어벨카메라 설치 기사)",
+        "relationTo": "both",
+        "knowledgeScope": "설치 당시 각도, 고정렌즈 160도 사양, 프리뷰와 저장 영상 차이, 재조정 로그를 원본으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 38,
+          "occupation": "도어벨카메라 설치 기사",
+          "relationToA": "황민석을 업무상 알고 있음",
+          "relationToB": "주하린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "민석씨",
+          "addressB": "하린씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_2",
+        "name": "이민지 (같은 라인 1203호 주민)",
+        "relationTo": "both",
+        "knowledgeScope": "하린의 첫 공개 글 표현, 민석의 귀가 시간표 역공 게시물, 그 뒤 대화 분위기를 직접 목격했다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 38,
+          "occupation": "같은 라인 1203호 주민",
+          "relationToA": "황민석을 업무상 알고 있음",
+          "relationToB": "주하린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "민석씨",
+          "addressB": "하린씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "최연서 (관리사무소 운영주임)",
+        "relationTo": "both",
+        "knowledgeScope": "설치 미통보 기록, 복도 촬영 가이드, 민원 접수 순서, SD카드 확보·포렌식 의뢰 과정을 원본으로 확인 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "관리사무소 운영주임",
+          "relationToA": "황민석을 업무상 알고 있음",
+          "relationToB": "주하린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "황민석씨",
+          "addressB": "주하린씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "cctv_privacy_suspicion",
+    "description": "복도 전단지 분실이 반복되자 민석은 도어벨카메라를 달았고, 맞은편 하린은 자기 현관이 찍힐까 불안해했다. 촬영 범위를 두고 언성이 높아진 어느 날, 주민방에 '카메라가 안쪽까지 따라왔다'는 27초 클립이 돌면서 갈등이 폭발했다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "현관문은 사적 공간의 경계선이라 렌즈 각도 몇 도 차이가 강한 불쾌감을 만든다. '스토킹'이라는 단어가 한번 붙자 기술 문제는 뒷전, 평판 전쟁이 먼저 커졌다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "민석의 미통보 설치와 초반 촬영각 초과",
+      "truth": true,
+      "truthDescription": "민석은 관리실 사전 통보 없이 카메라를 설치했고, 초기 이틀간 하린의 도어매트와 문틀 일부가 저장 영상에 포함되도록 각도를 넓게 두었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "촬영범위조정",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-2",
+      "name": "하린의 공개 낙인과 위조 클립 유포",
+      "truth": true,
+      "truthDescription": "하린은 관리실 판단 전 주민방에 위조 영상을 돌리며 '현관 앞을 노리는 사람'이라고 표현해 민석의 평판을 공개 훼손했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "평판회복",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "27초 클립은 원본 영상인가",
+      "truth": false,
+      "truthDescription": "27초 클립은 프리뷰 6초 + 다른 시점 복도 영상을 합친 뒤 디지털 줌·좌우 반전·가짜 타임스탬프를 덧씌운 위조본이었다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 10,
+        "b": 90
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "증거절차",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-4",
+      "name": "카메라가 하린 집 내부를 추적했는가",
+      "truth": false,
+      "truthDescription": "해당 기기는 팬·틸트 없는 고정렌즈 모델이다. 원본 저장 영상에도 하린 집 내부 추적은 없고 복도와 도어매트 일부만 담겨 있었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "촬영범위조정",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "관리실 확인 우선 원칙의 쌍방 파기",
+      "truth": true,
+      "truthDescription": "전단지 분실 뒤 '관리실을 먼저 거치자'고 합의했지만, 하린은 공개 낙인 글부터 올렸고 민석은 방어한다며 하린의 귀가 시간표를 주민방에 올렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "중재절차",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "하린이 돌린 27초 줌 클립",
+      "description": "주민방에 퍼진 27초 MP4. 문이 열리자 카메라가 따라붙는 듯 줌이 되지만, 해당 기기에는 줌 기능 자체가 없다.",
+      "type": "video",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "unlawful",
+      "proves": [
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "메신저 전달본 MP4만 제출. 원본 SD카드 파일·제조사 추출본 미포함.",
+        "check_metadata": "파일 생성이 첫 민원보다 뒤이고 휴대폰 편집 앱의 재인코딩 흔적이 남아 있다.",
+        "restore_context": "문이 열린 뒤부터 시작돼 설치 전 각도나 카메라 움직임은 보여주지 않는다.",
+        "verify_source": "첫 프레임 앱 UI가 민석 카메라 설정 화면과 일치 — 완전 허구는 아니나 편집 가공된 자료.",
+        "check_edits": "타임스탬프 글꼴 변경, 기기 미지원 줌 배율 변화, 일부 프레임 좌우 반전 — 위조 흔적 3건 확인.",
+        "question_acquisition": "개인 장치 화면을 무단 녹화·편집해 유포한 자료라 취득·유포 정당성 모두 심각한 문제."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "설치 직후 각도 사진과 관리사무소 미통보 기록",
+      "description": "설치 기사 촬영 초기 각도 사진과 관리실 접수 로그. 사전 문의 기록이 비어 있어 미통보 설치가 확인된다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "설치 확인 사진 원본 + 관리사무소 설치 문의·접수 로그 제출.",
+        "check_metadata": "설치 사진은 당일 저녁 촬영, 사전 문의 기록 공란 — 미통보 설치 확정.",
+        "restore_context": "사진에 맞은편 도어매트·문틀 일부가 포함돼 초기 촬영 범위가 합의선을 넘었음을 보여준다.",
+        "verify_source": "기사 휴대폰 EXIF와 관리사무소 저장 시각 일치.",
+        "check_edits": "기관 보관 원본, 편집 흔적 없음. 연속 촬영 번호 자연스러움.",
+        "question_acquisition": "설치 점검 자료라 적법하나 맞은편 세대 현관 정보 포함 — 필요 부분만 활용."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "원본 SD카드 2분 영상과 기기 사양서",
+      "description": "SD카드 원본 2분 영상 + 제조사 사양서. 고정렌즈 160도 모델로 팬·틸트 미지원이 확인돼 추적 촬영 불가를 증명한다.",
+      "type": "device_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "SD카드 직접 추출 연속 파일 + 제조사 PDF 사양서 원본 제출.",
+        "check_metadata": "원본이 연속 녹화 구간 저장, 문제의 27초와 같은 시각대 포함.",
+        "restore_context": "원본에는 복도·도어매트만 보일 뿐 카메라 회전이나 실내 추적 장면 없음 — 유포본과 완전히 다름.",
+        "verify_source": "기기 시리얼·모델명·저장파일 헤더 정보 모두 일치.",
+        "check_edits": "원본 해시 확보, 프레임 삭제·재인코딩 흔적 없음 — 무결성 확인.",
+        "question_acquisition": "관리사무소 보관 절차를 거친 원본이라 무결성 높음. 열람은 사건 시각대로 제한."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "27초 클립 포렌식 비교 보고서",
+      "description": "포렌식 보고서. 유포본과 SD카드 원본·프리뷰 캐시를 대조해 합성·디지털줌·좌우반전·타임스탬프 위조를 확인했다.",
+      "type": "forensic_report",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "유포본·SD카드 원본·프리뷰 캐시 대조 분석표 + 해시 목록 제출.",
+        "check_metadata": "유포본 타임스탬프가 원본보다 43초 어긋남. 편집 앱 렌더 로그 잔존.",
+        "restore_context": "앞 6초는 설치 프리뷰, 뒤는 다른 시점 복도 영상을 이어붙여 하나의 연속 장면처럼 가공한 것으로 분석.",
+        "verify_source": "관리사무소 보관본·제조사 로그 서버 시각 일치 — 포렌식 기준 원본 확정.",
+        "check_edits": "좌우 반전·디지털 줌 램프·가짜 타임스탬프 오버레이 3건 모두 식별.",
+        "question_acquisition": "공식 감정 절차를 거쳐 적법. 개인 현관 영상 포함돼 분석 결과 위주로만 공유."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "주민 채팅방 캡처와 민석의 역공 게시물",
+      "description": "하린의 '현관 앞을 노리는 사람' 주민방 글 + 민석이 올린 하린 귀가 시간표 게시물. 양쪽 모두 관리실 절차보다 공개 공격이 먼저였다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "채팅방 내보내기 원문 + 게시물 캡처 2건 + 삭제 시각 기록 제출.",
+        "check_metadata": "하린의 첫 공개 글이 관리실 접수보다 앞서고, 민석의 역공 게시물은 같은 날 밤 뒤이어 올라옴.",
+        "restore_context": "하린은 '스토킹' 낙인어를 먼저 썼고, 민석은 원본 반박 대신 하린의 귀가 시간표를 공개해 맞대응했다.",
+        "verify_source": "방 관리자 로그와 양측 휴대폰 내보내기 원문 시간 교차 일치.",
+        "check_edits": "일부 크롭됐으나 핵심 문장·게시 시각은 원문과 동일.",
+        "question_acquisition": "사적 채팅·생활패턴 정보 포함 — 사건 해결 외 재유포 부적절."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "민원 접수 순서표와 각도 재조정 서비스 로그",
+      "description": "관리실·설치기사 기록. 하린의 공개 글이 정식 민원보다 36분 앞서고, 민석의 각도 재조정은 기사 방문 직후 이뤄졌다.",
+      "type": "complaint_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "관리실 수신 로그 + 기사 방문기록 + 재조정 후 재촬영 사진 한 세트 제출.",
+        "check_metadata": "하린 공개 글이 정식 민원보다 36분 선행. 민석 각도 재조정은 기사 방문 직후 완료.",
+        "restore_context": "민석이 각도를 좁힌 건 사실이나, 이미 이틀간 범위 초과가 있었고 사전 절차도 밟지 않았다.",
+        "verify_source": "기사 작업일지·관리실 통화시간·재조정 사진 시간 삼자 일치.",
+        "check_edits": "기관 보존 로그, 편집 흔적 없음. 전후 비교사진 연속성 확보.",
+        "question_acquisition": "복도 촬영 민원 자료라 적법. 특정 세대 출입 빈도 등 부수 정보는 축약 활용."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    },
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "민석은 사전 통보 없이 카메라를 달았고 초기 이틀간 맞은편 도어매트와 문틀 일부가 저장 영상에 잡혔다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "하린은 주민방에 편집 영상을 돌리며 민석을 현관을 노리는 사람처럼 공개적으로 표현했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "27초 클립은 원본이 아니라 설치 프리뷰와 다른 복도 영상을 합친 위조본이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "민석의 기기는 고정렌즈 모델이어서 원격으로 하린 집 안쪽을 추적 촬영할 수 없었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 관리사무소 확인보다 공개 게시와 역공 게시를 먼저 선택해 사생활 분쟁 절차를 무너뜨렸다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "installation_notice_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "doorway_line_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "interior_capture_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "preview_vs_saved_clip_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "management_first_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_stalker_label"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "public_label_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_past_camera_anxiety"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "clip_origin_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "mobile_editor_log_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "management_first_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "why_not_file_complaint_first"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "촬영범위조정": [
+      "관리사무소 입회 하에 카메라 시야를 문틀 안쪽 기준으로 재설정하고 재점검 사진을 남긴다.",
+      "공용복도 방향이 포함되면 안내문과 보관기간, 음성녹음 여부를 명시한다.",
+      "재차 범위 초과가 발생하면 장비를 임시 철거하고 재설치 승인 절차를 다시 밟는다."
+    ],
+    "증거절차": [
+      "화면녹화본이 아닌 원본 SD 카드나 제조사 추출본만 증거로 인정한다.",
+      "설치 프리뷰, 보정 영상, 편집본은 원본과 분리해 표시하고 해시값으로 대조한다.",
+      "위조·편집 증거 유포가 확인되면 분쟁조정과 별도로 규약 위반 제재를 적용한다."
+    ],
+    "평판회복": [
+      "하린은 '스토킹' 표현과 편집 클립을 같은 채널에서 철회하고 정정문을 올린다.",
+      "민석은 하린의 귀가·출근 시간표를 올린 역공 게시물을 삭제하고 재유포 금지를 약속한다.",
+      "관리사무소는 사실관계 요약만 공지하고 개인 생활패턴 언급은 금지한다."
+    ],
+    "중재절차": [
+      "사생활 촬영 민원은 공개 채팅방보다 관리사무소와 설치기사 합동 확인을 먼저 거친다.",
+      "당사자끼리 원본 영상을 직접 주고받지 말고 관리사무소 보관본으로만 열람한다.",
+      "반복 충돌 시 같은 라인 주민과 관리사무소가 참여하는 촬영장치 운영 합의를 문서로 남긴다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-1",
+    "tp-3"
+  ]
+}

@@ -1,13 +1,17 @@
 /**
- * LLM 기반 대화 해석기 v2.
- * 시스템 프롬프트를 간결하고 정확하게 구성하여 응답 품질을 높인다.
+ * LLM 기반 대화 해석기.
+ * Phase 3~5 심문에서 재판관 질문 + NPC 응답을 한 번에 생성한다.
  * 연결 실패 시 기존 대사 트리 폴백.
  */
 import { chatCompletion } from './llmClient'
+import { buildSpeechGuide, getMyCall, getJudgeReference, getAngryCall } from './llmSpeechGuide'
+import { gwawa } from '../utils/korean'
 import { resolveDialogue as fallbackResolve, type ResolvedDialogue } from './dialogueResolver'
 import type { PlayerAction, PartyId, DialogueNode, AgentState } from '../types'
+import { GamePhase } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
 import type { CaseData } from '../types'
+import { useGameStore } from '../store/useGameStore'
 
 export async function resolveLLMDialogue(
   action: PlayerAction,
@@ -24,12 +28,26 @@ export async function resolveLLMDialogue(
   const agent = target === 'a' ? agentA : agentB
   const profile = target === 'a' ? caseData.duo.partyA : caseData.duo.partyB
   const opponent = target === 'a' ? caseData.duo.partyB : caseData.duo.partyA
-  const disputeId = 'disputeId' in action ? (action as { disputeId?: string }).disputeId : undefined
+  let disputeId = 'disputeId' in action ? (action as { disputeId?: string }).disputeId : undefined
+
+  // evidence_present: 증거에서 쟁점 + 증거 정보 추출
+  let evidenceForPrompt: CaseData['evidence'][number] | undefined
+  if (action.type === 'evidence_present') {
+    evidenceForPrompt = caseData.evidence.find(e => e.id === action.evidenceId)
+    if (!disputeId && evidenceForPrompt?.proves.length) {
+      disputeId = evidenceForPrompt.proves[0]
+    }
+  }
+
   const dispute = disputeId ? caseData.disputes.find((d) => d.id === disputeId) : undefined
   const lieEntry = disputeId ? agent.lieStateMap[disputeId] : undefined
 
-  const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target)
-  const userPrompt = buildUserPrompt(action, dispute, profile.name)
+  const store = useGameStore.getState()
+  const recentDialogues = store.dialogueLog.slice(-8)
+  const presentedEvidence = caseData.evidence.filter(e => evidenceStates[e.id]?.presented)
+
+  const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase)
+  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt)
 
   try {
     const response = await chatCompletion(
@@ -37,18 +55,44 @@ export async function resolveLLMDialogue(
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
       ],
-      { temperature: 0.85, maxTokens: 150 },
+      { temperature: 0.85, maxTokens: 250 },
     )
 
     if (!response.trim()) throw new Error('Empty response')
 
     const parsed = parseLLMResponse(response, target, disputeId)
-    return { node: parsed, target }
+
+    // 재판관 질문이 있으면 추가, 없으면 폴백 템플릿 사용
+    const store2 = useGameStore.getState()
+    const judgeText = parsed.judgeQuestion?.trim()
+    if (judgeText) {
+      store2.addDialogue({
+        speaker: 'judge',
+        text: judgeText,
+        relatedDisputes: disputeId ? [disputeId] : [],
+        turn: store2.turnCount,
+      })
+    } else {
+      // LLM이 재판관 질문을 생성하지 못한 경우 폴백
+      const fallbackQuestion = buildFallbackJudgeQuestion(action, caseData, target, dispute)
+      if (fallbackQuestion) {
+        store2.addDialogue({
+          speaker: 'judge',
+          text: fallbackQuestion,
+          relatedDisputes: disputeId ? [disputeId] : [],
+          turn: store2.turnCount,
+        })
+      }
+    }
+
+    return { node: parsed.npcNode, target }
   } catch (error) {
     console.warn('LLM 호출 실패, 폴백:', error)
     return fallbackResolve(action, agentA, agentB, evidenceStates)
   }
 }
+
+/* ── 시스템 프롬프트 ─────────────────────── */
 
 function buildSystemPrompt(
   me: CaseData['duo']['partyA'],
@@ -58,18 +102,37 @@ function buildSystemPrompt(
   dispute: CaseData['disputes'][number] | undefined,
   caseData: CaseData,
   party: PartyId,
+  recentDialogues: { speaker: string; text: string }[],
+  presentedEvidence: CaseData['evidence'],
+  currentPhase: GamePhase,
 ): string {
-  // 핵심만 간결하게. GPT-4o-mini는 짧은 프롬프트에서 더 잘 작동.
   const lines: string[] = []
 
-  // 페르소나 (2줄)
-  lines.push(`당신은 ${me.name}(${me.age}세, ${me.occupation}).`)
-  lines.push(`성격: ${me.speechStyle}`)
+  /* ① 페르소나 */
+  lines.push(`당신은 "${me.name}"(${me.age}세, ${me.occupation}).`)
+  lines.push(``)
+  lines.push(`## 성격과 말투 (반드시 반영)`)
+  lines.push(me.speechStyle)
+  lines.push(``)
+  lines.push(`## 상황`)
+  lines.push(`법정에서 ${gwawa(opponent.name)} 분쟁 중.`)
+  lines.push(`배경: ${caseData.context.description}`)
 
-  // 상황 (1줄)
-  lines.push(`법정에서 ${opponent.name}과(와) 분쟁 중. 배경: ${caseData.context.description}`)
+  /* 호칭 안내 — 더 강조 */
+  const myCall = getMyCall(caseData.duo, party)
+  const judgeRef = getJudgeReference(caseData.duo, party)
+  const angryCall = getAngryCall(caseData.duo, party)
+  lines.push(``)
+  lines.push(`## 호칭 (엄격히 지키세요)`)
+  lines.push(`- 상대에게: "${myCall}" (매 문장 시작에 호칭을 넣지 마세요. 자연스럽게.)`)
+  lines.push(`- 재판관에게 상대 언급: "${judgeRef}"`)
+  lines.push(`- 감정 폭발 시: "${angryCall}"`)
+  lines.push(`- ⚠️ 매번 "${myCall},"로 시작하면 로봇 같습니다. 호칭 없이 바로 본론으로 들어가는 문장도 섞으세요.`)
 
-  // 내가 아는 사실 (핵심만)
+  /* ①-b 현재 단계별 태도 (Phase 깊이) */
+  lines.push(getPhaseDepthGuide(currentPhase))
+
+  /* ② 내가 아는 사실 */
   const myQuadrant = party === 'a' ? 'a_only' : 'b_only'
   const myFacts = caseData.truthTable.filter(
     (t) => t.quadrant === 'both_know' || t.quadrant === myQuadrant,
@@ -81,7 +144,7 @@ function buildSystemPrompt(
     }
   }
 
-  // 현재 쟁점 + 거짓말 상태 (핵심)
+  /* ③ 쟁점 + 거짓말 상태 */
   if (lieEntry && dispute) {
     const stateInstructions: Record<string, string> = {
       S0: '이 쟁점을 완전히 부정하세요. 자신감 있게.',
@@ -101,7 +164,8 @@ function buildSystemPrompt(
       career_preservation: '직장/평판을 지키려는 마음',
     }
 
-    lines.push(`\n쟁점: "${dispute.name}"`)
+    lines.push(`\n## 현재 쟁점: "${dispute.name}"`)
+    lines.push(`내용: ${dispute.truthDescription}`)
     lines.push(stateInstructions[lieEntry.currentState] ?? '')
 
     if (!dispute.truth && lieEntry.currentState <= 'S1') {
@@ -109,12 +173,12 @@ function buildSystemPrompt(
     }
 
     lines.push(`거짓말 동기: ${motiveHints[lieEntry.lieMotive] ?? ''}`)
+    lines.push(`⚠️ 이 쟁점("${dispute.name}")에 대해서만 답하세요. 다른 쟁점 이야기를 꺼내지 마세요.`)
   }
 
-  // 감정 (1줄)
+  /* ④ 감정 + 말버릇 */
   lines.push(`\n현재 감정: ${agent.emotionalState.behaviorHint || agent.emotionalState.phase}`)
 
-  // 말버릇 (1줄)
   const activeTell = me.verbalTells.find((v) =>
     (v.trigger === 'lying' && lieEntry && lieEntry.currentState <= 'S2') ||
     (v.trigger === 'cornered' && lieEntry && lieEntry.currentState >= 'S3') ||
@@ -124,38 +188,114 @@ function buildSystemPrompt(
     lines.push(`말버릇 발동: ${activeTell.pattern}`)
   }
 
-  // 규칙 (필수 3줄)
-  lines.push(`\n규칙: 1~2문장. 한국어 존댓말. 법정 상황. (행동 묘사)를 괄호로 넣으세요.`)
+  /* ⑤ 제시된 증거 */
+  if (presentedEvidence.length > 0) {
+    lines.push(`\n## 이미 제시된 증거`)
+    for (const ev of presentedEvidence) {
+      lines.push(`- ${ev.name}: ${ev.description.slice(0, 60)}`)
+    }
+    lines.push(`부정하기 어려운 증거가 있다면 그에 맞게 대응을 바꾸세요.`)
+  }
+
+  /* ⑥ 최근 대화 + 심문 이력 컨텍스트 */
+  if (recentDialogues.length > 0) {
+    const speakerNames: Record<string, string> = {
+      a: caseData.duo.partyA.name, b: caseData.duo.partyB.name,
+      judge: '재판관', system: '시스템', witness: '증인',
+    }
+    lines.push(`\n## 최근 대화 (이 맥락을 이어서 답하세요)`)
+    for (const d of recentDialogues.slice(-5)) {
+      lines.push(`${speakerNames[d.speaker] ?? d.speaker}: ${d.text.slice(0, 80)}`)
+    }
+    lines.push(`위 흐름을 끊지 말고 이어가세요. 이전 말과 모순되지 않게.`)
+  }
+
+  /* ⑥-b 심문 이력 컨텍스트 (질문 순서 의존성) */
+  try {
+    const store = useGameStore.getState()
+    const ctx = store.getInterrogationContext(party, dispute?.id ?? '')
+    if (ctx.firstTime) {
+      lines.push(`\n⚠️ 이 쟁점에 대해 이 사람에게 처음 묻는 질문이다.`)
+      lines.push(`"이미 말씀드렸다" "아까도 말했다" 류의 표현을 절대 쓰지 마세요. 처음 듣는 것처럼 반응하세요.`)
+      if (ctx.otherPartyAsked) {
+        lines.push(`(단, 상대방에게는 이미 이 주제가 나왔다. 상대 발언을 들은 상태.)`)
+      }
+      if (ctx.otherPartyRevealed) {
+        lines.push(`(⚡ 상대방이 이 쟁점에서 비밀을 인정했다. 당신은 그 사실을 알고 있다 — 충격/분노/동요를 보여라.)`)
+      }
+    } else {
+      lines.push(`\n이 쟁점에 대해 ${ctx.previousTypes.length}번째 질문이다.`)
+      lines.push(`이전 질문 유형: ${ctx.previousTypes.join(' → ')}`)
+      lines.push(`같은 말을 반복하지 마세요. 이전 답변보다 한 단계 더 깊은 내용을 꺼내세요.`)
+    }
+
+    // 다른 쟁점에서 이미 밝혀진 사실 → 이 쟁점 답변에 영향
+    const allHistory = store.interrogationHistory[party] ?? {}
+    const revealedDisputes = Object.entries(allHistory)
+      .filter(([dId, h]) => h.revealed && dId !== (dispute?.id ?? ''))
+      .map(([dId]) => caseData.disputes.find(d => d.id === dId)?.name)
+      .filter(Boolean)
+    if (revealedDisputes.length > 0) {
+      lines.push(`\n이미 인정한 다른 쟁점: ${revealedDisputes.join(', ')}`)
+      lines.push(`이미 인정한 것과 모순되는 주장은 하지 마세요. 일관성을 유지하세요.`)
+    }
+  } catch { /* store 접근 실패 시 무시 */ }
+
+  /* ⑦ 질문 유형별 지침 */
+  lines.push(`\n## 질문 유형별 답변 지침`)
+  lines.push(`- 사실 추궁: 구체적 사실(날짜, 금액, 장소)로 답하거나 방어. "그런 일 없다" 같은 단순 부정 금지.`)
+  lines.push(`- 동기 탐색: "왜 그랬는지"에 대해 자기 입장에서 설명. 감정적 배경과 당시 상황을 섞어서.`)
+  lines.push(`- 공감 접근: 재판관이 부드럽게 다가옴. 경계를 낮추고 솔직한 감정. 평소 못 했던 말을 꺼낼 수 있음.`)
+  lines.push(``)
+  lines.push(`## 자연스러운 대화를 위한 규칙`)
+  lines.push(`1. 같은 문장 구조를 반복하지 마세요. ("그건... ~입니다" 패턴 금지)`)
+  lines.push(`2. 2~3문장으로 답하되 한 문장은 짧게(10자 이내), 한 문장은 길게 — 리듬감을 주세요.`)
+  lines.push(`3. 말버릇(verbalTells)이 있으면 자연스럽게 섞되 매번 넣지 마세요. 3~4턴에 한 번.`)
+  lines.push(`4. 재판관의 질문을 그대로 반복하지 마세요. 자기 방식으로 재해석해서 답하세요.`)
+  lines.push(`5. "~입니다/~습니다"와 "~야/~잖아"를 한 답변 안에서 혼합하지 마세요.`)
+
+  /* ⑧ 말투 규칙 (공용 모듈) */
+  lines.push(`\n${buildSpeechGuide(caseData.duo, 'interrogation', party)}`)
+
+  /* ⑨ 출력 형식 */
+  lines.push(`\n## 출력 형식 (JSON만, 다른 텍스트 없이)`)
+  lines.push(`{"judgeQuestion":"재판관 질문 (1~2문장, ~주십시오/~습니까 존댓말)","npcResponse":"${me.name}의 대사 (2~3문장, 괄호 행동묘사 넣지 마)","behaviorHint":"행동 묘사 (1문장, ~한다 체)"}`)
+  lines.push(``)
+  lines.push(`규칙:`)
+  lines.push(`- judgeQuestion: 반드시 내용이 있어야 함. 빈 문자열 금지. 이전 대화를 이어받아 구체적으로.`)
+  lines.push(`  나쁜 예: "말씀해 주세요." (너무 범용)`)
+  lines.push(`  좋은 예: "${opponent.name} 씨가 방금 ${dispute?.name ?? '그 부분'}에 대해 말한 내용, 사실입니까?"`)
+  lines.push(`- npcResponse: 캐릭터 성격(speechStyle)대로. 같은 패턴 반복 금지. 대사만, 괄호 넣지 마.`)
+  lines.push(`- behaviorHint: "손을 떤다", "시선을 피한다" 같은 관찰 가능한 행동만.`)
 
   return lines.join('\n')
 }
 
-function buildUserPrompt(action: PlayerAction, dispute?: CaseData['disputes'][number], myName?: string): string {
+/* ── 유저 프롬프트 ───────────────────────── */
+
+function buildUserPrompt(action: PlayerAction, dispute?: CaseData['disputes'][number], evidence?: CaseData['evidence'][number]): string {
   const topic = dispute?.name ?? '해당 사안'
+  const detail = dispute?.truthDescription ? `\n쟁점 핵심: ${dispute.truthDescription}` : ''
 
   if (action.type === 'question') {
-    const prompts: Record<string, string> = {
-      fact_fixing: `재판관: "${myName} 씨, ${topic}에 대해 정확한 사실을 말씀해 주십시오."`,
-      timeline: `재판관: "${myName} 씨, ${topic} 당시 시간 순서를 정리해 주십시오."`,
-      motive: `재판관: "${myName} 씨, ${topic}에 대해 왜 그런 선택을 하셨습니까?"`,
-      context_expansion: `재판관: "${myName} 씨, ${topic}의 전후 상황을 말씀해 주십시오."`,
-      provenance: `재판관: "${myName} 씨, 그 정보를 어디서 어떻게 알게 되셨습니까?"`,
-      empathy: `재판관: "${myName} 씨, 말하기 어려우시면 천천히 하셔도 됩니다."`,
+    const directions: Record<string, string> = {
+      fact_pursuit: `재판관이 "${topic}"에 대해 사실을 추궁합니다.${detail}\n이 쟁점의 사실 여부를 캐묻는 질문을 만들고, 이 쟁점에 대해서만 답하세요.`,
+      motive_search: `재판관이 "${topic}"에 대해 동기를 탐색합니다.${detail}\n"왜 그랬는지" 파고드는 질문. 이 쟁점의 동기만 다루세요.`,
+      empathy_approach: `재판관이 "${topic}"에 대해 공감으로 다가갑니다.${detail}\n부드럽게 마음을 여는 질문. 이 쟁점에 대한 감정만 다루세요.`,
     }
-    return prompts[action.questionType] ?? `재판관이 ${topic}에 대해 질문합니다.`
+    return directions[action.questionType] ?? `재판관이 ${topic}에 대해 질문합니다.`
   }
 
   if (action.type === 'evidence_present') {
-    return `재판관이 ${topic} 관련 증거를 제시했습니다. 이 증거에 대해 반응하세요.`
+    const evName = evidence?.name ?? '증거'
+    const evDesc = evidence?.description ? `\n증거 내용: ${evidence.description}` : ''
+    return `재판관이 "${evName}" 증거를 제시했습니다.${evDesc}\n\n⚠️ "${topic}" 쟁점에 대한 증거입니다. 반드시 이 증거에 대해서만 직접 반응하세요.\n다른 쟁점(폰 확인, 외도 등)으로 넘어가지 마세요. 이 증거가 자신에게 불리하다면 변명하거나 설명하세요.`
   }
 
   if (action.type === 'trust_action') {
     const prompts: Record<string, string> = {
-      confidential_protection: `재판관: "이 말은 상대에게 공개하지 않겠습니다." — 비공개가 보장되었으니 솔직해질 수 있습니다.`,
-      interruption_block: `재판관이 상대의 개입을 차단했습니다. 안전한 환경에서 말할 수 있습니다.`,
-      retaliation_check: `재판관: "말씀하신 후 불이익이 걱정되시나요?" — 걱정에 대해 솔직히 답하세요.`,
-      emotional_stabilization: `재판관이 진정할 시간을 주었습니다. 감정이 가라앉고 더 솔직해질 수 있습니다.`,
-      pre_disclosure_consent: `재판관: "이 내용을 공개해도 괜찮겠습니까?" — 신뢰 수준에 따라 답하세요.`,
+      confidential_protection: `재판관: "이 말은 상대에게 공개하지 않겠습니다." — 비공개 보장, 솔직해질 수 있습니다.`,
+      separation: `재판관이 상대의 개입을 차단했습니다. 안전한 환경에서 말할 수 있습니다.`,
     }
     return prompts[action.actionType] ?? '재판관이 조치를 취했습니다.'
   }
@@ -163,18 +303,124 @@ function buildUserPrompt(action: PlayerAction, dispute?: CaseData['disputes'][nu
   return '재판관이 질문합니다.'
 }
 
-function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string): DialogueNode {
-  // (행동 묘사)를 추출
+/* ── 응답 파싱 ───────────────────────────── */
+
+interface ParsedLLMResponse {
+  judgeQuestion: string
+  npcNode: DialogueNode
+}
+
+function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string): ParsedLLMResponse {
+  try {
+    const jsonMatch = response.match(/\{[\s\S]*\}/)
+    if (jsonMatch) {
+      const parsed = JSON.parse(jsonMatch[0])
+      const behaviorMatch = parsed.npcResponse?.match(/[（(]([^)）]+)[)）]/)
+      const behaviorHint = parsed.behaviorHint || (behaviorMatch ? behaviorMatch[1] : undefined)
+      const text = (parsed.npcResponse ?? '').replace(/[（(][^)）]+[)）]/g, '').trim()
+
+      return {
+        judgeQuestion: parsed.judgeQuestion ?? '',
+        npcNode: {
+          id: `llm-${Date.now()}`,
+          conditions: disputeId ? { disputeId } : {},
+          speaker,
+          text: text || response,
+          behaviorHint,
+          effects: {},
+        },
+      }
+    }
+  } catch { /* JSON 파싱 실패 → 폴백 */ }
+
   const behaviorMatch = response.match(/[（(]([^)）]+)[)）]/)
   const behaviorHint = behaviorMatch ? behaviorMatch[1] : undefined
   const text = response.replace(/[（(][^)）]+[)）]/g, '').trim()
 
   return {
-    id: `llm-${Date.now()}`,
-    conditions: disputeId ? { disputeId } : {},
-    speaker,
-    text: text || response,
-    behaviorHint,
-    effects: {},
+    judgeQuestion: '',
+    npcNode: {
+      id: `llm-${Date.now()}`,
+      conditions: disputeId ? { disputeId } : {},
+      speaker,
+      text: text || response,
+      behaviorHint,
+      effects: {},
+    },
+  }
+}
+
+/* ── LLM이 재판관 질문을 생성하지 못했을 때 폴백 ── */
+
+function buildFallbackJudgeQuestion(
+  action: PlayerAction,
+  caseData: CaseData,
+  target: PartyId,
+  dispute?: CaseData['disputes'][number],
+): string {
+  const name = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+  const topic = dispute?.name ?? '해당 사안'
+
+  if (action.type === 'question') {
+    const templates: Record<string, string[]> = {
+      fact_pursuit: [
+        `${name} 씨, ${topic}에 대해 사실대로 말씀해 주십시오.`,
+        `${name} 씨, ${topic}에 대해 좀 더 구체적으로 설명해 주시겠습니까?`,
+      ],
+      motive_search: [
+        `${name} 씨, ${topic}에 대해 왜 그런 선택을 하셨습니까?`,
+        `${name} 씨, 그때 어떤 사정이 있었는지 말씀해 주십시오.`,
+      ],
+      empathy_approach: [
+        `${name} 씨, ${topic}에 대해 편하게 말씀해 주세요.`,
+        `${name} 씨, 그때 심정이 어떠셨는지 듣고 싶습니다.`,
+      ],
+    }
+    const pool = templates[action.questionType] ?? templates.fact_pursuit
+    return pool[Math.floor(Math.random() * pool.length)]
+  }
+
+  if (action.type === 'evidence_present') {
+    return `${name} 씨, 이 증거에 대해 어떻게 생각하십니까?`
+  }
+
+  if (action.type === 'trust_action') {
+    return `${name} 씨, 편하게 말씀하셔도 됩니다.`
+  }
+
+  return `${name} 씨, 한 가지 더 여쭤보겠습니다.`
+}
+
+/* ── Phase별 응답 깊이 가이드 ──────────────── */
+
+function getPhaseDepthGuide(phase: GamePhase): string {
+  switch (phase) {
+    case GamePhase.Phase3_Interrogation:
+      return `\n## 현재 단계: 심문 (초기)
+- 아직 증거가 제시되지 않은 초기 단계. 경계심이 높습니다.
+- 준비된 답변 위주로 대응하세요. 핵심 비밀은 절대 드러내지 마세요.
+- 같은 질문이 반복되면 짜증을 내거나 "이미 말씀드렸잖아요"로 방어.
+- 표면적인 사실만 언급. 깊은 동기나 감정은 숨기세요.
+- 자기 유리한 사실 위주로 진술. "그건 오해입니다"류의 단순 부정.`
+
+    case GamePhase.Phase4_Evidence:
+      return `\n## 현재 단계: 증거 심리 (중반)
+- 증거가 제시된 상태. 무조건 부정하면 오히려 불리합니다.
+- 증거와 모순되는 주장은 수정하거나 "그건 다른 맥락입니다"로 변호.
+- 이전 단계보다 감정이 동요됩니다. 더 솔직한 반응을 보이세요.
+- 이전에 말하지 않았던 새로운 정보를 하나씩 흘리세요.
+- "사실 그때..." 같은 추가 배경 정보를 자연스럽게 꺼내세요.`
+
+    case GamePhase.Phase5_ReExamination:
+      return `\n## 현재 단계: 최종 심문 (후반)
+- 장시간 심문으로 지쳤습니다. 방어가 느슨해졌습니다.
+- 같은 쟁점이라도 이전보다 훨씬 깊은 속내를 드러내세요.
+- "사실은...", "솔직히 말하면..." 같은 고백이 자연스럽게 나올 수 있습니다.
+- 감정적 호소, 진심 어린 후회, 상대에 대한 진짜 감정을 표현하세요.
+- 이전 단계에서 숨겼던 진짜 동기나 배경을 밝히세요.
+- 방어보다는 이해받고 싶은 마음이 커집니다.`
+
+    default:
+      return ''
   }
 }

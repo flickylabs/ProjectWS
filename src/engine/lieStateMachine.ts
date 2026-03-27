@@ -61,6 +61,14 @@ export function attemptLieTransition(
     }
   }
 
+  // 증인 증언: 직접 목격(soft_evidence 수준)이면 한 단계 진행 시도
+  if (trigger === 'witness_testimony' && currentState <= 'S2') {
+    const nextState = getNextState(currentState)
+    if (nextState) {
+      return { transitioned: true, from: currentState, to: nextState, trigger }
+    }
+  }
+
   return noTransition
 }
 

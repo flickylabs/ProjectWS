@@ -57,6 +57,59 @@
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+}
+.animate-shake {
+  animation: shake 0.4s ease-out;
+}
+
+@keyframes evidence-slam {
+  0% { transform: translateY(-20px) scale(1.1); opacity: 0; }
+  50% { transform: translateY(2px) scale(0.98); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+.animate-evidence-slam {
+  animation: evidence-slam 0.4s ease-out;
+}
+
+@keyframes gavel-hit {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+.animate-gavel {
+  animation: gavel-hit 0.3s ease-out;
+}
+
+/* 법정 배경 패턴 */
+.court-bg {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(217, 119, 6, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(217, 119, 6, 0.02) 0%, transparent 50%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 255, 255, 0.008) 40px,
+      rgba(255, 255, 255, 0.008) 41px
+    );
+}
+
 /* ── 스크롤바 ── */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

@@ -1,0 +1,726 @@
+{
+  "caseId": "case-neighbor-06",
+  "meta": {
+    "relationshipType": "neighbor",
+    "conflictSeed": "CS-1",
+    "variableModules": [
+      "VM-D"
+    ],
+    "twistModule": "",
+    "difficulty": "easy",
+    "anchorTruth": "방화문 고장은 세영의 손수레만의 탓이 아니다. 인호의 카트도 공범이었고, 보전금 6만원이 빠져 실제 주민 부담은 총 12만원 — 각 세대 6만원이면 끝난다.",
+    "emotionalBait": "며칠째 쾅 닫히던 방화문 소리, CCTV 속 손수레와 카트, 거기에 세영이 보낸 9만원 송금 요청 캡처 — 세 가지가 겹치면 상대가 고장도 내고 돈도 더 뜯으려 한다고 느낀다.",
+    "resolutionDilemma": "세영은 수리를 주도한 공이 있지만 보전금을 숨기고 부풀린 액수를 먼저 요구했다. 인호도 문받침 책임이 있으면서 한 푼도 안 내겠다고 버텼다. 돈과 사과를 어디서 끊느냐가 관건이다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "문세영",
+      "age": 44,
+      "occupation": "플로리스트 겸 소형 꽃배달 매장 운영",
+      "incomeBracket": "mid",
+      "archetype": "micro_manager",
+      "speechStyle": "'견적서 보내드렸죠, 계좌번호도요' — 숫자를 먼저 깔고 빠른 정산을 압박한다. 궁지에 몰리면 '제가 업체 부르고, 입회하고, 다 했잖아요'라며 수고를 방패로 세운다.",
+      "pride": 7,
+      "fear": "수리비에 자기 편의를 슬쩍 얹은 사람, 이웃한테 돈을 과하게 뜯는 사람이라는 평판이 굳어지는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "bank_transfer_and_receipt_album",
+      "dailyRoutine": "새벽 꽃시장 물건을 받아 손수레로 집과 작업실을 오간다. 저녁엔 이체 내역과 영수증 사진을 정리한다.",
+      "sensitivePoints": [
+        "수리비 투명성",
+        "장사 물건 이동",
+        "돈 계산으로 의심받는 일"
+      ],
+      "verbalTells": [
+        {
+          "type": "receipt_shield",
+          "trigger": "lying",
+          "pattern": "견적서를 먼저 내밀며 그것이 최종 계산서인 것처럼 무게를 실어 말한다. '여기 나와 있잖아요, 18만원.'"
+        },
+        {
+          "type": "effort_credit",
+          "trigger": "cornered",
+          "pattern": "금액 질문이 나오면 '제가 업체 연락하고, 기사 기다리고, 입회까지 했거든요'라며 수고를 반복해 돈 대화를 밀어낸다."
+        },
+        {
+          "type": "round_numbering",
+          "trigger": "avoiding",
+          "pattern": "항목별 금액을 묻자 '대충 반씩이면 되지 않겠어요?'처럼 둥근 표현으로 정확한 숫자를 흐린다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "인호씨",
+        "toJudge": "옆집 분",
+        "angry": "조인호 씨!"
+      }
+    },
+    "partyB": {
+      "name": "조인호",
+      "age": 46,
+      "occupation": "가전 부품 배송기사",
+      "incomeBracket": "mid",
+      "archetype": "stubborn_bargainer",
+      "speechStyle": "'최종 금액이 그게 맞습니까?' — 숫자부터 확인하고 감정은 짧게 자른다. 억울해지면 '왜 제가 더 냅니까', '근거가 뭡니까'를 단문으로 반복한다.",
+      "pride": 6,
+      "fear": "남이 낸 견적서를 검증도 않고 돈을 떠안는 호구, 또는 자기 잘못은 숨기고 꿈쩍 않는 뻔뻔한 사람이라는 시선 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "dashcam_and_complex_app",
+      "dailyRoutine": "아침 일찍 접이식 카트로 물건을 옮기며 출근한다. 밤에는 관리앱 공지와 시설 알림을 확인한다.",
+      "sensitivePoints": [
+        "공정한 분담",
+        "접이식 카트 사용",
+        "억울한 비용 전가"
+      ],
+      "verbalTells": [
+        {
+          "type": "final_amount_fixation",
+          "trigger": "lying",
+          "pattern": "고장 원인을 설명해도 '그래서 제가 얼마를 왜 내야 합니까'만 되풀이한다. 과정보다 결론만 고집한다."
+        },
+        {
+          "type": "short_denial",
+          "trigger": "cornered",
+          "pattern": "카트로 문을 받쳤다는 CCTV가 나오면 '그건 잠깐이었습니다, 진짜 잠깐요'라고 짧게 축소한다."
+        },
+        {
+          "type": "counter_invoice",
+          "trigger": "avoiding",
+          "pattern": "고장 책임을 묻자 '일단 최종 영수증부터 보죠'라며 원인 대화를 돈 계산으로 전환한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "세영씨",
+        "toJudge": "옆집 분",
+        "angry": "문세영 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "지난해 이사짐 이동 뒤 '공동복도 수리비는 관리사무소 최종 계산서 확인 후에만 나눈다'고 합의한 적이 있다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "겨울에 세영이 경첩에 윤활제를 뿌린 일을 세영은 '내가 늘 관리했다'로, 인호는 '자기 탓을 가린 임시조치'로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '내가 늘 손보던 문이었다' / B: '자기 사용 탓에 생긴 문제를 관리한 척한다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "도어클로저가 몇 주 전부터 세게 닫히는 걸 둘 다 알았지만, 각자 문을 잠깐 받쳐두고 버티며 정식 신고를 미뤘다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "이수경 (같은 층 주민)",
+        "relationTo": "both",
+        "knowledgeScope": "문이 쾅 닫히던 시기, 두 집 모두 카트·손수레로 문을 받쳐둔 장면, 소음 민원 시점을 기억한다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 47,
+          "occupation": "같은 층 주민",
+          "relationToA": "문세영을 업무상 알고 있음",
+          "relationToB": "조인호을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "세영씨",
+          "addressB": "인호씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_2",
+        "name": "박영수 (수리기사)",
+        "relationTo": "both",
+        "knowledgeScope": "도어클로저 손상 원인, 오일 누유·암 휨 등 반복 문받침 흔적, 견적과 최종 정산 차이를 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 47,
+          "occupation": "수리기사",
+          "relationToA": "문세영을 업무상 알고 있음",
+          "relationToB": "조인호을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "세영씨",
+          "addressB": "인호씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "정미선 (관리사무소 시설주임)",
+        "relationTo": "both",
+        "knowledgeScope": "보전금 6만원 적용 내역, 최종 계산서 12만원, 민원 접수·통화 순서를 원본으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 50,
+          "occupation": "관리사무소 시설주임",
+          "relationToA": "문세영을 업무상 알고 있음",
+          "relationToB": "조인호을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "문세영씨",
+          "addressB": "조인호씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "common_facility_repair",
+    "description": "3층 공동복도 방화문은 물건을 옮길 때마다 카트나 손수레로 받쳐두는 구간이었다. 쾅 닫히는 소리가 몇 주 반복된 끝에 도어클로저가 완전히 나갔고, 세영이 먼저 기사를 불렀다. 그런데 정산 문자를 받은 인호는 금액이 부풀려졌다고 느꼈고, 단순한 수리비 분담이 돈과 책임 공방으로 번졌다.",
+    "emotionalPressure": 5,
+    "affects": "both",
+    "triggerAmplifier": "액수는 크지 않지만 매일 지나는 문이고 소음이 몇 주째 쌓인 문제였다. 만원 단위 차이가 곧 '누가 더 얄밉게 굴었는가'의 감정 싸움으로 번졌다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "세영의 보전금 은닉과 과다 청구",
+      "truth": true,
+      "truthDescription": "보전금 6만원이 반영된 최종 계산서가 나온 뒤에도 세영은 보전 전 견적 18만원 기준으로 인호에게 9만원을 요구했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "비용정산",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "인호의 문받침 사용과 공동 책임",
+      "truth": true,
+      "truthDescription": "인호도 접이식 카트로 방화문을 3주간 5회 이상 받쳐두었고, 이 반복 사용이 도어클로저 손상을 키운 공동 과실에 해당한다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 35,
+        "b": 65
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "공동책임정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-3",
+      "name": "고장은 세영 손수레 단독 책임인가",
+      "truth": false,
+      "truthDescription": "고장은 세영 6회·인호 5회의 반복 문받침이 누적된 공동 과실이었다. 어느 한쪽의 단독 책임으로 보기 어렵다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공동책임정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "실제 주민 부담액과 세대별 분담액",
+      "truth": true,
+      "truthDescription": "최종 수리비 18만원 중 보전금 6만원이 이미 처리됐다. 주민 부담 총액 12만원, 두 세대가 6만원씩 나누는 것이 맞다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "비용정산",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "계산서 확인 전 송금 압박·지급 거부",
+      "truth": true,
+      "truthDescription": "예전 합의대로면 최종 계산서 확인 후 정산이었지만, 세영은 먼저 송금을 요구했고 인호는 자기 책임 확인도 없이 전액 거부로 맞서며 둘 다 절차를 깼다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "중재절차",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "세영의 계좌요청 문자와 수리견적 캡처",
+      "description": "세영이 보낸 '9만원 송금 요청' 문자와 보전 전 18만원 견적 캡처. 보전금 적용 후 최종 계산서는 빠져 있다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "송금 요청 문자 + 견적 캡처 제출. 최종 계산서는 미포함.",
+        "check_metadata": "문자 발신이 보전금 적용 안내 23분 후 — 세영이 보전금을 이미 알고도 견적 기준으로 요구한 정황.",
+        "restore_context": "요구액 9만원은 최종 부담액(6만원)이 아니라 보전 전 견적(18만원)의 절반이었다.",
+        "verify_source": "세영 휴대폰 메시지 원문·사진 앨범 저장 시각 일치.",
+        "check_edits": "견적 캡처에 합성 흔적 없으나 최종 정산 페이지가 의도적으로 제외돼 있다.",
+        "question_acquisition": "사적 문자 자료라 제3자 연락처·계좌정보를 가린 후 활용해야 한다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "3층 공동복도 CCTV 요약본",
+      "description": "3주간 CCTV 요약본. 세영 손수레 6회, 인호 카트 5회 — 양쪽 모두 반복적으로 방화문을 받쳐 고정한 장면이 담겨 있다.",
+      "type": "cctv",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본에서 날짜별 핵심 장면을 추출한 요약본 + 열람 기록 제출.",
+        "check_metadata": "3주간 세영 6회·인호 5회 문받침 장면 기록 — 빈도 차이는 1회뿐.",
+        "restore_context": "우연이 아닌 양쪽 모두의 습관적 사용 — 단독 과실 주장이 성립하기 어려운 흐름.",
+        "verify_source": "관리사무소 서버본과 백업본의 프레임 수·시각 일치.",
+        "check_edits": "요약본이나 원본 타임코드 연결표가 있어 장면 삭제·조작 흔적 없음.",
+        "question_acquisition": "공용복도 CCTV라 적법하나, 세대 식별 정보·방문객 얼굴은 최소화 필요."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "최종 수리계산서와 관리사무소 보전금 전표",
+      "description": "관리사무소 공식 정산서. 수리비 18만원 - 보전금 6만원 = 주민 부담 12만원. 세영이 보낸 견적과 3만원 차이가 난다.",
+      "type": "repair_record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "최종 계산서 + 카드영수증 + 보전금 전표 한 세트 제출.",
+        "check_metadata": "정산 완료가 세영의 송금 요청보다 시간상 앞섬. 보전금 승인 담당자 서명 보존.",
+        "restore_context": "실제 주민 부담은 12만원. 보전 전 견적 기준 9만원 요구는 3만원 과다 청구.",
+        "verify_source": "수리업체 계산서 번호와 관리사무소 전표 번호가 상호 연결 확인.",
+        "check_edits": "기관 원본 출력물, 편집·금액 수정 이력 없음.",
+        "question_acquisition": "공용시설 정산 자료라 정당성 높음. 개인 결제수단 정보만 마스킹 필요."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "박영수 기사 점검보고서",
+      "description": "수리기사 점검보고서. 도어클로저 암 휨과 오일 누유는 일회성 충격이 아닌 반복 문받침 압력으로 누적됐다고 기록돼 있다.",
+      "type": "inspection_report",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "현장 점검표 + 부품 사진 + 교체 사유 메모 제출.",
+        "check_metadata": "점검 시각이 CCTV 마지막 문받침 장면 다음 날 오전 — 고장 직후 즉시 점검.",
+        "restore_context": "일회성 충격이 아닌 반복 문 고정으로 오일 누유·암 휨이 진행됐다는 소견 — 단독 과실 배제.",
+        "verify_source": "기사 서명·업체 접수번호·부품 교체내역 상호 일치.",
+        "check_edits": "사진 EXIF와 점검표 시각 일치, 조작 흔적 없음.",
+        "question_acquisition": "수리업체 공식 보고서라 활용 적법. 업체 연락처·내부 코드는 최소 공개."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "지난해 공용수리 정산 약속 대화와 이번 통화 순서표",
+      "description": "지난해 합의 대화 원문과 이번 사건 통화 순서표. 송금 요구가 최종 계산서 공지보다 앞서 있어 절차 위반 순서가 드러난다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "작년 합의 대화 내보내기 + 이번 통화시간 요약표 동시 제출.",
+        "check_metadata": "송금 요구가 공식 정산 공지보다 먼저, 인호의 전액 거부는 직후 — 양쪽 모두 절차 위반.",
+        "restore_context": "양측 모두 '계산서 확인 후 정산' 절차를 알았지만 세영은 선청구, 인호는 확인 없는 전액 거부로 맞섰다.",
+        "verify_source": "메신저 발신 시각과 관리사무소 수신 기록 시간 교차 일치.",
+        "check_edits": "일부 크롭됐으나 원문 대조 결과 핵심 문장·시각 동일.",
+        "question_acquisition": "사적 합의 대화·통화요약 포함 — 제3자 언급 부분은 제외하고 활용."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "층주민 진술과 소음 민원 메모",
+      "description": "층 주민 이수경의 진술과 소음 민원 메모. 수리 직전 2주간 3건의 소음 접수가 기록돼 문제의 누적을 뒷받침한다.",
+      "type": "complaint_log",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "이수경 문자 진술 + 관리사무소 소음 민원 메모 제출.",
+        "check_metadata": "수리 직전 2주간 소음 민원 3건 접수 — 문제가 갑작스럽지 않았음을 입증.",
+        "restore_context": "한 번의 사고가 아닌, 양쪽이 문을 받쳐 쓰며 악화시킨 누적 문제라는 흐름을 보강한다.",
+        "verify_source": "민원 접수 시각과 이수경 진술 날짜가 교차 일치.",
+        "check_edits": "문자 진술 원본 보존, 민원 메모 수정 이력 없음.",
+        "question_acquisition": "제3자 진술 포함 — 필요한 사실만 인용하고 생활패턴 노출은 최소화."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    },
+    {
+      "requires": [
+        "e-2",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "세영은 보전 전 견적을 기준으로 인호에게 실제보다 많은 금액을 요구했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "인호도 방화문을 접이식 카트와 박스로 반복해 받쳐두었다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "도어클로저 고장은 한 사람의 단독 과실이 아니라 두 세대의 반복 문받침이 합쳐진 결과였다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "최종 주민 부담액은 120,000원이고 두 세대가 60,000원씩 분담하면 된다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 최종 계산서 확인 전 압박이나 거부부터 하지 않겠다는 이전 정산 원칙을 어겼다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "payment_request_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "subsidy_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "sole_cause_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "cart_frequency_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "final_invoice_rule_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_urgent_repair_stress"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "door_wedging_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "fold_cart_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "sole_blame_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "temporary_use_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "final_invoice_rule_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "no_payment_until_log_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "비용정산": [
+      "최종 계산서와 보전금 적용 내역을 기준으로 주민 부담 총액을 확정하고 두 세대가 60,000원씩 나눠 낸다.",
+      "견적서와 최종 계산서를 구분해 보관하고 다음부터는 보전금 적용 전 금액으로 개인 송금 요청을 하지 않는다.",
+      "이미 과다 청구나 과소 납부가 있었다면 관리사무소 입회 하에 차액만 재정산한다."
+    ],
+    "공동책임정리": [
+      "도어클로저 고장이 한쪽 단독 과실이 아니라는 점을 확인하고 두 세대 모두 공동 책임을 인정한다.",
+      "꽃 손수레와 접이식 카트 모두 방화문 고정 사용을 중단하고 큰 물건 이동은 2인 방식이나 사전 요청으로 바꾼다.",
+      "반복 위반이 생기면 공동복도 CCTV 열람과 경고를 함께 적용한다."
+    ],
+    "공용공간경계": [
+      "방화문은 물건으로 받쳐두지 않고 장시간 이동이 필요하면 관리사무소에 임시 개방 요청을 한다.",
+      "공용복도 시설 문제는 임시방편으로 버티지 말고 처음 이상 징후가 보일 때 바로 신고한다.",
+      "같은 층 주민에게 피해가 가는 소음·문고정 사용이 반복되면 공용시설 이용수칙 안내를 시행한다."
+    ],
+    "중재절차": [
+      "수리비 갈등은 개인 계좌요청보다 관리사무소 접수번호와 최종 계산서 공유를 먼저 하도록 절차를 고정한다.",
+      "정산 전에는 전액 거부나 과다 청구 주장을 단체방에 올리지 말고 1:1 확인 뒤 관리사무소에 공동 문의한다.",
+      "비슷한 분담 분쟁이 다시 생기면 수리기사 설명, 계산서, 보전금 내역을 한 장의 합의서로 남긴다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

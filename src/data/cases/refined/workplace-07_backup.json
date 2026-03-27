@@ -1,0 +1,675 @@
+{
+  "caseId": "case-work-08",
+  "meta": {
+    "relationshipType": "boss_employee",
+    "conflictSeed": "CS-5",
+    "variableModules": [
+      "VM-B",
+      "VM-E"
+    ],
+    "twistModule": "TW-4",
+    "difficulty": "hard",
+    "anchorTruth": "세린이 내부 게시판에 올린 익명 글의 핵심 스크린샷은 올해 대화가 아니라 2년 전 품질등급 축소 대화와 현재 프로젝트 헤더를 합성한 편집본이었고, 다만 태욱이 과거에도 유사한 문제 제기를 눌러 온 배경이 있어 의혹이 쉽게 사실처럼 굳었다.",
+    "emotionalBait": "익명 게시판 글 한 편과 '지워, 밖으로 나가기 전에'라는 캡처 한 장이 붙자 태욱이 실제로 증거인멸을 지시한 것처럼 보인다. 게다가 팀 안에 이미 과거 품질 이슈 축소 소문이 남아 있어, 편집된 스크린샷도 진짜보다 더 설득력 있게 받아들여진다.",
+    "resolutionDilemma": "태욱의 과거 제보 축소와 선행 보복, 세린의 익명 명예훼손과 편집 증거 유포 중 무엇을 더 무겁게 볼지, 그리고 현재 의혹과 과거 실제 문제를 어떻게 분리해 다시 다룰지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "장태욱",
+      "age": 40,
+      "occupation": "품질보증팀장",
+      "incomeBracket": "high",
+      "archetype": "cold_logic",
+      "speechStyle": "질문을 받으면 메시지 원본, 절차, 등급 기준부터 먼저 설명하며 감정을 최대한 배제한다. 하지만 몰리면 현재 건과 과거 건을 인위적으로 떼어 놓으며 자신이 남긴 압박성 코멘트의 맥락을 축소한다.",
+      "pride": 8,
+      "fear": "익명 게시판 글 하나로 증거인멸을 지시한 관리자라는 낙인이 찍히고 품질 총괄 라인에서 신뢰를 잃는 것",
+      "riskAppetite": 5,
+      "digitalHabit": "chat_export_checker",
+      "dailyRoutine": "아침에는 불량률과 출하승인 현황을 확인하고, 오후에는 품질회의와 협력사 이슈를 정리하며, 밤에는 사건 보고서 문장과 등급 코멘트를 직접 손본다.",
+      "sensitivePoints": [
+        "품질은폐 의혹",
+        "익명 제보",
+        "관리자 보복 평판"
+      ],
+      "verbalTells": [
+        {
+          "type": "context_split",
+          "trigger": "lying",
+          "pattern": "현재 사건과 과거 사건을 지나치게 잘라 설명하며 공통된 패턴 지적을 기술적 우연처럼 만든다."
+        },
+        {
+          "type": "format_attack",
+          "trigger": "cornered",
+          "pattern": "내용 대신 '원본 형식이 아니다', '게시판 절차를 어겼다'를 먼저 공격해 자신의 과거 행위를 뒤로 민다."
+        },
+        {
+          "type": "cool_relabel",
+          "trigger": "avoiding",
+          "pattern": "'배제'를 '보호적 분리', '압박'을 '품질 표현 조정'이라고 바꿔 불이익의 강도를 낮춘다."
+        }
+      ]
+    },
+    "partyB": {
+      "name": "한세린",
+      "age": 32,
+      "occupation": "품질감사 대리",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "처음에는 캡처와 시간표를 조용히 꺼내지만, 곧바로 자신이 과거에도 눌렸던 제보자라는 프레임으로 대화를 끌고 간다. 몰리면 현재 증거의 문제를 과거 억압의 연장선으로 묶으며 편집 행위를 '맥락 복원'이라고 축소한다.",
+      "pride": 7,
+      "fear": "익명 글 때문에 허위 제보자라는 낙인이 찍히는 동시에, 실제로 문제 삼았던 과거 은폐까지 다시 묻혀 버리는 것",
+      "riskAppetite": 6,
+      "digitalHabit": "archive_clip_collector",
+      "dailyRoutine": "오전에는 품질 감사 로그와 불량 보고서를 읽고, 오후에는 협력사 이슈를 추적하며, 밤에는 개인 아카이브에 회의 캡처와 메모를 따로 모아 둔다.",
+      "sensitivePoints": [
+        "허위 제보 낙인",
+        "과거 묵살 경험",
+        "익명 보호 파기"
+      ],
+      "verbalTells": [
+        {
+          "type": "past_hurt_loop",
+          "trigger": "lying",
+          "pattern": "현재 증거의 진위를 묻는 질문에도 '그때도 묻혔다'는 과거 상처를 먼저 꺼내 검증 순서를 늦춘다."
+        },
+        {
+          "type": "edit_as_context",
+          "trigger": "cornered",
+          "pattern": "'합성'이 아니라 '맥락을 붙인 것'이라며 편집 행위의 의미를 축소한다."
+        },
+        {
+          "type": "ally_chain",
+          "trigger": "emotional",
+          "pattern": "조사담당, 예전 동료, 외부 감사 이름을 연달아 언급해 자신의 의심이 혼자만의 것이 아니었다고 압박한다."
+        }
+      ]
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "두 사람은 품질 이슈 제기는 익명 게시판이 아니라 윤리경영 채널이나 품질 핫라인에 원본 자료와 함께 올리기로 알고 있었다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "2년 전 태욱이 세린에게 '등급 표현을 낮추자'고 했던 말을 두 사람은 서로 다르게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '외부 공포를 막기 위한 문구 조정이었다' / B: '문제의 심각성을 일부러 죽이라는 압박이었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "2년 전 품질 이슈 축소가 정식 징계나 재조사로 이어지지 않자 세린은 그 뒤로 태욱 라인에서는 원본을 그대로 올려도 끝내 묻힌다고 믿게 됐다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "박정훈 (품질총괄 디렉터)",
+        "relationTo": "a",
+        "knowledgeScope": "태욱이 익명 글 이후 출하 지연과 여론 악화를 동시에 우려한 사실, 그리고 현재 사건의 원본 채팅이 무엇인지 보고받은 흐름을 안다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "윤예진 (윤리경영 조사담당)",
+        "relationTo": "both",
+        "knowledgeScope": "익명 게시글 보존, 핫라인 접수 순서, 태욱의 초기 의심 발언, 세린의 과거 보복 우려 진술을 함께 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "김도현 (디지털포렌식 담당)",
+        "relationTo": "both",
+        "knowledgeScope": "스크린샷 원본 해시, 편집 레이어, 작업PC 로그, 과거 채팅 아카이브 조각의 재사용 여부를 원본 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      }
+    ]
+  },
+  "context": {
+    "contextType": "internal_whistleblowing",
+    "description": "신규 협력사 결함 보고가 잇따르던 시점에 사내 익명 게시판에 태욱을 겨냥한 폭로글이 올라왔다. 익명 글은 윤리경영 핫라인보다 먼저 팀 안과 본부 전체에 퍼졌고, 편집된 스크린샷이 사실처럼 소비되면서 과거 품질 축소 논란, 현재 출하 압박, 제보자 보호 문제까지 한꺼번에 뒤엉켰다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "익명 게시판은 회사 전체가 보는 공간이라 한 번 올라온 비난과 캡처는 조사 전에도 바로 평판 사실처럼 굳어질 수 있었고, 과거 미종결 사건이 남아 있어 현재 증거의 진위 판단이 더 흐려졌다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "태욱의 익명 제보자 색출과 선행 낙인",
+      "truth": true,
+      "truthDescription": "태욱은 정식 포렌식 결과가 나오기 전에 세린을 유력 작성자로 지목하고, 팀 회의와 역할 재배치에서 사실상 문제 인원처럼 다뤘다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "제보절차보호",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "세린의 익명 게시글과 편집 스크린샷 유포",
+      "truth": true,
+      "truthDescription": "세린은 익명 게시판에 태욱이 현재 품질이슈의 증거인멸을 지시했다는 취지의 글을 올리고, 편집된 스크린샷을 멘토와 동료들에게 추가로 퍼뜨렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "증거진정성검증",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "게시글의 핵심 스크린샷은 태욱의 현 시점 증거인멸 지시를 그대로 담고 있는가",
+      "truth": false,
+      "truthDescription": "핵심 스크린샷은 현재 대화가 아니라 2년 전 품질등급 축소 채팅의 문장과 현재 프로젝트 채널 헤더를 합성한 편집본으로, 태욱이 이번 사건에서 직접 증거삭제를 지시한 원본 증거는 아니다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "평판복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "태욱의 과거 제보 축소와 평가 개입",
+      "truth": true,
+      "truthDescription": "태욱은 2년 전에도 세린이 올린 품질 우려를 낮은 등급으로 돌리고 공개 제기를 만류했으며, 이번 익명 글 이후에도 세린의 평가와 역할 배정에 불이익성 코멘트를 남겼다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "과거사정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "과거 미종결 사건을 현재 명예전으로 재활용한 쌍방 가담",
+      "truth": true,
+      "truthDescription": "태욱은 과거 사건을 떼어 내며 세린을 과장된 사람으로 몰았고, 세린은 과거의 실제 축소 경험을 현재 허위 증거와 붙여 현재 사건을 더 심각한 명예훼손전으로 키웠다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거사정리",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "익명 게시글 보존본과 태욱의 팀 미팅 메모",
+      "description": "사내 게시판 익명 글 원본, 댓글 흐름, 그리고 같은 날 태욱이 팀 미팅에서 '안에서 이런 식으로 사람 죽이는 글'이라고 말한 메모다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "게시글 화면 캡처만이 아니라 보존본, 댓글 타임라인, 팀 미팅 회의 메모를 함께 확인해야 한다.",
+        "check_metadata": "익명 글이 올라온 지 두 시간도 되지 않아 태욱이 특정 제보자 존재를 암시하는 발언을 한 기록이 남아 있다.",
+        "restore_context": "태욱이 직접 이름을 부르진 않았지만 팀 안에서는 세린을 겨냥한 말로 받아들일 수 있는 표현이 이어졌다.",
+        "verify_source": "게시판 보존 서버와 회의록 작성자의 원문이 같은 시각 순서를 보여 준다.",
+        "check_edits": "기관 보존본이라 사후 편집 흔적이 없다.",
+        "question_acquisition": "내부 게시판과 팀 회의록은 조사 범위 내 적법하게 확보됐다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "세린이 제출한 메신저 스크린샷 묶음",
+      "description": "태욱이 '지워'라고 말한 것처럼 보이는 대화 캡처 묶음으로, 타임스탬프와 채널명이 부분적으로 잘려 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "단순 이미지 파일만이 아니라 캡처 전후 연속본, 채팅 내보내기 원문, 저장 경로를 함께 확인해야 한다.",
+        "check_metadata": "메시지 본문 영역과 상단 채널 표시 영역의 해상도·압축 이력이 서로 달라 단일 캡처가 아닐 가능성이 보인다.",
+        "restore_context": "이 자료만 보면 태욱이 현재 사건의 증거인멸을 지시한 것처럼 보이지만, 시기와 대화방 정보가 단절돼 원문 맥락을 단독으로 확정할 수 없다.",
+        "verify_source": "세린 개인 단말에서 생성된 파일명과 업로드 시간이 익명 글 게시 직전과 맞물린다.",
+        "check_edits": "문장 자체를 바꾼 흔적은 약하지만 합성·절삭 흔적이 여러 곳에서 관찰된다.",
+        "question_acquisition": "개인 단말 자료라 조사 목적 외 재배포는 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "메신저 원본 export와 메시지 해시 비교표",
+      "description": "문제 캡처에 쓰인 원본 대화의 실제 문맥과 해시값 비교표로, 현재 채널 헤더와 과거 메시지가 섞였음을 보여 준다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "캡처 이미지와 대조할 수 있도록 원본 대화 export, 메시지 ID, 해시 비교표를 모두 열어야 한다.",
+        "check_metadata": "문제 문장은 2년 전 품질등급 하향 회의 직후의 채팅에 있고, 현재 프로젝트 채널 헤더와는 메시지 ID가 전혀 연결되지 않는다.",
+        "restore_context": "현재 사건에서 태욱이 삭제를 지시한 원문은 발견되지 않았고, 편집본이 오래된 문장을 현재 사건처럼 재배치한 구조가 드러난다.",
+        "verify_source": "메신저 플랫폼의 보존 export와 김도현 포렌식 비교표가 동일한 해시 결론을 보여 준다.",
+        "check_edits": "플랫폼 원본 export라 사후 편집 흔적이 없다.",
+        "question_acquisition": "업무 메신저 보존자료라 조사 범위 내 적법하게 활용 가능하다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "2년 전 결함등급 하향 회의록과 후속 메일",
+      "description": "태욱이 과거에도 세린의 품질 우려를 낮은 등급으로 돌리고 공개 제기를 만류한 회의록과 메일이다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "당시 회의록 확정본과 후속 메일 전체 체인을 함께 봐야 과거 억압의 강도를 정확히 판단할 수 있다.",
+        "check_metadata": "태욱이 '외부 공포를 키우지 말자'며 등급 표현을 낮추자고 한 시각과, 세린이 원안을 제출한 시각이 연속으로 남아 있다.",
+        "restore_context": "현재 증거 편집과는 별개로, 태욱이 과거에 실제로 제기를 축소하고 공개 확산을 만류한 패턴이 확인된다.",
+        "verify_source": "품질문서 저장소와 메일 아카이브가 같은 회의 ID와 첨부 파일을 가리킨다.",
+        "check_edits": "보존 문서라 사후 편집 흔적이 없다.",
+        "question_acquisition": "과거 품질사건 자료지만 재조사 목적의 열람 범위 안에 있다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "윤리경영 조사 접수기록과 태욱의 인사 개입 로그",
+      "description": "익명 글 게시 직후 태욱이 세린을 의심하며 리뷰 미팅에서 배제하고 평가 코멘트를 남긴 기록이다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "조사 접수 요약본이 아니라 초기 면담 메모, 역할 재배정 기록, 평가 입력 로그를 모두 확인해야 한다.",
+        "check_metadata": "포렌식 결과가 나오기 전 태욱 계정에서 세린의 리뷰 참여 제외와 부정적 코멘트가 먼저 입력됐다.",
+        "restore_context": "익명 제보자 보호가 살아 있어야 하는 시점에 태욱이 사실상 유력 제보자 색출과 역할 배제를 동시에 진행한 흐름이 드러난다.",
+        "verify_source": "윤리경영 시스템과 HR 평가 로그의 타임스탬프가 일치한다.",
+        "check_edits": "원본 로그라 사후 수정 전 입력 단계까지 추적 가능하다.",
+        "question_acquisition": "인사·조사 자료라 분쟁 해결 목적을 벗어난 공개는 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "디지털포렌식 레이어 분석 메모와 편집PC 로그",
+      "description": "세린 개인 노트북에서 오래된 대화 이미지와 현재 채널 상단 바가 같은 편집 세션에서 합쳐진 흔적을 정리한 포렌식 메모다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2",
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "편집 결과물만이 아니라 작업PC 최근 파일목록, 임시폴더, 레이어 캐시를 같이 봐야 한다.",
+        "check_metadata": "익명 글 게시 직전 세린 노트북에서 과거 채팅 이미지 파일과 현재 채널 헤더 이미지가 같은 편집 프로그램 세션에 열린 기록이 남아 있다.",
+        "restore_context": "세린이 완전히 허구를 창조한 것은 아니지만, 과거 실제 압박 문장을 현재 사건 증거처럼 보이게 재조립한 정황이 선명하다.",
+        "verify_source": "김도현의 포렌식 메모와 작업PC 이벤트 로그가 동일한 파일 해시와 세션 타임라인을 가리킨다.",
+        "check_edits": "기관 포렌식 원본이라 편집 과정 자체가 증거로 보존돼 있다.",
+        "question_acquisition": "디지털 포렌식 자료라 접근 범위는 엄격히 제한돼야 하지만 조사 목적 사용은 적법하다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-2",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "태욱은 포렌식 결과 전에 세린을 유력 제보자로 보고 선행 낙인과 역할 배제를 시작했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "세린은 익명 게시글과 편집된 스크린샷으로 태욱의 현재 범죄행위처럼 보이게 만들었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "핵심 스크린샷은 올해 증거인멸 지시의 원본이 아니라 과거 채팅과 현재 헤더를 합성한 편집본이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "태욱은 과거에도 세린의 품질 우려를 축소하고 이번에도 평가에 불이익성 코멘트를 남겼다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "미종결된 과거 사건이 현재 익명 폭로와 보복 프레임의 연료가 됐다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "author_identification_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_remove_from_review_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "past_downgrade_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_customer_panic"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-5_or_retaliation_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_case_weaponization_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_call_it_overreaction_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "anonymous_post_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "mentor_and_coworker_share_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "recipient_scope_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L3",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "screenshot_authenticity_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_current_header_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L2",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "why_board_not_hotline_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_not_being_believed"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "question_about_2024_or_2025_archive_use"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "제보절차보호": [
+      "익명 게시판 폭로가 나오더라도 관리자는 유력 작성자 색출이나 역할 배제를 먼저 하지 못하게 하고, 초기 대응은 윤리경영팀이 단독으로 맡는다.",
+      "익명 제보와 피지목 관리자의 업무분리를 임시 조치로 두되, 이는 보호 목적이지 징계성 배제가 아님을 문서로 남긴다.",
+      "선행 보복이나 유력 작성자 암시가 확인되면 해당 관리자의 평가권과 사건 관련 배정권을 즉시 보류한다."
+    ],
+    "증거진정성검증": [
+      "캡처나 스크린샷은 원본 export, 해시, 생성경로 없이 단독 증거로 쓰지 않고, 편집 여부 확인 전까지는 확산을 금지한다.",
+      "익명 제보에 이미지가 첨부되면 윤리경영팀과 디지털포렌식이 먼저 진정성을 확인한 뒤 조사 범위를 정하게 한다.",
+      "고의적 편집·합성이 확인되면 제보 내용의 일부 진실 여부와 별개로 증거 위조 책임을 별도 심리한다."
+    ],
+    "평판복구": [
+      "현재 사건에서 진본이 아닌 스크린샷이 유포된 사실과, 그럼에도 별도로 남는 조사 쟁점을 같은 정정문 안에서 분리해 공지한다.",
+      "태욱에 대한 즉단적 범죄 프레임과 세린에 대한 허위제보자 낙인을 모두 중지시키고, 조사 완료 전 인사상 불이익과 소문을 동결한다.",
+      "이미 팀 안에 퍼진 익명글의 영향이 크면 게시글 삭제만이 아니라 정정 공지, 역할 복구, 선행 코멘트 철회까지 함께 묶어 처리한다."
+    ],
+    "과거사정리": [
+      "2년 전 품질등급 하향 사건을 현재 익명글과 분리해 다시 열고, 당시 왜 공식 재조사가 없었는지 별도로 점검한다.",
+      "과거에 실제로 있었던 제보 축소와 현재의 편집 증거 사용을 서로 상쇄하지 않도록, 각 사건의 공로와 책임을 분리해 기록한다.",
+      "같은 유형의 미종결 사건이 반복되면 과거 사건 아카이브를 자동 참조해 재발 방지와 보호조치를 먼저 켜는 규칙을 둔다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

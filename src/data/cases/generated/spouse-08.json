@@ -1,650 +1,696 @@
 {
-"caseId": "case-spouse-08",
-"meta": {
-"relationshipType": "spouse",
-"conflictSeed": "CS-4",
-"variableModules": [
-"VM-A",
-"VM-E"
-],
-"twistModule": "TW-5",
-"difficulty": "hard",
-"anchorTruth": "한서진이 법무사 정유나에게 전세계약서와 생활비 내역을 보낸 건 비밀 이혼 준비처럼 보였지만, 두 사람은 한 달 전 카페 음성메모에서 '별거를 진지하게 검토하면 상담까지만 받아 본다'고 이미 비공식 합의해 두었다.",
-"emotionalBait": "공유클라우드 업로드 알림, 법무사 명함, 그리고 2022년 현석의 숨긴 대출 정리서까지 한 폴더에 들어 있어 서진이 몰래 판을 끝내려 한 것처럼 보인다.",
-"resolutionDilemma": "상담 자체는 사전 합의였지만 서진이 과거 상처 문서를 범위 밖으로 넘긴 점과, 현석이 뒤늦게 합의를 부정하고 가족·임대인을 끌어들인 점 중 무엇을 더 중하게 볼지가 어렵다."
-},
-"duo": {
-"partyA": {
-"name": "한서진",
-"age": 35,
-"occupation": "보험사 보상심사 대리",
-"incomeBracket": "mid",
-"archetype": "contingency_planner",
-"speechStyle": "가능한 경우의 수를 먼저 정리한 뒤 감정을 말한다. 불안할수록 '실행'과 '상담'을 엄격히 구분하며 자신이 선을 지켰다고 설명한다.",
-"pride": 8,
-"fear": "준비 없이 끌려다니다가 주거와 생활비를 한꺼번에 잃는 것",
-"riskAppetite": 3,
-"digitalHabit": "cloud_folder_archiver",
-"dailyRoutine": "아침에는 보험 심사 문서를 검토하고, 점심시간에는 은행·부동산·행정 일정을 정리하며, 밤에는 메모앱에 분리 거주 시나리오를 적어 둔다.",
-"sensitivePoints": [
-"예측 가능성",
-"주거 안정",
-"과거에 숨겨졌던 돈 문제"
-],
-"verbalTells": [
-{
-"type": "scope_split",
-"trigger": "lying",
-"pattern": "문서 공유를 추궁받으면 '제출이 아니라 문의였어'라며 행위의 범위를 잘게 나눠 방어한다."
-},
-{
-"type": "document_stack",
-"trigger": "cornered",
-"pattern": "하나의 잘못을 지적받으면 관련 문서 세 묶음을 연달아 내놓아 의도보다 절차를 보게 만든다."
-},
-{
-"type": "historic_justifier",
-"trigger": "hurt",
-"pattern": "현재 행동의 과함을 지적받으면 곧바로 과거 숨긴 대출 사건을 끌어와 필요성을 정당화한다."
-}
-]
-},
-"partyB": {
-"name": "류현석",
-"age": 39,
-"occupation": "수입가구 브랜드 영업소장",
-"incomeBracket": "high",
-"archetype": "mood_negotiator",
-"speechStyle": "대화 분위기에 따라 약속의 의미를 넓혔다 줄였다 한다. 궁지에 몰리면 '그때는 진짜 헤어질 줄 몰랐지'처럼 과거 발언의 효력을 감정 상태로 약화한다.",
-"pride": 8,
-"fear": "배우자와 가족, 임대인 모두에게 이미 끝난 사람으로 취급되는 것",
-"riskAppetite": 6,
-"digitalHabit": "call_then_delete",
-"dailyRoutine": "오전에는 매장 실적을 확인하고, 오후에는 거래처를 돌며, 밤에는 차 안에서 길게 통화해 갈등을 그날그날 봉합하려 든다.",
-"sensitivePoints": [
-"버림받는 이미지",
-"가족 체면",
-"2022년 숨긴 대출 사건"
-],
-"verbalTells": [
-{
-"type": "promise_shrink",
-"trigger": "lying",
-"pattern": "분명한 합의를 추궁받으면 '그건 그냥 해본 말이었지'라며 약속을 감정적 위로 수준으로 축소한다."
-},
-{
-"type": "witness_summon",
-"trigger": "defensive",
-"pattern": "자신이 불리해지면 곧바로 누나나 임대인을 거론해 상황을 외부 증언으로 뒤집으려 한다."
-},
-{
-"type": "retro_edit",
-"trigger": "shame",
-"pattern": "과거 사건을 다시 설명하며 자신에게 불리한 문장만 빠뜨린 새 버전을 만든다."
-}
-]
-},
-"relationshipLedger": [
-{
-"id": "ledger-1",
-"category": "confirmed",
-"description": "한 달 전 부부상담을 마치고 카페에서, 두 사람은 월말까지 관계가 나아지지 않으면 정유나 법무사에게 '상담까지만' 받고 실제 제출·가족 통보는 다시 상의하기로 비공식 합의했다.",
-"isReal": true,
-"whoRemembersAccurately": "both",
-"whoDistorts": "b",
-"distortionDirection": "B는 나중에 이 합의를 '감정 달래기용 말'로 축소한다.",
-"currentlyResolved": "unresolved",
-"emotionalResidue": "strong",
-"connectionToCurrent": "direct"
-},
-{
-"id": "ledger-2",
-"category": "distorted",
-"description": "2022년 현석이 사업상 급전을 숨기고 대출을 받은 사건은 이미 덮인 일인지, 여전히 현재의 판단 근거인지 두 사람이 다르게 본다.",
-"isReal": true,
-"whoRemembersAccurately": "both",
-"whoDistorts": "both",
-"distortionDirection": "A: '신뢰가 깨진 출발점이라 아직 현재형이다' / B: '그건 다 갚고 끝난 과거다'",
-"currentlyResolved": "surface_only",
-"emotionalResidue": "strong",
-"connectionToCurrent": "direct"
-},
-{
-"id": "ledger-3",
-"category": "silenced",
-"description": "둘은 이미 주말마다 따로 지내고 분리 거주를 상상하고 있었지만, 부모에게 알려 파국을 고정하고 싶지 않아 말을 미뤄 왔다.",
-"isReal": true,
-"whoRemembersAccurately": "both",
-"whoDistorts": "none",
-"distortionDirection": "",
-"currentlyResolved": "surface_only",
-"emotionalResidue": "strong",
-"connectionToCurrent": "direct"
-}
-],
-"socialGraph": [
-{
-"id": "tp-1",
-"slot": "family_1",
-"name": "류미경 (현석의 누나)",
-"relationTo": "b",
-"knowledgeScope": "현석이 법무사 상담 합의를 뒤늦게 '없던 걸로 하자'고 말하며 자신에게 예비 열쇠 보관과 임대인 연락을 부탁한 사실을 안다.",
-"witnessedDirectly": true,
-"bias": "pro_b",
-"distortionRisk": "strategic"
-},
-{
-"id": "tp-2",
-"slot": "acquaintance_1",
-"name": "김다솔 (서진의 회사 동료)",
-"relationTo": "a",
-"knowledgeScope": "서진이 상담 예약만 하고 실제 접수나 신고는 하지 않았으며, 월말 대화가 끝난 뒤에야 폴더를 정리했다는 사실을 안다.",
-"witnessedDirectly": false,
-"bias": "pro_a",
-"distortionRisk": "accurate"
-},
-{
-"id": "tp-3",
-"slot": "institutional",
-"name": "정유나 (법무사 사무장)",
-"relationTo": "both",
-"knowledgeScope": "상담 예약 범위, 전달된 문서 목록, 실제 제출 여부, 보증금 분할 문의 수준을 원본 기준으로 확인할 수 있다.",
-"witnessedDirectly": true,
-"bias": "neutral",
-"distortionRisk": "accurate"
-}
-]
-},
-"context": {
-"contextType": "trial_separation",
-"description": "두 사람은 별거를 진지하게 고려하면서도 부모와 회사에는 아직 정상 부부처럼 보이고 싶어 했다. 문제는 전세계약 갱신 답변 시한이 다가오자 현실 판단을 미룰 수 없게 되면서 시작됐다. 상담까지만 받아 보자는 비공식 합의 아래 서진이 법무사에게 계약서와 생활비 자료를 보냈고, 현석은 공유클라우드 알림을 본 뒤 이를 비밀 이혼 준비로 받아들였다. 여기에 2022년 숨긴 대출 정리서가 폴더에 함께 들어 있었고, 현석은 곧바로 누나와 임대인까지 끌어들여 갈등을 폭발시켰다.",
-"emotionalPressure": 9,
-"affects": "both",
-"triggerAmplifier": "이미 별거를 상상하고 있으면서도 아무것도 확정하고 싶지 않은 상태라, 서류 한 장과 통화 한 번이 곧 최종 결별 선언처럼 느껴지는 시기였다."
-},
-"disputes": [
-{
-"id": "d-1",
-"name": "서진의 법무사 상담은 비밀 이혼 준비였나",
-"truth": false,
-"truthDescription": "서진의 상담 자체는 두 사람이 카페 음성메모에서 미리 합의한 범위 안의 비구속적 상담이었고, 실제 제출·신고 단계까지 나아가지는 않았다.",
-"quadrant": "shared_misconception",
-"requiredEvidence": [
-"e-1",
-"e-2",
-"e-4"
-],
-"correctResponsibility": {
-"a": 35,
-"b": 65
-},
-"ambiguity": "low",
-"weight": "high",
-"mediationLink": "별거프로토콜",
-"legitimacyIssue": true
-},
-{
-"id": "d-2",
-"name": "서진의 과거 대출정리서 첨부",
-"truth": true,
-"truthDescription": "서진은 상담 범위를 방어한다는 이유로 현석의 2022년 숨긴 대출 정리서를 추가 업로드해, 이미 덮기로 했던 과거 상처를 새 판단 근거로 끌어왔다.",
-"quadrant": "a_only",
-"requiredEvidence": [
-"e-3",
-"e-4"
-],
-"correctResponsibility": {
-"a": 80,
-"b": 20
-},
-"ambiguity": "none",
-"weight": "high",
-"mediationLink": "과거청산",
-"legitimacyIssue": true
-},
-{
-"id": "d-3",
-"name": "현석은 사전 합의가 없었다고 뒤집었다",
-"truth": true,
-"truthDescription": "현석은 카페에서의 비공식 상담 합의를 알고 있었음에도, 이후 누나와 임대인에게는 서진이 독단적으로 법무사를 끼워 넣은 것처럼 설명했다.",
-"quadrant": "b_only",
-"requiredEvidence": [
-"e-1",
-"e-5"
-],
-"correctResponsibility": {
-"a": 10,
-"b": 90
-},
-"ambiguity": "none",
-"weight": "high",
-"mediationLink": "신뢰회복",
-"legitimacyIssue": false
-},
-{
-"id": "d-4",
-"name": "비공식 합의의 범위를 양측 모두 깼다",
-"truth": true,
-"truthDescription": "서진은 과거 대출 문서를 상담 폴더에 넣어 범위를 넘겼고, 현석은 가족과 임대인에게 먼저 알리며 '재논의 전 제3자 비공개' 원칙을 깼다.",
-"quadrant": "both_know",
-"requiredEvidence": [
-"e-3",
-"e-5"
-],
-"correctResponsibility": {
-"a": 45,
-"b": 55
-},
-"ambiguity": "none",
-"weight": "medium",
-"mediationLink": "제3자경계",
-"legitimacyIssue": false
-},
-{
-"id": "d-5",
-"name": "보증금 갱신 위기는 상담 때문에 바로 발생했는가",
-"truth": false,
-"truthDescription": "실제 압박은 임대인의 갱신 확답 시한과 현석의 선제 통화, 그리고 두 사람의 답변 지연이 겹쳐 생긴 것이지 법무 상담 자체만의 결과는 아니었다.",
-"quadrant": "neither_knows",
-"requiredEvidence": [
-"e-4",
-"e-5",
-"e-6"
-],
-"correctResponsibility": {
-"a": 40,
-"b": 60
-},
-"ambiguity": "low",
-"weight": "high",
-"mediationLink": "주거결정",
-"legitimacyIssue": false
-}
-],
-"evidence": [
-{
-"id": "e-1",
-"name": "카페 음성메모와 당일 결제영수증",
-"description": "부부상담 직후 카페에서 녹음된 음성메모와 결제영수증으로, 두 사람이 '상담까지만, 실제 제출 전엔 다시 얘기'라고 말한 구간이 남아 있다.",
-"type": "audio",
-"reliability": "hard",
-"completeness": "original",
-"provenance": "personal_device",
-"legitimacy": "lawful",
-"proves": [
-"d-1",
-"d-3"
-],
-"isTrap": false,
-"requires": [],
-"investigationResults": {
-"request_original": "원본 음성 파일과 카페 결제 영수증이 함께 제출됐다.",
-"check_metadata": "녹음 시각은 상담센터 종료 직후 18분 뒤이며 카페 결제 시각과 이어진다.",
-"restore_context": "대화에는 정유나 법무사 이름과 '접수 말고 상담만'이라는 표현이 연속으로 나온다.",
-"verify_source": "기기 원본과 백업본 해시가 일치했다.",
-"check_edits": "파일 길이와 파형이 연속적이라 후편집 흔적이 없다.",
-"question_acquisition": "당사자 기기에서 확보한 자기 대화 자료다."
-}
-},
-{
-"id": "e-2",
-"name": "현석이 저장한 공유클라우드 업로드 알림 캡처",
-"description": "현석 휴대폰에 뜬 '정유나 상담폴더 업로드 완료' 알림 캡처로, 문서명이 일부만 보인다.",
-"type": "cloud_log",
-"reliability": "soft",
-"completeness": "cropped",
-"provenance": "personal_device",
-"legitimacy": "privacy_concern",
-"proves": [
-"d-1"
-],
-"isTrap": true,
-"requires": [],
-"investigationResults": {
-"request_original": "알림 화면만 있고 폴더 전체 목록이나 업로드 목적 설명은 포함되지 않았다.",
-"check_metadata": "캡처 시각은 서진이 업로드를 마친 뒤 3분 후다.",
-"restore_context": "알림만으로는 실제 제출인지 상담용 초안 전송인지 구분할 수 없다.",
-"verify_source": "현석 기기 알림 기록과 캡처 생성 시간이 일치한다.",
-"check_edits": "합성 흔적은 없지만 상단 알림과 문서 일부만 잘린 선택적 캡처다.",
-"question_acquisition": "공유클라우드 알림을 무단 저장한 자료라 사생활 쟁점이 남는다."
-}
-},
-{
-"id": "e-3",
-"name": "상담 폴더 버전 이력과 2022년 대출정리서 업로드 로그",
-"description": "서진이 전세 계약서 뒤에 현석의 2022년 숨긴 대출 정리서를 추가 업로드한 시점과 파일명을 보여주는 버전 이력이다.",
-"type": "cloud_log",
-"reliability": "hard",
-"completeness": "original",
-"provenance": "platform",
-"legitimacy": "lawful",
-"proves": [
-"d-2",
-"d-4"
-],
-"isTrap": false,
-"requires": [],
-"investigationResults": {
-"request_original": "클라우드 버전 이력과 파일 업로드 로그 원본이 함께 확보됐다.",
-"check_metadata": "대출정리서 업로드는 기본 계약서 전송 47분 뒤 추가로 이뤄졌다.",
-"restore_context": "추가 업로드 파일명에는 '과거 숨긴 부채 관련 참고'라는 서진의 메모가 붙어 있다.",
-"verify_source": "플랫폼 서버 기록과 서진 기기 동기화 로그가 일치한다.",
-"check_edits": "서버 원본이라 편집 흔적이 없다.",
-"question_acquisition": "본인 소유 클라우드 자료지만 상대의 과거 금융문서가 포함돼 취급 범위 제한이 필요하다."
-}
-},
-{
-"id": "e-4",
-"name": "정유나 사무실 상담 접수표와 상담요약",
-"description": "정유나 사무실이 남긴 접수표와 상담요약으로, 실제 신청·통보 없이 보증금 분할 가능성과 거주지 분리 시나리오만 설명한 기록이다.",
-"type": "institutional_note",
-"reliability": "hard",
-"completeness": "original",
-"provenance": "institutional",
-"legitimacy": "lawful",
-"proves": [
-"d-1",
-"d-2",
-"d-5"
-],
-"isTrap": false,
-"requires": [
-"e-2"
-],
-"investigationResults": {
-"request_original": "사무실 접수표와 상담요약 원본이 비식별 처리되어 제출됐다.",
-"check_metadata": "상담 분류는 '사전 정보 문의'이며 실제 접수 번호나 사건 번호는 없다.",
-"restore_context": "정유나는 서진에게 임대인 통보 전 배우자와 재논의가 필요하다고 안내했다.",
-"verify_source": "법무사 사무실 CRM 기록과 상담요약 문서 번호가 일치한다.",
-"check_edits": "기관 문서라 수정 흔적이 없다.",
-"question_acquisition": "당사자 요청에 따라 최소 범위로 제출된 상담기록이다."
-}
-},
-{
-"id": "e-5",
-"name": "현석-누나 메신저와 임대인 통화요약",
-"description": "현석이 누나에게 '법무사 끼운 건 서진 단독'이라고 말하며 예비 열쇠 보관과 임대인 확인 전화를 부탁한 대화, 그리고 같은 날 임대인과의 통화요약이다.",
-"type": "chat",
-"reliability": "hard",
-"completeness": "original",
-"provenance": "mixed",
-"legitimacy": "lawful",
-"proves": [
-"d-3",
-"d-4",
-"d-5"
-],
-"isTrap": false,
-"requires": [],
-"investigationResults": {
-"request_original": "메신저 원문과 임대인 통화요약 메모가 함께 제출됐다.",
-"check_metadata": "누나에게 보낸 메시지는 업로드 알림을 본 뒤 12분 후, 임대인 통화는 그로부터 19분 뒤다.",
-"restore_context": "현석은 합의를 언급하지 않고 서진의 독단이라는 프레임으로 먼저 외부 설명을 만들었다.",
-"verify_source": "누나 측 대화 백업과 통화기록, 임대인 측 시간대가 서로 맞는다.",
-"check_edits": "삭제 흔적은 없고 통화요약은 연속 메모 형태다.",
-"question_acquisition": "대화 당사자와 통화 상대 확인을 거친 자료다."
-}
-},
-{
-"id": "e-6",
-"name": "임대인 갱신확답 문자와 보증금 일정표",
-"description": "임대인이 요구한 갱신 확답 시한 문자와, 보증금 증액·반환 일정을 정리한 표다.",
-"type": "institutional_note",
-"reliability": "hard",
-"completeness": "original",
-"provenance": "mixed",
-"legitimacy": "lawful",
-"proves": [
-"d-5"
-],
-"isTrap": false,
-"requires": [],
-"investigationResults": {
-"request_original": "임대인 문자 원본과 서진이 만든 일정표, 은행 상담 메모가 함께 제출됐다.",
-"check_metadata": "확답 시한은 법무사 상담 직후 사흘 내였고, 현석의 임대인 통화는 그 전에 먼저 이뤄졌다.",
-"restore_context": "위기는 이미 시한이 임박한 상태에서 두 사람이 답변을 미루고 있었기 때문에 커졌다.",
-"verify_source": "임대인 발신 번호와 은행 상담 날짜가 일치한다.",
-"check_edits": "문자 원본과 일정표 버전 이력이 남아 있다.",
-"question_acquisition": "주거계약 관련 최소 범위 자료다."
-}
-}
-],
-"evidenceCombinations": [
-{
-"requires": [
-"e-2",
-"e-4"
-],
-"upgradesTo": "hard",
-"proves": [
-"d-1"
-]
-}
-],
-"truthTable": [
-{
-"id": "t-1",
-"fact": "서진의 법무사 접촉은 갑작스러운 독단이 아니라 한 달 전 비공식 합의된 상담 범위 안에 있었다.",
-"isTrue": true,
-"weight": 10,
-"quadrant": "shared_misconception"
-},
-{
-"id": "t-2",
-"fact": "서진은 그 범위를 넘겨 현석의 2022년 대출정리서를 상담 폴더에 추가했다.",
-"isTrue": true,
-"weight": 9,
-"quadrant": "a_only"
-},
-{
-"id": "t-3",
-"fact": "현석은 나중에 사전 합의를 부정하며 서진의 행동을 독단처럼 외부에 설명했다.",
-"isTrue": true,
-"weight": 10,
-"quadrant": "b_only"
-},
-{
-"id": "t-4",
-"fact": "두 사람 모두 '상담까지만, 가족·임대인에는 아직 비공개'라는 비공식 합의의 범위를 다른 방식으로 깼다.",
-"isTrue": true,
-"weight": 8,
-"quadrant": "both_know"
-},
-{
-"id": "t-5",
-"fact": "보증금 갱신 위기는 상담 그 자체보다 시한 압박과 현석의 선제 통화, 두 사람의 지연이 함께 만든 결과였다.",
-"isTrue": true,
-"weight": 9,
-"quadrant": "neither_knows"
-}
-],
-"lieConfigA": [
-{
-"disputeId": "d-2",
-"lieType": "LT-2",
-"lieIntensity": "L2",
-"lieMotive": "self_protection",
-"initialState": "S0",
-"collapseViaTrust": false,
-"transitions": [
-{
-"from": "S0",
-"to": "S1",
-"trigger": "loan_document_question"
-},
-{
-"from": "S1",
-"to": "S2",
-"trigger": "e-3_presented"
-},
-{
-"from": "S2",
-"to": "S3",
-"trigger": "scope_of_consultation_followup"
-},
-{
-"from": "S3",
-"to": "S5",
-"trigger": "e-4_or_responsibility_question"
-}
-]
-},
-{
-"disputeId": "d-4",
-"lieType": "LT-7",
-"lieIntensity": "L1",
-"lieMotive": "relationship_maintenance",
-"initialState": "S0",
-"collapseViaTrust": false,
-"transitions": [
-{
-"from": "S0",
-"to": "S1",
-"trigger": "agreement_scope_question"
-},
-{
-"from": "S1",
-"to": "S2",
-"trigger": "small_admission_about_anxiety"
-},
-{
-"from": "S2",
-"to": "S3",
-"trigger": "historic_reference_followup"
-},
-{
-"from": "S3",
-"to": "S5",
-"trigger": "shared_boundary_question"
-}
-]
-}
-],
-"lieConfigB": [
-{
-"disputeId": "d-3",
-"lieType": "LT-1",
-"lieIntensity": "L3",
-"lieMotive": "face_saving",
-"initialState": "S0",
-"collapseViaTrust": true,
-"transitions": [
-{
-"from": "S0",
-"to": "S1",
-"trigger": "prior_agreement_question"
-},
-{
-"from": "S1",
-"to": "S2",
-"trigger": "e-1_presented"
-},
-{
-"from": "S2",
-"to": "S3",
-"trigger": "did_you_retract_it_question"
-},
-{
-"from": "S3",
-"to": "S4",
-"trigger": "nonjudgmental_question_about_fear_of_separation"
-},
-{
-"from": "S4",
-"to": "S5",
-"trigger": "e-5_presented"
-}
-]
-},
-{
-"disputeId": "d-4",
-"lieType": "LT-2",
-"lieIntensity": "L2",
-"lieMotive": "third_party_protection",
-"initialState": "S0",
-"collapseViaTrust": false,
-"transitions": [
-{
-"from": "S0",
-"to": "S1",
-"trigger": "family_involvement_question"
-},
-{
-"from": "S1",
-"to": "S2",
-"trigger": "e-5_presented"
-},
-{
-"from": "S2",
-"to": "S3",
-"trigger": "landlord_contact_followup"
-},
-{
-"from": "S3",
-"to": "S5",
-"trigger": "no_disclosure_agreement_question"
-}
-]
-},
-{
-"disputeId": "d-5",
-"lieType": "LT-4",
-"lieIntensity": "L1",
-"lieMotive": "shame_avoidance",
-"initialState": "S0",
-"collapseViaTrust": false,
-"transitions": [
-{
-"from": "S0",
-"to": "S1",
-"trigger": "housing_crisis_question"
-},
-{
-"from": "S1",
-"to": "S2",
-"trigger": "e-6_presented"
-},
-{
-"from": "S2",
-"to": "S3",
-"trigger": "timeline_reconstruction"
-},
-{
-"from": "S3",
-"to": "S5",
-"trigger": "shared_responsibility_question"
-}
-]
-}
-],
-"solutions": {
-"별거프로토콜": [
-"상담, 견적, 실제 제출, 임대인 통보를 네 단계로 분리해 어느 단계부터 재합의가 필요한지 문서로 적는다.",
-"비공식 합의라도 음성메모 수준이 아니라 간단한 공동 메모로 남겨, 나중에 감정에 따라 효력이 줄어들지 않게 한다.",
-"별거 검토 기간에는 누가 어떤 제3자에게 무엇까지 보여줄 수 있는지 체크리스트를 만든다."
-],
-"제3자경계": [
-"가족과 임대인, 법무사를 한꺼번에 끌어들이지 않고 연락 창구를 1인으로 정한다.",
-"예비 열쇠 보관, 임대인 문의, 법률 상담은 상대 배우자에게 같은 날 로그를 남긴다.",
-"합의 없이 가족을 개입시키면 이후 주거 협의는 중립 제3자만 통해 진행한다."
-],
-"과거청산": [
-"2022년 대출 사건처럼 이미 덮기로 한 과거 자료는 현재 협의에 쓰기 전에 별도 동의를 받는다.",
-"과거 상처를 현재 판단 근거로 다시 쓸 때는 범위와 목적을 명시하고, 감정 보복용 첨부를 금지한다.",
-"신뢰 손상 이력은 상담실에서만 다루고 임대인·가족·실무 제3자에게는 전달하지 않는다."
-],
-"주거결정": [
-"임대인 답변 시한과 보증금 일정부터 먼저 확정하고 관계 감정 논쟁은 그 뒤에 분리해 다룬다.",
-"별거 여부와 무관하게 한 달 단위 주거 플랜 A·B를 만들어 답변 지연으로 생기는 손실을 막는다.",
-"현재 집 유지, 단기 분리 거주, 조기 해지 세 시나리오를 같은 표에서 비교해 감정적 추측을 줄인다."
-]
-},
-"activeLedgerEntries": [
-"ledger-1",
-"ledger-2"
-],
-"activeThirdParties": [
-"tp-1",
-"tp-3"
-]
+  "caseId": "case-spouse-08",
+  "meta": {
+    "relationshipType": "spouse",
+    "conflictSeed": "CS-4",
+    "variableModules": [
+      "VM-A",
+      "VM-E"
+    ],
+    "twistModule": "TW-5",
+    "difficulty": "hard",
+    "anchorTruth": "서진이 법무사에게 서류를 넘긴 건 비밀 이혼 준비처럼 보였다. 하지만 한 달 전 카페에서 상담까지만이라고 합의했고 음성메모가 남아 있다.",
+    "emotionalBait": "공유클라우드에 뜬 '정유나 상담폴더 업로드 완료' 알림, 법무사 명함, 2022년 숨긴 대출 정리서 — 한 폴더에 나란히 있으면 서진이 증거를 모아 판을 끝내려 한 것처럼 읽힌다.",
+    "resolutionDilemma": "서진은 합의된 상담 범위를 지켰지만 이미 덮은 대출 문서를 끼워 넣어 과거를 무기로 꺼냈다. 현석은 합의를 알면서 누나와 임대인에게 '서진 독단'이라 알렸다. 어느 쪽 월선이 더 무거운지가 갈린다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "한서진",
+      "age": 35,
+      "occupation": "보험사 보상심사 대리",
+      "incomeBracket": "mid",
+      "archetype": "contingency_planner",
+      "speechStyle": "'경우의 수가 세 가지야'처럼 선택지를 먼저 나열한 뒤 감정을 꺼낸다. 불안할수록 '실행이 아니라 상담만 한 거야'라며 행위의 경계를 밀리 단위로 쪼갠다 — 선을 지켰다는 증명이 곧 방어이기 때문이다.",
+      "pride": 8,
+      "fear": "전세 갱신 시한이 지나고 열쇠가 누나에게 넘어간 저녁, 문 앞에 들어갈 곳도 돌아갈 돈도 없이 서 있는 자신이 두렵다.",
+      "riskAppetite": 3,
+      "digitalHabit": "cloud_folder_archiver",
+      "dailyRoutine": "아침에는 보험 심사 문서를 검토하고, 점심시간에는 은행·부동산·행정 일정을 정리하며, 밤에는 메모앱에 분리 거주 시나리오를 적어 둔다.",
+      "sensitivePoints": [
+        "예측 가능성",
+        "주거 안정",
+        "과거에 숨겨졌던 돈 문제"
+      ],
+      "verbalTells": [
+        {
+          "type": "scope_split",
+          "trigger": "lying",
+          "pattern": "'제출이 아니라 문의였어, 보낸 것과 접수는 다르잖아' — 행위를 밀리 단위로 쪼개 방어한다. 그 한 끗이 무너지면 '몰래 이혼 준비' 프레임에 갇히기 때문이다."
+        },
+        {
+          "type": "document_stack",
+          "trigger": "cornered",
+          "pattern": "잘못 하나를 지적받으면 접수표, 이메일, 답변 세 묶음을 연달아 꺼낸다. 서류 더미 속에서 의도 대신 절차를 보게 만드는 패턴."
+        },
+        {
+          "type": "historic_justifier",
+          "trigger": "hurt",
+          "pattern": "'왜 이렇게까지 했냐'에 '2022년에 3천만 원 숨긴 사람이 누구야'로 받는다. 현재를 지적받으면 과거를 소환해 공격으로 뒤집는다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "오빠",
+        "toJudge": "제 남편",
+        "angry": "류현석 씨!"
+      }
+    },
+    "partyB": {
+      "name": "류현석",
+      "age": 39,
+      "occupation": "수입가구 브랜드 영업소장",
+      "incomeBracket": "high",
+      "archetype": "mood_negotiator",
+      "speechStyle": "분위기 좋으면 '그때 그런 얘기도 했잖아'로 합의를 넓히고, 불리하면 '그냥 해본 말이었지'로 줄인다. 궁지에 몰리면 '그때는 진짜 헤어질 줄 몰랐잖아'라며 감정으로 발언 효력 자체를 없애려 한다.",
+      "pride": 8,
+      "fear": "누나가 고개 젓고, 임대인이 전화 끊고, 서진이 대화를 멈추는 — 세 방향에서 끝난 사람 취급 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "call_then_delete",
+      "dailyRoutine": "오전에는 매장 실적을 확인하고, 오후에는 거래처를 돌며, 밤에는 차 안에서 길게 통화해 갈등을 그날그날 봉합하려 든다.",
+      "sensitivePoints": [
+        "버림받는 이미지",
+        "가족 체면",
+        "2022년 숨긴 대출 사건"
+      ],
+      "verbalTells": [
+        {
+          "type": "promise_shrink",
+          "trigger": "lying",
+          "pattern": "'그건 해본 말이지, 진짜 그렇게 할 줄 알았어?' — 합의를 추궁받으면 분위기에 맞춘 위로로 격하시킨다. 녹음된 합의를 무효화하려는 패턴."
+        },
+        {
+          "type": "witness_summon",
+          "trigger": "defensive",
+          "pattern": "'누나한테 물어봐, 임대인도 같은 말 할 거야' — 불리해지면 외부 인물을 소환한다. 제3자 권위로 덮으려 하지만, 먼저 자기 버전을 심어놓은 사실은 빠뜨린다."
+        },
+        {
+          "type": "retro_edit",
+          "trigger": "shame",
+          "pattern": "같은 사건을 다시 말할 때 불리한 문장만 빠진다. 합의 부분은 사라지고 정황만 남는다. 매번 새 버전을 만드는 패턴."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "서진아",
+        "toJudge": "제 아내",
+        "angry": "한서진 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "한 달 전 카페에서 '월말까지 안 나아지면 법무사 상담까지만, 접수나 가족 통보는 다시 얘기하자'는 합의가 이루어졌다. 음성메모에 녹음돼 있다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "b",
+        "distortionDirection": "B는 나중에 이 합의를 '감정 달래기용 말'로 축소한다.",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "2022년 현석은 사업 급전 3천만 원을 몰래 대출받았다. '다시는 재정을 숨기지 않는다'는 조건으로 덮었다. 서진은 '아직 유효한 전과', 현석은 '이미 사면된 과거'로 본다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '신뢰가 깨진 출발점이라 아직 현재형이다' / B: '그건 다 갚고 끝난 과거다'",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "금요일이면 각자 따로 지내며 분리 거주를 상상했지만, 부모에게 알리면 별거가 이혼으로 굳어질까 봐 둘 다 말을 미뤘다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "류미경 (현석의 누나)",
+        "relationTo": "b",
+        "knowledgeScope": "현석이 합의를 번복한 뒤 예비 열쇠 보관과 임대인 확인 전화를 부탁한 사실을 안다. 합의를 부정하면서 방어 준비를 시킨 순서가 핵심.",
+        "witnessedDirectly": true,
+        "bias": "pro_b",
+        "distortionRisk": "strategic",
+        "witnessProfile": {
+          "age": 42,
+          "occupation": "현석의 누나",
+          "relationToA": "한서진와는 이 사건을 통해 알게 됨",
+          "relationToB": "현석의 누나",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "동생 걱정이 앞서지만 사실은 사실대로 말하려 한다. 감정이 올라오면 직설적이 된다.",
+          "addressJudge": "재판관님",
+          "addressA": "서진씨",
+          "addressB": "현석씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "김다솔 (서진의 회사 동료)",
+        "relationTo": "a",
+        "knowledgeScope": "서진이 상담 예약만 잡고 실제 접수는 하지 않았으며, 합의 대화 후 폴더를 정리했다는 순서를 알고 있다.",
+        "witnessedDirectly": false,
+        "bias": "pro_a",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 37,
+          "occupation": "보험사 보상심사 대리",
+          "relationToA": "서진의 회사 동료",
+          "relationToB": "류현석와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "직장 상황을 잘 아는 만큼 구체적이지만, 본인 평판에 영향 갈까 봐 표현을 고른다.",
+          "addressJudge": "재판관님",
+          "addressA": "서진씨",
+          "addressB": "현석씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "정유나 (법무사 사무장)",
+        "relationTo": "both",
+        "knowledgeScope": "상담 분류, 전달 문서 세 건, 접수 번호 없음, 보증금은 시나리오 문의 수준이었음을 원본으로 확인 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 42,
+          "occupation": "법무사 사무장",
+          "relationToA": "한서진을 업무상 알고 있음",
+          "relationToB": "류현석을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "한서진씨",
+          "addressB": "류현석씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "trial_separation",
+    "description": "주말마다 따로 지내지만 외부에는 정상 부부. 전세 확답 시한 사흘 앞이었다. 카페 합의를 근거로 서진이 서류를 보냈고, 현석은 3분 뒤 알림을 열어 이혼 준비로 읽었다. 12분 뒤 누나에게, 31분 뒤 임대인에게 서진 독단이라 알렸다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "둘 다 별거를 상상하면서도 확정이 무서워 아무것도 못 정하던 시기였다. 전세계약서 한 장이 최종 결별 선언처럼, 임대인 통화 한 번이 돌이킬 수 없는 폭로가 되었다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "법무사 상담은 합의인가 독단인가",
+      "truth": false,
+      "truthDescription": "서진의 상담은 카페 합의 범위 안이었고 접수 번호도 사건 번호도 없다. 법무사 CRM 기록으로 확인된다. 판단 포인트는 '범위 안이었느냐'이지 '서류를 보냈느냐'가 아니다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 35,
+        "b": 65
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "별거프로토콜",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-2",
+      "name": "상담 폴더에 끼워 넣은 대출 정리서",
+      "truth": true,
+      "truthDescription": "계약서 47분 뒤 서진은 대출 정리서를 추가했다. 이미 덮은 과거를 상담 폴더에 끼워 넣었다. 상담 방어와 과거 무기화의 경계가 핵심.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "과거청산",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "카페 합의 번복과 외부 선제 통보",
+      "truth": true,
+      "truthDescription": "현석은 카페 합의에 참여했고 음성메모에 목소리가 남아 있다. 그런데 알림 12분 뒤 누나에게, 31분 뒤 임대인에게 '서진 독단'이라 설명했다. 합의를 알면서 없었던 것처럼 프레임을 짰다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 10,
+        "b": 90
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "신뢰회복",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "비공식 합의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "서진은 합의에 없던 대출 문서를 폴더에 끼워 문서 범위를 넘겼다. 현석은 재논의 없이 누나와 임대인에게 알려 비공개 원칙을 깼다. 둘 다 합의를 위반했고 어느 쪽이 본질을 더 훼손했는지가 갈린다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "제3자경계",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "전세 위기 — 상담 탓인가 답변 지연 탓인가",
+      "truth": false,
+      "truthDescription": "갱신 확답 시한이 사흘 앞이었고 두 사람 모두 답변을 미루고 있었다. 현석의 임대인 선제 전화가 겹쳤다. 법무 상담 자체가 위기를 만든 게 아니라 시한+지연+선제 통화가 동시에 터진 것이다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-4",
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 40,
+        "b": 60
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "주거결정",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "카페 음성메모와 당일 결제영수증",
+      "description": "카페 음성메모(두 목소리 포함)와 결제영수증이다. '상담까지만, 접수 전엔 다시 얘기'라는 합의 구간이 남아 있다. 다만 구체적 범위는 명시돼 있지 않다.",
+      "type": "audio",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 음성 파일(WAV, 14분 32초)과 카페 결제 영수증 원본이 함께 제출됐다. 두 사람 목소리가 모두 포함돼 있다.",
+        "check_metadata": "녹음 시작 오후 5시 48분, 카페 결제 5시 43분 — 주문 후 5분 뒤 녹음을 시작한 셈이다.",
+        "restore_context": "녹음 4분~6분 구간에서 법무사 이름이 세 번, '접수 말고 상담만'이 연속으로 나온다. 현석도 동의하는 음성이 포함돼 있다.",
+        "verify_source": "서진 휴대폰 원본과 자동 클라우드 백업본의 SHA-256 해시가 일치했다. 파일이 복사 과정에서 변조되지 않았음을 확인한다.",
+        "check_edits": "14분 32초 전체 구간의 파형이 연속적이며, 무음 삽입·구간 삭제·접합 흔적이 없다. 다만 녹음 시작 전과 종료 후 대화는 포함돼 있지 않다.",
+        "question_acquisition": "서진 본인 휴대폰의 자기 대화 녹음이다. 적법하지만 상대 동의 없는 녹음이라는 점은 남는다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "현석이 저장한 공유클라우드 업로드 알림 캡처",
+      "description": "현석 휴대폰의 '정유나 상담폴더 업로드 완료' 알림 캡처다. 파일명이 일부만 보여 전체 목록과 업로드 목적은 알 수 없다.",
+      "type": "cloud_log",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "스크린샷 한 장뿐이다. 알림과 파일명 일부만 보이며 폴더 전체 목록이나 업로드 목적 설명은 없다.",
+        "check_metadata": "캡처 생성 시각은 서진의 업로드 완료 시점 3분 뒤다. 현석이 알림을 거의 즉시 확인하고 저장했다는 뜻이다.",
+        "restore_context": "알림에는 '업로드 완료'만 표시되며, 공식 제출인지 초안 정리인지 구분 불가. 현석이 이혼 준비로 읽은 근거는 이 알림이 전부였다.",
+        "verify_source": "현석 휴대폰의 알림 기록과 스크린샷 메타데이터의 생성 시간이 일치한다. 캡처 자체는 진본이다.",
+        "check_edits": "합성 흔적 없지만 알림과 파일명 일부만 잡힌 선택적 캡처로, 전체 맥락은 빠져 있다.",
+        "question_acquisition": "부부 공유 클라우드 알림을 현석이 캡처한 것이다. 접근은 정당하지만 법무 상담 자료 저장은 사생활 범위 쟁점이 남는다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "상담 폴더 버전 이력과 대출정리서 로그",
+      "description": "클라우드 버전 이력으로, 기본 계약서 47분 뒤 대출 정리서가 추가된 것을 보여준다. 시점과 순서는 명확하지만 처음부터 의도한 것인지는 단정 불가.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "클라우드 플랫폼의 버전 이력 페이지와 파일별 업로드 로그 원본이 함께 확보됐다. 각 파일의 업로드 시각, 파일명, 작성자 계정이 기록돼 있다.",
+        "check_metadata": "기본 계약서 먼저 업로드, 47분 뒤 대출 정리서 별도 추가. 한 번에 올린 것이 아니라 시차를 둔 것이 핵심.",
+        "restore_context": "파일명에 '과거 숨긴 부채 관련 참고'라는 메모가 붙어 있다. 과거를 상담 맥락에 연결하려 한 흔적이지만 공격인지 방어인지는 단정 불가.",
+        "verify_source": "클라우드 플랫폼 서버 측 기록과 서진 기기의 동기화 로그가 일치한다. 업로드 시각과 파일 해시가 양쪽에서 동일하게 확인된다.",
+        "check_edits": "서버에 기록된 원본 이력이라 사후 수정이나 삭제 흔적이 없다. 버전 이력 자체의 신뢰도는 높다.",
+        "question_acquisition": "서진 본인 클라우드 자료다. 다만 현석의 과거 금융 정보가 포함돼 있어 상담 외 활용 시 범위 제한 필요."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "정유나 사무실 상담 접수표와 상담요약",
+      "description": "법무사 접수표와 상담요약이다. 분류는 '사전 정보 문의'이며 접수·사건 번호 없다. 보증금 분할 시나리오만 설명한 수준으로 실제 신청이 이루어지지 않았음을 보여준다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "정유나 법무사 사무실의 접수표와 상담요약 원본이 개인정보 비식별 처리된 상태로 제출됐다. 관리번호와 상담 분류가 표기돼 있다.",
+        "check_metadata": "상담 분류란에 '사전 정보 문의'로 기재돼 있으며, 접수 번호·사건 번호 칸이 비어 있다. 정식 접수가 이루어지지 않았다는 결정적 근거다.",
+        "restore_context": "상담요약에 '임대인 통보 전 배우자 재논의 필요'라고 안내한 기록이 있다. 법무사도 단독 진행을 권하지 않았다는 맥락.",
+        "verify_source": "법무사 사무실 CRM 시스템의 관리번호와 종이 상담요약의 문서 번호가 일치한다. 기관 내부 기록과 대조 확인이 된 자료다.",
+        "check_edits": "법무사 사무실에서 발행한 기관 문서로 사후 수정 흔적이 없다. CRM에 기록된 원본 상태 그대로다.",
+        "question_acquisition": "서진 요청으로 법무사가 최소 범위 발급한 상담 기록이다. 구체적 의도나 감정 뉘앙스는 요약에 없다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "현석-누나 메신저와 임대인 통화요약",
+      "description": "현석이 누나에게 보낸 메시지와 임대인 통화요약이다. '법무사 끼운 건 서진 단독'이라는 프레임, 열쇠 보관 부탁, 전화 요청이 담겨 있다. 카페 합의 미언급이 핵심.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "현석이 누나에게 보낸 메신저 대화 원문과 같은 날 임대인과의 통화 내용을 정리한 요약 메모가 함께 제출됐다.",
+        "check_metadata": "알림 캡처 12분 뒤 누나에게, 19분 뒤 임대인에게 — 31분 만에 외부 두 명에게 연락이 닿았다. 서진 미확인 상태로 나간 속도가 핵심.",
+        "restore_context": "누나에게 '서진이가 혼자 법무사 끼웠어'라는 표현이 있지만 카페 합의는 한마디도 없다. 합의를 생략한 채 독단 프레임을 먼저 심은 것.",
+        "verify_source": "누나 측 메신저 백업의 수신 시각, 현석 측 발신 시각, 임대인 측 통화 기록의 시간대가 삼자 교차 확인으로 일치한다.",
+        "check_edits": "메시지 삭제 흔적 없다. 통화요약은 연속 메모 형태로 재작성 흔적 없다. 다만 요약이므로 실제 발화를 100% 옮겼는지는 확인 불가.",
+        "question_acquisition": "메신저는 누나 확인, 통화요약은 임대인 대조 확인을 거친 자료다. 현석이 누나에게 사전 조율했을 가능성은 배제 불가."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "임대인 갱신확답 문자와 보증금 일정표",
+      "description": "임대인의 갱신 확답 시한 문자와 보증금 일정표다. 시한이 상담 직후였고 현석의 임대인 통화가 먼저였다는 시간 순서를 보여준다. 위기 원인이 상담인지 지연인지 판단 근거.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "임대인이 보낸 갱신 확답 요구 문자 원본, 서진이 작성한 보증금 증액·반환 일정표, 은행 대출 상담 메모가 세트로 제출됐다.",
+        "check_metadata": "확답 시한은 상담일로부터 사흘 뒤, 현석의 임대인 통화는 시한 이틀 전이다. 임대인 재촉 전에 현석이 먼저 연락한 순서가 핵심.",
+        "restore_context": "갱신 확답 시한은 이미 임박해 있었고 둘 다 답변을 미루고 있었다. 위기의 씨앗은 답변 지연이며 현석의 선제 통화가 기름을 부었다.",
+        "verify_source": "문자의 임대인 발신 번호가 계약서상 연락처와 일치하며, 은행 상담 메모의 날짜가 일정표 작성일과 맞는다.",
+        "check_edits": "문자는 수신 원본 그대로이며, 일정표는 클라우드 버전 이력에 최초 작성본만 남아 있어 사후 수정이 없다.",
+        "question_acquisition": "전세 갱신과 관련된 최소 범위의 주거계약 자료다. 임대인 개인정보는 비식별 처리됐으며, 보증금 금액과 시한 날짜만 확인 가능하다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-2",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "서진의 법무사 접촉은 갑작스러운 독단이 아니라 한 달 전 비공식 합의된 상담 범위 안에 있었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-2",
+      "fact": "서진은 그 범위를 넘겨 현석의 2022년 대출정리서를 상담 폴더에 추가했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "현석은 나중에 사전 합의를 부정하며 서진의 행동을 독단처럼 외부에 설명했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "두 사람 모두 '상담까지만, 가족·임대인에는 아직 비공개'라는 비공식 합의의 범위를 다른 방식으로 깼다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "보증금 갱신 위기는 상담 그 자체보다 시한 압박과 현석의 선제 통화, 두 사람의 지연이 함께 만든 결과였다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "loan_document_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "scope_of_consultation_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "agreement_scope_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_anxiety"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "historic_reference_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_boundary_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "prior_agreement_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "did_you_retract_it_question"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_fear_of_separation"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "third_party_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "family_involvement_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "landlord_contact_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "no_disclosure_agreement_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "housing_crisis_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "timeline_reconstruction"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "별거프로토콜": [
+      "상담, 견적, 실제 제출, 임대인 통보를 네 단계로 분리해 어느 단계부터 재합의가 필요한지 문서로 적는다.",
+      "비공식 합의라도 음성메모 수준이 아니라 간단한 공동 메모로 남겨, 나중에 감정에 따라 효력이 줄어들지 않게 한다.",
+      "별거 검토 기간에는 누가 어떤 제3자에게 무엇까지 보여줄 수 있는지 체크리스트를 만든다."
+    ],
+    "제3자경계": [
+      "가족과 임대인, 법무사를 한꺼번에 끌어들이지 않고 연락 창구를 1인으로 정한다.",
+      "예비 열쇠 보관, 임대인 문의, 법률 상담은 상대 배우자에게 같은 날 로그를 남긴다.",
+      "합의 없이 가족을 개입시키면 이후 주거 협의는 중립 제3자만 통해 진행한다."
+    ],
+    "과거청산": [
+      "2022년 대출 사건처럼 이미 덮기로 한 과거 자료는 현재 협의에 쓰기 전에 별도 동의를 받는다.",
+      "과거 상처를 현재 판단 근거로 다시 쓸 때는 범위와 목적을 명시하고, 감정 보복용 첨부를 금지한다.",
+      "신뢰 손상 이력은 상담실에서만 다루고 임대인·가족·실무 제3자에게는 전달하지 않는다."
+    ],
+    "주거결정": [
+      "임대인 답변 시한과 보증금 일정부터 먼저 확정하고 관계 감정 논쟁은 그 뒤에 분리해 다룬다.",
+      "별거 여부와 무관하게 한 달 단위 주거 플랜 A·B를 만들어 답변 지연으로 생기는 손실을 막는다.",
+      "현재 집 유지, 단기 분리 거주, 조기 해지 세 시나리오를 같은 표에서 비교해 감정적 추측을 줄인다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-2"
+  ],
+  "activeThirdParties": [
+    "tp-1",
+    "tp-3"
+  ]
 }

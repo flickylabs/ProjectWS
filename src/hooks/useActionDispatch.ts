@@ -2,13 +2,24 @@ import { useCallback } from 'react'
 import { useGameStore } from '../store/useGameStore'
 import { resolveDialogue } from '../engine/dialogueResolver'
 import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
+import { generateWitnessTestimony, canCallWitness } from '../engine/witnessEngine'
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
 import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
+import { iga, eunneun } from '../utils/korean'
 
 /** LLM 모드 플래그 — App에서 설정 */
 let useLLMMode = false
 export function setLLMMode(enabled: boolean) { useLLMMode = enabled }
 export function isLLMMode() { return useLLMMode }
+
+/** 다음 질문에 적용할 토글 모디파이어 */
+let _nextConfidential = false
+let _nextEvasionTarget: { target: PartyId; disputeId: string } | null = null
+
+export function setNextConfidential(on: boolean) { _nextConfidential = on }
+export function setNextEvasionReading(target: PartyId, disputeId: string) {
+  _nextEvasionTarget = { target, disputeId }
+}
 
 export function useActionDispatch() {
   const dispatch = useCallback((action: PlayerAction) => {
@@ -20,6 +31,10 @@ export function useActionDispatch() {
     }
     if (action.type === 'evidence_investigate') {
       handleEvidenceInvestigate(action)
+      return
+    }
+    if (action.type === 'call_witness') {
+      handleCallWitness(action)
       return
     }
     if (action.type === 'question') {
@@ -47,51 +62,165 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   const evDef = state.evidenceDefinitions.find((e) => e.id === action.evidenceId)
   if (!evDef) return
 
+  // 조합 발동 전 스냅샷 (새로 발동된 것만 표시하기 위해)
+  const prevTriggeredCount = state.triggeredCombinations.length
+
   const newUnlocks = state.presentEvidence(action.evidenceId, action.target)
 
   playEvidencePresent()
-  state.addDialogue({ speaker: 'system', text: `📄 증거 제시: ${evDef.name}`, relatedDisputes: evDef.proves, turn: state.turnCount })
+  const disputeNames = evDef.proves.map(dId => state.caseData?.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
+  const reliabilityLabel = evDef.reliability === 'hard' ? 'Hard' : 'Soft'
+  state.addDialogue({
+    speaker: 'system',
+    text: `📋 증거 제시: ${evDef.name} [${reliabilityLabel}] → "${disputeNames}"`,
+    relatedDisputes: evDef.proves,
+    turn: state.turnCount,
+  })
 
   const trigger = evDef.reliability === 'hard' ? 'hard_evidence' : 'soft_evidence'
+  let evDidTransition = false
   for (const disputeId of evDef.proves) {
     const transitioned = state.transitionLie(action.target, disputeId, trigger)
-    if (transitioned) notifyLieTransition(action.target, disputeId)
+    if (transitioned) { notifyLieTransition(action.target, disputeId); evDidTransition = true }
   }
+  if (evDidTransition) state.trackMetric('evidenceEffective')
 
   state.changeEmotion(action.target, evDef.reliability === 'hard' ? 15 : 8)
 
   for (const id of newUnlocks) {
     const def = state.evidenceDefinitions.find((e) => e.id === id)
-    if (def) { playEvidenceUnlock(); state.addDialogue({ speaker: 'system', text: `🔓 새로운 증거 확보: ${def.name}`, relatedDisputes: def.proves, turn: state.turnCount }) }
+    if (def) {
+      playEvidenceUnlock()
+      state.addDialogue({ speaker: 'system', text: `🔓 새로운 증거를 손에 넣었다 — ${def.name}`, relatedDisputes: def.proves, turn: state.turnCount })
+    }
   }
 
-  // 증거 조합 격상 체크
-  const freshEvidenceState = useGameStore.getState()
-  const triggered = freshEvidenceState.triggeredCombinations
-  if (triggered.length > 0) {
-    const caseData = freshEvidenceState.caseData
+  // 증거 조합 격상 — 이번에 새로 발동된 것만 표시
+  const freshState = useGameStore.getState()
+  const newlyTriggered = freshState.triggeredCombinations.slice(prevTriggeredCount)
+  if (newlyTriggered.length > 0) {
+    const caseData = freshState.caseData
     if (caseData) {
-      for (const comboKey of triggered) {
+      for (const comboKey of newlyTriggered) {
         const combo = caseData.evidenceCombinations.find((c) => c.requires.join('+') === comboKey)
         if (combo) {
           const names = combo.requires.map((id) => caseData.evidence.find((e) => e.id === id)?.name ?? id).join(' + ')
+          const disputeNames = combo.proves.map(dId => caseData.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
           playEvidenceUpgrade()
-          freshEvidenceState.addDialogue({
+          freshState.addDialogue({
             speaker: 'system',
-            text: `⚡ 증거 조합 격상! ${names} → Hard 등급으로 신뢰도 상승`,
+            text: `🔗 증거 조합 격상! ${names} → "${disputeNames}" 신뢰도 Hard 확정`,
             relatedDisputes: combo.proves,
-            turn: freshEvidenceState.turnCount,
+            turn: freshState.turnCount,
           })
         }
       }
     }
   }
 
-  // NPC 반응
-  const fakeAction: PlayerAction = { type: 'question', questionType: 'fact_fixing', target: action.target, disputeId: evDef.proves[0] ?? '' }
-  await resolveAndApply(fakeAction, action.target)
+  // NPC 반응 — 증거에 대해 직접 반응하도록 evidence_present 액션 전달
+  if (evDef.proves.length > 0) {
+    await resolveAndApply(action, action.target)
+  }
 
-  state.incrementTurn()
+  useGameStore.getState().incrementTurn()
+}
+
+// ── 증인 소환 ──
+async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_witness' }>) {
+  const state = useGameStore.getState()
+  if (!state.caseData) return
+
+  const witness = state.caseData.duo.socialGraph.find(tp => tp.id === action.witnessId)
+  if (!witness) return
+
+  const check = canCallWitness(action.witnessId, state.calledWitnesses, state.caseData)
+  if (!check.available) {
+    state.addDialogue({ speaker: 'system', text: check.reason ?? '증인 소환 불가', relatedDisputes: [], turn: state.turnCount })
+    return
+  }
+
+  // 비용: 조사 토큰 1개
+  if (state.resources.investigationTokens < 1) {
+    state.addDialogue({ speaker: 'system', text: '조사 토큰이 부족하다.', relatedDisputes: [], turn: state.turnCount })
+    return
+  }
+  state.spend('investigationTokens', 1)
+  state.addCalledWitness(action.witnessId)
+
+  // 소환 연출
+  state.addDialogue({
+    speaker: 'system',
+    text: `🧑‍⚖️ 증인 ${witness.name} 소환 — 증언이 시작된다.`,
+    relatedDisputes: [],
+    turn: state.turnCount,
+  })
+
+  // 증언 생성 (LLM 또는 폴백)
+  state.setLLMLoading(true)
+  try {
+    const recentDialogues = state.dialogueLog.slice(-8)
+    const testimony = await generateWitnessTestimony(
+      witness, state.caseData, state.agentA, state.agentB, recentDialogues,
+    )
+
+    const fresh = useGameStore.getState()
+    fresh.setLLMLoading(false)
+
+    // 증언 등록
+    fresh.addDialogue({
+      speaker: 'witness',
+      text: testimony.testimony,
+      relatedDisputes: testimony.relatedDisputes,
+      turn: fresh.turnCount,
+      behaviorHint: testimony.behaviorHint,
+    })
+
+    // 편향 방향에 따라 NPC 반응
+    const favoredParty: PartyId | null =
+      testimony.favorDirection === 'pro_a' ? 'a'
+      : testimony.favorDirection === 'pro_b' ? 'b'
+      : null
+
+    // 유리한 쪽의 신뢰 상승, 불리한 쪽 감정 동요
+    if (favoredParty) {
+      const unfavored: PartyId = favoredParty === 'a' ? 'b' : 'a'
+      fresh.changeEmotion(unfavored, 10)
+
+      // 증언이 직접 목격이면 관련 쟁점의 lie state 전이 시도
+      if (witness.witnessedDirectly && testimony.relatedDisputes.length > 0) {
+        for (const dId of testimony.relatedDisputes) {
+          const transitioned = fresh.transitionLie(unfavored, dId, 'witness_testimony')
+          if (transitioned) {
+            notifyLieTransition(unfavored, dId)
+            fresh.trackMetric('lieTransitions')
+          }
+        }
+      }
+    }
+
+    // 왜곡된 증언이면 시스템 힌트
+    if (testimony.distorted) {
+      fresh.addDialogue({
+        speaker: 'system',
+        text: '💭 증언의 일부가 기억에 의존하고 있다. 다른 증거와 대조해볼 필요가 있다.',
+        relatedDisputes: testimony.relatedDisputes,
+        turn: fresh.turnCount,
+      })
+    }
+
+    fresh.trackMetric('questionsAsked')
+  } catch {
+    useGameStore.getState().setLLMLoading(false)
+    useGameStore.getState().addDialogue({
+      speaker: 'system',
+      text: '증인 증언 생성에 실패했다.',
+      relatedDisputes: [],
+      turn: useGameStore.getState().turnCount,
+    })
+  }
+
+  useGameStore.getState().incrementTurn()
 }
 
 // ── 증거 조사 ──
@@ -105,24 +234,82 @@ function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: 'eviden
 async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }>) {
   const state = useGameStore.getState()
 
-  state.addDialogue({
-    speaker: 'judge',
-    text: buildQuestionText(action.questionType, action.target, action.disputeId),
-    relatedDisputes: [action.disputeId],
-    turn: state.turnCount,
-  })
+  // ── 토글 모디파이어 소비 ──
+  const isConfidential = _nextConfidential
+  _nextConfidential = false
+  const evasionTarget = _nextEvasionTarget
+  _nextEvasionTarget = null
+
+  if (isConfidential) {
+    state.changeTrust(action.target, 'trustTowardJudge', 20)
+    state.addDialogue({
+      speaker: 'system',
+      text: '🔒 비공개 심문 — 이 답변은 상대에게 공개되지 않는다.',
+      relatedDisputes: [], turn: state.turnCount,
+    })
+    state.trackMetric('confidentialUsed')
+    state.trackMetric('togglesUsed')
+  }
+
+  // 비LLM 모드: 고정 템플릿으로 재판관 질문 먼저 추가
+  // LLM 모드: llmDialogueResolver 내부에서 재판관 질문 + NPC 응답 동시 생성
+  //           (LLM 실패 시에도 폴백 질문이 자동 생성됨)
+  if (!useLLMMode) {
+    state.addDialogue({
+      speaker: 'judge',
+      text: buildQuestionText(action.questionType, action.target, action.disputeId),
+      relatedDisputes: [action.disputeId],
+      turn: state.turnCount,
+    })
+  }
+
+  // 심문 이력 기록
+  state.trackInterrogation(action.target, action.disputeId, action.questionType, state.turnCount)
+
+  // 메트릭 추적
+  state.trackMetric('questionsAsked')
+  // bothSidesQuestioned: A와 B 모두 질문한 적 있는지 체크
+  if (!state.processMetrics.bothSidesQuestioned) {
+    const otherTarget = action.target === 'a' ? 'b' : 'a'
+    const otherAsked = state.dialogueLog.some(d => d.speaker === otherTarget)
+    if (otherAsked) state.trackMetric('bothSidesQuestioned')
+  }
 
   // lie 전이 시도
-  const trigger = questionTypeToTrigger(action.questionType)
-  const transitioned = state.transitionLie(action.target, action.disputeId, trigger)
-  if (transitioned) notifyLieTransition(action.target, action.disputeId)
+  const triggers = questionTypeToTrigger(action.questionType)
+  let didTransition = false
+  for (const trigger of triggers) {
+    const transitioned = state.transitionLie(action.target, action.disputeId, trigger)
+    if (transitioned) {
+      notifyLieTransition(action.target, action.disputeId)
+      didTransition = true
+      state.trackMetric('lieTransitions')
+      // S5 도달 체크
+      const agent = action.target === 'a' ? state.agentA : state.agentB
+      if (agent.lieStateMap[action.disputeId]?.currentState === 'S5') {
+        state.trackMetric('liesCollapsed')
+      }
+      break
+    }
+  }
 
-  if (action.questionType === 'empathy') {
+  if (action.questionType === 'empathy_approach') {
     state.changeTrust(action.target, 'trustTowardJudge', 12)
   }
 
-  // NPC 응답 (대상)
-  await resolveAndApply(action, action.target)
+  // NPC 응답 — LLM 모드에서는 재판관 질문 + NPC 응답이 함께 생성됨
+  await resolveAndApply(action, action.target, isConfidential)
+
+  // 증거 발견: NPC 응답 이후 — 진술 내용에서 단서가 포착된 것처럼 연출
+  if (didTransition) {
+    discoverEvidenceFromQuestioning(action.target, action.disputeId)
+  }
+
+  // ── 회피 판독: 응답 후 거짓말 불안정도 표시 ──
+  if (evasionTarget) {
+    state.trackMetric('togglesUsed')
+    showEvasionReadingResult(evasionTarget.target, evasionTarget.disputeId)
+  }
 
   // 분리심문 턴 소모
   const sepState = useGameStore.getState()
@@ -132,42 +319,69 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     if (prevTurns <= 1) {
       useGameStore.getState().addDialogue({
         speaker: 'system',
-        text: '🚪 분리심문이 종료되었습니다. 상대방이 복귀합니다.',
+        text: '🚪 분리 심문 종료 — 상대방이 복귀한다.',
         relatedDisputes: [],
         turn: useGameStore.getState().turnCount,
       })
     }
   }
 
-  // 상대방 끼어들기 (분리심문 중이면 차단)
+  // ── 상대방 끼어들기 (구조적 반응 시스템) ──
   const opponent: PartyId = action.target === 'a' ? 'b' : 'a'
   const freshState = useGameStore.getState()
-  const isSeparated = freshState.separationTarget === action.target  // 대상과 1:1 분리 중이면 상대 차단
+  const isSeparated = freshState.separationTarget === action.target
   const opponentAgent = opponent === 'a' ? freshState.agentA : freshState.agentB
   const hasOpponentStake = !!opponentAgent.lieStateMap[action.disputeId]
-  const opponentAngry = opponentAgent.emotionalState.phase === 'angry' || opponentAgent.emotionalState.phase === 'confident'
 
-  // Phase별 끼어들기 확률 차등
-  const phaseInterruptRate: Record<string, number> = {
-    phase3: 0.3,  // 심문: 30%
-    phase4: 0.2,  // 증거: 20%
-    phase5: 0.15, // 재심문: 15% (재심문에서는 좀 더 통제됨)
-  }
-  const baseRate = phaseInterruptRate[freshState.currentPhase] ?? 0.25
-
-  if (!isSeparated && hasOpponentStake && (opponentAngry || Math.random() < baseRate)) {
+  if (!isSeparated && hasOpponentStake) {
     const opponentName = opponent === 'a' ? freshState.caseData?.duo.partyA.name : freshState.caseData?.duo.partyB.name
-    const opponentAction: PlayerAction = { type: 'question', questionType: action.questionType, target: opponent, disputeId: action.disputeId }
-    freshState.addDialogue({
-      speaker: 'system',
-      text: `💬 ${opponentName}이(가) 끼어듭니다.`,
-      relatedDisputes: [action.disputeId],
-      turn: freshState.turnCount,
-    })
-    await resolveAndApply(opponentAction, opponent)
+    const targetAgent = action.target === 'a' ? freshState.agentA : freshState.agentB
+    const targetLie = targetAgent.lieStateMap[action.disputeId]
+
+    // ① 강제 끼어들기: 비밀 탄로 (S4/S5 전이) → 상대 100% 반응
+    const secretRevealed = didTransition && targetLie && (targetLie.currentState === 'S4' || targetLie.currentState === 'S5')
+
+    // ② 강제 끼어들기: 상대가 자기를 직접 언급 (책임 전가 S3)
+    const blameShifted = didTransition && targetLie?.currentState === 'S3'
+
+    // ③ 확률 끼어들기: 감정 기반 (기존 로직 개선)
+    const opponentAngry = opponentAgent.emotionalState.phase === 'angry' || opponentAgent.emotionalState.phase === 'confident'
+    const phaseRate: Record<string, number> = { phase3: 0.25, phase4: 0.15, phase5: 0.1 }
+    const baseRate = phaseRate[freshState.currentPhase] ?? 0.2
+    const probabilisticInterrupt = opponentAngry ? Math.random() < baseRate + 0.25 : Math.random() < baseRate
+
+    const shouldInterrupt = secretRevealed || blameShifted || probabilisticInterrupt
+
+    if (shouldInterrupt) {
+      // 끼어들기 유형에 따른 시스템 메시지
+      let interruptMsg: string
+      if (secretRevealed) {
+        interruptMsg = `💥 ${iga(opponentName)} 충격을 받고 끼어든다!`
+      } else if (blameShifted) {
+        interruptMsg = `😡 ${iga(opponentName)} 참지 못하고 반박한다!`
+      } else {
+        interruptMsg = `💬 ${iga(opponentName)} 참지 못하고 끼어든다!`
+      }
+
+      freshState.addDialogue({
+        speaker: 'system',
+        text: interruptMsg,
+        relatedDisputes: [action.disputeId],
+        turn: freshState.turnCount,
+      })
+
+      // 상대 반응 — 끼어들기 맥락을 프롬프트에 전달
+      const opponentAction: PlayerAction = {
+        type: 'question',
+        questionType: secretRevealed ? 'fact_pursuit' : action.questionType,
+        target: opponent,
+        disputeId: action.disputeId,
+      }
+      await resolveAndApply(opponentAction, opponent)
+    }
   }
 
-  state.incrementTurn()
+  useGameStore.getState().incrementTurn()
 }
 
 // ── 신뢰/보호 행동 ──
@@ -193,38 +407,70 @@ async function handleTrustAction(action: Extract<PlayerAction, { type: 'trust_ac
     }
   }
 
-  await resolveAndApply(action, action.target)
+  const isConfidential = action.actionType === 'confidential_protection'
+  await resolveAndApply(action, action.target, isConfidential)
 
-  state.incrementTurn()
+  useGameStore.getState().incrementTurn()
 }
 
 // ── 공통: LLM 또는 폴백으로 대사 해석 ──
-async function resolveAndApply(action: PlayerAction, target: PartyId) {
-  const state = useGameStore.getState()
+async function resolveAndApply(action: PlayerAction, target: PartyId, isConfidential = false) {
   let node: DialogueNode | null = null
+  const preState = useGameStore.getState()
 
-  if (useLLMMode && state.caseData) {
-    state.setLLMLoading(true)
+  if (useLLMMode && preState.caseData) {
+    preState.setLLMLoading(true, target)
     try {
+      // await 후 fresh state로 재로드
+      const freshState = useGameStore.getState()
       const result = await resolveLLMDialogue(
-        action, state.agentA, state.agentB, state.evidenceStates, state.caseData,
+        action, freshState.agentA, freshState.agentB, freshState.evidenceStates, freshState.caseData!,
       )
       if (result) node = result.node
     } catch {
       // LLM 실패 → 폴백
     }
-    state.setLLMLoading(false)
+    useGameStore.getState().setLLMLoading(false)
   }
 
   if (!node) {
-    const result = resolveDialogue(action, state.agentA, state.agentB, state.evidenceStates)
+    // LLM 실패 시 폴백: 재판관 질문이 아직 없으면 고정 템플릿 추가
+    const fallbackState = useGameStore.getState()
+    if (useLLMMode && action.type === 'question') {
+      const lastJudge = fallbackState.dialogueLog.slice(-3).find(d => d.speaker === 'judge')
+      if (!lastJudge || lastJudge.turn < fallbackState.turnCount) {
+        fallbackState.addDialogue({
+          speaker: 'judge',
+          text: buildQuestionText(action.questionType, action.target, action.disputeId),
+          relatedDisputes: [action.disputeId],
+          turn: fallbackState.turnCount,
+        })
+      }
+    }
+    const freshState = useGameStore.getState()
+    const result = resolveDialogue(action, freshState.agentA, freshState.agentB, freshState.evidenceStates)
     if (result) node = result.node
   }
 
-  if (node) applyDialogueNode(node, target)
+  // 폴백도 실패하면 범용 응답 생성
+  if (!node) {
+    const s = useGameStore.getState()
+    const name = target === 'a' ? s.caseData?.duo.partyA.name : s.caseData?.duo.partyB.name
+    s.addDialogue({
+      speaker: target,
+      text: `... ${eunneun(name ?? '당사자')} 할 말을 잃었다.`,
+      relatedDisputes: [],
+      turn: s.turnCount,
+      behaviorHint: '침묵하며 생각에 잠긴다.',
+      isConfidential,
+    })
+    return
+  }
+
+  applyDialogueNode(node, target, isConfidential)
 }
 
-function applyDialogueNode(node: DialogueNode, target: PartyId) {
+function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential = false) {
   const state = useGameStore.getState()
 
   state.addDialogue({
@@ -233,6 +479,7 @@ function applyDialogueNode(node: DialogueNode, target: PartyId) {
     relatedDisputes: node.conditions.disputeId ? [node.conditions.disputeId] : [],
     turn: state.turnCount,
     behaviorHint: node.behaviorHint,
+    isConfidential,
   })
 
   const effects = node.effects
@@ -246,6 +493,10 @@ function applyDialogueNode(node: DialogueNode, target: PartyId) {
     const evStates = state.evidenceStates
     if (evStates[effects.evidenceUnlock] && !evStates[effects.evidenceUnlock].unlocked) {
       state.presentEvidence(effects.evidenceUnlock, target)
+      // 비공개 보호 하에 해금된 증거에 confidentialSource 마킹
+      if (isConfidential) {
+        state.markEvidenceConfidential(effects.evidenceUnlock)
+      }
     }
   }
   if (effects.claimUpdate) {
@@ -256,8 +507,124 @@ function applyDialogueNode(node: DialogueNode, target: PartyId) {
       confidence: effects.claimUpdate.confidence,
       status: 'normal',
       turn: state.turnCount,
+      isConfidential,
     })
   }
+}
+
+/**
+ * 심문으로 인한 증거 발견.
+ * NPC 응답 이후 호출 — 진술 내용에서 증거 단서가 포착된 것처럼 연출.
+ * 거짓말 상태, 감정, 쟁점에 따라 발견 확률과 메시지가 달라짐.
+ */
+function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
+  const state = useGameStore.getState()
+  if (!state.caseData) return
+
+  const name = party === 'a' ? state.caseData.duo.partyA.name : state.caseData.duo.partyB.name
+  const agent = party === 'a' ? state.agentA : state.agentB
+  const lieEntry = agent.lieStateMap[disputeId]
+  const dispute = state.caseData.disputes.find(d => d.id === disputeId)
+
+  // 이 쟁점을 증명하는 잠긴 증거 찾기
+  const lockedRelated = state.evidenceDefinitions.filter(e => {
+    const rs = state.evidenceStates[e.id]
+    if (!rs || rs.unlocked) return false
+    return e.proves.includes(disputeId)
+  })
+
+  if (lockedRelated.length === 0) return
+
+  // 발견 확률: 거짓말 상태가 깊을수록 높음
+  const chanceByState: Record<string, number> = {
+    S0: 0.15, S1: 0.30, S2: 0.50, S3: 0.65, S4: 0.80, S5: 1.0,
+  }
+  const chance = chanceByState[lieEntry?.currentState ?? 'S0'] ?? 0.2
+  if (Math.random() > chance) return
+
+  const ev = lockedRelated[0]
+
+  // 증거 해금
+  useGameStore.setState((prev) => ({
+    evidenceStates: {
+      ...prev.evidenceStates,
+      [ev.id]: { ...prev.evidenceStates[ev.id], unlocked: true },
+    },
+  }))
+
+  // 증거 유형 + 거짓말 상태에 따른 개연성 있는 발견 메시지
+  const reason = getDiscoveryReason(ev, name, lieEntry?.currentState ?? 'S0', dispute?.name ?? '')
+
+  playEvidenceUnlock()
+  state.trackMetric('evidenceDiscovered')
+  state.addDialogue({
+    speaker: 'system',
+    text: reason,
+    relatedDisputes: ev.proves,
+    turn: state.turnCount,
+  })
+}
+
+/** 증거 유형 + 상황에 따른 발견 사유 메시지 생성 */
+function getDiscoveryReason(
+  ev: { name: string; type: string },
+  npcName: string,
+  lieState: string,
+  disputeName: string,
+): string {
+  // 거짓말 상태에 따른 발견 맥락
+  const context: Record<string, string> = {
+    S0: '말하다 실수로',
+    S1: '흔들리면서',
+    S2: '인정하다가',
+    S3: '상대 탓을 하다',
+    S4: '감정이 격해지며',
+    S5: '결국 인정하면서',
+  }
+  const ctxText = context[lieState] ?? '대화 중'
+
+  // 증거 유형별 발견 사유
+  const n = iga(npcName)
+  const typeReasons: Record<string, string[]> = {
+    bank:       [`${n} ${ctxText} 금전 거래를 언급했다`, `관련 금융 기록을 확보했다`],
+    chat:       [`${n} ${ctxText} 메시지 기록의 존재를 언급했다`, `해당 대화 내용을 확보했다`],
+    cctv:       [`${n} ${ctxText} 특정 장소를 언급했다`, `해당 위치의 영상 기록을 확보했다`],
+    contract:   [`${n} ${ctxText} 약속/계약을 언급했다`, `관련 문서를 확보했다`],
+    testimony:  [`${n} ${ctxText} 제3자를 언급했다`, `해당 인물의 증언을 확보했다`],
+    log:        [`${n} ${ctxText} 기록의 존재를 언급했다`, `관련 로그를 확보했다`],
+    device:     [`${n} ${ctxText} 기기 사용을 언급했다`, `해당 기기 데이터를 확보했다`],
+    sns:        [`${n} ${ctxText} SNS 활동을 언급했다`, `해당 게시물을 확보했다`],
+  }
+
+  const reasons = typeReasons[ev.type] ?? [`${npcName}의 진술에서 단서가 포착됐다`, `관련 자료를 확보했다`]
+
+  return `📎 ${reasons[0]} → ${reasons[1]}\n🔓 새 증거: ${ev.name}`
+}
+
+/** 회피 판독 결과 표시 — 해당 쟁점의 거짓말 불안정도 공개 */
+function showEvasionReadingResult(party: PartyId, disputeId: string) {
+  const state = useGameStore.getState()
+  if (!state.caseData) return
+  const agent = party === 'a' ? state.agentA : state.agentB
+  const name = party === 'a' ? state.caseData.duo.partyA.name : state.caseData.duo.partyB.name
+  const dispute = state.caseData.disputes.find(d => d.id === disputeId)
+  const lieEntry = agent.lieStateMap[disputeId]
+
+  if (!lieEntry || !dispute) return
+
+  const intensityLabel = (lieEntry as any).lieIntensity === 'L1' ? '매우 불안정'
+    : (lieEntry as any).lieIntensity === 'L2' ? '불안정'
+    : '강하게 방어 중'
+  const stateLabel: Record<string, string> = {
+    S0: '완강히 부정', S1: '동요 중', S2: '일부 인정', S3: '책임 전가', S4: '감정 호소', S5: '인정',
+  }
+
+  state.addDialogue({
+    speaker: 'system',
+    text: `🔍 ${name}의 속마음 — "${dispute.name}": ${intensityLabel}`,
+    relatedDisputes: [disputeId],
+    turn: state.turnCount,
+  })
 }
 
 function notifyLieTransition(party: PartyId, disputeId: string) {
@@ -266,43 +633,49 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
   const name = party === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name
   const dispute = state.caseData?.disputes.find((d) => d.id === disputeId)
   const newState = agent.lieStateMap[disputeId]?.currentState
+
+  // S4/S5에 도달하면 revealed 마킹
+  if (newState && (newState === 'S4' || newState === 'S5')) {
+    state.markRevealed(party, disputeId)
+  }
   const labels: Record<string, string> = {
-    S1: '동요하기 시작합니다', S2: '일부를 인정했습니다',
-    S3: '상대에게 책임을 돌리고 있습니다', S4: '감정적으로 호소하고 있습니다',
-    S5: '더 이상 부정하지 않습니다',
+    S1: '표정이 흔들린다!',
+    S2: '일부를 인정하기 시작했다!',
+    S3: '상대 탓을 하기 시작한다!',
+    S4: '감정에 호소하기 시작했다!',
+    S5: '결국 입을 열었다!',
   }
   if (newState && labels[newState]) {
     if (newState === 'S5') playLieCollapse()
-    state.addDialogue({ speaker: 'system', text: `⚡ ${name}이(가) "${dispute?.name}" 쟁점에서 ${labels[newState]}`, relatedDisputes: [disputeId], turn: state.turnCount })
+    const icon = newState >= 'S4' ? '💥' : '⚡'
+    state.addDialogue({ speaker: 'system', text: `${icon} ${name} — "${dispute?.name}" | ${labels[newState]}`, relatedDisputes: [disputeId], turn: state.turnCount })
   }
 }
 
-function questionTypeToTrigger(type: QuestionType): string {
-  const map: Record<QuestionType, string> = {
-    fact_fixing: 'direct_question', timeline: 'timeline_question', motive: 'motive_question',
-    context_expansion: 'context_question', provenance: 'provenance_question', empathy: 'empathy_question',
+function questionTypeToTrigger(type: QuestionType): string[] {
+  const map: Record<QuestionType, string[]> = {
+    fact_pursuit: ['direct_question', 'timeline_question'],
+    motive_search: ['motive_question', 'context_question'],
+    empathy_approach: ['empathy_question', 'provenance_question'],
   }
-  return map[type] ?? 'direct_question'
+  return map[type] ?? ['direct_question']
 }
 
 function applyTrustEffect(actionType: string, target: PartyId) {
   const s = useGameStore.getState()
   switch (actionType) {
     case 'confidential_protection': s.changeTrust(target, 'trustTowardJudge', 20); s.changeTrust(target, 'fearOfExposure', -15); break
-    case 'interruption_block':
+    case 'separation':
       // 분리심문: 조사 토큰 1 소모, 3턴간 상대 배제
       if (s.resources.investigationTokens >= 1) {
         s.spend('investigationTokens', 1)
         s.startSeparation(target, 3)
         s.changeTrust(target, 'retaliationWorry', -10)
-        s.addDialogue({ speaker: 'system', text: `🚪 분리심문이 시작됩니다. 3턴간 상대방이 배제됩니다.`, relatedDisputes: [], turn: s.turnCount })
+        s.addDialogue({ speaker: 'system', text: `🚪 분리 심문 시작 — 3턴간 상대방이 배제된다.`, relatedDisputes: [], turn: s.turnCount })
       } else {
         s.addDialogue({ speaker: 'system', text: `조사 토큰이 부족합니다.`, relatedDisputes: [], turn: s.turnCount })
       }
       break
-    case 'retaliation_check': s.changeTrust(target, 'retaliationWorry', -25); break
-    case 'emotional_stabilization': s.changeTrust(target, 'trustTowardJudge', 8); s.changeEmotion(target, -15); break
-    case 'pre_disclosure_consent': s.changeTrust(target, 'trustTowardJudge', 5); break
   }
 }
 
@@ -311,15 +684,52 @@ function buildQuestionText(type: QuestionType, target: PartyId, disputeId: strin
   const name = target === 'a' ? s.caseData?.duo.partyA.name : s.caseData?.duo.partyB.name
   const dispute = s.caseData?.disputes.find((d) => d.id === disputeId)
   const topic = dispute?.name ?? '해당 사안'
-  const t: Record<QuestionType, string> = {
-    fact_fixing: `${name} 씨, ${topic}에 대해 정확한 사실을 말씀해 주십시오.`,
-    timeline: `${name} 씨, ${topic} 당시 시간 순서를 정리해 주십시오.`,
-    motive: `${name} 씨, ${topic}에 대해 왜 그런 선택을 하셨습니까?`,
-    context_expansion: `${name} 씨, ${topic}의 전후 상황을 말씀해 주십시오.`,
-    provenance: `${name} 씨, 그 정보를 어디서 어떻게 알게 되셨습니까?`,
-    empathy: `${name} 씨, 말하기 어려우시면 천천히 하셔도 됩니다.`,
+  const agent = target === 'a' ? s.agentA : s.agentB
+  const lieEntry = agent.lieStateMap[disputeId]
+  const lieState = lieEntry?.currentState ?? 'S0'
+  const turn = s.turnCount
+
+  // 상황에 따라 다양한 질문 생성
+  const factQuestions = [
+    `${name} 씨, ${topic}에 대해 사실대로 말씀해 주십시오.`,
+    `${name} 씨, ${topic}에 대해 정확히 어떤 일이 있었습니까?`,
+    `${name} 씨, 아까 ${topic} 관련해서 하신 말씀, 좀 더 자세히 설명해 주시겠습니까?`,
+    `${name} 씨, ${topic}에 대해 빠뜨린 부분이 있지 않습니까?`,
+    `${name} 씨, 방금 말씀하신 내용과 ${topic}이 어떻게 연결됩니까?`,
+  ]
+  const motiveQuestions = [
+    `${name} 씨, ${topic}에 대해 왜 그런 선택을 하셨습니까?`,
+    `${name} 씨, ${topic} 당시 어떤 사정이 있었는지 말씀해 주십시오.`,
+    `${name} 씨, ${topic}을 그렇게 처리한 이유가 있을 텐데요?`,
+    `${name} 씨, 그때 다른 방법은 없었습니까? 왜 하필 그렇게 하셨는지요.`,
+    `${name} 씨, ${topic}의 배경을 좀 더 설명해 주시겠습니까?`,
+  ]
+  const empathyQuestions = [
+    `${name} 씨, ${topic}에 대해 말하기 어려우시면 천천히 하셔도 됩니다.`,
+    `${name} 씨, ${topic} 당시 심정이 어떠셨는지 편하게 말씀해 주세요.`,
+    `${name} 씨, ${topic}으로 많이 힘드셨을 것 같습니다. 괜찮으시면 말씀해 주세요.`,
+    `${name} 씨, 이 부분은 민감할 수 있지만, ${topic}에 대한 솔직한 마음을 듣고 싶습니다.`,
+    `${name} 씨, 지금까지 말씀 잘 들었습니다. ${topic}에 대해 한 가지만 더 여쭤봐도 될까요?`,
+  ]
+
+  // lie state에 따라 강도 조절
+  const pool = type === 'fact_pursuit' ? factQuestions
+    : type === 'motive_search' ? motiveQuestions
+    : empathyQuestions
+
+  // 턴 + lieState 기반으로 변형 선택 (같은 쟁점 재질문 시 다른 문장)
+  const idx = (turn + disputeId.charCodeAt(disputeId.length - 1)) % pool.length
+  let question = pool[idx]
+
+  // S3 이상(책임전가/감정호소)에서는 더 강하게
+  if (lieState >= 'S3' && type === 'fact_pursuit') {
+    question = `${name} 씨, 계속 돌려 말씀하시는데, ${topic}에 대해 정직하게 답해 주십시오.`
   }
-  return t[type]
+  if (lieState >= 'S3' && type === 'motive_search') {
+    question = `${name} 씨, 상대방 탓만 하지 마시고, ${topic}에 대한 본인의 책임을 말씀해 주십시오.`
+  }
+
+  return question
 }
 
 function buildTrustActionText(actionType: string, target: PartyId): string {
@@ -327,10 +737,7 @@ function buildTrustActionText(actionType: string, target: PartyId): string {
   const name = target === 'a' ? s.caseData?.duo.partyA.name : s.caseData?.duo.partyB.name
   const t: Record<string, string> = {
     confidential_protection: `${name} 씨, 지금 하시는 말씀은 상대방에게 공개하지 않겠습니다.`,
-    interruption_block: `상대측은 발언을 중단해 주십시오.`,
-    retaliation_check: `${name} 씨, 말씀하신 후 불이익이 걱정되시나요?`,
-    emotional_stabilization: `잠시 진정하시고. 준비되시면 천천히 말씀해 주십시오.`,
-    pre_disclosure_consent: `${name} 씨, 이 내용을 공개해도 괜찮겠습니까?`,
+    separation: `상대측은 발언을 중단해 주십시오.`,
   }
   return t[actionType] ?? ''
 }

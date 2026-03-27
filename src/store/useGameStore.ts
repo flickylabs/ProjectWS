@@ -5,18 +5,37 @@ import { createResourceSlice, type ResourceSlice } from './slices/resourceSlice'
 import { createEvidenceSlice, type EvidenceSlice } from './slices/evidenceSlice'
 import { createDialogueSlice, type DialogueSlice } from './slices/dialogueSlice'
 import { createVerdictSlice, type VerdictSlice } from './slices/verdictSlice'
-import type { CaseData } from '../types'
+import type { CaseData, ProcessMetrics } from '../types'
+import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
+
+const EMPTY_METRICS: ProcessMetrics = {
+  questionsAsked: 0, lieTransitions: 0, liesCollapsed: 0,
+  evidenceDiscovered: 0, evidenceEffective: 0, skillsUsedEffective: 0,
+  freeQuestionsRelevant: 0, togglesUsed: 0, bothSidesQuestioned: false, confidentialUsed: 0,
+}
 
 export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
-  setLLMLoading: (loading: boolean) => void
+  llmLoadingTarget: 'a' | 'b' | null
+  setLLMLoading: (loading: boolean, target?: 'a' | 'b') => void
   separationTarget: 'a' | 'b' | null
   separationTurns: number
   startSeparation: (target: 'a' | 'b', turns: number) => void
   tickSeparation: () => void
+  processMetrics: ProcessMetrics
+  trackMetric: (key: keyof ProcessMetrics, delta?: number) => void
+  testimonyAnalysis: TestimonyAnalysis | null
+  setTestimonyAnalysis: (analysis: TestimonyAnalysis | null) => void
+  calledWitnesses: string[]
+  addCalledWitness: (witnessId: string) => void
+  /** 심문 이력: party → disputeId → 질문 기록 */
+  interrogationHistory: Record<string, Record<string, { questionTypes: string[]; turns: number[]; revealed: boolean }>>
+  trackInterrogation: (party: 'a' | 'b', disputeId: string, questionType: string, turn: number) => void
+  markRevealed: (party: 'a' | 'b', disputeId: string) => void
+  getInterrogationContext: (party: 'a' | 'b', disputeId: string) => { firstTime: boolean; previousTypes: string[]; otherPartyAsked: boolean; otherPartyRevealed: boolean }
   initializeCase: (caseData: CaseData) => void
 }
 
@@ -34,10 +53,58 @@ export const useGameStore = create<GameStore>()((...args) => {
     caseData: null,
     lieConfigs: null,
     isLLMLoading: false,
-    setLLMLoading: (loading: boolean) => set({ isLLMLoading: loading }),
+    llmLoadingTarget: null,
+    setLLMLoading: (loading: boolean, target?: 'a' | 'b') => set({ isLLMLoading: loading, llmLoadingTarget: loading ? (target ?? null) : null }),
     separationTarget: null,
     separationTurns: 0,
     startSeparation: (target, turns) => set({ separationTarget: target, separationTurns: turns }),
+    processMetrics: { ...EMPTY_METRICS },
+    testimonyAnalysis: null,
+    setTestimonyAnalysis: (analysis) => set({ testimonyAnalysis: analysis }),
+    calledWitnesses: [],
+    addCalledWitness: (witnessId) => set((prev) => ({ calledWitnesses: [...prev.calledWitnesses, witnessId] })),
+
+    interrogationHistory: { a: {}, b: {} },
+    trackInterrogation: (party, disputeId, questionType, turn) => set((prev) => {
+      const h = { ...prev.interrogationHistory }
+      const ph = { ...h[party] }
+      const entry = ph[disputeId] ?? { questionTypes: [], turns: [], revealed: false }
+      ph[disputeId] = {
+        ...entry,
+        questionTypes: [...entry.questionTypes, questionType],
+        turns: [...entry.turns, turn],
+      }
+      h[party] = ph
+      return { interrogationHistory: h }
+    }),
+    markRevealed: (party, disputeId) => set((prev) => {
+      const h = { ...prev.interrogationHistory }
+      const ph = { ...h[party] }
+      const entry = ph[disputeId] ?? { questionTypes: [], turns: [], revealed: false }
+      ph[disputeId] = { ...entry, revealed: true }
+      h[party] = ph
+      return { interrogationHistory: h }
+    }),
+    getInterrogationContext: (party, disputeId) => {
+      const h = useGameStore.getState().interrogationHistory
+      const myHistory = h[party]?.[disputeId]
+      const otherParty = party === 'a' ? 'b' : 'a'
+      const otherHistory = h[otherParty]?.[disputeId]
+      return {
+        firstTime: !myHistory || myHistory.questionTypes.length === 0,
+        previousTypes: myHistory?.questionTypes ?? [],
+        otherPartyAsked: !!otherHistory && otherHistory.questionTypes.length > 0,
+        otherPartyRevealed: !!otherHistory?.revealed,
+      }
+    },
+    trackMetric: (key, delta = 1) => {
+      set((prev) => {
+        const m = { ...prev.processMetrics }
+        if (typeof m[key] === 'boolean') { (m as any)[key] = true }
+        else { (m as any)[key] = (m[key] as number) + delta }
+        return { processMetrics: m }
+      })
+    },
     tickSeparation: () => {
       const s = useGameStore.getState()
       if (s.separationTurns <= 1) {
@@ -50,8 +117,19 @@ export const useGameStore = create<GameStore>()((...args) => {
     initializeCase: (caseData: CaseData) => {
       const store = useGameStore.getState()
 
-      // 사건 데이터 저장
-      set({ caseData, lieConfigs: { a: caseData.lieConfigA, b: caseData.lieConfigB } })
+      // 사건 데이터 최소 검증
+      if (!caseData.disputes || caseData.disputes.length === 0) {
+        console.error('[Solomon] 사건에 쟁점이 없습니다:', caseData.caseId)
+      }
+      if (!caseData.evidence) {
+        caseData.evidence = []
+      }
+      if (!caseData.evidenceCombinations) {
+        caseData.evidenceCombinations = []
+      }
+
+      // 사건 데이터 저장 + 분리심문 초기화
+      set({ caseData, lieConfigs: { a: caseData.lieConfigA, b: caseData.lieConfigB }, separationTarget: null, separationTurns: 0, isLLMLoading: false, processMetrics: { ...EMPTY_METRICS }, testimonyAnalysis: null, calledWitnesses: [], interrogationHistory: { a: {}, b: {} } })
 
       // Phase 초기화
       store.setPhase(GamePhase.Phase0_CaseIntro)

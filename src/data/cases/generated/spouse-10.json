@@ -1,613 +1,659 @@
 {
-"caseId": "case-spouse-10",
-"meta": {
-"relationshipType": "spouse",
-"conflictSeed": "CS-6",
-"variableModules": [
-"VM-C"
-],
-"twistModule": null,
-"difficulty": "easy",
-"anchorTruth": "남기현의 일방적 점심 약속과 배수아의 모호한 '본가' 일정표가 겹치며, 명절 방문 불발은 배신이 아니라 용어 오해와 최종 확인 부재에서 생겼다.",
-"emotionalBait": "기현이 자기 부모 집 선물만 챙기고 장인댁 연락을 늦춘 기록이 먼저 보이면서, 일부러 한쪽 집 약속을 버린 것처럼 보인다.",
-"resolutionDilemma": "한쪽은 실제 시간을 부모에게 말해 버렸고 다른 쪽은 배우자가 당연히 알아들을 표현이라고 믿었기 때문에, 누가 더 크게 사과하고 어떤 기준으로 다음 명절 순서를 정할지 애매하다."
-},
-"duo": {
-"partyA": {
-"name": "배수아",
-"age": 33,
-"occupation": "초등학교 사서",
-"incomeBracket": "mid",
-"archetype": "schedule_literalist",
-"speechStyle": "달력과 문자 문구를 기준으로 약속의 존재를 판단한다. 감정이 올라오면 상대가 한 표현을 거의 그대로 반복하며 자신이 왜 그렇게 이해했는지 설명한다.",
-"pride": 6,
-"fear": "양가 중 한쪽에 예의 없는 며느리로 보이거나 약속 정리를 못 하는 사람처럼 보이는 것",
-"riskAppetite": 3,
-"digitalHabit": "shared_calendar_main",
-"dailyRoutine": "아침에는 학교 업무 준비를 하고, 퇴근길에는 장보기와 선물 확인을 하며, 밤에는 공유캘린더와 가족 단톡 일정을 다시 맞춰 본다.",
-"sensitivePoints": [
-"정확한 약속 문구",
-"친정 부모 일정",
-"늦은 변경 통보"
-],
-"verbalTells": [
-{
-"type": "quote_readback",
-"trigger": "lying",
-"pattern": "불리해지면 자신이 보낸 문장을 그대로 다시 읽으며 그 표현 자체는 틀리지 않았다고 버틴다."
-},
-{
-"type": "term_fixation",
-"trigger": "defensive",
-"pattern": "'본가라고 썼지 네 집이라고 안 썼잖아'처럼 단어 뜻싸움으로 논점을 좁힌다."
-},
-{
-"type": "silent_assumption",
-"trigger": "cornered",
-"pattern": "직접 확인을 안 한 이유를 묻는 질문에 '그건 당연히 그렇게 읽히는 줄 알았지'라고 답한다."
-}
-]
-},
-"partyB": {
-"name": "남기현",
-"age": 35,
-"occupation": "소방설비 영업기사",
-"incomeBracket": "mid",
-"archetype": "spoken_assumer",
-"speechStyle": "분위기상 오간 말을 곧 합의로 받아들인다. 일정 확인을 번거롭게 느껴서 '그 정도면 된 거 아니야'라고 정리하려 한다.",
-"pride": 6,
-"fear": "양가 눈치를 동시에 보는 우유부단한 사람으로 보이는 것",
-"riskAppetite": 5,
-"digitalHabit": "voice_note_first",
-"dailyRoutine": "오전에는 거래처를 돌고, 오후에는 현장 점검을 보며, 퇴근 후에는 차 안에서 부모와 배우자에게 짧은 음성메시지를 남긴다.",
-"sensitivePoints": [
-"어머니의 식사 약속",
-"교통 체증",
-"자신이 대충 산다고 보이는 일"
-],
-"verbalTells": [
-{
-"type": "mood_confirmation",
-"trigger": "lying",
-"pattern": "확정 여부를 묻는 질문에 '그 분위기였잖아'라며 기분을 합의처럼 말한다."
-},
-{
-"type": "time_blur",
-"trigger": "cornered",
-"pattern": "'점심쯤' '오전쯤' 같은 뭉툭한 시간을 써서 실제 약속 강도를 흐린다."
-},
-{
-"type": "question_flip",
-"trigger": "hurt",
-"pattern": "자신의 일방 약속을 추궁받으면 '그럼 넌 왜 본가라고만 적었는데?'라고 되묻는다."
-}
-]
-},
-"relationshipLedger": [
-{
-"id": "ledger-1",
-"category": "confirmed",
-"description": "결혼 후 두 사람은 큰 명절에는 첫 방문 우선순위를 번갈아 가질 수 있다고 합의했지만, 반나절 분할이나 같은 날 양가 방문 표현까지는 정하지 않았다.",
-"isReal": true,
-"whoRemembersAccurately": "both",
-"whoDistorts": "none",
-"distortionDirection": "",
-"currentlyResolved": "surface_only",
-"emotionalResidue": "strong",
-"connectionToCurrent": "direct"
-},
-{
-"id": "ledger-2",
-"category": "distorted",
-"description": "지난 어버이날 기현 부모 집에 40분 늦게 도착했던 일을 두 사람은 서로 다른 원인으로 기억한다.",
-"isReal": true,
-"whoRemembersAccurately": "both",
-"whoDistorts": "both",
-"distortionDirection": "A: '그때도 네가 확인을 안 했다' / B: '그때는 교통만 꼬인 거였다'",
-"currentlyResolved": "unresolved",
-"emotionalResidue": "mild",
-"connectionToCurrent": "indirect"
-},
-{
-"id": "ledger-3",
-"category": "silenced",
-"description": "수아는 기현이 자기 가족과 관련된 세부 조율을 자꾸 흐린다고 느끼고, 기현은 수아가 친정 쪽 표현을 자기에게도 통하는 기본 언어처럼 쓰는 게 불편하지만 크게 말하지 않았다.",
-"isReal": true,
-"whoRemembersAccurately": "both",
-"whoDistorts": "none",
-"distortionDirection": "",
-"currentlyResolved": "surface_only",
-"emotionalResidue": "strong",
-"connectionToCurrent": "direct"
-}
-],
-"socialGraph": [
-{
-"id": "tp-1",
-"slot": "family_1",
-"name": "박영란 (기현의 어머니)",
-"relationTo": "b",
-"knowledgeScope": "기현이 토요일 점심 무렵 먼저 오겠다고 말하며 식사 시간을 사실상 확정한 과정을 안다.",
-"witnessedDirectly": true,
-"bias": "pro_b",
-"distortionRisk": "unconscious"
-},
-{
-"id": "tp-2",
-"slot": "acquaintance_1",
-"name": "최은비 (수아의 직장 동료)",
-"relationTo": "a",
-"knowledgeScope": "수아가 평소 자신의 친정집을 '본가'라고 자주 부른다는 언어 습관을 알고 있다.",
-"witnessedDirectly": false,
-"bias": "pro_a",
-"distortionRisk": "accurate"
-},
-{
-"id": "tp-3",
-"slot": "institutional",
-"name": "최민규 (백화점 명절 선물 픽업센터 매니저)",
-"relationTo": "both",
-"knowledgeScope": "두 사람이 서로 다른 시간대에 각자 다른 부모 집 명의로 선물 픽업을 예약한 사실을 원본 주문기록으로 확인할 수 있다.",
-"witnessedDirectly": true,
-"bias": "neutral",
-"distortionRisk": "accurate"
-}
-]
-},
-"context": {
-"contextType": "holiday_visit",
-"description": "설 연휴 첫날, 두 사람은 하루 안에 양가를 모두 들르려 했지만 표현과 확인 방식이 달랐다. 수아는 공유캘린더에 '토 11시 본가'라고 적어 두고 친정 먼저라고 생각했고, 기현은 며칠 전 음성메시지에서 오간 '가까운 쪽 먼저'를 자기 부모 집 점심 약속으로 받아들였다. 각자 선물까지 준비한 상태에서 서로가 이미 같은 계획을 알고 있다고 믿었고, 막상 출발 직전에야 다른 그림이었다는 사실을 알게 됐다.",
-"emotionalPressure": 5,
-"affects": "both",
-"triggerAmplifier": "명절이라는 특성상 한쪽 부모에게 한 번 실수하면 단순 일정 문제가 아니라 예의와 서열의 문제처럼 읽히기 쉬워 작은 오해가 빠르게 서운함으로 커졌다."
-},
-"disputes": [
-{
-"id": "d-1",
-"name": "기현의 일방적 점심 확정 약속",
-"truth": true,
-"truthDescription": "기현은 수아와 최종 확인하지 않은 채 어머니에게 토요일 점심 방문을 사실상 확정처럼 전달하고 식사 준비를 부탁했다.",
-"quadrant": "b_only",
-"requiredEvidence": [
-"e-1"
-],
-"correctResponsibility": {
-"a": 25,
-"b": 75
-},
-"ambiguity": "none",
-"weight": "medium",
-"mediationLink": "방문확정규칙",
-"legitimacyIssue": false
-},
-{
-"id": "d-2",
-"name": "수아의 모호한 '본가' 일정표와 직접 확인 누락",
-"truth": true,
-"truthDescription": "수아는 공유캘린더와 음성메시지에서 '본가'와 '가까운 쪽 먼저' 같은 모호한 표현을 쓰고도 기현이 친정 먼저라고 당연히 이해했을 것이라 가정했다.",
-"quadrant": "a_only",
-"requiredEvidence": [
-"e-2",
-"e-5"
-],
-"correctResponsibility": {
-"a": 70,
-"b": 30
-},
-"ambiguity": "none",
-"weight": "medium",
-"mediationLink": "방문확정규칙",
-"legitimacyIssue": false
-},
-{
-"id": "d-3",
-"name": "기현이 장인댁 약속을 일부러 무시했는가",
-"truth": false,
-"truthDescription": "기현은 장인댁을 일부러 무시한 것이 아니라, 같은 표현을 다르게 이해한 채 자기 부모 점심을 먼저라는 일정으로 착각하고 움직였다.",
-"quadrant": "shared_misconception",
-"requiredEvidence": [
-"e-4",
-"e-5"
-],
-"correctResponsibility": {
-"a": 60,
-"b": 40
-},
-"ambiguity": "low",
-"weight": "medium",
-"mediationLink": "오해정리",
-"legitimacyIssue": false
-},
-{
-"id": "d-4",
-"name": "양가보다 배우자 최종 확인이 늦었다",
-"truth": true,
-"truthDescription": "두 사람 모두 명절 선물과 부모 집 방문 시간을 각자 준비하면서도 정작 배우자에게는 최종 확정 메시지를 늦게 보내 양가보다 서로가 나중에 알게 됐다.",
-"quadrant": "both_know",
-"requiredEvidence": [
-"e-1",
-"e-2",
-"e-6"
-],
-"correctResponsibility": {
-"a": 50,
-"b": 50
-},
-"ambiguity": "none",
-"weight": "medium",
-"mediationLink": "부부우선확인",
-"legitimacyIssue": false
-},
-{
-"id": "d-5",
-"name": "이번 파행은 악의보다 모호한 표현과 이동시간 오판의 결과였다",
-"truth": true,
-"truthDescription": "실제 파행은 '본가', '먼저', '점심쯤' 같은 모호한 표현과, 같은 날 양가를 모두 돌 수 있다는 이동시간 계산 착각이 합쳐져 벌어진 일이었다.",
-"quadrant": "neither_knows",
-"requiredEvidence": [
-"e-4",
-"e-5",
-"e-6"
-],
-"correctResponsibility": {
-"a": 50,
-"b": 50
-},
-"ambiguity": "none",
-"weight": "high",
-"mediationLink": "명절운영",
-"legitimacyIssue": false
-}
-],
-"evidence": [
-{
-"id": "e-1",
-"name": "기현-어머니 가족 단톡과 과일상자 픽업 예약",
-"description": "기현이 어머니에게 '토 점심쯤 먼저 갈게요'라고 보낸 단톡 메시지와, 같은 날 오전 기현 명의로 예약된 과일상자 픽업 내역이다.",
-"type": "chat",
-"reliability": "hard",
-"completeness": "original",
-"provenance": "mixed",
-"legitimacy": "lawful",
-"proves": [
-"d-1",
-"d-4"
-],
-"isTrap": false,
-"requires": [],
-"investigationResults": {
-"request_original": "가족 단톡 원문과 백화점 픽업 예약 원본이 함께 제출됐다.",
-"check_metadata": "단톡 메시지는 명절 전날 밤 8시 11분, 픽업 예약은 그 다음 날 오전 9시 03분으로 이어진다.",
-"restore_context": "기현은 점심 방문을 가능성 수준이 아니라 준비 가능한 일정처럼 전달했다.",
-"verify_source": "단톡 참여자 두 명의 백업본과 백화점 주문번호가 일치한다.",
-"check_edits": "삭제나 크롭 흔적이 없다.",
-"question_acquisition": "가족 단톡 참여자와 주문 당사자 자료라 절차상 문제는 적다."
-}
-},
-{
-"id": "e-2",
-"name": "공유캘린더 버전 이력",
-"description": "수아가 입력한 '토 11시 본가'와 '일 오후 어머님댁' 일정이 보이는 공유캘린더 원본 이력이다.",
-"type": "cloud_log",
-"reliability": "hard",
-"completeness": "original",
-"provenance": "platform",
-"legitimacy": "lawful",
-"proves": [
-"d-2",
-"d-4"
-],
-"isTrap": false,
-"requires": [],
-"investigationResults": {
-"request_original": "캘린더 서버 버전 이력과 각 기기 동기화 기록이 함께 제출됐다.",
-"check_metadata": "해당 일정 입력은 명절 이틀 전 밤이며, 이후 수아 쪽에서는 수정 없이 유지됐다.",
-"restore_context": "일정명은 구체 시간만 있을 뿐 어느 집을 뜻하는지 명시돼 있지 않아 해석 여지가 남는다.",
-"verify_source": "플랫폼 관리자 로그와 두 사람 기기 동기화 시각이 일치한다.",
-"check_edits": "서버 원본이라 수동 편집 흔적이 없다.",
-"question_acquisition": "공유캘린더 자료이므로 공동 열람 범위 내에서 적법하다."
-}
-},
-{
-"id": "e-3",
-"name": "수아가 저장한 이모의 섭섭 메시지 캡처",
-"description": "수아 친정 이모가 '점심 차려 놓고 기다렸다'고 보낸 섭섭 메시지 캡처다.",
-"type": "chat",
-"reliability": "soft",
-"completeness": "cropped",
-"provenance": "third_party",
-"legitimacy": "lawful",
-"proves": [
-"d-3",
-"d-4"
-],
-"isTrap": true,
-"requires": [],
-"investigationResults": {
-"request_original": "문제가 된 메시지만 있고 앞뒤 대화는 없다.",
-"check_metadata": "캡처 생성 시각은 실제 출발 지연이 발생한 뒤 34분 후다.",
-"restore_context": "이 메시지는 결과적 서운함을 보여 줄 뿐, 누가 먼저 어떤 약속을 확정했는지는 단독으로 증명하지 못한다.",
-"verify_source": "이모 측과 수아 측 기기에서 같은 문구가 확인된다.",
-"check_edits": "문구 합성 흔적은 없지만 앞뒤 문맥이 잘린 선택적 캡처다.",
-"question_acquisition": "가족 대화 참여자의 제공 자료로 위법성은 낮다."
-}
-},
-{
-"id": "e-4",
-"name": "통화기록과 하이패스·주차 이력",
-"description": "출발 직전 두 사람이 서로 통화한 시각, 그리고 차량이 어느 방향으로 먼저 이동했는지를 보여 주는 하이패스 및 주차 이력이다.",
-"type": "access_log",
-"reliability": "hard",
-"completeness": "original",
-"provenance": "mixed",
-"legitimacy": "lawful",
-"proves": [
-"d-3",
-"d-5"
-],
-"isTrap": false,
-"requires": [],
-"investigationResults": {
-"request_original": "통신사 통화기록과 하이패스 조회, 주차 정산 내역이 함께 제출됐다.",
-"check_metadata": "최종 통화는 출발 7분 전에 이뤄졌고, 이후 차량은 각자 다른 방향으로 먼저 움직였다.",
-"restore_context": "누구도 상대 집 약속을 의도적으로 깨기 위해 움직였다기보다 이미 서로 다른 확정안을 머리에 두고 출발한 흐름이 확인된다.",
-"verify_source": "통신사 기록과 교통 로그 시간이 분 단위까지 맞아떨어진다.",
-"check_edits": "기관 조회본이라 편집 흔적이 없다.",
-"question_acquisition": "본인 명의 차량과 통화기록만 최소 범위로 확인했다."
-}
-},
-{
-"id": "e-5",
-"name": "부부 음성메시지와 메신저 대화",
-"description": "수아가 '이번엔 가까운 쪽 먼저 가자'고 남긴 음성메시지와, 기현이 '응, 본가부터'라고 답한 메신저 대화다.",
-"type": "audio",
-"reliability": "soft",
-"completeness": "original",
-"provenance": "personal_device",
-"legitimacy": "lawful",
-"proves": [
-"d-2",
-"d-3",
-"d-5"
-],
-"isTrap": false,
-"requires": [],
-"investigationResults": {
-"request_original": "음성메시지 원본과 메신저 서버 백업이 함께 제출됐다.",
-"check_metadata": "음성메시지는 명절 사흘 전, 답장은 그날 저녁 2시간 뒤에 전송됐다.",
-"restore_context": "양쪽 모두 어느 집을 지칭하는지 구체 명칭을 쓰지 않아, 같은 표현을 서로 다르게 해석할 여지가 컸다.",
-"verify_source": "기기 원본과 서버 백업 해시가 일치한다.",
-"check_edits": "후편집 흔적은 없고 연속 대화 흐름이 유지된다.",
-"question_acquisition": "부부 당사자 대화 자료로 적법하다."
-}
-},
-{
-"id": "e-6",
-"name": "두 집 선물세트 픽업 내역과 수령 메모",
-"description": "기현은 자기 부모 집용 과일상자, 수아는 친정용 한과세트를 각각 예약해 둔 내역과 수령 메모다.",
-"type": "document",
-"reliability": "hard",
-"completeness": "original",
-"provenance": "mixed",
-"legitimacy": "lawful",
-"proves": [
-"d-4",
-"d-5"
-],
-"isTrap": false,
-"requires": [],
-"investigationResults": {
-"request_original": "두 주문서 원본과 수령 메모가 함께 제출됐다.",
-"check_metadata": "각 주문은 서로 5시간 차로 예약됐고, 수령처 메모에는 각기 다른 부모 집 주소가 남아 있다.",
-"restore_context": "두 사람 모두 각자 부모 집 방문을 실제 일정으로 준비했지만 서로의 준비 내용을 최종 확인하지 않았다.",
-"verify_source": "백화점 주문 시스템과 카드 승인 기록이 일치한다.",
-"check_edits": "기관 발급 주문서라 조작 흔적이 없다.",
-"question_acquisition": "본인 주문 내역과 수령 메모 자료다."
-}
-}
-],
-"evidenceCombinations": [
-{
-"requires": [
-"e-2",
-"e-5"
-],
-"upgradesTo": "hard",
-"proves": [
-"d-2",
-"d-5"
-]
-}
-],
-"truthTable": [
-{
-"id": "t-1",
-"fact": "기현은 배우자와 최종 확인하기 전에 자기 어머니에게 토요일 점심 방문을 확정처럼 말했다.",
-"isTrue": true,
-"weight": 8,
-"quadrant": "b_only"
-},
-{
-"id": "t-2",
-"fact": "수아는 '본가'와 '가까운 쪽 먼저' 같은 모호한 표현을 써 놓고도 직접 확인하지 않았다.",
-"isTrue": true,
-"weight": 8,
-"quadrant": "a_only"
-},
-{
-"id": "t-3",
-"fact": "기현이 장인댁 약속을 일부러 무시한 것은 아니고, 서로 다른 일정 해석을 따라 움직인 결과였다.",
-"isTrue": true,
-"weight": 9,
-"quadrant": "shared_misconception"
-},
-{
-"id": "t-4",
-"fact": "두 사람 모두 양가보다 서로에게 최종 확정 메시지를 늦게 보냈다.",
-"isTrue": true,
-"weight": 7,
-"quadrant": "both_know"
-},
-{
-"id": "t-5",
-"fact": "이번 파행의 핵심 원인은 악의가 아니라 모호한 표현과 이동시간 오판이었다.",
-"isTrue": true,
-"weight": 10,
-"quadrant": "neither_knows"
-}
-],
-"lieConfigA": [
-{
-"disputeId": "d-2",
-"lieType": "LT-2",
-"lieIntensity": "L1",
-"lieMotive": "face_saving",
-"initialState": "S0",
-"collapseViaTrust": false,
-"transitions": [
-{
-"from": "S0",
-"to": "S1",
-"trigger": "calendar_wording_question"
-},
-{
-"from": "S1",
-"to": "S2",
-"trigger": "e-2_presented"
-},
-{
-"from": "S2",
-"to": "S3",
-"trigger": "what_did_you_mean_by_bonga"
-},
-{
-"from": "S3",
-"to": "S5",
-"trigger": "e-5_or_responsibility_question"
-}
-]
-},
-{
-"disputeId": "d-3",
-"lieType": "LT-4",
-"lieIntensity": "L1",
-"lieMotive": "hurt",
-"initialState": "S0",
-"collapseViaTrust": false,
-"transitions": [
-{
-"from": "S0",
-"to": "S1",
-"trigger": "intentional_snub_question"
-},
-{
-"from": "S1",
-"to": "S2",
-"trigger": "e-4_presented"
-},
-{
-"from": "S2",
-"to": "S3",
-"trigger": "voice_message_followup"
-},
-{
-"from": "S3",
-"to": "S5",
-"trigger": "shared_misunderstanding_question"
-}
-]
-}
-],
-"lieConfigB": [
-{
-"disputeId": "d-1",
-"lieType": "LT-2",
-"lieIntensity": "L1",
-"lieMotive": "face_saving",
-"initialState": "S0",
-"collapseViaTrust": false,
-"transitions": [
-{
-"from": "S0",
-"to": "S1",
-"trigger": "did_you_confirm_lunch_question"
-},
-{
-"from": "S1",
-"to": "S2",
-"trigger": "e-1_presented"
-},
-{
-"from": "S2",
-"to": "S3",
-"trigger": "did_you_tell_your_spouse_followup"
-},
-{
-"from": "S3",
-"to": "S5",
-"trigger": "responsibility_question"
-}
-]
-},
-{
-"disputeId": "d-5",
-"lieType": "LT-7",
-"lieIntensity": "L1",
-"lieMotive": "relationship_maintenance",
-"initialState": "S0",
-"collapseViaTrust": true,
-"transitions": [
-{
-"from": "S0",
-"to": "S1",
-"trigger": "overall_cause_question"
-},
-{
-"from": "S1",
-"to": "S2",
-"trigger": "small_admission_about_rushing"
-},
-{
-"from": "S2",
-"to": "S3",
-"trigger": "travel_time_followup"
-},
-{
-"from": "S3",
-"to": "S5",
-"trigger": "e-5_or_e-6_presented"
-}
-]
-}
-],
-"solutions": {
-"방문확정규칙": [
-"명절 방문은 '누구 집, 몇 시, 식사 포함 여부'까지 한 문장으로 정리한 뒤 부모에게 전달한다.",
-"공유캘린더에는 '본가' 같은 내부 표현 대신 '기현 부모님댁', '수아 친정'처럼 제3자가 봐도 같은 뜻인 표기만 쓴다.",
-"한쪽이 부모에게 먼저 시간을 말했으면 그날 안에 배우자에게 스크린샷으로 공유하고 미확정이면 다시 수정한다."
-],
-"명절운영": [
-"같은 날 양가를 모두 도는 일정은 이동시간에 최소 30분 완충을 넣고, 식사 약속은 한쪽만 확정한다.",
-"반나절 분할 명절은 출발 전날 밤 한 번 더 통화로 최종 동선을 확인한다.",
-"명절마다 순서를 새로 추측하지 말고 번갈이 우선권 규칙과 예외 조건을 연간 메모로 남긴다."
-],
-"오해정리": [
-"양가 부모에게는 누가 일부러 무시한 것이 아니라 표현 오해였다는 사실을 같은 문장으로 짧게 설명한다.",
-"섭섭한 메시지를 중계하기 전에 먼저 배우자와 해석 차이를 확인하고, 가족 감정을 증거처럼 쓰지 않는다.",
-"단어 뜻싸움이 시작되면 그날은 의도 단정 대신 실제 보낸 문장과 확정 여부만 확인한다."
-],
-"부부우선확인": [
-"부모에게 알리기 전 배우자에게 최종 확인을 먼저 보내는 순서를 원칙으로 한다.",
-"명절 선물 주문과 식사 예약은 둘이 함께 보는 한 채널에만 남긴다.",
-"부부 확인보다 가족 통보가 앞선 일이 반복되면 다음 명절 계획은 한쪽이 단독으로 부모와 약속하지 못하게 한다."
-]
-},
-"activeLedgerEntries": [
-"ledger-1",
-"ledger-3"
-],
-"activeThirdParties": [
-"tp-1",
-"tp-3"
-]
+  "caseId": "case-spouse-10",
+  "meta": {
+    "relationshipType": "spouse",
+    "conflictSeed": "CS-6",
+    "variableModules": [
+      "VM-C"
+    ],
+    "twistModule": null,
+    "difficulty": "easy",
+    "anchorTruth": "기현은 전날 밤 어머니에게 점심 확정 문자를 보냈고, 수아는 캘린더에 본가라고만 적어 뒀다. 본가가 어느 집인지 한 번도 확인하지 않은 채 각자 다른 방향으로 출발했다.",
+    "emotionalBait": "기현 명의 과일상자 픽업 예약이 먼저 눈에 들어오고, 장인댁 연락은 출발 7분 전 통화뿐이다. 시댁만 챙기고 처가를 뒤로 밀어낸 것처럼 읽힌다.",
+    "resolutionDilemma": "기현은 어머니에게 점심 준비까지 부탁했고, 수아는 이모가 차려 놓고 기다렸다는 메시지를 받았다. 양쪽 체면이 깎인 상태에서 누가 먼저 사과하고 다음 명절 기준을 어떻게 정할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "배수아",
+      "age": 33,
+      "occupation": "초등학교 사서",
+      "incomeBracket": "mid",
+      "archetype": "schedule_literalist",
+      "speechStyle": "'토 11시 본가라고 적었잖아, 왜 안 물어봤어?' — 캘린더 문구를 증거처럼 꺼내며 기록이 있으면 오해 책임이 상대에게 넘어간다고 믿는다. 자기 문장을 그대로 낭독하는 습관.",
+      "pride": 6,
+      "fear": "양가 어느 쪽에서든 예의 없는 며느리라는 시선이 고정되는 것. 시어머니 한마디, 친정 이모 한숨이 두렵다.",
+      "riskAppetite": 3,
+      "digitalHabit": "shared_calendar_main",
+      "dailyRoutine": "아침에는 학교 업무 준비를 하고, 퇴근길에는 장보기와 선물 확인을 하며, 밤에는 공유캘린더와 가족 단톡 일정을 다시 맞춰 본다.",
+      "sensitivePoints": [
+        "정확한 약속 문구",
+        "친정 부모 일정",
+        "늦은 변경 통보"
+      ],
+      "verbalTells": [
+        {
+          "type": "quote_readback",
+          "trigger": "lying",
+          "pattern": "'토 11시 본가 — 이게 어떻게 시댁이야?' 불리해질수록 자기 문장을 원문 그대로 낭독하며 표현 자체는 틀리지 않았다고 버틴다."
+        },
+        {
+          "type": "term_fixation",
+          "trigger": "defensive",
+          "pattern": "'본가라고 썼지, 네 집이라고 안 썼잖아' — 단어 사전적 의미로 논점을 좁혀 간다. 전체 맥락보다 한 단어 정의에 매달리는 패턴."
+        },
+        {
+          "type": "silent_assumption",
+          "trigger": "cornered",
+          "pattern": "'당연히 그렇게 읽히는 줄 알았지, 왜 물어봐?' — 확인을 안 한 이유를 추궁받으면 자기 해석이 보편적이라는 전제를 깐다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "기현씨",
+        "toJudge": "제 남편",
+        "angry": "남기현!"
+      }
+    },
+    "partyB": {
+      "name": "남기현",
+      "age": 35,
+      "occupation": "소방설비 영업기사",
+      "incomeBracket": "mid",
+      "archetype": "spoken_assumer",
+      "speechStyle": "'분위기가 그랬잖아, 우리 집 먼저라고 된 거 아냐?' — 시각·장소 없이 분위기로 합의를 주장한다. 추궁받으면 '넌 왜 본가라고만 적었는데?'로 역질문한다.",
+      "pride": 6,
+      "fear": "아버지 전화에 말 더듬고 장인 전화에 뜸 들이는 자신. 양쪽 부모 사이에서 줏대 없는 사위로 낙인찍히는 것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "voice_note_first",
+      "dailyRoutine": "오전에는 거래처를 돌고, 오후에는 현장 점검을 보며, 퇴근 후에는 차 안에서 부모와 배우자에게 짧은 음성메시지를 남긴다.",
+      "sensitivePoints": [
+        "어머니의 식사 약속",
+        "교통 체증",
+        "자신이 대충 산다고 보이는 일"
+      ],
+      "verbalTells": [
+        {
+          "type": "mood_confirmation",
+          "trigger": "lying",
+          "pattern": "'그때 분위기가 다 그랬잖아' — 확정 문자도 캘린더도 없이 통화 중 느낌만으로 합의를 주장한다. 근거 요구 시 분위기를 반복."
+        },
+        {
+          "type": "time_blur",
+          "trigger": "cornered",
+          "pattern": "'점심쯤 간다고 했지, 12시라고 한 적 없어' — 뭉툭한 시간 표현으로 약속 강도를 흐려 나중에 퇴로를 남겨 둔다."
+        },
+        {
+          "type": "question_flip",
+          "trigger": "hurt",
+          "pattern": "'넌 왜 본가라고만 적었는데?' — 자기 일방 약속이 추궁되면 상대의 모호한 표현을 끌어와 공격과 방어를 동시에 한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "수아씨",
+        "toJudge": "제 아내",
+        "angry": "배수아 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "결혼 직후 '큰 명절은 번갈아 먼저 가자'라는 구두 합의가 있었지만, '같은 날 오전·오후로 나눠 양가를 도는 경우 어느 쪽이 먼저인가'까지는 한 번도 정하지 않았다. 이 빈칸이 이번 충돌의 출발점이다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "지난 어버이날, 기현 부모 집에 40분 늦게 도착한 적이 있다. 기현은 '수아가 친정에서 출발을 질질 끌었다'고 기억하고, 수아는 '기현이 출발 시간을 안 정해 놓고 나한테 떠넘겼다'고 기억한다. 같은 사건, 다른 원인 — 이 패턴이 이번에도 반복됐다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '그때도 네가 확인을 안 했다' / B: '그때는 교통만 꼬인 거였다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "수아는 '기현은 시댁 일정은 칼같이 잡으면서 친정 쪽은 늘 대충 넘어간다'고 쌓아 두고 있고, 기현은 '수아가 친정에서 쓰는 표현을 나한테도 당연히 통한다고 전제하는 게 은근히 불편하다'고 속으로 삼켜 왔다. 서로 말하지 않은 불만이 이번 명절에 한꺼번에 터졌다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "박영란 (기현의 어머니)",
+        "relationTo": "b",
+        "knowledgeScope": "기현이 전날 밤 8시 11분 가족 단톡에 '토 점심쯤 먼저 갈게요'라고 보낸 뒤 어머니가 점심상을 준비한 과정을 처음부터 끝까지 알고 있다.",
+        "witnessedDirectly": true,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 60,
+          "occupation": "주부",
+          "relationToA": "배수아와는 이 사건을 통해 알게 됨",
+          "relationToB": "기현의 어머니",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "자식 편을 들면서도 객관적으로 보이려 한다. 어른 특유의 훈계 톤이 섞인다.",
+          "addressJudge": "재판관님",
+          "addressA": "수아씨",
+          "addressB": "기현"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "최은비 (수아의 직장 동료)",
+        "relationTo": "a",
+        "knowledgeScope": "수아가 평소 자기 친정을 '본가'라고 부르는 습관이 있다는 것을 알고 있으며, 기현이 이 표현을 시댁으로 이해할 수 있다는 점도 인지하고 있다.",
+        "witnessedDirectly": false,
+        "bias": "pro_a",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 35,
+          "occupation": "초등학교 사서",
+          "relationToA": "수아의 직장 동료",
+          "relationToB": "남기현와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "직장 상황을 잘 아는 만큼 구체적이지만, 본인 평판에 영향 갈까 봐 표현을 고른다.",
+          "addressJudge": "재판관님",
+          "addressA": "수아씨",
+          "addressB": "기현씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "최민규 (백화점 명절 선물 픽업센터 매니저)",
+        "relationTo": "both",
+        "knowledgeScope": "기현 과일상자(시댁)와 수아 한과세트(친정) 픽업 예약이 5시간 간격이었음을 백화점 주문기록으로 확인 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 39,
+          "occupation": "백화점 명절 선물 픽업센터 매니저",
+          "relationToA": "배수아을 업무상 알고 있음",
+          "relationToB": "남기현을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "배수아씨",
+          "addressB": "남기현씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "holiday_visit",
+    "description": "설 연휴 첫날 오전. 수아는 친정용 한과세트를 들고, 기현은 시댁용 과일상자를 싣고 있었다. 수아는 캘린더에 토 11시 본가, 기현은 어머니에게 점심 먼저 가겠다고 확정한 상태. 문 앞에서 마주치며 전혀 다른 그림이 드러났다.",
+    "emotionalPressure": 5,
+    "affects": "both",
+    "triggerAmplifier": "명절 점심은 한 번뿐이다. 한쪽 부모에게 안 온다가 되면 일정 착오가 아니라 서열 문제로 읽힌다. 양쪽 모두 이미 식사를 준비한 뒤라 작은 오해가 체면 손상으로 불어났다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "기현의 일방 점심 확정",
+      "truth": true,
+      "truthDescription": "기현은 전날 밤 단톡에 점심 먼저 가겠다고 보내고 과일상자 픽업까지 예약했다. 수아 확인 문자는 없다. 어머니에게 확정이었지만 배우자 동의 없는 확정은 일방 통보.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "방문확정규칙",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "수아의 모호한 본가 일정표",
+      "truth": true,
+      "truthDescription": "수아는 캘린더에 토 11시 본가라고만 입력하고 본가=친정이라고 설명한 적이 없다. 자기 가족 표현을 배우자도 같은 뜻으로 읽을 거라는 가정이 확인 의무 회피.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "방문확정규칙",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-3",
+      "name": "기현의 처가 무시 의도 유무",
+      "truth": false,
+      "truthDescription": "기현 메모에 오후 장인댁 방문 계획이 남아 있다. 의도적 배제가 아니라 해석 오류였지만 확인 한 통화면 막을 수 있었으므로 과실은 남는다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "오해정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "배우자 최종 확인 지연",
+      "truth": true,
+      "truthDescription": "기현은 전날 밤 어머니에게, 수아는 이틀 전 친정에 방문 의사를 전했다. 부부 간 최종 통화는 출발 7분 전. 양가보다 배우자가 나중에 안 구조 자체가 소통 우선순위 문제.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "부부우선확인",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "모호한 표현과 이동시간 착각",
+      "truth": true,
+      "truthDescription": "본가(어느 집?), 먼저(누구 기준?), 점심쯤(몇 시?) — 세 단어 모두 해석이 둘로 갈린다. 양가 사이 이동 50분을 감안 안 한 착각까지 합쳐진 구조적 실수.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-4",
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "명절운영",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "기현-어머니 가족 단톡과 과일상자 픽업 예약",
+      "description": "기현이 전날 밤 어머니에게 보낸 단톡과 오전 과일상자 픽업 예약. 시댁 방문을 확정 수순으로 진행했음을 보여주지만 수아 동의 여부는 없다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "가족 단톡 원문(전날 밤 8:11 발신)과 백화점 픽업 예약 확인서(다음 날 오전 9:03 결제)가 함께 제출됐다.",
+        "check_metadata": "단톡 발신 전날 밤 20:11, 픽업 결제 다음 날 09:03. 13시간 간격으로 연락→준비가 이어져 기현이 확정으로 여겼음을 시사.",
+        "restore_context": "'먼저 갈게요'는 가능성이 아니라 확정 통보에 가깝다. 어머니가 점심상을 준비한 것도 이 문구 때문이다.",
+        "verify_source": "단톡 참여자 두 명(기현·어머니)의 기기 백업본에서 동일 문구가 확인되고, 백화점 주문번호와 카드 승인 내역이 일치한다.",
+        "check_edits": "메시지 삭제·수정 이력 없음, 캡처 이미지에 크롭·합성 흔적 없음. 원본 상태 그대로다.",
+        "question_acquisition": "가족 단톡 참여자 본인 제출 + 주문 당사자 본인 내역이므로 취득 절차상 문제는 없다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "공유캘린더 버전 이력",
+      "description": "수아의 토 11시 본가 캘린더 이력. 본가가 어느 집인지 명시하지 않아 기현이 시댁으로 읽었을 가능성이 있다. 수정 없이 유지된 점은 친정 의도 근거.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "캘린더 서버 버전 이력(생성·수정·삭제 로그)과 수아·기현 양쪽 기기의 동기화 타임스탬프가 함께 제출됐다.",
+        "check_metadata": "일정 생성: 명절 이틀 전 밤 23:47. 이후 수정·삭제 없음. 수아 기준으로는 변경 필요를 느끼지 않았다는 뜻.",
+        "restore_context": "'토 11시 본가' — 시간은 구체적이지만 본가가 친정인지 시댁인지 어디에도 명시돼 있지 않아 해석 여지가 남는다.",
+        "verify_source": "캘린더 플랫폼 서버 로그와 양쪽 기기 동기화 시각이 분 단위까지 일치한다. 위조 가능성은 극히 낮다.",
+        "check_edits": "서버 원본 기록이므로 사용자 측 수동 편집이 불가능한 구조다. 조작 흔적 없음.",
+        "question_acquisition": "부부 공유캘린더 자료로 양쪽 모두 열람 권한이 있으며, 제출에 별도 동의가 필요하지 않는 범위다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "수아가 저장한 이모의 섭섭 메시지 캡처",
+      "description": "이모가 보낸 차려 놓고 기다렸다 메시지. 친정 측 피해를 보여주지만 누가 방문 시간을 확정했는지는 단독 판단 불가.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "이모가 보낸 '점심 차려 놓고 기다렸다' 메시지 한 건만 캡처돼 있고, 그 앞뒤 대화는 포함되지 않았다.",
+        "check_metadata": "캡처 생성: 출발 지연 발생 후 34분. 감정 고조 시점에 가장 서운한 문구만 골랐을 가능성이 있다.",
+        "restore_context": "결과적 피해를 보여줄 뿐이다. 누가 먼저 방문 시간을 확정했는지, 수아가 이모에게 몇 시라고 말했는지는 이 캡처로 알 수 없다.",
+        "verify_source": "이모 기기와 수아 기기 양쪽에서 동일 문구·동일 시각이 확인된다. 문구 자체는 진본이다.",
+        "check_edits": "합성 흔적 없다. 다만 앞뒤 대화가 잘린 선택적 캡처이므로 이모가 메시지 전에 어떤 맥락이 있었는지 확인 불가.",
+        "question_acquisition": "가족 대화 당사자(수아)가 직접 제출한 자료로, 취득 위법성은 없다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "통화기록과 하이패스·주차 이력",
+      "description": "출발 7분 전 부부 통화 기록과, 각자 다른 방향으로 움직인 하이패스·주차 이력. 서로 다른 계획을 갖고 동시에 출발한 물리적 증거.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "통신사 발급 통화기록 원본, 하이패스 톨게이트 통과 이력, 목적지 주차장 정산 내역 세 종류가 함께 제출됐다.",
+        "check_metadata": "부부 최종 통화: 출발 7분 전, 2분 14초. 이후 각자 다른 방면 톨게이트·주차장을 통과. 7분 안에 조율 불가능했던 상황.",
+        "restore_context": "두 차량이 거의 동시에 반대 방향 출발. 어느 쪽도 상대 약속을 알면서 깬 것이 아니라 각자 확정안대로 움직였다.",
+        "verify_source": "통신사 통화 종료 시각과 하이패스 톨게이트 통과 시각이 분 단위로 맞아떨어진다. 세 출처가 교차 검증된다.",
+        "check_edits": "통신사·도로공사·주차장 기관 발급 조회본이라 사용자 편집이 구조적으로 불가능하다.",
+        "question_acquisition": "각자 본인 명의 차량 이력과 본인 통화기록만 최소 범위로 조회·제출했으므로 절차상 문제 없다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "부부 음성메시지와 메신저 대화",
+      "description": "수아의 가까운 쪽 먼저 음성메시지와 기현의 본가부터 텍스트 답장. 핵심 분기점이며 어느 쪽도 구체적 집 이름을 명시하지 않았다.",
+      "type": "audio",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "수아의 음성메시지 원본 파일(.m4a)과 기현의 텍스트 답장이 포함된 메신저 서버 백업이 함께 제출됐다.",
+        "check_metadata": "수아 음성메시지: 명절 사흘 전 오후. 기현 답장: 같은 날 저녁 2시간 뒤. 공백 동안 기현이 본가=시댁으로 해석을 굳혔을 가능성.",
+        "restore_context": "수아: '가까운 쪽 먼저', 기현: '본가부터' — 양쪽 모두 구체 집 이름 없이 같은 대화를 정반대로 해석할 여지가 있었다.",
+        "verify_source": "수아 기기의 음성 파일 해시와 메신저 서버 백업 해시가 일치한다. 기현 측 기기에서도 동일 대화가 확인된다.",
+        "check_edits": "음성 파일에 잘라 붙이기·편집 흔적 없음. 텍스트 메시지도 수정 이력 없이 연속 대화 흐름이 유지된다.",
+        "question_acquisition": "부부 당사자 간 1:1 대화 자료이며, 양쪽 모두 제출에 동의했으므로 적법하다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "두 집 선물세트 픽업 내역과 수령 메모",
+      "description": "기현 과일상자(시댁)·수아 한과세트(친정) 픽업 예약. 5시간 간격 다른 주소로, 각자 다른 첫 방문지를 상정했으나 상대 준비를 확인 안 했다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "기현 명의 과일상자 주문서와 수아 명의 한과세트 주문서, 각각의 수령 메모가 함께 제출됐다.",
+        "check_metadata": "두 주문 간 5시간 차. 기현 수령 메모에 시댁, 수아에 친정 주소. 완전히 별개 주소라는 것은 각자 다른 첫 방문지를 상정했다는 뜻.",
+        "restore_context": "둘 다 내 쪽 부모 집이 먼저라는 전제로 선물을 준비했지만 상대가 어디로 보냈는지 한 번도 확인하지 않았다.",
+        "verify_source": "백화점 주문 시스템의 주문번호·결제 시각과 각자 카드사 승인 기록이 일치한다. 교차 검증 완료.",
+        "check_edits": "백화점 시스템에서 발급된 주문서 원본이므로 사용자 측 조작이 구조적으로 불가능하다.",
+        "question_acquisition": "각자 본인 명의 주문 내역과 본인이 작성한 수령 메모이므로 제출에 절차적 문제없다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-2",
+        "e-5"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2",
+        "d-5"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "기현은 배우자와 최종 확인하기 전에 자기 어머니에게 토요일 점심 방문을 확정처럼 말했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "수아는 '본가'와 '가까운 쪽 먼저' 같은 모호한 표현을 써 놓고도 직접 확인하지 않았다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "기현이 장인댁 약속을 일부러 무시한 것은 아니고, 서로 다른 일정 해석을 따라 움직인 결과였다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "두 사람 모두 양가보다 서로에게 최종 확정 메시지를 늦게 보냈다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "이번 파행의 핵심 원인은 악의가 아니라 모호한 표현과 이동시간 오판이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "calendar_wording_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "what_did_you_mean_by_bonga"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "hurt",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "intentional_snub_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "voice_message_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_misunderstanding_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "did_you_confirm_lunch_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "did_you_tell_your_spouse_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "overall_cause_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_rushing"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "travel_time_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_e-6_presented"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "방문확정규칙": [
+      "명절 방문은 '누구 집, 몇 시, 식사 포함 여부'까지 한 문장으로 정리한 뒤 부모에게 전달한다.",
+      "공유캘린더에는 '본가' 같은 내부 표현 대신 '기현 부모님댁', '수아 친정'처럼 제3자가 봐도 같은 뜻인 표기만 쓴다.",
+      "한쪽이 부모에게 먼저 시간을 말했으면 그날 안에 배우자에게 스크린샷으로 공유하고 미확정이면 다시 수정한다."
+    ],
+    "명절운영": [
+      "같은 날 양가를 모두 도는 일정은 이동시간에 최소 30분 완충을 넣고, 식사 약속은 한쪽만 확정한다.",
+      "반나절 분할 명절은 출발 전날 밤 한 번 더 통화로 최종 동선을 확인한다.",
+      "명절마다 순서를 새로 추측하지 말고 번갈이 우선권 규칙과 예외 조건을 연간 메모로 남긴다."
+    ],
+    "오해정리": [
+      "양가 부모에게는 누가 일부러 무시한 것이 아니라 표현 오해였다는 사실을 같은 문장으로 짧게 설명한다.",
+      "섭섭한 메시지를 중계하기 전에 먼저 배우자와 해석 차이를 확인하고, 가족 감정을 증거처럼 쓰지 않는다.",
+      "단어 뜻싸움이 시작되면 그날은 의도 단정 대신 실제 보낸 문장과 확정 여부만 확인한다."
+    ],
+    "부부우선확인": [
+      "부모에게 알리기 전 배우자에게 최종 확인을 먼저 보내는 순서를 원칙으로 한다.",
+      "명절 선물 주문과 식사 예약은 둘이 함께 보는 한 채널에만 남긴다.",
+      "부부 확인보다 가족 통보가 앞선 일이 반복되면 다음 명절 계획은 한쪽이 단독으로 부모와 약속하지 못하게 한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-1",
+    "tp-3"
+  ]
 }

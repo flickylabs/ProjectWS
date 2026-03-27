@@ -3,13 +3,13 @@ import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
 import { playPhaseTransition } from '../../engine/soundEngine'
 
-const PHASE_INFO: Record<GamePhase, { title: string; subtitle: string; icon: string } | null> = {
+const PHASE_INFO: Record<GamePhase, { title: string; subtitle: string; icon: string; unlocks?: string[] } | null> = {
   [GamePhase.Phase0_CaseIntro]: null,
   [GamePhase.Phase1_InitialStatement]: { title: '초기 진술', subtitle: '양측의 주장을 들어봅니다', icon: '🗣️' },
   [GamePhase.Phase2_Rebuttal]: { title: '즉각 반박', subtitle: '양측이 서로의 진술에 반박합니다', icon: '⚡' },
   [GamePhase.Phase3_Interrogation]: { title: '심문 개시', subtitle: '질문을 통해 진실을 파헤치세요', icon: '🔍' },
-  [GamePhase.Phase4_Evidence]: { title: '증거 제시', subtitle: '확보한 증거를 공개하세요', icon: '📄' },
-  [GamePhase.Phase5_ReExamination]: { title: '재심문', subtitle: '붕괴된 쟁점을 깊이 파고드세요', icon: '🔬' },
+  [GamePhase.Phase4_Evidence]: { title: '증거 심리', subtitle: '확보한 증거를 공개하세요', icon: '📄', unlocks: ['📄 증거 제시 해금', '⚡ 즉답 요구 해금', '🔍 회피 판독 토글 해금'] },
+  [GamePhase.Phase5_ReExamination]: { title: '최종 심문', subtitle: '붕괴된 쟁점을 깊이 파고드세요', icon: '🔬', unlocks: ['🔒 비공개 보호 토글 해금'] },
   [GamePhase.Phase6_Mediation]: { title: '중재안', subtitle: '판결 방식을 선택하세요', icon: '🤝' },
   [GamePhase.Phase7_Verdict]: { title: '최종 판결', subtitle: '사실과 책임, 해결책을 결정하세요', icon: '⚖️' },
   [GamePhase.Result]: null,
@@ -49,6 +49,13 @@ export default function PhaseTransition() {
         <div className="text-5xl mb-1">{info.icon}</div>
         <div className="text-xl font-bold text-amber-400">{info.title}</div>
         <div className="text-sm text-gray-400">{info.subtitle}</div>
+        {info.unlocks && info.unlocks.length > 0 && (
+          <div className="pt-2 space-y-0.5">
+            {info.unlocks.map((u, i) => (
+              <div key={i} className="text-xs text-emerald-400/90">{u}</div>
+            ))}
+          </div>
+        )}
         {nameA && nameB && (
           <div className="text-xs text-gray-600 pt-1">
             <span className="text-blue-400/60">{nameA}</span>

@@ -59,6 +59,13 @@ export interface Dispute {
   ambiguity: 'none' | 'low' | 'high'
   weight: 'high' | 'medium' | 'low'
   mediationLink: string
+  /** 이 쟁점을 심문하려면 선행 조건 필요 (없으면 처음부터 가능) */
+  unlockCondition?: {
+    /** 선행 쟁점이 특정 상태 이상이어야 함 */
+    requireDispute?: { id: string; minState: string }
+    /** 선행 증거가 제시되어야 함 */
+    requireEvidence?: string
+  }
   legitimacyIssue: boolean
 }
 
@@ -70,8 +77,20 @@ export interface ContextSeed {
   triggerAmplifier: string
 }
 
+export interface CaseMeta {
+  relationshipType: string
+  conflictSeed: string
+  variableModules?: string[]
+  twistModule?: string | null
+  difficulty: 'easy' | 'medium' | 'hard'
+  anchorTruth: string
+  emotionalBait: string
+  resolutionDilemma: string
+}
+
 export interface CaseData {
   caseId: string
+  meta?: CaseMeta
   duo: DuoSeed
   context: ContextSeed
   disputes: Dispute[]

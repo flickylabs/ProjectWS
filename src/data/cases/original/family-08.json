@@ -1,0 +1,673 @@
+{
+"caseId": "case-family-08",
+"meta": {
+"relationshipType": "family",
+"conflictSeed": "CS-4",
+"variableModules": [
+"VM-C",
+"VM-E"
+],
+"twistModule": "TW-5",
+"difficulty": "hard",
+"anchorTruth": "이준호가 어머니를 몰래 영구입소시킨 것처럼 보인 150만원 송금은 사실 작년 가을 형제와 어머니가 함께 적어둔 '야간 배회 재발 시 은솔요양원 대기·평가입소 진행' 합의를 집행한 것이었고, 핵심 문제는 그 합의 존재보다 준호의 미통보와 세라의 공개 비난이었다.",
+"emotionalBait": "요양원 계좌로 간 150만원, 짐가방 사진, '이번 주 침상 확보'라는 문자만 먼저 보이면서 처음에는 준호가 누나 몰래 어머니를 시설에 넣으려 한 배신자로 보인다.",
+"resolutionDilemma": "재발한 배회와 화재 위험 속에서 현장 돌봄을 맡은 준호의 긴급 판단을 전부 악의로 볼 수는 없지만, 이미 있던 합의를 핑계로 통보 의무까지 건너뛴 점은 문제이고, 세라 역시 과거의 상처를 현재 사건에 덧씌워 친척들 앞에서 공개 비난을 한 책임을 피하기 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "이세라",
+"age": 46,
+"occupation": "대형마트 회계팀 과장",
+"incomeBracket": "mid",
+"archetype": "cold_logic",
+"speechStyle": "시설 안내문, 계좌 내역, 통화 시간을 차례대로 세우며 자신의 의심을 논리처럼 제시한다. 다만 배신감이 커지면 자료 끝에 '또 나만 나중에 알았다'는 감정을 덧붙여 현재 사건을 과거의 늦은 통보 기억과 곧바로 연결한다.",
+"pride": 6,
+"fear": "어머니 돌봄의 중대한 결정을 또다시 마지막에 통보받고, 형제 사이에서 감정적인 방해자로만 남는 것",
+"riskAppetite": 4,
+"digitalHabit": "care_calendar_and_scan_folder",
+"dailyRoutine": "출근 전 어머니 안부 전화를 하고 점심시간엔 병원·약국 일정을 맞추며, 밤에는 가족 단톡과 CCTV 캡처, 돌봄 메모를 정리한다.",
+"sensitivePoints": [
+"늦은 통보",
+"요양원 영구입소 표현",
+"과거 아버지 ICU 연락 지연"
+],
+"verbalTells": [
+{
+"type": "timeline_press",
+"trigger": "cornered",
+"pattern": "밀리기 시작하면 몇 시에 누가 무엇을 알았는지 시간표를 빠르게 읽어 상대의 해명을 끊는다."
+},
+{
+"type": "betrayal_echo",
+"trigger": "lying",
+"pattern": "불리한 공개비난 질문에도 '결국 또 숨겼잖아'를 반복해 자신의 과한 반응을 배신에 대한 자연스러운 결과처럼 만든다."
+},
+{
+"type": "past_overlay",
+"trigger": "emotional",
+"pattern": "현재 쟁점이 막히면 아버지 ICU 연락이 늦었던 일을 바로 끌어와 사건을 하나의 패턴으로 묶는다."
+}
+]
+},
+"partyB": {
+"name": "이준호",
+"age": 42,
+"occupation": "도시가스 안전점검 기사",
+"incomeBracket": "mid",
+"archetype": "avoidant",
+"speechStyle": "응급 상황과 현장 부담을 먼저 길게 설명하며 핵심 결정을 뒤로 미룬다. 책임을 물으면 '일단 안전부터였다'는 말로 절차 문제를 축소하고, 세라가 흥분할까 봐 말 못 했다는 식으로 통보 누락을 정당화하려 한다.",
+"pride": 5,
+"fear": "가장 가까이서 돌본 사람인데도 어머니를 버리듯 시설에 보내려 한 불효자로 낙인찍히는 것",
+"riskAppetite": 5,
+"digitalHabit": "receipt_and_voice_memo_folder",
+"dailyRoutine": "새벽 출근 전 어머니 집에 들러 가스와 약을 확인하고, 퇴근 후에는 기저귀·식사·배회 기록을 휴대폰 메모와 영수증 폴더에 남긴다.",
+"sensitivePoints": [
+"불효자 낙인",
+"형제 통보 의무",
+"시설비 부담"
+],
+"verbalTells": [
+{
+"type": "urgency_buffer",
+"trigger": "avoiding",
+"pattern": "핵심 질문에 바로 답하지 않고 배회, 넘어짐, 가스 경보 같은 긴급 상황을 길게 늘어놓는다."
+},
+{
+"type": "soft_minimizing",
+"trigger": "lying",
+"pattern": "대기등록과 평가입소를 '그냥 자리만 잡아둔 거야'라고 줄여 말해 통보 누락의 무게를 낮춘다."
+},
+{
+"type": "care_burden_shield",
+"trigger": "cornered",
+"pattern": "궁지에 몰리면 자신이 밤마다 몇 번씩 어머니를 찾으러 나간 일을 길게 말하며 절차보다 현장 고생을 방패로 세운다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "작년 가을 어머니의 야간 배회와 가스레인지 화재 직전 사고 뒤, 세라와 준호, 어머니는 배회가 두 번 더 재발하거나 화재 위험이 다시 나오면 은솔요양원 대기등록과 평가입소를 검토하고 그날 안에 가족 단톡으로 공유하기로 합의했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '상담과 대기만 하자는 뜻이었다' / B: '조건이 오면 바로 등록까지 가능하다는 뜻이었다'",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "어머니가 예전에 '낯선 데서 오래 있고 싶진 않다'고 말한 일을 두 사람은 절대적 재가 원칙인지, 악화 전 단계의 바람인지 다르게 기억한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '시설은 끝까지 안 된다는 뜻이었다' / B: '멀쩡할 때 기준으로 한 말이지 지금 같은 배회 상황까지 막은 건 아니었다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "2021년 아버지가 중환자실로 전원됐을 때 준호가 세라에게 5시간 늦게 알려 세라가 임종 직전에야 도착한 일은 두 사람 사이의 기본 신뢰를 오래 갉아먹었다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "정옥자 (어머니)",
+"relationTo": "both",
+"knowledgeScope": "작년 가을 가족회의에서 배회가 더 심해지면 잠깐 시설 평가입소를 해보자는 말이 오간 것은 어렴풋이 기억한다. 다만 최근 입소금과 계약의 성격은 혼동하고 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "unconscious"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "송하린 (은솔요양원 입소상담 사회복지사)",
+"relationTo": "both",
+"knowledgeScope": "150만원의 성격이 영구입소 계약금인지, 평가입소용 대기금인지와 준호가 어떤 표현으로 상담했는지 원본 기록으로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "배수진 (치매안심센터 사례관리사)",
+"relationTo": "both",
+"knowledgeScope": "가족회의 메모, 위험 신호 기준, 사전 합의 문구와 최근 상담 기록을 통해 당시 합의의 범위와 통보 원칙을 설명할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "nursing_home_admission_decision",
+"description": "어머니의 야간 배회와 가스 경보가 반복되자 형제는 재가 돌봄을 더 버틸지, 평가입소를 먼저 해볼지 사이에서 오래 흔들렸다. 그런데 준호가 은솔요양원에 먼저 대기금을 보내고 침상 확보 문자를 받자 세라는 또 중요한 결정을 숨겼다고 느꼈고, 과거 ICU 연락 지연 기억까지 겹치면서 입소 논의가 곧 배신 싸움으로 폭발했다.",
+"emotionalPressure": 9,
+"affects": "both",
+"triggerAmplifier": "시설 입소는 죄책감과 불효 불안을 강하게 건드리는 데다, 이미 한 번 늦은 통보로 큰 상처를 겪은 형제라 작은 생략도 곧바로 오래된 배신의 반복으로 읽혔다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "준호의 대기금 송금과 즉시 미통보",
+"truth": true,
+"truthDescription": "준호는 은솔요양원에 150만원을 송금하며 평가입소용 대기 자리를 먼저 확보했고, 작년 합의에 있던 '같은 날 공유' 원칙을 지키지 않았다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-1",
+"e-2"
+],
+"correctResponsibility": {
+"a": 20,
+"b": 80
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "입소절차공유",
+"legitimacyIssue": false
+},
+{
+"id": "d-2",
+"name": "세라의 친척방 공개 비난",
+"truth": true,
+"truthDescription": "세라는 계약의 정확한 성격을 확인하기 전 친척 단톡과 사촌 통화에서 준호가 어머니를 몰래 시설에 넣었다는 취지로 공개 비난을 퍼뜨렸다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-3"
+],
+"correctResponsibility": {
+"a": 75,
+"b": 25
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "가족신뢰복구",
+"legitimacyIssue": true
+},
+{
+"id": "d-3",
+"name": "150만원은 영구입소 계약금인가",
+"truth": false,
+"truthDescription": "문제가 된 150만원은 영구입소 확정금이 아니라 2주 평가입소 침상 홀드와 대기등록을 위한 환불 가능 금액이었다.",
+"quadrant": "shared_misconception",
+"requiredEvidence": [
+"e-1",
+"e-4"
+],
+"correctResponsibility": {
+"a": 45,
+"b": 55
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "계약의미정리",
+"legitimacyIssue": false
+},
+{
+"id": "d-4",
+"name": "이미 입소 조건에 합의했는가",
+"truth": true,
+"truthDescription": "작년 가을 가족회의와 치매안심센터 기록에는 배회 재발 또는 화재 위험 재발 시 은솔요양원 대기·평가입소를 진행할 수 있다는 사전 합의가 남아 있었다. 다만 준호는 통보 의무를, 세라는 합의 존재 자체를 현재에 와서 서로 다르게 축소했다.",
+"quadrant": "neither_knows",
+"requiredEvidence": [
+"e-5",
+"e-6"
+],
+"correctResponsibility": {
+"a": 50,
+"b": 50
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "사전합의복원",
+"legitimacyIssue": false
+},
+{
+"id": "d-5",
+"name": "배신 프레임을 키운 공동 책임",
+"truth": true,
+"truthDescription": "준호는 이번에도 중요한 정보를 늦게 알렸고, 세라는 과거 ICU 지연 연락 기억을 현재 사실확인보다 앞세워 배신 서사를 친척들에게 먼저 확산시켰다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-2",
+"e-3",
+"e-6"
+],
+"correctResponsibility": {
+"a": 45,
+"b": 55
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "가족신뢰복구",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "은솔요양원 대기등록 신청서와 150만원 입금영수증",
+"description": "준호가 보낸 150만원의 성격과 신청 구분이 적힌 은솔요양원 원본 신청서, 평가입소 침상 홀드 안내, 입금 영수증이다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-1",
+"d-3"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "시설 원본 신청서와 영수증, 환불 규정 첨부문서를 함께 확인하자 계약 종류가 영구입소가 아니라 평가입소 대기임이 분명해졌다.",
+"check_metadata": "신청은 준호 명의로 접수됐고, 입금 시각은 어머니의 두 번째 야간 배회 신고 다음 날 오전으로 찍혀 있다.",
+"restore_context": "겉으로는 입소금처럼 보이지만 문서상 명칭과 환불 조항은 임시 평가입소용 홀드에 가깝다.",
+"verify_source": "시설 접수번호와 회계 영수증 번호가 모두 일치했다.",
+"check_edits": "기관 원본이라 편집 흔적이 없다.",
+"question_acquisition": "입소 절차 관련 공문서라 제출 정당성은 높다."
+}
+},
+{
+"id": "e-2",
+"name": "가족 단톡 내보내기와 준호 통화·알림 로그",
+"description": "준호가 송금 뒤 19시간 동안 가족 단톡에 아무 설명을 하지 않았고, 세라의 질문 전화를 여러 번 놓친 뒤 다음 날 아침에야 답한 기록이다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-1",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "단톡 내보내기와 통화기록 원본을 대조하자 준호가 송금 사실을 같은 날 공유하지 않았음이 드러났다.",
+"check_metadata": "세라의 부재중 전화는 세 차례, 준호의 첫 설명 메시지는 그 다음 날 오전 7시 12분으로 남아 있다.",
+"restore_context": "준호는 배회 수습 때문에 바빴다고 하지만, 같은 밤 시설 상담사에게는 추가 문자를 보낸 흔적이 있어 완전한 무통보는 아니었다.",
+"verify_source": "통신사 발신내역과 메신저 원본 시간이 서로 맞았다.",
+"check_edits": "내보내기 원본이라 개별 메시지 삭제 흔적은 적다.",
+"question_acquisition": "형제 공동 대화 자료라 활용 가능하지만 다른 친척 연락처는 비식별 처리돼야 한다."
+}
+},
+{
+"id": "e-3",
+"name": "친척 단톡과 사촌 통화 메모",
+"description": "세라가 친척 단톡에 '준호가 엄마를 몰래 넣었다'고 적고 사촌들에게 비슷한 취지로 말한 내보내기 파일과 통화 메모다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-2",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "캡처가 아니라 단톡 내보내기와 통화 직후 남긴 메모 원본을 확인했다.",
+"check_metadata": "세라의 첫 공개 메시지는 준호의 정식 설명보다 2시간 먼저 올라갔다.",
+"restore_context": "세라는 도움을 구하려고 한 말이라 하지만, 표현은 사실확인 요청보다 단정적 비난에 가까웠다.",
+"verify_source": "메신저 원본과 사촌의 회신 시간대가 서로 맞물린다.",
+"check_edits": "원본 내보내기라 자르기 흔적은 없고, 통화 메모는 작성 시각이 남아 있다.",
+"question_acquisition": "친척들이 포함된 대화라 사생활 침해 우려가 있어 목적 외 재사용은 제한돼야 한다."
+}
+},
+{
+"id": "e-4",
+"name": "요양원 환불 규정 메일과 상담 녹취",
+"description": "송하린 사회복지사가 보낸 환불 규정 메일과 상담 통화 원본으로, 150만원의 법적·실무적 의미를 구분할 수 있다.",
+"type": "email",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-3"
+],
+"isTrap": false,
+"requires": [
+"e-1"
+],
+"investigationResults": {
+"request_original": "메일 원문과 시설 상담 녹취 전체를 확인하자 '영구입소'라는 표현은 나오지 않았다.",
+"check_metadata": "메일 발송 시각은 입금 14분 뒤이며, 상담 녹취에서도 준호는 '평가부터'라는 표현을 쓴다.",
+"restore_context": "세라가 본 계좌 이체만으로는 영구입소처럼 보였지만, 시설 실무에선 평가입소 홀드와 영구입소 계약을 별도로 구분한다.",
+"verify_source": "시설 메일 서버 헤더와 녹취 원본 파일 정보가 일치한다.",
+"check_edits": "기관 원본이라 편집 흔적이 없다.",
+"question_acquisition": "입소 절차 확인 자료여서 제출 정당성은 높다."
+}
+},
+{
+"id": "e-5",
+"name": "작년 가을 가족회의 노트 사진",
+"description": "준호가 휴대폰에서 찾아낸 가족회의 노트 사진으로, '배회 두 번 더면 은솔 대기'라는 문장만 먼저 보이고 서명과 뒷부분은 잘려 있다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-4"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "처음에는 잘린 사진만 제출됐고, 서명 여부와 통보 조건은 확인되지 않았다.",
+"check_metadata": "사진은 작년 회의 당일 찍혔지만 최근 다시 잘라 저장된 흔적이 남아 있다.",
+"restore_context": "문장 일부만 보면 준호 주장에 유리하게 읽히지만, 실제 합의 범위와 부가 조건을 단정하기엔 정보가 부족하다.",
+"verify_source": "원본 사진의 촬영 일시는 회의 날짜와 맞는다.",
+"check_edits": "강한 크롭으로 하단 문장과 서명란이 사라져 있다.",
+"question_acquisition": "가족 내부 메모라 활용 가능하지만, 맥락 없는 부분제시는 오해를 키울 수 있다."
+}
+},
+{
+"id": "e-6",
+"name": "치매안심센터 사례관리 기록과 서명된 가족 돌봄계획서",
+"description": "배수진 사례관리사가 보관한 상담 기록과 형제·어머니가 서명한 돌봄계획서로, 배회 재발 시 시설 대기·평가입소와 같은 날 공유 원칙이 함께 적혀 있다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-4",
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-5"
+],
+"investigationResults": {
+"request_original": "센터 원본 기록과 서명된 계획서를 대조하자 준호가 기억한 조건도, 세라가 놓친 통보 조항도 함께 확인됐다.",
+"check_metadata": "기록 작성 시각은 작년 가스 사고 직후 상담일이며, 참석자 서명이 모두 남아 있다.",
+"restore_context": "사전 합의는 분명 존재했지만, 그것이 준호의 단독 진행권을 뜻한 것은 아니고 같은 날 공유 의무가 핵심 조건으로 붙어 있었다.",
+"verify_source": "센터 접수번호와 사례관리사 서명이 원본과 일치했다.",
+"check_edits": "기관 보관 문서라 편집 흔적이 없다.",
+"question_acquisition": "공적 사례관리 자료라 적법하지만, 어머니의 건강 정보가 포함돼 있어 분쟁 해결 범위 내 사용이 원칙이다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-5",
+"e-6"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-4"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "준호는 150만원을 먼저 보내고도 그날 안에 가족 단톡으로 공유하지 않았다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "b_only"
+},
+{
+"id": "t-2",
+"fact": "세라는 계약의 성격을 확인하기 전 친척들에게 준호를 공개적으로 비난했다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "a_only"
+},
+{
+"id": "t-3",
+"fact": "150만원은 영구입소 확정금이 아니라 평가입소용 대기금이었다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "shared_misconception"
+},
+{
+"id": "t-4",
+"fact": "작년 가을 형제와 어머니는 배회 재발 시 은솔요양원 대기·평가입소를 진행하기로 이미 합의했었다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "neither_knows"
+},
+{
+"id": "t-5",
+"fact": "현재의 배신 프레임은 준호의 미통보와 세라의 공개 비난, 그리고 과거 ICU 지연 연락 기억이 함께 키웠다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "both_know"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-2",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "relative_chat_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "public_wording_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-4",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "prior_agreement_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-5_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "full_plan_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-6_presented"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-5",
+"lieIntensity": "L1",
+"lieMotive": "relationship_maintenance",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "old_icu_memory_question"
+},
+{
+"from": "S1",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_not_being_last_again"
+},
+{
+"from": "S4",
+"to": "S3",
+"trigger": "e-2_presented"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-1",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "deposit_notice_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "same_day_rule_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-3",
+"lieIntensity": "L1",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "contract_meaning_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "refund_clause_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-4_presented"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-6",
+"lieIntensity": "L2",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "prior_agreement_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-5_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "notice_clause_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-6_presented"
+}
+]
+}
+],
+"solutions": {
+"입소절차공유": [
+"요양원 대기등록, 평가입소, 영구입소를 단계별로 나누고 각 단계마다 누구에게 언제 알릴지 같은 날 규칙을 다시 적는다.",
+"입소 관련 송금과 서류는 가족 공용 폴더와 단톡에 동시에 올리고, 설명 없는 캡처만 먼저 보내는 방식을 금지한다.",
+"준호가 다시 단독으로 절차를 진행하면 현장 돌봄의 재량을 줄이고 기관 사례관리사를 거쳐서만 입소 절차를 밟는다."
+],
+"계약의미정리": [
+"요양원 계약서에서 대기금, 평가입소, 정식입소의 차이를 한 장 표로 정리해 형제가 같은 용어를 쓰도록 한다.",
+"시설과의 모든 통화는 요약본을 남기고, 환불 규정과 침상 홀드 규정은 문서 원본으로만 확인한다.",
+"이체 내역만 보고 영구입소로 단정하는 일이 반복되면 시설 상담 창구를 사회복지사 1명으로 고정한다."
+],
+"사전합의복원": [
+"작년 가을 돌봄계획서를 다시 읽고, 당시 합의에서 지금도 유효한 부분과 수정할 부분을 줄 단위로 확인한다.",
+"배회 횟수, 화재 위험, 평가입소 기간처럼 촉발 조건을 숫자와 기간으로 다시 명확히 적는다.",
+"이미 했던 합의를 기억대로만 다투게 되면 이후의 돌봄 기준은 반드시 기관 기록에 서명으로 남긴다."
+],
+"가족신뢰복구": [
+"세라는 친척방 공개 비난을 중단하고, 준호는 중요한 의료·돌봄 결정을 늦지 않게 알리는 기본 규칙을 먼저 복구한다.",
+"과거 ICU 지연 연락 사건은 현재 입소 논쟁과 분리해 별도 시간에만 다루고, 현재 사실확인 전에 과거 패턴으로 단정하지 않는다.",
+"다시 공개 비난이나 늦은 통보가 반복되면 형제 직접 대화를 중단하고 치매안심센터 사례관리사 입회 하에서만 결정한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-2",
+"tp-3"
+]
+}

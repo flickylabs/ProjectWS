@@ -1,0 +1,717 @@
+{
+  "caseId": "case-work-05",
+  "meta": {
+    "relationshipType": "boss_employee",
+    "conflictSeed": "CS-2",
+    "variableModules": [
+      "VM-E"
+    ],
+    "twistModule": "TW-1",
+    "difficulty": "hard",
+    "anchorTruth": "가은의 '순수 창작' 고객회복 랩의 핵심 구조는 2년 전 컨설턴트 배수진의 보류 파일에서 왔고, 상혁은 그걸 알면서 공동기획 표기를 지웠다.",
+    "emotionalBait": "승진 발표 전날, 가은의 손글씨 노트와 상혁 단독 명의 슬라이드가 나란히 놓이자 '상사가 아이디어를 훔쳤다'는 구도가 너무 깔끔하다.",
+    "resolutionDilemma": "가은 기여를 지운 상혁과, 2년 전 원출처를 지우고 피해자 위치를 선점한 가은 중 어느 쪽이 더 무거운가. 이미 승진 심사에 들어간 평판 메모는 되돌릴 수 있는가."
+  },
+  "duo": {
+    "partyA": {
+      "name": "오상혁",
+      "age": 41,
+      "occupation": "신사업전략실장",
+      "incomeBracket": "high",
+      "archetype": "cold_logic",
+      "speechStyle": "\"그건 팀 자산화된 안건이에요.\" 조직 맥락부터 깔아 출처 논의를 흐린다. 감정은 거의 드러내지 않지만 주어는 항상 '우리'다.",
+      "pride": 8,
+      "fear": "승진위원회 앞에서 '후배 아이디어를 훔친 관리자'로 찍혀 전략 라인 신뢰를 잃는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "archive_comment_hunter",
+      "dailyRoutine": "아침에는 본부장 보고 안건을 정리하고, 오후에는 파일럿 성과 자료를 비교하며, 밤에는 오래된 제안서와 최신 브리핑 문구를 직접 손본다.",
+      "sensitivePoints": [
+        "승진위원회 평판",
+        "출처 관리",
+        "팀 통솔력"
+      ],
+      "verbalTells": [
+        {
+          "type": "asset_reframe",
+          "trigger": "lying",
+          "pattern": "\"그건 이미 팀 자산화된 안건입니다.\" 출처 질문에 소유권을 조직으로 돌려 흐린다."
+        },
+        {
+          "type": "source_ladder",
+          "trigger": "cornered",
+          "pattern": "\"기획, 정리, 발표는 다 다른 층위예요.\" 책임을 잘게 쪼개 자기 몫을 축소한다."
+        },
+        {
+          "type": "pronoun_smoothing",
+          "trigger": "avoiding",
+          "pattern": "\"우리가 정리했고, 그쪽에서 가져왔죠.\" 주어를 흐려 직접 개입 사실을 숨긴다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "가은씨",
+        "toJudge": "제 팀원",
+        "angry": "문가은!"
+      }
+    },
+    "partyB": {
+      "name": "문가은",
+      "age": 33,
+      "occupation": "서비스전략 과장",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "캡처와 시간표를 침착히 꺼내다가 \"또 당했어요\"로 전환한다. 몰리면 세부 출처 대신 피해 감정을 앞세워 과거와 현재를 묶는다.",
+      "pride": 7,
+      "fear": "승진 누락에 더해 2년 전 출처 누락까지 소환돼 '포장의 달인'이라는 딱지가 붙는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "notes_and_dm_curator",
+      "dailyRoutine": "오전에는 고객 리텐션 데이터와 인터뷰를 정리하고, 오후에는 실험안을 문서화하며, 늦은 밤에는 개인 노트와 멘토 DM에 자신이 만든 문장을 따로 모아 둔다.",
+      "sensitivePoints": [
+        "승진 누락",
+        "원저작 인정",
+        "과거 논란 재소환"
+      ],
+      "verbalTells": [
+        {
+          "type": "hurt_claim_loop",
+          "trigger": "lying",
+          "pattern": "\"저는 이미 두 번 뺏겼어요.\" 사실 확인 전에 피해 호소를 반복해 검증을 늦춘다."
+        },
+        {
+          "type": "ownership_shrink",
+          "trigger": "cornered",
+          "pattern": "\"참고한 거지, 가져온 게 아니에요.\" 과거 자료 활용 범위를 극단적으로 좁게 정의한다."
+        },
+        {
+          "type": "ally_name_drop",
+          "trigger": "emotional",
+          "pattern": "\"멘토도, 팀장님도 다 알고 있어요.\" 이름을 연달아 꺼내 혼자가 아닌 분위기를 만든다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "실장님",
+        "toJudge": "제 실장",
+        "angry": "오상혁 실장!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "승진 브리핑에 아이디어를 올릴 때 초안 작성자와 발표자를 모두 표기하기로 지난 분기부터 합의돼 있었다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "상혁이 가은 파일럿 문장을 \"조직 언어로 다듬겠다\"고 한 말을 둘은 '도움' vs '빼앗기'로 다르게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '문장 편집 범위일 뿐이었다' / B: '그때부터 내 안건을 자기 식으로 흡수하겠다는 신호였다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "2년 전 배수진 출처가 흐려졌을 때 상혁은 조용히 덮었고, 가은은 그 보호를 빚처럼 느끼며 정리를 피했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "조유리 (신규사업본부 본부장)",
+        "relationTo": "a",
+        "knowledgeScope": "상혁이 공동기획자 표기를 넣을지 고민하던 대화를 직접 들었다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 46,
+          "occupation": "신규사업본부 본부장",
+          "relationToA": "신규사업본부 본부장",
+          "relationToB": "문가은와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "상혁씨",
+          "addressB": "가은씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "배수진 (전직 서비스디자인 컨설턴트)",
+        "relationTo": "both",
+        "knowledgeScope": "2년 전 배수진 파일럿 원문과 가은이 구조를 템플릿으로 옮기던 과정을 알고 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 39,
+          "occupation": "전직 서비스디자인 컨설턴트",
+          "relationToA": "오상혁을 업무상 알고 있음",
+          "relationToB": "문가은을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "상혁씨",
+          "addressB": "가은씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "정민호 (HR 승진심사 운영 담당)",
+        "relationTo": "both",
+        "knowledgeScope": "브리핑 순서 변경, 비공식 평판 메모, 승진위 폴더 접근 로그를 원본 대조 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 42,
+          "occupation": "HR 승진심사 운영 담당",
+          "relationToA": "오상혁을 업무상 알고 있음",
+          "relationToB": "문가은을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "오상혁씨",
+          "addressB": "문가은씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "promotion_shortlist",
+    "description": "내일 오전 승진 발표. 혁신 브리핑이 사실상 마지막 가점이다. 아이디어 원출처와 이번 기여가 엉킨 채, 2년 전 덮인 유사 사건까지 다시 떠올랐다. 누가 누구 생각을 훔쳤는지가 곧 승진과 평판을 가른다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "발표 전날이라 슬라이드 한 장, 노트 사진 한 장이 곧바로 승진위원회 판단에 반영된다. 2년 전 출처 문제까지 한 번에 재소환."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "상혁의 공동기획 표기 삭제",
+      "truth": true,
+      "truthDescription": "상혁은 가은이 구조·사례를 짠 고객회복 랩을 대표 과제로 올리면서 슬라이드에서 공동기획자 표기를 삭제했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "출처복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "가은의 폴더 무단 확보·소문 확산",
+      "truth": true,
+      "truthDescription": "가은은 권한 회수 14분 전에 승진위 폴더를 일괄 다운로드하고, 멘토방·동료 둘에게 \"상혁이 아이디어를 훔쳤다\"고 단정 메시지를 돌렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "증거취급경계",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "고객회복 랩의 원출처 진위",
+      "truth": false,
+      "truthDescription": "핵심 실험명과 구조는 2년 전 배수진 보류 파일에 이미 있었다. 가은은 이를 템플릿으로 옮기면서 원출처 표기를 빼고 재사용했다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 40,
+        "b": 60
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "출처복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "상혁의 선행 평판 메모와 순서 변경",
+      "truth": true,
+      "truthDescription": "상혁은 해명 전날 밤 HR에 'source citation risk' 메모를 넣고 가은 발표 순서를 뒤로 밀었다. 사실상 선제 불이익.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "승진절차복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "2년 전 출처 누락의 은폐와 반복",
+      "truth": true,
+      "truthDescription": "2년 전 상혁은 배수진 이름을 빼고 내부에서 덮었고, 가은은 그 관성을 이번에도 반복했다. 쌍방 은폐의 반복이다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거청산",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "혁신브리핑 킥오프 회의록과 초안 슬라이드 버전 이력",
+      "description": "가은의 초안(구조·사례 배열)과 상혁이 공동기획자 표기를 삭제한 최종 브리핑본 버전 이력.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "회의록 확정본과 슬라이드 버전 기록이 모두 보존. 작성자·수정 순서 확인 가능.",
+        "check_metadata": "초안 Author=가은, 공동기획자 삭제=상혁 계정. 두 계정의 수정 시각이 분리돼 있다.",
+        "restore_context": "상혁은 제목·순서만 손봤고, 구조와 사례 배열은 가은 초안을 거의 그대로 유지했다.",
+        "verify_source": "공유드라이브 버전 이력과 회의록 링크가 동일 문서 ID를 가리킨다.",
+        "check_edits": "버전 로그 기반. 사후 편집 흔적 없이 변경 단계가 선명하다.",
+        "question_acquisition": "업무 공동 문서. 분쟁 해결 목적 열람 적법."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "가은의 개인 노트 사진과 날짜가 잘린 화이트보드 캡처",
+      "description": "가은의 손글씨 노트 사진과 날짜가 크롭된 화이트보드 캡처. 작성 시점이 확정되지 않는다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "개별 사진이 아닌 전후 연속본과 메모앱 원문을 함께 확인해야 한다.",
+        "check_metadata": "날짜 일부가 크롭돼 이번 분기 작성인지 2년 전 자료 재필사인지 단독 확정 불가.",
+        "restore_context": "손글씨는 가은 것이 맞으나, 핵심 표현이 2년 전 파일럿 문구와 겹칠 가능성이 남는다.",
+        "verify_source": "EXIF와 메모앱 백업이 같은 장치를 가리키나 원문 기원은 별도 확인 필요.",
+        "check_edits": "문장 변조는 없으나 날짜 크롭·프레임 절삭이 있어 시점 오해를 키운다.",
+        "question_acquisition": "개인 단말 자료. 제출 동의·사적 메모 노출 범위를 제한해야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "승진위원회 준비 폴더 다운로드 로그와 DLP 전송 기록",
+      "description": "권한 회수 14분 전 가은의 일괄 다운로드와 직후 멘토방·동료에게 링크 전송된 DLP 기록.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약이 아닌 다운로드 로그와 메신저 DLP 기록을 함께 확인해야 한다.",
+        "check_metadata": "권한 회수 14분 전 가은 계정에서 일괄 다운로드→링크 전송이 연속 발생.",
+        "restore_context": "정식 이의 전에 멘토방으로 먼저 보낸 흐름. 자기 방어와 소문 확산이 분리되지 않는다.",
+        "verify_source": "협업도구 감사 로그와 DLP 콘솔의 파일 해시·전송 시각이 일치한다.",
+        "check_edits": "서버 추출 원본. 사후 편집 흔적 없음.",
+        "question_acquisition": "업무 폴더·메신저 로그로 적법. 다만 멘토방 수신자 명단은 최소 공개 원칙."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "2년 전 파일럿 제안서 보류본과 배수진 주석",
+      "description": "배수진의 2년 전 보류 파일럿 제안서. 고객회복 랩 핵심 실험명이 주석본에 이미 적혀 있다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "보류 PDF뿐 아니라 공동편집 초안과 코멘트 레이어를 함께 열어야 한다.",
+        "check_metadata": "가은의 현재 실험명과 거의 동일한 표현이 2년 전 배수진 주석본에 이미 있다.",
+        "restore_context": "보류됐지만 폐기는 아니다. 이후 누가 어떤 출처로 재사용했는지가 핵심.",
+        "verify_source": "지식관리 저장소와 옛 프로젝트 폴더 해시 일치. 원본성 높음.",
+        "check_edits": "버전 닫힌 보존본. 사후 편집 흔적 없음.",
+        "question_acquisition": "사내 저장소 보관 보류 자료. 분쟁 해결 범위 내 열람 적법."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "HR 승진심사 메모와 발표 순서 변경 기록",
+      "description": "상혁의 'source citation risk' 비공개 메모와 가은 발표 순서가 뒤로 밀린 운영 기록.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약이 아닌 초기 코멘트 입력 시각과 순서 변경 로그를 함께 확인해야 한다.",
+        "check_metadata": "가은 해명 전날 밤 상혁 계정에서 'source citation risk' 비공개 메모가 먼저 입력.",
+        "restore_context": "공식 징계가 아닌 순서 변경이 사실상 승진 가점 감소로 작동한 구조가 확인된다.",
+        "verify_source": "HR 콘솔과 발표 세션 스케줄 변경 이력이 동일 타임라인을 보여준다.",
+        "check_edits": "초기 입력→수정본 모두 보존. 문구 완화 과정까지 추적 가능.",
+        "question_acquisition": "인사자료. 공개 최소화 원칙이나 분쟁 해결 목적 확인은 가능."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "과거 출처 누락 정리 이메일 체인",
+      "description": "2년 전 상혁·가은·배수진 이메일. '배수진 이름은 빼고 내부 정리만 하자'는 흐름이 스레드에 남아 있다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "캡처가 아닌 전체 스레드와 첨부 문서를 모두 확보해야 한다.",
+        "check_metadata": "상혁 \"내부 공유만\" 회신과 가은의 배수진 감사 메일이 연달아 남아 있다.",
+        "restore_context": "당시 분쟁을 공식 종료하지 않고 넘긴 결정이 현재 소유권 분쟁을 복잡하게 만든다.",
+        "verify_source": "메일 서버 아카이브와 개인 보관함이 동일 메시지 ID를 가진다.",
+        "check_edits": "원본 이메일. 본문 편집 흔적 없음.",
+        "question_acquisition": "업무 메일이나 외부 컨설턴트 개인 정보 포함. 재배포 제한 필요."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-2",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "상혁은 이번 승진 브리핑에서 가은의 현재 기여를 지우고 안건을 단독 성과처럼 제시했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "가은은 정식 절차 전에 승진위원회 자료를 내려받아 사적 채널로 퍼뜨렸다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "고객회복 랩의 핵심은 가은의 완전한 순수 창작이 아니라 2년 전 보류 파일에서 이어진 아이디어였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "상혁은 사실확인 전에 HR 메모와 발표 순서 조정으로 가은의 승진 평판에 개입했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "과거 유사 사건을 정식 정리하지 않고 덮은 결정이 이번 갈등을 반복시키는 토양이 됐다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "credit_label_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_no_coauthor_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L3",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "promotion_note_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_committee_pressure"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "speaking_order_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "third_party_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_incident_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "contractor_name_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "archive_coverup_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "folder_access_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "mentor_chat_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "leftover_permission_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L3",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "originality_claim_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-6_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L2",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_case_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_fear_of_being_erased"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "contractor_credit_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "출처복구": [
+      "이번 브리핑 안건의 원안, 발전 기여, 최종 발표를 분리해 공동 정정문으로 남기고 승진 자료에도 동일하게 반영한다.",
+      "보류된 옛 프로젝트까지 포함한 아이디어 출처표를 본부 차원에서 다시 만들고, 현재 안건에는 원출처와 현 기여자를 모두 병기한다.",
+      "고의적인 출처 삭제가 반복되면 해당 안건의 발표권과 승진 가점을 모두 회수하고 제3자 심사로 넘긴다."
+    ],
+    "증거취급경계": [
+      "승진위원회 자료는 남은 권한이 보이더라도 개인 보관이나 사적 멘토방 공유를 금지하고 이의는 HR 보안 채널로만 받는다.",
+      "당사자 보호가 필요할 때는 캡처나 파일 배포 대신 파일 해시와 접근 시각만 봉인 제출하게 한다.",
+      "무단 다운로드와 소문 확산이 재발하면 승진 심사와 별개로 보안 징계를 우선 적용한다."
+    ],
+    "승진절차복구": [
+      "비공식 평판 메모와 발표 순서 변경을 잠정 중지하고, 출처 확인이 끝난 뒤 승진위원회가 안건을 다시 심의한다.",
+      "승진 직전 관리자의 인사 코멘트는 단독 입력이 아니라 HR 공동확인 후에만 효력을 갖게 한다.",
+      "사실확인 전 선행 낙인이 반복되면 해당 관리자의 승진 추천권과 코멘트 권한을 일정 기간 보류한다."
+    ],
+    "과거청산": [
+      "2년 전 보류 사건을 현재 분쟁과 분리해 다시 정리하고, 빠졌던 외부 기여자 표기를 공식 보존문서에 복원한다.",
+      "과거에 덮인 출처 누락 건은 공로와 책임을 별도로 정산해 현재 인사평가와 혼선이 없게 기록한다.",
+      "유사 사건을 비공식으로 덮는 관행이 반복되면 외부 기여가 섞인 안건은 감사팀 사전검토를 의무화한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

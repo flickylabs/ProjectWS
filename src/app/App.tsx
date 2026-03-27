@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { GamePhase } from '../types'
 import { useGameStore } from '../store/useGameStore'
 import { checkConnection, getProviderName } from '../engine/llmClient'
@@ -6,6 +6,9 @@ import { setLLMMode, isLLMMode } from '../hooks/useActionDispatch'
 import { getRandomCase, getCaseCount, getCaseCountByType } from '../data/cases'
 import { generatePhase1Dialogues, generatePhase2Dialogues } from '../engine/llmPhaseDialogue'
 import type { StageDefinition } from '../data/campaign'
+import { loadProfile, loadExtendedHistory, getPlayerStats } from '../data/leaderboard'
+import { getCurrentSeason, getRemainingDays } from '../data/seasons'
+import { loadCampaignProgress } from '../data/campaign'
 import CourtLayout from '../components/layout/CourtLayout'
 import PhaseTransition from '../components/layout/PhaseTransition'
 import Tutorial from '../components/layout/Tutorial'
@@ -13,13 +16,21 @@ import Phase0_CaseIntro from '../components/phase/Phase0_CaseIntro'
 import AutoDialoguePhase from '../components/phase/AutoDialoguePhase'
 import Phase6_Mediation from '../components/phase/Phase6_Mediation'
 import CampaignScreen from '../components/phase/CampaignScreen'
+import CaseMap from '../components/phase/CaseMap'
 import ActionPanel from '../components/actions/ActionPanel'
 import VerdictScreen from '../components/verdict/VerdictScreen'
 import ResultScreen from '../components/result/ResultScreen'
 import HistoryPanel from '../components/layout/HistoryPanel'
+import SettingsPanel from '../components/layout/SettingsPanel'
+import LeaderboardScreen from '../components/leaderboard/LeaderboardScreen'
+import IntroSlides, { hasSeenIntro } from '../components/layout/IntroSlides'
+import ProfilePage from '../components/profile/ProfilePage'
 import { phase1Dialogues } from '../data/dialogues/phase1'
 import { phase2Dialogues } from '../data/dialogues/phase2'
 import { buildGenericPhase1, buildGenericPhase2 } from '../data/dialogues/generic-phase1'
+import { loadPhase1Script, loadPhase2Script } from '../data/dialogues/phaseScriptLoader'
+// prefetch는 AutoDialoguePhase 내부에서 직접 소비
+import { triggerDialogueTap } from '../components/phase/AutoDialoguePhase'
 
 export default function App() {
   const currentPhase = useGameStore((s) => s.currentPhase)
@@ -28,17 +39,21 @@ export default function App() {
   if (!caseData) return <TitleScreen />
 
   if (currentPhase === GamePhase.Phase0_CaseIntro) {
-    return <div className="h-screen bg-gray-950 text-gray-100 max-w-lg mx-auto"><Phase0_CaseIntro /></div>
+    return <div className="h-[100dvh] bg-gray-950 text-gray-100 max-w-lg mx-auto"><Phase0_CaseIntro /></div>
   }
   if (currentPhase === GamePhase.Result) {
-    return <div className="h-screen bg-gray-950 text-gray-100 max-w-lg mx-auto"><ResultScreen /></div>
+    return <div className="h-[100dvh] bg-gray-950 text-gray-100 max-w-lg mx-auto"><ResultScreen /></div>
   }
 
   return (
     <>
       <PhaseTransition />
       <Tutorial />
-      <CourtLayout actionPanel={getActionPanel(currentPhase)} />
+      <CourtLayout
+        actionPanel={getActionPanel(currentPhase)}
+        onDialogueTap={triggerDialogueTap}
+        isDialoguePhase={currentPhase === GamePhase.Phase1_InitialStatement || currentPhase === GamePhase.Phase2_Rebuttal}
+      />
     </>
   )
 }
@@ -46,15 +61,39 @@ export default function App() {
 function TitleScreen() {
   const [llmStatus, setLlmStatus] = useState<{ connected: boolean; provider?: string; modelId?: string; error?: string } | null>(null)
   const [loading, setLoading] = useState(false)
-  const [showCampaign, setShowCampaign] = useState(false)
+  const [showCaseMap, setShowCaseMap] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
+  const [showLeaderboard, setShowLeaderboard] = useState(false)
+  const [showProfile, setShowProfile] = useState(false)
+  const [showSettings, setShowSettings] = useState(false)
+  const [showIntro, setShowIntro] = useState(() => !hasSeenIntro())
   const initializeCase = useGameStore((s) => s.initializeCase)
-  const caseCount = getCaseCount()
-  const caseCounts = getCaseCountByType()
 
   useEffect(() => {
     checkConnection().then(setLlmStatus)
   }, [])
+
+  // Profile & stats data
+  const profile = useMemo(() => loadProfile(), [showProfile])
+  const history = useMemo(() => loadExtendedHistory(), [showProfile, showHistory])
+  const stats = useMemo(() => getPlayerStats(), [showProfile, showHistory])
+  const campaign = useMemo(() => loadCampaignProgress(), [showCaseMap])
+  const season = getCurrentSeason()
+  const remaining = getRemainingDays()
+
+  const reputation = useMemo(
+    () => history.reduce((sum, e) => sum + Math.max(0, e.score), 0),
+    [history],
+  )
+
+  const tierLabel = useMemo(() => {
+    if (reputation >= 2000) return '솔로몬'
+    if (reputation >= 1000) return '원로'
+    if (reputation >= 600) return '숙련'
+    if (reputation >= 300) return '정식'
+    if (reputation >= 100) return '견습'
+    return '수습'
+  }, [reputation])
 
   const handleStart = (relationshipType?: string) => {
     setLLMMode(llmStatus?.connected ?? false)
@@ -68,8 +107,28 @@ function TitleScreen() {
     initializeCase(caseData)
   }
 
-  if (showCampaign) {
-    return <CampaignScreen onSelectStage={handleCampaignStage} onBack={() => setShowCampaign(false)} />
+  // 1. Intro (first time only)
+  if (showIntro) {
+    return <IntroSlides onComplete={() => setShowIntro(false)} />
+  }
+
+  // 2. Profile page
+  if (showProfile) {
+    return <ProfilePage onBack={() => setShowProfile(false)} />
+  }
+
+  // 3. Case map
+  if (showCaseMap) {
+    return <CaseMap onSelectCase={(caseData) => {
+      setLLMMode(llmStatus?.connected ?? false)
+      initializeCase(caseData)
+      setShowCaseMap(false)
+    }} onBack={() => setShowCaseMap(false)} />
+  }
+
+  // 4. Leaderboard
+  if (showLeaderboard) {
+    return <LeaderboardScreen onClose={() => setShowLeaderboard(false)} />
   }
 
   const handleRetry = async () => {
@@ -78,74 +137,73 @@ function TitleScreen() {
     setLoading(false)
   }
 
-  const RELATION_LABELS: Record<string, string> = {
-    spouse: '부부', neighbor: '이웃', boss_employee: '직장',
-    partnership: '동업', family: '가족', tenant_landlord: '세입자', friend: '친구',
-  }
-
   return (
-    <div className="h-screen bg-gray-950 text-gray-100 flex flex-col max-w-lg mx-auto">
+    <div
+      className="h-[100dvh] bg-gray-950 text-gray-100 flex flex-col max-w-lg mx-auto"
+      style={{ paddingTop: 'env(safe-area-inset-top, 0px)', paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+    >
       {showHistory && <HistoryPanel onClose={() => setShowHistory(false)} />}
+      {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
 
-      {/* 히어로 영역 */}
-      <div className="flex-1 flex flex-col items-center justify-center px-6 bg-gradient-to-b from-amber-950/20 via-gray-950 to-gray-950">
-        <div className="text-center space-y-3 w-full">
-          <div className="text-6xl animate-pulse-glow inline-block">⚖️</div>
-          <h1 className="text-3xl font-bold text-amber-400 tracking-tight">솔로몬</h1>
-          <p className="text-sm text-gray-500 leading-relaxed">AI 둘의 싸움을<br />인간의 지혜로 재판하는 게임</p>
+      {/* 상단 — 프로필 + 설정 */}
+      <div className="flex items-center justify-between px-4 pt-3 pb-2 shrink-0">
+        <button onClick={() => setShowProfile(true)}
+          className="flex items-center gap-2 bg-gray-900/60 hover:bg-gray-800/60 border border-gray-800/40 rounded-full px-3 py-1.5 transition-all active:scale-95">
+          <span className="text-sm">👑</span>
+          <span className="text-xs font-semibold text-gray-300">{profile.playerName}</span>
+          <span className="text-xs text-amber-400 font-bold">{reputation.toLocaleString()}</span>
+        </button>
+        <button onClick={() => setShowSettings(true)} className="text-gray-600 hover:text-gray-300 text-lg">⚙️</button>
+      </div>
+
+      {/* 중앙 — 타이틀 + 버튼 */}
+      <div className="flex-1 flex flex-col items-center justify-center px-6 relative overflow-hidden">
+        {/* 배경 글로우 */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-72 h-72 bg-amber-600/8 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-blue-600/5 rounded-full blur-2xl" />
+          <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-rose-600/5 rounded-full blur-2xl" />
+        </div>
+
+        {/* 타이틀 */}
+        <div className="text-center relative z-10 mb-10">
+          <div className="text-6xl mb-3 animate-pulse-glow">⚖️</div>
+          <h1 className="text-4xl font-black text-amber-400 tracking-tight mb-2">솔로몬</h1>
+          <p className="text-sm text-gray-500 leading-relaxed">AI 둘의 싸움을<br/>인간의 지혜로 재판하는 게임</p>
+        </div>
+
+        {/* 버튼 영역 — 중앙에서 약간 아래 */}
+        <div className="relative z-10 w-full max-w-xs space-y-3">
+          <button
+            onClick={() => setShowCaseMap(true)}
+            className="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-gray-950 font-bold py-4 rounded-2xl transition-all shadow-lg shadow-amber-600/25 active:scale-95"
+          >
+            <span className="text-lg">⚖️ 사건 시작</span>
+          </button>
+
+          <div className="grid grid-cols-2 gap-2">
+            <button onClick={() => setShowLeaderboard(true)}
+              className="bg-gray-900/80 hover:bg-gray-800/80 text-gray-300 font-semibold py-3 rounded-xl transition-colors border border-gray-800/50 text-sm">
+              🏆 리더보드
+            </button>
+            <button onClick={() => setShowHistory(true)}
+              className="bg-gray-900/80 hover:bg-gray-800/80 text-gray-300 font-semibold py-3 rounded-xl transition-colors border border-gray-800/50 text-sm">
+              📊 내 기록
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* 하단 액션 영역 */}
-      <div className="px-5 pb-8 space-y-3">
-        {/* 메인 버튼 */}
-        <button
-          onClick={() => handleStart()}
-          className="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-gray-950 font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-amber-600/20 active:scale-95"
-        >
-          ⚖️ 재판 시작
-          <span className="block text-xs font-normal opacity-60 mt-0.5">사건 {caseCount}개 중 랜덤 선택</span>
-        </button>
-
-        <div className="grid grid-cols-2 gap-2">
-          <button
-            onClick={() => setShowCampaign(true)}
-            className="bg-gray-800/60 hover:bg-gray-700/60 text-gray-300 font-semibold py-3 rounded-xl transition-colors ring-1 ring-gray-700/50 text-sm"
-          >
-            📖 캠페인
-          </button>
-          <button
-            onClick={() => setShowHistory(true)}
-            className="bg-gray-800/60 hover:bg-gray-700/60 text-gray-300 font-semibold py-3 rounded-xl transition-colors ring-1 ring-gray-700/50 text-sm"
-          >
-            📜 판결 기록
-          </button>
-        </div>
-
-        {/* 관계 유형 선택 */}
-        {caseCount > 1 && (
-          <div className="flex flex-wrap gap-1.5 justify-center pt-1">
-            {Object.entries(caseCounts).map(([type, count]) => (
-              <button
-                key={type}
-                onClick={() => handleStart(type)}
-                className="text-xs text-gray-500 hover:text-gray-300 hover:bg-gray-800/50 px-2.5 py-1 rounded-full transition-colors"
-              >
-                {RELATION_LABELS[type] ?? type} {count}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* LLM + 상태 */}
-        <div className="flex items-center justify-center gap-2 pt-1">
-          {llmStatus === null && <span className="text-xs text-gray-600">연결 확인 중...</span>}
-          {llmStatus?.connected && (
-            <span className="text-xs text-emerald-500/70">● AI 연결됨</span>
-          )}
+      {/* 하단 — 시즌 + AI */}
+      <div className="px-5 pb-4 shrink-0">
+        <div className="flex items-center justify-center gap-3 text-xs text-gray-600">
+          <span>{season.name} · {remaining}일</span>
+          <span>·</span>
+          {llmStatus === null && <span>연결 확인 중...</span>}
+          {llmStatus?.connected && <span className="text-emerald-500/70">● AI 연결됨</span>}
           {llmStatus && !llmStatus.connected && (
-            <button onClick={handleRetry} disabled={loading} className="text-xs text-gray-600 hover:text-gray-400">
-              {loading ? '확인 중...' : '● AI 미연결 (탭하여 재시도)'}
+            <button onClick={handleRetry} disabled={loading} className="hover:text-gray-400">
+              {loading ? '확인 중...' : '● AI 미연결'}
             </button>
           )}
         </div>
@@ -160,27 +218,28 @@ function getActionPanel(phase: GamePhase) {
 
   switch (phase) {
     case GamePhase.Phase1_InitialStatement: {
-      // 하드코딩 사건은 전용 대사, 생성 사건은 범용 대사 또는 LLM
-      const isHardcoded = caseData?.caseId === 'case-001'
-      const fallback = isHardcoded ? phase1Dialogues : (caseData ? buildGenericPhase1(caseData) : phase1Dialogues)
+      // Phase 1: 사건별 사전 생성 스크립트 우선 → 없으면 범용 폴백
+      const caseScript = caseData ? loadPhase1Script(caseData.caseId) : null
+      const fallback = caseScript ?? (caseData ? buildGenericPhase1(caseData) : phase1Dialogues)
       return (
         <AutoDialoguePhase
           dialogues={fallback}
-          llmGenerator={llmMode && caseData ? () => generatePhase1Dialogues(caseData) : undefined}
           nextPhase={GamePhase.Phase2_Rebuttal}
           nextLabel="반박 단계로"
+          phaseKey="phase1"
         />
       )
     }
     case GamePhase.Phase2_Rebuttal: {
-      const isHardcoded = caseData?.caseId === 'case-001'
-      const fallback = isHardcoded ? phase2Dialogues : (caseData ? buildGenericPhase2(caseData) : phase2Dialogues)
+      // Phase 2: 사건별 사전 생성 스크립트 우선 → 없으면 범용 폴백
+      const caseScript = caseData ? loadPhase2Script(caseData.caseId) : null
+      const fallback = caseScript ?? (caseData ? buildGenericPhase2(caseData) : phase2Dialogues)
       return (
         <AutoDialoguePhase
           dialogues={fallback}
-          llmGenerator={llmMode && caseData ? () => generatePhase2Dialogues(caseData) : undefined}
           nextPhase={GamePhase.Phase3_Interrogation}
           nextLabel="심문 시작"
+          phaseKey="phase2"
         />
       )
     }

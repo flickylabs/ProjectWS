@@ -1,0 +1,718 @@
+{
+  "caseId": "case-family-02",
+  "meta": {
+    "relationshipType": "family",
+    "conflictSeed": "CS-4",
+    "variableModules": [
+      "VM-A"
+    ],
+    "twistModule": "TW-2",
+    "difficulty": "hard",
+    "anchorTruth": "명절 뒤 거래처와 중개업소에 퍼진 가족 비밀의 직접 배후는 아들 강선우 본인보다, 그가 넘겨준 파일을 사촌 중개사에게 돌린 며느리 이민지 쪽에 더 가깝다.",
+    "emotionalBait": "명절 식탁 음성 클립, 창고 등기 PDF, 아들의 모호한 해명이 겹치면서 처음에는 아들이 아버지 건강과 창고 매각 정보를 밖에 흘린 배신자로 보인다.",
+    "resolutionDilemma": "아들이 배우자에게 가족 자료를 넘긴 잘못은 분명하지만, 실제 외부 유출의 배후가 며느리였을 때 어디까지 아들에게 책임을 묻고 어머니의 무단 기기 열람과 공개 비난을 어떻게 함께 제어할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "정미옥",
+      "age": 63,
+      "occupation": "반찬공장 공동대표",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "질문을 받으면 사실 확인보다 먼저 '누가 우리 집을 밖에 팔아먹었냐'는 프레임을 세운다. 확신이 서면 가족 서열과 사업 책임을 한 문장에 섞어 압박하며 상대의 망설임을 죄책감처럼 몰아간다.",
+      "pride": 8,
+      "fear": "남편 건강과 가업이 동시에 흔들리는 상황에서 어머니이자 대표 자리에서 밀려나는 것 — 그것이 두렵다.",
+      "riskAppetite": 7,
+      "digitalHabit": "family_group_broadcast",
+      "dailyRoutine": "새벽 시장 보고 공장 출고를 챙긴 뒤 오후에는 창고와 거래처 전화를 돌리고, 밤엔 가족 단톡과 직원 공지를 한꺼번에 관리한다.",
+      "sensitivePoints": [
+        "남편 건강 정보",
+        "가업 평판",
+        "며느리의 경영 관여"
+      ],
+      "verbalTells": [
+        {
+          "type": "hierarchy_strike",
+          "trigger": "cornered",
+          "pattern": "밀리기 시작하면 '내가 이 집과 공장을 몇 년 지켰는데'라는 식으로 연차와 희생을 앞세워 발언권을 장악한다."
+        },
+        {
+          "type": "accusation_loop",
+          "trigger": "lying",
+          "pattern": "의심이 생기면 같은 문장을 어조만 바꿔 세 번쯤 반복해 상대의 말실수를 유도한다."
+        },
+        {
+          "type": "public_threat",
+          "trigger": "emotional",
+          "pattern": "감정이 올라오면 '이건 친척들 다 있는 데서 말하자'며 공개 검증을 압박 카드로 꺼낸다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "선우",
+        "toJudge": "제 가족",
+        "angry": "선우!"
+      }
+    },
+    "partyB": {
+      "name": "강선우",
+      "age": 35,
+      "occupation": "가족 반찬공장 생산관리자",
+      "incomeBracket": "mid",
+      "archetype": "avoidant",
+      "speechStyle": "갈등이 커지면 설명 순서를 뒤로 미루며 '그건 내가 정리해서 말할게'라고 시간을 번다. 다만 배우자 이야기가 나오면 부인과 사실을 섞어 말해 책임의 중심을 흐린다.",
+      "pride": 6,
+      "fear": "배신한 아들이자 아내도 못 지키는 남편으로 동시에 낙인찍히는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "cloud_folder_sharing",
+      "dailyRoutine": "아침에 공장 생산표를 맞추고 낮에는 납품 차량과 원가표를 정리하며, 밤엔 가족 문서를 클라우드에 스캔해 백업한다.",
+      "sensitivePoints": [
+        "가업 승계 압박",
+        "아내 비난",
+        "아버지 건강 공개"
+      ],
+      "verbalTells": [
+        {
+          "type": "delay_buffer",
+          "trigger": "avoiding",
+          "pattern": "답을 바로 하지 않고 '그 얘기는 맥락부터 봐야 해'라며 순서를 늦춘다."
+        },
+        {
+          "type": "soft_minimizing",
+          "trigger": "lying",
+          "pattern": "불리한 공유 행위는 '그냥 보여준 거지'처럼 크기를 줄여 표현한다."
+        },
+        {
+          "type": "marriage_shield",
+          "trigger": "cornered",
+          "pattern": "아내 관련 질문이 나오면 '가족끼리 그런 말까지 해야 해?'라고 관계 자체를 방패로 쓴다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "미옥",
+        "toJudge": "제 가족",
+        "angry": "미옥!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "작년 아버지 파킨슨 진단 이후 가족은 건강 기록과 공장 부채표는 직계 가족 바깥으로 돌리지 않기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "창립기념식 뒤 아버지가 '선우가 현장을 잘 안다'고 말했던 일을 두 사람은 승계 신호인지 단순 칭찬인지 다르게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '현장 맡으란 말이지 지분 승계는 아니었다' / B: '아버지가 결국 내가 이어받길 바란다는 뜻이었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "코로나 때 며느리 민지가 급한 급여를 막으려고 2,000만원을 빌려준 뒤에도, 그 돈이 경영 발언권을 주는지 여부는 끝내 정리되지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "강정호 (아버지)",
+        "relationTo": "both",
+        "knowledgeScope": "명절 식탁에서 자신의 건강상태와 창고 정리 가능성을 직접 언급했지만, 이후 누가 밖으로 전했는지는 모른다.",
+        "witnessedDirectly": true,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 68,
+          "occupation": "은퇴",
+          "relationToA": "정미옥을 업무상 알고 있음",
+          "relationToB": "강선우을 업무상 알고 있음",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "자식 편을 들면서도 객관적으로 보이려 한다. 어른 특유의 훈계 톤이 섞인다.",
+          "addressJudge": "재판관님",
+          "addressA": "미옥씨",
+          "addressB": "선우"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "한지훈 (주요 거래처 영업과장)",
+        "relationTo": "both",
+        "knowledgeScope": "명절 직후 공급처들 사이에 공장 매각 소문이 돌기 시작한 시점과, 창고 등기 PDF가 돌았다는 정황을 안다.",
+        "witnessedDirectly": false,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 51,
+          "occupation": "주요 거래처 영업과장",
+          "relationToA": "정미옥을 업무상 알고 있음",
+          "relationToB": "강선우을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "미옥씨",
+          "addressB": "선우씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "노세영 (가업승계 상담 변호사)",
+        "relationTo": "both",
+        "knowledgeScope": "음성 메모 전체 맥락과 정식 승계 문서 부재, 그리고 중개업소 문의 첨부파일의 원본 출처를 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 54,
+          "occupation": "가업승계 상담 변호사",
+          "relationToA": "정미옥을 업무상 알고 있음",
+          "relationToB": "강선우을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "정미옥씨",
+          "addressB": "강선우씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "post_holiday_gathering",
+    "description": "추석 가족 모임에서 아버지 건강 악화 가능성과 창고 매각, 누가 공장을 이어받을지 이야기가 한꺼번에 나왔다. 그런데 48시간도 안 돼 거래처와 중개업소가 같은 내용을 입에 올리기 시작하면서, 식탁 위 대화가 시장 소문으로 번져 집안 전체가 배신 프레임에 갇혔다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "명절 직후라 친척과 거래처의 시선이 동시에 몰렸고, 건강과 승계 정보가 섞여 작은 공유도 곧 가업 매각 신호처럼 받아들여졌다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "선우의 배우자 자료 공유",
+      "truth": true,
+      "truthDescription": "선우는 명절 식탁 음성 클립과 창고 등기·부채표 일부를 며느리 민지에게 넘기며 가족 외 비공유 원칙을 먼저 깼다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "비밀경계",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-2",
+      "name": "외부 유출의 실제 배후",
+      "truth": true,
+      "truthDescription": "거래처와 중개업소로 이어진 실질적 외부 유출은 선우 본인의 직접 제보보다, 며느리 민지가 사촌 중개사에게 정보를 돌리며 시작된 흐름에 가깝다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 30,
+        "b": 70
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "외부유출차단",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "미옥의 며느리 태블릿 무단 열람과 친척 단톡 확산",
+      "truth": true,
+      "truthDescription": "미옥은 주방에 놓인 민지의 태블릿을 열어 동기화 화면을 확인한 뒤, 친척 단톡에 선우가 밖에 흘렸다는 취지의 글을 올렸다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "사생활경계",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-4",
+      "name": "아버지 음성 메모는 선우 단독 승계 선언인가",
+      "truth": false,
+      "truthDescription": "42초 클립만 보면 단독 승계처럼 들리지만, 전체 녹취와 변호사 의견상 이는 건강 악화 시 현장 운영을 임시로 맡아보라는 취지일 뿐 지분·상속 확정은 아니다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "승계정리",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-5",
+      "name": "가족 비밀 외부 비공유 원칙의 쌍방 파기",
+      "truth": true,
+      "truthDescription": "가족은 건강기록과 공장 재산표를 집 밖으로 돌리지 않기로 했지만, 선우는 배우자에게 예외 없이 넘겼고 미옥은 친척과 거래처에 의심을 흘리며 원칙을 같이 무너뜨렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "비밀경계",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "명절 식탁 음성메모 42초 클립",
+      "description": "아버지가 '공장은 선우가 맡아'라고 말한 대목만 남은 42초 음성 클립으로, 단독 승계 선언처럼 들린다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "household_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 녹음은 없고 42초 길이 파일만 먼저 제출됐다.",
+        "check_metadata": "생성 시각은 명절 저녁 21시 17분이며 선우 휴대폰에서 민지에게 전송된 이력이 보인다.",
+        "restore_context": "직전과 직후 대화가 빠져 있어 건강 악화 대비 임시 운영 논의인지 단독 승계 선언인지 분간이 어렵다.",
+        "verify_source": "가정용 공유녹음 앱의 원본 해시와 일치한다.",
+        "check_edits": "오디오 파형상 앞뒤 절단 흔적이 있다.",
+        "question_acquisition": "가족 모임 대화 녹음이라 당사자 동의 범위와 사생활 침해 문제가 남는다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "가족클라우드 공유기록과 선우-민지 메시지",
+      "description": "선우가 며느리 민지에게 명절 음성 클립과 '창고 등기·부채표' 폴더 링크를 보낸 클라우드 로그와 메시지 원본이다.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "공유 링크 생성 시각과 채팅 원본이 함께 보존돼 있다.",
+        "check_metadata": "파일 전송은 명절 다음 날 오전 6시 42분이며 수신 계정은 민지 개인 이메일이다.",
+        "restore_context": "본문에는 '밖에는 말하지 말고 네가 정리만 해줘'라는 문장이 있어 선우가 외부유출까지 직접 의도했다고 단정되진 않는다.",
+        "verify_source": "클라우드 관리자 로그와 채팅 플랫폼 원본이 일치한다.",
+        "check_edits": "플랫폼 추출본이라 본문 수정 흔적이 없다.",
+        "question_acquisition": "선우가 직접 제출한 계정 로그라 적법하지만 제3자 계정 정보는 일부 비식별 처리돼야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "며느리 태블릿 접속 로그와 친척 단톡 캡처",
+      "description": "미옥이 주방에 놓인 민지의 태블릿을 열어 클라우드 동기화 화면을 본 뒤, 친척 단톡에 '선우가 밖에 흘렸다'고 적은 기록이다.",
+      "type": "device_log",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "household_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "태블릿 잠금 해제 시각과 친척 단톡 원본 메시지가 함께 남아 있다.",
+        "check_metadata": "접속은 아침 7시 03분, 친척 단톡 전송은 그로부터 6분 뒤다.",
+        "restore_context": "당시 화면에는 민지의 외부 발송 여부가 아니라 선우가 보낸 공유 링크만 떠 있었다.",
+        "verify_source": "태블릿 사용 기록과 단톡 내보내기 파일이 서로 맞물린다.",
+        "check_edits": "캡처 자체 편집은 없지만 화면 해석이 과잉된 흔적이 있다.",
+        "question_acquisition": "가족 구성원의 개인 기기 무단 열람으로 확보된 자료라 사생활 침해 소지가 크다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "중개업소 문의메일 헤더와 첨부된 창고 등기 PDF",
+      "description": "지역 중개업소가 받은 익명 문의메일 헤더와 첨부 창고 등기 PDF로, 민지 측 보조 이메일과 이어지는 복구 정보가 남아 있다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "메일 원본 헤더와 첨부 PDF 해시값이 중개업소 서버에 남아 있다.",
+        "check_metadata": "보조 이메일 복구번호 뒷자리와 민지가 사용한 간편로그인 번호 일부가 일치한다.",
+        "restore_context": "본문은 '가족이 곧 창고를 정리할 수 있다'며 시세 문의를 하는 형식이다.",
+        "verify_source": "중개업소 서버 추출본과 메일 보안업체 회신이 일치한다.",
+        "check_edits": "서버 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "기관이 비식별 처리 후 제공한 자료라 적법하다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "민지 노트앱 초안과 사촌 중개사 통화기록",
+      "description": "민지 노트앱의 '시세 먼저 알아보고 시어머니 설득' 초안과, 사촌 중개사에게 통화한 기록이다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "노트앱 원본과 통화목록이 같은 날짜로 이어져 있다.",
+        "check_metadata": "초안 작성은 선우가 파일을 보낸 뒤 28분 후, 중개사 통화는 그날 오후다.",
+        "restore_context": "초안에는 공장 매각을 기정사실화하려는 표현보다 '선우를 빼고 먼저 정보 확인'이라는 문장이 더 강하다.",
+        "verify_source": "민지가 뒤늦게 동의해 제출한 백업본과 통신사 기록이 일치했다.",
+        "check_edits": "노트앱 수정 이력은 두 차례뿐이고 본문 조작 흔적은 없다.",
+        "question_acquisition": "가족 분쟁과 무관한 개인 메모가 일부 섞여 있어 사용 범위는 엄격히 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "가업승계 상담 변호사 확인서와 음성 전체 녹취",
+      "description": "노세영 변호사가 확인한 전체 녹취와 상담 메모로, 아버지 발언이 단독 승계 확정이 아니라 건강 악화 시 임시 운영을 맡기려는 취지였음을 보여준다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "전체 18분 녹취와 상담 접수 메모가 원본 상태로 제출됐다.",
+        "check_metadata": "녹음 시작은 식사 직후 20시 59분이며 끊김 없이 이어진다.",
+        "restore_context": "전체 대화에는 '지분이랑 상속은 나중에 다시 정리하자'는 아버지 발언이 분명히 있다.",
+        "verify_source": "변호사 사무실 접수번호와 원본 녹취 해시가 일치한다.",
+        "check_edits": "전체 파일은 편집 흔적이 없고 42초 클립만 별도 추출본이었다.",
+        "question_acquisition": "가업·상속 상담 자료라 적법하지만 가족 외부 공개는 최소화돼야 한다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-5"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "선우는 명절 식탁 음성 클립과 창고 등기·부채표 일부를 배우자에게 넘겼다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "거래처와 중개업소로 이어진 실질적 외부 유출의 출발점은 며느리 민지의 별도 문의였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-3",
+      "fact": "미옥은 민지 태블릿을 무단 열람하고 친척 단톡에 의심을 퍼뜨렸다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "42초 음성 클립은 단독 승계 선언처럼 보이지만 전체 맥락은 임시 운영 지시였다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-5",
+      "fact": "어머니와 아들은 둘 다 가족 비밀 외부 비공유 원칙을 다른 방식으로 무너뜨렸다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "tablet_access_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "relative_chat_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "privacy_boundary_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_audio_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "full_transcript_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-5",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "confidentiality_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_factory_fear"
+        },
+        {
+          "from": "S4",
+          "to": "S3",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "third_party_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "spouse_share_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "nonjudgmental_question_about_marriage"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "third_party_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "rumor_source_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "spouse_contact_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "confidentiality_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "shared_folder_exception_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "비밀경계": [
+      "건강기록·재산표·등기 자료는 직계 가족 안에서도 열람 대상과 목적을 적은 공유목록으로 다시 묶는다.",
+      "배우자를 포함한 가족 외 전달은 사전 동의 1회와 전달 로그 보존을 의무화한다.",
+      "반복 위반이 나오면 가업 자료를 외부 변호사 보관 체계로 넘기고 가족 개인 폴더 접근권을 즉시 제한한다."
+    ],
+    "사생활경계": [
+      "가정 내 공용 태블릿과 개인 태블릿을 분리하고, 잠금 해제 기록이 남는 기기만 가족 공간에 둔다.",
+      "가족 의심이 생겨도 개인기기 열람 대신 변호사나 제3자 입회 확인 절차를 먼저 거친다.",
+      "재차 무단 열람과 친척 단톡 확산이 발생하면 명절 모임과 사업 회의 참석 범위를 한시적으로 분리한다."
+    ],
+    "승계정리": [
+      "음성 클립과 사적 발언을 승계 약속으로 쓰지 않겠다는 확인 문구를 가족회의록 첫 줄에 둔다.",
+      "변호사 입회하에 건강 악화 시 임시 운영권, 지분, 상속, 창고 처분 가능성을 문서로 따로 나눈다.",
+      "승계 암시를 근거로 독점 주장이나 외부 문의가 반복되면 가업 승계 논의를 중단하고 외부 관리인 체계를 검토한다."
+    ],
+    "외부유출차단": [
+      "중개업소와 거래처에 동일한 정정 문구를 보내고, 추가 문의는 변호사 창구 하나로만 받는다.",
+      "유출 경로를 가족 내부 책임과 별도로 정리해 며느리·사위 포함 제3자 접근 권한을 재설정한다.",
+      "다시 외부 유출이 발생하면 거래처 고지, 로그 보존, 법적 경고를 묶은 공식 대응 절차로 즉시 전환한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

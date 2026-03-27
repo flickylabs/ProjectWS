@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
+import { GamePhase } from '../../types'
+import { getRandomCase } from '../../data/cases'
 import ScoreBreakdown from './ScoreBreakdown'
 import TruthReveal from './TruthReveal'
 import Aftermath from './Aftermath'
@@ -16,7 +18,24 @@ export default function ResultScreen() {
 
   if (!verdictScore || !caseData) return null
 
-  const handleReplay = () => initializeCase(caseData)
+  // 홈으로
+  const handleHome = () => {
+    useGameStore.setState({ caseData: null })
+    useGameStore.getState().setPhase(GamePhase.Phase0_CaseIntro)
+    useGameStore.getState().clearDialogue()
+  }
+
+  // 다음 재판 (새 사건)
+  const handleReplay = () => {
+    const newCase = getRandomCase()
+    initializeCase(newCase)
+  }
+
+  // 다시 판결하기 (같은 사건, 판결 단계로)
+  const handleRetry = () => {
+    useGameStore.getState().resetVerdict()
+    useGameStore.getState().setPhase(GamePhase.Phase7_Verdict)
+  }
 
   const TABS: { id: ResultTab; label: string }[] = [
     { id: 'score', label: '평가' },
@@ -60,13 +79,27 @@ export default function ResultScreen() {
         {tab === 'share' && <ShareResult />}
       </div>
 
-      {/* 재시작 */}
-      <div className="border-t border-gray-800 px-4 py-3 text-center">
+      {/* 하단 버튼 */}
+      <div className="border-t border-gray-800 px-4 py-3 space-y-2">
+        <div className="flex gap-2">
+          <button
+            onClick={handleHome}
+            className="flex-1 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold py-2.5 rounded-xl transition-colors text-sm"
+          >
+            🏠 홈으로
+          </button>
+          <button
+            onClick={handleReplay}
+            className="flex-1 bg-amber-600 hover:bg-amber-500 text-gray-950 font-bold py-2.5 rounded-xl transition-colors text-sm"
+          >
+            ⚖️ 다음 재판
+          </button>
+        </div>
         <button
-          onClick={handleReplay}
-          className="bg-amber-600 hover:bg-amber-500 text-gray-950 font-bold px-8 py-2.5 rounded-lg transition-colors text-sm"
+          onClick={handleRetry}
+          className="w-full text-xs py-1.5 text-gray-500 hover:text-gray-300 transition-colors"
         >
-          다시 재판하기
+          🔄 다시 판결하기
         </button>
       </div>
     </div>

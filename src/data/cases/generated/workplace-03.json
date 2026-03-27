@@ -1,0 +1,719 @@
+{
+  "caseId": "case-work-03",
+  "meta": {
+    "relationshipType": "boss_employee",
+    "conflictSeed": "CS-5",
+    "variableModules": [
+      "VM-C"
+    ],
+    "twistModule": "TW-6",
+    "difficulty": "medium",
+    "anchorTruth": "'라인 타고 들어온 HJ'는 희주가 아니라 외부 연계 후보 한재균을 가리킨 취중 발언이었다. 자동 클립에서 앞 8초가 잘렸다.",
+    "emotionalBait": "19초 클립, 임원 추천 전배 직후 타이밍, '라인 탔다'는 표현이 겹치자 팀장이 후배의 채용 배경을 공개 비하한 그림이 완성된다.",
+    "resolutionDilemma": "도윤의 모호하지만 위험한 술자리 발언과 희주의 단정 메시지 전파 중 어느 쪽이 더 무거운가. 이미 번진 평판 손상을 어떤 방식으로 되돌릴 수 있는가."
+  },
+  "duo": {
+    "partyA": {
+      "name": "강도윤",
+      "age": 38,
+      "occupation": "브랜드전략팀 팀장",
+      "incomeBracket": "high",
+      "archetype": "victim_cosplay",
+      "speechStyle": "\"난 이미 충분히 상처받았어요.\" 피해자 위치를 먼저 점한다. 궁지에 몰리면 \"다들 취해 있었잖아\"로 책임을 희석한다.",
+      "pride": 7,
+      "fear": "술자리 실언 하나로 '후배를 깎아내리는 상사'라는 딱지가 굳어 팀 신뢰를 잃는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "shared_album_viewer",
+      "dailyRoutine": "오전에는 캠페인 방향 회의를 돌고, 오후에는 임원 보고용 문구를 손보며, 저녁에는 팀원 산출물 코멘트를 몰아서 남긴다.",
+      "sensitivePoints": [
+        "관리자 평판",
+        "술자리 언행",
+        "인사 개입 의혹"
+      ],
+      "verbalTells": [
+        {
+          "type": "hurt_first_frame",
+          "trigger": "lying",
+          "pattern": "\"저도 충분히 상처받았습니다.\" 사실 확인 전에 피해자 프레임을 먼저 깐다."
+        },
+        {
+          "type": "half_laugh_soften",
+          "trigger": "cornered",
+          "pattern": "\"그 정도로 받아들일 줄은...\" 짧게 웃으며 발언 강도를 축소해 넘긴다."
+        },
+        {
+          "type": "we_all_were_drunk",
+          "trigger": "avoiding",
+          "pattern": "\"다들 취해 있었잖아요.\" 개인 발언 책임을 집단 상황으로 녹여 흐린다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "희주씨",
+        "toJudge": "제 부하직원",
+        "angry": "최희주!"
+      }
+    },
+    "partyB": {
+      "name": "최희주",
+      "age": 30,
+      "occupation": "브랜드기획 대리",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "캡처와 시간표를 차례로 늘어놓으며 감정을 미루려 한다. 억울함이 차면 \"그게 저 아니면 누군데요?\"라며 정황을 의도로 단정한다.",
+      "pride": 6,
+      "fear": "\"라인 타고 들어온 애\"로 찍혀서 전배 경위와 실력 모두 의심받는 사람이 되는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "private_dm_archiver",
+      "dailyRoutine": "오전에는 시장 자료를 정리하고, 오후에는 제안서와 회의록을 돌린 뒤, 밤에는 멘토와 동료들에게 초안을 점검받는다.",
+      "sensitivePoints": [
+        "전배 배경",
+        "실력 폄하",
+        "사내 소문"
+      ],
+      "verbalTells": [
+        {
+          "type": "timestamp_stack",
+          "trigger": "lying",
+          "pattern": "\"7시 42분에 보고, 7시 58분에 전달했어요.\" 핵심 대신 시간표를 읊어 판단을 늦춘다."
+        },
+        {
+          "type": "definition_narrowing",
+          "trigger": "cornered",
+          "pattern": "\"퍼뜨린 게 아니라 확인한 거예요.\" 단어 정의를 좁혀 책임 범위를 잘라낸다."
+        },
+        {
+          "type": "flat_voice_push",
+          "trigger": "emotional",
+          "pattern": "억울할수록 목소리가 오히려 낮아지고 평평해진다. 단정적 결론은 그때 나온다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "팀장님",
+        "toJudge": "제 팀장",
+        "angry": "강도윤 팀장!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "팀 회식에서 개인 평가나 채용 배경 이야기는 하지 않기로 두 사람 사이에 구두 합의가 있었다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "희주의 임원 추천 전배 때 도윤이 한 \"배경 설명을 깔끔히 하자\"는 말을 둘은 정반대로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '오해를 줄이려던 실무 조언이었다' / B: '처음부터 내 라인을 의심한 말처럼 들렸다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "임원 보고 준비 때 도윤이 희주 초안을 공개 석상에서 '정치적 문장'이라 불렀다. 희주는 모욕감을 삼키고 넘겼다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "윤세아 (같은 본부 차장)",
+        "relationTo": "a",
+        "knowledgeScope": "2차에서 윤세아가 먼저 'HJ 라인 이슈'를 꺼낸 흐름과 도윤의 취중 발언 장면을 안다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 43,
+          "occupation": "같은 본부 차장",
+          "relationToA": "같은 본부 차장",
+          "relationToB": "최희주와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "도윤씨",
+          "addressB": "희주씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "정채린 (HR 조직문화 담당)",
+        "relationTo": "both",
+        "knowledgeScope": "희주의 HR 상담, 도윤의 비공식 평판 메모, 발표 배정 변경 시점을 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 36,
+          "occupation": "HR 조직문화 담당",
+          "relationToA": "강도윤을 업무상 알고 있음",
+          "relationToB": "최희주을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "도윤씨",
+          "addressB": "희주씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "박성원 (총무·보안 담당)",
+        "relationTo": "both",
+        "knowledgeScope": "공유앨범 원본 메타, 식당 CCTV 좌석 배치, 법인카드 정산 시각을 원본 대조 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 39,
+          "occupation": "총무·보안 담당",
+          "relationToA": "강도윤을 업무상 알고 있음",
+          "relationToB": "최희주을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "강도윤씨",
+          "addressB": "최희주씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "after_work_dinner",
+    "description": "캠페인 통과 축하 회식, 2차까지 이어진 술자리. 본부 차장과 임원 추천 전배자가 같은 테이블에 있었다. 다음 날 아침 7시 42분, 19초짜리 클립과 DM이 회사 안을 돌기 시작했다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "알코올, 상하 직급 혼재, 전배 직후 민감한 시기가 겹쳤다. 한 문장만 잘려도 명예훼손과 리더십 논란으로 번지는 조건."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "도윤의 취중 HJ 발언",
+      "truth": true,
+      "truthDescription": "도윤은 2차에서 \"라인 타고 들어온 HJ, 포장이 실력보다 앞서\"라고 말했다. 대상을 특정하지 않았지만 오해를 부를 위험한 발언이었다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "회식발언경계",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "희주의 단정 DM 전파",
+      "truth": true,
+      "truthDescription": "희주는 HJ=자신이라 단정하고 \"팀장이 내 채용 배경을 씹었다\"는 DM을 멘토방·동료 둘에게 아침 7시에 보냈다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "소문차단",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "HJ 발언의 실제 대상은 누구인가",
+      "truth": false,
+      "truthDescription": "HJ는 외부 연계 후보 한재균이었다. 인력배치 메모에 'HJ=Han Jae-gyun'으로 표기돼 있고, 자동 클립이 앞 8초를 잘라 양쪽 모두 오해했다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "평판복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "도윤의 선제 HR 메모와 발표 배제",
+      "truth": true,
+      "truthDescription": "도윤은 희주 면담 전 HR에 '평판 리스크 인원'이라 적고, 다음 주 리허설 발표에서 희주를 뺐다. 사실상 선제 조치다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "관리자보복방지",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "정정 전 쌍방 소문전 가담",
+      "truth": true,
+      "truthDescription": "도윤은 팀 회의에서 \"어제 일로 팀 명예가 흔들렸다\"고 암시했고, 희주는 단정 DM을 여러 명에게 돌렸다. 쌍방 소문전이다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "소문차단",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "사내 공유앨범 19초 회식 영상 클립",
+      "description": "회식 2차 자동 하이라이트 19초 클립. 발언 앞 8초가 잘려 대상 설명이 빠져 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "platform",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "19초 클립이 아닌 원본 라이브포토와 연속 영상 전체를 요청해야 한다.",
+        "check_metadata": "클립 시작이 촬영보다 7.8초 늦다. 대상 설명이 빠진 채 발언 중간부터 담겼다.",
+        "restore_context": "앞부분 누락으로 HJ를 누가 먼저 꺼냈는지, 내부인인지 외부 후보인지 판단 불가.",
+        "verify_source": "앨범 업로드 시각과 참석자 단말 백업 시각 일치. 당일 생성본 확인.",
+        "check_edits": "이어붙이기 흔적은 없으나 자동 추출이라 맥락 손실이 핵심 문제다.",
+        "question_acquisition": "직원 얼굴·음성이 포함된 사적 회식 영상. 활용 범위를 제한해야 한다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "희주의 멘토방 DM와 동료 전달 메시지",
+      "description": "희주가 아침 7시 42분~8시 사이 멘토방·동료 둘에게 보낸 \"팀장이 내 배경을 씹었다\" DM 캡처 묶음.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "캡처가 아닌 대화방 전체 원본과 전달 순서를 확인해야 한다.",
+        "check_metadata": "07:42~08:00 사이 3명에게 연속 전송. 출근 전 확산이 시작됐다.",
+        "restore_context": "첫 메시지는 확인 질문이었으나 후반에 '내 얘기 맞다'로 단정이 강해진다.",
+        "verify_source": "멘토방과 동료 수신자 단말의 파일명·시각이 서로 일치한다.",
+        "check_edits": "본문 변조 없으나 일부 답장이 잘려 있어 반박 맥락이 누락됐다.",
+        "question_acquisition": "사적 조언 대화. 정당한 문제 제기와 명예훼손 경계를 구분해 다뤄야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "인력배치 공유노트 초안의 HJ 표기",
+      "description": "인력배치 공유노트 초안. HJ 옆에 'Han Jae-gyun/partner shortlist' 메모가 회식 전 시각에 입력돼 있다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "현재본이 아닌 회식 당일 밤 버전 이력과 약어 설명 칸을 함께 확인해야 한다.",
+        "check_metadata": "HJ 옆 메모 'Han Jae-gyun/partner shortlist' 입력 시각이 회식 전으로 찍혀 있다.",
+        "restore_context": "같은 페이지에 희주는 한글 실명으로 별도 기재. HJ와 분리돼 있다.",
+        "verify_source": "공유드라이브 버전 이력과 본부 차장 열람 기록이 일치한다.",
+        "check_edits": "버전 로그 보존 문서. 사후 편집 흔적 없이 원본성 높음.",
+        "question_acquisition": "업무용 공유 문서. 분쟁 해결 범위 내 열람 적법."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "법인카드 정산 메모와 식당 CCTV 좌석 정보",
+      "description": "법인카드 정산 메모와 식당 CCTV. 희주는 다른 테이블에 앉아 발언을 실시간으로 듣지 못한 것이 확인된다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "클립 시각에 해당하는 CCTV 구간과 정산 메모 원본을 함께 확인해야 한다.",
+        "check_metadata": "클립 시작 직전 윤세아가 '한재균 라인 이슈'를 꺼내는 장면이 CCTV에 찍혀 있다.",
+        "restore_context": "희주는 다른 테이블에 앉아 발언을 직접 못 듣고 나중에 클립으로 접했다.",
+        "verify_source": "총무팀 CCTV와 법인카드 정산 시각이 같은 타임라인을 형성한다.",
+        "check_edits": "기관 보존본. 편집·절삭 흔적 없음.",
+        "question_acquisition": "CCTV·결제 정보 포함. 필요 구간만 제한적으로 확인해야 한다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "HR 상담 접수와 발표 리허설 배정 변경 기록",
+      "description": "도윤의 HR 비공식 '평판 리스크' 메모와, 희주가 리허설 발표에서 빠진 배정 변경 기록.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "HR 상담 로그 원본과 발표 배정표의 변경 전·후 버전을 함께 확인해야 한다.",
+        "check_metadata": "도윤의 '평판 리스크' 메모가 희주 면담 전날 밤에, 배정 변경은 다음 날 오전에 처리됐다.",
+        "restore_context": "공식 징계가 아닌 발표 배제가 사실상 선제 불이익처럼 작동했다.",
+        "verify_source": "HR 관리자 조회본과 팀 캘린더 배정 이력이 일치한다.",
+        "check_edits": "초기 메모→수정본 모두 보존. 편집 경로 투명.",
+        "question_acquisition": "인사자료. 분쟁 해결 목적 외 공개는 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "공유앨범 원본 메타데이터와 자동 하이라이트 생성 로그",
+      "description": "자동 클립 생성 로그. 웃음 소리 급등 시점에서 추출이 시작돼 앞 7.8초가 잘린 과정이 기록돼 있다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "관리자 권한으로 원본 파일 패키지와 하이라이트 생성 로그를 추출해야 한다.",
+        "check_metadata": "웃음 급등 시점에서 자동 클립 시작. 대상 설명이 담긴 앞 8초가 잘렸다.",
+        "restore_context": "잘린 앞부분에 '외부 후보 HJ'라는 표현이 있어 희주 직접 지칭으로 보기 어렵다.",
+        "verify_source": "플랫폼 로그와 관리 콘솔 기록이 같은 자동 추출 규칙을 보여준다.",
+        "check_edits": "수동 편집이 아닌 시스템 자동 추출. 조작이 아니라 오해가 핵심 문제다.",
+        "question_acquisition": "단말 식별자 포함. 필요 메타만 제한 공개해야 한다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "도윤은 회식 자리에서 특정인을 연상시키는 모호하고 위험한 평판 발언을 했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "희주는 발언의 주어를 자신으로 단정하고 팀장 비방 메시지를 여러 사람에게 보냈다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "문제의 HJ는 희주가 아니라 외부 연계 후보 한재균이었고, 양측은 같은 약어와 클립을 다르게 해석했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "도윤은 사실 확인 전에 HR 메모와 발표 배제로 희주의 평판 불이익을 키웠다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 공식 정정보다 먼저 사내 소문과 암시를 이용해 상대를 압박했다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "dinner_comment_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "who_hj_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "hr_note_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_reputation_damage"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "rehearsal_exclusion_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "rumor_management_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "team_meeting_phrase_followup"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "named_person_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "dm_forward_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "mentor_room_scope_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "recipient_count_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "targeted_me_claim"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "rumor_spread_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_hurt"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_not_hr_first_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "회식발언경계": [
+      "회식 자리에서는 팀원 평가와 채용 배경 언급을 금지하고, 필요한 피드백은 다음 근무시간에만 정식으로 하게 한다.",
+      "문제가 된 회식 발언은 참석자 확인을 거쳐 같은 날 정정 메모로 남기고, 사적 영상 클립만으로 판단하지 않게 한다.",
+      "반복되면 관리자의 회식 주관권과 인사평가 참여권을 분리하고 조직문화 교육을 의무화한다."
+    ],
+    "소문차단": [
+      "평판 이슈는 멘토방이나 사적 DM이 아니라 HR 단일 채널로 접수하고, 확인 전 이름 언급을 중단한다.",
+      "루머가 돌기 시작하면 팀장과 당사자가 함께 사실확인 일정을 공지해 비공식 추측을 먼저 차단한다.",
+      "반복적인 추측 전파가 있으면 발신자와 관리자를 함께 경고하고 사내 메신저 사용 가이드를 적용한다."
+    ],
+    "평판복구": [
+      "문제 발언의 실제 대상과 맥락을 확인한 뒤, 희주와 도윤 모두에게 동일한 범위의 정정 공지를 제공한다.",
+      "인력배치 약어와 회식 영상 같은 맥락 손실 자료는 원본 확인 전 인사 판단 자료로 쓰지 않게 한다.",
+      "이미 퍼진 평판 피해가 크면 HR이 중심이 되어 정정문, 배정 복구, 평가 메모 삭제를 묶어 처리한다."
+    ],
+    "관리자보복방지": [
+      "사실관계 확인 전에는 관리자가 HR 비공식 메모나 발표 배제 같은 불이익 조치를 단독으로 하지 못하게 한다.",
+      "회식 이후 갈등이 생기면 직속상사가 아닌 제3의 팀장이 임시로 역할 배정과 발표권을 조정한다.",
+      "보복성 배제가 반복되면 해당 관리자의 인사 코멘트 권한을 일정 기간 정지한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

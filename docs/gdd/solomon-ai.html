@@ -23,8 +23,8 @@
     <a class="topbar-sec-link" href="#prompt">LLM 프롬프트</a>
   </div>
   <div class="topbar-meta">
-    <span>v2.0</span>
-    <span>2026-03-25</span>
+    <span>v3.0</span>
+    <span>2026-03-28</span>
   </div>
 </header>
 
@@ -33,6 +33,7 @@
     <div class="sidebar-section-title">게임 비전</div>
     <div class="sidebar-items">
       <a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
+      <a class="sidebar-link" href="solomon-concept.html"><span class="icon">🎭</span><span class="label">세계관 &amp; 컨셉</span></a>
     </div>
   </div>
   <div class="sidebar-section">
@@ -65,9 +66,9 @@
 
 <main class="content">
 
-  <h1>에이전트 설계 <span class="badge">GDD v2.0</span></h1>
-  <p class="subtitle">엔진 아키텍처 · 거짓말 2축 · 감정 & 행동 징후 · 신뢰/보호 로직 · 발언 결정 · LLM 프롬프트</p>
-  <p>대화의 생동감과 시스템의 일관성을 동시에 확보하는 기술 설계. <strong>LLM은 연기만 하고, 진실은 룰 엔진이 관리한다.</strong></p>
+  <h1>에이전트 설계 <span class="badge">GDD v3.0</span></h1>
+  <p class="subtitle">엔진 아키텍처 · 거짓말 2축 · 감정 & 행동 징후 · 신뢰/보호 로직 · 발언 결정 · LLM 프롬프트 · Phase별 깊이 · 진술 분석</p>
+  <p>대화의 생동감과 시스템의 일관성을 동시에 확보하는 기술 설계. <strong>LLM은 연기만 하고, 진실은 룰 엔진이 관리한다.</strong> v3.0에서 Phase별 응답 깊이 차등, 공용 말투 모듈, 이름 플레이스홀더, AI 진술 분석 추가.</p>
 
 
   <!-- ── 엔진 아키텍처 ──────────────────────────── -->
@@ -76,19 +77,19 @@
 
   <div class="card-grid">
     <div class="card">
-      <span class="badge badge-sub">로컬 LLM</span>
-      <div class="card-title mt-sm">사건 마스터 엔진</div>
-      <p>DuoSeed·ContextSeed·CaseSeed 전체를 생성·저장한다. 48h 타임라인, 인과 그래프, 증거 그래프, 거짓말 전략, 드라마 비트 모두 사전 생성.</p>
+      <span class="badge badge-sub">사전 생성</span>
+      <div class="card-title mt-sm">GPT Pro → 사건 데이터 + Phase 1 대사</div>
+      <p>84개 사건 JSON(DuoSeed·CaseSeed·증거·거짓말 전략)과 Phase 1 초기 진술 스크립트를 GPT로 사전 생성. Claude Code가 텍스트 정제·보정.</p>
     </div>
     <div class="card">
-      <span class="badge badge-warning">클라우드 API</span>
-      <div class="card-title mt-sm">당사자 연기 LLM (A/B)</div>
-      <p>자신의 <code>knowledge_matrix</code> 분면과 현재 <code>lie_state</code>, <code>emotional_state</code>, <code>trust_state</code>만 주입받아 자연어 발언을 생성한다. 실시간 플레이 중 턴마다 호출.</p>
+      <span class="badge badge-warning">런타임 LLM</span>
+      <div class="card-title mt-sm">OpenAI GPT-4o-mini — Phase 2~5 대화</div>
+      <p>Phase 2(반박) LLM 생성, Phase 3~5 심문 시 재판관 질문+NPC 응답 동시 생성, 자유질문 처리, 증거 대질, 진술 분석. 턴마다 호출.</p>
     </div>
     <div class="card">
-      <span class="badge badge-success">서버 로직</span>
-      <div class="card-title mt-sm">룰 엔진 (판정)</div>
-      <p>거짓말 상태 머신 전이, 감정 트리거, 증거 잠금 해제, 모순 판정, 신뢰도 업데이트, 판결 채점. LLM 없이 구조화된 로직으로 처리.</p>
+      <span class="badge badge-success">클라이언트 로직</span>
+      <div class="card-title mt-sm">룰 엔진 (판정) — Zustand + TypeScript</div>
+      <p>거짓말 상태 머신 전이, 감정 트리거, 증거 잠금 해제, 심문 중 증거 발견, 과정 점수 추적, 판결 채점. LLM 없이 구조화된 로직으로 처리.</p>
     </div>
   </div>
 
@@ -316,23 +317,49 @@
 
 
   <!-- ── LLM 프롬프트 구조 ──────────────────────── -->
-  <h2 id="prompt">LLM 프롬프트 구조 (v2.0)</h2>
-  <p>각 에이전트의 시스템 프롬프트는 <strong>6개 블록</strong>으로 구성된다. 이번 턴에 필요한 정보만 동적으로 조립한다.</p>
+  <h2 id="prompt">LLM 프롬프트 구조 (v3.0)</h2>
+  <p>Phase 3~5 심문에서 재판관 질문 + NPC 응답을 한 번의 LLM 호출로 동시 생성한다. 시스템 프롬프트는 <strong>9개 블록</strong>으로 구성.</p>
 
-  <div class="flow-row"><div class="step-label">Block 1 · 페르소나</div><div class="step-desc">DuoSeed의 캐릭터 프로필. 아키타입, 말투, 자존심, 공포, 민감 포인트. "당신은 [이름], [나이]세 [직업]으로, [성격 특징]인 사람입니다."</div></div>
-  <div class="flow-row"><div class="step-label">Block 2 · 사실 분면</div><div class="step-desc">knowledge_matrix에서 자신의 분면(a_only + both_know)만 주입. 활성화된 Relationship Ledger 이력도 자신의 기억 버전으로 포함. B가 아는 사실은 절대 포함하지 않는다.</div></div>
-  <div class="flow-row"><div class="step-label">Block 3 · 거짓말 2축 상태</div><div class="step-desc">lie_state_map (쟁점별 현재 S0~S5) + 각 쟁점의 lie_type(LT-1~7) + lie_motive(LM-1~7). 희생 진술 사용 가능 여부.</div></div>
-  <div class="flow-row"><div class="step-label">Block 4 · 감정 + 신뢰 상태</div><div class="step-desc">현재 emotional_arc 위치 + trust_toward_judge + fear_of_exposure + retaliation_worry. 이번 턴 행동 징후 톤 지시.</div></div>
-  <div class="flow-row"><div class="step-label">Block 5 · Verbal Tell</div><div class="step-desc">이번 턴 활성화된 쟁점에 매핑된 Verbal Tell만 주입. "이 상황에서 당신은 [버릇 패턴]이 나타납니다."</div></div>
-  <div class="flow-row"><div class="step-label">Block 6 · 발언 목표</div><div class="step-desc">룰 엔진이 결정한 이번 발언 목표 (Defend / Attack / Sacrifice / Confide / Reframe / Appeal 등). LLM은 이 목표에 맞게 자연어 발언을 생성.</div></div>
+  <div class="flow-row"><div class="step-label">① 페르소나</div><div class="step-desc">이름, 나이, 직업, 성격. 상대와의 분쟁 배경.</div></div>
+  <div class="flow-row"><div class="step-label">①-b Phase 깊이 가이드</div><div class="step-desc"><strong>Phase 3:</strong> 경계심 높음, 표면적 답변. <strong>Phase 4:</strong> 증거 앞에 흔들림, 새 정보 흘림. <strong>Phase 5:</strong> 방어 느슨, 깊은 고백 가능.</div></div>
+  <div class="flow-row"><div class="step-label">② 사실 분면</div><div class="step-desc">자신이 아는 사실만 (a_only + both_know). 상대의 지식은 절대 포함하지 않음.</div></div>
+  <div class="flow-row"><div class="step-label">③ 쟁점 + 거짓말 상태</div><div class="step-desc">현재 쟁점명 + truthDescription + S0~S5 상태별 행동 지시 + 동기 + "이 쟁점에 대해서만 답하라" 제약.</div></div>
+  <div class="flow-row"><div class="step-label">④ 감정 + 말버릇</div><div class="step-desc">현재 감정 상태 + 활성화된 Verbal Tell 패턴.</div></div>
+  <div class="flow-row"><div class="step-label">⑤ 제시된 증거</div><div class="step-desc">이미 공개된 증거 목록. 부정하기 어려운 증거가 있으면 대응을 바꾸도록 지시.</div></div>
+  <div class="flow-row"><div class="step-label">⑥ 최근 대화</div><div class="step-desc">최근 5개 대화 히스토리. 흐름을 끊지 않고 이어가도록 지시.</div></div>
+  <div class="flow-row"><div class="step-label">⑦ 질문 유형별 지침</div><div class="step-desc">사실추궁/동기탐색/공감접근/공격적 질문에 대한 응답 방향.</div></div>
+  <div class="flow-row"><div class="step-label">⑧ 말투 규칙</div><div class="step-desc">공용 모듈(llmSpeechGuide.ts)에서 관계별 호칭·반말/존댓말 규칙을 자동 생성하여 주입.</div></div>
+  <div class="flow-row"><div class="step-label">⑨ 출력 형식</div><div class="step-desc">JSON: {"judgeQuestion":"재판관 질문", "npcResponse":"NPC 답변 (행동묘사)", "behaviorHint":"행동묘사"}</div></div>
+
+  <h3>공용 모듈 (v3.0 신규)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>모듈</th><th>파일</th><th>역할</th></tr></thead>
+    <tbody>
+      <tr><td>말투 가이드</td><td>llmSpeechGuide.ts</td><td>관계별 호칭·반말/존댓말 규칙을 buildSpeechGuide()로 자동 생성. 부부="자기", ~냐?금지 등.</td></tr>
+      <tr><td>이름 플레이스홀더</td><td>korean.ts · resolveNameTemplate()</td><td>{A}, {B}, {A:이}, {B:은} → 런타임에 이름+조사 자동 치환.</td></tr>
+      <tr><td>speaker 정규화</td><td>llmPhaseDialogue.ts · normalizeSpeaker()</td><td>LLM이 반환하는 "A"/"한지석" 등을 "a"/"b"/"system"으로 변환.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Phase별 LLM 파일 구조</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>파일</th><th>담당</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td>llmPhaseDialogue.ts</td><td>Phase 1~2 대사 생성</td><td>Phase 1은 사전 생성 스크립트 우선, LLM은 폴백</td></tr>
+      <tr><td>llmDialogueResolver.ts</td><td>Phase 3~5 심문 대화</td><td>재판관 질문 + NPC 응답 동시 생성</td></tr>
+      <tr><td>llmFreeQuestion.ts</td><td>자유질문 처리</td><td>질문 유형 자동 분류 + NPC 응답</td></tr>
+      <tr><td>llmTestimonyAnalysis.ts</td><td>Phase 5 진술 분석</td><td>전체 대화 요약 + 모순 탐지</td></tr>
+      <tr><td>llmSpeechGuide.ts</td><td>말투 규칙 모듈</td><td>7개 관계 유형별 호칭/반말/존댓말 규칙</td></tr>
+    </tbody>
+  </table></div>
 
   <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
     <strong>절대 규칙:</strong>
     <ul style="margin:0;padding-left:20px;">
-      <li>LLM 프롬프트에 <strong>상대 에이전트의 내부 상태(지식 분면, lie_state, 감정 상태, 신뢰 상태)를 포함하지 않는다.</strong></li>
-      <li>에이전트는 상대가 무엇을 알고 있는지 "모르는 상태"로 연기해야 한다.</li>
+      <li>LLM 프롬프트에 <strong>상대 에이전트의 내부 상태를 포함하지 않는다.</strong></li>
+      <li>에이전트는 상대가 무엇을 알고 있는지 "모르는 상태"로 연기.</li>
       <li>상대의 <strong>발언 텍스트만</strong> 컨텍스트로 줄 수 있다.</li>
-      <li>Verbal Tell은 <strong>이번 턴에 활성화된 쟁점과 관련된 것만</strong> 주입해 프롬프트 부담 최소화.</li>
+      <li>Phase별 깊이 가이드가 같은 질문에 대한 답변 깊이를 차등화한다.</li>
     </ul>
   </div></div>
 

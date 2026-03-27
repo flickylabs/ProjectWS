@@ -1,0 +1,669 @@
+{
+  "caseId": "case-work-09",
+  "meta": {
+    "relationshipType": "boss_employee",
+    "conflictSeed": "CS-4",
+    "variableModules": [
+      "VM-C",
+      "VM-A"
+    ],
+    "twistModule": "TW-6",
+    "difficulty": "medium",
+    "anchorTruth": "거래처가 알고 있던 '팔콘 가격가드'와 할인한도 표현은 은채가 자료를 흘린 결과가 아니라, 같은 제목의 두 '공유본' 문서와 에이전시 AE의 요약 메일이 뒤섞이며 서로가 서로를 누설자로 오해한 결과였다.",
+    "emotionalBait": "거래처 미팅 직후 고객이 내부 코드명처럼 들리는 표현을 꺼내고, 클라이언트 도메인이 '공유본_팔콘'이라는 제목의 문서를 열람한 로그 캡처까지 돌자, 은채가 내부 준비자료를 밖으로 넘겼다는 그림이 너무 쉽게 완성됐다.",
+    "resolutionDilemma": "준석의 성급한 누설자 지목과 계정 배제, 은채의 외부 파트너를 통한 역추적·내부비난 전파 중 무엇을 더 무겁게 볼지, 그리고 실제 유출이 아닌 오해였던 사건으로 흔들린 거래처 신뢰를 어떻게 복구할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "송준석",
+      "age": 39,
+      "occupation": "엔터프라이즈세일즈팀 팀장",
+      "incomeBracket": "high",
+      "archetype": "avoidant",
+      "speechStyle": "민감한 질문이 오면 먼저 거래처 분위기와 매출 리스크부터 설명하며 개별 행동의 순서를 뒤로 미룬다. 몰리면 '일단 계정을 멈추지 않게 하려 했다'는 말로 자신의 성급한 배제를 운영상 필요처럼 포장한다.",
+      "pride": 7,
+      "fear": "핵심 거래처 앞에서 내부 기밀도 못 지키는 관리자라는 평판이 생기고 대형 계정을 잃는 것",
+      "riskAppetite": 5,
+      "digitalHabit": "permission_audit_checker",
+      "dailyRoutine": "아침에는 핵심 계정 현황과 미팅 준비자료를 확인하고, 오후에는 거래처 미팅과 제안 조율을 돌며, 저녁에는 공유문서 권한과 후속 메일 문구를 직접 손본다.",
+      "sensitivePoints": [
+        "거래처 신뢰",
+        "문서 권한관리",
+        "계정 리더십"
+      ],
+      "verbalTells": [
+        {
+          "type": "client_risk_shield",
+          "trigger": "lying",
+          "pattern": "누가 무엇을 보냈는지 묻는 질문에도 '그 계정은 지금 한 번만 삐끗해도 끝난다'며 거래처 리스크를 먼저 꺼내 책임 판단을 뒤로 민다."
+        },
+        {
+          "type": "temporary_freeze",
+          "trigger": "cornered",
+          "pattern": "'잠깐 뺀 거다', '임시로 정리한 거다'라며 사실상 배제 조치를 잠정 대응처럼 축소한다."
+        },
+        {
+          "type": "shared_word_blur",
+          "trigger": "avoiding",
+          "pattern": "'공유본을 보낸 줄 알았다', '그쪽에서 연 문서인 줄 알았다'처럼 '공유본'이 무엇인지 끝내 특정하지 않는다."
+        }
+      ]
+    },
+    "partyB": {
+      "name": "유은채",
+      "age": 30,
+      "occupation": "어카운트전략 대리",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "문서 제목, 발신 시각, 수신 순서를 차례대로 말하며 자신의 결백을 정리해 보이려 한다. 그러나 억울함이 커지면 정황을 곧바로 의도로 연결하며 상대가 자신을 희생양 삼았다고 단정해 버린다.",
+      "pride": 6,
+      "fear": "한 번의 오해로 거래처 자료를 흘린 사람으로 찍혀 세일즈 경력이 무너지는 것",
+      "riskAppetite": 4,
+      "digitalHabit": "meeting_note_color_coder",
+      "dailyRoutine": "오전에는 거래처별 준비문서를 정리하고, 오후에는 미팅 노트와 후속 액션을 기록하며, 밤에는 공유문서 제목과 접근권을 다시 맞춘다.",
+      "sensitivePoints": [
+        "기밀 누설 낙인",
+        "계정 배제",
+        "외부 파트너 앞 망신"
+      ],
+      "verbalTells": [
+        {
+          "type": "title_timestamp_stack",
+          "trigger": "lying",
+          "pattern": "핵심 인정 대신 문서 제목과 분 단위 발신 시각을 길게 읊어 질문의 초점을 분산시킨다."
+        },
+        {
+          "type": "definition_trim",
+          "trigger": "cornered",
+          "pattern": "'외부 공유'가 아니라 '확인 요청'이었다고 표현을 바꿔 자신이 파트너에게 보낸 내부 화면의 성격을 축소한다."
+        },
+        {
+          "type": "flat_blame_line",
+          "trigger": "emotional",
+          "pattern": "감정이 올라올수록 오히려 낮은 목소리로 '저를 먼저 잘라 놓고 시작했잖아요'를 반복해 단정적으로 밀어붙인다."
+        }
+      ]
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "두 사람은 거래처 발송용 문서와 내부 준비문서의 제목을 명확히 구분하고, 외부 발송 전에는 서로 링크와 권한을 교차확인하기로 해 왔다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "지난 분기 에이전시 AE가 '공유본'을 달라고 했을 때 어떤 문서를 뜻했는지를 두 사람은 다르게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '외부발송본을 뜻하는 업계 관행어였다' / B: '내부 준비본과 외부 공유본 이름을 헷갈리게 만든 건 준석이었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "미팅 당일 아침 준석이 전화로 '공유본 먼저 열어 둬'라고 했지만 문서 ID를 남기지 않았고, 은채는 제목이 겹친다는 걸 알면서도 공식 채널에서 다시 특정하지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "박민성 (사업개발 디렉터)",
+        "relationTo": "a",
+        "knowledgeScope": "준석이 거래처 미팅 직후 계정 리스크를 크게 우려하며 은채를 후속 커뮤니케이션에서 빼겠다고 말한 흐름을 들었다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "강소라 (브랜드에이전시 AE)",
+        "relationTo": "both",
+        "knowledgeScope": "실제로 어떤 '공유본' 링크를 열었는지, 거래처 후속 메일에서 내부처럼 들린 표현을 누가 어떤 맥락으로 썼는지 안다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "이재원 (협업툴 보안관리자)",
+        "relationTo": "both",
+        "knowledgeScope": "중복 제목 문서의 링크 맵, 외부 도메인 열람 로그, 권한 변경 시각을 원본 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate"
+      }
+    ]
+  },
+  "context": {
+    "contextType": "client_meeting_followup",
+    "description": "핵심 거래처 미팅이 끝난 직후 고객이 사내 코드명처럼 들리는 표현을 먼저 꺼내고, 에이전시 후속 메일까지 겹치면서 내부 정보 유출 의심이 순식간에 커졌다. 거래처와 외부 에이전시, 내부 계정팀이 같은 날 여러 개의 '공유본' 문서를 오가던 상황이라 누가 무엇을 보냈는지보다 누가 어떤 제목을 무엇으로 이해했는지가 더 중요해진 케이스였다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "대형 거래처 재계약이 걸려 있어 작은 보안 의심도 곧바로 계정 교체와 신뢰 하락으로 이어질 수 있었고, 같은 제목의 문서가 여럿 존재해 오해가 사실처럼 굳기 쉬웠다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "준석의 성급한 누설자 지목과 계정 배제",
+      "truth": true,
+      "truthDescription": "준석은 사실확인 전에 은채를 정보 유출자로 의심해 거래처 후속 메일과 내부 계정 회의에서 빼고, 팀 안에서도 사실상 원인 제공자처럼 다뤘다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "대외커뮤니케이션복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "은채의 외부 파트너 대상 내부비난 전파",
+      "truth": true,
+      "truthDescription": "은채는 자신의 결백을 입증하려고 에이전시 AE에게 내부 슬랙 화면 일부와 '팀장이 잘못 보낸 것 아니냐'는 취지의 메시지를 보내며 외부 파트너에게 내부 갈등을 노출했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "제3자메모분리",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "거래처에 실제로 내부 준비자료가 유출됐는가",
+      "truth": false,
+      "truthDescription": "거래처가 본 것은 동일한 제목을 가진 클라이언트용 공유본과 에이전시 AE의 요약 메일이었고, 내부 준비자료 원본 링크가 거래처 도메인으로 열린 기록은 없었다. 양측은 '공유본'이라는 같은 말을 서로 다른 문서로 이해해 실제 유출이 있다고 오해했다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-3",
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공유문서명명규칙",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "준석의 선행 리스크 메모와 역할 재배치",
+      "truth": true,
+      "truthDescription": "준석은 보안 사실확인 전 CRM과 내부 평가 메모에 은채를 '외부 커뮤니케이션 리스크 인원'으로 남기고 계정 역할을 축소했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "평가보류",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "사실확인 전 제3자를 통한 추측전",
+      "truth": true,
+      "truthDescription": "준석은 에이전시와 거래처 쪽에 '자료관리 이슈가 있었다'는 뉘앙스를 풍겼고, 은채는 에이전시 AE에게 내부책임 소재를 암시하며 제3자를 통해 추측전을 벌였다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "대외커뮤니케이션복구",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "거래처 후속 이메일 체인과 계정 회의록",
+      "description": "준석이 은채를 후속 메일 참조에서 빼고 내부 회의에서 '자료선 관리가 틀어진 것 같다'고 말한 이메일 체인과 회의록이다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "이메일 요약본이 아니라 거래처 체인 전체와 계정 회의록 초안·확정본을 함께 열어야 한다.",
+        "check_metadata": "미팅 종료 두 시간 안에 은채가 참조에서 빠진 후속 메일이 발송됐고, 같은 저녁 회의록에 '자료선 이슈'라는 표현이 추가됐다.",
+        "restore_context": "준석이 이름을 직접 쓰지는 않았지만, 참조 제거와 회의 발언이 이어져 은채를 사실상 원인으로 보는 흐름이 형성됐다.",
+        "verify_source": "메일 서버 아카이브와 회의록 작성 문서의 버전 이력이 같은 타임라인을 보여 준다.",
+        "check_edits": "기관 원본과 버전 로그라 사후 편집 흔적이 없다.",
+        "question_acquisition": "거래처 응대와 계정 운영 기록이라 조사 목적의 열람은 적법하다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "은채의 에이전시 AE DM과 내부 화면 캡처",
+      "description": "은채가 강소라 AE에게 보낸 DM과, 그때 첨부한 내부 슬랙 화면 일부 캡처다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "갤러리 캡처만이 아니라 원본 DM 내보내기와 첨부 파일 전후 메시지까지 함께 확인해야 한다.",
+        "check_metadata": "준석이 은채를 회의 참조에서 뺀 직후, 은채가 강소라에게 내부 화면을 보내며 누가 무엇을 보냈는지 물은 기록이 남아 있다.",
+        "restore_context": "은채는 결백 확인용 문의였다고 주장하지만, 외부 파트너에게 내부 책임 공방을 노출한 점은 분명하다.",
+        "verify_source": "강소라의 수신 단말과 은채의 전송 파일명이 서로 일치한다.",
+        "check_edits": "본문 변조 흔적은 없지만 일부 앞뒤 맥락이 잘려 있어 강도는 별도 복원이 필요하다.",
+        "question_acquisition": "사적 단말 캡처가 포함돼 있어 수신자와 화면 범위는 최소한으로만 공개돼야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "준석이 제출한 '공유본_팔콘' 열람 로그 PDF",
+      "description": "클라이언트 도메인이 '공유본_팔콘'을 열었다고 표시돼 있어 내부자료 유출처럼 보이는 열람 로그 PDF다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "PDF 발췌본이 아니라 문서 ID, 링크 해시, 권한맵이 포함된 플랫폼 원본 추출본을 함께 봐야 한다.",
+        "check_metadata": "문서 제목만 보이고 문서 ID와 경로가 잘려 있어 어떤 '공유본_팔콘'인지 단독으로는 구별되지 않는다.",
+        "restore_context": "같은 제목의 문서가 둘 이상 존재해 이 자료만으로는 내부 준비본인지 클라이언트용 공유본인지 판단할 수 없다.",
+        "verify_source": "플랫폼에서 나온 파일 형식과 비슷하지만 공식 관리자 출력 레이아웃과는 일부 열 구성이 다르다.",
+        "check_edits": "문장 변조는 없으나 선택적 절삭과 강조 표시로 유출 프레임이 과장된다.",
+        "question_acquisition": "준석이 자발 제출한 자료라 입수는 적법하지만 완전성은 별도로 검증돼야 한다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "협업드라이브 링크 맵과 중복 제목 문서 버전 이력",
+      "description": "동일한 '공유본_팔콘' 제목을 가진 클라이언트용 문서와 내부 준비문서의 문서 ID, 권한, 생성 경로를 구분해 보여주는 원본 로그다.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "링크 목록 요약본이 아니라 문서 ID별 권한 테이블과 버전 이력을 같이 열어야 한다.",
+        "check_metadata": "클라이언트 도메인이 연 것은 외부권한이 열린 클라이언트용 공유본이었고, 내부 준비문서는 같은 제목이지만 외부 접근 기록이 없다.",
+        "restore_context": "둘 다 '공유본_팔콘'으로 보였기 때문에 제목만 본 양측이 실제로는 다른 문서를 두고 같은 사건이라고 오해한 구조가 드러난다.",
+        "verify_source": "협업툴 관리자 콘솔과 이재원 추출 CSV가 동일한 문서 ID 매핑을 보여 준다.",
+        "check_edits": "관리자 원본 추출본이라 사후 편집 흔적이 없다.",
+        "question_acquisition": "협업툴 감사 로그는 보안조사 범위 내 적법하게 열람할 수 있다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "에이전시 AE 후속 메일과 거래처 회의요약",
+      "description": "강소라 AE가 거래처에 보낸 후속 메일과 회의요약으로, 내부처럼 들린 표현이 실제로는 미팅 중 구두로 나온 말을 요약한 것임을 보여 준다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약본이 아니라 강소라의 발신 메일 원문과 고객 측 수신본을 함께 대조해야 한다.",
+        "check_metadata": "문제의 '팔콘 가격가드'와 할인한도 표현은 준석이 미팅 중 구두로 설명한 내용을 강소라가 정리한 문장으로 남아 있다.",
+        "restore_context": "거래처가 내부문서를 읽어서가 아니라 미팅에서 들은 용어와 에이전시 요약을 통해 유사 표현을 쓰게 된 사실이 드러난다.",
+        "verify_source": "강소라의 발신 메일 헤더와 거래처 수신 사본이 같은 메시지 ID를 가진다.",
+        "check_edits": "제3자 메일 원본이라 사후 편집 흔적이 없다.",
+        "question_acquisition": "외부 파트너가 자발 제출한 자료라 적법하지만 거래처 민감표현은 제한적으로만 사용해야 한다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "CRM 역할 변경 로그와 준석의 리스크 메모",
+      "description": "준석이 은채의 계정 역할을 축소하고 '외부 커뮤니케이션 리스크'라는 비공개 메모를 입력한 CRM 기록이다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "현재 계정 화면만이 아니라 역할 변경 이력과 메모 최초 입력본을 함께 확인해야 한다.",
+        "check_metadata": "문서 유출 사실이 확인되기 전에 준석 계정으로 은채의 외부 미팅 권한 축소와 리스크 메모가 먼저 입력됐다.",
+        "restore_context": "계정 보호 명분이 있었더라도 사실상 선행 낙인과 역할 배제가 먼저 작동한 흐름이 드러난다.",
+        "verify_source": "CRM 감사 로그와 인사 메모 시스템의 타임스탬프가 같은 순서를 보여 준다.",
+        "check_edits": "초기 입력본과 수정본이 모두 남아 있어 사후 미화 여부를 구분할 수 있다.",
+        "question_acquisition": "인사·영업 시스템 자료라 분쟁 해결 목적 외 공개는 제한돼야 한다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "준석은 사실확인 전에 은채를 유출 의심 인원으로 보고 계정에서 배제하기 시작했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "은채는 외부 에이전시 AE에게 내부 책임 공방의 일부를 노출했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "실제 내부 준비문서 유출은 없었고, 같은 제목의 공유본과 AE 요약메일이 오해를 만들었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "준석은 사실확인 전에 은채를 외부 커뮤니케이션 리스크 인원으로 메모에 남겼다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 제3자를 통해 추측을 먼저 흘리며 거래처 신뢰를 더 흔들었다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "leak_source_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_remove_from_account_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "actual_leak_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_duplicate_titles"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_or_e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "risk_note_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_before_factcheck_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "account_role_change_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "agency_dm_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "internal_screenshot_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "recipient_scope_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "raw_doc_shared_claim"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "ae_summary_email_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "third_party_rumor_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_being_cut_out"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_not_internal_channel_first_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "대외커뮤니케이션복구": [
+      "거래처에는 확인되지 않은 유출 추정을 말하지 않고, 사실관계가 정리될 때까지 변경된 계정 역할과 설명 문구를 공동 승인으로만 조정한다.",
+      "은채의 외부 미팅·메일 배제는 원상복구하되, 거래처에는 실제 유출이 확인되지 않았다는 범위 안에서만 정정한다.",
+      "추후 보안 의심이 생기면 영업팀장이 단독으로 POC를 교체하지 못하고 보안·영업운영 공동승인을 거치게 한다."
+    ],
+    "공유문서명명규칙": [
+      "내부 준비문서와 외부 공유문서에 같은 제목을 쓰지 않고, 문서명에 'INT'·'EXT'와 문서 ID를 의무적으로 붙인다.",
+      "전화나 구두로 '공유본'이라고만 지시하는 관행을 없애고, 링크 자체를 메시지에 남기지 않으면 실행하지 않게 한다.",
+      "중복 제목 문서가 반복 생성되면 플랫폼에서 자동 경고를 띄우고 외부권한 부여를 잠시 막는다."
+    ],
+    "제3자메모분리": [
+      "에이전시나 외부 파트너에게는 클라이언트용 요약본만 제공하고, 내부 슬랙 화면이나 준비문서 캡처를 확인용으로라도 보내지 않게 한다.",
+      "회의 노트는 내부본과 대외본을 별도 템플릿으로 분리해 동일한 표현이 섞이지 않도록 운영한다.",
+      "제3자를 통한 역추적이나 책임 확인이 다시 발생하면 당사자와 관리자 모두에게 대외 커뮤니케이션 재교육을 의무화한다."
+    ],
+    "평가보류": [
+      "사실확인 전 입력된 '외부 커뮤니케이션 리스크' 메모와 역할 축소 기록은 계정 보안조사가 끝날 때까지 평가 반영을 멈춘다.",
+      "준석과 은채 모두 거래처 신뢰 훼손 기여도를 따로 계산하되, 실제 유출이 아니었다는 점을 전제로 인사 판단을 다시 한다.",
+      "보안 의심 단계에서 관리자 선행 낙인이 반복되면 해당 관리자의 계정 배정권과 평가 코멘트 권한을 일정 기간 보류한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

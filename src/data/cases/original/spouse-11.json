@@ -1,0 +1,675 @@
+{
+"caseId": "case-spouse-11",
+"meta": {
+"relationshipType": "spouse",
+"conflictSeed": "CS-3",
+"variableModules": [
+"VM-D"
+],
+"twistModule": "TW-3",
+"difficulty": "hard",
+"anchorTruth": "유림의 무단 포털 접속과 승호의 권한 변경은 단독 배신이 아니라, 둘이 공사 손상을 키워 보험금으로 예산 구멍을 메우려 한 공동 시나리오의 일부였다.",
+"emotionalBait": "심야 CCTV 캡처, 몰래 보낸 공사중지 요청, 제습기 중단 로그가 따로 보이면 한쪽이 상대 권한을 침범해 집을 망친 것처럼 읽힌다.",
+"resolutionDilemma": "둘 다 상대의 권한 침범만을 전면에 내세우지만 실제로는 보험금을 노린 공모가 있었기에, 현재의 거짓말과 과거의 공동 가담을 어디서 끊어 책임을 재배분할지가 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "차유림",
+"age": 38,
+"occupation": "제품 사진 스튜디오 겸 온라인소품몰 운영자",
+"incomeBracket": "mid",
+"archetype": "image_controller",
+"speechStyle": "사진과 기록을 먼저 정리해 보여 주고 감정은 뒤에 말한다. 몰리면 '나는 저장만 했지 실행은 안 했어'라며 행위 단계를 잘게 나눠 책임을 줄이려 한다.",
+"pride": 8,
+"fear": "리모델링 실패와 재정난을 동시에 인정하는 사람으로 보이는 것",
+"riskAppetite": 5,
+"digitalHabit": "tablet_admin_access",
+"dailyRoutine": "오전에는 스튜디오 촬영과 상품 등록을 하고, 오후에는 공사 현장 알림과 자재 배송을 확인하며, 밤에는 사진 백업과 집 수리 견적을 정리한다.",
+"sensitivePoints": [
+"완공 일정 지연",
+"예산 초과",
+"자신의 기획이 망가졌다는 평가"
+],
+"verbalTells": [
+{
+"type": "scope_split",
+"trigger": "lying",
+"pattern": "권한 침범을 추궁받으면 '캡처만 했지 보낸 건 아니야', '들어간 건 맞지만 변경은 안 했어'처럼 단계를 분리한다."
+},
+{
+"type": "visual_overload",
+"trigger": "cornered",
+"pattern": "문제가 된 행위를 묻는 대신 사진, 캡처, 견적서를 여러 장 연달아 꺼내 핵심 질문을 흐린다."
+},
+{
+"type": "result_reframe",
+"trigger": "shame",
+"pattern": "'어차피 다 살리려고 한 거야'라며 의도보다 결과 개선 명분을 앞세운다."
+}
+]
+},
+"partyB": {
+"name": "백승호",
+"age": 41,
+"occupation": "상가 시설관리 팀장",
+"incomeBracket": "mid",
+"archetype": "expedient_restorer",
+"speechStyle": "상황이 터지면 먼저 임시조치를 해 놓고 설명은 나중에 붙인다. 불리해지면 '그때는 현장이 급했어'라는 문장으로 절차 위반을 상황 탓으로 돌린다.",
+"pride": 7,
+"fear": "가족 집을 지키지도 못하고 보험 사기까지 건드린 사람으로 남는 것",
+"riskAppetite": 7,
+"digitalHabit": "smart_home_admin",
+"dailyRoutine": "새벽에는 건물 점검 보고를 받고, 낮에는 거래처 현장을 돌며, 저녁에는 리모델링 현장과 보험 통화를 한꺼번에 처리한다.",
+"sensitivePoints": [
+"가장 역할",
+"공사 하자 대응",
+"손해를 키운 사람으로 지목되는 일"
+],
+"verbalTells": [
+{
+"type": "task_listing",
+"trigger": "lying",
+"pattern": "질문을 받으면 주차 정산, 누수 확인, 자재 반품처럼 자잘한 동선을 길게 나열한다."
+},
+{
+"type": "time_bargain",
+"trigger": "shame",
+"pattern": "'반나절만 늦춘 거야', '하루만 두려던 거였어'처럼 피해 확대 결정을 시간 단위로 축소한다."
+},
+{
+"type": "question_flip",
+"trigger": "cornered",
+"pattern": "자신의 권한 변경을 묻는 순간 '그럼 네가 내 아이디로 들어간 건 뭐였는데?'라고 곧바로 되묻는다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "입주 공사를 시작하며 두 사람은 공사 포털 권한, 디지털 도어락, 보험 연락은 공동 관리하고 200만원 이상 추가 지출이나 청구는 같은 날 공유하기로 합의했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "겨울에 작은 누수 보수만 하고 넘어갔던 전셋집 사건을 두 사람은 다르게 해석한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '그때 바로 신고 안 해서 더 커졌다' / B: '사소한 하자는 먼저 막고 보는 게 맞았다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "indirect"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "두 사람 모두 입주 예산이 이미 무너졌고 보험금이 아니면 스튜디오 수납장과 잔금까지 버티기 어렵다는 사실을 알고 있었지만 정면으로 말하지 않았다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "백은실 (승호의 누나)",
+"relationTo": "b",
+"knowledgeScope": "공사비가 예산을 크게 넘겼고 승호가 보험금이 나오면 붙박이장 비용까지 메울 수 있는지 물었던 사실을 안다.",
+"witnessedDirectly": false,
+"bias": "pro_b",
+"distortionRisk": "unconscious"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "홍대성 (인테리어 현장소장)",
+"relationTo": "both",
+"knowledgeScope": "현장관리 포털 권한, 공사중지 요청, 긴급건조 권고, 심야 재출입 기록의 원본 흐름을 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "조민서 (주택보험 손해사정사)",
+"relationTo": "both",
+"knowledgeScope": "보험청구 초안, 수분센서 데이터, 지급 보류 사유와 손상 확대 정황을 원본 기준으로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "home_remodel",
+"description": "지하층 스튜디오와 주거공간을 함께 리모델링하던 중 욕실 배관에서 작은 누수가 시작됐다. 원래는 부분 보수로 끝날 수 있었지만, 이미 맞춤 수납장과 바닥 마감 예산이 초과된 상태라 두 사람은 보험으로 한 번에 정리할 유혹을 느꼈다. 그 뒤 유림은 승호 계정으로 공사 포털에 들어가 자료를 모으고, 승호는 제습기와 긴급건조를 늦추며 피해를 키웠다. 지급 보류가 걸리자 둘은 갑자기 서로의 권한 침범만 부각시키기 시작했다.",
+"emotionalPressure": 9,
+"affects": "both",
+"triggerAmplifier": "입주 지연과 예산 붕괴가 겹친 시점이라 작은 하자도 곧 생활 기반 전체를 흔드는 문제처럼 느껴졌고, 한 번의 편법을 둘이 함께 시작한 뒤부터는 서로를 먼저 배신자로 만드는 쪽이 유리해졌다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "유림의 무단 포털 접속과 자료 반출",
+"truth": true,
+"truthDescription": "유림은 승호의 현장관리 포털 아이디와 일회용 도어락 관리자 권한을 무단 사용해 공사중지 요청을 보내고 CCTV 자료를 내보냈다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-1"
+],
+"correctResponsibility": {
+"a": 85,
+"b": 15
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "공사권한분리",
+"legitimacyIssue": true
+},
+{
+"id": "d-2",
+"name": "승호의 긴급건조 지연과 권한 봉쇄",
+"truth": true,
+"truthDescription": "승호는 긴급건조 방문을 뒤로 미루고 제습기 스마트플러그를 꺼 둔 채, 도어락과 현장 알림 권한도 자신 중심으로 다시 묶었다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-2"
+],
+"correctResponsibility": {
+"a": 20,
+"b": 80
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "공사권한분리",
+"legitimacyIssue": false
+},
+{
+"id": "d-3",
+"name": "대규모 손상은 전적으로 시공사 과실이었나",
+"truth": false,
+"truthDescription": "초기 누수 자체는 시공사 하자와 연결되지만, 천장과 마루 손상이 크게 번진 직접 원인은 부부가 긴급조치를 늦추고 심야 캡처를 이용해 손상 서사를 키운 데 있었다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-3",
+"e-5"
+],
+"correctResponsibility": {
+"a": 45,
+"b": 55
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "보험청구정정",
+"legitimacyIssue": true
+},
+{
+"id": "d-4",
+"name": "부부의 보험금 공모와 손상 확대 협의",
+"truth": true,
+"truthDescription": "유림과 승호는 손상이 더 커 보이면 보험으로 바닥, 천장, 일부 맞춤가구 비용까지 메울 수 있다고 계산하며 손상 확대를 사실상 공동 기획했다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-4",
+"e-5"
+],
+"correctResponsibility": {
+"a": 50,
+"b": 50
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "보험청구정정",
+"legitimacyIssue": true
+},
+{
+"id": "d-5",
+"name": "보험금 지급 보류는 시공사 보복 신고 때문이었나",
+"truth": false,
+"truthDescription": "지급 보류의 직접 원인은 홍대성의 신고가 아니라 제습 지연, 수분센서 이상 곡선, 사진 촬영 순서 불일치 등 손상 확대 정황이었다.",
+"quadrant": "neither_knows",
+"requiredEvidence": [
+"e-2",
+"e-6"
+],
+"correctResponsibility": {
+"a": 45,
+"b": 55
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "주거복구운영",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "현장관리 포털 접속감사로그와 도어락 관리자 기록",
+"description": "유림 태블릿에서 승호 명의 현장관리 포털에 접속해 공사중지 요청과 CCTV 내보내기를 실행한 로그, 그리고 일회용 도어락 관리자 메뉴 접근 기록이다.",
+"type": "cloud_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-1"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "포털 서버 감사로그와 도어락 관리자 접근기록 원본이 함께 제출됐다.",
+"check_metadata": "승호 계정 접속은 유림 태블릿 브라우저 지문과 같은 시간대에 일어났고, 바로 뒤 CCTV 내보내기 요청이 이어진다.",
+"restore_context": "유림은 캡처와 요청을 따로 보낸 것처럼 말했지만 실제 로그상 하나의 세션에서 연속 처리됐다.",
+"verify_source": "시공사 포털 관리자와 스마트락 서버 기록이 일치했다.",
+"check_edits": "서버 추출본이라 수동 편집 흔적이 없다.",
+"question_acquisition": "공동 주거공간 공사 계정의 감사로그로 적법하게 확보됐다."
+}
+},
+{
+"id": "e-2",
+"name": "제습기 스마트플러그 로그와 긴급건조 연기 보고서",
+"description": "승호가 제습기 전원을 장시간 꺼 두고 건조업체 방문을 다음 날로 미룬 기록, 그리고 현장 알림 권한을 재설정한 보고서다.",
+"type": "device_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-2",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "스마트플러그 관리자 로그와 건조업체 일정 변경 보고서가 함께 제출됐다.",
+"check_metadata": "제습기 전원 중단은 누수 확인 직후 6시간 이상 이어졌고, 건조업체 방문도 같은 날 밤 취소됐다.",
+"restore_context": "승호는 현장이 비어 있어 어쩔 수 없었다고 말했지만 권한 재설정과 방문 연기가 같은 세션에서 처리됐다.",
+"verify_source": "스마트홈 서버와 복구업체 CRM 기록이 서로 부합한다.",
+"check_edits": "기관 및 서버 원본이라 편집 흔적이 없다.",
+"question_acquisition": "공동 현장 기기와 계약업체 기록이라 확보 절차상 문제는 적다."
+}
+},
+{
+"id": "e-3",
+"name": "유림이 저장한 심야 CCTV 캡처와 현장 알람 이력",
+"description": "홍대성 현장소장이 밤 늦게 다시 들어와 손상을 키운 것처럼 보이는 CCTV 캡처와 현장 알람 이력이다.",
+"type": "video",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-3"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "원본 영상이 아니라 유림이 내보낸 정지화면 캡처와 짧은 클립만 있다.",
+"check_metadata": "캡처 생성 시각은 공사중지 요청 직후로, 전체 재생본보다 11초가량 앞뒤가 잘려 있다.",
+"restore_context": "홍대성의 재출입은 실제로는 추가 손상 행위가 아니라 누수 확인과 밸브 점검을 위한 짧은 확인 방문이었다.",
+"verify_source": "현장 알람 이력상 재출입 자체는 사실이지만 행위 내용은 캡처만으로 단정할 수 없다.",
+"check_edits": "합성 흔적은 없으나 필요한 장면만 잘린 선택적 추출이다.",
+"question_acquisition": "무단 포털 접속으로 반출된 CCTV 자료라 사생활 및 권한 침해 소지가 있다."
+}
+},
+{
+"id": "e-4",
+"name": "삭제 복원된 부부 메신저와 예산 메모",
+"description": "손상이 더 커지면 보험으로 천장과 마루를 같이 갈 수 있는지, 지급금이 나오면 붙박이장 잔금과 카드대금을 어떻게 나눌지 적은 대화와 메모다.",
+"type": "chat",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "personal_device",
+"legitimacy": "lawful",
+"proves": [
+"d-3",
+"d-4"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "양측 기기 백업에서 삭제 복원된 대화와 가족클라우드 예산 메모 원본이 함께 확인됐다.",
+"check_metadata": "대화 시각은 긴급건조 취소 직전과 보험 상담 직후로 나뉘며, 같은 취지를 반복한다.",
+"restore_context": "한쪽이 단독으로 유혹한 것이 아니라 둘 다 손상 범위와 예상 지급금 사용처를 계산하고 있었다.",
+"verify_source": "메신저 서버 백업과 메모앱 버전 이력이 일치한다.",
+"check_edits": "삭제 복원 흔적은 있으나 핵심 문구 조작은 확인되지 않았다.",
+"question_acquisition": "당사자 기기와 공동 클라우드 자료로 확인됐다."
+}
+},
+{
+"id": "e-5",
+"name": "보험청구서 초안과 수분센서 분석보고",
+"description": "청구서에는 갑작스런 천장붕괴로 적혔지만, 수분센서 곡선과 사진 메타데이터는 며칠간 점진적으로 손상이 확대됐음을 보여준다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-3",
+"d-4",
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-3"
+],
+"investigationResults": {
+"request_original": "보험청구 초안, 손해사정 보고서, 수분센서 원본 CSV가 함께 제출됐다.",
+"check_metadata": "청구서 사진은 실제 촬영 순서가 바뀌어 있었고 손상량이 가장 큰 사진이 먼저 배치돼 있다.",
+"restore_context": "초기 누수는 작았지만 제습 중단과 공사중지 뒤 센서 수치가 계단형으로 상승했다.",
+"verify_source": "보험사 접수 시스템과 현장센서 기록이 서로 부합한다.",
+"check_edits": "청구서 서술은 사람이 작성한 초안이며, 센서 데이터와 사진 메타데이터는 후편집 흔적이 없다.",
+"question_acquisition": "보험사 조사 과정에서 적법하게 확보된 자료다."
+}
+},
+{
+"id": "e-6",
+"name": "보험사 조사유예 통지와 복구업체 진술서",
+"description": "지급 보류 사유가 시공사 신고가 아니라 손상 확대 의심과 초기 복구 지연이라는 점을 적은 조사유예 통지와 복구업체 진술서다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-2"
+],
+"investigationResults": {
+"request_original": "보험사 조사유예 통지 원본과 복구업체 현장진술서가 함께 제출됐다.",
+"check_metadata": "보류 결정은 시공사와의 분쟁 제기보다 앞선 날짜에 내려졌고, 제습 중단 로그가 핵심 사유로 적혔다.",
+"restore_context": "두 사람은 홍대성의 보복 신고를 의심했지만 실제로는 내부 이상징후 탐지에 먼저 걸린 상태였다.",
+"verify_source": "보험사 SIU 기록과 복구업체 방문 일지가 일치한다.",
+"check_edits": "기관 원본이라 편집 흔적이 없다.",
+"question_acquisition": "보험조사 절차 안에서 제공된 자료다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-3",
+"e-5"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-3"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "유림은 승호의 공사 포털과 도어락 관리자 권한을 무단 사용했다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "a_only"
+},
+{
+"id": "t-2",
+"fact": "승호는 긴급건조와 제습을 일부러 늦추고 현장 권한을 자신 쪽으로 다시 묶었다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "b_only"
+},
+{
+"id": "t-3",
+"fact": "큰 손상은 전적으로 시공사 과실이 아니라 부부가 긴급조치를 늦추며 키운 결과였다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "both_know"
+},
+{
+"id": "t-4",
+"fact": "두 사람은 보험금으로 예산 구멍을 메우려는 계산 아래 손상 확대를 공동으로 기획했다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "both_know"
+},
+{
+"id": "t-5",
+"fact": "보험금 지급 보류는 시공사 보복이 아니라 이상 데이터와 복구 지연 정황 때문에 발생했다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "neither_knows"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-1",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "portal_access_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "what_did_you_export_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-4",
+"lieIntensity": "L2",
+"lieMotive": "third_party_blame",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "contractor_fault_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "sensor_data_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-1",
+"lieIntensity": "L3",
+"lieMotive": "financial_preservation",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "insurance_motive_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-4_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "budget_gap_followup"
+},
+{
+"from": "S3",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_move_in_pressure"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "e-5_or_shared_responsibility_question"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-2",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "drying_delay_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "why_turn_off_dehumidifier"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-4",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "who_caused_major_damage_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-5_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "did_you_follow_emergency_repair_advice"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_fault_question"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-1",
+"lieIntensity": "L3",
+"lieMotive": "financial_survival",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "did_you_two_plan_the_claim_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-4_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "what_was_the_money_for_followup"
+},
+{
+"from": "S3",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_budget_collapse"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "e-5_or_emotion_threshold"
+}
+]
+}
+],
+"solutions": {
+"공사권한분리": [
+"공사 포털과 도어락은 한 사람의 관리자, 다른 한 사람의 열람권으로 분리하고 변경은 자동으로 서로에게 통지되게 한다.",
+"시공사·복구업체·보험사 연락창구를 하나로 정하고, 공사중지나 방문 연기는 배우자 서면 확인 없이는 실행하지 않는다.",
+"권한 무단 사용이 다시 발생하면 공사 의사결정은 제3의 현장관리인만 통해 진행한다."
+],
+"보험청구정정": [
+"이미 제출한 청구 서사는 손상 확대 정황을 포함해 즉시 정정하거나 철회하고, 사진과 센서 데이터는 원본 순서대로 다시 제출한다.",
+"시공사 과실과 부부의 지연 대응을 분리해 기록하고, 보험금으로 해결하려던 추가 인테리어 비용은 별도 예산으로 떼어낸다.",
+"다시 과장 청구나 자료 선택 제출이 발생하면 공동 보험 연락 권한을 중단하고 중립 손해사정인만 통해 소통한다."
+],
+"주거복구운영": [
+"실제 복구가 필요한 범위와 미뤄도 되는 업그레이드 항목을 분리해 입주 일정부터 다시 짠다.",
+"건조, 마감, 가구 설치처럼 시간순으로 영향을 주는 공정은 체크리스트로 묶어 어느 한쪽이 임의로 멈추지 못하게 한다.",
+"예산 압박 때문에 편법이 반복되지 않도록 잔금, 가구비, 보험 예상액을 서로 다른 계정과 표로 관리한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-2",
+"tp-3"
+]
+}

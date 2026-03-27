@@ -1,0 +1,712 @@
+{
+  "caseId": "case-family-07",
+  "meta": {
+    "relationshipType": "family",
+    "conflictSeed": "CS-2",
+    "variableModules": [
+      "VM-D"
+    ],
+    "twistModule": "",
+    "difficulty": "easy",
+    "anchorTruth": "백종문이 지원사업 기사와 수상 장면에서 딸 지수의 공로를 자기 몫처럼 넓게 말한 건 맞지만, 가업의 최근 반등은 종문의 생산 안정화와 지수의 온라인·브랜드 개편이 함께 맞물린 결과였다.",
+    "emotionalBait": "대표 이름만 적힌 상패, '아버지가 회사를 살렸다'는 기사 제목, 딸의 밤샘 온라인몰 대시보드가 겹치면서 처음에는 창업주 아버지가 딸의 성과를 가로챈 듯 보인다.",
+    "resolutionDilemma": "창업주로서 종문의 장기 기여와 리스크 부담을 지워버릴 수는 없지만, 지수가 만든 신규 매출과 브랜드 전환 역시 독립된 성과라서, 누가 더 했는지보다 어떤 영역을 누구 이름으로 인정하고 승계 권한을 어떻게 나눌지 정하기가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "백종문",
+      "age": 61,
+      "occupation": "전통한과 공방 대표",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "질문을 받으면 먼저 '내가 이 공방을 30년 지켰다'며 창업주의 시간을 발언권으로 세운다. 불리한 자료가 나오면 대표 명의, 대출 책임, 거래처 신뢰를 한 문장에 묶어 개인 공로보다 자신이 짊어진 무게를 강조한다.",
+      "pride": 8,
+      "fear": "창업주이자 가장으로서의 위치를 잃고, 딸 덕에 겨우 버틴 사람처럼 평가받는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "voice_note_supplier_log",
+      "dailyRoutine": "새벽에 작업장을 열어 반죽과 온도를 먼저 확인하고, 낮에는 납품 거래처와 원재료 전화를 돌리며, 밤에는 매출 숫자보다 불량률과 재고 메모를 다시 본다.",
+      "sensitivePoints": [
+        "창업주 권위",
+        "대표 명의",
+        "지수의 공개 발언"
+      ],
+      "verbalTells": [
+        {
+          "type": "founder_weight",
+          "trigger": "cornered",
+          "pattern": "밀리기 시작하면 '누가 대출 도장 찍었는데' 같은 문장을 반복해 공로 논쟁을 생존 책임 문제로 바꾼다."
+        },
+        {
+          "type": "title_shield",
+          "trigger": "lying",
+          "pattern": "불리한 단독 공로 질문에는 '대표 이름이 들어가는 건 원래 그렇다'며 형식 문제로 축소한다."
+        },
+        {
+          "type": "generation_rebuke",
+          "trigger": "emotional",
+          "pattern": "감정이 올라오면 '몇 달 잘된 걸로 회사를 다 바꿨다고 하냐'며 기간 차이를 들어 상대 기여를 깎는다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "지수",
+        "toJudge": "제 가족",
+        "angry": "지수!"
+      }
+    },
+    "partyB": {
+      "name": "백지수",
+      "age": 33,
+      "occupation": "가업 브랜드·온라인몰 운영팀장",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "판매 추이, 재구매율, 콘텐츠 도달률을 날짜별로 꺼내며 자신의 기여를 수치로 입증하려 한다. 다만 억울함이 커지면 숫자 끝마다 '그런데 기사엔 다 아버지 이야기뿐'이라는 평가를 붙여 자료를 곧바로 비난으로 연결한다.",
+      "pride": 7,
+      "fear": "몇 년간의 리브랜딩과 온라인 개편이 '딸이 도와준 일' 정도로 축소되고 승계 논의에서 얼굴마담으로만 남는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "dashboard_and_draft_archive",
+      "dailyRoutine": "오전에는 온라인 주문과 광고 성과를 확인하고, 오후에는 포장 시안과 리뷰를 정리하며, 저녁에는 다음 행사 소개글과 거래처 제안서를 수정한다.",
+      "sensitivePoints": [
+        "온라인몰 성과",
+        "승계 언급 회피",
+        "아버지의 언론 인터뷰"
+      ],
+      "verbalTells": [
+        {
+          "type": "metric_stack",
+          "trigger": "cornered",
+          "pattern": "공격받으면 전환율, 객단가, 신규회원 수를 연달아 읽어 감정 질문을 숫자 싸움으로 바꾼다."
+        },
+        {
+          "type": "scope_split",
+          "trigger": "lying",
+          "pattern": "불리한 과장 발언은 '그 발언은 온라인 부분만 말한 거였다'며 범위를 잘게 쪼갠다."
+        },
+        {
+          "type": "recognition_hook",
+          "trigger": "emotional",
+          "pattern": "자료 설명 끝에 꼭 '근데 제 이름은 없잖아요'를 붙여 인정받지 못한 감정을 다시 끌어온다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "종문",
+        "toJudge": "제 가족",
+        "angry": "종문!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "2022년 매출 정체 뒤 종문과 지수는 종문이 생산·원재료·기존 거래처를, 지수가 온라인몰·브랜드·행사 홍보를 맡고 큰 의사결정은 함께 보자고 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "작년 지역박람회 뒤 종문이 '이제 지수가 앞에 서도 된다'고 말한 일을 두 사람은 승계 예고인지 행사 칭찬인지 다르게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '행사 진행을 잘했다는 뜻이었다' / B: '브랜드 전면과 후계 역할을 인정한 말이었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "지수가 대기업 디자인팀을 그만두고 공방에 들어올 때 종문이 퇴직금 공백과 생활비를 몇 달 떠안아준 일은 고마움과 빚진 감정이 섞인 채 남아 있다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "박순애 (어머니)",
+        "relationTo": "both",
+        "knowledgeScope": "종문이 새벽 생산을 지키는 모습과 지수가 밤마다 온라인몰을 고치는 모습을 모두 봤다. 다만 지원사업 서류와 외부 기사 문구의 세부는 직접 확인하지 않았다.",
+        "witnessedDirectly": false,
+        "bias": "neutral",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 86,
+          "occupation": "주부",
+          "relationToA": "백종문을 업무상 알고 있음",
+          "relationToB": "백지수을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "자식 편을 들면서도 객관적으로 보이려 한다. 어른 특유의 훈계 톤이 섞인다.",
+          "addressJudge": "재판관님",
+          "addressA": "종문씨",
+          "addressB": "지수"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "강도현 (백화점 식품관 MD)",
+        "relationTo": "both",
+        "knowledgeScope": "지수의 패키지·온라인 기획 이후 입점 문의가 늘어난 점과, 종문이 납품 불량률과 출고 시간을 안정시켜 거래가 유지된 점을 모두 안다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 49,
+          "occupation": "백화점 식품관 MD",
+          "relationToA": "백종문을 업무상 알고 있음",
+          "relationToB": "백지수을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "종문씨",
+          "addressB": "지수씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "문서윤 (소상공인 승계 컨설턴트)",
+        "relationTo": "both",
+        "knowledgeScope": "지원사업 초안 작성, 지역상 신청 양식, 승계 컨설팅 기록을 통해 두 사람의 실제 역할 분담과 외부 표기 문제를 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 52,
+          "occupation": "소상공인 승계 컨설턴트",
+          "relationToA": "백종문을 업무상 알고 있음",
+          "relationToB": "백지수을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "백종문씨",
+          "addressB": "백지수씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "family_business_succession",
+    "description": "전통한과 공방이 온라인몰과 백화점 팝업으로 다시 성장하자, 지역 기사와 지원사업 발표가 종문을 중심으로 쏟아졌다. 그런데 지수는 자신이 만든 패키지 개편과 신규 매출이 창업주 서사에 흡수된다고 느꼈고, 종문은 지수가 몇 년 성과만으로 회사를 자기 프로젝트처럼 말한다고 느끼며 승계 갈등이 본격화됐다.",
+    "emotionalPressure": 7,
+    "affects": "both",
+    "triggerAmplifier": "성과가 눈에 보이는 시기일수록 외부 표기 한 줄과 기사 제목 하나가 곧 후계자 신호처럼 읽혀, 공로 논쟁이 곧 권한과 승계 자격 싸움으로 커졌다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "종문의 단독 공로 표기",
+      "truth": true,
+      "truthDescription": "종문은 지원사업 신청서 최종본과 지역 기사 인터뷰에서 지수의 온라인·브랜드 기여를 축소하고 자신의 대표 성과처럼 넓게 말했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "공로기준정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "지수의 단독 구원자식 홍보",
+      "truth": true,
+      "truthDescription": "지수는 인터뷰와 홍보 글에서 자신이 공방을 완전히 바꿔 살린 것처럼 말해 종문의 장기 생산 개선과 거래처 유지 기여를 가렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "홍보발언통제",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-3",
+      "name": "실제 반등의 핵심 기여는 누구인가",
+      "truth": true,
+      "truthDescription": "최근 반등은 지수의 온라인몰·패키지·행사 기획과 종문의 생산 표준화·불량률 관리·기존 거래처 신뢰 유지가 결합해 나온 결과로, 어느 한쪽의 단독 공로로 보기 어렵다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "승계역할분리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "상패와 박람회 대표 표기는 승계 확정인가",
+      "truth": false,
+      "truthDescription": "지역상 상패와 박람회 대표자 표기는 법적 대표와 신청서 명의 기준일 뿐, 공식적인 승계 확정이나 단독 후계자 지정은 아니었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "승계역할분리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "유리한 기간만 고른 실적 제시",
+      "truth": true,
+      "truthDescription": "종문은 온라인 개편 전의 최저점만, 지수는 생산 불안이 안정된 뒤의 고점만 골라 각자 자신에게 유리한 비교 기간으로 성과를 제시했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "실적검증",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "지원사업 초안·최종본과 지역 기사 교정본",
+      "description": "지수가 작성한 온라인 확장 섹션이 있던 지원사업 초안, 종문 명의로 제출된 최종본, 그리고 지역신문 인터뷰 교정본이다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "문서 원본과 수정 이력, 기사 교정 메일을 함께 대조하자 지수의 역할 문장이 최종 단계에서 빠진 흐름이 확인됐다.",
+        "check_metadata": "초안 작성은 지수 계정, 최종 제출과 기사 확인은 종문 계정에서 이뤄졌다.",
+        "restore_context": "최종본이 대표 명의인 것은 자연스럽지만, 설명 문구까지 대표 개인 성과처럼 바뀐 대목은 형식 이상으로 기여를 좁혔다.",
+        "verify_source": "지원사업 접수번호와 신문사 교정 메일 헤더가 원본과 일치했다.",
+        "check_edits": "추적 변경과 교정 흔적이 남아 있어 누가 어떤 문장을 뺐는지 확인된다.",
+        "question_acquisition": "회사 공동 문서와 당사자 이메일이라 제출 정당성은 높다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "지수의 인터뷰 영상과 홍보 게시물 아카이브",
+      "description": "지수가 지역 창업 인터뷰와 공방 홍보 글에서 '제가 공방 체질을 다 바꿨다'고 말한 영상과 게시물 원본이다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "편집본이 아니라 전체 인터뷰와 게시물 아카이브를 확인하자 과장 표현과 전후 맥락이 모두 드러났다.",
+        "check_metadata": "문제가 된 발언은 수상 직후 집중적으로 게시됐고, 삭제 전 저장 아카이브에도 같은 문장이 남아 있다.",
+        "restore_context": "지수는 온라인 부분만 말했다고 주장하지만, 실제 문장에는 공방 전체를 자신이 바꿨다는 뉘앙스가 섞여 있다.",
+        "verify_source": "플랫폼 원본 아카이브와 촬영본 시간이 일치했다.",
+        "check_edits": "짧은 홍보용 재편집본도 있었지만, 전체본에서도 핵심 표현은 동일하게 확인된다.",
+        "question_acquisition": "본인 공개 게시물 자료라 적법하다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "온라인몰 매출 대시보드와 생산 불량률·납기 로그",
+      "description": "지수의 온라인몰 전환율·재구매율 대시보드와 종문의 생산 불량률, 납기 준수율, 반품률 로그를 함께 묶은 자료다.",
+      "type": "spreadsheet",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "대시보드 원본과 공장 일일 로그를 같은 기간으로 맞춰 보자 매출 상승과 품질 안정이 동시에 나타났다.",
+        "check_metadata": "온라인 유입 급증 시점과 납기 준수율 회복 시점이 비슷하게 겹친다.",
+        "restore_context": "광고나 디자인만으로는 반품률이 이렇게 줄기 어렵고, 품질 개선만으로는 신규회원이 이렇게 늘기 어려워 두 축의 기여가 함께 보인다.",
+        "verify_source": "쇼핑몰 관리자 로그와 생산일지 원본이 각각 플랫폼·작업장 기록과 일치했다.",
+        "check_edits": "원본 추출본이라 수동 수정 흔적이 없고, 비교표만 별도로 만들어졌다.",
+        "question_acquisition": "가업 공동 운영 자료여서 제출 정당성은 높다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "지역상 신청 안내문과 상패 제작 주문서",
+      "description": "지역상 신청 규정, 박람회 대표자 등록 기준, 상패 제작 주문서로, 표기가 대표자 기준인지 승계 확정인지 구분할 수 있는 자료다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "안내문 원본과 주문서 세부항목을 확인하자 수상 명칭은 사업자 대표 기준으로 자동 입력되는 구조였다.",
+        "check_metadata": "박람회 등록도 법적 대표명과 사업자등록 정보 기준으로 처리됐다.",
+        "restore_context": "종문 이름이 앞에 나온다고 해서 지수를 배제한 공식 후계 결정으로 해석할 수는 없다.",
+        "verify_source": "상공회의소 접수번호와 상패 제작업체 주문번호가 모두 확인됐다.",
+        "check_edits": "기관 발급 안내문이라 편집 흔적이 없다.",
+        "question_acquisition": "공개 신청 기준 자료라 활용 문제는 낮다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "월별 KPI 비교표와 클라우드 수정 이력",
+      "description": "두 사람이 각자 발표용으로 만든 월별 KPI 비교표와, 어떤 월을 제외했는지 드러나는 클라우드 수정 이력이다.",
+      "type": "cloud_log",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "발표용 표와 숨김 처리된 월 데이터를 함께 보자 서로가 제외한 시점이 달랐다.",
+        "check_metadata": "종문은 개편 전 저점만 남기는 수정, 지수는 생산불안이 컸던 초기 달을 가리는 수정을 각자 했다.",
+        "restore_context": "거짓 수치라기보다 비교 구간을 고의로 다르게 잡아 자기 기여가 더 커 보이게 만든 방식이었다.",
+        "verify_source": "클라우드 버전 기록과 원본 숫자가 e-3의 실제 로그와 일치했다.",
+        "check_edits": "수정 이력과 숨김 열 처리 흔적이 분명하다.",
+        "question_acquisition": "공동 업무 자료라 제출 정당성은 높다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "승계 컨설턴트 회의록과 역할 진단표",
+      "description": "문서윤 컨설턴트가 남긴 회의록과 역할 진단표로, 생산·브랜드 양축 기여와 단독 승계 판단의 유보가 적혀 있다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "회의록 원본에는 종문의 생산 통제와 지수의 브랜드 전환이 각각 핵심 축으로 분리돼 기록돼 있다.",
+        "check_metadata": "회의는 수상 직후가 아니라 그보다 앞서 열렸고, 당시에도 단독 후계자 결정은 보류로 적혀 있다.",
+        "restore_context": "외부 수상과 기사보다 실제 승계 논의는 훨씬 신중했고, 역할 분리부터 정리하자는 권고가 중심이었다.",
+        "verify_source": "컨설턴트 서명과 접수 기록이 일치한다.",
+        "check_edits": "기관 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "분쟁 조정을 위한 공식 컨설팅 자료라 제출 정당성은 높다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "종문은 지원사업 최종본과 기사에서 지수의 기여를 자기 중심으로 넓게 말했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "지수도 인터뷰와 홍보에서 자신이 공방을 거의 혼자 살린 것처럼 과장했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "최근 반등은 생산 안정화와 온라인·브랜드 전환이 함께 맞물린 공동 성과다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-4",
+      "fact": "상패와 대표자 표기는 공식 승계 확정이 아니라 행정상 대표 명의였다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람은 모두 자기에게 유리한 기간만 골라 실적을 비교했다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "credit_omission_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "final_copy_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "succession_signal_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "consultant_note_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-6",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "comparison_period_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "hidden_months_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "solo_savior_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "whole_business_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "turnaround_cause_question"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_recognition_need"
+        },
+        {
+          "from": "S4",
+          "to": "S3",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-6",
+      "lieIntensity": "L1",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "comparison_period_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "excluded_months_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "공로기준정리": [
+      "생산 안정화, 원재료 관리, 브랜드 개편, 온라인 매출처럼 공로 항목을 영역별로 나눠 이름을 병기한다.",
+      "지원사업·기사·상패 설명문에는 대표 명의와 실무 기여자를 따로 적는 원칙을 만든다.",
+      "누가 더 했는지 한 줄로 정리하는 방식이 반복되면 외부 소개 문구는 제3자 검토 없이는 내보내지 않는다."
+    ],
+    "홍보발언통제": [
+      "가업 홍보에서 '내가 다 바꿨다'거나 '내가 다 지켰다' 같은 단독 서사를 금지한다.",
+      "인터뷰와 홍보 문구는 사전 공유 후 확정하고, 과장 표현이 있으면 같은 채널에서 정정한다.",
+      "공개 발언으로 다시 서로의 기여를 깎아내리면 가족 내부 논의를 멈추고 외부 PR 창구를 한 사람으로 제한한다."
+    ],
+    "승계역할분리": [
+      "승계는 한 번에 대표 승계로 밀지 말고 생산 총괄과 브랜드·판매 총괄 권한을 분리해 시험 운영한다.",
+      "6개월 단위로 역할 성과를 공동 검토하고, 대표 명의 이전 여부는 그 이후에 별도로 결정한다.",
+      "수상이나 기사 노출을 승계 확정 신호로 해석하는 일이 반복되면 컨설턴트 입회 없이 승계 언급을 중단한다."
+    ],
+    "실적검증": [
+      "실적 비교는 같은 기준 월과 같은 지표로만 하며, 빠진 달이 있으면 이유를 함께 적는다.",
+      "공동 대시보드 하나를 두고 수정 이력을 모두 남겨 발표용 별도 표를 줄인다.",
+      "유리한 기간만 골라 제시하는 일이 반복되면 외부 회계사나 컨설턴트가 기준표를 고정하도록 맡긴다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

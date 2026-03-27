@@ -1,4 +1,4 @@
-import type { VerdictInput, VerdictScore } from '../types'
+import type { VerdictInput, VerdictScore, ProcessMetrics } from '../types'
 import type { Dispute, EvidenceNode } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
 
@@ -9,6 +9,7 @@ interface VerdictContext {
   input: VerdictInput
   turnsUsed: number
   courtControlRemaining: number
+  processMetrics: ProcessMetrics
 }
 
 export function calculateVerdict(ctx: VerdictContext): VerdictScore {
@@ -19,6 +20,8 @@ export function calculateVerdict(ctx: VerdictContext): VerdictScore {
 
   return { insight, authority, wisdom, total }
 }
+
+/* ── 통찰 (Insight) ────────────────────────── */
 
 function calculateInsight(ctx: VerdictContext): number {
   let score = 0
@@ -31,7 +34,6 @@ function calculateInsight(ctx: VerdictContext): number {
     const finding = ctx.input.factFindings[dispute.id]
 
     if (finding === 'pending') {
-      // 보류: 모호성이 높으면 페널티 없음, 낮으면 소폭 감점
       if (dispute.ambiguity === 'high') {
         score += weight * 0.7
       } else {
@@ -57,43 +59,77 @@ function calculateInsight(ctx: VerdictContext): number {
     }
   }
 
-  return maxScore > 0 ? Math.round((score / maxScore) * 100) : 0
+  const base = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0
+
+  // ── 과정 보너스: 통찰 ──
+  const pm = ctx.processMetrics
+  let processBonus = 0
+  processBonus += Math.min(10, pm.liesCollapsed * 3)             // 거짓말 붕괴 +3 (최대 10)
+  processBonus += Math.min(6, pm.evidenceDiscovered * 3)          // 증거 발견 +3 (최대 6)
+  processBonus += Math.min(6, pm.freeQuestionsRelevant * 2)       // 자유질문 적중 +2 (최대 6)
+  // 질문 효율: 전이율이 30% 이상이면 보너스
+  if (pm.questionsAsked > 0) {
+    const efficiency = pm.lieTransitions / pm.questionsAsked
+    if (efficiency >= 0.3) processBonus += 5
+  }
+
+  return Math.max(0, Math.min(100, base + processBonus))
 }
 
-function calculateAuthority(ctx: VerdictContext): number {
-  let score = 70 // 기본 점수
+/* ── 권위 (Authority) ──────────────────────── */
 
-  // 법정 통제력 잔여량 보너스
+function calculateAuthority(ctx: VerdictContext): number {
+  let score = 70
+
   score += ctx.courtControlRemaining * 5
 
-  // 위법 증거를 판결 근거로 사용했으면 감점
+  // 위법 증거
   for (const evidence of ctx.evidence) {
     if (evidence.legitimacy !== 'lawful') {
-      const legality = ctx.input.evidenceLegality[evidence.id]
-      if (legality === true) {
-        // 위법 증거 사용 허용
+      if (ctx.input.evidenceLegality[evidence.id] === true) {
         score -= 15
       }
     }
   }
 
-  // 턴 효율성 (너무 많은 턴을 쓰면 소폭 감점)
+  // 비공개 보호 약속 위반
+  for (const evidence of ctx.evidence) {
+    const evState = ctx.evidenceStates[evidence.id]
+    if (evState?.confidentialSource && evState.presented) {
+      const excluded = ctx.input.evidenceLegality[evidence.id] === false
+      if (!excluded) {
+        score -= 20
+      }
+    }
+  }
+
+  // 턴 효율성
   if (ctx.turnsUsed > 20) {
     score -= Math.min(10, (ctx.turnsUsed - 20) * 2)
   }
 
-  return Math.max(0, Math.min(100, score))
+  // ── 과정 보너스: 권위 ──
+  const pm = ctx.processMetrics
+  let processBonus = 0
+  processBonus += Math.min(8, pm.evidenceEffective * 4)           // 효과적 증거 제시 +4 (최대 8)
+  // 턴 효율 보너스 (적은 턴으로 많은 전이)
+  if (ctx.turnsUsed > 0 && ctx.turnsUsed <= 15) processBonus += 5 // 15턴 이내 +5
+  // 양측 모두 심문했으면 공정성 보너스
+  if (pm.bothSidesQuestioned) processBonus += 3
+
+  return Math.max(0, Math.min(100, score + processBonus))
 }
 
-function calculateWisdom(ctx: VerdictContext): number {
-  let score = 50 // 기본 점수
+/* ── 지혜 (Wisdom) ─────────────────────────── */
 
-  // 해결책 선택이 있으면 보너스
+function calculateWisdom(ctx: VerdictContext): number {
+  let score = 50
+
   if (ctx.input.selectedSolutions.length > 0) {
     score += 20
   }
 
-  // "다 A 잘못" 또는 "다 B 잘못"으로 밀어붙이면 감점
+  // 극단적 판결 감점
   const resps = Object.values(ctx.input.responsibility)
   const allA = resps.every((r) => r.a >= 90)
   const allB = resps.every((r) => r.b >= 90)
@@ -101,12 +137,20 @@ function calculateWisdom(ctx: VerdictContext): number {
     score -= 20
   }
 
-  // 모호한 쟁점에서 적절히 보류했으면 보너스
+  // 모호한 쟁점 적절한 보류
   for (const dispute of ctx.disputes) {
     if (dispute.ambiguity === 'high' && ctx.input.factFindings[dispute.id] === 'pending') {
       score += 10
     }
   }
 
-  return Math.max(0, Math.min(100, score))
+  // ── 과정 보너스: 지혜 ──
+  const pm = ctx.processMetrics
+  let processBonus = 0
+  processBonus += Math.min(8, pm.confidentialUsed * 4)            // 비공개 보호 활용 +4 (최대 8)
+  processBonus += Math.min(6, pm.togglesUsed * 2)                 // 토글 스킬 활용 +2 (최대 6)
+  // AI 자유 질문 활용 보너스
+  if (pm.freeQuestionsRelevant >= 2) processBonus += 3             // 자유질문 2회+ 적중 → 지혜 +3
+
+  return Math.max(0, Math.min(100, score + processBonus))
 }

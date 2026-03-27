@@ -5,8 +5,14 @@ export type DigitalHabit = 'sns_active' | 'messenger_main' | 'minimal'
 
 export interface VerbalTell {
   type: string
-  trigger: 'lying' | 'cornered' | 'emotional' | 'avoiding'
+  trigger: 'lying' | 'cornered' | 'emotional' | 'avoiding' | 'shame' | 'hurt' | 'defensive'
   pattern: string
+}
+
+export interface CallTerms {
+  toPartner: string    // 상대를 부를 때 ("자기", "오빠", "팀장님", "주연씨" 등)
+  toJudge: string      // 재판관에게 상대를 언급할 때 ("제 아내", "옆집 분", "제 팀장" 등)
+  angry: string        // 감정이 격해질 때 ("오세린 씨!", "정한결 씨!" 등)
 }
 
 export interface CharacterProfile {
@@ -24,6 +30,7 @@ export interface CharacterProfile {
   dailyRoutine: string
   sensitivePoints: string[]
   verbalTells: VerbalTell[]
+  callTerms?: CallTerms
 }
 
 export type LedgerCategory = 'confirmed' | 'distorted' | 'silenced'
@@ -50,17 +57,43 @@ export interface ThirdParty {
   relationTo: 'a' | 'b' | 'both'
   knowledgeScope: string
   witnessedDirectly: boolean
-  bias: 'pro_a' | 'pro_b' | 'neutral' | 'self_interest'
-  distortionRisk: 'intentional' | 'unconscious' | 'accurate'
+  bias: 'pro_a' | 'pro_b' | 'neutral' | 'self_interest' | 'anti_a' | 'anti_b' | 'against_both' | 'pro_self'
+  distortionRisk: 'intentional' | 'unconscious' | 'accurate' | 'strategic'
+
+  /** 증인 상세 프로필 (증인 소환 시 사용) */
+  witnessProfile?: {
+    age: number
+    occupation: string
+    /** A와의 관계 설명 (예: "대학 동기, 15년 지기") */
+    relationToA: string
+    /** B와의 관계 설명 (예: "처음 보는 사이") */
+    relationToB: string
+    /** A에 대한 감정 (-100~100, 음수=적대, 0=무관심, 양수=호의) */
+    sentimentToA: number
+    /** B에 대한 감정 */
+    sentimentToB: number
+    /** 말투 특성 (LLM 프롬프트에 주입) */
+    speechStyle: string
+    /** 증언 시 재판관에게 쓰는 호칭 */
+    addressJudge: string
+    /** A를 부르는 호칭 */
+    addressA: string
+    /** B를 부르는 호칭 */
+    addressB: string
+    /** 숨기고 싶은 것 (증언의 빈틈) */
+    hiddenAgenda?: string
+  }
 }
 
 export type RelationshipType =
   | 'spouse'
   | 'neighbor'
   | 'boss_employee'
+  | 'workplace'
   | 'partnership'
   | 'family'
   | 'tenant_landlord'
+  | 'tenant'
   | 'friend'
 
 export interface DuoSeed {

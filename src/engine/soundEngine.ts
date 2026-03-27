@@ -97,6 +97,19 @@ export function playSeparation() {
   setTimeout(() => playTone(294, 0.2, 'triangle', 0.06), 100)
 }
 
+/** 재판봉 (3회) */
+export function playGavel() {
+  const hit = (delay: number) => {
+    setTimeout(() => {
+      playTone(120, 0.08, 'square', 0.15)
+      playTone(80, 0.12, 'sawtooth', 0.08)
+    }, delay)
+  }
+  hit(0)
+  hit(250)
+  hit(500)
+}
+
 /** 칭호 획득 */
 export function playTitleEarned() {
   playTone(523, 0.1, 'sine', 0.1)

@@ -6,6 +6,7 @@ export interface EvidenceRuntimeState {
   presented: boolean
   presentedTo: ('a' | 'b')[]
   investigatedActions: string[]
+  confidentialSource?: boolean
 }
 
 export function createInitialEvidenceStates(

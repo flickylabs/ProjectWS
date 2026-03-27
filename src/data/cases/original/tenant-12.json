@@ -1,0 +1,666 @@
+{
+"caseId": "case-tenant-12",
+"meta": {
+"relationshipType": "tenant_landlord",
+"conflictSeed": "CS-5",
+"variableModules": [
+"VM-C"
+],
+"twistModule": "TW-6",
+"difficulty": "medium",
+"anchorTruth": "소담이 믿은 '경수가 나를 문제 세입자로 소문냈다'와 경수가 믿은 '미령이 개인적으로만 민원을 달랜 줄 알았다'는 둘 다 완전히 거짓이 아니었다. 실제 시작점은 관리인 미령의 '4층 분 건은 제가 조용히 보고 있어요'라는 애매한 말이었고, 이 말이 이웃 사이에서 '관리실이 4층 세입자를 문제 인물로 찍어 뒀다'는 뜻으로 와전됐다.",
+"emotionalBait": "이웃이 건넨 '관리인한테 들었다'는 말, 캡처된 옆집 단톡 한 줄, 그리고 경수의 늦고 모호한 해명 때문에 처음에는 집주인이 특정 세입자를 골라 문제 인물로 찍어 퍼뜨린 것처럼 보인다.",
+"resolutionDilemma": "경수가 직접 소문을 만들었다고 보기는 어렵지만, 관리인을 통해 흘러나간 애매한 표현을 빨리 바로잡지 않은 책임은 남는다. 반면 소담도 출처가 완전히 확인되기 전에 공개 단톡방에서 건물주를 비방하며 갈등을 키웠다. 누가 시작했느냐보다 어디서 오해가 굳어졌고 누가 그것을 바로잡지 않았는지를 따져야 한다."
+},
+"duo": {
+"partyA": {
+"name": "이소담",
+"age": 31,
+"occupation": "출판사 마케터",
+"incomeBracket": "mid",
+"archetype": "confrontational",
+"speechStyle": "질문이 시작되면 누가 어떤 말을 했는지 캡처 출처부터 따지며 빠르게 모순을 짚는다. 감정이 올라오면 확인된 사실과 추정을 한 문장에 섞어 공격적으로 들리지만, 본인이 공개적으로 대응한 부분은 축소하려 한다.",
+"pride": 6,
+"fear": "이웃들 사이에서 문제 세입자로 찍혀 다음 계약과 일상까지 흔들리는 것",
+"riskAppetite": 6,
+"digitalHabit": "screenshot_archive_heavy",
+"dailyRoutine": "낮에는 마케팅 문안을 다듬고, 퇴근 후에는 택배와 방문 일정을 정리하며, 밤에는 단톡 캡처와 메시지를 폴더별로 저장해 둔다.",
+"sensitivePoints": [
+"문제 세입자 소문",
+"이웃 시선",
+"공개 단톡 언급"
+],
+"verbalTells": [
+{
+"type": "sender_fixation",
+"trigger": "lying",
+"pattern": "상대가 설명을 넓히면 '그 말 누가 처음 보냈죠'라고 끊고 발신자를 고정하려 한다."
+},
+{
+"type": "screenshot_burst",
+"trigger": "cornered",
+"pattern": "불리한 질문이 오면 맥락 설명보다 캡처 여러 장을 한꺼번에 보여 주며 자신이 확실한 증거를 쥐고 있다는 분위기를 만든다."
+},
+{
+"type": "heated_overlap",
+"trigger": "emotional",
+"pattern": "억울해지면 질문이 끝나기 전에 끼어들어 사실과 해석을 한 번에 쏟아낸다."
+}
+]
+},
+"partyB": {
+"name": "문경수",
+"age": 63,
+"occupation": "다가구주택 임대인",
+"incomeBracket": "high",
+"archetype": "avoidant",
+"speechStyle": "직접 갈등에 들어가기보다 관리인이 알아서 설명했을 거라는 식으로 한 발 물러서 말한다. 추궁이 들어오면 자신이 한 말보다 관리인과 세입자들 사이 전달 과정이 문제였다고 하며 책임을 흩뜨린다.",
+"pride": 7,
+"fear": "건물 평판 관리도 못 하고 관리인 말 한마디까지 통제하지 못하는 집주인으로 보이는 것",
+"riskAppetite": 4,
+"digitalHabit": "manager_delegation_chat",
+"dailyRoutine": "아침에는 건물 복도와 쓰레기 배출 상태를 보고, 낮에는 관리인과 민원 문자를 정리하며, 저녁에는 공지문과 세입자 문의를 한꺼번에 확인한다.",
+"sensitivePoints": [
+"다른 세입자 민원",
+"건물 평판",
+"관리인 통제 실패"
+],
+"verbalTells": [
+{
+"type": "delegation_shield",
+"trigger": "lying",
+"pattern": "불리해지면 '그건 관리인이 응대한 겁니다'를 반복해 자신의 책임선을 뒤로 밀어낸다."
+},
+{
+"type": "passive_voice_escape",
+"trigger": "cornered",
+"pattern": "소문을 왜 바로잡지 않았냐는 질문에는 '그렇게 전달된 모양' 같은 수동형 표현으로 행위 주체를 흐린다."
+},
+{
+"type": "silence_stretch",
+"trigger": "emotional",
+"pattern": "감정이 올라오면 잠깐 침묵한 뒤 원칙과 관리 규칙만 짧게 읽어 내려간다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "입주 초 두 사람은 소음·쓰레기 같은 생활 문제는 관리인이 먼저 당사자에게 조용히 알리고, 확인되지 않은 내용은 건물 전체 공지로 돌리지 않기로 했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "mild",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "봄에 처음 복도 냄새 민원이 들어왔을 때 경수가 '미령 씨가 조용히 확인해 볼게요'라고 말한 장면을 두 사람은 다르게 기억한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: 공개 언급 없이 개인 확인만 하겠다는 약속으로 들었다 / B: 관리인이 필요한 설명은 이웃들에게도 할 수 있다는 뜻으로 이해했다",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "소담은 늦은 방문객과 택배 응대가 복도에서 눈에 띈다는 점을 대수롭지 않게 넘겼고, 경수는 이전 세입자 때도 이웃 사이 소문이 빨리 번졌다는 사실을 알면서도 관리인에게 애매한 표현을 자제시키지 않았다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "mild",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "이가영 (소담의 언니)",
+"relationTo": "a",
+"knowledgeScope": "이웃에게서 '관리인이 문제 세입자라고 했다'는 말을 처음 전해 들은 시점과, 소담이 단톡방에 공개 반박 글을 올리게 된 경위를 안다.",
+"witnessedDirectly": false,
+"bias": "pro_a",
+"distortionRisk": "unconscious"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "조미령 (건물 관리인)",
+"relationTo": "both",
+"knowledgeScope": "자신이 어떤 표현으로 4층 세입자 문제를 언급했는지, 누구에게 어떤 취지로 말했는지 가장 정확히 알고 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "박정민 (관리사무소 민원기록 담당자)",
+"relationTo": "both",
+"knowledgeScope": "실제 민원 횟수, 건물 공지 이력, 확인된 소음·분리배출 기록이 어느 수준이었는지 원본 민원대장으로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "tenant_rumor_misunderstanding",
+"description": "작은 다가구주택에서 이웃 세입자들끼리 왕래하던 중, 늦은 택배와 방문객 문제를 두고 복도 냄새와 소음 이야기가 오갔다. 관리인 미령은 한 이웃을 달래며 '4층 분 건은 제가 조용히 보고 있다'고 말했고, 이 말은 몇 단계를 거치며 '4층 세입자가 문제라 관리실이 지켜본다'는 소문으로 번졌다. 소담은 이를 경수가 퍼뜨린 낙인으로 받아들였고, 경수는 단순 오해쯤으로 넘기다 뒤늦게 갈등이 커졌다.",
+"emotionalPressure": 7,
+"affects": "both",
+"triggerAmplifier": "소담에게는 이웃 시선과 일상 평판이 직접 걸려 있었고, 경수에게는 다른 세입자들의 민원 확산과 건물 이미지 관리가 동시에 걸려 있었다. 애매한 한 문장이 단톡 캡처와 구전으로 번지면서, 사실 확인보다 감정적 확신이 먼저 굳어졌다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "경수가 직접 '문제 세입자'라고 퍼뜨렸는가",
+"truth": false,
+"truthDescription": "경수가 직접 이웃들에게 소담을 문제 세입자라고 지목해 퍼뜨린 정황은 없고, 소문의 직접 출발점은 미령의 애매한 설명과 이웃 간 재전달이었다.",
+"quadrant": "shared_misconception",
+"requiredEvidence": [
+"e-2",
+"e-5"
+],
+"correctResponsibility": {
+"a": 45,
+"b": 55
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "소문출처복구",
+"legitimacyIssue": true
+},
+{
+"id": "d-2",
+"name": "미령 발언의 원래 취지",
+"truth": true,
+"truthDescription": "미령은 늦은 시간 복도 냄새와 방문객 질문을 두고 '4층 분 건은 제가 조용히 보고 있다'고 말했을 뿐, 상습 문제 세입자라고 낙인찍으려던 것은 아니었다. 다만 표현이 지나치게 애매해 오해를 불렀다.",
+"quadrant": "neither_knows",
+"requiredEvidence": [
+"e-2",
+"e-3"
+],
+"correctResponsibility": {
+"a": 40,
+"b": 60
+},
+"ambiguity": "low",
+"weight": "medium",
+"mediationLink": "소문출처복구",
+"legitimacyIssue": false
+},
+{
+"id": "d-3",
+"name": "소담의 공개 단톡 반박과 역비난",
+"truth": true,
+"truthDescription": "소담은 출처를 완전히 확인하기 전에 건물 단톡방에 '집주인과 관리인이 거짓 소문을 낸다'고 공개 반박하며 캡처를 올려 갈등을 더 크게 만들었다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-4",
+"e-5"
+],
+"correctResponsibility": {
+"a": 70,
+"b": 30
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "공개정정조율",
+"legitimacyIssue": true
+},
+{
+"id": "d-4",
+"name": "실제 생활 불편의 정도",
+"truth": true,
+"truthDescription": "택배와 늦은 방문객으로 복도 대화가 한두 번 길어지고 분리배출 안내를 다시 받은 적은 있지만, 반복 소음·악취·무단투숙 같은 상습 문제로 확인된 기록은 없다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-1",
+"e-6"
+],
+"correctResponsibility": {
+"a": 55,
+"b": 45
+},
+"ambiguity": "low",
+"weight": "medium",
+"mediationLink": "생활불편분리",
+"legitimacyIssue": false
+},
+{
+"id": "d-5",
+"name": "경수의 정정 지연과 방관",
+"truth": true,
+"truthDescription": "경수는 소문이 돈다는 말을 들은 뒤에도 '관리인이 알아서 말한 것'이라며 명확한 정정문을 바로 내지 않았고, 그 사이 이웃들 사이 인상이 굳어졌다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-3",
+"e-5"
+],
+"correctResponsibility": {
+"a": 25,
+"b": 75
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "공개정정조율",
+"legitimacyIssue": true
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "임대차계약서와 건물 생활규칙 원본",
+"description": "민원은 먼저 당사자에게 알리고, 확인되지 않은 생활 문제를 공개적으로 특정 세대에 연결하지 않는다는 문구가 적힌 계약서와 생활규칙 원본이다.",
+"type": "contract",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-4"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "당사자 계약서 원본과 관리사무소 보관 생활규칙 사본이 함께 제출됐다.",
+"check_metadata": "생활규칙은 입주 시점에 이미 배포된 고정 양식으로 확인됐다.",
+"restore_context": "계약 구조는 생활 불편을 바로 낙인찍어 공개하기보다 먼저 사실 확인과 개별 고지를 원칙으로 하고 있다.",
+"verify_source": "관리사무소 등록번호와 당사자 서명, 규칙 문구가 보관본과 일치한다.",
+"check_edits": "추가 삽입이나 재작성 흔적이 없다.",
+"question_acquisition": "당사자 계약 및 건물 규칙 문서라 제출 정당성은 충분하다."
+}
+},
+{
+"id": "e-2",
+"name": "이웃 사이드챗 캡처와 미령 음성메모",
+"description": "이웃 세입자가 받은 사이드챗 캡처와, 미령이 '4층 분 건은 제가 조용히 보고 있다'고 말한 짧은 음성메모가 묶인 자료다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "third_party",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-1",
+"d-2"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "처음에는 캡처와 음성 발췌만 있었고, 이후 이웃 쪽 전체 대화 일부와 미령의 원본 파일이 추가 제출됐다.",
+"check_metadata": "문제의 발언은 소담이 공개 반박하기 전날 저녁에 생성된 것으로 남아 있다.",
+"restore_context": "처음 캡처에는 '문제라 지켜본다'는 인상만 남았지만, 전체 문맥에는 냄새 질문을 진정시키며 '제가 먼저 확인하겠다'는 취지가 앞에 있었다.",
+"verify_source": "이웃 세입자 단말과 미령 휴대폰 백업의 시각 흐름이 대체로 일치한다.",
+"check_edits": "본문 편집은 없지만 핵심 앞뒤가 빠진 선택적 크롭이 확인된다.",
+"question_acquisition": "제3자가 있는 사적 대화라 공개 범위와 사생활 보호에 주의가 필요하다."
+}
+},
+{
+"id": "e-3",
+"name": "미령 업무일지와 경수-미령 문자",
+"description": "관리인 업무일지, 경수가 미령에게 민원은 조용히 처리하라고 보낸 문자, 그리고 소문 이후 정정 여부를 미룬 정황이 담긴 기록이다.",
+"type": "record",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-2",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "업무일지 원본과 경수-미령 문자 원문이 함께 제출돼 발언 취지와 후속 대응을 연결해 볼 수 있었다.",
+"check_metadata": "미령의 사이드챗 직전과 직후 경수와 주고받은 문자가 같은 시간대에 남아 있다.",
+"restore_context": "경수는 공개 낙인을 지시한 적은 없지만, 미령의 애매한 표현을 알게 된 뒤에도 명확한 정정을 바로 보내지 않았다.",
+"verify_source": "관리실 일지 시간과 문자 발신 시각, 경수 휴대폰 수신 기록이 서로 맞는다.",
+"check_edits": "업무일지와 문자 원문 모두 사후 편집 흔적이 없다.",
+"question_acquisition": "관리실 기록과 개인 문자가 함께 포함돼 있어 필요한 부분만 사용해야 한다."
+}
+},
+{
+"id": "e-4",
+"name": "건물 단톡방 공개 반박 캡처",
+"description": "소담이 건물 단톡방에 올린 공개 반박문과, 경수와 미령이 거짓 소문을 냈다고 적은 메시지 캡처다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-3"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "소담 휴대폰의 단톡 원문과 관리자 백업 일부가 함께 제출됐다.",
+"check_metadata": "공개 반박은 소문 캡처를 전달받은 지 약 25분 뒤 바로 올라온 것으로 확인된다.",
+"restore_context": "사실 확인을 위한 별도 문의 없이 공개 비난과 캡처 공유가 동시에 이뤄져 갈등을 키운 흐름이 드러난다.",
+"verify_source": "관리자 백업본과 소담 휴대폰 저장 시각이 일치한다.",
+"check_edits": "메시지 원문이라 편집 흔적이 없다.",
+"question_acquisition": "여러 입주민이 있는 단톡 자료라 공개 범위에 각별한 주의가 필요하다."
+}
+},
+{
+"id": "e-5",
+"name": "입주민 채팅 내보내기와 루머 전파 시간표",
+"description": "입주민 채팅 내보내기 파일과, 미령 발언이 어떤 순서로 이웃들에게 전달돼 소담에게까지 들어왔는지 정리한 시간표다.",
+"type": "record",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-1",
+"d-3",
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-2"
+],
+"investigationResults": {
+"request_original": "관리자 내보내기 파일과 시간대별 전달자 정리표가 함께 제출됐다.",
+"check_metadata": "미령의 발언이 한 이웃에게 전달된 뒤 두 차례 재전달을 거쳐 '문제 세입자' 표현으로 굳어지는 흐름이 분 단위로 남아 있다.",
+"restore_context": "소담이 처음 접한 표현은 이미 여러 단계 과장을 거친 버전이었고, 경수의 정정 지연도 그 사이에 끼어 있었다.",
+"verify_source": "채팅 내보내기 시각과 각 단말 저장 시각, 관리실 통화 기록이 서로 맞아떨어진다.",
+"check_edits": "내보내기 원본과 정리표의 순서가 일치해 후작성 가능성은 낮다.",
+"question_acquisition": "다수 입주민 정보가 포함돼 있어 필요한 부분만 가려 사용해야 한다."
+}
+},
+{
+"id": "e-6",
+"name": "민원대장과 복도 확인 기록",
+"description": "택배 시간대 짧은 복도 소음 민원 두 건, 분리배출 재안내 한 건, 공용부 오염 확인 여부가 적힌 민원대장과 확인 기록이다.",
+"type": "record",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-4"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "관리사무소 민원대장 원본과 복도 확인 메모가 함께 제출됐다.",
+"check_metadata": "관련 민원은 한 달 동안 세 건에 그치고 이후 반복 기록은 없다.",
+"restore_context": "생활 불편이 전혀 없었다고 보긴 어렵지만, 상습 악취·무단투숙·심야 소음 같은 중대한 문제로 누적되지는 않았다.",
+"verify_source": "민원대장 번호와 CCTV 확인 메모 시각, 관리실 순찰 기록이 맞아떨어진다.",
+"check_edits": "전산 입력과 종이 대장이 동일해 사후 수정 가능성은 낮다.",
+"question_acquisition": "건물 관리기록이라 분쟁 해결 목적 범위에서 적법성이 높다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-2",
+"e-5"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-1",
+"d-2"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "소문의 출발점은 경수의 직접 비방이 아니라 미령의 애매한 발언과 그 재전달이었다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "shared_misconception"
+},
+{
+"id": "t-2",
+"fact": "미령은 원래 민원을 조용히 확인하겠다는 뜻이었지만, 표현이 모호해 문제 인물 낙인처럼 들리게 만들었다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "neither_knows"
+},
+{
+"id": "t-3",
+"fact": "소담은 출처를 다 확인하기 전에 공개 단톡방에서 건물주와 관리인을 비난했다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "a_only"
+},
+{
+"id": "t-4",
+"fact": "실제 생활 불편은 한두 차례 있었지만 상습 문제 세입자 수준으로 확인되지는 않았다.",
+"isTrue": true,
+"weight": 7,
+"quadrant": "both_know"
+},
+{
+"id": "t-5",
+"fact": "경수는 소문을 직접 만들진 않았어도 정정을 늦춰 오해가 굳어지게 했다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "b_only"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-1",
+"lieType": "LT-3",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "rumor_source_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_neighbor_stares"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-6",
+"lieIntensity": "L1",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "public_accusation_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-4_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "fact_check_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-5",
+"lieIntensity": "L1",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "actual_inconvenience_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-6_presented"
+},
+{
+"from": "S2",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_late_visitors"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "e-1_presented"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-2",
+"lieType": "LT-4",
+"lieIntensity": "L1",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "manager_phrase_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_neighbor_pressure"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "e-3_presented"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "correction_delay_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "why_no_notice_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-3",
+"lieIntensity": "L1",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "actual_problem_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-6_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "repeat_incident_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"solutions": {
+"소문출처복구": [
+"미령의 원래 발언과 재전달 과정을 시간순으로 복원해, '문제 세입자 낙인'과 '민원 조용히 확인'을 구분한 정정문을 만든다.",
+"경수와 미령은 누가 어떤 말을 누구에게 했는지 범위를 좁혀 설명하고, 이웃들에겐 확인된 사실만 다시 공지한다.",
+"향후 민원 응대는 개인 확인, 사실 기록, 건물 공지의 순서로 나누고 특정 세대를 암시하는 애매한 표현을 금지한다."
+],
+"공개정정조율": [
+"경수는 소문 확산을 방치한 점을 인정하고, 소담은 출처 확인 전 공개 비난으로 갈등을 키운 점을 인정한 뒤 공동 정정문을 올린다.",
+"정정문에는 '상습 문제 세입자'라는 표현이 사실이 아니며, 현재 확인된 생활 불편은 제한적이었다는 점을 함께 적는다.",
+"이후 건물 단톡에서는 민원 당사자 지목을 금지하고, 필요한 설명은 관리실 또는 1:1 채널로만 남긴다."
+],
+"생활불편분리": [
+"택배 시간대 짧은 복도 대화, 분리배출 재안내 같은 실제 생활 문제는 소문과 분리해 체크리스트로 관리한다.",
+"소담은 늦은 방문객 응대와 문 앞 적치 시간을 줄이고, 경수는 확인되지 않은 인상평가를 민원 사유처럼 쓰지 않는다.",
+"재발이 있으면 녹취나 소문 대신 관리실 기록과 확인된 시간대만 기준으로 다시 판단한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-2",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-2",
+"tp-3"
+]
+}

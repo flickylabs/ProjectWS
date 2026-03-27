@@ -1,0 +1,670 @@
+{
+"caseId": "case-family-05",
+"meta": {
+"relationshipType": "family",
+"conflictSeed": "CS-3",
+"variableModules": [
+"VM-B"
+],
+"twistModule": "TW-4",
+"difficulty": "hard",
+"anchorTruth": "박은주가 딸의 독립을 막으려 현관 비밀번호와 임대인 연락망을 이용해 개입한 것보다 더 결정적인 문제는, 소현의 자백처럼 보인 31초 녹취가 은주가 세 통화를 잘라 붙여 만든 위조본이었다.",
+"emotionalBait": "늦은 밤 이삿짐 상자, 공유주거 계약서 초안, '엄마 카드로 막고 그냥 나갈게'라는 31초 음성클립이 겹치며 처음에는 성급하게 집을 뛰쳐나가려는 딸이 부모를 속인 듯 보인다.",
+"resolutionDilemma": "과거 전세사기 직전까지 갔던 딸을 붙잡고 싶었다는 어머니의 불안을 참작하더라도, 성인 자녀의 방과 계약에 개입하고 위조 녹취까지 만든 행위를 어디까지 용인할지, 또 딸의 축소 설명과 독립 통보 파기를 어떤 방식으로 다시 조율할지가 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "박은주",
+"age": 57,
+"occupation": "동네 미용실 원장",
+"incomeBracket": "mid",
+"archetype": "confrontational",
+"speechStyle": "질문을 받으면 사실관계보다 먼저 '엄마가 아니면 누가 막았겠냐'며 보호자 위치를 내세운다. 밀리기 시작하면 딸의 과거 실수와 현재 불안을 한 문장에 묶어, 통제가 아니라 보호였다고 프레임을 바꾼다.",
+"pride": 8,
+"fear": "딸이 또 위험한 계약에 걸려들고 자신은 통제적인 엄마로만 기억되는 것",
+"riskAppetite": 7,
+"digitalHabit": "family_device_checker",
+"dailyRoutine": "아침에 미용실 문을 열기 전 집안 택배와 공과금을 확인하고, 영업이 끝난 뒤에는 가족 단톡과 부동산 문자 내역을 훑어본다.",
+"sensitivePoints": [
+"과거 전세사기 직전 사건",
+"성인 딸의 독립",
+"부모 통제 비난"
+],
+"verbalTells": [
+{
+"type": "protective_overclaim",
+"trigger": "lying",
+"pattern": "불리한 개입 질문이 나오면 '내가 막았으니 사고가 안 난 거야'처럼 결과를 자기 보호 논리로 덮는다."
+},
+{
+"type": "public_scold_mode",
+"trigger": "cornered",
+"pattern": "목소리가 커지면서 상대를 이름 전체로 부르고, 마치 훈육하듯 날짜와 실수를 차례로 열거한다."
+},
+{
+"type": "fear_reframe",
+"trigger": "emotional",
+"pattern": "위조나 침범 지적이 나오면 '무서워서 그랬다'고 감정 이유를 먼저 꺼내 행위의 무게를 줄이려 한다."
+}
+]
+},
+"partyB": {
+"name": "박소현",
+"age": 26,
+"occupation": "웹툰 배경 채색 어시스턴트",
+"incomeBracket": "mid",
+"archetype": "avoidant",
+"speechStyle": "핵심 답을 바로 하지 않고 계약, 작업 일정, 월수입 순서부터 길게 설명해 본론을 뒤로 미룬다. 억울함이 커지면 '그래서 또 내가 애 취급이잖아'라는 식으로 사실과 감정을 한꺼번에 쏟아낸다.",
+"pride": 5,
+"fear": "독립조차 스스로 못 하는 미성숙한 딸로 고정되고, 부모 통제 아래 다시 돌아가야 하는 것",
+"riskAppetite": 5,
+"digitalHabit": "voice_note_and_contract_folder",
+"dailyRoutine": "낮에는 재택으로 원고 마감을 맞추고, 저녁에는 부동산 앱과 작업 메신저를 번갈아 보며 계약 서류를 폴더별로 정리한다.",
+"sensitivePoints": [
+"성인인데도 남겨진 현관 비밀번호",
+"과거 계약 실수",
+"룸메이트·생활방식 간섭"
+],
+"verbalTells": [
+{
+"type": "scope_narrowing",
+"trigger": "lying",
+"pattern": "불리한 계약 질문이 나오면 '그 시점만 보면 단독으로 보였어'처럼 범위를 잘게 쪼개 전체 오해를 줄이려 한다."
+},
+{
+"type": "late_context_dump",
+"trigger": "avoiding",
+"pattern": "핵심보다 앞서 월수입, 마감 일정, 방 크기 같은 주변 정보를 길게 풀어 시간을 번다."
+},
+{
+"type": "adult_status_assertion",
+"trigger": "cornered",
+"pattern": "궁지에 몰리면 '나는 스물여섯이야'를 반복해 행위 평가보다 나이와 자율성을 먼저 방패로 세운다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "2년 전 소현이 전세사기 직전까지 갔다가 계약을 접은 뒤, 다음 주거 계약은 상담사 한 번과 상의하되 그 전까지는 은주가 방과 서류를 함부로 보지 않기로 합의했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "작년 아버지가 '월수입만 좀 고정되면 소현도 나갈 때 됐다'고 말한 일을 두 사람은 허가인지 조건부 유예인지 다르게 기억한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '안정될 때까지 더 기다리라는 뜻이었다' / B: '돈만 모이면 독립을 허락한 말이었다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "소현이 미술학원을 중도 포기했을 때 은주가 수강료 위약금 300만원을 대신 정리해준 일은 고마움과 통제의 근거가 섞인 채 남아 있다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "박성철 (아버지)",
+"relationTo": "both",
+"knowledgeScope": "전세사기 직전 사건과 은주가 아직도 현관 비밀번호와 예비열쇠를 쥐고 있다는 점을 안다. 다만 위조 녹취의 제작 과정은 직접 보지 못했다.",
+"witnessedDirectly": false,
+"bias": "pro_b",
+"distortionRisk": "unconscious"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "최연우 (오피스텔 임대인)",
+"relationTo": "both",
+"knowledgeScope": "소현의 계약금 송금, 은주의 취소 연락, 최종 계약 거절 사유를 문자와 통화기록 기준으로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "윤혜림 (청년주거상담사)",
+"relationTo": "both",
+"knowledgeScope": "두 사람이 사전 상담 후 계약하기로 했던 합의와, 임대인이 가족 갈등 때문에 계약을 부담스러워했다고 말한 중재 기록을 갖고 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "adult_independence_moveout",
+"description": "소현이 재택 작업이 길어지면서 부모 집에서 벗어나 독립 원룸을 구하려 하자, 은주는 과거 전세사기 직전 사건을 이유로 계약 전반을 직접 확인하려 들었다. 그런데 상담을 거치자는 말과 별개로 소현이 계약금을 먼저 걸고, 은주는 임대인에게 직접 연락하며 방 출입까지 이어지면서 독립 갈등이 거주권 침범 싸움으로 커졌다.",
+"emotionalPressure": 9,
+"affects": "both",
+"triggerAmplifier": "같은 집에 살며 비밀번호와 예비열쇠가 남아 있는 상태라 작은 의심도 즉시 공간 침범으로 번졌고, 편집된 녹취가 등장하자 보호와 통제의 경계가 한꺼번에 무너졌다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "은주의 딸 방 출입과 임대인 개입",
+"truth": true,
+"truthDescription": "은주는 소현이 없을 때 딸 방에 들어가 계약 서류를 확인했고, 임대인에게 직접 연락해 사실상 계약 중단을 압박했다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-1",
+"e-2"
+],
+"correctResponsibility": {
+"a": 85,
+"b": 15
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "거주권한",
+"legitimacyIssue": true
+},
+{
+"id": "d-2",
+"name": "소현의 공유주거 계약 축소 설명",
+"truth": true,
+"truthDescription": "소현은 부모에게는 단독 원룸이라고 설명했지만, 실제로는 룸메이트가 있는 공유주거 계약 초안에 계약금을 먼저 넣고 있었다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-3"
+],
+"correctResponsibility": {
+"a": 20,
+"b": 80
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "계약복구",
+"legitimacyIssue": false
+},
+{
+"id": "d-3",
+"name": "31초 녹취는 소현의 금전·가출 자백인가",
+"truth": false,
+"truthDescription": "은주가 제시한 31초 녹취는 소현의 실제 자백이 아니라 세 통화를 잘라 붙이고 오래된 음성조각을 끼워 넣은 위조본이었다.",
+"quadrant": "shared_misconception",
+"requiredEvidence": [
+"e-4",
+"e-5"
+],
+"correctResponsibility": {
+"a": 80,
+"b": 20
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "증거검증",
+"legitimacyIssue": true
+},
+{
+"id": "d-4",
+"name": "사전 상담 후 계약하기로 한 약속의 쌍방 파기",
+"truth": true,
+"truthDescription": "두 사람은 청년주거상담 뒤에 계약 여부를 정하기로 했지만, 소현은 계약금을 먼저 걸었고 은주는 상담 전에 방 출입과 임대인 연락을 해 약속을 같이 깼다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-3",
+"e-6"
+],
+"correctResponsibility": {
+"a": 45,
+"b": 55
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "독립경계",
+"legitimacyIssue": false
+},
+{
+"id": "d-5",
+"name": "임대인의 최종 계약 거절 사유",
+"truth": true,
+"truthDescription": "임대인의 최종 거절은 소현의 수입 불안정보다, 은주의 취소 연락과 편집된 녹취 전달로 가족 분쟁 위험이 크게 보였기 때문이었다.",
+"quadrant": "neither_knows",
+"requiredEvidence": [
+"e-2",
+"e-6"
+],
+"correctResponsibility": {
+"a": 70,
+"b": 30
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "계약복구",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "현관 스마트도어락 출입기록과 방 문열림 알림",
+"description": "소현이 작업실에 있던 낮 시간, 은주가 집에 들어와 딸 방 문이 열린 기록과 알림이 남은 스마트도어락·홈앱 로그다.",
+"type": "device_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "household_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-1"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "홈앱 원본 로그에는 현관 개방 시각과 실내 문열림 센서 기록이 같은 분 단위로 이어져 있다.",
+"check_metadata": "접속 기기는 은주 휴대폰으로 기록됐고, 소현의 작업 메신저 활동 시각과 겹쳐 부재가 확인된다.",
+"restore_context": "단순 귀가 기록이 아니라 딸 방 센서가 연달아 반응해 내부 확인 행위가 있었음을 보여준다.",
+"verify_source": "도어락 업체 서버 로그와 가정용 허브 로그가 일치했다.",
+"check_edits": "장치 추출본이라 수동 편집 흔적이 없다.",
+"question_acquisition": "같은 집 장치 기록이지만 성인 자녀의 사적 공간 출입이 드러나 사생활 침해 쟁점이 크다."
+}
+},
+{
+"id": "e-2",
+"name": "임대인 통화녹취와 취소 요청 문자",
+"description": "은주가 임대인 최연우에게 '계약을 다시 보류해 달라'고 말한 통화 원본과, 직후 보낸 취소 요청 문자다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-1",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "임대인 휴대폰의 원본 통화녹음과 문자 내보내기 파일이 제출됐다.",
+"check_metadata": "통화는 소현의 계약금 송금 47분 뒤에 이뤄졌고, 취소 문자는 그 직후 3분 안에 발송됐다.",
+"restore_context": "은주는 단순 문의라고 주장했지만, 문자에는 '가족이 책임 못 진다'는 문장이 있어 계약 중단 압박에 가깝다.",
+"verify_source": "통신사 통화내역과 문자 발신 시간이 원본과 일치했다.",
+"check_edits": "대화 파일은 원본 내보내기라 자르기 흔적이 없다.",
+"question_acquisition": "상대방 단말에 남은 녹음이라 제출은 가능하지만, 가족 갈등용으로 재유포하면 사생활 침해 소지가 있다."
+}
+},
+{
+"id": "e-3",
+"name": "공유주거 계약서 초안과 계약금 이체증",
+"description": "소현이 부모에게는 단독 원룸이라 설명했던 방의 실제 계약 초안과, 룸메이트 명의가 포함된 계약금 이체 내역이다.",
+"type": "document",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-2",
+"d-4"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "부동산 전자계약 초안과 은행 이체증 원본을 함께 대조했다.",
+"check_metadata": "초안 저장 시각이 상담센터 예약 하루 전이고, 계약금 송금은 같은 날 저녁으로 찍혀 있다.",
+"restore_context": "단독 거주처럼 들렸던 설명과 달리, 계약서에는 공용 주방·룸메이트 조항이 분명히 들어 있다.",
+"verify_source": "부동산 플랫폼 저장 기록과 은행 송금 기록이 서로 맞아떨어졌다.",
+"check_edits": "전자문서와 은행 이체증 모두 편집 흔적이 없다.",
+"question_acquisition": "소현이 직접 제출한 계약 자료라 취득 정당성은 높지만 동거인의 개인정보는 비식별 처리돼야 한다."
+}
+},
+{
+"id": "e-4",
+"name": "31초 음성클립 파일",
+"description": "소현이 '엄마 카드로 막고 그냥 나갈게'라고 말하는 것처럼 들리는 31초 길이의 음성 파일이다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-3"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "은주는 전체 녹음이 아닌 31초 클립만 먼저 제출했다.",
+"check_metadata": "파일 생성 시각은 임대인에게 전달되기 12분 전이며, 동일 길이의 재저장 기록이 두 번 남아 있다.",
+"restore_context": "앞뒤 문맥이 모두 잘려 있어 실제로 누구와 어떤 상황에서 한 말인지 단정할 수 없다.",
+"verify_source": "파일 자체는 은주 휴대폰 음성편집 앱 저장 폴더에서 나온 것으로 확인됐다.",
+"check_edits": "파형상 세 구간의 경계가 비정상적으로 끊기고 주변 잡음 패턴이 달라 절단 흔적이 강하다.",
+"question_acquisition": "가족 간 사적 대화를 녹음한 자료라 원본 사용 범위와 동의 문제가 민감하다."
+}
+},
+{
+"id": "e-5",
+"name": "디지털포렌식 감정서와 11분 원본 통화 백업",
+"description": "음성분석 기관이 작성한 감정서와 클라우드에서 복구된 11분 원본 통화 파일로, 31초 클립이 여러 시점의 음성을 붙인 위조본임을 보여준다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-3"
+],
+"isTrap": false,
+"requires": [
+"e-4"
+],
+"investigationResults": {
+"request_original": "기관 제출본에는 31초 클립과 복구된 11분 파일의 비교 파형이 함께 포함돼 있다.",
+"check_metadata": "문제가 된 '엄마 카드' 구절은 7개월 전 다른 통화에서 따온 음성조각으로 시간 코드가 전혀 다르다.",
+"restore_context": "원본 통화에서 소현은 오히려 '엄마 카드 같은 건 안 건드려'라고 말하고, 이후 공유주거 설명을 이어간다.",
+"verify_source": "포렌식 기관 해시값과 클라우드 백업 파일 해시가 보고서와 일치했다.",
+"check_edits": "클립에는 세 차례 절단과 한 차례 음절 대치 흔적이 확인됐고, 원본 11분 파일은 편집 흔적이 없다.",
+"question_acquisition": "소현이 본인 계정 백업 접근을 허락해 확보한 적법 자료지만, 사적 통화 내용은 분쟁 범위 내에서만 사용돼야 한다."
+}
+},
+{
+"id": "e-6",
+"name": "청년주거상담센터 중재기록과 임대인 회신메일",
+"description": "윤혜림 상담사의 중재 메모와 임대인이 보낸 회신메일로, 사전 상담 후 결정하기로 한 합의와 최종 계약 거절 이유가 적혀 있다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-4",
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-2"
+],
+"investigationResults": {
+"request_original": "상담센터 원본 메모와 임대인 회신메일 전문이 함께 제출됐다.",
+"check_metadata": "상담 예약은 계약금 송금보다 앞섰지만 실제 상담일은 은주의 임대인 연락 뒤로 미뤄져 있다.",
+"restore_context": "임대인은 수입 문제보다 '가족이 편집 파일까지 보내며 이견을 보였다'는 점을 계약 부담 사유로 적었다.",
+"verify_source": "상담센터 접수번호와 메일 서버 원본 헤더가 일치했다.",
+"check_edits": "기관 메모와 메일 원문이라 선택적 편집 흔적이 없다.",
+"question_acquisition": "분쟁 해결을 위한 중재 기록이라 제출 정당성은 높지만, 향후 임대차 협상 외 용도로 확산하면 문제가 된다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-2",
+"e-4"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-5"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "은주는 소현이 없는 시간에 딸 방에 들어가고 임대인에게 직접 연락했다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "a_only"
+},
+{
+"id": "t-2",
+"fact": "소현은 단독 원룸처럼 설명했지만 실제로는 공유주거 계약 초안에 계약금을 먼저 넣었다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "b_only"
+},
+{
+"id": "t-3",
+"fact": "31초 녹취는 소현의 자백이 아니라 잘라 붙인 위조 음성이다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "shared_misconception"
+},
+{
+"id": "t-4",
+"fact": "두 사람은 상담 후 계약하기로 한 약속을 서로 다른 방식으로 먼저 깼다.",
+"isTrue": true,
+"weight": 7,
+"quadrant": "both_know"
+},
+{
+"id": "t-5",
+"fact": "임대인이 계약을 거절한 직접 원인은 소현의 수입보다 가족의 취소 연락과 편집 녹취였다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "neither_knows"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-1",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "room_entry_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "landlord_contact_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-2_presented"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-1",
+"lieIntensity": "L3",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "edited_audio_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-4_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "waveform_report_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-5",
+"lieIntensity": "L1",
+"lieMotive": "relationship_maintenance",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "counselor_rule_question"
+},
+{
+"from": "S1",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_old_scam_fear"
+},
+{
+"from": "S4",
+"to": "S3",
+"trigger": "e-6_presented"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-2",
+"lieType": "LT-3",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "lease_type_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "roommate_clause_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-6",
+"lieIntensity": "L1",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "counselor_rule_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "deposit_timeline_followup"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "e-6_presented"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-4",
+"lieIntensity": "L1",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "lease_rejection_reason_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "full_landlord_email_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "timeline_reconstruction"
+}
+]
+}
+],
+"solutions": {
+"거주권한": [
+"성인 자녀 방과 택배, 계약 서류는 사전 허락 없이는 열람하지 않는다는 문구를 집안 규칙으로 명확히 적는다.",
+"예비열쇠와 현관 비밀번호는 봉인하거나 바꾸고, 응급 상황 외 사용 기록을 남긴다.",
+"재차 무단 출입이나 임대인 직접 개입이 발생하면 가족 간 직접 협상을 중단하고 제3자 상담사를 통해서만 주거 이야기를 한다."
+],
+"계약복구": [
+"임대인에게는 위조 녹취와 취소 연락이 가족 내 문제였음을 해명하고, 계약 의사는 소현 본인만 전달하도록 창구를 하나로 정한다.",
+"다음 계약부터는 단독 거주인지 공유주거인지, 계약금 시점과 보증금 출처를 한 장 표로 먼저 공유한다.",
+"같은 유형의 축소 설명이나 부모 개입이 반복되면 임대차 절차를 청년주거상담센터 대리 체계로 넘긴다."
+],
+"증거검증": [
+"가족 갈등에서 녹음 파일을 증거로 쓰려면 전체 길이 원본과 저장 경로를 함께 내도록 한다.",
+"잘린 캡처나 편집 음성은 메타데이터 확인 전까지 판단 자료에서 제외한다.",
+"위조 증거 제출이 다시 나오면 가족회의를 중단하고 증거 보존과 법률 검토를 먼저 진행한다."
+],
+"독립경계": [
+"독립 논의는 주 1회 정해진 시간에만 하고, 그 외 시간에는 방 점검이나 계약 추궁을 하지 않는다.",
+"부모는 안전 우려를 질문 목록으로만 내고, 성인 자녀는 계약 구조와 비용을 일정표 형태로 답한다.",
+"약속을 어기고 선계약·선개입이 반복되면 일정 기간 가족 간 직접 독립 협상을 금지하고 상담사 입회 하에만 논의한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-2",
+"tp-3"
+]
+}

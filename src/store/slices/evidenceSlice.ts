@@ -18,6 +18,7 @@ export interface EvidenceSlice {
   initEvidence: (evidence: EvidenceNode[], combinations: EvidenceCombination[]) => void
   presentEvidence: (evidenceId: string, target: 'a' | 'b') => string[]
   investigateEvidence: (evidenceId: string, subAction: string) => string | null
+  markEvidenceConfidential: (evidenceId: string) => void
   isUnlocked: (evidenceId: string) => boolean
   isPresented: (evidenceId: string) => boolean
   getUnlockedEvidence: () => EvidenceNode[]
@@ -47,13 +48,14 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
     // 잠금 해제 체크 (immutable)
     const { updated, newlyUnlocked } = checkUnlocks(afterPresent, evidenceDefinitions)
 
-    // 조합 체크
+    // 조합 체크 (이미 발동된 조합은 제외)
     const combos = checkCombinations(updated, evidenceCombinations)
-    const newComboIds = combos.map((c) => c.requires.join('+'))
+    const existing = new Set(get().triggeredCombinations)
+    const newComboIds = combos.map((c) => c.requires.join('+')).filter(id => !existing.has(id))
 
     set({
       evidenceStates: updated,
-      triggeredCombinations: [...get().triggeredCombinations, ...newComboIds],
+      triggeredCombinations: [...existing, ...newComboIds],
     })
 
     return newlyUnlocked
@@ -66,6 +68,18 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
 
     const def = evidenceDefinitions.find((e) => e.id === evidenceId)
     return def?.investigationResults[subAction] ?? null
+  },
+
+  markEvidenceConfidential: (evidenceId) => {
+    const { evidenceStates } = get()
+    const state = evidenceStates[evidenceId]
+    if (!state) return
+    set({
+      evidenceStates: {
+        ...evidenceStates,
+        [evidenceId]: { ...state, confidentialSource: true },
+      },
+    })
   },
 
   isUnlocked: (evidenceId) => {

@@ -16,8 +16,8 @@
   <span class="topbar-title">홈</span>
   <div class="topbar-sections"></div>
   <div class="topbar-meta">
-    <span>v2.0</span>
-    <span>2026-03-25</span>
+    <span>v3.0</span>
+    <span>2026-03-28</span>
   </div>
 </header>
 
@@ -26,6 +26,7 @@
     <div class="sidebar-section-title">게임 비전</div>
     <div class="sidebar-items">
       <a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
+      <a class="sidebar-link" href="solomon-concept.html"><span class="icon">🎭</span><span class="label">세계관 & 컨셉</span></a>
     </div>
   </div>
   <div class="sidebar-section">
@@ -58,11 +59,18 @@
 
 <main class="content">
   <div class="index-hero">
-    <h1>⚖️ 솔로몬 <span class="badge">GDD v2.0</span></h1>
+    <h1>⚖️ 솔로몬 <span class="badge">GDD v3.0</span></h1>
     <p class="subtitle">LLM 심문 추리 게임 · Procedural Case Drama — 반복 등장하는 인물쌍의 생활 위에서 사건이 발생하고, 플레이어는 사실과 오해, 압박과 신뢰, 판결과 중재 사이를 가르며 '지혜'를 증명하는 리플레이형 추리 게임</p>
   </div>
 
   <div class="index-cards">
+    <a class="index-card" href="solomon-concept.html">
+      <div class="card-icon">🎭</div>
+      <div class="card-title">세계관 & 컨셉</div>
+      <div class="card-desc">게임 정체성, 세계관, 플레이어 역할, 톤 & 분위기, 언어/호칭 규칙, 비주얼 아이덴티티, 레퍼런스.</div>
+      <div class="card-tags"><span>세계관</span><span>톤</span><span>호칭 규칙</span><span>비주얼</span></div>
+    </a>
+
     <a class="index-card" href="solomon-overview.html">
       <div class="card-icon">⚖️</div>
       <div class="card-title">게임 개요</div>
@@ -87,29 +95,29 @@
     <a class="index-card" href="solomon-ai.html">
       <div class="card-icon">🤖</div>
       <div class="card-title">에이전트 설계</div>
-      <div class="card-desc">거짓말 2축(유형 x 동기), LT-7 희생 진술, Verbal Tell, 감정 행동 징후, 신뢰/보호 에이전트 로직, 발언 결정 로직, LLM 프롬프트 구조를 고도화합니다.</div>
-      <div class="card-tags"><span>Lie Motive</span><span>Verbal Tell</span><span>행동 징후</span><span>신뢰/보호</span></div>
+      <div class="card-desc">거짓말 2축, Verbal Tell, Phase별 깊이 가이드, 공용 말투 모듈, 이름 플레이스홀더, AI 진술 분석, LLM 프롬프트 9블록 구조.</div>
+      <div class="card-tags"><span>Phase별 깊이</span><span>말투 모듈</span><span>진술 분석</span><span>프롬프트 구조</span></div>
     </a>
 
     <a class="index-card" href="solomon-mechanics.html">
       <div class="card-icon">🎮</div>
       <div class="card-title">플레이 메커닉</div>
-      <div class="card-desc">진실 3층, 질문 6종 시스템, 신뢰/보호 행동 5종, 리테마이징된 스킬, 증거 조사 하위 액션, 중재안 Phase, 주장 그래프, 부분 해결 사건을 다룹니다.</div>
-      <div class="card-tags"><span>질문 6종</span><span>신뢰 루트</span><span>중재안</span><span>주장 그래프</span></div>
+      <div class="card-desc">Phase별 해금, 질문 3종+자유질문, 토글/액티브 스킬, 증거 대질, 심문 중 증거 발견, 과정 점수 보너스, Phase별 LLM 깊이를 다룹니다.</div>
+      <div class="card-tags"><span>Phase별 해금</span><span>토글/액티브 스킬</span><span>증거 대질</span><span>과정 점수</span></div>
     </a>
 
     <a class="index-card" href="solomon-content.html">
       <div class="card-icon">📈</div>
       <div class="card-title">콘텐츠 &amp; 밸런스</div>
-      <div class="card-desc">ContextSeed 맥락 팩, 캠페인 Stage 갱신, 관계별 미니 보드, 반복 플레이 예시, DuoSeed 기반 샘플 사건, 밸런스 원칙을 정리합니다.</div>
-      <div class="card-tags"><span>Context Pack</span><span>관계별 보드</span><span>샘플 사건</span><span>밸런스</span></div>
+      <div class="card-desc">CaseMap 7챕터×12스테이지, 84개 사건, 리더보드/시즌/프로필, 명성 티어, Context Pack 9종, 밸런스 원칙.</div>
+      <div class="card-tags"><span>CaseMap</span><span>84사건</span><span>리더보드</span><span>명성 티어</span></div>
     </a>
 
     <a class="index-card" href="solomon-production.html">
       <div class="card-icon">🔧</div>
       <div class="card-title">제작 계획</div>
-      <div class="card-desc">LLM 분업 기술 스택(로컬 + 클라우드 API), UX 갱신(주장 그래프, 행동 징후, 관계별 보드, 중재 UI), 리스크 대응, MVP 범위를 다룹니다.</div>
-      <div class="card-tags"><span>LLM 분업 스택</span><span>UX</span><span>리스크</span><span>MVP</span></div>
+      <div class="card-desc">React+Vite+Zustand 기술스택, 모바일 퍼스트 UI, GPT 사전생성+런타임 LLM, 구현 완료/후순위 목록.</div>
+      <div class="card-tags"><span>기술스택</span><span>모바일 UI</span><span>구현현황</span><span>후순위</span></div>
     </a>
   </div>
 

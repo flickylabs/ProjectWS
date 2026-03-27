@@ -1,7 +1,7 @@
 import type { PartyId } from './game'
 import type { LieState } from './agent'
 
-export type Speaker = PartyId | 'system' | 'judge'
+export type Speaker = PartyId | 'system' | 'judge' | 'witness'
 
 export interface DialogueEntry {
   id: string
@@ -10,6 +10,7 @@ export interface DialogueEntry {
   relatedDisputes: string[]
   turn: number
   behaviorHint?: string
+  isConfidential?: boolean
 }
 
 export type ClaimStatus = 'normal' | 'conflict' | 'changed' | 'official' | 'collapsed'
@@ -22,25 +23,20 @@ export interface ClaimNode {
   confidence: 'high' | 'medium' | 'low'
   status: ClaimStatus
   turn: number
+  isConfidential?: boolean
 }
 
-export type QuestionType = 'fact_fixing' | 'timeline' | 'motive' | 'context_expansion' | 'provenance' | 'empathy'
+// 통합된 질문 유형 (6종 → 3종)
+export type QuestionType = 'fact_pursuit' | 'motive_search' | 'empathy_approach'
 
-export type TrustActionType =
-  | 'confidential_protection'
-  | 'interruption_block'
-  | 'retaliation_check'
-  | 'emotional_stabilization'
-  | 'pre_disclosure_consent'
+// 보호 행동 (5종 → 2종)
+export type TrustActionType = 'confidential_protection' | 'separation'
 
-export type SkillType =
-  | 'immediate_answer'
-  | 'cross_examination'
-  | 'evasion_reading'
-  | 'statement_comparison'
-  | 'third_party_summon'
-  | 'order_warning'
-  | 'official_record'
+// 전략 스킬 (즉답 요구만 액티브, 회피 판독은 토글로 구현)
+export type SkillType = 'immediate_answer' | 'evasion_reading'
+
+// 레거시 호환: 이전 질문 유형을 새 유형으로 매핑
+export type LegacyQuestionType = 'fact_fixing' | 'timeline' | 'motive' | 'context_expansion' | 'provenance' | 'empathy'
 
 export type EvidenceSubAction =
   | 'request_original'
@@ -62,12 +58,13 @@ export type PlayerAction =
   | { type: 'skill'; skillType: SkillType; target?: PartyId; disputeId?: string }
   | { type: 'evidence_present'; evidenceId: string; target: PartyId }
   | { type: 'evidence_investigate'; evidenceId: string; subAction: EvidenceSubAction }
+  | { type: 'call_witness'; witnessId: string }
   | { type: 'mediation'; choice: MediationChoice }
   | { type: 'advance_phase' }
 
 export interface DialogueCondition {
   disputeId?: string
-  questionType?: QuestionType
+  questionType?: QuestionType | LegacyQuestionType
   lieState?: LieState
   evidencePresented?: string[]
   trustActionUsed?: TrustActionType
