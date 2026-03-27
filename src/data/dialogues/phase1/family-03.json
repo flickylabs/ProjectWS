@@ -10,55 +10,78 @@
     {
       "speaker": "a",
       "text": "재판관님, 제 아들이 나가면서 6개월 동안 매달 60만원 보내겠다고 했습니다. 월세, 전기료, 약값, 반찬값 — 저 혼자 다 감당하고 있는데, 석 달째부터 금액이 줄었습니다.",
-      "relatedDisputes": ["d-1", "d-2"],
+      "relatedDisputes": [
+        "d-1",
+        "d-2"
+      ],
       "behaviorHint": "공과금 고지서를 한 장씩 꺼내며 생활고를 길게 열거한다."
     },
     {
       "speaker": "b",
       "text": "재판관님, 약속한 건 맞습니다. 그런데 그건 순서대로 말해야 합니다. 3개월째 현장이 줄어서 수입이 빠졌고, 조금 밀린 거지 끊은 게 아닙니다.",
-      "relatedDisputes": ["d-1", "d-2"],
+      "relatedDisputes": [
+        "d-1",
+        "d-2"
+      ],
       "behaviorHint": "설명 순서를 늦추며 감액의 규모를 줄여 말한다."
     },
     {
       "speaker": "a",
       "text": "정우, 조금이 아니야. 자동이체를 아예 끊었잖아. 네 아버지도 장남은 다르다 했어. 부모 마음은 자식이 모른다.",
-      "relatedDisputes": ["d-2", "d-1"],
+      "relatedDisputes": [
+        "d-2",
+        "d-1"
+      ],
       "behaviorHint": "돌아가신 아버지의 말을 끌어오며 한숨을 길게 내쉰다."
     },
     {
       "speaker": "b",
       "text": "미안한 건 맞아. 그런데 내가 보낸 돈이 다 약값이랑 전기료에 쓰인 거 맞아? 복자, 수빈이 학원비는 어디서 나왔어.",
-      "relatedDisputes": ["d-3", "d-2"],
+      "relatedDisputes": [
+        "d-3",
+        "d-2"
+      ],
       "behaviorHint": "짧게 인정한 뒤 곧바로 사용처 질문으로 화제를 옮긴다."
     },
     {
       "speaker": "a",
       "text": "수빈이는 네 누나야. 엄마가 자식 교육비 쓰면 안 돼? 그리고 네가 제때 보냈으면 내가 이리저리 돌려 막았겠어?",
-      "relatedDisputes": ["d-3", "d-4"],
+      "relatedDisputes": [
+        "d-3",
+        "d-4"
+      ],
       "behaviorHint": "목소리가 높아지며 질문 자체를 모질다는 듯 받아친다."
     },
     {
       "speaker": "b",
       "text": "재판관님, 저도 확인했습니다. 어머니가 제 약속 캡처를 친척 단톡에 올리면서 '장남이 생활비를 끊었다'고 하셨습니다. 친척들한테 전화가 쏟아졌습니다.",
-      "relatedDisputes": ["d-4"],
+      "relatedDisputes": [
+        "d-4"
+      ],
       "behaviorHint": "단톡 캡처를 보여주며 억눌린 목소리로 말한다."
     },
     {
       "speaker": "a",
       "text": "내가 어디 가서 구걸했어? 사실을 말한 거지. 장남이 약속을 안 지키는데 엄마가 가만히 있어야 해?",
-      "relatedDisputes": ["d-4", "d-1"],
+      "relatedDisputes": [
+        "d-4",
+        "d-1"
+      ],
       "behaviorHint": "체면이 건드려지자 말을 멈추고 잠깐 입을 다문다."
     },
     {
       "speaker": "system",
-      "text": "송금 약속의 이행 여부와 생활비 사용처는 별개 쟁점이다. 하나씩 정리해달라.",
+      "text": "송금 약속의 이행 여부와 생활비 사용처는 별개 쟁점이다. 하나씩 정리해 주시기 바랍니다.",
       "relatedDisputes": [],
       "behaviorHint": null
     },
     {
       "speaker": "b",
       "text": "재판관님, 제가 석 달째부터 금액을 줄이고 늦게 보낸 건 사실입니다. 하지만 한 번 비튼 거지, 전부 끊은 건 아닙니다. 그리고 제 돈이 다른 데 쓰였는지도 확인이 필요합니다.",
-      "relatedDisputes": ["d-2", "d-3"],
+      "relatedDisputes": [
+        "d-2",
+        "d-3"
+      ],
       "behaviorHint": "고개를 숙이다가 마지막 문장에서 시선을 올린다."
     }
   ]
