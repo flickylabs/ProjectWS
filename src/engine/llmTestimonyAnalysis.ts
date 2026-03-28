@@ -2,8 +2,12 @@
  * 진술 분석 엔진.
  * 지금까지의 모든 대화를 LLM에 보내 구조화된 요약을 생성한다.
  * Phase 5 전용 기능.
+ *
+ * 프롬프트는 웹 어드민(promptManager)에서 관리한다.
  */
 import { chatCompletion } from './llmClient'
+import { getPrompt, getPromptConfig } from '../api/promptManager'
+import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 import type { CaseData } from '../types'
 
 export interface TestimonyAnalysis {
@@ -31,26 +35,18 @@ export async function analyzeTestimony(
     .map(d => `${speakerNames[d.speaker] ?? d.speaker}: ${d.text}`)
     .join('\n')
 
-  const prompt = `법정 심문 게임의 진술 분석관입니다.
+  const taVars = { disputes, nameA, nameB, history }
 
-쟁점: ${disputes}
-당사자: ${nameA} (A) vs ${nameB} (B)
+  const prompt = isAgentLoaded()
+    ? buildAgentPrompt('testimony_analysis', taVars)
+    : getPrompt('testimony_analysis', taVars)
 
-## 지금까지의 대화 기록:
-${history}
-
-위 대화를 분석하여 아래 JSON만 출력하세요:
-{
-  "claimsA": ["${nameA}의 핵심 주장 2~3개 (짧게)"],
-  "claimsB": ["${nameB}의 핵심 주장 2~3개 (짧게)"],
-  "contradictions": ["A와 B 사이 또는 각자 내부 모순 2~3개 (구체적으로)"],
-  "unknowns": ["아직 밝혀지지 않은 점 1~2개"]
-}`
+  const config = isAgentLoaded() ? getAgentConfig('testimony_analysis') : getPromptConfig('testimony_analysis')
 
   try {
     const response = await chatCompletion(
       [{ role: 'user', content: prompt }],
-      { temperature: 0.3, maxTokens: 800 },
+      { temperature: config.temperature, maxTokens: config.maxTokens },
     )
 
     const jsonMatch = response.match(/\{[\s\S]*\}/)

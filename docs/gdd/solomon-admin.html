@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>솔로몬 GDD — WebAdmin 대시보드</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/solomon.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="solomon-index.html">⚖️ <span>솔로몬</span> GDD</a>
+  <span class="topbar-title">WebAdmin 대시보드</span>
+  <div class="topbar-sections"></div>
+  <div class="topbar-meta"><span>v4.1</span><span>2026-03-28</span></div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
+      <a class="sidebar-link" href="solomon-concept.html"><span class="icon">🎭</span><span class="label">세계관 & 컨셉</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">사건 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-case.html"><span class="icon">🧱</span><span class="label">사건 구조</span></a>
+      <a class="sidebar-link" href="solomon-generator.html"><span class="icon">⚙️</span><span class="label">생성 엔진</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">AI 에이전트</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-ai.html"><span class="icon">🤖</span><span class="label">에이전트 설계</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">플레이 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-mechanics.html"><span class="icon">🎮</span><span class="label">플레이 메커닉</span></a>
+      <a class="sidebar-link" href="solomon-content.html"><span class="icon">📈</span><span class="label">콘텐츠 & 밸런스</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">서버 & 인프라</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-server.html"><span class="icon">🗄️</span><span class="label">서버 & DB</span></a>
+      <a class="sidebar-link active" href="solomon-admin.html"><span class="icon">🖥️</span><span class="label">WebAdmin</span></a>
+      <a class="sidebar-link" href="solomon-systems.html"><span class="icon">📬</span><span class="label">공지 & 우편</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+
+<h1>🖥️ WebAdmin 대시보드 <span class="badge">v1.0</span></h1>
+<p class="subtitle">솔로몬 게임 운영을 위한 관리자 대시보드 — 통계, 공지, 우편, AI 프롬프트, 플레이어 관리</p>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="overview">1. WebAdmin 개요</h2>
+
+<div class="card">
+  <div class="card-title">접속 정보</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>값</th></tr></thead>
+    <tbody>
+      <tr><td><strong>접속 URL</strong></td><td><code>http://localhost:3001/admin</code></td></tr>
+      <tr><td><strong>서빙 방식</strong></td><td>Express 정적 파일 (<code>express.static('public/admin')</code>)</td></tr>
+      <tr><td><strong>인증</strong></td><td>현재 미구현 (Phase 2 계획)</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<h3>1.1 기술 스택</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>구분</th><th>기술</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><strong>프론트엔드</strong></td><td>Vanilla HTML / JavaScript</td><td>빌드 도구 없이 순수 HTML+JS로 구성된 SPA</td></tr>
+    <tr><td><strong>스타일</strong></td><td>인라인 CSS (Warm Pastel 테마)</td><td>부드러운 파스텔 톤 + 카드 기반 레이아웃</td></tr>
+    <tr><td><strong>API 통신</strong></td><td>fetch API (REST)</td><td>백엔드 Express 서버와 동일 포트에서 동작</td></tr>
+    <tr><td><strong>라우팅</strong></td><td>Hash-based SPA</td><td>탭 클릭 시 해시 변경으로 뷰 전환 (페이지 리로드 없음)</td></tr>
+  </tbody>
+</table></div>
+
+<h3>1.2 디자인 테마 — Warm Pastel</h3>
+<div class="card">
+  <div class="card-title">색상 팔레트</div>
+  <pre><code>배경(body)         #faf6f1   — 따뜻한 크림색
+카드 배경           #ffffff   — 순백 (그림자: 0 1px 3px rgba(0,0,0,0.08))
+헤더/사이드바       #f5efe6   — 연한 베이지
+액센트(버튼/탭)     #8b7355   — 올리브 브라운
+호버 효과          #f0e8d9   — 라이트 샌드
+텍스트             #5a4a3a   — 다크 브라운
+보조 텍스트         #8b7355   — 미디엄 브라운
+성공(초록)          #4caf50   — 통계 증가 표시
+경고(주황)          #ff9800   — 주의 알림
+위험(빨강)          #f44336   — 삭제/에러</code></pre>
+</div>
+
+<h3>1.3 전체 레이아웃 구조</h3>
+<div class="card">
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌──────────────────────────────────────────────────────────────┐
+│  ⚖️ Solomon Admin           [ Dashboard ] [ Notices ] ...    │
+│              ← 상단 헤더 (고정, 타이틀 + 탭 내비게이션) →       │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐               │
+│  │ Total  │ │ Total  │ │ Today  │ │Active  │  ← 통계 카드   │
+│  │Players │ │ Games  │ │ Games  │ │ (7d)   │    (8개)       │
+│  └────────┘ └────────┘ └────────┘ └────────┘               │
+│  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐               │
+│  │  Avg   │ │Active  │ │Active  │ │  AI    │               │
+│  │ Score  │ │Notices │ │ Mail   │ │Prompts │               │
+│  └────────┘ └────────┘ └────────┘ └────────┘               │
+│                                                              │
+│  ┌──────────────────────┐  ┌──────────────────────┐         │
+│  │   Recent Games       │  │  Games by            │         │
+│  │   (최신 게임 목록)     │  │  Relationship         │         │
+│  │   테이블              │  │  (관계유형별 통계)      │         │
+│  └──────────────────────┘  └──────────────────────┘         │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<div class="alert alert-info">
+  <strong>SPA 탭 구조</strong> — 상단 탭 메뉴에서 6개 섹션을 전환합니다:
+  Dashboard, Notices, Mail, AI Prompts, Players, Games, Settings.
+  각 탭 클릭 시 해당 섹션만 표시되고 나머지는 숨겨집니다.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="dashboard">2. Dashboard (대시보드)</h2>
+
+<p>대시보드는 WebAdmin의 랜딩 페이지로, 게임 운영 상태를 한눈에 파악할 수 있는 8개의 통계 카드와 2개의 요약 테이블로 구성됩니다.</p>
+
+<h3>2.1 통계 카드 (Stats Cards)</h3>
+<div class="card">
+  <div class="card-title">8개 통계 카드 구성</div>
+  <p>카드는 4열 × 2행 그리드(<code>grid-template-columns: repeat(4, 1fr)</code>)로 배치됩니다. 각 카드는 흰색 배경에 미세한 그림자가 적용되고, 아이콘 + 수치 + 라벨 구조입니다.</p>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>#</th><th>카드 이름</th><th>아이콘</th><th>데이터 소스</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><strong>Total Players</strong></td><td>👥</td><td><code>GET /api/stats</code> → <code>totalPlayers</code></td><td>전체 등록 플레이어 수</td></tr>
+    <tr><td>2</td><td><strong>Total Games</strong></td><td>🎮</td><td><code>GET /api/stats</code> → <code>totalGames</code></td><td>누적 게임 플레이 횟수</td></tr>
+    <tr><td>3</td><td><strong>Today Games</strong></td><td>📅</td><td><code>GET /api/stats</code> → <code>todayGames</code></td><td>오늘 플레이된 게임 수</td></tr>
+    <tr><td>4</td><td><strong>Active (7d)</strong></td><td>🔥</td><td><code>GET /api/stats</code> → <code>activePlayers7d</code></td><td>최근 7일 내 접속한 플레이어 수</td></tr>
+    <tr><td>5</td><td><strong>Avg Score</strong></td><td>⭐</td><td><code>GET /api/stats</code> → <code>avgScore</code></td><td>전체 게임 평균 점수</td></tr>
+    <tr><td>6</td><td><strong>Active Notices</strong></td><td>📢</td><td><code>GET /api/stats</code> → <code>activeNotices</code></td><td>현재 활성화된 공지 수</td></tr>
+    <tr><td>7</td><td><strong>Active Mail</strong></td><td>📬</td><td><code>GET /api/stats</code> → <code>activeMail</code></td><td>현재 발송 중인 우편 수</td></tr>
+    <tr><td>8</td><td><strong>AI Prompts</strong></td><td>🤖</td><td><code>GET /api/stats</code> → <code>totalPrompts</code></td><td>등록된 AI 프롬프트 수</td></tr>
+  </tbody>
+</table></div>
+
+<h3>2.2 Recent Games 테이블</h3>
+<div class="card">
+  <div class="card-title">최근 게임 기록</div>
+  <p>대시보드 하단 좌측에 위치하며, 가장 최근에 완료된 게임을 시간순으로 표시합니다.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>컬럼</th><th>설명</th><th>예시</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Player</strong></td><td>플레이어 이름</td><td>김판관</td></tr>
+      <tr><td><strong>Case</strong></td><td>사건 ID</td><td>case_family_001</td></tr>
+      <tr><td><strong>Score</strong></td><td>획득 점수</td><td>85</td></tr>
+      <tr><td><strong>Date</strong></td><td>플레이 일시</td><td>2026-03-28 14:30</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<h3>2.3 Games by Relationship 테이블</h3>
+<div class="card">
+  <div class="card-title">관계 유형별 게임 통계</div>
+  <p>대시보드 하단 우측에 위치하며, 관계 유형(가족, 연인, 친구, 직장, 이웃)별 게임 플레이 횟수와 평균 점수를 집계합니다.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>컬럼</th><th>설명</th><th>예시</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Relationship</strong></td><td>관계 유형 (rel_type)</td><td>family</td></tr>
+      <tr><td><strong>Games</strong></td><td>해당 유형의 총 게임 수</td><td>42</td></tr>
+      <tr><td><strong>Avg Score</strong></td><td>해당 유형의 평균 점수</td><td>78.5</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="alert alert-info">
+  <strong>API 엔드포인트</strong> — 대시보드 통계는 단일 <code>GET /api/stats</code> 호출로 모든 데이터를 수신합니다.
+  Recent Games와 Relationship 통계는 응답 내 <code>recentGames</code>, <code>gamesByRelationship</code> 배열로 포함됩니다.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="notices">3. 공지 관리 (Notices)</h2>
+
+<p>게임 내 공지사항을 생성, 수정, 삭제할 수 있는 관리 페이지입니다. 모든 조작은 모달 폼 UI를 통해 이루어집니다.</p>
+
+<h3>3.1 공지 목록 테이블</h3>
+<div class="card">
+  <div class="card-title">공지 목록 UI</div>
+  <pre style="font-size:0.82rem;line-height:1.8;">
+┌──────────────────────────────────────────────────────────────┐
+│  📢 공지 관리                              [ + 새 공지 작성 ] │
+├──────────────────────────────────────────────────────────────┤
+│  ID │ 제목            │ 유형   │ 우선순위 │ 고정 │ 기간        │ 액션   │
+│ ────┼─────────────────┼────────┼──────────┼──────┼────────────┼───────│
+│  1  │ 서버 점검 안내    │ maint. │   ★★    │  📌  │ 03/28~03/29│ ✏️ 🗑️ │
+│  2  │ 신규 사건 추가    │ update │   ★     │      │ 03/25~04/01│ ✏️ 🗑️ │
+│  3  │ 봄맞이 이벤트    │ event  │   ★★★  │  📌  │ 03/20~04/10│ ✏️ 🗑️ │
+└──────────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<h3>3.2 공지 데이터 필드</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>필드</th><th>타입</th><th>필수</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>title</code></td><td>TEXT</td><td>O</td><td>공지 제목 (최대 200자)</td></tr>
+    <tr><td><code>content</code></td><td>TEXT</td><td>O</td><td>공지 본문 (HTML 지원)</td></tr>
+    <tr><td><code>type</code></td><td>ENUM</td><td>O</td><td><code>info</code> | <code>event</code> | <code>update</code> | <code>maintenance</code></td></tr>
+    <tr><td><code>priority</code></td><td>INTEGER</td><td>O</td><td><code>0</code> (일반) | <code>1</code> (중요) | <code>2</code> (긴급)</td></tr>
+    <tr><td><code>is_pinned</code></td><td>BOOLEAN</td><td>X</td><td>상단 고정 여부 (기본값: false)</td></tr>
+    <tr><td><code>start_date</code></td><td>DATETIME</td><td>O</td><td>공지 게시 시작 일시</td></tr>
+    <tr><td><code>end_date</code></td><td>DATETIME</td><td>X</td><td>공지 게시 종료 일시 (null이면 무기한)</td></tr>
+  </tbody>
+</table></div>
+
+<h3>3.3 공지 유형 (Type)</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>유형</th><th>라벨</th><th>색상 배지</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><code>info</code></td><td>안내</td><td>파란색</td><td>일반 안내 사항</td></tr>
+    <tr><td><code>event</code></td><td>이벤트</td><td>보라색</td><td>기간 한정 이벤트 공지</td></tr>
+    <tr><td><code>update</code></td><td>업데이트</td><td>초록색</td><td>게임 업데이트 / 패치 노트</td></tr>
+    <tr><td><code>maintenance</code></td><td>점검</td><td>주황색</td><td>서버 점검 / 긴급 공지</td></tr>
+  </tbody>
+</table></div>
+
+<h3>3.4 모달 폼 UI</h3>
+<div class="card">
+  <div class="card-title">공지 작성/수정 모달</div>
+  <pre style="font-size:0.82rem;line-height:1.8;">
+┌──────────────────────────────────────┐
+│         📢 공지 작성 / 수정           │
+│  ┌──────────────────────────────────┐│
+│  │ 제목: [____________________]     ││
+│  │ 유형: [info ▼]                   ││
+│  │ 우선순위: [0 ▼]                  ││
+│  │ 고정: [☐]                        ││
+│  │ 시작일: [2026-03-28]             ││
+│  │ 종료일: [2026-04-28]             ││
+│  │ 내용:                            ││
+│  │ ┌──────────────────────────────┐ ││
+│  │ │                              │ ││
+│  │ │  (textarea, 5줄)             │ ││
+│  │ │                              │ ││
+│  │ └──────────────────────────────┘ ││
+│  └──────────────────────────────────┘│
+│           [ 취소 ]  [ 저장 ]          │
+└──────────────────────────────────────┘
+  </pre>
+</div>
+
+<h3>3.5 API 엔드포인트</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>메서드</th><th>경로</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>GET</code></td><td><code>/api/notices</code></td><td>전체 공지 목록 조회</td></tr>
+    <tr><td><code>POST</code></td><td><code>/api/notices</code></td><td>새 공지 생성</td></tr>
+    <tr><td><code>PUT</code></td><td><code>/api/notices/:id</code></td><td>공지 수정</td></tr>
+    <tr><td><code>DELETE</code></td><td><code>/api/notices/:id</code></td><td>공지 삭제</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="mail">4. 우편 관리 (Mail)</h2>
+
+<p>플레이어에게 보상이 포함된 우편을 발송하고 관리하는 페이지입니다. 전체 발송과 특정 플레이어 지정 발송을 모두 지원합니다.</p>
+
+<h3>4.1 우편 목록 테이블</h3>
+<div class="card">
+  <div class="card-title">우편 목록 UI</div>
+  <pre style="font-size:0.82rem;line-height:1.8;">
+┌──────────────────────────────────────────────────────────────────┐
+│  📬 우편 관리                                 [ + 새 우편 작성 ] │
+├──────────────────────────────────────────────────────────────────┤
+│  ID │ 제목          │ 발신자   │ 대상   │ 보상    │ 만료일     │ 액션   │
+│ ────┼───────────────┼──────────┼────────┼─────────┼───────────┼───────│
+│  1  │ 환영 보상     │ 시스템   │ all    │ coin×100│ 04/28     │ ✏️ 🗑️ │
+│  2  │ 이벤트 보상   │ 운영팀   │ all    │ title×1 │ 04/15     │ ✏️ 🗑️ │
+│  3  │ 개별 보상     │ GM      │ specific│ item×3 │ 05/01     │ ✏️ 🗑️ │
+└──────────────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<h3>4.2 우편 데이터 필드</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>필드</th><th>타입</th><th>필수</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>title</code></td><td>TEXT</td><td>O</td><td>우편 제목</td></tr>
+    <tr><td><code>content</code></td><td>TEXT</td><td>O</td><td>우편 본문 내용</td></tr>
+    <tr><td><code>sender</code></td><td>TEXT</td><td>O</td><td>발신자 이름 (예: 시스템, 운영팀, GM)</td></tr>
+    <tr><td><code>target_type</code></td><td>ENUM</td><td>O</td><td><code>all</code> (전체 발송) | <code>specific</code> (특정 플레이어)</td></tr>
+    <tr><td><code>target_players</code></td><td>TEXT</td><td>조건부</td><td><code>specific</code>일 때 대상 플레이어 ID (JSON 배열)</td></tr>
+    <tr><td><code>reward_type</code></td><td>ENUM</td><td>X</td><td><code>coin</code> | <code>item</code> | <code>title</code> | null (보상 없음)</td></tr>
+    <tr><td><code>reward_amount</code></td><td>INTEGER</td><td>X</td><td>보상 수량 (기본값: 1)</td></tr>
+    <tr><td><code>expires_at</code></td><td>DATETIME</td><td>X</td><td>우편 만료 일시 (null이면 무기한)</td></tr>
+  </tbody>
+</table></div>
+
+<h3>4.3 보상 시스템</h3>
+<div class="card">
+  <div class="card-title">보상 유형 상세</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>보상 유형</th><th>아이콘</th><th>설명</th><th>수량 범위</th></tr></thead>
+    <tbody>
+      <tr><td><code>coin</code></td><td>🪙</td><td>게임 내 재화 (코인)</td><td>1 ~ 99,999</td></tr>
+      <tr><td><code>item</code></td><td>🎁</td><td>게임 내 아이템</td><td>1 ~ 99</td></tr>
+      <tr><td><code>title</code></td><td>🏅</td><td>플레이어 칭호</td><td>1 (고정)</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="alert alert-warning">
+  <strong>보상 수령 흐름</strong> — 플레이어가 우편함에서 우편을 열면 <code>is_read = true</code>로 업데이트되고,
+  "보상 받기" 버튼 클릭 시 <code>reward_claimed = true</code>로 변경되면서 보상이 지급됩니다.
+  한 번 수령한 보상은 재수령 불가합니다.
+</div>
+
+<h3>4.4 API 엔드포인트</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>메서드</th><th>경로</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>GET</code></td><td><code>/api/mail</code></td><td>전체 우편 목록 조회</td></tr>
+    <tr><td><code>POST</code></td><td><code>/api/mail</code></td><td>새 우편 생성 (+ 보상 설정)</td></tr>
+    <tr><td><code>PUT</code></td><td><code>/api/mail/:id</code></td><td>우편 수정</td></tr>
+    <tr><td><code>DELETE</code></td><td><code>/api/mail/:id</code></td><td>우편 삭제</td></tr>
+    <tr><td><code>POST</code></td><td><code>/api/mail/:id/read</code></td><td>우편 읽음 처리</td></tr>
+    <tr><td><code>POST</code></td><td><code>/api/mail/:id/claim</code></td><td>보상 수령 처리</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="ai-prompts">5. AI 프롬프트 관리 (AI Prompts)</h2>
+
+<p>게임에서 사용하는 모든 LLM 프롬프트를 실시간으로 편집하고 관리하는 페이지입니다. 프롬프트 변경 시 게임 클라이언트가 자동으로 새로운 프롬프트를 로드합니다.</p>
+
+<h3>5.1 카테고리별 탭 필터</h3>
+<div class="card">
+  <div class="card-title">프롬프트 카테고리</div>
+  <pre style="font-size:0.82rem;line-height:1.8;">
+┌──────────────────────────────────────────────────────────────┐
+│  🤖 AI 프롬프트 관리                                         │
+│  [ All ] [ system ] [ interrogation ] [ judgment ] [ etc ]  │
+├──────────────────────────────────────────────────────────────┤
+│  Key                  │ Name           │ Category │ Ver │ 액션│
+│ ──────────────────────┼────────────────┼──────────┼─────┼────│
+│  system_base          │ 시스템 기본     │ system   │  3  │ ✏️ │
+│  interrogation_main   │ 심문 메인       │ interr.  │  5  │ ✏️ │
+│  judgment_scoring     │ 판결 채점       │ judgment │  2  │ ✏️ │
+└──────────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>카테고리</th><th>설명</th><th>주요 프롬프트</th></tr></thead>
+  <tbody>
+    <tr><td><code>system</code></td><td>시스템 레벨 기본 프롬프트</td><td>AI 페르소나 설정, 기본 행동 규칙</td></tr>
+    <tr><td><code>interrogation</code></td><td>심문 단계 프롬프트</td><td>NPC 응답 생성, 감정 표현, 단서 제공</td></tr>
+    <tr><td><code>judgment</code></td><td>판결 단계 프롬프트</td><td>점수 산출, 판결문 생성</td></tr>
+    <tr><td><code>generation</code></td><td>사건 생성 프롬프트</td><td>동적 사건 생성 (향후 확장)</td></tr>
+  </tbody>
+</table></div>
+
+<h3>5.2 프롬프트 편집기</h3>
+<div class="card">
+  <div class="card-title">모노스페이스 에디터 UI</div>
+  <pre style="font-size:0.82rem;line-height:1.8;">
+┌──────────────────────────────────────────────────────────────┐
+│  ✏️ 프롬프트 편집: interrogation_main (v5)                    │
+│  ┌──────────────────────────────────────────────────────────┐│
+│  │  이름: [심문 메인 프롬프트_____________]                   ││
+│  │  카테고리: [interrogation ▼]                              ││
+│  └──────────────────────────────────────────────────────────┘│
+│  ┌──────────────────────────────────────────────────────────┐│
+│  │ font-family: 'Courier New', monospace                    ││
+│  │ font-size: 13px                                          ││
+│  │ ─────────────────────────────────────────────────────── ││
+│  │ 당신은 {{character_name}}입니다.                          ││
+│  │ 성격: {{personality}}                                    ││
+│  │ 현재 감정 상태: {{emotion_state}}                         ││
+│  │                                                          ││
+│  │ 플레이어가 질문하면 캐릭터의 성격과 감정에 맞게            ││
+│  │ 자연스럽게 응답하세요.                                     ││
+│  │ ...                                                      ││
+│  │ (min-height: 300px, 리사이즈 가능)                        ││
+│  └──────────────────────────────────────────────────────────┘│
+│           [ 취소 ]  [ 저장 ]                                  │
+└──────────────────────────────────────────────────────────────┘
+  </pre>
+  <p>편집기는 <code>monospace</code> 폰트가 적용된 <code>&lt;textarea&gt;</code>로 구성되며, 최소 높이 300px에 자유롭게 리사이즈 가능합니다. 프롬프트 내의 변수(<code>{{변수명}}</code>)는 시각적으로 구분되어 표시됩니다.</p>
+</div>
+
+<h3>5.3 변수 관리 (Variables)</h3>
+<div class="card">
+  <div class="card-title">프롬프트 변수 시스템</div>
+  <p>각 프롬프트에는 <code>variables</code> 필드가 JSON 배열로 저장되어 있으며, 프롬프트 본문 내에서 <code>{{변수명}}</code> 형태로 참조됩니다. 게임 엔진이 실행 시점에 실제 값으로 치환합니다.</p>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>변수명</th><th>설명</th><th>사용 예시</th></tr></thead>
+  <tbody>
+    <tr><td><code>{{character_name}}</code></td><td>현재 NPC 캐릭터 이름</td><td>당신은 {{character_name}}입니다.</td></tr>
+    <tr><td><code>{{personality}}</code></td><td>캐릭터 성격 설정</td><td>성격: {{personality}}</td></tr>
+    <tr><td><code>{{emotion_state}}</code></td><td>현재 감정 상태</td><td>감정: {{emotion_state}}</td></tr>
+    <tr><td><code>{{case_summary}}</code></td><td>사건 요약 정보</td><td>사건 개요: {{case_summary}}</td></tr>
+    <tr><td><code>{{evidence_list}}</code></td><td>수집된 증거 목록</td><td>증거: {{evidence_list}}</td></tr>
+    <tr><td><code>{{conversation_history}}</code></td><td>대화 히스토리</td><td>이전 대화: {{conversation_history}}</td></tr>
+  </tbody>
+</table></div>
+
+<h3>5.4 버전 히스토리 & 원클릭 롤백</h3>
+<div class="card">
+  <div class="card-title">버전 관리 시스템</div>
+  <p>프롬프트를 수정하면 이전 내용이 <code>ai_prompt_history</code> 테이블에 자동 저장되고, 현재 프롬프트의 <code>version</code>이 1 증가합니다.</p>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>기능</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><strong>자동 히스토리 저장</strong></td><td>프롬프트 수정 시 서버가 자동으로 이전 버전을 <code>ai_prompt_history</code>에 백업</td></tr>
+    <tr><td><strong>버전 번호</strong></td><td>각 프롬프트의 <code>version</code> 필드가 수정할 때마다 +1 증가</td></tr>
+    <tr><td><strong>히스토리 조회</strong></td><td><code>GET /api/ai-prompts/:id/history</code>로 특정 프롬프트의 전체 변경 이력 확인</td></tr>
+    <tr><td><strong>원클릭 롤백</strong></td><td><code>POST /api/ai-prompts/:id/rollback/:version</code> 호출로 특정 버전으로 즉시 복원</td></tr>
+  </tbody>
+</table></div>
+
+<div class="alert alert-warning">
+  <strong>롤백 주의사항</strong> — 롤백 실행 시 현재 버전이 히스토리에 저장된 후 지정 버전의 내용으로 덮어씁니다.
+  따라서 롤백 자체도 히스토리에 기록되어 추적이 가능합니다.
+</div>
+
+<h3>5.5 API 엔드포인트</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>메서드</th><th>경로</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>GET</code></td><td><code>/api/ai-prompts</code></td><td>전체 프롬프트 목록 (카테고리 필터 지원: <code>?category=system</code>)</td></tr>
+    <tr><td><code>GET</code></td><td><code>/api/ai-prompts/:id</code></td><td>단일 프롬프트 상세 조회</td></tr>
+    <tr><td><code>PUT</code></td><td><code>/api/ai-prompts/:id</code></td><td>프롬프트 수정 (자동 버전업 + 히스토리 저장)</td></tr>
+    <tr><td><code>GET</code></td><td><code>/api/ai-prompts/:id/history</code></td><td>프롬프트 변경 히스토리 조회</td></tr>
+    <tr><td><code>POST</code></td><td><code>/api/ai-prompts/:id/rollback/:version</code></td><td>특정 버전으로 롤백</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="players">6. 플레이어 관리 (Players)</h2>
+
+<p>등록된 플레이어 정보를 조회하는 페이지입니다. 플레이어는 게임 최초 실행 시 클라이언트에서 자동 등록되며, WebAdmin에서는 읽기 전용으로 열람합니다.</p>
+
+<h3>6.1 플레이어 목록 테이블</h3>
+<div class="card">
+  <div class="card-title">플레이어 목록 UI</div>
+  <pre style="font-size:0.82rem;line-height:1.8;">
+┌────────────────────────────────────────────────────────────────────┐
+│  👥 플레이어 관리                                                  │
+├────────────────────────────────────────────────────────────────────┤
+│  ID        │ Name    │ Region │ Games │ Best Score │ Last Active  │
+│ ───────────┼─────────┼────────┼───────┼────────────┼─────────────│
+│  player_01 │ 김판관   │ 서울    │  15   │    95      │ 2026-03-28  │
+│  player_02 │ 이현명   │ 부산    │   8   │    88      │ 2026-03-27  │
+│  player_03 │ 박지혜   │ 대구    │  23   │    92      │ 2026-03-28  │
+│  player_04 │ 최솔로몬 │ 인천    │   3   │    72      │ 2026-03-25  │
+└────────────────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<h3>6.2 플레이어 컬럼 상세</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>DB 필드</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><strong>ID</strong></td><td><code>players.id</code></td><td>고유 플레이어 식별자</td></tr>
+    <tr><td><strong>Name</strong></td><td><code>players.name</code></td><td>플레이어 표시 이름</td></tr>
+    <tr><td><strong>Region</strong></td><td><code>players.region</code></td><td>플레이어 지역 (선택 입력)</td></tr>
+    <tr><td><strong>Games Played</strong></td><td><code>COUNT(game_history)</code></td><td>해당 플레이어의 총 게임 횟수 (집계)</td></tr>
+    <tr><td><strong>Best Score</strong></td><td><code>MAX(game_history.score)</code></td><td>해당 플레이어의 최고 점수 (집계)</td></tr>
+    <tr><td><strong>Last Active</strong></td><td><code>players.last_active</code></td><td>마지막 접속 일시</td></tr>
+  </tbody>
+</table></div>
+
+<h3>6.3 API 엔드포인트</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>메서드</th><th>경로</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>GET</code></td><td><code>/api/players</code></td><td>전체 플레이어 목록 조회 (Games Played, Best Score 집계 포함)</td></tr>
+    <tr><td><code>POST</code></td><td><code>/api/players/sync</code></td><td>클라이언트에서 플레이어 정보 동기화 (등록/업데이트)</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="games">7. 게임 기록 (Games)</h2>
+
+<p>전체 게임 플레이 기록을 열람하는 페이지입니다. 플레이어별, 사건별, 관계유형별 필터링이 가능합니다.</p>
+
+<h3>7.1 게임 기록 테이블</h3>
+<div class="card">
+  <div class="card-title">게임 기록 UI</div>
+  <pre style="font-size:0.82rem;line-height:1.8;">
+┌──────────────────────────────────────────────────────────────────────┐
+│  🎮 게임 기록                                                        │
+├──────────────────────────────────────────────────────────────────────┤
+│  Player  │ Case            │ Score │  I  │  A  │  W  │ Type   │ Date│
+│ ─────────┼─────────────────┼───────┼─────┼─────┼─────┼────────┼─────│
+│  김판관   │ case_family_001 │  85   │ 30  │ 25  │ 30  │ family │03/28│
+│  이현명   │ case_lover_003  │  92   │ 35  │ 28  │ 29  │ lover  │03/28│
+│  박지혜   │ case_friend_002 │  78   │ 28  │ 22  │ 28  │ friend │03/27│
+│  김판관   │ case_work_001   │  71   │ 25  │ 20  │ 26  │ work   │03/27│
+└──────────────────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<h3>7.2 게임 기록 컬럼 상세</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>DB 필드</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Player</strong></td><td><code>players.name</code> (JOIN)</td><td>플레이어 이름</td></tr>
+    <tr><td><strong>Case</strong></td><td><code>game_history.case_id</code></td><td>플레이한 사건 ID</td></tr>
+    <tr><td><strong>Score</strong></td><td><code>game_history.score</code></td><td>최종 획득 점수 (0~100)</td></tr>
+    <tr><td><strong>I (Interrogation)</strong></td><td><code>game_history.interrogation_score</code></td><td>심문 단계 점수</td></tr>
+    <tr><td><strong>A (Analysis)</strong></td><td><code>game_history.analysis_score</code></td><td>분석 단계 점수</td></tr>
+    <tr><td><strong>W (Wisdom)</strong></td><td><code>game_history.wisdom_score</code></td><td>판결 지혜 점수</td></tr>
+    <tr><td><strong>Type</strong></td><td><code>game_history.rel_type</code></td><td>사건 관계 유형 (family/lover/friend/work/neighbor)</td></tr>
+    <tr><td><strong>Date</strong></td><td><code>game_history.played_at</code></td><td>게임 플레이 일시</td></tr>
+  </tbody>
+</table></div>
+
+<div class="alert alert-info">
+  <strong>점수 체계 (I/A/W)</strong> —
+  총점(Score)은 심문(Interrogation), 분석(Analysis), 판결 지혜(Wisdom) 세 영역의 합산입니다.
+  각 영역은 독립적으로 0~35점이며, 합산 최대 100점(+보너스 5점)입니다.
+</div>
+
+<h3>7.3 API 엔드포인트</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>메서드</th><th>경로</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>GET</code></td><td><code>/api/players/history</code></td><td>전체 게임 기록 조회 (플레이어 이름 JOIN 포함)</td></tr>
+    <tr><td><code>POST</code></td><td><code>/api/players/history</code></td><td>게임 결과 기록 저장 (클라이언트에서 호출)</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="settings">8. 설정 (Settings)</h2>
+
+<p>게임 전역에 적용되는 키-밸류 설정을 관리하는 페이지입니다. 서버 재시작 없이 실시간으로 설정을 변경할 수 있습니다.</p>
+
+<h3>8.1 설정 목록</h3>
+<div class="card">
+  <div class="card-title">설정 관리 UI</div>
+  <pre style="font-size:0.82rem;line-height:1.8;">
+┌──────────────────────────────────────────────────────────────┐
+│  ⚙️ 설정 관리                               [ + 새 설정 추가 ]│
+├──────────────────────────────────────────────────────────────┤
+│  Key                   │ Value                    │ 액션     │
+│ ───────────────────────┼──────────────────────────┼─────────│
+│  game_version          │ 1.0.0                    │ ✏️  🗑️  │
+│  maintenance_mode      │ false                    │ ✏️  🗑️  │
+│  llm_provider          │ openai                   │ ✏️  🗑️  │
+│  llm_model             │ gpt-4o-mini              │ ✏️  🗑️  │
+│  llm_temperature       │ 0.8                      │ ✏️  🗑️  │
+│  max_questions_per_npc │ 10                       │ ✏️  🗑️  │
+│  scoring_version       │ v2                       │ ✏️  🗑️  │
+└──────────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<h3>8.2 주요 설정 키 상세</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>키</th><th>타입</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>game_version</code></td><td>string</td><td><code>1.0.0</code></td><td>현재 게임 버전 표시</td></tr>
+    <tr><td><code>maintenance_mode</code></td><td>boolean</td><td><code>false</code></td><td>점검 모드 활성화 시 게임 접속 차단</td></tr>
+    <tr><td><code>llm_provider</code></td><td>string</td><td><code>openai</code></td><td>LLM 제공자 (openai / anthropic / local)</td></tr>
+    <tr><td><code>llm_model</code></td><td>string</td><td><code>gpt-4o-mini</code></td><td>사용할 LLM 모델명</td></tr>
+    <tr><td><code>llm_temperature</code></td><td>float</td><td><code>0.8</code></td><td>LLM 응답 다양성 (0.0~2.0)</td></tr>
+    <tr><td><code>max_questions_per_npc</code></td><td>integer</td><td><code>10</code></td><td>NPC당 최대 질문 횟수</td></tr>
+    <tr><td><code>scoring_version</code></td><td>string</td><td><code>v2</code></td><td>채점 알고리즘 버전</td></tr>
+    <tr><td><code>default_season</code></td><td>string</td><td><code>season_1</code></td><td>현재 활성 시즌 ID</td></tr>
+  </tbody>
+</table></div>
+
+<div class="alert alert-warning">
+  <strong>주의: maintenance_mode</strong> — 이 값을 <code>true</code>로 변경하면 모든 플레이어의 게임 접속이 차단됩니다.
+  점검 공지를 먼저 등록한 후 활성화하는 것을 권장합니다.
+</div>
+
+<h3>8.3 설정 CRUD</h3>
+<div class="card">
+  <div class="card-title">설정 추가/수정 모달</div>
+  <pre style="font-size:0.82rem;line-height:1.8;">
+┌──────────────────────────────────┐
+│       ⚙️ 설정 추가 / 수정        │
+│  ┌──────────────────────────────┐│
+│  │ Key:   [____________________]││
+│  │ Value: [____________________]││
+│  └──────────────────────────────┘│
+│         [ 취소 ]  [ 저장 ]        │
+└──────────────────────────────────┘
+  </pre>
+  <p>Key-Value 형태의 단순한 입력 폼입니다. Key는 새로 추가할 때만 입력 가능하고, 수정 시에는 읽기 전용이 됩니다.</p>
+</div>
+
+<h3>8.4 API 엔드포인트</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>메서드</th><th>경로</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>GET</code></td><td><code>/api/settings</code></td><td>전체 설정 목록 조회</td></tr>
+    <tr><td><code>POST</code></td><td><code>/api/settings</code></td><td>새 설정 추가</td></tr>
+    <tr><td><code>PUT</code></td><td><code>/api/settings/:key</code></td><td>설정 값 수정</td></tr>
+    <tr><td><code>DELETE</code></td><td><code>/api/settings/:key</code></td><td>설정 삭제</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="data-flow">9. 데이터 흐름 요약</h2>
+
+<div class="card">
+  <div class="card-title">WebAdmin 데이터 흐름</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌───────────────────────────────────────────────────────────────┐
+│                   WebAdmin (Browser)                          │
+│                                                               │
+│   Dashboard ──→ GET /api/stats ──────────────────┐            │
+│   Notices  ──→ CRUD /api/notices ────────────────┤            │
+│   Mail     ──→ CRUD /api/mail ───────────────────┤            │
+│   Prompts  ──→ CRUD /api/ai-prompts ─────────────┤            │
+│   Players  ──→ GET  /api/players ────────────────┤            │
+│   Games    ──→ GET  /api/players/history ─────────┤            │
+│   Settings ──→ CRUD /api/settings ───────────────┤            │
+│                                                   │            │
+│                                                   ▼            │
+│                                          ┌──────────────┐     │
+│                                          │ Express.js   │     │
+│                                          │ Server :3001 │     │
+│                                          └──────┬───────┘     │
+│                                                 │              │
+│                                          ┌──────▼───────┐     │
+│                                          │  SQLite DB   │     │
+│                                          │  (WAL mode)  │     │
+│                                          └──────────────┘     │
+└───────────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<div class="alert alert-info">
+  <strong>클라이언트 연동</strong> — WebAdmin에서 변경한 공지, 우편, AI 프롬프트는 게임 클라이언트(React)에서
+  폴링(<code>promptManager.ts</code>) 또는 API 호출을 통해 실시간으로 반영됩니다.
+  별도의 WebSocket 연결 없이 REST API 기반으로 동작합니다.
+</div>
+
+</main>
+
+<script>
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => document.body.classList.toggle('sidebar-collapsed'));
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+</script>
+</body>
+</html>

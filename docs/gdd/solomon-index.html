@@ -16,7 +16,7 @@
   <span class="topbar-title">홈</span>
   <div class="topbar-sections"></div>
   <div class="topbar-meta">
-    <span>v4.1</span>
+    <span>v5.0</span>
     <span>2026-03-28</span>
   </div>
 </header>
@@ -50,6 +50,14 @@
     </div>
   </div>
   <div class="sidebar-section">
+    <div class="sidebar-section-title">서버 & 인프라</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-server.html"><span class="icon">🗄️</span><span class="label">서버 & DB</span></a>
+      <a class="sidebar-link" href="solomon-admin.html"><span class="icon">🖥️</span><span class="label">WebAdmin</span></a>
+      <a class="sidebar-link" href="solomon-systems.html"><span class="icon">📬</span><span class="label">공지 & 우편</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
     <div class="sidebar-section-title">프로덕션</div>
     <div class="sidebar-items">
       <a class="sidebar-link" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a>
@@ -59,7 +67,7 @@
 
 <main class="content">
   <div class="index-hero">
-    <h1>⚖️ 솔로몬 <span class="badge">GDD v4.1</span></h1>
+    <h1>⚖️ 솔로몬 <span class="badge">GDD v5.0</span></h1>
     <p class="subtitle">LLM 심문 추리 게임 · Procedural Case Drama — 반복 등장하는 인물쌍의 생활 위에서 사건이 발생하고, 플레이어는 사실과 오해, 압박과 신뢰, 판결과 중재 사이를 가르며 '지혜'를 증명하는 리플레이형 추리 게임</p>
   </div>
 
@@ -111,6 +119,27 @@
       <div class="card-title">콘텐츠 &amp; 밸런스</div>
       <div class="card-desc">CaseMap 7챕터x12스테이지, 84개 사건, 리더보드/시즌/프로필, 명성 티어 6단계, 보상 시스템, 상점/글로벌 리소스, 밸런스 원칙.</div>
       <div class="card-tags"><span>CaseMap</span><span>84사건</span><span>리더보드</span><span>보상/상점</span></div>
+    </a>
+
+    <a class="index-card" href="solomon-server.html">
+      <div class="card-icon">🗄️</div>
+      <div class="card-title">서버 & DB 아키텍처</div>
+      <div class="card-desc">Express.js 백엔드, SQLite DB(WAL), 8개 테이블 스키마, REST API 24개 엔드포인트, AI 프롬프트 모듈화 & 실시간 적용, Vite 프록시 연동.</div>
+      <div class="card-tags"><span>Express.js</span><span>SQLite</span><span>REST API</span><span>AI 모듈화</span></div>
+    </a>
+
+    <a class="index-card" href="solomon-admin.html">
+      <div class="card-icon">🖥️</div>
+      <div class="card-title">WebAdmin 대시보드</div>
+      <div class="card-desc">관리자 콘솔 — 공지/우편 CRUD, AI 프롬프트 에디터(버전관리+롤백), 플레이어 관리, 게임 기록 열람, 대시보드 통계 8종, 글로벌 설정.</div>
+      <div class="card-tags"><span>Dashboard</span><span>AI 프롬프트</span><span>공지/우편</span><span>설정</span></div>
+    </a>
+
+    <a class="index-card" href="solomon-systems.html">
+      <div class="card-icon">📬</div>
+      <div class="card-title">공지 & 우편 시스템</div>
+      <div class="card-desc">게임 내 공지 시스템(4타입, 우선순위, 고정, 기간제), 우편 시스템(보상 첨부, 읽음/수령 추적, 만료), Frontend 통합, 오프라인 폴백.</div>
+      <div class="card-tags"><span>공지 4타입</span><span>우편 보상</span><span>읽음 추적</span><span>실시간 반영</span></div>
     </a>
 
     <a class="index-card" href="solomon-production.html">

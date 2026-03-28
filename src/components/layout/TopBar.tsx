@@ -44,16 +44,6 @@ export default function TopBar() {
           </button>
           <PhaseIndicator />
           <div className="flex items-center gap-2 ml-2 shrink-0">
-            {/* 돋보기 (조사 토큰) */}
-            <button onClick={() => setShowResource('invest')} className="flex items-center gap-0.5 text-xs hover:opacity-80 active:scale-95">
-              <Emoji char="🔍" size={14} />
-              <span className={`font-bold ${globalInvest > 10 ? 'text-purple-400' : 'text-amber-400'}`}>{globalInvest}</span>
-            </button>
-            {/* 번개 (스킬 포인트) */}
-            <button onClick={() => setShowResource('skill')} className="flex items-center gap-0.5 text-xs hover:opacity-80 active:scale-95">
-              <Emoji char="⚡" size={14} />
-              <span className={`font-bold ${globalSkill > 10 ? 'text-purple-400' : 'text-blue-400'}`}>{globalSkill}</span>
-            </button>
             <button onClick={() => setShowSettings(true)} className="text-gray-500 hover:text-white"><Emoji char="⚙️" size={16} /></button>
           </div>
         </div>

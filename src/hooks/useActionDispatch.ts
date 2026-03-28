@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { useGameStore } from '../store/useGameStore'
-import { resolveDialogue } from '../engine/dialogueResolver'
+import { resolveDialogue, generateDynamicFallback } from '../engine/dialogueResolver'
 import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
 import { generateWitnessTestimony, canCallWitness } from '../engine/witnessEngine'
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
@@ -448,8 +448,17 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
       }
     }
     const freshState = useGameStore.getState()
-    const result = resolveDialogue(action, freshState.agentA, freshState.agentB, freshState.evidenceStates)
-    if (result) node = result.node
+    // LLM 모드: 대사 트리(case-001 전용)를 건너뛰고 동적 폴백 직접 사용
+    // 비LLM 모드: 기존 대사 트리 매칭 유지
+    if (useLLMMode) {
+      const agent = target === 'a' ? freshState.agentA : freshState.agentB
+      const qt = action.type === 'question' ? action.questionType : undefined
+      const disputeId = 'disputeId' in action ? (action as { disputeId?: string }).disputeId : undefined
+      node = generateDynamicFallback(target, agent, disputeId, qt)
+    } else {
+      const result = resolveDialogue(action, freshState.agentA, freshState.agentB, freshState.evidenceStates)
+      if (result) node = result.node
+    }
   }
 
   // 폴백도 실패하면 범용 응답 생성

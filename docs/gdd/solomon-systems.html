@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>솔로몬 GDD — 공지 & 우편 시스템</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/solomon.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="solomon-index.html">⚖️ <span>솔로몬</span> GDD</a>
+  <span class="topbar-title">공지 & 우편 시스템</span>
+  <div class="topbar-sections"></div>
+  <div class="topbar-meta"><span>v4.1</span><span>2026-03-28</span></div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
+      <a class="sidebar-link" href="solomon-concept.html"><span class="icon">🎭</span><span class="label">세계관 & 컨셉</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">사건 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-case.html"><span class="icon">🧱</span><span class="label">사건 구조</span></a>
+      <a class="sidebar-link" href="solomon-generator.html"><span class="icon">⚙️</span><span class="label">생성 엔진</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">AI 에이전트</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-ai.html"><span class="icon">🤖</span><span class="label">에이전트 설계</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">플레이 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-mechanics.html"><span class="icon">🎮</span><span class="label">플레이 메커닉</span></a>
+      <a class="sidebar-link" href="solomon-content.html"><span class="icon">📈</span><span class="label">콘텐츠 & 밸런스</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">서버 & 인프라</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-server.html"><span class="icon">🗄️</span><span class="label">서버 & DB</span></a>
+      <a class="sidebar-link" href="solomon-admin.html"><span class="icon">🖥️</span><span class="label">WebAdmin</span></a>
+      <a class="sidebar-link active" href="solomon-systems.html"><span class="icon">📬</span><span class="label">공지 & 우편</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+
+<h1>📬 공지 & 우편 시스템 <span class="badge">v1.0</span></h1>
+<p class="subtitle">관리자 → 플레이어 커뮤니케이션 파이프라인 — 공지사항 실시간 표시 & 보상 우편 발송</p>
+
+<div class="alert alert-info">
+  <strong>문서 범위:</strong> 이 문서는 공지(Notice)와 우편(Mail) 시스템의 DB 스키마, API 엔드포인트, 프론트엔드 UI 컴포넌트, 운영 시나리오를 상세히 다룹니다. 서버 아키텍처 전반은 <a href="solomon-server.html">서버 & DB</a>, 관리자 도구는 <a href="solomon-admin.html">WebAdmin</a> 문서를 참조하세요.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 1. 공지 시스템 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2 id="notice">1. 공지 시스템 (Notice System)</h2>
+
+<!-- 1.1 시스템 개요 -->
+<h3 id="notice-overview">1.1 시스템 개요</h3>
+
+<div class="card">
+  <div class="card-title">공지 시스템 전체 흐름</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌─────────────────────┐         ┌────────────────────────┐         ┌─────────────────────┐
+│     WebAdmin         │         │    Express.js Server    │         │   Game Client        │
+│   (관리자 브라우저)    │         │       (:3001)           │         │  (TitleScreen)       │
+│                     │         │                        │         │                     │
+│  ┌───────────────┐  │  POST   │  ┌──────────────────┐  │  GET    │  ┌───────────────┐  │
+│  │ 공지 작성 폼   │──┼────────▶│  │ /api/notices     │  │◀───────┼──│ NoticePanel   │  │
+│  │ - 타입 선택    │  │         │  │ (CRUD)           │  │         │  │ - 목록 뷰     │  │
+│  │ - 우선순위     │  │         │  └────────┬─────────┘  │         │  │ - 상세 뷰     │  │
+│  │ - 기간 설정    │  │         │           │            │         │  └───────────────┘  │
+│  │ - 고정 여부    │  │         │  ┌────────▼─────────┐  │         │                     │
+│  └───────────────┘  │         │  │    SQLite DB      │  │         │                     │
+│                     │         │  │  notices 테이블    │  │         │                     │
+└─────────────────────┘         │  └──────────────────┘  │         └─────────────────────┘
+                                └────────────────────────┘
+  </pre>
+</div>
+
+<p>공지 시스템은 <strong>관리자가 WebAdmin 대시보드에서 공지를 작성</strong>하면, 게임 클라이언트의 <strong>TitleScreen에서 실시간으로 표시</strong>되는 단방향 커뮤니케이션 시스템입니다. 공지는 서버의 SQLite 데이터베이스에 저장되며, 클라이언트는 TitleScreen 진입 시 <code>GET /api/notices</code> API를 호출하여 활성 공지 목록을 가져옵니다.</p>
+
+<div class="card">
+  <div class="card-title">핵심 설계 원칙</div>
+  <ul>
+    <li><strong>즉시 반영:</strong> 관리자가 공지를 작성하는 즉시 클라이언트에서 조회 가능 (별도 배포 불필요)</li>
+    <li><strong>기간 기반 자동 관리:</strong> start_date / end_date로 노출 기간을 지정하면 서버가 자동으로 필터링</li>
+    <li><strong>타입별 시각적 구분:</strong> 4가지 공지 타입에 따라 색상 배지가 자동 적용</li>
+    <li><strong>우선순위 + 고정:</strong> 긴급 공지는 항상 최상단에 표시</li>
+  </ul>
+</div>
+
+<!-- 1.2 공지 타입 -->
+<h3 id="notice-types">1.2 공지 타입 (4종)</h3>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>타입 코드</th><th>표시명</th><th>배지 색상</th><th>용도</th><th>사용 예시</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><code>info</code></td>
+      <td>안내</td>
+      <td style="color:#3b82f6;"><strong>파란색 (#3b82f6)</strong></td>
+      <td>일반 안내, 시스템 공지</td>
+      <td>이용약관 변경, 서비스 안내</td>
+    </tr>
+    <tr>
+      <td><code>event</code></td>
+      <td>이벤트</td>
+      <td style="color:#8b5cf6;"><strong>보라색 (#8b5cf6)</strong></td>
+      <td>게임 이벤트, 프로모션</td>
+      <td>시즌 이벤트, 특별 보상 이벤트</td>
+    </tr>
+    <tr>
+      <td><code>update</code></td>
+      <td>업데이트</td>
+      <td style="color:#22c55e;"><strong>녹색 (#22c55e)</strong></td>
+      <td>버전 업데이트, 패치 노트</td>
+      <td>v1.2.0 업데이트 안내</td>
+    </tr>
+    <tr>
+      <td><code>maintenance</code></td>
+      <td>점검</td>
+      <td style="color:#f59e0b;"><strong>주황색 (#f59e0b)</strong></td>
+      <td>서버 점검, 긴급 점검</td>
+      <td>정기 점검 안내, 긴급 서버 점검</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="card">
+  <div class="card-title">타입별 배지 렌더링 (프론트엔드)</div>
+<pre><code>// NoticePanel.tsx — 타입별 스타일 매핑
+const typeStyles: Record&lt;string, { bg: string; text: string; label: string }&gt; = {
+  info:        { bg: 'rgba(59,130,246,0.15)',  text: '#60a5fa', label: '안내' },
+  event:       { bg: 'rgba(139,92,246,0.15)',  text: '#a78bfa', label: '이벤트' },
+  update:      { bg: 'rgba(34,197,94,0.15)',   text: '#4ade80', label: '업데이트' },
+  maintenance: { bg: 'rgba(245,158,11,0.15)',  text: '#fbbf24', label: '점검' },
+};
+
+// 배지 HTML 구조
+&lt;span style={{
+  background: typeStyles[notice.type].bg,
+  color: typeStyles[notice.type].text,
+  padding: '2px 8px',
+  borderRadius: '4px',
+  fontSize: '0.75rem',
+  fontWeight: 'bold',
+}}&gt;
+  {typeStyles[notice.type].label}
+&lt;/span&gt;</code></pre>
+</div>
+
+<!-- 1.3 우선순위 -->
+<h3 id="notice-priority">1.3 우선순위 (Priority)</h3>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>값</th><th>레벨</th><th>표시 방식</th><th>정렬 가중치</th><th>적합한 상황</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><code>0</code></td>
+      <td>일반</td>
+      <td>기본 스타일</td>
+      <td>최하위</td>
+      <td>일반 안내, 이벤트 공지</td>
+    </tr>
+    <tr>
+      <td><code>1</code></td>
+      <td>중요</td>
+      <td>강조 테두리</td>
+      <td>중간</td>
+      <td>업데이트 안내, 중요 변경사항</td>
+    </tr>
+    <tr>
+      <td><code>2</code></td>
+      <td>긴급</td>
+      <td>빨간 강조 + 상단 배치</td>
+      <td>최상위</td>
+      <td>긴급 점검, 치명적 버그 안내</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="alert alert-warning">
+  <strong>정렬 규칙:</strong> 공지 목록은 항상 <code>pinned DESC → priority DESC → created_at DESC</code> 순서로 정렬됩니다. 즉, 고정 공지가 최상단, 그 다음 우선순위가 높은 순, 마지막으로 최신순으로 표시됩니다.
+</div>
+
+<!-- 1.4 고정 (Pinned) -->
+<h3 id="notice-pinned">1.4 고정 공지 (Pinned)</h3>
+
+<div class="card">
+  <div class="card-title">고정 공지 동작 방식</div>
+  <ul>
+    <li><strong>pinned = 1 (true):</strong> 공지 목록 최상단에 항상 고정 표시. 📌 아이콘이 제목 앞에 렌더링됩니다.</li>
+    <li><strong>pinned = 0 (false):</strong> 일반 공지로 우선순위와 생성일 기준 정렬됩니다.</li>
+    <li><strong>복수 고정:</strong> 여러 공지를 동시에 고정할 수 있으며, 고정 공지 간에는 priority → created_at 순으로 정렬됩니다.</li>
+    <li><strong>WebAdmin 조작:</strong> 공지 편집 화면에서 "상단 고정" 토글 스위치로 제어합니다.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-title">DB 스키마 — notices 테이블</div>
+<pre><code>CREATE TABLE notices (
+  id          INTEGER PRIMARY KEY AUTOINCREMENT,
+  title       TEXT    NOT NULL,              -- 공지 제목
+  content     TEXT    NOT NULL,              -- 공지 본문 (HTML 또는 텍스트)
+  type        TEXT    NOT NULL DEFAULT 'info', -- 'info' | 'event' | 'update' | 'maintenance'
+  priority    INTEGER NOT NULL DEFAULT 0,    -- 0=일반, 1=중요, 2=긴급
+  pinned      INTEGER NOT NULL DEFAULT 0,    -- 0=일반, 1=상단고정
+  is_active   INTEGER NOT NULL DEFAULT 1,    -- 0=비활성, 1=활성
+  start_date  TEXT    DEFAULT NULL,          -- 노출 시작일 (ISO 8601, null=즉시)
+  end_date    TEXT    DEFAULT NULL,          -- 노출 종료일 (ISO 8601, null=무기한)
+  created_at  TEXT    DEFAULT (datetime('now')),
+  updated_at  TEXT    DEFAULT (datetime('now'))
+);</code></pre>
+</div>
+
+<!-- 1.5 노출 기간 -->
+<h3 id="notice-period">1.5 노출 기간 (Exposure Period)</h3>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>start_date</th><th>end_date</th><th>동작</th><th>사용 시나리오</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><code>NULL</code></td>
+      <td><code>NULL</code></td>
+      <td>즉시 노출, 무기한 유지</td>
+      <td>영구 안내 (이용약관 등)</td>
+    </tr>
+    <tr>
+      <td><code>2026-04-01</code></td>
+      <td><code>NULL</code></td>
+      <td>4월 1일부터 무기한 노출</td>
+      <td>예정된 변경사항 안내</td>
+    </tr>
+    <tr>
+      <td><code>NULL</code></td>
+      <td><code>2026-04-30</code></td>
+      <td>즉시 노출, 4월 30일에 자동 종료</td>
+      <td>기간 한정 이벤트 공지</td>
+    </tr>
+    <tr>
+      <td><code>2026-04-01</code></td>
+      <td><code>2026-04-30</code></td>
+      <td>4월 1일~30일만 노출</td>
+      <td>시즌 이벤트 공지</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="card">
+  <div class="card-title">서버측 기간 필터링 로직</div>
+<pre><code>// server/routes/notices.js — 활성 공지 조회
+const now = new Date().toISOString();
+
+const notices = db.prepare(`
+  SELECT * FROM notices
+  WHERE is_active = 1
+    AND (start_date IS NULL OR start_date &lt;= ?)
+    AND (end_date   IS NULL OR end_date   &gt;= ?)
+  ORDER BY pinned DESC, priority DESC, created_at DESC
+`).all(now, now);</code></pre>
+</div>
+
+<!-- 1.6 프론트엔드 UI -->
+<h3 id="notice-ui">1.6 프론트엔드 UI — NoticePanel 컴포넌트</h3>
+
+<div class="card">
+  <div class="card-title">NoticePanel 컴포넌트 구조</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌─────────────────────────────────────────────────────────┐
+│                  NoticePanel (Modal)                     │
+│  position: fixed; z-index: 1000                         │
+│  ┌───────────────────────────────────────────────────┐  │
+│  │  ┌─────────────────────────────────────────────┐  │  │
+│  │  │  📋 공지사항               [✕ 닫기 버튼]    │  │  │
+│  │  ├─────────────────────────────────────────────┤  │  │
+│  │  │                                             │  │  │
+│  │  │  📌 [점검] 3/28 정기 점검 안내     3/27    │  │  │
+│  │  │  ─────────────────────────────────────────  │  │  │
+│  │  │     [이벤트] 봄맞이 특별 이벤트     3/25    │  │  │
+│  │  │  ─────────────────────────────────────────  │  │  │
+│  │  │     [업데이트] v1.2.0 패치 노트     3/24    │  │  │
+│  │  │  ─────────────────────────────────────────  │  │  │
+│  │  │     [안내] 이용약관 변경 안내        3/20    │  │  │
+│  │  │                                             │  │  │
+│  │  └─────────────────────────────────────────────┘  │  │
+│  └───────────────────────────────────────────────────┘  │
+│                                                         │
+│  (배경: 반투명 오버레이, 클릭 시 닫기)                    │
+└─────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<h4>목록 뷰 (List View)</h4>
+
+<div class="card">
+  <ul>
+    <li><strong>타입 배지:</strong> 공지 타입에 따른 컬러 배지 (안내/이벤트/업데이트/점검)</li>
+    <li><strong>고정 아이콘:</strong> 고정 공지는 제목 앞에 📌 아이콘 표시</li>
+    <li><strong>날짜 표시:</strong> <code>created_at</code>을 상대적 시간 또는 날짜 포맷으로 표시</li>
+    <li><strong>내용 미리보기:</strong> 본문의 처음 50자를 미리보기로 표시 (말줄임 처리)</li>
+    <li><strong>항목 클릭:</strong> 클릭 시 상세 뷰로 전환 (슬라이드 애니메이션)</li>
+  </ul>
+</div>
+
+<h4>상세 뷰 (Detail View)</h4>
+
+<div class="card">
+  <ul>
+    <li><strong>← 뒤로가기 버튼:</strong> 상세 뷰 상단 좌측에 배치, 클릭 시 목록 뷰로 복귀</li>
+    <li><strong>타입 배지 + 날짜:</strong> 상단에 타입 배지와 작성일 표시</li>
+    <li><strong>제목:</strong> 큰 폰트로 공지 제목 표시</li>
+    <li><strong>전체 내용:</strong> 공지 본문 전체 렌더링 (스크롤 가능)</li>
+  </ul>
+</div>
+
+<h4>상태 처리</h4>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>상태</th><th>UI 표시</th><th>조건</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>로딩 중</strong></td>
+      <td>"공지사항을 불러오는 중..." + 스피너</td>
+      <td>API 호출 진행 중</td>
+    </tr>
+    <tr>
+      <td><strong>빈 상태</strong></td>
+      <td>"현재 공지사항이 없습니다" 안내 메시지</td>
+      <td>활성 공지가 0건</td>
+    </tr>
+    <tr>
+      <td><strong>오류</strong></td>
+      <td>"공지사항을 불러올 수 없습니다" + 재시도 버튼</td>
+      <td>API 호출 실패</td>
+    </tr>
+    <tr>
+      <td><strong>정상</strong></td>
+      <td>공지 목록 렌더링</td>
+      <td>1건 이상 조회 성공</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="card">
+  <div class="card-title">NoticePanel 모달 스타일링</div>
+<pre><code>/* NoticePanel 오버레이 */
+.notice-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* NoticePanel 본체 */
+.notice-panel {
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+/* 공지 항목 */
+.notice-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.notice-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+}</code></pre>
+</div>
+
+<!-- 1.7 API 흐름 -->
+<h3 id="notice-api">1.7 API 흐름</h3>
+
+<div class="card">
+  <div class="card-title">공지 API 엔드포인트</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Method</th><th>Endpoint</th><th>용도</th><th>호출자</th></tr></thead>
+    <tbody>
+      <tr><td><code>GET</code></td><td><code>/api/notices</code></td><td>활성 공지 목록 조회</td><td>Game Client</td></tr>
+      <tr><td><code>GET</code></td><td><code>/api/notices/all</code></td><td>전체 공지 목록 (비활성 포함)</td><td>WebAdmin</td></tr>
+      <tr><td><code>POST</code></td><td><code>/api/notices</code></td><td>공지 생성</td><td>WebAdmin</td></tr>
+      <tr><td><code>PUT</code></td><td><code>/api/notices/:id</code></td><td>공지 수정</td><td>WebAdmin</td></tr>
+      <tr><td><code>DELETE</code></td><td><code>/api/notices/:id</code></td><td>공지 삭제</td><td>WebAdmin</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="card">
+  <div class="card-title">GET /api/notices — 활성 공지 조회 흐름</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+클라이언트 요청                        서버 처리
+─────────────                     ─────────────
+GET /api/notices          →       1. is_active = 1 필터
+                                  2. start_date &lt;= NOW 필터
+                                  3. end_date &gt;= NOW 필터
+                                  4. ORDER BY pinned DESC,
+                                     priority DESC,
+                                     created_at DESC
+                          ←       5. JSON 배열 응답
+  </pre>
+</div>
+
+<div class="card">
+  <div class="card-title">응답 예시</div>
+<pre><code>// GET /api/notices 응답
+[
+  {
+    "id": 3,
+    "title": "3/28 정기 점검 안내",
+    "content": "안녕하세요. 솔로몬 운영팀입니다.\n3월 28일 04:00~06:00 정기 점검이 진행됩니다...",
+    "type": "maintenance",
+    "priority": 2,
+    "pinned": 1,
+    "is_active": 1,
+    "start_date": null,
+    "end_date": "2026-03-29T00:00:00.000Z",
+    "created_at": "2026-03-27T10:00:00.000Z",
+    "updated_at": "2026-03-27T10:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "title": "봄맞이 특별 이벤트",
+    "content": "봄을 맞아 특별 이벤트를 진행합니다! ...",
+    "type": "event",
+    "priority": 0,
+    "pinned": 0,
+    ...
+  }
+]</code></pre>
+</div>
+
+<!-- 1.8 운영 시나리오 -->
+<h3 id="notice-scenarios">1.8 운영 시나리오</h3>
+
+<div class="card">
+  <div class="card-title">시나리오 A: 긴급 점검 공지</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>설정값</th></tr></thead>
+    <tbody>
+      <tr><td>제목</td><td>긴급 서버 점검 안내 (3/28 15:00~17:00)</td></tr>
+      <tr><td>타입</td><td><code>maintenance</code> (점검)</td></tr>
+      <tr><td>우선순위</td><td><code>2</code> (긴급)</td></tr>
+      <tr><td>고정</td><td><code>pinned = 1</code> (상단 고정)</td></tr>
+      <tr><td>시작일</td><td><code>NULL</code> (즉시 노출)</td></tr>
+      <tr><td>종료일</td><td><code>2026-03-28T17:00:00Z</code> (점검 종료 후 자동 숨김)</td></tr>
+      <tr><td>결과</td><td>모든 플레이어에게 최상단 주황색 배지로 즉시 표시, 점검 종료 후 자동 비노출</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="card">
+  <div class="card-title">시나리오 B: 이벤트 공지</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>설정값</th></tr></thead>
+    <tbody>
+      <tr><td>제목</td><td>봄맞이 특별 이벤트 — 사건 클리어 보상 2배!</td></tr>
+      <tr><td>타입</td><td><code>event</code> (이벤트)</td></tr>
+      <tr><td>우선순위</td><td><code>1</code> (중요)</td></tr>
+      <tr><td>고정</td><td><code>pinned = 0</code></td></tr>
+      <tr><td>시작일</td><td><code>2026-04-01T00:00:00Z</code></td></tr>
+      <tr><td>종료일</td><td><code>2026-04-30T23:59:59Z</code></td></tr>
+      <tr><td>결과</td><td>4월 한 달간만 보라색 배지로 표시, 기간 전후 자동 숨김</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="card">
+  <div class="card-title">시나리오 C: 업데이트 공지</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>설정값</th></tr></thead>
+    <tbody>
+      <tr><td>제목</td><td>v1.2.0 업데이트 — 새로운 사건 5종 추가</td></tr>
+      <tr><td>타입</td><td><code>update</code> (업데이트)</td></tr>
+      <tr><td>우선순위</td><td><code>1</code> (중요)</td></tr>
+      <tr><td>고정</td><td><code>pinned = 1</code> (상단 고정)</td></tr>
+      <tr><td>시작일</td><td><code>NULL</code> (즉시)</td></tr>
+      <tr><td>종료일</td><td><code>2026-04-07T00:00:00Z</code> (1주일 후 자동 숨김)</td></tr>
+      <tr><td>결과</td><td>업데이트 당일부터 1주일간 상단 고정, 녹색 배지로 표시</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 2. 우편 시스템 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2 id="mail">2. 우편 시스템 (Mail System)</h2>
+
+<!-- 2.1 시스템 개요 -->
+<h3 id="mail-overview">2.1 시스템 개요</h3>
+
+<div class="card">
+  <div class="card-title">우편 시스템 전체 흐름</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌─────────────────────┐         ┌────────────────────────────┐         ┌───────────────────────┐
+│     WebAdmin         │         │      Express.js Server      │         │    Game Client         │
+│                     │         │                            │         │                       │
+│  ┌───────────────┐  │  POST   │  ┌──────────────────────┐  │         │  ┌─────────────────┐  │
+│  │ 우편 발송 폼   │──┼────────▶│  │  /api/mail (CRUD)    │  │  GET    │  │  MailInbox      │  │
+│  │ - 대상 선택    │  │         │  └──────────┬───────────┘  │◀───────┼──│  - 목록/상세 뷰  │  │
+│  │ - 보상 설정    │  │         │             │              │         │  │  - 보상 수령    │  │
+│  │ - 만료일      │  │         │  ┌──────────▼───────────┐  │  POST   │  └─────────────────┘  │
+│  └───────────────┘  │         │  │    SQLite DB          │  │◀───────┤                       │
+│                     │         │  │  mail 테이블           │  │  read/  │  ┌─────────────────┐  │
+│                     │         │  │  mail_read_status      │  │  claim  │  │  TitleScreen    │  │
+│                     │         │  └───────────────────────┘  │         │  │  미읽은 카운트   │  │
+└─────────────────────┘         └────────────────────────────┘         └───────────────────────┘
+  </pre>
+</div>
+
+<p>우편 시스템은 <strong>관리자가 플레이어에게 우편을 발송</strong>하고, 선택적으로 <strong>보상을 첨부</strong>할 수 있는 시스템입니다. 공지 시스템과 달리 <strong>플레이어별 읽음/수령 상태를 개별 추적</strong>하며, 보상이 첨부된 경우 플레이어가 명시적으로 "보상 받기" 버튼을 클릭해야 수령이 완료됩니다.</p>
+
+<div class="card">
+  <div class="card-title">공지 vs 우편 비교</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>특성</th><th>공지 (Notice)</th><th>우편 (Mail)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>방향</strong></td><td>관리자 → 전체 플레이어</td><td>관리자 → 전체 또는 특정 플레이어</td></tr>
+      <tr><td><strong>보상 첨부</strong></td><td>불가</td><td>가능 (coin, item, title)</td></tr>
+      <tr><td><strong>읽음 추적</strong></td><td>없음</td><td>플레이어별 개별 추적</td></tr>
+      <tr><td><strong>수령 상태</strong></td><td>없음</td><td>보상 수령 여부 추적 (중복 방지)</td></tr>
+      <tr><td><strong>UI 위치</strong></td><td>TitleScreen → 📢 버튼</td><td>TitleScreen → 📨 버튼</td></tr>
+      <tr><td><strong>만료</strong></td><td>기간 기반 자동 숨김</td><td>expires_at 기반 자동 만료</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- 2.2 우편 타입 -->
+<h3 id="mail-target">2.2 우편 타입 (발송 대상)</h3>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>target_type</th><th>target_id</th><th>설명</th><th>사용 시나리오</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><code>'all'</code></td>
+      <td><code>NULL</code></td>
+      <td>전체 플레이어에게 발송</td>
+      <td>시즌 보상, 이벤트 보상, 사과 보상 등</td>
+    </tr>
+    <tr>
+      <td><code>'specific'</code></td>
+      <td>플레이어 ID 값</td>
+      <td>특정 플레이어 1명에게 발송</td>
+      <td>고객 지원 보상, 개별 안내 등</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="card">
+  <div class="card-title">DB 스키마 — mail 테이블</div>
+<pre><code>CREATE TABLE mail (
+  id             INTEGER PRIMARY KEY AUTOINCREMENT,
+  title          TEXT    NOT NULL,                 -- 우편 제목
+  content        TEXT    NOT NULL,                 -- 우편 본문
+  sender_name    TEXT    NOT NULL DEFAULT '운영팀',  -- 발신자 표시명
+  target_type    TEXT    NOT NULL DEFAULT 'all',   -- 'all' | 'specific'
+  target_id      TEXT    DEFAULT NULL,             -- specific일 때 플레이어 ID
+  reward_type    TEXT    DEFAULT NULL,             -- null | 'coin' | 'item' | 'title'
+  reward_amount  INTEGER DEFAULT NULL,             -- 보상 수량
+  reward_data    TEXT    DEFAULT NULL,             -- JSON 확장 데이터
+  is_active      INTEGER NOT NULL DEFAULT 1,       -- 0=비활성, 1=활성
+  expires_at     TEXT    DEFAULT NULL,             -- 만료 시각 (ISO 8601, null=무기한)
+  created_at     TEXT    DEFAULT (datetime('now')),
+  updated_at     TEXT    DEFAULT (datetime('now'))
+);</code></pre>
+</div>
+
+<!-- 2.3 보상 시스템 -->
+<h3 id="mail-reward">2.3 보상 시스템 (Reward System)</h3>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>reward_type</th><th>reward_amount</th><th>reward_data</th><th>설명</th><th>예시</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><code>null</code></td>
+      <td><code>null</code></td>
+      <td><code>null</code></td>
+      <td>보상 없음 — 단순 안내 우편</td>
+      <td>환영 메시지</td>
+    </tr>
+    <tr>
+      <td><code>'coin'</code></td>
+      <td><code>500</code></td>
+      <td><code>null</code></td>
+      <td>게임 머니 지급</td>
+      <td>사과 보상: 코인 500개</td>
+    </tr>
+    <tr>
+      <td><code>'item'</code></td>
+      <td><code>1</code></td>
+      <td><code>{"itemId":"hint_scroll","name":"힌트 두루마리"}</code></td>
+      <td>아이템 지급</td>
+      <td>이벤트 보상 아이템</td>
+    </tr>
+    <tr>
+      <td><code>'title'</code></td>
+      <td><code>1</code></td>
+      <td><code>{"titleId":"early_bird","name":"얼리버드"}</code></td>
+      <td>칭호 지급</td>
+      <td>사전 예약 칭호</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="card">
+  <div class="card-title">보상 처리 흐름</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+플레이어 동작                     서버 처리                          결과
+─────────────                ─────────────                    ─────────
+1. 우편 목록 진입     →       GET /api/mail/player/:id         우편 목록 표시
+2. 우편 클릭 (열람)   →       POST /api/mail/read              is_read = true
+3. "보상 받기" 클릭   →       POST /api/mail/claim             중복 체크 후 보상 반환
+                              ├─ reward_claimed 이미 true?     → 409 Conflict
+                              ├─ reward_type이 null?           → 400 Bad Request
+                              └─ 정상                          → 200 + 보상 데이터
+4. 클라이언트 처리    ←       { reward_type, reward_amount }   로컬 저장소 반영
+  </pre>
+</div>
+
+<div class="alert alert-warning">
+  <strong>중복 수령 방지:</strong> <code>mail_read_status</code> 테이블의 <code>UNIQUE(mail_id, player_id)</code> 제약과 <code>reward_claimed</code> 플래그로 이중 보호됩니다. 동일 우편에 대한 보상 수령 요청이 중복 도착하더라도 서버에서 반드시 차단합니다.
+</div>
+
+<!-- 2.4 읽음/수령 상태 -->
+<h3 id="mail-status">2.4 읽음/수령 상태 (Read/Claim Status)</h3>
+
+<div class="card">
+  <div class="card-title">DB 스키마 — mail_read_status 테이블</div>
+<pre><code>CREATE TABLE mail_read_status (
+  id              INTEGER PRIMARY KEY AUTOINCREMENT,
+  mail_id         INTEGER NOT NULL,              -- mail.id 참조
+  player_id       TEXT    NOT NULL,              -- 플레이어 고유 ID
+  is_read         INTEGER NOT NULL DEFAULT 0,    -- 0=미읽음, 1=읽음
+  reward_claimed  INTEGER NOT NULL DEFAULT 0,    -- 0=미수령, 1=수령완료
+  read_at         TEXT    DEFAULT NULL,          -- 읽은 시각
+  claimed_at      TEXT    DEFAULT NULL,          -- 수령 시각
+  created_at      TEXT    DEFAULT (datetime('now')),
+  UNIQUE(mail_id, player_id)                     -- 중복 방지 제약
+);</code></pre>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>필드</th><th>초기값</th><th>변경 시점</th><th>변경 API</th><th>되돌림 가능</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><code>is_read</code></td>
+      <td><code>0</code></td>
+      <td>플레이어가 우편 상세 뷰를 열 때</td>
+      <td><code>POST /api/mail/read</code></td>
+      <td>불가 (단방향)</td>
+    </tr>
+    <tr>
+      <td><code>reward_claimed</code></td>
+      <td><code>0</code></td>
+      <td>플레이어가 "보상 받기" 버튼 클릭 시</td>
+      <td><code>POST /api/mail/claim</code></td>
+      <td>불가 (단방향)</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="card">
+  <div class="card-title">UPSERT 패턴 — 읽음 처리</div>
+<pre><code>// POST /api/mail/read — 우편 읽음 처리
+db.prepare(`
+  INSERT INTO mail_read_status (mail_id, player_id, is_read, read_at)
+  VALUES (?, ?, 1, datetime('now'))
+  ON CONFLICT(mail_id, player_id) DO UPDATE SET
+    is_read = 1,
+    read_at = COALESCE(mail_read_status.read_at, datetime('now'))
+`).run(mailId, playerId);
+
+// ON CONFLICT → UPSERT: 이미 레코드가 있으면 UPDATE
+// COALESCE: 최초 읽은 시각 보존 (이후 재열람 시 시각 변경 안 함)</code></pre>
+</div>
+
+<div class="card">
+  <div class="card-title">보상 수령 처리</div>
+<pre><code>// POST /api/mail/claim — 보상 수령
+router.post('/claim', (req, res) => {
+  const { mailId, playerId } = req.body;
+
+  // 1. 우편 존재 및 보상 확인
+  const mail = db.prepare('SELECT * FROM mail WHERE id = ?').get(mailId);
+  if (!mail) return res.status(404).json({ error: '우편을 찾을 수 없습니다' });
+  if (!mail.reward_type) return res.status(400).json({ error: '보상이 없는 우편입니다' });
+
+  // 2. 이미 수령했는지 확인
+  const status = db.prepare(
+    'SELECT * FROM mail_read_status WHERE mail_id = ? AND player_id = ?'
+  ).get(mailId, playerId);
+
+  if (status?.reward_claimed) {
+    return res.status(409).json({ error: '이미 수령한 보상입니다' });
+  }
+
+  // 3. 수령 처리 (UPSERT)
+  db.prepare(`
+    INSERT INTO mail_read_status (mail_id, player_id, is_read, reward_claimed, read_at, claimed_at)
+    VALUES (?, ?, 1, 1, datetime('now'), datetime('now'))
+    ON CONFLICT(mail_id, player_id) DO UPDATE SET
+      reward_claimed = 1,
+      claimed_at = datetime('now')
+  `).run(mailId, playerId);
+
+  // 4. 보상 데이터 반환
+  res.json({
+    success: true,
+    reward: {
+      type: mail.reward_type,
+      amount: mail.reward_amount,
+      data: mail.reward_data ? JSON.parse(mail.reward_data) : null,
+    }
+  });
+});</code></pre>
+</div>
+
+<!-- 2.5 만료 시스템 -->
+<h3 id="mail-expiry">2.5 만료 시스템 (Expiration)</h3>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>expires_at</th><th>동작</th><th>사용 시나리오</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><code>NULL</code></td>
+      <td>무기한 유지 — 플레이어가 삭제하지 않는 한 영구 보관</td>
+      <td>환영 우편, 중요 안내</td>
+    </tr>
+    <tr>
+      <td><code>'2026-04-30T23:59:59Z'</code></td>
+      <td>해당 시각 이후 API 응답에서 자동 제외</td>
+      <td>이벤트 보상 (기간 한정)</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="alert alert-danger">
+  <strong>주의:</strong> 만료된 우편의 미수령 보상은 소멸됩니다. 운영 시 만료일을 넉넉하게 설정하거나, 중요한 보상은 <code>expires_at = NULL</code>로 설정하는 것을 권장합니다.
+</div>
+
+<div class="card">
+  <div class="card-title">서버측 만료 필터링</div>
+<pre><code>// GET /api/mail/player/:playerId — 플레이어 우편 조회
+const mails = db.prepare(`
+  SELECT m.*,
+         mrs.is_read,
+         mrs.reward_claimed,
+         mrs.read_at,
+         mrs.claimed_at
+  FROM mail m
+  LEFT JOIN mail_read_status mrs
+    ON m.id = mrs.mail_id AND mrs.player_id = ?
+  WHERE m.is_active = 1
+    AND (m.expires_at IS NULL OR m.expires_at > datetime('now'))
+    AND (m.target_type = 'all' OR (m.target_type = 'specific' AND m.target_id = ?))
+  ORDER BY m.created_at DESC
+`).all(playerId, playerId);</code></pre>
+</div>
+
+<!-- 2.6 프론트엔드 UI -->
+<h3 id="mail-ui">2.6 프론트엔드 UI — MailInbox 컴포넌트</h3>
+
+<div class="card">
+  <div class="card-title">MailInbox 컴포넌트 구조</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌───────────────────────────────────────────────────────────┐
+│                    MailInbox (Modal)                       │
+│  ┌─────────────────────────────────────────────────────┐  │
+│  │  📨 우편함                           [✕ 닫기]       │  │
+│  ├─────────────────────────────────────────────────────┤  │
+│  │                                                     │  │
+│  │  🔴 [운영팀] 환영 보상을 확인하세요!     🎁  3/28  │  │
+│  │      환영합니다! 특별 보상이 도착했...              │  │
+│  │  ─────────────────────────────────────────────────  │  │
+│  │     [운영팀] 시즌 1 종료 보상          🎁  3/25    │  │
+│  │      시즌 1 참여 보상입니다. 코인...               │  │
+│  │  ─────────────────────────────────────────────────  │  │
+│  │     [운영팀] 시스템 안내                    3/20    │  │
+│  │      이용약관이 변경되었습니다...                    │  │
+│  │                                                     │  │
+│  └─────────────────────────────────────────────────────┘  │
+│                                                           │
+│  🔴 = 미읽음 표시    🎁 = 보상 있음                       │
+└───────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<h4>목록 뷰 (List View)</h4>
+
+<div class="card">
+  <div class="table-wrap"><table>
+    <thead><tr><th>요소</th><th>표시 조건</th><th>스타일</th></tr></thead>
+    <tbody>
+      <tr><td><strong>미읽음 점</strong> (🔴)</td><td><code>is_read = false</code></td><td>빨간 원형 도트 (8px), 항목 좌측</td></tr>
+      <tr><td><strong>제목 (볼드)</strong></td><td><code>is_read = false</code>일 때 볼드</td><td><code>font-weight: 700</code> (미읽음) / <code>400</code> (읽음)</td></tr>
+      <tr><td><strong>발신자명</strong></td><td>항상</td><td><code>[운영팀]</code> 등 대괄호 형식</td></tr>
+      <tr><td><strong>보상 아이콘</strong> (🎁)</td><td><code>reward_type != null</code></td><td>항목 우측 보상 아이콘</td></tr>
+      <tr><td><strong>날짜</strong></td><td>항상</td><td><code>created_at</code> 날짜 포맷 (M/DD)</td></tr>
+      <tr><td><strong>미리보기</strong></td><td>항상</td><td>본문 앞 40자, 흐린 색상</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<h4>상세 뷰 (Detail View)</h4>
+
+<div class="card">
+  <div class="card-title">우편 상세 뷰 레이아웃</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌─────────────────────────────────────────────┐
+│  ← 뒤로                                     │
+│                                             │
+│  발신자: 운영팀                               │
+│  날짜: 2026-03-28                            │
+│  만료: 2026-04-30                            │
+│                                             │
+│  ─────────────────────────────────────────  │
+│                                             │
+│  환영합니다!                                 │
+│  솔로몬의 세계에 오신 것을 환영합니다.         │
+│  아래 보상을 확인해 주세요.                    │
+│                                             │
+│  ─────────────────────────────────────────  │
+│                                             │
+│  ┌─────────────────────────────────────┐    │
+│  │  🎁 보상                             │    │
+│  │                                     │    │
+│  │  💰 코인: 500개                      │    │
+│  │                                     │    │
+│  │  ┌─────────────────────────────┐    │    │
+│  │  │     Claim Reward  ✅         │    │    │
+│  │  └─────────────────────────────┘    │    │
+│  └─────────────────────────────────────┘    │
+│                                             │
+└─────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<div class="card">
+  <ul>
+    <li><strong>발신자 (sender_name):</strong> 우편 상단에 표시</li>
+    <li><strong>날짜 (created_at):</strong> 발송일 표시</li>
+    <li><strong>만료일 (expires_at):</strong> 만료일이 설정된 경우에만 표시, 임박 시 빨간색 강조</li>
+    <li><strong>본문 (content):</strong> 전체 본문 렌더링, 스크롤 가능</li>
+  </ul>
+</div>
+
+<h4>보상 수령 UI</h4>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>상태</th><th>UI 표시</th><th>버튼</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>보상 없음 (<code>reward_type = null</code>)</td>
+      <td>보상 섹션 숨김</td>
+      <td>없음</td>
+    </tr>
+    <tr>
+      <td>미수령 (<code>reward_claimed = false</code>)</td>
+      <td>보상 타입 아이콘 + 금액/명칭</td>
+      <td><strong>"Claim Reward"</strong> 버튼 (활성, 골드 색상)</td>
+    </tr>
+    <tr>
+      <td>수령 완료 (<code>reward_claimed = true</code>)</td>
+      <td>보상 타입 아이콘 + 금액/명칭</td>
+      <td><strong>"Claimed ✅"</strong> 버튼 (비활성, 회색)</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="card">
+  <div class="card-title">보상 타입별 아이콘 매핑</div>
+<pre><code>const rewardIcons: Record&lt;string, string&gt; = {
+  coin:  '💰',    // 게임 머니
+  item:  '📦',    // 아이템
+  title: '🏅',    // 칭호
+};
+
+// 보상 표시 텍스트 생성
+function getRewardText(type: string, amount: number, data?: any): string {
+  switch (type) {
+    case 'coin':  return `코인 ${amount.toLocaleString()}개`;
+    case 'item':  return `${data?.name || '아이템'} ×${amount}`;
+    case 'title': return `칭호: ${data?.name || '특별 칭호'}`;
+    default:      return '보상';
+  }
+}</code></pre>
+</div>
+
+<h4>미읽은 우편 카운트 배지</h4>
+
+<div class="card">
+  <div class="card-title">TitleScreen 상단 배지</div>
+  <p>TitleScreen 상단 바의 📨 우편 버튼 위에 미읽은 우편 개수가 <strong>빨간 원형 배지</strong>로 표시됩니다.</p>
+<pre><code>// TitleScreen — 미읽은 우편 카운트 조회
+const [unreadCount, setUnreadCount] = useState(0);
+
+useEffect(() => {
+  if (!isServerConnected || !playerId) return;
+
+  mailApi.getUnreadCount(playerId)
+    .then(count => setUnreadCount(count))
+    .catch(() => setUnreadCount(0));
+}, [isServerConnected, playerId]);
+
+// 배지 렌더링
+{unreadCount > 0 && (
+  &lt;span style={{
+    position: 'absolute',
+    top: -4, right: -4,
+    background: '#ef4444',
+    color: 'white',
+    borderRadius: '50%',
+    width: 18, height: 18,
+    fontSize: '0.7rem',
+    fontWeight: 'bold',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}&gt;
+    {unreadCount > 99 ? '99+' : unreadCount}
+  &lt;/span&gt;
+)}</code></pre>
+</div>
+
+<!-- 2.7 API 흐름 -->
+<h3 id="mail-api">2.7 API 흐름</h3>
+
+<div class="card">
+  <div class="card-title">우편 API 엔드포인트 전체 목록</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Method</th><th>Endpoint</th><th>용도</th><th>호출자</th><th>인증</th></tr></thead>
+    <tbody>
+      <tr><td><code>GET</code></td><td><code>/api/mail/player/:playerId</code></td><td>플레이어 우편 목록</td><td>Game Client</td><td>Player ID</td></tr>
+      <tr><td><code>GET</code></td><td><code>/api/mail/unread-count/:playerId</code></td><td>미읽은 우편 수</td><td>Game Client</td><td>Player ID</td></tr>
+      <tr><td><code>POST</code></td><td><code>/api/mail/read</code></td><td>읽음 처리</td><td>Game Client</td><td>Player ID</td></tr>
+      <tr><td><code>POST</code></td><td><code>/api/mail/claim</code></td><td>보상 수령</td><td>Game Client</td><td>Player ID</td></tr>
+      <tr><td><code>GET</code></td><td><code>/api/mail</code></td><td>전체 우편 목록 (관리용)</td><td>WebAdmin</td><td>Admin</td></tr>
+      <tr><td><code>POST</code></td><td><code>/api/mail</code></td><td>우편 발송</td><td>WebAdmin</td><td>Admin</td></tr>
+      <tr><td><code>PUT</code></td><td><code>/api/mail/:id</code></td><td>우편 수정</td><td>WebAdmin</td><td>Admin</td></tr>
+      <tr><td><code>DELETE</code></td><td><code>/api/mail/:id</code></td><td>우편 삭제</td><td>WebAdmin</td><td>Admin</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<h4>GET /api/mail/player/:playerId — 플레이어 우편 목록</h4>
+
+<div class="card">
+  <div class="card-title">요청/응답 상세</div>
+<pre><code>// 요청
+GET /api/mail/player/player_abc123
+
+// 서버 처리 순서
+// 1. is_active = 1 (활성 우편만)
+// 2. expires_at IS NULL OR expires_at > NOW (미만료)
+// 3. target_type = 'all' OR target_id = 요청 플레이어 (대상 필터)
+// 4. LEFT JOIN mail_read_status (읽음/수령 상태 결합)
+// 5. ORDER BY created_at DESC (최신순)
+
+// 응답 예시
+[
+  {
+    "id": 5,
+    "title": "환영 보상을 확인하세요!",
+    "content": "환영합니다! 솔로몬의 세계에 오신 것을 환영합니다...",
+    "sender_name": "운영팀",
+    "target_type": "all",
+    "reward_type": "coin",
+    "reward_amount": 500,
+    "reward_data": null,
+    "expires_at": "2026-04-30T23:59:59.000Z",
+    "created_at": "2026-03-28T00:00:00.000Z",
+    "is_read": 0,           // ← mail_read_status JOIN 결과
+    "reward_claimed": 0     // ← mail_read_status JOIN 결과
+  },
+  ...
+]</code></pre>
+</div>
+
+<h4>POST /api/mail/read — 읽음 처리</h4>
+
+<div class="card">
+<pre><code>// 요청
+POST /api/mail/read
+Content-Type: application/json
+
+{
+  "mailId": 5,
+  "playerId": "player_abc123"
+}
+
+// 서버: UPSERT mail_read_status → is_read = 1, read_at = NOW
+// 이미 읽은 우편이면 read_at은 최초 시각 유지 (COALESCE)
+
+// 응답
+{ "success": true }</code></pre>
+</div>
+
+<h4>POST /api/mail/claim — 보상 수령</h4>
+
+<div class="card">
+<pre><code>// 요청
+POST /api/mail/claim
+Content-Type: application/json
+
+{
+  "mailId": 5,
+  "playerId": "player_abc123"
+}
+
+// 성공 응답 (200)
+{
+  "success": true,
+  "reward": {
+    "type": "coin",
+    "amount": 500,
+    "data": null
+  }
+}
+
+// 중복 수령 시 (409)
+{ "error": "이미 수령한 보상입니다" }
+
+// 보상 없는 우편 (400)
+{ "error": "보상이 없는 우편입니다" }</code></pre>
+</div>
+
+<h4>GET /api/mail/unread-count/:playerId — 미읽은 우편 수</h4>
+
+<div class="card">
+<pre><code>// 요청
+GET /api/mail/unread-count/player_abc123
+
+// 서버 로직
+const count = db.prepare(`
+  SELECT COUNT(*) as count FROM mail m
+  LEFT JOIN mail_read_status mrs
+    ON m.id = mrs.mail_id AND mrs.player_id = ?
+  WHERE m.is_active = 1
+    AND (m.expires_at IS NULL OR m.expires_at > datetime('now'))
+    AND (m.target_type = 'all' OR (m.target_type = 'specific' AND m.target_id = ?))
+    AND (mrs.is_read IS NULL OR mrs.is_read = 0)
+`).get(playerId, playerId);
+
+// 응답
+{ "count": 3 }</code></pre>
+</div>
+
+<!-- 2.8 운영 시나리오 -->
+<h3 id="mail-scenarios">2.8 운영 시나리오</h3>
+
+<div class="card">
+  <div class="card-title">시나리오 A: 환영 보상 우편</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>설정값</th></tr></thead>
+    <tbody>
+      <tr><td>제목</td><td>솔로몬에 오신 것을 환영합니다!</td></tr>
+      <tr><td>본문</td><td>재판관님, 솔로몬의 법정에 오신 것을 환영합니다. 아래 보상으로 첫 번째 사건에 도전해 보세요!</td></tr>
+      <tr><td>발신자</td><td>운영팀</td></tr>
+      <tr><td>대상</td><td><code>target_type = 'all'</code></td></tr>
+      <tr><td>보상</td><td><code>reward_type = 'coin'</code>, <code>reward_amount = 1000</code></td></tr>
+      <tr><td>만료</td><td><code>expires_at = NULL</code> (무기한)</td></tr>
+      <tr><td>결과</td><td>모든 플레이어가 우편함에서 확인 가능, 코인 1000개 수령 가능</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="card">
+  <div class="card-title">시나리오 B: 시즌 종료 보상</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>설정값</th></tr></thead>
+    <tbody>
+      <tr><td>제목</td><td>시즌 1 종료 보상</td></tr>
+      <tr><td>본문</td><td>시즌 1에 참여해 주셔서 감사합니다! 참여 보상을 지급합니다.</td></tr>
+      <tr><td>발신자</td><td>운영팀</td></tr>
+      <tr><td>대상</td><td><code>target_type = 'all'</code></td></tr>
+      <tr><td>보상</td><td><code>reward_type = 'title'</code>, <code>reward_amount = 1</code>, <code>reward_data = {"titleId":"season1","name":"시즌 1 참가자"}</code></td></tr>
+      <tr><td>만료</td><td><code>expires_at = '2026-04-15T23:59:59Z'</code> (2주 후 만료)</td></tr>
+      <tr><td>결과</td><td>2주 내에 수령하지 않으면 보상 소멸</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="card">
+  <div class="card-title">시나리오 C: 긴급 보상 (서버 장애 보상)</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>설정값</th></tr></thead>
+    <tbody>
+      <tr><td>제목</td><td>서버 장애 보상 안내</td></tr>
+      <tr><td>본문</td><td>3/27 서버 장애로 불편을 드려 죄송합니다. 보상을 지급합니다.</td></tr>
+      <tr><td>발신자</td><td>운영팀</td></tr>
+      <tr><td>대상</td><td><code>target_type = 'all'</code></td></tr>
+      <tr><td>보상</td><td><code>reward_type = 'coin'</code>, <code>reward_amount = 2000</code></td></tr>
+      <tr><td>만료</td><td><code>expires_at = '2026-04-30T23:59:59Z'</code> (넉넉하게 1개월)</td></tr>
+      <tr><td>결과</td><td>전체 플레이어 대상, 1개월 내 수령 가능</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 3. 게임 연동 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2 id="integration">3. 게임 연동 (Frontend Integration)</h2>
+
+<!-- 3.1 TitleScreen 통합 -->
+<h3 id="titlescreen">3.1 TitleScreen 통합</h3>
+
+<div class="card">
+  <div class="card-title">TitleScreen 상단 바 레이아웃</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌──────────────────────────────────────────────────────────────┐
+│  TitleScreen 상단 바                                          │
+│                                                              │
+│   ┌──────────┐                    ┌────────┐  ┌────────┐    │
+│   │ 프로필   │                    │ 📢 공지 │  │ 📨 우편 │    │
+│   │ 아이콘   │                    │        │  │   🔴3  │    │
+│   └──────────┘                    └────────┘  └────────┘    │
+│                                                              │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│                    ⚖️ 솔로몬의 법정                            │
+│                                                              │
+│                  [ 재판 시작하기 ]                              │
+│                                                              │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+📢 = 공지 버튼 → NoticePanel 모달 오픈
+📨 = 우편 버튼 → MailInbox 모달 오픈
+🔴3 = 미읽은 우편 3건 배지
+  </pre>
+</div>
+
+<div class="card">
+  <div class="card-title">상단 바 버튼 구현</div>
+<pre><code>// TitleScreen.tsx — 상단 바 버튼
+&lt;div style={{ display: 'flex', gap: '0.5rem' }}&gt;
+  {/* 공지 버튼 */}
+  &lt;button onClick={() => setShowNotice(true)} disabled={!isServerConnected}&gt;
+    📢
+  &lt;/button&gt;
+
+  {/* 우편 버튼 (카운트 배지 포함) */}
+  &lt;button
+    onClick={() => setShowMail(true)}
+    disabled={!isServerConnected}
+    style={{ position: 'relative' }}
+  &gt;
+    📨
+    {unreadCount &gt; 0 &amp;&amp; &lt;span className="badge"&gt;{unreadCount}&lt;/span&gt;}
+  &lt;/button&gt;
+&lt;/div&gt;
+
+{/* 모달 렌더링 */}
+{showNotice &amp;&amp; &lt;NoticePanel onClose={() =&gt; setShowNotice(false)} /&gt;}
+{showMail &amp;&amp; &lt;MailInbox playerId={playerId} onClose={() =&gt; setShowMail(false)} /&gt;}</code></pre>
+</div>
+
+<!-- 3.2 서버 연결 흐름 -->
+<h3 id="connection-flow">3.2 서버 연결 흐름</h3>
+
+<div class="card">
+  <div class="card-title">앱 시작 시 서버 연결 시퀀스</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+앱 시작 (App Mount)
+       │
+       ▼
+┌──────────────────┐
+│ healthApi.check() │──── 서버 상태 확인 (GET /api/health)
+└──────┬───────────┘
+       │
+       ├── 성공 (200) ──────────────────────────────────┐
+       │                                                │
+       │   ┌───────────────────────────────────────┐    │
+       │   │ 병렬 로드                              │    │
+       │   │                                       │    │
+       │   │  1. noticeApi.getActive()             │    │
+       │   │     → 공지 목록 캐시                    │    │
+       │   │                                       │    │
+       │   │  2. mailApi.getUnreadCount(playerId)  │    │
+       │   │     → 미읽은 우편 카운트               │    │
+       │   │                                       │    │
+       │   │  3. promptApi.getActive()             │    │
+       │   │     → AI 프롬프트 캐시                 │    │
+       │   │                                       │    │
+       │   │  4. playerApi.sync(profile)           │    │
+       │   │     → 플레이어 프로필 동기화            │    │
+       │   └───────────────────────────────────────┘    │
+       │                                                │
+       │   isServerConnected = true                     │
+       │   📢📨 버튼 활성화                              │
+       │                                                │
+       └── 실패 (timeout/error) ────────────────────────┐
+                                                        │
+           isServerConnected = false                    │
+           📢📨 버튼 비활성 (dimmed)                     │
+           게임 플레이는 정상 진행                        │
+  </pre>
+</div>
+
+<div class="card">
+  <div class="card-title">서버 연결 확인 코드</div>
+<pre><code>// src/services/api.ts — Health Check
+export const healthApi = {
+  check: async (): Promise&lt;boolean&gt; => {
+    try {
+      const response = await fetch(`${API_BASE}/api/health`, {
+        signal: AbortSignal.timeout(3000),  // 3초 타임아웃
+      });
+      return response.ok;
+    } catch {
+      return false;
+    }
+  },
+};
+
+// TitleScreen.tsx — 시작 시 연결 확인
+useEffect(() => {
+  healthApi.check().then(connected => {
+    setIsServerConnected(connected);
+    if (connected) {
+      // 병렬로 공지/우편/프롬프트 로드
+      Promise.allSettled([
+        noticeApi.getActive(),
+        mailApi.getUnreadCount(playerId),
+        promptApi.getActive(),
+        playerApi.sync(localProfile),
+      ]);
+    }
+  });
+}, []);</code></pre>
+</div>
+
+<!-- 3.3 오프라인 모드 -->
+<h3 id="offline">3.3 오프라인 모드</h3>
+
+<div class="card">
+  <div class="card-title">오프라인 시 동작 정책</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>기능</th><th>서버 연결 시</th><th>오프라인 시</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>공지 시스템</strong></td>
+        <td>📢 버튼 활성, 클릭 시 공지 목록 표시</td>
+        <td>📢 버튼 비활성 (dimmed), 클릭 불가</td>
+        <td>서버 데이터 의존</td>
+      </tr>
+      <tr>
+        <td><strong>우편 시스템</strong></td>
+        <td>📨 버튼 활성, 카운트 배지 표시</td>
+        <td>📨 버튼 비활성 (dimmed), 배지 숨김</td>
+        <td>서버 데이터 의존</td>
+      </tr>
+      <tr>
+        <td><strong>게임 플레이</strong></td>
+        <td>정상 플레이 + AI 심문 가능</td>
+        <td>정상 플레이 (AI 심문 제외)</td>
+        <td>로컬 데이터로 플레이 가능</td>
+      </tr>
+      <tr>
+        <td><strong>AI 프롬프트</strong></td>
+        <td>서버에서 최신 프롬프트 로드</td>
+        <td>로컬 캐시 프롬프트 사용</td>
+        <td>캐시 없으면 AI 기능 비활성</td>
+      </tr>
+      <tr>
+        <td><strong>플레이어 동기화</strong></td>
+        <td>localStorage → 서버 자동 동기화</td>
+        <td>동기화 스킵, localStorage만 사용</td>
+        <td>다음 연결 시 자동 동기화</td>
+      </tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="alert alert-info">
+  <strong>설계 원칙 — 오프라인 우선 (Offline-First):</strong> 솔로몬은 싱글 플레이어 게임이므로, 서버 연결이 불가능하더라도 핵심 게임 플레이(사건 선택, 증거 조사, 심문, 판결)는 로컬 데이터만으로 정상 진행됩니다. 공지/우편/AI 심문 등 서버 의존 기능만 비활성화되며, 이는 게임 플레이에 치명적이지 않습니다.
+</div>
+
+<!-- 3.4 플레이어 동기화 -->
+<h3 id="player-sync">3.4 플레이어 동기화 (Player Sync)</h3>
+
+<div class="card">
+  <div class="card-title">동기화 흐름</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌───────────────────────┐       ┌─────────────────────┐       ┌──────────────┐
+│   Game Client          │       │   Express Server     │       │   SQLite DB   │
+│                       │       │                     │       │              │
+│  localStorage에서     │ POST  │  /api/players/sync  │       │  players     │
+│  프로필 로드          │──────▶│                     │       │  테이블       │
+│  {                    │       │  1. player_id 확인   │       │              │
+│    id: "abc123",      │       │  2. 존재하면 UPDATE  │──────▶│  UPSERT      │
+│    name: "재판관",     │       │  3. 없으면 INSERT    │       │              │
+│    level: 5,          │       │  4. last_login 갱신  │       │              │
+│    ...                │       │                     │       │              │
+│  }                    │◀──────│  5. 동기화 결과 반환  │       │              │
+│                       │  200  │                     │       │              │
+│  서버 데이터로        │       │                     │       │              │
+│  localStorage 갱신    │       │                     │       │              │
+└───────────────────────┘       └─────────────────────┘       └──────────────┘
+  </pre>
+</div>
+
+<div class="card">
+  <div class="card-title">playerApi.sync() 구현</div>
+<pre><code>// src/services/api.ts
+export const playerApi = {
+  sync: async (profile: PlayerProfile): Promise&lt;PlayerProfile&gt; => {
+    const response = await fetch(`${API_BASE}/api/players/sync`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        player_id: profile.id,
+        nickname: profile.name,
+        level: profile.level,
+        total_cases: profile.totalCases,
+        correct_verdicts: profile.correctVerdicts,
+      }),
+    });
+    return response.json();
+  },
+};
+
+// 동기화 시점:
+// 1. 앱 시작 시 (TitleScreen mount)
+// 2. 사건 완료 시 (통계 변경)
+// 3. 레벨업 시</code></pre>
+</div>
+
+<div class="card">
+  <div class="card-title">동기화가 활용되는 기능</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>기능</th><th>동기화 필요 데이터</th><th>용도</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>우편 시스템</strong></td>
+        <td>player_id</td>
+        <td>플레이어별 우편 조회/읽음/수령 처리</td>
+      </tr>
+      <tr>
+        <td><strong>WebAdmin 대시보드</strong></td>
+        <td>전체 프로필</td>
+        <td>플레이어 목록 조회, 통계 확인</td>
+      </tr>
+      <tr>
+        <td><strong>특정 플레이어 우편</strong></td>
+        <td>player_id + nickname</td>
+        <td>WebAdmin에서 특정 플레이어 우편 발송 시 대상 검색</td>
+      </tr>
+      <tr>
+        <td><strong>운영 통계</strong></td>
+        <td>level, total_cases, correct_verdicts</td>
+        <td>전체 DAU, 레벨 분포, 정답률 분석</td>
+      </tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 부록 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2 id="appendix">부록: 전체 데이터 흐름 요약</h2>
+
+<div class="card">
+  <div class="card-title">공지 & 우편 시스템 — 엔드투엔드 데이터 흐름</div>
+  <pre style="font-size:0.78rem;line-height:1.8;text-align:center;">
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                          관리자 (WebAdmin)
+                               │
+            ┌──────────────────┼──────────────────┐
+            │                  │                  │
+       POST /notices      POST /mail         PUT /notices/:id
+       (공지 생성)        (우편 발송)         (공지 수정)
+            │                  │                  │
+            ▼                  ▼                  ▼
+    ┌───────────────────────────────────────────────────┐
+    │                  SQLite Database                   │
+    │                                                   │
+    │  notices          mail           mail_read_status  │
+    │  ┌──────┐        ┌──────┐       ┌──────────────┐  │
+    │  │ id   │        │ id   │       │ mail_id      │  │
+    │  │ title│        │ title│       │ player_id    │  │
+    │  │ type │        │reward│       │ is_read      │  │
+    │  │ ...  │        │ ...  │       │ reward_claim │  │
+    │  └──────┘        └──────┘       └──────────────┘  │
+    └───────────────────────────────────────────────────┘
+            │                  │                  │
+       GET /notices    GET /mail/player/:id  GET /mail/unread-count/:id
+            │                  │                  │
+            ▼                  ▼                  ▼
+    ┌───────────────────────────────────────────────────┐
+    │                Game Client (TitleScreen)           │
+    │                                                   │
+    │    📢 NoticePanel          📨 MailInbox    🔴3    │
+    │    ┌──────────┐            ┌──────────┐           │
+    │    │ 목록 뷰  │            │ 목록 뷰  │           │
+    │    │ 상세 뷰  │            │ 상세 뷰  │           │
+    │    └──────────┘            │ 보상 수령 │           │
+    │                            └──────────┘           │
+    └───────────────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  </pre>
+</div>
+
+<div class="card">
+  <div class="card-title">핵심 설계 결정 요약</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>결정 사항</th><th>선택</th><th>이유</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>공지 읽음 추적</td>
+        <td>미구현 (전체 브로드캐스트)</td>
+        <td>공지는 정보 전달 목적, 개별 추적 불필요</td>
+      </tr>
+      <tr>
+        <td>우편 읽음 추적</td>
+        <td>mail_read_status 별도 테이블</td>
+        <td>보상 수령 + 읽음을 플레이어별 독립 추적 필요</td>
+      </tr>
+      <tr>
+        <td>보상 지급 방식</td>
+        <td>클라이언트 반환 (서버 미적용)</td>
+        <td>Phase 1에서는 서버 사이드 인벤토리 미구현, 클라이언트 localStorage 반영</td>
+      </tr>
+      <tr>
+        <td>만료 처리</td>
+        <td>조회 시 서버 필터링</td>
+        <td>별도 배치 작업 불필요, 조회 시 자동 제외</td>
+      </tr>
+      <tr>
+        <td>오프라인 정책</td>
+        <td>공지/우편 비활성, 게임 플레이 유지</td>
+        <td>싱글 플레이어 게임 특성 — 핵심 루프는 로컬 완결</td>
+      </tr>
+    </tbody>
+  </table></div>
+</div>
+
+</main>
+
+<script>
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => document.body.classList.toggle('sidebar-collapsed'));
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+</script>
+</body>
+</html>

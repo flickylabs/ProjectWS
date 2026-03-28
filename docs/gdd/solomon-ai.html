@@ -26,7 +26,7 @@
     <a class="topbar-sec-link" href="#interrogation-history">심문 이력</a>
   </div>
   <div class="topbar-meta">
-    <span>v4.1</span>
+    <span>v5.0</span>
     <span>2026-03-28</span>
   </div>
 </header>
@@ -60,6 +60,14 @@
     </div>
   </div>
   <div class="sidebar-section">
+    <div class="sidebar-section-title">서버 & 인프라</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-server.html"><span class="icon">🗄️</span><span class="label">서버 & DB</span></a>
+      <a class="sidebar-link" href="solomon-admin.html"><span class="icon">🖥️</span><span class="label">WebAdmin</span></a>
+      <a class="sidebar-link" href="solomon-systems.html"><span class="icon">📬</span><span class="label">공지 & 우편</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
     <div class="sidebar-section-title">프로덕션</div>
     <div class="sidebar-items">
       <a class="sidebar-link" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a>
@@ -70,7 +78,7 @@
 <main class="content">
 
   <h1>에이전트 설계 <span class="badge">GDD v4.1</span></h1>
-  <p class="subtitle">엔진 아키텍처 · 거짓말 6단계 상태머신 · 감정 & 행동 징후 · 신뢰/보호 로직 · 발언 결정 · 증인 시스템 · 교차 반응 · 심문 이력 · LLM 프롬프트 9블록 · callTerms · Phase별 깊이</p>
+  <p class="subtitle">엔진 아키텍처 · 거짓말 6단계 상태머신 · 감정 & 행동 징후 · 신뢰/보호 로직 · 발언 결정 · 증인 시스템 · 교차 반응 · 심문 이력 · AI 3계층 파이프라인 (Agent+Block+DataField) · Context Flags · Phase Transcript</p>
   <p>대화의 생동감과 시스템의 일관성을 동시에 확보하는 기술 설계. <strong>LLM은 연기만 하고, 진실은 룰 엔진이 관리한다.</strong> v4.0에서 253명 증인 시스템, 교차 당사자 자동반응, 심문 이력 추적, callTerms LLM 주입 추가. v4.1에서 프롬프트 전면 압축, "자기"→"자기야" 강제 보정, 혼합 발화 규칙, 안티패턴 차단, 재판관 질문 이름 자동 제거.</p>
 
 
@@ -319,28 +327,71 @@
   </div>
 
 
-  <!-- ── LLM 프롬프트 구조 ──────────────────────── -->
-  <h2 id="prompt">LLM 프롬프트 구조 (v4.1 압축)</h2>
-  <p>Phase 3~5 심문에서 재판관 질문 + NPC 응답을 한 번의 LLM 호출로 동시 생성한다. 시스템 프롬프트는 <strong>9개 블록</strong>으로 구성. v4.1에서 산발적 지시를 핵심 규칙 중심으로 압축하고, 실제 한국어 대사 예시를 포함.</p>
+  <!-- ── AI 프롬프트 파이프라인 ──────────────────────── -->
+  <h2 id="prompt">AI 프롬프트 파이프라인 (v5.0 — 3계층 아키텍처)</h2>
+  <p>모놀리식 프롬프트 → <strong>Agent + Block + Data Field</strong> 3계층으로 재설계. 모든 프롬프트/설정/데이터를 웹 어드민에서 코드 변경 없이 실시간 제어 가능.</p>
 
-  <div class="flow-row"><div class="step-label">① 페르소나</div><div class="step-desc">이름, 나이, 직업, 성격. 상대와의 분쟁 배경.</div></div>
-  <div class="flow-row"><div class="step-label">①-b Phase 깊이 가이드</div><div class="step-desc"><strong>Phase 3:</strong> 경계심 높음, 표면적 답변. <strong>Phase 4:</strong> 증거 앞에 흔들림, 새 정보 흘림. <strong>Phase 5:</strong> 방어 느슨, 깊은 고백 가능.</div></div>
-  <div class="flow-row"><div class="step-label">② 사실 분면</div><div class="step-desc">자신이 아는 사실만 (a_only + both_know). 상대의 지식은 절대 포함하지 않음.</div></div>
-  <div class="flow-row"><div class="step-label">③ 쟁점 + 거짓말 상태</div><div class="step-desc">현재 쟁점명 + truthDescription + S0~S5 상태별 행동 지시 + 동기 + "이 쟁점에 대해서만 답하라" 제약.</div></div>
-  <div class="flow-row"><div class="step-label">④ 감정 + 말버릇</div><div class="step-desc">현재 감정 상태 + 활성화된 Verbal Tell 패턴.</div></div>
-  <div class="flow-row"><div class="step-label">⑤ 제시된 증거</div><div class="step-desc">이미 공개된 증거 목록. 부정하기 어려운 증거가 있으면 대응을 바꾸도록 지시.</div></div>
-  <div class="flow-row"><div class="step-label">⑥ 최근 대화</div><div class="step-desc">최근 5개 대화 히스토리. 흐름을 끊지 않고 이어가도록 지시.</div></div>
-  <div class="flow-row"><div class="step-label">⑦ 질문 유형별 지침</div><div class="step-desc">사실추궁/동기탐색/공감접근/공격적 질문에 대한 응답 방향. (v4.1: 3줄로 압축)</div></div>
-  <div class="flow-row"><div class="step-label">⑧ 말투 규칙</div><div class="step-desc">공용 모듈(llmSpeechGuide.ts)에서 관계별 호칭·반말/존댓말 규칙을 자동 생성하여 주입. (v4.1: 중복 제거, "자기"→"자기야" 강제 보정)</div></div>
-  <div class="flow-row"><div class="step-label">⑨ 출력 형식</div><div class="step-desc">JSON: {"judgeQuestion":"재판관 질문", "npcResponse":"NPC 답변 (행동묘사)", "behaviorHint":"행동묘사"}</div></div>
+  <h3>3계층 구조</h3>
+  <div class="flow-row"><div class="step-label">Agent (에이전트)</div><div class="step-desc">LLM 설정(model, temperature, max_tokens) + Block 조합 정의 + Context Flags. 5개: interrogation, free_question, testimony_analysis, phase1/2_generator</div></div>
+  <div class="flow-row"><div class="step-label">Prompt Block</div><div class="step-desc">재사용 가능한 프롬프트 조각. 15개 블록을 sort_order로 조립. 조건부 블록(Phase3/4/5 가이드)은 condition_field/value로 런타임 선택.</div></div>
+  <div class="flow-row"><div class="step-label">Data Field</div><div class="step-desc">세션 데이터 레지스트리. 25개 변수 정의 (source: character/case/agent_state/session/computed). 블록 내 {변수}로 참조.</div></div>
 
-  <h3>공용 모듈 (v3.0 신규)</h3>
+  <h3>심문 에이전트 블록 조합 (interrogation)</h3>
   <div class="table-wrap"><table>
-    <thead><tr><th>모듈</th><th>파일</th><th>역할</th></tr></thead>
+    <thead><tr><th>순서</th><th>블록</th><th>카테고리</th><th>역할</th><th>조건</th></tr></thead>
     <tbody>
-      <tr><td>말투 가이드</td><td>llmSpeechGuide.ts</td><td>관계별 호칭·반말/존댓말 규칙을 buildSpeechGuide()로 자동 생성. 부부="자기야"(v4.1: "자기"→"자기야" 강제 보정), ~냐?금지 등. 중복 규칙 제거.</td></tr>
-      <tr><td>이름 플레이스홀더</td><td>korean.ts · resolveNameTemplate()</td><td>{A}, {B}, {A:이}, {B:은} → 런타임에 이름+조사 자동 치환.</td></tr>
-      <tr><td>speaker 정규화</td><td>llmPhaseDialogue.ts · normalizeSpeaker()</td><td>LLM이 반환하는 "A"/"한지석" 등을 "a"/"b"/"system"으로 변환.</td></tr>
+      <tr><td>0</td><td>character_base</td><td>common</td><td>NPC 캐릭터 소개 (이름, 나이, 배경, 말투)</td><td>—</td></tr>
+      <tr><td>1</td><td>naming_rules</td><td>common</td><td>호칭 규칙 (callForm, judgeRef, angryCall)</td><td>—</td></tr>
+      <tr><td>2</td><td>dialogue_rules</td><td>common</td><td>대화 규칙 4조</td><td>—</td></tr>
+      <tr><td>3</td><td>phase3_guide</td><td>interrogation</td><td>Phase 3 — 경계심 높음, 표면적 답변</td><td>phase=Phase3</td></tr>
+      <tr><td>3</td><td>phase4_guide</td><td>interrogation</td><td>Phase 4 — 증거 앞에서 흔들림</td><td>phase=Phase4</td></tr>
+      <tr><td>3</td><td>phase5_guide</td><td>interrogation</td><td>Phase 5 — 방어 느슨, 깊은 고백</td><td>phase=Phase5</td></tr>
+      <tr><td>3.5</td><td>phase_history_context</td><td>interrogation</td><td>Phase 1/2 대화 요약 → 심문 맥락 참조</td><td>—</td></tr>
+      <tr><td>4</td><td>lie_state_guide</td><td>interrogation</td><td>쟁점/거짓말/감정/증거/대화/이력 데이터</td><td>—</td></tr>
+      <tr><td>5</td><td>question_type_guide</td><td>interrogation</td><td>질문 유형별 응답 가이드</td><td>—</td></tr>
+      <tr><td>6</td><td>speech_guide_short</td><td>common</td><td>말투 가이드 (반말/존댓말)</td><td>—</td></tr>
+      <tr><td>7</td><td>output_json_npc</td><td>output</td><td>JSON 출력 형식 규칙</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Context Flags (MyPeb 참고)</h3>
+  <p>에이전트별 JSONB — 어떤 세션 데이터를 포함/제외할지 토글. 어드민에서 체크박스로 on/off. 불필요한 데이터 제거로 토큰 절약.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>플래그</th><th>기본값</th><th>역할</th></tr></thead>
+    <tbody>
+      <tr><td>include_knownFacts</td><td>✅</td><td>내가 아는 사실 목록 포함</td></tr>
+      <tr><td>include_disputeInfo</td><td>✅</td><td>현재 쟁점+거짓말 상태 포함</td></tr>
+      <tr><td>include_emotionInfo</td><td>✅</td><td>감정+말버릇 포함</td></tr>
+      <tr><td>include_evidenceInfo</td><td>✅</td><td>제시된 증거 목록 포함</td></tr>
+      <tr><td>include_recentDialogue</td><td>✅</td><td>최근 대화 5개 포함</td></tr>
+      <tr><td>include_historyContext</td><td>✅</td><td>심문 이력 컨텍스트 포함</td></tr>
+      <tr><td>include_phaseTranscript</td><td>✅</td><td>Phase 1/2 대화 요약 포함</td></tr>
+      <tr><td>max_recent_dialogues</td><td>5</td><td>최근 대화 최대 개수</td></tr>
+      <tr><td>max_known_facts</td><td>4</td><td>사실 목록 최대 개수</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>프롬프트 조립 흐름</h3>
+  <pre style="font-size:0.82rem;background:var(--bg-code);padding:16px;border-radius:8px;overflow-x:auto;">
+buildAgentPrompt('interrogation', variables, { phase: currentPhase })
+  │
+  ├─ ① Agent 설정 로드 (temp:0.85, maxTokens:250)
+  ├─ ② Block 조합 로드 (10개, sort_order 순)
+  ├─ ③ 조건부 필터 (phase=Phase3 → phase3_guide만 포함)
+  ├─ ④ 각 Block content를 순서대로 연결
+  ├─ ⑤ {변수} → 런타임 데이터로 치환
+  └─ ⑥ 최종 시스템 프롬프트 완성
+  </pre>
+
+  <h3>5개 에이전트 설정</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>에이전트</th><th>temp</th><th>tokens</th><th>블록 수</th><th>용도</th></tr></thead>
+    <tbody>
+      <tr><td>interrogation</td><td>0.85</td><td>250</td><td>10 (3 조건부)</td><td>Phase 3~5 심문 NPC 응답</td></tr>
+      <tr><td>free_question</td><td>0.7</td><td>400</td><td>3</td><td>자유 질문 응답</td></tr>
+      <tr><td>testimony_analysis</td><td>0.3</td><td>800</td><td>1</td><td>진술 분석</td></tr>
+      <tr><td>phase1_generator</td><td>0.85</td><td>4000</td><td>1</td><td>Phase 1 대사 생성</td></tr>
+      <tr><td>phase2_generator</td><td>0.85</td><td>3000</td><td>1</td><td>Phase 2 대사 생성</td></tr>
     </tbody>
   </table></div>
 
@@ -353,6 +404,7 @@
       <tr><td>llmFreeQuestion.ts</td><td>자유질문 처리</td><td>질문 유형 자동 분류 + NPC 응답</td></tr>
       <tr><td>llmTestimonyAnalysis.ts</td><td>Phase 5 진술 분석</td><td>전체 대화 요약 + 모순 탐지</td></tr>
       <tr><td>llmSpeechGuide.ts</td><td>말투 규칙 모듈</td><td>7개 관계 유형별 호칭/반말/존댓말 규칙</td></tr>
+      <tr><td>agentManager.ts</td><td>에이전트 관리</td><td>Block 조립 + Context Flags + 캐시/폴링</td></tr>
     </tbody>
   </table></div>
 
@@ -369,34 +421,25 @@
     </ul>
   </div></div>
 
-  <h3>v4.1 프롬프트 핵심 변경사항</h3>
+  <h3>v5.0 핵심 변경사항</h3>
   <div class="card-grid">
     <div class="card">
-      <div class="card-title">프롬프트 구조 압축</div>
-      <p>산발적 지시 → 핵심 규칙 중심 압축. 질문 유형 지침 3줄로 축약. 출력 예시에 실제 한국어 대사 포함.</p>
+      <div class="card-title">3계층 아키텍처</div>
+      <p>모놀리식 프롬프트 9개 → <strong>Agent(5) + Block(15) + Data Field(25)</strong> 분리. 웹 어드민에서 블록 조합/순서 변경/데이터 토글 가능.</p>
     </div>
     <div class="card">
-      <div class="card-title">"자기" → "자기야" 강제 보정</div>
-      <p>llmSpeechGuide, llmDialogueResolver, llmFreeQuestion 전 모듈에서 부부 관계 호칭 "자기"를 "자기야"로 강제 보정. 자연스러운 대화톤 확보.</p>
+      <div class="card-title">Context Flags (MyPeb 참고)</div>
+      <p>에이전트별 <strong>context_flags</strong> JSONB로 어떤 데이터를 포함할지 토글. 불필요한 데이터 제거로 토큰 절약 + 어드민에서 실시간 제어.</p>
     </div>
     <div class="card">
-      <div class="card-title">혼합 발화 규칙</div>
-      <p><strong>"재판관에게 1문장 + 상대에게 1문장 섞어라"</strong> — NPC가 재판관에게만 말하거나 상대에게만 말하는 단조로운 패턴 방지.</p>
+      <div class="card-title">Phase Transcript 주입</div>
+      <p>Phase 1/2에서 양측이 한 진술을 <strong>{phaseTranscript}</strong>로 Phase 3~5 프롬프트에 자동 주입. 이전 발언과의 일관성 보장.</p>
     </div>
     <div class="card">
-      <div class="card-title">안티패턴 규칙</div>
-      <p><strong>자기 불리한 정보를 먼저 꺼내지 마라.</strong> 같은 내용을 반복하지 마라. — LLM이 자발적으로 불리한 정보를 노출하는 패턴 차단.</p>
+      <div class="card-title">조건부 블록</div>
+      <p>condition_field/value로 런타임 조건에 따라 블록 선택. Phase3/4/5 가이드가 자동 전환.</p>
     </div>
   </div>
-
-  <h3>재판관 질문 이름 자동 제거 (v4.1)</h3>
-  <p>쟁점명에 대상 당사자의 이름이 포함된 경우 자동 제거하여 자연스러운 질문을 생성한다.</p>
-  <ul>
-    <li><strong>대상 이름 제거:</strong> "세린의 새벽 휴대폰 열람" → "새벽 휴대폰 열람" (세린에게 질문 시)</li>
-    <li><strong>상대 이름 → "상대방의":</strong> "민준의 계좌 인출" → "상대방의 계좌 인출" (세린에게 질문 시)</li>
-    <li><strong>공감 접근 톤:</strong> "동정" 표현 → "솔직한 마음/본심" 표현으로 변경</li>
-    <li><code>buildFallbackJudgeQuestion()</code>에도 동일한 이름 제거 로직 적용</li>
-  </ul>
 
 
   <!-- ── 증인 시스템 ──────────────────────────── -->

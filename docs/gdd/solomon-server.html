@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>솔로몬 GDD — 서버 & DB 아키텍처</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/solomon.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="topbar-hamburger" aria-label="메뉴">☰</button>
+  <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
+  <a class="topbar-logo" href="solomon-index.html">⚖️ <span>솔로몬</span> GDD</a>
+  <span class="topbar-title">서버 & DB 아키텍처</span>
+  <div class="topbar-sections"></div>
+  <div class="topbar-meta"><span>v4.1</span><span>2026-03-28</span></div>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">게임 비전</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-overview.html"><span class="icon">⚖️</span><span class="label">게임 개요</span></a>
+      <a class="sidebar-link" href="solomon-concept.html"><span class="icon">🎭</span><span class="label">세계관 & 컨셉</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">사건 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-case.html"><span class="icon">🧱</span><span class="label">사건 구조</span></a>
+      <a class="sidebar-link" href="solomon-generator.html"><span class="icon">⚙️</span><span class="label">생성 엔진</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">AI 에이전트</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-ai.html"><span class="icon">🤖</span><span class="label">에이전트 설계</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">플레이 설계</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-mechanics.html"><span class="icon">🎮</span><span class="label">플레이 메커닉</span></a>
+      <a class="sidebar-link" href="solomon-content.html"><span class="icon">📈</span><span class="label">콘텐츠 & 밸런스</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">서버 & 인프라</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link active" href="solomon-server.html"><span class="icon">🗄️</span><span class="label">서버 & DB</span></a>
+      <a class="sidebar-link" href="solomon-admin.html"><span class="icon">🖥️</span><span class="label">WebAdmin</span></a>
+      <a class="sidebar-link" href="solomon-systems.html"><span class="icon">📬</span><span class="label">공지 & 우편</span></a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">프로덕션</div>
+    <div class="sidebar-items">
+      <a class="sidebar-link" href="solomon-production.html"><span class="icon">🔧</span><span class="label">제작 계획</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+
+<h1>🗄️ 서버 & DB 아키텍처 <span class="badge">v1.0</span></h1>
+<p class="subtitle">Express.js 백엔드, SQLite 데이터베이스, REST API 설계</p>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="architecture">1. 시스템 아키텍처</h2>
+
+<div class="card">
+  <div class="card-title">전체 아키텍처 다이어그램</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌─────────────────────────────────────────────────────────────┐
+│                     CLIENT (Browser)                        │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │
+│  │  React Game   │  │  Notice/Mail │  │ AI Prompt Manager│  │
+│  │  (Zustand)    │  │  Components  │  │ (Cache + Poll)   │  │
+│  └──────┬───────┘  └──────┬───────┘  └────────┬─────────┘  │
+│         │                 │                    │             │
+│         └────────────┬────┘────────────────────┘             │
+│                      │ REST API (fetch)                      │
+├──────────────────────┼──────────────────────────────────────┤
+│                      ▼                                       │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │              Express.js Server (:3001)                  │  │
+│  │  ┌──────────┬──────────┬──────────┬──────────────────┐ │  │
+│  │  │ Notices  │  Mail    │ AI Prompt│  Players/Stats   │ │  │
+│  │  │ API      │  API     │ API      │  API             │ │  │
+│  │  └────┬─────┴────┬─────┴────┬─────┴──────┬───────────┘ │  │
+│  │       │          │          │            │              │  │
+│  │       └──────────┴──────────┴────────────┘              │  │
+│  │                      │                                   │  │
+│  │              ┌───────▼───────┐                           │  │
+│  │              │  SQLite DB    │                           │  │
+│  │              │ (WAL mode)    │                           │  │
+│  │              └───────────────┘                           │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │              WebAdmin Dashboard                         │  │
+│  │              (Static HTML + JS)                         │  │
+│  │  Served at: /admin                                      │  │
+│  └────────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────────┘
+  </pre>
+</div>
+
+<h3>1.1 기술 스택</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>계층</th><th>기술</th><th>버전</th><th>역할</th></tr></thead>
+  <tbody>
+    <tr><td><strong>프론트엔드</strong></td><td>React + TypeScript + Vite</td><td>19 / 5.9 / 8.0</td><td>게임 클라이언트, 공지/우편 UI</td></tr>
+    <tr><td><strong>상태관리</strong></td><td>Zustand</td><td>5.0</td><td>게임 상태 (6 Slice + Root)</td></tr>
+    <tr><td><strong>스타일</strong></td><td>Tailwind CSS</td><td>4.2</td><td>유틸리티 CSS</td></tr>
+    <tr><td><strong>백엔드</strong></td><td>Express.js</td><td>5.1</td><td>REST API 서버</td></tr>
+    <tr><td><strong>데이터베이스</strong></td><td>SQLite (better-sqlite3)</td><td>11.7</td><td>영구 저장, WAL 모드</td></tr>
+    <tr><td><strong>LLM</strong></td><td>OpenAI GPT-4o-mini</td><td>—</td><td>심문 대화 실시간 생성</td></tr>
+    <tr><td><strong>WebAdmin</strong></td><td>Vanilla HTML/JS</td><td>—</td><td>관리자 대시보드</td></tr>
+  </tbody>
+</table></div>
+
+<h3>1.2 디렉토리 구조</h3>
+<pre><code>ProjectWS/
+├── src/                          # 프론트엔드 소스
+│   ├── api/                      # API 클라이언트 & 프롬프트 매니저
+│   │   ├── client.ts             # REST API 래퍼
+│   │   └── promptManager.ts      # AI 프롬프트 캐시 & 폴링
+│   ├── components/
+│   │   ├── notice/NoticePanel.tsx # 공지 UI
+│   │   └── mail/MailInbox.tsx     # 우편함 UI
+│   ├── engine/                   # 게임 엔진 (12 모듈)
+│   └── store/                    # Zustand 상태
+├── server/                       # 백엔드 서버
+│   ├── index.js                  # Express 엔트리
+│   ├── db/
+│   │   ├── schema.js             # DDL (8 테이블)
+│   │   ├── connection.js         # DB 커넥션 싱글턴
+│   │   └── seed.js               # 초기 데이터 시드
+│   ├── routes/
+│   │   ├── notices.js            # 공지 CRUD API
+│   │   ├── mail.js               # 우편 CRUD + 읽음/보상 API
+│   │   ├── aiPrompts.js          # AI 프롬프트 CRUD + 롤백
+│   │   ├── players.js            # 플레이어 동기화 + 기록
+│   │   └── stats.js              # 대시보드 통계 + 설정
+│   ├── public/admin/index.html   # WebAdmin SPA
+│   ├── solomon.db                # SQLite 데이터 파일
+│   └── package.json
+└── vite.config.ts                # Vite + API 프록시</code></pre>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="database">2. 데이터베이스 설계</h2>
+
+<h3>2.1 ER 다이어그램</h3>
+<pre style="font-size:0.78rem;line-height:1.9;text-align:center;">
+┌──────────┐       ┌──────────────┐       ┌──────────┐
+│ players  │──1:N──│ game_history │       │ notices  │
+│──────────│       │──────────────│       │──────────│
+│ id (PK)  │       │ id (PK)      │       │ id (PK)  │
+│ name     │       │ player_id(FK)│       │ title    │
+│ region   │       │ case_id      │       │ content  │
+│ created  │       │ score/I/A/W  │       │ type     │
+│ active   │       │ rel_type     │       │ priority │
+└──────────┘       │ season_id    │       │ is_pinned│
+      │            └──────────────┘       │ active   │
+      │                                   │ start/end│
+      │            ┌──────────────┐       └──────────┘
+      ├────1:N─────│ mail_read    │
+      │            │  _status     │       ┌──────────────┐
+      │            │──────────────│       │ ai_prompts   │
+      │            │ mail_id (FK) │       │──────────────│
+      │            │ player_id(FK)│       │ id (PK)      │
+      │            │ is_read      │       │ key (UNIQUE) │
+      │            │ reward_claim │       │ name         │
+      │            └──────┬───────┘       │ category     │
+      │                   │               │ content      │
+      │            ┌──────┴───────┐       │ variables    │
+      │            │    mail      │       │ version      │
+      │            │──────────────│       └──────┬───────┘
+      │            │ id (PK)      │              │
+      │            │ title        │       ┌──────┴───────┐
+      │            │ content      │       │ ai_prompt    │
+      │            │ sender       │       │  _history    │
+      │            │ reward_type  │       │──────────────│
+      │            │ target_type  │       │ prompt_id FK │
+      │            └──────────────┘       │ content      │
+      │                                   │ version      │
+      │            ┌──────────────┐       └──────────────┘
+      └────1:N─────│ hall_of_fame │
+                   │──────────────│       ┌──────────────┐
+                   │ player_id FK │       │  settings    │
+                   │ score        │       │──────────────│
+                   │ season_id    │       │ key (PK)     │
+                   │ rank         │       │ value        │
+                   └──────────────┘       └──────────────┘
+</pre>
+
+<h3>2.2 테이블 상세</h3>
+
+<h4>players — 플레이어</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>TEXT</td><td>PK</td><td>UUID (클라이언트 생성)</td></tr>
+    <tr><td><code>name</code></td><td>TEXT</td><td>NOT NULL</td><td>플레이어 닉네임 (기본: '재판관')</td></tr>
+    <tr><td><code>region</code></td><td>TEXT</td><td>DEFAULT 'KR'</td><td>지역 코드</td></tr>
+    <tr><td><code>created_at</code></td><td>TEXT</td><td>NOT NULL</td><td>ISO 8601 생성 시각</td></tr>
+    <tr><td><code>last_active</code></td><td>TEXT</td><td>NOT NULL</td><td>마지막 활동 시각</td></tr>
+  </tbody>
+</table></div>
+
+<h4>game_history — 게임 기록</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTO</td><td>기록 ID</td></tr>
+    <tr><td><code>player_id</code></td><td>TEXT</td><td>FK → players</td><td>플레이어 참조</td></tr>
+    <tr><td><code>case_id</code></td><td>TEXT</td><td>NOT NULL</td><td>사건 ID (e.g. case-spouse-01)</td></tr>
+    <tr><td><code>score</code></td><td>INTEGER</td><td>DEFAULT 0</td><td>총점</td></tr>
+    <tr><td><code>insight</code></td><td>INTEGER</td><td>DEFAULT 0</td><td>통찰력 점수</td></tr>
+    <tr><td><code>authority</code></td><td>INTEGER</td><td>DEFAULT 0</td><td>권위 점수</td></tr>
+    <tr><td><code>wisdom</code></td><td>INTEGER</td><td>DEFAULT 0</td><td>지혜 점수</td></tr>
+    <tr><td><code>relationship_type</code></td><td>TEXT</td><td>—</td><td>관계 유형</td></tr>
+    <tr><td><code>name_a / name_b</code></td><td>TEXT</td><td>—</td><td>당사자 이름</td></tr>
+    <tr><td><code>season_id</code></td><td>TEXT</td><td>—</td><td>시즌 ID</td></tr>
+    <tr><td><code>titles</code></td><td>TEXT</td><td>JSON</td><td>획득 칭호 배열</td></tr>
+    <tr><td><code>played_at</code></td><td>TEXT</td><td>NOT NULL</td><td>플레이 시각</td></tr>
+  </tbody>
+</table></div>
+
+<h4>notices — 공지사항</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER PK</td><td>공지 ID</td></tr>
+    <tr><td><code>title</code></td><td>TEXT NOT NULL</td><td>공지 제목</td></tr>
+    <tr><td><code>content</code></td><td>TEXT NOT NULL</td><td>공지 본문 (줄바꿈 포함)</td></tr>
+    <tr><td><code>type</code></td><td>TEXT</td><td>info / event / update / maintenance</td></tr>
+    <tr><td><code>priority</code></td><td>INTEGER</td><td>0=일반, 1=중요, 2=긴급</td></tr>
+    <tr><td><code>is_pinned</code></td><td>INTEGER</td><td>1=상단 고정</td></tr>
+    <tr><td><code>is_active</code></td><td>INTEGER</td><td>1=활성, 0=비활성</td></tr>
+    <tr><td><code>start_date / end_date</code></td><td>TEXT</td><td>노출 기간 (null=무기한)</td></tr>
+  </tbody>
+</table></div>
+
+<h4>mail — 우편</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER PK</td><td>우편 ID</td></tr>
+    <tr><td><code>title</code></td><td>TEXT NOT NULL</td><td>우편 제목</td></tr>
+    <tr><td><code>content</code></td><td>TEXT NOT NULL</td><td>우편 본문</td></tr>
+    <tr><td><code>sender</code></td><td>TEXT</td><td>발신자 (기본: '솔로몬 운영팀')</td></tr>
+    <tr><td><code>reward_type</code></td><td>TEXT</td><td>null / coin / item / title</td></tr>
+    <tr><td><code>reward_amount</code></td><td>INTEGER</td><td>보상 수량</td></tr>
+    <tr><td><code>reward_data</code></td><td>TEXT JSON</td><td>아이템 상세 (JSON)</td></tr>
+    <tr><td><code>target_type</code></td><td>TEXT</td><td>all / specific</td></tr>
+    <tr><td><code>target_players</code></td><td>TEXT JSON</td><td>대상 플레이어 ID 배열</td></tr>
+    <tr><td><code>expires_at</code></td><td>TEXT</td><td>만료일 (null=무기한)</td></tr>
+  </tbody>
+</table></div>
+
+<h4>ai_prompts — AI 프롬프트</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER PK</td><td>프롬프트 ID</td></tr>
+    <tr><td><code>key</code></td><td>TEXT UNIQUE</td><td>고유 키 (e.g. dialogue_system)</td></tr>
+    <tr><td><code>name</code></td><td>TEXT</td><td>표시 이름</td></tr>
+    <tr><td><code>description</code></td><td>TEXT</td><td>설명</td></tr>
+    <tr><td><code>category</code></td><td>TEXT</td><td>dialogue / analysis / generation / system</td></tr>
+    <tr><td><code>content</code></td><td>TEXT</td><td>프롬프트 본문 ({변수} 포함)</td></tr>
+    <tr><td><code>variables</code></td><td>TEXT JSON</td><td>사용 가능 변수 목록</td></tr>
+    <tr><td><code>is_active</code></td><td>INTEGER</td><td>1=활성</td></tr>
+    <tr><td><code>version</code></td><td>INTEGER</td><td>현재 버전 (자동 증가)</td></tr>
+  </tbody>
+</table></div>
+
+<div class="alert alert-info"><span class="alert-icon">💡</span><div>
+  <strong>프롬프트 버전 관리</strong>: 프롬프트 내용 변경 시 이전 버전이 <code>ai_prompt_history</code>에 자동 저장됩니다. WebAdmin에서 원클릭 롤백이 가능합니다.
+</div></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="api">3. REST API 명세</h2>
+
+<h3>3.1 공지 API</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/notices</code></td><td>활성 공지 목록 (기간 필터)</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/notices/all</code></td><td>전체 공지 (비활성 포함)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/notices</code></td><td>공지 생성</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/notices/:id</code></td><td>공지 수정</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FDEDEC;color:#E74C3C;">DELETE</span></td><td><code>/api/notices/:id</code></td><td>공지 삭제</td><td>WebAdmin</td></tr>
+  </tbody>
+</table></div>
+
+<h3>3.2 우편 API</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/mail/player/:playerId</code></td><td>플레이어 우편함</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/mail/unread-count/:playerId</code></td><td>미읽은 우편 수</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/mail/read</code></td><td>읽음 처리</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/mail/claim</code></td><td>보상 수령</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/mail/all</code></td><td>전체 우편</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/mail</code></td><td>우편 발송</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/mail/:id</code></td><td>우편 수정</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FDEDEC;color:#E74C3C;">DELETE</span></td><td><code>/api/mail/:id</code></td><td>우편 삭제</td><td>WebAdmin</td></tr>
+  </tbody>
+</table></div>
+
+<h3>3.3 AI 프롬프트 API</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-prompts</code></td><td>활성 프롬프트 (key → content 맵)</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-prompts/all</code></td><td>전체 프롬프트 (관리용)</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-prompts/:key</code></td><td>특정 프롬프트 + 변경 이력</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/ai-prompts</code></td><td>프롬프트 생성</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/ai-prompts/:key</code></td><td>프롬프트 수정 (자동 버전 기록)</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/ai-prompts/:key/rollback/:ver</code></td><td>특정 버전으로 롤백</td></tr>
+  </tbody>
+</table></div>
+
+<h3>3.4 플레이어 & 통계 API</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/players/sync</code></td><td>플레이어 등록/동기화</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/players/history</code></td><td>게임 결과 기록</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/players</code></td><td>플레이어 목록 (관리용)</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/stats</code></td><td>대시보드 통계</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/stats/settings</code></td><td>글로벌 설정 조회</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/stats/settings</code></td><td>설정 업데이트</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/health</code></td><td>서버 상태 확인</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="ai-module">4. AI 모듈화 시스템</h2>
+
+<div class="alert alert-info"><span class="alert-icon">🤖</span><div>
+  <strong>핵심 설계 원칙</strong>: AI 프롬프트를 코드에서 분리하여 DB로 관리합니다. WebAdmin에서 프롬프트를 수정하면 60초 이내에 게임에 실시간 반영됩니다. 코드 배포 없이 AI 행동을 튜닝할 수 있습니다.
+</div></div>
+
+<h3>4.1 프롬프트 카테고리</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>카테고리</th><th>설명</th><th>프롬프트 예시</th></tr></thead>
+  <tbody>
+    <tr><td><strong>dialogue</strong></td><td>심문 대화 생성</td><td>dialogue_system, free_question, emotion_speech_guide</td></tr>
+    <tr><td><strong>analysis</strong></td><td>증언/판결 분석</td><td>testimony_analysis, verdict_evaluation</td></tr>
+    <tr><td><strong>generation</strong></td><td>콘텐츠 자동 생성</td><td>phase1_script</td></tr>
+    <tr><td><strong>system</strong></td><td>시스템 레벨 프롬프트</td><td>(확장 예정)</td></tr>
+  </tbody>
+</table></div>
+
+<h3>4.2 변수 치환 시스템</h3>
+<p>프롬프트 내 <code>{변수명}</code> 형식의 플레이스홀더는 런타임에 실제 값으로 치환됩니다.</p>
+<pre><code>// 예시: dialogue_system 프롬프트
+const prompt = getPrompt('dialogue_system', {
+  party: 'A',
+  name: '민준',
+  archetype: 'avoidant',
+  speechStyle: '말끝을 흐리며 회피하는 스타일',
+  emotionalState: 'shaken',
+  lieState: 'S2',
+  otherName: '서연',
+  relationship: '제 아내',
+});</code></pre>
+
+<h3>4.3 캐시 & 폴링 메커니즘</h3>
+<div class="card">
+  <div class="card-title">PromptManager 동작 흐름</div>
+  <pre style="font-size:0.8rem;line-height:1.8;">
+1. 앱 시작 시 → loadPrompts(force=true)
+   ├─ 서버 연결 성공 → DB 프롬프트 로드 → promptCache 갱신
+   └─ 서버 연결 실패 → DEFAULT_PROMPTS 사용 (오프라인 모드)
+
+2. startPromptPolling(60000) → 60초마다 자동 갱신
+   ├─ 서버 응답 OK → 캐시 갱신 (WebAdmin 변경사항 반영)
+   └─ 서버 오류 → 기존 캐시 유지 (게임 중단 없음)
+
+3. getPrompt(key, vars) 호출 시
+   ├─ 캐시에서 프롬프트 조회
+   ├─ {변수} 치환
+   └─ 최종 프롬프트 반환
+  </pre>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="deployment">5. 배포 & 운영</h2>
+
+<h3>5.1 개발 환경 실행</h3>
+<pre><code># 1. 서버 시작 (터미널 1)
+cd server
+npm install
+npm run seed    # 초기 데이터 삽입 (최초 1회)
+npm run dev     # http://localhost:3001
+
+# 2. 프론트엔드 시작 (터미널 2)
+cd ProjectWS
+npm run dev     # http://localhost:5173
+                # /api/* → localhost:3001 프록시
+
+# 3. WebAdmin 접속
+# http://localhost:3001/admin</code></pre>
+
+<h3>5.2 환경 변수</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>변수</th><th>위치</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>VITE_OPENAI_API_KEY</code></td><td>.env</td><td>—</td><td>OpenAI API 키 (없으면 오프라인)</td></tr>
+    <tr><td><code>VITE_API_URL</code></td><td>.env</td><td>/api</td><td>API 베이스 URL</td></tr>
+    <tr><td><code>PORT</code></td><td>server env</td><td>3001</td><td>서버 포트</td></tr>
+  </tbody>
+</table></div>
+
+<h3>5.3 프로덕션 배포 (계획)</h3>
+<div class="card">
+  <ul>
+    <li><strong>프론트엔드</strong>: Vercel (<code>vite build</code> → 정적 배포)</li>
+    <li><strong>백엔드</strong>: Railway / Render (Express.js)</li>
+    <li><strong>DB 마이그레이션</strong>: SQLite → Supabase PostgreSQL (Phase 2)</li>
+    <li><strong>WebAdmin</strong>: 서버와 함께 배포 (/admin 경로)</li>
+  </ul>
+</div>
+
+</main>
+
+<script>
+document.querySelector('.sidebar-toggle')?.addEventListener('click', () => document.body.classList.toggle('sidebar-collapsed'));
+const hamburger = document.querySelector('.topbar-hamburger');
+const sidebar = document.getElementById('sidebar');
+hamburger?.addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) sidebar.classList.remove('mobile-open'); });
+});
+</script>
+</body>
+</html>

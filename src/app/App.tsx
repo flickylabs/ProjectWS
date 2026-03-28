@@ -26,6 +26,11 @@ import SettingsPanel from '../components/layout/SettingsPanel'
 import LeaderboardScreen from '../components/leaderboard/LeaderboardScreen'
 import IntroSlides, { hasSeenIntro } from '../components/layout/IntroSlides'
 import ProfilePage from '../components/profile/ProfilePage'
+import NoticePanel from '../components/notice/NoticePanel'
+import MailInbox from '../components/mail/MailInbox'
+import { loadPrompts, startPromptPolling } from '../api/promptManager'
+import { loadAgents, startAgentPolling } from '../api/agentManager'
+import { playerApi, mailApi, healthApi } from '../api/client'
 import { phase1Dialogues } from '../data/dialogues/phase1'
 import { phase2Dialogues } from '../data/dialogues/phase2'
 import { buildGenericPhase1, buildGenericPhase2 } from '../data/dialogues/generic-phase1'
@@ -75,10 +80,36 @@ function TitleScreen() {
   const [showProfile, setShowProfile] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
   const [showIntro, setShowIntro] = useState(() => !hasSeenIntro())
+  const [showNotice, setShowNotice] = useState(false)
+  const [showMail, setShowMail] = useState(false)
+  const [unreadMail, setUnreadMail] = useState(0)
+  const [serverConnected, setServerConnected] = useState(false)
   const initializeCase = useGameStore((s) => s.initializeCase)
 
   useEffect(() => {
     checkConnection().then(setLlmStatus)
+
+    // 서버 연결 + AI 프롬프트 로드 + 플레이어 동기화
+    ;(async () => {
+      try {
+        await healthApi.check()
+        setServerConnected(true)
+        await loadPrompts(true)
+        startPromptPolling()
+        await loadAgents(true)
+        startAgentPolling()
+
+        // 플레이어 동기화
+        const p = loadProfile()
+        await playerApi.sync(p.playerId, p.playerName, p.region || 'KR').catch(() => {})
+
+        // 미읽은 우편 수
+        const { count } = await mailApi.unreadCount(p.playerId).catch(() => ({ count: 0 }))
+        setUnreadMail(count)
+      } catch {
+        // 서버 미연결 — offline 모드 유지
+      }
+    })()
   }, [])
 
   // Profile & stats data
@@ -152,6 +183,8 @@ function TitleScreen() {
     >
       {showHistory && <HistoryPanel onClose={() => setShowHistory(false)} />}
       {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
+      {showNotice && <NoticePanel onClose={() => setShowNotice(false)} />}
+      {showMail && <MailInbox onClose={() => { setShowMail(false); setUnreadMail(0) }} />}
 
       {/* 상단 — 프로필 + 설정 */}
       <div className="flex items-center justify-between px-4 pt-3 pb-2 shrink-0">
@@ -161,7 +194,20 @@ function TitleScreen() {
           <span className="text-xs font-semibold text-gray-300">{profile.playerName}</span>
           <span className="text-xs text-amber-400 font-bold">{reputation.toLocaleString()}</span>
         </button>
-        <button onClick={() => setShowSettings(true)} className="text-gray-600 hover:text-gray-300 text-lg"><Emoji char="⚙️" size={18} /></button>
+        <div className="flex items-center gap-2">
+          <button onClick={() => setShowNotice(true)} className="text-gray-600 hover:text-gray-300 text-lg relative">
+            <Emoji char="📢" size={16} />
+          </button>
+          <button onClick={() => setShowMail(true)} className="text-gray-600 hover:text-gray-300 text-lg relative">
+            <Emoji char="📨" size={16} />
+            {unreadMail > 0 && (
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                {unreadMail > 9 ? '9+' : unreadMail}
+              </span>
+            )}
+          </button>
+          <button onClick={() => setShowSettings(true)} className="text-gray-600 hover:text-gray-300 text-lg"><Emoji char="⚙️" size={18} /></button>
+        </div>
       </div>
 
       {/* 중앙 — 타이틀 + 버튼 */}

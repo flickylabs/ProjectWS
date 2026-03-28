@@ -1,7 +1,11 @@
 /**
  * LLM으로 Phase 1(초기 진술)과 Phase 2(즉각 반박) 대사를 동적 생성한다.
+ *
+ * 프롬프트는 웹 어드민(promptManager)에서 관리한다.
  */
 import { chatCompletion } from './llmClient'
+import { getPrompt, getPromptConfig } from '../api/promptManager'
+import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 import { buildSpeechGuide, getHonorifics, getRelationLabel } from './llmSpeechGuide'
 import type { CaseData, DialogueEntry } from '../types'
 
@@ -12,28 +16,27 @@ export async function generatePhase1Dialogues(caseData: CaseData): Promise<Omit<
   const disputeList = disputes.map((d) => `${d.id}: ${d.name}`).join(', ')
   const relLabel = getRelationLabel(duo.relationshipType)
 
-  const prompt = `법정 심문 게임. ${nameA}(${duo.partyA.speechStyle.slice(0, 50)})와 ${nameB}(${duo.partyB.speechStyle.slice(0, 50)})의 초기 진술.
-관계: ${relLabel}
+  const p1Vars = {
+    nameA,
+    speechStyleA: duo.partyA.speechStyle.slice(0, 50),
+    nameB,
+    speechStyleB: duo.partyB.speechStyle.slice(0, 50),
+    relationship: relLabel,
+    context: context.description,
+    disputeList,
+    speechGuide: buildSpeechGuide(duo, 'phase1'),
+  }
 
-배경: ${context.description}
-쟁점: ${disputeList}
+  const prompt = isAgentLoaded()
+    ? buildAgentPrompt('phase1_generator', p1Vars)
+    : getPrompt('phase1_generation', p1Vars)
 
-${buildSpeechGuide(duo, 'phase1')}
-
-## 대사 규칙
-- A가 먼저 재판관에게 자기 입장 진술(존댓말) → B가 끼어들어 반박(반말) → A가 대응 → 점점 격해짐
-- 총 8~10개 대사. A와 B가 번갈아. 시스템(재판관 개입) 1~2개 섞어서.
-- 각 대사는 2~3문장으로 완결. 중간에 자르지 마세요.
-- (행동 묘사)를 대사 끝에 괄호로.
-
-JSON 배열만 출력.
-⚠️ speaker 필드는 반드시 소문자 "a", "b", "system" 중 하나만 사용하세요. 이름을 넣지 마세요.
-형식: [{"speaker":"a","text":"대사 (행동묘사)","relatedDisputes":["d-1"]}]`
+  const config = isAgentLoaded() ? getAgentConfig('phase1_generator') : getPromptConfig('phase1_generation')
 
   try {
     const response = await chatCompletion(
       [{ role: 'user', content: prompt }],
-      { temperature: 0.85, maxTokens: 4000 },
+      { temperature: config.temperature, maxTokens: config.maxTokens },
     )
     return parseDialogueArray(response, nameA, nameB)
   } catch (error) {
@@ -46,34 +49,30 @@ export async function generatePhase2Dialogues(caseData: CaseData): Promise<Omit<
   const { duo, disputes } = caseData
   const nameA = duo.partyA.name
   const nameB = duo.partyB.name
-  const { aCallsB, bCallsA } = getHonorifics(duo)
   const relLabel = getRelationLabel(duo.relationshipType)
 
-  const prompt = `법정 심문 게임의 즉각 반박.
-관계: ${relLabel}
+  const p2Vars = {
+    nameA,
+    speechStyleA: duo.partyA.speechStyle.slice(0, 50),
+    nameB,
+    speechStyleB: duo.partyB.speechStyle.slice(0, 50),
+    relationship: relLabel,
+    verbalTellsA: duo.partyA.verbalTells.map((v) => v.pattern).slice(0, 2).join(' / '),
+    verbalTellsB: duo.partyB.verbalTells.map((v) => v.pattern).slice(0, 2).join(' / '),
+    speechGuide: buildSpeechGuide(duo, 'phase2'),
+    disputeListWithNames: disputes.map((d) => `${d.id}(${d.name})`).join(', '),
+  }
 
-${nameA}(${duo.partyA.speechStyle.slice(0, 50)}) vs ${nameB}(${duo.partyB.speechStyle.slice(0, 50)})
+  const prompt = isAgentLoaded()
+    ? buildAgentPrompt('phase2_generator', p2Vars)
+    : getPrompt('phase2_generation', p2Vars)
 
-${nameA} 말버릇: ${duo.partyA.verbalTells.map((v) => v.pattern).slice(0, 2).join(' / ')}
-${nameB} 말버릇: ${duo.partyB.verbalTells.map((v) => v.pattern).slice(0, 2).join(' / ')}
-
-${buildSpeechGuide(duo, 'phase2')}
-
-## 대사 규칙
-- 6~8개 대사. 서로에게 직접 따지는 반박. 감정 격화 + 첫 모순 힌트 1개.
-- A가 화제 전환 시도 → B가 잡아당김.
-- 마지막에 시스템이 "반박 종료, 심문 시작" 선언.
-- 각 대사는 2~3문장. 중간에 자르지 마세요.
-- (행동 묘사) 포함. 말버릇 자연스럽게.
-
-JSON 배열만. ⚠️ speaker는 반드시 소문자 "a", "b", "system"만 사용.
-[{"speaker":"a","text":"대사 (행동묘사)","relatedDisputes":["d-1"]}]
-쟁점 id: ${disputes.map((d) => `${d.id}(${d.name})`).join(', ')}`
+  const config = isAgentLoaded() ? getAgentConfig('phase2_generator') : getPromptConfig('phase2_generation')
 
   try {
     const response = await chatCompletion(
       [{ role: 'user', content: prompt }],
-      { temperature: 0.85, maxTokens: 3000 },
+      { temperature: config.temperature, maxTokens: config.maxTokens },
     )
     return parseDialogueArray(response, nameA, nameB)
   } catch (error) {

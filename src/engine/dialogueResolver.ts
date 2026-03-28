@@ -96,7 +96,7 @@ export function resolveDialogue(
 }
 
 /** 대사 트리에 매칭 노드가 전혀 없을 때 동적으로 폴백 대사를 생성 */
-function generateDynamicFallback(
+export function generateDynamicFallback(
   target: PartyId,
   agent: AgentState,
   disputeId?: string,

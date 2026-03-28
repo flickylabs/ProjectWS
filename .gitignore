@@ -17,3 +17,9 @@ dist/
 # Env
 .env
 .env.local
+
+# Server DB
+server/solomon.db
+server/solomon.db-shm
+server/solomon.db-wal
+server/node_modules/

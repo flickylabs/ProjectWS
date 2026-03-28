@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solomon WebAdmin</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --brand: #FFD666; --brand-light: #FFF3D0; --brand-dark: #E6B800;
+  --bg: #FFFDF5; --bg-white: #FFFFFF; --bg-sidebar: #FFF8EC; --bg-hover: #FFF3D0;
+  --text: #3D3328; --text-light: #7A6E60; --text-muted: #A89E90;
+  --danger: #E74C3C; --danger-bg: #FDEDEC;
+  --success: #27AE60; --success-bg: #E8F5E9;
+  --info: #3498DB; --info-bg: #EBF5FB;
+  --warning: #E67E22; --warning-bg: #FEF5E7;
+  --sidebar-w: 240px; --topbar-h: 52px;
+  --radius: 12px; --radius-sm: 8px;
+  --shadow-sm: 0 1px 3px rgba(61,51,40,0.08);
+  --shadow-md: 0 2px 8px rgba(61,51,40,0.12);
+}
+html { font-size: 14px; }
+body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+/* TopBar */
+.topbar { position: fixed; top: 0; left: 0; right: 0; height: var(--topbar-h); background: var(--bg); border-bottom: 1px solid rgba(61,51,40,0.08); display: flex; align-items: center; padding: 0 20px; z-index: 100; }
+.topbar-logo { font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.topbar-logo span { color: var(--brand-dark); }
+.topbar-right { margin-left: auto; display: flex; align-items: center; gap: 12px; font-size: 0.85rem; color: var(--text-muted); }
+
+/* Sidebar */
+.sidebar { position: fixed; top: var(--topbar-h); left: 0; bottom: 0; width: var(--sidebar-w); background: var(--bg-sidebar); border-right: 1px solid rgba(61,51,40,0.06); padding: 12px 0; overflow-y: auto; }
+.nav-section { padding: 0 10px; margin-bottom: 4px; }
+.nav-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); padding: 10px 10px 4px; }
+.nav-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: var(--radius-sm); cursor: pointer; font-size: 0.9rem; color: var(--text); transition: all 0.15s; text-decoration: none; }
+.nav-item:hover { background: var(--bg-hover); }
+.nav-item.active { background: var(--brand-light); font-weight: 600; color: var(--brand-dark); }
+.nav-item .ico { width: 22px; text-align: center; font-size: 1rem; }
+.nav-badge { margin-left: auto; background: var(--danger); color: #fff; font-size: 0.7rem; padding: 1px 6px; border-radius: 10px; font-weight: 600; }
+
+/* Content */
+.content { margin-left: var(--sidebar-w); margin-top: var(--topbar-h); padding: 24px 28px; }
+
+/* Cards */
+.card { background: var(--bg-white); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 20px; margin-bottom: 16px; border: 1px solid rgba(61,51,40,0.05); }
+.card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.card-title { font-size: 1.1rem; font-weight: 700; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.stat-card { background: var(--bg-white); border-radius: var(--radius-sm); padding: 16px; box-shadow: var(--shadow-sm); border: 1px solid rgba(61,51,40,0.05); text-align: center; }
+.stat-value { font-size: 2rem; font-weight: 800; color: var(--brand-dark); }
+.stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+/* Tables */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+thead th { background: var(--bg-sidebar); font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid rgba(61,51,40,0.1); }
+tbody td { padding: 8px 12px; border-bottom: 1px solid rgba(61,51,40,0.05); }
+tbody tr:hover { background: var(--bg-hover); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; }
+.btn-primary { background: var(--brand); color: var(--text); }
+.btn-primary:hover { background: var(--brand-dark); }
+.btn-danger { background: var(--danger-bg); color: var(--danger); }
+.btn-danger:hover { background: var(--danger); color: #fff; }
+.btn-success { background: var(--success-bg); color: var(--success); }
+.btn-sm { padding: 4px 10px; font-size: 0.78rem; }
+.btn-outline { background: transparent; border: 1px solid rgba(61,51,40,0.15); color: var(--text-light); }
+.btn-outline:hover { background: var(--bg-hover); color: var(--text); }
+
+/* Forms */
+.form-group { margin-bottom: 14px; }
+.form-label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 4px; color: var(--text-light); }
+.form-input, .form-select, .form-textarea { width: 100%; padding: 8px 12px; border: 1px solid rgba(61,51,40,0.15); border-radius: var(--radius-sm); font-size: 0.9rem; background: var(--bg-white); color: var(--text); font-family: inherit; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--brand-dark); box-shadow: 0 0 0 3px var(--brand-light); }
+.form-textarea { min-height: 120px; resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 200; display: none; align-items: center; justify-content: center; }
+.modal-overlay.show { display: flex; }
+.modal { background: var(--bg-white); border-radius: var(--radius); box-shadow: var(--shadow-md); width: 90%; max-width: 640px; max-height: 85vh; overflow-y: auto; padding: 24px; }
+.modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.modal-title { font-size: 1.1rem; font-weight: 700; }
+.modal-close { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text-muted); }
+.modal-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(61,51,40,0.08); }
+
+/* Badge */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.72rem; font-weight: 600; }
+.badge-info { background: var(--info-bg); color: var(--info); }
+.badge-event { background: #F3E5F5; color: #8E24AA; }
+.badge-update { background: var(--success-bg); color: var(--success); }
+.badge-maintenance { background: var(--warning-bg); color: var(--warning); }
+.badge-active { background: var(--success-bg); color: var(--success); }
+.badge-inactive { background: rgba(61,51,40,0.08); color: var(--text-muted); }
+
+/* Tabs */
+.tabs { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 2px solid rgba(61,51,40,0.08); padding-bottom: 0; }
+.tab { padding: 8px 16px; cursor: pointer; font-size: 0.88rem; font-weight: 500; color: var(--text-muted); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.15s; }
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--brand-dark); border-bottom-color: var(--brand-dark); font-weight: 600; }
+
+/* Code editor feel for prompt textarea */
+.prompt-editor { font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; font-size: 0.82rem; line-height: 1.7; min-height: 200px; background: #F9F5EC; }
+
+/* Toast */
+.toast { position: fixed; bottom: 24px; right: 24px; padding: 12px 20px; border-radius: var(--radius-sm); color: #fff; font-size: 0.88rem; font-weight: 500; z-index: 300; opacity: 0; transform: translateY(10px); transition: all 0.3s; }
+.toast.show { opacity: 1; transform: translateY(0); }
+.toast-success { background: var(--success); }
+.toast-error { background: var(--danger); }
+
+/* Page sections */
+.page { display: none; }
+.page.active { display: block; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .content { margin-left: 0; }
+  .card-grid { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-logo">&#x2696;&#xFE0F; <span>Solomon</span> Admin</div>
+  <div class="topbar-right">
+    <span id="serverStatus">Connecting...</span>
+    <span>v1.0</span>
+  </div>
+</header>
+
+<nav class="sidebar">
+  <div class="nav-section">
+    <div class="nav-title">General</div>
+    <a class="nav-item active" data-page="dashboard"><span class="ico">&#x1F4CA;</span> Dashboard</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-title">Content</div>
+    <a class="nav-item" data-page="notices"><span class="ico">&#x1F4E2;</span> Notices <span class="nav-badge" id="noticeCount">0</span></a>
+    <a class="nav-item" data-page="mail"><span class="ico">&#x1F4E8;</span> Mail <span class="nav-badge" id="mailCount">0</span></a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-title">AI System</div>
+    <a class="nav-item" data-page="agents"><span class="ico">&#x1F9E0;</span> AI Agents</a>
+    <a class="nav-item" data-page="blocks"><span class="ico">&#x1F9E9;</span> Prompt Blocks</a>
+    <a class="nav-item" data-page="datafields"><span class="ico">&#x1F4CB;</span> Data Fields</a>
+    <a class="nav-item" data-page="prompts"><span class="ico">&#x1F916;</span> AI Prompts <span style="font-size:0.7rem;color:var(--text-muted)">(legacy)</span></a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-title">Users</div>
+    <a class="nav-item" data-page="players"><span class="ico">&#x1F464;</span> Players</a>
+    <a class="nav-item" data-page="history"><span class="ico">&#x1F3AE;</span> Game History</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-title">System</div>
+    <a class="nav-item" data-page="settings"><span class="ico">&#x2699;&#xFE0F;</span> Settings</a>
+  </div>
+</nav>
+
+<main class="content">
+
+<!-- ═══ Dashboard ═══ -->
+<div class="page active" id="page-dashboard">
+  <h1 style="font-size:1.4rem;font-weight:800;margin-bottom:20px;">Dashboard</h1>
+  <div class="card-grid" id="dashStats"></div>
+  <div class="card">
+    <div class="card-header"><div class="card-title">Recent Games</div></div>
+    <div class="table-wrap"><table><thead><tr><th>Player</th><th>Case</th><th>Score</th><th>Type</th><th>Date</th></tr></thead><tbody id="recentGamesBody"></tbody></table></div>
+  </div>
+  <div class="card">
+    <div class="card-header"><div class="card-title">Games by Relationship</div></div>
+    <div class="table-wrap"><table><thead><tr><th>Relationship</th><th>Games</th><th>Avg Score</th></tr></thead><tbody id="byRelBody"></tbody></table></div>
+  </div>
+</div>
+
+<!-- ═══ Notices ═══ -->
+<div class="page" id="page-notices">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+    <h1 style="font-size:1.4rem;font-weight:800;">Notices</h1>
+    <button class="btn btn-primary" onclick="openNoticeModal()">+ New Notice</button>
+  </div>
+  <div class="card">
+    <div class="table-wrap"><table><thead><tr><th>ID</th><th>Title</th><th>Type</th><th>Priority</th><th>Status</th><th>Created</th><th>Actions</th></tr></thead><tbody id="noticesBody"></tbody></table></div>
+  </div>
+</div>
+
+<!-- ═══ Mail ═══ -->
+<div class="page" id="page-mail">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+    <h1 style="font-size:1.4rem;font-weight:800;">Mail</h1>
+    <button class="btn btn-primary" onclick="openMailModal()">+ New Mail</button>
+  </div>
+  <div class="card">
+    <div class="table-wrap"><table><thead><tr><th>ID</th><th>Title</th><th>Sender</th><th>Reward</th><th>Target</th><th>Status</th><th>Created</th><th>Actions</th></tr></thead><tbody id="mailBody"></tbody></table></div>
+  </div>
+</div>
+
+<!-- ═══ AI Agents ═══ -->
+<div class="page" id="page-agents">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+    <h1 style="font-size:1.4rem;font-weight:800;">AI Agents</h1>
+    <button class="btn btn-primary" onclick="openAgentModal()">+ New Agent</button>
+  </div>
+  <div id="agentCards" class="grid-cards"></div>
+</div>
+
+<!-- ═══ Prompt Blocks ═══ -->
+<div class="page" id="page-blocks">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+    <h1 style="font-size:1.4rem;font-weight:800;">Prompt Blocks</h1>
+    <button class="btn btn-primary" onclick="openBlockModal()">+ New Block</button>
+  </div>
+  <div id="blockCategoryTabs" style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;"></div>
+  <div id="blockCards" class="grid-cards"></div>
+</div>
+
+<!-- ═══ Data Fields ═══ -->
+<div class="page" id="page-datafields">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+    <h1 style="font-size:1.4rem;font-weight:800;">Session Data Fields</h1>
+    <button class="btn btn-primary" onclick="openDataFieldModal()">+ New Field</button>
+  </div>
+  <div class="card">
+    <div class="table-wrap"><table><thead><tr><th>Key</th><th>Name</th><th>Source</th><th>Type</th><th>Example</th><th>Actions</th></tr></thead><tbody id="dataFieldBody"></tbody></table></div>
+  </div>
+</div>
+
+<!-- Agent Modal -->
+<div class="modal-overlay" id="agentModal">
+  <div class="modal" style="max-width:600px;">
+    <div class="modal-header"><span id="agentModalTitle">New Agent</span><button class="modal-close" onclick="closeModal('agentModal')">&times;</button></div>
+    <input type="hidden" id="agentEditKey">
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Key</label><input class="form-input" id="agentKey" placeholder="e.g. interrogation"></div>
+      <div class="form-group"><label class="form-label">Name</label><input class="form-input" id="agentName"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Description</label><input class="form-input" id="agentDesc"></div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Model <span style="color:var(--text-muted);font-size:0.78rem;">(비워두면 기본)</span></label><input class="form-input" id="agentModel" placeholder="gpt-4o-mini"></div>
+      <div class="form-group"><label class="form-label">Temperature</label><input class="form-input" id="agentTemp" type="number" step="0.05" min="0" max="2"></div>
+      <div class="form-group"><label class="form-label">Max Tokens</label><input class="form-input" id="agentMaxTokens" type="number" step="50" min="50" max="8000"></div>
+    </div>
+    <div id="agentBlockList" style="margin-top:12px;"></div>
+    <div style="margin-top:12px;">
+      <label class="form-label">Context Flags <span style="color:var(--text-muted);font-size:0.78rem;">(어떤 세션 데이터를 포함할지 제어)</span></label>
+      <div id="agentContextFlags" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:0.85rem;"></div>
+    </div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeModal('agentModal')">Cancel</button><button class="btn btn-primary" onclick="saveAgent()">Save</button></div>
+  </div>
+</div>
+
+<!-- Block Modal -->
+<div class="modal-overlay" id="blockModal">
+  <div class="modal" style="max-width:700px;">
+    <div class="modal-header"><span id="blockModalTitle">New Block</span><button class="modal-close" onclick="closeModal('blockModal')">&times;</button></div>
+    <input type="hidden" id="blockEditKey">
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Key</label><input class="form-input" id="blockKey" placeholder="e.g. character_base"></div>
+      <div class="form-group"><label class="form-label">Name</label><input class="form-input" id="blockName"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Category</label><select class="form-select" id="blockCategory"><option value="common">Common</option><option value="interrogation">Interrogation</option><option value="dialogue">Dialogue</option><option value="analysis">Analysis</option><option value="generation">Generation</option><option value="output">Output</option></select></div>
+      <div class="form-group"><label class="form-label">Description</label><input class="form-input" id="blockDesc"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Block Content</label><textarea class="form-textarea prompt-editor" id="blockContent"></textarea></div>
+    <div class="form-group"><label class="form-label">Variables (comma separated)</label><input class="form-input" id="blockVars" placeholder="e.g. name, age, opponent"></div>
+    <div id="blockHistory" style="margin-top:12px;"></div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeModal('blockModal')">Cancel</button><button class="btn btn-primary" onclick="saveBlock()">Save</button></div>
+  </div>
+</div>
+
+<!-- Data Field Modal -->
+<div class="modal-overlay" id="dataFieldModal">
+  <div class="modal" style="max-width:500px;">
+    <div class="modal-header"><span>Data Field</span><button class="modal-close" onclick="closeModal('dataFieldModal')">&times;</button></div>
+    <input type="hidden" id="dfEditKey">
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Key</label><input class="form-input" id="dfKey" placeholder="e.g. name"></div>
+      <div class="form-group"><label class="form-label">Name</label><input class="form-input" id="dfName" placeholder="NPC 이름"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Source</label><select class="form-select" id="dfSource"><option value="character">Character</option><option value="case">Case</option><option value="agent_state">Agent State</option><option value="session">Session</option><option value="computed">Computed</option></select></div>
+      <div class="form-group"><label class="form-label">Type</label><select class="form-select" id="dfType"><option value="string">String</option><option value="number">Number</option><option value="text">Text</option><option value="json">JSON</option></select></div>
+    </div>
+    <div class="form-group"><label class="form-label">Example</label><input class="form-input" id="dfExample" placeholder="한지석"></div>
+    <div class="form-group"><label class="form-label">Description</label><input class="form-input" id="dfDescription"></div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeModal('dataFieldModal')">Cancel</button><button class="btn btn-primary" onclick="saveDataField()">Save</button></div>
+  </div>
+</div>
+
+<!-- ═══ AI Prompts (Legacy) ═══ -->
+<div class="page" id="page-prompts">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+    <h1 style="font-size:1.4rem;font-weight:800;">AI Prompts</h1>
+    <button class="btn btn-primary" onclick="openPromptModal()">+ New Prompt</button>
+  </div>
+  <div class="tabs" id="promptTabs"></div>
+  <div id="promptCards"></div>
+</div>
+
+<!-- ═══ Players ═══ -->
+<div class="page" id="page-players">
+  <h1 style="font-size:1.4rem;font-weight:800;margin-bottom:20px;">Players</h1>
+  <div class="card">
+    <div class="table-wrap"><table><thead><tr><th>ID</th><th>Name</th><th>Region</th><th>Games</th><th>Best Score</th><th>Last Active</th></tr></thead><tbody id="playersBody"></tbody></table></div>
+  </div>
+</div>
+
+<!-- ═══ Game History ═══ -->
+<div class="page" id="page-history">
+  <h1 style="font-size:1.4rem;font-weight:800;margin-bottom:20px;">Game History</h1>
+  <div class="card">
+    <div class="table-wrap"><table><thead><tr><th>ID</th><th>Player</th><th>Case</th><th>Score</th><th>I/A/W</th><th>Type</th><th>Played</th></tr></thead><tbody id="historyBody"></tbody></table></div>
+  </div>
+</div>
+
+<!-- ═══ Settings ═══ -->
+<div class="page" id="page-settings">
+  <h1 style="font-size:1.4rem;font-weight:800;margin-bottom:20px;">Settings</h1>
+  <div class="card" id="settingsCard"></div>
+</div>
+
+</main>
+
+<!-- ═══ Notice Modal ═══ -->
+<div class="modal-overlay" id="noticeModal">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title" id="noticeModalTitle">New Notice</div><button class="modal-close" onclick="closeModal('noticeModal')">&times;</button></div>
+    <input type="hidden" id="noticeEditId">
+    <div class="form-group"><label class="form-label">Title</label><input class="form-input" id="noticeTitle"></div>
+    <div class="form-group"><label class="form-label">Content</label><textarea class="form-textarea" id="noticeContent"></textarea></div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Type</label><select class="form-select" id="noticeType"><option value="info">Info</option><option value="event">Event</option><option value="update">Update</option><option value="maintenance">Maintenance</option></select></div>
+      <div class="form-group"><label class="form-label">Priority</label><select class="form-select" id="noticePriority"><option value="0">Normal</option><option value="1">Important</option><option value="2">Urgent</option></select></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Start Date</label><input class="form-input" type="datetime-local" id="noticeStart"></div>
+      <div class="form-group"><label class="form-label">End Date</label><input class="form-input" type="datetime-local" id="noticeEnd"></div>
+    </div>
+    <div class="form-group"><label><input type="checkbox" id="noticePinned"> Pinned</label></div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeModal('noticeModal')">Cancel</button><button class="btn btn-primary" onclick="saveNotice()">Save</button></div>
+  </div>
+</div>
+
+<!-- ═══ Mail Modal ═══ -->
+<div class="modal-overlay" id="mailModal">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title" id="mailModalTitle">New Mail</div><button class="modal-close" onclick="closeModal('mailModal')">&times;</button></div>
+    <input type="hidden" id="mailEditId">
+    <div class="form-group"><label class="form-label">Title</label><input class="form-input" id="mailTitle"></div>
+    <div class="form-group"><label class="form-label">Content</label><textarea class="form-textarea" id="mailContent"></textarea></div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Sender</label><input class="form-input" id="mailSender" value="Solomon Team"></div>
+      <div class="form-group"><label class="form-label">Target</label><select class="form-select" id="mailTarget"><option value="all">All Players</option><option value="specific">Specific</option></select></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Reward Type</label><select class="form-select" id="mailRewardType"><option value="">None</option><option value="coin">Coin</option><option value="item">Item</option><option value="title">Title</option></select></div>
+      <div class="form-group"><label class="form-label">Reward Amount</label><input class="form-input" type="number" id="mailRewardAmount" value="0"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Expires At</label><input class="form-input" type="datetime-local" id="mailExpires"></div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeModal('mailModal')">Cancel</button><button class="btn btn-primary" onclick="saveMail()">Send</button></div>
+  </div>
+</div>
+
+<!-- ═══ Prompt Modal ═══ -->
+<div class="modal-overlay" id="promptModal">
+  <div class="modal" style="max-width:780px;">
+    <div class="modal-header"><div class="modal-title" id="promptModalTitle">New Prompt</div><button class="modal-close" onclick="closeModal('promptModal')">&times;</button></div>
+    <input type="hidden" id="promptEditKey">
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Key (unique ID)</label><input class="form-input" id="promptKey" placeholder="e.g. dialogue_system"></div>
+      <div class="form-group"><label class="form-label">Name</label><input class="form-input" id="promptName"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Category</label><select class="form-select" id="promptCategory"><option value="interrogation">Interrogation</option><option value="dialogue">Dialogue</option><option value="analysis">Analysis</option><option value="generation">Generation</option><option value="system">System</option></select></div>
+      <div class="form-group"><label class="form-label">Description</label><input class="form-input" id="promptDesc"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Prompt Content</label><textarea class="form-textarea prompt-editor" id="promptContent"></textarea></div>
+    <div class="form-group"><label class="form-label">Variables (comma separated)</label><input class="form-input" id="promptVars" placeholder="e.g. name, party, emotion"></div>
+    <div class="form-row" style="margin-top:12px;">
+      <div class="form-group"><label class="form-label">Temperature <span style="color:var(--text-muted);font-size:0.78rem;">(0.0~2.0, 비워두면 기본값)</span></label><input class="form-input" id="promptTemperature" type="number" step="0.05" min="0" max="2" placeholder="e.g. 0.85"></div>
+      <div class="form-group"><label class="form-label">Max Tokens <span style="color:var(--text-muted);font-size:0.78rem;">(비워두면 기본값)</span></label><input class="form-input" id="promptMaxTokens" type="number" step="50" min="50" max="8000" placeholder="e.g. 250"></div>
+    </div>
+    <div id="promptHistory" style="margin-top:12px;"></div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeModal('promptModal')">Cancel</button><button class="btn btn-primary" onclick="savePrompt()">Save</button></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+const API = window.location.origin + '/api';
+
+// ── Navigation ──
+document.querySelectorAll('.nav-item').forEach(el => {
+  el.addEventListener('click', () => {
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    el.classList.add('active');
+    const page = el.dataset.page;
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    loadPage(page);
+  });
+});
+
+function loadPage(page) {
+  switch(page) {
+    case 'dashboard': loadDashboard(); break;
+    case 'notices': loadNotices(); break;
+    case 'mail': loadMail(); break;
+    case 'agents': loadAgents(); break;
+    case 'blocks': loadBlocks(); break;
+    case 'datafields': loadDataFields(); break;
+    case 'prompts': loadPrompts(); break;
+    case 'players': loadPlayers(); break;
+    case 'history': loadHistory(); break;
+    case 'settings': loadSettings(); break;
+  }
+}
+
+// ── Toast ──
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast toast-${type} show`;
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ── Modal ──
+function openModal(id) { document.getElementById(id).classList.add('show'); }
+function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+// ── API Helper ──
+async function api(path, method = 'GET', body) {
+  const opts = { method, headers: { 'Content-Type': 'application/json' } };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(API + path, opts);
+  return res.json();
+}
+
+// ═══════════════════════════════════════════
+// Dashboard
+// ═══════════════════════════════════════════
+async function loadDashboard() {
+  const data = await api('/stats');
+  document.getElementById('dashStats').innerHTML = [
+    statCard(data.totalPlayers, 'Total Players'),
+    statCard(data.totalGames, 'Total Games'),
+    statCard(data.todayGames, 'Today Games'),
+    statCard(data.recentPlayers, 'Active (7d)'),
+    statCard(data.avgScore, 'Avg Score'),
+    statCard(data.activeNotices, 'Active Notices'),
+    statCard(data.activeMail, 'Active Mail'),
+    statCard(data.totalPrompts, 'AI Prompts'),
+  ].join('');
+
+  document.getElementById('recentGamesBody').innerHTML = (data.recentGames || []).map(g => `
+    <tr><td>${g.player_name || g.player_id?.slice(0,8)}</td><td>${g.case_id}</td><td><strong>${g.score}</strong></td><td>${g.relationship_type || '-'}</td><td>${fmtDate(g.played_at)}</td></tr>
+  `).join('') || '<tr><td colspan="5" style="text-align:center;color:var(--text-muted)">No games yet</td></tr>';
+
+  document.getElementById('byRelBody').innerHTML = (data.byRelationship || []).map(r => `
+    <tr><td>${r.relationship_type}</td><td>${r.count}</td><td>${Math.round(r.avg_score)}</td></tr>
+  `).join('') || '<tr><td colspan="3" style="text-align:center;color:var(--text-muted)">No data</td></tr>';
+
+  document.getElementById('noticeCount').textContent = data.activeNotices;
+  document.getElementById('mailCount').textContent = data.activeMail;
+}
+
+function statCard(val, label) {
+  return `<div class="stat-card"><div class="stat-value">${val}</div><div class="stat-label">${label}</div></div>`;
+}
+
+// ═══════════════════════════════════════════
+// Notices
+// ═══════════════════════════════════════════
+async function loadNotices() {
+  const rows = await api('/notices/all');
+  document.getElementById('noticesBody').innerHTML = rows.map(n => `
+    <tr>
+      <td>${n.id}</td>
+      <td>${n.title}</td>
+      <td><span class="badge badge-${n.type}">${n.type}</span></td>
+      <td>${['Normal','Important','Urgent'][n.priority]}</td>
+      <td><span class="badge ${n.is_active ? 'badge-active' : 'badge-inactive'}">${n.is_active ? 'Active' : 'Inactive'}</span></td>
+      <td>${fmtDate(n.created_at)}</td>
+      <td>
+        <button class="btn btn-sm btn-outline" onclick="editNotice(${n.id})">Edit</button>
+        <button class="btn btn-sm btn-danger" onclick="deleteNotice(${n.id})">Del</button>
+      </td>
+    </tr>
+  `).join('') || '<tr><td colspan="7" style="text-align:center;color:var(--text-muted)">No notices</td></tr>';
+}
+
+function openNoticeModal(data) {
+  document.getElementById('noticeEditId').value = data?.id || '';
+  document.getElementById('noticeTitle').value = data?.title || '';
+  document.getElementById('noticeContent').value = data?.content || '';
+  document.getElementById('noticeType').value = data?.type || 'info';
+  document.getElementById('noticePriority').value = data?.priority ?? 0;
+  document.getElementById('noticePinned').checked = !!data?.is_pinned;
+  document.getElementById('noticeStart').value = data?.start_date?.slice(0,16) || '';
+  document.getElementById('noticeEnd').value = data?.end_date?.slice(0,16) || '';
+  document.getElementById('noticeModalTitle').textContent = data ? 'Edit Notice' : 'New Notice';
+  openModal('noticeModal');
+}
+
+async function editNotice(id) {
+  const data = await api(`/notices/${id}`);
+  openNoticeModal(data);
+}
+
+async function saveNotice() {
+  const id = document.getElementById('noticeEditId').value;
+  const body = {
+    title: document.getElementById('noticeTitle').value,
+    content: document.getElementById('noticeContent').value,
+    type: document.getElementById('noticeType').value,
+    priority: parseInt(document.getElementById('noticePriority').value),
+    is_pinned: document.getElementById('noticePinned').checked ? 1 : 0,
+    start_date: document.getElementById('noticeStart').value || null,
+    end_date: document.getElementById('noticeEnd').value || null,
+  };
+  if (id) await api(`/notices/${id}`, 'PUT', body);
+  else await api('/notices', 'POST', body);
+  closeModal('noticeModal');
+  showToast(id ? 'Notice updated' : 'Notice created');
+  loadNotices();
+}
+
+async function deleteNotice(id) {
+  if (!confirm('Delete this notice?')) return;
+  await api(`/notices/${id}`, 'DELETE');
+  showToast('Notice deleted');
+  loadNotices();
+}
+
+// ═══════════════════════════════════════════
+// Mail
+// ═══════════════════════════════════════════
+async function loadMail() {
+  const rows = await api('/mail/all');
+  document.getElementById('mailBody').innerHTML = rows.map(m => `
+    <tr>
+      <td>${m.id}</td>
+      <td>${m.title}</td>
+      <td>${m.sender}</td>
+      <td>${m.reward_type ? `${m.reward_type} x${m.reward_amount}` : '-'}</td>
+      <td>${m.target_type}</td>
+      <td><span class="badge ${m.is_active ? 'badge-active' : 'badge-inactive'}">${m.is_active ? 'Active' : 'Inactive'}</span></td>
+      <td>${fmtDate(m.created_at)}</td>
+      <td>
+        <button class="btn btn-sm btn-outline" onclick="editMail(${m.id})">Edit</button>
+        <button class="btn btn-sm btn-danger" onclick="deleteMail(${m.id})">Del</button>
+      </td>
+    </tr>
+  `).join('') || '<tr><td colspan="8" style="text-align:center;color:var(--text-muted)">No mail</td></tr>';
+}
+
+function openMailModal(data) {
+  document.getElementById('mailEditId').value = data?.id || '';
+  document.getElementById('mailTitle').value = data?.title || '';
+  document.getElementById('mailContent').value = data?.content || '';
+  document.getElementById('mailSender').value = data?.sender || 'Solomon Team';
+  document.getElementById('mailTarget').value = data?.target_type || 'all';
+  document.getElementById('mailRewardType').value = data?.reward_type || '';
+  document.getElementById('mailRewardAmount').value = data?.reward_amount || 0;
+  document.getElementById('mailExpires').value = data?.expires_at?.slice(0,16) || '';
+  document.getElementById('mailModalTitle').textContent = data ? 'Edit Mail' : 'New Mail';
+  openModal('mailModal');
+}
+
+async function editMail(id) {
+  const rows = await api('/mail/all');
+  const data = rows.find(m => m.id === id);
+  if (data) openMailModal(data);
+}
+
+async function saveMail() {
+  const id = document.getElementById('mailEditId').value;
+  const body = {
+    title: document.getElementById('mailTitle').value,
+    content: document.getElementById('mailContent').value,
+    sender: document.getElementById('mailSender').value,
+    target_type: document.getElementById('mailTarget').value,
+    reward_type: document.getElementById('mailRewardType').value || null,
+    reward_amount: parseInt(document.getElementById('mailRewardAmount').value) || 0,
+    expires_at: document.getElementById('mailExpires').value || null,
+  };
+  if (id) await api(`/mail/${id}`, 'PUT', body);
+  else await api('/mail', 'POST', body);
+  closeModal('mailModal');
+  showToast(id ? 'Mail updated' : 'Mail sent');
+  loadMail();
+}
+
+async function deleteMail(id) {
+  if (!confirm('Delete this mail?')) return;
+  await api(`/mail/${id}`, 'DELETE');
+  showToast('Mail deleted');
+  loadMail();
+}
+
+// ═══════════════════════════════════════════
+// AI Prompts
+// ═══════════════════════════════════════════
+let allPrompts = [];
+async function loadPrompts() {
+  allPrompts = await api('/ai-prompts/all');
+  const categories = [...new Set(allPrompts.map(p => p.category))];
+
+  document.getElementById('promptTabs').innerHTML =
+    `<div class="tab active" data-cat="all">All</div>` +
+    categories.map(c => `<div class="tab" data-cat="${c}">${c}</div>`).join('');
+
+  document.querySelectorAll('#promptTabs .tab').forEach(t => {
+    t.addEventListener('click', () => {
+      document.querySelectorAll('#promptTabs .tab').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+      renderPromptCards(t.dataset.cat);
+    });
+  });
+
+  renderPromptCards('all');
+}
+
+function renderPromptCards(cat) {
+  const filtered = cat === 'all' ? allPrompts : allPrompts.filter(p => p.category === cat);
+  document.getElementById('promptCards').innerHTML = filtered.map(p => `
+    <div class="card" style="cursor:pointer;" onclick="editPrompt('${p.key}')">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;">${p.name}</div>
+          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">${p.key} &middot; <span class="badge badge-${p.category === 'interrogation' ? 'info' : p.category === 'dialogue' ? 'info' : p.category === 'analysis' ? 'event' : 'update'}">${p.category}</span> &middot; v${p.version}${p.temperature != null ? ` &middot; temp:${p.temperature}` : ''}${p.max_tokens != null ? ` &middot; ${p.max_tokens}tok` : ''}</div>
+        </div>
+        <span class="badge ${p.is_active ? 'badge-active' : 'badge-inactive'}">${p.is_active ? 'Active' : 'Inactive'}</span>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-light);margin-top:8px;">${p.description || ''}</p>
+      <pre style="font-size:0.75rem;max-height:80px;overflow:hidden;margin-top:8px;opacity:0.7;">${escHtml(p.content?.slice(0, 200))}...</pre>
+    </div>
+  `).join('') || '<div style="text-align:center;color:var(--text-muted);padding:40px;">No prompts in this category</div>';
+}
+
+function openPromptModal(data) {
+  document.getElementById('promptEditKey').value = data?.key || '';
+  document.getElementById('promptKey').value = data?.key || '';
+  document.getElementById('promptKey').disabled = !!data;
+  document.getElementById('promptName').value = data?.name || '';
+  document.getElementById('promptCategory').value = data?.category || 'dialogue';
+  document.getElementById('promptDesc').value = data?.description || '';
+  document.getElementById('promptContent').value = data?.content || '';
+  const vars = data?.variables || data?.vars;
+  document.getElementById('promptVars').value = Array.isArray(vars) ? vars.join(', ') : (vars || '');
+  document.getElementById('promptTemperature').value = data?.temperature != null ? data.temperature : '';
+  document.getElementById('promptMaxTokens').value = data?.max_tokens != null ? data.max_tokens : '';
+  document.getElementById('promptModalTitle').textContent = data ? `Edit: ${data.name}` : 'New Prompt';
+  document.getElementById('promptHistory').innerHTML = '';
+  openModal('promptModal');
+}
+
+async function editPrompt(key) {
+  const data = await api(`/ai-prompts/${key}`);
+  openPromptModal(data);
+  if (data.history?.length) {
+    document.getElementById('promptHistory').innerHTML = `
+      <details><summary style="font-size:0.85rem;font-weight:600;">Version History (${data.history.length})</summary>
+      <div style="padding:8px 0;">${data.history.map(h => `
+        <div style="border-bottom:1px solid rgba(0,0,0,0.05);padding:6px 0;">
+          <span style="font-weight:600;">v${h.version}</span>
+          <span style="color:var(--text-muted);font-size:0.78rem;margin-left:8px;">${fmtDate(h.created_at)} by ${h.changed_by}</span>
+          <button class="btn btn-sm btn-outline" style="margin-left:8px;" onclick="rollbackPrompt('${key}',${h.version})">Rollback</button>
+          <pre style="font-size:0.72rem;max-height:60px;overflow:hidden;margin-top:4px;">${escHtml(h.content?.slice(0,150))}</pre>
+        </div>
+      `).join('')}</div></details>
+    `;
+  }
+}
+
+async function savePrompt() {
+  const editKey = document.getElementById('promptEditKey').value;
+  const body = {
+    key: document.getElementById('promptKey').value,
+    name: document.getElementById('promptName').value,
+    category: document.getElementById('promptCategory').value,
+    description: document.getElementById('promptDesc').value,
+    content: document.getElementById('promptContent').value,
+    variables: document.getElementById('promptVars').value.split(',').map(v => v.trim()).filter(Boolean),
+    temperature: document.getElementById('promptTemperature').value !== '' ? parseFloat(document.getElementById('promptTemperature').value) : null,
+    max_tokens: document.getElementById('promptMaxTokens').value !== '' ? parseInt(document.getElementById('promptMaxTokens').value) : null,
+  };
+  if (editKey) await api(`/ai-prompts/${editKey}`, 'PUT', body);
+  else await api('/ai-prompts', 'POST', body);
+  closeModal('promptModal');
+  showToast(editKey ? 'Prompt updated' : 'Prompt created');
+  loadPrompts();
+}
+
+async function rollbackPrompt(key, version) {
+  if (!confirm(`Rollback to version ${version}?`)) return;
+  await api(`/ai-prompts/${key}/rollback/${version}`, 'POST');
+  showToast('Rolled back');
+  editPrompt(key);
+  loadPrompts();
+}
+
+// ═══════════════════════════════════════════
+// AI Agents
+// ═══════════════════════════════════════════
+let allAgents = [], allBlocks = [], allDataFields = [];
+
+async function loadAgents() {
+  allAgents = await api('/ai-agents');
+  renderAgentCards();
+}
+
+function renderAgentCards() {
+  document.getElementById('agentCards').innerHTML = allAgents.map(a => `
+    <div class="card" style="cursor:pointer;" onclick="editAgent('${a.key}')">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;">${a.name}</div>
+          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">${a.key} &middot; temp:${a.temperature ?? '-'} &middot; ${a.max_tokens ?? '-'}tok &middot; ${a.blocks?.length ?? 0} blocks</div>
+        </div>
+        <span class="badge ${a.is_active ? 'badge-active' : 'badge-inactive'}">${a.is_active ? 'Active' : 'Off'}</span>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-light);margin-top:8px;">${a.description || ''}</p>
+      <div style="font-size:0.75rem;color:var(--text-muted);margin-top:6px;">${(a.blocks || []).filter(b => !b.condition_field).map(b => b.block_key).join(' → ')}</div>
+    </div>
+  `).join('') || '<div style="text-align:center;color:var(--text-muted);padding:40px;">No agents</div>';
+}
+
+function openAgentModal(data) {
+  document.getElementById('agentEditKey').value = data?.key || '';
+  document.getElementById('agentKey').value = data?.key || '';
+  document.getElementById('agentKey').disabled = !!data;
+  document.getElementById('agentName').value = data?.name || '';
+  document.getElementById('agentDesc').value = data?.description || '';
+  document.getElementById('agentModel').value = data?.model || '';
+  document.getElementById('agentTemp').value = data?.temperature != null ? data.temperature : '';
+  document.getElementById('agentMaxTokens').value = data?.max_tokens != null ? data.max_tokens : '';
+  document.getElementById('agentModalTitle').textContent = data ? `Edit: ${data.name}` : 'New Agent';
+  // Context Flags 렌더링
+  const flags = data?.context_flags ? (typeof data.context_flags === 'string' ? JSON.parse(data.context_flags) : data.context_flags) : {};
+  const flagKeys = ['include_knownFacts','include_disputeInfo','include_emotionInfo','include_evidenceInfo','include_recentDialogue','include_historyContext','include_phaseTranscript','include_lieStates','include_disputeList','include_speechGuide','include_history'];
+  const numKeys = ['max_recent_dialogues','max_known_facts','max_history_entries'];
+  document.getElementById('agentContextFlags').innerHTML =
+    flagKeys.map(k => `<label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" class="ctx-flag" data-key="${k}" ${flags[k] ? 'checked' : ''}> ${k.replace('include_','')}</label>`).join('') +
+    numKeys.map(k => `<label style="display:flex;align-items:center;gap:6px;">${k.replace('max_','max ')}: <input type="number" class="ctx-flag-num" data-key="${k}" value="${flags[k] ?? ''}" style="width:60px;padding:2px 4px;border:1px solid #ccc;border-radius:4px;"></label>`).join('');
+  // 블록 조합 표시
+  const blockListEl = document.getElementById('agentBlockList');
+  if (data?.blocks?.length) {
+    blockListEl.innerHTML = '<div style="font-weight:600;font-size:0.85rem;margin-bottom:6px;">Prompt Block 조합:</div>' +
+      data.blocks.map((b, i) => `<div style="padding:4px 8px;background:var(--bg-hover);border-radius:4px;margin-bottom:3px;font-size:0.82rem;">
+        <span style="font-weight:600;">#${b.sort_order}</span> ${b.block_key}${b.condition_field ? ` <span style="color:var(--text-muted);">(${b.condition_field}=${b.condition_value})</span>` : ''}
+      </div>`).join('');
+  } else {
+    blockListEl.innerHTML = '';
+  }
+  openModal('agentModal');
+}
+
+async function editAgent(key) {
+  const data = await api(`/ai-agents/${key}`);
+  openAgentModal(data);
+}
+
+async function saveAgent() {
+  const editKey = document.getElementById('agentEditKey').value;
+  const body = {
+    key: document.getElementById('agentKey').value,
+    name: document.getElementById('agentName').value,
+    description: document.getElementById('agentDesc').value,
+    model: document.getElementById('agentModel').value || null,
+    temperature: document.getElementById('agentTemp').value !== '' ? parseFloat(document.getElementById('agentTemp').value) : null,
+    max_tokens: document.getElementById('agentMaxTokens').value !== '' ? parseInt(document.getElementById('agentMaxTokens').value) : null,
+  };
+  // Context flags 수집
+  const ctxFlags = {};
+  document.querySelectorAll('.ctx-flag').forEach(el => { if (el.checked) ctxFlags[el.dataset.key] = true; });
+  document.querySelectorAll('.ctx-flag-num').forEach(el => { if (el.value) ctxFlags[el.dataset.key] = parseInt(el.value); });
+  body.context_flags = ctxFlags;
+  if (editKey) await api(`/ai-agents/${editKey}`, 'PUT', body);
+  else await api('/ai-agents', 'POST', body);
+  closeModal('agentModal');
+  showToast(editKey ? 'Agent updated' : 'Agent created');
+  loadAgents();
+}
+
+// ═══════════════════════════════════════════
+// Prompt Blocks
+// ═══════════════════════════════════════════
+async function loadBlocks() {
+  allBlocks = await api('/ai-blocks');
+  const cats = ['all', ...new Set(allBlocks.map(b => b.category))];
+  document.getElementById('blockCategoryTabs').innerHTML = cats.map(c =>
+    `<button class="btn btn-sm ${c === 'all' ? 'btn-primary' : 'btn-outline'}" onclick="filterBlocks('${c}', this)">${c}</button>`
+  ).join('');
+  renderBlockCards('all');
+}
+
+function filterBlocks(cat, btn) {
+  document.querySelectorAll('#blockCategoryTabs .btn').forEach(b => { b.className = 'btn btn-sm btn-outline'; });
+  if (btn) btn.className = 'btn btn-sm btn-primary';
+  renderBlockCards(cat);
+}
+
+function renderBlockCards(cat) {
+  const filtered = cat === 'all' ? allBlocks : allBlocks.filter(b => b.category === cat);
+  document.getElementById('blockCards').innerHTML = filtered.map(b => `
+    <div class="card" style="cursor:pointer;" onclick="editBlock('${b.key}')">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;">${b.name}</div>
+          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">${b.key} &middot; <span class="badge badge-info">${b.category}</span> &middot; v${b.version}</div>
+        </div>
+        <span class="badge ${b.is_active ? 'badge-active' : 'badge-inactive'}">${b.is_active ? 'Active' : 'Off'}</span>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-light);margin-top:8px;">${b.description || ''}</p>
+      <pre style="font-size:0.72rem;max-height:50px;overflow:hidden;margin-top:6px;background:var(--bg-hover);padding:6px;border-radius:4px;">${escHtml((b.content || '').slice(0, 120))}</pre>
+    </div>
+  `).join('') || '<div style="text-align:center;color:var(--text-muted);padding:40px;">No blocks</div>';
+}
+
+function openBlockModal(data) {
+  document.getElementById('blockEditKey').value = data?.key || '';
+  document.getElementById('blockKey').value = data?.key || '';
+  document.getElementById('blockKey').disabled = !!data;
+  document.getElementById('blockName').value = data?.name || '';
+  document.getElementById('blockCategory').value = data?.category || 'common';
+  document.getElementById('blockDesc').value = data?.description || '';
+  document.getElementById('blockContent').value = data?.content || '';
+  const vars = data?.variables;
+  document.getElementById('blockVars').value = Array.isArray(vars) ? vars.join(', ') : (vars || '');
+  document.getElementById('blockModalTitle').textContent = data ? `Edit: ${data.name}` : 'New Block';
+  document.getElementById('blockHistory').innerHTML = '';
+  openModal('blockModal');
+}
+
+async function editBlock(key) {
+  const data = await api(`/ai-blocks/${key}`);
+  openBlockModal(data);
+  if (data.history?.length) {
+    document.getElementById('blockHistory').innerHTML = `
+      <details><summary style="font-size:0.85rem;font-weight:600;">Version History (${data.history.length})</summary>
+      <div style="padding:8px 0;">${data.history.map(h => `
+        <div style="border-bottom:1px solid rgba(0,0,0,0.05);padding:6px 0;">
+          <span style="font-weight:600;">v${h.version}</span>
+          <span style="color:var(--text-muted);font-size:0.78rem;margin-left:8px;">${fmtDate(h.created_at)} by ${h.changed_by}</span>
+          <button class="btn btn-sm btn-outline" style="margin-left:8px;" onclick="rollbackBlock('${key}',${h.version})">Rollback</button>
+          <pre style="font-size:0.72rem;max-height:60px;overflow:hidden;margin-top:4px;">${escHtml(h.content?.slice(0,150))}</pre>
+        </div>
+      `).join('')}</div></details>
+    `;
+  }
+}
+
+async function saveBlock() {
+  const editKey = document.getElementById('blockEditKey').value;
+  const body = {
+    key: document.getElementById('blockKey').value,
+    name: document.getElementById('blockName').value,
+    category: document.getElementById('blockCategory').value,
+    description: document.getElementById('blockDesc').value,
+    content: document.getElementById('blockContent').value,
+    variables: document.getElementById('blockVars').value.split(',').map(v => v.trim()).filter(Boolean),
+  };
+  if (editKey) await api(`/ai-blocks/${editKey}`, 'PUT', body);
+  else await api('/ai-blocks', 'POST', body);
+  closeModal('blockModal');
+  showToast(editKey ? 'Block updated' : 'Block created');
+  loadBlocks();
+}
+
+async function rollbackBlock(key, version) {
+  if (!confirm(`Rollback to version ${version}?`)) return;
+  await api(`/ai-blocks/${key}/rollback/${version}`, 'POST');
+  showToast('Rolled back');
+  editBlock(key);
+  loadBlocks();
+}
+
+// ═══════════════════════════════════════════
+// Data Fields
+// ═══════════════════════════════════════════
+async function loadDataFields() {
+  allDataFields = await api('/ai-data-fields');
+  const srcColors = { character: '#4f46e5', case: '#059669', agent_state: '#d97706', session: '#dc2626', computed: '#6b7280' };
+  document.getElementById('dataFieldBody').innerHTML = allDataFields.map(f => `<tr>
+    <td><code style="font-size:0.82rem;">${f.key}</code></td>
+    <td>${f.name}</td>
+    <td><span style="color:${srcColors[f.source] || '#333'};font-weight:600;font-size:0.82rem;">${f.source}</span></td>
+    <td><span style="font-size:0.82rem;">${f.data_type}</span></td>
+    <td><code style="font-size:0.75rem;max-width:200px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escHtml(f.example || '')}</code></td>
+    <td><button class="btn btn-sm btn-outline" onclick="editDataField('${f.key}')">Edit</button></td>
+  </tr>`).join('') || '<tr><td colspan="6" style="text-align:center;color:var(--text-muted);">No data fields</td></tr>';
+}
+
+function openDataFieldModal(data) {
+  document.getElementById('dfEditKey').value = data?.key || '';
+  document.getElementById('dfKey').value = data?.key || '';
+  document.getElementById('dfKey').disabled = !!data;
+  document.getElementById('dfName').value = data?.name || '';
+  document.getElementById('dfSource').value = data?.source || 'computed';
+  document.getElementById('dfType').value = data?.data_type || 'string';
+  document.getElementById('dfExample').value = data?.example || '';
+  document.getElementById('dfDescription').value = data?.description || '';
+  openModal('dataFieldModal');
+}
+
+async function editDataField(key) {
+  const df = allDataFields.find(f => f.key === key);
+  if (df) openDataFieldModal(df);
+}
+
+async function saveDataField() {
+  const editKey = document.getElementById('dfEditKey').value;
+  const body = {
+    key: document.getElementById('dfKey').value,
+    name: document.getElementById('dfName').value,
+    source: document.getElementById('dfSource').value,
+    data_type: document.getElementById('dfType').value,
+    example: document.getElementById('dfExample').value,
+    description: document.getElementById('dfDescription').value,
+  };
+  if (editKey) await api(`/ai-data-fields/${editKey}`, 'PUT', body);
+  else await api('/ai-data-fields', 'POST', body);
+  closeModal('dataFieldModal');
+  showToast('Saved');
+  loadDataFields();
+}
+
+// ═══════════════════════════════════════════
+// Players
+// ═══════════════════════════════════════════
+async function loadPlayers() {
+  const rows = await api('/players');
+  document.getElementById('playersBody').innerHTML = rows.map(p => `
+    <tr>
+      <td style="font-family:monospace;font-size:0.78rem;">${p.id?.slice(0,12)}...</td>
+      <td><strong>${p.name}</strong></td>
+      <td>${p.region || '-'}</td>
+      <td>${p.games_played || 0}</td>
+      <td>${p.best_score || '-'}</td>
+      <td>${fmtDate(p.last_active)}</td>
+    </tr>
+  `).join('') || '<tr><td colspan="6" style="text-align:center;color:var(--text-muted)">No players yet</td></tr>';
+}
+
+// ═══════════════════════════════════════════
+// Game History
+// ═══════════════════════════════════════════
+async function loadHistory() {
+  // Get all players' histories via stats approach
+  const players = await api('/players');
+  let allHistory = [];
+  for (const p of players.slice(0, 20)) {
+    const h = await api(`/players/${p.id}/history`);
+    allHistory.push(...h.map(r => ({ ...r, player_name: p.name })));
+  }
+  allHistory.sort((a, b) => b.played_at?.localeCompare(a.played_at));
+
+  document.getElementById('historyBody').innerHTML = allHistory.slice(0, 100).map(h => `
+    <tr>
+      <td>${h.id}</td>
+      <td>${h.player_name || h.player_id?.slice(0,8)}</td>
+      <td>${h.case_id}</td>
+      <td><strong>${h.score}</strong></td>
+      <td>${h.insight}/${h.authority}/${h.wisdom}</td>
+      <td>${h.relationship_type || '-'}</td>
+      <td>${fmtDate(h.played_at)}</td>
+    </tr>
+  `).join('') || '<tr><td colspan="7" style="text-align:center;color:var(--text-muted)">No history</td></tr>';
+}
+
+// ═══════════════════════════════════════════
+// Settings
+// ═══════════════════════════════════════════
+async function loadSettings() {
+  const settings = await api('/stats/settings');
+  const keys = Object.keys(settings);
+  document.getElementById('settingsCard').innerHTML = `
+    <div class="card-header"><div class="card-title">Global Settings</div><button class="btn btn-primary" onclick="saveSettings()">Save All</button></div>
+    ${keys.map(k => `
+      <div class="form-group">
+        <label class="form-label">${k}</label>
+        <input class="form-input setting-input" data-key="${k}" value="${escHtml(settings[k])}">
+      </div>
+    `).join('')}
+    <div class="form-group" style="margin-top:16px;">
+      <div class="form-row">
+        <input class="form-input" id="newSettingKey" placeholder="New key">
+        <input class="form-input" id="newSettingVal" placeholder="Value">
+      </div>
+      <button class="btn btn-outline" style="margin-top:8px;" onclick="addSetting()">+ Add Setting</button>
+    </div>
+  `;
+}
+
+async function saveSettings() {
+  const body = {};
+  document.querySelectorAll('.setting-input').forEach(el => { body[el.dataset.key] = el.value; });
+  await api('/stats/settings', 'PUT', body);
+  showToast('Settings saved');
+}
+
+function addSetting() {
+  const k = document.getElementById('newSettingKey').value;
+  const v = document.getElementById('newSettingVal').value;
+  if (!k) return;
+  api('/stats/settings', 'PUT', { [k]: v }).then(() => { showToast('Setting added'); loadSettings(); });
+}
+
+// ── Helpers ──
+function fmtDate(d) { if (!d) return '-'; return new Date(d).toLocaleDateString('ko-KR', { year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' }); }
+function escHtml(s) { if (!s) return ''; return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// ── Init ──
+async function init() {
+  try {
+    const health = await api('/health');
+    document.getElementById('serverStatus').textContent = 'Connected';
+    document.getElementById('serverStatus').style.color = 'var(--success)';
+    loadDashboard();
+  } catch(e) {
+    document.getElementById('serverStatus').textContent = 'Disconnected';
+    document.getElementById('serverStatus').style.color = 'var(--danger)';
+  }
+}
+init();
+</script>
+</body>
+</html>

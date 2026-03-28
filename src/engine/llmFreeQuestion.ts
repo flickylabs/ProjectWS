@@ -1,8 +1,12 @@
 /**
  * 자유 질문 처리 엔진.
  * 플레이어의 자유 입력을 LLM이 분류하고, NPC 응답을 생성한다.
+ *
+ * 프롬프트는 웹 어드민(promptManager)에서 관리한다.
  */
 import { chatCompletion } from './llmClient'
+import { getPrompt, getPromptConfig } from '../api/promptManager'
+import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 import { buildSpeechGuide, getMyCall, getJudgeReference, getAngryCall } from './llmSpeechGuide'
 import { eunneun } from '../utils/korean'
 import type { CaseData, PartyId, QuestionType } from '../types'
@@ -40,35 +44,28 @@ export async function processFreeQuestion(
   const judgeRef = getJudgeReference(caseData.duo, target)
   const angryCall = getAngryCall(caseData.duo, target)
 
-  const systemPrompt = `당신은 법정 심문 게임의 NPC "${party.name}"입니다.
+  const fqVars: Record<string, string> = {
+    name: party.name,
+    age: String(party.age),
+    occupation: party.occupation,
+    archetype: party.archetype,
+    speechStyle: party.speechStyle,
+    verbalTells: party.verbalTells.map(v => `${v.trigger}일 때: ${v.pattern}`).join(' / '),
+    emotionalPhase: agent.emotionalState.phase,
+    opponent: opponent.name,
+    callForm: myCall,
+    judgeRef,
+    angryCall,
+    lieStates,
+    disputeList,
+    speechGuide: buildSpeechGuide(caseData.duo, 'free', target),
+  }
 
-## 캐릭터
-- 이름: ${party.name} (${party.age}세, ${party.occupation})
-- 성격: ${party.archetype}
-- 말투: ${party.speechStyle}
-- 말버릇: ${party.verbalTells.map(v => `${v.trigger}일 때: ${v.pattern}`).join(' / ')}
-- 현재 감정: ${agent.emotionalState.phase}
-- 상대: ${opponent.name}
-- 호칭: 상대를 "${myCall}"로 부름. 재판관에게 상대 언급 시 "${judgeRef}". 감정 폭발 시 "${angryCall}".
+  const systemPrompt = isAgentLoaded()
+    ? buildAgentPrompt('free_question', fqVars)
+    : getPrompt('free_question', fqVars)
 
-## 현재 거짓말 상태
-${lieStates}
-(S0=완강히 부정, S1=동요, S2=일부 인정, S3=책임 전가, S4=감정 호소, S5=인정)
-
-## 쟁점 목록
-${disputeList}
-
-${buildSpeechGuide(caseData.duo, 'free', target)}
-
-## 규칙
-1. 재판관의 자유 질문에 캐릭터로서 대답하세요.
-2. lieState S0~S3이면 절대 진실을 완전히 고백하지 마세요. 회피, 부분 인정, 책임 전가.
-3. lieState S4~S5이면 더 솔직하게 답변.
-4. 말투와 말버릇을 반영하세요.
-5. 답변은 2~3문장. 행동 묘사는 넣지 말고 behaviorHint에 따로 적으세요.
-
-## 출력 형식 (JSON만)
-{"questionType":"fact_pursuit|motive_search|empathy_approach|irrelevant","disputeId":"d-1~d-5 중 관련 있는 것, 없으면 null","secondaryDisputeId":"두 번째 쟁점 또는 null","response":"NPC 대사만 (괄호 행동묘사 넣지 마)","behaviorHint":"행동/표정 묘사만 따로"}`
+  const config = isAgentLoaded() ? getAgentConfig('free_question') : getPromptConfig('free_question')
 
   try {
     const raw = await chatCompletion(
@@ -76,7 +73,7 @@ ${buildSpeechGuide(caseData.duo, 'free', target)}
         { role: 'system', content: systemPrompt },
         { role: 'user', content: `재판관: "${question}"` },
       ],
-      { temperature: 0.7, maxTokens: 400 },
+      { temperature: config.temperature, maxTokens: config.maxTokens },
     )
 
     return parseFreeQuestionResponse(raw)

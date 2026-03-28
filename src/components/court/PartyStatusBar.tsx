@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
+import { INITIAL_RESOURCES } from '../../utils/constants'
 import Emoji from '../common/Emoji'
 
 const EMOTION_EMOJI: Record<string, string> = {
@@ -35,8 +36,8 @@ export default function PartyStatusBar() {
 
         {/* 중앙: Stat */}
         <div className="flex items-center gap-3">
-          <StatPill icon="🔍" value={resources.investigationTokens} color="text-blue-400" />
-          <StatPill icon="⚡" value={resources.skillPoints} color="text-amber-400" />
+          <StatPill icon="🔍" value={resources.investigationTokens} max={INITIAL_RESOURCES.investigationTokens} color="text-blue-400" />
+          <StatPill icon="⚡" value={resources.skillPoints} max={INITIAL_RESOURCES.skillPoints} color="text-amber-400" />
         </div>
 
         {/* B */}
@@ -62,11 +63,11 @@ export default function PartyStatusBar() {
   )
 }
 
-function StatPill({ icon, value, color }: { icon: string; value: number; color: string }) {
+function StatPill({ icon, value, max, color }: { icon: string; value: number; max: number; color: string }) {
   return (
     <div className="flex items-center gap-1">
       <Emoji char={icon} size={14} />
-      <span className={`text-sm font-bold ${color}`}>{value}</span>
+      <span className={`text-sm font-bold ${value === 0 ? 'text-red-400' : color}`}>{value}<span className="text-gray-600 font-normal">/{max}</span></span>
     </div>
   )
 }

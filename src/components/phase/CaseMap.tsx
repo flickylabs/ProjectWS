@@ -2,6 +2,8 @@ import { useState, useMemo, useRef, useEffect } from 'react'
 import type { CaseData } from '../../types'
 import { loadGeneratedCases } from '../../data/cases/caseLoader'
 import Emoji from '../common/Emoji'
+import MailInbox from '../mail/MailInbox'
+import { mailApi } from '../../api/client'
 
 interface Props {
   onSelectCase: (caseData: CaseData) => void
@@ -46,6 +48,15 @@ export function saveCaseProgress(caseId: string, score: number) {
 export default function CaseMap({ onSelectCase, onBack }: Props) {
   const [chapterIdx, setChapterIdx] = useState(0)
   const [selectedCase, setSelectedCase] = useState<CaseData | null>(null)
+  const [showMail, setShowMail] = useState(false)
+  const [unreadMail, setUnreadMail] = useState(0)
+
+  useEffect(() => {
+    const playerId = localStorage.getItem('solomon-player-id')
+    if (playerId) {
+      mailApi.unreadCount(playerId).then(r => setUnreadMail(r.count)).catch(() => {})
+    }
+  }, [showMail])
   const progress = useMemo(() => loadProgress(), [])
   const allCases = useMemo(() => loadGeneratedCases(), [])
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -89,8 +100,15 @@ export default function CaseMap({ onSelectCase, onBack }: Props) {
           <span className="text-sm font-bold text-amber-400"><Emoji char={chapter.icon} size={14} /> {chapter.label}</span>
           <div className="text-xs text-gray-500">{chapterStats.cleared}/{chapterStats.total} 클리어 · <Emoji char="★" size={10} />{chapterStats.stars}</div>
         </div>
-        <div className="w-10" />
+        <button onClick={() => setShowMail(true)} className="relative text-gray-400 hover:text-white text-lg w-10 text-right">
+          <Emoji char="📨" size={16} />
+          {unreadMail > 0 && (
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[16px] h-4 flex items-center justify-center px-1">{unreadMail}</span>
+          )}
+        </button>
       </div>
+
+      {showMail && <MailInbox onClose={() => setShowMail(false)} />}
 
       {/* 챕터 선택 */}
       <div className="flex gap-1 px-3 py-2 overflow-x-auto scrollbar-hide shrink-0">
