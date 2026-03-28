@@ -336,7 +336,7 @@ function buildUserPrompt(action: PlayerAction, dispute?: CaseData['disputes'][nu
     const directions: Record<string, string> = {
       fact_pursuit: `재판관이 "${topic}"에 대해 사실을 추궁합니다.${detail}\n이 쟁점의 사실 여부를 캐묻는 질문을 만들고, 이 쟁점에 대해서만 답하세요.`,
       motive_search: `재판관이 "${topic}"에 대해 동기를 탐색합니다.${detail}\n"왜 그랬는지" 파고드는 질문. 이 쟁점의 동기만 다루세요.`,
-      empathy_approach: `재판관이 "${topic}"에 대해 공감으로 다가갑니다.${detail}\n부드럽게 마음을 여는 질문. 이 쟁점에 대한 감정만 다루세요.`,
+      empathy_approach: `재판관이 "${topic}"에 대해 공감으로 다가갑니다.${detail}\n상대의 상황을 이해하고 싶다는 톤의 질문. "그런 상황이 되신 배경이 궁금합니다" "당시 심정을 들어보고 싶습니다" 같은 접근. 비난/추궁 금지. 이 쟁점에 대한 감정만 다루세요.`,
     }
     return directions[action.questionType] ?? `재판관이 ${topic}에 대해 질문합니다.`
   }
@@ -434,8 +434,9 @@ function buildFallbackJudgeQuestion(
         `${myName} 씨, 그때 어떤 사정이 있었는지 말씀해 주십시오.`,
       ],
       empathy_approach: [
-        `${myName} 씨, ${topic}에 대한 솔직한 마음을 듣고 싶습니다.`,
-        `${myName} 씨, ${topic} 당시 심정이 어떠셨습니까?`,
+        `${myName} 씨, ${topic}과 관련해서 당시 어떤 상황이셨는지 들어보고 싶습니다.`,
+        `${myName} 씨, ${topic}에 대해 그런 선택을 하게 된 배경이 궁금합니다. 편하게 말씀해 주세요.`,
+        `${myName} 씨, ${topic} 당시 심정을 좀 들어볼 수 있을까요? 사정이 있으셨을 거라 생각합니다.`,
       ],
     }
     const pool = templates[action.questionType] ?? templates.fact_pursuit

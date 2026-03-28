@@ -449,16 +449,19 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
       }
     }
     const freshState = useGameStore.getState()
-    // LLM 모드: 대사 트리(case-001 전용)를 건너뛰고 동적 폴백 직접 사용
-    // 비LLM 모드: 기존 대사 트리 매칭 유지
-    if (useLLMMode) {
+    // 대사 트리(phase3-5.ts)는 case-001 전용이므로,
+    // 현재 사건이 case-001이 아니면 동적 폴백 사용
+    const currentCaseId = freshState.caseData?.caseId
+    if (currentCaseId === 'case-001') {
+      // case-001(민준-서연): 하드코딩된 대사 트리 사용
+      const result = resolveDialogue(action, freshState.agentA, freshState.agentB, freshState.evidenceStates)
+      if (result) node = result.node
+    } else {
+      // 그 외 모든 사건: 감정/거짓말 상태 기반 동적 폴백
       const agent = target === 'a' ? freshState.agentA : freshState.agentB
       const qt = action.type === 'question' ? action.questionType : undefined
       const disputeId = 'disputeId' in action ? (action as { disputeId?: string }).disputeId : undefined
       node = generateDynamicFallback(target, agent, disputeId, qt)
-    } else {
-      const result = resolveDialogue(action, freshState.agentA, freshState.agentB, freshState.evidenceStates)
-      if (result) node = result.node
     }
   }
 
