@@ -132,15 +132,22 @@ function buildSystemPrompt(
   // Phase 깊이 가이드 (어드민에서 관리)
   const phaseGuide = getPhaseGuide(currentPhase)
 
-  // 내가 아는 사실
+  // 내가 아는 사실 — 현재 쟁점과 관련된 것만 우선 포함
   const myQuadrant = party === 'a' ? 'a_only' : 'b_only'
-  const myFacts = caseData.truthTable.filter(
+  const allMyFacts = caseData.truthTable.filter(
     (t) => t.quadrant === 'both_know' || t.quadrant === myQuadrant,
   )
+  // 현재 쟁점명 키워드로 관련 사실 필터링
+  const disputeKeywords = dispute ? dispute.name.split(/[\s·,]+/).filter(w => w.length >= 2) : []
+  const relevantFacts = disputeKeywords.length > 0
+    ? allMyFacts.filter(f => disputeKeywords.some(kw => f.fact.includes(kw)))
+    : allMyFacts
+  // 관련 사실 우선, 부족하면 일반 사실 보충 (최대 3개)
+  const selectedFacts = relevantFacts.length > 0 ? relevantFacts.slice(0, 3) : allMyFacts.slice(0, 2)
   let knownFacts = ''
-  if (myFacts.length > 0) {
-    knownFacts = `\n당신이 아는 사실:`
-    for (const f of myFacts.slice(0, 4)) {
+  if (selectedFacts.length > 0) {
+    knownFacts = `\n당신이 아는 사실 (현재 쟁점 "${dispute?.name ?? ''}" 관련):`
+    for (const f of selectedFacts) {
       knownFacts += `\n- ${f.fact}${f.isTrue ? '' : ' (당신은 사실이라 믿지만 오해일 수 있음)'}`
     }
   }
@@ -171,7 +178,15 @@ function buildSystemPrompt(
       disputeInfo += `\n(이 쟁점은 사실이 아닙니다 — 당신은 진짜로 안 했습니다. 억울하게 부정하세요.)`
     }
     disputeInfo += `\n거짓말 동기: ${motiveHints[lieEntry.lieMotive] ?? ''}`
-    disputeInfo += `\n⚠️ 이 쟁점("${dispute.name}")에 대해서만 답하세요. 다른 쟁점 이야기를 꺼내지 마세요.`
+
+    // 다른 쟁점 이름을 명시적으로 금지
+    const otherDisputes = caseData.disputes.filter(d => d.id !== dispute.id)
+    if (otherDisputes.length > 0) {
+      disputeInfo += `\n\n⚠️ 중요 — 쟁점 스코핑 규칙:`
+      disputeInfo += `\n현재 질문은 "${dispute.name}"에 대한 것입니다. 이 쟁점에만 답하세요.`
+      disputeInfo += `\n❌ 절대 언급 금지: ${otherDisputes.map(d => `"${d.name}"`).join(', ')}`
+      disputeInfo += `\n이 쟁점과 무관한 사실, 금액, 사건을 꺼내지 마세요.`
+    }
   }
 
   // 감정 + 말버릇

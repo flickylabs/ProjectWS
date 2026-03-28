@@ -103,15 +103,17 @@ const blocks = [
   },
   {
     key: 'lie_state_guide',
-    name: '거짓말/쟁점 상태',
-    description: '현재 쟁점과 거짓말 상태 정보. 코드에서 {disputeInfo} 변수로 채움',
+    name: '거짓말/쟁점 상태 + 세션 데이터',
+    description: '현재 쟁점 관련 사실, 거짓말 상태, 감정, 증거, 대화 이력. 쟁점 외 정보는 필터링됨.',
     category: 'interrogation',
     content: `{knownFacts}
 {disputeInfo}
 {emotionInfo}
 {evidenceInfo}
 {recentDialogue}
-{historyContext}`,
+{historyContext}
+
+⚠️ 위에 명시된 "현재 쟁점" 이외의 다른 쟁점, 다른 사건, 다른 금액을 언급하면 안 됩니다. 질문받은 쟁점에만 집중하세요.`,
     variables: '["knownFacts","disputeInfo","emotionInfo","evidenceInfo","recentDialogue","historyContext"]',
   },
   {
