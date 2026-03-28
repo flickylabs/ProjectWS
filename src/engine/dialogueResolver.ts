@@ -244,7 +244,7 @@ function calculateSpecificity(cond: DialogueCondition): number {
 }
 
 export function resolveEvidenceReaction(
-  evidenceId: string,
+  _evidenceId: string,
   target: PartyId,
   agentA: AgentState,
   agentB: AgentState,

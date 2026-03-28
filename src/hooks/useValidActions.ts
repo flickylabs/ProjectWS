@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { useGameStore } from '../store/useGameStore'
-import type { PartyId, QuestionType, Dispute } from '../types'
+import type { PartyId, QuestionType, Dispute, CaseData, AgentState } from '../types'
+import type { EvidenceRuntimeState } from '../engine/evidenceEngine'
 
 interface ValidDispute {
   id: string
@@ -22,10 +23,10 @@ interface ValidQuestion {
  * 무의미한 조합은 disabled + 이유 표시.
  */
 export function useValidActions(target: PartyId | null) {
-  const caseData = useGameStore((s) => s.caseData)
-  const agentA = useGameStore((s) => s.agentA)
-  const agentB = useGameStore((s) => s.agentB)
-  const evidenceStates = useGameStore((s) => s.evidenceStates)
+  const caseData = useGameStore((s: { caseData: CaseData | null }) => s.caseData)
+  const agentA = useGameStore((s: { agentA: AgentState }) => s.agentA)
+  const agentB = useGameStore((s: { agentB: AgentState }) => s.agentB)
+  const evidenceStates = useGameStore((s: { evidenceStates: Record<string, EvidenceRuntimeState> }) => s.evidenceStates)
 
   return useMemo(() => {
     if (!caseData || !target) return { questions: [], validDisputeIds: [] }
@@ -64,7 +65,7 @@ export function useValidActions(target: PartyId | null) {
           if (unlock.requireDispute) {
             const reqEntry = agent.lieStateMap[unlock.requireDispute.id]
             if (!reqEntry || reqEntry.currentState < unlock.requireDispute.minState) {
-              const reqDispute = disputes.find(x => x.id === unlock.requireDispute!.id)
+              const reqDispute = disputes.find((x: Dispute) => x.id === unlock.requireDispute!.id)
               return { id: d.id, name: d.name, enabled: false, reason: `선행: "${reqDispute?.name ?? '?'}" 추궁 필요` }
             }
           }

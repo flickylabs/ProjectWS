@@ -61,8 +61,8 @@ export default function Emoji({ char, size = 16, className = '' }: EmojiProps) {
  * 텍스트 내의 이모지를 자동으로 이미지로 변환하는 유틸.
  * 시스템 메시지 등에서 "📋 증거 제시:" 같은 텍스트를 처리할 때 사용.
  */
-export function replaceEmojisInText(text: string, size = 14): (string | JSX.Element)[] {
-  const parts: (string | JSX.Element)[] = []
+export function replaceEmojisInText(text: string, size = 14): (string | React.ReactElement)[] {
+  const parts: (string | React.ReactElement)[] = []
   let lastIdx = 0
   const emojiRegex = /(\p{Emoji_Presentation}|\p{Emoji}\uFE0F|\u200D)+/gu
 

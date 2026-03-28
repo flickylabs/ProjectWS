@@ -34,7 +34,7 @@ function extractScript(mod: unknown): PhaseScript | null {
 
 function buildIndex(mods: Record<string, unknown>): Map<string, PhaseScript> {
   const map = new Map<string, PhaseScript>()
-  for (const [path, mod] of Object.entries(mods)) {
+  for (const [_path, mod] of Object.entries(mods)) {
     const script = extractScript(mod)
     if (script) {
       map.set(script.caseId, script)

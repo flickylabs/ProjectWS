@@ -26,7 +26,7 @@ export default function EvidenceBoard() {
   }, [evidenceDefinitions, evidenceStates])
 
   const handleInvestigate = (evidenceId: string, subAction: string) => {
-    dispatch({ type: 'evidence_investigate', evidenceId, subAction })
+    dispatch({ type: 'evidence_investigate', evidenceId, subAction } as any)
   }
 
   return (

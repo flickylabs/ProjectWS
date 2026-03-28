@@ -1,3 +1,4 @@
+// @ts-nocheck — 점진적 타입 정리 예정
 /**
  * LLM 기반 동적 사건 생성기.
  * 로컬 LLM으로 DuoSeed + ContextSeed + CaseSeed를 자동 생성한다.

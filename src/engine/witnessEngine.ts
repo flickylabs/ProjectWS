@@ -4,9 +4,8 @@
  * Phase 4(증거 심리)부터 사용 가능, 조사 토큰 1개 소모.
  */
 import { chatCompletion } from './llmClient'
-import { buildSpeechGuide, getRelationLabel } from './llmSpeechGuide'
-import { iga, eunneun } from '../utils/korean'
-import type { CaseData, PartyId } from '../types'
+import { getRelationLabel } from './llmSpeechGuide'
+import type { CaseData } from '../types'
 import type { AgentState } from '../types'
 import type { ThirdParty } from '../types/character'
 
@@ -46,8 +45,8 @@ export function getAvailableWitnesses(
 export async function generateWitnessTestimony(
   witness: ThirdParty,
   caseData: CaseData,
-  agentA: AgentState,
-  agentB: AgentState,
+  _agentA: AgentState,
+  _agentB: AgentState,
   recentDialogues: { speaker: string; text: string }[],
 ): Promise<WitnessTestimony> {
   const relType = getRelationLabel(caseData.duo.relationshipType ?? '')

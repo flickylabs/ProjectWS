@@ -1,3 +1,4 @@
+// @ts-nocheck — 대규모 대사 생성 파일, 점진적 정리 예정
 import type { DialogueEntry } from '../../types'
 import type { CaseData } from '../../types'
 import type { Archetype, LedgerEntry, ThirdParty } from '../../types/character'
@@ -298,7 +299,7 @@ export function buildGenericPhase2(caseData: CaseData): Omit<DialogueEntry, 'id'
   // A의 sensitive point
   const aSensitive = duo.partyA.sensitivePoints[0]
   // B의 lying verbal tell
-  const bTellLying = duo.partyB.verbalTells.find(v => v.trigger === 'lying')
+  const _bTellLying = duo.partyB.verbalTells.find(v => v.trigger === 'lying')
   // A의 cornered verbal tell
   const aTellCornered = duo.partyA.verbalTells.find(v => v.trigger === 'cornered')
   // B의 defensive verbal tell

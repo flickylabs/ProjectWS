@@ -153,8 +153,8 @@ function convertAlternateFormat(raw: any): any {
   }))
 
   // lies → lieConfig
-  const convertLies = (lies: any[], party: 'a' | 'b') =>
-    (lies ?? []).map((lie: any, i: number) => {
+  const convertLies = (lies: any[], _party: 'a' | 'b') =>
+    (lies ?? []).map((lie: any, _i: number) => {
       const disputeId = issueIdMap[lie.collapseViaEvidence?.[0] ? (raw.evidence ?? []).find((e: any) => e.evidenceId === lie.collapseViaEvidence[0])?.reveals?.[0] : null] ?? disputes[0]?.id ?? 'd-1'
       return {
         disputeId,
@@ -176,7 +176,7 @@ function convertAlternateFormat(raw: any): any {
   // solutions 변환
   const solutions: Record<string, string[]> = {}
   if (raw.solutionOptions) {
-    for (const [key, val] of Object.entries(raw.solutionOptions as Record<string, any>)) {
+    for (const [_key, val] of Object.entries(raw.solutionOptions as Record<string, any>)) {
       solutions[disputes[0]?.id ?? 'd-1'] = solutions[disputes[0]?.id ?? 'd-1'] ?? []
       solutions[disputes[0]?.id ?? 'd-1'].push(`[${val.label}] ${val.action}`)
     }

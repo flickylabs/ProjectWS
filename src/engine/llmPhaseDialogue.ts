@@ -6,7 +6,7 @@
 import { chatCompletion } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
-import { buildSpeechGuide, getHonorifics, getRelationLabel } from './llmSpeechGuide'
+import { buildSpeechGuide, getRelationLabel } from './llmSpeechGuide'
 import type { CaseData, DialogueEntry } from '../types'
 
 export async function generatePhase1Dialogues(caseData: CaseData): Promise<Omit<DialogueEntry, 'id'>[]> {

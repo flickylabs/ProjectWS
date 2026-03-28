@@ -1560,6 +1560,491 @@ Mobile Response</div>
 
 </section>
 
+<section class="gdd-section" data-tab="app" id="sec-ai-pipeline">
+<h2 id="ai-pipeline">13-A. AI 파이프라인 — 완전 재현 가이드</h2>
+
+<div class="alert alert-info">
+  <span class="alert-icon">🧠</span>
+  <div>이 섹션은 AI 응답이 생성되는 <strong>전체 흐름</strong>을 코드 레벨로 문서화합니다. 이 문서만으로 동일한 AI 파이프라인을 처음부터 구축할 수 있습니다.</div>
+</div>
+
+<h3>13-A.1 전체 아키텍처 다이어그램</h3>
+<div class="flowchart">┌─────────────────────────────────────────────────────────────────────┐
+│ MOBILE APP                                                          │
+│  chatService.ts → aiGateway.ts → POST /v1/ai/chat                  │
+│  ┌──────────────────┐                                               │
+│  │ personalityContext│ speech_preset, mbti_vector(4축),              │
+│  │                  │ intimacy_stage, recent_messages(3),           │
+│  │                  │ user_gender, pet_gender, user_display_name    │
+│  └────────┬─────────┘                                               │
+│           ↓ HTTP POST (15s timeout)                                 │
+├───────────┼─────────────────────────────────────────────────────────┤
+│ API SERVER│ (Express.js)                                            │
+│           ↓                                                         │
+│  ① 입력 안전 검사 (금지패턴 + 위기감지)                              │
+│           ↓                                                         │
+│  ② 쿼터 확인 (free:10, basic:30, pro:무제한)                        │
+│           ↓                                                         │
+│  ③ 대화 로드/생성 (ai_conversation + ai_message)                    │
+│           ↓                                                         │
+│  ④ 컨텍스트 윈도우 트림 (MAX 10턴, ~2000토큰)                       │
+│           ↓                                                         │
+│  ⑤ 시스템 프롬프트 조립 ← buildSystemPrompt()                      │
+│     ┌────────────────────────────────────┐                          │
+│     │ [VOICE]        ~100-300 tok        │ ← pet_speech_presets     │
+│     │ [IDENTITY]     ~150 tok            │ ← 세계관 (full/short)    │
+│     │ [PERSONALITY]  ~200 tok            │ ← MBTI 4축 매핑          │
+│     │ [RELATIONSHIP] ~250 tok            │ ← 친밀도 1-5단계         │
+│     │ [MOMENT]       ~100 tok            │ ← 시간대 + 채팅모드      │
+│     │ [TASK]         ~50 tok             │ ← 유스케이스별 지시       │
+│     │ [MEMORY]       ~80 tok             │ ← 정보 범위 제한         │
+│     │ [NEVER]        ~150 tok            │ ← 금지 표현              │
+│     │ + 금지표현 라인  (DB 동적)          │ ← expression_style       │
+│     │ + 로케일 시스템 라인               │ ← 언어별 지시             │
+│     │ + 한국어 조사 가이드 (ko only)     │                          │
+│     └────────────────────────────────────┘                          │
+│     총 ~1,500-2,000 토큰                                            │
+│           ↓                                                         │
+│  ⑥ 컨텍스트 변수 주입 ← buildContextVariables()                    │
+│     profiles, pet_relationship, pet_personality,                    │
+│     pet_speech_presets, album_memories(5), diary_entries(3)         │
+│           ↓                                                         │
+│  ⑦ 메시지 배열 조립                                                │
+│     [system(~1500tok)] + [history(~2000tok)] + [user(~200tok)]     │
+│     총 ~3,600 토큰 (4K 컨텍스트 윈도우 이내)                        │
+│           ↓                                                         │
+│  ⑧ AI Provider 호출 ← routeAiCall()                                │
+│     Primary(OPENAI) → Fallback(LOCAL_OAI) → ON_DEVICE              │
+│     ~3,000-8,000ms                                                  │
+│           ↓                                                         │
+│  ⑨ 응답 안전 검사 + 후처리 (서명제거, 금지표현, 페르소나위반)       │
+│           ↓                                                         │
+│  ⑩ 메시지 저장 + 쿼터 업데이트 (비동기)                             │
+│           ↓                                                         │
+│  Response JSON                                                      │
+└─────────────────────────────────────────────────────────────────────┘</div>
+
+<h3>13-A.2 프롬프트 8블록 상세</h3>
+
+<h4>[VOICE] — 말투 프리셋</h4>
+<div class="card">
+  <p><code>buildVoiceBlock(speechPreset, petName, ownerName, locale)</code></p>
+  <p>DB <code>TONE_PRESET_INSTRUCTIONS[preset][locale]</code>에서 템플릿 로드 → <code>{owner_name}</code>, <code>{pet_name}</code> 치환.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>프리셋</th><th>호칭</th><th>말투 핵심</th><th>토큰</th></tr></thead>
+    <tbody>
+      <tr><td>cute_sibling</td><td>"{owner_name}" 고정</td><td>반말, 애교, 물결(~), 느낌표(!!)</td><td>~200</td></tr>
+      <tr><td>comfortable_friend</td><td>"{owner_name}" 고정</td><td>반말, 편한 구어체, 슬랭</td><td>~150</td></tr>
+      <tr><td>warm_companion</td><td>"{owner_name}" 고정</td><td>반말, 따뜻하고 다정, 20-30% 존댓말 드롭</td><td>~180</td></tr>
+      <tr><td>polite_friend</td><td>"{owner_name}" 고정</td><td>존댓말, 친근하고 다정</td><td>~160</td></tr>
+      <tr><td>loyal_pet</td><td>"{owner_name}" 고정</td><td>존댓말, 충직, "~드릴게요"</td><td>~180</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Fallback</strong>: 로케일 없으면 → ko 버전 사용. 프리셋 없으면 → warm_companion 기본.</p>
+</div>
+
+<h4>[IDENTITY] — 캐릭터 정체성</h4>
+<div class="card">
+  <p><code>buildIdentityBlock(petName, ownerName, 'full'|'short')</code></p>
+  <p><strong>Full</strong>: "나는 {ownerName}의 반려 펫 '{petName}'이다. 온기로 깨어난 존재." + 감각 묘사 (배고픔="가슴 쪽 조용함", 기쁨="작은 불씨", 과거="잠들어 있었을 때")</p>
+  <p><strong>Short</strong>: 1줄 요약 (todo, 날씨 등 Light 레벨용)</p>
+</div>
+
+<h4>[PERSONALITY] — MBTI 4축 매핑</h4>
+<div class="card">
+  <p><code>buildPersonalityBlock(mbtiVector)</code></p>
+  <p>각 축 값(-5~+5)을 행동 지시문으로 변환:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>축</th><th>+5 (극단)</th><th>-5 (극단)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>E-I</strong> (에너지)</td><td>매우 적극적, 먼저 말걸기, 질문 2~3개</td><td>용기 내서 말 꺼냄, 머뭇→시도→진심, 어눌함이 매력</td></tr>
+      <tr><td><strong>S-N</strong> (표현)</td><td>비유·시적·패턴 위주</td><td>구체적·경험적·실용적</td></tr>
+      <tr><td><strong>T-F</strong> (반응)</td><td>감정 공감 먼저</td><td>상황 분석 먼저</td></tr>
+      <tr><td><strong>J-P</strong> (조절)</td><td>체계적, 단계 제안</td><td>"다른 거 하자!" 기분 전환형</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<h4>[RELATIONSHIP] — 친밀도 5단계</h4>
+<div class="card">
+  <p><code>buildRelationshipBlock(intimacyStage, ownerName, 'full'|'short')</code></p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>단계</th><th>정보 범위</th><th>솔직함</th><th>자기 공개</th></tr></thead>
+    <tbody>
+      <tr><td>1 (첫 만남)</td><td>없음</td><td>기본 대응만</td><td>안 함</td></tr>
+      <tr><td>2 (알아가는)</td><td>최근 대화</td><td>가벼운 의견</td><td>일상 이야기</td></tr>
+      <tr><td>3 (친한 친구)</td><td>+ 생활 패턴</td><td>자연스러운 제안</td><td>취향/가벼운 걱정</td></tr>
+      <tr><td>4 (깊은 사이)</td><td>+ 감정 맥락</td><td>진심 피드백</td><td>걱정/감정</td></tr>
+      <tr><td>5 (소중한 존재)</td><td>+ 전체 프로필+장기 패턴</td><td>직설적 쓴소리 OK</td><td>비밀/과거 기억</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<h4>[MOMENT] / [TASK] / [MEMORY] / [NEVER]</h4>
+<div class="card">
+  <p><strong>[MOMENT]</strong>: 시간대(dawn/morning/daytime/evening/night) → 톤 조절 지시 + chatMode(casual: "짧고 가볍게" / deep: "깊이 반응") + 날씨 컨텍스트</p>
+  <p><strong>[TASK]</strong>: 유스케이스별 고정 지시 — chat("자연스럽게 답해"), myday("따뜻한 답글, 공감 먼저"), todo("축하, 짧게"), weekly("편지, 감정 중심")</p>
+  <p><strong>[MEMORY]</strong>: 친밀도별 정보 참조 범위 제한 지시</p>
+  <p><strong>[NEVER]</strong>: "돌이었을 때"→"잠들어 있었을 때", AI 정체 노출 금지, 죄책감 유도 금지, 과의존 표현 금지, 서명 금지, 의료/법률/투자 조언 금지</p>
+</div>
+
+<h3>13-A.3 유스케이스별 블록 포함 매트릭스</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>블록</th><th>chat</th><th>myday</th><th>todo</th><th>weekly</th><th>weather(Light)</th></tr></thead>
+  <tbody>
+    <tr><td>[VOICE]</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+    <tr><td>[IDENTITY]</td><td>full</td><td>full</td><td>short</td><td>full</td><td>1줄</td></tr>
+    <tr><td>[PERSONALITY]</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>—</td></tr>
+    <tr><td>[RELATIONSHIP]</td><td>full</td><td>full</td><td>short</td><td>full</td><td>—</td></tr>
+    <tr><td>[MOMENT]</td><td>full</td><td>full</td><td>시간만</td><td>—</td><td>—</td></tr>
+    <tr><td>[TASK]</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+    <tr><td>[MEMORY]</td><td>✅</td><td>✅</td><td>—</td><td>✅</td><td>—</td></tr>
+    <tr><td>[NEVER]</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>단축</td></tr>
+  </tbody>
+</table></div>
+<p><strong>토큰 예산</strong>: Full ~1,500-2,000 tok / Light ~250 tok / Analyze: TASK+INPUT only (페르소나 없음)</p>
+
+<h3>13-A.4 컨텍스트 변수 주입 (DB → 프롬프트)</h3>
+<div class="card">
+  <div class="card-title"><code>buildContextVariables(userId, contextFlags)</code></div>
+  <p>6개 병렬 DB 쿼리로 변수 수집:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>테이블</th><th>SELECT</th><th>결과 변수</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><code>profiles</code></td><td>display_name, pet_name</td><td>owner_name, pet_name</td></tr>
+      <tr><td>2</td><td><code>pet_relationship</code></td><td>affinity</td><td>affection_level, relationship_stage(1-5)</td></tr>
+      <tr><td>3</td><td><code>pet_personality</code></td><td>traits, speech_preset_id</td><td>mbti_axes(E_I/S_N/T_F/J_P)</td></tr>
+      <tr><td>4</td><td><code>pet_speech_presets</code></td><td>preset_code, expression_style</td><td>personality_overlay, forbidden_expressions</td></tr>
+      <tr><td>5</td><td><code>album_memories</code></td><td>title, description (최신 5건)</td><td>memory_summary</td></tr>
+      <tr><td>6</td><td><code>diary_entries</code></td><td>content, question_text (최신 3건)</td><td>recent_snippets</td></tr>
+    </tbody>
+  </table></div>
+  <p>contextFlags 불리언으로 개별 변수 포함/제외 제어 (어드민 콘솔에서 실시간 변경 가능).</p>
+</div>
+
+<h3>13-A.5 토큰 관리</h3>
+<div class="card">
+  <div class="card-title">토큰 추정 함수</div>
+  <pre><code>function estimateTokens(text: string): number {
+  const cjk = (text.match(/[\u3000-\u9FFF\uAC00-\uD7AF]/g) || []).length;
+  return Math.ceil(cjk / 2 + (text.length - cjk) / 4);
+}
+// CJK(한/중/일): ~2글자/토큰, Latin(영어): ~4글자/토큰</code></pre>
+  <div class="table-wrap"><table>
+    <thead><tr><th>영역</th><th>제한</th><th>초과 시</th></tr></thead>
+    <tbody>
+      <tr><td>대화 히스토리</td><td>MAX 10턴 (assistant replies) / ~2,000 tok</td><td>오래된 메시지 삭제 + AI 요약 생성</td></tr>
+      <tr><td>시스템 프롬프트</td><td>~1,500-2,000 tok</td><td>Light 레벨로 축소 (~250 tok)</td></tr>
+      <tr><td>유저 입력</td><td>2,000자 (V2_MAX_INPUT_LENGTH)</td><td>truncate</td></tr>
+      <tr><td>AI 출력</td><td>max_tokens: 200 (기본, DB 오버라이드 가능)</td><td>—</td></tr>
+      <tr><td><strong>총합</strong></td><td><strong>~3,600 tok</strong></td><td>4K 컨텍스트 윈도우 이내</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<h3>13-A.6 Provider 라우팅 & 폴백</h3>
+<div class="card">
+  <pre><code>routeAiCall(usecaseCode, messages, temperature, maxTokens, modelOverride, locale)
+  │
+  ├─ ① DB에서 유스케이스별 라우팅 로드 (ai_usecases 테이블)
+  │   → provider_primary, provider_secondary, model, params
+  │   → 캐시: 60초 TTL
+  │
+  ├─ ② Primary Provider 호출
+  │   ├─ OPENAI: OpenAI SDK → openai.chat.completions.create()
+  │   ├─ LOCAL_OAI: fetch() → LM Studio/Ollama (OpenAI 호환 API)
+  │   └─ ON_DEVICE: 페이로드 반환 (클라이언트측 llama.rn 추론)
+  │
+  └─ ③ Primary 실패 시 → Secondary Provider 폴백
+      └─ isRetriableError(error) 검사 (401/429/500/503)</code></pre>
+  <p><strong>모델 라우팅</strong>: <code>resolveModelForLocale(config, locale)</code> — params.model_by_locale에서 언어별 모델 선택. 없으면 base model → env 기본값(gpt-4o-mini).</p>
+  <p><strong>캐시</strong>: Provider config 30s, Usecase routing 60s, On-Device policy 60s, Health check 30s</p>
+</div>
+
+<h3>13-A.7 핵심 구조: {모델 파라미터 + 시스템 템플릿 + 컨텍스트 플래그}</h3>
+
+<div class="alert alert-info">
+  <span class="alert-icon">🔑</span>
+  <div>AI 응답의 모든 것은 <strong>3개 축의 조합</strong>으로 결정됩니다. 이 3축은 모두 DB에 저장되어 있고, 웹 어드민에서 코드 변경 없이 실시간으로 제어 가능합니다.</div>
+</div>
+
+<h4>3축 구조 다이어그램</h4>
+<div class="flowchart">┌─────────────────────────────────────────────────────────────────┐
+│                    ai_usecases 테이블 (1행 = 1 유스케이스)       │
+│                                                                 │
+│  ┌──────────────────┐  ┌──────────────┐  ┌──────────────────┐  │
+│  │  ① 모델 파라미터  │  │ ② 시스템 템플릿│  │ ③ 컨텍스트 플래그│  │
+│  │  (params JSONB)  │  │  (별도 테이블)  │  │  (context_flags) │  │
+│  │                  │  │               │  │                  │  │
+│  │ temperature: 0.8 │  │ system_template│  │ include_pet_name │  │
+│  │ max_tokens: 300  │  │ ({{변수}} 포함) │  │ include_personality│
+│  │ model_by_locale: │  │ user_template  │  │ include_history  │  │
+│  │  ko: gpt-4o-mini │  │ output_format  │  │ include_mbti_axes│  │
+│  │  en: gpt-4o-mini │  │ json_schema    │  │ recent_snippets  │  │
+│  └──────┬───────────┘  └──────┬────────┘  └──────┬───────────┘  │
+│         │                     │                   │              │
+│  어드민: RoutingTab    어드민: VersionsTab   어드민: RoutingTab   │
+│  → Params JSON 카드   → 에디터 패널        → Flags 카드        │
+└─────────┼─────────────────────┼───────────────────┼──────────────┘
+          ↓                     ↓                   ↓
+   ┌──────────────────────────────────────────────────────────┐
+   │            promptConfigService.ts (서버)                  │
+   │                                                          │
+   │  loadActivePrompt('ai.chat.free') — 캐시 60초             │
+   │    → params          → temperature, max_tokens, model    │
+   │    → active_version  → system_template, user_template    │
+   │    → context_flags   → 어떤 DB 데이터를 주입할지 결정     │
+   │                                                          │
+   │  buildContextVariables(userId, flags)                    │
+   │    → flags가 true인 것만 DB 쿼리 실행                     │
+   │    → 결과를 {{플레이스홀더}} 변수로 반환                   │
+   │                                                          │
+   │  renderTemplate(system_template, contextVars)            │
+   │    → {{pet_name}} → "펩비"                                │
+   │    → {{personality_overlay}} → "ISFP, 친밀도3..."         │
+   │    → = 완성된 system prompt                               │
+   └──────────────────────────────────────────────────────────┘</div>
+
+<h4>① 모델 파라미터 상세</h4>
+<div class="card">
+  <div class="card-title">DB: <code>ai_usecases.params</code> (JSONB) + <code>.model</code> + <code>.provider_*</code></div>
+  <pre><code>// ai_usecases 테이블 — params 컬럼 (JSONB)
+{
+  "temperature": 0.8,           // 창의성 (0.0=결정적 ~ 1.0=창의적)
+  "max_tokens": 300,            // 최대 출력 토큰 수
+  "model_by_locale": {          // 언어별 모델 오버라이드
+    "ko": "gpt-4o-mini",       // 한국어 → 이 모델
+    "en": "gpt-4o-mini",       // 영어 → 이 모델
+    "ja": "gpt-4o-mini",       // 일본어
+    "zh": "gpt-4o-mini"        // 중국어
+  }
+}
+
+// 별도 컬럼들
+model:              TEXT    — 기본 모델 (locale 오버라이드 없을 때)
+provider_primary:   TEXT FK — 주 제공자 ('OPENAI' | 'LOCAL_OAI')
+provider_secondary: TEXT FK — 폴백 제공자 (Primary 실패 시)</code></pre>
+
+  <p><strong>모델 결정 우선순위</strong>:</p>
+  <pre><code>params.model_by_locale[현재로케일]
+  → ai_usecases.model
+    → ENV OPENAI_MODEL
+      → "gpt-4o-mini" (하드코딩 기본값)</code></pre>
+
+  <p><strong>어드민 제어</strong>: RoutingTab → Provider 카드(드롭다운 2개) + Model 카드(base + 4언어별) + Params JSON 카드(textarea)</p>
+</div>
+
+<h4>② 시스템 템플릿 상세</h4>
+<div class="card">
+  <div class="card-title">DB: <code>ai_prompt_versions</code> + <code>ai_usecase_active</code></div>
+
+  <p><strong>버전 관리 구조</strong>: 하나의 유스케이스에 여러 버전 저장 가능. <code>ai_usecase_active</code>가 <strong>활성 버전 1개</strong>만 가리킴.</p>
+
+  <pre><code>ai_prompt_versions 테이블:
+┌────────────────────────────────────────────────────────────┐
+│ id:              UUID (PK)                                 │
+│ usecase_id:      'ai.chat.free' (FK → ai_usecases)        │
+│ version:         3 (단조 증가, UNIQUE(usecase_id, version))│
+│ system_template: "너는 {{pet_name}}이라는 AI 펫이야.       │
+│                   {{personality_overlay}}                   │
+│                   최근 대화: {{recent_snippets}}             │
+│                   기억: {{memory_summary}} ..."             │
+│ user_template:   "{{message}}"                             │
+│ output_format:   'text' | 'json'                           │
+│ json_schema:     null | { type:"object", properties:... }  │
+│ notes:           "v3: 감정 공감 강화"                       │
+│ created_by:      UUID (관리자)                              │
+└────────────────────────────────────────────────────────────┘
+
+ai_usecase_active 테이블:
+┌──────────────────────────────────────────────┐
+│ usecase_id:        'ai.chat.free' (PK)       │
+│ active_version_id: &lt;v3의 UUID&gt;  ← 이것만 사용 │
+└──────────────────────────────────────────────┘</code></pre>
+
+  <p><strong>치환 메커니즘</strong>: <code>renderTemplate(template, vars)</code> → 정규식 <code>/\{\{(\w+)\}\}/g</code>로 매칭 → <code>vars[key]</code>로 문자열 치환. 미등록 플레이스홀더는 원본 유지 + 경고 로그.</p>
+
+  <p><strong>사용 가능한 {{플레이스홀더}}</strong>:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>플레이스홀더</th><th>DB 출처</th><th>결과 예시</th></tr></thead>
+    <tbody>
+      <tr><td><code>{{pet_name}}</code></td><td>profiles.pet_name</td><td>"펩비"</td></tr>
+      <tr><td><code>{{owner_name}}</code></td><td>profiles.display_name + 호칭 변환</td><td>"지민 누나"</td></tr>
+      <tr><td><code>{{personality_overlay}}</code></td><td>pet_personality + speech_presets + intimacy</td><td>"ISFP, 친밀도3, cute_sibling 말투"</td></tr>
+      <tr><td><code>{{mbti_axes}}</code></td><td>pet_personality.traits</td><td>"E/I=−3, S/N=1, T/F=−5, J/P=3"</td></tr>
+      <tr><td><code>{{relationship_stage}}</code></td><td>pet_intimacy_stages → 계산</td><td>"3 (친한 친구)"</td></tr>
+      <tr><td><code>{{affection_level}}</code></td><td>pet_relationship.affinity</td><td>"450"</td></tr>
+      <tr><td><code>{{memory_summary}}</code></td><td>album_memories (최신 5건)</td><td>"[일상] 한강 산책: 봄바람이 좋았다"</td></tr>
+      <tr><td><code>{{recent_snippets}}</code></td><td>diary_entries (최신 3건)</td><td>"[3/27] Q:감사한 순간? → 퇴근 후 산책"</td></tr>
+      <tr><td><code>{{message}}</code></td><td>유저 현재 입력</td><td>"오늘 야근했어"</td></tr>
+      <tr><td><code>{{weather_context}}</code></td><td>날씨 API 데이터</td><td>"맑음 24°C, 오후 비 예보"</td></tr>
+      <tr><td><code>{{speech_preset}}</code></td><td>pet_speech_presets.preset_code</td><td>"cute_sibling"</td></tr>
+    </tbody>
+  </table></div>
+
+  <p><strong>어드민 제어</strong>: VersionsTab → system/user_template textarea 편집 → <code>Save Changes</code>(기존 버전 덮어쓰기) or <code>Save as New</code>(새 버전 생성) → <code>Publish</code>(활성 버전 전환)</p>
+</div>
+
+<h4>③ 컨텍스트 플래그 상세</h4>
+<div class="card">
+  <div class="card-title">DB: <code>ai_usecases.context_flags</code> (JSONB)</div>
+
+  <p>각 플래그가 <code>true</code>이면, 서버가 해당 DB 쿼리를 실행하고 결과를 {{플레이스홀더}}에 주입합니다. <code>false</code>이면 <strong>쿼리 자체를 실행하지 않아</strong> 토큰 절약 + 레이턴시 감소.</p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>플래그</th><th>타입</th><th>true일 때 실행</th><th>결과 변수</th></tr></thead>
+    <tbody>
+      <tr><td><code>include_pet_name</code></td><td>bool</td><td><code>SELECT pet_name FROM profiles</code></td><td>{{pet_name}}</td></tr>
+      <tr><td><code>include_owner_name</code></td><td>bool</td><td><code>SELECT display_name FROM profiles</code> + 호칭 변환</td><td>{{owner_name}}</td></tr>
+      <tr><td><code>include_personality</code></td><td>bool</td><td><code>SELECT traits FROM pet_personality</code> + <code>pet_speech_presets</code> 조합</td><td>{{personality_overlay}}</td></tr>
+      <tr><td><code>include_mbti_axes</code></td><td>bool</td><td><code>SELECT traits FROM pet_personality</code></td><td>{{mbti_axes}}</td></tr>
+      <tr><td><code>include_affection</code></td><td>bool</td><td><code>SELECT affinity FROM pet_relationship</code></td><td>{{affection_level}}</td></tr>
+      <tr><td><code>include_relationship_stage</code></td><td>bool</td><td>affinity → <code>pet_intimacy_stages</code> 매핑</td><td>{{relationship_stage}}</td></tr>
+      <tr><td><code>include_speech_preset</code></td><td>bool</td><td><code>SELECT * FROM pet_speech_presets</code></td><td>{{speech_preset}}</td></tr>
+      <tr><td><code>include_memory_summary</code></td><td>bool</td><td><code>SELECT title, desc FROM album_memories LIMIT 5</code></td><td>{{memory_summary}}</td></tr>
+      <tr><td><code>recent_snippets</code></td><td>bool</td><td><code>SELECT content FROM diary_entries LIMIT 3</code></td><td>{{recent_snippets}}</td></tr>
+      <tr><td><code>include_history</code></td><td>bool</td><td><code>SELECT role, content FROM ai_message</code> (최대 10턴)</td><td>대화 히스토리 배열</td></tr>
+      <tr><td><code>include_worldview</code></td><td>bool</td><td>코드 내 세계관 상수 포함</td><td>[IDENTITY] 블록</td></tr>
+      <tr><td><code>include_timeband</code></td><td>bool</td><td><code>new Date().getHours()</code> → 시간대 매핑</td><td>[MOMENT] 블록</td></tr>
+      <tr><td><code>rag_enabled</code></td><td>bool</td><td>RAG 벡터 검색 (미래 기능)</td><td>—</td></tr>
+      <tr><td><code>rag_k</code></td><td>number</td><td>RAG top-K 결과 수 (미래 기능)</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+
+  <p><strong>어드민 제어</strong>: RoutingTab → Context Flags 카드 — 2컬럼 체크박스 그리드. boolean은 체크박스, number(rag_k)는 숫자 입력. 변경 즉시 Save → DB UPDATE → 60초 내 서버 반영.</p>
+</div>
+
+<h4>3축 조합 예시: 유스케이스별 설정값</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>유스케이스</th><th>① 모델 파라미터</th><th>② 템플릿 특성</th><th>③ 활성 플래그</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><code>ai.chat.free</code><br><small>자유 채팅</small></td>
+      <td>temp: 0.8<br>max: 300<br>model: gpt-4o-mini</td>
+      <td>Full 8블록<br>(~1,500 tok)<br>output: text</td>
+      <td>pet_name ✅ owner_name ✅<br>personality ✅ mbti_axes ✅<br>affection ✅ relationship ✅<br>memory ✅ snippets ✅<br>history ✅ worldview ✅<br>timeband ✅</td>
+    </tr>
+    <tr>
+      <td><code>ai.myday.reply</code><br><small>일기 답변</small></td>
+      <td>temp: 0.7<br>max: 350</td>
+      <td>Full 8블록<br>output: text</td>
+      <td>위와 동일<br>단, history ❌</td>
+    </tr>
+    <tr>
+      <td><code>ai.weather</code><br><small>날씨 코멘트</small></td>
+      <td>temp: 0.6<br>max: 100</td>
+      <td>Light (~250 tok)<br>IDENTITY 1줄만</td>
+      <td>pet_name ✅<br><strong>나머지 전부 ❌</strong></td>
+    </tr>
+    <tr>
+      <td><code>ai.myday.analysis</code><br><small>일기 분석</small></td>
+      <td>temp: 0.3<br>max: 200</td>
+      <td>Analyze 레벨<br>TASK+INPUT만<br>output: json</td>
+      <td><strong>전부 ❌</strong><br>(페르소나 없음)</td>
+    </tr>
+    <tr>
+      <td><code>ai.weekly.report</code><br><small>주간 리포트</small></td>
+      <td>temp: 0.7<br>max: 600</td>
+      <td>Full 8블록</td>
+      <td>pet_name ✅<br>+ 유스케이스별 선택</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h4>어드민→서버 반영 흐름</h4>
+<div class="card">
+<pre><code>어드민에서 변경 저장
+  │
+  ├─ ① Supabase UPDATE (ai_usecases 또는 ai_prompt_versions)
+  │
+  ├─ ② logAudit() → admin_audit_log INSERT (before/after 기록)
+  │
+  ├─ ③ POST /v1/admin/prompts/refresh → 서버 캐시 클리어
+  │     → promptConfigService.refreshPromptCache(usecaseId)
+  │     → Map.delete(usecaseId) — 해당 유스케이스만 클리어
+  │
+  └─ ④ 다음 AI 요청 시 (최대 60초 이내):
+       → loadActivePrompt(usecaseId)
+       → 캐시 미스 → DB에서 최신 설정 로드
+       → 새 설정으로 프롬프트 생성
+       → 코드 변경/서버 재시작 불필요</code></pre>
+</div>
+
+<h4>DB 스키마 관계도</h4>
+<div class="flowchart">ai_providers                ai_usecases                     ai_prompt_versions
+┌──────────────┐   FK    ┌──────────────────────┐   FK    ┌────────────────────┐
+│provider_code │◄────────│provider_primary      │        │id (UUID)           │
+│display_name  │◄────────│provider_secondary    │        │usecase_id ─────────┤──►
+│enabled       │         │                      │        │version (INT)       │
+│base_url      │         │id (PK, TEXT)         │        │system_template     │
+│api_key       │         │title, description    │        │user_template       │
+└──────────────┘         │enabled               │        │output_format       │
+                         │model (TEXT)          │        │json_schema (JSONB) │
+                         │params (JSONB)        │        │notes               │
+                         │  .temperature        │        └────────────────────┘
+                         │  .max_tokens         │                  │
+                         │  .model_by_locale    │                  │
+                         │context_flags (JSONB) │        ai_usecase_active
+                         │  .include_pet_name   │        ┌─────────────────────┐
+                         │  .include_personality│        │usecase_id (PK)  ────┤►
+                         │  .include_history    │        │active_version_id ───┤► 1개만 활성
+                         │  ...12개 플래그       │        └─────────────────────┘
+                         │updated_at            │
+                         └──────────────────────┘</div>
+
+
+<h3>13-A.14 실시간 수정 (어드민 콘솔 → 서버 즉시 반영)</h3>
+<div class="card">
+  <div class="card-title">코드 변경 없이 AI 동작을 수정하는 방법</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>변경 대상</th><th>어드민 페이지</th><th>DB 테이블</th><th>반영 시간</th></tr></thead>
+    <tbody>
+      <tr><td>프롬프트 내용</td><td>ai-prompts → VersionsTab</td><td>ai_prompt_versions.system_template</td><td>60초 (캐시 TTL)</td></tr>
+      <tr><td>AI 제공자 변경</td><td>ai-prompts → RoutingTab</td><td>ai_usecases.provider_primary/secondary</td><td>30초</td></tr>
+      <tr><td>모델 변경</td><td>ai-prompts → RoutingTab</td><td>ai_usecases.model, params.model_by_locale</td><td>60초</td></tr>
+      <tr><td>컨텍스트 플래그</td><td>ai-prompts → RoutingTab → Flags</td><td>ai_usecases.context_flags</td><td>60초</td></tr>
+      <tr><td>Temperature/MaxTokens</td><td>ai-prompts → RoutingTab → Params JSON</td><td>ai_usecases.params</td><td>60초</td></tr>
+      <tr><td>금지 표현</td><td>speech-presets → expression_style</td><td>pet_speech_presets.expression_style</td><td>즉시 (캐시 없음)</td></tr>
+      <tr><td>말투 프리셋</td><td>speech-presets</td><td>pet_speech_presets</td><td>즉시</td></tr>
+      <tr><td>친밀도 행동</td><td>pet-personality/intimacy</td><td>pet_intimacy_behaviors.instruction_*</td><td>즉시</td></tr>
+      <tr><td>쿼터 제한</td><td>overrides → ai_limits_override</td><td>app_config</td><td>60초</td></tr>
+      <tr><td>On-Device 정책</td><td>ondevice-policy</td><td>ai_ondevice_policy</td><td>60초</td></tr>
+      <tr><td>유스케이스 활성/비활성</td><td>ai-prompts → UsecaseList 배지</td><td>ai_usecases.enabled</td><td>60초</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>핵심 원칙</strong>: 모든 AI 설정은 DB에 저장되고, 서버는 캐시 만료 후 자동으로 최신 설정을 로드합니다. 서버 재시작이나 코드 배포 없이 어드민 콘솔에서 즉시 변경 가능합니다.</p>
+</div>
+
+<h3>13-A.15 안전 시스템</h3>
+<div class="card">
+  <p><strong>입력 검사</strong>:</p>
+  <ul>
+    <li>금지 패턴: 폭발물 제조, 무기, 약물 → 요청 차단</li>
+    <li>위기 감지: 자살(high), 자해(medium), 학대(medium), 폭행(medium) → 익명 로깅 + 위기 자원 반환</li>
+    <li>위기 자원: 한국 1393/1577-0199, 영어 988, 일본어 0570-783-556, 중국어 400-161-9995</li>
+  </ul>
+  <p><strong>출력 검사</strong>:</p>
+  <ul>
+    <li>페르소나 위반: "I am an AI", "인공지능", "[INST]", "&lt;|im_start|&gt;" 등 → 폴백 메시지로 교체</li>
+    <li>서명 제거: "-{petName} 드림" 패턴</li>
+    <li>행동 묘사 제거: *고개를 숙인다*, (조용히 웃는다)</li>
+    <li>금지 표현 검사: 세계관 위반, 죄책감 유도, 과의존 표현 → needsRegeneration 플래그</li>
+  </ul>
+</div>
+
+<h3>13-A.16 쿼터 & 과금</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>시스템</th><th>무료(free)</th><th>Basic</th><th>Pro</th></tr></thead>
+  <tbody>
+    <tr><td>자유 채팅 (일일)</td><td>10회</td><td>30회</td><td>무제한</td></tr>
+    <tr><td>광고 보너스</td><td>+3회/시청 (일일 2회)</td><td>—</td><td>—</td></tr>
+    <tr><td>MyDay 무료 턴</td><td colspan="3">3턴 (전 tier 공통)</td></tr>
+    <tr><td>MyDay 4턴+</td><td>10/20/30골드</td><td>8/16/24골드 (-20%)</td><td>5/10/15골드 (-50%)</td></tr>
+  </tbody>
+</table></div>
+</section>
+
+
 <section class="gdd-section" data-tab="app" id="sec-tech">
 <h2 id="tech">13. 기술 아키텍처</h2>
 

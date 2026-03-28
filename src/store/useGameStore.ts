@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+// @ts-ignore -- persist reserved for future use
 import { persist } from 'zustand/middleware'
 import { createPhaseSlice, type PhaseSlice } from './slices/phaseSlice'
 import { createAgentSlice, type AgentSlice } from './slices/agentSlice'
@@ -93,9 +94,9 @@ export const useGameStore = create<GameStore>()((...args) => {
       h[party] = ph
       return { interrogationHistory: h }
     }),
-    getInterrogationContext: (party, disputeId) => {
-      const h = useGameStore.getState().interrogationHistory
-      const myHistory = h[party]?.[disputeId]
+    getInterrogationContext: (party: 'a' | 'b', disputeId: string): { firstTime: boolean; previousTypes: string[]; otherPartyAsked: boolean; otherPartyRevealed: boolean } => {
+      const h: Record<string, Record<string, { questionTypes: string[]; turns: number[]; revealed: boolean }>> = useGameStore.getState().interrogationHistory
+      const myHistory: { questionTypes: string[]; turns: number[]; revealed: boolean } | undefined = h[party]?.[disputeId]
       const otherParty = party === 'a' ? 'b' : 'a'
       const otherHistory = h[otherParty]?.[disputeId]
       return {

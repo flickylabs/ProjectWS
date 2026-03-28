@@ -50,8 +50,8 @@ async function resolveModelId(config: LLMConfig): Promise<string> {
     const res = await fetch(`${config.baseUrl}/models`)
     const data = await res.json()
     if (data.data?.length > 0) {
-      cachedLocalModelId = data.data[0].id
-      return cachedLocalModelId
+      cachedLocalModelId = data.data[0].id as string
+      return cachedLocalModelId!
     }
   } catch { /* ignore */ }
   return config.modelId
@@ -118,8 +118,8 @@ export async function checkConnection(): Promise<{
     if (!res.ok) return { connected: false, error: `HTTP ${res.status}` }
     const data = await res.json()
     if (data.data?.length > 0) {
-      cachedLocalModelId = data.data[0].id
-      return { connected: true, provider: 'local', modelId: cachedLocalModelId }
+      cachedLocalModelId = data.data[0].id as string
+      return { connected: true, provider: 'local' as const, modelId: cachedLocalModelId! }
     }
     return { connected: false, error: '모델이 로드되지 않았습니다.' }
   } catch {

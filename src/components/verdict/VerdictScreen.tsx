@@ -36,7 +36,7 @@ export default function VerdictScreen() {
 
   const currentIdx = STEPS.findIndex((s) => s.id === step)
   const factCount = Object.keys(verdictInput.factFindings).length
-  const hasFactFindings = factCount > 0
+  const _hasFactFindings = factCount > 0
   const allFactsJudged = factCount >= caseData.disputes.length
   const hasLegalityIssue = caseData.evidence.some(
     (e) => (e.legitimacy !== 'lawful' || evidenceStates[e.id]?.confidentialSource) && evidenceStates[e.id]?.presented,

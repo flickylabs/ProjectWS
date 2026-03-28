@@ -8,8 +8,7 @@
 import { chatCompletion } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded, getContextFlags } from '../api/agentManager'
-import { buildSpeechGuide, getMyCall, getJudgeReference, getAngryCall, getRelationLabel } from './llmSpeechGuide'
-import { gwawa } from '../utils/korean'
+import { getMyCall, getJudgeReference, getAngryCall, getRelationLabel } from './llmSpeechGuide'
 import { resolveDialogue as fallbackResolve, type ResolvedDialogue } from './dialogueResolver'
 import type { PlayerAction, PartyId, DialogueNode, AgentState } from '../types'
 import { GamePhase } from '../types'
@@ -270,13 +269,6 @@ function buildSystemPrompt(
     ? `\n말투: 상대에게 반말, 재판관에게 존댓말. "~냐?" 금지→"~야?" 사용.`
     : `\n말투: 상대에게 존댓말(~씨), 재판관에게 존댓말. 격해지면 반말 가능.`
 
-  // 출력 형식 (어드민에서 관리)
-  const outputFormat = getPrompt('interrogation_output', {
-    name: me.name,
-    disputeName: dispute?.name ?? '해당 사안',
-    callForm,
-  })
-
   // ── 변수 맵 조립 ──
   const vars: Record<string, string> = {
     name: me.name,
@@ -307,7 +299,7 @@ function buildSystemPrompt(
   }
 
   // 폴백: 기존 모놀리식 프롬프트
-  const outputFormat = getPrompt('interrogation_output', {
+  const fallbackOutputFormat = getPrompt('interrogation_output', {
     name: me.name,
     disputeName: dispute?.name ?? '해당 사안',
     callForm,
@@ -315,7 +307,7 @@ function buildSystemPrompt(
   return getPrompt('interrogation_system', {
     ...vars,
     phaseGuide,
-    outputFormat,
+    outputFormat: fallbackOutputFormat,
   })
 }
 

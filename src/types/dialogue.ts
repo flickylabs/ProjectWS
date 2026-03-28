@@ -30,7 +30,7 @@ export interface ClaimNode {
 export type QuestionType = 'fact_pursuit' | 'motive_search' | 'empathy_approach'
 
 // 보호 행동 (5종 → 2종)
-export type TrustActionType = 'confidential_protection' | 'separation'
+export type TrustActionType = 'confidential_protection' | 'separation' | 'emotional_stabilization' | 'retaliation_check'
 
 // 전략 스킬 (즉답 요구만 액티브, 회피 판독은 토글로 구현)
 export type SkillType = 'immediate_answer' | 'evasion_reading'

@@ -30,7 +30,7 @@ export default function ResponsibilitySlider() {
           const tiltAngle = ((resp.a - 50) / 50) * 12 // -12 ~ +12도
           const aHeavy = resp.a > 50
           const bHeavy = resp.b > 50
-          const balanced = resp.a === 50
+          const _balanced = resp.a === 50
 
           return (
             <div key={d.id} className="bg-gray-800/60 border border-gray-700 rounded-xl p-3">
