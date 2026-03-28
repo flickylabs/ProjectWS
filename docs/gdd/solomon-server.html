@@ -14,7 +14,16 @@
   <button class="sidebar-toggle" aria-label="사이드바 토글">◀</button>
   <a class="topbar-logo" href="solomon-index.html">⚖️ <span>솔로몬</span> GDD</a>
   <span class="topbar-title">서버 & DB 아키텍처</span>
-  <div class="topbar-sections"></div>
+  <div class="topbar-sections">
+    <a class="topbar-sec-link" href="#architecture">아키텍처</a>
+    <a class="topbar-sec-link" href="#deploy">배포 구성</a>
+    <a class="topbar-sec-link" href="#constants">핵심 상수</a>
+    <a class="topbar-sec-link" href="#api">API 명세</a>
+    <a class="topbar-sec-link" href="#database">DB 스키마</a>
+    <a class="topbar-sec-link" href="#ai-module">AI 모듈화</a>
+    <a class="topbar-sec-link" href="#env">환경 변수</a>
+    <a class="topbar-sec-link" href="#setup">재현 가이드</a>
+  </div>
   <div class="topbar-meta"><span>v5.0</span><span>2026-03-28</span></div>
 </header>
 
@@ -64,8 +73,8 @@
 
 <main class="content">
 
-<h1>🗄️ 서버 & DB 아키텍처 <span class="badge">v1.0</span></h1>
-<p class="subtitle">Express.js 백엔드, SQLite 데이터베이스, REST API 설계</p>
+<h1>🗄️ 서버 & DB 아키텍처 <span class="badge">v2.0</span></h1>
+<p class="subtitle">Express.js 백엔드, SQLite 14개 테이블, REST API 47개 엔드포인트, 배포 구성, 핵심 상수 총정리</p>
 
 <!-- ═══════════════════════════════════════════ -->
 <h2 id="architecture">1. 시스템 아키텍처</h2>
@@ -136,15 +145,19 @@
 ├── server/                       # 백엔드 서버
 │   ├── index.js                  # Express 엔트리
 │   ├── db/
-│   │   ├── schema.js             # DDL (8 테이블)
+│   │   ├── schema.js             # DDL (14 테이블)
 │   │   ├── connection.js         # DB 커넥션 싱글턴
-│   │   └── seed.js               # 초기 데이터 시드
+│   │   ├── seed.js               # 초기 데이터 시드
+│   │   └── seedBlocks.js        # AI 블록/에이전트 시드
 │   ├── routes/
-│   │   ├── notices.js            # 공지 CRUD API
-│   │   ├── mail.js               # 우편 CRUD + 읽음/보상 API
-│   │   ├── aiPrompts.js          # AI 프롬프트 CRUD + 롤백
-│   │   ├── players.js            # 플레이어 동기화 + 기록
-│   │   └── stats.js              # 대시보드 통계 + 설정
+│   │   ├── notices.js            # 공지 CRUD API (6 endpoints)
+│   │   ├── mail.js               # 우편 CRUD + 읽음/보상 (8 endpoints)
+│   │   ├── aiPrompts.js          # AI 프롬프트 CRUD + 롤백 (7 endpoints)
+│   │   ├── aiBlocks.js           # AI 블록 CRUD + 롤백 (6 endpoints)
+│   │   ├── aiAgents.js           # AI 에이전트 CRUD + 프리뷰 (7 endpoints)
+│   │   ├── aiDataFields.js       # AI 데이터 필드 CRUD (4 endpoints)
+│   │   ├── players.js            # 플레이어 동기화 + 기록 (5 endpoints)
+│   │   └── stats.js              # 대시보드 통계 + 설정 (3 endpoints)
 │   ├── public/admin/index.html   # WebAdmin SPA
 │   ├── solomon.db                # SQLite 데이터 파일
 │   └── package.json
@@ -391,42 +404,611 @@ const prompt = getPrompt('dialogue_system', {
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<h2 id="deployment">5. 배포 & 운영</h2>
+<h2 id="deploy">5. 기술 아키텍처 & 배포 구성</h2>
 
-<h3>5.1 개발 환경 실행</h3>
-<pre><code># 1. 서버 시작 (터미널 1)
-cd server
-npm install
-npm run seed    # 초기 데이터 삽입 (최초 1회)
-npm run dev     # http://localhost:3001
-
-# 2. 프론트엔드 시작 (터미널 2)
-cd ProjectWS
-npm run dev     # http://localhost:5173
-                # /api/* → localhost:3001 프록시
-
-# 3. WebAdmin 접속
-# http://localhost:3001/admin</code></pre>
-
-<h3>5.2 환경 변수</h3>
+<h3>5.1 전체 기술 스택</h3>
 <div class="table-wrap"><table>
-  <thead><tr><th>변수</th><th>위치</th><th>기본값</th><th>설명</th></tr></thead>
+  <thead><tr><th>계층</th><th>기술</th><th>역할</th></tr></thead>
   <tbody>
-    <tr><td><code>VITE_OPENAI_API_KEY</code></td><td>.env</td><td>—</td><td>OpenAI API 키 (없으면 오프라인)</td></tr>
-    <tr><td><code>VITE_API_URL</code></td><td>.env</td><td>/api</td><td>API 베이스 URL</td></tr>
-    <tr><td><code>PORT</code></td><td>server env</td><td>3001</td><td>서버 포트</td></tr>
+    <tr><td><strong>프론트엔드</strong></td><td>React 19 + TypeScript + Vite 6</td><td>게임 클라이언트 SPA</td></tr>
+    <tr><td><strong>스타일</strong></td><td>Tailwind CSS 4</td><td>유틸리티 CSS</td></tr>
+    <tr><td><strong>상태관리</strong></td><td>Zustand 5</td><td>6 Slice (game, court, dialogue, shop 등)</td></tr>
+    <tr><td><strong>백엔드</strong></td><td>Express.js 5</td><td>REST API + WebAdmin 정적 서빙</td></tr>
+    <tr><td><strong>데이터베이스</strong></td><td>SQLite (better-sqlite3)</td><td>WAL 모드, 14개 테이블</td></tr>
+    <tr><td><strong>LLM</strong></td><td>OpenAI gpt-4o-mini / LM Studio(로컬)</td><td>심문 대화 실시간 생성</td></tr>
+    <tr><td><strong>WebAdmin</strong></td><td>Vanilla HTML + JS</td><td>관리자 대시보드 (/admin)</td></tr>
   </tbody>
 </table></div>
 
-<h3>5.3 프로덕션 배포 (계획)</h3>
+<h3>5.2 배포 구성</h3>
+<div class="card">
+  <div class="card-title">프로덕션 배포 토폴로지</div>
+  <pre style="font-size:0.82rem;line-height:1.8;text-align:center;">
+┌─────────────────────────────────────────────────────────────────┐
+│                        사용자 (Browser)                          │
+└───────────────┬─────────────────────────┬───────────────────────┘
+                │ HTML/JS/CSS             │ REST API
+                ▼                         ▼
+┌───────────────────────┐   ┌─────────────────────────────────────┐
+│   Vercel (프론트엔드)   │   │   Railway (백엔드)                   │
+│   solomon-game.       │   │   projectws-production.up.          │
+│     vercel.app        │   │     railway.app                     │
+│                       │   │                                     │
+│   React + Vite 빌드    │   │   Express.js + SQLite               │
+│   정적 SPA 배포         │   │   API + WebAdmin (/admin)           │
+└───────────────────────┘   └─────────────────────────────────────┘
+  </pre>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>구성</th><th>서비스</th><th>URL</th><th>역할</th></tr></thead>
+  <tbody>
+    <tr><td><strong>프론트엔드</strong></td><td>Vercel</td><td><code>solomon-game.vercel.app</code></td><td>React SPA 정적 배포 (<code>vite build</code>)</td></tr>
+    <tr><td><strong>백엔드</strong></td><td>Railway</td><td><code>projectws-production.up.railway.app</code></td><td>Express API + WebAdmin + SQLite</td></tr>
+    <tr><td><strong>LLM (클라우드)</strong></td><td>OpenAI</td><td><code>api.openai.com</code></td><td>gpt-4o-mini 호출 (클라이언트 → 직접)</td></tr>
+    <tr><td><strong>LLM (로컬)</strong></td><td>LM Studio</td><td><code>localhost:1234</code></td><td>로컬 모델 서빙 (개발/테스트)</td></tr>
+  </tbody>
+</table></div>
+
+<div class="alert alert-info"><span class="alert-icon">💡</span><div>
+  <strong>프록시 설정</strong>: 개발 환경에서는 Vite 프록시가 <code>/api/*</code> 요청을 <code>localhost:3001</code>로 전달합니다. 프로덕션에서는 <code>VITE_API_URL</code>이 Railway URL을 직접 가리킵니다.
+</div></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="constants">6. 핵심 상수 총정리</h2>
+
+<h3>6.1 게임 초기 자원 (<code>src/utils/constants.ts</code>)</h3>
+
+<h4>INITIAL_RESOURCES</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>키</th><th>값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>investigationTokens</code></td><td><strong>6</strong></td><td>조사 토큰 — 증거 조사(~3) + 증인(~1) + AI분석(1) + 여유(1)</td></tr>
+    <tr><td><code>skillPoints</code></td><td><strong>5</strong></td><td>스킬 포인트</td></tr>
+    <tr><td><code>courtControl</code></td><td><strong>3</strong></td><td>법정 통제력</td></tr>
+  </tbody>
+</table></div>
+
+<h4>SKILL_COSTS</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>스킬</th><th>소모 자원</th><th>수량</th></tr></thead>
+  <tbody>
+    <tr><td><code>immediate_answer</code></td><td>skillPoints</td><td>1</td></tr>
+    <tr><td><code>evasion_reading</code></td><td>skillPoints</td><td>1</td></tr>
+  </tbody>
+</table></div>
+
+<h4>SKILL_LIMITS</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>스킬</th><th>최대 사용 횟수</th></tr></thead>
+  <tbody>
+    <tr><td><code>immediate_answer</code></td><td>1</td></tr>
+  </tbody>
+</table></div>
+
+<h4>TRUST_THRESHOLDS</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>키</th><th>임계값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>voluntaryConfession</code></td><td>70</td><td>자발적 고백 임계치</td></tr>
+    <tr><td><code>confidentialAcceptance</code></td><td>50</td><td>비밀 수용 임계치</td></tr>
+    <tr><td><code>preDisclosureConsent</code></td><td>60</td><td>사전 공개 동의 임계치</td></tr>
+  </tbody>
+</table></div>
+
+<h4>TRUST_DELTAS</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>이벤트</th><th>trustTowardJudge</th><th>fearOfExposure</th><th>retaliationWorry</th></tr></thead>
+  <tbody>
+    <tr><td><code>empathyQuestion</code></td><td>+12</td><td>—</td><td>—</td></tr>
+    <tr><td><code>confidentialProtection</code></td><td>+20</td><td>-15</td><td>—</td></tr>
+    <tr><td><code>separation</code></td><td>—</td><td>—</td><td>-10</td></tr>
+    <tr><td><code>excessivePressure</code></td><td>-15</td><td>—</td><td>—</td></tr>
+    <tr><td><code>sidingWithOpponent</code></td><td>-20</td><td>—</td><td>—</td></tr>
+  </tbody>
+</table></div>
+
+<h4>PHASE_ORDER — 게임 진행 순서</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>#</th><th>Phase</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td>0</td><td><code>Phase0_CaseIntro</code></td><td>사건 소개</td></tr>
+    <tr><td>1</td><td><code>Phase1_InitialStatement</code></td><td>초기 진술</td></tr>
+    <tr><td>2</td><td><code>Phase2_Rebuttal</code></td><td>반박</td></tr>
+    <tr><td>3</td><td><code>Phase3_Interrogation</code></td><td>심문</td></tr>
+    <tr><td>4</td><td><code>Phase4_Evidence</code></td><td>증거 심리</td></tr>
+    <tr><td>5</td><td><code>Phase5_ReExamination</code></td><td>재심문</td></tr>
+    <tr><td>6</td><td><code>Phase6_Mediation</code></td><td>조정</td></tr>
+    <tr><td>7</td><td><code>Phase7_Verdict</code></td><td>판결</td></tr>
+    <tr><td>8</td><td><code>Result</code></td><td>결과</td></tr>
+  </tbody>
+</table></div>
+
+<h4>MIN_TURNS_BEFORE_ADVANCE — 최소 턴 수</h4>
+<div class="table-wrap"><table>
+  <thead><tr><th>Phase</th><th>최소 턴</th></tr></thead>
+  <tbody>
+    <tr><td><code>Phase3_Interrogation</code></td><td>3</td></tr>
+    <tr><td><code>Phase4_Evidence</code></td><td>1</td></tr>
+    <tr><td><code>Phase5_ReExamination</code></td><td>2</td></tr>
+  </tbody>
+</table></div>
+
+<h3>6.2 글로벌 자원 시스템 (<code>src/store/slices/shopSlice.ts</code>)</h3>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>상수</th><th>값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>FREE_CAP</code></td><td>10</td><td>자동 충전 상한 (무료)</td></tr>
+    <tr><td><code>PAID_CAP</code></td><td>99</td><td>유료 구입 절대 상한</td></tr>
+    <tr><td><code>RECHARGE_INTERVAL_MS</code></td><td>3,600,000</td><td>돋보기 자동 충전 간격 (1시간)</td></tr>
+    <tr><td><code>MAX_AD_INVEST</code></td><td>5</td><td>하루 광고 최대 횟수 (돋보기)</td></tr>
+    <tr><td><code>MAX_AD_SKILL</code></td><td>2</td><td>하루 광고 최대 횟수 (번개)</td></tr>
+  </tbody>
+</table></div>
+
+<div class="alert alert-info"><span class="alert-icon">💡</span><div>
+  <strong>충전 규칙</strong>: 보유량이 FREE_CAP(10) 이상이면 자동 충전 정지. 하나라도 소비하여 10 미만이 되면 충전 타이머 재가동. 유료 구입은 PAID_CAP(99)까지 가능.
+</div></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="api-full">7. API 엔드포인트 전체 목록</h2>
+
+<h3>7.1 공지 API — <code>/api/notices</code></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/notices</code></td><td>활성 공지 목록 (기간 필터, 고정/우선순위 정렬)</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/notices/all</code></td><td>전체 공지 (비활성 포함)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/notices/:id</code></td><td>특정 공지 상세 조회</td><td>공용</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/notices</code></td><td>공지 생성 (title, content 필수)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/notices/:id</code></td><td>공지 수정 (COALESCE 부분 업데이트)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FDEDEC;color:#E74C3C;">DELETE</span></td><td><code>/api/notices/:id</code></td><td>공지 삭제</td><td>WebAdmin</td></tr>
+  </tbody>
+</table></div>
+
+<h3>7.2 우편 API — <code>/api/mail</code></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/mail/player/:playerId</code></td><td>플레이어 우편함 (읽음/보상 상태 JOIN)</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/mail/unread-count/:playerId</code></td><td>미읽은 우편 수</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/mail/read</code></td><td>읽음 처리 (UPSERT)</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/mail/claim</code></td><td>보상 수령 (중복 방지)</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/mail/all</code></td><td>전체 우편 목록</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/mail</code></td><td>우편 발송 (title, content 필수)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/mail/:id</code></td><td>우편 수정</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FDEDEC;color:#E74C3C;">DELETE</span></td><td><code>/api/mail/:id</code></td><td>우편 삭제 (read_status도 삭제)</td><td>WebAdmin</td></tr>
+  </tbody>
+</table></div>
+
+<h3>7.3 AI 프롬프트 API — <code>/api/ai-prompts</code></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-prompts</code></td><td>활성 프롬프트 (key → {content, variables, version} 맵)</td><td>프론트엔드 캐시</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-prompts/all</code></td><td>전체 프롬프트 (비활성 포함)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-prompts/:key</code></td><td>특정 프롬프트 + 변경 이력 (최근 20건)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/ai-prompts</code></td><td>프롬프트 생성 (key, name, content 필수)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/ai-prompts/:key</code></td><td>프롬프트 수정 (content 변경 시 자동 버전 기록)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/ai-prompts/:key/rollback/:ver</code></td><td>특정 버전으로 롤백 (현재 → 히스토리 저장 후 교체)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FDEDEC;color:#E74C3C;">DELETE</span></td><td><code>/api/ai-prompts/:key</code></td><td>프롬프트 삭제 (히스토리도 삭제)</td><td>WebAdmin</td></tr>
+  </tbody>
+</table></div>
+
+<h3>7.4 AI 블록 API — <code>/api/ai-blocks</code></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-blocks</code></td><td>전체 블록 목록</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-blocks/:key</code></td><td>블록 상세 + 히스토리 (최근 20건)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/ai-blocks</code></td><td>블록 생성 (key, name, content 필수)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/ai-blocks/:key</code></td><td>블록 수정 (content 변경 시 자동 버전 기록)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/ai-blocks/:key/rollback/:ver</code></td><td>특정 버전으로 롤백</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FDEDEC;color:#E74C3C;">DELETE</span></td><td><code>/api/ai-blocks/:key</code></td><td>블록 삭제 (히스토리 + agent_blocks 연결도 삭제)</td><td>WebAdmin</td></tr>
+  </tbody>
+</table></div>
+
+<h3>7.5 AI 에이전트 API — <code>/api/ai-agents</code></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-agents</code></td><td>에이전트 목록 (블록 조합 포함)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-agents/:key</code></td><td>에이전트 상세 + 블록 조합</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-agents/:key/preview</code></td><td>조립된 프롬프트 미리보기 (조건 필터링 지원)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/ai-agents</code></td><td>에이전트 생성 (key, name 필수)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/ai-agents/:key</code></td><td>에이전트 수정 (model, temperature 등)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/ai-agents/:key/blocks</code></td><td>블록 조합 전체 교체 (트랜잭션)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FDEDEC;color:#E74C3C;">DELETE</span></td><td><code>/api/ai-agents/:key</code></td><td>에이전트 삭제 (agent_blocks 연결도 삭제)</td><td>WebAdmin</td></tr>
+  </tbody>
+</table></div>
+
+<h3>7.6 AI 데이터 필드 API — <code>/api/ai-data-fields</code></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/ai-data-fields</code></td><td>전체 데이터 필드 목록</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/ai-data-fields</code></td><td>데이터 필드 추가 (key, name 필수)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/ai-data-fields/:key</code></td><td>데이터 필드 수정</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FDEDEC;color:#E74C3C;">DELETE</span></td><td><code>/api/ai-data-fields/:key</code></td><td>데이터 필드 삭제</td><td>WebAdmin</td></tr>
+  </tbody>
+</table></div>
+
+<h3>7.7 플레이어 API — <code>/api/players</code></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/players</code></td><td>플레이어 목록 (games_played, best_score 서브쿼리)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/players/:id</code></td><td>플레이어 상세 + 최근 50건 기록</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/players/sync</code></td><td>플레이어 등록/동기화 (UPSERT)</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E3F2FD;color:#1565C0;">POST</span></td><td><code>/api/players/history</code></td><td>게임 결과 기록 (player_id, case_id 필수)</td><td>프론트엔드</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/players/:id/history</code></td><td>특정 플레이어 전체 게임 기록</td><td>WebAdmin</td></tr>
+  </tbody>
+</table></div>
+
+<h3>7.8 통계 & 설정 API — <code>/api/stats</code></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/stats</code></td><td>대시보드 통계 (총 플레이어/게임/평균점수/관계유형별 등)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/stats/settings</code></td><td>글로벌 설정 조회 (key→value 맵)</td><td>WebAdmin</td></tr>
+    <tr><td><span class="badge" style="background:#FFF3E0;color:#E65100;">PUT</span></td><td><code>/api/stats/settings</code></td><td>설정 업데이트 (트랜잭션 UPSERT)</td><td>WebAdmin</td></tr>
+  </tbody>
+</table></div>
+
+<h3>7.9 헬스체크</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Method</th><th>Endpoint</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge" style="background:#E8F5E9;color:#2E7D32;">GET</span></td><td><code>/api/health</code></td><td>서버 상태 확인 — <code>{ status: 'ok', timestamp }</code></td></tr>
+  </tbody>
+</table></div>
+
+<div class="card">
+  <div class="card-title">API 엔드포인트 요약</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>라우터</th><th>GET</th><th>POST</th><th>PUT</th><th>DELETE</th><th>합계</th></tr></thead>
+    <tbody>
+      <tr><td>notices</td><td>3</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
+      <tr><td>mail</td><td>3</td><td>3</td><td>1</td><td>1</td><td>8</td></tr>
+      <tr><td>ai-prompts</td><td>3</td><td>2</td><td>1</td><td>1</td><td>7</td></tr>
+      <tr><td>ai-blocks</td><td>2</td><td>2</td><td>1</td><td>1</td><td>6</td></tr>
+      <tr><td>ai-agents</td><td>3</td><td>1</td><td>2</td><td>1</td><td>7</td></tr>
+      <tr><td>ai-data-fields</td><td>1</td><td>1</td><td>1</td><td>1</td><td>4</td></tr>
+      <tr><td>players</td><td>3</td><td>2</td><td>0</td><td>0</td><td>5</td></tr>
+      <tr><td>stats</td><td>2</td><td>0</td><td>1</td><td>0</td><td>3</td></tr>
+      <tr><td>health</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+      <tr><td><strong>합계</strong></td><td><strong>21</strong></td><td><strong>12</strong></td><td><strong>8</strong></td><td><strong>6</strong></td><td><strong>47</strong></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="database-full">8. DB 스키마 상세 (14개 테이블)</h2>
+
+<h3>8.1 players</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>TEXT</td><td>PRIMARY KEY</td><td>—</td><td>UUID (클라이언트 생성)</td></tr>
+    <tr><td><code>name</code></td><td>TEXT</td><td>NOT NULL</td><td>'재판관'</td><td>플레이어 닉네임</td></tr>
+    <tr><td><code>region</code></td><td>TEXT</td><td>—</td><td>'KR'</td><td>지역 코드</td></tr>
+    <tr><td><code>created_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>생성 시각</td></tr>
+    <tr><td><code>last_active</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>마지막 활동</td></tr>
+  </tbody>
+</table></div>
+
+<h3>8.2 game_history</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>기록 ID</td></tr>
+    <tr><td><code>player_id</code></td><td>TEXT</td><td>NOT NULL, FK→players</td><td>—</td><td>플레이어 참조</td></tr>
+    <tr><td><code>case_id</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>사건 ID</td></tr>
+    <tr><td><code>score</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>총점</td></tr>
+    <tr><td><code>insight</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>통찰력</td></tr>
+    <tr><td><code>authority</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>권위</td></tr>
+    <tr><td><code>wisdom</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>지혜</td></tr>
+    <tr><td><code>relationship_type</code></td><td>TEXT</td><td>—</td><td>—</td><td>관계 유형</td></tr>
+    <tr><td><code>name_a</code></td><td>TEXT</td><td>—</td><td>—</td><td>당사자 A 이름</td></tr>
+    <tr><td><code>name_b</code></td><td>TEXT</td><td>—</td><td>—</td><td>당사자 B 이름</td></tr>
+    <tr><td><code>season_id</code></td><td>TEXT</td><td>—</td><td>—</td><td>시즌 ID</td></tr>
+    <tr><td><code>titles</code></td><td>TEXT</td><td>—</td><td>'[]'</td><td>획득 칭호 (JSON 배열)</td></tr>
+    <tr><td><code>played_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>플레이 시각</td></tr>
+  </tbody>
+</table></div>
+<p>인덱스: <code>idx_history_player(player_id)</code>, <code>idx_history_season(season_id)</code></p>
+
+<h3>8.3 hall_of_fame</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>ID</td></tr>
+    <tr><td><code>player_id</code></td><td>TEXT</td><td>NOT NULL, FK→players</td><td>—</td><td>플레이어</td></tr>
+    <tr><td><code>player_name</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>플레이어 이름 (스냅샷)</td></tr>
+    <tr><td><code>score</code></td><td>INTEGER</td><td>NOT NULL</td><td>—</td><td>점수</td></tr>
+    <tr><td><code>insight</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>통찰력</td></tr>
+    <tr><td><code>authority</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>권위</td></tr>
+    <tr><td><code>wisdom</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>지혜</td></tr>
+    <tr><td><code>case_id</code></td><td>TEXT</td><td>—</td><td>—</td><td>사건 ID</td></tr>
+    <tr><td><code>season_id</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>시즌</td></tr>
+    <tr><td><code>rank</code></td><td>INTEGER</td><td>NOT NULL</td><td>—</td><td>순위</td></tr>
+    <tr><td><code>recorded_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>기록 시각</td></tr>
+  </tbody>
+</table></div>
+<p>인덱스: <code>idx_hof_season(season_id)</code></p>
+
+<h3>8.4 notices</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>공지 ID</td></tr>
+    <tr><td><code>title</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>제목</td></tr>
+    <tr><td><code>content</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>본문</td></tr>
+    <tr><td><code>type</code></td><td>TEXT</td><td>NOT NULL</td><td>'info'</td><td>info / event / update / maintenance</td></tr>
+    <tr><td><code>priority</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>0=일반, 1=중요, 2=긴급</td></tr>
+    <tr><td><code>is_pinned</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>상단 고정</td></tr>
+    <tr><td><code>is_active</code></td><td>INTEGER</td><td>NOT NULL</td><td>1</td><td>활성 여부</td></tr>
+    <tr><td><code>start_date</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>노출 시작일</td></tr>
+    <tr><td><code>end_date</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>노출 종료일</td></tr>
+    <tr><td><code>created_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>생성 시각</td></tr>
+    <tr><td><code>updated_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>수정 시각</td></tr>
+  </tbody>
+</table></div>
+
+<h3>8.5 mail</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>우편 ID</td></tr>
+    <tr><td><code>title</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>제목</td></tr>
+    <tr><td><code>content</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>본문</td></tr>
+    <tr><td><code>sender</code></td><td>TEXT</td><td>NOT NULL</td><td>'솔로몬 운영팀'</td><td>발신자</td></tr>
+    <tr><td><code>reward_type</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>null / coin / item / title</td></tr>
+    <tr><td><code>reward_amount</code></td><td>INTEGER</td><td>—</td><td>0</td><td>보상 수량</td></tr>
+    <tr><td><code>reward_data</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>JSON (아이템 상세)</td></tr>
+    <tr><td><code>target_type</code></td><td>TEXT</td><td>NOT NULL</td><td>'all'</td><td>all / specific</td></tr>
+    <tr><td><code>target_players</code></td><td>TEXT</td><td>—</td><td>'[]'</td><td>대상 플레이어 ID (JSON 배열)</td></tr>
+    <tr><td><code>is_active</code></td><td>INTEGER</td><td>NOT NULL</td><td>1</td><td>활성 여부</td></tr>
+    <tr><td><code>created_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>생성 시각</td></tr>
+    <tr><td><code>expires_at</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>만료일 (null=무기한)</td></tr>
+  </tbody>
+</table></div>
+
+<h3>8.6 mail_read_status</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>ID</td></tr>
+    <tr><td><code>mail_id</code></td><td>INTEGER</td><td>NOT NULL, FK→mail</td><td>—</td><td>우편 참조</td></tr>
+    <tr><td><code>player_id</code></td><td>TEXT</td><td>NOT NULL, FK→players</td><td>—</td><td>플레이어 참조</td></tr>
+    <tr><td><code>is_read</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>읽음 여부</td></tr>
+    <tr><td><code>reward_claimed</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>보상 수령 여부</td></tr>
+    <tr><td><code>read_at</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>읽은 시각</td></tr>
+    <tr><td><code>claimed_at</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>수령 시각</td></tr>
+  </tbody>
+</table></div>
+<p>유니크 제약: <code>UNIQUE(mail_id, player_id)</code> / 인덱스: <code>idx_mail_read_player(player_id)</code></p>
+
+<h3>8.7 ai_prompts</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>프롬프트 ID</td></tr>
+    <tr><td><code>key</code></td><td>TEXT</td><td>NOT NULL, UNIQUE</td><td>—</td><td>고유 키 (e.g. dialogue_system)</td></tr>
+    <tr><td><code>name</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>표시 이름</td></tr>
+    <tr><td><code>description</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>설명</td></tr>
+    <tr><td><code>category</code></td><td>TEXT</td><td>NOT NULL</td><td>'dialogue'</td><td>dialogue / analysis / generation / system</td></tr>
+    <tr><td><code>content</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>프롬프트 본문 ({변수} 포함)</td></tr>
+    <tr><td><code>variables</code></td><td>TEXT</td><td>—</td><td>'[]'</td><td>사용 가능 변수 (JSON 배열)</td></tr>
+    <tr><td><code>is_active</code></td><td>INTEGER</td><td>NOT NULL</td><td>1</td><td>활성 여부</td></tr>
+    <tr><td><code>version</code></td><td>INTEGER</td><td>NOT NULL</td><td>1</td><td>현재 버전</td></tr>
+    <tr><td><code>temperature</code></td><td>REAL</td><td>—</td><td>NULL</td><td>LLM temperature (null=기본값)</td></tr>
+    <tr><td><code>max_tokens</code></td><td>INTEGER</td><td>—</td><td>NULL</td><td>LLM max_tokens (null=기본값)</td></tr>
+    <tr><td><code>updated_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>수정 시각</td></tr>
+    <tr><td><code>created_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>생성 시각</td></tr>
+  </tbody>
+</table></div>
+
+<h3>8.8 ai_prompt_history</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>ID</td></tr>
+    <tr><td><code>prompt_id</code></td><td>INTEGER</td><td>NOT NULL, FK→ai_prompts</td><td>—</td><td>프롬프트 참조</td></tr>
+    <tr><td><code>content</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>변경 전 내용</td></tr>
+    <tr><td><code>version</code></td><td>INTEGER</td><td>NOT NULL</td><td>—</td><td>버전 번호</td></tr>
+    <tr><td><code>changed_by</code></td><td>TEXT</td><td>—</td><td>'admin'</td><td>변경자</td></tr>
+    <tr><td><code>created_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>기록 시각</td></tr>
+  </tbody>
+</table></div>
+
+<h3>8.9 settings</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>key</code></td><td>TEXT</td><td>PRIMARY KEY</td><td>—</td><td>설정 키</td></tr>
+    <tr><td><code>value</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>설정 값</td></tr>
+    <tr><td><code>updated_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>수정 시각</td></tr>
+  </tbody>
+</table></div>
+
+<h3>8.10 ai_prompt_blocks</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>블록 ID</td></tr>
+    <tr><td><code>key</code></td><td>TEXT</td><td>NOT NULL, UNIQUE</td><td>—</td><td>고유 키</td></tr>
+    <tr><td><code>name</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>표시 이름</td></tr>
+    <tr><td><code>description</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>설명</td></tr>
+    <tr><td><code>category</code></td><td>TEXT</td><td>NOT NULL</td><td>'common'</td><td>카테고리</td></tr>
+    <tr><td><code>content</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>블록 본문</td></tr>
+    <tr><td><code>variables</code></td><td>TEXT</td><td>—</td><td>'[]'</td><td>변수 목록 (JSON)</td></tr>
+    <tr><td><code>version</code></td><td>INTEGER</td><td>NOT NULL</td><td>1</td><td>현재 버전</td></tr>
+    <tr><td><code>is_active</code></td><td>INTEGER</td><td>NOT NULL</td><td>1</td><td>활성 여부</td></tr>
+    <tr><td><code>updated_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>수정 시각</td></tr>
+    <tr><td><code>created_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>생성 시각</td></tr>
+  </tbody>
+</table></div>
+
+<h3>8.11 ai_agents</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>에이전트 ID</td></tr>
+    <tr><td><code>key</code></td><td>TEXT</td><td>NOT NULL, UNIQUE</td><td>—</td><td>고유 키</td></tr>
+    <tr><td><code>name</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>표시 이름</td></tr>
+    <tr><td><code>description</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>설명</td></tr>
+    <tr><td><code>model</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>LLM 모델명</td></tr>
+    <tr><td><code>temperature</code></td><td>REAL</td><td>—</td><td>NULL</td><td>temperature</td></tr>
+    <tr><td><code>max_tokens</code></td><td>INTEGER</td><td>—</td><td>NULL</td><td>max_tokens</td></tr>
+    <tr><td><code>provider</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>'openai' | 'local' | null(기본)</td></tr>
+    <tr><td><code>context_flags</code></td><td>TEXT</td><td>—</td><td>'{}'</td><td>데이터 섹션 토글 (JSON)</td></tr>
+    <tr><td><code>is_active</code></td><td>INTEGER</td><td>NOT NULL</td><td>1</td><td>활성 여부</td></tr>
+    <tr><td><code>updated_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>수정 시각</td></tr>
+    <tr><td><code>created_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>생성 시각</td></tr>
+  </tbody>
+</table></div>
+
+<h3>8.12 ai_agent_blocks</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>ID</td></tr>
+    <tr><td><code>agent_key</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>에이전트 키</td></tr>
+    <tr><td><code>block_key</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>블록 키</td></tr>
+    <tr><td><code>sort_order</code></td><td>INTEGER</td><td>NOT NULL</td><td>0</td><td>정렬 순서</td></tr>
+    <tr><td><code>condition_field</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>조건 필드명</td></tr>
+    <tr><td><code>condition_value</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>조건값</td></tr>
+  </tbody>
+</table></div>
+<p>유니크 제약: <code>UNIQUE(agent_key, block_key, condition_value)</code></p>
+
+<h3>8.13 ai_data_fields</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>ID</td></tr>
+    <tr><td><code>key</code></td><td>TEXT</td><td>NOT NULL, UNIQUE</td><td>—</td><td>필드 키</td></tr>
+    <tr><td><code>name</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>표시 이름</td></tr>
+    <tr><td><code>description</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>설명</td></tr>
+    <tr><td><code>source</code></td><td>TEXT</td><td>NOT NULL</td><td>'computed'</td><td>데이터 출처</td></tr>
+    <tr><td><code>data_type</code></td><td>TEXT</td><td>NOT NULL</td><td>'string'</td><td>데이터 타입</td></tr>
+    <tr><td><code>example</code></td><td>TEXT</td><td>—</td><td>NULL</td><td>예시 값</td></tr>
+    <tr><td><code>updated_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>수정 시각</td></tr>
+  </tbody>
+</table></div>
+
+<h3>8.14 ai_block_history</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>컬럼</th><th>타입</th><th>제약</th><th>기본값</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>INTEGER</td><td>PK AUTOINCREMENT</td><td>—</td><td>ID</td></tr>
+    <tr><td><code>block_id</code></td><td>INTEGER</td><td>NOT NULL, FK→ai_prompt_blocks</td><td>—</td><td>블록 참조</td></tr>
+    <tr><td><code>content</code></td><td>TEXT</td><td>NOT NULL</td><td>—</td><td>변경 전 내용</td></tr>
+    <tr><td><code>version</code></td><td>INTEGER</td><td>NOT NULL</td><td>—</td><td>버전 번호</td></tr>
+    <tr><td><code>changed_by</code></td><td>TEXT</td><td>—</td><td>'admin'</td><td>변경자</td></tr>
+    <tr><td><code>created_at</code></td><td>TEXT</td><td>NOT NULL</td><td>datetime('now')</td><td>기록 시각</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="env">9. 환경 변수</h2>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>변수</th><th>위치</th><th>기본값</th><th>필수</th><th>설명</th></tr></thead>
+  <tbody>
+    <tr><td><code>VITE_OPENAI_API_KEY</code></td><td>.env (프론트엔드)</td><td>—</td><td>선택</td><td>OpenAI API 키. 없으면 LLM 오프라인 모드 (스크립트 전용)</td></tr>
+    <tr><td><code>VITE_API_URL</code></td><td>.env (프론트엔드)</td><td><code>/api</code></td><td>선택</td><td>API 베이스 URL. 개발: /api (Vite 프록시), 프로덕션: Railway URL</td></tr>
+    <tr><td><code>PORT</code></td><td>server 환경변수</td><td><code>3001</code></td><td>선택</td><td>Express 서버 포트. Railway에서는 자동 할당</td></tr>
+  </tbody>
+</table></div>
+
+<div class="card">
+  <div class="card-title">환경별 설정 예시</div>
+  <pre><code># ── 로컬 개발 (.env) ──
+VITE_OPENAI_API_KEY=sk-xxxxx
+VITE_API_URL=/api
+
+# ── 프로덕션 (Vercel 환경변수) ──
+VITE_OPENAI_API_KEY=sk-xxxxx
+VITE_API_URL=https://projectws-production.up.railway.app/api
+
+# ── Railway (서버 환경변수) ──
+PORT=3001    # Railway가 자동 할당</code></pre>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2 id="setup">10. 재현 가이드 (처음부터 구축)</h2>
+
+<h3>10.1 사전 요구사항</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>도구</th><th>버전</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td>Node.js</td><td>20+</td><td>프론트/백엔드 런타임</td></tr>
+    <tr><td>npm</td><td>10+</td><td>패키지 관리</td></tr>
+    <tr><td>Git</td><td>2.40+</td><td>소스 관리</td></tr>
+    <tr><td>LM Studio (선택)</td><td>—</td><td>로컬 LLM 서빙</td></tr>
+  </tbody>
+</table></div>
+
+<h3>10.2 설치 & 실행</h3>
+<pre><code># 1. 저장소 클론
+git clone https://github.com/your-org/ProjectWS.git
+cd ProjectWS
+
+# 2. 프론트엔드 의존성 설치
+npm install
+
+# 3. 환경 변수 설정
+cp .env.example .env
+# VITE_OPENAI_API_KEY=sk-xxxxx   (선택: 없으면 오프라인 모드)
+
+# 4. 서버 의존성 설치 & DB 초기화
+cd server
+npm install
+node db/seed.js        # 기본 데이터 시드 (공지, 프롬프트 등)
+node db/seedBlocks.js  # AI 블록 시드 (프롬프트 블록 + 에이전트 조합)
+
+# 5. 서버 시작 (터미널 1)
+node index.js
+# → Solomon Server running on http://localhost:3001
+# → WebAdmin:  http://localhost:3001/admin
+
+# 6. 프론트엔드 시작 (터미널 2)
+cd ..   # ProjectWS 루트로
+npm run dev
+# → http://localhost:5173
+# → /api/* → localhost:3001 자동 프록시</code></pre>
+
+<h3>10.3 빠른 시작 (배치 파일)</h3>
+<pre><code># 전체 시작 (서버 + 프론트)
+start-all.bat
+
+# 서버만 시작
+start-server.bat
+
+# DB 초기화 (데이터 리셋)
+reset-db.bat</code></pre>
+
+<h3>10.4 WebAdmin 접속</h3>
 <div class="card">
   <ul>
-    <li><strong>프론트엔드</strong>: Vercel (<code>vite build</code> → 정적 배포)</li>
-    <li><strong>백엔드</strong>: Railway / Render (Express.js)</li>
-    <li><strong>DB 마이그레이션</strong>: SQLite → Supabase PostgreSQL (Phase 2)</li>
-    <li><strong>WebAdmin</strong>: 서버와 함께 배포 (/admin 경로)</li>
+    <li><strong>로컬</strong>: <code>http://localhost:3001/admin</code></li>
+    <li><strong>프로덕션</strong>: <code>https://projectws-production.up.railway.app/admin</code></li>
+    <li>인증 없음 (현재) — 추후 Basic Auth 또는 세션 인증 추가 예정</li>
   </ul>
 </div>
+
+<h3>10.5 프로덕션 빌드 & 배포</h3>
+<pre><code># 프론트엔드 빌드 (Vercel)
+npm run build
+# → dist/ 디렉토리 생성 → Vercel 자동 배포
+
+# 서버 배포 (Railway)
+# railway.json 또는 Procfile 기반
+# Railway가 server/index.js 자동 실행
+# PORT 환경변수 자동 할당</code></pre>
 
 </main>
 
