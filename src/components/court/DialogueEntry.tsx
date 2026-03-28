@@ -37,6 +37,15 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
   const [displayText, setDisplayText] = useState(animate ? '' : entry.text)
   const [done, setDone] = useState(!animate)
 
+  // animate가 false로 바뀌면 (새 대사 추가로 더 이상 마지막이 아닌 경우)
+  // 전체 텍스트를 즉시 표시하고 완료 처리
+  useEffect(() => {
+    if (!animate && !done) {
+      setDisplayText(entry.text)
+      setDone(true)
+    }
+  }, [animate, done, entry.text])
+
   useEffect(() => {
     if (!animate) return
     let i = 0
