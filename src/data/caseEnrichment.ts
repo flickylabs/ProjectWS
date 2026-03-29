@@ -23,6 +23,8 @@ export interface DisputeOptimalPath {
   requiredActions: string[]
   bonusActions: string[]
   pathGoal?: string
+  triggerMapping?: Record<string, string>
+  pathBonus?: number
 }
 
 export interface NarrativeExpansionEntry {
