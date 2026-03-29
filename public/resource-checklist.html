@@ -696,8 +696,10 @@ function showPalette(){
 
   // Right: live preview (sticky)
   h+=`<div class="pal-right"><div class="pal-preview">`;
-  h+=`<div class="pal-pv-header"><h3>\uB77C\uC774\uBE0C \uD504\uB9AC\uBDF0</h3><div class="pal-pv-tools"><button class="pal-reset-btn" onclick="resetAllPal()">\u21BA \uC804\uCCB4 \uC0C9\uC0C1 \uC6D0\uB798\uB300\uB85C</button><button onclick="enlargePV()">\uD655\uB300</button></div></div>`;
-  h+=`<div id="palPVInner"></div>`;
+  h+=`<div class="pal-pv-header"><h3>라이브 프리뷰</h3><div class="pal-pv-tools"><button class="pal-reset-btn" onclick="resetAllPal()">↺ 초기화</button><button onclick="enlargePV()">확대</button></div></div>`;
+  h+=`<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px"><button onclick="pvSlide(-1)" style="border:none;background:var(--bdr);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:14px">◀</button><span id="palPVLabel" style="font-size:11px;font-weight:600;color:var(--txt)"></span><button onclick="pvSlide(1)" style="border:none;background:var(--bdr);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:14px">▶</button></div>`;
+  h+=`<div id="palPVInner" style="min-height:400px"></div>`;
+  h+=`<div id="palPVDots" style="text-align:center;margin-top:6px"></div>`;
   h+=`</div></div>`;
   h+=`</div>`;
 
@@ -750,8 +752,14 @@ function resetAllPal(){
 }
 
 function enlargePV(){
-  const el=document.getElementById('palPVInner');if(!el)return;
-  document.getElementById('palEnlargeInner').innerHTML=el.innerHTML;
+  const slides=pvSlides();
+  const s=slides[pvPage];
+  const inner=document.getElementById('palEnlargeInner');
+  inner.innerHTML=`<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+    <button onclick="pvPage=((pvPage-1)%${slides.length}+${slides.length})%${slides.length};enlargePV()" style="border:none;background:var(--bdr);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:18px">◀</button>
+    <span style="font-size:13px;font-weight:700;color:var(--txt)">${pvPage+1}/${slides.length} ${s.name}</span>
+    <button onclick="pvPage=(pvPage+1)%${slides.length};enlargePV()" style="border:none;background:var(--bdr);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:18px">▶</button>
+  </div><div style="transform:scale(1.3);transform-origin:top center;padding-bottom:40px">${s.html}</div>`;
   document.getElementById('palEnlarge').classList.add('show');
 }
 
@@ -760,108 +768,204 @@ function pc(id){
   return item?getPalColor(item):'#000';
 }
 
-function updatePalPreview(){
-  const el=document.getElementById('palPVInner');if(!el)return;
+let pvPage=0;
+function pvSlide(dir){const total=pvSlides().length;pvPage=((pvPage+dir)%total+total)%total;renderPVSlide();}
+
+function pvSlides(){
   const bg=pc('p01'),card=pc('p02'),input=pc('p03');
   const txt=pc('p04'),sub=pc('p05'),dim=pc('p06');
   const acc=pc('p07'),acc2=pc('p08'),acc3=pc('p09');
   const charA=pc('p10'),charAact=pc('p11'),charAbub=pc('p12');
   const charB=pc('p13'),charBact=pc('p14'),charBbub=pc('p15');
   const ok=pc('p22'),err=pc('p23'),pur=pc('p24'),sys=pc('p25');
-
-  // 질문 카드 색상
   const qFact=pc('p16')||'#1d4ed8',qTime=pc('p17')||'#0e7490',qMotive=pc('p18')||'#7e22ce',qCtx=pc('p19')||'#047857',qProv=pc('p20')||'#c2410c',qEmpathy=pc('p21')||'#be185d';
+  const S=s=>`style="${s}"`;
+  return [
 
-  el.innerHTML=`<div style="display:flex;flex-direction:column;gap:12px">
-    <!-- 타이틀 화면 -->
-    <div style="background:${bg};border:1.5px solid ${input};border-radius:10px;padding:16px;text-align:center">
-      <div style="font-size:10px;color:${dim};margin-bottom:4px">타이틀 화면</div>
-      <div style="font-size:28px;margin-bottom:4px">⚖️</div>
-      <div style="font-size:18px;font-weight:900;color:${acc};margin-bottom:2px">솔로몬</div>
-      <div style="font-size:9px;color:${sub};margin-bottom:10px">AI 둘의 싸움을 인간의 지혜로 재판하는 게임</div>
-      <div style="background:linear-gradient(90deg,${acc3},${acc2});color:${bg};font-weight:700;padding:8px;border-radius:10px;font-size:11px;margin-bottom:6px">⚖️ 사건 시작</div>
-      <div style="display:flex;gap:4px">
-        <div style="flex:1;background:${card};border:1px solid ${input};border-radius:8px;padding:6px;font-size:9px;color:${sub}">🏆 리더보드</div>
-        <div style="flex:1;background:${card};border:1px solid ${input};border-radius:8px;padding:6px;font-size:9px;color:${sub}">📊 내 기록</div>
+  // ── 슬라이드 1: 타이틀 화면 ──
+  {name:'타이틀 화면',html:`<div style="background:${bg};border-radius:10px;padding:20px;text-align:center;min-height:420px;display:flex;flex-direction:column;justify-content:center">
+    <div style="font-size:36px;margin-bottom:6px">⚖️</div>
+    <div style="font-size:22px;font-weight:900;color:${acc};margin-bottom:4px">솔로몬</div>
+    <div style="font-size:10px;color:${sub};margin-bottom:16px;line-height:1.5">AI 둘의 싸움을<br>인간의 지혜로 재판하는 게임</div>
+    <div style="background:linear-gradient(90deg,${acc3},${acc2});color:${bg};font-weight:700;padding:10px;border-radius:12px;font-size:13px;margin-bottom:8px">⚖️ 사건 시작</div>
+    <div style="display:flex;gap:6px">
+      <div style="flex:1;background:${card};border:1px solid ${input};border-radius:10px;padding:8px;font-size:10px;color:${sub}">🏆 리더보드</div>
+      <div style="flex:1;background:${card};border:1px solid ${input};border-radius:10px;padding:8px;font-size:10px;color:${sub}">📊 내 기록</div>
+    </div>
+    <div style="margin-top:12px;font-size:9px;color:${dim}">시즌 1 · 28일 · <span style="color:${ok}">● AI 연결됨</span></div>
+  </div>`},
+
+  // ── 슬라이드 2: 사건 소개 (Phase 0) ──
+  {name:'사건 소개 (Phase 0)',html:`<div style="background:${bg};border-radius:10px;padding:16px;min-height:420px">
+    <div style="text-align:center;margin-bottom:10px"><span style="font-size:9px;background:${acc}20;color:${acc};padding:3px 10px;border-radius:10px;font-weight:600">부부 갈등</span></div>
+    <div style="font-size:14px;font-weight:700;color:${txt};text-align:center;margin-bottom:12px">비밀 송금과 무너진 신뢰</div>
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <div style="flex:1;background:${charAbub};border:1px solid ${charA}40;border-radius:10px;padding:10px;text-align:center">
+        <div style="font-size:20px;margin-bottom:4px">😐</div>
+        <div style="font-size:11px;font-weight:700;color:${charA}">김지석</div>
+        <div style="font-size:8px;color:${sub}">35세 · 회사원</div>
+        <div style="font-size:8px;color:${dim};margin-top:4px">방어적 · 수치심</div>
+      </div>
+      <div style="flex:1;background:${charBbub};border:1px solid ${charB}40;border-radius:10px;padding:10px;text-align:center">
+        <div style="font-size:20px;margin-bottom:4px">😤</div>
+        <div style="font-size:11px;font-weight:700;color:${charB}">박세린</div>
+        <div style="font-size:8px;color:${sub}">33세 · 프리랜서</div>
+        <div style="font-size:8px;color:${dim};margin-top:4px">공격적 · 체면</div>
       </div>
     </div>
+    <div style="font-size:9px;color:${sub};line-height:1.6;margin-bottom:10px">남편의 비밀 송금 280만원이 발견되면서 시작된 갈등. 아내는 외도를 의심하고, 남편은 가족에게 보낸 돈이라고 주장한다.</div>
+    <div style="margin-bottom:6px;font-size:9px;color:${dim};font-weight:600">쟁점 5개</div>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;font-size:8px">
+      <span style="background:${input};color:${txt};padding:3px 8px;border-radius:6px;border:1px solid ${input}">비밀 송금</span>
+      <span style="background:${input};color:${txt};padding:3px 8px;border-radius:6px;border:1px solid ${input}">가계부 지출</span>
+      <span style="background:${input};color:${txt};padding:3px 8px;border-radius:6px;border:1px solid ${input}">외도 의심</span>
+      <span style="background:${input};color:${txt};padding:3px 8px;border-radius:6px;border:1px solid ${input}">양육 분담</span>
+      <span style="background:${input};color:${txt};padding:3px 8px;border-radius:6px;border:1px solid ${input}">통장 관리</span>
+    </div>
+    <div style="margin-top:12px;background:${acc3};color:${bg};font-weight:700;padding:10px;border-radius:10px;font-size:11px;text-align:center">재판 시작</div>
+  </div>`},
 
-    <!-- 법정 — TopBar + PartyStatus -->
-    <div style="background:${bg};border:1.5px solid ${input};border-radius:10px;overflow:hidden">
-      <div style="font-size:10px;color:${dim};padding:4px 10px;text-align:center">법정 화면</div>
-      <div style="background:${card};padding:6px 10px;border-bottom:1px solid ${input};display:flex;justify-content:space-between;align-items:center">
-        <span style="font-size:10px;font-weight:700;color:${acc}">⚖️ 솔로몬</span>
-        <span style="font-size:8px;color:${acc};background:${acc}15;padding:2px 8px;border-radius:10px;font-weight:600">[심문]</span>
-        <span style="font-size:8px;color:${sub}">🔍3 ⚡5 ⚖️3</span>
+  // ── 슬라이드 3: 법정 대화 ──
+  {name:'법정 대화 (Phase 3~5)',html:`<div style="background:${bg};border-radius:10px;overflow:hidden;min-height:420px;display:flex;flex-direction:column">
+    <div style="background:${card};padding:6px 12px;border-bottom:1px solid ${input};display:flex;justify-content:space-between;align-items:center">
+      <span style="font-size:11px;font-weight:700;color:${acc}">⚖️ 솔로몬</span>
+      <span style="font-size:9px;color:${acc};background:${acc}15;padding:2px 10px;border-radius:10px;font-weight:600">심문</span>
+      <span style="font-size:9px;color:${sub}">🔍3 ⚡5 ⚖️3</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;padding:6px 12px;font-size:9px;border-bottom:1px solid ${input}">
+      <span style="color:${charA}">😐 김지석 <span style="font-size:7px;color:${sub}">방어적</span></span>
+      <span style="color:${charB}">박세린 😤 <span style="font-size:7px;color:${sub}">자신감</span></span>
+    </div>
+    <div style="flex:1;padding:10px;overflow-y:auto">
+      <div style="max-width:82%;padding:7px 11px;background:${charAbub};color:#bfdbfe;border-radius:12px 12px 12px 2px;margin-bottom:8px;font-size:10px;line-height:1.6">
+        <div style="font-size:8px;font-weight:700;color:${charA};margin-bottom:3px">😐 김지석</div>
+        그건 제가 한 게 아닙니다. 그날 밤 저는 집에 있었어요.
       </div>
-      <div style="display:flex;justify-content:space-between;padding:5px 10px;font-size:9px;border-bottom:1px solid ${input}">
-        <span style="color:${charA}">😐 캐릭터A <span style="font-size:7px;color:${sub}">방어적</span></span>
-        <span style="color:${charB}">캐릭터B 😤 <span style="font-size:7px;color:${sub}">자신감</span></span>
+      <div style="text-align:center;margin:8px 0"><span style="font-size:8px;background:${err}18;color:${err};padding:3px 12px;border-radius:10px">⚡ 김지석 — "비밀 송금" | 흔들리기 시작</span></div>
+      <div style="max-width:82%;padding:7px 11px;background:${charBbub};color:#fecdd3;border-radius:12px 12px 2px 12px;margin-left:auto;margin-bottom:8px;font-size:10px;line-height:1.6">
+        <div style="font-size:8px;font-weight:700;color:${charB};margin-bottom:3px;text-align:right">박세린 😤</div>
+        거짓말하지 마세요. 영수증이 여기 있잖아요.
       </div>
+      <div style="max-width:82%;padding:7px 11px;background:${pur}18;border:1px solid ${pur}40;border-radius:12px;margin-bottom:8px;font-size:10px;line-height:1.6">
+        <div style="font-size:8px;font-weight:700;color:${pur};margin-bottom:3px">🔒 비공개 진술</div>
+        <span style="color:#e9d5ff">사실은... 그 돈은 가족에게 보낸 겁니다.</span>
+      </div>
+      <div style="text-align:center;margin:8px 0"><span style="font-size:8px;background:${sys}18;color:${sys};padding:3px 12px;border-radius:10px">⚖️ 시스템 메시지</span></div>
+    </div>
+  </div>`},
 
-      <!-- 대화 영역 -->
-      <div style="padding:8px;min-height:100px">
-        <div style="max-width:82%;padding:6px 10px;background:${charAbub};color:#bfdbfe;border-radius:10px 10px 10px 2px;margin-bottom:6px;font-size:9px;line-height:1.5">
-          <div style="font-size:8px;font-weight:700;color:${charA};margin-bottom:2px">😐 캐릭터A</div>
-          그건 제가 한 게 아닙니다. 그날 밤 저는 집에 있었어요.
-        </div>
-        <div style="text-align:center;margin:6px 0"><span style="font-size:8px;background:${err}18;color:${err};padding:2px 10px;border-radius:10px">⚡ 캐릭터A — "비밀 송금" | 흔들리기 시작</span></div>
-        <div style="max-width:82%;padding:6px 10px;background:${charBbub};color:#fecdd3;border-radius:10px 10px 2px 10px;margin-left:auto;margin-bottom:6px;font-size:9px;line-height:1.5">
-          <div style="font-size:8px;font-weight:700;color:${charB};margin-bottom:2px;text-align:right">캐릭터B 😤</div>
-          거짓말하지 마세요. 영수증이 여기 있잖아요.
-        </div>
-        <div style="max-width:82%;padding:6px 10px;background:${pur}18;border:1px solid ${pur}40;border-radius:10px 10px 10px 2px;margin-bottom:6px;font-size:9px;line-height:1.5">
-          <div style="font-size:8px;font-weight:700;color:${pur};margin-bottom:2px">🔒 비공개 진술</div>
-          <span style="color:#e9d5ff">사실은... 그 돈은 가족에게 보낸 겁니다.</span>
-        </div>
-        <div style="text-align:center;margin:6px 0"><span style="font-size:8px;background:${sys}18;color:${sys};padding:2px 10px;border-radius:10px">⚖️ 시스템 메시지가 여기에 표시됩니다</span></div>
+  // ── 슬라이드 4: 액션 패널 ──
+  {name:'액션 패널',html:`<div style="background:${bg};border-radius:10px;overflow:hidden;min-height:420px;display:flex;flex-direction:column">
+    <div style="background:${card};padding:8px 12px;border-bottom:1px solid ${input};font-size:10px;color:${dim};text-align:center">하단 액션 패널</div>
+    <div style="flex:1;padding:12px;display:flex;flex-direction:column;gap:10px">
+      <div style="font-size:10px;color:${sub};font-weight:600">대상 선택</div>
+      <div style="display:flex;gap:6px">
+        <div style="flex:1;padding:8px;border-radius:8px;background:${input};border:2px solid ${charAact};color:${charA};font-size:10px;text-align:center;font-weight:600">😐 김지석</div>
+        <div style="flex:1;padding:8px;border-radius:8px;background:${input};border:1px solid ${input};color:${sub};font-size:10px;text-align:center">😤 박세린</div>
       </div>
-
-      <!-- 액션 패널 -->
-      <div style="background:${card};border-top:1px solid ${input};padding:8px">
-        <div style="display:flex;gap:4px;margin-bottom:6px;font-size:9px">
-          <span style="padding:3px 8px;border-radius:6px;background:${input};border:1px solid ${charAact};color:${charA}">😐 A</span>
-          <span style="padding:3px 8px;border-radius:6px;background:${input};border:1px solid ${input};color:${sub}">😤 B</span>
-        </div>
-        <div style="display:flex;gap:3px;flex-wrap:wrap;font-size:8px;margin-bottom:6px">
-          <span style="background:${input};color:${acc};padding:3px 8px;border-radius:6px;font-weight:600">❗이의</span>
-          <span style="background:${input};color:${acc};padding:3px 8px;border-radius:6px;font-weight:600">❓질문</span>
-          <span style="background:${input};color:${acc};padding:3px 8px;border-radius:6px;font-weight:600">✍️자유</span>
-          <span style="background:${input};color:${acc};padding:3px 8px;border-radius:6px;font-weight:600">📄증거</span>
-          <span style="background:${input};color:${acc};padding:3px 8px;border-radius:6px;font-weight:600">🤝신뢰</span>
-        </div>
-        <div style="display:flex;gap:3px;flex-wrap:wrap;font-size:8px">
-          <span style="background:${qFact}25;color:${qFact};padding:2px 6px;border-radius:4px;border:1px solid ${qFact}40">사실추궁</span>
-          <span style="background:${qTime}25;color:${qTime};padding:2px 6px;border-radius:4px;border:1px solid ${qTime}40">타임라인</span>
-          <span style="background:${qMotive}25;color:${qMotive};padding:2px 6px;border-radius:4px;border:1px solid ${qMotive}40">동기탐색</span>
-          <span style="background:${qCtx}25;color:${qCtx};padding:2px 6px;border-radius:4px;border:1px solid ${qCtx}40">맥락확장</span>
-          <span style="background:${qProv}25;color:${qProv};padding:2px 6px;border-radius:4px;border:1px solid ${qProv}40">출처확인</span>
-          <span style="background:${qEmpathy}25;color:${qEmpathy};padding:2px 6px;border-radius:4px;border:1px solid ${qEmpathy}40">공감접근</span>
-        </div>
+      <div style="font-size:10px;color:${sub};font-weight:600">액션 탭</div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;font-size:9px">
+        <span style="background:${acc}20;color:${acc};padding:5px 12px;border-radius:8px;font-weight:700;border:1px solid ${acc}40">❓질문</span>
+        <span style="background:${input};color:${sub};padding:5px 12px;border-radius:8px">📄증거</span>
+        <span style="background:${input};color:${sub};padding:5px 12px;border-radius:8px">🤝신뢰</span>
+        <span style="background:${input};color:${sub};padding:5px 12px;border-radius:8px">⚡스킬</span>
+        <span style="background:${input};color:${sub};padding:5px 12px;border-radius:8px">➡️다음</span>
+      </div>
+      <div style="font-size:10px;color:${sub};font-weight:600">질문 카드 6종</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:9px">
+        <div style="background:${qFact}18;color:${qFact};padding:8px;border-radius:8px;border:1px solid ${qFact}30"><b>❓사실추궁</b><div style="font-size:7px;color:${sub};margin-top:2px">날짜/금액/행위 확정</div></div>
+        <div style="background:${qTime}18;color:${qTime};padding:8px;border-radius:8px;border:1px solid ${qTime}30"><b>🕐타임라인</b><div style="font-size:7px;color:${sub};margin-top:2px">시간순 재구성</div></div>
+        <div style="background:${qMotive}18;color:${qMotive};padding:8px;border-radius:8px;border:1px solid ${qMotive}30"><b>💜동기탐색</b><div style="font-size:7px;color:${sub};margin-top:2px">숨은 이유 탐색</div></div>
+        <div style="background:${qCtx}18;color:${qCtx};padding:8px;border-radius:8px;border:1px solid ${qCtx}30"><b>💚맥락확장</b><div style="font-size:7px;color:${sub};margin-top:2px">배경 확인</div></div>
+        <div style="background:${qProv}18;color:${qProv};padding:8px;border-radius:8px;border:1px solid ${qProv}30"><b>🟠출처확인</b><div style="font-size:7px;color:${sub};margin-top:2px">증거 출처 검증</div></div>
+        <div style="background:${qEmpathy}18;color:${qEmpathy};padding:8px;border-radius:8px;border:1px solid ${qEmpathy}30"><b>💗공감접근</b><div style="font-size:7px;color:${sub};margin-top:2px">감정에 공감</div></div>
       </div>
     </div>
+  </div>`},
 
-    <!-- 상태 뱃지 + 결과 -->
-    <div style="background:${bg};border:1.5px solid ${input};border-radius:10px;padding:12px">
-      <div style="font-size:10px;color:${dim};margin-bottom:6px;text-align:center">상태 뱃지 & 결과</div>
-      <div style="display:flex;gap:4px;flex-wrap:wrap;font-size:8px;margin-bottom:8px;justify-content:center">
-        <span style="background:${ok}22;color:${ok};padding:3px 8px;border-radius:6px">✓ 성공/완료</span>
-        <span style="background:${err}22;color:${err};padding:3px 8px;border-radius:6px">✗ 붕괴/에러</span>
-        <span style="background:${pur}22;color:${pur};padding:3px 8px;border-radius:6px">🔒 비공개</span>
-        <span style="background:${sys}22;color:${sys};padding:3px 8px;border-radius:6px">⚖️ 시스템</span>
-      </div>
-      <div style="text-align:center;margin-bottom:6px">
-        <div style="font-size:24px;font-weight:900;color:${acc}">78<span style="font-size:12px;color:${acc3}">점</span></div>
-        <div style="font-size:9px;color:${sub}">유능한 재판관</div>
-      </div>
-      <div style="display:flex;gap:8px;font-size:8px">
-        <div style="flex:1;text-align:center"><div style="color:${charA};font-weight:700">🔍 통찰</div><div style="background:${input};border-radius:3px;overflow:hidden;height:6px;margin-top:2px"><div style="width:72%;height:100%;background:${charA};border-radius:3px"></div></div><div style="color:${txt};margin-top:1px">72</div></div>
-        <div style="flex:1;text-align:center"><div style="color:${acc};font-weight:700">⚖️ 권위</div><div style="background:${input};border-radius:3px;overflow:hidden;height:6px;margin-top:2px"><div style="width:80%;height:100%;background:${acc};border-radius:3px"></div></div><div style="color:${txt};margin-top:1px">80</div></div>
-        <div style="flex:1;text-align:center"><div style="color:${ok};font-weight:700">💡 지혜</div><div style="background:${input};border-radius:3px;overflow:hidden;height:6px;margin-top:2px"><div style="width:82%;height:100%;background:${ok};border-radius:3px"></div></div><div style="color:${txt};margin-top:1px">82</div></div>
-      </div>
+  // ── 슬라이드 5: 사건 선택 (CaseMap) ──
+  {name:'사건 선택 (CaseMap)',html:`<div style="background:${bg};border-radius:10px;padding:16px;min-height:420px">
+    <div style="text-align:center;margin-bottom:12px">
+      <div style="font-size:13px;font-weight:700;color:${acc}">⚖️ 사건 선택</div>
+      <div style="font-size:9px;color:${sub}">7개 챕터 · 84개 사건</div>
     </div>
-  </div>`;
+    ${['💍 부부','🏘️ 이웃','🏢 직장','🤝 동업','👨‍👩‍👧 가족','🏠 세입자','👫 친구'].map((ch,i)=>`
+    <div style="background:${card};border:1px solid ${i<3?ok+'40':input};border-radius:10px;padding:8px 12px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between">
+      <div><span style="font-size:11px">${ch}</span> <span style="font-size:8px;color:${sub}">12건</span></div>
+      <div style="font-size:8px">${i<3?`<span style="color:${ok}">★★★</span>`:`<span style="color:${dim}">미클리어</span>`}</div>
+    </div>`).join('')}
+  </div>`},
+
+  // ── 슬라이드 6: Phase 전환 ──
+  {name:'Phase 전환 오버레이',html:`<div style="background:${bg}dd;border-radius:10px;min-height:420px;display:flex;align-items:center;justify-content:center">
+    <div style="text-align:center">
+      <div style="font-size:48px;margin-bottom:8px">🔍</div>
+      <div style="font-size:20px;font-weight:900;color:${acc}">심문 개시</div>
+      <div style="font-size:11px;color:${sub};margin-top:4px">질문을 통해 진실을 파헤치세요</div>
+      <div style="margin-top:12px;display:flex;gap:6px;justify-content:center;font-size:8px">
+        <span style="color:${ok}">📄 증거 제시 해금</span>
+        <span style="color:${ok}">⚡ 즉답 요구 해금</span>
+      </div>
+      <div style="margin-top:8px;font-size:9px;color:${dim}"><span style="color:${charA}60">김지석</span> vs <span style="color:${charB}60">박세린</span></div>
+    </div>
+  </div>`},
+
+  // ── 슬라이드 7: 판결 결과 ──
+  {name:'판결 결과 (Result)',html:`<div style="background:${bg};border-radius:10px;padding:16px;min-height:420px;text-align:center">
+    <div style="font-size:36px;margin-bottom:6px">⚖️</div>
+    <div style="font-size:13px;font-weight:600;color:${txt}">판결이 완료되었습니다</div>
+    <div style="font-size:28px;font-weight:900;color:${acc};margin:8px 0">78<span style="font-size:14px;color:${acc3}">점</span></div>
+    <div style="font-size:10px;color:${sub};margin-bottom:16px">유능한 재판관</div>
+    <div style="display:flex;gap:10px;margin-bottom:16px">
+      <div style="flex:1;text-align:center"><div style="font-size:9px;color:${charA};font-weight:700;margin-bottom:3px">🔍 통찰</div><div style="background:${input};border-radius:4px;overflow:hidden;height:8px"><div style="width:72%;height:100%;background:${charA};border-radius:4px"></div></div><div style="font-size:10px;color:${txt};margin-top:2px;font-weight:600">72</div></div>
+      <div style="flex:1;text-align:center"><div style="font-size:9px;color:${acc};font-weight:700;margin-bottom:3px">⚖️ 권위</div><div style="background:${input};border-radius:4px;overflow:hidden;height:8px"><div style="width:80%;height:100%;background:${acc};border-radius:4px"></div></div><div style="font-size:10px;color:${txt};margin-top:2px;font-weight:600">80</div></div>
+      <div style="flex:1;text-align:center"><div style="font-size:9px;color:${ok};font-weight:700;margin-bottom:3px">💡 지혜</div><div style="background:${input};border-radius:4px;overflow:hidden;height:8px"><div style="width:82%;height:100%;background:${ok};border-radius:4px"></div></div><div style="font-size:10px;color:${txt};margin-top:2px;font-weight:600">82</div></div>
+    </div>
+    <div style="display:flex;gap:4px;justify-content:center;font-size:8px;margin-bottom:12px">
+      <span style="background:${ok}22;color:${ok};padding:3px 8px;border-radius:6px">✓ 성공</span>
+      <span style="background:${err}22;color:${err};padding:3px 8px;border-radius:6px">✗ 붕괴</span>
+      <span style="background:${pur}22;color:${pur};padding:3px 8px;border-radius:6px">🔒 비공개</span>
+      <span style="background:${sys}22;color:${sys};padding:3px 8px;border-radius:6px">⚖️ 시스템</span>
+    </div>
+    <div style="display:flex;gap:6px">
+      <div style="flex:1;background:${card};border:1px solid ${input};border-radius:10px;padding:8px;font-size:10px;color:${sub}">🏠 홈으로</div>
+      <div style="flex:1;background:${acc3};border-radius:10px;padding:8px;font-size:10px;color:${bg};font-weight:700">⚖️ 다음 재판</div>
+    </div>
+  </div>`},
+
+  // ── 슬라이드 8: 설정 패널 ──
+  {name:'설정 패널',html:`<div style="background:${card};border:1px solid ${input};border-radius:10px;padding:16px;min-height:420px">
+    <div style="font-size:12px;font-weight:700;color:${acc};margin-bottom:12px">설정</div>
+    <div style="font-size:9px;color:${dim};font-weight:600;margin-bottom:6px">AI 연결</div>
+    <div style="background:${ok}15;border:1px solid ${ok}40;border-radius:8px;padding:6px 10px;font-size:9px;color:${ok};margin-bottom:12px">✓ OpenAI GPT-4o-mini 연결됨</div>
+    <div style="font-size:9px;color:${dim};font-weight:600;margin-bottom:6px">게임 설정</div>
+    ${['배경음악','효과음','행동 징후 표시','대사 자동 재생'].map(l=>`
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid ${input}">
+      <span style="font-size:9px;color:${txt}">${l}</span>
+      <div style="width:32px;height:16px;border-radius:8px;background:${acc3};position:relative"><div style="width:12px;height:12px;border-radius:50%;background:white;position:absolute;top:2px;right:2px"></div></div>
+    </div>`).join('')}
+    <div style="font-size:9px;color:${dim};font-weight:600;margin:12px 0 6px">플레이 기록</div>
+    <div style="display:flex;gap:6px">
+      <div style="flex:1;background:${input};border-radius:8px;padding:8px;text-align:center"><div style="font-size:8px;color:${sub}">총 플레이</div><div style="font-size:12px;font-weight:700;color:${txt}">12판</div></div>
+      <div style="flex:1;background:${input};border-radius:8px;padding:8px;text-align:center"><div style="font-size:8px;color:${sub}">최고 점수</div><div style="font-size:12px;font-weight:700;color:${txt}">89점</div></div>
+      <div style="flex:1;background:${input};border-radius:8px;padding:8px;text-align:center"><div style="font-size:8px;color:${sub}">최근 사건</div><div style="font-size:12px;font-weight:700;color:${txt}">5개</div></div>
+    </div>
+  </div>`},
+  ];}
+
+function renderPVSlide(){
+  const slides=pvSlides();
+  const el=document.getElementById('palPVInner');if(!el)return;
+  const s=slides[pvPage];
+  el.innerHTML=s.html;
+  const label=document.getElementById('palPVLabel');
+  if(label)label.textContent=`${pvPage+1}/${slides.length} ${s.name}`;
+  const dots=document.getElementById('palPVDots');
+  if(dots)dots.innerHTML=slides.map((_,i)=>`<span style="display:inline-block;width:6px;height:6px;border-radius:50%;margin:0 2px;background:${i===pvPage?'var(--acc)':'var(--bdr)'};cursor:pointer" onclick="pvPage=${i};renderPVSlide()"></span>`).join('');
 }
+
+function updatePalPreview(){renderPVSlide();}
+
 
 // ══════════ TABLE VIEW ══════════
 function show(gid,sid){
