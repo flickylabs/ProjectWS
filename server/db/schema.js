@@ -208,6 +208,48 @@ export function createTables(db) {
     );
 
     -- ═══════════════════════════════════════════
+    -- 시즌 관리
+    -- ═══════════════════════════════════════════
+    CREATE TABLE IF NOT EXISTS seasons (
+      id          TEXT PRIMARY KEY,
+      name        TEXT NOT NULL,
+      start_date  TEXT NOT NULL,
+      end_date    TEXT NOT NULL,
+      is_active   INTEGER NOT NULL DEFAULT 0,
+      created_at  TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    -- ═══════════════════════════════════════════
+    -- LLM 호출 로그 (비용 모니터링용)
+    -- ═══════════════════════════════════════════
+    CREATE TABLE IF NOT EXISTS llm_call_log (
+      id          INTEGER PRIMARY KEY AUTOINCREMENT,
+      agent_key   TEXT,
+      model       TEXT DEFAULT 'gpt-4o-mini',
+      input_tokens  INTEGER DEFAULT 0,
+      output_tokens INTEGER DEFAULT 0,
+      duration_ms   INTEGER DEFAULT 0,
+      created_at  TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    -- ═══════════════════════════════════════════
+    -- 사건 메타 (태그, 상성, 경로 등 보강 데이터)
+    -- ═══════════════════════════════════════════
+    CREATE TABLE IF NOT EXISTS case_meta (
+      id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+      case_key            TEXT NOT NULL UNIQUE,
+      personality_tags_a   TEXT DEFAULT '[]',
+      personality_tags_b   TEXT DEFAULT '[]',
+      content_tags         TEXT DEFAULT '{}',
+      truth_category       TEXT DEFAULT '{}',
+      action_affinity      TEXT DEFAULT '{}',
+      optimal_path         TEXT DEFAULT '{}',
+      narrative_expansion  TEXT DEFAULT '{}',
+      witness_speech_sample TEXT DEFAULT '{}',
+      updated_at           TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    -- ═══════════════════════════════════════════
     -- 프롬프트 블록 변경 이력
     -- ═══════════════════════════════════════════
     CREATE TABLE IF NOT EXISTS ai_block_history (

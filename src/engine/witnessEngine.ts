@@ -2,9 +2,14 @@
  * 증인 소환 시스템.
  * socialGraph의 제3자를 증인으로 소환해 증언을 생성한다.
  * Phase 4(증거 심리)부터 사용 가능, 조사 토큰 1개 소모.
+ *
+ * v3: witness_testimony 에이전트 블록 조합 사용
  */
 import { chatCompletion } from './llmClient'
+import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 import { getRelationLabel } from './llmSpeechGuide'
+import { WITNESS_BUDGETS } from '../data/witnessBudget'
+import { normalizeCaseKey } from '../utils/caseHelpers'
 import type { CaseData } from '../types'
 import type { AgentState } from '../types'
 import type { ThirdParty } from '../types/character'
@@ -49,92 +54,16 @@ export async function generateWitnessTestimony(
   _agentB: AgentState,
   recentDialogues: { speaker: string; text: string }[],
 ): Promise<WitnessTestimony> {
-  const relType = getRelationLabel(caseData.duo.relationshipType ?? '')
-  const disputes = caseData.disputes.map(d => `${d.id}: ${d.name}`).join('\n')
+  const vars = buildWitnessVars(witness, caseData, recentDialogues)
 
-  // 편향에 따른 증언 방향 지시
-  const biasGuide: Record<string, string> = {
-    pro_a: `${caseData.duo.partyA.name} 편에 가깝다. 자연스럽게 A에 유리한 정보를 강조하되, 노골적이면 안 된다.`,
-    pro_b: `${caseData.duo.partyB.name} 편에 가깝다. 자연스럽게 B에 유리한 정보를 강조하되, 노골적이면 안 된다.`,
-    neutral: '중립적이다. 자신이 아는 사실만 말한다.',
-    self_interest: '자기 이익이 우선이다. 자기에게 불리한 부분은 축소한다.',
-  }
+  // Agent 블록 조합 우선, 폴백으로 하드코딩 프롬프트
+  const systemPrompt = isAgentLoaded()
+    ? buildAgentPrompt('witness_testimony', vars)
+    : buildFallbackWitnessPrompt(witness, caseData, recentDialogues)
 
-  // 왜곡 위험에 따른 지시
-  const distortionGuide: Record<string, string> = {
-    accurate: '기억이 정확하다. 사실을 있는 그대로 전달한다.',
-    unconscious: '의도는 없지만 기억이 편향돼 있다. 한쪽에 유리하게 해석된 사실을 말한다.',
-    intentional: '의도적으로 일부를 숨기거나 과장한다. 플레이어가 잘 들어야 빈틈을 찾을 수 있다.',
-    strategic: '전략적으로 정보를 취사선택한다. 불리한 사실은 빼고 유리한 것만 내놓는다.',
-  }
-
-  // witnessProfile 활용
-  const wp = witness.witnessProfile
-  const ageInfo = wp ? `${wp.age}세, ${wp.occupation}` : '정보 없음'
-  const relA = wp?.relationToA ?? (witness.relationTo === 'a' ? `${caseData.duo.partyA.name}쪽 인물` : '간접적으로 아는 사이')
-  const relB = wp?.relationToB ?? (witness.relationTo === 'b' ? `${caseData.duo.partyB.name}쪽 인물` : '간접적으로 아는 사이')
-  const sentA = wp?.sentimentToA ?? 0
-  const sentB = wp?.sentimentToB ?? 0
-  const speechStyle = wp?.speechStyle ?? '조심스럽게 사실 위주로 말한다.'
-  const addrJudge = wp?.addressJudge ?? '재판관님'
-  const addrA = wp?.addressA ?? caseData.duo.partyA.name + '씨'
-  const addrB = wp?.addressB ?? caseData.duo.partyB.name + '씨'
-  const hidden = wp?.hiddenAgenda ?? ''
-
-  // 감정을 자연어로 변환
-  const sentimentDesc = (val: number, name: string) => {
-    if (val >= 50) return `${name}에게 호의적이다. 자연스럽게 편을 든다.`
-    if (val >= 20) return `${name}에게 약한 호감이 있다.`
-    if (val <= -30) return `${name}에게 적대감이 있다. 은근히 불리한 말을 섞는다.`
-    if (val <= -10) return `${name}에게 약간 불편한 감정이 있다.`
-    return `${name}에 대해 특별한 감정은 없다.`
-  }
-
-  const systemPrompt = `당신은 법정 심문 게임의 증인 "${witness.name}"입니다.
-
-## 증인 프로필
-- 이름: ${witness.name}
-- 나이/직업: ${ageInfo}
-- ${caseData.duo.partyA.name}와의 관계: ${relA}
-- ${caseData.duo.partyB.name}와의 관계: ${relB}
-- 직접 목격: ${witness.witnessedDirectly ? '예 — 구체적 장면을 묘사할 수 있다' : '아니오 — 전해 들은 이야기로 답한다'}
-- 아는 내용: ${witness.knowledgeScope}
-
-## 감정과 태도
-- ${sentimentDesc(sentA, caseData.duo.partyA.name)}
-- ${sentimentDesc(sentB, caseData.duo.partyB.name)}
-- 편향: ${biasGuide[witness.bias] ?? biasGuide.neutral}
-- 왜곡 위험: ${distortionGuide[witness.distortionRisk] ?? distortionGuide.accurate}
-${hidden ? `- 숨기고 싶은 것: ${hidden}` : ''}
-
-## 말투
-${speechStyle}
-
-## 호칭 (매우 중요)
-- 재판관: "${addrJudge}"
-- ${caseData.duo.partyA.name}: "${addrA}"
-- ${caseData.duo.partyB.name}: "${addrB}"
-- 재판관에게는 항상 존댓말. A/B를 언급할 때 위 호칭을 사용하세요.
-
-## 사건 쟁점
-${disputes}
-
-## 배경
-${relType} 관계. ${caseData.context.description}
-
-## 최근 대화 (맥락 참고)
-${recentDialogues.slice(-5).map(d => `${d.speaker}: ${d.text.slice(0, 60)}`).join('\n')}
-
-## 규칙
-1. "${addrJudge}"에게 존댓말로 증언. 자신이 아는 범위 안에서만 답하세요.
-2. 모르는 건 "그 부분은 잘 모르겠습니다"로. 추측을 사실처럼 말하지 마세요.
-3. 감정이 있으면 자연스럽게 드러나되 노골적이면 안 됩니다.
-4. 왜곡 위험이 있으면 사실의 일부를 빠뜨리거나 순서를 바꾸세요.
-5. 증언은 3~4문장. 구체적 날짜/시각/금액을 포함해 신뢰감을 주세요.
-6. 말투를 반드시 반영하세요 — 기관 담당자는 건조하게, 가족은 감정적으로, 친구는 편하게.
-
-## 출력 (JSON만)
-{"testimony":"증언 내용 (3~4문장)","behaviorHint":"행동/표정 묘사","relatedDisputes":["d-1"등],"favorDirection":"pro_a|pro_b|neutral|mixed"}`
+  const config = isAgentLoaded()
+    ? getAgentConfig('witness_testimony')
+    : { temperature: 0.7, maxTokens: 300 }
 
   try {
     const raw = await chatCompletion(
@@ -142,7 +71,7 @@ ${recentDialogues.slice(-5).map(d => `${d.speaker}: ${d.text.slice(0, 60)}`).joi
         { role: 'system', content: systemPrompt },
         { role: 'user', content: `재판관: "${witness.name} 증인, 이 사건에 대해 아는 바를 말씀해 주십시오."` },
       ],
-      { temperature: 0.7, maxTokens: 300 },
+      { temperature: config.temperature, maxTokens: config.maxTokens },
     )
 
     return parseWitnessResponse(raw, witness)
@@ -151,7 +80,80 @@ ${recentDialogues.slice(-5).map(d => `${d.speaker}: ${d.text.slice(0, 60)}`).joi
   }
 }
 
-/** LLM 응답 파싱 */
+/* ── 증인 변수 맵 생성 ──────────────────── */
+
+function buildWitnessVars(
+  witness: ThirdParty,
+  caseData: CaseData,
+  recentDialogues: { speaker: string; text: string }[],
+): Record<string, string> {
+  const wp = witness.witnessProfile
+  const disputes = caseData.disputes.map(d => `${d.id}: ${d.name}`).join('\n')
+
+  // 편향 가이드
+  const biasGuide: Record<string, string> = {
+    pro_a: `${caseData.duo.partyA.name} 편에 가깝다. 자연스럽게 A에 유리한 정보를 강조하되, 노골적이면 안 된다.`,
+    pro_b: `${caseData.duo.partyB.name} 편에 가깝다. 자연스럽게 B에 유리한 정보를 강조하되, 노골적이면 안 된다.`,
+    neutral: '중립적이다. 자신이 아는 사실만 말한다.',
+    self_interest: '자기 이익이 우선이다. 자기에게 불리한 부분은 축소한다.',
+  }
+
+  // 왜곡 가이드
+  const distortionGuide: Record<string, string> = {
+    accurate: '기억이 정확하다. 사실을 있는 그대로 전달한다.',
+    unconscious: '의도는 없지만 기억이 편향돼 있다. 한쪽에 유리하게 해석된 사실을 말한다.',
+    intentional: '의도적으로 일부를 숨기거나 과장한다.',
+    strategic: '전략적으로 정보를 취사선택한다. 불리한 사실은 빼고 유리한 것만 내놓는다.',
+  }
+
+  // 감정 기반 편향 설명
+  const sentA = wp?.sentimentToA ?? 0
+  const sentB = wp?.sentimentToB ?? 0
+  const sentimentDesc = (val: number, name: string) => {
+    if (val >= 50) return `${name}에게 호의적이다.`
+    if (val >= 20) return `${name}에게 약한 호감이 있다.`
+    if (val <= -30) return `${name}에게 적대감이 있다.`
+    if (val <= -10) return `${name}에게 약간 불편한 감정이 있다.`
+    return `${name}에 대해 특별한 감정은 없다.`
+  }
+  const fullBiasGuide = [
+    sentimentDesc(sentA, caseData.duo.partyA.name),
+    sentimentDesc(sentB, caseData.duo.partyB.name),
+    biasGuide[witness.bias] ?? biasGuide.neutral,
+  ].join('\n')
+
+  // 최근 대화 (맥락)
+  const recentDialogueStr = recentDialogues.slice(-5)
+    .map(d => `${d.speaker}: ${d.text.slice(0, 60)}`)
+    .join('\n')
+
+  return {
+    witnessName: witness.name,
+    witnessAge: wp ? `${wp.age}세` : '정보 없음',
+    witnessOccupation: wp?.occupation ?? '정보 없음',
+    nameA: caseData.duo.partyA.name,
+    nameB: caseData.duo.partyB.name,
+    witnessRelationToA: wp?.relationToA ?? (witness.relationTo === 'a' ? `${caseData.duo.partyA.name}쪽 인물` : '간접적으로 아는 사이'),
+    witnessRelationToB: wp?.relationToB ?? (witness.relationTo === 'b' ? `${caseData.duo.partyB.name}쪽 인물` : '간접적으로 아는 사이'),
+    witnessWitnessedDirectly: witness.witnessedDirectly ? '예 — 직접 본 장면이 있다' : '아니오 — 전해 들은 이야기로 답한다',
+    context: caseData.context.description,
+    disputeList: disputes,
+    witnessKnowledgeScope: witness.knowledgeScope,
+    witnessBudget: formatWitnessBudget(caseData, witness.id),
+    witnessBiasGuide: fullBiasGuide,
+    witnessDistortionGuide: distortionGuide[witness.distortionRisk] ?? distortionGuide.accurate,
+    witnessHiddenAgenda: wp?.hiddenAgenda ?? '',
+    witnessAddressJudge: wp?.addressJudge ?? '재판관님',
+    witnessAddressA: wp?.addressA ?? caseData.duo.partyA.name + '씨',
+    witnessAddressB: wp?.addressB ?? caseData.duo.partyB.name + '씨',
+    witnessSpeechStyle: wp?.speechStyle ?? '조심스럽게 사실 위주로 말한다.',
+    // 최근 대화 (witness_dialogue_rules에서는 사용 안 하지만 참고용)
+    recentDialogue: recentDialogueStr,
+  }
+}
+
+/* ── LLM 응답 파싱 ──────────────────────── */
+
 function parseWitnessResponse(raw: string, witness: ThirdParty): WitnessTestimony {
   try {
     const jsonMatch = raw.match(/\{[\s\S]*\}/)
@@ -172,7 +174,72 @@ function parseWitnessResponse(raw: string, witness: ThirdParty): WitnessTestimon
   }
 }
 
-/** LLM 실패 시 폴백 증언 */
+/* ── 폴백: 에이전트 미로드 시 하드코딩 프롬프트 ── */
+
+function buildFallbackWitnessPrompt(
+  witness: ThirdParty,
+  caseData: CaseData,
+  recentDialogues: { speaker: string; text: string }[],
+): string {
+  const vars = buildWitnessVars(witness, caseData, recentDialogues)
+  return `당신은 이 사건의 증인 "${vars.witnessName}"입니다.
+
+## 증인 프로필
+- 이름: ${vars.witnessName}
+- 나이/직업: ${vars.witnessAge}, ${vars.witnessOccupation}
+- ${vars.nameA}와의 관계: ${vars.witnessRelationToA}
+- ${vars.nameB}와의 관계: ${vars.witnessRelationToB}
+- 직접 목격: ${vars.witnessWitnessedDirectly}
+- 아는 내용: ${vars.witnessKnowledgeScope}
+
+## 감정/편향
+${vars.witnessBiasGuide}
+왜곡 위험: ${vars.witnessDistortionGuide}
+${vars.witnessHiddenAgenda ? `숨기고 싶은 것: ${vars.witnessHiddenAgenda}` : ''}
+
+## 말투/호칭
+${vars.witnessSpeechStyle}
+- 재판관: "${vars.witnessAddressJudge}"
+- ${vars.nameA}: "${vars.witnessAddressA}"
+- ${vars.nameB}: "${vars.witnessAddressB}"
+
+## 사건 쟁점
+${vars.disputeList}
+
+## 규칙
+- 재판관에게 존댓말로 3~4문장 증언.
+- 모르는 것은 "잘 모르겠습니다"로.
+- 증언 안에 괄호 행동묘사 넣지 말고 behaviorHint에만.
+
+## 출력 (JSON만)
+{"testimony":"증언 내용","behaviorHint":"행동/표정 묘사","relatedDisputes":["d-1"],"favorDirection":"pro_a|pro_b|neutral|mixed","certainty":"direct|hearsay|inferred","mentionedTruthIds":[]}`
+}
+
+/* ── witnessBudget 포매팅 (v4 데이터) ────── */
+
+function formatWitnessBudget(caseData: CaseData, witnessId: string): string {
+  const caseKey = normalizeCaseKey(caseData)
+  const budget = WITNESS_BUDGETS[caseKey]?.[witnessId]
+  if (!budget) return ''
+
+  const parts: string[] = []
+  if (budget.canState.length > 0) {
+    parts.push('말할 수 있는 것:')
+    budget.canState.forEach(s => parts.push(`- ${s}`))
+  }
+  if (budget.uncertain.length > 0) {
+    parts.push('불확실한 것 (추측하지 마):')
+    budget.uncertain.forEach(s => parts.push(`- ${s}`))
+  }
+  if (budget.forbidden.length > 0) {
+    parts.push('절대 말하면 안 되는 것:')
+    budget.forbidden.forEach(s => parts.push(`- ${s}`))
+  }
+  return parts.join('\n')
+}
+
+/* ── LLM 실패 시 폴백 증언 ──────────────── */
+
 function generateFallbackTestimony(witness: ThirdParty, _caseData: CaseData): WitnessTestimony {
   const biasText: Record<string, string> = {
     pro_a: '제가 본 바로는 그쪽 말이 맞는 것 같습니다.',

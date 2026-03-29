@@ -8,13 +8,15 @@
 import { chatCompletion } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded, getContextFlags } from '../api/agentManager'
-import { getMyCall, getJudgeReference, getAngryCall, getRelationLabel } from './llmSpeechGuide'
+import { getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
 import { resolveDialogue as fallbackResolve, type ResolvedDialogue } from './dialogueResolver'
 import type { PlayerAction, PartyId, DialogueNode, AgentState } from '../types'
 import { GamePhase } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
 import type { CaseData } from '../types'
 import { useGameStore } from '../store/useGameStore'
+import { TRUTH_POLICIES, getFallbackPolicy, type LieStateKey } from '../data/truthPolicy'
+import { normalizeCaseKey, getRelationshipType } from '../utils/caseHelpers'
 
 export async function resolveLLMDialogue(
   action: PlayerAction,
@@ -23,36 +25,89 @@ export async function resolveLLMDialogue(
   evidenceStates: Record<string, EvidenceRuntimeState>,
   caseData: CaseData,
 ): Promise<ResolvedDialogue | null> {
-  if (action.type !== 'question' && action.type !== 'evidence_present' && action.type !== 'trust_action') {
+  if (action.type !== 'question' && action.type !== 'evidence_present' && action.type !== 'evidence_investigate' && action.type !== 'trust_action' && action.type !== 'mediation') {
     return null
   }
 
+  const store = useGameStore.getState()
   const target: PartyId = 'target' in action ? action.target : 'a'
   const agent = target === 'a' ? agentA : agentB
   const profile = target === 'a' ? caseData.duo.partyA : caseData.duo.partyB
   const opponent = target === 'a' ? caseData.duo.partyB : caseData.duo.partyA
   let disputeId = 'disputeId' in action ? (action as { disputeId?: string }).disputeId : undefined
 
-  // evidence_present: 증거에서 쟁점 + 증거 정보 추출
+  // evidence_present / evidence_investigate: 증거에서 쟁점 + 증거 정보 추출
   let evidenceForPrompt: CaseData['evidence'][number] | undefined
-  if (action.type === 'evidence_present') {
+  if (action.type === 'evidence_present' || action.type === 'evidence_investigate') {
     evidenceForPrompt = caseData.evidence.find(e => e.id === action.evidenceId)
     if (!disputeId && evidenceForPrompt?.proves.length) {
       disputeId = evidenceForPrompt.proves[0]
     }
   }
 
+  // trust_action: disputeId가 없으면 가장 최근 심문한 쟁점을 자동 추론
+  if (!disputeId && action.type === 'trust_action') {
+    const recentJudgeEntries = store.dialogueLog
+      .filter(d => d.speaker === 'judge' && d.relatedDisputes.length > 0)
+    if (recentJudgeEntries.length > 0) {
+      disputeId = recentJudgeEntries[recentJudgeEntries.length - 1].relatedDisputes[0]
+    }
+  }
+
   const dispute = disputeId ? caseData.disputes.find((d) => d.id === disputeId) : undefined
   const lieEntry = disputeId ? agent.lieStateMap[disputeId] : undefined
 
-  const store = useGameStore.getState()
-  const recentDialogues = store.dialogueLog.slice(-8)
-  const presentedEvidence = caseData.evidence.filter(e => evidenceStates[e.id]?.presented)
+  // ── 컨텍스트 필터링 강화 ──
+  // 최근 대화: 현재 쟁점 관련 + 최근 것만 (불필요한 다른 쟁점 대화 제외)
+  const allRecent = store.dialogueLog.slice(-12)
+  const recentDialogues = disputeId
+    ? allRecent.filter(d =>
+        d.relatedDisputes.length === 0 ||  // 시스템 일반 대화 (쟁점 무관)
+        d.relatedDisputes.includes(disputeId!),  // 현재 쟁점 관련만
+      ).slice(-8)
+    : allRecent.slice(-8)
 
-  const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase)
-  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt)
+  // 제시된 증거: 이 대상(target)에게 제시된 것 + 현재 쟁점 관련만 필터
+  const presentedEvidence = caseData.evidence.filter(e => {
+    const state = evidenceStates[e.id]
+    if (!state?.presented || !state.presentedTo.includes(target)) return false
+    // 쟁점 필터: 현재 쟁점과 관련된 증거만 (disputeId 없으면 전체)
+    if (!disputeId) return true
+    return e.proves.includes(disputeId)
+  })
 
-  const config = isAgentLoaded() ? getAgentConfig('interrogation') : getPromptConfig('interrogation_system')
+  // ── 새 변수 생성: actionContract ──
+  const actionContract = buildActionContract(action, lieEntry, store, caseData, target, disputeId)
+
+  // ── 새 변수 생성: trustInfo (v3: JSON 형식) ──
+  const trustInfo = JSON.stringify({
+    trustTowardJudge: agent.trustState.trustTowardJudge,
+    fearOfExposure: agent.trustState.fearOfExposure,
+    retaliationWorry: agent.trustState.retaliationWorry,
+  })
+
+  // ── 새 변수 생성: skillOverlay ──
+  const skillOverlay = buildSkillOverlay(store, target)
+
+  // ── 새 변수 생성: evidenceAxis (v3: JSON 형식) ──
+  const evidenceAxis = evidenceForPrompt ? buildEvidenceAxis(evidenceForPrompt) : ''
+
+  // ── 새 변수 생성: investigationResult (#6 — 사건 JSON에서 추출) ──
+  const investigationResult = buildInvestigationResult(evidenceForPrompt, evidenceStates)
+
+  // ── focusedDisputeId ──
+  const focusedDisputeId = disputeId ?? ''
+
+  // ── 에이전트 라우팅: 액션 유형에 따라 적절한 에이전트 선택 ──
+  const agentKey = resolveAgentKey(action, store, target)
+
+  // ── 재판관 질문: 엔진 템플릿 (LLM 호출 전에 생성하여 user message에 포함) ──
+  const judgeQuestion = buildJudgeQuestion(action, caseData, target, dispute)
+
+  const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey)
+  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, judgeQuestion, investigationResult)
+
+  const config = isAgentLoaded() ? getAgentConfig(agentKey) : getPromptConfig('interrogation_system')
 
   try {
     const response = await chatCompletion(
@@ -72,30 +127,57 @@ export async function resolveLLMDialogue(
       throw new Error('NPC response too short or empty')
     }
 
-    // 재판관 질문이 있으면 추가, 없으면 폴백 템플릿 사용
-    const store2 = useGameStore.getState()
-    const judgeText = parsed.judgeQuestion?.trim()
-    if (judgeText) {
-      store2.addDialogue({
-        speaker: 'judge',
-        text: judgeText,
-        relatedDisputes: disputeId ? [disputeId] : [],
-        turn: store2.turnCount,
+    // ── 금지 정보 누출 검증 (#2) ──
+    const contract = JSON.parse(actionContract) as { forbiddenTruthIds?: string[] }
+    const forbidden = contract.forbiddenTruthIds ?? []
+    const leaked = parsed.mentionedTruthIds.filter(id => forbidden.includes(id))
+    if (leaked.length > 0) {
+      console.warn(`[TruthGuard] 금지 정보 누출 감지: ${leaked.join(', ')}`)
+      parsed.mentionedTruthIds = parsed.mentionedTruthIds.filter(id => !forbidden.includes(id))
+
+      // 텍스트 레벨 검증: forbidden truth의 핵심 키워드가 본문에 있는지
+      const forbiddenFacts = caseData.truthTable
+        .map((t, i) => ({ id: `t-${i + 1}`, fact: t.fact }))
+        .filter(t => forbidden.includes(t.id))
+      const npcText = parsed.npcNode.text + ' ' + (parsed.requestedFollowup ?? '')
+      const textLeaks = forbiddenFacts.filter(f => {
+        // 핵심 키워드 추출 (3글자 이상 단어)
+        const keywords = f.fact.split(/[\s,·.]+/).filter(w => w.length >= 3)
+        // 키워드 중 2개 이상 매칭되면 텍스트 누출로 판단
+        const matches = keywords.filter(kw => npcText.includes(kw))
+        return matches.length >= 2
       })
-    } else {
-      // LLM이 재판관 질문을 생성하지 못한 경우 폴백
-      const fallbackQuestion = buildFallbackJudgeQuestion(action, caseData, target, dispute)
-      if (fallbackQuestion) {
-        store2.addDialogue({
-          speaker: 'judge',
-          text: fallbackQuestion,
-          relatedDisputes: disputeId ? [disputeId] : [],
-          turn: store2.turnCount,
-        })
+
+      if (textLeaks.length > 0) {
+        console.warn(`[TruthGuard] 텍스트 레벨 누출 감지: ${textLeaks.map(t => t.id).join(', ')} — 폴백 전환`)
+        // 텍스트 누출 시 폴백 대사로 교체
+        parsed.npcNode.text = '재판관님, 그 부분은 제가 말씀드리기 어렵습니다.'
+        parsed.npcNode.behaviorHint = '입을 다물고 시선을 내린다.'
+        parsed.stance = 'hedge'
+        parsed.requestedFollowup = ''
       }
     }
 
-    return { node: parsed.npcNode, target }
+    // 재판관 질문을 대화 로그에 추가
+    if (judgeQuestion) {
+      store.addDialogue({
+        speaker: 'judge',
+        text: judgeQuestion,
+        relatedDisputes: disputeId ? [disputeId] : [],
+        turn: store.turnCount,
+      })
+    }
+
+    // responseMode는 엔진이 강제 (LLM 출력 무시)
+    const contractObj2 = JSON.parse(actionContract) as { responseMode?: string; answerStyle?: string }
+    return {
+      node: parsed.npcNode, target,
+      stance: parsed.stance,
+      responseMode: contractObj2.responseMode ?? parsed.responseMode,  // 엔진 값 우선
+      answerStyle: contractObj2.answerStyle ?? 'factual',
+      mentionedTruthIds: parsed.mentionedTruthIds,
+      requestedFollowup: parsed.requestedFollowup,
+    }
   } catch (error) {
     console.warn('LLM 호출 실패, 폴백:', error)
     return fallbackResolve(action, agentA, agentB, evidenceStates)
@@ -115,41 +197,51 @@ function buildSystemPrompt(
   recentDialogues: { speaker: string; text: string }[],
   presentedEvidence: CaseData['evidence'],
   currentPhase: GamePhase,
+  actionContract: string,
+  trustInfo: string,
+  skillOverlay: string,
+  evidenceAxis: string,
+  focusedDisputeId: string,
+  agentKey: string,
 ): string {
   const myCall = getMyCall(caseData.duo, party)
   const judgeRef = getJudgeReference(caseData.duo, party)
   const angryCall = getAngryCall(caseData.duo, party)
-  const isInformal = ['spouse', 'family', 'friend'].includes(caseData.duo.relationshipType ?? '')
+  const canInformalThis = canUseInformal(caseData, party)
   const callForm = myCall === '자기' ? '자기야' : myCall
 
   // ── 동적 데이터 블록 조립 ──
 
-  // 말투 형식 가이드
-  const formalityGuide = isInformal
+  // 말투 형식 가이드 (v6: subtype 기반)
+  const formalityGuide = canInformalThis
     ? `- 상대에게: 반말 (~야, ~잖아, ~거야)`
-    : `- 상대에게: 존댓말 (~요, ~습니다)`
+    : `- 상대에게: 존댓말 (~요, ~습니다). 감정 격해지면 반말 전환 가능.`
 
   // Phase 깊이 가이드 (어드민에서 관리)
   const phaseGuide = getPhaseGuide(currentPhase)
 
-  // 내가 아는 사실 — 현재 쟁점과 관련된 것만 우선 포함
+  // 내가 아는 사실 — allowedTruthIds 기반으로만 제공 (truth 누출 방지)
+  // 현재 actionContract에서 allowed된 truth만 NPC에게 보여줌
+  const contractObj = JSON.parse(actionContract) as { allowedTruthIds?: string[] }
+  const allowedIds = contractObj.allowedTruthIds ?? []
   const myQuadrant = party === 'a' ? 'a_only' : 'b_only'
-  const allMyFacts = caseData.truthTable.filter(
-    (t) => t.quadrant === 'both_know' || t.quadrant === myQuadrant,
-  )
-  // 현재 쟁점명 키워드로 관련 사실 필터링
-  const disputeKeywords = dispute ? dispute.name.split(/[\s·,]+/).filter(w => w.length >= 2) : []
-  const relevantFacts = disputeKeywords.length > 0
-    ? allMyFacts.filter(f => disputeKeywords.some(kw => f.fact.includes(kw)))
-    : allMyFacts
-  // 관련 사실 우선, 부족하면 일반 사실 보충 (최대 3개)
-  const selectedFacts = relevantFacts.length > 0 ? relevantFacts.slice(0, 3) : allMyFacts.slice(0, 2)
+
   let knownFacts = ''
-  if (selectedFacts.length > 0) {
-    knownFacts = `\n당신이 아는 사실 (현재 쟁점 "${dispute?.name ?? ''}" 관련):`
-    for (const f of selectedFacts) {
-      knownFacts += `\n- ${f.fact}${f.isTrue ? '' : ' (당신은 사실이라 믿지만 오해일 수 있음)'}`
+  if (allowedIds.length > 0) {
+    const allowedFacts = caseData.truthTable
+      .map((t, i) => ({ ...t, id: `t-${i + 1}` }))
+      .filter(t => allowedIds.includes(t.id))
+      .filter(t => t.quadrant === 'both_know' || t.quadrant === myQuadrant)
+      .slice(0, 3)
+    if (allowedFacts.length > 0) {
+      knownFacts = `\n당신이 이번 답변에서 참고할 수 있는 사실:`
+      for (const f of allowedFacts) {
+        knownFacts += `\n- ${f.fact}`
+      }
     }
+  } else {
+    // allowedTruthIds가 비어있으면 (S0~S1) → 사실을 아예 안 줌
+    // NPC는 자기가 아는 범위에서만 답변 (truthDescription 없이)
   }
 
   // 쟁점 + 거짓말 상태
@@ -173,9 +265,16 @@ function buildSystemPrompt(
       career_preservation: '직장/평판을 지키려는 마음',
     }
 
-    disputeInfo = `\n## 현재 쟁점: "${dispute.name}"\n내용: ${dispute.truthDescription}\n${stateInstructions[lieEntry.currentState] ?? ''}`
+    // truthDescription을 그대로 주면 LLM이 정답을 보고 시작 → 누출 위험
+    // lie state에 맞는 중립 요약만 제공
+    const neutralDesc = lieEntry.currentState <= 'S2'
+      ? `상대가 "${dispute.name}"에 대해 문제를 제기하고 있다.`  // S0~S2: 쟁점명만, 진실 내용 숨김
+      : lieEntry.currentState <= 'S4'
+        ? `"${dispute.name}"에 대해 일부 사실이 드러나고 있다.`  // S3~S4: 약간 더 열림
+        : dispute.truthDescription  // S5: 전체 공개 (이미 인정한 상태)
+    disputeInfo = `\n## 현재 쟁점: "${dispute.name}"\n내용: ${neutralDesc}\n${stateInstructions[lieEntry.currentState] ?? ''}`
     if (!dispute.truth && lieEntry.currentState <= 'S1') {
-      disputeInfo += `\n(이 쟁점은 사실이 아닙니다 — 당신은 진짜로 안 했습니다. 억울하게 부정하세요.)`
+      disputeInfo += `\n(이 쟁점에서 상대가 주장하는 것은 사실이 아닙니다 — 당신은 진짜로 안 했습니다. 억울하게 부정하세요.)`
     }
     disputeInfo += `\n거짓말 동기: ${motiveHints[lieEntry.lieMotive] ?? ''}`
 
@@ -280,16 +379,16 @@ function buildSystemPrompt(
   }
 
   // 말투 가이드 (짧은 버전)
-  const speechGuideShort = isInformal
+  const speechGuideShort = canInformalThis
     ? `\n말투: 상대에게 반말, 재판관에게 존댓말. "~냐?" 금지→"~야?" 사용.`
-    : `\n말투: 상대에게 존댓말(~씨), 재판관에게 존댓말. 격해지면 반말 가능.`
+    : `\n말투: 상대에게 존댓말, 재판관에게 존댓말. 감정 격해지면 반말 전환 가능.`
 
   // ── 변수 맵 조립 ──
   const vars: Record<string, string> = {
     name: me.name,
     age: String(me.age),
     opponent: opponent.name,
-    relationship: getRelationLabel(caseData.duo.relationshipType ?? ''),
+    relationship: getRelationLabel(getRelationshipType(caseData)),
     context: caseData.context.description,
     speechStyle: me.speechStyle,
     callForm,
@@ -304,13 +403,21 @@ function buildSystemPrompt(
     historyContext,
     speechGuideShort,
     phaseTranscript,
+    // 신규 v2/v3 변수
+    actionContract,
+    trustInfo,
+    skillOverlay,
+    evidenceAxis,
+    focusedDisputeId,
+    investigationResult,
     // output 블록용
     disputeName: dispute?.name ?? '해당 사안',
   }
 
   // ── Agent 블록 조합 우선, 폴백으로 기존 promptManager ──
   if (isAgentLoaded()) {
-    return buildAgentPrompt('interrogation', vars, { phase: currentPhase })
+    // agentKey는 resolveLLMDialogue에서 전달받음
+    return buildAgentPrompt(agentKey ?? 'interrogation', vars, { phase: currentPhase })
   }
 
   // 폴백: 기존 모놀리식 프롬프트
@@ -343,86 +450,138 @@ function getPhaseGuide(phase: GamePhase): string {
 
 /* ── 유저 프롬프트 ───────────────────────── */
 
-function buildUserPrompt(action: PlayerAction, dispute?: CaseData['disputes'][number], evidence?: CaseData['evidence'][number]): string {
-  const topic = dispute?.name ?? '해당 사안'
-  const detail = dispute?.truthDescription ? `\n쟁점 핵심: ${dispute.truthDescription}` : ''
+function buildUserPrompt(
+  action: PlayerAction,
+  dispute: CaseData['disputes'][number] | undefined,
+  evidence: CaseData['evidence'][number] | undefined,
+  focusedDisputeId: string,
+  judgeQuestion: string,
+  investigationResult: string,
+): string {
+  const disputeName = dispute?.name ?? '해당 사안'
 
+  // ── 심문 (fact_pursuit / motive_search / empathy_approach) ──
   if (action.type === 'question') {
-    const directions: Record<string, string> = {
-      fact_pursuit: `재판관이 "${topic}"에 대해 사실을 추궁합니다.${detail}\n이 쟁점의 사실 여부를 캐묻는 질문을 만들고, 이 쟁점에 대해서만 답하세요.`,
-      motive_search: `재판관이 "${topic}"에 대해 동기를 탐색합니다.${detail}\n"왜 그랬는지" 파고드는 질문. 이 쟁점의 동기만 다루세요.`,
-      empathy_approach: `재판관이 "${topic}"에 대해 공감으로 다가갑니다.${detail}\n상대의 상황을 이해하고 싶다는 톤의 질문. "그런 상황이 되신 배경이 궁금합니다" "당시 심정을 들어보고 싶습니다" 같은 접근. 비난/추궁 금지. 이 쟁점에 대한 감정만 다루세요.`,
+    const templates: Record<string, string> = {
+      fact_pursuit: `현재 액션은 fact_pursuit다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 날짜, 시간, 금액, 행위 여부를 중심으로 답한다.\n- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.\n- 출력은 JSON 객체 하나만 한다.`,
+      motive_search: `현재 액션은 motive_search다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 왜 그랬는지, 왜 숨겼는지, 무엇이 두려웠는지 같은 동기 층을 중심으로 답한다.\n- 단순한 사실 나열로만 끝내지 않는다.\n- 출력은 JSON 객체 하나만 한다.`,
+      empathy_approach: `현재 액션은 empathy_approach다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 비난받는 자리라기보다 사정을 설명할 기회로 느껴야 한다.\n- 감정, 상처, 수치심, 관계 유지 욕구를 조심스럽게 드러낼 수 있다.\n- 출력은 JSON 객체 하나만 한다.`,
     }
-    return directions[action.questionType] ?? `재판관이 ${topic}에 대해 질문합니다.`
+    return templates[action.questionType] ?? `현재 액션은 ${action.questionType}다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관 질문: "${judgeQuestion}"\n출력은 JSON 객체 하나만 한다.`
   }
 
+  // ── 증거 제시 ──
   if (action.type === 'evidence_present') {
-    const evName = evidence?.name ?? '증거'
-    const evDesc = evidence?.description ? `\n증거 내용: ${evidence.description}` : ''
-    return `재판관이 "${evName}" 증거를 제시했습니다.${evDesc}\n\n⚠️ "${topic}" 쟁점에 대한 증거입니다. 반드시 이 증거에 대해서만 직접 반응하세요.\n다른 쟁점(폰 확인, 외도 등)으로 넘어가지 마세요. 이 증거가 자신에게 불리하다면 변명하거나 설명하세요.`
+    return `현재 액션은 evidence_present다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관이 "${evidence?.name ?? '증거'}" 증거를 제시했다.\n증거 설명: ${evidence?.description ?? ''}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 첫 문장은 반드시 현재 증거에 대한 직접 반응이다.\n- 이 증거와 무관한 다른 쟁점을 새로 꺼내지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
   }
 
-  if (action.type === 'trust_action') {
-    const prompts: Record<string, string> = {
-      confidential_protection: `재판관: "이 말은 상대에게 공개하지 않겠습니다." — 비공개 보장, 솔직해질 수 있습니다.`,
-      separation: `재판관이 상대의 개입을 차단했습니다. 안전한 환경에서 말할 수 있습니다.`,
+  // ── 증거 조사 6종 ──
+  if (action.type === 'evidence_investigate') {
+    const subActionLabels: Record<string, string> = {
+      request_original: '원본 확보 결과를 제시했다',
+      check_metadata: '메타데이터 확인 결과를 제시했다',
+      restore_context: '앞뒤 맥락 복원 결과를 제시했다',
+      verify_source: '출처 검증 결과를 제시했다',
+      check_edits: '편집 여부 확인 결과를 제시했다',
+      question_acquisition: '취득 경위 확인 결과를 제시했다',
     }
-    return prompts[action.actionType] ?? '재판관이 조치를 취했습니다.'
+    const subActionRules: Record<string, string> = {
+      request_original: '원본 확보 결과에 직접 반응한다.',
+      check_metadata: '시간, 기기, 수정 이력 등 공개된 조사 결과에만 반응한다.',
+      restore_context: '잘린 맥락, 전후 문장, 상황 설명에 직접 반응한다.',
+      verify_source: '출처의 신빙성과 전달 경로에 직접 반응한다.',
+      check_edits: '편집 흔적 유무에 직접 반응한다.',
+      question_acquisition: '취득 정당성과 절차 문제에 직접 반응한다.',
+    }
+    const label = subActionLabels[action.subAction] ?? '조사 결과를 제시했다'
+    const rule = subActionRules[action.subAction] ?? '조사 결과에 직접 반응한다.'
+    return `현재 액션은 evidence_investigate.${action.subAction}이다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관이 현재 증거의 ${label}\n조사 결과: ${investigationResult}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- ${rule}\n- 출력은 JSON 객체 하나만 한다.`
   }
 
-  return '재판관이 질문합니다.'
+  // ── 신뢰 액션 (비공개 보호 / 분리심문 등) ──
+  if (action.type === 'trust_action') {
+    const templates: Record<string, string> = {
+      confidential_protection: `현재 액션은 confidential_protection이다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관 질문: "${judgeQuestion}"\n\n상황:\n- 이 답변은 상대에게 즉시 공개되지 않는다.\n- 지금은 재판관에게만 조심스럽게 말할 수 있다.\n\n규칙:\n- private_confession 톤을 우선한다.\n- 출력은 JSON 객체 하나만 한다.`,
+      separation: `현재 액션은 separation이다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관 질문: "${judgeQuestion}"\n\n상황:\n- 상대의 개입이 차단된 상태다.\n- 상대를 의식한 공격적 연기를 줄이고 재판관에게만 답한다.\n\n규칙:\n- answer_only 또는 private_confession 톤을 우선한다.\n- 출력은 JSON 객체 하나만 한다.`,
+      emotional_stabilization: `현재 액션은 emotional_stabilization이다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관 질문: "${judgeQuestion}"\n\n상황:\n- 재판관이 감정을 가라앉히고 다시 설명할 기회를 줬다.\n\n규칙:\n- 흥분을 조금 가라앉히고, 현재 쟁점에 다시 집중해 답한다.\n- 출력은 JSON 객체 하나만 한다.`,
+      retaliation_check: `현재 액션은 retaliation_check다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관 질문: "${judgeQuestion}"\n\n상황:\n- 재판관이 상대의 보복이나 반응을 걱정하는지 확인하고 있다.\n\n규칙:\n- 상대 반응에 대한 두려움, 부담, 망설임을 중심으로 답한다.\n- 출력은 JSON 객체 하나만 한다.`,
+    }
+    return templates[action.actionType] ?? `재판관이 조치를 취했다.\nfocusedDisputeId: ${focusedDisputeId}\n출력은 JSON 객체 하나만 한다.`
+  }
+
+  // ── 중재안 ──
+  if (action.type === 'mediation') {
+    return `현재 단계는 phase6 중재안이다.\nfocusedDisputeId: ${focusedDisputeId}\n\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- accept, reject, conditional_accept, counterproposal 중 하나로 반응한다.\n- 이미 드러난 사실과 감정, 손해를 바탕으로만 반응한다.\n- 새 비밀을 갑자기 고백하지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
+  }
+
+  return `focusedDisputeId: ${focusedDisputeId}\n재판관 질문: "${judgeQuestion}"\n출력은 JSON 객체 하나만 한다.`
 }
 
-/* ── 응답 파싱 ───────────────────────────── */
+/* ── 응답 파싱 (v3: stance/mentionedTruthIds/requestedFollowup) ── */
+
+type NpcStance = 'deny' | 'hedge' | 'partial_admit' | 'admit' | 'reframe'
 
 interface ParsedLLMResponse {
-  judgeQuestion: string
   npcNode: DialogueNode
+  stance: NpcStance
+  mentionedTruthIds: string[]
+  responseMode: string
+  requestedFollowup: string
 }
 
+const VALID_STANCES: NpcStance[] = ['deny', 'hedge', 'partial_admit', 'admit', 'reframe']
+
 function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string): ParsedLLMResponse {
-  try {
-    const jsonMatch = response.match(/\{[\s\S]*\}/)
-    if (jsonMatch) {
-      const parsed = JSON.parse(jsonMatch[0])
-      const behaviorMatch = parsed.npcResponse?.match(/[（(]([^)）]+)[)）]/)
-      const behaviorHint = parsed.behaviorHint || (behaviorMatch ? behaviorMatch[1] : undefined)
-      const text = (parsed.npcResponse ?? '').replace(/[（(][^)）]+[)）]/g, '').trim()
-
-      return {
-        judgeQuestion: parsed.judgeQuestion ?? '',
-        npcNode: {
-          id: `llm-${Date.now()}`,
-          conditions: disputeId ? { disputeId } : {},
-          speaker,
-          text: text || response,
-          behaviorHint,
-          effects: {},
-        },
-      }
-    }
-  } catch { /* JSON 파싱 실패 → 폴백 */ }
-
-  const behaviorMatch = response.match(/[（(]([^)）]+)[)）]/)
-  const behaviorHint = behaviorMatch ? behaviorMatch[1] : undefined
-  const text = response.replace(/[（(][^)）]+[)）]/g, '').trim()
-
-  return {
-    judgeQuestion: '',
+  const fallback: ParsedLLMResponse = {
     npcNode: {
       id: `llm-${Date.now()}`,
       conditions: disputeId ? { disputeId } : {},
       speaker,
-      text: text || response,
-      behaviorHint,
+      text: response.replace(/[（(][^)）]+[)）]/g, '').trim().slice(0, 300) || '...',
+      behaviorHint: response.match(/[（(]([^)）]+)[)）]/)?.[1],
       effects: {},
     },
+    stance: 'hedge',
+    mentionedTruthIds: [],
+    responseMode: 'answer_then_counter',
+    requestedFollowup: '',
+  }
+
+  try {
+    const jsonMatch = response.match(/\{[\s\S]*\}/)
+    if (!jsonMatch) return fallback
+
+    const parsed = JSON.parse(jsonMatch[0])
+
+    // npcResponse 파싱 (괄호 행동묘사 분리)
+    const rawText = parsed.npcResponse ?? ''
+    const behaviorFromText = rawText.match(/[（(]([^)）]+)[)）]/)?.[1]
+    const text = rawText.replace(/[（(][^)）]+[)）]/g, '').trim()
+
+    if (!text || text.length < 3) return fallback
+
+    return {
+      npcNode: {
+        id: `llm-${Date.now()}`,
+        conditions: disputeId ? { disputeId } : {},
+        speaker,
+        text,
+        behaviorHint: parsed.behaviorHint || behaviorFromText,
+        effects: {},
+      },
+      stance: VALID_STANCES.includes(parsed.stance) ? parsed.stance : 'hedge',
+      mentionedTruthIds: Array.isArray(parsed.mentionedTruthIds) ? parsed.mentionedTruthIds : [],
+      responseMode: parsed.responseMode ?? 'answer_then_counter',
+      requestedFollowup: parsed.requestedFollowup ?? '',
+    }
+  } catch {
+    return fallback
   }
 }
 
-/* ── LLM이 재판관 질문을 생성하지 못했을 때 폴백 ── */
+/* ── 재판관 질문 생성 (엔진 우선 — 템플릿 기반) ── */
 
-function buildFallbackJudgeQuestion(
+function buildJudgeQuestion(
   action: PlayerAction,
   caseData: CaseData,
   target: PartyId,
@@ -462,9 +621,219 @@ function buildFallbackJudgeQuestion(
     return `${myName} 씨, 이 증거에 대해 어떻게 생각하십니까?`
   }
 
+  if (action.type === 'evidence_investigate') {
+    const subLabels: Record<string, string> = {
+      request_original: `${myName} 씨, 이 증거의 원본을 확인했습니다. 이에 대해 하실 말씀이 있습니까?`,
+      check_metadata: `${myName} 씨, 이 증거의 생성 시점과 수정 이력을 확인했습니다.`,
+      restore_context: `${myName} 씨, 이 증거의 앞뒤 맥락을 복원했습니다. 설명해 주시겠습니까?`,
+      verify_source: `${myName} 씨, 이 증거의 출처를 검증했습니다.`,
+      check_edits: `${myName} 씨, 이 증거의 편집 여부를 확인했습니다.`,
+      question_acquisition: `${myName} 씨, 이 증거가 어떻게 확보되었는지 확인했습니다.`,
+    }
+    return subLabels[action.subAction] ?? `${myName} 씨, 이 조사 결과에 대해 어떻게 생각하십니까?`
+  }
+
   if (action.type === 'trust_action') {
-    return `${myName} 씨, 편하게 말씀하셔도 됩니다.`
+    const trustTemplates: Record<string, string[]> = {
+      confidential_protection: [
+        `${myName} 씨, 이 말은 상대에게 즉시 공개되지 않습니다. 편하게 말씀해 주세요.`,
+        `${myName} 씨, 지금 하시는 말씀은 비공개입니다. 솔직하게 말씀하셔도 됩니다.`,
+      ],
+      separation: [
+        `${myName} 씨, 지금은 상대 개입 없이 말씀하실 수 있습니다. ${topic}에 대해 다시 설명해 주시겠습니까?`,
+        `${myName} 씨, 지금은 방해 없이 말씀하실 수 있습니다. 편하게 얘기해 주세요.`,
+      ],
+      emotional_stabilization: [
+        `${myName} 씨, ${topic} 때문에 감정이 올라온 건 이해합니다. 잠시 정리하시고 다시 설명해 주시겠습니까?`,
+      ],
+      retaliation_check: [
+        `${myName} 씨, ${topic}에 관해 지금 말을 아끼는 이유가 있으시다면 말씀해 주십시오.`,
+      ],
+    }
+    const pool = trustTemplates[action.actionType] ?? [`${myName} 씨, 편하게 말씀하셔도 됩니다.`]
+    return pool[Math.floor(Math.random() * pool.length)]
   }
 
   return `${myName} 씨, 한 가지 더 여쭤보겠습니다.`
+}
+
+/* ── ActionContract 생성 (v3: JSON 형식) ── */
+
+function buildActionContract(
+  action: PlayerAction,
+  lieEntry: AgentState['lieStateMap'][string] | undefined,
+  store: ReturnType<typeof useGameStore.getState>,
+  caseData: CaseData,
+  party: PartyId,
+  disputeId: string | undefined,
+): string {
+  const state = lieEntry?.currentState ?? 'S0'
+  const stateNum = parseInt(state.slice(1))
+
+  // 액션별 설정
+  const goalMap: Record<string, string> = {
+    fact_pursuit: '날짜·금액·행위 여부를 고정한다',
+    motive_search: '숨긴 이유와 자기정당화 동기를 끌어낸다',
+    empathy_approach: '수치심·두려움·관계유지 동기를 낮은 톤으로 끌어낸다',
+    evidence_present: '현재 증거에 대한 직접 반응과 해명을 끌어낸다',
+    evidence_investigate: '조사 결과에 대한 직접 반응을 끌어낸다',
+    confidential_protection: '상대에게 못 하던 말을 재판관에게만 하게 한다',
+    separation: '상대 눈치를 덜 보고 현재 쟁점에 집중하게 한다',
+    emotional_stabilization: '감정을 가라앉히고 현재 쟁점에 다시 집중하게 한다',
+    retaliation_check: '상대 보복에 대한 두려움과 부담을 파악한다',
+  }
+
+  // actionType + questionType 결정
+  let actionType = action.type
+  let questionType: string | undefined
+  if (action.type === 'question') questionType = action.questionType
+  const goalKey = questionType ?? (action.type === 'trust_action' ? action.actionType : action.type)
+
+  // responseMode 결정 — 환경 상태 (발화 대상 제어)
+  let responseMode = 'answer_then_counter'
+  if (action.type === 'evidence_present' || action.type === 'evidence_investigate') {
+    responseMode = 'evidence_rebuttal'
+  } else if (store.separationTarget === target) {
+    responseMode = 'answer_only'
+  } else if (action.type === 'trust_action') {
+    if (action.actionType === 'confidential_protection') responseMode = 'private_confession'
+    else if (action.actionType === 'separation') responseMode = 'answer_only'
+    else responseMode = 'answer_then_counter'
+  } else if (action.type === 'question') {
+    // 모든 심문은 answer_only (empathy 포함). 감정 톤은 answerStyle로 분리.
+    responseMode = 'answer_only'
+  }
+
+  // answerStyle 결정 — 감정 톤 (발화 스타일 제어)
+  let answerStyle = 'factual'
+  if (questionType === 'fact_pursuit') answerStyle = 'factual'
+  else if (questionType === 'motive_search') answerStyle = 'motivational'
+  else if (questionType === 'empathy_approach') answerStyle = 'empathic'
+  if (responseMode === 'private_confession') answerStyle = 'private'
+
+  // revealBudget
+  const factBudget = (questionType === 'fact_pursuit' || actionType === 'evidence_present') ? Math.min(stateNum + 1, 3) : Math.min(stateNum, 2)
+  const motiveBudget = questionType === 'motive_search' ? Math.min(stateNum + 1, 3) : Math.min(stateNum, 1)
+  const emotionBudget = (questionType === 'empathy_approach' || answerStyle === 'empathic' || answerStyle === 'private') ? Math.min(stateNum + 1, 3) : Math.min(stateNum, 2)
+
+  const contract: Record<string, unknown> = {
+    actionType,
+    ...(questionType ? { questionType } : {}),
+    ...(action.type === 'trust_action' ? { trustActionType: action.actionType } : {}),
+    responseMode,
+    answerStyle,
+    goal: goalMap[goalKey] ?? '현재 쟁점에 답한다',
+    revealBudget: { fact: factBudget, motive: motiveBudget, emotion: emotionBudget },
+    allowedTruthIds: getTruthIds(caseData, party, disputeId, state, 'allowed'),
+    forbiddenTruthIds: getTruthIds(caseData, party, disputeId, state, 'forbidden'),
+  }
+
+  return JSON.stringify(contract)
+}
+
+/* ── SkillOverlay 생성 (v3 형식) ─────────── */
+
+function buildSkillOverlay(
+  store: ReturnType<typeof useGameStore.getState>,
+  target: PartyId,
+): string {
+  const parts: string[] = []
+
+  if (store.separationTarget === target) {
+    parts.push('[분리심문 활성]')
+    parts.push('- responseMode: answer_only')
+    parts.push('- 상대 직접 언급, 도발, 과시적 연기를 줄인다')
+    parts.push('- retaliationWorry 감소 상태')
+  }
+
+  return parts.join('\n')
+}
+
+/* ── EvidenceAxis 생성 (v3: JSON 형식) ───── */
+
+function buildEvidenceAxis(evidence: CaseData['evidence'][number]): string {
+  const ev = evidence as CaseData['evidence'][number] & {
+    reliability?: string
+    completeness?: string
+    provenance?: string
+    legitimacy?: string
+  }
+  return JSON.stringify({
+    reliability: ev.reliability ?? ev.type ?? 'unknown',
+    completeness: ev.completeness ?? 'original',
+    provenance: ev.provenance ?? 'direct',
+    legitimacy: ev.legitimacy ?? 'lawful',
+  })
+}
+
+/* ── InvestigationResult 추출 (#6) ───────── */
+
+function buildInvestigationResult(
+  evidence: CaseData['evidence'][number] | undefined,
+  evidenceStates: Record<string, EvidenceRuntimeState>,
+): string {
+  if (!evidence) return ''
+  const state = evidenceStates[evidence.id]
+  if (!state || state.investigatedActions.length === 0) return ''
+
+  // 사건 JSON의 investigationResults에서 수행된 조사 결과만 추출
+  // 값이 문자열일 수도 있고, { result: string } 객체일 수도 있음
+  const results = (evidence as CaseData['evidence'][number] & { investigationResults?: Record<string, string | { result: string }> }).investigationResults
+  if (!results) return ''
+
+  return state.investigatedActions
+    .filter(action => results[action] != null)
+    .map(action => {
+      const val = results[action]
+      const text = typeof val === 'string' ? val : val?.result ?? ''
+      return `${action}: ${text}`
+    })
+    .join('\n')
+}
+
+/* ── 에이전트 라우팅 ─────────────────────── */
+
+function resolveAgentKey(
+  action: PlayerAction,
+  store: ReturnType<typeof useGameStore.getState>,
+  target: PartyId,
+): string {
+  // 중재안 → mediation_reaction
+  if (action.type === 'mediation') return 'mediation_reaction'
+
+  // 증거 제시/조사 → evidence_reaction
+  if (action.type === 'evidence_present' || action.type === 'evidence_investigate') return 'evidence_reaction'
+
+  // 비공개 보호 또는 분리심문 → interrogation_private
+  if (action.type === 'trust_action') return 'interrogation_private'
+  if (store.separationTarget === target) return 'interrogation_private'
+
+  // 일반 심문 → interrogation (공개)
+  return 'interrogation'
+}
+
+/* ── truthIds 조회 (v4 truthPolicy 기반) ── */
+
+function getTruthIds(
+  caseData: CaseData,
+  party: PartyId,
+  disputeId: string | undefined,
+  lieState: string,
+  field: 'allowed' | 'forbidden',
+): string[] {
+  if (!disputeId) return []
+
+  const caseKey = normalizeCaseKey(caseData)
+  const stateKey = lieState as LieStateKey
+
+  // 1. v4 정책에서 정확한 매핑 찾기 (정규화된 키 사용)
+  const policy = TRUTH_POLICIES[caseKey]?.[party]?.[disputeId]?.[stateKey]
+  if (policy) return policy[field]
+
+  // 2. 폴백: 일반 규칙 적용
+  const allTruthIds = caseData.truthTable.map((_, i) => `t-${i + 1}`)
+  const dispute = caseData.disputes.find(d => d.id === disputeId)
+  const anchorTruthIds = dispute ? [`t-${parseInt(disputeId.split('-')[1])}`] : []
+  const fallback = getFallbackPolicy(allTruthIds, anchorTruthIds, stateKey)
+  return fallback[field]
 }

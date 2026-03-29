@@ -26,11 +26,7 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
 
       {isLLMLoading && (
         <div className={`flex items-center gap-2 my-2 px-3 py-2 ${llmTarget === 'b' ? 'justify-end' : ''}`}>
-          <div className="flex gap-1">
-            <div className={`w-1.5 h-1.5 rounded-full animate-bounce ${llmTarget === 'b' ? 'bg-rose-500' : 'bg-blue-500'}`} style={{ animationDelay: '0ms' }} />
-            <div className={`w-1.5 h-1.5 rounded-full animate-bounce ${llmTarget === 'b' ? 'bg-rose-500' : 'bg-blue-500'}`} style={{ animationDelay: '150ms' }} />
-            <div className={`w-1.5 h-1.5 rounded-full animate-bounce ${llmTarget === 'b' ? 'bg-rose-500' : 'bg-blue-500'}`} style={{ animationDelay: '300ms' }} />
-          </div>
+          <div className="gavel-loading" style={{ fontSize: 16 }}>⚖️</div>
           <span className="text-xs text-gray-500">응답 중...</span>
         </div>
       )}

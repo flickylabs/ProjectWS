@@ -16,6 +16,10 @@ import statsRouter from './routes/stats.js';
 import aiAgentsRouter from './routes/aiAgents.js';
 import aiBlocksRouter from './routes/aiBlocks.js';
 import aiDataFieldsRouter from './routes/aiDataFields.js';
+import evalRouter from './routes/eval.js';
+import caseMetaRouter from './routes/caseMeta.js';
+import seasonsRouter from './routes/seasons.js';
+import llmLogRouter from './routes/llmLog.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -34,6 +38,10 @@ app.use('/api/stats', statsRouter);
 app.use('/api/ai-agents', aiAgentsRouter);
 app.use('/api/ai-blocks', aiBlocksRouter);
 app.use('/api/ai-data-fields', aiDataFieldsRouter);
+app.use('/api/eval', evalRouter);
+app.use('/api/case-meta', caseMetaRouter);
+app.use('/api/seasons', seasonsRouter);
+app.use('/api/llm-log', llmLogRouter);
 
 // ── WebAdmin 정적 파일 ──
 app.use('/admin', express.static(path.join(__dirname, 'public', 'admin')));

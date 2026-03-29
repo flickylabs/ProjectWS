@@ -1,0 +1,719 @@
+{
+  "caseId": "case-friend-03",
+  "meta": {
+    "relationshipType": "friend",
+    "conflictSeed": "CS-5",
+    "variableModules": [
+      "VM-B"
+    ],
+    "twistModule": "TW-4",
+    "difficulty": "hard",
+    "anchorTruth": "지후를 가해자로 확정하게 만든 DM 캡처는 나래가 기존 대화 조각을 붙여 만든 합성 이미지였고, 실제로 확인되는 것은 지후의 공개 저격과 나래의 위조 재게시뿐이었다.",
+    "emotionalBait": "지후가 먼저 협업 게시물 댓글로 나래를 깎아내리고 있던 상황에서, '조회수용 피해자 코스프레'라는 직설 문장이 담긴 DM 캡처까지 나오자 서로가 서로를 악의적 가해자로 확신하기 쉬웠다.",
+    "resolutionDilemma": "지후의 선공성 명예훼손과 나래의 고의적 증거 위조 중 어느 쪽을 더 무겁게 볼지, 그리고 위조 증거가 끼어든 뒤에도 친구 관계와 공동 작업 채널을 남길지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "강나래",
+      "age": 28,
+      "occupation": "프리랜서 일러스트레이터",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "말을 시작할 때 사실과 해석을 분리하려 하지만, 불리해지면 자료 형식의 차이를 붙잡아 핵심 책임을 늦춘다. 감정이 올라와도 톤을 높이기보다 문장을 더 짧고 차갑게 끊는다.",
+      "pride": 8,
+      "fear": "협업에서 억울하게 평판이 망가진 사람으로 굳어지는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "story_archive_and_folders",
+      "dailyRoutine": "오전에는 외주 일러스트 수정과 메일 답장을 하고, 오후에는 카페에서 태블릿으로 스케치와 스토리 문구를 정리한다. 밤에는 캡처와 폴더를 날짜별로 분류해 저장하는 습관이 있다.",
+      "sensitivePoints": [
+        "공개적인 평판 추락",
+        "작업물보다 인성 문제로 회자되는 일",
+        "협업사 앞에서 신뢰 잃는 상황"
+      ],
+      "verbalTells": [
+        {
+          "type": "format_split",
+          "trigger": "lying",
+          "pattern": "불리한 질문이 나오면 '그건 캡처 기준이고 원본 기준은 달라'라며 자료 종류를 나눠 책임 판단을 미룬다."
+        },
+        {
+          "type": "quote_lock",
+          "trigger": "cornered",
+          "pattern": "상대가 한 표현의 일부만 짚어 다시 읽어 주며 전체 맥락보다 특정 단어 하나를 확대한다."
+        },
+        {
+          "type": "flat_breath",
+          "trigger": "emotional",
+          "pattern": "분노가 올라오면 말수가 줄고 숨을 고른 뒤 낮은 톤으로 한 문장씩 끊어 말한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "지후아",
+        "toJudge": "제 친구",
+        "angry": "야, 지후!"
+      }
+    },
+    "partyB": {
+      "name": "오지후",
+      "age": 30,
+      "occupation": "빈티지 소품 셀러",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "먼저 자신이 얼마나 억울했는지를 길게 말하고, 질문 자체가 과장됐다고 규정하며 방어한다. 불리해지면 발언 내용보다 '경고하려던 의도'를 반복해 수위를 낮추려 한다.",
+      "pride": 7,
+      "fear": "장사와 협업을 위해 친구를 깎아내리는 사람으로 낙인찍히는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "comment_and_live",
+      "dailyRoutine": "오전에는 재고 촬영과 포장 작업을 하고, 오후에는 마켓 댓글과 DM을 확인하며 판매를 조율한다. 밤에는 라이브 공지와 스토리 반응을 보면서 삭제 여부를 자주 바꾼다.",
+      "sensitivePoints": [
+        "가게 평판",
+        "팔로워 앞에서 비겁한 사람 취급받는 일",
+        "협업을 망친 책임이 자신에게 몰리는 상황"
+      ],
+      "verbalTells": [
+        {
+          "type": "wounded_preface",
+          "trigger": "lying",
+          "pattern": "본론 전에 '난 원래 공개저격 안 좋아하는 사람인데'라고 먼저 말해 피해자 위치를 선점한다."
+        },
+        {
+          "type": "motive_cover",
+          "trigger": "cornered",
+          "pattern": "문제 댓글을 지적받으면 '비방이 아니라 경고였어'라며 행위보다 의도를 앞세운다."
+        },
+        {
+          "type": "audience_scan",
+          "trigger": "emotional",
+          "pattern": "감정이 오르면 상대 반응보다 조회수와 다른 사람 댓글부터 확인하며 말 흐름을 바꾼다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "나래아",
+        "toJudge": "제 친구",
+        "angry": "야, 나래!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "작년 협찬 리뷰 오해가 있었을 때, 두 사람은 협업 갈등은 당사자 확인 전 스토리·댓글로 올리지 않기로 약속했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "겨울 플리마켓 때 남은 샘플을 누가 개인 계정으로 먼저 팔자고 했는지를 둘 다 자신에게 유리하게 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '지후가 먼저 상업적 전환을 제안했다' / B: '나래가 홍보용 서사를 먼저 만들었다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "예전에 지후가 가짜 팔로워 의혹을 받았을 때 나래가 편들어 준 적이 있지만, 그때 생긴 빚진 감정과 기대는 끝내 말로 정리되지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "문소희 (공통 친구 겸 촬영 스태프)",
+        "relationTo": "both",
+        "knowledgeScope": "나래에게서 문제 캡처를 먼저 받았고, 지후가 올렸다 지운 스토리 문구도 직접 봤다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 29,
+          "occupation": "온라인 쇼핑몰 운영",
+          "relationToA": "강나래을 업무상 알고 있음",
+          "relationToB": "오지후을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "편하게 말하다가 재판관 앞에서는 존댓말로 돌아간다. 친구의 입장을 자연스럽게 대변한다.",
+          "addressJudge": "재판관님",
+          "addressA": "나래씨",
+          "addressB": "지후"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "institutional",
+        "name": "최아영 (빈티지 소품 커뮤니티 운영자)",
+        "relationTo": "both",
+        "knowledgeScope": "신고 접수 시각, 숨김 처리된 댓글, 나래가 첨부한 캡처 파일과 지후 삭제 요청 여부를 원본 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 34,
+          "occupation": "빈티지 소품 커뮤니티 운영자",
+          "relationToA": "강나래을 업무상 알고 있음",
+          "relationToB": "오지후을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "강나래씨",
+          "addressB": "오지후씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional_2",
+        "name": "배준서 (협업사 디지털콘텐츠 매니저)",
+        "relationTo": "both",
+        "knowledgeScope": "협찬품 물류 로그, 반납 등록 지연 사유, DM export 대조 리포트 작성 과정을 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 31,
+          "occupation": "협업사 디지털콘텐츠 매니저",
+          "relationToA": "강나래을 업무상 알고 있음",
+          "relationToB": "오지후을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "나래씨",
+          "addressB": "지후씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "sns_slander_after_collab",
+    "description": "주말 팝업 협업이 끝난 뒤 사은품 배송 지연 문의가 쌓이자, 지후는 같은 협업 게시물 아래에서 나래가 협찬 물건과 서사를 이용한다는 식으로 댓글과 스토리를 남겼다. 나래는 이에 대응해 지후가 자신을 조롱하고 루머를 의도했다는 DM 캡처를 운영자와 공통 친구들에게 퍼뜨렸고, 사건은 곧 공개 평판전으로 번졌다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "두 사람 모두 팔로워와 협업사를 의식해야 하는 상황이어서, 한 문장짜리 댓글과 한 장의 캡처만으로도 장사와 작업 평판이 동시에 흔들릴 수 있었다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "지후의 협업 게시물 댓글과 스토리를 통한 나래 명예훼손",
+      "truth": true,
+      "truthDescription": "지후는 나래를 직접 실명으로 적지는 않았지만 같은 협업 게시물 아래 '협찬 물건도 자기 서사로 바꿔 판다'는 식의 댓글과 스토리를 올려 나래를 특정 가능하게 비방했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "평판복구",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-2",
+      "name": "나래의 편집 캡처 제작과 재게시",
+      "truth": true,
+      "truthDescription": "나래는 기존 대화 조각을 붙여 지후가 자신을 조롱한 것처럼 보이는 캡처를 만들고, 이를 운영자 신고와 공통 친구 대화, 스토리 암시에 사용했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-3",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 78,
+        "b": 22
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "평판복구",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "문제의 DM 캡처는 지후가 실제로 보낸 원문인가",
+      "truth": false,
+      "truthDescription": "핵심 캡처는 지후가 보낸 단일 원문이 아니라, 나래가 서로 다른 시기의 대화 버블과 프로필 레이어를 합쳐 만든 위조 이미지였다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "증거검증",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-4",
+      "name": "나래의 협찬품 유용 의혹",
+      "truth": false,
+      "truthDescription": "배송 지연과 재고 표기 차이는 협업사의 일괄 반납 등록 지연 때문이었고, 나래가 협찬품을 개인 판매나 보관에 돌린 사실은 확인되지 않았다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 35,
+        "b": 65
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "증거검증",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "협업 갈등 비공개 원칙의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "두 사람은 협업 갈등을 공개 게시물로 끌고 가지 않기로 했지만, 지후는 공개 댓글과 스토리로 먼저 암시했고 나래는 위조 캡처를 근거로 운영자와 친구들에게 퍼뜨리며 약속을 깼다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 56,
+        "b": 44
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "친구경계재설정",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "나래 스토리와 신고 DM에 첨부된 DM 캡처 파일",
+      "description": "지후가 '조회수용 피해자 코스프레'라고 말하고 루머를 의도했다는 식으로 보이는 한 장짜리 DM 캡처 파일이다.",
+      "type": "sns",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 DM export 없이 이미지 파일 한 장만 제출됐다.",
+        "check_metadata": "파일 생성 시각이 문제 발언이 있었다고 주장된 날짜보다 뒤이고, 편집앱 저장 경로 흔적이 남아 있다.",
+        "restore_context": "프로필과 말풍선 일부만 보일 뿐 앞뒤 대화 흐름과 발화 맥락이 모두 잘려 있다.",
+        "verify_source": "나래의 스토리 보관본과 최아영에게 보낸 신고 DM 첨부 파일의 해시가 일치한다.",
+        "check_edits": "확대하면 글자 간격과 말풍선 그림자 값이 일정하지 않아 합성 흔적이 보인다.",
+        "question_acquisition": "사적인 DM처럼 보이게 만든 자료라 출처 신뢰성뿐 아니라 개인정보 침해 문제도 크다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "지후의 댓글·스토리 보관본과 삭제 로그",
+      "description": "협업 게시물 아래 남긴 댓글과, 협찬 물건과 서사를 암시한 스토리 보관본 및 삭제 시간 로그다.",
+      "type": "sns",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "스토리 보관함 원본과 협업 게시물 댓글 내역이 함께 확인됐다.",
+        "check_metadata": "문제 표현은 나래가 캡처를 퍼뜨리기 몇 시간 전에 먼저 올라왔다.",
+        "restore_context": "실명은 없지만 같은 협업 사진, 배송 지연 맥락, 사은품 언급이 붙어 있어 당사자를 아는 팔로워에겐 지목성이 높다.",
+        "verify_source": "지후 계정 아카이브와 커뮤니티 운영자 삭제 로그의 시간대가 서로 일치한다.",
+        "check_edits": "앱 내 보관본이라 후편집 흔적은 없다.",
+        "question_acquisition": "본인 계정 자료라 적법하지만 조회자와 댓글 작성자 정보는 최소 범위만 써야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "나래의 편집앱 프로젝트 파일과 갤러리 레이어 백업",
+      "description": "문제 캡처를 만들 때 사용된 편집앱 프로젝트 파일과, 서로 다른 날짜의 대화 캡처 조각이 저장된 갤러리 백업이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "나래 태블릿의 편집앱 프로젝트와 원본 캡처 폴더가 통째로 제출됐다.",
+        "check_metadata": "프로젝트 생성 시각이 신고 DM 발송 직전이고, 소스 이미지 두 장의 촬영 날짜가 서로 다르다.",
+        "restore_context": "한 레이어는 지후의 오래전 불평 메시지 일부이고, 다른 레이어는 나래가 만든 프로필·시간 표시 영역이었다.",
+        "verify_source": "프로젝트 파일의 미리보기와 e-1 최종 이미지가 동일한 레이어 순서를 가진다.",
+        "check_edits": "자르기, 문자 위치 이동, 그림자 적용 이력이 프로젝트 내부에 남아 있다.",
+        "question_acquisition": "기기 소유자인 나래가 제출한 자료라 절차상 문제는 적지만 사적 대화 원본 공개는 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "협업사 물류 확인서와 반납 등록 지연 로그",
+      "description": "사은품과 협찬품이 모두 정상 반납 처리됐고, 앱 재고 표기만 늦게 반영됐음을 보여주는 협업사 백오피스 로그와 확인서다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "협업사 물류 백오피스 export와 담당자 확인서 원본이 제출됐다.",
+        "check_metadata": "지후의 댓글이 올라온 시각보다 앞서 모든 반납 접수는 끝났고, 공개 표기 반영만 뒤늦게 이루어졌다.",
+        "restore_context": "배송 지연 문의는 송장 일괄 등록 지연 때문이지 나래의 개인 보관이나 판매 때문이 아니었다.",
+        "verify_source": "배준서 관리자 계정의 백오피스 기록과 택배 송장번호가 일치한다.",
+        "check_edits": "서버 export 파일과 PDF 확인서가 서로 맞아 후편집 흔적이 없다.",
+        "question_acquisition": "협업사 내부 자료라 제출은 적법하지만 물류 담당자 연락처와 주문자 정보는 가려야 한다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "나래의 운영자 신고 DM과 문소희 전달 대화 원본",
+      "description": "나래가 위조 캡처를 첨부해 운영자에게 신고하고, 문소희에게도 지후라고 단정하며 전달한 대화 원본이다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "운영자 수신 기록과 문소희 대화창 원본이 함께 제출됐다.",
+        "check_metadata": "전달 시각은 e-1 파일 생성 직후 20분 안쪽으로 이어진다.",
+        "restore_context": "나래는 처음엔 '확인 부탁'이라고 적었지만 곧바로 지후라고 특정하는 문장을 덧붙였다.",
+        "verify_source": "나래 단말 원본과 최아영·문소희 수신 기록의 메시지 순서가 일치한다.",
+        "check_edits": "삭제 복원 흔적은 없고 전체 대화 흐름이 보존돼 있다.",
+        "question_acquisition": "당사자 제출 자료라 위법성은 낮지만 공통 친구의 실명과 계정명은 최소 범위만 공개해야 한다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "플랫폼 원본 DM export와 파일 해시 대조 리포트",
+      "description": "지후 계정의 원본 DM export와 e-1 파일을 대조해, 문제 문장이 실제 단일 대화에 존재하지 않음을 보여주는 리포트다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "지후 계정 DM export 원본과 e-1 파일 원본이 함께 비교됐다.",
+        "check_metadata": "캡처 속 시간표시 조합은 실제 DM export에 존재하지 않고, 문제 문장 전체가 한 대화에서 연속으로 확인되지 않는다.",
+        "restore_context": "지후가 다른 날 보낸 불평 문장 조각은 있었지만, 나래를 조롱하며 루머를 의도했다는 완성 문장은 원본 어디에도 없다.",
+        "verify_source": "플랫폼 다운로드 원본과 파일 해시 분석 결과가 동일한 결론을 가리킨다.",
+        "check_edits": "e-1 이미지의 텍스트 테두리와 버블 해상도가 원본 DM 렌더링과 다르게 나타난다.",
+        "question_acquisition": "당사자 동의와 플랫폼 회신을 통해 확보한 자료라 적법성은 높지만 DM 전체 공개는 제한돼야 한다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "지후는 위조 캡처가 나오기 전부터 협업 게시물과 스토리에서 나래를 특정 가능하게 비방했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "나래는 기존 대화 조각을 편집해 문제 캡처를 만들고 이를 운영자와 친구들에게 퍼뜨렸다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "문제의 DM 캡처는 지후가 실제로 보낸 단일 원문이 아니라 합성 이미지였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "협찬품 누락처럼 보인 흔적은 반납 등록 지연 때문이었고 나래의 유용은 확인되지 않았다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람은 협업 갈등을 공개 게시물과 캡처전으로 끌고 가지 않기로 약속했었다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "story_repost_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "file_creation_time_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "screenshot_authenticity_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "layer_backup_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_or_e-3_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_rule_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_why_she_needed_stronger_proof"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "public_comment_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "same_post_target_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "sponsor_goods_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "return_log_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_rule_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_hurt"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_why_he_posted_publicly"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-2_or_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "평판복구": [
+      "지후는 댓글과 스토리를 내리고, 나래는 위조 캡처를 기준으로 한 신고와 전달을 먼저 철회한 뒤 각각 같은 범위에 정정 메시지를 보낸다.",
+      "협업사와 커뮤니티 운영자 앞에서는 확인된 사실만 남긴 짧은 공동 정리문을 작성하고, 추정이나 감정 표현은 제외한다.",
+      "다시 공개 비방이나 조작 자료 사용이 반복되면 두 사람은 공동 협업과 상호 홍보를 즉시 중단한다."
+    ],
+    "증거검증": [
+      "앞으로 분쟁 증거는 캡처 한 장이 아니라 원본 export, 업로드 시각, 제3자 확인까지 갖춰진 자료만 인정한다.",
+      "협찬품·배송 같은 운영 정보는 개인 계정 추정이 아니라 협업사 로그를 먼저 확인한 뒤 말하는 절차를 세운다.",
+      "위조 자료를 한 번이라도 다시 만들거나 알면서 유통하면 친구 관계와 별개로 플랫폼 신고와 법적 대응까지 열어 둔다."
+    ],
+    "친구경계재설정": [
+      "감정이 생겨도 공개 댓글과 스토리로 먼저 치지 않고, 24시간 안에 직접 질문 3개만 주고받는 규칙을 다시 만든다.",
+      "한동안은 공동 작업은 쉬되 개인적인 안부와 사적 만남만 제한적으로 이어 가며 신뢰를 따로 재평가한다.",
+      "상대의 과거 루머나 약점을 새 분쟁의 무기로 꺼내는 순간에는 우정보다 거리두기를 우선하는 경계선을 명문화한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

@@ -1,3 +1,10 @@
+/**
+ * 판결 채점 엔진 v2
+ * - 15턴 보너스 제거
+ * - 상성(affinity) + 경로(optimalPath) + 심층(deepTruth) + 균형(balance) 중심 재가중
+ * - 반복/unsupported collapse 패널티 추가
+ * - 즉답요구 S5: unsupportedCollapse 패널티만 면제
+ */
 import type { VerdictInput, VerdictScore, ProcessMetrics } from '../types'
 import type { Dispute, EvidenceNode } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
@@ -67,6 +74,10 @@ function calculateInsight(ctx: VerdictContext): number {
   processBonus += Math.min(10, pm.liesCollapsed * 3)             // 거짓말 붕괴 +3 (최대 10)
   processBonus += Math.min(6, pm.evidenceDiscovered * 3)          // 증거 발견 +3 (최대 6)
   processBonus += Math.min(6, pm.freeQuestionsRelevant * 2)       // 자유질문 적중 +2 (최대 6)
+  // v2: 심층 truth 해금 보너스
+  processBonus += Math.min(8, pm.deepTruthsUnlocked * 4)          // 심층 해금 +4 (최대 8)
+  // v2: 상성 보너스
+  processBonus += Math.min(6, pm.affinityHits * 2)                // 상성 적중 +2 (최대 6)
   // 질문 효율: 전이율이 30% 이상이면 보너스
   if (pm.questionsAsked > 0) {
     const efficiency = pm.lieTransitions / pm.questionsAsked
@@ -103,19 +114,25 @@ function calculateAuthority(ctx: VerdictContext): number {
     }
   }
 
-  // 턴 효율성
+  // 턴 초과 패널티 (20턴 이상부터)
   if (ctx.turnsUsed > 20) {
     score -= Math.min(10, (ctx.turnsUsed - 20) * 2)
   }
 
-  // ── 과정 보너스: 권위 ──
+  // ── 과정 보너스/패널티: 권위 ──
   const pm = ctx.processMetrics
   let processBonus = 0
   processBonus += Math.min(8, pm.evidenceEffective * 4)           // 효과적 증거 제시 +4 (최대 8)
-  // 턴 효율 보너스 (적은 턴으로 많은 전이)
-  if (ctx.turnsUsed > 0 && ctx.turnsUsed <= 15) processBonus += 5 // 15턴 이내 +5
+  // v2: 15턴 보너스 제거 (속도 보상 삭제)
+  // v2: 경로 커버리지 보너스
+  processBonus += Math.min(6, pm.requiredPathsCovered * 3)         // 필수 경로 충족 +3 (최대 6)
   // 양측 모두 심문했으면 공정성 보너스
-  if (pm.bothSidesQuestioned) processBonus += 3
+  if (pm.bothSidesQuestioned) processBonus += 4                    // v2: +3 → +4
+
+  // v2: 패널티
+  processBonus -= Math.min(6, pm.sameActionRepeats * 2)            // 반복 심문 -2 (최대 -6)
+  // unsupported collapse: hard evidence/trust 없이 S5 (즉답요구 제외)
+  processBonus -= Math.min(6, pm.unsupportedCollapses * 6)         // -6 (최대 -6)
 
   return Math.max(0, Math.min(100, score + processBonus))
 }
@@ -150,7 +167,11 @@ function calculateWisdom(ctx: VerdictContext): number {
   processBonus += Math.min(8, pm.confidentialUsed * 4)            // 비공개 보호 활용 +4 (최대 8)
   processBonus += Math.min(6, pm.togglesUsed * 2)                 // 토글 스킬 활용 +2 (최대 6)
   // AI 자유 질문 활용 보너스
-  if (pm.freeQuestionsRelevant >= 2) processBonus += 3             // 자유질문 2회+ 적중 → 지혜 +3
+  if (pm.freeQuestionsRelevant >= 2) processBonus += 3             // 자유질문 2회+ 적중 → +3
+  // v2: 상성 미스 패널티
+  processBonus -= Math.min(4, pm.affinityMisses * 1)              // 상성 미스 -1 (최대 -4)
+  // v2: 경로 보너스 액션 커버
+  processBonus += Math.min(4, pm.bonusPathsCovered * 2)           // 보너스 경로 +2 (최대 4)
 
   return Math.max(0, Math.min(100, score + processBonus))
 }

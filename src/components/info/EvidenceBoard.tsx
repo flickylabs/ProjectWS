@@ -3,6 +3,7 @@ import { useGameStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import type { EvidenceNode } from '../../types'
 import Emoji from '../common/Emoji'
+import { getEvidenceIcon } from '../../utils/evidenceIcons'
 
 const SUB_ACTIONS: { key: string; label: string; icon: string }[] = [
   { key: 'request_original', label: '원본 요청', icon: '📋' },
@@ -43,6 +44,7 @@ export default function EvidenceBoard() {
               className="w-full text-left px-2.5 py-2 flex items-center justify-between"
             >
               <div className="flex items-center gap-1.5 min-w-0">
+                <img src={getEvidenceIcon(ev.type)} alt={ev.type} width={18} height={18} className="inline-block shrink-0" />
                 <span className={`text-xs px-1 py-0.5 rounded ${ev.reliability === 'hard' ? 'bg-emerald-900/40 text-emerald-400' : 'bg-yellow-900/40 text-yellow-400'}`}>
                   {ev.reliability === 'hard' ? 'H' : 'S'}
                 </span>

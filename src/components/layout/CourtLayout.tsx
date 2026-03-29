@@ -69,44 +69,54 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
       </div>
       <PartyStatusBar />
 
-      {/* 채팅 — flex-1로 남은 공간 전부 차지, 직접 스크롤 */}
-      <div
-        ref={chatRef}
-        className="flex-1 min-h-0 overflow-y-auto relative"
-        onClick={handleChatClick}
-      >
-        <DialogueLog onTestimonyClick={() => setShowTestimony(true)} />
-
-        {/* 정보 버튼 */}
-        {/* 정보 버튼은 TopBar 옆에 렌더링 — 아래 별도 처리 */}
-
-        {/* 정보 패널 */}
+      {/* 채팅 + 사건 요약 오버레이 컨테이너 */}
+      <div className="flex-1 min-h-0 relative">
+        {/* 사건 요약 패널 — absolute 오버레이 (대화창 레이아웃 영향 없음) */}
         {!isDialoguePhase && infoOpen && (
-          <div onClick={(e) => e.stopPropagation()}
-            className="sticky bottom-0 bg-gray-900/98 backdrop-blur-sm border-t border-gray-700/50 rounded-t-2xl z-20"
-            style={{ maxHeight: '55vh' }}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="absolute top-0 left-0 right-0 z-30 bg-gray-900/98 backdrop-blur-sm border-b border-gray-700/50 rounded-b-xl shadow-xl shadow-black/30 animate-fade-in"
+            style={{ height: 280, display: 'flex', flexDirection: 'column' }}
           >
-            <div className="flex justify-center py-1.5"><div className="w-10 h-1 bg-gray-700 rounded-full" /></div>
-            <div className="flex px-3 gap-1 pb-2">
+            {/* 탭 */}
+            <div className="flex px-3 gap-1 py-2 shrink-0">
               {([
                 { id: 'disputes' as const, label: '쟁점', icon: '⚡' },
                 { id: 'claims' as const, label: '주장', icon: '💬' },
                 { id: 'evidence' as const, label: '증거', icon: '📄' },
               ]).map(tab => (
                 <button key={tab.id} onClick={() => setInfoTab(tab.id)}
-                  className={`flex-1 py-1.5 text-xs font-semibold rounded-lg ${infoTab === tab.id ? 'bg-amber-600/15 text-amber-400 ring-1 ring-amber-500/20' : 'text-gray-500'}`}
+                  className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all ${
+                    infoTab === tab.id
+                      ? 'bg-amber-600/15 text-amber-400 ring-1 ring-amber-500/20'
+                      : 'text-gray-500 hover:text-gray-300'
+                  }`}
                 ><Emoji char={tab.icon} size={12} /> {tab.label}</button>
               ))}
             </div>
-            <div className="overflow-y-auto px-3 pb-3" style={{ maxHeight: 'calc(55vh - 60px)' }}>
+            {/* 콘텐츠 — 고정 사이즈 내 스크롤 */}
+            <div className="overflow-y-auto px-3 pb-2 flex-1 min-h-0">
               {infoTab === 'disputes' && <DisputeChecklist />}
               {infoTab === 'claims' && <ClaimGraph />}
               {infoTab === 'evidence' && <EvidenceBoard />}
             </div>
+            {/* 접기 */}
+            <button
+              onClick={() => setInfoOpen(false)}
+              className="shrink-0 w-full py-1.5 text-xs text-gray-500 hover:text-gray-300 border-t border-gray-800/50 bg-gray-900/50"
+            >▲ 접기</button>
           </div>
         )}
 
-        <PhaseOverlay />
+        {/* 채팅 — 전체 영역 스크롤, 정보 패널과 독립 */}
+        <div
+          ref={chatRef}
+          className="absolute inset-0 overflow-y-auto"
+          onClick={handleChatClick}
+        >
+          <DialogueLog onTestimonyClick={() => setShowTestimony(true)} />
+          <PhaseOverlay />
+        </div>
       </div>
 
       {/* 하단 — 토스트(접이식) + 고정 패널 */}

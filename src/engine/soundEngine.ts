@@ -1,7 +1,6 @@
 /**
  * 사운드 이벤트 시스템.
- * 실제 음원 파일 없이도 Web Audio API로 간단한 효과음을 생성한다.
- * 나중에 음원 파일로 교체 가능.
+ * 실제 MP3 파일 우선, 없으면 Web Audio API 합성음 폴백.
  */
 
 let audioCtx: AudioContext | null = null
@@ -17,8 +16,27 @@ function getAudioCtx(): AudioContext {
 export function setSoundEnabled(v: boolean) { enabled = v }
 export function isSoundEnabled() { return enabled }
 
-/** 간단한 톤 재생 */
-function playTone(frequency: number, duration: number, type: OscillatorType = 'sine', volume = 0.15) {
+// ── MP3 파일 재생 ──
+
+const audioCache: Record<string, HTMLAudioElement> = {}
+
+function playFile(path: string, volume = 0.3) {
+  if (!enabled) return
+  try {
+    if (!audioCache[path]) {
+      audioCache[path] = new Audio(path)
+    }
+    const audio = audioCache[path]
+    audio.volume = volume
+    audio.currentTime = 0
+    audio.play().catch(() => {})
+  } catch { /* 무시 */ }
+}
+
+// ── 합성음 폴백 (MP3 로드 실패 시 사용) ──
+
+// @ts-ignore — 향후 폴백용으로 유지
+function _playTone(frequency: number, duration: number, type: OscillatorType = 'sine', volume = 0.15) {
   if (!enabled) return
   try {
     const ctx = getAudioCtx()
@@ -39,81 +57,65 @@ function playTone(frequency: number, duration: number, type: OscillatorType = 's
 
 /** Phase 전환 */
 export function playPhaseTransition() {
-  playTone(523, 0.15, 'sine', 0.1)  // C5
-  setTimeout(() => playTone(659, 0.15, 'sine', 0.1), 100)  // E5
-  setTimeout(() => playTone(784, 0.2, 'sine', 0.1), 200)  // G5
+  playFile('/sfx/whoosh.mp3', 0.25)
 }
 
 /** 거짓말 붕괴 */
 export function playLieCollapse() {
-  playTone(880, 0.1, 'sawtooth', 0.08)
-  setTimeout(() => playTone(660, 0.1, 'sawtooth', 0.08), 80)
-  setTimeout(() => playTone(440, 0.2, 'sawtooth', 0.06), 160)
+  playFile('/sfx/reveal.mp3', 0.35)
 }
 
 /** 증거 제시 */
 export function playEvidencePresent() {
-  playTone(440, 0.1, 'triangle', 0.1)
-  setTimeout(() => playTone(554, 0.15, 'triangle', 0.1), 100)
+  playFile('/sfx/stamp.mp3', 0.25)
 }
 
 /** 증거 잠금 해제 */
 export function playEvidenceUnlock() {
-  playTone(330, 0.08, 'sine', 0.08)
-  setTimeout(() => playTone(440, 0.08, 'sine', 0.08), 60)
-  setTimeout(() => playTone(660, 0.15, 'sine', 0.1), 120)
+  playFile('/sfx/notification.mp3', 0.2)
 }
 
 /** 증거 조합 격상 */
 export function playEvidenceUpgrade() {
-  playTone(440, 0.1, 'sine', 0.1)
-  setTimeout(() => playTone(554, 0.1, 'sine', 0.1), 100)
-  setTimeout(() => playTone(660, 0.1, 'sine', 0.1), 200)
-  setTimeout(() => playTone(880, 0.2, 'sine', 0.12), 300)
+  playFile('/sfx/chime.mp3', 0.3)
 }
 
 /** 판결 확정 */
 export function playVerdictConfirm() {
-  playTone(262, 0.15, 'sine', 0.1)
-  setTimeout(() => playTone(330, 0.15, 'sine', 0.1), 150)
-  setTimeout(() => playTone(392, 0.15, 'sine', 0.1), 300)
-  setTimeout(() => playTone(523, 0.3, 'sine', 0.12), 450)
+  playFile('/sfx/chime.mp3', 0.35)
 }
 
 /** 클릭/선택 */
 export function playClick() {
-  playTone(800, 0.05, 'sine', 0.05)
+  playFile('/sfx/click.mp3', 0.15)
 }
 
 /** 에러/실패 */
 export function playError() {
-  playTone(200, 0.15, 'square', 0.06)
-  setTimeout(() => playTone(150, 0.2, 'square', 0.04), 120)
+  playFile('/sfx/alert.mp3', 0.2)
 }
 
 /** 분리심문 시작 */
 export function playSeparation() {
-  playTone(392, 0.1, 'triangle', 0.08)
-  setTimeout(() => playTone(294, 0.2, 'triangle', 0.06), 100)
+  playFile('/sfx/tension.mp3', 0.25)
 }
 
 /** 재판봉 (3회) */
 export function playGavel() {
-  const hit = (delay: number) => {
-    setTimeout(() => {
-      playTone(120, 0.08, 'square', 0.15)
-      playTone(80, 0.12, 'sawtooth', 0.08)
-    }, delay)
-  }
-  hit(0)
-  hit(250)
-  hit(500)
+  playFile('/sfx/gavel.mp3', 0.4)
 }
 
 /** 칭호 획득 */
 export function playTitleEarned() {
-  playTone(523, 0.1, 'sine', 0.1)
-  setTimeout(() => playTone(659, 0.1, 'sine', 0.1), 120)
-  setTimeout(() => playTone(784, 0.1, 'sine', 0.1), 240)
-  setTimeout(() => playTone(1047, 0.3, 'sine', 0.12), 360)
+  playFile('/sfx/chime.mp3', 0.35)
+}
+
+/** 대사 넘기기 (신규) */
+export function playDialogueTick() {
+  playFile('/sfx/click.mp3', 0.08)
+}
+
+/** 이의 제기 (신규) */
+export function playObjection() {
+  playFile('/sfx/alert.mp3', 0.4)
 }

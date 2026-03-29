@@ -1,0 +1,726 @@
+{
+  "caseId": "case-partner-05",
+  "meta": {
+    "relationshipType": "partnership",
+    "conflictSeed": "CS-1",
+    "variableModules": [
+      "VM-A"
+    ],
+    "twistModule": "TW-2",
+    "difficulty": "hard",
+    "anchorTruth": "문제의 2,400만원은 현우의 개인 공금 유용이 아니라 세무사 박태성의 권유로 집행된 세무조사 대응 선급금과 예납세액이었다.",
+    "emotionalBait": "정체가 흐린 자문사 계좌, 조사 직전 심야 이체, 현우와 같은 학교 출신 대표가 있는 법인등기 캡처가 겹치며 개인 비자금처럼 보인다.",
+    "resolutionDilemma": "현우가 문서화 없이 공금을 움직인 잘못은 분명하지만, 그 판단의 출발점에 세무사의 자기이익 섞인 조언이 있었다는 점까지 감안해 누구 책임을 더 무겁게 볼지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "최현우",
+      "age": 37,
+      "occupation": "건강식품 유통사 공동대표 겸 운영총괄",
+      "incomeBracket": "high",
+      "archetype": "cold_logic",
+      "speechStyle": "질문을 받으면 먼저 계정과 전표 흐름부터 설명하며 판단의 동기를 뒤로 미룬다. 불리한 대목이 나오면 '조사 대응상 불가피했다'며 감정과 절차를 분리하려 한다.",
+      "pride": 8,
+      "fear": "세무조사 직전에 회사 돈을 빼돌린 대표로 보이거나, 숫자를 다루는 운영총괄인데도 기본 통제를 무너뜨린 사람으로 남는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "erp_and_mail_archive",
+      "dailyRoutine": "오전에는 입출금과 발주표를 대조하고, 오후에는 물류·정산 이슈를 처리하며, 밤에는 세무자료와 장부 계정을 직접 맞춰 본다.",
+      "sensitivePoints": [
+        "공금 유용 의심",
+        "세무조사 대응 판단",
+        "외부 전문가 의존"
+      ],
+      "verbalTells": [
+        {
+          "type": "account_chain_recital",
+          "trigger": "lying",
+          "pattern": "의도를 묻는 질문에도 계정명, 전표번호, 발행 시각을 길게 나열해 본심 진술을 늦춘다."
+        },
+        {
+          "type": "necessity_frame",
+          "trigger": "cornered",
+          "pattern": "공동 승인 누락을 지적받으면 '그때는 선택지가 없었다'며 위기 대응의 불가피성으로 초점을 옮긴다."
+        },
+        {
+          "type": "affect_pruning",
+          "trigger": "avoiding",
+          "pattern": "상대가 배신감을 말하면 '감정은 이해하지만 지금은 세목 구조를 보자'며 정서 표현을 잘라낸다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "소라씨",
+        "toJudge": "제 동업자",
+        "angry": "정소라 씨!"
+      }
+    },
+    "partyB": {
+      "name": "정소라",
+      "age": 35,
+      "occupation": "건강식품 유통사 공동대표 겸 재무마케팅총괄",
+      "incomeBracket": "high",
+      "archetype": "victim_cosplay",
+      "speechStyle": "현재 갈등을 과거의 반복 패턴처럼 묶어 말하며 자신이 또 속은 사람이라는 프레임을 먼저 세운다. 불리한 자료가 나오면 증거 진위보다 왜 그런 의심을 하게 됐는지를 길게 강조한다.",
+      "pride": 7,
+      "fear": "세무조사 직전에 또 숫자와 문서에 속아 회사 손실을 키운 재무 담당처럼 보이거나, 경고 신호를 보고도 놓친 사람으로 남는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "spreadsheet_recon_and_chat_capture",
+      "dailyRoutine": "아침에는 현금흐름표와 카드 매출을 확인하고, 오후에는 광고정산과 세무자료 요청을 처리하며, 밤에는 캡처한 장부와 메신저 기록을 대조한다.",
+      "sensitivePoints": [
+        "또다시 속았다는 인식",
+        "세무조사 리스크 은닉",
+        "공동 승인 무시"
+      ],
+      "verbalTells": [
+        {
+          "type": "injury_stack",
+          "trigger": "lying",
+          "pattern": "현재 질문을 받으면 예전 누락, 늦은 보고, 장부 정정 사례를 한꺼번에 꺼내 지금 행동의 정당성을 먼저 만든다."
+        },
+        {
+          "type": "proof_dramatization",
+          "trigger": "cornered",
+          "pattern": "캡처 한 장이나 등기부 한 줄을 '이번엔 눈으로 봤다'는 식으로 확대해 전체 의도의 증거처럼 말한다."
+        },
+        {
+          "type": "moral_redirect",
+          "trigger": "emotional",
+          "pattern": "원본 제출 여부를 묻는 질문을 받으면 곧바로 '그런 의심을 만든 사람이 누구냐'는 도덕 판단으로 방향을 튼다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "현우씨",
+        "toJudge": "제 동업자",
+        "angry": "최현우 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "작년 판촉비 누락 정정 이후 두 사람은 1,000만원 이상 외부 자문·선급금 집행은 최소한 메신저 승인과 세금계산서 초안을 함께 남기기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "봄에 반품충당금을 언제 잡을지를 두고 다퉜을 때 누가 더 공격적으로 숫자를 밀어붙였는지를 두 사람 모두 상대 탓 중심으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '소라가 매출 방어를 위해 충당금 반영을 늦추려 했다' / B: '현우가 조사 리스크를 과소평가하며 장부를 밀어붙였다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "세무조사 통지 전주에 외부 전문가를 더 붙일지, 비용 성격을 직원들에게 어디까지 공개할지를 끝까지 문서로 정리하지 못한 채 덮어둔 적이 있다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "정연수 (소라의 언니, 초창기 투자금 일부 대여)",
+        "relationTo": "b",
+        "knowledgeScope": "소라가 세무조사 직전 현우를 전혀 믿지 못했고, 등기부 캡처를 본 뒤 개인 비자금이라고 거의 확신했다는 심리 상태를 안다.",
+        "witnessedDirectly": false,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 38,
+          "occupation": "소라의 언니, 초창기 투자금 일부 대여",
+          "relationToA": "최현우와는 이 사건을 통해 알게 됨",
+          "relationToB": "소라의 언니, 초창기 투자금 일부 대여",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "동생 걱정이 앞서지만 사실은 사실대로 말하려 한다. 감정이 올라오면 직설적이 된다.",
+          "addressJudge": "재판관님",
+          "addressA": "현우씨",
+          "addressB": "소라씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "노지훈 (사내 재무대리)",
+        "relationTo": "both",
+        "knowledgeScope": "문제의 선급금 전표가 처음에는 '조사대응 자문'으로 올라왔다가 팀 불안 방지를 이유로 일반 관리비성 명목으로 바뀐 흐름을 기억한다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 38,
+          "occupation": "사내 재무대리",
+          "relationToA": "최현우을 업무상 알고 있음",
+          "relationToB": "정소라을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "현우씨",
+          "addressB": "소라씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "박태성 (외부 세무사)",
+        "relationTo": "both",
+        "knowledgeScope": "선급금 구조, 조사대응 체크리스트, 제휴 자문사와의 관계, 두 사람이 어느 시점까지 그의 조언을 신뢰했는지를 원본 메일 기준으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "외부 세무사",
+          "relationToA": "최현우을 업무상 알고 있음",
+          "relationToB": "정소라을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "최현우씨",
+          "addressB": "정소라씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "pre_tax_audit",
+    "description": "국세청 세무조사 통지가 막 도착해 일주일 안에 주요 장부와 판촉비 증빙을 정리해야 하는 상황이었다. 조사 결과에 따라 가맹점 정산과 추가 대출 연장이 흔들릴 수 있어, 두 사람 모두 장부와 현금흐름을 동시에 방어해야 한다는 압박을 받고 있었다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "조사 직전이라 자금 이동 하나가 곧 탈루 은닉이나 횡령처럼 읽혔고, 외부 전문가가 끼어들수록 책임 주체가 더 흐려져 상대를 먼저 의심하게 만들었다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "현우의 무단 조사대응 선급금 이체",
+      "truth": true,
+      "truthDescription": "현우는 소라의 최종 승인 없이 법인 운영계좌에서 2,400만원을 박태성 세무사가 지정한 제휴 자문사 계좌로 선급 이체했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 68,
+        "b": 32
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "세무대응권한재설계",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "소라의 개인 유용 프레임 고착",
+      "truth": true,
+      "truthDescription": "소라는 자신도 세무사의 조사대응 선급금 제안 메일을 받은 사실을 숨기고, 해지 협상 테이블과 임원 회의에서 이를 현우의 개인 비자금 의혹처럼 몰아갔다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 34,
+        "b": 66
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "신뢰회복",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "선급금 구조의 배후 제안자는 상대 공동대표였는가",
+      "truth": false,
+      "truthDescription": "현우는 소라가 장부 리스크를 덮으려 밀었다고, 소라는 현우가 공금을 숨기려 설계했다고 믿었지만, 실제 선급금 구조와 계정명은 박태성 세무사의 구체적 제안에서 시작됐다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 47,
+        "b": 53
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "증거검증프로토콜",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "조사대응 비용 성격의 쌍방 은폐",
+      "truth": true,
+      "truthDescription": "두 사람은 모두 직원과 일부 거래처 문의에 선급금을 '서버 이전·관리비 선급' 정도로만 설명하며 실제 조사대응 자문 목적을 감췄다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 52,
+        "b": 48
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "과거장부정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "세무사의 제휴 자문사 이해충돌",
+      "truth": true,
+      "truthDescription": "박태성 세무사는 자신이 추천한 자문사와 별도 소개수수료 약정을 맺고 있었고, 이 관계를 두 공동대표에게 명확히 밝히지 않았다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 44,
+        "b": 56
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "세무대응권한재설계",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "법인계좌 이체확인서와 자문사 선급금 전표",
+      "description": "세무조사 통지 이틀 뒤 법인 운영계좌에서 제휴 자문사 '세움조세자문' 계좌로 2,400만원이 이체된 은행 원본 확인서와 ERP 선급금 전표다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은행 발급 PDF와 ERP 전표 원본에 같은 금액과 전표번호가 연결돼 있다.",
+        "check_metadata": "이체 실행 단말은 현우의 노트북이지만 공동 전자승인 토큰은 사용되지 않았다.",
+        "restore_context": "적요란에는 '조사대응 자문 선급'이 먼저 기재됐다가 ERP 상 후속 메모에서 일반 관리비성 표현이 덧붙었다.",
+        "verify_source": "은행 원장 번호와 회사 ERP 일련번호가 서로 일치한다.",
+        "check_edits": "발급 원본과 서버 저장본 사이에 편집 흔적이 없다.",
+        "question_acquisition": "법인계좌와 회사 ERP 자료라 열람 자체는 적법하다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "박태성 세무사의 조사대응 제안 메일과 체크리스트",
+      "description": "박태성이 '조사 전에 자문 선급금을 먼저 집행하고 문제 항목은 일반 관리비 계정으로 임시 정리하자'고 제안한 원본 메일과 첨부 체크리스트다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "세무사 사무실 서버 보관본과 회사 수신함 원본이 함께 확보됐다.",
+        "check_metadata": "최초 발신 시각은 이체 4시간 전이며, 수신자에 현우와 소라가 모두 포함돼 있다.",
+        "restore_context": "메일 본문에는 자문 선급금, 조사대응 자료분류, 팀 내 설명 축소까지 한 흐름으로 적혀 있어 배후 제안자가 세무사였음이 드러난다.",
+        "verify_source": "도메인 인증과 헤더 정보가 실제 세무사 사무실 서버와 일치한다.",
+        "check_edits": "헤더 포함 원본이라 후편집 흔적이 없다.",
+        "question_acquisition": "공동대표 업무 메일이라 제출 정당성은 높지만 외부 자문 세부전략은 분쟁 해결 범위로 한정해야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "법인등기부 캡처와 동문 단체방 스크린샷",
+      "description": "제휴 자문사 대표가 현우의 대학 동문이라는 점과 이름이 겹친다는 이유로 개인 친분 거래처럼 보이게 만든 등기부 캡처와 단체방 스크린샷이다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 대화 내보내기가 아니라 소라가 저장한 캡처 두 장만 제출됐다.",
+        "check_metadata": "캡처 저장 시각은 이체 다음 날 새벽이며, 각각 다른 기기에서 다시 잘라낸 흔적이 남아 있다.",
+        "restore_context": "동문 관계는 확인되지만 실제 계약 개시나 금전 합의를 뜻하는 앞뒤 대화는 빠져 있다.",
+        "verify_source": "등기 정보 자체는 사실이나 단체방 화면은 누가 어떤 맥락으로 보냈는지 확인되지 않았다.",
+        "check_edits": "문자열 조작 흔적은 없지만 선택적 크롭과 강조표시가 명확하다.",
+        "question_acquisition": "사적 단체방 자료와 개인 캡처라 개인정보·사생활 침해 우려가 있다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "공동 받은 메일 스레드와 소라의 회신 초안",
+      "description": "소라도 조사대응 선급금 제안과 계정 임시 변경 방안을 읽고 '우선 자료만 정리하자'고 답하려다 보낸 흔적이 남은 메일 스레드와 임시 저장 초안이다.",
+      "type": "email",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "메일 스레드 전체와 드래프트 자동저장 기록이 함께 확보됐다.",
+        "check_metadata": "소라의 드래프트는 이체 52분 전에 저장됐고, 최종 발송은 하지 않았지만 열람 기록은 남아 있다.",
+        "restore_context": "소라가 제안 내용을 몰랐다는 주장과 달리, 선급금과 임시 계정명 변경안을 구체적으로 읽고 검토한 정황이 드러난다.",
+        "verify_source": "구글 워크스페이스 활동 로그와 드래프트 버전 기록이 일치한다.",
+        "check_edits": "플랫폼 원본이라 수정 흔적이 명확히 남아 있고 변조는 없다.",
+        "question_acquisition": "회사 공용 메일 시스템 자료라 적법하지만 개인 메모 부분은 최소 범위로 사용해야 한다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "재무대리 노지훈의 회의 메모와 팀 공지 초안",
+      "description": "선급금 명목을 팀에는 일반 관리비로만 공유하자는 두 대표의 회의 메모, 그리고 실제로 그렇게 작성된 내부 공지 초안이다.",
+      "type": "document",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "재무대리의 회의록 원본, 수정된 공지 초안, 메신저 전달 로그가 한 세트로 확보됐다.",
+        "check_metadata": "회의록 작성 시각은 이체 당일 오전이며, 두 대표 모두 최종 문구를 확인한 흔적이 있다.",
+        "restore_context": "단순 실수나 추측이 아니라 팀 불안과 조사 노출을 막기 위해 의도적으로 비용 성격을 축소 표현한 맥락이 드러난다.",
+        "verify_source": "노지훈의 노트북 로컬 원본과 공지 초안 클라우드 버전이 서로 일치한다.",
+        "check_edits": "수정 이력은 남아 있지만 문서 위조 흔적은 없다.",
+        "question_acquisition": "회사 내부 문서라 적법하지만 직원 개인 의견 부분은 비식별 처리해야 한다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "제휴 자문사 소개수수료 약정서와 세무사 사무실 회계메모",
+      "description": "박태성이 추천한 세움조세자문과 별도 소개수수료 약정을 맺고 있었음을 보여주는 약정서와 사무실 회계메모다.",
+      "type": "contract",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "자문사와 세무사 사무실 사이의 약정서 원본, 수수료 청구 메모, 송장 초안이 함께 확보됐다.",
+        "check_metadata": "약정 체결일은 두 공동대표에게 제안 메일을 보내기 사흘 전으로 찍혀 있다.",
+        "restore_context": "세무사가 순수한 중립 조언자가 아니라 자신의 이해관계가 걸린 구조를 먼저 제안했음이 확인된다.",
+        "verify_source": "자문사 인감, 문서번호, 회계메모의 참조번호가 서로 맞아떨어진다.",
+        "check_edits": "전자서명 검증과 파일 해시에서 후편집 흔적이 없다.",
+        "question_acquisition": "제3자 계약자료지만 분쟁 해결 목적으로 한정 제출돼 적법하다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3",
+        "d-5"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "현우는 공동 승인 없이 2,400만원 조사대응 선급금을 먼저 이체했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "소라는 자신도 관련 제안을 읽었으면서 이를 현우의 개인 비자금 의혹처럼 몰아갔다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "선급금 구조의 최초 제안자는 상대 공동대표가 아니라 세무사 박태성이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "두 사람 모두 조사대응 비용의 실제 성격을 팀에 축소해 설명했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "세무사는 추천 자문사와 수수료 약정을 맺고 있었고 이를 명확히 고지하지 않았다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "neither_knows"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "audit_retainer_transfer_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "joint_approval_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-2_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "who_started_structure_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_tax_accountant_advice"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-2_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "internal_notice_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "expense_label_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "personal_slush_fund_claim_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "did_you_read_tax_mail_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-4_or_e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-7",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "who_designed_transfer_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_being_misled"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-2_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "team_notice_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_hide_audit_cost_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "증거검증프로토콜": [
+      "세무조사 대응 관련 자료는 캡처나 요약표가 아니라 원본 메일, 은행 전표, 세금계산서 초안을 한 세트로만 인정한다.",
+      "제3자 자문사와의 연결 의혹은 등기 캡처가 아니라 계약 경위와 이해관계 고지서를 함께 제출해야만 사실 판단에 반영한다.",
+      "원본 확인 전 상대를 횡령자로 지칭하거나 협상자료로 확정하면 외부 조정인이 증거 효력을 즉시 제한한다."
+    ],
+    "세무대응권한재설계": [
+      "세무조사·감사 대응 비용은 금액과 무관하게 두 대표와 외부 회계대리인이 동시에 승인하는 별도 코드로만 집행한다.",
+      "세무사나 법무사가 추천한 제휴 업체를 쓸 때는 소개수수료와 이해충돌 여부를 서면으로 먼저 확인한다.",
+      "다시 긴급 대응을 이유로 단독 이체가 발생하면 해당 대표의 단독 금융권한을 즉시 중단하고 조사대응 예산을 별도 계좌로 분리한다."
+    ],
+    "과거장부정리": [
+      "이번 조사 전 임시로 돌려둔 계정명과 설명 문구를 전부 원복하고, 조사 종료 후 수정분개와 설명서까지 함께 남긴다.",
+      "팀 불안 방지를 이유로 비용 성격을 흐리는 관행을 멈추고, 민감 비용도 최소한 진짜 목적 범주까지는 공동 공지한다.",
+      "과거 판촉비·충당금 누락처럼 이번에도 다시 계정 돌리기가 확인되면 외부 세무조정 리뷰를 분기마다 의무화한다."
+    ],
+    "신뢰회복": [
+      "소라는 개인 비자금 프레임을 철회하고, 현우는 문서화 없는 선급금 이체 자체를 사과하는 방식으로 잘못의 성격을 분리한다.",
+      "두 사람은 세무사의 제안, 자신들의 동의·방치, 실제 자금 귀속을 시간순으로 정리한 공동 사실표를 만들어 팀과 공유한다.",
+      "향후 세무리스크 상황에서 상대 의도를 먼저 탈루나 횡령으로 단정하면 내부 논쟁이 아니라 외부 조정 절차로 바로 넘기도록 한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-3",
+    "tp-2"
+  ]
+}

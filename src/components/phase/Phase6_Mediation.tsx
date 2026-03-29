@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
-import { chatCompletion } from '../../engine/llmClient'
+import { resolveLLMDialogue } from '../../engine/llmDialogueResolver'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import Emoji from '../common/Emoji'
+import type { PlayerAction } from '../../types'
 
 type MediationPath = 'immediate' | 'conditional' | 'postpone' | 'fact_first'
 
 export default function Phase6_Mediation() {
   const [selectedPath, setSelectedPath] = useState<MediationPath | null>(null)
-  const [mediationResponse, setMediationResponse] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const advancePhase = useGameStore((s) => s.advancePhase)
   const caseData = useGameStore((s) => s.caseData)
@@ -34,7 +34,6 @@ export default function Phase6_Mediation() {
       return
     }
 
-    // 조건부 조정 / 보류 / 사실우선 → 양측 반응 생성
     setLoading(true)
 
     const pathLabels: Record<string, string> = {
@@ -51,50 +50,51 @@ export default function Phase6_Mediation() {
     })
 
     if (isLLMMode()) {
-      try {
-        const prompt = buildMediationPrompt(caseData, path)
-        const response = await chatCompletion(
-          [{ role: 'user', content: prompt }],
-          { temperature: 0.8, maxTokens: 500 },
-        )
-        setMediationResponse(response)
+      // mediation_reaction 에이전트로 양측 반응 생성
+      const store = useGameStore.getState()
+      const mediationAction: PlayerAction = { type: 'mediation', choice: pathToChoice(path) }
 
-        // 양측 반응을 대화 로그에 추가
-        const lines = response.split('\n').filter((l) => l.trim())
-        for (const line of lines) {
-          const speaker = line.startsWith('A:') ? 'a' as const
-            : line.startsWith('B:') ? 'b' as const
-            : 'system' as const
-          const text = line.replace(/^[AB]:\s*/, '').replace(/^시스템:\s*/, '')
-          if (text) {
-            addDialogue({ speaker, text, relatedDisputes: [], turn: turnCount })
-          }
+      // A 반응
+      try {
+        store.setLLMLoading(true, 'a')
+        const resultA = await resolveLLMDialogue(mediationAction, store.agentA, store.agentB, store.evidenceStates, caseData)
+        store.setLLMLoading(false)
+        if (resultA) {
+          store.addDialogue({ speaker: 'a', text: resultA.node.text, relatedDisputes: [], turn: store.turnCount, behaviorHint: resultA.node.behaviorHint })
         }
-      } catch {
-        setMediationResponse(null)
-      }
+      } catch { store.setLLMLoading(false) }
+
+      // B 반응
+      try {
+        const freshStore = useGameStore.getState()
+        freshStore.setLLMLoading(true, 'b')
+        const resultB = await resolveLLMDialogue(mediationAction, freshStore.agentA, freshStore.agentB, freshStore.evidenceStates, caseData)
+        freshStore.setLLMLoading(false)
+        if (resultB) {
+          freshStore.addDialogue({ speaker: 'b', text: resultB.node.text, relatedDisputes: [], turn: freshStore.turnCount, behaviorHint: resultB.node.behaviorHint })
+        }
+      } catch { useGameStore.getState().setLLMLoading(false) }
     } else {
       // 폴백: 고정 반응
       const nameA = caseData.duo.partyA.name
       const nameB = caseData.duo.partyB.name
       const fallbacks: Record<string, string[]> = {
         conditional: [
-          `${nameA}: ... 조건이 합리적이라면 고려해 보겠습니다.`,
-          `${nameB}: 조건에 따라 다르겠지만... 들어는 보겠습니다.`,
+          `조건이 합리적이라면 고려해 보겠습니다.`,
+          `조건에 따라 다르겠지만... 들어는 보겠습니다.`,
         ],
         postpone: [
-          `${nameA}: 보류라... 결국 다시 와야 한다는 건가요?`,
-          `${nameB}: 확실한 건 확실하게 해주셨으면 좋겠어요.`,
+          `보류라... 결국 다시 와야 한다는 건가요?`,
+          `확실한 건 확실하게 해주셨으면 좋겠어요.`,
         ],
         fact_first: [
-          `${nameA}: 사실 관계부터 정리하는 건 찬성합니다.`,
-          `${nameB}: 네, 그게 공정할 것 같아요.`,
+          `사실 관계부터 정리하는 건 찬성합니다.`,
+          `네, 그게 공정할 것 같아요.`,
         ],
       }
-      for (const text of fallbacks[path] ?? []) {
-        const speaker = text.startsWith(nameA) ? 'a' as const : 'b' as const
-        addDialogue({ speaker, text: text.replace(/^[^:]+:\s*/, ''), relatedDisputes: [], turn: turnCount })
-      }
+      const lines = fallbacks[path] ?? []
+      if (lines[0]) addDialogue({ speaker: 'a', text: lines[0], relatedDisputes: [], turn: turnCount })
+      if (lines[1]) addDialogue({ speaker: 'b', text: lines[1], relatedDisputes: [], turn: turnCount })
     }
 
     setLoading(false)
@@ -148,26 +148,12 @@ export default function Phase6_Mediation() {
   )
 }
 
-function buildMediationPrompt(caseData: CaseData, path: MediationPath): string {
-  const nameA = caseData.duo.partyA.name
-  const nameB = caseData.duo.partyB.name
-  const disputes = caseData.disputes.map((d) => d.name).join(', ')
-
-  const pathDesc: Record<string, string> = {
-    conditional: '재판관이 조건부 조정안을 제시했습니다. 양측이 어떤 조건이면 수용할 수 있는지 반응합니다.',
-    postpone: '재판관이 확실한 사실만 확정하고 나머지를 보류하겠다고 했습니다. 양측이 반응합니다.',
-    fact_first: '재판관이 사실 관계부터 정리하겠다고 했습니다. 양측이 반응합니다.',
+function pathToChoice(path: MediationPath): 'immediate_verdict' | 'conditional_mediation' | 'postpone_investigation' | 'fact_first_solution_later' {
+  const map: Record<MediationPath, 'immediate_verdict' | 'conditional_mediation' | 'postpone_investigation' | 'fact_first_solution_later'> = {
+    immediate: 'immediate_verdict',
+    conditional: 'conditional_mediation',
+    postpone: 'postpone_investigation',
+    fact_first: 'fact_first_solution_later',
   }
-
-  return `법정 심문 게임입니다. ${nameA}와 ${nameB}가 분쟁 중입니다.
-쟁점: ${disputes}
-${nameA} 성격: ${caseData.duo.partyA.speechStyle}
-${nameB} 성격: ${caseData.duo.partyB.speechStyle}
-
-${pathDesc[path]}
-
-A:와 B:로 시작하는 짧은 반응을 2~3줄씩 작성하세요. 각자 성격에 맞게.
-한국어로 법정 어투.`
+  return map[path]
 }
-
-type CaseData = import('../../types').CaseData

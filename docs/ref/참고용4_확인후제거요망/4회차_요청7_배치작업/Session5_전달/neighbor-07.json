@@ -1,0 +1,720 @@
+{
+  "caseId": "case-neighbor-07",
+  "meta": {
+    "relationshipType": "neighbor",
+    "conflictSeed": "CS-3",
+    "variableModules": [
+      "VM-C",
+      "VM-E"
+    ],
+    "twistModule": "TW-6",
+    "difficulty": "medium",
+    "anchorTruth": "8층 잠금함은 어느 세대 전용도 아니었다. 전 세입자 윤가영에게 누수 공사 기간 한시 허용됐던 공용 비상물품함이었고, 퇴거와 함께 허가는 이미 종료돼 있었다.",
+    "emotionalBait": "싱크대 서랍 속 옛 열쇠, 잠금함 안쪽 '803' 스티커, 갑자기 들어간 유모차, 그 위에 걸린 새 자물쇠 — 네 가지가 겹치면 상대가 처음부터 공간을 빼앗으려 한 것처럼 보인다.",
+    "resolutionDilemma": "근본 원인은 전 세입자의 어정쩡한 인수인계와 공용공간 오해다. 하지만 나리의 무단 사용과 성호의 사적 자물쇠·공개 경고도 분명한 잘못이라, 첫 이웃관계를 어디까지 사과와 규칙 재정리로 수습할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "박나리",
+      "age": 31,
+      "occupation": "프리랜서 번역가",
+      "incomeBracket": "mid",
+      "archetype": "avoidant",
+      "speechStyle": "'먼저 죄송합니다만' — 톤부터 낮추고 시작한다. 하지만 열쇠 사용을 추궁당하면 '전 세입자도 괜찮다고 했고, 집주인도 그렇게 말했어요'라며 남의 말을 권한처럼 끌어온다.",
+      "pride": 5,
+      "fear": "이사 온 지 일주일도 안 돼 규칙도 모르면서 남의 공간을 점유한 사람이라는 낙인이 층 전체로 퍼지는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "messenger_and_move_in_checklist",
+      "dailyRoutine": "오전에는 번역 마감을 보고 낮에는 아직 덜 푼 이사 박스를 정리한다. 유모차와 택배 박스처럼 부피 큰 물건을 잠깐 치워둘 공간에 예민하다.",
+      "sensitivePoints": [
+        "새집 적응",
+        "아이 짐 보관",
+        "무단침입 취급"
+      ],
+      "verbalTells": [
+        {
+          "type": "apology_preface",
+          "trigger": "cornered",
+          "pattern": "'죄송한데 그때는 정말 급해서요' — 사과를 먼저 깔고 이사 날씨, 아이 짐, 택배 박스 이야기로 길게 빠진다."
+        },
+        {
+          "type": "borrowed_authority",
+          "trigger": "lying",
+          "pattern": "'전 세입자도, 집주인도 다 괜찮다고 했어요' — 자기 판단을 묻는 질문에 타인의 말을 공식 허가처럼 끌어온다."
+        },
+        {
+          "type": "topic_trail",
+          "trigger": "avoiding",
+          "pattern": "열쇠 사용을 추궁받으면 '비가 오고 있었고, 아이 짐이 많았고, 택배도 밀려 있어서' — 주변 사정을 길게 쌓아 핵심 답을 미룬다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "성호씨",
+        "toJudge": "옆집 분",
+        "angry": "권성호 씨!"
+      }
+    },
+    "partyB": {
+      "name": "권성호",
+      "age": 47,
+      "occupation": "손해보험 현장조사관",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "상대 말이 길어지면 끊는다. '규칙부터 말해 주세요.' 자신이 옳다고 느끼면 '전 세입자 때도 이랬습니다'라며 과거 분쟁을 끌어와 현재 행동을 같은 부류로 단정한다.",
+      "pride": 8,
+      "fear": "전 세입자 때처럼 공용공간이 또 사유화되는 걸 눈뜨고 당하는 사람, 결국 아무것도 못 막는 사람으로 보이는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "complex_app_and_cctv_requests",
+      "dailyRoutine": "아침 일찍 출근하며 비상계단과 복도 상태를 한 번씩 본다. 퇴근 후에는 관리앱 공지와 소방 관련 안내를 자주 확인한다.",
+      "sensitivePoints": [
+        "피난 동선",
+        "이전 거주자와의 악연",
+        "새 이웃의 무시하는 태도"
+      ],
+      "verbalTells": [
+        {
+          "type": "rule_punch",
+          "trigger": "lying",
+          "pattern": "'피난 통로. 공용물품. 무단 열쇠.' — 규정 단어를 짧게 끊어 연속으로 던지며 상대를 규칙 위반자로 몰아간다."
+        },
+        {
+          "type": "old_case_echo",
+          "trigger": "emotional",
+          "pattern": "화가 차오르면 '전 세입자 때도 똑같았습니다'를 반복해 나리를 윤가영과 같은 부류로 묶어버린다."
+        },
+        {
+          "type": "volume_spike",
+          "trigger": "cornered",
+          "pattern": "자물쇠·경고문 책임을 묻자 음량이 확 올라간다. '내가 안 막았으면 또 그냥 넘어갔을 거 아닙니까' — 선제 조치를 정당방위처럼 밀어붙인다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "나리씨",
+        "toJudge": "옆집 분",
+        "angry": "박나리 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "이사 첫날 성호가 엘리베이터를 잡아주며 '잠금함은 예민한 자리니 관리실 먼저 확인하세요'라고 말했고, 나리도 알겠다고 답했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "'원래 803이 쓰던 데였다'는 성호의 말을 나리는 허락으로, 성호는 경고로 기억한다. 같은 문장, 정반대 해석.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '원래 803이 쓰던 곳이면 내가 들어와도 이어받는 줄 알았다' / B: '예민한 곳이라고 경고한 걸 사용 허락으로 바꿔 말한다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "성호는 윤가영과 몇 달 다퉜던 잠금함 분쟁을 끝까지 알려주지 않았고, 나리도 옛 열쇠를 가지고 있다는 사실을 바로 꺼내지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "윤가영 (전 803호 거주자)",
+        "relationTo": "both",
+        "knowledgeScope": "열쇠를 싱크대 서랍에 둔 이유, 임시사용 허가가 누수 공사 때문이었다는 사실, 성호와의 마찰 경위를 안다.",
+        "witnessedDirectly": false,
+        "bias": "self_interest",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "전 803호 거주자",
+          "relationToA": "박나리을 업무상 알고 있음",
+          "relationToB": "권성호을 업무상 알고 있음",
+          "sentimentToA": 0,
+          "sentimentToB": 0,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "나리씨",
+          "addressB": "성호씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_2",
+        "name": "최민호 (주간 경비원)",
+        "relationTo": "both",
+        "knowledgeScope": "이사 직후 계단실 CCTV, 성호 자물쇠 설치 시각, 관리실 첫 신고 순서를 원본으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "주간 경비원",
+          "relationToA": "박나리을 업무상 알고 있음",
+          "relationToB": "권성호을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "나리씨",
+          "addressB": "성호씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "한지민 (관리사무소 시설주임)",
+        "relationTo": "both",
+        "knowledgeScope": "잠금함의 본래 용도(비상물품함), 한시 허가 기록, 퇴거 시 반납 공지, 소방 점검 결과를 원본으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 44,
+          "occupation": "관리사무소 시설주임",
+          "relationToA": "박나리을 업무상 알고 있음",
+          "relationToB": "권성호을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "박나리씨",
+          "addressB": "권성호씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "post_move_in",
+    "description": "이사 직후 8층 복도는 박스로 어수선했고, 계단실 잠금함은 겉보기에 803호가 오래 써온 수납칸 같았다. 나리는 싱크대 서랍 속 옛 열쇠를 믿고 잠깐 짐을 넣었고, 성호는 과거와 같은 사유화가 시작됐다고 판단해 즉각 자물쇠를 걸었다.",
+    "emotionalPressure": 7,
+    "affects": "both",
+    "triggerAmplifier": "첫 인사와 첫 갈등이 같은 주에 겹쳤고, 둘 다 전 세입자 이야기를 절반씩만 알았다. 작은 행동 하나가 의도적 권한 침범으로 읽힐 수밖에 없었다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "나리의 옛 열쇠 사용과 잠금함 적치",
+      "truth": true,
+      "truthDescription": "나리는 전 세입자가 남긴 열쇠로 잠금함을 열고, 관리실 확인 없이 유모차와 이사 박스를 넣어 두었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "공용공간경계",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-2",
+      "name": "성호의 사적 재잠금과 공개 경고",
+      "truth": true,
+      "truthDescription": "성호는 관리실 회신 전 자기 자물쇠를 걸고 단지앱에 '새 803호 공용공간 점유'라는 취지의 경고 글을 올렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 30,
+        "b": 70
+      },
+      "ambiguity": "low",
+      "weight": "medium",
+      "mediationLink": "중재절차",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-3",
+      "name": "8층 잠금함은 803호 전용이었는가",
+      "truth": false,
+      "truthDescription": "잠금함은 세대 전용이 아닌 공용 비상물품함이었고, 윤가영에게 주어진 임시사용 허가는 퇴거일 하루 전에 이미 종료돼 있었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "열쇠회수절차",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "'803' 메모·스티커는 공식 허가였는가",
+      "truth": false,
+      "truthDescription": "'803' 메모와 스티커는 전 세입자의 사적 인수인계 흔적일 뿐이다. '급하면 여기 두세요'라는 문구만 있고 승인 주체·기간 기재는 없다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-1",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "이사정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "관리실 확인 우선 원칙의 쌍방 파기",
+      "truth": true,
+      "truthDescription": "이사 첫날 '관리실 확인이 먼저'라고 서로 확인했지만, 나리는 먼저 열어 썼고 성호는 먼저 잠그고 경고를 올렸다. 둘 다 약속을 깼다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 45,
+        "b": 55
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "중재절차",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "윤가영이 남긴 열쇠 봉투와 '803' 메모",
+      "description": "싱크대 서랍 속 열쇠 봉투와 잠금함 안쪽 '803 사용' 메모 사진. 메모에는 '급하면 여기 두세요'만 있고 승인 주체 기재는 없다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "봉투 사진 + 메모 캡처만 제출. 관리사무소 허가서 원본은 미포함.",
+        "check_metadata": "사진 생성은 이사 첫날 저녁, 종이 메모는 오래된 필체와 변색 흔적 — 시기 차이가 뚜렷.",
+        "restore_context": "'급하면 여기 두세요'라는 사적 문구만 있고 승인 주체·사용 기간 기재 없음.",
+        "verify_source": "윤가영의 메신저 프로필·필체 특징과 일부 일치 — 전 세입자 물건일 가능성 높음.",
+        "check_edits": "합성 흔적 없으나 전후 맥락 없이 필요한 부분만 촬영 — 선별적 제출.",
+        "question_acquisition": "전 세입자 사적 인수인계 흔적이라 소지는 가능하나 공식 권한 증빙으로는 부적합."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "8층 계단실 CCTV와 출입 동선 요약",
+      "description": "계단실 CCTV 9분 추출본. 나리가 열쇠로 잠금함을 여는 장면 → 유모차·박스 적치 → 성호가 와서 문 상태 확인까지 연속 기록.",
+      "type": "cctv",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본에서 사건 전후 9분 구간 추출본 제출.",
+        "check_metadata": "영상 시각이 관리실 첫 통화보다 17분 앞섬 — 나리의 사용이 신고보다 선행.",
+        "restore_context": "적치 장면은 보이나 오디오 없어 두 사람의 대화 내용은 직접 확인 불가.",
+        "verify_source": "경비실 백업과 관리사무소 열람본 해시값 동일 — 무결성 확보.",
+        "check_edits": "추출 구간 지정만 됐을 뿐 프레임 삭제·합성 흔적 없음.",
+        "question_acquisition": "공용복도 CCTV라 적법하나, 세대 출입 패턴 노출 우려로 사건 구간만 제한 활용."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "임시사용 승인대장과 퇴거 반납 공지",
+      "description": "관리사무소 임시사용 승인대장과 퇴거 반납 공지. 사유는 실내 누수 공사 임시보관, 종료일은 퇴거 하루 전이다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "승인대장 원본 + 퇴거 안내 공문 + 내부 결재선 일괄 제출.",
+        "check_metadata": "임시사용 종료일이 퇴거 하루 전, 연장 기록 없음 — 나리 이사 시점엔 이미 만료.",
+        "restore_context": "허가 사유는 누수 공사 중 임시 보관이었지, 803호 상시 전용권 부여가 아니었다.",
+        "verify_source": "관리사무소 전산번호와 종이 보존 문서 결재번호 상호 일치.",
+        "check_edits": "기관 문서, 편집·수정 이력 없음.",
+        "question_acquisition": "공용시설 관리 문서라 적법. 이전 세대 개인 사정은 최소 범위만 공개."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "성호의 자물쇠 설치 사진과 손글씨 경고문",
+      "description": "성호가 건 추가 자물쇠 사진과 나리 물건 위에 붙인 '공용공간 무단사용 금지' 손글씨 경고문. 관리실 공식 회신 28분 전에 설치됐다.",
+      "type": "photo",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "성호 촬영 원본 + 나리 재촬영 경고문 사진 모두 제출.",
+        "check_metadata": "자물쇠 설치 사진이 관리실 공식 회신보다 28분 앞섬 — 성호의 선제 조치 확인.",
+        "restore_context": "경고문이 규칙 위반을 지적하지만, 관리실 승인 없는 성호의 사적 잠금 조치도 동시에 드러난다.",
+        "verify_source": "양측 사진의 각도·시간대가 같은 문·같은 물건을 가리킴이 확인.",
+        "check_edits": "크롭 외 편집 없음. 글씨 번짐 상태도 실물과 일치.",
+        "question_acquisition": "당사자 직접 촬영이라 취득 문제는 적으나, 상대 물건·호수 정보 포함돼 재유포 주의."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "이사 첫날 안내 문자와 단지앱 글·통화 순서표",
+      "description": "성호의 첫 안내 문자 → 나리 답장 → 단지앱 경고 글 → 관리실 통화 시간표. 경고 글이 관리실 첫 답변보다 11분 앞서 있다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "메신저 내보내기 + 단지앱 원문 + 관리실 수신시간표 일괄 제출.",
+        "check_metadata": "경고 글이 관리실 첫 답변보다 11분 선행, 안내 문자는 이사 당일 오전 발송.",
+        "restore_context": "양쪽 모두 '관리실 먼저'를 알고 있었으나 행동은 그 순서를 지키지 않았다.",
+        "verify_source": "앱 관리자 로그와 휴대폰 메시지 시간 교차 일치.",
+        "check_edits": "일부 크롭됐으나 원문 대조 결과 핵심 문장·시각 동일.",
+        "question_acquisition": "사적 대화 + 단지앱 글 포함 — 제3자 댓글·연락처를 가리고 활용."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "윤가영의 음성메시지",
+      "description": "윤가영의 46초 음성메시지. '잠깐 쓰던 데라 열쇠를 못 돌려드렸고, 다음 분도 급하면 쓰실 줄 알았다' — 반납 의무를 기억 못 한 채 사적으로 넘긴 정황.",
+      "type": "audio",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "메신저 46초 음성원본만 제출, 별도 문자 설명 없음.",
+        "check_metadata": "전송 시각 사건 다음 날 오전. 윤가영이 관리실 확인 후 보냈다고 스스로 밝힘.",
+        "restore_context": "윤가영 자신도 반납 의무를 정확히 기억하지 못한 채 열쇠를 사적으로 넘긴 정황이 드러난다.",
+        "verify_source": "발신 계정·전화번호가 집주인 전달 연락처와 일치.",
+        "check_edits": "분할·이어붙이기 흔적 없으나 전후 대화 미포함 — 단독 증거력은 제한적.",
+        "question_acquisition": "제3자 개인 음성이라 동의 범위 안에서만 활용. 사건 외 사적 사정 확산 금지."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4"
+      ]
+    },
+    {
+      "requires": [
+        "e-3",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "나리는 전 세입자가 남긴 열쇠로 잠금함을 열고 물건을 넣었다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "성호는 관리사무소 조치 전 자물쇠를 추가로 걸고 공개 경고를 올렸다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "문제의 잠금함은 특정 세대 전용이 아니라 전 세입자에게 한시 허용됐던 공용 비상물품함이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "잠금함 안쪽의 '803' 메모와 스티커는 공식 허가가 아니라 사적 인수인계 흔적이었다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 관리실 확인이 먼저라는 첫 원칙을 알고도 행동 순서를 어겼다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_key_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_not_check_management_first"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-2_or_e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "official_permission_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "temporary_permit_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "management_first_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_move_in_stress"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "padlock_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "public_naming_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "ownership_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "temporary_permit_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "management_first_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_post_before_reply"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "공용공간경계": [
+      "잠금함과 비상계단 공간은 세대 임의 사용을 중단하고, 이사 물품도 당일 한정 임시적치만 허용한다.",
+      "열쇠가 남아 있더라도 관리사무소 승인 전에는 사용하지 않고, 남의 자물쇠나 물건에 직접 손대지 않는다.",
+      "재차 무단 사용이나 사적 봉쇄가 발생하면 관리사무소 입회 하에 즉시 비우고 경고 조치를 병행한다."
+    ],
+    "열쇠회수절차": [
+      "전 세입자에게 남은 열쇠와 사적 메모를 모두 회수하고 잠금장치를 교체한다.",
+      "공용 잠금함은 열쇠 번호, 보관자, 사용 기간을 관리사무소 장부로만 관리한다.",
+      "퇴거 시 열쇠 반납이 누락되면 다음 입주 전 점검을 의무화하고, 반복 누락 시 보증금 공제 규정을 적용한다."
+    ],
+    "이사정리": [
+      "이사 직후 발견되는 메모, 스티커, 남은 열쇠는 권리 표시로 보지 말고 관리사무소에 사진으로 먼저 신고한다.",
+      "이전 거주자의 비공식 약속은 다음 세대에 자동 승계되지 않는다는 안내문을 입주 패키지에 명시한다.",
+      "전 세입자 관련 오해가 남으면 관리사무소, 새 입주자, 인접 세대가 함께 짧은 사실확인 메모를 남긴다."
+    ],
+    "중재절차": [
+      "공용공간 분쟁은 단지앱 공개 경고보다 관리사무소 접수와 당사자 1:1 통보를 먼저 한다.",
+      "새 이웃과 첫 갈등이 생기면 과거 사례를 단정적으로 소환하기보다 현재 증거와 규정부터 같이 확인한다.",
+      "반복 충돌 시 경비원 입회 하에 타임라인을 함께 적고, 직접 자물쇠를 거는 식의 자력조치는 금지한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-1",
+    "tp-3"
+  ]
+}

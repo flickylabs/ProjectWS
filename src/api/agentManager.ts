@@ -3,21 +3,26 @@
  *
  * 핵심 기능:
  * 1. 서버에서 에이전트 + 블록 로드/캐시
- * 2. 조건부 블록 필터링 (예: phase=Phase3 → phase3_guide만 포함)
+ * 2. 조건부 블록 필터링 (예: phase=phase3 → phase3_guide만 포함)
  * 3. 블록 순서대로 조립 + 변수 치환 → 최종 프롬프트
  * 4. 에이전트별 LLM 설정 (temperature, maxTokens) 제공
  * 5. 서버 미연결 시 promptManager 폴백
+ * 6. 세션 스냅샷: 세션 시작 시 블록 버전 고정 → 진행 중 갱신 방지
  */
 
 import { agentApi, type AgentConfig, type AgentBlockComposition, type PromptBlock } from './client'
 
-// ── 캐시 ──
+// ── 라이브 캐시 (polling으로 갱신) ──
 let agentCache: Record<string, AgentConfig> = {}
 let blockCache: Record<string, PromptBlock> = {}
 let loaded = false
 let lastFetchTime = 0
 let fetchPromise: Promise<void> | null = null
 const CACHE_TTL = 60_000
+
+// ── 세션 스냅샷 (세션 동안 고정) ──
+let sessionAgents: Record<string, AgentConfig> | null = null
+let sessionBlocks: Record<string, PromptBlock> | null = null
 
 /**
  * 서버에서 에이전트 + 블록 로드
@@ -64,10 +69,40 @@ export function isAgentLoaded(): boolean {
 }
 
 /**
+ * 세션 시작 시 현재 캐시를 스냅샷으로 고정.
+ * 이후 buildAgentPrompt 등은 스냅샷을 우선 사용.
+ */
+export function snapshotForSession(): void {
+  if (!loaded) return
+  sessionAgents = { ...agentCache }
+  sessionBlocks = { ...blockCache }
+  console.log(`[AgentManager] Session snapshot taken: ${Object.keys(sessionAgents).length} agents, ${Object.keys(sessionBlocks).length} blocks`)
+}
+
+/**
+ * 세션 종료 시 스냅샷 해제. 이후 라이브 캐시를 다시 사용.
+ */
+export function clearSessionSnapshot(): void {
+  sessionAgents = null
+  sessionBlocks = null
+}
+
+/**
+ * 현재 활성 에이전트 캐시 (스냅샷 우선)
+ */
+function getActiveAgents(): Record<string, AgentConfig> {
+  return sessionAgents ?? agentCache
+}
+
+function getActiveBlocks(): Record<string, PromptBlock> {
+  return sessionBlocks ?? blockCache
+}
+
+/**
  * 에이전트의 LLM 설정 조회
  */
 export function getAgentConfig(agentKey: string): { temperature: number; maxTokens: number } {
-  const agent = agentCache[agentKey]
+  const agent = getActiveAgents()[agentKey]
   return {
     temperature: agent?.temperature ?? 0.8,
     maxTokens: agent?.max_tokens ?? 300,
@@ -78,7 +113,7 @@ export function getAgentConfig(agentKey: string): { temperature: number; maxToke
  * 에이전트의 context_flags 조회
  */
 export function getContextFlags(agentKey: string): Record<string, unknown> {
-  const agent = agentCache[agentKey]
+  const agent = getActiveAgents()[agentKey]
   if (!agent) return {}
   try {
     const raw = (agent as unknown as { context_flags?: string }).context_flags
@@ -91,7 +126,7 @@ export function getContextFlags(agentKey: string): Record<string, unknown> {
  *
  * @param agentKey - 에이전트 키 (e.g. 'interrogation')
  * @param variables - 변수 치환 맵 (e.g. { name: '한지석', age: '35' })
- * @param conditions - 조건부 블록 필터 (e.g. { phase: 'Phase3_Interrogation' })
+ * @param conditions - 조건부 블록 필터 (e.g. { phase: 'phase3' })
  * @returns 최종 프롬프트 문자열
  */
 export function buildAgentPrompt(
@@ -99,7 +134,10 @@ export function buildAgentPrompt(
   variables: Record<string, string> = {},
   conditions: Record<string, string> = {},
 ): string {
-  const agent = agentCache[agentKey]
+  const agents = getActiveAgents()
+  const blocks = getActiveBlocks()
+
+  const agent = agents[agentKey]
   if (!agent) {
     console.warn(`[AgentManager] Unknown agent: ${agentKey}`)
     return ''
@@ -117,7 +155,7 @@ export function buildAgentPrompt(
   // 3. 블록 content 조립
   const parts: string[] = []
   for (const comp of activeBlocks) {
-    const block = blockCache[comp.block_key]
+    const block = blocks[comp.block_key]
     if (block && block.is_active) {
       parts.push(block.content)
     }

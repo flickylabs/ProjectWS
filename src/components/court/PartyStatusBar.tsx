@@ -7,6 +7,7 @@ const EMOTION_EMOJI: Record<string, string> = {
   defensive: '😐', confident: '😤', shaken: '😰', angry: '😡', resigned: '😞',
 }
 
+
 export default function PartyStatusBar() {
   const caseData = useGameStore((s) => s.caseData)
   const agentA = useGameStore((s) => s.agentA)

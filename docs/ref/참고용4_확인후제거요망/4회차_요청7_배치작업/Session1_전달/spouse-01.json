@@ -1,0 +1,724 @@
+{
+  "caseId": "case-spouse-01",
+  "meta": {
+    "relationshipType": "spouse",
+    "conflictSeed": "CS-1",
+    "variableModules": [
+      "VM-C"
+    ],
+    "twistModule": "TW-6",
+    "difficulty": "medium",
+    "anchorTruth": "지석이 낯선 여자 이름으로 보낸 280만원은 외도 자금이 아니었다. 추석 연휴, 비어버린 간병 구간을 메우려 몰래 보낸 돌봄센터 예약금이었다.",
+    "emotionalBait": "낯선 여자 이름으로 빠져나간 280만원, 밤 9시 모텔 골목 출입기록, '조용한 데서 보자'는 메시지 — 세 가지가 겹치면 누구라도 외도를 의심한다.",
+    "resolutionDilemma": "아내 몰래 처가 어머니를 챙긴 남편의 선의와, 새벽에 남편 폰을 열어본 아내의 불안 — 어느 쪽이 더 무거운가? 무너진 재정 신뢰는 어떻게 다시 세울 것인가?"
+  },
+  "duo": {
+    "partyA": {
+      "name": "한지석",
+      "age": 39,
+      "occupation": "물류센터 야간 운영팀장",
+      "incomeBracket": "mid",
+      "archetype": "avoidant",
+      "speechStyle": "곤란한 질문에는 '9월 20일 기준으로 말씀드리면'처럼 숫자부터 꺼내며 감정을 뒤로 미룬다. 궁지에 몰리면 '그건 순서가 있습니다'라며 흐름을 자기 쪽으로 잡으려 든다.",
+      "pride": 7,
+      "fear": "처가 살림을 혼자 감당 못 하는 무능한 남편, 돈 앞에서 쩔쩔매는 가장이라는 시선이 가장 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "banking_app_heavy",
+      "dailyRoutine": "오후에 출근해 밤샘 근무를 하고, 새벽 귀가 후 오전엔 은행·관공서 일을 몰아서 처리한다.",
+      "sensitivePoints": [
+        "가장 역할",
+        "처가 지원 문제",
+        "실패한 투자 전력"
+      ],
+      "verbalTells": [
+        {
+          "type": "over_precision",
+          "trigger": "lying",
+          "pattern": "불편한 질문이 올수록 숫자가 정밀해진다. '한 9시쯤'이 아니라 '9시 12분쯤', '280만원 정도'가 아니라 '2,800,000원 딱' — 정확함 뒤에 감정을 숨기는 버릇이다."
+        },
+        {
+          "type": "counter_question",
+          "trigger": "cornered",
+          "pattern": "의도를 추궁당하면 답 대신 되묻는다. '왜 그랬냐고요? 그럼 당신은 왜 그걸 봤는데요?' — 공격을 방어로 뒤집는 버릇이다."
+        },
+        {
+          "type": "timeline_padding",
+          "trigger": "shame",
+          "pattern": "본론에 다가갈수록 업무 동선을 길게 늘어놓는다. '그날 저녁 8시 반에 물류 마감 끝내고, 동료한테 인수인계하고, 주차장까지 걸어가는데…' — 핵심을 에둘러 시간을 번다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "자기",
+        "toJudge": "제 아내",
+        "angry": "오세린 씨!"
+      }
+    },
+    "partyB": {
+      "name": "오세린",
+      "age": 36,
+      "occupation": "프리랜서 플로리스트",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "'그래서 그 돈 어디 썼어요?' '아까도 물어봤는데, 어디 썼냐고요?' '세 번째 묻습니다만' — 같은 질문을 어조만 바꿔가며 상대 표정을 읽는다. 확신이 서면 감정과 팩트를 한 문장에 섞어 쏘아붙인다.",
+      "pride": 6,
+      "fear": "남편에게 속으면서도 모른 척 명절상을 차리는 바보 같은 아내 — 시댁 앞에서 체면만 세우다 뒤통수 맞는 꼴이 될까 봐 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "messenger_main",
+      "dailyRoutine": "오전엔 꽃시장, 오후엔 주문 제작, 밤에는 가족 단톡과 정산 앱을 함께 본다.",
+      "sensitivePoints": [
+        "외도 의심",
+        "동생의 반복된 금전 문제",
+        "시댁 앞에서 체면 구기는 일"
+      ],
+      "verbalTells": [
+        {
+          "type": "evidence_waving",
+          "trigger": "lying",
+          "pattern": "증거 한 장이면 충분하다는 듯 캡처를 흔들며 '이게 다예요, 이게 전부입니다'라고 단정 짓는다. 맥락은 안 보고 결론부터 내린다."
+        },
+        {
+          "type": "motive_jump",
+          "trigger": "hurt",
+          "pattern": "행동 하나에서 의도를 곧바로 단정짓는다. 송금 한 건이 '그러니까 날 속인 거잖아'가 되고, 늦은 귀가가 '다른 여자 만나고 온 거잖아'로 뛴다."
+        },
+        {
+          "type": "selective_quote",
+          "trigger": "defensive",
+          "pattern": "상대의 긴 해명에서 가장 불리한 세 단어만 골라 반복한다. '사정이 있었다? 사정이 있었다고요? 무슨 사정이요?' — 해명 전체가 아니라 약한 고리만 물고 늘어진다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "자기",
+        "toJudge": "제 남편",
+        "angry": "한지석 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "재작년에 지석이 주식으로 수백만원을 날린 뒤, 부부는 100만원 넘는 돈은 반드시 먼저 상의하기로 약속했다. 둘 다 또렷이 기억하는 합의다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "작년에 세린 동생이 급전을 부탁했을 때 지석이 '이번 한 번만 돕자'고 한 말을 두 사람이 전혀 다르게 기억한다. 지석은 '딱 잘랐다'고, 세린은 '문은 열어뒀다'고 믿는다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '그때가 마지막이라고 분명히 말했다' / B: '급하면 가족을 도울 수 있다고 열어뒀다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "세린 어머니가 가을에 수술을 받은 뒤, 연휴 간병을 누가 얼마나 맡을지 제대로 정하지 못했다. 서로 먼저 꺼내기 싫어 덮어뒀고, 그 침묵이 지금 터진 것이다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "오미숙 (세린의 어머니)",
+        "relationTo": "b",
+        "knowledgeScope": "추석 연휴에 간병 인력이 필요하다는 사실을 알고 있고, 딸이 동생 돈 문제를 남편에게 숨기려 했다는 정황도 어렴풋이 눈치채고 있다.",
+        "witnessedDirectly": false,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 61,
+          "occupation": "주부",
+          "relationToA": "한지석와는 이 사건을 통해 알게 됨",
+          "relationToB": "세린의 어머니",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "자식 편을 들면서도 객관적으로 보이려 한다. 어른 특유의 훈계 톤이 섞인다.",
+          "addressJudge": "재판관님",
+          "addressA": "지석씨",
+          "addressB": "세린"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "이재훈 (지석의 직장 동료)",
+        "relationTo": "a",
+        "knowledgeScope": "지석이 추석 직전에 재가돌봄센터 견적을 여러 차례 문의했다는 사실을 안다. 외도가 아니라 간병 준비였음을 방증할 수 있는 인물이다.",
+        "witnessedDirectly": false,
+        "bias": "pro_a",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "물류센터 야간 운영팀장",
+          "relationToA": "지석의 직장 동료",
+          "relationToB": "오세린와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "직장 상황을 잘 아는 만큼 구체적이지만, 본인 평판에 영향 갈까 봐 표현을 고른다.",
+          "addressJudge": "재판관님",
+          "addressA": "지석씨",
+          "addressB": "세린씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "최민정 (재가돌봄센터 상담팀장)",
+        "relationTo": "both",
+        "knowledgeScope": "지석의 상담 예약 내역, 280만원 입금 목적, 상담 장소와 시간을 기관 기록으로 증명할 수 있다. 이 사건의 진실을 풀 열쇠를 쥔 인물이다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 42,
+          "occupation": "재가돌봄센터 상담팀장",
+          "relationToA": "한지석을 업무상 알고 있음",
+          "relationToB": "오세린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "한지석씨",
+          "addressB": "오세린씨"
+        }
+      },
+      {
+        "id": "tp-4",
+        "slot": "acquaintance_2",
+        "name": "정우성 (세린의 대학 동기)",
+        "relationTo": "b",
+        "knowledgeScope": "세린이 동생의 밀린 월세를 대신 처리해달라며 자기 계좌를 경유해 150만원을 넘겨달라고 요청한 메신저 대화 원본과 이체 기록을 갖고 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 36,
+          "occupation": "프리랜서 디자이너",
+          "relationToA": "한지석와는 이 사건을 통해 알게 됨",
+          "relationToB": "세린의 대학 동기",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "편하게 말하다가 재판관 앞에서는 존댓말로 돌아간다. 친구의 입장을 자연스럽게 대변한다.",
+          "addressJudge": "재판관님",
+          "addressA": "지석씨",
+          "addressB": "세린"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "holiday",
+    "description": "추석이 일주일 앞으로 다가왔다. 차례비, 병원비, 처가 방문 일정이 한꺼번에 몰렸고, 연휴 동안 어머니 간병을 맡아줄 사람이 빈 구간이 생겼다. 돈도 시간도 빠듯한데, 두 사람은 상대가 먼저 입을 열어주길 기다리다 결국 말 대신 의심부터 키워버렸다.",
+    "emotionalPressure": 8,
+    "affects": "both",
+    "triggerAmplifier": "명절 직전이라 추가 지출을 꺼내기 어려웠고, 시댁·처가 일정이 빈틈없이 맞물려 있어 사소한 비밀도 곧장 외도나 배신의 증거처럼 부풀어올랐다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "지석의 비밀 송금 280만원",
+      "truth": true,
+      "truthDescription": "지석은 세린에게 한마디 상의 없이 공동생활비 계좌에서 280만원을 빼냈다. 받는 사람은 재가돌봄센터 상담팀장 최민정. 목적은 추석 연휴 간병 예약금이었지만, 숨긴 것 자체가 약속 위반이다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "재정투명화",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "세린의 새벽 휴대폰 열람",
+      "truth": true,
+      "truthDescription": "세린은 새벽 2시에 잠든 지석의 휴대폰 잠금을 풀고 메신저 대화를 캡처했다. 그 캡처를 언니에게 보내며 '이거 외도 맞지?'라고 물었다. 의심이 확인되기도 전에 제3자에게 퍼뜨린 셈이다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "사생활경계",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "최민정은 외도 상대인가",
+      "truth": false,
+      "truthDescription": "최민정은 외도 상대가 아니다. 재가돌봄센터 상담팀장이며, 모텔 골목에서 만난 것처럼 보인 장면은 같은 블록에 붙은 센터 후문 상담실에서 간병 일정을 잡은 것이었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 40,
+        "b": 60
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "신뢰회복",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-4",
+      "name": "세린의 우회 송금 150만원",
+      "truth": true,
+      "truthDescription": "세린도 깨끗하지 않다. 동생의 밀린 월세 3개월치를 막으려 대학 동기 정우성 계좌를 경유해 150만원을 우회 송금했다. '추석 지나고 말할게'라는 메시지가 고스란히 남아 있다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "재정투명화",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "100만원 사전 상의 약속 위반",
+      "truth": true,
+      "truthDescription": "재작년에 세운 '100만원 이상은 반드시 상의' 약속을 두 사람 모두 어겼다. 지석은 280만원을 몰래 보냈고, 세린은 150만원을 돌려서 보냈다. 방법만 달랐을 뿐, 약속을 깬 건 똑같다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "재정투명화",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "공동계좌 거래내역서",
+      "description": "9월 20일, 부부 공동생활비 계좌에서 '최민정'이라는 이름으로 280만원이 빠져나간 은행 원본 거래내역이다. 이체 시각과 수취인 실명이 고스란히 찍혀 있다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은행 발급 원본에 이체 시각 '9월 20일 14:03', 수취인 '최민정'이 찍혀 있다. 금액 2,800,000원. 메모란은 비어 있다.",
+        "check_metadata": "이체 단말은 지석 명의 휴대폰, 공인인증도 지석 본인 명의다. 타인이 대신 보낸 흔적은 없다.",
+        "restore_context": "이체 7분 전과 23분 전, 돌봄센터 대표번호(1588-XXXX)로 두 차례 통화한 기록이 있다. 외도 상대에게 보내는 돈이라면 센터에 전화할 이유가 없다.",
+        "verify_source": "은행 고객센터에 대조한 결과, PDF 해시값이 원본과 일치한다. 위·변조 흔적 없음.",
+        "check_edits": "은행 시스템에서 직접 출력한 PDF 발급본이다. 수정 이력이나 이미지 편집 흔적은 없다.",
+        "question_acquisition": "부부 공동명의 계좌이므로 어느 쪽이든 조회할 권리가 있다. 다만 280만원을 상의 없이 인출한 행위 자체는 합의 위반이다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "재가돌봄센터 상담예약 확인서",
+      "description": "재가돌봄센터가 발급한 추석 연휴 간병 예약서다. 상담팀장 최민정 이름으로 접수돼 있고, 대상자란에 '오미숙(세린 어머니)'이 적혀 있다. 280만원 예약금 영수증이 함께 붙어 있다.",
+      "type": "contract",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "예약서 신청인란에 '한지석', 돌봄 대상자란에 '오미숙(처모)'이 적혀 있다. 기간은 추석 연휴 3일, 예약금 280만원 수납 완료 도장이 찍혀 있다.",
+        "check_metadata": "예약서 작성 시각은 송금 당일 14:31, 이체 28분 뒤다. 이후 수정이나 취소 기록은 없다.",
+        "restore_context": "상담 사유란에 '추석 연휴 기간 가족 돌봄 공백 — 가족 간 일정 조율 전 긴급 예약'이라고 적혀 있다. 세린에게 미리 말하지 못한 정황이 읽힌다.",
+        "verify_source": "예약서에 찍힌 센터 직인, 대표번호, 사업자등록번호를 대조한 결과 모두 실제 기관 정보와 일치한다. 위장 기관이 아니다.",
+        "check_edits": "전자서명 유효성 검증 통과. 발급 이후 한 글자도 수정되지 않았다.",
+        "question_acquisition": "돌봄센터가 직접 발급한 기관 제출본이라 취득 경위에 문제없다. 다만 대상자(어머니)의 건강 상세는 개인정보 보호를 위해 최소한만 공개된다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "세린이 캡처한 메신저 대화 일부",
+      "description": "세린이 지석 휴대폰에서 캡처한 메신저 대화 일부다. '지난번처럼 조용한 데서 보죠'라는 문장이 찍혀 있지만, 앞뒤 맥락이 잘려 있어 상담 약속인지 밀회 약속인지 이것만으로는 알 수 없다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "전체 대화 원본은 제출되지 않았다. 세린이 캡처한 스크린샷 1장뿐이며, 앞뒤 수십 줄이 잘려 있다.",
+        "check_metadata": "캡처 파일의 생성 시각이 새벽 2시 07분이다. 지석이 잠든 사이에 폰을 열어 찍은 것으로 보인다.",
+        "restore_context": "'조용한 데서 보죠'만 떼어 보면 밀회처럼 읽히지만, 앞뒤가 잘려 있어 상담 장소 약속인지 사적 만남인지 이 캡처만으로는 알 수 없다.",
+        "verify_source": "화면 상단 프로필 이미지와 계정명이 지석의 메신저 계정과 일치한다. 세린이 지석 폰에서 직접 캡처한 것으로 보인다.",
+        "check_edits": "글자를 고치거나 합성한 흔적은 없다. 다만 대화의 위아래를 의도적으로 잘라낸 선택적 크롭이 확인된다. 불리한 맥락만 남기고 나머지를 잘라낸 셈이다.",
+        "question_acquisition": "새벽에 잠든 배우자의 휴대폰 잠금을 풀고 무단 열람해 얻은 자료다. 내용이 사실이라 해도 취득 과정 자체가 사생활 침해에 해당할 수 있다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "상담 건물 출입기록과 카페 영수증",
+      "description": "문제의 그 밤, 지석이 들어간 건물의 출입기록과 1층 카페 영수증이다. 모텔 골목으로 보이지만 실제로는 돌봄센터 후문과 같은 골목에 붙은 상담동이었음을 보여준다. 시각은 밤 9시 14분.",
+      "type": "access_log",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "건물 1층 출입명부에 '한지석, 21:14 입장'이 수기로 적혀 있고, 같은 건물 카페 영수증의 카드 승인번호와 시각이 이와 일치한다.",
+        "check_metadata": "출입 시각 21:14는 메신저 대화(e-3)에서 '조용한 데서 보자'고 약속한 바로 그날 저녁이다. 시간대가 정확히 맞아떨어진다.",
+        "restore_context": "이 골목은 모텔 간판이 늘어선 거리처럼 보이지만, 안쪽으로 20미터만 더 들어가면 돌봄센터 상담동 후문이 나온다. 겉모습만 보고 판단하면 오해하기 딱 좋은 위치다.",
+        "verify_source": "건물 관리인이 출입명부 원본을 확인해줬고, 카드사에서도 해당 시간·장소 결제를 승인했다. 이중 교차 검증이 된 셈이다.",
+        "check_edits": "카드 영수증은 POS 원본 출력이라 편집 여지가 없다. 출입명부는 수기 작성본을 복사한 것인데, 필적이 일관되어 사후 조작 가능성은 낮다.",
+        "question_acquisition": "지석 본인이 자발적으로 제출한 자료다. '제가 그날 어디 있었는지 증명하겠습니다'라며 직접 꺼냈으므로 취득 경위에 문제없다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "세린-{T4} 송금 요청 메시지",
+      "description": "세린이 대학 동기 정우성에게 보낸 메신저 대화 원본이다. '지석한테는 추석 지나고 말할게, 일단 이거 동생한테 좀 넘겨줘'라는 메시지와 함께 150만원 송금 요청이 담겨 있다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "정우성 폰에 남아 있는 대화 원본과 세린 폰의 동일 대화를 대조한 결과, 내용과 시각이 완전히 일치한다.",
+        "check_metadata": "세린이 정우성에게 메시지를 보낸 시각은 9월 21일 오전 10:22 — 지석이 280만원을 송금한 바로 다음 날 아침이다. 남편의 비밀 송금을 알게 된 직후, 자신도 우회 송금을 시작한 셈이다.",
+        "restore_context": "150만원의 최종 수취인은 세린 동생이지만, 세린은 직접 보내지 않고 정우성을 경유했다. 남편에게 들키지 않으려 중간 전달자를 쓴 것이다.",
+        "verify_source": "세린 폰과 정우성 폰, 양쪽 메신저 대화의 해시값을 대조한 결과 100% 일치한다. 어느 한쪽이 조작한 흔적은 없다.",
+        "check_edits": "세린 폰에서 이 대화를 한 차례 삭제했다 복원한 흔적이 있다. 증거 인멸을 시도했을 가능성이 있지만, 복원된 본문 자체는 조작되지 않았다.",
+        "question_acquisition": "정우성이 자발적으로 제출한 자료다. 본인이 참여한 대화이므로 상대방(세린) 동의 없이 제출해도 위법성은 낮다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "{T4} 계좌 입금확인서와 월세 납부증",
+      "description": "정우성 계좌에 들어온 150만원이 18분 만에 세린 동생의 연체 월세로 빠져나간 기록이다. 입금확인서와 임대인 발급 납부증이 이어져 있어 우회 송금의 흐름이 선명하게 드러난다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "investigationResults": {
+        "request_original": "정우성 계좌에 150만원이 입금된 내역과, 세린 동생의 임대인이 발급한 월세 수납증이 시간순으로 이어진다. 돈의 흐름이 한눈에 읽힌다.",
+        "check_metadata": "입금 시각과 월세 납부 시각의 차이가 겨우 18분이다. 중간에 보관하거나 다른 용도로 쓴 흔적이 없다. 처음부터 월세용으로 짜인 우회 송금이다.",
+        "restore_context": "세린 동생은 월세를 3개월째 밀리고 있었고, 임대인이 내용증명을 보낸 직후였다. 세린은 명절 전에 급히 막으려 했고, 남편에게는 '추석 지나고 말할게'라며 일단 숨겼다.",
+        "verify_source": "은행 이체 기록과 임대인 발급 수납증을 교차 검증했다. 금액, 날짜, 수취인이 모두 일치한다. 조작 가능성 없음.",
+        "check_edits": "은행 발급 입금확인서와 임대인 직인이 찍힌 수납증, 모두 기관 원본이다. 편집이나 변조 여지가 없다.",
+        "question_acquisition": "정우성과 세린 동생이라는 제3자의 금융 정보가 포함돼 있다. 이 사건 판단에 필요한 범위 안에서만 사용해야 하며, 불필요한 공개는 개인정보 침해에 해당한다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "지석이 {T3}에게 보낸 280만원은 연휴 간병 예약금이었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "세린은 지석의 휴대폰을 무단 열람해 캡처를 제3자에게 보냈다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "골목 만남처럼 보인 접촉은 돌봄센터 후문 상담 일정이었다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "세린도 동생을 위해 150만원을 우회 송금했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 100만원 이상 사전 상의 약속을 다른 방식으로 어겼다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "bank_transfer_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "purpose_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-2_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-6",
+      "lieIntensity": "L3",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "cropped_chat_presented"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "location_timeline_question"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_mother_in_law"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_or_emotion_threshold"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-3",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "agreement_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "phone_access_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "third_party_share_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "sister_reference"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "third_party_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "missing_money_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "beneficiary_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "agreement_reminder"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "joint_rule_question"
+        },
+        {
+          "from": "S2",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "재정투명화": [
+      "추석 이후 한 달간 50만원 이상 지출만 공동 기록표에 적고 과거 추궁은 보류한다.",
+      "공동계좌와 개인계좌를 분리하되 100만원 이상 가족지원은 사전 서면 동의를 의무화한다.",
+      "한시적으로 제3의 재무중재인에게 생활비 배분 권한을 맡기고 약속 위반 시 공동계좌 접근권을 제한한다."
+    ],
+    "사생활경계": [
+      "서로의 휴대폰 비밀번호를 즉시 바꾸고, 의심이 생기면 직접 질문 1회 후 제3자 상담으로 넘긴다.",
+      "가족이나 형제자매에게 배우자 의심 정황을 공유하기 전 당사자 확인 절차를 문서로 정한다.",
+      "다시 무단 열람이 발생하면 별거 중 정보접근 규칙을 적용하는 경계 합의를 체결한다."
+    ],
+    "신뢰회복": [
+      "{T3} 상담팀장 확인 하에 오해가 된 문장과 장소를 함께 재구성하고 사과문을 교환한다.",
+      "명절 이후 처가 지원과 동생 지원을 구분한 우선순위 회의를 정식으로 연다.",
+      "외도 의심을 반복 무기로 쓰는 경우 부부상담을 의무화하고 미이행 시 재정 분리 수위를 높인다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-1",
+    "tp-3"
+  ]
+}

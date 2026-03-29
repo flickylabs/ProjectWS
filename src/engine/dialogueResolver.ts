@@ -6,6 +6,16 @@ import { interrogationNodes } from '../data/dialogues/phase3-5'
 export interface ResolvedDialogue {
   node: DialogueNode
   target: PartyId
+  /** v3: LLM이 반환한 태도 (deny/hedge/partial_admit/admit/reframe) */
+  stance?: string
+  /** v6: 엔진이 강제한 응답 모드 */
+  responseMode?: string
+  /** v6: 감정 톤 (factual/motivational/empathic/private) */
+  answerStyle?: string
+  /** v3: LLM이 이번 답변에서 언급한 truth IDs */
+  mentionedTruthIds?: string[]
+  /** v3: 다음에 파고들 포인트 */
+  requestedFollowup?: string
 }
 
 /**

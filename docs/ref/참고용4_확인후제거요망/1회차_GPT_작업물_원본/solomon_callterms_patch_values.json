@@ -1,0 +1,365 @@
+{
+  "_meta": {
+    "issueRows": 37,
+    "uniqueCaseIds": 25,
+    "note": "37건은 이슈 행 개수이며, 실제 patch 대상 caseId는 25개입니다.",
+    "inferredRelations": {
+      "family-02": {
+        "resolvedAs": "family_inlaw_mother_daughter_in_law",
+        "confidence": "medium"
+      },
+      "family-03": {
+        "resolvedAs": "family_parent_child_mother_son",
+        "confidence": "medium_high"
+      },
+      "family-06": {
+        "resolvedAs": "family_parent_child_mother_son",
+        "confidence": "high"
+      }
+    },
+    "tenantAssumption": "tenant-01~12는 기본적으로 partyA=tenant, partyB=landlord로 작성. 실제 사건 배경이 반대면 두 toJudge 값만 swap."
+  },
+  "family-01": {
+    "familyRelation": "siblings",
+    "partyA.callTerms": {
+      "toPartner": "도현아",
+      "toJudge": "제 동생",
+      "angry": "도현!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "누나",
+      "toJudge": "제 누나",
+      "angry": "누나!"
+    }
+  },
+  "family-02": {
+    "familyRelation": "inlaw_mother_daughter_in_law",
+    "_relationResolution": "정미옥=시어머니, 강선우=며느리",
+    "partyA.callTerms": {
+      "toPartner": "선우야",
+      "toJudge": "제 며느리",
+      "angry": "선우!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "어머님",
+      "toJudge": "시어머님",
+      "angry": "어머님!"
+    }
+  },
+  "family-03": {
+    "familyRelation": "parent_child",
+    "_relationResolution": "최복자=어머니, 박정우=아들",
+    "partyA.callTerms": {
+      "toPartner": "정우야",
+      "toJudge": "제 아들",
+      "angry": "정우야!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "엄마",
+      "toJudge": "저희 어머니",
+      "angry": "엄마!"
+    }
+  },
+  "family-04": {
+    "familyRelation": "siblings",
+    "partyA.callTerms": {
+      "toPartner": "민규야",
+      "toJudge": "제 동생",
+      "angry": "민규!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "누나",
+      "toJudge": "제 누나",
+      "angry": "누나!"
+    }
+  },
+  "family-05": {
+    "familyRelation": "parent_child",
+    "_relationResolution": "박은주=어머니, 박소현=딸",
+    "partyA.callTerms": {
+      "toPartner": "소현아",
+      "toJudge": "제 딸",
+      "angry": "소현아!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "엄마",
+      "toJudge": "저희 어머니",
+      "angry": "엄마!"
+    }
+  },
+  "family-06": {
+    "familyRelation": "parent_child",
+    "_relationResolution": "오선영=어머니, 임하준=아들",
+    "partyA.callTerms": {
+      "toPartner": "하준아",
+      "toJudge": "제 아들",
+      "angry": "하준아!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "엄마",
+      "toJudge": "저희 어머니",
+      "angry": "엄마!"
+    }
+  },
+  "family-07": {
+    "familyRelation": "parent_child",
+    "_relationResolution": "백종문=아버지, 백지수=딸",
+    "partyA.callTerms": {
+      "toPartner": "지수야",
+      "toJudge": "제 딸",
+      "angry": "지수야!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "아버지",
+      "toJudge": "저희 아버지",
+      "angry": "아버지!"
+    }
+  },
+  "family-08": {
+    "familyRelation": "siblings",
+    "partyA.callTerms": {
+      "toPartner": "준호야",
+      "toJudge": "제 동생",
+      "angry": "준호!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "누나",
+      "toJudge": "제 누나",
+      "angry": "누나!"
+    }
+  },
+  "family-09": {
+    "familyRelation": "siblings",
+    "partyA.callTerms": {
+      "toPartner": "도윤아",
+      "toJudge": "제 동생",
+      "angry": "도윤!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "누나",
+      "toJudge": "제 누나",
+      "angry": "누나!"
+    }
+  },
+  "family-10": {
+    "familyRelation": "siblings",
+    "partyA.callTerms": {
+      "toPartner": "민재야",
+      "toJudge": "제 동생",
+      "angry": "민재!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "누나",
+      "toJudge": "제 누나",
+      "angry": "누나!"
+    }
+  },
+  "family-11": {
+    "familyRelation": "parent_child",
+    "_relationResolution": "오연숙=어머니, 오하린=딸",
+    "partyA.callTerms": {
+      "toPartner": "하린아",
+      "toJudge": "제 딸",
+      "angry": "하린아!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "엄마",
+      "toJudge": "저희 어머니",
+      "angry": "엄마!"
+    }
+  },
+  "family-12": {
+    "familyRelation": "siblings",
+    "partyA.callTerms": {
+      "toPartner": "현우야",
+      "toJudge": "제 동생",
+      "angry": "현우!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "누나",
+      "toJudge": "제 누나",
+      "angry": "누나!"
+    }
+  },
+  "spouse-08": {
+    "relationshipState": "separated",
+    "partyA.callTerms": {
+      "toPartner": "현석 씨",
+      "toJudge": "제 남편",
+      "angry": "현석!"
+    },
+    "partyB.callTerms": {
+      "toPartner": "서진 씨",
+      "toJudge": "제 아내",
+      "angry": "서진!"
+    }
+  },
+  "tenant-01": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-02": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-03": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-04": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-05": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-06": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-07": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-08": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-09": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-10": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-11": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  },
+  "tenant-12": {
+    "relationshipSubtype": "tenant_landlord",
+    "roleMap": {
+      "partyA": "tenant",
+      "partyB": "landlord"
+    },
+    "partyA.callTerms": {
+      "toJudge": "집주인분"
+    },
+    "partyB.callTerms": {
+      "toJudge": "세입자분"
+    },
+    "_verifyRoleFromCase": true
+  }
+}

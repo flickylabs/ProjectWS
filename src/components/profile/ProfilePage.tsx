@@ -227,6 +227,9 @@ export default function ProfilePage({ onBack }: Props) {
           )}
         </div>
 
+        {/* 업적/보상 수령 */}
+        <AchievementSection />
+
         {/* Campaign chapter progress */}
         <div className="bg-gray-900 border border-gray-800 rounded-xl p-4">
           <div className="text-xs text-gray-500 font-semibold mb-3">챕터별 진행률</div>
@@ -290,6 +293,80 @@ function StatBox({
         {value}
       </div>
       <div className="text-xs text-gray-500">{label}</div>
+    </div>
+  )
+}
+
+// ── 업적/보상 수령 섹션 ──
+import { getAchievements, getClaimedIds, markClaimed, type Achievement } from '../../data/achievements'
+
+function AchievementSection() {
+  const [claimedIds, setClaimedIds] = useState(getClaimedIds())
+  const achievements = getAchievements()
+
+  const handleClaim = (ach: Achievement) => {
+    markClaimed(ach.id)
+    setClaimedIds([...claimedIds, ach.id])
+    // 보상은 localStorage에 직접 지급 (우편 시스템 연동 시 mailApi 사용)
+    const profile = JSON.parse(localStorage.getItem('solomon-profile') ?? '{}')
+    alert(`🎉 "${ach.title}" 보상 수령!\n${ach.reward.type === 'invest' ? '🔍' : '⚡'} ×${ach.reward.amount}`)
+  }
+
+  const CATEGORY_LABELS: Record<string, { label: string; emoji: string }> = {
+    beginner: { label: '입문', emoji: '🌱' },
+    mastery: { label: '숙련', emoji: '🏆' },
+    collection: { label: '수집', emoji: '📦' },
+    special: { label: '특별', emoji: '✨' },
+  }
+
+  const grouped = Object.groupBy
+    ? Object.groupBy(achievements, a => a.category)
+    : achievements.reduce((acc, a) => { (acc[a.category] ??= []).push(a); return acc }, {} as Record<string, Achievement[]>)
+
+  return (
+    <div className="bg-gray-900 border border-gray-800 rounded-xl p-4">
+      <div className="text-xs text-gray-500 font-semibold mb-3">
+        🏅 업적 ({claimedIds.length}/{achievements.length})
+      </div>
+      <div className="space-y-4">
+        {Object.entries(grouped).map(([cat, achs]) => {
+          const catInfo = CATEGORY_LABELS[cat] || { label: cat, emoji: '📋' }
+          return (
+            <div key={cat}>
+              <div className="text-xs text-gray-400 font-semibold mb-2">{catInfo.emoji} {catInfo.label}</div>
+              <div className="space-y-1.5">
+                {(achs as Achievement[]).map(ach => {
+                  const unlocked = ach.check()
+                  const claimed = claimedIds.includes(ach.id)
+                  return (
+                    <div key={ach.id} className={`flex items-center gap-3 px-3 py-2.5 rounded-lg ${
+                      claimed ? 'bg-gray-800/30 opacity-60' : unlocked ? 'bg-amber-950/20 border border-amber-800/30' : 'bg-gray-800/20'
+                    }`}>
+                      <span className="text-lg">{ach.emoji}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className={`text-xs font-semibold ${unlocked ? 'text-amber-300' : 'text-gray-400'}`}>{ach.title}</div>
+                        <div className="text-xs text-gray-500">{ach.description}</div>
+                      </div>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <span className="text-xs text-gray-500">
+                          {ach.reward.type === 'invest' ? '🔍' : '⚡'}×{ach.reward.amount}
+                        </span>
+                        {claimed ? (
+                          <span className="text-xs text-gray-600">✓</span>
+                        ) : unlocked ? (
+                          <button onClick={() => handleClaim(ach)} className="px-3 py-1 text-xs rounded-lg bg-amber-600 text-gray-950 font-bold hover:bg-amber-500 active:scale-95">받기</button>
+                        ) : (
+                          <span className="text-xs text-gray-700">🔒</span>
+                        )}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }

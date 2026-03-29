@@ -20,12 +20,20 @@ export function saveProfile(profile: LocalPlayerProfile): void {
   localStorage.setItem(PROFILE_KEY, JSON.stringify(profile))
 }
 
+// 랜덤 닉네임 풀
+const RANDOM_ADJECTIVES = ['공정한','현명한','냉철한','날카로운','온화한','단호한','침착한','민첩한','신중한','당당한','정직한','용감한','꼼꼼한','예리한','관대한']
+const RANDOM_NOUNS = ['재판관','판사','심판관','조정자','중재인','법관','현자','탐정','분석가','조사관','검증자','감찰관','심리관','해결사','수호자']
+const RANDOM_EMOJIS = ['⚖️','🦉','🏛️','📜','🔍','🎯','💡','🛡️','👨‍⚖️','👩‍⚖️','🦅','🌟','🔮','📖','🗡️','🌿']
+
+function randomPick<T>(arr: T[]): T { return arr[Math.floor(Math.random() * arr.length)] }
+
 function createDefaultProfile(): LocalPlayerProfile {
   const profile: LocalPlayerProfile = {
     playerId: crypto.randomUUID?.() ?? `p-${Date.now()}-${Math.random().toString(36).slice(2)}`,
-    playerName: '재판관',
+    playerName: `${randomPick(RANDOM_ADJECTIVES)} ${randomPick(RANDOM_NOUNS)}`,
     region: '서울',
     createdAt: new Date().toISOString(),
+    avatar: randomPick(RANDOM_EMOJIS),
   }
   saveProfile(profile)
   return profile

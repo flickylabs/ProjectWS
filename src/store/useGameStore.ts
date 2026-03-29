@@ -11,11 +11,15 @@ import { createShopSlice, type ShopSlice } from './slices/shopSlice'
 import type { CaseData, ProcessMetrics } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
+import { snapshotForSession, clearSessionSnapshot } from '../api/agentManager'
 
 const EMPTY_METRICS: ProcessMetrics = {
   questionsAsked: 0, lieTransitions: 0, liesCollapsed: 0,
   evidenceDiscovered: 0, evidenceEffective: 0, skillsUsedEffective: 0,
   freeQuestionsRelevant: 0, togglesUsed: 0, bothSidesQuestioned: false, confidentialUsed: 0,
+  // v2
+  affinityHits: 0, affinityMisses: 0, requiredPathsCovered: 0, bonusPathsCovered: 0,
+  deepTruthsUnlocked: 0, sameActionRepeats: 0, unsupportedCollapses: 0, immediateAnswerUsed: 0,
 }
 
 export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & {
@@ -136,6 +140,9 @@ export const useGameStore = create<GameStore>()((...args) => {
       if (!caseData.evidenceCombinations) {
         caseData.evidenceCombinations = []
       }
+
+      // 프롬프트 스냅샷: 세션 시작 시 현재 블록 버전 고정
+      snapshotForSession()
 
       // 사건 데이터 저장 + 분리심문 초기화
       set({ caseData, lieConfigs: { a: caseData.lieConfigA, b: caseData.lieConfigB }, separationTarget: null, separationTurns: 0, isLLMLoading: false, processMetrics: { ...EMPTY_METRICS }, testimonyAnalysis: null, calledWitnesses: [], interrogationHistory: { a: {}, b: {} }, pendingMinigame: null })

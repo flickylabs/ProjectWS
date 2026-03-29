@@ -26,11 +26,11 @@ import SettingsPanel from '../components/layout/SettingsPanel'
 import LeaderboardScreen from '../components/leaderboard/LeaderboardScreen'
 import IntroSlides, { hasSeenIntro } from '../components/layout/IntroSlides'
 import ProfilePage from '../components/profile/ProfilePage'
-import NoticePanel from '../components/notice/NoticePanel'
+import NoticePanel, { isDismissedToday } from '../components/notice/NoticePanel'
 import MailInbox from '../components/mail/MailInbox'
 import { loadPrompts, startPromptPolling } from '../api/promptManager'
 import { loadAgents, startAgentPolling } from '../api/agentManager'
-import { playerApi, mailApi, healthApi } from '../api/client'
+import { playerApi, mailApi, healthApi, noticeApi } from '../api/client'
 import { phase1Dialogues } from '../data/dialogues/phase1'
 import { phase2Dialogues } from '../data/dialogues/phase2'
 import { buildGenericPhase1, buildGenericPhase2 } from '../data/dialogues/generic-phase1'
@@ -81,6 +81,7 @@ function TitleScreen() {
   const [showSettings, setShowSettings] = useState(false)
   const [showIntro, setShowIntro] = useState(() => !hasSeenIntro())
   const [showNotice, setShowNotice] = useState(false)
+  const [noticeAutoPopup, setNoticeAutoPopup] = useState(false)
   const [showMail, setShowMail] = useState(false)
   const [unreadMail, setUnreadMail] = useState(0)
   const [serverConnected, setServerConnected] = useState(false)
@@ -98,6 +99,9 @@ function TitleScreen() {
         startPromptPolling()
         await loadAgents(true)
         startAgentPolling()
+        // 밸런스 설정 로드
+        const { loadSettings: loadBalanceSettings } = await import('../api/settingsManager')
+        await loadBalanceSettings()
 
         // 플레이어 동기화
         const p = loadProfile()
@@ -106,6 +110,12 @@ function TitleScreen() {
         // 미읽은 우편 수
         const { count } = await mailApi.unreadCount(p.playerId).catch(() => ({ count: 0 }))
         setUnreadMail(count)
+
+        // 자동 공지 팝업 (하루동안 보지않기가 아닌 경우)
+        if (!isDismissedToday()) {
+          const activeNotices = await noticeApi.list().catch(() => [])
+          if (activeNotices.length > 0) { setShowNotice(true); setNoticeAutoPopup(true) }
+        }
       } catch {
         // 서버 미연결 — offline 모드 유지
       }
@@ -183,7 +193,7 @@ function TitleScreen() {
     >
       {showHistory && <HistoryPanel onClose={() => setShowHistory(false)} />}
       {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
-      {showNotice && <NoticePanel onClose={() => setShowNotice(false)} />}
+      {showNotice && <NoticePanel onClose={() => { setShowNotice(false); setNoticeAutoPopup(false) }} autoPopup={noticeAutoPopup} />}
       {showMail && <MailInbox onClose={() => { setShowMail(false); setUnreadMail(0) }} />}
 
       {/* 상단 — 프로필 + 설정 */}

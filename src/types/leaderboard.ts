@@ -28,6 +28,8 @@ export interface LocalPlayerProfile {
   playerName: string
   region: string
   createdAt: string
+  avatar?: string  // 이모지 또는 업로드된 이미지 URL
+  avatarType?: 'emoji' | 'image'  // 아바타 유형
 }
 
 export type SortCategory = 'total' | 'insight' | 'authority' | 'wisdom'

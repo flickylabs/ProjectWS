@@ -46,6 +46,10 @@ export function useActionDispatch() {
       handleTrustAction(action)
       return
     }
+    if (action.type === 'mediation') {
+      // Phase6_Mediation.tsx에서 직접 처리하므로 여기서는 패스스루
+      return
+    }
     if (action.type === 'advance_phase') {
       if (state.canAdvancePhase()) state.advancePhase()
       return
@@ -225,10 +229,24 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
 }
 
 // ── 증거 조사 ──
-function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: 'evidence_investigate' }>) {
+async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: 'evidence_investigate' }>) {
   const state = useGameStore.getState()
   const result = state.investigateEvidence(action.evidenceId, action.subAction)
   if (result) state.addDialogue({ speaker: 'system', text: `🔍 ${result}`, relatedDisputes: [], turn: state.turnCount })
+
+  // NPC 반응 — 조사 결과에 대해 반응하도록 LLM 호출
+  const evDef = state.evidenceDefinitions.find(e => e.id === action.evidenceId)
+  if (evDef?.proves.length) {
+    // 증거의 첫 번째 관련 쟁점에서 책임이 더 큰 당사자에게 질문
+    const caseData = state.caseData
+    const disputeId = evDef.proves[0]
+    const dispute = caseData?.disputes.find(d => d.id === disputeId)
+    const target: PartyId = (dispute?.correctResponsibility?.a ?? 50) >= 50 ? 'a' : 'b'
+
+    await resolveAndApply(action, target)
+  }
+
+  useGameStore.getState().incrementTurn()
 }
 
 // ── 질문 ──
@@ -417,17 +435,25 @@ async function handleTrustAction(action: Extract<PlayerAction, { type: 'trust_ac
 // ── 공통: LLM 또는 폴백으로 대사 해석 ──
 async function resolveAndApply(action: PlayerAction, target: PartyId, isConfidential = false) {
   let node: DialogueNode | null = null
+  let llmMeta: { stance?: string; responseMode?: string; answerStyle?: string; mentionedTruthIds?: string[] } = {}
   const preState = useGameStore.getState()
 
   if (useLLMMode && preState.caseData) {
     preState.setLLMLoading(true, target)
     try {
-      // await 후 fresh state로 재로드
       const freshState = useGameStore.getState()
       const result = await resolveLLMDialogue(
         action, freshState.agentA, freshState.agentB, freshState.evidenceStates, freshState.caseData!,
       )
-      if (result) node = result.node
+      if (result) {
+        node = result.node
+        llmMeta = {
+          stance: result.stance,
+          responseMode: result.responseMode,
+          answerStyle: result.answerStyle,
+          mentionedTruthIds: result.mentionedTruthIds,
+        }
+      }
     } catch {
       // LLM 실패 → 폴백
     }
@@ -481,6 +507,27 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
   }
 
   applyDialogueNode(node, target, isConfidential)
+
+  // LLM 모드: 주장 자동 등록 (stance 기반)
+  if (llmMeta.stance && node.conditions?.disputeId) {
+    const stanceToConfidence: Record<string, 'high' | 'medium' | 'low'> = {
+      deny: 'high', hedge: 'medium', partial_admit: 'medium', admit: 'low', reframe: 'medium',
+    }
+    const stanceToStatus: Record<string, string> = {
+      deny: 'normal', hedge: 'normal', partial_admit: 'changed', admit: 'collapsed', reframe: 'changed',
+    }
+    const summary = node.text.length > 60 ? node.text.slice(0, 57) + '...' : node.text
+    const freshState = useGameStore.getState()
+    freshState.addClaim({
+      claimant: target,
+      disputeId: node.conditions.disputeId,
+      summary,
+      confidence: stanceToConfidence[llmMeta.stance] ?? 'medium',
+      status: (stanceToStatus[llmMeta.stance] ?? 'normal') as any,
+      turn: freshState.turnCount,
+      isConfidential,
+    })
+  }
 }
 
 function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential = false) {

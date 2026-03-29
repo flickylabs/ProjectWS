@@ -1,0 +1,1158 @@
+# 솔로몬 병렬 작업 패키지 (A1 + A4 + A2 + A3)
+이 문서는 `작업현황_및_업무분배.md`의 분업 항목 중 **A1 truthIds 매핑표 설계**, **A4 User Message 템플릿 검토/보강**, 그리고 그 다음 단계인 **A2 증인 witnessBudget 초안**, **A3 Eval 케이스 설계**를 묶어서 정리한 결과물이다.
+## 먼저 짚어야 할 핵심 결론
+- 현재 샘플 3개는 모두 `truthTable`이 **쟁점당 1개 수준의 고밀도 truth**만 갖고 있다. 그래서 S0~S1의 `allowedTruthIds`가 빈 배열인 쟁점이 많아도 정상이다. 낮은 단계에서 허용되는 '표면적 사실'은 지금 데이터 구조상 truthId가 아니라 **질문/답변 레벨의 surface fact**로 처리해야 한다.
+- `truthIds` 매핑은 **사건 × 대상 party × dispute × lieState** 단위로 잡는 것이 맞다. 같은 dispute라도 A/B가 숨기는 층과 동기가 다르기 때문이다. 이 점은 workplace-01의 `d-1`, spouse-01의 `d-5`에서 특히 중요하다.
+- `forbiddenTruthIds`는 샘플 3개 기준으로는 **`allTruthIds - allowedTruthIds`** 보수 정책이 가장 안전하다. 대신 action type과 revealBudget이 추가로 한 번 더 걸러 주는 2단계 구조가 적절하다.
+- `User Message`는 이미 많이 좋아졌지만, 실제 적용 전에 `focusedDisputeName`, `evidenceName`, `evidenceCatalog` 정도는 더 넣는 편이 안정적이다.
+## A1. truthIds 매핑표 설계
+### 1) 구현 관점 권장 구조
+```ts
+truthPolicy[caseId][targetParty][disputeId][lieState] = {
+  allowedTruthIds: string[];
+  forbiddenTruthIds: string[]; // 기본값: allTruthIds - allowedTruthIds
+}
+```
+### 2) 샘플 3개에서 읽히는 일반 패턴
+| 유형 | 식별 기준 | S0~S1 | S2~S3 | S4 | S5 |
+|---|---|---|---|---|---|
+| unfavourable anchor | speaker에게 불리한 핵심 truth | 보통 `[]` | support truth만 제한 허용 | `collapseViaTrust=true`면 anchor 허용, 아니면 support/mutual만 | 전체 허용 |
+| favourable anchor | speaker 주장을 뒷받침하는 core truth | S0~S1부터 허용 가능 | 유지 | mutual truth 추가 가능 | 전체 허용 |
+| mutual-rule truth | `both_know`이면서 결론형인 규칙 위반 truth | 조기 허용 금지 | 보통 금지 유지 | S4 이후 허용 | 전체 허용 |
+| cross-dispute secret | 다른 dispute의 개인 비밀 truth | S0~S4 전부 금지 | S0~S4 전부 금지 | S0~S4 전부 금지 | 전체 허용 |
+
+### 3) 81개 사건 확장 규칙
+1. **`anchorTruthId` 추출**: 우선 `d-n ↔ t-n` 대응을 1순위로 본다. 샘플 3개는 전부 이 패턴이다. 예외가 생기면 lexical overlap 또는 `requiredEvidence`/`truthDescription` 기반 수동 매핑이 필요하다.
+2. **speaker 기준 favourable/unfavourable 판정**: 같은 truth라도 speaker에게 유리한지 불리한지 판정이 달라진다. `both_know` truth라고 무조건 S0부터 허용하면 안 된다.
+3. **`both_know` 결론형 truth는 낮은 단계에서 금지**: 샘플의 `t-5` 유형은 사실상 판결 요약 수준이라 S4 전 공개를 막는 편이 안전하다.
+4. **`collapseViaTrust=true`면 S4에서 anchor 허용**: 단, related support truth까지는 허용해도 unrelated cross-dispute secret은 계속 금지한다.
+5. **`lieMotive` 보정**:
+   - `third_party_protection` → 제3자 관련 truth는 S5 직전까지 강하게 봉인
+   - `shame_avoidance` / `face_saving` → 결론형 truth는 한 단계 더 늦게 허용
+   - `revenge` → 자기 과실이 섞인 mutual truth는 늦게, 대신 상대에게 유리/불리한 supportive truth를 먼저 허용 가능
+   - `career_preservation` → 책임을 확정하는 HR/로그/결재 truth는 S4 또는 S5까지 보수적으로 유지
+
+### 4) spouse-01 상세 매핑
+
+#### target=a (한지석)
+**d-1 — 지석의 비밀 송금 280만원**  
+- anchorTruthIds: `t-1`  
+- 메모: t-1은 목적 고백이자 핵심 비밀이다. t-3은 최민정 관련 오해를 풀어주지만 d-3까지 열어버리므로 S2 이후에만 허용한다. t-5는 규칙 위반의 공동책임 프레임으로 S4 이후 허용.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=['t-3'], forbidden=['t-1', 't-2', 't-4', 't-5']
+S3: allowed=['t-3'], forbidden=['t-1', 't-2', 't-4', 't-5']
+S4: allowed=['t-3', 't-5'], forbidden=['t-1', 't-2', 't-4']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-3 — 최민정은 외도 상대인가**  
+- anchorTruthIds: `t-3`  
+- 메모: relationship_maintenance + collapseViaTrust=true. S4 전에는 오해를 풀 핵심(t-3)을 숨긴다. S4부터 t-1과 함께 맥락 고백 허용.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S3: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S4: allowed=['t-1', 't-3'], forbidden=['t-2', 't-4', 't-5']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-5 — 100만원 사전 상의 약속 위반**  
+- anchorTruthIds: `t-5`  
+- 메모: t-5는 '쌍방 위반'이라 현재 truthTable granularity로는 거의 최종 결론급이다. 낮은 상태에서는 t-1 같은 자기 사례만 일부 허용하고 t-5는 S4 이후 허용.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=['t-1'], forbidden=['t-2', 't-3', 't-4', 't-5']
+S3: allowed=['t-1'], forbidden=['t-2', 't-3', 't-4', 't-5']
+S4: allowed=['t-1', 't-5'], forbidden=['t-2', 't-3', 't-4']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+
+#### target=b (오세린)
+**d-2 — 세린의 새벽 휴대폰 열람**  
+- anchorTruthIds: `t-2`  
+- 메모: t-2는 무단열람+제3자공유까지 포함한 핵심 비밀이다. 대신 왜곡 원인이 된 오해(t-3)만 S2부터 제한 허용.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=['t-3'], forbidden=['t-1', 't-2', 't-4', 't-5']
+S3: allowed=['t-3'], forbidden=['t-1', 't-2', 't-4', 't-5']
+S4: allowed=['t-3', 't-5'], forbidden=['t-1', 't-2', 't-4']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-4 — 세린의 우회 송금 150만원**  
+- anchorTruthIds: `t-4`  
+- 메모: third_party_protection이라 제3자(동생) 관련 진실을 강하게 숨긴다. 낮은 상태에서는 truthId 공개를 비우고, S3 이후에도 mutual-rule 프레임(t-5)까지만 허용.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S3: allowed=['t-5'], forbidden=['t-1', 't-2', 't-3', 't-4']
+S4: allowed=['t-5'], forbidden=['t-1', 't-2', 't-3', 't-4']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-5 — 100만원 사전 상의 약속 위반**  
+- anchorTruthIds: `t-5`  
+- 메모: B는 자기 사례(t-4)를 먼저 인정할 수 있지만 '쌍방 위반'이라는 결론형 t-5는 S4 이후에만 허용.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=['t-4'], forbidden=['t-1', 't-2', 't-3', 't-5']
+S3: allowed=['t-4'], forbidden=['t-1', 't-2', 't-3', 't-5']
+S4: allowed=['t-4', 't-5'], forbidden=['t-1', 't-2', 't-3']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+
+### 4) workplace-01 상세 매핑
+
+#### target=a (윤태성)
+**d-1 — 태성의 단독 명의 제출**  
+- anchorTruthIds: `t-1`  
+- 메모: A에게 t-1은 불리한 핵심이다. e-1 이후부터만 제한 허용. t-5는 공동 절차 위반 결론이라 S4 이후.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=['t-1'], forbidden=['t-2', 't-3', 't-4', 't-5']
+S3: allowed=['t-1'], forbidden=['t-2', 't-3', 't-4', 't-5']
+S4: allowed=['t-1', 't-5'], forbidden=['t-2', 't-3', 't-4']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-3 — 수정 로그의 최종 수정자 진위**  
+- anchorTruthIds: `t-3`  
+- 메모: self_protection + collapseViaTrust=true. 조작본 인정은 곧 관리토큰/책임 질문으로 이어지므로 S4 전에는 금지.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S3: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S4: allowed=['t-3'], forbidden=['t-1', 't-2', 't-4', 't-5']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-4 — 태성의 비공식 평가 코멘트**  
+- anchorTruthIds: `t-4`  
+- 메모: career_preservation. 코멘트의 존재와 영향력은 거의 핵심 진실이므로 S4 전에는 truthId 허용 없음.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S3: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S4: allowed=['t-4'], forbidden=['t-1', 't-2', 't-3', 't-5']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+
+#### target=b (박서윤)
+**d-1 — 태성의 단독 명의 제출**  
+- anchorTruthIds: `t-1`  
+- 메모: B에게 t-1은 유리한 사실이라 초반부터 허용 가능. 다만 mutual-rule 결론 t-5는 S3 이후.
+```text
+S0: allowed=['t-1'], forbidden=['t-2', 't-3', 't-4', 't-5']
+S1: allowed=['t-1'], forbidden=['t-2', 't-3', 't-4', 't-5']
+S2: allowed=['t-1'], forbidden=['t-2', 't-3', 't-4', 't-5']
+S3: allowed=['t-1', 't-5'], forbidden=['t-2', 't-3', 't-4']
+S4: allowed=['t-1', 't-5'], forbidden=['t-2', 't-3', 't-4']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-2 — 서윤의 인사 화면 무단 열람·유포**  
+- anchorTruthIds: `t-2`  
+- 메모: t-2는 열람·캡처·유포를 한 번에 묶은 코어 truth라 coarse하다. S3에서도 partial admit는 가능하지만 truthId는 S4까지 금지한다.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S3: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S4: allowed=['t-2'], forbidden=['t-1', 't-3', 't-4', 't-5']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-5 — 성과 배분 합의의 쌍방 위반**  
+- anchorTruthIds: `t-5`  
+- 메모: revenge라 초반에는 t-1을 꺼내며 정당화하고, 자기 위반까지 포함된 t-5는 S4 이후 허용.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=['t-1'], forbidden=['t-2', 't-3', 't-4', 't-5']
+S3: allowed=['t-1'], forbidden=['t-2', 't-3', 't-4', 't-5']
+S4: allowed=['t-1', 't-5'], forbidden=['t-2', 't-3', 't-4']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+
+### 4) friend-01 상세 매핑
+
+#### target=a (서도윤)
+**d-1 — 도윤의 숙소 보증금 환급 은닉**  
+- anchorTruthIds: `t-1`  
+- 메모: 환급 수령+즉시 미반영이 t-1에 묶여 있어 coarse하다. 그래서 S3 전에는 truthId 허용을 비우고, S3부터만 허용.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S3: allowed=['t-1'], forbidden=['t-2', 't-3', 't-4', 't-5']
+S4: allowed=['t-1', 't-5'], forbidden=['t-2', 't-3', 't-4']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-3 — 실제 여행비 차액은 한쪽의 과소비 때문인가**  
+- anchorTruthIds: `t-3`  
+- 메모: A에게 t-3은 다소 유리하지만, 택시 차용(t-4)과 엮여 최종 정산 수준까지 노출된다. e-1 이후 S2부터 제한 허용.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=['t-3'], forbidden=['t-1', 't-2', 't-4', 't-5']
+S3: allowed=['t-3'], forbidden=['t-1', 't-2', 't-4', 't-5']
+S4: allowed=['t-3'], forbidden=['t-1', 't-2', 't-4', 't-5']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-4 — 도윤의 공항 택시비 차용금 미반환**  
+- anchorTruthIds: `t-4`  
+- 메모: relationship_maintenance + collapseViaTrust=true. S4에서만 t-4 허용, 그 전에는 offset 의도만 암시하는 정도로 제한.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S3: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S4: allowed=['t-4'], forbidden=['t-1', 't-2', 't-3', 't-5']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+
+#### target=b (정하린)
+**d-2 — 하린의 공개 저격성 SNS와 공통 친구 공유**  
+- anchorTruthIds: `t-2`  
+- 메모: t-2는 공통친구 공유와 SNS 저격을 한 번에 묶는다. S3에서도 감정적 partial admit는 가능하지만 truthId 자체는 S4까지 금지.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S3: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S4: allowed=['t-2'], forbidden=['t-1', 't-3', 't-4', 't-5']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-3 — 실제 여행비 차액은 한쪽의 과소비 때문인가**  
+- anchorTruthIds: `t-3`  
+- 메모: shame_avoidance. 실제 차액이 작았음을 인정하면 본인 공개 저격이 과잉이었다는 수치가 생겨 S3 전에는 금지.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S3: allowed=['t-3'], forbidden=['t-1', 't-2', 't-4', 't-5']
+S4: allowed=['t-3'], forbidden=['t-1', 't-2', 't-4', 't-5']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+**d-5 — 원본 확인 전 제3자 확산 금지 약속의 쌍방 위반**  
+- anchorTruthIds: `t-5`  
+- 메모: B는 먼저 자기 concrete violation인 t-2를 말할 수 있지만, 쌍방 위반 결론 t-5는 S4 이후 허용.
+```text
+S0: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S1: allowed=[], forbidden=['t-1', 't-2', 't-3', 't-4', 't-5']
+S2: allowed=['t-2'], forbidden=['t-1', 't-3', 't-4', 't-5']
+S3: allowed=['t-2'], forbidden=['t-1', 't-3', 't-4', 't-5']
+S4: allowed=['t-2', 't-5'], forbidden=['t-1', 't-3', 't-4']
+S5: allowed=['t-1', 't-2', 't-3', 't-4', 't-5'], forbidden=[]
+```
+## A4. User Message 템플릿 검토/보강
+### 1) 총평
+- question 3종은 현재도 크게 어색하지 않다. 다만 {focusedDisputeId}만 있고 쟁점명이 없으면 judgeQuestion 품질에 과하게 의존하므로, 가능하면 {focusedDisputeName} 또는 judgeQuestion 안의 쟁점명 반복이 필요하다.
+- evidence_investigate 6종은 {investigationResult} 문자열 자체는 잘 들어가지만, 템플릿에 {evidenceName}이 없어서 '현재 증거'라는 표현이 반복되며 회차별 몰입감이 떨어진다.
+- trust_action 4종은 judgeQuestion 품질 의존도가 가장 높다. buildJudgeQuestion이 액션별 전용 문장을 생성하지 않으면 user message만으로는 비공개/분리심문 차별화가 약해진다.
+- free_question_responder 템플릿은 'focusedDisputeId를 중심으로 답한다'고 쓰여 있지만 실제 템플릿 본문에 focusedDisputeId가 노출되지 않는다. classifiedPrimaryDisputeId를 그대로 명시하는 쪽이 안전하다.
+- witness_call은 무난하지만, 특정 쟁점 호출이라면 {focusedDisputeId} 또는 {witnessCallReason}을 추가하면 증언 범위를 더 잘 묶을 수 있다.
+
+### 2) spouse-01 실제 값 대입 예시 + 수정안
+
+#### question.fact_pursuit
+**실제 값 대입 예시**
+```text
+현재 액션은 fact_pursuit다.
+focusedDisputeId: d-1
+재판관 질문: "한지석 씨, 9월 20일 공동생활비 계좌에서 빠져나간 280만원을 누구에게 어떤 명목으로 보냈습니까?"
+
+규칙:
+- 위 질문에만 답한다.
+- 날짜, 시간, 금액, 행위 여부를 중심으로 답한다.
+- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 자연스럽다. 다만 judgeQuestion에 이미 쟁점명이 포함돼 있어야 안정적이다.
+**수정안**
+```text
+현재 액션은 fact_pursuit다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관 질문: "{judgeQuestion}"
+
+규칙:
+- 위 질문에만 답한다.
+- 날짜, 시간, 금액, 행위 여부를 중심으로 답한다.
+- 현재 쟁점과 직접 연결되지 않는 다른 truthId나 다른 증거를 새로 끌어오지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### question.motive_search
+**실제 값 대입 예시**
+```text
+현재 액션은 motive_search다.
+focusedDisputeId: d-1
+재판관 질문: "한지석 씨, 추석 직전 280만원 송금을 왜 세린 씨에게 미리 말하지 못했습니까?"
+
+규칙:
+- 위 질문에만 답한다.
+- 왜 그랬는지, 왜 숨겼는지, 무엇이 두려웠는지 같은 동기 층을 중심으로 답한다.
+- 단순한 사실 나열로만 끝내지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 자연스럽다. ActionContract의 revealBudget.motive와 잘 맞는다.
+**수정안**
+```text
+현재 액션은 motive_search다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관 질문: "{judgeQuestion}"
+
+규칙:
+- 위 질문에만 답한다.
+- 왜 그랬는지, 왜 숨겼는지, 무엇이 두려웠는지 같은 동기 층을 중심으로 답한다.
+- 현재 쟁점 밖의 다른 비밀을 새로운 변명거리로 꺼내지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### question.empathy_approach
+**실제 값 대입 예시**
+```text
+현재 액션은 empathy_approach다.
+focusedDisputeId: d-3
+재판관 질문: "한지석 씨, 그날 최민정 씨 관련 일을 바로 말하지 못한 데에 어떤 두려움이 있었는지 재판관이 듣고 싶습니다."
+
+규칙:
+- 위 질문에만 답한다.
+- 비난받는 자리라기보다 사정을 설명할 기회로 느껴야 한다.
+- 감정, 상처, 수치심, 관계 유지 욕구를 조심스럽게 드러낼 수 있다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 자연스럽다. trustInfo가 붙으면 더 좋아진다.
+**수정안**
+```text
+현재 액션은 empathy_approach다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관 질문: "{judgeQuestion}"
+
+규칙:
+- 위 질문에만 답한다.
+- 지금은 비난보다 사정을 설명할 기회에 가깝다.
+- 감정, 상처, 수치심, 관계 유지 욕구를 조심스럽게 드러낼 수 있다.
+- allowedTruthIds 밖의 핵심 사실을 갑자기 완성형으로 털어놓지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### evidence_present
+**실제 값 대입 예시**
+```text
+현재 액션은 evidence_present다.
+focusedDisputeId: d-1
+재판관이 "공동계좌 거래내역서" 증거를 제시했다.
+증거 설명: 9월 20일, 부부 공동생활비 계좌에서 '최민정'이라는 이름으로 280만원이 빠져나간 은행 원본 거래내역이다. 이체 시각과 수취인 실명이 고스란히 찍혀 있다.
+재판관 질문: "한지석 씨, 이 거래내역에 찍힌 280만원 송금을 어떻게 설명하시겠습니까?"
+
+규칙:
+- 첫 문장은 반드시 현재 증거에 대한 직접 반응이다.
+- 이 증거와 무관한 다른 쟁점을 새로 꺼내지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 자연스럽다. 이미 좋다.
+**수정안**
+```text
+현재 액션은 evidence_present다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관이 "{evidenceName}" 증거를 제시했다.
+증거 설명: {evidenceDescription}
+재판관 질문: "{judgeQuestion}"
+
+규칙:
+- 첫 문장은 반드시 현재 증거에 대한 직접 반응이다.
+- 이 증거와 무관한 다른 쟁점, 다른 사람의 비밀, 다른 금액을 새로 꺼내지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### evidence_investigate.request_original
+**실제 값 대입 예시**
+```text
+현재 액션은 evidence_investigate.request_original이다.
+focusedDisputeId: d-1
+재판관이 현재 증거의 원본 확보 결과를 제시했다.
+조사 결과: 예약서 신청인란에 '한지석', 돌봄 대상자란에 '오미숙(처모)'이 적혀 있다. 기간은 추석 연휴 3일, 예약금 280만원 수납 완료 도장이 찍혀 있다.
+재판관 질문: "한지석 씨, 이 원본 예약서에 적힌 내용을 보면 누구를 위한 예약이었는지 설명해 주셔야 할 것 같습니다."
+
+규칙:
+- 원본 확보 결과에 직접 반응한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 내용은 자연스럽지만 '현재 증거'보다 증거명이 직접 들어가는 편이 좋다.
+**수정안**
+```text
+현재 액션은 evidence_investigate.request_original이다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관이 "{evidenceName}"의 원본 확보 결과를 제시했다.
+조사 결과: {investigationResult}
+재판관 질문: "{judgeQuestion}"
+
+규칙:
+- 원본 확보 결과에 직접 반응한다.
+- 원본이 보여 준 정보 범위를 넘어 새로운 메타데이터를 지어내지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### evidence_investigate.check_metadata
+**실제 값 대입 예시**
+```text
+현재 액션은 evidence_investigate.check_metadata다.
+focusedDisputeId: d-1
+재판관이 현재 증거의 메타데이터 확인 결과를 제시했다.
+조사 결과: 이체 단말은 지석 명의 휴대폰, 공인인증도 지석 본인 명의다. 타인이 대신 보낸 흔적은 없다.
+재판관 질문: "한지석 씨, 이 송금이 본인 명의 단말과 인증으로 이뤄졌다는 점은 인정하십니까?"
+
+규칙:
+- 시간, 기기, 수정 이력 등 공개된 조사 결과에만 반응한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 자연스럽다.
+**수정안**
+```text
+현재 액션은 evidence_investigate.check_metadata다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관이 "{evidenceName}"의 메타데이터 확인 결과를 제시했다.
+조사 결과: {investigationResult}
+재판관 질문: "{judgeQuestion}"
+
+규칙:
+- 시간, 기기, 계정, 생성·수정 이력처럼 공개된 조사 결과에만 반응한다.
+- 조사 결과에 없는 추가 단말, 추가 계정, 추가 수정 이력을 지어내지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### evidence_investigate.restore_context
+**실제 값 대입 예시**
+```text
+현재 액션은 evidence_investigate.restore_context다.
+focusedDisputeId: d-3
+재판관이 현재 증거의 앞뒤 맥락 복원 결과를 제시했다.
+조사 결과: '조용한 데서 보죠'만 떼어 보면 밀회처럼 읽히지만, 앞뒤가 잘려 있어 상담 장소 약속인지 사적 만남인지 이 캡처만으로는 알 수 없다.
+재판관 질문: "한지석 씨, 잘린 앞뒤 문맥을 보면 이 대화를 어떻게 이해해야 합니까?"
+
+규칙:
+- 잘린 맥락, 전후 문장, 상황 설명에 직접 반응한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 자연스럽다. restore_context와 investigationResult 연결이 가장 잘 드러나는 유형이다.
+**수정안**
+```text
+현재 액션은 evidence_investigate.restore_context다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관이 "{evidenceName}"의 앞뒤 맥락 복원 결과를 제시했다.
+조사 결과: {investigationResult}
+재판관 질문: "{judgeQuestion}"
+
+규칙:
+- 잘린 맥락, 전후 문장, 당시 상황 설명에 직접 반응한다.
+- 지금 조사 결과가 보여 준 맥락만 사용한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### evidence_investigate.verify_source
+**실제 값 대입 예시**
+```text
+현재 액션은 evidence_investigate.verify_source다.
+focusedDisputeId: d-1
+재판관이 현재 증거의 출처 검증 결과를 제시했다.
+조사 결과: 은행 고객센터에 대조한 결과, PDF 해시값이 원본과 일치한다. 위·변조 흔적 없음.
+재판관 질문: "한지석 씨, 그렇다면 이 거래내역의 진본성 자체를 부정하시긴 어렵겠습니다. 어떻게 설명하시겠습니까?"
+
+규칙:
+- 출처의 신빙성과 전달 경로에 직접 반응한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 자연스럽다.
+**수정안**
+```text
+현재 액션은 evidence_investigate.verify_source다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관이 "{evidenceName}"의 출처 검증 결과를 제시했다.
+조사 결과: {investigationResult}
+재판관 질문: "{judgeQuestion}"
+
+규칙:
+- 출처의 신빙성과 전달 경로에 직접 반응한다.
+- legitimacy 항변을 하더라도 진본성 확인 결과와 정면 모순되게 말하지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### evidence_investigate.check_edits
+**실제 값 대입 예시**
+```text
+현재 액션은 evidence_investigate.check_edits다.
+focusedDisputeId: d-2
+재판관이 현재 증거의 편집 여부 확인 결과를 제시했다.
+조사 결과: 글자를 고치거나 합성한 흔적은 없다. 다만 대화의 위아래를 의도적으로 잘라낸 선택적 크롭이 확인된다. 불리한 맥락만 남기고 나머지를 잘라낸 셈이다.
+재판관 질문: "오세린 씨, 글자를 합성한 건 아니라도 선택적으로 잘라낸 건 맞는 것 같습니다. 이 점은 어떻게 설명하시겠습니까?"
+
+규칙:
+- 편집 흔적 유무에 직접 반응한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 자연스럽다.
+**수정안**
+```text
+현재 액션은 evidence_investigate.check_edits다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관이 "{evidenceName}"의 편집 여부 확인 결과를 제시했다.
+조사 결과: {investigationResult}
+재판관 질문: "{judgeQuestion}"
+
+규칙:
+- 편집 흔적 유무, 크롭 여부, 누락된 부분에 직접 반응한다.
+- '조작은 아니었다'만 반복하지 말고 왜 그런 형태가 됐는지도 현재 쟁점 범위 안에서 설명한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### evidence_investigate.question_acquisition
+**실제 값 대입 예시**
+```text
+현재 액션은 evidence_investigate.question_acquisition이다.
+focusedDisputeId: d-2
+재판관이 현재 증거의 취득 경위 확인 결과를 제시했다.
+조사 결과: 새벽에 잠든 배우자의 휴대폰 잠금을 풀고 무단 열람해 얻은 자료다. 내용이 사실이라 해도 취득 과정 자체가 사생활 침해에 해당할 수 있다.
+재판관 질문: "오세린 씨, 이 캡처를 확보한 방식 자체에 문제가 있다는 지적에 대해 답해 주십시오."
+
+규칙:
+- 취득 정당성과 절차 문제에 직접 반응한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 자연스럽다. 다만 취득 정당성만 말하다가 내용 해명을 아예 안 하는 답이 나오지 않도록 주의가 필요하다.
+**수정안**
+```text
+현재 액션은 evidence_investigate.question_acquisition이다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관이 "{evidenceName}"의 취득 경위 확인 결과를 제시했다.
+조사 결과: {investigationResult}
+재판관 질문: "{judgeQuestion}"
+
+규칙:
+- 취득 정당성과 절차 문제에 직접 반응한다.
+- legitimacy 문제만 반복하지 말고, 현재 쟁점에 대한 해명도 1문장 이상 포함한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### trust_action.confidential_protection
+**실제 값 대입 예시**
+```text
+현재 액션은 confidential_protection이다.
+focusedDisputeId: d-1
+재판관 질문: "한지석 씨, 이 말은 오세린 씨에게 즉시 공개되지 않습니다. 280만원 송금을 숨긴 진짜 이유를 지금 재판관에게만 말씀해 주시겠습니까?"
+
+상황:
+- 이 답변은 상대에게 즉시 공개되지 않는다.
+- 지금은 재판관에게만 조심스럽게 말할 수 있다.
+
+규칙:
+- private_confession 톤을 우선한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: judgeQuestion이 액션 전용으로 잘 생성되면 매우 자연스럽다.
+**수정안**
+```text
+현재 액션은 confidential_protection이다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관 질문: "{judgeQuestion}"
+
+상황:
+- 이 답변은 상대에게 즉시 공개되지 않는다.
+- 지금은 재판관에게만 조심스럽게 말할 수 있다.
+
+규칙:
+- private_confession 톤을 우선한다.
+- allowedTruthIds 범위를 넘겨 다른 쟁점 비밀까지 새로 털어놓지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### trust_action.separation
+**실제 값 대입 예시**
+```text
+현재 액션은 separation이다.
+focusedDisputeId: d-4
+재판관 질문: "오세린 씨, 지금은 한지석 씨 개입 없이 말씀하실 수 있습니다. 150만원이 어디로 갔는지 재판관에게만 차분히 설명해 주십시오."
+
+상황:
+- 상대의 개입이 차단된 상태다.
+- 상대를 의식한 공격적 연기를 줄이고 재판관에게만 답한다.
+
+규칙:
+- answer_only 또는 private_confession 톤을 우선한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: judgeQuestion이 구체적일 때 좋다.
+**수정안**
+```text
+현재 액션은 separation이다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관 질문: "{judgeQuestion}"
+
+상황:
+- 상대의 개입이 차단된 상태다.
+- 상대를 의식한 공격적 연기를 줄이고 재판관에게만 답한다.
+
+규칙:
+- answer_only 또는 private_confession 톤을 우선한다.
+- 상대 이름을 직접 불러 공격하지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### trust_action.emotional_stabilization
+**실제 값 대입 예시**
+```text
+현재 액션은 emotional_stabilization이다.
+focusedDisputeId: d-2
+재판관 질문: "오세린 씨, 감정이 올라온 건 이해했습니다. 잠시 숨을 고르고, 새벽에 휴대폰을 확인한 경위만 차분히 다시 말씀해 주십시오."
+
+상황:
+- 재판관이 감정을 가라앉히고 다시 설명할 기회를 줬다.
+
+규칙:
+- 흥분을 조금 가라앉히고, 현재 쟁점에 다시 집중해 답한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 자연스럽다.
+**수정안**
+```text
+현재 액션은 emotional_stabilization이다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관 질문: "{judgeQuestion}"
+
+상황:
+- 재판관이 감정을 가라앉히고 다시 설명할 기회를 줬다.
+
+규칙:
+- 흥분을 조금 가라앉히고, 현재 쟁점에 다시 집중해 답한다.
+- 지금은 반박보다 설명을 우선한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### trust_action.retaliation_check
+**실제 값 대입 예시**
+```text
+현재 액션은 retaliation_check다.
+focusedDisputeId: d-4
+재판관 질문: "오세린 씨, 지금 150만원 문제를 말하면 가족이나 상대 반응이 두려워서 주저하고 계십니까?"
+
+상황:
+- 재판관이 상대의 보복이나 반응을 걱정하는지 확인하고 있다.
+
+규칙:
+- 상대 반응에 대한 두려움, 부담, 망설임을 중심으로 답한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: judgeQuestion이 current dispute와 retaliation을 동시에 집어줘야 자연스럽다.
+**수정안**
+```text
+현재 액션은 retaliation_check다.
+focusedDisputeId: {focusedDisputeId}
+쟁점명: {focusedDisputeName}
+재판관 질문: "{judgeQuestion}"
+
+상황:
+- 재판관이 상대의 보복이나 반응을 걱정하는지 확인하고 있다.
+
+규칙:
+- 상대 반응에 대한 두려움, 부담, 망설임을 중심으로 답한다.
+- fearOfExposure/retaliationWorry와 맞지 않는 과도한 허세를 줄인다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### free_question_classifier
+**실제 값 대입 예시**
+```text
+재판관의 자유 질문을 분류한다.
+질문: "최민정 씨가 외도 상대가 아니라면 왜 골목에서 만났습니까?"
+
+규칙:
+- 캐릭터 연기 금지.
+- 입력 질문만 보고 questionType, disputeId, evidence 언급 여부를 분류한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 최소 형태로는 가능하지만, dispute/evidence 후보가 함께 들어가면 분류 안정성이 올라간다.
+**수정안**
+```text
+재판관의 자유 질문을 분류한다.
+질문: "{playerQuestion}"
+쟁점 후보: {disputeList}
+증거 후보: {evidenceCatalog}
+
+규칙:
+- 캐릭터 연기 금지.
+- 입력 질문을 가장 가까운 questionType과 disputeId에 매핑한다.
+- 질문 속 고유명사·금액·증거명 언급이 있으면 mentionedEvidenceIds에 반영한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### free_question_responder
+**실제 값 대입 예시**
+```text
+분류가 끝난 자유 질문에 캐릭터로서 응답한다.
+원문 질문: "최민정 씨가 외도 상대가 아니라면 왜 골목에서 만났습니까?"
+classifier 결과:
+- questionType: fact_pursuit
+- primaryDisputeId: d-3
+- secondaryDisputeId: d-1
+- confidence: 0.88
+
+규칙:
+- 분류 결과를 다시 바꾸지 않는다.
+- focusedDisputeId를 중심으로 답한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 문장 자체는 괜찮지만 템플릿 본문에 focusedDisputeId가 실제로 들어가 있지 않다. 이건 수정이 필요하다.
+**수정안**
+```text
+분류가 끝난 자유 질문에 캐릭터로서 응답한다.
+원문 질문: "{playerQuestion}"
+focusedDisputeId: {classifiedPrimaryDisputeId}
+secondaryDisputeId: {classifiedSecondaryDisputeId}
+classifier 결과:
+- questionType: {classifiedQuestionType}
+- primaryDisputeId: {classifiedPrimaryDisputeId}
+- secondaryDisputeId: {classifiedSecondaryDisputeId}
+- confidence: {classificationConfidence}
+
+규칙:
+- 분류 결과를 다시 바꾸지 않는다.
+- primaryDisputeId 중심으로 답하고, secondaryDisputeId는 필요할 때만 최소 언급한다.
+- confidence가 낮아도 다른 쟁점으로 멋대로 새지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+#### witness_call
+**실제 값 대입 예시**
+```text
+재판관: "최민정 증인, 이 사건에 대해 아는 바를 말씀해 주십시오."
+
+규칙:
+- 증인으로서만 답한다.
+- 출력은 JSON 객체 하나만 한다.
+```
+**판정**: 기본은 무난하다. 특정 쟁점용 증인 호출이라면 범위를 더 좁혀줄 수 있다.
+**수정안**
+```text
+재판관: "{witnessName} 증인, {focusedDisputeName}와 관련해 아는 범위만 말씀해 주십시오."
+
+규칙:
+- 증인으로서만 답한다.
+- witnessBudget과 witnessKnowledgeScope 밖의 사실을 새로 단정하지 않는다.
+- 출력은 JSON 객체 하나만 한다.
+```
+
+### 3) investigationResult 연결 판정
+- spouse-01의 investigationResults는 6종 조사 액션 모두와 자연스럽게 연결된다. 특히 restore_context, check_edits, question_acquisition은 현재 문자열 그대로도 충분히 강하다.
+- evidence_investigate 6종 모두에 {evidenceName} 추가 권장
+- question_acquisition에는 '정당성만 말하지 말고 내용 해명도 포함' 규칙 추가 권장
+- check_edits에는 '조작 부정만 반복하지 말고 왜 크롭/삭제가 일어났는지 현재 쟁점 범위에서 설명' 규칙 추가 권장
+
+### 4) trust_action의 `{focusedDisputeId}` + `{judgeQuestion}` 조합 판정
+- {focusedDisputeId}+{judgeQuestion} 조합 자체는 충분하다. 문제는 judgeQuestion이 trust_action 전용 문장으로 생성되느냐이다.
+  - `confidential_protection` 권장 judgeQuestion: 이 말은 상대에게 즉시 공개되지 않습니다. {focusedDisputeName}에 관해 재판관에게만 말할 수 있는 부분이 있습니까?
+  - `separation` 권장 judgeQuestion: 지금은 상대 개입 없이 말씀하실 수 있습니다. {focusedDisputeName}에 대해 사실관계만 차분히 설명해 주십시오.
+  - `emotional_stabilization` 권장 judgeQuestion: {focusedDisputeName} 때문에 감정이 올라온 건 이해합니다. 숨을 고르고, 무엇이 사실인지부터 다시 말씀해 주십시오.
+  - `retaliation_check` 권장 judgeQuestion: {focusedDisputeName}에 관해 지금 말을 아끼는 이유가 상대 반응이나 제3자 보복이 두려워서입니까?
+
+## A2. witnessBudget 초안
+아래 구조는 그대로 `{witnessBudget}` 변수에 넣을 수 있게 JSON 형태로 정리했다.
+
+### spouse-01
+```json
+{
+  "tp-1": {
+    "name": "오미숙 (세린의 어머니)",
+    "canState": [
+      "추석 연휴에 본인 돌봄 공백이 생겨 가족이 간병 인력을 알아보던 분위기가 있었다.",
+      "세린이 동생 돈 문제를 남편에게 바로 말하지 못해 마음이 급해 보였다는 점은 느꼈다."
+    ],
+    "uncertain": [
+      "280만원 송금의 정확한 시각과 명목은 직접 보지 못했다.",
+      "최민정을 만난 밤 골목 접촉의 실제 목적은 전해 들은 수준이다."
+    ],
+    "forbidden": [
+      "세린의 휴대폰 무단 열람과 제3자 캡처 공유의 구체적 경위",
+      "정우성 계좌를 거친 150만원의 실제 금융 흐름",
+      "지석이 실제로 어떤 설명을 하려다 말았는지에 대한 단정"
+    ]
+  },
+  "tp-2": {
+    "name": "이재훈 (지석의 직장 동료)",
+    "canState": [
+      "지석이 추석 직전에 재가돌봄센터 견적과 예약 가능 여부를 여러 차례 문의했다.",
+      "업무 중에도 가족 돌봄 문제 때문에 급히 통화하거나 일정을 조정하는 모습이 있었다."
+    ],
+    "uncertain": [
+      "280만원을 실제로 언제 누구에게 송금했는지는 직접 보지 못했다.",
+      "세린이 왜 외도를 의심했는지, 휴대폰을 어떻게 열람했는지는 모른다."
+    ],
+    "forbidden": [
+      "세린의 동생 월세 문제와 우회 송금 내역",
+      "지석과 최민정의 실제 상담 장소·시각의 최종 확정",
+      "부부의 100만원 사전 상의 약속의 구체 조항"
+    ]
+  },
+  "tp-3": {
+    "name": "최민정 (재가돌봄센터 상담팀장)",
+    "canState": [
+      "지석이 280만원을 추석 연휴 간병 예약금으로 납부했고 대상자가 오미숙이었다.",
+      "문제의 만남은 센터 후문 상담 일정이었고 사적 밀회가 아니었다.",
+      "예약서, 직인, 수납 기록 등 기관 원본으로 그 사실을 확인할 수 있다."
+    ],
+    "uncertain": [
+      "부부 사이에 100만원 이상 사전 상의 약속이 어떻게 정해졌는지는 모른다.",
+      "세린이 어떤 경위로 외도를 의심하게 됐는지는 직접 모른다."
+    ],
+    "forbidden": [
+      "세린의 휴대폰 열람·캡처 공유 경위",
+      "세린 동생의 월세 사정과 150만원 우회 송금 세부",
+      "부부 감정관계나 외도 의심의 심리 해석"
+    ]
+  },
+  "tp-4": {
+    "name": "정우성 (세린의 대학 동기)",
+    "canState": [
+      "세린이 자신에게 150만원을 세린 동생 쪽으로 넘겨 달라고 요청했다.",
+      "세린이 '지석한테는 추석 지나고 말할게'라는 취지로 말하며 중간 전달을 부탁했다."
+    ],
+    "uncertain": [
+      "세린이 왜 그 시점에 그렇게까지 급했는지 속마음은 정확히 모른다.",
+      "지석의 280만원 송금 목적과 최민정 관련 진실은 전해 들은 바 없다."
+    ],
+    "forbidden": [
+      "지석의 휴대폰 무단 열람 문제",
+      "최민정과 지석의 상담 장소·상담 내용",
+      "부부의 상호 비난 중 어느 쪽이 더 책임이 큰지에 대한 단정"
+    ]
+  }
+}
+```
+
+### workplace-01
+```json
+{
+  "tp-1": {
+    "name": "최현우 (본부 팀장)",
+    "canState": [
+      "임원 보고 전날 회의에서 서윤의 분석 프레임이 보고서 핵심이라는 취지의 말이 나왔다.",
+      "팀 내에서 실무 오너와 최종 발표자의 명의를 어떻게 병기하는지 관행을 알고 있다."
+    ],
+    "uncertain": [
+      "HR 평가 시스템 안에서 누가 어떤 비공개 코멘트를 입력했는지는 직접 보지 못했다.",
+      "23:41 관리자 대리발급 토큰과 PDF 해시 불일치의 기술적 원인은 모른다."
+    ],
+    "forbidden": [
+      "HR 비공개 코멘트의 상세 문구",
+      "서윤의 새벽 인사 화면 열람·캡처·유포의 실제 단말 증거",
+      "포렌식 로그 세부값을 본 것처럼 말하는 것"
+    ]
+  },
+  "tp-2": {
+    "name": "이지안 (HR 비즈니스 파트너)",
+    "canState": [
+      "평가 초안 v1과 v2 사이에서 서윤 기여 표기가 축소됐고, 그 직전 태성 계정의 비공개 코멘트 입력 시점이 남아 있다.",
+      "서윤의 미제출 고충 초안과 평가 버전 기록을 HR 시스템 범위 안에서 확인할 수 있다."
+    ],
+    "uncertain": [
+      "보고서 실무 기여가 체감상 어느 정도였는지 현업 판단은 제한적이다.",
+      "문서 수정 이력 PDF가 누가 어떤 의도로 조작됐는지는 HR 기록만으로 단정할 수 없다."
+    ],
+    "forbidden": [
+      "감사팀 원본 로그의 전문",
+      "슬랙 DM 수신자들의 내부 대화 내용",
+      "성과 배분 분쟁의 감정적 책임을 재단하는 해석"
+    ]
+  },
+  "tp-3": {
+    "name": "김도현 (감사팀 포렌식 담당)",
+    "canState": [
+      "서버 원본 로그상 23:41에는 관리자 대리발급 토큰과 공용 PC 세션이 찍혀 있고, 서윤의 마지막 정상 편집은 20:17이다.",
+      "태성이 제출한 PDF와 공식 추출본의 해시가 일치하지 않아 조작 또는 누락 가능성이 확인된다."
+    ],
+    "uncertain": [
+      "태성과 서윤 사이의 공로 배분 합의 관행 전체는 감사 범위 밖이다.",
+      "태성이 왜 그런 자료를 냈는지 개인적 동기까지는 판단하지 않는다."
+    ],
+    "forbidden": [
+      "HR 평가 코멘트 원문",
+      "서윤의 고충 초안이나 슬랙 사적 대화",
+      "징계 수위나 내부 인사 결정 결과를 예단하는 발언"
+    ]
+  }
+}
+```
+
+### friend-01
+```json
+{
+  "tp-1": {
+    "name": "김수아 (공통 친구)",
+    "canState": [
+      "하린이 정산 확정 전에 중간 정산 캡처를 먼저 보내며 도윤이 돈을 안 갚는다는 취지로 말했다.",
+      "도윤이 뒤늦게 보증금 환급을 택시비와 상계하려 했다는 말을 자신에게 남겼다."
+    ],
+    "uncertain": [
+      "보증금 환급의 정확한 입금 시각과 숙소 원본 기록은 직접 못 봤다.",
+      "최종 정산 차액이 정확히 얼마였는지는 원본 로그 없이 단정할 수 없다."
+    ],
+    "forbidden": [
+      "정산 앱 원본 CSV·자동분배 설정 로그의 세부값",
+      "숙소 운영자가 확인한 보증금 환급 계좌 정보",
+      "하린 SNS 게시물의 법적 문제를 전문가처럼 단정하는 것"
+    ]
+  },
+  "tp-2": {
+    "name": "윤재민 (여행 소모임 총무)",
+    "canState": [
+      "정산 앱 원본 기준으로 비용 업로드 시점, 자동분배 적용 순서, 보증금 환급 반영 시점을 확인할 수 있다.",
+      "중간 화면의 큰 차액과 최종 정산 수치가 달랐다는 점을 원본 로그로 설명할 수 있다."
+    ],
+    "uncertain": [
+      "하린이 왜 공통 친구나 SNS에 먼저 말했는지 감정적 동기는 모른다.",
+      "도윤이 보증금 환급을 왜 바로 공유하지 않았는지 개인 심리는 모른다."
+    ],
+    "forbidden": [
+      "김수아에게 오간 사적 카톡 전문",
+      "숙소 운영자 메시지 원문",
+      "공항 택시 이동 경로와 같은 민감한 동선 정보의 과도한 공개"
+    ]
+  },
+  "tp-3": {
+    "name": "박은지 (숙소 운영자)",
+    "canState": [
+      "체크아웃 당일 보증금 9만2천원이 도윤 명의 계좌로 환급됐고 그 시각을 원본으로 확인할 수 있다.",
+      "체크아웃 당일 안내 메시지와 보증금 반환 관련 호스트 대화 원본을 보관하고 있다."
+    ],
+    "uncertain": [
+      "공항 택시비 7만원 차용 문제와 최종 정산 차액 전체는 숙소 운영 범위 밖이다.",
+      "하린이 SNS에 무엇을 올렸는지, 김수아와 무슨 대화를 했는지는 모른다."
+    ],
+    "forbidden": [
+      "정산 앱 자동분배 설정과 CSV 원본",
+      "공통 친구에게 퍼진 캡처 내용",
+      "두 사람의 제3자 확산 금지 약속 존재 여부를 단정하는 것"
+    ]
+  }
+}
+```
+## A3. Eval 케이스 설계
+15개 케이스는 액션별 차별화, 금지 truth 누출, responseMode 준수 여부를 함께 보도록 구성했다.
+
+### Eval 1 — spouse-01 / fact_pursuit + S0~S1
+```text
+액션: {"type": "question", "questionType": "fact_pursuit", "focusedDisputeId": "d-1", "target": "a", "lieState": "S1"}
+기대 stance: ['deny', 'hedge']
+기대 responseMode: answer_only
+금지 truthIds: ['t-1', 't-3', 't-4', 't-5']
+체크:
+- 280만원의 존재를 부정하더라도 d-2/d-4 쟁점으로 새지 않는다
+- 간병 예약금, 최민정 상담 일정 같은 핵심 맥락을 밝히지 않는다
+좋은 응답 예시: 재판관님, 280만원이 빠져나간 건 맞지만 사적인 유흥비나 그런 성격은 아닙니다. 지금 그 용도까지 단정해서 말씀드리긴 어렵습니다.
+나쁜 응답 예시: 사실 그 돈은 장모님 추석 간병 예약금이었습니다. 최민정 씨도 외도 상대가 아니고요.
+```
+
+### Eval 2 — spouse-01 / empathy_approach + S2~S3
+```text
+액션: {"type": "question", "questionType": "empathy_approach", "focusedDisputeId": "d-3", "target": "a", "lieState": "S2"}
+기대 stance: ['hedge', 'partial_admit']
+기대 responseMode: private_confession
+금지 truthIds: ['t-1', 't-3', 't-4', 't-5']
+체크:
+- 감정 층은 드러내되 최민정 만남의 실제 정체를 확정적으로 말하지 않는다
+- 상대를 비난하는 공개 법정 톤이 아니라 낮은 톤이어야 한다
+좋은 응답 예시: 재판관님, 그날 일을 바로 설명하면 또 다른 오해가 커질까 봐 겁이 났습니다. 괜히 세린 씨를 더 자극할 것 같아서 말을 아꼈습니다.
+나쁜 응답 예시: 최민정 씨는 돌봄센터 상담팀장이고 그 골목은 상담동 후문입니다. 제가 외도한 게 아닙니다.
+```
+
+### Eval 3 — spouse-01 / evidence_present + hard
+```text
+액션: {"type": "evidence_present", "focusedDisputeId": "d-1", "target": "a", "lieState": "S2"}
+증거: {"id": "e-1", "name": "공동계좌 거래내역서", "reliability": "hard"}
+기대 stance: ['partial_admit', 'reframe']
+기대 responseMode: evidence_rebuttal
+금지 truthIds: ['t-1', 't-4']
+체크:
+- 첫 문장이 반드시 e-1 자체에 대한 직접 반응이어야 한다
+- 송금 사실은 부정하지 않더라도 목적 전체를 털어놓지 않는다
+좋은 응답 예시: 그 거래내역 자체는 맞습니다. 다만 저 이름만 보고 외도 자금이라고 단정하는 건 맞지 않습니다.
+나쁜 응답 예시: 맞습니다. 처모님 간병 예약금을 보낸 거였고, 그래서 상담팀장 최민정을 만났습니다.
+```
+
+### Eval 4 — spouse-01 / separation + S3
+```text
+액션: {"type": "trust_action", "actionType": "separation", "focusedDisputeId": "d-4", "target": "b", "lieState": "S3"}
+기대 stance: ['hedge', 'partial_admit']
+기대 responseMode: answer_only
+금지 truthIds: ['t-4']
+체크:
+- 상대 직접 호명/공격 없이 재판관에게만 답한다
+- 보복·가족 노출 우려는 말할 수 있지만 세린 동생 실명/세부 사정은 누설하지 않는다
+좋은 응답 예시: 재판관님, 그 돈이 어디로 간 건지 바로 말하기 어려운 사정이 있었습니다. 가족 일이라 상대가 흥분할까 봐 겁이 났습니다.
+나쁜 응답 예시: 네, 제 동생 월세였습니다. 지석 씨도 똑같이 숨겼으면서 왜 저만 몰아붙이십니까?
+```
+
+### Eval 5 — spouse-01 / confidential_protection + S4
+```text
+액션: {"type": "trust_action", "actionType": "confidential_protection", "focusedDisputeId": "d-3", "target": "a", "lieState": "S4"}
+기대 stance: ['partial_admit', 'admit']
+기대 responseMode: private_confession
+금지 truthIds: ['t-2', 't-4', 't-5']
+체크:
+- t-3을 드러내며 외도 오해를 푸는 쪽으로 움직인다
+- 상대에게 직접 말하듯 공격하지 않는다
+좋은 응답 예시: 재판관님, 그 만남은 외도가 아니라 돌봄센터 상담이었습니다. 세린 씨 어머니 일까지 얽혀 있어서 더 큰 오해가 날까 봐 제가 먼저 말을 못 꺼냈습니다.
+나쁜 응답 예시: 세린 씨도 동생한테 150만원 돌려보냈잖아요. 그 얘기부터 법정에서 까야 합니다.
+```
+
+### Eval 6 — workplace-01 / fact_pursuit + S0~S1
+```text
+액션: {"type": "question", "questionType": "fact_pursuit", "focusedDisputeId": "d-4", "target": "a", "lieState": "S1"}
+기대 stance: ['deny', 'hedge']
+기대 responseMode: answer_only
+금지 truthIds: ['t-4']
+체크:
+- HR 비공개 코멘트 존재를 확정적으로 인정하지 않는다
+- 문서 로그 조작(d-3)이나 서윤 유포(d-2)로 새지 않는다
+좋은 응답 예시: 재판관님, 평가 과정에서 여러 의견이 오간 건 맞지만 제가 점수에 직접 개입했다고 단정할 수는 없습니다. 그 부분은 과장돼 있습니다.
+나쁜 응답 예시: 예, 제가 HR에 '기여는 있으나 리스크가 크다'고 적었고 그 직후 서윤 점수가 내려갔습니다.
+```
+
+### Eval 7 — workplace-01 / empathy_approach + S2~S3
+```text
+액션: {"type": "question", "questionType": "empathy_approach", "focusedDisputeId": "d-3", "target": "a", "lieState": "S3"}
+기대 stance: ['hedge', 'partial_admit']
+기대 responseMode: private_confession
+금지 truthIds: ['t-3', 't-4']
+체크:
+- shared PC나 관리자 토큰 같은 핵심 단어를 직접 고백하지 않는다
+- 체면·평판을 지키려 했다는 동기는 드러낼 수 있다
+좋은 응답 예시: 재판관님, 그 로그 문제를 바로 인정하면 제 쪽이 조직적으로 뭘 숨긴 것처럼 비칠까 봐 망설였습니다. 팀 전체 평판까지 걸려 있다고 느꼈습니다.
+나쁜 응답 예시: 공용 PC에서 관리자 대리발급 토큰이 찍힌 건 맞습니다. 그래서 PDF가 조작본처럼 보이게 됐습니다.
+```
+
+### Eval 8 — workplace-01 / evidence_present + hard
+```text
+액션: {"type": "evidence_present", "focusedDisputeId": "d-3", "target": "a", "lieState": "S2"}
+증거: {"id": "e-3", "name": "문서 서버 원본 감사 로그", "reliability": "hard"}
+기대 stance: ['partial_admit', 'reframe']
+기대 responseMode: evidence_rebuttal
+금지 truthIds: ['t-4']
+체크:
+- 첫 문장이 서버 원본 감사 로그 자체를 받아들이는 직접 반응이어야 한다
+- 서윤의 마지막 정상 편집 시점과 메타 덮어쓰기의 의미를 재해석할 수는 있어도 무작정 허위라고 하면 안 된다
+좋은 응답 예시: 그 감사 로그가 원본이라는 점은 부정하지 않겠습니다. 다만 그 기록만으로 제가 서윤 씨를 몰아내려 조작을 지시했다고 단정하는 건 과합니다.
+나쁜 응답 예시: 그 로그는 가짜입니다. 원래 23:48 최종 수정자는 서윤 씨였고 감사팀이 틀렸습니다.
+```
+
+### Eval 9 — workplace-01 / separation + S3
+```text
+액션: {"type": "trust_action", "actionType": "separation", "focusedDisputeId": "d-2", "target": "b", "lieState": "S3"}
+기대 stance: ['hedge', 'partial_admit']
+기대 responseMode: answer_only
+금지 truthIds: ['t-2']
+체크:
+- 상사 보복을 의식한 말투가 줄고 재판관에게만 답한다
+- 동료 둘에게 보낸 사실 전체를 완성형으로 털어놓지는 않는다
+좋은 응답 예시: 재판관님, 그 화면을 본 뒤 너무 억울해서 몇 사람에게 하소연한 건 있습니다. 다만 그 순간에 정식 절차를 밟을 여유가 없다고 느꼈습니다.
+나쁜 응답 예시: 네, 제가 새벽 1시에 평가 화면을 열고 캡처해서 두 동료에게 다 보냈습니다.
+```
+
+### Eval 10 — workplace-01 / confidential_protection + S4
+```text
+액션: {"type": "trust_action", "actionType": "confidential_protection", "focusedDisputeId": "d-3", "target": "a", "lieState": "S4"}
+기대 stance: ['admit', 'reframe']
+기대 responseMode: private_confession
+금지 truthIds: ['t-2']
+체크:
+- t-3을 드러내며 PDF 진본성 문제를 인정한다
+- 정치적으로 둘러대기보다 조심스러운 고백 톤이어야 한다
+좋은 응답 예시: 재판관님, 서윤 씨가 23:48 최종 수정자였다는 그 PDF는 그대로 믿기 어렵습니다. 원본 로그를 보면 다른 토큰 개입이 있었고, 제가 그 부분을 정면으로 말하지 못했던 건 맞습니다.
+나쁜 응답 예시: 서윤 씨도 인사 화면 훔쳐봤잖아요. 그걸 먼저 물으셔야죠.
+```
+
+### Eval 11 — friend-01 / fact_pursuit + S0~S1
+```text
+액션: {"type": "question", "questionType": "fact_pursuit", "focusedDisputeId": "d-1", "target": "a", "lieState": "S1"}
+기대 stance: ['deny', 'hedge']
+기대 responseMode: answer_only
+금지 truthIds: ['t-1', 't-4', 't-5']
+체크:
+- 보증금 환급을 즉시 반영하지 않았다는 핵심을 말하지 않는다
+- 택시 차용금이나 SNS 확산 문제로 새지 않는다
+좋은 응답 예시: 재판관님, 보증금 정산이 바로 확정된 상황은 아니었습니다. 그 시점 숫자만 가지고 제가 돈을 숨겼다고 단정하긴 어렵습니다.
+나쁜 응답 예시: 체크아웃 직후 9만2천원을 받은 건 맞는데 제가 바로 반영하지 않았습니다.
+```
+
+### Eval 12 — friend-01 / empathy_approach + S2~S3
+```text
+액션: {"type": "question", "questionType": "empathy_approach", "focusedDisputeId": "d-4", "target": "a", "lieState": "S3"}
+기대 stance: ['hedge', 'partial_admit']
+기대 responseMode: private_confession
+금지 truthIds: ['t-4']
+체크:
+- 하린과 관계를 깨고 싶지 않았다는 정서가 드러난다
+- 7만원 차용 미반환을 완결형으로 인정하지는 않는다
+좋은 응답 예시: 재판관님, 그 돈 문제를 정면으로 꺼내는 순간 여행 전체가 더 지저분해질 것 같았습니다. 그냥 보증금이랑 같이 정리하면 덜 부딪힐 거라고 스스로 합리화했습니다.
+나쁜 응답 예시: 맞습니다. 공항 택시비 7만원을 안 갚고 보증금이랑 상계하려 했습니다.
+```
+
+### Eval 13 — friend-01 / evidence_present + hard
+```text
+액션: {"type": "evidence_present", "focusedDisputeId": "d-4", "target": "a", "lieState": "S2"}
+증거: {"id": "e-6", "name": "공항 택시 영수증과 차용 메모·취소 내역", "reliability": "hard"}
+기대 stance: ['partial_admit', 'reframe']
+기대 responseMode: evidence_rebuttal
+금지 truthIds: ['t-1', 't-5']
+체크:
+- 첫 문장이 e-6 자체에 대한 반응이어야 한다
+- 차용 메모 존재는 부정하지 않되 의도·정산 방식으로 재구성한다
+좋은 응답 예시: 그 자료가 남아 있는 건 맞습니다. 다만 저는 떼어먹으려 했다기보다 보증금 정산과 함께 맞추면 된다고 판단했습니다.
+나쁜 응답 예시: 그건 중요하지 않습니다. 하린 씨가 SNS에 먼저 떠벌린 게 더 큰 문제입니다.
+```
+
+### Eval 14 — friend-01 / separation + S3
+```text
+액션: {"type": "trust_action", "actionType": "separation", "focusedDisputeId": "d-2", "target": "b", "lieState": "S3"}
+기대 stance: ['hedge', 'partial_admit']
+기대 responseMode: answer_only
+금지 truthIds: ['t-2']
+체크:
+- 하린이 제3자 반응을 의식한 심리를 말할 수 있다
+- SNS+공통친구 공유를 한 번에 완결형으로 털어놓지는 않는다
+좋은 응답 예시: 재판관님, 그때는 제가 혼자 뒤집어쓴다는 느낌이 들어서 친구한테 먼저 하소연한 건 있습니다. 다만 공개적으로 누군가를 망신 주려던 의도까지는 아니었습니다.
+나쁜 응답 예시: 네, 제가 공통 친구와 인스타에 도윤 씨를 겨냥한 내용을 다 퍼뜨렸습니다.
+```
+
+### Eval 15 — friend-01 / confidential_protection + S4
+```text
+액션: {"type": "trust_action", "actionType": "confidential_protection", "focusedDisputeId": "d-4", "target": "a", "lieState": "S4"}
+기대 stance: ['admit', 'partial_admit']
+기대 responseMode: private_confession
+금지 truthIds: ['t-2', 't-5']
+체크:
+- t-4를 드러내며 차용금을 명확히 정리하지 않은 점을 인정한다
+- 상대 비난보다 관계를 해치고 싶지 않았다는 동기가 우세해야 한다
+좋은 응답 예시: 재판관님, 택시비 7만원은 결국 제 몫이 맞았습니다. 바로 보내지 않고 보증금이랑 같이 정리하면 덜 상처 주겠다고 생각한 게 오히려 일을 더 꼬이게 했습니다.
+나쁜 응답 예시: 하린 씨도 먼저 SNS에 올렸으니 저만 잘못한 건 아닙니다.
+```
+## Claude Code에 바로 넘길 적용 메모
+1. `C5 buildActionContract()`에서는 위 매핑을 **base truth pool**로 쓰고, action type에 따라 추가로 좁히는 방식이 가장 안전하다. 예를 들어 `fact_pursuit`는 base allowed 안에서도 emotion-heavy truth를 다시 빼는 식이다.
+2. 현재 truthTable granularity가 거칠어서 S0~S1 allowed가 빈 배열인 케이스가 많다. 이건 오류가 아니라 정상이며, surface fact는 별도 `surfaceFacts` 또는 `revealHints` 데이터로 보완하는 것이 장기적으로 필요하다.
+3. `buildUserPrompt()`에 가능하면 다음 3개를 추가하길 권장한다: `{focusedDisputeName}`, `{evidenceName}`(investigate에서도), `{evidenceCatalog}`(free_question_classifier용).
+4. `free_question_responder` 템플릿은 본문에 `focusedDisputeId: {classifiedPrimaryDisputeId}`를 명시하는 수정이 필요하다.
+5. witness 쪽은 `{witnessBudget}`를 그대로 문자열 주입해도 되지만, 읽기 좋게 `canState / uncertain / forbidden`을 bullet text로 변환해 넣는 편이 증인 출력 안정성이 더 좋다.

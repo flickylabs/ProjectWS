@@ -148,11 +148,18 @@ tbody tr:hover { background: var(--bg-hover); }
     <a class="nav-item" data-page="blocks"><span class="ico">&#x1F9E9;</span> Prompt Blocks</a>
     <a class="nav-item" data-page="datafields"><span class="ico">&#x1F4CB;</span> Data Fields</a>
     <a class="nav-item" data-page="prompts"><span class="ico">&#x1F916;</span> AI Prompts <span style="font-size:0.7rem;color:var(--text-muted)">(legacy)</span></a>
+    <a class="nav-item" data-page="eval"><span class="ico">&#x1F9EA;</span> Eval Test</a>
+    <a class="nav-item" data-page="casemeta"><span class="ico">&#x1F3AF;</span> Case Meta</a>
   </div>
   <div class="nav-section">
     <div class="nav-title">Users</div>
     <a class="nav-item" data-page="players"><span class="ico">&#x1F464;</span> Players</a>
     <a class="nav-item" data-page="history"><span class="ico">&#x1F3AE;</span> Game History</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-title">Operations</div>
+    <a class="nav-item" data-page="seasons"><span class="ico">&#x1F3C6;</span> Seasons</a>
+    <a class="nav-item" data-page="llmcost"><span class="ico">&#x1F4B0;</span> LLM Cost</a>
   </div>
   <div class="nav-section">
     <div class="nav-title">System</div>
@@ -323,6 +330,171 @@ tbody tr:hover { background: var(--bg-hover); }
   <div class="card" id="settingsCard"></div>
 </div>
 
+<!-- ═══ Seasons ═══ -->
+<div class="page" id="page-seasons">
+  <div class="card-header">
+    <h1 style="font-size:1.4rem;font-weight:800;">Seasons</h1>
+    <button class="btn btn-primary" onclick="openSeasonModal()">+ New Season</button>
+  </div>
+  <div id="seasonsList"></div>
+</div>
+
+<!-- ═══ LLM Cost ═══ -->
+<div class="page" id="page-llmcost">
+  <div class="card-header">
+    <h1 style="font-size:1.4rem;font-weight:800;">LLM Cost Monitor</h1>
+  </div>
+  <div id="llmStats"></div>
+  <div class="card" style="margin-top:16px;">
+    <div class="card-title">Recent Calls</div>
+    <div class="table-wrap"><table><thead><tr><th>Time</th><th>Agent</th><th>Input</th><th>Output</th><th>Duration</th></tr></thead><tbody id="llmRecentBody"></tbody></table></div>
+  </div>
+</div>
+
+<!-- ═══ Case Meta ═══ -->
+<div class="page" id="page-casemeta">
+  <div class="card-header">
+    <h1 style="font-size:1.4rem;font-weight:800;">Case Meta</h1>
+  </div>
+  <div class="form-group" style="max-width:400px;margin-bottom:16px;">
+    <select class="form-select" id="caseMetaSelect" onchange="loadCaseMeta()"><option value="">-- 사건 선택 --</option></select>
+  </div>
+  <div id="caseMetaContent" style="display:none;">
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-title">Personality Tags</div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">A Tags</label><input class="form-input" id="cmTagsA" placeholder="avoidant, shame_sensitive, ..."></div>
+        <div class="form-group"><label class="form-label">B Tags</label><input class="form-input" id="cmTagsB" placeholder="confrontational, face_sensitive, ..."></div>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-title">Content Tags / Truth Category</div>
+      <div class="form-group"><label class="form-label">Content Tags (JSON)</label><textarea class="form-textarea" id="cmContentTags" rows="3" placeholder='{"d-1":["financial","secret_keeping"]}'></textarea></div>
+      <div class="form-group"><label class="form-label">Truth Category (JSON)</label><textarea class="form-textarea" id="cmTruthCategory" rows="3" placeholder='{"t-1":"fact","t-2":"emotion"}'></textarea></div>
+    </div>
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-title">Action Affinity</div>
+      <div class="form-group"><textarea class="form-textarea" id="cmAffinity" rows="5" placeholder='{"d-1":{"bestAction":"empathy_approach","actionScores":{...}}}'></textarea></div>
+    </div>
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-title">Optimal Path</div>
+      <div class="form-group"><textarea class="form-textarea" id="cmPath" rows="5" placeholder='{"d-1":{"pathGoal":"collapse_lie","requiredActions":["fact_pursuit"],...}}'></textarea></div>
+    </div>
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-title">Narrative Expansion / Witness Speech Sample</div>
+      <div class="form-group"><label class="form-label">Narrative Expansion (JSON)</label><textarea class="form-textarea" id="cmNarrative" rows="3"></textarea></div>
+      <div class="form-group"><label class="form-label">Witness Speech Sample (JSON)</label><textarea class="form-textarea" id="cmWitnessSpeech" rows="3"></textarea></div>
+    </div>
+    <button class="btn btn-primary" onclick="saveCaseMeta()">저장</button>
+  </div>
+</div>
+
+<!-- ═══ Eval Test ═══ -->
+<div class="page" id="page-eval">
+  <div class="card-header">
+    <h1 style="font-size:1.4rem;font-weight:800;">AI Eval Test</h1>
+  </div>
+
+  <!-- 탭 -->
+  <div style="display:flex;gap:8px;margin-bottom:16px;">
+    <button class="btn btn-primary" id="evalTabPreset" onclick="switchEvalTab('preset')">Preset (15)</button>
+    <button class="btn btn-outline" id="evalTabCustom" onclick="switchEvalTab('custom')">Custom Test</button>
+  </div>
+
+  <!-- Preset 탭 -->
+  <div id="evalPresetSection">
+    <div style="margin-bottom:12px;"><button class="btn btn-primary" onclick="runAllEval()">&#x25B6; 전체 실행</button></div>
+    <div id="evalSummary" style="margin-bottom:16px;"></div>
+    <div id="evalCards" style="display:flex;flex-direction:column;gap:10px;"></div>
+  </div>
+
+  <!-- Custom 탭 -->
+  <div id="evalCustomSection" style="display:none;">
+    <!-- (1) 사건 선택 기반 -->
+    <div class="card">
+      <div class="card-title" style="margin-bottom:12px;">사건 선택 기반 테스트</div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr 1fr;">
+        <div class="form-group">
+          <label class="form-label">사건</label>
+          <select class="form-select" id="customCase" onchange="onCaseSelect()"><option value="">-- 선택 --</option></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">대상</label>
+          <select class="form-select" id="customTarget"><option value="a">A</option><option value="b">B</option></select>
+
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phase</label>
+          <select class="form-select" id="customPhase"><option value="phase3">Phase 3</option><option value="phase4">Phase 4</option><option value="phase5">Phase 5</option></select>
+        </div>
+      </div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr 1fr;">
+        <div class="form-group">
+          <label class="form-label">쟁점</label>
+          <select class="form-select" id="customDispute"></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">액션</label>
+          <select class="form-select" id="customAction" onchange="onActionChange()">
+            <option value="question">심문 (question)</option>
+            <option value="evidence_present">증거 제시</option>
+            <option value="trust_action">신뢰 액션</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">하위 액션</label>
+          <select class="form-select" id="customSubAction">
+            <option value="fact_pursuit">사실 추궁</option>
+            <option value="motive_search">동기 탐색</option>
+            <option value="empathy_approach">공감 접근</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">에이전트</label>
+        <select class="form-select" id="customAgent">
+          <option value="interrogation">interrogation (공개심문)</option>
+          <option value="interrogation_private">interrogation_private (비공개)</option>
+          <option value="evidence_reaction">evidence_reaction (증거반응)</option>
+        </select>
+      </div>
+      <div id="customCaseInfo" style="font-size:0.78rem;color:var(--text-muted);margin-bottom:10px;"></div>
+      <button class="btn btn-primary" onclick="runCustomEval()">&#x25B6; 실행</button>
+    </div>
+
+    <!-- (2) 직접 입력 -->
+    <div class="card" style="margin-top:16px;">
+      <div class="card-title" style="margin-bottom:12px;">직접 입력 테스트</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">에이전트</label>
+          <select class="form-select" id="manualAgent">
+            <option value="interrogation">interrogation</option>
+            <option value="interrogation_private">interrogation_private</option>
+            <option value="evidence_reaction">evidence_reaction</option>
+            <option value="mediation_reaction">mediation_reaction</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phase</label>
+          <select class="form-select" id="manualPhase"><option value="phase3">phase3</option><option value="phase4">phase4</option><option value="phase5">phase5</option><option value="phase6">phase6</option></select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">User Message (직접 입력)</label>
+        <textarea class="form-textarea" id="manualUserMessage" rows="5" placeholder="현재 액션은 fact_pursuit다.&#10;focusedDisputeId: d-1&#10;재판관 질문: &quot;...&quot;&#10;출력은 JSON 객체 하나만 한다."></textarea>
+      </div>
+      <button class="btn btn-primary" onclick="runManualEval()">&#x25B6; 실행</button>
+    </div>
+
+    <!-- 결과 -->
+    <div class="card" id="customResult" style="margin-top:16px;display:none;">
+      <div class="card-title">결과</div>
+      <div id="customResultContent"></div>
+    </div>
+  </div>
+</div>
+
 </main>
 
 <!-- ═══ Notice Modal ═══ -->
@@ -419,6 +591,10 @@ function loadPage(page) {
     case 'players': loadPlayers(); break;
     case 'history': loadHistory(); break;
     case 'settings': loadSettings(); break;
+    case 'eval': loadEvalCases(); break;
+    case 'casemeta': loadCaseMetaList(); break;
+    case 'seasons': loadSeasons(); break;
+    case 'llmcost': loadLLMStats(); break;
   }
 }
 
@@ -744,7 +920,7 @@ function openAgentModal(data) {
   document.getElementById('agentModalTitle').textContent = data ? `Edit: ${data.name}` : 'New Agent';
   // Context Flags 렌더링
   const flags = data?.context_flags ? (typeof data.context_flags === 'string' ? JSON.parse(data.context_flags) : data.context_flags) : {};
-  const flagKeys = ['include_knownFacts','include_disputeInfo','include_emotionInfo','include_evidenceInfo','include_recentDialogue','include_historyContext','include_phaseTranscript','include_lieStates','include_disputeList','include_speechGuide','include_history'];
+  const flagKeys = ['include_knownFacts','include_disputeInfo','include_emotionInfo','include_evidenceInfo','include_recentDialogue','include_historyContext','include_phaseTranscript','include_lieStates','include_disputeList','include_speechGuide','include_history','include_actionContract','include_trustInfo','include_skillOverlay','include_focusedDisputeId','include_evidenceAxis','include_investigationResult','include_evidenceCatalog','include_witnessBudget','exclude_confidential_from_opponent'];
   const numKeys = ['max_recent_dialogues','max_known_facts','max_history_entries'];
   document.getElementById('agentContextFlags').innerHTML =
     flagKeys.map(k => `<label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" class="ctx-flag" data-key="${k}" ${flags[k] ? 'checked' : ''}> ${k.replace('include_','')}</label>`).join('') +
@@ -980,28 +1156,93 @@ async function loadHistory() {
 // ═══════════════════════════════════════════
 async function loadSettings() {
   const settings = await api('/stats/settings');
-  const keys = Object.keys(settings);
-  document.getElementById('settingsCard').innerHTML = `
-    <div class="card-header"><div class="card-title">Global Settings</div><button class="btn btn-primary" onclick="saveSettings()">Save All</button></div>
-    ${keys.map(k => `
-      <div class="form-group">
-        <label class="form-label">${k}</label>
-        <input class="form-input setting-input" data-key="${k}" value="${escHtml(settings[k])}">
-      </div>
-    `).join('')}
-    <div class="form-group" style="margin-top:16px;">
-      <div class="form-row">
-        <input class="form-input" id="newSettingKey" placeholder="New key">
-        <input class="form-input" id="newSettingVal" placeholder="Value">
-      </div>
-      <button class="btn btn-outline" style="margin-top:8px;" onclick="addSetting()">+ Add Setting</button>
-    </div>
-  `;
+  const keys = Object.keys(settings).sort();
+
+  // 카테고리별 그룹화
+  const groups = {};
+  keys.forEach(k => {
+    const parts = k.split('.');
+    const group = parts.length > 1 ? parts.slice(0, 2).join('.') : 'other';
+    if (!groups[group]) groups[group] = [];
+    groups[group].push(k);
+  });
+
+  const GROUP_LABELS = {
+    'balance.initial': '🎮 초기 리소스',
+    'balance.cost': '⚡ 액션 소비량',
+    'balance.limit': '🔒 사용 제한',
+    'balance.global': '🌐 글로벌 리소스 (상점)',
+    'balance.trust': '🤝 신뢰/감정 수치',
+    'balance.phase': '📊 Phase 최소 턴',
+    'balance.score': '⭐ 점수 기준',
+    'feature': '🔧 기능 플래그',
+    'other': '기타',
+  };
+
+  const FIELD_LABELS = {
+    'balance.initial.investigationTokens': '조사 토큰',
+    'balance.initial.skillPoints': '스킬 포인트',
+    'balance.initial.courtControl': '법정 통제력',
+    'balance.cost.immediate_answer': '즉답요구 (JSON)',
+    'balance.cost.evasion_reading': '회피판독 (JSON)',
+    'balance.cost.separation': '분리심문 (JSON)',
+    'balance.cost.objection': '이의제기 (JSON)',
+    'balance.cost.free_question': '자유질문 (JSON)',
+    'balance.cost.evidence_investigate': '증거조사 (JSON)',
+    'balance.cost.call_witness': '증인소환 (JSON)',
+    'balance.cost.testimony_analysis': 'AI진술분석 (JSON)',
+    'balance.limit.immediate_answer': '즉답요구 (게임당)',
+    'balance.global.freeCap': '무료 캡',
+    'balance.global.paidCap': '유료 캡',
+    'balance.global.rechargeIntervalMs': '자동충전 (ms)',
+    'balance.global.maxAdInvest': '일일 광고 최대(조사)',
+    'balance.global.maxAdSkill': '일일 광고 최대(스킬)',
+    'balance.global.adRewardAmount': '광고당 보상',
+    'balance.trust.empathyQuestion': '공감질문 trust',
+    'balance.trust.confidentialProtection': '비공개보호 trust',
+    'balance.trust.separationRetaliation': '분리심문 retaliationWorry',
+    'balance.trust.excessivePressure': '과도압박 trust',
+    'balance.trust.voluntaryConfession': '자발적 고백 임계값',
+    'balance.trust.confidentialAcceptance': '비공개 수용 임계값',
+    'balance.phase.minTurnsPhase3': 'Phase3 최소 턴',
+    'balance.phase.minTurnsPhase4': 'Phase4 최소 턴',
+    'balance.phase.minTurnsPhase5': 'Phase5 최소 턴',
+    'balance.score.threeStarThreshold': '3성 기준 점수',
+    'feature.llmEnabled': 'LLM 모드',
+    'feature.maintenanceMode': '점검 모드',
+  };
+
+  let html = '<div class="card-header"><div class="card-title">Settings</div><button class="btn btn-primary" onclick="saveSettings()">Save All</button></div>';
+
+  for (const [group, groupKeys] of Object.entries(groups)) {
+    const label = GROUP_LABELS[group] || group;
+    html += `<div style="margin-top:16px;margin-bottom:8px;font-weight:700;font-size:0.95rem;">${label}</div>`;
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">';
+    for (const k of groupKeys) {
+      const fieldLabel = FIELD_LABELS[k] || k.split('.').pop();
+      const val = escHtml(settings[k]);
+      const isToggle = k.startsWith('feature.');
+      if (isToggle) {
+        html += `<div class="form-group" style="grid-column:span 2;"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" class="setting-toggle" data-key="${k}" ${val === 'true' ? 'checked' : ''}> ${fieldLabel}</label></div>`;
+      } else {
+        html += `<div class="form-group"><label class="form-label">${fieldLabel}</label><input class="form-input setting-input" data-key="${k}" value="${val}" style="font-size:0.85rem;"></div>`;
+      }
+    }
+    html += '</div>';
+  }
+
+  html += `<div style="margin-top:20px;border-top:1px solid rgba(61,51,40,0.1);padding-top:12px;">
+    <div class="form-row"><input class="form-input" id="newSettingKey" placeholder="New key"><input class="form-input" id="newSettingVal" placeholder="Value"></div>
+    <button class="btn btn-outline" style="margin-top:8px;" onclick="addSetting()">+ Add Setting</button>
+  </div>`;
+
+  document.getElementById('settingsCard').innerHTML = html;
 }
 
 async function saveSettings() {
   const body = {};
   document.querySelectorAll('.setting-input').forEach(el => { body[el.dataset.key] = el.value; });
+  document.querySelectorAll('.setting-toggle').forEach(el => { body[el.dataset.key] = el.checked ? 'true' : 'false'; });
   await api('/stats/settings', 'PUT', body);
   showToast('Settings saved');
 }
@@ -1030,6 +1271,375 @@ async function init() {
   }
 }
 init();
+
+// ═══════════════════════════════════════════
+// Seasons
+// ═══════════════════════════════════════════
+async function loadSeasons() {
+  const seasons = await api('/seasons');
+  document.getElementById('seasonsList').innerHTML = seasons.length === 0
+    ? '<div style="text-align:center;color:var(--text-muted);padding:40px;">No seasons</div>'
+    : seasons.map(s => `
+      <div class="card" style="margin-bottom:8px;border-left:3px solid ${s.is_active ? 'var(--success)' : 'var(--text-muted)'};">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <span style="font-weight:700;">${s.name}</span>
+            <span style="font-size:0.8rem;color:var(--text-muted);margin-left:8px;">${s.id}</span>
+            ${s.is_active ? '<span style="background:var(--success-bg);color:var(--success);font-size:0.7rem;padding:2px 6px;border-radius:4px;margin-left:8px;">Active</span>' : ''}
+          </div>
+          <div style="font-size:0.8rem;color:var(--text-light);">${s.start_date} ~ ${s.end_date}</div>
+        </div>
+      </div>
+    `).join('');
+}
+
+function openSeasonModal() {
+  const id = prompt('시즌 ID (예: season-2)');
+  if (!id) return;
+  const name = prompt('시즌 이름');
+  const start = prompt('시작일 (YYYY-MM-DD)');
+  const end = prompt('종료일 (YYYY-MM-DD)');
+  const active = confirm('이 시즌을 활성화할까요?');
+  api('/seasons', 'POST', { id, name, start_date: start, end_date: end, is_active: active })
+    .then(() => { showToast('Season created'); loadSeasons(); });
+}
+
+// ═══════════════════════════════════════════
+// LLM Cost
+// ═══════════════════════════════════════════
+async function loadLLMStats() {
+  const stats = await api('/llm-log/stats');
+  document.getElementById('llmStats').innerHTML = `
+    <div class="card-grid" style="grid-template-columns:repeat(4,1fr);">
+      <div class="stat-card"><div class="stat-value">${stats.today?.calls ?? 0}</div><div class="stat-label">Today Calls</div></div>
+      <div class="stat-card"><div class="stat-value">${stats.month?.calls ?? 0}</div><div class="stat-label">Month Calls</div></div>
+      <div class="stat-card"><div class="stat-value">${((stats.month?.inputTokens ?? 0) / 1000).toFixed(1)}K</div><div class="stat-label">Month Input Tokens</div></div>
+      <div class="stat-card"><div class="stat-value">$${stats.month?.estimatedCostUSD ?? '0'}</div><div class="stat-label">Est. Cost (USD)</div></div>
+    </div>
+    ${stats.byAgent?.length ? `
+      <div class="card" style="margin-top:12px;">
+        <div class="card-title">Agent별 (이번 달)</div>
+        <div class="table-wrap"><table><thead><tr><th>Agent</th><th>Calls</th><th>Input</th><th>Output</th></tr></thead><tbody>
+          ${stats.byAgent.map(a => `<tr><td>${a.agent_key}</td><td>${a.cnt}</td><td>${(a.inp/1000).toFixed(1)}K</td><td>${(a.out/1000).toFixed(1)}K</td></tr>`).join('')}
+        </tbody></table></div>
+      </div>
+    ` : ''}
+  `;
+
+  const recent = await api('/llm-log/recent?limit=20');
+  document.getElementById('llmRecentBody').innerHTML = (recent || []).map(r => `
+    <tr><td style="font-size:0.78rem;">${fmtDate(r.created_at)}</td><td>${r.agent_key}</td><td>${r.input_tokens}</td><td>${r.output_tokens}</td><td>${r.duration_ms}ms</td></tr>
+  `).join('') || '<tr><td colspan="5" style="text-align:center;color:var(--text-muted)">No calls yet</td></tr>';
+}
+
+// ═══════════════════════════════════════════
+// Case Meta
+// ═══════════════════════════════════════════
+
+async function loadCaseMetaList() {
+  const cases = await api('/eval/case-list');
+  document.getElementById('caseMetaSelect').innerHTML = '<option value="">-- 사건 선택 (84개) --</option>' +
+    cases.map(c => `<option value="${c.file}">${c.file} — ${c.nameA} vs ${c.nameB} (${c.relationshipType})</option>`).join('');
+}
+
+async function loadCaseMeta() {
+  const key = document.getElementById('caseMetaSelect').value;
+  if (!key) { document.getElementById('caseMetaContent').style.display = 'none'; return; }
+  document.getElementById('caseMetaContent').style.display = 'block';
+
+  const meta = await api('/case-meta/' + key);
+  if (meta) {
+    document.getElementById('cmTagsA').value = (meta.personality_tags_a || []).join(', ');
+    document.getElementById('cmTagsB').value = (meta.personality_tags_b || []).join(', ');
+    document.getElementById('cmContentTags').value = JSON.stringify(meta.content_tags || {}, null, 2);
+    document.getElementById('cmTruthCategory').value = JSON.stringify(meta.truth_category || {}, null, 2);
+    document.getElementById('cmAffinity').value = JSON.stringify(meta.action_affinity || {}, null, 2);
+    document.getElementById('cmPath').value = JSON.stringify(meta.optimal_path || {}, null, 2);
+    document.getElementById('cmNarrative').value = JSON.stringify(meta.narrative_expansion || {}, null, 2);
+    document.getElementById('cmWitnessSpeech').value = JSON.stringify(meta.witness_speech_sample || {}, null, 2);
+  } else {
+    ['cmTagsA','cmTagsB','cmContentTags','cmTruthCategory','cmAffinity','cmPath','cmNarrative','cmWitnessSpeech'].forEach(id => document.getElementById(id).value = '');
+  }
+}
+
+async function saveCaseMeta() {
+  const key = document.getElementById('caseMetaSelect').value;
+  if (!key) return;
+
+  const body = {
+    personality_tags_a: document.getElementById('cmTagsA').value.split(',').map(s => s.trim()).filter(Boolean),
+    personality_tags_b: document.getElementById('cmTagsB').value.split(',').map(s => s.trim()).filter(Boolean),
+    content_tags: tryParseJSON(document.getElementById('cmContentTags').value, {}),
+    truth_category: tryParseJSON(document.getElementById('cmTruthCategory').value, {}),
+    action_affinity: tryParseJSON(document.getElementById('cmAffinity').value, {}),
+    optimal_path: tryParseJSON(document.getElementById('cmPath').value, {}),
+    narrative_expansion: tryParseJSON(document.getElementById('cmNarrative').value, {}),
+    witness_speech_sample: tryParseJSON(document.getElementById('cmWitnessSpeech').value, {}),
+  };
+
+  await api('/case-meta/' + key, 'PUT', body);
+  showToast('Case meta saved: ' + key);
+}
+
+function tryParseJSON(str, fallback) {
+  try { return JSON.parse(str); } catch { return fallback; }
+}
+
+// ═══════════════════════════════════════════
+// Eval Test
+// ═══════════════════════════════════════════
+let evalCases = [];
+let caseList = [];
+let selectedCaseData = null;
+
+function switchEvalTab(tab) {
+  document.getElementById('evalPresetSection').style.display = tab === 'preset' ? 'block' : 'none';
+  document.getElementById('evalCustomSection').style.display = tab === 'custom' ? 'block' : 'none';
+  document.getElementById('evalTabPreset').className = tab === 'preset' ? 'btn btn-primary' : 'btn btn-outline';
+  document.getElementById('evalTabCustom').className = tab === 'custom' ? 'btn btn-primary' : 'btn btn-outline';
+  if (tab === 'custom' && caseList.length === 0) loadCaseList();
+}
+
+async function loadCaseList() {
+  caseList = await api('/eval/case-list');
+  const sel = document.getElementById('customCase');
+  sel.innerHTML = '<option value="">-- 사건 선택 (84개) --</option>' +
+    caseList.map(c => `<option value="${c.file}">${c.file} — ${c.nameA} vs ${c.nameB} (${c.relationshipType})</option>`).join('');
+}
+
+async function onCaseSelect() {
+  const fileKey = document.getElementById('customCase').value;
+  if (!fileKey) { selectedCaseData = null; return; }
+
+  selectedCaseData = await api('/eval/case/' + fileKey);
+
+  // 대상 셀렉트에 이름 표시
+  document.getElementById('customTarget').innerHTML =
+    `<option value="a">A — ${selectedCaseData.partyA.name} (${selectedCaseData.partyA.age}세)</option>` +
+    `<option value="b">B — ${selectedCaseData.partyB.name} (${selectedCaseData.partyB.age}세)</option>`;
+
+  // 대상 변경 시 쟁점 필터링
+  document.getElementById('customTarget').onchange = () => updateDisputeOptions();
+  updateDisputeOptions();
+
+  // 사건 정보 표시
+  document.getElementById('customCaseInfo').innerHTML =
+    `${selectedCaseData.partyA.name}(A, ${selectedCaseData.partyA.age}세) vs ${selectedCaseData.partyB.name}(B, ${selectedCaseData.partyB.age}세) | ` +
+    `쟁점 ${selectedCaseData.disputes.length}개, 증거 ${selectedCaseData.evidence.length}개, 증인 ${selectedCaseData.witnesses.length}명 | ` +
+    `${selectedCaseData.context || ''}`;
+}
+
+function updateDisputeOptions() {
+  if (!selectedCaseData) return;
+  const target = document.getElementById('customTarget').value;
+  const lieConfig = target === 'a' ? selectedCaseData.lieConfigA : selectedCaseData.lieConfigB;
+  const lieDisputeIds = new Set((lieConfig || []).map(l => l.disputeId));
+
+  document.getElementById('customDispute').innerHTML =
+    selectedCaseData.disputes.map(d => {
+      const hasLie = lieDisputeIds.has(d.id);
+      const suffix = hasLie ? '' : ' ⚠️ 무관';
+      return `<option value="${d.id}" ${!hasLie ? 'style="color:#999"' : ''}>${d.id}: ${d.name}${suffix}</option>`;
+    }).join('');
+}
+
+function onActionChange() {
+  const action = document.getElementById('customAction').value;
+  const subSel = document.getElementById('customSubAction');
+  if (action === 'question') {
+    subSel.innerHTML = '<option value="fact_pursuit">사실 추궁</option><option value="motive_search">동기 탐색</option><option value="empathy_approach">공감 접근</option>';
+    document.getElementById('customAgent').value = 'interrogation';
+  } else if (action === 'evidence_present') {
+    const evOpts = selectedCaseData ? selectedCaseData.evidence.map(e => `<option value="${e.id}">${e.id}: ${e.name} [${e.reliability}]</option>`).join('') : '<option>증거 없음</option>';
+    subSel.innerHTML = evOpts;
+    document.getElementById('customAgent').value = 'evidence_reaction';
+  } else if (action === 'trust_action') {
+    subSel.innerHTML = '<option value="confidential_protection">비공개 보호</option><option value="separation">분리 심문</option><option value="emotional_stabilization">감정 안정</option><option value="retaliation_check">보복 확인</option>';
+    document.getElementById('customAgent').value = 'interrogation_private';
+  }
+}
+
+async function runCustomEval() {
+  const body = {
+    caseFileKey: document.getElementById('customCase').value,
+    agentKey: document.getElementById('customAgent').value,
+    phase: document.getElementById('customPhase').value,
+    target: document.getElementById('customTarget').value,
+    disputeId: document.getElementById('customDispute').value,
+    actionType: document.getElementById('customAction').value,
+    questionType: document.getElementById('customAction').value === 'question' ? document.getElementById('customSubAction').value : undefined,
+    trustActionType: document.getElementById('customAction').value === 'trust_action' ? document.getElementById('customSubAction').value : undefined,
+    evidenceId: document.getElementById('customAction').value === 'evidence_present' ? document.getElementById('customSubAction').value : undefined,
+  };
+
+  showCustomResult('실행 중...');
+  try {
+    const result = await api('/eval/custom-run', 'POST', body);
+    renderCustomResult(result);
+  } catch (e) { showCustomResult('오류: ' + e.message); }
+}
+
+async function runManualEval() {
+  const body = {
+    agentKey: document.getElementById('manualAgent').value,
+    phase: document.getElementById('manualPhase').value,
+    userMessageOverride: document.getElementById('manualUserMessage').value,
+    target: 'a', disputeId: '',
+  };
+
+  showCustomResult('실행 중...');
+  try {
+    const result = await api('/eval/custom-run', 'POST', body);
+    renderCustomResult(result);
+  } catch (e) { showCustomResult('오류: ' + e.message); }
+}
+
+function showCustomResult(msg) {
+  const el = document.getElementById('customResult');
+  el.style.display = 'block';
+  document.getElementById('customResultContent').innerHTML = `<div style="color:var(--text-muted);font-size:0.85rem;">${msg}</div>`;
+}
+
+function renderCustomResult(result) {
+  const el = document.getElementById('customResult');
+  el.style.display = 'block';
+
+  const parsed = result.parsedResponse;
+  document.getElementById('customResultContent').innerHTML = `
+    <div style="font-size:0.82rem;margin-bottom:8px;">
+      <span style="font-weight:600;">Agent:</span> ${result.agentKey} &middot;
+      <span style="font-weight:600;">Blocks:</span> ${result.blocksUsed?.length ?? 0} &middot;
+      <span style="font-weight:600;">Prompt:</span> ${result.systemPromptLength ?? 0}자 &middot;
+      <span style="font-weight:600;">Temp:</span> ${result.temperature}
+    </div>
+    ${parsed ? `
+      <div style="margin-bottom:8px;">
+        <span class="badge ${parsed.stance === 'deny' || parsed.stance === 'hedge' ? 'badge-active' : ''}" style="font-size:0.75rem;padding:2px 8px;border-radius:4px;background:var(--bg-hover);margin-right:4px;">stance: ${parsed.stance}</span>
+        <span style="font-size:0.75rem;padding:2px 8px;border-radius:4px;background:var(--bg-hover);margin-right:4px;">mode: ${parsed.responseMode}</span>
+        <span style="font-size:0.75rem;padding:2px 8px;border-radius:4px;background:var(--bg-hover);">truthIds: ${(parsed.mentionedTruthIds||[]).join(',') || '없음'}</span>
+      </div>
+      <div style="background:var(--bg-sidebar);padding:12px;border-radius:8px;font-size:0.85rem;line-height:1.6;">
+        <div style="font-weight:600;margin-bottom:4px;">NPC 응답:</div>
+        <div>${parsed.npcResponse || ''}</div>
+        <div style="color:var(--text-muted);margin-top:6px;font-size:0.78rem;">💭 ${parsed.behaviorHint || ''}</div>
+        ${parsed.requestedFollowup ? `<div style="color:var(--info);margin-top:4px;font-size:0.78rem;">→ ${parsed.requestedFollowup}</div>` : ''}
+      </div>
+    ` : `<div style="color:var(--danger);">JSON 파싱 실패</div>`}
+    <details style="margin-top:10px;">
+      <summary style="cursor:pointer;font-size:0.78rem;color:var(--text-muted);">Raw Response</summary>
+      <pre style="background:var(--bg-sidebar);padding:8px;border-radius:6px;font-size:0.72rem;white-space:pre-wrap;margin-top:4px;">${result.rawResponse || ''}</pre>
+    </details>
+    <details style="margin-top:4px;">
+      <summary style="cursor:pointer;font-size:0.78rem;color:var(--text-muted);">User Message</summary>
+      <pre style="background:var(--bg-sidebar);padding:8px;border-radius:6px;font-size:0.72rem;white-space:pre-wrap;margin-top:4px;">${result.userMessage || ''}</pre>
+    </details>
+  `;
+}
+
+async function loadEvalCases() {
+  evalCases = await api('/eval/cases');
+  renderEvalCards();
+}
+
+function renderEvalCards() {
+  document.getElementById('evalCards').innerHTML = evalCases.map(c => `
+    <div class="card" id="eval-card-${c.id}" style="padding:14px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <span style="font-weight:700;font-size:0.9rem;">${c.id}</span>
+          <span style="font-size:0.82rem;color:var(--text-light);margin-left:8px;">${c.label}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span id="eval-status-${c.id}" style="font-size:0.78rem;color:var(--text-muted);">대기</span>
+          <button class="btn btn-sm btn-primary" onclick="runSingleEval('${c.id}')">실행</button>
+        </div>
+      </div>
+      <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">
+        ${c.agentKey} &middot; ${c.phase} &middot; ${c.target} &middot; ${c.disputeId} &middot;
+        기대: ${(c.expectedStance||[]).join('/')} &middot; ${c.expectedMode || '-'} &middot; 금지${c.forbiddenCount}개
+      </div>
+      <div id="eval-detail-${c.id}" style="margin-top:8px;display:none;"></div>
+    </div>
+  `).join('');
+  document.getElementById('evalSummary').innerHTML = `<div style="font-size:0.85rem;color:var(--text-muted);">총 ${evalCases.length}개 케이스 — 개별 또는 전체 실행 가능</div>`;
+}
+
+async function runSingleEval(caseId) {
+  const statusEl = document.getElementById('eval-status-' + caseId);
+  const detailEl = document.getElementById('eval-detail-' + caseId);
+  statusEl.textContent = '실행 중...';
+  statusEl.style.color = 'var(--info)';
+  detailEl.style.display = 'none';
+
+  try {
+    const result = await api('/eval/run', 'POST', { caseId });
+    statusEl.textContent = result.passed ? '✅ PASS' : '❌ FAIL';
+    statusEl.style.color = result.passed ? 'var(--success)' : 'var(--danger)';
+    document.getElementById('eval-card-' + caseId).style.borderColor = result.passed ? 'var(--success)' : 'var(--danger)';
+
+    detailEl.style.display = 'block';
+    detailEl.innerHTML = `
+      <div style="font-size:0.78rem;">
+        ${(result.checks || []).map(ch => `
+          <div style="padding:2px 0;color:${ch.passed ? 'var(--success)' : 'var(--danger)'}">
+            ${ch.passed ? '✓' : '✗'} ${ch.name}: ${ch.detail}
+          </div>
+        `).join('')}
+        ${result.parsedResponse ? `
+          <details style="margin-top:6px;">
+            <summary style="cursor:pointer;color:var(--text-muted);">응답 상세</summary>
+            <div style="background:var(--bg-sidebar);padding:8px;border-radius:6px;margin-top:4px;font-size:0.75rem;white-space:pre-wrap;">${JSON.stringify(result.parsedResponse, null, 2)}</div>
+          </details>
+        ` : `<div style="color:var(--danger);margin-top:4px;">JSON 파싱 실패: ${(result.rawResponse||'').slice(0,200)}</div>`}
+        ${result.error ? `<div style="color:var(--danger);">Error: ${result.error}</div>` : ''}
+      </div>
+    `;
+  } catch (e) {
+    statusEl.textContent = '❌ 오류';
+    statusEl.style.color = 'var(--danger)';
+    detailEl.style.display = 'block';
+    detailEl.innerHTML = `<div style="color:var(--danger);font-size:0.78rem;">${e.message}</div>`;
+  }
+}
+
+async function runAllEval() {
+  document.getElementById('evalSummary').innerHTML = '<div style="color:var(--info);">전체 실행 중... (15케이스, 1~2분 소요)</div>';
+
+  try {
+    const result = await api('/eval/run-all', 'POST');
+    document.getElementById('evalSummary').innerHTML = `
+      <div class="card-grid" style="grid-template-columns:repeat(4,1fr);">
+        <div class="stat-card"><div class="stat-value">${result.total}</div><div class="stat-label">Total</div></div>
+        <div class="stat-card" style="border-color:var(--success);"><div class="stat-value" style="color:var(--success);">${result.passed}</div><div class="stat-label">Passed</div></div>
+        <div class="stat-card" style="border-color:var(--danger);"><div class="stat-value" style="color:var(--danger);">${result.failed}</div><div class="stat-label">Failed</div></div>
+        <div class="stat-card"><div class="stat-value">${result.passRate}%</div><div class="stat-label">Pass Rate</div></div>
+      </div>
+    `;
+
+    // 각 카드 업데이트
+    for (const r of result.results || []) {
+      const statusEl = document.getElementById('eval-status-' + r.id);
+      const cardEl = document.getElementById('eval-card-' + r.id);
+      const detailEl = document.getElementById('eval-detail-' + r.id);
+      if (!statusEl) continue;
+
+      statusEl.textContent = r.passed ? '✅ PASS' : '❌ FAIL';
+      statusEl.style.color = r.passed ? 'var(--success)' : 'var(--danger)';
+      if (cardEl) cardEl.style.borderColor = r.passed ? 'var(--success)' : 'var(--danger)';
+
+      if (detailEl) {
+        detailEl.style.display = 'block';
+        detailEl.innerHTML = (r.checks || []).map(ch => `
+          <div style="font-size:0.78rem;padding:1px 0;color:${ch.passed ? 'var(--success)' : 'var(--danger)'}">
+            ${ch.passed ? '✓' : '✗'} ${ch.name}: ${ch.detail}
+          </div>
+        `).join('') + (r.error ? `<div style="color:var(--danger);font-size:0.78rem;">Error: ${r.error}</div>` : '');
+      }
+    }
+  } catch (e) {
+    document.getElementById('evalSummary').innerHTML = `<div style="color:var(--danger);">실행 오류: ${e.message}</div>`;
+  }
+}
 </script>
 </body>
 </html>

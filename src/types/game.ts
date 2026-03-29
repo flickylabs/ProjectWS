@@ -44,4 +44,13 @@ export interface ProcessMetrics {
   togglesUsed: number            // 토글 스킬 사용 (회피판독 + 비공개보호)
   bothSidesQuestioned: boolean   // 양측 모두 심문했는지
   confidentialUsed: number       // 비공개 보호 사용 횟수
+  // v2: 상성/경로/품질 지표
+  affinityHits: number           // 상성 맞는 액션 횟수 (best/good)
+  affinityMisses: number         // 상성 안 맞는 액션 횟수 (weak/worst)
+  requiredPathsCovered: number   // optimalPath.requiredActions 충족한 쟁점 수
+  bonusPathsCovered: number      // optimalPath.bonusActions 충족 횟수
+  deepTruthsUnlocked: number    // narrativeExpansion 해금 횟수
+  sameActionRepeats: number      // 같은 쟁점에 같은 액션 3회+ 반복 횟수
+  unsupportedCollapses: number   // hard evidence/trust 없이 S5 달성 (즉답요구 제외)
+  immediateAnswerUsed: number    // 즉답요구로 S5 달성 횟수
 }

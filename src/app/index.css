@@ -110,6 +110,17 @@
     );
 }
 
+/* ── 로딩 애니메이션 (재판봉 흔들림) ── */
+.gavel-loading {
+  display: inline-block;
+  animation: gavelSwing 1s ease-in-out infinite;
+}
+@keyframes gavelSwing {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}
+
 /* ── 스크롤바 ── */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

@@ -47,6 +47,12 @@ export default function SettingsPanel({ onClose }: Props) {
           {/* 게임 설정 */}
           <Section title="게임 설정">
             <Toggle
+              label="배경음악"
+              desc="게임 플레이 중 배경 음악"
+              checked={settings.bgmEnabled ?? true}
+              onChange={(v) => handleChange('bgmEnabled', v)}
+            />
+            <Toggle
               label="효과음"
               desc="Phase 전환, 붕괴, 증거 등 효과음"
               checked={isSoundEnabled()}
