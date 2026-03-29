@@ -9,7 +9,7 @@ import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceU
 import { iga, eunneun } from '../utils/korean'
 import { showToast } from '../components/common/Toast'
 import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
-import { getOptimalPath } from '../data/caseEnrichment'
+import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 
 /** LLM 모드 플래그 — App에서 설정 */
@@ -90,7 +90,24 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   let evDidTransition = false
   for (const disputeId of evDef.proves) {
     const transitioned = state.transitionLie(action.target, disputeId, trigger)
-    if (transitioned) { notifyLieTransition(action.target, disputeId); evDidTransition = true }
+    if (transitioned) {
+      notifyLieTransition(action.target, disputeId); evDidTransition = true
+      const freshAgent = action.target === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+      const newLieState = freshAgent.lieStateMap[disputeId]?.currentState
+      // deepTruthsUnlocked: S4+ 도달 시 narrativeExpansion 존재 여부
+      if (newLieState && (newLieState === 'S4' || newLieState === 'S5')) {
+        const caseKey = normalizeCaseKey(state.caseData?.caseId ?? '')
+        if (getNarrativeExpansion(caseKey, disputeId)) state.trackMetric('deepTruthsUnlocked')
+      }
+      // immediateAnswerUsed: soft_evidence(즉답 요구)로 S5 도달
+      if (newLieState === 'S5' && trigger === 'soft_evidence') {
+        state.trackMetric('immediateAnswerUsed')
+      }
+      // unsupportedCollapses: hard_evidence/trust 없이 S5 도달
+      if (newLieState === 'S5' && trigger !== 'hard_evidence') {
+        state.trackMetric('unsupportedCollapses')
+      }
+    }
   }
   if (evDidTransition) state.trackMetric('evidenceEffective')
 
@@ -203,6 +220,17 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
           if (transitioned) {
             notifyLieTransition(unfavored, dId)
             fresh.trackMetric('lieTransitions')
+            const wAgent = unfavored === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+            const wNewState = wAgent.lieStateMap[dId]?.currentState
+            // unsupportedCollapses: 증인 증언만으로 S5 도달
+            if (wNewState === 'S5') {
+              fresh.trackMetric('unsupportedCollapses')
+            }
+            // deepTruthsUnlocked: S4+ 도달 시 narrativeExpansion 존재 여부
+            if (wNewState && (wNewState === 'S4' || wNewState === 'S5')) {
+              const caseKey = normalizeCaseKey(fresh.caseData?.caseId ?? '')
+              if (getNarrativeExpansion(caseKey, dId)) fresh.trackMetric('deepTruthsUnlocked')
+            }
           }
         }
       }
@@ -290,6 +318,13 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   // 심문 이력 기록
   state.trackInterrogation(action.target, action.disputeId, action.questionType, state.turnCount)
 
+  // sameActionRepeats: 같은 쟁점에 같은 질문 유형 3회+ 반복 감지 (임계 돌파 시 1회만)
+  const updatedHistory = useGameStore.getState().interrogationHistory[action.target]?.[action.disputeId]
+  if (updatedHistory) {
+    const sameCount = updatedHistory.questionTypes.filter((t: string) => t === action.questionType).length
+    if (sameCount === 3) state.trackMetric('sameActionRepeats')
+  }
+
   // 메트릭 추적
   state.trackMetric('questionsAsked')
   // bothSidesQuestioned: A와 B 모두 질문한 적 있는지 체크
@@ -324,8 +359,16 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         state.trackMetric('lieTransitions')
         // S5 도달 체크
         const freshAgent = action.target === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
-        if (freshAgent.lieStateMap[action.disputeId]?.currentState === 'S5') {
+        const qNewState = freshAgent.lieStateMap[action.disputeId]?.currentState
+        if (qNewState === 'S5') {
           state.trackMetric('liesCollapsed')
+          // unsupportedCollapses: 질문만으로 S5 도달 (hard_evidence/trust 아님)
+          state.trackMetric('unsupportedCollapses')
+        }
+        // deepTruthsUnlocked: S4+ 도달 시 narrativeExpansion 존재 여부
+        if (qNewState && (qNewState === 'S4' || qNewState === 'S5')) {
+          const caseKey = normalizeCaseKey(state.caseData?.caseId ?? '')
+          if (getNarrativeExpansion(caseKey, action.disputeId)) state.trackMetric('deepTruthsUnlocked')
         }
         break
       }
@@ -452,8 +495,18 @@ async function handleTrustAction(action: Extract<PlayerAction, { type: 'trust_ac
   const agent = action.target === 'a' ? freshState.agentA : freshState.agentB
   for (const [disputeId, entry] of Object.entries(agent.lieStateMap)) {
     if (entry.collapseViaTrust && entry.currentState !== 'S5') {
-      const transitioned = freshState.transitionLie(action.target, disputeId, `trust_${action.actionType}`)
-      if (transitioned) notifyLieTransition(action.target, disputeId)
+      const trustTrigger = `trust_${action.actionType}`
+      const transitioned = freshState.transitionLie(action.target, disputeId, trustTrigger)
+      if (transitioned) {
+        notifyLieTransition(action.target, disputeId)
+        const tAgent = action.target === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+        const tNewState = tAgent.lieStateMap[disputeId]?.currentState
+        // deepTruthsUnlocked: S4+ 도달 시 narrativeExpansion 존재 여부
+        if (tNewState && (tNewState === 'S4' || tNewState === 'S5')) {
+          const caseKey = normalizeCaseKey(freshState.caseData?.caseId ?? '')
+          if (getNarrativeExpansion(caseKey, disputeId)) freshState.trackMetric('deepTruthsUnlocked')
+        }
+      }
     }
   }
 

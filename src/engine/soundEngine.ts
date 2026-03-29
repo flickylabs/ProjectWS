@@ -124,3 +124,46 @@ export function playDialogueTick() {
 export function playObjection() {
   playFile('/sfx/alert.mp3', 0.4)
 }
+
+// ── BGM 시스템 ──
+
+let bgmAudio: HTMLAudioElement | null = null
+let bgmEnabled = (() => {
+  try { return localStorage.getItem('solomon-bgm') !== 'off' } catch { return true }
+})()
+let currentBgmTrack = ''
+
+export function setBgmEnabled(v: boolean) {
+  bgmEnabled = v
+  try { localStorage.setItem('solomon-bgm', v ? 'on' : 'off') } catch { /* */ }
+  if (!v && bgmAudio) {
+    bgmAudio.pause()
+  } else if (v && bgmAudio && currentBgmTrack) {
+    bgmAudio.play().catch(() => {})
+  }
+}
+export function isBgmEnabled() { return bgmEnabled }
+
+/** BGM 재생 (루프). 같은 트랙이면 무시. */
+export function playBgm(track: string, volume = 0.15) {
+  if (currentBgmTrack === track && bgmAudio && !bgmAudio.paused) return
+  stopBgm()
+  if (!bgmEnabled) { currentBgmTrack = track; return }
+  try {
+    bgmAudio = new Audio(track)
+    bgmAudio.loop = true
+    bgmAudio.volume = volume
+    bgmAudio.play().catch(() => {})
+    currentBgmTrack = track
+  } catch { /* */ }
+}
+
+/** BGM 정지 */
+export function stopBgm() {
+  if (bgmAudio) {
+    bgmAudio.pause()
+    bgmAudio.currentTime = 0
+    bgmAudio = null
+  }
+  currentBgmTrack = ''
+}

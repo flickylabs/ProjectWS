@@ -38,6 +38,7 @@ export interface WitnessSpeechSamples {
 
 export interface CaseEnrichment {
   personalityTags?: CasePersonalityTags
+  contentTags?: Record<string, string[]>
   actionAffinity?: Record<string, DisputeActionAffinity>
   optimalPath?: Record<string, DisputeOptimalPath>
   narrativeExpansion?: Record<string, NarrativeExpansionEntry>
@@ -83,6 +84,10 @@ export function getWitnessSpeechSamples(caseId: string, witnessId: string): stri
 
 export function getTruthCategory(caseId: string, truthId: string): string | null {
   return ENRICHMENT_DATA[caseId]?.truthCategory?.[truthId] ?? null
+}
+
+export function getContentTags(caseId: string, disputeId: string): string[] | null {
+  return ENRICHMENT_DATA[caseId]?.contentTags?.[disputeId] ?? null
 }
 
 export function hasEnrichment(caseId: string): boolean {

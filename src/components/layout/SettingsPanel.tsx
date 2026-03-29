@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getSettings, updateSettings, loadSave } from '../../hooks/useLocalStorage'
 import { checkConnection, getProviderName } from '../../engine/llmClient'
-import { isSoundEnabled, setSoundEnabled } from '../../engine/soundEngine'
+import { isSoundEnabled, setSoundEnabled, isBgmEnabled, setBgmEnabled } from '../../engine/soundEngine'
 import { useGameStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
@@ -49,8 +49,8 @@ export default function SettingsPanel({ onClose }: Props) {
             <Toggle
               label="배경음악"
               desc="게임 플레이 중 배경 음악"
-              checked={settings.bgmEnabled ?? true}
-              onChange={(v) => handleChange('bgmEnabled', v)}
+              checked={isBgmEnabled()}
+              onChange={(v) => setBgmEnabled(v)}
             />
             <Toggle
               label="효과음"
