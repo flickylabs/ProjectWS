@@ -10,6 +10,7 @@ import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentMan
 import { getRelationLabel } from './llmSpeechGuide'
 import { WITNESS_BUDGETS } from '../data/witnessBudget'
 import { normalizeCaseKey } from '../utils/caseHelpers'
+import { getWitnessSpeechSamples } from '../data/caseEnrichment'
 import type { CaseData } from '../types'
 import type { AgentState } from '../types'
 import type { ThirdParty } from '../types/character'
@@ -147,6 +148,8 @@ function buildWitnessVars(
     witnessAddressA: wp?.addressA ?? caseData.duo.partyA.name + '씨',
     witnessAddressB: wp?.addressB ?? caseData.duo.partyB.name + '씨',
     witnessSpeechStyle: wp?.speechStyle ?? '조심스럽게 사실 위주로 말한다.',
+    // few-shot 증언 예시 (보강 데이터)
+    witnessSpeechSamples: buildSpeechSampleBlock(caseData, witness.id),
     // 최근 대화 (witness_dialogue_rules에서는 사용 안 하지만 참고용)
     recentDialogue: recentDialogueStr,
   }
@@ -236,6 +239,18 @@ function formatWitnessBudget(caseData: CaseData, witnessId: string): string {
     budget.forbidden.forEach(s => parts.push(`- ${s}`))
   }
   return parts.join('\n')
+}
+
+/* ── 증인 말투 few-shot 예시 (보강 데이터) ── */
+
+function buildSpeechSampleBlock(caseData: CaseData, witnessId: string): string {
+  const caseKey = normalizeCaseKey(caseData)
+  const samples = getWitnessSpeechSamples(caseKey, witnessId)
+  if (!samples || samples.length === 0) return ''
+
+  const lines = ['## 이 증인의 말투 예시 (이 톤을 참고하세요)']
+  samples.forEach((s, i) => lines.push(`예시${i + 1}: "${s}"`))
+  return lines.join('\n')
 }
 
 /* ── LLM 실패 시 폴백 증언 ──────────────── */

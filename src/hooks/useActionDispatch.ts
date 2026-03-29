@@ -8,6 +8,9 @@ import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types
 import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
 import { iga, eunneun } from '../utils/korean'
 import { showToast } from '../components/common/Toast'
+import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
+import { getOptimalPath } from '../data/caseEnrichment'
+import { normalizeCaseKey } from '../utils/caseHelpers'
 
 /** LLM 모드 플래그 — App에서 설정 */
 let useLLMMode = false
@@ -296,22 +299,44 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     if (otherAsked) state.trackMetric('bothSidesQuestioned')
   }
 
-  // lie 전이 시도
+  // lie 전이 시도 — actionAffinity 점수로 게이팅
   const triggers = questionTypeToTrigger(action.questionType)
   let didTransition = false
-  for (const trigger of triggers) {
-    const transitioned = state.transitionLie(action.target, action.disputeId, trigger)
-    if (transitioned) {
-      notifyLieTransition(action.target, action.disputeId)
-      didTransition = true
-      state.trackMetric('lieTransitions')
-      // S5 도달 체크
-      const agent = action.target === 'a' ? state.agentA : state.agentB
-      if (agent.lieStateMap[action.disputeId]?.currentState === 'S5') {
-        state.trackMetric('liesCollapsed')
+
+  // 상성 점수 조회: 해당 쟁점의 lieMotive × 질문 유형
+  const agent = action.target === 'a' ? state.agentA : state.agentB
+  const lieEntry = agent.lieStateMap[action.disputeId]
+  const affinityScore = lieEntry ? getAffinityScore(lieEntry.lieMotive, action.questionType) : 1.0
+  const affinityGrade = getAffinityGrade(affinityScore)
+
+  // 상성 게이팅: worst(0.70 미만)이면 전이 확률 30%, weak(0.70~0.84)이면 60%, 나머지 100%
+  const affinityRoll = Math.random()
+  const affinityPass = affinityGrade === 'worst' ? affinityRoll < 0.3
+    : affinityGrade === 'weak' ? affinityRoll < 0.6
+    : true
+
+  if (affinityPass) {
+    for (const trigger of triggers) {
+      const transitioned = state.transitionLie(action.target, action.disputeId, trigger)
+      if (transitioned) {
+        notifyLieTransition(action.target, action.disputeId)
+        didTransition = true
+        state.trackMetric('lieTransitions')
+        // S5 도달 체크
+        const freshAgent = action.target === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+        if (freshAgent.lieStateMap[action.disputeId]?.currentState === 'S5') {
+          state.trackMetric('liesCollapsed')
+        }
+        break
       }
-      break
     }
+  }
+
+  // 상성 메트릭 추적
+  if (affinityGrade === 'best' || affinityGrade === 'good') {
+    state.trackMetric('affinityHits')
+  } else if (affinityGrade === 'weak' || affinityGrade === 'worst') {
+    state.trackMetric('affinityMisses')
   }
 
   if (action.questionType === 'empathy_approach') {
@@ -401,6 +426,9 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       await resolveAndApply(opponentAction, opponent)
     }
   }
+
+  // ── optimalPath 추적 ──
+  trackOptimalPath(action.disputeId, action.questionType)
 
   useGameStore.getState().incrementTurn()
 }
@@ -833,4 +861,21 @@ function buildTrustActionText(actionType: string, target: PartyId): string {
     separation: `상대측은 발언을 중단해 주십시오.`,
   }
   return t[actionType] ?? ''
+}
+
+/** optimalPath 추적 — 액션이 필수/보너스 경로에 해당하는지 체크 */
+function trackOptimalPath(disputeId: string, actionType: string) {
+  const state = useGameStore.getState()
+  if (!state.caseData) return
+  const caseKey = normalizeCaseKey(state.caseData.caseId)
+  const path = getOptimalPath(caseKey, disputeId)
+  if (!path) return
+
+  // requiredActions 체크 (예: ["fact_pursuit", "evidence_present:e-1"])
+  const matchesRequired = path.requiredActions.some(ra => ra === actionType || ra.startsWith(actionType))
+  if (matchesRequired) state.trackMetric('requiredPathsCovered')
+
+  // bonusActions 체크
+  const matchesBonus = path.bonusActions.some(ba => ba === actionType || ba.startsWith(actionType))
+  if (matchesBonus) state.trackMetric('bonusPathsCovered')
 }

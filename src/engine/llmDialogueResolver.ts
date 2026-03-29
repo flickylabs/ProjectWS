@@ -17,6 +17,7 @@ import type { CaseData } from '../types'
 import { useGameStore } from '../store/useGameStore'
 import { TRUTH_POLICIES, getFallbackPolicy, type LieStateKey } from '../data/truthPolicy'
 import { normalizeCaseKey, getRelationshipType } from '../utils/caseHelpers'
+import { getPersonalityTags, getActionAffinityForDispute, getNarrativeExpansion } from '../data/caseEnrichment'
 
 export async function resolveLLMDialogue(
   action: PlayerAction,
@@ -299,6 +300,50 @@ function buildSystemPrompt(
     emotionInfo += `\n말버릇 발동: ${activeTell.pattern}`
   }
 
+  // ── 보강 데이터: 성격 태그 + 상성 힌트 + 서사 확장 ──
+  let enrichmentInfo = ''
+  const caseKey = normalizeCaseKey(caseData.caseId)
+
+  // 성격 태그 → NPC 반응 패턴 지시
+  const pTags = getPersonalityTags(caseKey)
+  const myTags = pTags?.[party]
+  if (myTags && myTags.length > 0) {
+    const tagDescriptions: Record<string, string> = {
+      confrontational: '공격적으로 반격한다', passive_aggressive: '겉으로는 순응하지만 우회적으로 공격한다',
+      gaslighting: '상대의 기억이나 판단을 의심하게 만든다', denial_heavy: '강하게 부정하며 버틴다',
+      blame_shifting: '책임을 상대에게 돌린다', overly_cooperative: '지나치게 협조적으로 보이려 한다',
+      martyr_complex: '자신을 희생자로 연출한다', detail_obsessed: '사소한 디테일에 집착한다',
+      emotionally_volatile: '감정 기복이 심하다', calculated_calm: '차분하게 계산적으로 대응한다',
+      trust_broken: '신뢰가 깨진 상태로 방어적이다', grudge_holding: '과거 원한을 쉽게 놓지 않는다',
+      conflict_avoidant: '갈등을 피하려 한다', authority_challenging: '권위에 도전적이다',
+      victim_identity: '자신이 피해자라는 정체성이 강하다', manipulative: '상대를 교묘하게 조종한다',
+      shame_sensitive: '수치심에 극도로 민감하다', face_sensitive: '체면을 매우 중시한다',
+      fairness_obsessed: '공정함에 집착한다', cold_logical: '감정을 배제하고 논리로만 대응한다',
+      selective_quote: '자기에게 유리한 부분만 인용한다', timeline_padding: '시간 순서를 자기 유리하게 조정한다',
+      counter_attack: '방어 대신 역공으로 전환한다', avoidant: '질문을 회피하거나 주제를 돌린다',
+      relationship_preserving: '관계를 지키려고 양보한다', retaliation_sensitive: '보복을 두려워한다',
+      privacy_sensitive: '사생활 노출에 극도로 예민하다',
+    }
+    const descs = myTags.map(t => tagDescriptions[t] || t).join(', ')
+    enrichmentInfo += `\n## 성격 특성\n당신의 대응 패턴: ${descs}\n이 성격 특성이 답변 톤과 전략에 반영되어야 합니다.`
+  }
+
+  // 상성 힌트 → NPC가 특정 질문 유형에 저항/취약하도록 유도
+  if (dispute) {
+    const dAffinity = getActionAffinityForDispute(caseKey, dispute.id)
+    if (dAffinity) {
+      enrichmentInfo += `\n## 이 쟁점에서의 반응 경향`
+      enrichmentInfo += `\n- 가장 위협적인 접근: ${dAffinity.bestActionHint}`
+      enrichmentInfo += `\n- 가장 비효과적인 접근에 대한 반응: ${dAffinity.worstActionReaction}`
+    }
+
+    // 서사 확장: 해금 조건 충족 시 추가 맥락
+    const narr = getNarrativeExpansion(caseKey, dispute.id)
+    if (narr && lieEntry && lieEntry.currentState >= 'S4') {
+      enrichmentInfo += `\n## 깊은 맥락 (S4+ 해금)\n${narr.deeperReveal}`
+    }
+  }
+
   // 제시된 증거
   let evidenceInfo = ''
   if (presentedEvidence.length > 0) {
@@ -398,6 +443,7 @@ function buildSystemPrompt(
     knownFacts,
     disputeInfo,
     emotionInfo,
+    enrichmentInfo,
     evidenceInfo,
     recentDialogue: recentDialogueStr,
     historyContext,
