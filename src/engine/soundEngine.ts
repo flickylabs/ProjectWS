@@ -4,7 +4,9 @@
  */
 
 let audioCtx: AudioContext | null = null
-let enabled = true
+let enabled = (() => {
+  try { return localStorage.getItem('solomon-sfx') !== 'off' } catch { return true }
+})()
 
 function getAudioCtx(): AudioContext {
   if (!audioCtx) {
@@ -13,7 +15,10 @@ function getAudioCtx(): AudioContext {
   return audioCtx
 }
 
-export function setSoundEnabled(v: boolean) { enabled = v }
+export function setSoundEnabled(v: boolean) {
+  enabled = v
+  try { localStorage.setItem('solomon-sfx', v ? 'on' : 'off') } catch { /* */ }
+}
 export function isSoundEnabled() { return enabled }
 
 // ── MP3 파일 재생 ──

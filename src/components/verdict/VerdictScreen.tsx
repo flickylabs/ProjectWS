@@ -60,8 +60,8 @@ export default function VerdictScreen() {
     })
     // 캠페인 Stage 진행 (관계 유형으로 매칭)
     const stageMap: Record<string, number> = {
-      spouse: 1, neighbor: 2, workplace: 3, boss_employee: 3,
-      partnership: 4, family: 5, tenant: 6, tenant_landlord: 6, friend: 7,
+      neighbor: 1, spouse: 2, boss_employee: 3,
+      partnership: 4, family: 5, tenant_landlord: 6,
     }
     const stage = stageMap[caseData.duo.relationshipType]
     if (stage) completeStage(stage, score.total)

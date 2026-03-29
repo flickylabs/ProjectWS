@@ -21,6 +21,7 @@ export default function ResultScreen() {
 
   // 홈으로
   const handleHome = () => {
+    useGameStore.getState().clearSavedGame()
     useGameStore.setState({ caseData: null })
     useGameStore.getState().setPhase(GamePhase.Phase0_CaseIntro)
     useGameStore.getState().clearDialogue()

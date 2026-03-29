@@ -13,6 +13,7 @@ export default function TitleReveal() {
   const skillUseCounts = useGameStore((s) => s.skillUseCounts)
   const caseData = useGameStore((s) => s.caseData)
 
+  const processMetrics = useGameStore((s) => s.processMetrics)
   const [titles, setTitles] = useState<Title[]>([])
   const [newTitles, setNewTitles] = useState<Set<string>>(new Set())
 
@@ -26,7 +27,7 @@ export default function TitleReveal() {
     const meta = {
       turnsUsed: turnCount,
       evidencePresented: Object.values(evidenceStates).filter((e) => e.presented).length,
-      trustActionsUsed: 0, // TODO: 추적 필요
+      trustActionsUsed: processMetrics.trustActionsUsed,
       skillsUsed: Object.values(skillUseCounts).reduce((a, b) => a + b, 0),
       collapsedDisputes: collapsedA + collapsedB,
       totalDisputes: totalLies,

@@ -12,4 +12,16 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (id.includes('node_modules/react')) return 'vendor-react'
+          if (id.includes('node_modules/zustand')) return 'vendor-zustand'
+          if (id.includes('/src/data/') && (id.includes('truthPolicy') || id.includes('witnessBudget') || id.includes('actionAffinity') || id.includes('evalCases'))) return 'case-data'
+          if (id.includes('/src/engine/') && (id.includes('llmDialogue') || id.includes('llmFreeQuestion') || id.includes('witnessEngine') || id.includes('verdictEngine') || id.includes('evalRunner'))) return 'engine'
+        },
+      },
+    },
+  },
 })

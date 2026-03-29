@@ -417,6 +417,7 @@ async function handleTrustAction(action: Extract<PlayerAction, { type: 'trust_ac
   })
 
   applyTrustEffect(action.actionType, action.target)
+  state.trackMetric('trustActionsUsed')
 
   // 신뢰 행동도 lie 전이 트리거 가능
   const freshState = useGameStore.getState()
