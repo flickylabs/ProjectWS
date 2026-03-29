@@ -1,0 +1,32 @@
+{
+  "bestActionHint_unique": true,
+  "worstActionReaction_unique": true,
+  "truthCategory_counts": {
+    "core_fact": 13,
+    "circumstantial": 5,
+    "hidden_motive": 6,
+    "subjective_claim": 4,
+    "emotional_context": 2
+  },
+  "truthCategory_min_types": true,
+  "truthCategory_max_ratio": 0.43333333333333335,
+  "personality_combo_unique": true,
+  "face_sensitive_count": 3,
+  "max_speech_similarity_to_canState": 0.41,
+  "max_speech_similarity_detail": {
+    "case": "workplace-07",
+    "tp": "tp-2",
+    "sample": "조사실에서 확인한 건 단순히 글이 있었단 정도가 아닙니다. 게시판 보존 시각, 태욱씨가 먼저 의심을 굳힌 장면, 세린씨가 보복을 걱정한 진술이 시간순으로 맞물려 있었습니다.",
+    "canState": "게시글 보존본, 핫라인 접수 순서, 태욱의 초기 의심 발언, 세린의 보복 우려 진술을 함께 확인할 수 있다.",
+    "similarity": 0.41
+  },
+  "forbidden_exact_duplicates_ge3": 0,
+  "untouched_sections_preserved": {
+    "truthPolicies": true,
+    "contentTags": true,
+    "optimalPath": true,
+    "narrativeExpansion": true
+  },
+  "action_static_fields_preserved": true,
+  "witnessBudget_name_canState_preserved": true
+}

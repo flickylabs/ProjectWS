@@ -1,0 +1,879 @@
+{
+  "truthPolicies": {
+    "spouse-01": {
+      "a": {
+        "d-1": {
+          "disputeName": "지석의 비밀 송금 280만원",
+          "anchorTruthIds": [
+            "t-1"
+          ],
+          "notes": "t-1은 목적 고백이자 핵심 비밀이다. t-3은 최민정 관련 오해를 풀어주지만 d-3까지 열어버리므로 S2 이후에만 허용한다. t-5는 규칙 위반의 공동책임 프레임으로 S4 이후 허용.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [
+              "t-3"
+            ],
+            "S3": [
+              "t-3"
+            ],
+            "S4": [
+              "t-3",
+              "t-5"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [
+                "t-3"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [
+                "t-3"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-3",
+                "t-5"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-4"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        },
+        "d-3": {
+          "disputeName": "최민정은 외도 상대인가",
+          "anchorTruthIds": [
+            "t-3"
+          ],
+          "notes": "relationship_maintenance + collapseViaTrust=true. S4 전에는 오해를 풀 핵심(t-3)을 숨긴다. S4부터 t-1과 함께 맥락 고백 허용.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [],
+            "S3": [],
+            "S4": [
+              "t-1",
+              "t-3"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-1",
+                "t-3"
+              ],
+              "forbidden": [
+                "t-2",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        },
+        "d-5": {
+          "disputeName": "100만원 사전 상의 약속 위반",
+          "anchorTruthIds": [
+            "t-5"
+          ],
+          "notes": "t-5는 '쌍방 위반'이라 현재 truthTable granularity로는 거의 최종 결론급이다. 낮은 상태에서는 t-1 같은 자기 사례만 일부 허용하고 t-5는 S4 이후 허용.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [
+              "t-1"
+            ],
+            "S3": [
+              "t-1"
+            ],
+            "S4": [
+              "t-1",
+              "t-5"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [
+                "t-1"
+              ],
+              "forbidden": [
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [
+                "t-1"
+              ],
+              "forbidden": [
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-1",
+                "t-5"
+              ],
+              "forbidden": [
+                "t-2",
+                "t-3",
+                "t-4"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        }
+      },
+      "b": {
+        "d-2": {
+          "disputeName": "세린의 새벽 휴대폰 열람",
+          "anchorTruthIds": [
+            "t-2"
+          ],
+          "notes": "t-2는 무단열람+제3자공유까지 포함한 핵심 비밀이다. 대신 왜곡 원인이 된 오해(t-3)만 S2부터 제한 허용.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [
+              "t-3"
+            ],
+            "S3": [
+              "t-3"
+            ],
+            "S4": [
+              "t-3",
+              "t-5"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [
+                "t-3"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [
+                "t-3"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-3",
+                "t-5"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-4"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        },
+        "d-4": {
+          "disputeName": "세린의 우회 송금 150만원",
+          "anchorTruthIds": [
+            "t-4"
+          ],
+          "notes": "third_party_protection이라 제3자(동생) 관련 진실을 강하게 숨긴다. 낮은 상태에서는 truthId 공개를 비우고, S3 이후에도 mutual-rule 프레임(t-5)까지만 허용.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [],
+            "S3": [
+              "t-5"
+            ],
+            "S4": [
+              "t-5"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [
+                "t-5"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-5"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        },
+        "d-5": {
+          "disputeName": "100만원 사전 상의 약속 위반",
+          "anchorTruthIds": [
+            "t-5"
+          ],
+          "notes": "B는 자기 사례(t-4)를 먼저 인정할 수 있지만 '쌍방 위반'이라는 결론형 t-5는 S4 이후에만 허용.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [
+              "t-4"
+            ],
+            "S3": [
+              "t-4"
+            ],
+            "S4": [
+              "t-4",
+              "t-5"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [
+                "t-4"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [
+                "t-4"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-5"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "witnessBudgets": {
+    "spouse-01": {
+      "tp-1": {
+        "name": "오미숙 (세린의 어머니)",
+        "canState": [
+          "추석 연휴에 본인 돌봄 공백이 생겨 가족이 간병 인력을 알아보던 분위기가 있었다.",
+          "세린이 동생 돈 문제를 남편에게 바로 말하지 못해 마음이 급해 보였다는 점은 느꼈다."
+        ],
+        "uncertain": [
+          "280만원 송금의 정확한 시각과 명목은 직접 보지 못했다.",
+          "최민정을 만난 밤 골목 접촉의 실제 목적은 전해 들은 수준이다."
+        ],
+        "forbidden": [
+          "세린의 휴대폰 무단 열람과 제3자 캡처 공유의 구체적 경위",
+          "정우성 계좌를 거친 150만원의 실제 금융 흐름",
+          "지석이 실제로 어떤 설명을 하려다 말았는지에 대한 단정"
+        ]
+      },
+      "tp-2": {
+        "name": "이재훈 (지석의 직장 동료)",
+        "canState": [
+          "지석이 추석 직전에 재가돌봄센터 견적과 예약 가능 여부를 여러 차례 문의했다.",
+          "업무 중에도 가족 돌봄 문제 때문에 급히 통화하거나 일정을 조정하는 모습이 있었다."
+        ],
+        "uncertain": [
+          "280만원을 실제로 언제 누구에게 송금했는지는 직접 보지 못했다.",
+          "세린이 왜 외도를 의심했는지, 휴대폰을 어떻게 열람했는지는 모른다."
+        ],
+        "forbidden": [
+          "세린의 동생 월세 문제와 우회 송금 내역",
+          "지석과 최민정의 실제 상담 장소·시각의 최종 확정",
+          "부부의 100만원 사전 상의 약속의 구체 조항"
+        ]
+      },
+      "tp-3": {
+        "name": "최민정 (재가돌봄센터 상담팀장)",
+        "canState": [
+          "지석이 280만원을 추석 연휴 간병 예약금으로 납부했고 대상자가 오미숙이었다.",
+          "문제의 만남은 센터 후문 상담 일정이었고 사적 밀회가 아니었다.",
+          "예약서, 직인, 수납 기록 등 기관 원본으로 그 사실을 확인할 수 있다."
+        ],
+        "uncertain": [
+          "부부 사이에 100만원 이상 사전 상의 약속이 어떻게 정해졌는지는 모른다.",
+          "세린이 어떤 경위로 외도를 의심하게 됐는지는 직접 모른다."
+        ],
+        "forbidden": [
+          "세린의 휴대폰 열람·캡처 공유 경위",
+          "세린 동생의 월세 사정과 150만원 우회 송금 세부",
+          "부부 감정관계나 외도 의심의 심리 해석"
+        ]
+      },
+      "tp-4": {
+        "name": "정우성 (세린의 대학 동기)",
+        "canState": [
+          "세린이 자신에게 150만원을 세린 동생 쪽으로 넘겨 달라고 요청했다.",
+          "세린이 '지석한테는 추석 지나고 말할게'라는 취지로 말하며 중간 전달을 부탁했다."
+        ],
+        "uncertain": [
+          "세린이 왜 그 시점에 그렇게까지 급했는지 속마음은 정확히 모른다.",
+          "지석의 280만원 송금 목적과 최민정 관련 진실은 전해 들은 바 없다."
+        ],
+        "forbidden": [
+          "지석의 휴대폰 무단 열람 문제",
+          "최민정과 지석의 상담 장소·상담 내용",
+          "부부의 상호 비난 중 어느 쪽이 더 책임이 큰지에 대한 단정"
+        ]
+      }
+    }
+  },
+  "personalityTags": {
+    "spouse-01": {
+      "a": [
+        "avoidant",
+        "shame_sensitive",
+        "timeline_padding",
+        "relationship_preserving"
+      ],
+      "b": [
+        "confrontational",
+        "selective_quote",
+        "face_sensitive",
+        "counter_attack"
+      ]
+    }
+  },
+  "contentTags": {
+    "spouse-01": {
+      "d-1": [
+        "financial",
+        "family_care",
+        "secret_keeping",
+        "promise_violation"
+      ],
+      "d-2": [
+        "privacy",
+        "trust_breach",
+        "third_party_risk"
+      ],
+      "d-3": [
+        "intimacy_suspicion",
+        "misleading_soft_evidence",
+        "hard_evidence_available",
+        "sequence_sensitive"
+      ],
+      "d-4": [
+        "financial",
+        "third_party_risk",
+        "secret_keeping",
+        "promise_violation"
+      ],
+      "d-5": [
+        "financial",
+        "promise_violation",
+        "trust_breach",
+        "hard_evidence_available"
+      ]
+    }
+  },
+  "truthCategory": {
+    "spouse-01": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "fact"
+    }
+  },
+  "actionAffinity": {
+    "spouse-01": {
+      "d-1": {
+        "bestAction": "motive_search",
+        "worstAction": "fact_pursuit",
+        "actionScores": {
+          "fact_pursuit": 0.86,
+          "motive_search": 1.2,
+          "empathy_approach": 1.05,
+          "evidence_present": 1,
+          "separation": 1,
+          "confidential_protection": 1.15
+        },
+        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
+        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+      },
+      "d-2": {
+        "bestAction": "evidence_present",
+        "worstAction": "empathy_approach",
+        "actionScores": {
+          "fact_pursuit": 1.15,
+          "motive_search": 0.95,
+          "empathy_approach": 0.75,
+          "evidence_present": 1.25,
+          "separation": 1.05,
+          "confidential_protection": 1.15
+        },
+        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
+        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+      },
+      "d-3": {
+        "bestAction": "confidential_protection",
+        "worstAction": "fact_pursuit",
+        "actionScores": {
+          "fact_pursuit": 0.77,
+          "motive_search": 0.95,
+          "empathy_approach": 1.25,
+          "evidence_present": 1.21,
+          "separation": 1,
+          "confidential_protection": 1.3
+        },
+        "bestActionHint": "공개 망신과 2차 확산을 막아 준다는 신호가 있어야 숨긴 맥락이 나온다.",
+        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+      },
+      "d-4": {
+        "bestAction": "confidential_protection",
+        "worstAction": "fact_pursuit",
+        "actionScores": {
+          "fact_pursuit": 0.81,
+          "motive_search": 0.95,
+          "empathy_approach": 1.1,
+          "evidence_present": 0.9,
+          "separation": 1.25,
+          "confidential_protection": 1.3
+        },
+        "bestActionHint": "제3자·민감정보 노출 불안을 먼저 눌러야 입을 연다. 보호 장치를 약속할수록 진술 폭이 넓어진다.",
+        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+      },
+      "d-5": {
+        "bestAction": "evidence_present",
+        "worstAction": "empathy_approach",
+        "actionScores": {
+          "fact_pursuit": 1.26,
+          "motive_search": 0.95,
+          "empathy_approach": 0.75,
+          "evidence_present": 1.3,
+          "separation": 1,
+          "confidential_protection": 1
+        },
+        "bestActionHint": "금액·시각·흐름이 남는 쟁점이라 기록을 맞대면 변명보다 숫자가 먼저 무너진다.",
+        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+      }
+    }
+  },
+  "optimalPath": {
+    "spouse-01": {
+      "d-1": {
+        "pathGoal": "collapse_lie",
+        "requiredActions": [
+          "fact_pursuit",
+          "evidence_present:e-1"
+        ],
+        "bonusActions": [
+          "motive_search"
+        ],
+        "triggerMapping": {
+          "fact_pursuit": "bank_transfer_question",
+          "evidence_present:e-1": "e-1_presented",
+          "motive_search": "purpose_followup"
+        },
+        "pathBonus": 8
+      },
+      "d-2": {
+        "pathGoal": "collapse_lie",
+        "requiredActions": [
+          "fact_pursuit",
+          "investigate_only:e-3"
+        ],
+        "bonusActions": [
+          "confidential_protection"
+        ],
+        "triggerMapping": {
+          "fact_pursuit": "phone_access_question",
+          "investigate_only:e-3": "e-3_presented",
+          "confidential_protection": "phone_access_question"
+        },
+        "pathBonus": 8
+      },
+      "d-3": {
+        "pathGoal": "prove_false",
+        "requiredActions": [
+          "empathy_approach",
+          "investigate_only:e-3",
+          "evidence_present:e-4"
+        ],
+        "bonusActions": [],
+        "triggerMapping": {
+          "empathy_approach": "nonjudgmental_question_about_mother_in_law",
+          "investigate_only:e-3": "cropped_chat_presented",
+          "evidence_present:e-4": "e-4_or_emotion_threshold"
+        },
+        "pathBonus": 10
+      },
+      "d-4": {
+        "pathGoal": "collapse_lie",
+        "requiredActions": [
+          "fact_pursuit",
+          "evidence_present:e-5"
+        ],
+        "bonusActions": [
+          "motive_search",
+          "confidential_protection"
+        ],
+        "triggerMapping": {
+          "fact_pursuit": "missing_money_question",
+          "evidence_present:e-5": "e-5_presented",
+          "motive_search": "beneficiary_question",
+          "confidential_protection": "missing_money_question"
+        },
+        "pathBonus": 8
+      },
+      "d-5": {
+        "pathGoal": "reveal_mutual_breach",
+        "requiredActions": [
+          "fact_pursuit",
+          "evidence_present:e-1",
+          "evidence_present:e-6"
+        ],
+        "bonusActions": [
+          "separation"
+        ],
+        "triggerMapping": {
+          "fact_pursuit": "agreement_reminder",
+          "evidence_present:e-1": "e-6_presented",
+          "evidence_present:e-6": "e-6_presented",
+          "separation": "shared_responsibility_question"
+        },
+        "pathBonus": 6
+      }
+    }
+  },
+  "narrativeExpansion": {
+    "spouse-01": {
+      "d-3": {
+        "category": "motive",
+        "deeperReveal": "지석은 외도 오해를 풀 수 있는 설명이 있다는 걸 알면서도, 처가 돌봄을 몰래 챙긴 사실이 드러나면 생활력과 재정 능력까지 한꺼번에 무너져 보일까 봐 말을 미뤘다.",
+        "unlockHint": "empathy_approach 또는 confidential_protection + d-3 현재 S3 이상",
+        "impactDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      }
+    }
+  },
+  "witnessSpeechSample": {
+    "spouse-01": {
+      "tp-1": [
+        "제가 옆에서 본 바로는, 추석 연휴에 본인 돌봄 공백이 생겨 가족이 간병 인력을 알아보던 분위기가 있었다.",
+        "제가 옆에서 본 바로는, 세린이 동생 돈 문제를 남편에게 바로 말하지 못해 마음이 급해 보였다는 점은 느꼈다."
+      ],
+      "tp-2": [
+        "제가 아는 범위에서는 지석이 추석 직전에 재가돌봄센터 견적과 예약 가능 여부를 여러 차례 문의했다.",
+        "제가 아는 범위에서는 업무 중에도 가족 돌봄 문제 때문에 급히 통화하거나 일정을 조정하는 모습이 있었다."
+      ],
+      "tp-3": [
+        "기록상 지석이 280만원을 추석 연휴 간병 예약금으로 납부했고 대상자가 오미숙이었다.",
+        "기록상 문제의 만남은 센터 후문 상담 일정이었고 사적 밀회가 아니었다."
+      ],
+      "tp-4": [
+        "제가 아는 범위에서는 세린이 자신에게 150만원을 세린 동생 쪽으로 넘겨 달라고 요청했다.",
+        "제가 아는 범위에서는 세린이 '지석한테는 추석 지나고 말할게'라는 취지로 말하며 중간 전달을 부탁했다."
+      ]
+    }
+  }
+}

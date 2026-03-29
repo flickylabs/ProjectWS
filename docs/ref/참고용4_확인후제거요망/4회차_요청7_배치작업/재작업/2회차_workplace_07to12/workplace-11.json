@@ -1,0 +1,724 @@
+{
+  "caseId": "case-work-11",
+  "meta": {
+    "relationshipType": "boss_employee",
+    "conflictSeed": "CS-2",
+    "variableModules": [
+      "VM-D",
+      "VM-A"
+    ],
+    "twistModule": "TW-3",
+    "difficulty": "hard",
+    "anchorTruth": "둘은 발명자 표기 다툼을 연출하며 서로를 고발했지만, 실은 출원 전 청구항·실험데이터를 외부 브로커에게 넘기고 대가를 나눠 갖기로 공모한 사이였다.",
+    "emotionalBait": "출원 초안에서 태준 이름만 남고, 서린의 연구노트와 심야 DLP 경보가 겹치면서 '상사가 뺏고 부하가 반격하는' 구도가 너무 깔끔하게 완성된다.",
+    "resolutionDilemma": "태준의 발명자 삭제·선행 낙인과 서린의 브로커 전달·은폐 중 어느 쪽이 무거운가. 둘이 함께 만든 공모 구조 안에서 제3자에게 번진 기밀 유출을 어디까지 분리해 처리할 수 있는가."
+  },
+  "duo": {
+    "partyA": {
+      "name": "권태준",
+      "age": 44,
+      "occupation": "플랫폼IP전략팀 팀장",
+      "incomeBracket": "high",
+      "archetype": "cold_logic",
+      "speechStyle": "\"출원 단계부터 보면요, 발명자 기준과 자산 범위는 다른 층위입니다.\" 절차를 깔고, 몰리면 '조직 소유'를 반복해 삭제와 외부 접촉을 희석한다.",
+      "pride": 8,
+      "fear": "'공로 도둑이자 기밀 유출 공모자'로 드러나 연구소·승진 라인에서 동시에 밀리는 장면 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "claim_chart_versioning",
+      "dailyRoutine": "아침에는 발명신고서와 경쟁사 공고를 훑고, 오후에는 연구원 인터뷰와 특허 회의를 돌며, 밤에는 청구항 문구와 출원 우선순위를 직접 손본다.",
+      "sensitivePoints": [
+        "발명자 표기",
+        "보안 감사",
+        "승진 심사"
+      ],
+      "verbalTells": [
+        {
+          "type": "asset_merge",
+          "trigger": "lying",
+          "pattern": "\"회사 자산화가 끝난 안건이에요.\" 출처 질문에 소유권부터 재정의해 개인 기여 삭제를 정당화한다."
+        },
+        {
+          "type": "layer_split",
+          "trigger": "cornered",
+          "pattern": "\"기획, 실험, 청구항, 발표는 다 다른 층위예요.\" 책임을 잘게 쪼개 자기 몫을 축소한다."
+        },
+        {
+          "type": "subject_fog",
+          "trigger": "avoiding",
+          "pattern": "\"법무에서 정리된 줄 알았어요.\" 주어를 흐려 외부 전달의 직접 지시를 희미하게 만든다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "서린씨",
+        "toJudge": "제 팀원",
+        "angry": "노서린!"
+      }
+    },
+    "partyB": {
+      "name": "노서린",
+      "age": 34,
+      "occupation": "선임 알고리즘 연구원",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "\"버전 이력 보세요, 제 이름이 지워졌어요.\" 연구노트를 차분히 꺼내다가 몰리면 '내가 먼저 뺏겼다'는 피해 프레임으로 외부 접촉을 뒤로 민다.",
+      "pride": 7,
+      "fear": "발명자 인정을 잃는 동시에 '회사 기밀을 판 연구원'이라는 낙인까지 뒤집어쓰는 것 — 그것이 두렵다.",
+      "riskAppetite": 7,
+      "digitalHabit": "lab_note_and_private_mail_archiver",
+      "dailyRoutine": "오전에는 실험 로그와 선행기술을 비교하고, 오후에는 특허회의와 재현 테스트를 돌며, 밤에는 개인 노트와 비공식 메일에 문장과 도면을 따로 저장한다.",
+      "sensitivePoints": [
+        "발명자 인정",
+        "연구실 평판",
+        "외부 유출 낙인"
+      ],
+      "verbalTells": [
+        {
+          "type": "hurt_stack",
+          "trigger": "lying",
+          "pattern": "\"먼저 지워진 건 저예요, 몇 달을 참았어요.\" 피해 서사를 먼저 길게 꺼내 검증 순서를 늦춘다."
+        },
+        {
+          "type": "scope_minimize",
+          "trigger": "cornered",
+          "pattern": "\"패키지가 아니라 아이디어 설명용이었어요.\" 외부 전달 범위를 '정리본'으로 축소한다."
+        },
+        {
+          "type": "ally_invocation",
+          "trigger": "emotional",
+          "pattern": "\"변리사도, 동료도, 멘토도 비슷한 판단이었어요.\" 이름을 줄줄이 대며 혼자만의 일탈이 아니었다고 압박한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "팀장님",
+        "toJudge": "제 팀장",
+        "angry": "권태준 팀장!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "기여표와 외부 특허 상담은 법무 승인을 거쳐 같은 문서 ID로 관리하기로 한 규정이 있었다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "지난 분기 임시 출원 때 태준이 발명자 순서를 바꾼 일을 태준은 '정리', 서린은 '가로채기'로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: 출원 우선순위상 대표 발명자만 먼저 세운 임시 조치였다 / B: 그때부터 내 이름을 빼려던 예고였다",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "몇 달 전 둘은 브로커에게 정리본만 보여 주고 컨설팅 대가를 받자는 제안을 나눴지만 정식 기록은 남기지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "문정우 (연구소장)",
+        "relationTo": "a",
+        "knowledgeScope": "태준이 브리핑에서 서린 기여를 축소한 과정과 발명자 조정을 대표성 문제로 설명한 흐름을 안다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 49,
+          "occupation": "연구소장",
+          "relationToA": "연구소장",
+          "relationToB": "노서린와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "태준씨",
+          "addressB": "서린씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "유다인 (외부 특허브로커 네트워크 매니저)",
+        "relationTo": "both",
+        "knowledgeScope": "서린의 정리본, 태준의 추가 청구항 요구, 브로커 수수료·재전달 경로를 안다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "외부 특허브로커 네트워크 매니저",
+          "relationToA": "권태준을 업무상 알고 있음",
+          "relationToB": "노서린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "태준씨",
+          "addressB": "서린씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "최승우 (보안감사 포렌식 담당)",
+        "relationTo": "both",
+        "knowledgeScope": "DLP 경보, 메일 게이트웨이 로그, 지갑 입금 추적, 외부 링크 재공유 경로를 원본 대조 가능.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 44,
+          "occupation": "보안감사 포렌식 담당",
+          "relationToA": "권태준을 업무상 알고 있음",
+          "relationToB": "노서린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "권태준씨",
+          "addressB": "노서린씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "patent_dispute",
+    "description": "잠정출원 마감과 투자사 데모가 겹친 주간, 청구항·기여표를 급히 정리하던 중 발명자 다툼이 터졌다. 겉으로는 성과 가로채기지만, 실제로는 외부 브로커 접촉이 함께 얽혀 공 빼앗기와 기밀 판매가 한 사건으로 합쳐졌다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "특허 선점이 투자·보상과 직결되는 시기라, 발명자 이름 한 줄과 외부 전송 한 건이 승진·해고·형사 검토까지 연쇄로 이어질 수 있었다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "발명자 삭제와 성과 단독화",
+      "truth": true,
+      "truthDescription": "태준은 서린의 핵심 청구항·실험표를 출원 브리핑에 넣으면서 기여표와 슬라이드에서 서린 이름을 지우고 대표 성과로 제시했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 80,
+        "b": 20
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "출원공로복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-2",
+      "name": "브로커 우회 접촉과 전달",
+      "truth": true,
+      "truthDescription": "서린은 승인 없이 개인 메일·텔레그램으로 브로커에게 청구항 정리본과 실험 요약 ZIP을 보내고 수수료를 논의했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "외부접촉차단",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "유출 범위 — 브로커 1건인가",
+      "truth": false,
+      "truthDescription": "브로커 1건만 생각했지만, 작업 링크 재공유와 파라리걸 자동 전달로 패키지 일부가 경쟁사 자문 변리사 폴더까지 넘어갔다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-3",
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "제3자누설복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "선행 기밀위험 낙인",
+      "truth": true,
+      "truthDescription": "사실 확인 전 태준은 HR 평가에 서린을 '기밀취급 위험'으로 먼저 적고 브리핑·발표 권한을 축소했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "평가절차복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "다툼의 공모 은폐 설계 여부",
+      "truth": true,
+      "truthDescription": "겉으로는 발명자 다툼으로 서로를 고발했지만, 실제로는 브로커에게 자료를 넘기고 책임을 분산할 수 있게 갈등을 연출한 공모였다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "공모조사분리",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "발명자 기여표와 잠정출원 초안 버전 이력",
+      "description": "서린 청구항 초안에서 태준 최종 슬라이드까지 발명자 표기가 바뀌는 과정을 보여 주는 기여표·출원초안 묶음.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "발명신고서·기여표·출원 초안의 버전 이력을 함께 열어야 한다.",
+        "check_metadata": "서린 계정의 핵심 청구항 입력 후 브리핑 직전 태준 계정에서 발명자 표기 열이 수정됐다.",
+        "restore_context": "태준이 발표 구조를 정리한 것은 맞지만 청구항 뼈대는 서린 초안에서 왔다.",
+        "verify_source": "연구소 드라이브 버전과 특허관리 시스템 문서 ID가 동일하게 연결된다.",
+        "check_edits": "버전 이력 기반 — 사후 편집 흔적 없이 변경 단계 보존.",
+        "question_acquisition": "회사 지식재산 문서 — 감사·분쟁 해결 목적 적법 열람."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "서린의 개인메일 전달본과 텔레그램 수수료 대화",
+      "description": "서린이 브로커에게 암호화 ZIP을 보낸 개인메일과 수수료 단가를 논의한 텔레그램 캡처.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "partial",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "캡처뿐 아니라 발신 헤더와 텔레그램 원문 내보내기를 함께 확인해야 한다.",
+        "check_metadata": "내부검토 전날 밤 서린 계정에서 ZIP 발송과 수수료 논의가 연속으로 남아 있다.",
+        "restore_context": "'설명용 정리본'이라 주장하지만 첨부에 청구항 문장과 실험 요약이 함께 들어 있다.",
+        "verify_source": "개인 메일 헤더와 브로커 수신 단말이 동일 파일 해시를 가리킨다.",
+        "check_edits": "변조 없으나 답장·첨부 일부 절삭 — 범위 확인에 원문 대조 필요.",
+        "question_acquisition": "개인 단말·사설 메신저 포함 — 조사 목적 외 재배포 제한."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "태준이 제출한 DLP 경보 캡처 PDF",
+      "description": "서린 계정만 강조된 DLP 경보 PDF. 단독 유출처럼 보이지만 재전송 열과 세션 정보가 잘려 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "PDF뿐 아니라 경보 원본 이벤트와 연관 링크 로그를 함께 봐야 한다.",
+        "check_metadata": "서린 이벤트만 보이고 같은 시간대 재전송 열·수신 세션 정보가 잘려 있다.",
+        "restore_context": "단독으론 서린 유출처럼 보이지만 링크 생성자·재열람자 정보가 빠져 있다.",
+        "verify_source": "플랫폼 형식과 유사하지만 관리자 리포트 전체 열 구성과 다르다.",
+        "check_edits": "변조 없으나 절삭·강조로 서린 단독 유출 프레임이 과장됐다.",
+        "question_acquisition": "태준 자발 제출 — 입수 적법하지만 완전성 별도 검증 필요."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "메일 게이트웨이 원본 로그와 외부공유 링크 재전송 기록",
+      "description": "작업 링크가 브로커 → 파라리걸 → 경쟁사 자문 폴더로 재전달된 경로를 보여 주는 게이트웨이·링크 로그.",
+      "type": "access_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "요약이 아니라 원본 SMTP 로그와 링크 리디렉션 표를 함께 열어야 한다.",
+        "check_metadata": "브로커 수신 7분 뒤 파라리걸이 같은 링크를 열고 경쟁사 자문 도메인으로 재공유한 세션이 확인된다.",
+        "restore_context": "1:1 브로커 검토를 넘어 경쟁사 자문까지 퍼진 것은 링크 설정과 재전송이 겹친 결과였다.",
+        "verify_source": "보안 게이트웨이 로그와 외부세션 CSV가 동일 링크 해시를 가리킨다.",
+        "check_edits": "플랫폼 원본 추출본 — 사후 편집 흔적 없음.",
+        "question_acquisition": "보안사고 조사 범위 원본 로그 — 적법성 높음."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "HR 평가 초안과 기밀취급 위험 메모",
+      "description": "포렌식 결과 전에 태준이 서린을 '기밀위험'으로 적고 브리핑을 줄인 HR 평가·보안 메모.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "요약이 아니라 초기 입력본·수정본·브리핑 배정 변경 기록을 함께 확인해야 한다.",
+        "check_metadata": "포렌식 결과 전 태준 계정에서 '기밀위험' 코멘트와 발표 제외 메모가 먼저 입력됐다.",
+        "restore_context": "예방이라 주장하지만 발명자 다툼과 결합된 선행 낙인이 인사·역할에 반영됐다.",
+        "verify_source": "HR 로그와 브리핑 일정 변경 기록이 동일 시간 순서.",
+        "check_edits": "초기본·수정본 모두 남아 사후 미화 여부 구분 가능.",
+        "question_acquisition": "인사자료 — 분쟁 해결 목적 외 공개 제한."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "외부 브로커 송장과 가상자산 입금 추적 포렌식 정리",
+      "description": "브로커 송장, 둘에게 연결된 지갑 입금 내역, 경쟁사 자문 폴더 도달 경로를 묶은 포렌식 정리.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "송장뿐 아니라 지갑 거래내역, 해시 비교표, 브로커 계약 메모를 함께 봐야 한다.",
+        "check_metadata": "수수료가 둘의 별도 지갑으로 분할 입금, 경쟁사 자문 폴더 도달이 직후로 남아 있다.",
+        "restore_context": "공동 대가 기대와 자료 전달, 통제 밖 유출 확장 경로가 한 번에 확인된다.",
+        "verify_source": "가상자산 추적, 송장 번호, 게이트웨이 사건 ID가 서로 대응.",
+        "check_edits": "감사팀 서명본·원본 거래 로그 — 사후 편집 흔적 없음.",
+        "question_acquisition": "감사·법무 검토 확보 자료 — 적법하지만 외부 인물 식별 정보 최소 공개."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "태준은 서린의 핵심 청구항 기여를 지우고 발명자 표기와 대표 성과를 단독화했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "서린은 회사 승인 없이 외부 특허브로커와 접촉하고 대가를 논의했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "실제 외부 도달 범위는 두 사람이 의도한 수준보다 커졌고 제3자 자문 폴더까지 퍼졌다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-4",
+      "fact": "태준은 사실확인 전에 서린을 기밀위험 인원으로 먼저 낙인찍고 역할을 줄였다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-5",
+      "fact": "겉으로 보인 발명자 다툼은 두 사람이 함께 만든 공모 은폐 장치였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "inventor_credit_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_remove_name_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "risk_note_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_board_pressure"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "briefing_exclusion_or_responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L3",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "collusion_denial_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "broker_fee_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_or_shared_intent_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "private_broker_contact_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "zip_attachment_scope_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "payment_discussion_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "limited_share_claim_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_what_she_expected_broker_to_do"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "e-4_or_e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-7",
+      "lieIntensity": "L2",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "staged_fight_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "small_admission_about_being_erased"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "why_use_external_broker_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "출원공로복구": [
+      "잠정출원과 내부 브리핑의 발명자 기여표를 즉시 동결하고, 실제 청구항 기여를 기준으로 공동 정정본을 다시 올린다.",
+      "특허 안건의 대표 발명자, 실험 기여자, 발표자를 별도 필드로 분리해 한 사람의 성과 단독화가 되지 않게 한다.",
+      "고의적 발명자 삭제가 확인되면 해당 관리자의 출원 대표권과 보상 추천권을 일정 기간 회수한다."
+    ],
+    "외부접촉차단": [
+      "법무 승인 없는 개인메일과 사설메신저 특허 상담을 전면 금지하고, 외부 상담은 회사 지정 채널과 문서 ID로만 진행한다.",
+      "연구원과 관리자 모두 외부 브로커나 변리사 접촉 이력과 대가 수수를 사전 신고하게 한다.",
+      "미승인 외부 전달이 재발하면 관련 인원의 지식재산 접근권과 외부 커뮤니케이션 권한을 즉시 중지한다."
+    ],
+    "제3자누설복구": [
+      "브로커와 자문 변리사까지 포함한 재전송 경로를 모두 봉인 추적해 경쟁사 도달 범위와 사용 여부를 먼저 확인한다.",
+      "재공유 가능한 작업 링크를 즉시 폐기하고, 이미 본 자료는 폐기확인서와 접근 차단 조치를 함께 받는다.",
+      "제3자 재유출이 확인되면 민형사 대응과 별개로 해당 출원 전략을 전면 재설계한다."
+    ],
+    "평가절차복구": [
+      "포렌식과 공로 확인이 끝날 때까지 태준이 입력한 기밀위험 메모와 발표 제외 기록은 평가 반영을 멈춘다.",
+      "인사 코멘트와 보안조치는 같은 사건에 대해 분리 심의하고, 선행 낙인이 있었다면 브리핑 배정을 원상복구한다.",
+      "사실확인 전 관리자의 낙인성 메모가 반복되면 해당 관리자의 평가 코멘트 권한을 일정 기간 정지한다."
+    ],
+    "공모조사분리": [
+      "발명자 다툼과 기밀 유출 공모는 하나로 덮지 말고, 공로 판단과 비밀판매 행위를 별도 절차로 조사한다.",
+      "태준과 서린을 모두 특허 의사결정과 외부 자문 체인에서 잠정 분리하고 감사와 법무가 직접 문서를 관리한다.",
+      "조직 안에서 고발극으로 공모를 가리는 패턴이 확인되면 두 당사자의 평가, 보상, 징계를 공동심리로 넘긴다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

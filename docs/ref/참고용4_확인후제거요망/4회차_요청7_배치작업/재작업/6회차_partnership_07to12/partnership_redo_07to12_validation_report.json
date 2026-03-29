@@ -1,0 +1,343 @@
+{
+  "source": {
+    "prompt": "/mnt/data/재작업_프롬프트.md",
+    "current_result": "/mnt/data/현재결과_partnership_07to12.json",
+    "raw_cases": [
+      "/mnt/data/partnership-07.json",
+      "/mnt/data/partnership-08.json",
+      "/mnt/data/partnership-09.json",
+      "/mnt/data/partnership-10.json",
+      "/mnt/data/partnership-11.json",
+      "/mnt/data/partnership-12.json"
+    ],
+    "reference": "/mnt/data/레퍼런스_workplace-07.json"
+  },
+  "target_sections_replaced": [
+    "actionAffinity.bestActionHint",
+    "actionAffinity.worstActionReaction",
+    "witnessSpeechSample",
+    "truthCategory",
+    "witnessBudgets.forbidden",
+    "witnessBudgets.uncertain",
+    "personalityTags"
+  ],
+  "integrity_checks": {
+    "truthPolicies_unchanged": true,
+    "contentTags_unchanged": true,
+    "optimalPath_unchanged": true,
+    "narrativeExpansion_unchanged": true,
+    "actionAffinity_static_fields_unchanged": true,
+    "witnessBudgets_name_canState_unchanged": true
+  },
+  "actionAffinity_checks": {
+    "bestActionHint_total": 30,
+    "bestActionHint_exact_duplicate_count": 0,
+    "bestActionHint_duplicates": {},
+    "worstActionReaction_total": 30,
+    "worstActionReaction_exact_duplicate_count": 0,
+    "worstActionReaction_duplicates": {}
+  },
+  "truthCategory_checks": {
+    "counts": {
+      "core_fact": 12,
+      "circumstantial": 8,
+      "subjective_claim": 8,
+      "hidden_motive": 2
+    },
+    "ratios": {
+      "core_fact": 0.4,
+      "circumstantial": 0.267,
+      "subjective_claim": 0.267,
+      "hidden_motive": 0.067
+    },
+    "distinct_category_count": 4,
+    "max_category_ratio": 0.4,
+    "categories_used": [
+      "circumstantial",
+      "core_fact",
+      "hidden_motive",
+      "subjective_claim"
+    ],
+    "invalid_categories": []
+  },
+  "personalityTags_checks": {
+    "party_count": 12,
+    "unique_combo_count": 12,
+    "duplicate_combos": {},
+    "face_sensitive_count": 2,
+    "face_sensitive_ratio": 0.167,
+    "combos": [
+      {
+        "case": "partnership-07",
+        "party": "a",
+        "tags": [
+          "cold_logical",
+          "detail_obsessed",
+          "calculated_calm",
+          "privacy_sensitive"
+        ],
+        "comboKey": "calculated_calm|cold_logical|detail_obsessed|privacy_sensitive"
+      },
+      {
+        "case": "partnership-07",
+        "party": "b",
+        "tags": [
+          "confrontational",
+          "counter_attack",
+          "shame_sensitive",
+          "fairness_obsessed"
+        ],
+        "comboKey": "confrontational|counter_attack|fairness_obsessed|shame_sensitive"
+      },
+      {
+        "case": "partnership-08",
+        "party": "a",
+        "tags": [
+          "cold_logical",
+          "calculated_calm",
+          "conflict_avoidant",
+          "shame_sensitive"
+        ],
+        "comboKey": "calculated_calm|cold_logical|conflict_avoidant|shame_sensitive"
+      },
+      {
+        "case": "partnership-08",
+        "party": "b",
+        "tags": [
+          "victim_identity",
+          "martyr_complex",
+          "selective_quote",
+          "face_sensitive"
+        ],
+        "comboKey": "face_sensitive|martyr_complex|selective_quote|victim_identity"
+      },
+      {
+        "case": "partnership-09",
+        "party": "a",
+        "tags": [
+          "confrontational",
+          "authority_challenging",
+          "counter_attack",
+          "blame_shifting"
+        ],
+        "comboKey": "authority_challenging|blame_shifting|confrontational|counter_attack"
+      },
+      {
+        "case": "partnership-09",
+        "party": "b",
+        "tags": [
+          "victim_identity",
+          "manipulative",
+          "retaliation_sensitive",
+          "selective_quote"
+        ],
+        "comboKey": "manipulative|retaliation_sensitive|selective_quote|victim_identity"
+      },
+      {
+        "case": "partnership-10",
+        "party": "a",
+        "tags": [
+          "cold_logical",
+          "detail_obsessed",
+          "conflict_avoidant",
+          "relationship_preserving"
+        ],
+        "comboKey": "cold_logical|conflict_avoidant|detail_obsessed|relationship_preserving"
+      },
+      {
+        "case": "partnership-10",
+        "party": "b",
+        "tags": [
+          "confrontational",
+          "fairness_obsessed",
+          "emotionally_volatile",
+          "selective_quote"
+        ],
+        "comboKey": "confrontational|emotionally_volatile|fairness_obsessed|selective_quote"
+      },
+      {
+        "case": "partnership-11",
+        "party": "a",
+        "tags": [
+          "cold_logical",
+          "calculated_calm",
+          "timeline_padding",
+          "avoidant"
+        ],
+        "comboKey": "avoidant|calculated_calm|cold_logical|timeline_padding"
+      },
+      {
+        "case": "partnership-11",
+        "party": "b",
+        "tags": [
+          "victim_identity",
+          "grudge_holding",
+          "martyr_complex",
+          "manipulative"
+        ],
+        "comboKey": "grudge_holding|manipulative|martyr_complex|victim_identity"
+      },
+      {
+        "case": "partnership-12",
+        "party": "a",
+        "tags": [
+          "cold_logical",
+          "detail_obsessed",
+          "relationship_preserving",
+          "privacy_sensitive"
+        ],
+        "comboKey": "cold_logical|detail_obsessed|privacy_sensitive|relationship_preserving"
+      },
+      {
+        "case": "partnership-12",
+        "party": "b",
+        "tags": [
+          "confrontational",
+          "blame_shifting",
+          "emotionally_volatile",
+          "face_sensitive"
+        ],
+        "comboKey": "blame_shifting|confrontational|emotionally_volatile|face_sensitive"
+      }
+    ],
+    "invalid_personality_tags": []
+  },
+  "witnessSpeechSample_checks": {
+    "witness_count": 18,
+    "sample_count_total": 36,
+    "global_max_similarity_ratio": 0.441558,
+    "global_max_similarity_case": "partnership-10",
+    "global_max_similarity_witness": "tp-3",
+    "global_max_similarity_sample": "로그상으로는 오퍼 템플릿 생성, 캘린더 초대 발송, 급여 시트 미완성 상태가 순서대로 남아 있습니다. 절차가 중간에서 멈춘 건 분명합니다.",
+    "per_witness_max_similarity": {
+      "partnership-07:tp-1": {
+        "maxSimilarity": 0.335079,
+        "sample": "유나가 그날 밤 저한테 전화해서 '경쟁사가 우리 백화점 주간까지 알고 있대, 이건 내부 아니고 뭐냐'고 거의 확신하듯 말했어요. 동생이 그때 체면이 무너졌다고 느낀 건 분명합니다."
+      },
+      "partnership-07:tp-2": {
+        "maxSimilarity": 0.294872,
+        "sample": "태경씨가 저한테 보낸 건 점검용 자료 회신이었지 '저쪽에 돌려 달라'는 취지의 요청은 전혀 아니었습니다. 실수 지점은 제가 첨부를 선택한 단계였습니다."
+      },
+      "partnership-07:tp-3": {
+        "maxSimilarity": 0.163743,
+        "sample": "사무국 보관본으로 보면 동일한 첨부 해시가 경쟁사 바이어 수신 메일에도 남아 있습니다. 그래서 저희는 먼저 내부 고의 유출보다 follow-up 첨부 경로를 확인했습니다."
+      },
+      "partnership-08:tp-1": {
+        "maxSimilarity": 0.264151,
+        "sample": "제가 들은 시원 말은 '무조건 올해 간다'보다 '돈이 버텨야 간다'에 가까웠습니다. 그렇다고 지아씨가 상처받지 않았다는 뜻은 아니고요."
+      },
+      "partnership-08:tp-2": {
+        "maxSimilarity": 0.284024,
+        "sample": "지아 대표가 저한테 '기존 데스크에는 아직 말하지 말고, 새 공간 컨셉부터 조용히 보자'고 한 적 있습니다. 저는 그 말을 그냥 푸념 수준으로 듣진 않았어요."
+      },
+      "partnership-08:tp-3": {
+        "maxSimilarity": 0.272727,
+        "sample": "제가 계산한 월말 잔액에는 리스료와 부가세 예정액이 이미 반영돼 있습니다. 그 기준으로는 부속메모에 적힌 8천만원 2개월 유지 조건에 못 미쳤습니다."
+      },
+      "partnership-09:tp-1": {
+        "maxSimilarity": 0.337838,
+        "sample": "다예가 발표 직후에는 '내 이름이 전면에 안 보이면 다들 또 기술팀만 기억한다'는 식으로 말했습니다. 겉으로는 침착했지만 환수 얘기만 나오면 예민해졌고요."
+      },
+      "partnership-09:tp-2": {
+        "maxSimilarity": 0.369565,
+        "sample": "마감 직전 KPI 표가 두 번 크게 바뀌었습니다. 매장 수가 늘고 절감률 문장이 올라갈 때마다 인호 대표와 다예 대표 둘 다 '이 정도면 간다'는 식으로 확인을 했어요."
+      },
+      "partnership-09:tp-3": {
+        "maxSimilarity": 0.341463,
+        "sample": "또 한 가지는 중복 문구와 파일 메타데이터 이상 때문에 이미 사후점검 후보 검토가 올라가 있었다는 점입니다. 그래서 저희는 이 과제를 '완전히 종료된 건'으로 보지 않았습니다."
+      },
+      "partnership-10:tp-1": {
+        "maxSimilarity": 0.373494,
+        "sample": "혜린이는 지난번 부적합 알바생 들어왔을 때 프로그램 평판이 흔들린 걸 아직도 크게 겁냅니다. 그래서 이번에도 '시범수업도 안 보고 바로 넣는 건 못 견딘다'고 했어요."
+      },
+      "partnership-10:tp-2": {
+        "maxSimilarity": 0.263889,
+        "sample": "준서 대표님 쪽에서는 오퍼 메일이 와서 계좌정보랑 첫 주 가이드까지 받았습니다. 그래서 저는 거의 확정이라고 이해했어요."
+      },
+      "partnership-10:tp-3": {
+        "maxSimilarity": 0.441558,
+        "sample": "로그상으로는 오퍼 템플릿 생성, 캘린더 초대 발송, 급여 시트 미완성 상태가 순서대로 남아 있습니다. 절차가 중간에서 멈춘 건 분명합니다."
+      },
+      "partnership-11:tp-1": {
+        "maxSimilarity": 0.335135,
+        "sample": "아린은 제 앞에서 성수 매장 얘기보다 '도매처를 내가 책임지고 붙잡을 통로가 필요하다'는 말을 더 자주 했어요. 그래서 기존 법인과는 다른 이름으로 운영 구조를 짜볼까 고민을 털어놓았습니다."
+      },
+      "partnership-11:tp-2": {
+        "maxSimilarity": 0.410256,
+        "sample": "아린 대표 쪽에서 먼저 새 법인 명의 견적서를 보냈고, 결제 구조도 기존 법인과 다르게 설명했습니다. 그래서 저는 별도 거래선 전환을 실제 옵션으로 받아들였어요."
+      },
+      "partnership-11:tp-3": {
+        "maxSimilarity": 0.296774,
+        "sample": "문제는 어느 쪽이 더 빨랐느냐보다, 기존 공급계약과 상표사용 구조상 두 방향 모두 단독 실행이 쉽지 않았다는 점입니다. 위약과 상표 분쟁이 동시에 걸립니다."
+      },
+      "partnership-12:tp-1": {
+        "maxSimilarity": 0.302326,
+        "sample": "수진은 음성전사 캡처를 보고 나서 '바이어들이 우리를 내부 불화 있는 팀으로 보면 끝난다'고 했어요. 그때는 선우씨를 거의 범인처럼 생각하는 눈치였습니다."
+      },
+      "partnership-12:tp-2": {
+        "maxSimilarity": 0.258824,
+        "sample": "문제는 제가 follow-up에서 그 불만을 정리해 바이어들한테 전달하면서 표현을 섞어 버린 겁니다. 그래서 '두 분이 서로 못 믿는다'는 문장이 생겼어요."
+      },
+      "partnership-12:tp-3": {
+        "maxSimilarity": 0.371859,
+        "sample": "운영사 보관본으로 보면 buyer complaint memo에 문제 문장이 처음 잡힌 시점이 홍세진 씨 follow-up 직후입니다. 현장 발언이 곧바로 접수된 형태는 아니었습니다."
+      }
+    }
+  },
+  "witnessBudgets_checks": {
+    "uncertain_count_per_witness": {
+      "partnership-07:tp-1": 2,
+      "partnership-07:tp-2": 2,
+      "partnership-07:tp-3": 2,
+      "partnership-08:tp-1": 2,
+      "partnership-08:tp-2": 2,
+      "partnership-08:tp-3": 2,
+      "partnership-09:tp-1": 2,
+      "partnership-09:tp-2": 2,
+      "partnership-09:tp-3": 2,
+      "partnership-10:tp-1": 2,
+      "partnership-10:tp-2": 2,
+      "partnership-10:tp-3": 2,
+      "partnership-11:tp-1": 2,
+      "partnership-11:tp-2": 2,
+      "partnership-11:tp-3": 2,
+      "partnership-12:tp-1": 2,
+      "partnership-12:tp-2": 2,
+      "partnership-12:tp-3": 2
+    },
+    "forbidden_count_per_witness": {
+      "partnership-07:tp-1": 3,
+      "partnership-07:tp-2": 3,
+      "partnership-07:tp-3": 3,
+      "partnership-08:tp-1": 3,
+      "partnership-08:tp-2": 3,
+      "partnership-08:tp-3": 3,
+      "partnership-09:tp-1": 3,
+      "partnership-09:tp-2": 3,
+      "partnership-09:tp-3": 3,
+      "partnership-10:tp-1": 3,
+      "partnership-10:tp-2": 3,
+      "partnership-10:tp-3": 3,
+      "partnership-11:tp-1": 3,
+      "partnership-11:tp-2": 3,
+      "partnership-11:tp-3": 3,
+      "partnership-12:tp-1": 3,
+      "partnership-12:tp-2": 3,
+      "partnership-12:tp-3": 3
+    },
+    "forbidden_duplicate_entries_ge_3": {},
+    "forbidden_duplicate_entries_ge_2": {}
+  },
+  "pass_summary": {
+    "bestActionHint_no_exact_duplicates": true,
+    "worstActionReaction_no_exact_duplicates": true,
+    "truthCategory_uses_at_least_3_categories": true,
+    "truthCategory_no_category_over_60_percent": true,
+    "personalityTag_combos_all_unique": true,
+    "face_sensitive_below_50_percent": true,
+    "witnessSpeechSample_similarity_below_0_5": true,
+    "forbidden_no_entry_repeated_3_or_more": true,
+    "non_target_sections_preserved": true,
+    "overall": true
+  }
+}

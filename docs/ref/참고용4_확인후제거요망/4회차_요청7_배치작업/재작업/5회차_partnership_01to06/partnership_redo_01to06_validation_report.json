@@ -1,0 +1,346 @@
+{
+  "source": {
+    "prompt": "/mnt/data/재작업_프롬프트.md",
+    "current_result": "/mnt/data/현재결과_partnership_01to06.json",
+    "raw_cases": [
+      "/mnt/data/partnership-01.json",
+      "/mnt/data/partnership-02.json",
+      "/mnt/data/partnership-03.json",
+      "/mnt/data/partnership-04.json",
+      "/mnt/data/partnership-05.json",
+      "/mnt/data/partnership-06.json"
+    ],
+    "reference": "/mnt/data/레퍼런스_spouse-01.json"
+  },
+  "target_sections_replaced": [
+    "actionAffinity.bestActionHint",
+    "actionAffinity.worstActionReaction",
+    "witnessSpeechSample",
+    "truthCategory",
+    "witnessBudgets.forbidden",
+    "witnessBudgets.uncertain",
+    "personalityTags"
+  ],
+  "integrity_checks": {
+    "truthPolicies_unchanged": true,
+    "contentTags_unchanged": true,
+    "optimalPath_unchanged": true,
+    "narrativeExpansion_unchanged": true,
+    "actionAffinity_static_fields_unchanged": true,
+    "witnessBudgets_name_canState_unchanged": true
+  },
+  "actionAffinity_checks": {
+    "bestActionHint_total": 30,
+    "bestActionHint_exact_duplicate_count": 0,
+    "bestActionHint_duplicates": {},
+    "worstActionReaction_total": 30,
+    "worstActionReaction_exact_duplicate_count": 0,
+    "worstActionReaction_duplicates": {}
+  },
+  "truthCategory_checks": {
+    "counts": {
+      "core_fact": 16,
+      "circumstantial": 5,
+      "hidden_motive": 4,
+      "subjective_claim": 3,
+      "emotional_context": 2
+    },
+    "ratios": {
+      "core_fact": 0.533,
+      "circumstantial": 0.167,
+      "hidden_motive": 0.133,
+      "subjective_claim": 0.1,
+      "emotional_context": 0.067
+    },
+    "distinct_category_count": 5,
+    "max_category_ratio": 0.533,
+    "categories_used": [
+      "circumstantial",
+      "core_fact",
+      "emotional_context",
+      "hidden_motive",
+      "subjective_claim"
+    ],
+    "invalid_categories": []
+  },
+  "personalityTags_checks": {
+    "party_count": 12,
+    "unique_combo_count": 12,
+    "duplicate_combos": {},
+    "face_sensitive_count": 2,
+    "face_sensitive_ratio": 0.167,
+    "combos": [
+      {
+        "case": "partnership-01",
+        "party": "a",
+        "tags": [
+          "cold_logical",
+          "calculated_calm",
+          "detail_obsessed",
+          "shame_sensitive"
+        ],
+        "comboKey": "calculated_calm|cold_logical|detail_obsessed|shame_sensitive"
+      },
+      {
+        "case": "partnership-01",
+        "party": "b",
+        "tags": [
+          "confrontational",
+          "blame_shifting",
+          "counter_attack",
+          "face_sensitive"
+        ],
+        "comboKey": "blame_shifting|confrontational|counter_attack|face_sensitive"
+      },
+      {
+        "case": "partnership-02",
+        "party": "a",
+        "tags": [
+          "victim_identity",
+          "martyr_complex",
+          "selective_quote",
+          "retaliation_sensitive"
+        ],
+        "comboKey": "martyr_complex|retaliation_sensitive|selective_quote|victim_identity"
+      },
+      {
+        "case": "partnership-02",
+        "party": "b",
+        "tags": [
+          "cold_logical",
+          "fairness_obsessed",
+          "calculated_calm",
+          "authority_challenging"
+        ],
+        "comboKey": "authority_challenging|calculated_calm|cold_logical|fairness_obsessed"
+      },
+      {
+        "case": "partnership-03",
+        "party": "a",
+        "tags": [
+          "cold_logical",
+          "timeline_padding",
+          "calculated_calm",
+          "relationship_preserving"
+        ],
+        "comboKey": "calculated_calm|cold_logical|relationship_preserving|timeline_padding"
+      },
+      {
+        "case": "partnership-03",
+        "party": "b",
+        "tags": [
+          "confrontational",
+          "emotionally_volatile",
+          "selective_quote",
+          "authority_challenging"
+        ],
+        "comboKey": "authority_challenging|confrontational|emotionally_volatile|selective_quote"
+      },
+      {
+        "case": "partnership-04",
+        "party": "a",
+        "tags": [
+          "cold_logical",
+          "detail_obsessed",
+          "fairness_obsessed",
+          "avoidant"
+        ],
+        "comboKey": "avoidant|cold_logical|detail_obsessed|fairness_obsessed"
+      },
+      {
+        "case": "partnership-04",
+        "party": "b",
+        "tags": [
+          "victim_identity",
+          "grudge_holding",
+          "martyr_complex",
+          "face_sensitive"
+        ],
+        "comboKey": "face_sensitive|grudge_holding|martyr_complex|victim_identity"
+      },
+      {
+        "case": "partnership-05",
+        "party": "a",
+        "tags": [
+          "cold_logical",
+          "calculated_calm",
+          "privacy_sensitive",
+          "blame_shifting"
+        ],
+        "comboKey": "blame_shifting|calculated_calm|cold_logical|privacy_sensitive"
+      },
+      {
+        "case": "partnership-05",
+        "party": "b",
+        "tags": [
+          "victim_identity",
+          "retaliation_sensitive",
+          "shame_sensitive",
+          "manipulative"
+        ],
+        "comboKey": "manipulative|retaliation_sensitive|shame_sensitive|victim_identity"
+      },
+      {
+        "case": "partnership-06",
+        "party": "a",
+        "tags": [
+          "confrontational",
+          "fairness_obsessed",
+          "emotionally_volatile",
+          "grudge_holding"
+        ],
+        "comboKey": "confrontational|emotionally_volatile|fairness_obsessed|grudge_holding"
+      },
+      {
+        "case": "partnership-06",
+        "party": "b",
+        "tags": [
+          "cold_logical",
+          "detail_obsessed",
+          "calculated_calm",
+          "selective_quote"
+        ],
+        "comboKey": "calculated_calm|cold_logical|detail_obsessed|selective_quote"
+      }
+    ],
+    "invalid_personality_tags": []
+  },
+  "witnessSpeechSample_checks": {
+    "witness_count": 18,
+    "sample_count_total": 36,
+    "global_max_similarity_ratio": 0.485714,
+    "global_max_similarity_case": "partnership-02",
+    "global_max_similarity_witness": "tp-1",
+    "global_max_similarity_sample": "준오 형이 '본계약 붙기 전에 유지보수 파일럿만 우리 회사로 따로 돌릴 수 있냐'고 저한테 먼저 물은 건 사실입니다.",
+    "per_witness_max_similarity": {
+      "partnership-01:tp-1": {
+        "maxSimilarity": 0.315152,
+        "sample": "해나가 그 송금 얘기 나오던 날 저한테 전화해서 '이게 내 승인으로 찍히면 투자도 날아가고 직원들 앞에서도 끝난다'고 거의 울먹이듯 말했습니다."
+      },
+      "partnership-01:tp-2": {
+        "maxSimilarity": 0.476923,
+        "sample": "2주년 회식 끝나고 택시 기다릴 때 두 분이 '직원들한텐 투자금 말고 컨설팅비처럼만 얘기하자'고 낮게 상의하는 걸 들었습니다."
+      },
+      "partnership-01:tp-3": {
+        "maxSimilarity": 0.211921,
+        "sample": "두 분 모두 처음 상담 때는 같은 방향으로 말씀하셨습니다. 나중에 직원들 앞 설명이 달라졌을 뿐, 계약 초안 자체는 그 전부터 하나였습니다."
+      },
+      "partnership-02:tp-1": {
+        "maxSimilarity": 0.485714,
+        "sample": "준오 형이 '본계약 붙기 전에 유지보수 파일럿만 우리 회사로 따로 돌릴 수 있냐'고 저한테 먼저 물은 건 사실입니다."
+      },
+      "partnership-02:tp-2": {
+        "maxSimilarity": 0.482759,
+        "sample": "처음 받은 제안서 표지는 분명 박준오, 서민경 두 이름이 같이 있었어요. 마지막 인쇄 직전 파일만 민경씨 단독 표기로 바뀌었습니다."
+      },
+      "partnership-02:tp-3": {
+        "maxSimilarity": 0.316547,
+        "sample": "메일 스레드 보시면 '시훈데이터랩 사업자등록증' 첨부 직후에 내부 경고가 뜹니다. 그 이후부터는 공식 창구를 단일화해 달라고 저희가 먼저 요청했어요."
+      },
+      "partnership-03:tp-1": {
+        "maxSimilarity": 0.385185,
+        "sample": "도윤이가 전날 밤 리허설하면서 '처음 4분은 내가 끊는 걸로 정리됐다'고 해서 저도 오프닝 연습만 따로 잡아 줬습니다."
+      },
+      "partnership-03:tp-2": {
+        "maxSimilarity": 0.356589,
+        "sample": "아젠다 코멘트도 제가 남겼습니다. 표현이 모호해서 두 분이 각자 자기에게 유리한 쪽으로 이해한 것 같아요."
+      },
+      "partnership-03:tp-3": {
+        "maxSimilarity": 0.306569,
+        "sample": "투자사 입장에서 원한 건 발표 전체 독점이 아니라 첫 4분 오프닝과 시간관리만 한 명이 맡는 구조였습니다."
+      },
+      "partnership-04:tp-1": {
+        "maxSimilarity": 0.328947,
+        "sample": "2년 전 리베이트 일 뒤로 라희는 민재씨 숫자만 봐도 먼저 의심부터 했어요. 이번 주말 이체도 딱 그때 기억으로 받아들인 것 같았습니다."
+      },
+      "partnership-04:tp-2": {
+        "maxSimilarity": 0.361111,
+        "sample": "협상 첫 판엔 은행 도장 비슷한 PDF가 먼저 올라왔고, 원본 여부 질문은 그보다 한참 뒤에야 나왔습니다. 그 순서는 제가 분명히 기억합니다."
+      },
+      "partnership-04:tp-3": {
+        "maxSimilarity": 0.35443,
+        "sample": "문제 된 PDF는 은행에서 발급되는 정식 양식과 글꼴, 도장 레이어가 다릅니다. 또 마이그레이션 이후엔 원금, 부가세, 수수료가 따로 보이도록 바뀌었습니다."
+      },
+      "partnership-05:tp-1": {
+        "maxSimilarity": 0.331034,
+        "sample": "소라가 등기부 캡처 본 날엔 거의 결론을 내려 버린 상태였어요. '저건 조사대응이 아니라 현우 개인 돈줄일 거다'라고 단정해서 말했습니다."
+      },
+      "partnership-05:tp-2": {
+        "maxSimilarity": 0.350877,
+        "sample": "제가 보정 요청을 받았을 때는 같은 2,400만원인데 설명 문구만 계속 순해졌습니다. 처음엔 조사 대응 쪽으로 올리더니, 나중엔 그냥 일반 관리비처럼 눌러 적자는 흐름이었어요."
+      },
+      "partnership-05:tp-3": {
+        "maxSimilarity": 0.300654,
+        "sample": "선급 구조와 계정명은 제가 먼저 제안했습니다. 그 시점엔 두 대표 모두 조사 대응이 급하다고 보고 제 설명을 따르는 분위기였어요."
+      },
+      "partnership-06:tp-1": {
+        "maxSimilarity": 0.43609,
+        "sample": "보라 언니는 카운터 위치랑 사인물 톤이 바뀌면 아예 다른 가게가 된다고 봤어요. 막판까지도 그 부분만큼은 절대 못 넘긴다고 했습니다."
+      },
+      "partnership-06:tp-2": {
+        "maxSimilarity": 0.269504,
+        "sample": "둘 중 한 사람 지시만으로 생긴 지연은 아니었습니다. 변경이 서로 겹치면서 철거 순서, 반입 시간, 추가견적이 연쇄로 밀렸어요."
+      },
+      "partnership-06:tp-3": {
+        "maxSimilarity": 0.306748,
+        "sample": "허가 문의가 같은 날 두 번 방향을 바꿔 들어와서 관리실도 바로 기억합니다. 처음엔 집기 반입 쪽으로 접수됐다가, 몇 시간 뒤엔 카운터 동선이 바뀐 공정으로 다시 올라왔어요."
+      }
+    }
+  },
+  "witnessBudgets_checks": {
+    "uncertain_count_per_witness": {
+      "partnership-01:tp-1": 2,
+      "partnership-01:tp-2": 2,
+      "partnership-01:tp-3": 2,
+      "partnership-02:tp-1": 2,
+      "partnership-02:tp-2": 2,
+      "partnership-02:tp-3": 2,
+      "partnership-03:tp-1": 2,
+      "partnership-03:tp-2": 2,
+      "partnership-03:tp-3": 2,
+      "partnership-04:tp-1": 2,
+      "partnership-04:tp-2": 2,
+      "partnership-04:tp-3": 2,
+      "partnership-05:tp-1": 2,
+      "partnership-05:tp-2": 2,
+      "partnership-05:tp-3": 2,
+      "partnership-06:tp-1": 2,
+      "partnership-06:tp-2": 2,
+      "partnership-06:tp-3": 2
+    },
+    "forbidden_count_per_witness": {
+      "partnership-01:tp-1": 3,
+      "partnership-01:tp-2": 3,
+      "partnership-01:tp-3": 3,
+      "partnership-02:tp-1": 3,
+      "partnership-02:tp-2": 3,
+      "partnership-02:tp-3": 3,
+      "partnership-03:tp-1": 3,
+      "partnership-03:tp-2": 3,
+      "partnership-03:tp-3": 3,
+      "partnership-04:tp-1": 3,
+      "partnership-04:tp-2": 3,
+      "partnership-04:tp-3": 3,
+      "partnership-05:tp-1": 3,
+      "partnership-05:tp-2": 3,
+      "partnership-05:tp-3": 3,
+      "partnership-06:tp-1": 3,
+      "partnership-06:tp-2": 3,
+      "partnership-06:tp-3": 3
+    },
+    "forbidden_duplicate_entries_ge_3": {},
+    "forbidden_duplicate_entries_ge_2": {}
+  },
+  "pass_summary": {
+    "bestActionHint_no_exact_duplicates": true,
+    "worstActionReaction_no_exact_duplicates": true,
+    "truthCategory_uses_at_least_3_categories": true,
+    "truthCategory_no_category_over_60_percent": true,
+    "personalityTag_combos_all_unique": true,
+    "face_sensitive_below_50_percent": true,
+    "witnessSpeechSample_similarity_below_0_5": true,
+    "forbidden_no_entry_repeated_3_or_more": true,
+    "non_target_sections_preserved": true,
+    "overall": true
+  }
+}

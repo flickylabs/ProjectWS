@@ -1,0 +1,88 @@
+{
+  "truthCategory": {
+    "friend-01": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "motive"
+    },
+    "friend-02": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "motive"
+    },
+    "friend-03": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "fact"
+    },
+    "friend-04": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "motive",
+      "t-4": "fact",
+      "t-5": "fact"
+    },
+    "friend-05": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "motive",
+      "t-5": "motive"
+    },
+    "friend-06": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "fact"
+    },
+    "friend-07": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "fact"
+    },
+    "friend-08": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "fact"
+    },
+    "friend-09": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "motive",
+      "t-5": "motive"
+    },
+    "friend-10": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "motive",
+      "t-4": "fact",
+      "t-5": "fact"
+    },
+    "friend-11": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "fact"
+    },
+    "friend-12": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "motive",
+      "t-5": "fact"
+    }
+  }
+}

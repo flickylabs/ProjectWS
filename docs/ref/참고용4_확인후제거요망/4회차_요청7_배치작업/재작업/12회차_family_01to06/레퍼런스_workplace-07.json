@@ -1,0 +1,853 @@
+{
+  "truthPolicies": {
+    "workplace-07": {
+      "a": {
+        "d-1": {
+          "disputeName": "제보자 색출과 선행 낙인",
+          "anchorTruthIds": [
+            "t-1"
+          ],
+          "notes": "career_preservation. t-1은 성과·명의 문제의 핵심이라 초반엔 숨기고, 로그 오해를 흔들 수 있는 t-3만 S2 이후 제한 허용한다. 공동 책임(t-5)은 S4 이후.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [
+              "t-3"
+            ],
+            "S3": [
+              "t-3"
+            ],
+            "S4": [
+              "t-3",
+              "t-1",
+              "t-5"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [
+                "t-3"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [
+                "t-3"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-3",
+                "t-1",
+                "t-5"
+              ],
+              "forbidden": [
+                "t-2",
+                "t-4"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        },
+        "d-4": {
+          "disputeName": "과거 제보 축소와 평가 개입",
+          "anchorTruthIds": [
+            "t-4"
+          ],
+          "notes": "face_saving. 비공식 메모·선행 낙인·기준 변경은 거의 핵심 진실이라 S4 전에는 truthId 허용이 없다.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [],
+            "S3": [],
+            "S4": [
+              "t-4"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-4"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-5"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        },
+        "d-5": {
+          "disputeName": "미종결 사건의 쌍방 재활용",
+          "anchorTruthIds": [
+            "t-5"
+          ],
+          "notes": "self_protection이라 초반에는 상대 위반(t-2)만 꺼내며 정당화하고, 자기 몫까지 포함한 t-5는 S4 이후에야 허용한다.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [
+              "t-2"
+            ],
+            "S3": [
+              "t-2"
+            ],
+            "S4": [
+              "t-2",
+              "t-5"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [
+                "t-2"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [
+                "t-2"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-2",
+                "t-5"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-3",
+                "t-4"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        }
+      },
+      "b": {
+        "d-2": {
+          "disputeName": "익명 폭로와 편집 캡처 유포",
+          "anchorTruthIds": [
+            "t-2"
+          ],
+          "notes": "t-2는 열람·유포·외부상담/은폐를 한 번에 묶은 코어 truth라 S4 전까지는 truthId 허용이 거의 없다.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [],
+            "S3": [
+              "t-5"
+            ],
+            "S4": [
+              "t-5",
+              "t-2"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [
+                "t-5"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-5",
+                "t-2"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-3",
+                "t-4"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        },
+        "d-3": {
+          "disputeName": "캡처의 증거인멸 지시 진위",
+          "anchorTruthIds": [
+            "t-3"
+          ],
+          "notes": "career_preservation. t-3 인정은 기술로그·원출처·유출범위 같은 본게임 질문으로 곧바로 이어지므로 S4 전에는 금지한다.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [],
+            "S3": [],
+            "S4": [
+              "t-3"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-3"
+              ],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        },
+        "d-5": {
+          "disputeName": "미종결 사건의 쌍방 재활용",
+          "anchorTruthIds": [
+            "t-5"
+          ],
+          "notes": "shame_avoidance라 초반에는 상대 위반(t-1)만 꺼내며 정당화하고, 자기 몫까지 포함한 t-5는 S4 이후에야 허용한다.",
+          "states": {
+            "S0": [],
+            "S1": [],
+            "S2": [
+              "t-1"
+            ],
+            "S3": [
+              "t-1"
+            ],
+            "S4": [
+              "t-1",
+              "t-5"
+            ],
+            "S5": [
+              "t-1",
+              "t-2",
+              "t-3",
+              "t-4",
+              "t-5"
+            ]
+          },
+          "states_full": {
+            "S0": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S1": {
+              "allowed": [],
+              "forbidden": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S2": {
+              "allowed": [
+                "t-1"
+              ],
+              "forbidden": [
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S3": {
+              "allowed": [
+                "t-1"
+              ],
+              "forbidden": [
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ]
+            },
+            "S4": {
+              "allowed": [
+                "t-1",
+                "t-5"
+              ],
+              "forbidden": [
+                "t-2",
+                "t-3",
+                "t-4"
+              ]
+            },
+            "S5": {
+              "allowed": [
+                "t-1",
+                "t-2",
+                "t-3",
+                "t-4",
+                "t-5"
+              ],
+              "forbidden": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "witnessBudgets": {
+    "workplace-07": {
+      "tp-1": {
+        "name": "박정훈 (품질총괄 디렉터)",
+        "canState": [
+          "태욱이 출하 지연과 여론 악화를 동시에 우려한 사실, 원본 채팅 보고 흐름을 안다.",
+          "공식 회의와 보고 라인 범위에서 누가 어떤 방향으로 상황을 이해했는지는 알고 있다."
+        ],
+        "uncertain": [
+          "세린이 멘토·동료 7명에게 편집 캡처를 돌린 정확한 전송 순서와 각 수신자 반응은 윤예진 접수기록을 직접 본 게 아니라서 모른다.",
+          "e-3 메시지 ID와 현재 프로젝트 채널 헤더가 어떻게 분리되는지는 김도현 해시 비교표 없이는 확답 못 한다."
+        ],
+        "forbidden": [
+          "익명 게시글 작성자가 세린이라고 단정해, 태욱이 회의에서 던진 '최근 결함 보고 올린 사람' 발언을 작성자 특정 증거처럼 말하는 것",
+          "2년 전 결함등급 하향 회의록에서 C등급으로 돌린 문구나 후속 메일 전문을 직접 읽지 않은 범위까지 낭독하는 것",
+          "디지털포렌식 레이어 분석 메모의 해상도 수치나 편집 PC 로그를 본인 기억인 것처럼 진술하는 것"
+        ]
+      },
+      "tp-2": {
+        "name": "윤예진 (윤리경영 조사담당)",
+        "canState": [
+          "게시글 보존본, 핫라인 접수 순서, 태욱의 초기 의심 발언, 세린의 보복 우려 진술을 함께 확인할 수 있다.",
+          "평가·조사 기록의 버전 차이와 입력 순서는 시스템 범위 안에서 확인할 수 있다."
+        ],
+        "uncertain": [
+          "태욱이 2년 전 회의에서 '외부 공포를 키우지 말자'고 한 맥락이 품질 관리였는지 은폐였는지는 당시 회의 참석자 진술 없이는 단정 못 한다.",
+          "세린 단말 안에서 e-2 헤더 합성이 어떤 프로그램·레이어로 이뤄졌는지는 김도현 포렌식 분석 범위다."
+        ],
+        "forbidden": [
+          "세린이 멘토·동료 7명에게 보낸 모든 캡처 파일 원본을 조사실 밖에서 그대로 공개하는 것",
+          "태욱 평가란의 '협업 부적합' 문구를 인사 맥락 전체 없이 징계 확정처럼 단정하는 것",
+          "핫라인 접수 전 본부 게시판 댓글 작성자들 실명이나 사적 반응을 수사 내용처럼 줄줄이 언급하는 것"
+        ]
+      },
+      "tp-3": {
+        "name": "김도현 (디지털포렌식 담당)",
+        "canState": [
+          "스크린샷 해시, 편집 레이어, 작업PC 로그, 과거 채팅 아카이브 재사용 여부를 원본 대조로 확인할 수 있다.",
+          "원본 로그와 메타데이터를 대조해 어느 기록이 먼저였는지 확인할 수 있다."
+        ],
+        "uncertain": [
+          "태욱이 왜 2년 전 채팅 문장을 이번 사건 삭제 지시처럼 받아들이길 원했는지, 혹은 세린이 어느 순간 편집을 정당화했는지는 로그만으로 단정하지 않는다.",
+          "윤리경영 조사 접수기록에서 태욱의 '작성자가 누군지 감이 온다' 발언이 실제 인사 불이익 판단에 얼마나 직접 작용했는지는 윤예진 영역이다."
+        ],
+        "forbidden": [
+          "윤예진이 확보한 보복 우려 진술서 전문이나 게시판 댓글 캡처를 포렌식 증거인 것처럼 대신 읽어 주는 것",
+          "2년 전 결함등급 하향 회의록에서 누가 어떤 감정으로 침묵했는지 심리 해석까지 붙여 말하는 것",
+          "편집 PC 로그에 남은 개인 폴더명·사적 파일명 등 조사 목적과 무관한 단말 세부를 공개하는 것"
+        ]
+      }
+    }
+  },
+  "personalityTags": {
+    "workplace-07": {
+      "a": [
+        "calculated_calm",
+        "blame_shifting",
+        "retaliation_sensitive",
+        "shame_sensitive"
+      ],
+      "b": [
+        "victim_identity",
+        "selective_quote",
+        "counter_attack",
+        "grudge_holding"
+      ]
+    }
+  },
+  "contentTags": {
+    "workplace-07": {
+      "d-1": [
+        "career",
+        "trust_breach",
+        "hard_evidence_available",
+        "reputation_risk"
+      ],
+      "d-2": [
+        "privacy",
+        "trust_breach",
+        "third_party_risk"
+      ],
+      "d-3": [
+        "misleading_soft_evidence",
+        "hard_evidence_available",
+        "sequence_sensitive",
+        "role_failure"
+      ],
+      "d-4": [
+        "career",
+        "reputation_risk",
+        "hard_evidence_available",
+        "secret_keeping"
+      ],
+      "d-5": [
+        "privacy",
+        "promise_violation",
+        "trust_breach",
+        "hard_evidence_available"
+      ]
+    }
+  },
+  "truthCategory": {
+    "workplace-07": {
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "hidden_motive",
+      "t-5": "subjective_claim"
+    }
+  },
+  "actionAffinity": {
+    "workplace-07": {
+      "d-1": {
+        "bestAction": "evidence_present",
+        "worstAction": "empathy_approach",
+        "actionScores": {
+          "fact_pursuit": 1.05,
+          "motive_search": 0.95,
+          "empathy_approach": 0.7,
+          "evidence_present": 1.25,
+          "separation": 1,
+          "confidential_protection": 1.05
+        },
+        "bestActionHint": "익명 게시글 보존본과 리뷰 미팅 배제 로그를 같이 들이밀면, 태욱이 포렌식 전부터 세린을 찍고 움직였다는 순서가 드러나 '우연한 관리 판단' 변명이 약해진다.",
+        "worstActionReaction": "태욱의 억울함을 먼저 달래면 그는 곧 '익명 캡처 한 장에 당한 관리자' 위치로 숨으면서, 세린 색출과 평가 코멘트 입력 문제를 피해 간다."
+      },
+      "d-2": {
+        "bestAction": "fact_pursuit",
+        "worstAction": "empathy_approach",
+        "actionScores": {
+          "fact_pursuit": 1.15,
+          "motive_search": 0.9,
+          "empathy_approach": 0.7,
+          "evidence_present": 1.1,
+          "separation": 1,
+          "confidential_protection": 1.05
+        },
+        "bestActionHint": "세린에게 게시글 업로드 시각, 캡처 저장 경로, 멘토·동료 7명 전송 순서를 하나씩 고정해 묻는 게 좋다. '맥락을 붙였다'는 말이 퍼뜨린 범위와 타이밍 앞에서 버티기 어려워진다.",
+        "worstActionReaction": "과거 묵살의 상처부터 받아주면 세린은 다시 '2년 전에도 묻혔다'는 피해 서사로 돌아가고, 이번 편집·유포 행위는 배경 속으로 숨는다."
+      },
+      "d-3": {
+        "bestAction": "evidence_present",
+        "worstAction": "empathy_approach",
+        "actionScores": {
+          "fact_pursuit": 1,
+          "motive_search": 0.95,
+          "empathy_approach": 0.7,
+          "evidence_present": 1.3,
+          "separation": 1,
+          "confidential_protection": 1
+        },
+        "bestActionHint": "72dpi 본문과 96dpi 헤더 차이, 메시지 ID가 갈라지는 e-3 비교표를 캡처와 정면으로 붙이면, '지워' 문장이 현재 프로젝트 삭제 지시였다는 프레임이 한 번에 깨진다.",
+        "worstActionReaction": "세린이 느낀 공포를 먼저 인정해 버리면 그는 편집을 '복원'이나 '문맥 설명'으로 다시 부르며, 레이어 합성과 작업PC 로그 대조를 끝까지 미룬다."
+      },
+      "d-4": {
+        "bestAction": "motive_search",
+        "worstAction": "fact_pursuit",
+        "actionScores": {
+          "fact_pursuit": 0.85,
+          "motive_search": 1.2,
+          "empathy_approach": 0.9,
+          "evidence_present": 1.05,
+          "separation": 1,
+          "confidential_protection": 1.15
+        },
+        "bestActionHint": "태욱에게 왜 늘 '2년 전 건'과 '지금 건'을 칼같이 자르는지 묻게 되면, 품질총괄 라인에서 살아남으려는 계산과 세린 평가란 개입 동기가 함께 떠오른다.",
+        "worstActionReaction": "2년 전 회의록 문장만 파고들면 태욱은 '등급 표현 조정'이냐 '은폐'냐 같은 단어 싸움으로 빠져, 현재 보복 패턴을 과거 용어 논쟁 뒤에 숨긴다."
+      },
+      "d-5": {
+        "bestAction": "empathy_approach",
+        "worstAction": "fact_pursuit",
+        "actionScores": {
+          "fact_pursuit": 0.7,
+          "motive_search": 0.95,
+          "empathy_approach": 1.25,
+          "evidence_present": 1,
+          "separation": 1.1,
+          "confidential_protection": 1.25
+        },
+        "bestActionHint": "과거 축소가 남긴 상처와 이번 허위 캡처가 만든 낙인을 둘 다 인정해 주면, 태욱도 세린도 미종결 사건을 무기로 재활용했다는 사실을 방어 없이 꺼낼 여지가 생긴다.",
+        "worstActionReaction": "누가 먼저 더 심했는지만 따지면 둘 다 각자 유리한 한 장면만 끌어와서 싸우고, '과거 진실+현재 허위'를 분리해 보아야 한다는 핵심은 흐려진다."
+      }
+    }
+  },
+  "optimalPath": {
+    "workplace-07": {
+      "d-1": {
+        "pathGoal": "collapse_lie",
+        "requiredActions": [
+          "fact_pursuit",
+          "evidence_present:e-1"
+        ],
+        "bonusActions": [
+          "motive_search"
+        ],
+        "triggerMapping": {
+          "fact_pursuit": "author_identification_question",
+          "evidence_present:e-1": "e-1_presented",
+          "motive_search": "why_remove_from_review_question"
+        },
+        "pathBonus": 8
+      },
+      "d-2": {
+        "pathGoal": "collapse_lie",
+        "requiredActions": [
+          "fact_pursuit",
+          "investigate_only:e-2"
+        ],
+        "bonusActions": [],
+        "triggerMapping": {
+          "fact_pursuit": "anonymous_post_question",
+          "investigate_only:e-2": "e-2_presented"
+        },
+        "pathBonus": 8
+      },
+      "d-3": {
+        "pathGoal": "prove_false",
+        "requiredActions": [
+          "fact_pursuit",
+          "investigate_only:e-2",
+          "evidence_present:e-3"
+        ],
+        "bonusActions": [
+          "motive_search"
+        ],
+        "triggerMapping": {
+          "fact_pursuit": "screenshot_authenticity_question",
+          "investigate_only:e-2": "e-2_presented",
+          "evidence_present:e-3": "e-3_presented",
+          "motive_search": "why_current_header_question"
+        },
+        "pathBonus": 10
+      },
+      "d-4": {
+        "pathGoal": "collapse_lie",
+        "requiredActions": [
+          "fact_pursuit",
+          "evidence_present:e-4"
+        ],
+        "bonusActions": [
+          "motive_search"
+        ],
+        "triggerMapping": {
+          "fact_pursuit": "past_downgrade_question",
+          "evidence_present:e-4": "e-4_presented",
+          "motive_search": "nonjudgmental_question_about_customer_panic"
+        },
+        "pathBonus": 8
+      },
+      "d-5": {
+        "pathGoal": "reveal_mutual_breach",
+        "requiredActions": [
+          "fact_pursuit",
+          "evidence_present:e-1",
+          "evidence_present:e-4"
+        ],
+        "bonusActions": [
+          "separation",
+          "confidential_protection"
+        ],
+        "triggerMapping": {
+          "fact_pursuit": "old_case_weaponization_question",
+          "evidence_present:e-1": "e-1_presented",
+          "evidence_present:e-4": "e-4_presented",
+          "separation": "shared_responsibility_question",
+          "confidential_protection": "why_call_it_overreaction_question"
+        },
+        "pathBonus": 6
+      }
+    }
+  },
+  "narrativeExpansion": {
+    "workplace-07": {
+      "d-5": {
+        "category": "motive",
+        "deeperReveal": "세린에게는 2년 전 실제 축소 경험이 아직 끝나지 않은 사건이었고, 태욱에게는 과거 일을 현재에서 떼어내야만 자신의 관리자 평판이 유지됐다. 그 미종결성이 현재의 익명 폭로와 색출 프레임을 서로 정당화하는 연료가 됐다.",
+        "unlockHint": "confidential_protection 또는 empathy_approach + d-5 현재 S3 이상",
+        "impactDisputes": [
+          "d-1",
+          "d-2",
+          "d-4"
+        ]
+      }
+    }
+  },
+  "witnessSpeechSample": {
+    "workplace-07": {
+      "tp-1": [
+        "재판관님, 게시판 글이 뜬 직후 태욱씨가 '출하 지연보다 여론이 먼저 번지면 더 위험하다'고 보고한 건 기억합니다. 그때도 원본 채팅을 따로 보자고 했고요.",
+        "제가 아는 건 공식 라인 안의 흐름입니다. 태욱씨가 세린씨를 좋게 보지 않은 건 맞지만, e-2 캡처의 진위까지 본부 차원에서 확인한 상태는 아니었습니다."
+      ],
+      "tp-2": [
+        "조사실에서 확인한 건 단순히 글이 있었단 정도가 아닙니다. 게시판 보존 시각, 태욱씨가 먼저 의심을 굳힌 장면, 세린씨가 보복을 걱정한 진술이 시간순으로 맞물려 있었습니다.",
+        "평가 기록은 표현이 바뀌어도 입력 순서는 남습니다. 그래서 저는 '협업 부적합' 코멘트가 조사보다 뒤늦게 생긴 게 아니라는 점을 중요하게 봤습니다."
+      ],
+      "tp-3": [
+        "포렌식 기준으로 말씀드리면, 문제 캡처 본문은 2년 전 메시지 해시와 일치하고 상단 헤더만 현재 프로젝트 채널 값입니다. 한 장짜리 원본 캡처로 보기 어렵습니다.",
+        "편집 PC 로그를 대조하면 세린씨 단말에서 레이어가 합쳐진 흔적이 남습니다. 이번 사건 삭제 지시 원문은 export 어디에도 없었습니다."
+      ]
+    }
+  }
+}

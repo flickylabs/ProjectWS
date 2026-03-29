@@ -1,0 +1,341 @@
+{
+  "source": {
+    "prompt": "/mnt/data/재작업_프롬프트.md",
+    "current_result": "/mnt/data/현재결과_neighbor_01to06.json",
+    "raw_cases": [
+      "/mnt/data/neighbor-01.json",
+      "/mnt/data/neighbor-02.json",
+      "/mnt/data/neighbor-03.json",
+      "/mnt/data/neighbor-04.json",
+      "/mnt/data/neighbor-05.json",
+      "/mnt/data/neighbor-06.json"
+    ],
+    "reference": "/mnt/data/레퍼런스_spouse-01.json"
+  },
+  "target_sections_replaced": [
+    "actionAffinity.bestActionHint",
+    "actionAffinity.worstActionReaction",
+    "witnessSpeechSample",
+    "truthCategory",
+    "witnessBudgets.forbidden",
+    "witnessBudgets.uncertain",
+    "personalityTags"
+  ],
+  "integrity_checks": {
+    "truthPolicies_unchanged": true,
+    "contentTags_unchanged": true,
+    "optimalPath_unchanged": true,
+    "narrativeExpansion_unchanged": true,
+    "actionAffinity_static_fields_unchanged": true,
+    "witnessBudgets_name_canState_unchanged": true
+  },
+  "actionAffinity_checks": {
+    "bestActionHint_total": 30,
+    "bestActionHint_exact_duplicate_count": 0,
+    "bestActionHint_duplicates": {},
+    "worstActionReaction_total": 30,
+    "worstActionReaction_exact_duplicate_count": 0,
+    "worstActionReaction_duplicates": {}
+  },
+  "truthCategory_checks": {
+    "counts": {
+      "core_fact": 12,
+      "circumstantial": 9,
+      "hidden_motive": 5,
+      "subjective_claim": 4
+    },
+    "ratios": {
+      "core_fact": 0.4,
+      "circumstantial": 0.3,
+      "hidden_motive": 0.167,
+      "subjective_claim": 0.133
+    },
+    "distinct_category_count": 4,
+    "max_category_ratio": 0.4,
+    "categories_used": [
+      "circumstantial",
+      "core_fact",
+      "hidden_motive",
+      "subjective_claim"
+    ]
+  },
+  "personalityTags_checks": {
+    "party_count": 12,
+    "unique_combo_count": 12,
+    "duplicate_combos": {},
+    "face_sensitive_count": 2,
+    "face_sensitive_ratio": 0.167,
+    "combos": [
+      {
+        "case": "neighbor-01",
+        "party": "a",
+        "tags": [
+          "confrontational",
+          "fairness_obsessed",
+          "counter_attack",
+          "emotionally_volatile"
+        ],
+        "comboKey": "confrontational|counter_attack|emotionally_volatile|fairness_obsessed"
+      },
+      {
+        "case": "neighbor-01",
+        "party": "b",
+        "tags": [
+          "avoidant",
+          "relationship_preserving",
+          "shame_sensitive",
+          "timeline_padding"
+        ],
+        "comboKey": "avoidant|relationship_preserving|shame_sensitive|timeline_padding"
+      },
+      {
+        "case": "neighbor-02",
+        "party": "a",
+        "tags": [
+          "victim_identity",
+          "face_sensitive",
+          "counter_attack",
+          "retaliation_sensitive"
+        ],
+        "comboKey": "counter_attack|face_sensitive|retaliation_sensitive|victim_identity"
+      },
+      {
+        "case": "neighbor-02",
+        "party": "b",
+        "tags": [
+          "cold_logical",
+          "detail_obsessed",
+          "fairness_obsessed",
+          "calculated_calm"
+        ],
+        "comboKey": "calculated_calm|cold_logical|detail_obsessed|fairness_obsessed"
+      },
+      {
+        "case": "neighbor-03",
+        "party": "a",
+        "tags": [
+          "cold_logical",
+          "detail_obsessed",
+          "privacy_sensitive",
+          "calculated_calm"
+        ],
+        "comboKey": "calculated_calm|cold_logical|detail_obsessed|privacy_sensitive"
+      },
+      {
+        "case": "neighbor-03",
+        "party": "b",
+        "tags": [
+          "victim_identity",
+          "emotionally_volatile",
+          "counter_attack",
+          "shame_sensitive"
+        ],
+        "comboKey": "counter_attack|emotionally_volatile|shame_sensitive|victim_identity"
+      },
+      {
+        "case": "neighbor-04",
+        "party": "a",
+        "tags": [
+          "victim_identity",
+          "martyr_complex",
+          "counter_attack",
+          "face_sensitive"
+        ],
+        "comboKey": "counter_attack|face_sensitive|martyr_complex|victim_identity"
+      },
+      {
+        "case": "neighbor-04",
+        "party": "b",
+        "tags": [
+          "cold_logical",
+          "fairness_obsessed",
+          "grudge_holding",
+          "calculated_calm"
+        ],
+        "comboKey": "calculated_calm|cold_logical|fairness_obsessed|grudge_holding"
+      },
+      {
+        "case": "neighbor-05",
+        "party": "a",
+        "tags": [
+          "confrontational",
+          "detail_obsessed",
+          "selective_quote",
+          "privacy_sensitive"
+        ],
+        "comboKey": "confrontational|detail_obsessed|privacy_sensitive|selective_quote"
+      },
+      {
+        "case": "neighbor-05",
+        "party": "b",
+        "tags": [
+          "shame_sensitive",
+          "counter_attack",
+          "relationship_preserving",
+          "calculated_calm"
+        ],
+        "comboKey": "calculated_calm|counter_attack|relationship_preserving|shame_sensitive"
+      },
+      {
+        "case": "neighbor-06",
+        "party": "a",
+        "tags": [
+          "detail_obsessed",
+          "manipulative",
+          "shame_sensitive",
+          "calculated_calm"
+        ],
+        "comboKey": "calculated_calm|detail_obsessed|manipulative|shame_sensitive"
+      },
+      {
+        "case": "neighbor-06",
+        "party": "b",
+        "tags": [
+          "fairness_obsessed",
+          "denial_heavy",
+          "detail_obsessed",
+          "grudge_holding"
+        ],
+        "comboKey": "denial_heavy|detail_obsessed|fairness_obsessed|grudge_holding"
+      }
+    ]
+  },
+  "witnessSpeechSample_checks": {
+    "witness_count": 18,
+    "sample_count_total": 36,
+    "global_max_similarity_ratio": 0.485981,
+    "global_max_similarity_case": "neighbor-05",
+    "global_max_similarity_witness": "tp-2",
+    "global_max_similarity_sample": "제가 본 건 기사 출입 시각과 선반 상태까지고, 배송 사고 여부는 대리점 기록을 같이 봐야 맞습니다.",
+    "per_witness_max_similarity": {
+      "neighbor-01:tp-1": {
+        "maxSimilarity": 0.427184,
+        "sample": "복도에 제습기랑 물받이 통이 놓여 있던 건 맞고, 다음 날엔 한결씨 목소리가 복도 끝까지 들렸습니다."
+      },
+      "neighbor-01:tp-2": {
+        "maxSimilarity": 0.435644,
+        "sample": "기사는 23시 58분 승인으로 들어갔고, 그 기록은 경비실 대장에 남아 있습니다."
+      },
+      "neighbor-01:tp-3": {
+        "maxSimilarity": 0.336449,
+        "sample": "점검 보고서상 물은 윗집 욕실 배수에서 내려온 게 아니라 옥상 우수관 역류 쪽으로 보는 게 맞았습니다."
+      },
+      "neighbor-02:tp-1": {
+        "maxSimilarity": 0.252252,
+        "sample": "반상회 때 CCTV 예산이랑 반려동물 냄새 얘기가 한꺼번에 나와서, 두 분이 서로 예민해진 건 기억합니다."
+      },
+      "neighbor-02:tp-2": {
+        "maxSimilarity": 0.25,
+        "sample": "재판관님, 원본 6분 영상을 보면 민규씨가 박스를 뜯는 장면은 없고 선반 위치만 손보고 나갑니다."
+      },
+      "neighbor-02:tp-3": {
+        "maxSimilarity": 0.48,
+        "sample": "공용프린터 스풀 로그는 남아 있어서, 적어도 전단이 어디서 출력됐는지는 원본으로 확인 가능합니다."
+      },
+      "neighbor-03:tp-1": {
+        "maxSimilarity": 0.415842,
+        "sample": "사고 직후 서아씨가 제일 먼저 한 말이 \"문이 갑자기 닫히면서 줄이 걸렸다\"는 취지였어요."
+      },
+      "neighbor-03:tp-2": {
+        "maxSimilarity": 0.240741,
+        "sample": "사진 찍으러 갔을 때 바닥은 젖어 있었고, 줄이 배수구 쪽으로 길게 놓여 있었던 건 확인했습니다."
+      },
+      "neighbor-03:tp-3": {
+        "maxSimilarity": 0.383838,
+        "sample": "물림이면 보통 관통 흔적이나 쌍공 자국이 남는데, 그날 제가 본 상처 분포는 그쪽과 달랐습니다."
+      },
+      "neighbor-04:tp-1": {
+        "maxSimilarity": 0.477064,
+        "sample": "서림씨가 단체방에서 아버지 재활 얘기를 여러 번 한 건 맞지만, 그 이후 원상복구 이야기도 같이 나왔어요."
+      },
+      "neighbor-04:tp-2": {
+        "maxSimilarity": 0.357143,
+        "sample": "쪽지가 꽂힌 직후에 큰 실랑이가 난 건 아니었고, 새벽엔 차 위치가 그대로였던 것도 원본 CCTV에 남아 있습니다."
+      },
+      "neighbor-04:tp-3": {
+        "maxSimilarity": 0.314815,
+        "sample": "규정상 재활 배려는 종료일 이후 자동으로 이어지는 게 아니라, 합의된 날짜가 지나면 원상복구가 원칙입니다."
+      },
+      "neighbor-05:tp-1": {
+        "maxSimilarity": 0.418182,
+        "sample": "그 흰 상자 모서리 파란 스티커는 제 정기배송 표시라서, 화면 보고 바로 제 물건인 걸 알았습니다."
+      },
+      "neighbor-05:tp-2": {
+        "maxSimilarity": 0.485981,
+        "sample": "제가 본 건 기사 출입 시각과 선반 상태까지고, 배송 사고 여부는 대리점 기록을 같이 봐야 맞습니다."
+      },
+      "neighbor-05:tp-3": {
+        "maxSimilarity": 0.393443,
+        "sample": "최종 회수 사진이랑 스캔 로그를 대조하면, 두 분 물건이 누군가 가져간 게 아니라 중간에 멈춘 걸 알 수 있습니다."
+      },
+      "neighbor-06:tp-1": {
+        "maxSimilarity": 0.45614,
+        "sample": "문이 쾅 닫히던 시기엔 세영씨 손수레도, 인호씨 카트도 번갈아 문에 기대둔 걸 같은 층에서 몇 번 봤어요."
+      },
+      "neighbor-06:tp-2": {
+        "maxSimilarity": 0.254237,
+        "sample": "암이 휘고 오일이 샌 모양을 보면, 한 번 세게 친 손상보다 반복적으로 문을 받쳐 둔 흔적에 가깝습니다."
+      },
+      "neighbor-06:tp-3": {
+        "maxSimilarity": 0.369748,
+        "sample": "관리사무소 기준으로는 보전금 6만원이 먼저 빠졌고, 남은 주민 부담액이 12만원이라 두 세대 6만원씩이 맞습니다."
+      }
+    }
+  },
+  "witnessBudgets_checks": {
+    "uncertain_count_per_witness": {
+      "neighbor-01:tp-1": 2,
+      "neighbor-01:tp-2": 2,
+      "neighbor-01:tp-3": 2,
+      "neighbor-02:tp-1": 2,
+      "neighbor-02:tp-2": 2,
+      "neighbor-02:tp-3": 2,
+      "neighbor-03:tp-1": 2,
+      "neighbor-03:tp-2": 2,
+      "neighbor-03:tp-3": 2,
+      "neighbor-04:tp-1": 2,
+      "neighbor-04:tp-2": 2,
+      "neighbor-04:tp-3": 2,
+      "neighbor-05:tp-1": 2,
+      "neighbor-05:tp-2": 2,
+      "neighbor-05:tp-3": 2,
+      "neighbor-06:tp-1": 2,
+      "neighbor-06:tp-2": 2,
+      "neighbor-06:tp-3": 2
+    },
+    "forbidden_count_per_witness": {
+      "neighbor-01:tp-1": 3,
+      "neighbor-01:tp-2": 3,
+      "neighbor-01:tp-3": 3,
+      "neighbor-02:tp-1": 3,
+      "neighbor-02:tp-2": 3,
+      "neighbor-02:tp-3": 3,
+      "neighbor-03:tp-1": 3,
+      "neighbor-03:tp-2": 3,
+      "neighbor-03:tp-3": 3,
+      "neighbor-04:tp-1": 3,
+      "neighbor-04:tp-2": 3,
+      "neighbor-04:tp-3": 3,
+      "neighbor-05:tp-1": 3,
+      "neighbor-05:tp-2": 3,
+      "neighbor-05:tp-3": 3,
+      "neighbor-06:tp-1": 3,
+      "neighbor-06:tp-2": 3,
+      "neighbor-06:tp-3": 3
+    },
+    "forbidden_duplicate_entries_ge_3": {},
+    "forbidden_duplicate_entries_ge_2": {}
+  },
+  "pass_summary": {
+    "bestActionHint_no_exact_duplicates": true,
+    "worstActionReaction_no_exact_duplicates": true,
+    "truthCategory_uses_at_least_3_categories": true,
+    "truthCategory_no_category_over_60_percent": true,
+    "personalityTag_combos_all_unique": true,
+    "face_sensitive_below_50_percent": true,
+    "witnessSpeechSample_similarity_below_0_5": true,
+    "forbidden_no_entry_repeated_3_or_more": true,
+    "non_target_sections_preserved": true,
+    "overall": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "truthCategory": {
+    "family-01": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "motive"
+    },
+    "family-02": {
+      "t-1": "fact",
+      "t-2": "motive",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "motive"
+    },
+    "family-03": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "motive"
+    },
+    "family-04": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "motive",
+      "t-5": "fact"
+    },
+    "family-05": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "motive"
+    },
+    "family-06": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "motive",
+      "t-4": "fact",
+      "t-5": "fact"
+    },
+    "family-07": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "motive",
+      "t-4": "fact",
+      "t-5": "fact"
+    },
+    "family-08": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "emotion"
+    },
+    "family-09": {
+      "t-1": "motive",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "motive"
+    },
+    "family-10": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "motive"
+    },
+    "family-11": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "fact"
+    },
+    "family-12": {
+      "t-1": "fact",
+      "t-2": "fact",
+      "t-3": "fact",
+      "t-4": "fact",
+      "t-5": "motive"
+    }
+  }
+}

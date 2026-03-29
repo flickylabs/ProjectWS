@@ -1,0 +1,721 @@
+{
+  "caseId": "case-friend-12",
+  "meta": {
+    "relationshipType": "friend",
+    "conflictSeed": "CS-2",
+    "variableModules": [
+      "VM-C",
+      "VM-D"
+    ],
+    "twistModule": "TW-6",
+    "difficulty": "medium",
+    "anchorTruth": "공동 창작물 '새벽역'의 공개 화면과 공유 노션에서 보인 'song main: 윤수빈'과 'video main: 백재윤' 표시는 각 파트 책임 구분이었을 뿐 전체 소유권 표기가 아니었고, 둘은 최종 크레딧 시트를 끝내 만들지 않은 채 자기 쪽 라벨과 공개 카드만 보고 각자 더 큰 기여를 했다고 굳혀 버렸다.",
+    "emotionalBait": "스트리밍 카드에는 수빈 이름이 먼저 뜨고 쇼케이스 포스터와 재윤 릴 썸네일에는 재윤 역할이 더 크게 보여, 서로는 상대가 공개적으로 자신의 몫을 가져갔다고 느끼기 쉽다.",
+    "resolutionDilemma": "수빈의 '내 신곡' 식 단독 홍보와 재윤의 연출·프로듀싱 중심 포트폴리오 사용 중 무엇을 더 무겁게 볼지, 그리고 앞으로 친구 사이 공동 창작물에서 어떤 수준까지 역할·크레딧을 문서로 고정해야 할지가 어렵다."
+  },
+  "duo": {
+    "partyA": {
+      "name": "윤수빈",
+      "age": 27,
+      "occupation": "카피라이터 겸 인디 보컬",
+      "incomeBracket": "mid",
+      "archetype": "confrontational",
+      "speechStyle": "결과물이 세상에 어떻게 소개됐는지를 먼저 말하며, 자신이 쓴 문장과 부른 멜로디를 중심으로 창작의 핵심을 정의한다. 불리해지면 기술적 기여는 수고였을 뿐 작품의 정체성은 자신에게 있었다고 몰아간다.",
+      "pride": 8,
+      "fear": "자신의 목소리와 문장이 실린 작품에서 얼굴과 이름만 빌려준 사람처럼 축소되는 것 — 그것이 두렵다.",
+      "riskAppetite": 5,
+      "digitalHabit": "voice_memos_and_portfolio_posts",
+      "dailyRoutine": "낮에는 카피라이팅 외주 문구를 쓰고, 저녁에는 보컬 연습과 데모 녹음을 한다. 밤에는 음성메모와 캡션 초안을 정리해 두었다가 새벽에 포트폴리오와 SNS 문구를 올리는 편이다.",
+      "sensitivePoints": [
+        "자신의 가사와 보컬이 보조 요소처럼 취급되는 일",
+        "발표와 홍보에서 이름이 지워지는 상황",
+        "공동 작업이 타인의 포트폴리오 장식으로만 남는 것"
+      ],
+      "verbalTells": [
+        {
+          "type": "identity_push",
+          "trigger": "lying",
+          "pattern": "불리한 질문이 나오면 '노래의 정체성은 내 목소리였어'라고 작품의 핵심을 자신에게 먼저 묶는다."
+        },
+        {
+          "type": "caption_minimizing",
+          "trigger": "cornered",
+          "pattern": "문제된 단독 표현을 지적받으면 '캡션 한 줄이었어'라며 파급력을 축소한다."
+        },
+        {
+          "type": "tight_cutoff",
+          "trigger": "emotional",
+          "pattern": "감정이 올라오면 상대 설명을 중간에 끊고 예스·노 식의 짧은 질문으로 몰아간다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "재윤아",
+        "toJudge": "제 친구",
+        "angry": "야, 재윤!"
+      }
+    },
+    "partyB": {
+      "name": "백재윤",
+      "age": 29,
+      "occupation": "숏폼 영상 편집자 겸 비트메이커",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "프로젝트 파일과 버전 기록, 큐시트 순서를 차례로 보여 주며 누가 실제로 무엇을 만들었는지를 로그로 입증하려 한다. 하지만 몰리면 크레딧 문제를 '표시 형식' 문제로 줄여 자신의 과장된 자기 홍보를 가볍게 다루려 한다.",
+      "pride": 7,
+      "fear": "몇 달간 편집과 편곡을 해 놓고도 단순 기술 지원자처럼 지워지는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "daw_projects_and_edit_reels",
+      "dailyRoutine": "오전에는 납품용 숏폼 편집을 하고, 오후에는 비트와 사운드 디자인을 만진다. 밤에는 프리미어 프로젝트와 DAW 세션을 같이 열어 두고, 완성본을 릴과 포트폴리오에 어떻게 잘라 올릴지 고민한다.",
+      "sensitivePoints": [
+        "연출과 편곡이 단순 보조 노동처럼 취급되는 일",
+        "공동 작품이 상대 개인 브랜드로만 소비되는 상황",
+        "마감 직전 수습을 해놓고도 이름이 밀리는 것"
+      ],
+      "verbalTells": [
+        {
+          "type": "log_drop",
+          "trigger": "lying",
+          "pattern": "불리한 지점이 나오면 커밋과 프로젝트 타임라인을 한꺼번에 내밀어 개별 질문을 기록 더미에 묻는다."
+        },
+        {
+          "type": "format_split",
+          "trigger": "cornered",
+          "pattern": "'표시'와 '소유'는 다르다며 공개 화면의 인상을 과소평가한다."
+        },
+        {
+          "type": "dry_pause",
+          "trigger": "emotional",
+          "pattern": "감정이 올라오면 짧게 침묵한 뒤 더 무미건조한 톤으로 사실만 열거한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "수빈아",
+        "toJudge": "제 친구",
+        "angry": "야, 수빈!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "지난겨울 대학 쇼케이스 트레일러를 같이 만든 뒤, 둘은 최종 업로드와 제출 전에 대표 표기와 팀원 크레딧 문구를 공동 문서로 먼저 확인하기로 합의했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "봄 라이브클립 편집 때 공유 폴더 이름에 누가 먼저 'main' 표기를 붙였는지를 둘 다 상대 탓으로 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '재윤이 원래 자기 파트마다 메인이라는 단어를 즐겨 썼다' / B: '수빈도 보컬 탭에 메인 표기를 먼저 붙였다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "작년 재윤이 수빈 데모를 무상으로 마스터링해 주고, 수빈이 대신 보도자료 문구를 써 준 적이 있었지만 서로 어떤 빚이 남았는지는 정식으로 말하지 못했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "정다온 (공통 기타 세션 친구)",
+        "relationTo": "both",
+        "knowledgeScope": "수빈의 가사·가이드 녹음과 재윤의 편곡·촬영·편집 과정을 모두 봤고, 공개 직후 서로의 게시물을 둘 다 확인했다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 28,
+          "occupation": "영상 프로덕션 PD",
+          "relationToA": "윤수빈을 업무상 알고 있음",
+          "relationToB": "백재윤을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "편하게 말하다가 재판관 앞에서는 존댓말로 돌아간다. 친구의 입장을 자연스럽게 대변한다.",
+          "addressJudge": "재판관님",
+          "addressA": "수빈씨",
+          "addressB": "재윤"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "institutional",
+        "name": "박나경 (인디 쇼케이스 코디네이터)",
+        "relationTo": "both",
+        "knowledgeScope": "제출 폼의 공동 크레딧, 보도자료 초안, 쇼케이스 포스터 템플릿 구조를 원본 기준으로 알고 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 33,
+          "occupation": "인디 쇼케이스 코디네이터",
+          "relationToA": "윤수빈을 업무상 알고 있음",
+          "relationToB": "백재윤을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "윤수빈씨",
+          "addressB": "백재윤씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional_2",
+        "name": "최서린 (음원유통 플랫폼 지원 매니저)",
+        "relationTo": "both",
+        "knowledgeScope": "스트리밍 카드에 어떤 이름이 먼저 보이는지, 숨겨진 기여자 메타데이터와 수정 이력을 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 30,
+          "occupation": "음원유통 플랫폼 지원 매니저",
+          "relationToA": "윤수빈을 업무상 알고 있음",
+          "relationToB": "백재윤을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "수빈씨",
+          "addressB": "재윤씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "joint_music_video_credit_conflict",
+    "description": "수빈과 재윤은 스포큰워드 기반의 짧은 음악 영상 '새벽역'을 함께 만들었고, 수빈은 가사와 보컬·내레이션을, 재윤은 비트·촬영·편집을 맡았다. 작품이 쇼케이스와 스트리밍에서 동시에 주목받자 각 플랫폼의 표시 방식과 두 사람의 개별 홍보 문구가 엇갈리며, 서로가 성과를 훔쳤다는 감정이 빠르게 커졌다.",
+    "emotionalPressure": 7,
+    "affects": "both",
+    "triggerAmplifier": "음악 플랫폼은 아티스트를 먼저, 영상 포트폴리오는 연출자를 먼저 드러내는 구조라 같은 작품도 어느 화면을 보느냐에 따라 전혀 다른 주인처럼 보였고, 둘은 그 차이를 공동 책임으로 정리하지 못한 채 개인 해석으로 굳혀 갔다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "수빈의 '내 신곡/내 프로젝트' 단독 홍보",
+      "truth": true,
+      "truthDescription": "수빈은 공개 직후 캡션과 짧은 인터뷰 답변에서 '내 신곡', '내 프로젝트'라는 표현을 써 공동 작업물임에도 단독 성과처럼 보이게 했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "크레딧재정리",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-2",
+      "name": "재윤의 포트폴리오 릴과 안내 메일에서 수빈 누락",
+      "truth": true,
+      "truthDescription": "재윤은 포트폴리오 릴과 클라이언트 안내 메일에서 연출·프로듀싱을 강조하며 수빈을 'voice' 수준으로만 적거나 아예 썸네일에서 빼 공동 창작의 균형을 무너뜨렸다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-4",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "크레딧재정리",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-3",
+      "name": "최종작 '새벽역'은 사실상 한 사람의 단독 창작물인가",
+      "truth": false,
+      "truthDescription": "가사·보컬·멜로디와 비트·편곡·촬영·편집이 반복 수정으로 얽혀 있어 최종작은 어느 한 사람의 단독 창작물로 보기 어렵고, 핵심 구성요소가 상호 의존적으로 만들어졌다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-2",
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 52,
+        "b": 48
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "크레딧재정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "최종 크레딧 시트와 역할 정의를 끝까지 비워 둔 공동 책임",
+      "truth": true,
+      "truthDescription": "둘은 예전부터 제출 전 역할표와 크레딧 문구를 정하자고 했지만, 이번에는 '나중에 정리하자'는 말만 반복한 채 최종 공개 전까지 확정 시트를 만들지 않았다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-2",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "작업절차복구",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-5",
+      "name": "재윤의 one-name 화면과 포스터 크롭 재활용",
+      "truth": true,
+      "truthDescription": "재윤은 전체 제출 메타데이터에서 공동 크레딧을 이미 확인했음에도, 자신 이름이 먼저 보이는 포스터와 카드 화면만 잘라 포트폴리오와 소개 메일에 반복 사용해 단독 창작자처럼 보이게 했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 35,
+        "b": 65
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "크레딧재정리",
+      "legitimacyIssue": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "스트리밍 카드·포스터·릴 썸네일 캡처 모음",
+      "description": "스트리밍 카드에서는 수빈 이름만, 쇼케이스 포스터와 릴 썸네일에서는 재윤 역할만 크게 보이도록 잘린 공개 화면 모음이다.",
+      "type": "sns",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "정다온과 각자 계정에 남아 있던 공개 화면 캡처가 묶여 제출됐다.",
+        "check_metadata": "모든 캡처는 공개 직후 가장 초기 노출 화면에서 저장된 것이고, 전체 크레딧 열기 전 단계에 머물러 있다.",
+        "restore_context": "첫 화면만 보면 한 사람 이름만 보여 단독 작업처럼 읽히지만, 상세 정보나 전체 포스터에는 다른 기여가 더 남아 있다.",
+        "verify_source": "각 캡처의 게시 시각과 플랫폼 공개 시점이 일치해 실제 초기 노출 화면임이 확인된다.",
+        "check_edits": "문자열 조작은 없지만 선택적 크롭으로 다른 크레딧 정보가 빠져 있다.",
+        "question_acquisition": "공개 자료이긴 하나, 부분 캡처만 반복 유통될 때 오해를 키울 수 있어 전체 맥락 제시가 필요하다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "공유 노션 기획안과 크레딧 메모",
+      "description": "song main, video main 탭이 나뉜 기획안과 '최종 크레딧은 추후 확정'이라는 코멘트가 남은 공유 노션 원본이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "platform",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "노션 페이지 원본과 버전 기록, 댓글 스레드가 함께 제출됐다.",
+        "check_metadata": "song main과 video main 표기는 초중반에 생겼고, 최종 크레딧 표는 공개 전날까지도 빈칸으로 남아 있다.",
+        "restore_context": "메인 표기는 파트 책임자 수준이었지 작품 전체 소유자 표기는 아니었지만, 둘 다 자기 탭만 더 강하게 기억한 흔적이 보인다.",
+        "verify_source": "노션 버전 기록과 각자 저장한 링크 내용이 동일하다.",
+        "check_edits": "플랫폼 revision history라 후편집 흔적은 없다.",
+        "question_acquisition": "공동 작업 문서라 적법하지만 다른 미공개 기획 아이디어는 최소 범위만 다루는 것이 바람직하다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "DAW 세션 파일과 가사·멜로디 수정 이력",
+      "description": "재윤의 비트 세션, 수빈의 가이드 보컬과 가사 수정, 상호 피드백이 남은 DAW 프로젝트와 문서 이력이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "DAW 원본 세션과 보컬 가이드 파일, 가사 문서 revision log가 함께 제출됐다.",
+        "check_metadata": "초기 멜로디는 수빈 쪽, 후반 구조 편곡과 리듬 전환은 재윤 쪽에서 반복적으로 바뀐 흔적이 시간순으로 남아 있다.",
+        "restore_context": "한 사람이 던진 초안 위에 다른 사람이 수고만 보탠 구조가 아니라, 곡의 주요 부분이 교차 수정으로 완성됐다.",
+        "verify_source": "파일 타임스탬프와 노션 댓글, 음성메모 시각이 서로 이어진다.",
+        "check_edits": "원본 세션과 revision log라 사후 조작 흔적은 없다.",
+        "question_acquisition": "미공개 작업 파일이 포함돼 있어 외부 공유는 최종 분쟁 해결 범위에 한정돼야 한다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "편집 프로젝트 파일과 촬영 큐시트",
+      "description": "재윤의 프리미어/리졸브 프로젝트, 수빈의 재촬영 요청 음성메모, 컷 수정 로그가 남은 편집 원본이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2"
+      ],
+      "investigationResults": {
+        "request_original": "편집 프로젝트 파일과 촬영 큐시트, 수빈이 보낸 재촬영 음성메모가 함께 제출됐다.",
+        "check_metadata": "재윤이 최종 컷과 색보정을 대부분 수행한 것은 맞지만, 수빈의 화면 구성·자막 수정 요청도 후반부까지 계속 반영됐다.",
+        "restore_context": "재윤이 영상 파트를 주도한 사실과 별개로, 수빈이 얼굴과 목소리만 제공한 수준은 아니었다.",
+        "verify_source": "프로젝트 autosave 기록과 음성메모 타임스탬프가 동일한 수정 구간과 이어진다.",
+        "check_edits": "원본 프로젝트와 큐시트라 후편집 흔적은 없다.",
+        "question_acquisition": "클라이언트용 예시 파일과 장비 세팅 정보가 포함돼 있어 다른 상업 작업 정보는 비공개가 바람직하다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "쇼케이스 제출 폼과 음원유통 메타데이터 export",
+      "description": "쇼케이스는 공동 창작물로, 음원유통 메타데이터에는 primary artist와 producer가 각각 다르게 표시된 제출 원본이다.",
+      "type": "platform_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "쇼케이스 제출 PDF, press kit, 유통 플랫폼 export가 함께 제출됐다.",
+        "check_metadata": "공개 첫 화면에는 플랫폼 특성상 한 역할만 먼저 떠도, 상세 메타데이터에는 공동 크레딧이 이미 입력돼 있었다.",
+        "restore_context": "재윤은 전체 메타데이터를 본 상태에서 자신 이름이 먼저 보이는 화면만 별도로 활용할 수 있는 위치에 있었다.",
+        "verify_source": "박나경 코디네이터 보관본과 최서린 매니저 export 내용이 일치한다.",
+        "check_edits": "기관·플랫폼 보존본이라 후편집 흔적은 없다.",
+        "question_acquisition": "제출 자료에는 다른 미공개 홍보 문안이 포함돼 있어 외부 재배포는 제한하는 것이 적절하다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "인스타·릴스 edit history와 크레딧 조율 단톡",
+      "description": "수빈의 단독형 캡션 수정 내역, 재윤의 릴 썸네일 수정, 그리고 둘이 최종 크레딧 문구를 끝내 확정하지 못한 단톡 원본이다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "SNS edit history와 단톡 원본, 재윤이 보낸 포트폴리오 메일 초안이 함께 제출됐다.",
+        "check_metadata": "문제된 표현들은 모두 공개 직후 가장 노출이 큰 몇 시간 동안 유지됐고, 그 뒤 항의가 오간 다음에야 일부 수정됐다.",
+        "restore_context": "둘 다 상대의 반응을 본 뒤에도 즉시 정정하기보다 자기 해석에 맞는 홍보 문구를 유지하려 한 흔적이 남아 있다.",
+        "verify_source": "플랫폼 수정 기록과 단톡 메시지 순서, 메일 발송 시간이 서로 일치한다.",
+        "check_edits": "edit history와 원본 대화라 사후 조작 흔적은 없다.",
+        "question_acquisition": "개인 계정 포트폴리오와 미공개 메일 초안이 섞여 있어 공개 범위는 최소화하는 것이 좋다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-5"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "수빈은 공개 직후 '내 신곡', '내 프로젝트' 같은 표현으로 공동 작업물을 단독 성과처럼 홍보했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "재윤은 릴과 포트폴리오 메일에서 자신의 연출·프로듀싱을 중심에 놓고 수빈 크레딧을 축소했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "최종작은 가사·보컬과 비트·편집이 교차 수정된 공동 창작물이라 한 사람의 단독작으로 보기 어렵다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "둘은 공개 전 역할표와 크레딧 문구를 정하기로 해 놓고도 끝내 확정하지 못했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-5",
+      "fact": "재윤은 공동 메타데이터를 본 뒤에도 자신 이름이 먼저 보이는 화면만 골라 포트폴리오에 재사용했다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "b_only"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "solo_caption_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "caption_history_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "sole_creator_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "daw_revision_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_or_e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "credit_sheet_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_why_she_left_it_unfinished"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "portfolio_reel_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "thumbnail_omission_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "sole_creator_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "edit_project_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-3_or_e-4_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-4",
+      "lieIntensity": "L1",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "one_name_screen_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "metadata_view_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_or_e-6_presented"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "크레딧재정리": [
+      "수빈과 재윤은 음악·영상·기획·보컬·편곡·촬영·편집을 항목별로 나눈 최종 크레딧 시트를 만들고, 같은 문구를 모든 공개 채널에 동시에 반영한다.",
+      "이미 올라간 단독형 캡션, 릴 썸네일, 소개 메일은 공동 작업물이라는 표현으로 정정하고 가장 노출이 컸던 게시 범위에 같은 수준으로 다시 공지한다.",
+      "앞으로는 플랫폼 특성상 한 이름만 먼저 뜨는 화면을 단독 소유 근거로 쓰지 않고, 상세 메타데이터와 전체 크레딧을 함께 제시한다."
+    ],
+    "작업절차복구": [
+      "공개 전 마지막 24시간 안에는 역할표, 대표 표기, 포트폴리오 사용 문구를 반드시 공동 문서에서 잠그는 체크리스트를 만든다.",
+      "노션의 song main, video main 같은 파트 책임 표시는 유지하되, 작품 전체 소유·저작 표시와 혼동되지 않도록 별도 탭으로 분리한다.",
+      "마감 직전 수습을 누가 했는지와 별개로 최종 크레딧은 로그 기준이 아니라 합의 시트 기준으로 확정하는 절차를 세운다."
+    ],
+    "친구경계": [
+      "서로에게 빚처럼 남아 있던 무상 마스터링과 보도자료 도움은 이번 작품의 소유권 판단과 자동으로 연결하지 않는다고 다시 선을 긋는다.",
+      "다음 공동 창작물부터는 개인 포트폴리오와 상업 제안 메일에 쓸 설명 문구까지 사전에 합의하지 않으면 공개를 미룬다.",
+      "단독형 자기 홍보가 반복되면 친구 관계와 별개로 공동 창작은 중단하고, 이후에는 용역 계약 수준으로만 협업한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}

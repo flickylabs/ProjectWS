@@ -1,0 +1,291 @@
+{
+  "source": {
+    "prompt": "재작업_프롬프트.md",
+    "prompt_variant": "spouse-01~06 (S1 special: witnessBudgets.forbidden/uncertain 유지)",
+    "current_result": "현재결과_spouse_01to06.json",
+    "raw_cases": [
+      "spouse-01.json",
+      "spouse-02.json",
+      "spouse-03.json",
+      "spouse-04.json",
+      "spouse-05.json",
+      "spouse-06.json"
+    ],
+    "reference": "레퍼런스_spouse-01.json"
+  },
+  "target_sections_replaced": [
+    "actionAffinity.bestActionHint",
+    "actionAffinity.worstActionReaction",
+    "witnessSpeechSample",
+    "truthCategory",
+    "personalityTags"
+  ],
+  "integrity_checks": {
+    "truthPolicies_unchanged": true,
+    "contentTags_unchanged": true,
+    "optimalPath_unchanged": true,
+    "narrativeExpansion_unchanged": true,
+    "actionAffinity_static_fields_unchanged": true,
+    "witnessBudgets_unchanged": true
+  },
+  "actionAffinity_checks": {
+    "bestActionHint_total": 30,
+    "bestActionHint_exact_duplicate_count": 0,
+    "bestActionHint_duplicates": {},
+    "worstActionReaction_total": 30,
+    "worstActionReaction_exact_duplicate_count": 0,
+    "worstActionReaction_duplicates": {}
+  },
+  "truthCategory_checks": {
+    "counts": {
+      "core_fact": 14,
+      "circumstantial": 5,
+      "subjective_claim": 4,
+      "emotional_context": 3,
+      "hidden_motive": 4
+    },
+    "ratios": {
+      "core_fact": 0.466667,
+      "circumstantial": 0.166667,
+      "subjective_claim": 0.133333,
+      "emotional_context": 0.1,
+      "hidden_motive": 0.133333
+    },
+    "distinct_category_count": 5,
+    "max_category_ratio": 0.466667,
+    "categories_used": [
+      "core_fact",
+      "circumstantial",
+      "subjective_claim",
+      "emotional_context",
+      "hidden_motive"
+    ],
+    "invalid_categories": []
+  },
+  "personalityTags_checks": {
+    "party_count": 12,
+    "unique_combo_count": 12,
+    "duplicate_combos": {},
+    "face_sensitive_count": 3,
+    "face_sensitive_ratio": 0.25,
+    "combos": {
+      "spouse-01:a": [
+        "avoidant",
+        "shame_sensitive",
+        "timeline_padding",
+        "relationship_preserving"
+      ],
+      "spouse-01:b": [
+        "confrontational",
+        "selective_quote",
+        "retaliation_sensitive",
+        "face_sensitive"
+      ],
+      "spouse-02:a": [
+        "cold_logical",
+        "privacy_sensitive",
+        "shame_sensitive",
+        "detail_obsessed"
+      ],
+      "spouse-02:b": [
+        "martyr_complex",
+        "victim_identity",
+        "blame_shifting",
+        "face_sensitive"
+      ],
+      "spouse-03:a": [
+        "detail_obsessed",
+        "calculated_calm",
+        "shame_sensitive",
+        "conflict_avoidant"
+      ],
+      "spouse-03:b": [
+        "passive_aggressive",
+        "counter_attack",
+        "blame_shifting",
+        "fairness_obsessed"
+      ],
+      "spouse-04:a": [
+        "relationship_preserving",
+        "conflict_avoidant",
+        "shame_sensitive",
+        "blame_shifting"
+      ],
+      "spouse-04:b": [
+        "confrontational",
+        "detail_obsessed",
+        "fairness_obsessed",
+        "selective_quote"
+      ],
+      "spouse-05:a": [
+        "cold_logical",
+        "privacy_sensitive",
+        "manipulative",
+        "detail_obsessed"
+      ],
+      "spouse-05:b": [
+        "fairness_obsessed",
+        "authority_challenging",
+        "confrontational",
+        "trust_broken"
+      ],
+      "spouse-06:a": [
+        "conflict_avoidant",
+        "privacy_sensitive",
+        "relationship_preserving",
+        "calculated_calm"
+      ],
+      "spouse-06:b": [
+        "cold_logical",
+        "face_sensitive",
+        "counter_attack",
+        "retaliation_sensitive"
+      ]
+    },
+    "invalid_personality_tags": {}
+  },
+  "witnessSpeechSample_checks": {
+    "witness_count": 19,
+    "sample_count_total": 38,
+    "global_max_similarity_ratio": 0.470588,
+    "global_max_similarity_case": "spouse-02",
+    "global_max_similarity_witness": "tp-3",
+    "global_max_similarity_sample": "희주씨 초안은 학교 서버에 발송본으로 남아 있지 않았어요. 반면 실제로 들어온 첨부는 도윤씨 쪽 보조 계정 흔적과 맞물렸습니다.",
+    "per_witness_max_similarity": {
+      "spouse-01:tp-1": {
+        "maxSimilarity": 0.363636,
+        "sample": "세린이는 동생 쪽 집세 구멍 얘기만 나오면 말끝이 흐려졌어요. 지석 사위 앞에서는 끝내 입을 떼지 못한 채 혼자 끙끙거리는 느낌이었습니다."
+      },
+      "spouse-01:tp-2": {
+        "maxSimilarity": 0.302521,
+        "sample": "연휴 직전엔 지석 형이 쉬는 시간마다 돌봄센터 번호로 다시 거는 걸 여러 번 봤습니다. 일 얘기보다 처가 쪽 간병 공백을 더 신경 쓰더라고요."
+      },
+      "spouse-01:tp-3": {
+        "maxSimilarity": 0.46729,
+        "sample": "한지석씨는 제 개인 지인이 아니라 상담 고객이었습니다. 280만원도 오미숙 어르신 연휴 간병 예약금으로 정상 수납됐고요."
+      },
+      "spouse-01:tp-4": {
+        "maxSimilarity": 0.361905,
+        "sample": "세린이가 저한테는 '동생 쪽으로 150만 원만 먼저 건너가게 해 달라'고 했어요. 지석씨한테는 추석 지나고 말하겠다고도 했고요."
+      },
+      "spouse-02:tp-1": {
+        "maxSimilarity": 0.409836,
+        "sample": "가족끼리 예전 치료 얘기가 나온 적은 있지만, 그 종이가 학교 쪽 파일에 어떻게 얹혔는지까지 저는 전혀 본 적 없습니다."
+      },
+      "spouse-02:tp-2": {
+        "maxSimilarity": 0.412214,
+        "sample": "희주가 익명 글 본 날 손이 떨릴 정도로 놀라 있었습니다. 저한테도 도윤 메일을 연 건 맞는데, 계획적으로 뒤진 건 아니었다고 하소연했어요."
+      },
+      "spouse-02:tp-3": {
+        "maxSimilarity": 0.470588,
+        "sample": "희주씨 초안은 학교 서버에 발송본으로 남아 있지 않았어요. 반면 실제로 들어온 첨부는 도윤씨 쪽 보조 계정 흔적과 맞물렸습니다."
+      },
+      "spouse-03:tp-1": {
+        "maxSimilarity": 0.40678,
+        "sample": "인호는 건조기 얘길 할 때도 사치품 산다는 톤이 아니었어요. 유진이 새 회사 다니면 새벽 빨래 동선부터 줄여야 한다고 했죠."
+      },
+      "spouse-03:tp-2": {
+        "maxSimilarity": 0.396947,
+        "sample": "수습 첫 달 외부 미팅 있으면 정장, 구두 거의 필수예요. 유진도 갑자기 그 비용을 먼저 자기 돈으로 막아야 해서 많이 당황해했습니다."
+      },
+      "spouse-03:tp-3": {
+        "maxSimilarity": 0.460177,
+        "sample": "저희 규정상 유진씨 직무는 외부 미팅 복장 기준에서 빠지는 사람이 아니에요. 첫 달부터 바로 그 항목이 적용되는 자리였습니다."
+      },
+      "spouse-04:tp-1": {
+        "maxSimilarity": 0.434783,
+        "sample": "제가 예약 코드와 케이크 문구를 알고 있었던 건 사실입니다. 하준이가 선물 시계 찾으러 들르기로 한 것도 미리 들었고요."
+      },
+      "spouse-04:tp-2": {
+        "maxSimilarity": 0.387097,
+        "sample": "다은이가 저한테 보낸 건 하준씨랑 먼저 풀고 난 뒤가 아니었어요. 태블릿 알림 뜨자마자 '이거 직접 바꾼 거 맞지?' 하고 단톡에 캡처부터 올렸죠."
+      },
+      "spouse-04:tp-3": {
+        "maxSimilarity": 0.42623,
+        "sample": "시스템에는 변경 완료 알림만 남지만, 발신 번호까지 보면 하준씨 휴대폰은 아니었습니다. 예약 코드를 아는 다른 사람이 전화를 건 기록이 있어요."
+      },
+      "spouse-05:tp-1": {
+        "maxSimilarity": 0.363636,
+        "sample": "반대로 민재씨는 문제의 녹취를 저한테 먼저 들려주면서 소담이가 일부러 회의 망치려 한다고 크게 몰았습니다. 그때부터 저는 파일이 너무 극단적이라고 느꼈어요."
+      },
+      "spouse-05:tp-2": {
+        "maxSimilarity": 0.391304,
+        "sample": "민재 형이 7월 8일 파일이랑 11일 파일을 같이 보내면서 하나로 정리해 달라고 했습니다. 저는 내부 설명용 하이라이트쯤으로 알았지, 원본처럼 쓸 줄은 몰랐어요."
+      },
+      "spouse-05:tp-3": {
+        "maxSimilarity": 0.383333,
+        "sample": "문제 파일은 한 번에 이어진 녹음이 아니었습니다. 서로 다른 날 소리가 뒤섞여 있어서, 끊김 없는 협박 음성처럼 받아들이면 안 됩니다."
+      },
+      "spouse-06:tp-1": {
+        "maxSimilarity": 0.455446,
+        "sample": "그 문장, 서희가 북클럽 연재 초안에 써 둔 거 저도 전에 본 적 있어요. 남편 실명 고발문을 새로 쓴 건 아니었습니다."
+      },
+      "spouse-06:tp-2": {
+        "maxSimilarity": 0.326241,
+        "sample": "배지랑 문장 조합을 보고 제가 먼저 팀 선임한테 혹시 우람 팀장 이야기냐고 물은 건 맞습니다. 바로 사실로 단정해서 퍼뜨리겠다는 마음보단 확인이 먼저였어요."
+      },
+      "spouse-06:tp-3": {
+        "maxSimilarity": 0.42623,
+        "sample": "타임스탬프를 보면 우람씨가 집에서 배우자랑 정리 끝내기도 전에 회사 채널 쪽 버튼을 먼저 눌렀습니다. 그 순서만은 기록이 꽤 또렷해요."
+      }
+    }
+  },
+  "witnessBudgets_checks": {
+    "uncertain_count_per_witness": {
+      "spouse-01:tp-1": 2,
+      "spouse-01:tp-2": 2,
+      "spouse-01:tp-3": 2,
+      "spouse-01:tp-4": 2,
+      "spouse-02:tp-1": 2,
+      "spouse-02:tp-2": 2,
+      "spouse-02:tp-3": 2,
+      "spouse-03:tp-1": 2,
+      "spouse-03:tp-2": 2,
+      "spouse-03:tp-3": 2,
+      "spouse-04:tp-1": 2,
+      "spouse-04:tp-2": 2,
+      "spouse-04:tp-3": 2,
+      "spouse-05:tp-1": 2,
+      "spouse-05:tp-2": 2,
+      "spouse-05:tp-3": 2,
+      "spouse-06:tp-1": 2,
+      "spouse-06:tp-2": 2,
+      "spouse-06:tp-3": 2
+    },
+    "forbidden_count_per_witness": {
+      "spouse-01:tp-1": 3,
+      "spouse-01:tp-2": 3,
+      "spouse-01:tp-3": 3,
+      "spouse-01:tp-4": 3,
+      "spouse-02:tp-1": 3,
+      "spouse-02:tp-2": 3,
+      "spouse-02:tp-3": 3,
+      "spouse-03:tp-1": 3,
+      "spouse-03:tp-2": 3,
+      "spouse-03:tp-3": 3,
+      "spouse-04:tp-1": 3,
+      "spouse-04:tp-2": 3,
+      "spouse-04:tp-3": 3,
+      "spouse-05:tp-1": 3,
+      "spouse-05:tp-2": 3,
+      "spouse-05:tp-3": 3,
+      "spouse-06:tp-1": 3,
+      "spouse-06:tp-2": 3,
+      "spouse-06:tp-3": 3
+    },
+    "forbidden_duplicate_entries_ge_3": {},
+    "forbidden_duplicate_entries_ge_2": {}
+  },
+  "pass_summary": {
+    "bestActionHint_no_exact_duplicates": true,
+    "worstActionReaction_no_exact_duplicates": true,
+    "truthCategory_uses_at_least_3_categories": true,
+    "truthCategory_no_category_over_60_percent": true,
+    "personalityTag_combos_all_unique": true,
+    "face_sensitive_below_50_percent": true,
+    "witnessSpeechSample_similarity_below_0_5": true,
+    "forbidden_no_entry_repeated_3_or_more": true,
+    "non_target_sections_preserved": true,
+    "overall": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "bestActionHint_unique": true,
+  "worstActionReaction_unique": true,
+  "truthCategory_counts": {
+    "core_fact": 14,
+    "circumstantial": 5,
+    "hidden_motive": 5,
+    "subjective_claim": 6
+  },
+  "truthCategory_min_types": true,
+  "truthCategory_max_ratio": 0.4666666666666667,
+  "personality_combo_unique": true,
+  "face_sensitive_count": 2,
+  "max_speech_similarity_to_canState": 0.496,
+  "forbidden_exact_duplicates_ge3": 0
+}

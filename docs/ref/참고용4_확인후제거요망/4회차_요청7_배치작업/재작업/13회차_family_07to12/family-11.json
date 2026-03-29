@@ -1,0 +1,717 @@
+{
+  "caseId": "case-family-11",
+  "meta": {
+    "relationshipType": "family",
+    "conflictSeed": "CS-3",
+    "variableModules": [
+      "VM-E"
+    ],
+    "twistModule": "TW-1",
+    "difficulty": "hard",
+    "anchorTruth": "오연숙이 손주를 지키려 개입했다고 주장한 현재 갈등의 밑바닥에는, 몇 해 전 같은 아이에게 성인용 감기약과 해열제를 중복 투여하고도 그 밤을 단순 고열로만 덮어 둔 더 큰 실수가 깔려 있다.",
+    "emotionalBait": "잘린 담임 메시지, 무단 하원 로그, 발달상담 예약이 겹치면서 처음에는 조모가 무책임한 부모 대신 아이를 붙잡아 준 희생자처럼 보인다.",
+    "resolutionDilemma": "조모의 학교·병원 개입은 분명한 권한 침범이지만, 부모도 루틴을 자주 흔들고 긴급돌봄을 조모에게 의존해 불안을 키운 면이 있어, 단순 차단보다 돌봄 권한과 의사결정 경계를 어떻게 다시 그을지가 어렵다.",
+    "familyRelation": "parent_child"
+  },
+  "duo": {
+    "partyA": {
+      "name": "오연숙",
+      "age": 66,
+      "occupation": "은퇴한 학습지 교사",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "자신이 하원, 저녁, 한글놀이를 다 떠안았다고 먼저 말하며 보호자이자 희생자의 위치를 선점한다.",
+      "pride": 7,
+      "fear": "손주에게서 끊기고 위험한 조모로 낙인찍히는 것 — 그것이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "daycare_app_screenshot_keeper",
+      "dailyRoutine": "유치원 앱과 담임 공지를 자주 확인하고, 저녁엔 가족 단톡과 병원 문자를 번갈아 본다.",
+      "sensitivePoints": [
+        "손주 발달",
+        "딸의 양육 방식",
+        "예전 응급실 밤"
+      ],
+      "verbalTells": [
+        {
+          "type": "caregiver_rollcall",
+          "trigger": "lying",
+          "pattern": "무단 개입 질문이 나오면 하원, 저녁, 숙제, 목욕을 한꺼번에 나열해 침범을 돌봄 양으로 덮는다."
+        },
+        {
+          "type": "tearful_reframe",
+          "trigger": "emotional",
+          "pattern": "'내가 안 봤으면 더 큰일'이라고 반복해 개입을 구조처럼 보이게 만든다."
+        },
+        {
+          "type": "old_authority_pull",
+          "trigger": "cornered",
+          "pattern": "예전 교사 경력을 끌어와 부모보다 자신이 더 잘 안다고 말한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "하린아",
+        "toJudge": "제 딸",
+        "angry": "하린아!"
+      }
+    },
+    "partyB": {
+      "name": "오하린",
+      "age": 36,
+      "occupation": "앱 서비스 기획자",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "하원 기록, 동의서, 태블릿 로그를 순서대로 꺼내며 경계 침범을 설명한다.",
+      "pride": 6,
+      "fear": "자기 아이 결정권이 친정엄마에게 잠식되는 것 — 그것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "routine_tracker_and_export_folder",
+      "dailyRoutine": "출근 전 아이 준비를 하고 밤에는 수면과 기기 사용 기록을 정리한다.",
+      "sensitivePoints": [
+        "무단 병원 방문",
+        "아이 앞 훈육 개입",
+        "엄마의 예전 투약 실수"
+      ],
+      "verbalTells": [
+        {
+          "type": "log_stack",
+          "trigger": "cornered",
+          "pattern": "시간표와 로그를 연속으로 읽으며 감정 공방을 기록 대조로 바꾼다."
+        },
+        {
+          "type": "scope_split",
+          "trigger": "lying",
+          "pattern": "태블릿 허용과 늦은 픽업은 '야근 주간만'이라고 좁혀 말한다."
+        },
+        {
+          "type": "boundary_hook",
+          "trigger": "emotional",
+          "pattern": "'허락받았냐 안 받았냐'를 되묻고 권한 문제로 다시 묶는다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "엄마",
+        "toJudge": "저희 어머니",
+        "angry": "엄마!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "준서의 발달상담 이후 학교·병원·학원 결정은 부모 동의 후에만 하고, 연숙은 하원과 저녁 돌봄만 맡기로 했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "외할아버지가 예전에 '연숙 손이 아이를 잘 다룬다'고 말한 일을 두 사람은 재량 위임인지 칭찬인지 다르게 해석한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: 양육 재량까지 맡긴 뜻 / B: 돌봄 솜씨 칭찬일 뿐",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "준서가 두 돌 무렵 응급실에 갔던 밤, 연숙이 먹인 약의 종류와 간격이 끝까지 정리되지 않은 채 그냥 고열 사건처럼 묻혀 버렸다.",
+        "isReal": true,
+        "whoRemembersAccurately": "neither",
+        "whoDistorts": "both",
+        "distortionDirection": "A: 급한 밤이라 다들 헷갈렸을 뿐 / B: 단순 고열로만 기억",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "서준호 (하린의 남편)",
+        "relationTo": "both",
+        "knowledgeScope": "현재의 무단 하원과 클리닉 예약, 그리고 하린이 픽업권을 끊은 이유를 안다. 하지만 예전 응급실 밤의 투약 순서는 흐리게 기억한다.",
+        "witnessedDirectly": false,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 56,
+          "occupation": "하린의 남편",
+          "relationToA": "오연숙을 업무상 알고 있음",
+          "relationToB": "오하린을 업무상 알고 있음",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "조심스럽게 말하되, 자기가 아는 범위를 넘어서지 않으려 한다.",
+          "addressJudge": "재판관님",
+          "addressA": "연숙씨",
+          "addressB": "하린씨"
+        }
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "이선주 (유치원 담임교사)",
+        "relationTo": "both",
+        "knowledgeScope": "연숙이 별도 상담과 조기 하원을 요구한 사실, 그리고 원래 권고가 생활리듬 정리에 가까웠다는 점을 알고 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 53,
+          "occupation": "유치원 담임교사",
+          "relationToA": "오연숙을 업무상 알고 있음",
+          "relationToB": "오하린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "객관적으로 답하려 하지만 자기가 본 장면 위주로 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "연숙씨",
+          "addressB": "하린씨"
+        }
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "정미란 (아동발달상담센터 상담사)",
+        "relationTo": "both",
+        "knowledgeScope": "부모 동의서 원칙과 조부모의 직접 연락 금지 합의, 실제 상담 권고 내용을 기록으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 56,
+          "occupation": "아동발달상담센터 상담사",
+          "relationToA": "오연숙을 업무상 알고 있음",
+          "relationToB": "오하린을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "오연숙씨",
+          "addressB": "오하린씨"
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "grandparent_childcare_boundary_conflict",
+    "description": "맞벌이와 발달상담이 겹치면서 연숙은 손주 하원과 저녁 돌봄을 자주 맡았고, 점점 학교·병원 판단까지 자신이 해야 한다고 느끼기 시작했다. 반면 하린은 도움은 받되 결정권은 부모에게 남겨 두려 했지만, 담임과 클리닉, 하원 로그가 몰래 움직인 뒤부터 양육 갈등이 권한 침범 싸움으로 커졌다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "아이 발달과 안전 문제는 작은 선택도 크게 느껴지고, 예전 응급실 밤이 제대로 정리되지 않은 채 묻혀 있어 현재의 개입이 오래된 불신까지 건드렸다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "연숙의 무단 하원 변경과 사설 클리닉 개입",
+      "truth": true,
+      "truthDescription": "연숙은 부모 동의 없이 유치원 하원 시간을 바꾸고 준서를 사설 언어·집중 상담 클리닉에 데려가며 자신을 보호자로 기재했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "돌봄권한재설정",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-2",
+      "name": "하린의 양육 원칙 불일치와 조모 의존",
+      "truth": true,
+      "truthDescription": "하린은 일관된 루틴을 말했지만 야근 주간엔 태블릿 식사와 연숙의 긴급 픽업 의존이 반복됐고 이를 다시 조율하지 않았다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "양육기준합의",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-3",
+      "name": "담임교사가 강한 학습·병원 개입을 권했는가",
+      "truth": false,
+      "truthDescription": "담임교사의 실제 권고는 억지 학습이나 추가 검사보다 수면·등원 리듬과 부모-교사 소통을 먼저 맞추라는 것이었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 65,
+        "b": 35
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "학교소통정리",
+      "legitimacyIssue": false
+    },
+    {
+      "id": "d-4",
+      "name": "예전 응급실 밤은 단순 고열 사건이었는가",
+      "truth": false,
+      "truthDescription": "준서의 응급실 방문은 단순 고열만이 아니라, 연숙이 성인용 감기시럽과 해열제를 짧은 간격으로 중복 투약한 흐름과 겹쳐 있었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 90,
+        "b": 10
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "과거위험재확인",
+      "legitimacyIssue": true
+    },
+    {
+      "id": "d-5",
+      "name": "동의 기반 돌봄 규칙의 공동 파기",
+      "truth": true,
+      "truthDescription": "의료·교육 결정은 부모 동의 후에 하기로 했지만 연숙은 직접 개입했고 하린은 즉시 픽업권을 끊고 일부 교사 메시지를 친척에게 돌리며 규칙을 같이 무너뜨렸다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-3",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "돌봄권한재설정",
+      "legitimacyIssue": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "잘린 담임교사 메시지 캡처",
+      "description": "연숙이 보여준 캡처로, '집중과 한글을 더 봐 달라'는 문장만 남고 앞뒤의 생활리듬 설명이 빠져 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 대화 내보내기를 요구하자 캡처 바깥에 수면과 등원 리듬을 먼저 맞추라는 문장이 이어져 있었다.",
+        "check_metadata": "가족 단톡에 올리기 직전 다시 잘라 저장한 기록이 남아 있다.",
+        "restore_context": "겉으로는 담임이 바로 학습과 검사를 권한 듯 보이지만 전체 맥락은 생활리듬 정리에 가깝다.",
+        "verify_source": "담임의 원본 대화 순서와 캡처 시각이 서로 맞는다.",
+        "check_edits": "텍스트 조작은 없으나 상하가 강하게 잘려 의미가 달라졌다.",
+        "question_acquisition": "교사와 보호자 대화 캡처라 제출은 가능하지만 재유포는 민감하다."
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "유치원 하원 변경 로그와 사설 클리닉 신청서",
+      "description": "연숙이 하원자를 자신으로 바꾼 앱 기록, 조기 하원 시각, 사설 클리닉 상담신청서 원본이다.",
+      "type": "schedule",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "앱 로그와 접수 원본을 함께 보자 연숙이 보호자 체크란을 직접 선택한 사실이 드러났다.",
+        "check_metadata": "하원 변경은 부모에게 알리기 전날, 클리닉 접수는 그 다음 날 오전으로 남아 있다.",
+        "restore_context": "단순 정보 문의가 아니라 실제 하원 권한 변경과 상담 예약까지 이어진 개입이었다.",
+        "verify_source": "유치원 관리자 로그와 클리닉 접수번호가 일치한다.",
+        "check_edits": "앱·기관 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "아동 일정과 상담 정보가 포함돼 있어 목적 외 확산은 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "하린의 업무캘린더·태블릿 로그·긴급돌봄 요청 메시지",
+      "description": "야근 일정, 준서 태블릿 사용시간, 하린이 연숙에게 보낸 급한 하원·저녁 돌봄 요청 메시지를 묶은 자료다.",
+      "type": "cloud_log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "업무 캘린더, 메시지, 사용시간 보고서를 같은 주 단위로 대조했다.",
+        "check_metadata": "최근 두 달간 연숙에게 긴급 하원을 부탁한 메시지가 여러 차례 있었고 해당 주에 태블릿 시간도 길었다.",
+        "restore_context": "하린의 원칙은 존재했지만 실제 생활은 여러 차례 그 원칙을 벗어나 있었다.",
+        "verify_source": "원본 메시지와 기기 리포트, 회사 캘린더 시간이 서로 맞는다.",
+        "check_edits": "원본 내보내기와 장치 보고서라 선택적 편집 흔적이 없다.",
+        "question_acquisition": "직장 일정과 아동 기기 기록이 함께 있어 민감하다."
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "2020년 소아응급실 진료기록과 트리아지 메모",
+      "description": "준서가 응급실에 왔을 때의 의무기록과 초진 간호사가 적은 직전 투약 메모다.",
+      "type": "medical_record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "의무기록 원본에는 내원 직전 먹인 약 종류와 간격이 시각별로 남아 있다.",
+        "check_metadata": "트리아지 메모에는 외조모가 성인용 감기시럽과 해열제를 추가 투여했다는 내용이 기록돼 있다.",
+        "restore_context": "가족은 단순 고열로 기억했지만 의료진 기록상 투약 중복이 분명한 변수였다.",
+        "verify_source": "병원 접수번호와 의무기록 일련번호가 일치한다.",
+        "check_edits": "기관 보관 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "아동 의료정보가 포함돼 있어 사용 범위가 제한돼야 한다."
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "연숙의 옛 약봉투 사진과 약국 영수증",
+      "description": "연숙 휴대폰 백업에서 복구된 약봉투 사진과 그날 밤 연숙 카드로 결제된 성인용 감기약 영수증이다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "백업 사진과 카드 영수증 원본을 대조했다.",
+        "check_metadata": "사진은 응급실 내원 직전, 영수증은 그보다 조금 이른 시각이다.",
+        "restore_context": "집에 있던 유아용 약만 쓴 것이 아니라 별도로 성인용 약을 샀다는 흐름이 드러난다.",
+        "verify_source": "사진 EXIF와 카드 승인시각, 약국 POS 번호가 맞는다.",
+        "check_edits": "사진은 원본이고 영수증도 카드사 조회본과 일치한다.",
+        "question_acquisition": "개인 결제기록과 오래된 백업 사진이 포함돼 있어 민감하다."
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "아동발달상담센터 상담일지와 조부모 동의서",
+      "description": "상담일지와 유치원 연계 기록, 부모 동의 없는 학교·병원 직접 연락 금지 조항이 적힌 가족 동의서다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "상담일지와 동의서 원본에 교사 권고 문구와 조부모 역할 범위가 함께 남아 있다.",
+        "check_metadata": "갈등이 터지기 전 상담일에 작성됐고 하린과 연숙 서명이 모두 있다.",
+        "restore_context": "전문가 권고는 강한 학습보다 수면·하원 루틴과 보호자 합의를 먼저 맞추라는 방향이었다.",
+        "verify_source": "센터 접수번호와 상담사 서명이 원본과 일치한다.",
+        "check_edits": "기관 보관 문서라 편집 흔적이 없다.",
+        "question_acquisition": "아동 상담 내용이 포함된 기록이라 목적 외 사용은 제한돼야 한다."
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "연숙은 부모 동의 없이 하원자 변경과 사설 클리닉 접수를 진행했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "하린은 말한 것만큼 일관된 루틴을 유지하지 못했고 조모의 긴급 돌봄에 자주 의존했다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "담임과 상담사의 실제 권고는 강한 학습보다 생활리듬과 보호자 소통 정리였다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-4",
+      "fact": "예전 응급실 밤은 단순 고열만이 아니라 연숙의 부적절한 투약과도 연결돼 있었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "neither_knows"
+    },
+    {
+      "id": "t-5",
+      "fact": "의료·교육 결정은 부모 동의 후에 하기로 한 규칙을 조모와 엄마 모두 다른 방식으로 깼다.",
+      "isTrue": true,
+      "weight": 7,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "pickup_change_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-2_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "guardian_signature_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-4",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "teacher_recommendation_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "full_message_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-1",
+      "lieIntensity": "L3",
+      "lieMotive": "shame_avoidance",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "old_er_night_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "pharmacy_receipt_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-5_presented"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-3",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "routine_consistency_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-3_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "tablet_time_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-6",
+      "lieIntensity": "L1",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "teacher_message_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "e-1_presented"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "counselor_note_followup"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "e-6_presented"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "lieType": "LT-5",
+      "lieIntensity": "L1",
+      "lieMotive": "relationship_maintenance",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "four_party_rule_question"
+        },
+        {
+          "from": "S1",
+          "to": "S4",
+          "trigger": "nonjudgmental_question_about_not_feeling_overridden"
+        },
+        {
+          "from": "S4",
+          "to": "S3",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "shared_responsibility_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "돌봄권한재설정": [
+      "하원, 병원, 학원, 교사 상담처럼 결정을 수반하는 돌봄은 부모 승인 없이는 진행하지 않는다는 문구를 가족 합의서 첫 줄에 둔다.",
+      "비상 하원이나 급한 병원 방문도 같은 시각 부모·배우자·조모에게 남는 단톡 보고로 통일한다.",
+      "무단 개입이나 일방 차단이 다시 반복되면 조모의 정기 돌봄은 잠시 중단하고 제3자 입회 하에만 일정 조정을 재개한다."
+    ],
+    "양육기준합의": [
+      "태블릿 사용, 저녁 식사, 취침, 긴급 픽업 기준을 숫자와 시간으로 다시 적어 예외 범위를 명확히 한다.",
+      "부모가 도움을 요청할 때는 그날 허용되는 예외와 돌봄 범위를 함께 적고, 조모는 그 범위를 넘어선 학습·훈육 결정을 하지 않는다.",
+      "원칙이 자주 흔들린다면 도움을 늘리기보다 외부 돌봄 서비스나 시간제 돌봄을 먼저 검토한다."
+    ],
+    "학교소통정리": [
+      "교사·상담사 메시지는 잘린 캡처가 아니라 원문 전체를 부모 공유 폴더에 저장하고 해석은 그다음에 분리해 논의한다.",
+      "학교·상담센터 창구는 부모 한 명으로 고정하고 조부모는 참조만 받도록 한다.",
+      "다시 교사 말을 근거로 일방적 학원·병원 결정을 하면 학교·센터 연락은 잠시 부모만 하도록 제한한다."
+    ],
+    "과거위험재확인": [
+      "예전 응급실 밤의 기록을 가족이 함께 다시 읽고 임의 투약과 민간요법 금지 원칙을 서면으로 정리한다.",
+      "아이 관련 약은 처방전·용량표·투약 시각을 한곳에만 적고 누구도 구두 기억에 의존해 중복 투약하지 않도록 한다.",
+      "과거 위험을 계속 부인하거나 감정무기화하면 현재 양육 갈등과 분리해 소아과 또는 상담사 입회 하에 별도 안전 회의를 연다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-2",
+    "tp-3"
+  ]
+}
