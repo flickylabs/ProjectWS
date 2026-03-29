@@ -30,6 +30,14 @@ import NoticePanel, { isDismissedToday } from '../components/notice/NoticePanel'
 import MailInbox from '../components/mail/MailInbox'
 import { loadPrompts, startPromptPolling } from '../api/promptManager'
 import { loadAgents, startAgentPolling, snapshotForSession } from '../api/agentManager'
+import { registerAllEnrichments } from '../data/caseEnrichment'
+
+// 보강 데이터 자동 등록 (H 단계 후 caseEnrichmentData.ts가 존재하면 로드)
+try {
+  // @ts-ignore — H 단계 전에는 파일 미존재
+  const { CASE_ENRICHMENT_DATA } = require('../data/caseEnrichmentData')
+  if (CASE_ENRICHMENT_DATA) registerAllEnrichments(CASE_ENRICHMENT_DATA)
+} catch { /* H 단계 전: 보강 데이터 없음 — 정상 */ }
 import { playerApi, mailApi, healthApi, noticeApi } from '../api/client'
 import { phase1Dialogues } from '../data/dialogues/phase1'
 import { phase2Dialogues } from '../data/dialogues/phase2'
