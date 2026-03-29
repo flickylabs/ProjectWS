@@ -96,6 +96,8 @@ td.cmo textarea::placeholder{color:var(--t3)}
 .tg.css{background:#F0F0F0;color:#888}
 
 /* Tooltip ? icon */
+.audio-btn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--acc);border:none;color:var(--txt);font-size:10px;cursor:pointer;margin:0 4px;vertical-align:middle;transition:background .15s}
+.audio-btn:hover{background:var(--acc2)}
 .tip{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:var(--bdr);color:var(--t2);font-size:9px;font-weight:700;cursor:help;position:relative;vertical-align:middle;margin-left:4px;flex-shrink:0}
 .tip:hover .tip-box{display:block}
 .tip-box{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--txt);color:#fff;padding:8px 12px;border-radius:8px;font-size:11px;font-weight:400;line-height:1.5;white-space:normal;width:260px;z-index:100;box-shadow:0 4px 16px rgba(0,0,0,.2)}
@@ -192,11 +194,11 @@ const D=[
 // ── 1. 이미지 ──
 {id:'image',title:'이미지',icon:'🖼️',subs:[
 {id:'img-pwa',title:'필수 아이콘',items:[
-{id:'i01',n:'PWA 192',pv:'📱',f:'icons/pwa-192.png',tg:'none',sz:'192×192',fm:'PNG',brief:'PWA 홈 추가 시 사용되는 아이콘',tip:'manifest.json에서 참조. 192px 정사각'},
-{id:'i02',n:'PWA 512',pv:'📱',f:'icons/pwa-512.png',tg:'none',sz:'512×512',fm:'PNG',brief:'PWA 스플래시 스크린 아이콘',tip:'manifest.json에서 참조. 512px 정사각'},
-{id:'i03',n:'파비콘',pv:'🌐',f:'favicon.ico',tg:'none',sz:'48×48',fm:'ICO/PNG',brief:'브라우저 탭에 표시되는 작은 아이콘',tip:'<link rel="icon"> 참조'},
-{id:'i04',n:'OG 이미지',pv:'🖼️',f:'images/og-image.png',tg:'none',sz:'1200×630',fm:'PNG/JPG',brief:'카카오톡, SNS 공유 시 미리보기 이미지',tip:'<meta property="og:image"> 참조'},
-{id:'i05',n:'Apple 터치 아이콘',pv:'🍎',f:'icons/apple-touch-icon.png',tg:'none',sz:'180×180',fm:'PNG',brief:'iOS 홈 화면 추가 시 아이콘',tip:'<link rel="apple-touch-icon"> 참조'},
+{id:'i01',n:'PWA 192',pv:'📱',f:'public/icon-192.png',tg:'ok',sz:'192×192',fm:'PNG',brief:'PWA 홈 추가 시 사용되는 아이콘',tip:'manifest.json + apple-touch-icon 참조'},
+{id:'i02',n:'PWA 512',pv:'📱',f:'public/icon-512.png',tg:'ok',sz:'512×512',fm:'PNG',brief:'PWA 스플래시 스크린 아이콘',tip:'manifest.json에서 참조'},
+{id:'i03',n:'파비콘',pv:'🌐',f:'public/favicon.svg',tg:'ok',sz:'가변',fm:'SVG',brief:'브라우저 탭에 표시되는 아이콘',tip:'<link rel="icon"> 참조'},
+{id:'i04',n:'OG 이미지',pv:'🖼️',f:'(Canvas 동적 생성)',tg:'ok',sz:'600×400',fm:'Canvas→PNG',brief:'판결 결과 공유 시 동적 생성되는 카드 이미지',tip:'ShareResult.tsx에서 Canvas API로 생성'},
+{id:'i05',n:'Apple 터치 아이콘',pv:'🍎',f:'public/icon-192.png',tg:'ok',sz:'192×192',fm:'PNG',brief:'iOS 홈 화면 추가 시 아이콘',tip:'<link rel="apple-touch-icon"> 참조'},
 ]},
 {id:'img-logo',title:'로고/브랜딩',items:[
 {id:'i06',n:'텍스트 로고 (SVG)',pv:'✏️',f:'images/logo-text.svg',tg:'none',sz:'가변',fm:'SVG',brief:'솔로몬 텍스트 로고. 헤더, 로딩 화면 등에 사용',tip:'벡터 포맷으로 어떤 크기에서도 선명'},
@@ -219,26 +221,22 @@ const D=[
 
 // ── 2. 사운드 ──
 {id:'sound',title:'사운드',icon:'🔊',subs:[
-{id:'sfx-done',title:'효과음 (완료)',items:[
-{id:'s01',n:'Phase 전환',pv:'🔄',f:'sounds/sfx-phase-transition.mp3',tg:'ok',sz:'-',fm:'MP3',brief:'Phase가 바뀔 때 재생되는 전환음',tip:'짧고 명확한 전환 사인. 0.5~1초'},
-{id:'s02',n:'거짓말 붕괴',pv:'💥',f:'sounds/sfx-lie-collapse.mp3',tg:'ok',sz:'-',fm:'MP3',brief:'거짓말이 드러날 때 극적인 효과음',tip:'긴장감 해소. 유리 깨지는 느낌'},
-{id:'s03',n:'증거 제시',pv:'📋',f:'sounds/sfx-evidence-present.mp3',tg:'ok',sz:'-',fm:'MP3',brief:'증거를 법정에 제시할 때',tip:'문서 꺼내는 느낌. 타닥 소리'},
-{id:'s04',n:'증거 해제',pv:'🗑️',f:'sounds/sfx-evidence-dismiss.mp3',tg:'ok',sz:'-',fm:'MP3',brief:'증거가 기각/해제될 때',tip:'가벼운 슬라이드 아웃 느낌'},
-{id:'s05',n:'증거 격상',pv:'⬆️',f:'sounds/sfx-evidence-upgrade.mp3',tg:'ok',sz:'-',fm:'MP3',brief:'증거가 결정적 증거로 격상될 때',tip:'레벨업/업그레이드 느낌. 반짝이는 사운드'},
-{id:'s06',n:'판결 확정',pv:'⚖️',f:'sounds/sfx-verdict.mp3',tg:'ok',sz:'-',fm:'MP3',brief:'최종 판결이 내려질 때 의사봉 소리',tip:'망치 치는 소리. 가장 극적인 순간'},
-{id:'s07',n:'분리 심문',pv:'🚪',f:'sounds/sfx-separate-hearing.mp3',tg:'ok',sz:'-',fm:'MP3',brief:'분리 심문 모드 진입 시',tip:'문 닫히는/분리되는 느낌'},
-{id:'s08',n:'칭호 획득',pv:'🏆',f:'sounds/sfx-title-earn.mp3',tg:'ok',sz:'-',fm:'MP3',brief:'새로운 칭호를 획득했을 때 축하 효과음',tip:'팡파레/축하 사운드. 1~2초'},
-{id:'s09',n:'에러',pv:'⚠️',f:'sounds/sfx-error.mp3',tg:'ok',sz:'-',fm:'MP3',brief:'잘못된 조작이나 에러 발생 시',tip:'짧은 경고음. 불쾌하지 않은 톤'},
+{id:'sfx-done',title:'효과음 (9종 완료, 496KB)',items:[
+{id:'s01',n:'Phase 전환 (whoosh)',pv:'🔄',f:'public/sfx/whoosh.mp3',tg:'ok',sz:'63KB',fm:'MP3',brief:'Phase 전환 시 휙 소리',tip:'playPhaseTransition()'},
+{id:'s02',n:'거짓말 붕괴 (reveal)',pv:'💥',f:'public/sfx/reveal.mp3',tg:'ok',sz:'39KB',fm:'MP3',brief:'거짓말 상태 S5 도달 시',tip:'playLieCollapse()'},
+{id:'s03',n:'증거 제시 (stamp)',pv:'📋',f:'public/sfx/stamp.mp3',tg:'ok',sz:'94KB',fm:'MP3',brief:'증거를 법정에 제시할 때',tip:'playEvidencePresent()'},
+{id:'s04',n:'증거 해제 (notification)',pv:'🔓',f:'public/sfx/notification.mp3',tg:'ok',sz:'56KB',fm:'MP3',brief:'증거 잠금 해제 시',tip:'playEvidenceUnlock()'},
+{id:'s05',n:'증거 격상 (chime)',pv:'⬆️',f:'public/sfx/chime.mp3',tg:'ok',sz:'118KB',fm:'MP3',brief:'증거 조합 격상 + 판결 확정 + 칭호 획득',tip:'playEvidenceUpgrade() / playVerdictConfirm() / playTitleEarned()'},
+{id:'s06',n:'재판봉 (gavel)',pv:'⚖️',f:'public/sfx/gavel.mp3',tg:'ok',sz:'8KB',fm:'MP3',brief:'재판봉 3연타 효과',tip:'playGavel()'},
+{id:'s07',n:'클릭 (click)',pv:'👆',f:'public/sfx/click.mp3',tg:'ok',sz:'37KB',fm:'MP3',brief:'버튼 클릭 + 대사 넘기기',tip:'playClick() / playDialogueTick()'},
+{id:'s08',n:'경고/이의 (alert)',pv:'⚠️',f:'public/sfx/alert.mp3',tg:'ok',sz:'44KB',fm:'MP3',brief:'에러 + 이의제기',tip:'playError() / playObjection()'},
+{id:'s09',n:'긴장감 (tension)',pv:'🚪',f:'public/sfx/tension.mp3',tg:'ok',sz:'16KB',fm:'MP3',brief:'분리심문 시작 시',tip:'playSeparation()'},
 ]},
-{id:'sfx-todo',title:'효과음 (미구현)',items:[
-{id:'s10',n:'클릭',pv:'👆',f:'sounds/sfx-click.mp3',tg:'none',sz:'-',fm:'MP3',brief:'일반 버튼 클릭 시 기본 피드백 사운드',tip:'매우 짧고 가벼운 탭 사운드. 0.1초'},
-{id:'s11',n:'말풍선 팝',pv:'💬',f:'sounds/sfx-bubble-pop.mp3',tg:'none',sz:'-',fm:'MP3',brief:'대화 말풍선이 나타날 때',tip:'통통 튀는 느낌. 뽁 소리'},
-{id:'s12',n:'감정 변화',pv:'😠',f:'sounds/sfx-emotion-change.mp3',tg:'none',sz:'-',fm:'MP3',brief:'캐릭터 감정 상태가 변할 때',tip:'미묘한 분위기 전환음. 감정에 따라 변형 가능'},
-]},
-{id:'bgm',title:'BGM',items:[
-{id:'s13',n:'법정 BGM',pv:'🎵',f:'sounds/bgm-court.mp3',tg:'none',sz:'-',fm:'MP3',brief:'게임 플레이(법정 심리) 중 배경 음악',tip:'긴장감 있는 루프. 60~120초 루프'},
-{id:'s14',n:'타이틀 BGM',pv:'🎵',f:'sounds/bgm-title.mp3',tg:'none',sz:'-',fm:'MP3',brief:'타이틀/메인 화면 배경 음악',tip:'차분하고 위엄 있는 느낌. 루프'},
-{id:'s15',n:'판결/결과 BGM',pv:'🎵',f:'sounds/bgm-result.mp3',tg:'none',sz:'-',fm:'MP3',brief:'판결 결과 화면 배경 음악',tip:'판결 내용에 따라 분위기 다를 수 있음'},
+{id:'bgm',title:'BGM (코드 준비됨, 음원 대기)',items:[
+{id:'s13',n:'법정 BGM',pv:'🎵',f:'public/bgm/court.mp3',tg:'none',sz:'-',fm:'MP3',brief:'심문 Phase 3~5 배경 음악. 긴장감 있는 로우톤 앰비언트',tip:'playBgm() 구현됨, 음원만 필요'},
+{id:'s14',n:'타이틀 BGM',pv:'🎵',f:'public/bgm/title.mp3',tg:'none',sz:'-',fm:'MP3',brief:'타이틀/메인 화면. 잔잔한 피아노/스트링',tip:'루프 재생'},
+{id:'s15',n:'판결 BGM',pv:'🎵',f:'public/bgm/verdict.mp3',tg:'none',sz:'-',fm:'MP3',brief:'판결 Phase 7. 장엄한 분위기',tip:'루프 재생'},
+{id:'s16',n:'결과 BGM',pv:'🎵',f:'public/bgm/result.mp3',tg:'none',sz:'-',fm:'MP3',brief:'결과 화면. 밝거나 감성적인 마무리',tip:'루프 재생'},
 ]},
 ]},
 
@@ -324,99 +322,105 @@ const D=[
 ]},
 ]},
 
-// ── 5. 사건 데이터 ── (기존 4번에서 밀림)
+// ── 5. 사건 데이터 (84건 전체 완성) ──
 {id:'case',title:'사건 데이터',icon:'📋',subs:[
-{id:'case-couple',title:'부부 (12개, 5완료)',items:[
-{id:'c01',n:'부부 사건 1',pv:'💍',f:'data/cases/couple-01.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #1',tip:'완성된 사건 데이터'},
-{id:'c02',n:'부부 사건 2',pv:'💍',f:'data/cases/couple-02.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #2',tip:'완성된 사건 데이터'},
-{id:'c03',n:'부부 사건 3',pv:'💍',f:'data/cases/couple-03.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #3',tip:'완성된 사건 데이터'},
-{id:'c04',n:'부부 사건 4',pv:'💍',f:'data/cases/couple-04.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #4',tip:'완성된 사건 데이터'},
-{id:'c05',n:'부부 사건 5',pv:'💍',f:'data/cases/couple-05.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #5',tip:'완성된 사건 데이터'},
-{id:'c06',n:'부부 사건 6',pv:'💍',f:'data/cases/couple-06.json',tg:'none',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #6',tip:'미작성'},
-{id:'c07',n:'부부 사건 7',pv:'💍',f:'data/cases/couple-07.json',tg:'none',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #7',tip:'미작성'},
-{id:'c08',n:'부부 사건 8',pv:'💍',f:'data/cases/couple-08.json',tg:'none',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #8',tip:'미작성'},
-{id:'c09',n:'부부 사건 9',pv:'💍',f:'data/cases/couple-09.json',tg:'none',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #9',tip:'미작성'},
-{id:'c10',n:'부부 사건 10',pv:'💍',f:'data/cases/couple-10.json',tg:'none',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #10',tip:'미작성'},
-{id:'c11',n:'부부 사건 11',pv:'💍',f:'data/cases/couple-11.json',tg:'none',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #11',tip:'미작성'},
-{id:'c12',n:'부부 사건 12',pv:'💍',f:'data/cases/couple-12.json',tg:'none',sz:'-',fm:'JSON',brief:'부부 갈등 사건 시나리오 #12',tip:'미작성'},
+{id:'case-spouse',title:'부부 spouse (12/12)',items:[
+{id:'c01',n:'spouse-01',pv:'💍',f:'src/data/cases/generated/spouse-01.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #1',tip:'보강데이터: 재작업 대기'},
+{id:'c02',n:'spouse-02',pv:'💍',f:'src/data/cases/generated/spouse-02.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #2',tip:'보강데이터: 재작업 대기'},
+{id:'c03',n:'spouse-03',pv:'💍',f:'src/data/cases/generated/spouse-03.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #3',tip:'보강데이터: 재작업 대기'},
+{id:'c04',n:'spouse-04',pv:'💍',f:'src/data/cases/generated/spouse-04.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #4',tip:'보강데이터: 재작업 대기'},
+{id:'c05',n:'spouse-05',pv:'💍',f:'src/data/cases/generated/spouse-05.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #5',tip:'truthPolicy d-3 누락 → 16회차 보정'},
+{id:'c06',n:'spouse-06',pv:'💍',f:'src/data/cases/generated/spouse-06.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #6',tip:'보강데이터: 재작업 대기'},
+{id:'c07',n:'spouse-07',pv:'💍',f:'src/data/cases/generated/spouse-07.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #7',tip:'truthPolicy d-5 누락 → 16회차 보정'},
+{id:'c08',n:'spouse-08',pv:'💍',f:'src/data/cases/generated/spouse-08.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #8',tip:'truthPolicy d-1 누락 → 16회차 보정'},
+{id:'c09',n:'spouse-09',pv:'💍',f:'src/data/cases/generated/spouse-09.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #9',tip:'보강데이터: 재작업 대기'},
+{id:'c10',n:'spouse-10',pv:'💍',f:'src/data/cases/generated/spouse-10.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #10',tip:'truthPolicy d-4 누락 → 16회차 보정'},
+{id:'c11',n:'spouse-11',pv:'💍',f:'src/data/cases/generated/spouse-11.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #11',tip:'truthPolicy d-5 누락 → 16회차 보정'},
+{id:'c12',n:'spouse-12',pv:'💍',f:'src/data/cases/generated/spouse-12.json',tg:'ok',sz:'-',fm:'JSON',brief:'부부 갈등 #12',tip:'보강데이터: 재작업 대기'},
 ]},
-{id:'case-neighbor',title:'이웃 (12개)',items:[
-{id:'n01',n:'이웃 사건 1',pv:'🏘️',f:'data/cases/neighbor-01.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #1',tip:'미작성'},
-{id:'n02',n:'이웃 사건 2',pv:'🏘️',f:'data/cases/neighbor-02.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #2',tip:'미작성'},
-{id:'n03',n:'이웃 사건 3',pv:'🏘️',f:'data/cases/neighbor-03.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #3',tip:'미작성'},
-{id:'n04',n:'이웃 사건 4',pv:'🏘️',f:'data/cases/neighbor-04.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #4',tip:'미작성'},
-{id:'n05',n:'이웃 사건 5',pv:'🏘️',f:'data/cases/neighbor-05.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #5',tip:'미작성'},
-{id:'n06',n:'이웃 사건 6',pv:'🏘️',f:'data/cases/neighbor-06.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #6',tip:'미작성'},
-{id:'n07',n:'이웃 사건 7',pv:'🏘️',f:'data/cases/neighbor-07.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #7',tip:'미작성'},
-{id:'n08',n:'이웃 사건 8',pv:'🏘️',f:'data/cases/neighbor-08.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #8',tip:'미작성'},
-{id:'n09',n:'이웃 사건 9',pv:'🏘️',f:'data/cases/neighbor-09.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #9',tip:'미작성'},
-{id:'n10',n:'이웃 사건 10',pv:'🏘️',f:'data/cases/neighbor-10.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #10',tip:'미작성'},
-{id:'n11',n:'이웃 사건 11',pv:'🏘️',f:'data/cases/neighbor-11.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #11',tip:'미작성'},
-{id:'n12',n:'이웃 사건 12',pv:'🏘️',f:'data/cases/neighbor-12.json',tg:'none',sz:'-',fm:'JSON',brief:'이웃 분쟁 사건 시나리오 #12',tip:'미작성'},
+{id:'case-neighbor',title:'이웃 neighbor (12/12)',items:[
+{id:'n01',n:'neighbor-01',pv:'🏘️',f:'src/data/cases/generated/neighbor-01.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #1',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n02',n:'neighbor-02',pv:'🏘️',f:'neighbor-02.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #2',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n03',n:'neighbor-03',pv:'🏘️',f:'neighbor-03.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #3',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n04',n:'neighbor-04',pv:'🏘️',f:'neighbor-04.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #4',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n05',n:'neighbor-05',pv:'🏘️',f:'neighbor-05.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #5',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n06',n:'neighbor-06',pv:'🏘️',f:'neighbor-06.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #6',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n07',n:'neighbor-07',pv:'🏘️',f:'neighbor-07.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #7',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n08',n:'neighbor-08',pv:'🏘️',f:'neighbor-08.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #8',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n09',n:'neighbor-09',pv:'🏘️',f:'neighbor-09.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #9',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n10',n:'neighbor-10',pv:'🏘️',f:'neighbor-10.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #10',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n11',n:'neighbor-11',pv:'🏘️',f:'neighbor-11.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #11',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'n12',n:'neighbor-12',pv:'🏘️',f:'neighbor-12.json',tg:'ok',sz:'-',fm:'JSON',brief:'이웃 분쟁 #12',tip:'보강데이터: 재작업 A등급 완료'},
 ]},
-{id:'case-work',title:'직장 (12개)',items:[
-{id:'w01',n:'직장 사건 1',pv:'🏢',f:'data/cases/work-01.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #1',tip:'미작성'},
-{id:'w02',n:'직장 사건 2',pv:'🏢',f:'data/cases/work-02.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #2',tip:'미작성'},
-{id:'w03',n:'직장 사건 3',pv:'🏢',f:'data/cases/work-03.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #3',tip:'미작성'},
-{id:'w04',n:'직장 사건 4',pv:'🏢',f:'data/cases/work-04.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #4',tip:'미작성'},
-{id:'w05',n:'직장 사건 5',pv:'🏢',f:'data/cases/work-05.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #5',tip:'미작성'},
-{id:'w06',n:'직장 사건 6',pv:'🏢',f:'data/cases/work-06.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #6',tip:'미작성'},
-{id:'w07',n:'직장 사건 7',pv:'🏢',f:'data/cases/work-07.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #7',tip:'미작성'},
-{id:'w08',n:'직장 사건 8',pv:'🏢',f:'data/cases/work-08.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #8',tip:'미작성'},
-{id:'w09',n:'직장 사건 9',pv:'🏢',f:'data/cases/work-09.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #9',tip:'미작성'},
-{id:'w10',n:'직장 사건 10',pv:'🏢',f:'data/cases/work-10.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #10',tip:'미작성'},
-{id:'w11',n:'직장 사건 11',pv:'🏢',f:'data/cases/work-11.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #11',tip:'미작성'},
-{id:'w12',n:'직장 사건 12',pv:'🏢',f:'data/cases/work-12.json',tg:'none',sz:'-',fm:'JSON',brief:'직장 갈등 사건 시나리오 #12',tip:'미작성'},
+{id:'case-workplace',title:'직장 workplace (12/12)',items:[
+{id:'w01',n:'workplace-01',pv:'🏢',f:'src/data/cases/generated/workplace-01.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #1',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w02',n:'workplace-02',pv:'🏢',f:'workplace-02.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #2',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w03',n:'workplace-03',pv:'🏢',f:'workplace-03.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #3',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w04',n:'workplace-04',pv:'🏢',f:'workplace-04.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #4',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w05',n:'workplace-05',pv:'🏢',f:'workplace-05.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #5',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w06',n:'workplace-06',pv:'🏢',f:'workplace-06.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #6',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w07',n:'workplace-07',pv:'🏢',f:'workplace-07.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #7',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w08',n:'workplace-08',pv:'🏢',f:'workplace-08.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #8',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w09',n:'workplace-09',pv:'🏢',f:'workplace-09.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #9',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w10',n:'workplace-10',pv:'🏢',f:'workplace-10.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #10',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w11',n:'workplace-11',pv:'🏢',f:'workplace-11.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #11',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'w12',n:'workplace-12',pv:'🏢',f:'workplace-12.json',tg:'ok',sz:'-',fm:'JSON',brief:'직장 갈등 #12',tip:'보강데이터: 재작업 A등급 완료'},
 ]},
-{id:'case-biz',title:'동업 (10개)',items:[
-{id:'b01',n:'동업 사건 1',pv:'🤝',f:'data/cases/biz-01.json',tg:'none',sz:'-',fm:'JSON',brief:'동업 분쟁 사건 시나리오 #1',tip:'미작성'},
-{id:'b02',n:'동업 사건 2',pv:'🤝',f:'data/cases/biz-02.json',tg:'none',sz:'-',fm:'JSON',brief:'동업 분쟁 사건 시나리오 #2',tip:'미작성'},
-{id:'b03',n:'동업 사건 3',pv:'🤝',f:'data/cases/biz-03.json',tg:'none',sz:'-',fm:'JSON',brief:'동업 분쟁 사건 시나리오 #3',tip:'미작성'},
-{id:'b04',n:'동업 사건 4',pv:'🤝',f:'data/cases/biz-04.json',tg:'none',sz:'-',fm:'JSON',brief:'동업 분쟁 사건 시나리오 #4',tip:'미작성'},
-{id:'b05',n:'동업 사건 5',pv:'🤝',f:'data/cases/biz-05.json',tg:'none',sz:'-',fm:'JSON',brief:'동업 분쟁 사건 시나리오 #5',tip:'미작성'},
-{id:'b06',n:'동업 사건 6',pv:'🤝',f:'data/cases/biz-06.json',tg:'none',sz:'-',fm:'JSON',brief:'동업 분쟁 사건 시나리오 #6',tip:'미작성'},
-{id:'b07',n:'동업 사건 7',pv:'🤝',f:'data/cases/biz-07.json',tg:'none',sz:'-',fm:'JSON',brief:'동업 분쟁 사건 시나리오 #7',tip:'미작성'},
-{id:'b08',n:'동업 사건 8',pv:'🤝',f:'data/cases/biz-08.json',tg:'none',sz:'-',fm:'JSON',brief:'동업 분쟁 사건 시나리오 #8',tip:'미작성'},
-{id:'b09',n:'동업 사건 9',pv:'🤝',f:'data/cases/biz-09.json',tg:'none',sz:'-',fm:'JSON',brief:'동업 분쟁 사건 시나리오 #9',tip:'미작성'},
-{id:'b10',n:'동업 사건 10',pv:'🤝',f:'data/cases/biz-10.json',tg:'none',sz:'-',fm:'JSON',brief:'동업 분쟁 사건 시나리오 #10',tip:'미작성'},
+{id:'case-partnership',title:'동업 partnership (12/12)',items:[
+{id:'b01',n:'partnership-01',pv:'🤝',f:'partnership-01.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #1',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b02',n:'partnership-02',pv:'🤝',f:'partnership-02.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #2',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b03',n:'partnership-03',pv:'🤝',f:'partnership-03.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #3',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b04',n:'partnership-04',pv:'🤝',f:'partnership-04.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #4',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b05',n:'partnership-05',pv:'🤝',f:'partnership-05.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #5',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b06',n:'partnership-06',pv:'🤝',f:'partnership-06.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #6',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b07',n:'partnership-07',pv:'🤝',f:'partnership-07.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #7',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b08',n:'partnership-08',pv:'🤝',f:'partnership-08.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #8',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b09',n:'partnership-09',pv:'🤝',f:'partnership-09.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #9',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b10',n:'partnership-10',pv:'🤝',f:'partnership-10.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #10',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b11',n:'partnership-11',pv:'🤝',f:'partnership-11.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #11',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'b12',n:'partnership-12',pv:'🤝',f:'partnership-12.json',tg:'ok',sz:'-',fm:'JSON',brief:'동업 분쟁 #12',tip:'보강데이터: 재작업 A등급 완료'},
 ]},
-{id:'case-family',title:'가족 (12개)',items:[
-{id:'fm01',n:'가족 사건 1',pv:'👨‍👩‍👧',f:'data/cases/family-01.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #1',tip:'미작성'},
-{id:'fm02',n:'가족 사건 2',pv:'👨‍👩‍👧',f:'data/cases/family-02.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #2',tip:'미작성'},
-{id:'fm03',n:'가족 사건 3',pv:'👨‍👩‍👧',f:'data/cases/family-03.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #3',tip:'미작성'},
-{id:'fm04',n:'가족 사건 4',pv:'👨‍👩‍👧',f:'data/cases/family-04.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #4',tip:'미작성'},
-{id:'fm05',n:'가족 사건 5',pv:'👨‍👩‍👧',f:'data/cases/family-05.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #5',tip:'미작성'},
-{id:'fm06',n:'가족 사건 6',pv:'👨‍👩‍👧',f:'data/cases/family-06.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #6',tip:'미작성'},
-{id:'fm07',n:'가족 사건 7',pv:'👨‍👩‍👧',f:'data/cases/family-07.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #7',tip:'미작성'},
-{id:'fm08',n:'가족 사건 8',pv:'👨‍👩‍👧',f:'data/cases/family-08.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #8',tip:'미작성'},
-{id:'fm09',n:'가족 사건 9',pv:'👨‍👩‍👧',f:'data/cases/family-09.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #9',tip:'미작성'},
-{id:'fm10',n:'가족 사건 10',pv:'👨‍👩‍👧',f:'data/cases/family-10.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #10',tip:'미작성'},
-{id:'fm11',n:'가족 사건 11',pv:'👨‍👩‍👧',f:'data/cases/family-11.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #11',tip:'미작성'},
-{id:'fm12',n:'가족 사건 12',pv:'👨‍👩‍👧',f:'data/cases/family-12.json',tg:'none',sz:'-',fm:'JSON',brief:'가족 갈등 사건 시나리오 #12',tip:'미작성'},
+{id:'case-family',title:'가족 family (12/12)',items:[
+{id:'fm01',n:'family-01',pv:'👨‍👩‍👧',f:'family-01.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #1',tip:'보강데이터: 재작업 대기'},
+{id:'fm02',n:'family-02',pv:'👨‍👩‍👧',f:'family-02.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #2',tip:'보강데이터: 재작업 대기'},
+{id:'fm03',n:'family-03',pv:'👨‍👩‍👧',f:'family-03.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #3',tip:'보강데이터: 재작업 대기'},
+{id:'fm04',n:'family-04',pv:'👨‍👩‍👧',f:'family-04.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #4',tip:'보강데이터: 재작업 대기'},
+{id:'fm05',n:'family-05',pv:'👨‍👩‍👧',f:'family-05.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #5',tip:'보강데이터: 재작업 대기'},
+{id:'fm06',n:'family-06',pv:'👨‍👩‍👧',f:'family-06.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #6',tip:'보강데이터: 재작업 대기'},
+{id:'fm07',n:'family-07',pv:'👨‍👩‍👧',f:'family-07.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #7',tip:'보강데이터: 재작업 대기'},
+{id:'fm08',n:'family-08',pv:'👨‍👩‍👧',f:'family-08.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #8',tip:'보강데이터: 재작업 대기'},
+{id:'fm09',n:'family-09',pv:'👨‍👩‍👧',f:'family-09.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #9',tip:'보강데이터: 재작업 대기'},
+{id:'fm10',n:'family-10',pv:'👨‍👩‍👧',f:'family-10.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #10',tip:'보강데이터: 재작업 대기'},
+{id:'fm11',n:'family-11',pv:'👨‍👩‍👧',f:'family-11.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #11',tip:'보강데이터: 재작업 대기'},
+{id:'fm12',n:'family-12',pv:'👨‍👩‍👧',f:'family-12.json',tg:'ok',sz:'-',fm:'JSON',brief:'가족 갈등 #12',tip:'보강데이터: 재작업 대기'},
 ]},
-{id:'case-tenant',title:'세입자 (10개)',items:[
-{id:'t01',n:'세입자 사건 1',pv:'🏠',f:'data/cases/tenant-01.json',tg:'none',sz:'-',fm:'JSON',brief:'세입자 분쟁 사건 시나리오 #1',tip:'미작성'},
-{id:'t02',n:'세입자 사건 2',pv:'🏠',f:'data/cases/tenant-02.json',tg:'none',sz:'-',fm:'JSON',brief:'세입자 분쟁 사건 시나리오 #2',tip:'미작성'},
-{id:'t03',n:'세입자 사건 3',pv:'🏠',f:'data/cases/tenant-03.json',tg:'none',sz:'-',fm:'JSON',brief:'세입자 분쟁 사건 시나리오 #3',tip:'미작성'},
-{id:'t04',n:'세입자 사건 4',pv:'🏠',f:'data/cases/tenant-04.json',tg:'none',sz:'-',fm:'JSON',brief:'세입자 분쟁 사건 시나리오 #4',tip:'미작성'},
-{id:'t05',n:'세입자 사건 5',pv:'🏠',f:'data/cases/tenant-05.json',tg:'none',sz:'-',fm:'JSON',brief:'세입자 분쟁 사건 시나리오 #5',tip:'미작성'},
-{id:'t06',n:'세입자 사건 6',pv:'🏠',f:'data/cases/tenant-06.json',tg:'none',sz:'-',fm:'JSON',brief:'세입자 분쟁 사건 시나리오 #6',tip:'미작성'},
-{id:'t07',n:'세입자 사건 7',pv:'🏠',f:'data/cases/tenant-07.json',tg:'none',sz:'-',fm:'JSON',brief:'세입자 분쟁 사건 시나리오 #7',tip:'미작성'},
-{id:'t08',n:'세입자 사건 8',pv:'🏠',f:'data/cases/tenant-08.json',tg:'none',sz:'-',fm:'JSON',brief:'세입자 분쟁 사건 시나리오 #8',tip:'미작성'},
-{id:'t09',n:'세입자 사건 9',pv:'🏠',f:'data/cases/tenant-09.json',tg:'none',sz:'-',fm:'JSON',brief:'세입자 분쟁 사건 시나리오 #9',tip:'미작성'},
-{id:'t10',n:'세입자 사건 10',pv:'🏠',f:'data/cases/tenant-10.json',tg:'none',sz:'-',fm:'JSON',brief:'세입자 분쟁 사건 시나리오 #10',tip:'미작성'},
+{id:'case-tenant',title:'세입자 tenant (12/12)',items:[
+{id:'t01',n:'tenant-01',pv:'🏠',f:'tenant-01.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #1',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'t02',n:'tenant-02',pv:'🏠',f:'tenant-02.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #2',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'t03',n:'tenant-03',pv:'🏠',f:'tenant-03.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #3',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'t04',n:'tenant-04',pv:'🏠',f:'tenant-04.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #4',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'t05',n:'tenant-05',pv:'🏠',f:'tenant-05.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #5',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'t06',n:'tenant-06',pv:'🏠',f:'tenant-06.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #6',tip:'보강데이터: 재작업 A등급 완료'},
+{id:'t07',n:'tenant-07',pv:'🏠',f:'tenant-07.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #7',tip:'보강데이터: 재작업 B+ 완료'},
+{id:'t08',n:'tenant-08',pv:'🏠',f:'tenant-08.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #8',tip:'보강데이터: 재작업 B+ 완료'},
+{id:'t09',n:'tenant-09',pv:'🏠',f:'tenant-09.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #9',tip:'보강데이터: 재작업 B+ 완료'},
+{id:'t10',n:'tenant-10',pv:'🏠',f:'tenant-10.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #10',tip:'보강데이터: 재작업 B+ 완료'},
+{id:'t11',n:'tenant-11',pv:'🏠',f:'tenant-11.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #11',tip:'보강데이터: 재작업 B+ 완료'},
+{id:'t12',n:'tenant-12',pv:'🏠',f:'tenant-12.json',tg:'ok',sz:'-',fm:'JSON',brief:'세입자 분쟁 #12',tip:'보강데이터: 재작업 B+ 완료'},
 ]},
-{id:'case-friend',title:'친구 (10개)',items:[
-{id:'fr01',n:'친구 사건 1',pv:'👫',f:'data/cases/friend-01.json',tg:'none',sz:'-',fm:'JSON',brief:'친구 갈등 사건 시나리오 #1',tip:'미작성'},
-{id:'fr02',n:'친구 사건 2',pv:'👫',f:'data/cases/friend-02.json',tg:'none',sz:'-',fm:'JSON',brief:'친구 갈등 사건 시나리오 #2',tip:'미작성'},
-{id:'fr03',n:'친구 사건 3',pv:'👫',f:'data/cases/friend-03.json',tg:'none',sz:'-',fm:'JSON',brief:'친구 갈등 사건 시나리오 #3',tip:'미작성'},
-{id:'fr04',n:'친구 사건 4',pv:'👫',f:'data/cases/friend-04.json',tg:'none',sz:'-',fm:'JSON',brief:'친구 갈등 사건 시나리오 #4',tip:'미작성'},
-{id:'fr05',n:'친구 사건 5',pv:'👫',f:'data/cases/friend-05.json',tg:'none',sz:'-',fm:'JSON',brief:'친구 갈등 사건 시나리오 #5',tip:'미작성'},
-{id:'fr06',n:'친구 사건 6',pv:'👫',f:'data/cases/friend-06.json',tg:'none',sz:'-',fm:'JSON',brief:'친구 갈등 사건 시나리오 #6',tip:'미작성'},
-{id:'fr07',n:'친구 사건 7',pv:'👫',f:'data/cases/friend-07.json',tg:'none',sz:'-',fm:'JSON',brief:'친구 갈등 사건 시나리오 #7',tip:'미작성'},
-{id:'fr08',n:'친구 사건 8',pv:'👫',f:'data/cases/friend-08.json',tg:'none',sz:'-',fm:'JSON',brief:'친구 갈등 사건 시나리오 #8',tip:'미작성'},
-{id:'fr09',n:'친구 사건 9',pv:'👫',f:'data/cases/friend-09.json',tg:'none',sz:'-',fm:'JSON',brief:'친구 갈등 사건 시나리오 #9',tip:'미작성'},
-{id:'fr10',n:'친구 사건 10',pv:'👫',f:'data/cases/friend-10.json',tg:'none',sz:'-',fm:'JSON',brief:'친구 갈등 사건 시나리오 #10',tip:'미작성'},
+{id:'case-friend',title:'친구 friend (12/12)',items:[
+{id:'fr01',n:'friend-01',pv:'👫',f:'friend-01.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #1',tip:'보강데이터: 재작업 대기'},
+{id:'fr02',n:'friend-02',pv:'👫',f:'friend-02.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #2',tip:'보강데이터: 재작업 대기'},
+{id:'fr03',n:'friend-03',pv:'👫',f:'friend-03.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #3',tip:'보강데이터: 재작업 대기'},
+{id:'fr04',n:'friend-04',pv:'👫',f:'friend-04.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #4',tip:'보강데이터: 재작업 대기'},
+{id:'fr05',n:'friend-05',pv:'👫',f:'friend-05.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #5',tip:'보강데이터: 재작업 대기'},
+{id:'fr06',n:'friend-06',pv:'👫',f:'friend-06.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #6',tip:'보강데이터: 재작업 대기'},
+{id:'fr07',n:'friend-07',pv:'👫',f:'friend-07.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #7',tip:'보강데이터: 재작업 대기'},
+{id:'fr08',n:'friend-08',pv:'👫',f:'friend-08.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #8',tip:'보강데이터: 재작업 대기'},
+{id:'fr09',n:'friend-09',pv:'👫',f:'friend-09.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #9',tip:'보강데이터: 재작업 대기'},
+{id:'fr10',n:'friend-10',pv:'👫',f:'friend-10.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #10',tip:'보강데이터: 재작업 대기'},
+{id:'fr11',n:'friend-11',pv:'👫',f:'friend-11.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #11',tip:'보강데이터: 재작업 대기'},
+{id:'fr12',n:'friend-12',pv:'👫',f:'friend-12.json',tg:'ok',sz:'-',fm:'JSON',brief:'친구 갈등 #12',tip:'보강데이터: 재작업 대기'},
 ]},
 ]},
 
@@ -616,11 +620,23 @@ function show(gid,sid){
     // Tip
     const tipH=item.tip?`<span class="tip">?<span class="tip-box">${item.tip}</span></span>`:'';
 
-    h+=`<tr class="${ck?'ck':''}" data-i="${item.id}"><td class="cc"><input type="checkbox" data-id="${item.id}" ${ck?'checked':''} onchange="chk(this)"></td><td class="cp">${pvH}</td><td class="cn">${item.n} <span class="tg ${item.tg}">${{'emoji':'Emoji','png':'PNG','none':'없음','ok':'OK','css':'CSS'}[item.tg]||item.tg}</span></td><td class="cf">${item.f}</td><td class="cs">${item.sz}</td><td class="cm">${item.fm}</td><td class="cu">${item.brief}${tipH}</td><td class="cmo"><textarea data-id="${item.id}" placeholder="메모..." oninput="memo(this)">${nt}</textarea></td></tr>`;
+    // SFX/BGM 미리듣기 버튼
+    const audioBtn = item.f.includes('/sfx/') && item.tg==='ok' ? `<button class="audio-btn" onclick="event.stopPropagation();playPreview('${item.f.replace('public/','/')}')" title="미리듣기">&#9654;</button>` : '';
+    h+=`<tr class="${ck?'ck':''}" data-i="${item.id}"><td class="cc"><input type="checkbox" data-id="${item.id}" ${ck?'checked':''} onchange="chk(this)"></td><td class="cp">${pvH}</td><td class="cn">${item.n} ${audioBtn}<span class="tg ${item.tg}">${{'emoji':'Emoji','png':'PNG','none':'없음','ok':'OK','css':'CSS'}[item.tg]||item.tg}</span></td><td class="cf">${item.f}</td><td class="cs">${item.sz}</td><td class="cm">${item.fm}</td><td class="cu">${item.brief}${tipH}</td><td class="cmo"><textarea data-id="${item.id}" placeholder="메모..." oninput="memo(this)">${nt}</textarea></td></tr>`;
   });
   h+=`</tbody></table>`;
   document.getElementById('ct').innerHTML=h;
   flt();
+}
+
+// ══════════ AUDIO PREVIEW ══════════
+let _previewAudio=null;
+function playPreview(src){
+  if(_previewAudio){_previewAudio.pause();_previewAudio=null;}
+  _previewAudio=new Audio(src);
+  _previewAudio.volume=0.4;
+  _previewAudio.play().catch(()=>{});
+  _previewAudio.onended=()=>{_previewAudio=null;};
 }
 
 // ══════════ LIGHTBOX ══════════
