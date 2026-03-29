@@ -7,6 +7,7 @@ import { generateWitnessTestimony, canCallWitness } from '../engine/witnessEngin
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
 import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
 import { iga, eunneun } from '../utils/korean'
+import { showToast } from '../components/common/Toast'
 
 /** LLM 모드 플래그 — App에서 설정 */
 let useLLMMode = false
@@ -223,6 +224,7 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
       relatedDisputes: [],
       turn: useGameStore.getState().turnCount,
     })
+    showToast('증인 증언 생성에 실패했습니다', 'warn')
   }
 
   useGameStore.getState().incrementTurn()
@@ -454,8 +456,10 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
           mentionedTruthIds: result.mentionedTruthIds,
         }
       }
-    } catch {
-      // LLM 실패 → 폴백
+    } catch (e) {
+      // LLM 실패 → 폴백 + 토스트
+      const msg = e instanceof Error && e.message.includes('fetch') ? 'AI 서버에 연결할 수 없습니다' : 'AI 응답 생성에 실패했습니다'
+      showToast(msg, 'warn')
     }
     useGameStore.getState().setLLMLoading(false)
   }

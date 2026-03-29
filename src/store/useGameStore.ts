@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-// @ts-ignore -- persist reserved for future use
 import { persist } from 'zustand/middleware'
 import { createPhaseSlice, type PhaseSlice } from './slices/phaseSlice'
 import { createAgentSlice, type AgentSlice } from './slices/agentSlice'
@@ -47,9 +46,12 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   markRevealed: (party: 'a' | 'b', disputeId: string) => void
   getInterrogationContext: (party: 'a' | 'b', disputeId: string) => { firstTime: boolean; previousTypes: string[]; otherPartyAsked: boolean; otherPartyRevealed: boolean }
   initializeCase: (caseData: CaseData) => void
+  clearSavedGame: () => void
 }
 
-export const useGameStore = create<GameStore>()((...args) => {
+const SAVE_KEY = 'solomon-game-save'
+
+export const useGameStore = create<GameStore>()(persist((...args) => {
   const [set] = args
 
   return {
@@ -127,6 +129,11 @@ export const useGameStore = create<GameStore>()((...args) => {
       }
     },
 
+    clearSavedGame: () => {
+      sessionStorage.removeItem(SAVE_KEY)
+      clearSessionSnapshot()
+    },
+
     initializeCase: (caseData: CaseData) => {
       const store = useGameStore.getState()
 
@@ -173,4 +180,60 @@ export const useGameStore = create<GameStore>()((...args) => {
       store.resetVerdict()
     },
   }
-})
+}, {
+  name: SAVE_KEY,
+  storage: {
+    getItem: (name) => {
+      const str = sessionStorage.getItem(name)
+      return str ? JSON.parse(str) : null
+    },
+    setItem: (name, value) => sessionStorage.setItem(name, JSON.stringify(value)),
+    removeItem: (name) => sessionStorage.removeItem(name),
+  },
+  partialize: (state) => ({
+    // phase
+    currentPhase: state.currentPhase,
+    phaseHistory: state.phaseHistory,
+    turnCount: state.turnCount,
+    phaseTurnCount: state.phaseTurnCount,
+    // agents
+    agentA: state.agentA,
+    agentB: state.agentB,
+    archetypeA: state.archetypeA,
+    archetypeB: state.archetypeB,
+    lieConfigsA: state.lieConfigsA,
+    lieConfigsB: state.lieConfigsB,
+    // resources
+    resources: state.resources,
+    skillUseCounts: state.skillUseCounts,
+    // evidence
+    evidenceStates: state.evidenceStates,
+    evidenceDefinitions: state.evidenceDefinitions,
+    evidenceCombinations: state.evidenceCombinations,
+    triggeredCombinations: state.triggeredCombinations,
+    // dialogue
+    dialogueLog: state.dialogueLog,
+    claimGraph: state.claimGraph,
+    nextDialogueId: state.nextDialogueId,
+    // verdict
+    verdictInput: state.verdictInput,
+    verdictScore: state.verdictScore,
+    // shop
+    globalInvestTokens: state.globalInvestTokens,
+    globalSkillPoints: state.globalSkillPoints,
+    freeCap: state.freeCap,
+    lastInvestRechargeAt: state.lastInvestRechargeAt,
+    adWatchCountInvest: state.adWatchCountInvest,
+    adWatchCountSkill: state.adWatchCountSkill,
+    adResetDate: state.adResetDate,
+    // main
+    caseData: state.caseData,
+    lieConfigs: state.lieConfigs,
+    separationTarget: state.separationTarget,
+    separationTurns: state.separationTurns,
+    processMetrics: state.processMetrics,
+    testimonyAnalysis: state.testimonyAnalysis,
+    calledWitnesses: state.calledWitnesses,
+    interrogationHistory: state.interrogationHistory,
+  }),
+}))

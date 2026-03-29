@@ -29,7 +29,7 @@ import ProfilePage from '../components/profile/ProfilePage'
 import NoticePanel, { isDismissedToday } from '../components/notice/NoticePanel'
 import MailInbox from '../components/mail/MailInbox'
 import { loadPrompts, startPromptPolling } from '../api/promptManager'
-import { loadAgents, startAgentPolling } from '../api/agentManager'
+import { loadAgents, startAgentPolling, snapshotForSession } from '../api/agentManager'
 import { playerApi, mailApi, healthApi, noticeApi } from '../api/client'
 import { phase1Dialogues } from '../data/dialogues/phase1'
 import { phase2Dialogues } from '../data/dialogues/phase2'
@@ -48,8 +48,35 @@ import { triggerDialogueTap } from '../components/phase/AutoDialoguePhase'
 export default function App() {
   const currentPhase = useGameStore((s) => s.currentPhase)
   const caseData = useGameStore((s) => s.caseData)
+  const [sessionReady, setSessionReady] = useState(false)
+
+  // 세션 복원 시 프롬프트/에이전트 재로드
+  useEffect(() => {
+    if (!caseData) { setSessionReady(false); return }
+    if (sessionReady) return
+    ;(async () => {
+      try {
+        await loadPrompts(true)
+        await loadAgents(true)
+        snapshotForSession()
+        const { loadSettings: loadBalanceSettings } = await import('../api/settingsManager')
+        await loadBalanceSettings()
+      } catch { /* offline 모드 */ }
+      setSessionReady(true)
+    })()
+  }, [caseData, sessionReady])
 
   if (!caseData) return <TitleScreen />
+  if (caseData && !sessionReady) {
+    return (
+      <div className="h-[100dvh] bg-gray-950 text-gray-100 flex items-center justify-center max-w-lg mx-auto">
+        <div className="text-center">
+          <div className="gavel-loading text-3xl mb-3"><Emoji char="⚖️" size={40} /></div>
+          <p className="text-sm text-gray-500">세션 복원 중...</p>
+        </div>
+      </div>
+    )
+  }
 
   if (currentPhase === GamePhase.Phase0_CaseIntro) {
     return <div className="h-[100dvh] bg-gray-950 text-gray-100 max-w-lg mx-auto"><Phase0_CaseIntro /></div>
