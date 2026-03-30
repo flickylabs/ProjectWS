@@ -16,17 +16,22 @@ export interface EvalCase {
   userMessage: string
   actionContract: {
     actionType: string
+    questionType?: string
+    trustActionType?: string
     responseMode: string
+    answerStyle?: string
     goal: string
     revealBudget: { fact: number; motive: number; emotion: number }
     allowedTruthIds: string[]
     forbiddenTruthIds: string[]
+    [key: string]: unknown
   }
   expected: {
     stance: string[]
     responseMode: string
     forbiddenTruthIds: string[]
     forbiddenKeywords?: string[]
+    forbiddenDisputes?: string[]
     mustStartWithOneOf?: string[]
     mustNotAddressOpponent?: boolean
     example: Record<string, unknown>

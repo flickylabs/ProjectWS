@@ -29,6 +29,7 @@ export interface Notice {
   type: 'info' | 'event' | 'update' | 'maintenance';
   priority: number;
   is_pinned: number;
+  is_active?: number;
   created_at: string;
   updated_at: string;
 }

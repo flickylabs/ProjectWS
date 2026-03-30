@@ -319,9 +319,7 @@ function AchievementSection() {
     special: { label: '특별', emoji: '✨' },
   }
 
-  const grouped = Object.groupBy
-    ? Object.groupBy(achievements, a => a.category)
-    : achievements.reduce((acc, a) => { (acc[a.category] ??= []).push(a); return acc }, {} as Record<string, Achievement[]>)
+  const grouped = achievements.reduce((acc, a) => { (acc[a.category] ??= []).push(a); return acc }, {} as Record<string, Achievement[]>)
 
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-xl p-4">
