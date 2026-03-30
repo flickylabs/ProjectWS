@@ -11,6 +11,7 @@ import { showToast, showLLMErrorBanner } from '../components/common/Toast'
 import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
 import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
+import { detectStatementChange } from '../engine/contradictionEngine'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -122,7 +123,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   }
   if (evDidTransition) state.trackMetric('evidenceEffective')
 
-  state.changeEmotion(action.target, evDef.reliability === 'hard' ? 15 : 8)
+  changeEmotionWithPhaseTracking(action.target, evDef.reliability === 'hard' ? 15 : 8)
 
   for (const id of newUnlocks) {
     const def = state.evidenceDefinitions.find((e) => e.id === id)
@@ -225,7 +226,7 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
     // 유리한 쪽의 신뢰 상승, 불리한 쪽 감정 동요
     if (favoredParty) {
       const unfavored: PartyId = favoredParty === 'a' ? 'b' : 'a'
-      fresh.changeEmotion(unfavored, 10)
+      changeEmotionWithPhaseTracking(unfavored, 10)
 
       // 증언이 직접 목격이면 관련 쟁점의 lie state 전이 시도
       if (witness.witnessedDirectly && testimony.relatedDisputes.length > 0) {
@@ -381,7 +382,13 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         if (qNewState === 'S5') {
           state.trackMetric('liesCollapsed')
           // unsupportedCollapses: 질문만으로 S5 도달 (hard_evidence/trust 아님)
-          state.trackMetric('unsupportedCollapses')
+          // empathy_approach, empathy_question, motive_question 제외
+          const isEmpathyOrMotive = action.questionType === 'empathy_approach'
+            || triggers.includes('empathy_question')
+            || triggers.includes('motive_question')
+          if (!isEmpathyOrMotive) {
+            state.trackMetric('unsupportedCollapses')
+          }
         }
         // deepTruthsUnlocked: S4+ 도달 시 narrativeExpansion 존재 여부
         if (qNewState && (qNewState === 'S4' || qNewState === 'S5')) {
@@ -586,7 +593,9 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
     }
     const summary = node.text.length > 60 ? node.text.slice(0, 57) + '...' : node.text
     const freshState = useGameStore.getState()
-    freshState.addClaim({
+
+    // 모순 탐지: 이전 주장과 달라졌는지 체크
+    const newClaimData = {
       claimant: target,
       disputeId: node.conditions.disputeId,
       summary,
@@ -594,7 +603,20 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
       status: (stanceToStatus[llmMeta.stance] ?? 'normal') as any,
       turn: freshState.turnCount,
       isConfidential,
-    })
+    }
+    if (detectStatementChange(freshState.claimGraph, newClaimData)) {
+      const npcName = target === 'a'
+        ? freshState.caseData?.duo.partyA.name ?? '당사자A'
+        : freshState.caseData?.duo.partyB.name ?? '당사자B'
+      freshState.addDialogue({
+        speaker: 'system',
+        text: `⚡ ${npcName}의 진술이 이전 주장과 모순됩니다!`,
+        relatedDisputes: [node.conditions.disputeId],
+        turn: freshState.turnCount,
+      })
+    }
+
+    freshState.addClaim(newClaimData)
   }
 }
 
@@ -615,7 +637,7 @@ function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential =
     state.forceSetLieState(target, effects.lieTransition.disputeId, effects.lieTransition.to)
     notifyLieTransition(target, effects.lieTransition.disputeId)
   }
-  if (effects.emotionalDelta) state.changeEmotion(target, effects.emotionalDelta)
+  if (effects.emotionalDelta) changeEmotionWithPhaseTracking(target, effects.emotionalDelta)
   if (effects.trustDelta) state.changeTrust(target, effects.trustDelta.field, effects.trustDelta.delta)
   if (effects.evidenceUnlock) {
     const evStates = state.evidenceStates
@@ -636,6 +658,37 @@ function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential =
       status: 'normal',
       turn: state.turnCount,
       isConfidential,
+    })
+  }
+}
+
+const PHASE_LABELS: Record<string, string> = {
+  defensive: '방어적',
+  confident: '자신만만',
+  shaken: '동요',
+  angry: '분노',
+  resigned: '체념',
+}
+
+/**
+ * changeEmotion 래퍼 — phase 변경 시 시스템 메시지를 대화 로그에 추가.
+ */
+function changeEmotionWithPhaseTracking(party: PartyId, delta: number) {
+  const state = useGameStore.getState()
+  const agent = party === 'a' ? state.agentA : state.agentB
+  const prevPhase = agent.emotionalState.phase
+  state.changeEmotion(party, delta)
+  const newAgent = party === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+  const newPhase = newAgent.emotionalState.phase
+  if (newPhase !== prevPhase) {
+    const name = party === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name
+    const prevLabel = PHASE_LABELS[prevPhase] ?? prevPhase
+    const newLabel = PHASE_LABELS[newPhase] ?? newPhase
+    useGameStore.getState().addDialogue({
+      speaker: 'system',
+      text: `🎭 ${name}의 감정 변화: ${prevLabel} → ${newLabel}`,
+      relatedDisputes: [],
+      turn: useGameStore.getState().turnCount,
     })
   }
 }
@@ -665,7 +718,7 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
 
   // 발견 확률: 거짓말 상태가 깊을수록 높음
   const chanceByState: Record<string, number> = {
-    S0: 0.15, S1: 0.30, S2: 0.50, S3: 0.65, S4: 0.80, S5: 1.0,
+    S0: 0.25, S1: 0.40, S2: 0.50, S3: 0.65, S4: 0.80, S5: 1.0,
   }
   const chance = chanceByState[lieEntry?.currentState ?? 'S0'] ?? 0.2
   if (Math.random() > chance) return
@@ -898,6 +951,7 @@ function applyTrustEffect(actionType: string, target: PartyId) {
       if (s.resources.investigationTokens >= 1) {
         s.spend('investigationTokens', 1)
         s.startSeparation(target, 3)
+        playSeparation()
         s.changeTrust(target, 'retaliationWorry', -10)
         s.addDialogue({ speaker: 'system', text: `🚪 분리 심문 시작 — 3턴간 상대방이 배제된다.`, relatedDisputes: [], turn: s.turnCount })
       } else {

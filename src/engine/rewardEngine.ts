@@ -1,4 +1,3 @@
-// @ts-nocheck — 점진적 타입 정리 예정
 /**
  * 보상 시스템.
  * 첫 플레이, 일일 접속, 별 3개 달성 등의 보상을 관리한다.
@@ -43,9 +42,9 @@ const REWARD_CONDITIONS: RewardCondition[] = [
     check: () => {
       // 직전 게임 결과가 3성인지 확인
       const store = useGameStore.getState()
-      const verdict = store.verdictResult
+      const verdict = store.verdictScore
       if (!verdict) return false
-      const total = verdict.insight + verdict.authority + verdict.wisdom + verdict.processBonus
+      const total = verdict.insight + verdict.authority + verdict.wisdom
       return total >= 85 // 85점 이상 = 3성
     },
   },
@@ -70,7 +69,7 @@ export function checkAndGrantRewards(): { id: string; label: string; amount: num
       } else {
         // invest 보상
         const current = store.globalInvestTokens
-        const max = store.maxInvestTokens
+        const max = store.freeCap
         const actual = Math.min(cond.reward.amount, max - current)
         if (actual > 0) {
           useGameStore.setState({ globalInvestTokens: current + actual })
@@ -98,7 +97,7 @@ export function checkDailyLogin(): { granted: boolean; amount: number } {
   localStorage.setItem('solomon_last_login', today)
   const store = useGameStore.getState()
   const current = store.globalInvestTokens
-  const max = store.maxInvestTokens
+  const max = store.freeCap
   const amount = Math.min(2, max - current)
   if (amount > 0) {
     useGameStore.setState({ globalInvestTokens: current + amount })

@@ -6,6 +6,7 @@ import { recordGameComplete } from '../../hooks/useLocalStorage'
 import { recordHistory } from '../layout/HistoryPanel'
 import { completeStage } from '../../data/campaign'
 import { playGavel } from '../../engine/soundEngine'
+import { checkAndGrantRewards } from '../../engine/rewardEngine'
 import FactChecklist from './FactChecklist'
 import ResponsibilitySlider from './ResponsibilitySlider'
 import SolutionPicker from './SolutionPicker'
@@ -65,6 +66,8 @@ export default function VerdictScreen() {
     }
     const stage = stageMap[caseData.duo.relationshipType]
     if (stage) completeStage(stage, score.total)
+    // 보상 체크 및 지급 (verdictScore가 store에 저장된 직후 호출)
+    checkAndGrantRewards()
     advancePhase(GamePhase.Result)
   }
 

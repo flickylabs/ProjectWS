@@ -164,7 +164,7 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
         caseData.duo.partyA.archetype,
         caseData.duo.partyB.archetype,
         'defensive',    // A 시작 감정
-        'angry',        // B 시작 감정 (직선형)
+        'defensive',    // B 시작 감정 (A와 동일, 게임 진행에 따라 자연스럽게 변화)
       )
 
       // 리소스 초기화
