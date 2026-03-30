@@ -9,6 +9,7 @@ import type { StageDefinition } from '../data/campaign'
 import { loadProfile, loadExtendedHistory, getPlayerStats } from '../data/leaderboard'
 import { getCurrentSeason, getRemainingDays } from '../data/seasons'
 import { loadCampaignProgress } from '../data/campaign'
+import { playBgm as playBgmFn, stopBgm as stopBgmFn } from '../engine/soundEngine'
 import Emoji from '../components/common/Emoji'
 import CourtLayout from '../components/layout/CourtLayout'
 import PhaseTransition from '../components/layout/PhaseTransition'
@@ -124,6 +125,8 @@ function TitleScreen() {
 
   useEffect(() => {
     checkConnection().then(setLlmStatus)
+    // 타이틀 BGM 재생
+    playBgmFn('/bgm/title.mp3', 0.12)
 
     // 서버 연결 + AI 프롬프트 로드 + 플레이어 동기화
     ;(async () => {
@@ -181,6 +184,7 @@ function TitleScreen() {
 
   const handleStart = (relationshipType?: string) => {
     resetPrefetch()
+    stopBgmFn() // 타이틀 BGM 정지
     setLLMMode(llmStatus?.connected ?? false)
     const caseData = getRandomCase(relationshipType)
     initializeCase(caseData)
@@ -188,6 +192,7 @@ function TitleScreen() {
 
   const handleCampaignStage = (stage: StageDefinition) => {
     resetPrefetch()
+    stopBgmFn() // 타이틀 BGM 정지
     setLLMMode(llmStatus?.connected ?? false)
     const caseData = getRandomCase(stage.relationshipType || undefined)
     initializeCase(caseData)

@@ -1,7 +1,19 @@
 import { useEffect, useState } from 'react'
 import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
-import { playPhaseTransition } from '../../engine/soundEngine'
+import { playPhaseTransition, playBgm, stopBgm } from '../../engine/soundEngine'
+
+/** Phase별 BGM 매핑 */
+const PHASE_BGM: Partial<Record<GamePhase, string>> = {
+  [GamePhase.Phase1_InitialStatement]: '/bgm/court.mp3',
+  [GamePhase.Phase2_Rebuttal]: '/bgm/court.mp3',
+  [GamePhase.Phase3_Interrogation]: '/bgm/court.mp3',
+  [GamePhase.Phase4_Evidence]: '/bgm/court.mp3',
+  [GamePhase.Phase5_ReExamination]: '/bgm/court.mp3',
+  [GamePhase.Phase6_Mediation]: '/bgm/court.mp3',
+  [GamePhase.Phase7_Verdict]: '/bgm/verdict.mp3',
+  [GamePhase.Result]: '/bgm/result.mp3',
+}
 import Emoji, { replaceEmojisInText } from '../common/Emoji'
 
 const PHASE_INFO: Record<GamePhase, { title: string; subtitle: string; icon: string; unlocks?: string[] } | null> = {
@@ -28,10 +40,17 @@ export default function PhaseTransition() {
       if (info) {
         setVisible(true)
         playPhaseTransition()
+        // Phase별 BGM 전환
+        const bgmTrack = PHASE_BGM[currentPhase]
+        if (bgmTrack) playBgm(bgmTrack)
         const timer = setTimeout(() => setVisible(false), 1800)
         setLastPhase(currentPhase)
         return () => clearTimeout(timer)
       }
+      // BGM 전환 (info가 없는 Phase — Result 등)
+      const bgmTrack = PHASE_BGM[currentPhase]
+      if (bgmTrack) playBgm(bgmTrack)
+      else if (currentPhase === GamePhase.Phase0_CaseIntro) stopBgm()
       setLastPhase(currentPhase)
     }
   }, [currentPhase, lastPhase])
