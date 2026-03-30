@@ -27,7 +27,7 @@ export default function ResponsibilitySlider() {
       <div className="space-y-3">
         {activeDisputes.map((d) => {
           const resp = verdictInput.responsibility[d.id] ?? { a: 50, b: 50 }
-          const tiltAngle = ((resp.a - 50) / 50) * 12 // -12 ~ +12도
+          const tiltAngle = ((resp.b - resp.a) / 100) * 12 // A 무거우면 왼쪽 기울어짐(음수), B 무거우면 오른쪽(양수)
           const aHeavy = resp.a > 50
           const bHeavy = resp.b > 50
           const _balanced = resp.a === 50
@@ -47,13 +47,13 @@ export default function ResponsibilitySlider() {
                   className="absolute w-[85%] h-px bg-gray-400 transition-transform duration-300"
                   style={{ transform: `rotate(${tiltAngle}deg)`, transformOrigin: 'center' }}
                 >
-                  {/* A 접시 (왼쪽) */}
-                  <div className={`absolute -left-1 -top-5 flex flex-col items-center transition-all duration-300 ${aHeavy ? 'translate-y-1' : bHeavy ? '-translate-y-1' : ''}`}>
-                    <div className={`w-10 h-3 rounded-b-lg border border-t-0 transition-colors ${aHeavy ? 'bg-blue-600/40 border-blue-500' : 'bg-gray-800 border-gray-600'}`} />
+                  {/* A 접시 (왼쪽) — A 귀책 높으면 아래로 */}
+                  <div className={`absolute -left-1 -bottom-3 flex flex-col items-center transition-all duration-300 ${aHeavy ? 'translate-y-2' : bHeavy ? '-translate-y-1' : ''}`}>
+                    <div className={`w-10 h-3 rounded-t-lg border border-b-0 transition-colors ${aHeavy ? 'bg-blue-600/40 border-blue-500' : 'bg-gray-800 border-gray-600'}`} />
                   </div>
-                  {/* B 접시 (오른쪽) */}
-                  <div className={`absolute -right-1 -top-5 flex flex-col items-center transition-all duration-300 ${bHeavy ? 'translate-y-1' : aHeavy ? '-translate-y-1' : ''}`}>
-                    <div className={`w-10 h-3 rounded-b-lg border border-t-0 transition-colors ${bHeavy ? 'bg-rose-600/40 border-rose-500' : 'bg-gray-800 border-gray-600'}`} />
+                  {/* B 접시 (오른쪽) — B 귀책 높으면 아래로 */}
+                  <div className={`absolute -right-1 -bottom-3 flex flex-col items-center transition-all duration-300 ${bHeavy ? 'translate-y-2' : aHeavy ? '-translate-y-1' : ''}`}>
+                    <div className={`w-10 h-3 rounded-t-lg border border-b-0 transition-colors ${bHeavy ? 'bg-rose-600/40 border-rose-500' : 'bg-gray-800 border-gray-600'}`} />
                   </div>
                 </div>
 
@@ -71,7 +71,7 @@ export default function ResponsibilitySlider() {
                 </span>
               </div>
 
-              {/* 슬라이더 — 왼쪽=A 잘못, 오른쪽=B 잘못 */}
+              {/* 슬라이더 — 왼쪽=A 귀책↑, 오른쪽=B 귀책↑ */}
               <div className="relative">
                 <div className="absolute inset-0 h-2 rounded-full overflow-hidden top-1/2 -translate-y-1/2 pointer-events-none flex">
                   <div className="h-full bg-blue-600/30" style={{ width: `${resp.a}%` }} />
@@ -80,10 +80,10 @@ export default function ResponsibilitySlider() {
                 <input
                   type="range"
                   min={0} max={100} step={10}
-                  value={resp.a}
+                  value={resp.b}
                   onChange={(e) => {
-                    const a = Number(e.target.value)
-                    setResponsibility(d.id, a, 100 - a)
+                    const b = Number(e.target.value)
+                    setResponsibility(d.id, 100 - b, b)
                   }}
                   className="w-full accent-amber-500 h-2 relative z-10 opacity-80"
                 />
