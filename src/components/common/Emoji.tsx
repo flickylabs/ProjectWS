@@ -31,6 +31,12 @@ const emojiMap: Record<string, string> = {
   "🌱": "tier_01_seedling.png", "🌿": "tier_02_herb.png", "💎": "tier_06_gem.png",
   "📧": "evidence_email.png", "💻": "evidence_digital.png", "📷": "evidence_photo.png",
   "🔐": "evidence_access.png", "🔊": "evidence_audio.png",
+  "✨": "2728.png", "❌": "274c.png", "🌈": "1f308.png", "🌟": "1f31f.png",
+  "🎁": "1f381.png", "🎉": "1f389.png", "🏅": "1f3c5.png", "👣": "1f463.png",
+  "📅": "1f4c5.png", "📚": "1f4da.png", "📜": "1f4dc.png", "📦": "1f4e6.png",
+  "📬": "1f4ec.png", "🔇": "1f507.png", "🔧": "1f527.png", "🔮": "1f52e.png",
+  "🗂️": "1f5c2-fe0f.png", "🗡️": "1f5e1-fe0f.png", "🦅": "1f985.png", "🦉": "1f989.png",
+  "🪙": "1fa99.png",
 }
 
 interface EmojiProps {
