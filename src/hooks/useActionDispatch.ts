@@ -696,11 +696,12 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
     dispute?.name ?? '단서 2',
     name + '의 진술에서 발견',
   ]
-  state.setPendingMinigame({ type: 'evidence_discovery', evidenceId: ev.id, clues })
+  const lieState = lieEntry?.currentState ?? 'S0'
+  state.setPendingMinigame({ type: 'evidence_discovery', evidenceId: ev.id, clues, npcName: name, lieState, party })
   return // 미니게임 결과에서 actuallyDiscoverEvidence 호출
 }
 
-/** 미니게임 성공 시 실제 증거 해금 */
+/** 미니게임 성공 시 실제 증거 해금 — 3단 대화 연출 */
 export function actuallyDiscoverEvidence(evidenceId: string) {
   const state = useGameStore.getState()
   if (!state.caseData) return
@@ -708,8 +709,10 @@ export function actuallyDiscoverEvidence(evidenceId: string) {
   const ev = state.evidenceDefinitions.find(e => e.id === evidenceId)
   if (!ev) return
 
-  const name = 'NPC'
-  const lieState = 'S2'
+  const mg = state.pendingMinigame
+  const name = mg?.npcName ?? '증인'
+  const lieState = mg?.lieState ?? 'S2'
+  const party = mg?.party ?? 'a'
 
   useGameStore.setState((prev) => ({
     evidenceStates: {
@@ -718,52 +721,107 @@ export function actuallyDiscoverEvidence(evidenceId: string) {
     },
   }))
 
-  const reason = getDiscoveryReason(ev, name, lieState, ev.proves[0] ?? '')
+  const { slip, judgeChallenge } = getDiscoveryLines(ev, name, lieState)
 
+  // 1) 당사자 실수 대사 — 무심코 단서를 흘린다
+  state.addDialogue({
+    speaker: party,
+    text: slip,
+    relatedDisputes: ev.proves,
+    turn: state.turnCount,
+    behaviorHint: getSlipBehavior(lieState),
+  })
+
+  // 2) 재판관이 캐치 — 플레이어 시점의 반응
+  state.addDialogue({
+    speaker: 'judge',
+    text: judgeChallenge,
+    relatedDisputes: ev.proves,
+    turn: state.turnCount,
+  })
+
+  // 3) 증거 확보 알림
   playEvidenceUnlock()
   state.trackMetric('evidenceDiscovered')
   state.addDialogue({
     speaker: 'system',
-    text: reason,
+    text: `🔍 ${name}의 말에서 새로운 증거를 확보했다\n🔓 새 증거: ${ev.name}`,
     relatedDisputes: ev.proves,
     turn: state.turnCount,
   })
 }
 
-/** 증거 유형 + 상황에 따른 발견 사유 메시지 생성 */
-function getDiscoveryReason(
+/** 거짓말 상태에 따른 실수 행동 묘사 */
+function getSlipBehavior(lieState: string): string {
+  const behaviors: Record<string, string> = {
+    S0: '무심코 말을 꺼내다 멈칫한다.',
+    S1: '말끝이 흔들리며 시선을 피한다.',
+    S2: '설명하다 자신도 모르게 말이 새어 나온다.',
+    S3: '상대를 탓하다 의도치 않게 단서를 흘린다.',
+    S4: '감정이 격해지며 입에서 튀어나온다.',
+    S5: '체념한 듯 결국 내뱉는다.',
+  }
+  return behaviors[lieState] ?? '잠시 말을 멈추더니 다시 이어간다.'
+}
+
+/** 증거 유형 + 거짓말 상태에 따른 당사자 실수 대사 & 재판관 반응 */
+function getDiscoveryLines(
   ev: { name: string; type: string },
   npcName: string,
   lieState: string,
-  disputeName: string,
-): string {
-  // 거짓말 상태에 따른 발견 맥락
-  const context: Record<string, string> = {
-    S0: '말하다 실수로',
-    S1: '흔들리면서',
-    S2: '인정하다가',
-    S3: '상대 탓을 하다',
-    S4: '감정이 격해지며',
-    S5: '결국 인정하면서',
-  }
-  const ctxText = context[lieState] ?? '대화 중'
-
-  // 증거 유형별 발견 사유
-  const n = iga(npcName)
-  const typeReasons: Record<string, string[]> = {
-    bank:       [`${n} ${ctxText} 금전 거래를 언급했다`, `관련 금융 기록을 확보했다`],
-    chat:       [`${n} ${ctxText} 메시지 기록의 존재를 언급했다`, `해당 대화 내용을 확보했다`],
-    cctv:       [`${n} ${ctxText} 특정 장소를 언급했다`, `해당 위치의 영상 기록을 확보했다`],
-    contract:   [`${n} ${ctxText} 약속/계약을 언급했다`, `관련 문서를 확보했다`],
-    testimony:  [`${n} ${ctxText} 제3자를 언급했다`, `해당 인물의 증언을 확보했다`],
-    log:        [`${n} ${ctxText} 기록의 존재를 언급했다`, `관련 로그를 확보했다`],
-    device:     [`${n} ${ctxText} 기기 사용을 언급했다`, `해당 기기 데이터를 확보했다`],
-    sns:        [`${n} ${ctxText} SNS 활동을 언급했다`, `해당 게시물을 확보했다`],
+): { slip: string; judgeChallenge: string } {
+  // 거짓말 상태별 실수 맥락 (당사자가 말을 흘리는 방식)
+  const slipContext: Record<string, string> = {
+    S0: '그때 그 일은… 아, 아닙니다. 그냥 제가 잘못 말했습니다.',
+    S1: '그건… 사실 그때…',
+    S2: '아니, 그러니까… 그것도 관련이 있긴 한데…',
+    S3: '그쪽이야말로! …아, 그건 제가 말할 부분이 아니었는데.',
+    S4: '그게 그렇게 된 건 — 아…',
+    S5: '… 솔직히 말씀드리면, 그것도 있습니다.',
   }
 
-  const reasons = typeReasons[ev.type] ?? [`${npcName}의 진술에서 단서가 포착됐다`, `관련 자료를 확보했다`]
+  // 증거 유형별 당사자 실수 대사
+  const typeSlips: Record<string, { slip: string; judge: string }> = {
+    bank: {
+      slip: `${slipContext[lieState] ?? '…'} 그 돈 문제는… 거래 내역을 보시면 아시겠지만…`,
+      judge: `잠깐, 지금 거래 내역을 언급하셨는데 — 그 기록을 확인해 보겠습니다.`,
+    },
+    chat: {
+      slip: `${slipContext[lieState] ?? '…'} 그때 주고받은 메시지가 있긴 한데…`,
+      judge: `지금 메시지 기록이 있다고 하셨습니다. 해당 내용을 확보하겠습니다.`,
+    },
+    cctv: {
+      slip: `${slipContext[lieState] ?? '…'} 그 시간에 거기 있었던 건 맞는데… 카메라가 있는 줄은…`,
+      judge: `${npcName} 씨, 지금 해당 장소에 있었다고 인정하셨습니다. 영상 기록을 확인하겠습니다.`,
+    },
+    contract: {
+      slip: `${slipContext[lieState] ?? '…'} 그때 서로 약속한 게 있긴 했습니다…`,
+      judge: `지금 약속이 있었다고 하셨는데 — 관련 문서를 확인해 보겠습니다.`,
+    },
+    testimony: {
+      slip: `${slipContext[lieState] ?? '…'} 그 자리에 다른 사람도 있었는데…`,
+      judge: `다른 사람이 있었다고 하셨습니다. 해당 인물의 증언을 확보하겠습니다.`,
+    },
+    log: {
+      slip: `${slipContext[lieState] ?? '…'} 기록을 보면 알 수 있을 텐데…`,
+      judge: `기록이 있다고 하셨습니다. 해당 로그를 확인하겠습니다.`,
+    },
+    device: {
+      slip: `${slipContext[lieState] ?? '…'} 그때 폰으로 확인한 건 맞는데…`,
+      judge: `기기를 사용한 사실을 언급하셨습니다. 해당 데이터를 확보하겠습니다.`,
+    },
+    sns: {
+      slip: `${slipContext[lieState] ?? '…'} 그게 온라인에 올라간 건 맞지만…`,
+      judge: `SNS에 올라갔다고 하셨습니다. 해당 게시물을 확인하겠습니다.`,
+    },
+  }
 
-  return `📎 ${reasons[0]} → ${reasons[1]}\n🔓 새 증거: ${ev.name}`
+  const lines = typeSlips[ev.type] ?? {
+    slip: `${slipContext[lieState] ?? '…'} 그것도 사실 관련이 있긴 합니다…`,
+    judge: `지금 하신 말씀에서 새로운 단서가 포착됐습니다. 확인하겠습니다.`,
+  }
+
+  return { slip: lines.slip, judgeChallenge: lines.judge }
 }
 
 /** 회피 판독 결과 표시 — 해당 쟁점의 거짓말 불안정도 공개 */

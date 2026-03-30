@@ -7,7 +7,7 @@ import { createEvidenceSlice, type EvidenceSlice } from './slices/evidenceSlice'
 import { createDialogueSlice, type DialogueSlice } from './slices/dialogueSlice'
 import { createVerdictSlice, type VerdictSlice } from './slices/verdictSlice'
 import { createShopSlice, type ShopSlice } from './slices/shopSlice'
-import type { CaseData, ProcessMetrics } from '../types'
+import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
 import { snapshotForSession, clearSessionSnapshot } from '../api/agentManager'
@@ -38,7 +38,7 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   calledWitnesses: string[]
   addCalledWitness: (witnessId: string) => void
   /** 미니게임 대기 (UI에서 모달 표시) */
-  pendingMinigame: { type: 'evidence_discovery'; evidenceId: string; clues: [string, string, string] } | null
+  pendingMinigame: { type: 'evidence_discovery'; evidenceId: string; clues: [string, string, string]; npcName: string; lieState: string; party: PartyId } | null
   setPendingMinigame: (mg: GameStore['pendingMinigame']) => void
   /** 심문 이력: party → disputeId → 질문 기록 */
   interrogationHistory: Record<string, Record<string, { questionTypes: string[]; turns: number[]; revealed: boolean }>>
