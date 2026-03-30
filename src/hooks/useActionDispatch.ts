@@ -26,24 +26,31 @@ export function setNextEvasionReading(target: PartyId, disputeId: string) {
   _nextEvasionTarget = { target, disputeId }
 }
 
+let globalDispatchLock = false
+
 export function useActionDispatch() {
   const dispatch = useCallback((action: PlayerAction) => {
+    if (globalDispatchLock) { console.warn('[dispatch] 이전 액션 처리 중 — 무시'); return }
     const state = useGameStore.getState()
 
     if (action.type === 'evidence_present') {
-      handleEvidencePresent(action)
+      globalDispatchLock = true
+      handleEvidencePresent(action).finally(() => { globalDispatchLock = false })
       return
     }
     if (action.type === 'evidence_investigate') {
-      handleEvidenceInvestigate(action)
+      globalDispatchLock = true
+      handleEvidenceInvestigate(action).finally(() => { globalDispatchLock = false })
       return
     }
     if (action.type === 'call_witness') {
-      handleCallWitness(action)
+      globalDispatchLock = true
+      handleCallWitness(action).finally(() => { globalDispatchLock = false })
       return
     }
     if (action.type === 'question') {
-      handleQuestion(action)
+      globalDispatchLock = true
+      handleQuestion(action).finally(() => { globalDispatchLock = false })
       return
     }
     if (action.type === 'trust_action') {
