@@ -144,20 +144,34 @@ export default function ActionPanel() {
   }
   const hEv = (id: string) => { if (target) { dispatch({ type: 'evidence_present', evidenceId: id, target }); setActiveTab(null) } }
 
-  // 증거 대질: 증거 제시 + 자유 추궁
+  // 증거 대질: 증거 상태 업데이트 + 유저 질문으로 자유질문 1회 처리
   const hConfront = async (evidenceId: string, question: string) => {
     if (!target) return
     setActiveTab(null)
 
-    // 1. 증거 제시 (일반 흐름)
-    dispatch({ type: 'evidence_present', evidenceId, target })
-
-    // 2. 유저의 대질 질문을 자유질문으로 처리
     const s = useGameStore.getState()
     const evDef = s.evidenceDefinitions.find(e => e.id === evidenceId)
-    const prefixedQuestion = `[증거 "${evDef?.name ?? ''}"] ${question}`
+    if (!evDef) return
 
-    s.addDialogue({ speaker: 'judge', text: question, relatedDisputes: evDef?.proves ?? [], turn: s.turnCount })
+    // 1. 증거 상태만 업데이트 (LLM 호출 없이)
+    s.presentEvidence(evidenceId, target)
+    const disputeNames = evDef.proves.map(dId => s.caseData?.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
+    s.addDialogue({
+      speaker: 'system',
+      text: `📋 증거 제시: ${evDef.name} [${evDef.reliability === 'hard' ? 'Hard' : 'Soft'}] → "${disputeNames}"`,
+      relatedDisputes: evDef.proves,
+      turn: s.turnCount,
+    })
+
+    // 2. lie 전이 + 감정 변화
+    for (const dId of evDef.proves) {
+      s.transitionLie(target, dId, evDef.reliability === 'hard' ? 'hard_evidence' : 'soft_evidence')
+    }
+    s.changeEmotion(target, evDef.reliability === 'hard' ? 15 : 8)
+
+    // 3. 유저의 대질 질문을 자유질문으로 처리 (LLM 1회만)
+    const prefixedQuestion = `[증거 "${evDef.name}"] ${question}`
+    s.addDialogue({ speaker: 'judge', text: question, relatedDisputes: evDef.proves, turn: s.turnCount })
 
     s.setLLMLoading(true, target)
     try {
@@ -170,7 +184,6 @@ export default function ActionPanel() {
         fresh.trackMetric('freeQuestionsRelevant')
         const ts = ({ fact_pursuit: ['direct_question','timeline_question'], motive_search: ['motive_question','context_question'], empathy_approach: ['empathy_question','provenance_question'] } as Record<string,string[]>)[result.questionType] ?? ['direct_question']
         for (const t of ts) { if (fresh.transitionLie(target, result.disputeId, t)) break }
-        fresh.changeEmotion(target, 8)
       }
       fresh.incrementTurn()
     } catch {
