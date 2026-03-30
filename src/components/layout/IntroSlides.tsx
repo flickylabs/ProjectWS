@@ -7,7 +7,7 @@ const slides = [
   {
     icon: '⚖️',
     title: '솔로몬',
-    body: 'AI 둘의 싸움을\n인간의 지혜로 재판하는 게임',
+    body: '현대판 솔로몬이 되어\n판결을 내려보세요!',
   },
   {
     icon: null,

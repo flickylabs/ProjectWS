@@ -282,7 +282,8 @@ function TitleScreen() {
         <div className="text-center relative z-10 mb-10">
           <div className="text-6xl mb-3 animate-pulse-glow"><Emoji char="⚖️" size={56} /></div>
           <h1 className="text-4xl font-black text-amber-400 tracking-tight mb-2">솔로몬</h1>
-          <p className="text-sm text-gray-500 leading-relaxed">AI 둘의 싸움을<br/>인간의 지혜로 재판하는 게임</p>
+          <p className="text-sm text-gray-400 leading-relaxed">현대판 솔로몬이 되어<br/>판결을 내려보세요!</p>
+          <p className="text-[10px] text-gray-600 mt-2 leading-relaxed">사회·경험 기반 모의 재판 게임<br/>등장하는 사건은 가상이며, 실제 판례와 다를 수 있습니다</p>
         </div>
 
         {/* 버튼 영역 — 중앙에서 약간 아래 */}
