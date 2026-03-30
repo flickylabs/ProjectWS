@@ -4,6 +4,7 @@
  */
 
 export interface WitnessBudgetEntry {
+  name?: string
   canState: string[]
   uncertain: string[]
   forbidden: string[]
