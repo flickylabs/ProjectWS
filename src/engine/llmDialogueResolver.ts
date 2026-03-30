@@ -31,6 +31,7 @@ export async function resolveLLMDialogue(
   }
 
   const store = useGameStore.getState()
+  try {
   const target: PartyId = 'target' in action ? action.target : 'a'
   const agent = target === 'a' ? agentA : agentB
   const profile = target === 'a' ? caseData.duo.partyA : caseData.duo.partyB
@@ -181,6 +182,10 @@ export async function resolveLLMDialogue(
     }
   } catch (error) {
     console.warn('LLM 호출 실패, 폴백:', error)
+    return fallbackResolve(action, agentA, agentB, evidenceStates)
+  }
+  } catch (outerError) {
+    console.error('[resolveLLMDialogue] 프롬프트 조립 또는 처리 중 에러:', outerError)
     return fallbackResolve(action, agentA, agentB, evidenceStates)
   }
 }

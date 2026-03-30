@@ -82,13 +82,18 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
 
     return (
       <div className={`flex justify-center my-2.5 ${isEvidence ? 'animate-evidence-slam' : isCollapse ? 'animate-shake' : ''}`}>
-        <div className={`text-xs px-4 py-1.5 rounded-full max-w-[90%] text-center leading-relaxed ${
-          isCollapse ? 'bg-red-950/50 text-red-400 ring-1 ring-red-500/30' :
-          isEvidence ? 'bg-amber-950/50 text-amber-400 ring-1 ring-amber-500/20' :
-          isMultiHit ? 'bg-purple-950/50 text-purple-400 ring-1 ring-purple-500/20' :
-          'bg-gray-800/50 text-gray-500'
-        }`}>
-          {replaceEmojisInText(displayText, 14)}
+        <div
+          className={`text-xs italic px-5 py-1.5 max-w-[90%] text-center leading-relaxed ${
+            isCollapse ? 'bg-gray-950/80 text-amber-400/80 ring-1 ring-gray-600/30' :
+            isEvidence ? 'bg-gray-950/80 text-amber-400 ring-1 ring-amber-500/20' :
+            isMultiHit ? 'bg-gray-950/80 text-purple-400 ring-1 ring-purple-500/20' :
+            'bg-gray-950/60 text-gray-500'
+          }`}
+          style={{ transform: 'skewX(-4deg)' }}
+        >
+          <span style={{ display: 'inline-block', transform: 'skewX(4deg)' }}>
+            {replaceEmojisInText(displayText, 14)}
+          </span>
         </div>
       </div>
     )
@@ -96,8 +101,24 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
 
   const isA = entry.speaker === 'a'
   const isB = entry.speaker === 'b'
-  const name = isA ? nameA : isB ? nameB : '재판관'
-  const align = isA ? 'items-start' : isB ? 'items-end' : 'items-center'
+  const isJudge = entry.speaker === 'judge'
+
+  // 재판관은 아이콘/라벨 없이 구분선 + 둥근 말풍선 (어두운 갈색, 중앙)
+  if (isJudge) {
+    return (
+      <div className="my-3">
+        <div className="border-t border-gray-700/40 mb-3" />
+        <div className="flex justify-center">
+          <div className="bg-amber-950/40 border border-amber-800/30 rounded-2xl px-4 py-2.5 max-w-[85%]">
+            <p className="text-sm text-gray-200 leading-relaxed">{displayText}{!done && <span className="animate-pulse text-amber-400">|</span>}</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  const name = isA ? nameA : nameB
+  const align = isA ? 'items-start' : 'items-end'
 
   // 감정 기반 이모지
   const emotionPhase = isA ? agentA?.emotionalState?.phase : isB ? agentB?.emotionalState?.phase : undefined
@@ -111,14 +132,10 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
     nameColor: 'text-blue-400',
     bubble: isAngry ? 'bg-blue-950/70 border-blue-600/50' : 'bg-blue-950/50 border-blue-800/30',
     avatarRing: isAngry ? 'ring-red-500/60' : isShaken ? 'ring-yellow-500/40' : 'ring-blue-500/40',
-  } : isB ? {
+  } : {
     nameColor: 'text-rose-400',
     bubble: isAngry ? 'bg-rose-950/70 border-rose-600/50' : 'bg-rose-950/50 border-rose-800/30',
     avatarRing: isAngry ? 'ring-red-500/60' : isShaken ? 'ring-yellow-500/40' : 'ring-rose-500/40',
-  } : {
-    nameColor: 'text-amber-400',
-    bubble: 'bg-amber-950/40 border-amber-800/30',
-    avatarRing: 'ring-amber-500/40',
   }
 
   return (
@@ -145,7 +162,7 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
       </div>
 
       {/* 말풍선 */}
-      <div className={`border rounded-2xl ${isA ? 'rounded-tl-sm' : isB ? 'rounded-tr-sm' : ''} px-3.5 py-2.5 max-w-[85%] transition-colors duration-300 ${entry.isConfidential ? 'bg-purple-950/40 border-purple-700/50' : config.bubble}`}>
+      <div className={`border rounded-2xl ${isA ? 'rounded-tl-sm' : 'rounded-tr-sm'} px-3.5 py-2.5 max-w-[85%] transition-colors duration-300 ${entry.isConfidential ? 'bg-purple-950/40 border-purple-700/50' : config.bubble}`}>
         {entry.isConfidential && (
           <div className="flex items-center gap-1 mb-1.5 text-purple-400 text-xs font-semibold">
             <span>🔒</span><span>비공개 진술</span>

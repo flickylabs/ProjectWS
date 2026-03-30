@@ -16,18 +16,18 @@ interface Props {
   onFail: () => void
   /** 광고 보기 콜백 (100% 성공) */
   onWatchAd: () => void
-  /** 제한 시간 (초, 기본 3) */
+  /** 제한 시간 (초, 기본 6) */
   timeLimit?: number
 }
 
-export default function MemoryPuzzle({ clues, onSuccess, onFail, onWatchAd, timeLimit = 3 }: Props) {
+export default function MemoryPuzzle({ clues, onSuccess, onFail, onWatchAd, timeLimit = 6 }: Props) {
   const [phase, setPhase] = useState<'show' | 'play' | 'result'>('show')
   const [shuffled, setShuffled] = useState<{ text: string; idx: number }[]>([])
   const [tapped, setTapped] = useState<number[]>([])
   const [timeLeft, setTimeLeft] = useState(timeLimit)
   const [result, setResult] = useState<'success' | 'fail' | null>(null)
 
-  // 1단계: 정답 순서 보여주기 (1.5초)
+  // 1단계: 정답 순서 보여주기 (3초)
   useEffect(() => {
     const timer = setTimeout(() => {
       // 셔플
@@ -35,7 +35,7 @@ export default function MemoryPuzzle({ clues, onSuccess, onFail, onWatchAd, time
       const shuffledItems = [...items].sort(() => Math.random() - 0.5)
       setShuffled(shuffledItems)
       setPhase('play')
-    }, 1500)
+    }, 3000)
     return () => clearTimeout(timer)
   }, [clues])
 
