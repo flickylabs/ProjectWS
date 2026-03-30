@@ -43,7 +43,7 @@ const blocks = [
 - 재판관에게 상대를 지칭할 때: "{judgeRef}"
 - 감정이 격해졌을 때 튀어나올 수 있는 호칭: "{angryCall}"
 {formalityGuide}
-- 재판관에게는 항상 존댓말을 사용한다.
+★ 절대 규칙: 재판관에게는 어떤 상황에서도 반드시 존댓말(~습니다, ~요, ~입니다)만 사용. 반말 절대 금지. 위반 시 출력 무효.
 - 상대 호칭은 필요할 때만 넣는다. 매 문장마다 반복하지 않는다.
 - separation, confidential, private_confession 상황에서는 상대 호칭을 생략하거나 최소화해도 된다.`,
     variables: '["callForm","judgeRef","angryCall","formalityGuide"]',
@@ -64,7 +64,9 @@ const blocks = [
 - 같은 주장, 같은 표현, 같은 문장 구조를 반복하지 마라.
 - 이번 턴의 goal과 focusedDisputeId를 벗어나는 다른 쟁점, 다른 금액, 다른 사건으로 새지 마라.
 - npcResponse에는 괄호 행동묘사, 메타설명, 규칙 설명을 넣지 마라.
-- 기본 길이는 2~3문장이다. 다만 yes_no_first는 1~3문장, private_confession은 짧고 낮은 톤을 유지한다.`,
+- 기본 길이는 2~3문장이다. 다만 yes_no_first는 1~3문장, private_confession은 짧고 낮은 톤을 유지한다.
+- 횡설수설, 추상적 얼버무리기, 감정 호소로 시작하기 금지. 사실 → 이유 → 입장 순서로 답하라.
+- 재판관의 질문에 직접적으로 답하라. 질문을 되묻거나 화제를 전환하지 마라.`,
     variables: '[]',
   },
   {
@@ -622,6 +624,22 @@ speaker는 반드시 소문자 "a", "b", "system"만 사용한다.
 - mentionedTruthIds는 이미 드러난 truth id만 넣는다. 새 truth 발명 금지.`,
     variables: '[]',
   },
+  {
+    key: 'response_quality_rules',
+    name: '응답 품질 규칙',
+    description: '존댓말 필수, 횡설수설 금지, 답변 구조 강제',
+    category: 'common',
+    content: `## 응답 품질 규칙 (필수 — 위반 시 출력 무효)
+{responseQualityRules}
+
+추가 강제 사항:
+★ 재판관에게는 어떤 상황에서도 반드시 존댓말(~습니다, ~입니다, ~요)만 사용하라. 반말 사용 시 출력 무효.
+- 첫 문장은 "예/아니요" 또는 핵심 사실로 시작하라.
+- 2~3문장으로 간결하게 답하라. 같은 말을 반복하지 마라.
+- 감정 호소나 변명으로 시작하지 마라. 사실 → 이유 → 입장 순서로 답하라.
+- 질문을 되묻거나 화제를 전환하지 마라.`,
+    variables: '["responseQualityRules"]',
+  },
 ];
 
 const insertBlock = db.prepare(`
@@ -637,7 +655,7 @@ const agents = [
   {
     key: 'interrogation', name: '공개 심문 에이전트',
     description: 'Phase 3~5 공개 심문용',
-    model: null, temperature: 0.75, max_tokens: 320,
+    model: null, temperature: 0.65, max_tokens: 350,
     context_flags: '{"include_knownFacts":true,"include_disputeInfo":true,"include_emotionInfo":true,"include_evidenceInfo":true,"include_recentDialogue":true,"include_historyContext":true,"include_phaseTranscript":true,"include_actionContract":true,"include_trustInfo":true,"include_skillOverlay":true,"include_focusedDisputeId":true,"max_recent_dialogues":5,"max_known_facts":4}',
   },
   {
@@ -661,7 +679,7 @@ const agents = [
   {
     key: 'free_question_responder', name: '자유 질문 응답 에이전트',
     description: '분류 결과를 바탕으로 NPC가 응답',
-    model: null, temperature: 0.75, max_tokens: 320,
+    model: null, temperature: 0.65, max_tokens: 350,
     context_flags: '{"include_knownFacts":true,"include_disputeInfo":true,"include_emotionInfo":true,"include_evidenceInfo":true,"include_recentDialogue":true,"include_historyContext":true,"include_phaseTranscript":true,"include_actionContract":true,"include_trustInfo":true,"include_skillOverlay":true,"include_focusedDisputeId":true,"max_recent_dialogues":5,"max_known_facts":4}',
   },
   {
@@ -719,6 +737,7 @@ const agentBlocks = [
   { agent: 'interrogation', block: 'skill_overlay', order: 4.6 },
   { agent: 'interrogation', block: 'question_type_guide', order: 5 },
   { agent: 'interrogation', block: 'speech_guide_short', order: 6 },
+  { agent: 'interrogation', block: 'response_quality_rules', order: 6.5 },
   { agent: 'interrogation', block: 'output_json_npc', order: 7 },
   { agent: 'interrogation_private', block: 'character_base', order: 0 },
   { agent: 'interrogation_private', block: 'naming_rules', order: 1 },
@@ -734,6 +753,7 @@ const agentBlocks = [
   { agent: 'interrogation_private', block: 'skill_overlay', order: 4.6 },
   { agent: 'interrogation_private', block: 'question_type_guide', order: 5 },
   { agent: 'interrogation_private', block: 'speech_guide_short', order: 6 },
+  { agent: 'interrogation_private', block: 'response_quality_rules', order: 6.5 },
   { agent: 'interrogation_private', block: 'output_json_npc', order: 7 },
   { agent: 'evidence_reaction', block: 'character_base', order: 0 },
   { agent: 'evidence_reaction', block: 'naming_rules', order: 1 },
@@ -749,6 +769,7 @@ const agentBlocks = [
   { agent: 'evidence_reaction', block: 'evidence_axis', order: 5 },
   { agent: 'evidence_reaction', block: 'investigation_result_guide', order: 5.2 },
   { agent: 'evidence_reaction', block: 'speech_guide_short', order: 6 },
+  { agent: 'evidence_reaction', block: 'response_quality_rules', order: 6.5 },
   { agent: 'evidence_reaction', block: 'output_json_npc', order: 7 },
   { agent: 'free_question_classifier', block: 'free_question_classifier_rules', order: 0 },
   { agent: 'free_question_classifier', block: 'output_json_free_question_classifier', order: 1 },
@@ -766,6 +787,7 @@ const agentBlocks = [
   { agent: 'free_question_responder', block: 'question_type_guide', order: 5 },
   { agent: 'free_question_responder', block: 'free_question_responder_rules', order: 5.2 },
   { agent: 'free_question_responder', block: 'speech_guide_short', order: 6 },
+  { agent: 'free_question_responder', block: 'response_quality_rules', order: 6.5 },
   { agent: 'free_question_responder', block: 'output_json_npc', order: 7 },
   { agent: 'witness_testimony', block: 'witness_base', order: 0 },
   { agent: 'witness_testimony', block: 'witness_dialogue_rules', order: 1 },
@@ -834,6 +856,7 @@ const dataFields = [
   { key: 'evidenceAxis',    name: '증거 축 정보',       source: 'computed', type: 'text', example: 'reliability=hard, completeness=original, ...' },
   { key: 'focusedDisputeId', name: '현재 집중 쟁점 ID', source: 'session', type: 'string', example: 'd-2' },
   { key: 'investigationResult', name: '증거 조사 결과', source: 'session', type: 'text', example: 'request_original: 원본 확인됨' },
+  { key: 'responseQualityRules', name: '응답 품질 규칙', source: 'computed', type: 'text', example: '존댓말 필수, 횡설수설 금지, 사실→이유→입장 순서' },
   { key: 'evidenceCatalog', name: '전체 증거 목록',    source: 'case', type: 'text', example: 'e-1: 공동계좌 거래내역서' },
   { key: 'nameA',          name: 'A 이름',         source: 'case',      type: 'string', example: '윤태성' },
   { key: 'nameB',          name: 'B 이름',         source: 'case',      type: 'string', example: '박서윤' },
