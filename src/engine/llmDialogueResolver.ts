@@ -112,7 +112,7 @@ export async function resolveLLMDialogue(
     : 1
 
   // ── 상대방 최근 발언 (직전 상대 NPC 발언) ──
-  const opponentSpeaker = target === 'a' ? 'a' : 'b'
+  const opponentSpeaker: PartyId = target === 'a' ? 'b' : 'a'
   const lastOpponentLine = store.dialogueLog
     .filter(d => d.speaker === opponentSpeaker && (d.relatedDisputes.length === 0 || (disputeId ? d.relatedDisputes.includes(disputeId) : true)))
     .slice(-1)[0]?.text ?? ''
@@ -122,7 +122,23 @@ export async function resolveLLMDialogue(
     ? (store.interrogationHistory[target]?.[disputeId]?.questionTypes ?? [])
     : []
 
-  const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey, investigationResult, interrogationDepth)
+  // ── 교차 해금 정보: 다른 쟁점에서 드러난 핵심 사실 ──
+  let crossDisputeInfo = ''
+  if (disputeId && agent.lieStateMap) {
+    const otherDisputes = Object.entries(agent.lieStateMap)
+      .filter(([dId, entry]) => dId !== disputeId && entry.currentState >= 'S3')
+      .map(([dId, entry]) => {
+        const d = caseData.disputes.find(dd => dd.id === dId)
+        return d ? `${d.name}: 거짓말 상태 ${entry.currentState}` : null
+      })
+      .filter(Boolean)
+    if (otherDisputes.length > 0) {
+      crossDisputeInfo = `\n다른 쟁점에서 드러난 상황: ${otherDisputes.join(' / ')}\n이 정보를 참고하여 현재 쟁점 답변의 깊이를 조절할 수 있다.`
+    }
+  }
+
+  const rawSystemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey, investigationResult, interrogationDepth)
+  const systemPrompt = rawSystemPrompt + crossDisputeInfo
   const contractResponseMode = (() => { try { return (JSON.parse(actionContract) as { responseMode?: string }).responseMode ?? 'answer_only' } catch { return 'answer_only' } })()
   const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode, target, caseData, interrogationDepth, lastOpponentLine, mentionedTruthIds)
 
@@ -568,7 +584,7 @@ function buildUserPrompt(
     const guide = questionGuides[action.questionType] ?? ''
 
     // ── 심문 깊이 맥락 ──
-    const depthContext = `\n★ 심문 깊이 맥락:\n- 이 쟁점에 대한 질문 횟수: ${interrogationDepth}번째${lastOpponentLine ? `\n- 상대방이 직전에 한 말: "${lastOpponentLine.slice(0, 80)}"` : ''}${mentionedTruthIds.length > 0 ? `\n- 이 쟁점에서 지금까지 드러난 질문 유형: ${mentionedTruthIds.join(', ')}` : ''}\n- 질문 횟수가 많을수록 더 깊고 구체적인 답변을 해야 한다.`
+    const depthContext = `\n★ 심문 깊이 맥락:\n- 이 쟁점에 대한 질문 횟수: ${interrogationDepth}번째${lastOpponentLine ? `\n- 상대방이 직전에 한 말: "${lastOpponentLine.slice(0, 80)}"` : ''}${mentionedTruthIds.length > 0 ? `\n- 이 쟁점에서 지금까지 드러난 질문 유형: ${mentionedTruthIds.join(', ')}` : ''}\n- 질문 횟수가 많을수록 더 깊고 구체적인 답변을 해야 한다.\n- 1~2번째: 표면적 답변, 3~4번째: 숨겨진 배경 드러남, 5번째+: 핵심 진실에 근접`
 
     return `${addressRule}${judgeGenRule}${guide}${depthContext}\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n\n규칙:\n- judgeQuestion 필드에 재판관 질문을 자연스럽게 작성한다.\n- npcResponse에는 그 질문에 답한다.\n- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
   }
