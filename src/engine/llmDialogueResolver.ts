@@ -788,12 +788,37 @@ function buildJudgeQuestion(
   if (action.type === 'evidence_present') {
     const evDef = caseData.evidence.find(e => e.id === action.evidenceId)
     const evName = evDef?.name ?? '이 증거'
-    const templates = [
-      `${myName} 씨, '${evName}'을 제시합니다. 이 자료에 대해 설명해 주십시오.`,
-      `${myName} 씨, '${evName}'을 확인하셨습니까? 이 내용이 사실입니까.`,
-      `${myName} 씨, 지금 보시는 '${evName}'에 대해 어떻게 해명하시겠습니까.`,
-    ]
-    return templates[Math.floor(Math.random() * templates.length)]
+
+    // 증거가 증명하는 쟁점의 quadrant로 타깃별 질문 분기
+    const relatedDispute = evDef?.proves[0] ? caseData.disputes.find(d => d.id === evDef.proves[0]) : undefined
+    const quadrant = (relatedDispute as any)?.quadrant as string | undefined
+    const isTargetTheActor = (quadrant === 'a_only' && target === 'a') || (quadrant === 'b_only' && target === 'b')
+    const isTargetTheOther = (quadrant === 'a_only' && target === 'b') || (quadrant === 'b_only' && target === 'a')
+
+    if (isTargetTheActor) {
+      // 행위 당사자에게 → 해명/추궁
+      const templates = [
+        `${myName} 씨, '${evName}'을 제시합니다. 이 내용이 사실입니까? 해명해 주십시오.`,
+        `${myName} 씨, '${evName}'에 기록된 내용에 대해 직접 설명해 주시겠습니까.`,
+        `${myName} 씨, '${evName}'을 보고 계십니다. 이 사실관계가 맞는지 확인해 주십시오.`,
+      ]
+      return templates[Math.floor(Math.random() * templates.length)]
+    } else if (isTargetTheOther) {
+      // 상대방에게 → 취득 경위, 편집 여부, 인지 시점
+      const templates = [
+        `${myName} 씨, '${evName}'을 어떻게 확보하셨습니까? 취득 경위를 설명해 주십시오.`,
+        `${myName} 씨, '${evName}'을 처음 확인한 시점과 경위에 대해 말씀해 주십시오.`,
+        `${myName} 씨, '${evName}'이 원본 그대로인지, 편집이나 가공이 있었는지 확인하겠습니다.`,
+      ]
+      return templates[Math.floor(Math.random() * templates.length)]
+    } else {
+      // 양쪽 모두 해당 또는 quadrant 정보 없음 → 일반 질문
+      const templates = [
+        `${myName} 씨, '${evName}'을 제시합니다. 이 자료에 대해 설명해 주십시오.`,
+        `${myName} 씨, '${evName}'을 확인하셨습니까? 이 내용에 대해 어떻게 생각하십니까.`,
+      ]
+      return templates[Math.floor(Math.random() * templates.length)]
+    }
   }
 
   if (action.type === 'evidence_investigate') {
