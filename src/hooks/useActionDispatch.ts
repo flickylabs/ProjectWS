@@ -73,7 +73,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   if (!state.isUnlocked(action.evidenceId)) { evidencePresentLock = false; return }
 
   const evDef = state.evidenceDefinitions.find((e) => e.id === action.evidenceId)
-  if (!evDef) return
+  if (!evDef) { evidencePresentLock = false; return }
 
   // 조합 발동 전 스냅샷 (새로 발동된 것만 표시하기 위해)
   const prevTriggeredCount = state.triggeredCombinations.length
