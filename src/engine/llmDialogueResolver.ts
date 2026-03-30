@@ -744,7 +744,7 @@ function buildActionContract(
   let responseMode = 'answer_then_counter'
   if (action.type === 'evidence_present' || action.type === 'evidence_investigate') {
     responseMode = 'evidence_rebuttal'
-  } else if (store.separationTarget === target) {
+  } else if (store.separationTarget === party) {
     responseMode = 'answer_only'
   } else if (action.type === 'trust_action') {
     if (action.actionType === 'confidential_protection') responseMode = 'private_confession'
