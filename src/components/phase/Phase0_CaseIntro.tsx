@@ -86,10 +86,21 @@ export default function Phase0_CaseIntro() {
     advancePhase(GamePhase.Phase1_InitialStatement)
   }
 
+  const handleExit = () => {
+    useGameStore.getState().clearSavedGame?.()
+    useGameStore.setState({ caseData: null })
+    useGameStore.getState().setPhase(GamePhase.Phase0_CaseIntro)
+    useGameStore.getState().clearDialogue()
+  }
+
   return (
     <div className="flex flex-col h-full max-w-lg mx-auto">
-      {/* 상단: 진행 표시 */}
-      <div className="px-5 pt-4 pb-2">
+      {/* 상단: 나가기 + 진행 표시 */}
+      <div className="flex items-center px-4 pt-3 pb-1">
+        <button onClick={handleExit} className="text-gray-500 hover:text-white text-xs mr-2 shrink-0">← 나가기</button>
+        <div className="flex-1" />
+      </div>
+      <div className="px-5 pt-1 pb-2">
         <div className="flex items-center gap-1 justify-center">
           {STEPS.filter(s => s !== 'history' || duo.relationshipLedger.length > 0).map((s, i) => (
             <div key={s} className={`h-1 rounded-full transition-all duration-300 ${

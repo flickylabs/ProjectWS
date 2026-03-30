@@ -52,8 +52,13 @@ export default function FactChecklist() {
             <span className="text-xs text-gray-600">{currentIdx + 1} / {disputes.length}</span>
           </div>
 
-          {/* 쟁점명 */}
-          <p className="text-base font-bold text-gray-100 leading-snug mb-2">{d.name}</p>
+          {/* 쟁점명 + 진실 설명 */}
+          <p className="text-base font-bold text-gray-100 leading-snug mb-1">{d.name}</p>
+          {d.truthDescription && (
+            <p className="text-xs text-gray-400 leading-relaxed mb-2 border-l-2 border-amber-600/30 pl-2">
+              {d.truthDescription.split(/[.!?]/)[0].trim()}{d.truthDescription.includes('.') ? '.' : ''}
+            </p>
+          )}
 
           {/* 붕괴 여부 */}
           {collapsed && (
@@ -62,22 +67,25 @@ export default function FactChecklist() {
             </div>
           )}
 
-          {/* 판정 버튼 — 스와이프 스타일 */}
-          <div className="flex gap-2 mt-3">
+          {/* 판정 안내 */}
+          <div className="text-xs text-gray-500 mb-2">위 내용이 사실이라고 판단하십니까?</div>
+
+          {/* 판정 버튼 */}
+          <div className="flex gap-2">
             <SwipeButton
-              label="거짓"
+              label="아니다"
               icon="✕"
               active={current === 'false'}
               onClick={() => handleSwipe('false')}
             />
             <SwipeButton
-              label="보류"
+              label="모르겠다"
               icon="—"
               active={current === 'pending'}
               onClick={() => handleSwipe('pending')}
             />
             <SwipeButton
-              label="사실"
+              label="그렇다"
               icon="○"
               active={current === 'true'}
               onClick={() => handleSwipe('true')}
