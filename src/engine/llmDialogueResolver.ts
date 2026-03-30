@@ -107,7 +107,8 @@ export async function resolveLLMDialogue(
   const judgeQuestion = buildJudgeQuestion(action, caseData, target, dispute)
 
   const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey, investigationResult)
-  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, judgeQuestion, investigationResult)
+  const contractResponseMode = (() => { try { return (JSON.parse(actionContract) as { responseMode?: string }).responseMode ?? 'answer_only' } catch { return 'answer_only' } })()
+  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, judgeQuestion, investigationResult, contractResponseMode)
 
   const config = isAgentLoaded() ? getAgentConfig(agentKey) : getPromptConfig('interrogation_system')
 
@@ -515,22 +516,29 @@ function buildUserPrompt(
   focusedDisputeId: string,
   judgeQuestion: string,
   investigationResult: string,
+  responseMode: string,
 ): string {
   const disputeName = dispute?.name ?? '해당 사안'
+
+  // responseMode에 따라 발화 대상을 명시
+  const isJudgeOnly = responseMode === 'answer_only' || responseMode === 'private_confession' || responseMode === 'yes_no_first'
+  const addressRule = isJudgeOnly
+    ? `★ 발화 대상: 재판관. 상대방에게 말하는 것이 아니다.\n★ "자기야", "여보", "오빠" 등 상대 호칭으로 시작 금지. "재판관님"으로 시작하거나 호칭 없이 바로 답하라.\n★ 존댓말(~습니다, ~요)만 사용.\n`
+    : `★ 발화 대상: 재판관에게 답한 뒤, 필요 시 상대에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말(~습니다, ~요). 상대에게는 관계에 맞는 말투.\n`
 
   // ── 심문 (fact_pursuit / motive_search / empathy_approach) ──
   if (action.type === 'question') {
     const templates: Record<string, string> = {
-      fact_pursuit: `현재 액션은 fact_pursuit다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 날짜, 시간, 금액, 행위 여부를 중심으로 답한다.\n- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.\n- 출력은 JSON 객체 하나만 한다.`,
-      motive_search: `현재 액션은 motive_search다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 왜 그랬는지, 왜 숨겼는지, 무엇이 두려웠는지 같은 동기 층을 중심으로 답한다.\n- 단순한 사실 나열로만 끝내지 않는다.\n- 출력은 JSON 객체 하나만 한다.`,
-      empathy_approach: `현재 액션은 empathy_approach다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 비난받는 자리라기보다 사정을 설명할 기회로 느껴야 한다.\n- 감정, 상처, 수치심, 관계 유지 욕구를 조심스럽게 드러낼 수 있다.\n- 출력은 JSON 객체 하나만 한다.`,
+      fact_pursuit: `${addressRule}현재 액션은 fact_pursuit다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 날짜, 시간, 금액, 행위 여부를 중심으로 답한다.\n- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.\n- 출력은 JSON 객체 하나만 한다.`,
+      motive_search: `${addressRule}현재 액션은 motive_search다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 왜 그랬는지, 왜 숨겼는지, 무엇이 두려웠는지 같은 동기 층을 중심으로 답한다.\n- 단순한 사실 나열로만 끝내지 않는다.\n- 출력은 JSON 객체 하나만 한다.`,
+      empathy_approach: `${addressRule}현재 액션은 empathy_approach다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 비난받는 자리라기보다 사정을 설명할 기회로 느껴야 한다.\n- 감정, 상처, 수치심, 관계 유지 욕구를 조심스럽게 드러낼 수 있다.\n- 출력은 JSON 객체 하나만 한다.`,
     }
-    return templates[action.questionType] ?? `현재 액션은 ${action.questionType}다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관 질문: "${judgeQuestion}"\n출력은 JSON 객체 하나만 한다.`
+    return templates[action.questionType] ?? `${addressRule}현재 액션은 ${action.questionType}다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관 질문: "${judgeQuestion}"\n출력은 JSON 객체 하나만 한다.`
   }
 
   // ── 증거 제시 ──
   if (action.type === 'evidence_present') {
-    return `현재 액션은 evidence_present다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관이 "${evidence?.name ?? '증거'}" 증거를 제시했다.\n증거 설명: ${evidence?.description ?? ''}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 첫 문장은 반드시 현재 증거에 대한 직접 반응이다.\n- 이 증거와 무관한 다른 쟁점을 새로 꺼내지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
+    return `${addressRule}현재 액션은 evidence_present다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관이 "${evidence?.name ?? '증거'}" 증거를 제시했다.\n증거 설명: ${evidence?.description ?? ''}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 첫 문장은 반드시 현재 증거에 대한 직접 반응이다.\n- 이 증거와 무관한 다른 쟁점을 새로 꺼내지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
   }
 
   // ── 증거 조사 6종 ──
@@ -618,12 +626,15 @@ function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string
 
     if (!text || text.length < 3) return fallback
 
+    // 후처리: 재판관에게 반말 → 존댓말 강제 변환 + 호칭 오용 수정
+    const polished = enforceHonorifics(fixMisdirectedAddress(text))
+
     return {
       npcNode: {
         id: `llm-${Date.now()}`,
         conditions: disputeId ? { disputeId } : {},
         speaker,
-        text,
+        text: polished,
         behaviorHint: parsed.behaviorHint || behaviorFromText,
         effects: {},
       },
@@ -635,6 +646,97 @@ function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string
   } catch {
     return fallback
   }
+}
+
+/**
+ * 재판관에게 답하면서 상대 호칭으로 시작하는 오류 수정.
+ * "자기야, ~" → "재판관님, ~" 등
+ */
+function fixMisdirectedAddress(text: string): string {
+  // 상대방 호칭으로 문장이 시작하는 패턴을 재판관님으로 교체
+  const partnerAddresses = [
+    '자기야,', '자기야 ', '자기,', '자기 ',
+    '여보,', '여보 ',
+    '오빠,', '오빠 ', '언니,', '언니 ',
+    '형,', '형 ', '누나,', '누나 ',
+  ]
+  let result = text
+  for (const addr of partnerAddresses) {
+    if (result.startsWith(addr)) {
+      result = '재판관님, ' + result.slice(addr.length).trimStart()
+      break
+    }
+    // 문장 중간에서도 "자기야," 등을 제거
+    result = result.replace(new RegExp(`\\. ${addr.replace(',', ',')}`, 'g'), '. 재판관님, ')
+  }
+  return result
+}
+
+/**
+ * 반말 문장 끝을 존댓말로 강제 변환.
+ * 재판관에게 답하는 NPC 대사에서 반말이 섞이는 문제를 후처리로 해결.
+ */
+function enforceHonorifics(text: string): string {
+  // 문장 단위로 분리 (마침표, 물음표, 느낌표 기준)
+  return text.replace(/([^.?!…]+[.?!…]?)/g, (sentence) => {
+    const trimmed = sentence.trimEnd()
+    if (!trimmed) return sentence
+
+    // 이미 존댓말이면 스킵
+    if (/(?:습니다|입니다|습니까|세요|에요|해요|인가요|나요|던가요|을까요|겠습니다|드립니다|합니다|됩니다|봅니다|싶습니다|같습니다|있습니다|없습니다|았습니다|었습니다|겠어요|줄게요|할게요)[.?!…]*$/.test(trimmed)) {
+      return sentence
+    }
+
+    // 반말 패턴 → 존댓말 변환 (문장 끝 기준)
+    const replacements: [RegExp, string][] = [
+      // 평서문
+      [/거야([.…]*)$/, '겁니다$1'],
+      [/했어([.…]*)$/, '했습니다$1'],
+      [/인 거야([.…]*)$/, '인 겁니다$1'],
+      [/없어([.…]*)$/, '없습니다$1'],
+      [/있어([.…]*)$/, '있습니다$1'],
+      [/같아([.…]*)$/, '같습니다$1'],
+      [/몰라([.…]*)$/, '모릅니다$1'],
+      [/그래([.…]*)$/, '그렇습니다$1'],
+      [/아니야([.…]*)$/, '아닙니다$1'],
+      [/맞아([.…]*)$/, '맞습니다$1'],
+      [/싶어([.…]*)$/, '싶습니다$1'],
+      [/됐어([.…]*)$/, '됐습니다$1'],
+      [/봤어([.…]*)$/, '봤습니다$1'],
+      [/알아([.…]*)$/, '압니다$1'],
+      [/몰랐어([.…]*)$/, '몰랐습니다$1'],
+      [/했지([.…]*)$/, '했습니다$1'],
+      [/거든([.…]*)$/, '거든요$1'],
+      [/잖아([.…]*)$/, '잖습니까$1'],
+      [/인데([.…]*)$/, '인데요$1'],
+      [/하지([.…]*)$/, '하죠$1'],
+      [/던 거야([.…]*)$/, '던 겁니다$1'],
+      [/은 거야([.…]*)$/, '은 겁니다$1'],
+      // 의문문
+      [/거야\?$/, '겁니까?'],
+      [/했어\?$/, '했습니까?'],
+      [/없어\?$/, '없습니까?'],
+      [/있어\?$/, '있습니까?'],
+      [/맞아\?$/, '맞습니까?'],
+      [/뭐야\?$/, '뭡니까?'],
+      [/왜야\?$/, '왜입니까?'],
+      [/인가\?$/, '인가요?'],
+      [/알아\?$/, '압니까?'],
+      // 감탄/강조
+      [/잖아!$/, '잖습니까!'],
+      [/거야!$/, '겁니다!'],
+    ]
+
+    let result = trimmed
+    for (const [pattern, replacement] of replacements) {
+      if (pattern.test(result)) {
+        result = result.replace(pattern, replacement)
+        break
+      }
+    }
+    // 원래 후행 공백 복원
+    return result + sentence.slice(trimmed.length)
+  })
 }
 
 /* ── 재판관 질문 생성 (엔진 우선 — 템플릿 기반) ── */
