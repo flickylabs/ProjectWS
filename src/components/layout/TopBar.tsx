@@ -5,9 +5,11 @@ import PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
 import ResourcePopup from '../shop/ResourcePopup'
 import Emoji from '../common/Emoji'
+import { checkConnection } from '../../engine/llmClient'
 
 export default function TopBar() {
   const [showSettings, setShowSettings] = useState(false)
+  const [aiStatus, setAiStatus] = useState<'checking' | 'connected' | 'disconnected'>('checking')
   const [showExitConfirm, setShowExitConfirm] = useState(false)
   const [showResource, setShowResource] = useState<'invest' | 'skill' | null>(null)
 
@@ -27,6 +29,14 @@ export default function TopBar() {
     return () => clearInterval(timer)
   }, [tickRecharge])
 
+  // AI 연결 상태 주기적 체크 (30초마다)
+  useEffect(() => {
+    const check = () => checkConnection().then(r => setAiStatus(r.connected ? 'connected' : 'disconnected'))
+    check()
+    const timer = setInterval(check, 30_000)
+    return () => clearInterval(timer)
+  }, [])
+
   const handleExit = () => {
     // 게임 상태 초기화 → 홈으로 돌아감
     useGameStore.setState({ caseData: null })
@@ -44,6 +54,15 @@ export default function TopBar() {
           </button>
           <PhaseIndicator />
           <div className="flex items-center gap-2 ml-2 shrink-0">
+            <span className={`text-[10px] ${
+              aiStatus === 'connected' ? 'text-emerald-500/70' :
+              aiStatus === 'disconnected' ? 'text-red-400/70' :
+              'text-gray-600'
+            }`}>
+              {aiStatus === 'connected' ? '● AI' :
+               aiStatus === 'disconnected' ? '● 연결끊김' :
+               '○ 확인중'}
+            </span>
             <button onClick={() => setShowSettings(true)} className="text-gray-500 hover:text-white"><Emoji char="⚙️" size={16} /></button>
           </div>
         </div>

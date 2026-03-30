@@ -12,10 +12,10 @@ import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
 import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 
-/** LLM 모드 플래그 — App에서 설정 */
-let useLLMMode = false
-export function setLLMMode(enabled: boolean) { useLLMMode = enabled }
-export function isLLMMode() { return useLLMMode }
+/** LLM 모드 — AI 필수: 항상 true */
+const useLLMMode = true
+export function setLLMMode(_enabled: boolean) { /* AI 필수 — 항상 활성 */ }
+export function isLLMMode() { return true }
 
 /** 다음 질문에 적용할 토글 모디파이어 */
 let _nextConfidential = false
@@ -539,56 +539,19 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
         }
       }
     } catch (e) {
-      // LLM 실패 → 폴백 + 에러 배너
+      // AI 필수 — 실패 시 게임 중단 + 에러 배너
       console.error('[LLM] resolveAndApply 실패:', e)
       showLLMErrorBanner()
+      useGameStore.getState().setLLMLoading(false)
+      return
     }
     useGameStore.getState().setLLMLoading(false)
   }
 
   if (!node) {
-    // LLM 실패 시 폴백: 재판관 질문이 아직 없으면 고정 템플릿 추가
-    const fallbackState = useGameStore.getState()
-    if (useLLMMode && action.type === 'question') {
-      const lastJudge = fallbackState.dialogueLog.slice(-3).find(d => d.speaker === 'judge')
-      if (!lastJudge || lastJudge.turn < fallbackState.turnCount) {
-        fallbackState.addDialogue({
-          speaker: 'judge',
-          text: buildQuestionText(action.questionType, action.target, action.disputeId),
-          relatedDisputes: [action.disputeId],
-          turn: fallbackState.turnCount,
-        })
-      }
-    }
-    const freshState = useGameStore.getState()
-    // 대사 트리(phase3-5.ts)는 case-001 전용이므로,
-    // 현재 사건이 case-001이 아니면 동적 폴백 사용
-    const currentCaseId = freshState.caseData?.caseId
-    if (currentCaseId === 'case-001') {
-      // case-001(민준-서연): 하드코딩된 대사 트리 사용
-      const result = resolveDialogue(action, freshState.agentA, freshState.agentB, freshState.evidenceStates)
-      if (result) node = result.node
-    } else {
-      // 그 외 모든 사건: 감정/거짓말 상태 기반 동적 폴백
-      const agent = target === 'a' ? freshState.agentA : freshState.agentB
-      const qt = action.type === 'question' ? action.questionType : undefined
-      const disputeId = 'disputeId' in action ? (action as { disputeId?: string }).disputeId : undefined
-      node = generateDynamicFallback(target, agent, disputeId, qt)
-    }
-  }
-
-  // 폴백도 실패하면 범용 응답 생성
-  if (!node) {
-    const s = useGameStore.getState()
-    const name = target === 'a' ? s.caseData?.duo.partyA.name : s.caseData?.duo.partyB.name
-    s.addDialogue({
-      speaker: target,
-      text: `... ${eunneun(name ?? '당사자')} 할 말을 잃었다.`,
-      relatedDisputes: [],
-      turn: s.turnCount,
-      behaviorHint: '침묵하며 생각에 잠긴다.',
-      isConfidential,
-    })
+    // AI 응답 없음 — 에러 배너 표시하고 중단
+    console.error('[LLM] AI 응답 없음 — 게임 진행 중단')
+    showLLMErrorBanner()
     return
   }
 
