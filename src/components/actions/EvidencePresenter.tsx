@@ -49,13 +49,16 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
     }
 
     playClick()
+
+    // 3번째 조사(완료) 시 MatchingPuzzle 미니게임 트리거
+    if (state.investigatedActions.length === 2) {
+      useGameStore.getState().spend('investigationTokens', 1)
+      useGameStore.getState().setPendingMinigame({ type: 'evidence_depth', evidenceId, depth: 3 })
+      return
+    }
+
     useGameStore.getState().spend('investigationTokens', 1)
     dispatch({ type: 'evidence_investigate', evidenceId, subAction: nextKey })
-
-    // 3번째 조사 시 효과음
-    if (state.investigatedActions.length === 2) {
-      playEvidenceUnlock()
-    }
   }
 
   if (!target) return null

@@ -45,7 +45,7 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
     // TODO: 거짓말 붕괴(S5) 트리거 — lieStateMachine에서 S5 전환 시 HeartbeatDetector 사용
     | { type: 'lie_collapse'; disputeId: string; party: PartyId }
     // TODO: 모순 감지 트리거 — contradictionEngine에서 모순 발견 시 WordScramble 사용
-    | { type: 'contradiction'; text: string }
+    | { type: 'contradiction'; text: string; disputeId: string; target: PartyId }
     | null
   setPendingMinigame: (mg: GameStore['pendingMinigame']) => void
   /** 심문 이력: party → disputeId → 질문 기록 */

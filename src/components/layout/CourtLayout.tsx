@@ -9,7 +9,7 @@ import MemoryPuzzle from '../minigame/MemoryPuzzle'
 import HeartbeatDetector from '../minigame/HeartbeatDetector'
 import MatchingPuzzle from '../minigame/MatchingPuzzle'
 import WordScramble from '../minigame/WordScramble'
-import { actuallyDiscoverEvidence } from '../../hooks/useActionDispatch'
+import { actuallyDiscoverEvidence, applyLieCollapseSuccess, applyLieCollapseFail, applyContradictionSuccess, applyContradictionFail } from '../../hooks/useActionDispatch'
 import DisputeChecklist from '../info/DisputeChecklist'
 import ClaimGraph from '../info/ClaimGraph'
 import EvidenceBoard from '../info/EvidenceBoard'
@@ -194,6 +194,8 @@ function MinigameOverlay() {
   const mg = useGameStore((s) => s.pendingMinigame)
   const clearMg = useGameStore((s) => s.setPendingMinigame)
   const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
+  const evidenceStates = useGameStore((s) => s.evidenceStates)
+  const caseData = useGameStore((s) => s.caseData)
 
   if (!mg) return null
 
@@ -262,9 +264,100 @@ function MinigameOverlay() {
     )
   }
 
-  // TODO: evidence_depth → MatchingPuzzle
-  // TODO: lie_collapse → HeartbeatDetector
-  // TODO: contradiction → WordScramble
+  // evidence_depth → MatchingPuzzle
+  if (mg.type === 'evidence_depth') {
+    const { evidenceId } = mg
+    const evDef = evidenceDefinitions.find((e) => e.id === evidenceId)
+    const dispute = evDef ? caseData?.disputes.find((d) => d.id === evDef.proves[0]) : undefined
+
+    // 3번째 조사 subAction
+    const KEY_ORDER = ['request_original', 'restore_context', 'check_edits'] as const
+    const state = evidenceStates[evidenceId]
+    const nextKey = KEY_ORDER.find((k) => !state?.investigatedActions?.includes(k)) ?? 'check_edits'
+
+    const pairs: [string, string][] = [
+      ['단서', dispute?.name?.slice(0, 6) ?? '쟁점'],
+      ['증거', evDef?.name?.slice(0, 6) ?? '증거물'],
+      ['핵심', '조사완료'],
+    ]
+
+    const handleSuccess = () => {
+      const { investigateEvidence, addDialogue, turnCount } = useGameStore.getState()
+      const result = investigateEvidence(evidenceId, nextKey)
+      if (result) {
+        addDialogue({ speaker: 'system', text: `🔍 ${result}`, relatedDisputes: evDef?.proves ?? [], turn: turnCount })
+      }
+      clearMg(null)
+    }
+    const handleFail = () => {
+      useGameStore.getState().addDialogue({
+        speaker: 'system',
+        text: '조사가 실패했다. 결정적 단서를 놓쳤다.',
+        relatedDisputes: evDef?.proves ?? [],
+        turn: useGameStore.getState().turnCount,
+      })
+      clearMg(null)
+    }
+    const handleWatchAd = () => handleSuccess()
+
+    return (
+      <MatchingPuzzle
+        pairs={pairs}
+        onSuccess={handleSuccess}
+        onFail={handleFail}
+        onWatchAd={handleWatchAd}
+      />
+    )
+  }
+
+  // lie_collapse → HeartbeatDetector
+  if (mg.type === 'lie_collapse') {
+    const { disputeId, party } = mg
+
+    const handleSuccess = () => {
+      applyLieCollapseSuccess(disputeId, party)
+      clearMg(null)
+    }
+    const handleFail = () => {
+      applyLieCollapseFail(disputeId)
+      clearMg(null)
+    }
+    const handleWatchAd = () => handleSuccess()
+
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+        <div className="bg-gray-900 border border-amber-700/50 rounded-2xl p-5 w-[340px] shadow-2xl">
+          <HeartbeatDetector onSuccess={handleSuccess} onFail={handleFail} onWatchAd={handleWatchAd} />
+        </div>
+      </div>
+    )
+  }
+
+  // contradiction → WordScramble
+  if (mg.type === 'contradiction') {
+    const { text, disputeId, target } = mg
+    const chars = text.replace(/\s+/g, '').split('')
+    const words = chars.length >= 6 ? chars.slice(0, 10) : (text + '모순발견').replace(/\s+/g, '').split('').slice(0, 10)
+
+    const handleSuccess = () => {
+      applyContradictionSuccess(disputeId, target)
+      clearMg(null)
+    }
+    const handleFail = () => {
+      applyContradictionFail(disputeId)
+      clearMg(null)
+    }
+    const handleWatchAd = () => handleSuccess()
+
+    return (
+      <WordScramble
+        words={words}
+        onSuccess={handleSuccess}
+        onFail={handleFail}
+        onWatchAd={handleWatchAd}
+      />
+    )
+  }
 
   return null
 }

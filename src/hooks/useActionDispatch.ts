@@ -613,11 +613,12 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
       const npcName = target === 'a'
         ? freshState.caseData?.duo.partyA.name ?? '당사자A'
         : freshState.caseData?.duo.partyB.name ?? '당사자B'
-      freshState.addDialogue({
-        speaker: 'system',
-        text: `⚡ ${npcName}의 진술이 이전 주장과 모순됩니다!`,
-        relatedDisputes: [node.conditions.disputeId],
-        turn: freshState.turnCount,
+      // 모순 감지 시 WordScramble 미니게임 트리거
+      useGameStore.getState().setPendingMinigame({
+        type: 'contradiction',
+        text: `${npcName}의 진술 모순`,
+        disputeId: node.conditions.disputeId,
+        target,
       })
     }
 
@@ -999,7 +1000,80 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       ? `🔥 결정적 순간 — ${name}의 '${dispute?.name}' 거짓말이 무너졌다!`
       : `${icon} ${name} — "${dispute?.name}" | ${labels[newState]}`
     state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
+
+    // S5 도달 시 HeartbeatDetector 미니게임 트리거
+    if (newState === 'S5') {
+      useGameStore.getState().setPendingMinigame({ type: 'lie_collapse', disputeId, party })
+    }
   }
+}
+
+/** lie_collapse 미니게임 성공 시 추가 보상 처리 */
+export function applyLieCollapseSuccess(disputeId: string, party: PartyId) {
+  const state = useGameStore.getState()
+  const agent = party === 'a' ? state.agentA : state.agentB
+
+  // 관련 잠긴 증거 1개 해금 시도
+  const lockedEv = state.evidenceDefinitions.find(
+    (e) => e.proves.includes(disputeId) && !state.evidenceStates[e.id]?.unlocked
+  )
+
+  if (lockedEv) {
+    useGameStore.setState((prev) => ({
+      evidenceStates: {
+        ...prev.evidenceStates,
+        [lockedEv.id]: { ...prev.evidenceStates[lockedEv.id], unlocked: true },
+      },
+    }))
+    playEvidenceUnlock()
+    state.addDialogue({
+      speaker: 'system',
+      text: `🔥 완벽하게 간파했다! 새 증거가 해금된다 — ${lockedEv.name}`,
+      relatedDisputes: lockedEv.proves,
+      turn: state.turnCount,
+    })
+  } else {
+    state.addDialogue({
+      speaker: 'system',
+      text: `🔥 완벽하게 간파했다! 결정적 순간을 놓치지 않았다.`,
+      relatedDisputes: [disputeId],
+      turn: state.turnCount,
+    })
+  }
+}
+
+/** lie_collapse 미니게임 실패 시 처리 */
+export function applyLieCollapseFail(disputeId: string) {
+  const state = useGameStore.getState()
+  state.addDialogue({
+    speaker: 'system',
+    text: `거짓말은 무너졌지만, 결정적 증거는 놓쳤다...`,
+    relatedDisputes: [disputeId],
+    turn: state.turnCount,
+  })
+}
+
+/** contradiction 미니게임 성공 시 처리 */
+export function applyContradictionSuccess(disputeId: string, target: PartyId) {
+  const state = useGameStore.getState()
+  state.addDialogue({
+    speaker: 'system',
+    text: `⚡ 모순을 정확히 짚어냈다!`,
+    relatedDisputes: disputeId ? [disputeId] : [],
+    turn: state.turnCount,
+  })
+  changeEmotionWithPhaseTracking(target, 10)
+}
+
+/** contradiction 미니게임 실패 시 처리 */
+export function applyContradictionFail(disputeId: string) {
+  const state = useGameStore.getState()
+  state.addDialogue({
+    speaker: 'system',
+    text: `모순의 핵심을 놓쳤다...`,
+    relatedDisputes: disputeId ? [disputeId] : [],
+    turn: state.turnCount,
+  })
 }
 
 function questionTypeToTrigger(type: QuestionType): string[] {
