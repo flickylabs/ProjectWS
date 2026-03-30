@@ -559,10 +559,25 @@ function buildUserPrompt(
       const isActor = subjectParty === target
       const isOther = (subjectParty === 'a' || subjectParty === 'b') && subjectParty !== target
 
+      const prov = evidence.provenance
       if (isActor) {
         targetContext = `\n★ 당신(${myName})은 이 증거가 지적하는 행위의 당사자다. 증거 내용에 대해 해명하거나 변명해야 한다.\n`
       } else if (isOther) {
-        targetContext = `\n★ 당신(${myName})은 이 증거의 행위 당사자가 아니다. ${opName}의 행위에 대한 증거이므로, 당신은 이 증거를 어떻게 확보했는지, 이 증거에 대해 어떻게 생각하는지, 이 증거의 맥락을 설명해야 한다. ${opName}인 것처럼 변명하지 마라.\n`
+        // provenance에 따라 관찰/제출 측의 응답 방향이 달라짐
+        if (prov === 'institutional') {
+          targetContext = `\n★ 당신(${myName})은 이 증거의 행위 당사자가 아니다. 이 자료는 기관에서 제공된 것이다. 이 증거 내용에 대해 당신이 아는 바와 생각을 말하라. ${opName}인 것처럼 변명하지 마라.\n`
+        } else if (prov === 'third_party') {
+          targetContext = `\n★ 당신(${myName})은 이 증거의 행위 당사자가 아니다. 이 자료는 제3자가 제출한 것이다. 이 증거의 존재를 알고 있었는지, 내용에 대해 어떻게 생각하는지 말하라. ${opName}인 것처럼 변명하지 마라.\n`
+        } else {
+          targetContext = `\n★ 당신(${myName})은 이 증거의 행위 당사자가 아니다. ${opName}의 행위에 대한 증거이므로, 이 증거를 어떻게 확보했는지, 이 증거에 대해 어떻게 생각하는지 말하라. ${opName}인 것처럼 변명하지 마라.\n`
+        }
+      } else {
+        // subjectParty === 'both': provenance에 따라 맥락 제공
+        if (prov === 'institutional') {
+          targetContext = `\n★ 이 증거는 기관에서 제공된 공식 기록이다. 기록된 내용에 대해 당신의 입장을 말하라.\n`
+        } else if (prov === 'third_party') {
+          targetContext = `\n★ 이 증거는 제3자가 제출한 자료다. 내용에 대한 당신의 입장과, 이 자료의 존재를 알고 있었는지 말하라.\n`
+        }
       }
     }
     return `${addressRule}${targetContext}현재 액션은 evidence_present다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관이 "${evidence?.name ?? '증거'}" 증거를 제시했다.\n증거 설명: ${evidence?.description ?? ''}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 첫 문장은 반드시 현재 증거에 대한 직접 반응이다.\n- 이 증거와 무관한 다른 쟁점을 새로 꺼내지 않는다.\n- judgeQuestion 필드에 재판관 질문을 자연스럽게 작성한다.\n- 출력은 JSON 객체 하나만 한다.`
@@ -845,13 +860,29 @@ function buildJudgeQuestion(
       ]
       return templates[Math.floor(Math.random() * templates.length)]
     } else if (isTargetTheOther) {
-      // 상대방에게 → 취득 경위, 편집 여부, 인지 시점
-      const templates = [
-        `${myName} 씨, '${evName}'을 어떻게 확보하셨습니까? 취득 경위를 설명해 주십시오.`,
-        `${myName} 씨, '${evName}'을 처음 확인한 시점과 경위에 대해 말씀해 주십시오.`,
-        `${myName} 씨, '${evName}'이 원본 그대로인지, 편집이나 가공이 있었는지 확인하겠습니다.`,
-      ]
-      return templates[Math.floor(Math.random() * templates.length)]
+      const prov = evDef?.provenance
+      if (prov === 'institutional') {
+        // 기관/플랫폼 제공 → 취득 경위 불필요, 내용에 대한 의견
+        const templates = [
+          `${myName} 씨, '${evName}'을 제시합니다. 이 기록에 대해 어떻게 생각하십니까.`,
+          `${myName} 씨, '${evName}'의 내용을 확인하셨습니까? 의견을 말씀해 주십시오.`,
+        ]
+        return templates[Math.floor(Math.random() * templates.length)]
+      } else if (prov === 'third_party') {
+        // 제3자 제공 → 존재 인지 여부
+        const templates = [
+          `${myName} 씨, '${evName}'이 제출되었습니다. 이 자료의 존재를 알고 계셨습니까.`,
+          `${myName} 씨, 제3자가 제출한 '${evName}'에 대해 말씀해 주십시오.`,
+        ]
+        return templates[Math.floor(Math.random() * templates.length)]
+      } else {
+        // 당사자/개인기기 → 취득 경위
+        const templates = [
+          `${myName} 씨, '${evName}'을 어떻게 확보하셨습니까? 취득 경위를 설명해 주십시오.`,
+          `${myName} 씨, '${evName}'을 처음 확인한 시점과 경위에 대해 말씀해 주십시오.`,
+        ]
+        return templates[Math.floor(Math.random() * templates.length)]
+      }
     } else {
       // 양쪽 모두 해당 또는 quadrant 정보 없음 → 일반 질문
       const templates = [
