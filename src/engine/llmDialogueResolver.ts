@@ -409,7 +409,7 @@ function buildSystemPrompt(
 
   // Phase 1/2 대화 요약 (이전 스테이지에서 양측이 주장한 내용)
   let phaseTranscript = ''
-  const ctxFlags = isAgentLoaded() ? getContextFlags('interrogation') : {}
+  const ctxFlags = isAgentLoaded() ? getContextFlags(agentKey) : {}
   if (ctxFlags.include_phaseTranscript !== false) {
     try {
       const storeRef = useGameStore.getState()
@@ -476,7 +476,13 @@ function buildSystemPrompt(
   // ── Agent 블록 조합 우선, 폴백으로 기존 promptManager ──
   if (isAgentLoaded()) {
     // agentKey는 resolveLLMDialogue에서 전달받음
-    return buildAgentPrompt(agentKey ?? 'interrogation', vars, { phase: currentPhase })
+    const prompt = buildAgentPrompt(agentKey ?? 'interrogation', vars, { phase: currentPhase })
+    // 미치환 변수 감지
+    const unresolved = prompt.match(/\{[a-zA-Z_]+\}/g)
+    if (unresolved) {
+      console.warn(`[buildSystemPrompt] 미치환 변수 발견 (agent=${agentKey}):`, [...new Set(unresolved)])
+    }
+    return prompt
   }
 
   // 폴백: 기존 모놀리식 프롬프트
