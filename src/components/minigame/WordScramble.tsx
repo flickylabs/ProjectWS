@@ -158,7 +158,7 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
           <>
             {/* 헤더 */}
             <div className="flex justify-between items-center mb-2">
-              <span className="text-sm font-bold text-amber-400">문장을 올바른 순서로 배치하세요!</span>
+              <span className="text-sm font-bold text-amber-400">글자를 올바른 순서로 배치하세요!</span>
               <span className={`text-sm font-mono font-bold tabular-nums ${timeLeft < 6 ? 'text-red-400' : 'text-gray-400'}`}>
                 {timeLeft.toFixed(1)}초
               </span>
@@ -195,7 +195,7 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
                       onClick={() => handleSlotTap(slotIdx)}
                       disabled={cardId === null || isChecking}
                       className={`
-                        relative px-2.5 py-2 text-sm min-w-[48px] text-center
+                        relative px-2 py-1.5 text-sm min-w-[36px] text-center
                         transition-all active:scale-95 cursor-pointer
                         ${slotClass}
                         ${cardId !== null ? 'animate-fade-in' : ''}
@@ -225,7 +225,7 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
 
             {/* 단어 카드 영역 */}
             <div className="mb-4">
-              <div className="text-xs text-gray-500 mb-1.5">단어 카드</div>
+              <div className="text-xs text-gray-500 mb-1.5">글자 카드</div>
               <div className="flex flex-wrap gap-1.5 min-h-[44px]">
                 {available.map(cardId => {
                   const word = shuffledWords.find(w => w.id === cardId)?.word ?? ''
@@ -235,7 +235,7 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
                       onClick={() => handleWordTap(cardId)}
                       disabled={isChecking}
                       className="
-                        bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-sm
+                        bg-gray-800 border border-gray-600 rounded-lg px-2 py-1.5 text-sm
                         text-gray-200 transition-all active:scale-95
                         hover:border-amber-600 hover:bg-gray-700
                         animate-fade-in
@@ -246,7 +246,7 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
                   )
                 })}
                 {available.length === 0 && (
-                  <div className="text-xs text-gray-600 py-2">모든 단어가 배치되었습니다</div>
+                  <div className="text-xs text-gray-600 py-2">모든 글자가 배치되었습니다</div>
                 )}
               </div>
             </div>
