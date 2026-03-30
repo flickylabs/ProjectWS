@@ -64,19 +64,18 @@ export default function CaseMap({ onSelectCase, onBack, initialChapterType }: Pr
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const chapter = CHAPTERS[chapterIdx]
-  const cases = useMemo(() =>
-    allCases.filter(c => c.duo.relationshipType === chapter.type),
-  [allCases, chapter.type])
+  const cases = useMemo(() => {
+    const filtered = allCases.filter(c => c.duo.relationshipType === chapter.type)
+    // 난이도 오름차순 정렬: easy → medium → hard
+    const diffOrder: Record<string, number> = { easy: 0, medium: 1, hard: 2 }
+    return filtered.sort((a, b) => (diffOrder[a.meta?.difficulty ?? 'medium'] ?? 1) - (diffOrder[b.meta?.difficulty ?? 'medium'] ?? 1))
+  }, [allCases, chapter.type])
 
-  const isChapterUnlocked = (idx: number) => {
-    if (idx === 0) return true
-    const prev = CHAPTERS[idx - 1]
-    const prevCases = allCases.filter(c => c.duo.relationshipType === prev.type)
-    return prevCases.length >= 3 && (progress[prevCases[2]?.caseId]?.bestScore ?? 0) >= 40
-  }
+  const isChapterUnlocked = (_idx: number) => true // 모든 챕터 해금
 
   const isStageUnlocked = (idx: number) => {
-    if (idx < 3) return true
+    if (idx === 0) return true // 첫 사건은 항상 해금
+    // 이전 사건을 클리어해야 다음 사건 해금
     const prev = cases[idx - 1]
     return prev && (progress[prev.caseId]?.bestScore ?? 0) >= 40
   }

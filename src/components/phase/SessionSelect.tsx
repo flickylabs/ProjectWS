@@ -56,12 +56,7 @@ export default function SessionSelect({ onSelectSession, onBack }: Props) {
       <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3">
         {SESSIONS.map((session, idx) => {
           const stats = getSessionProgress(session.type, allCases, progress)
-          const isUnlocked = idx === 0 || (() => {
-            // 이전 세션의 첫 사건을 클리어해야 다음 세션 해금
-            const prevSession = SESSIONS[idx - 1]
-            const prevCases = allCases.filter((c: any) => c.duo.relationshipType === prevSession.type)
-            return prevCases.length > 0 && (progress[prevCases[0]?.caseId]?.bestScore ?? 0) >= 40
-          })()
+          const isUnlocked = true // 모든 세션 해금
 
           return (
             <button
