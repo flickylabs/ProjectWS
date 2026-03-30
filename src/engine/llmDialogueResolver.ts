@@ -454,6 +454,12 @@ function buildSystemPrompt(
     recentDialogue: recentDialogueStr,
     historyContext,
     speechGuideShort,
+    responseQualityRules: `\n응답 품질 규칙 (필수):
+- 재판관의 질문에 직접적으로 답하라. 횡설수설하거나 추상적으로 얼버무리지 마라.
+- 첫 문장은 "예/아니요" 또는 핵심 사실로 시작하라.
+- 2~3문장으로 간결하게 답하라. 같은 말을 반복하지 마라.
+- 재판관에게는 반드시 존댓말(~습니다, ~입니다, ~요)만 사용하라. 반말 사용 시 출력 무효.
+- 감정 호소나 변명으로 시작하지 마라. 사실 → 이유 → 입장 순서로 답하라.`,
     phaseTranscript,
     // 신규 v2/v3 변수
     actionContract,
@@ -652,17 +658,19 @@ function buildJudgeQuestion(
   if (action.type === 'question') {
     const templates: Record<string, string[]> = {
       fact_pursuit: [
-        `${myName} 씨, ${topic}에 대해 사실대로 말씀해 주십시오.`,
-        `${myName} 씨, ${topic}에 대해 좀 더 구체적으로 설명해 주시겠습니까?`,
+        `${myName} 씨, ${topic}에 대해 정확히 어떤 일이 있었는지 날짜와 경위를 말씀해 주십시오.`,
+        `${myName} 씨, ${topic} 건에 대해 본인의 행위와 그 시점을 구체적으로 설명해 주시겠습니까.`,
+        `${myName} 씨, ${topic}이 사실입니까? 사실관계를 정확히 확인하겠습니다.`,
       ],
       motive_search: [
-        `${myName} 씨, ${topic}을 왜 그렇게 하셨습니까?`,
-        `${myName} 씨, 그때 어떤 사정이 있었는지 말씀해 주십시오.`,
+        `${myName} 씨, ${topic} 건에서 그런 판단을 내린 이유가 무엇입니까?`,
+        `${myName} 씨, 왜 그 시점에 ${topic}을 결정하셨는지 설명해 주십시오.`,
+        `${myName} 씨, ${topic}의 동기와 배경을 구체적으로 말씀해 주십시오.`,
       ],
       empathy_approach: [
-        `${myName} 씨, ${topic}과 관련해서 당시 어떤 상황이셨는지 들어보고 싶습니다.`,
-        `${myName} 씨, ${topic}에 대해 그런 선택을 하게 된 배경이 궁금합니다. 편하게 말씀해 주세요.`,
-        `${myName} 씨, ${topic} 당시 심정을 좀 들어볼 수 있을까요? 사정이 있으셨을 거라 생각합니다.`,
+        `${myName} 씨, ${topic} 당시 어떤 상황에 놓여 계셨는지 말씀해 주시겠습니까.`,
+        `${myName} 씨, ${topic}에 대해 그런 선택을 하게 된 당시의 심정을 듣고 싶습니다.`,
+        `${myName} 씨, ${topic}과 관련해서 당시 어떤 어려움이 있었는지 편하게 말씀해 주십시오.`,
       ],
     }
     const pool = templates[action.questionType] ?? templates.fact_pursuit
