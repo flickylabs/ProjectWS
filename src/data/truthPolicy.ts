@@ -1583,6 +1583,70 @@ export const TRUTH_POLICIES: Record<string, Record<string, Record<string, Record
           "forbidden": []
         }
       },
+      "d-3": {
+        "S0": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S1": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S2": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S3": {
+          "allowed": [
+            "t-1"
+          ],
+          "forbidden": [
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S4": {
+          "allowed": [
+            "t-1",
+            "t-3",
+            "t-5"
+          ],
+          "forbidden": [
+            "t-2",
+            "t-4"
+          ]
+        },
+        "S5": {
+          "allowed": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ],
+          "forbidden": []
+        }
+      },
       "d-4": {
         "S0": {
           "allowed": [],
@@ -2437,6 +2501,70 @@ export const TRUTH_POLICIES: Record<string, Record<string, Record<string, Record
           ],
           "forbidden": []
         }
+      },
+      "d-5": {
+        "S0": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S1": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S2": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S3": {
+          "allowed": [
+            "t-4"
+          ],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-5"
+          ]
+        },
+        "S4": {
+          "allowed": [
+            "t-3",
+            "t-4",
+            "t-5"
+          ],
+          "forbidden": [
+            "t-1",
+            "t-2"
+          ]
+        },
+        "S5": {
+          "allowed": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ],
+          "forbidden": []
+        }
       }
     }
   },
@@ -2574,6 +2702,70 @@ export const TRUTH_POLICIES: Record<string, Record<string, Record<string, Record
       }
     },
     "b": {
+      "d-1": {
+        "S0": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S1": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S2": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S3": {
+          "allowed": [
+            "t-5"
+          ],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4"
+          ]
+        },
+        "S4": {
+          "allowed": [
+            "t-1",
+            "t-3",
+            "t-5"
+          ],
+          "forbidden": [
+            "t-2",
+            "t-4"
+          ]
+        },
+        "S5": {
+          "allowed": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ],
+          "forbidden": []
+        }
+      },
       "d-3": {
         "S0": {
           "allowed": [],
@@ -3294,6 +3486,71 @@ export const TRUTH_POLICIES: Record<string, Record<string, Record<string, Record
           ],
           "forbidden": []
         }
+      },
+      "d-4": {
+        "S0": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S1": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S2": {
+          "allowed": [
+            "t-2"
+          ],
+          "forbidden": [
+            "t-1",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S3": {
+          "allowed": [
+            "t-2",
+            "t-5"
+          ],
+          "forbidden": [
+            "t-1",
+            "t-3",
+            "t-4"
+          ]
+        },
+        "S4": {
+          "allowed": [
+            "t-2",
+            "t-4",
+            "t-5"
+          ],
+          "forbidden": [
+            "t-1",
+            "t-3"
+          ]
+        },
+        "S5": {
+          "allowed": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ],
+          "forbidden": []
+        }
       }
     },
     "b": {
@@ -3808,6 +4065,71 @@ export const TRUTH_POLICIES: Record<string, Record<string, Record<string, Record
             "t-1",
             "t-2",
             "t-5"
+          ]
+        },
+        "S5": {
+          "allowed": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ],
+          "forbidden": []
+        }
+      },
+      "d-5": {
+        "S0": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S1": {
+          "allowed": [],
+          "forbidden": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S2": {
+          "allowed": [
+            "t-1"
+          ],
+          "forbidden": [
+            "t-2",
+            "t-3",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S3": {
+          "allowed": [
+            "t-1",
+            "t-3"
+          ],
+          "forbidden": [
+            "t-2",
+            "t-4",
+            "t-5"
+          ]
+        },
+        "S4": {
+          "allowed": [
+            "t-1",
+            "t-2",
+            "t-3",
+            "t-5"
+          ],
+          "forbidden": [
+            "t-4"
           ]
         },
         "S5": {

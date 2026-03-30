@@ -18,15 +18,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
   "family-01": {
     "personalityTags": {
       "a": [
-        "victimizing",
-        "face_sensitive",
+        "martyr_complex",
+        "victim_identity",
         "counter_attack",
-        "relationship_preserving"
+        "shame_sensitive"
       ],
       "b": [
         "cold_logical",
+        "detail_obsessed",
         "fairness_obsessed",
-        "face_sensitive",
         "shame_sensitive"
       ]
     },
@@ -63,11 +63,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "subjective_claim",
+      "t-4": "core_fact",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -81,8 +81,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "수치심과 배신감이 강한 쟁점이라 먼저 감정을 눌러야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "서아에게 장녀로서 해온 돌봄이 통째로 탐욕으로 뒤집힐까 두렵냐는 결을 먼저 건드리면, 병원 접수와 목욕 보조 목록 뒤에 숨겨 둔 1,800만원 선이체 시점이 흔들리기 시작한다.",
+        "worstActionReaction": "거래내역 금액만 바로 찌르면 서아는 병원 접수, 장보기, 목욕 도움을 한숨에 읊고 울먹이며 '간병비 선집행' 프레임으로 쟁점을 다시 덮는다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -95,8 +95,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "도현에게 왜 입금을 12일 미루면서도 약값은 직접 끊어 냈는지 묻게 되면, '안 낸 동생' 낙인을 피하려는 계산과 누나 희생 서사에 대한 반감이 같이 올라와 지연의 고의성이 드러난다.",
+        "worstActionReaction": "60만원과 12일 지연만 들이대면 도현은 날짜와 금액을 더 빨리 읊으며 약값 결제와 교대 한 번을 방패로 세워 전체 지연을 부분 실수처럼 깎아낸다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -109,8 +109,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "누구 해석이 맞는지보다 왜 둘 다 '집 일은 서아가 맡아' 한 줄에 상속 의미를 얹고 싶은지 캐묻는 편이 좋다. 카페 폐업 지원금과 장녀 권한 불안이 드러나면 수첩 사진의 과장 해석이 약해진다.",
+        "worstActionReaction": "크롭된 수첩 문장 자체만 따지면 둘 다 '집 일' 뜻풀이 싸움으로 도망가고, 세금·병원 서류를 맡기던 2021년 맥락은 더 멀어진다."
       },
       "d-4": {
         "bestAction": "evidence_present",
@@ -123,8 +123,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "조혜진의 경감 신청 기록과 단기돌봄 연계표를 같이 내보이면, 첫 달 210만원을 당장 형제 사비로 막아야 했다는 전제가 무너져 서아의 선이체 명분도 도현의 방관 변명도 같이 약해진다.",
+        "worstActionReaction": "간병이 얼마나 막막했는지만 공감해 버리면 두 사람 다 그 공포를 면죄부처럼 쓰고, 이미 안내된 98만원 수준의 복지 절차는 대화 밖으로 밀려난다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -137,8 +137,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "동기를 먼저 캐면 억측으로 받아들여 사실 확인 전부터 방어적으로 굳어진다."
+        "bestActionHint": "e-1 거래내역과 e-3 공유표 업데이트 시각을 나란히 붙이면, 서아의 1,800만원 숨김과 도현의 약값·야간보호사 뒤늦은 입력이 한 화면에서 보여서 '나만 억울했다'는 말이 버티기 어렵다.",
+        "worstActionReaction": "왜 숨겼냐부터 캐면 서아는 장녀 희생을, 도현은 불효자 낙인 공포를 앞세우며 감정싸움으로 번지고 공유표를 누가 언제 비웠는지는 흐려진다."
       }
     },
     "optimalPath": {
@@ -248,13 +248,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 기억하기로는 서아가 병원 동행을 더 자주 한다는 점과 도현이 현금 대신 직접 약값을 내기도 했다는 점을 안다."
+        "아버지 폐렴 퇴원 후 간병이 시작됐는데, 서아가 '다 떠안았다'며 우는 뒤편에는 부모 관리계좌에서 큰 금액을 빼서 자기 카드대금과 보험료를 먼저 막은 사실이 있었어요.",
+        "도현도 첫 주 야간 보호사 비용 자기 몫을 12일이나 늦게 냈고, 교대도 한 번 출장 핑계로 비웠습니다. 간병비 문제보다 오래 묵은 상속 불안과 서운함이 같이 끓는 집이었어요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 실제 간병 투입 시간, 누가 교대했는지, 첫 주에 비어 있던 야간 구간을 원본 스케줄표 기준으로 확인할 수 있다."
+        "교대표를 보면 간병 전에 부모 계좌에서 큰 돈을 빼서 '간병비 선집행'이라고 포장한 게 첫 번째 문제입니다. 실제로는 카드대금과 보험료를 먼저 막은 거였어요.",
+        "도현도 교대 비용 입금을 12일 늦추고 야간 교대를 빠졌으니 깨끗하지 않습니다. 이 집은 간병 부담보다 오래전 '집 일은 서아가 맡아'라는 수첩 메모가 상속 지정처럼 쓰이는 게 핵심이에요."
       ],
       "tp-3": [
-        "기록상 장기요양 본인부담 경감 가능 여부와 퇴원 전 안내 시각, 단기돌봄 연계 절차를 기록 기준으로 설명할 수 있다."
+        "저는 2021년 수첩에 적힌 '집 일은 서아가 맡아'라는 문구를 확인했는데, 상속 지정이 아니라 당시 세금과 병원 서류를 임시로 맡기겠다는 맥락이었습니다.",
+        "이 건은 누가 덜 사랑해서가 아니라, 부모 계좌에서 큰 돈을 빼간 쪽과 교대 비용을 늦게 낸 쪽이 서로 상대를 먼저 공격하면서 커진 겁니다. 양쪽 다 약속을 어겼어요."
       ]
     }
   },
@@ -264,13 +267,13 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
         "confrontational",
         "face_sensitive",
         "retaliation_sensitive",
-        "selective_quote"
+        "blame_shifting"
       ],
       "b": [
         "avoidant",
         "relationship_preserving",
-        "third_party_protective",
-        "face_sensitive"
+        "denial_heavy",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -306,11 +309,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "motive",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "hidden_motive",
+      "t-3": "core_fact",
+      "t-4": "subjective_claim",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -324,8 +327,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.25,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "명절 음성 클립과 창고 등기·부채표를 '가족 밖 금지 자료'로 먼저 묶어 버리면, 선우는 '민지한테 그냥 보여준 것'이라는 말로 배우자 예외를 만들기 어려워지고 링크 전송 자체가 핵심 위반으로 고정된다.",
+        "worstActionReaction": "파일 몇 개를 언제 보냈는지 숫자만 따지면 선우는 '정리만 해달라 한 거지'라며 공유와 외부유출을 잘게 쪼개고, 가족 밖 비공유 원칙 파기는 흐려진다."
       },
       "d-2": {
         "bestAction": "confidential_protection",
@@ -338,8 +341,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.25,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "거래처와 중개업소로 번진 PDF를 누가 먼저 열었는지보다, 가족 자료가 어디서 집 밖으로 새었는지 경계를 봉인하면 민지 보조 이메일과 사촌 중개사 통화로 이어지는 실제 유출선이 훨씬 또렷해진다.",
+        "worstActionReaction": "소문을 처음 누구 입에서 들었냐만 좇으면 거래처마다 말이 갈려 선우 탓 공방만 커지고, 메일 헤더와 통화기록이 가리키는 실제 유출 경로는 놓치기 쉽다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -352,8 +355,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "태블릿 잠금 해제 시각과 친척 단톡 발송 6분 차이를 같이 보여주면, 미옥의 '걱정돼서 확인만 했다'는 말이 곧바로 공개 비난으로 이어졌다는 연쇄가 살아나 방어가 약해진다.",
+        "worstActionReaction": "가업이 흔들린 불안을 먼저 달래면 미옥은 '집 지키려다 그랬다'는 보호자 프레임으로 돌아가고, 무단 열람과 친척방 확산은 훈계처럼 둔갑한다."
       },
       "d-4": {
         "bestAction": "motive_search",
@@ -366,8 +369,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "미옥에게 왜 42초 음성만 붙들고 선우 단독 승계로 읽고 싶은지 묻게 되면, 남편 건강 악화와 며느리 경영 관여에 대한 불안이 튀어나와 클립 해석이 감정 섞인 확장임이 드러난다.",
+        "worstActionReaction": "잘린 음성 한 구절만 반복 재생하면 둘 다 '맡아'의 뜻싸움에 갇히고, 전체 녹취에 남은 임시 운영 맥락은 또 묻힌다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -380,8 +383,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.1,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "건강기록과 공장 재산표를 어디까지가 집 안 정보인지 선부터 다시 세우면, 선우의 배우자 공유와 미옥의 친척·거래처 의심 흘리기가 같은 원칙 파기였다는 점을 한꺼번에 붙잡을 수 있다.",
+        "worstActionReaction": "누가 먼저 더 크게 퍼뜨렸는지만 따지면 선우는 '배우자일 뿐'을, 미옥은 '상담하려고 보낸 것'을 내세워 각자 자기 유출만 예외로 만든다."
       }
     },
     "optimalPath": {
@@ -495,29 +498,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 기억하기로는 직접 본 범위 안의 사실만 제한적으로 말할 수 있다."
+        "추석 가족 모임에서 아버지 건강, 창고 매각, 공장 승계 얘기가 한꺼번에 나왔어요. 그런데 48시간도 안 돼서 거래처와 중개업소가 같은 내용을 입에 올리기 시작했습니다.",
+        "오래 살면서 집안 이야기가 밖으로 새는 걸 몇 번 봤지만, 이번은 너무 빨랐어요. 식탁에서 나온 말이 시장 소문이 되기까지 이틀도 안 걸린 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 명절 직후 공급처들 사이에 공장 매각 소문이 돌기 시작한 시점과, 창고 등기 PDF가 돌았다는 정황을 안다."
+        "선우는 명절 식탁 음성 클립과 창고 등기·부채표를 며느리 민지에게 넘기며 가족 외 비공유 원칙을 먼저 깼습니다. 민지가 그걸 사촌 중개사에게 돌리면서 시장까지 번진 거예요.",
+        "거래처에서 주문 전화가 아니라 '무슨 일 있냐'부터 물을 때, 저는 이미 늦었다고 느꼈습니다. 누가 시작했는지보다 같은 질문이 여러 곳에서 동시에 오는 순간이 더 위험합니다."
       ],
       "tp-3": [
-        "기록상 음성 메모 전체 맥락과 정식 승계 문서 부재, 그리고 중개업소 문의 첨부파일의 원본 출처를 확인할 수 있다."
+        "저는 미옥이 주방에 놓인 며느리 태블릿을 열어 동기화 화면을 확인한 뒤, 친척 단톡에 '선우가 밖에 흘렸다'고 올린 걸 확인했습니다. 무단 기기 확인과 공개 비난이 동시에 터진 거예요.",
+        "이 건의 직접적인 외부 유출 배후는 선우 본인보다 며느리가 사촌 중개사에게 정보를 돌린 흐름에 더 가깝습니다. 식탁에서 나온 애매한 말이 외부를 거치면서 확정처럼 굳어졌어요."
       ]
     }
   },
   "family-03": {
     "personalityTags": {
       "a": [
-        "victimizing",
+        "martyr_complex",
+        "victim_identity",
         "face_sensitive",
-        "relationship_preserving",
-        "selective_quote"
+        "passive_aggressive"
       ],
       "b": [
         "avoidant",
-        "face_sensitive",
-        "relationship_preserving",
-        "timeline_padding"
+        "conflict_avoidant",
+        "timeline_padding",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -553,11 +559,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "emotional_context",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -571,8 +577,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "잘린 카카오톡 캡처 앞뒤의 '6개월만' 문장과 자동이체 등록·해지 로그를 같이 제시하면, 정우가 말뿐 아니라 스스로 기간과 금액을 설정했다는 점이 고정돼 약속 여부 공방이 빨리 끝난다.",
+        "worstActionReaction": "수입이 들쭉날쭉했다는 사정부터 공감해 주면 정우는 이번 달만의 예외처럼 축소하고, 처음부터 6개월 약속이었다는 핵심은 뒤로 숨긴다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -585,8 +591,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "정우에게 왜 자동이체를 끊고도 미리 말하지 않았는지 묻게 되면, 장남 압박을 피하면서도 약속은 놓치기 싫었던 심리가 드러나 '조금 밀린 거지'라는 축소 표현이 무너진다.",
+        "worstActionReaction": "35만원, 40만원 같은 수치만 연달아 들이밀면 정우는 현장 수입 변동과 급여일 이야기로 시간을 늘여 지연의 고의성을 희석시킨다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -599,8 +605,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "복자에게 왜 정우 돈을 수빈 학원비에 돌리면서도 끝까지 약값이라고만 말했는지 묻게 되면, 장남 돈으로 딸까지 챙긴다는 비난을 피하려는 체면이 먼저 드러나 사용처 은닉이 선명해진다.",
+        "worstActionReaction": "계좌이체 20만원과 25만원만 들이대면 복자는 월세·전기료·약값을 한꺼번에 나열하며 생활고 전체로 판을 키워 학원비 전용을 흐린다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -613,8 +619,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "정우 약속 캡처를 친척방과 교회방으로 넘긴 순간을 '가족 밖 공개 압박'으로 묶어 버리면, 복자는 상의였다는 말로 빠져나가기 어렵고 체면을 무기로 쓴 행위가 또렷해진다.",
+        "worstActionReaction": "캡처에 적힌 문장만 따지면 복자는 '장남이 생활비를 끊었다'는 감정 호소로 되받아치고, 왜 먼저 제3자에게 돌렸는지는 뒤로 밀린다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -627,8 +633,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.28
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "현금 대신 전기료·관리비 직접 납부와 영수증 공유라는 경계선을 다시 세우면, 정우의 일회성 납부와 복자의 현금 회귀가 같은 합의 붕괴의 양쪽 끝이었다는 게 분명해진다.",
+        "worstActionReaction": "누가 먼저 어겼는지만 재면 정우는 한 번 낸 걸, 복자는 고지서 보낸 걸 내세워 서로 절반의 이행만 확대하고 전체 구조 실패는 사라진다."
       }
     },
     "optimalPath": {
@@ -736,13 +742,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 기억하기로는 어머니가 생활비 일부를 자신에게 보내준 사실과, 정우의 월 지원 약속이 집안에서 부담으로 작동했다는 점을 안다."
+        "정우는 독립하면서 어머니 생활비와 약값이 안정될 때까지 6개월간 월 60만원을 보내겠다고 약속했어요. 3개월까지는 잘 보냈는데 그 뒤로 금액과 날짜가 흔들리기 시작했습니다.",
+        "복자 어머니도 체면 때문에 힘들어했어요. 친척 단톡에 정우 약속 캡처를 올려 '장남이 생활비를 끊었다'고 공개 압박한 건, 아들보다 주변 눈치를 먼저 본 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 복자와 정우가 한때 현금 대신 전기료·관리비를 직접 납부하는 방식으로 바꾸려 했다는 통화와 납부 시점을 확인할 수 있다."
+        "저는 정우가 3개월째부터 자동이체를 해지하고 사전 통보 없이 두 차례 금액을 줄여 늦게 보낸 건 확인했습니다. 약속 위반은 맞아요.",
+        "다만 복자 어머니도 정우가 보낸 용돈 일부를 딸 수빈의 자격증 학원비와 교통카드 충전에 돌려 쓰고도 '전부 약값과 공과금에 썼다'고 말했습니다. 양쪽 다 투명하지 않았어요."
       ],
       "tp-3": [
-        "기록상 모자 공동 상담에서 생활비 지원 방식을 현금이 아닌 직접 납부로 바꾸자고 권고한 기록과 예산표를 갖고 있다."
+        "저는 이 건에서 현금 용돈 대신 전기료와 관리비를 정우가 직접 내자는 합의가 있었다고 확인했습니다. 그런데 정우는 한 번만 납부했고, 복자는 다시 현금 요구로 돌아가며 영수증 공유도 멈췄어요.",
+        "이 건의 핵심은 효도 여부가 아니라 약속 이행입니다. 정우는 월 60만원을 3개월만 지키고 흔들었고, 복자는 용돈 전용을 숨기면서 친척한테 공개 압박을 했습니다. 둘 다 합의를 어겼어요."
       ]
     }
   },
@@ -750,15 +759,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "cold_logical",
-        "fairness_obsessed",
-        "face_sensitive",
-        "selective_quote"
+        "detail_obsessed",
+        "selective_quote",
+        "fairness_obsessed"
       ],
       "b": [
-        "victimizing",
-        "face_sensitive",
+        "martyr_complex",
+        "victim_identity",
         "counter_attack",
-        "relationship_preserving"
+        "grudge_holding"
       ]
     },
     "contentTags": {
@@ -794,11 +803,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "motive",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "hidden_motive",
+      "t-3": "core_fact",
+      "t-4": "circumstantial",
+      "t-5": "emotional_context"
     },
     "actionAffinity": {
       "d-1": {
@@ -812,8 +821,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "은행 원본 거래내역과 향토장학재단 기부영수증을 바로 붙이면, 3,200만원 출금 상대가 형제 개인이 아니라 재단이라는 점이 고정돼 누가 훔쳤느냐는 오해가 한 번에 꺼진다.",
+        "worstActionReaction": "상속 불안과 민규 차용금 기억을 먼저 달래면 둘 다 '그래서 의심할 만했다'는 쪽으로 기울고, 정작 기부 원본 문서는 뒤로 밀린다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -826,8 +835,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "하린에게 왜 원본을 보고도 메모란이 잘린 잔액 캡처만 보냈는지 묻게 되면, 민규의 과거 빚과 문서 통제 욕구가 함께 드러나 단순 실수가 아니라 의심 유도였다는 점이 선명해진다.",
+        "worstActionReaction": "캡처 한 장의 픽셀만 붙잡고 늘어지면 하린은 '그 시점만 본 것'이라며 범위를 좁히고, 왜 굳이 잘린 화면을 보냈는지는 놓치게 된다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -840,8 +849,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "도어락 출입기록과 작업실 금고 사진을 나란히 제시하면, 민규가 인감과 등기 원본을 실제로 반출해 사흘간 숨겼다는 흐름이 남아 '보관이었을 뿐'이라는 말이 힘을 잃는다.",
+        "worstActionReaction": "가까이 사는 사람이 억울했을 거라 먼저 받아주면 민규는 보일러 수리와 우편 심부름을 줄줄이 꺼내 원본 반출 자체를 희생담 속에 섞어 버린다."
       },
       "d-4": {
         "bestAction": "evidence_present",
@@ -854,8 +863,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "잘린 잔액 캡처와 '정리본-2'로 바뀐 클라우드 파일명 변경 이력을 함께 보여주면, 하린의 부분 공개와 민규의 모호한 파일명이 같은 공동 폴더 위반이었다는 점이 한 화면에서 고정된다.",
+        "worstActionReaction": "형제 사이 불신부터 공감하면 둘 다 '상황이 그래서 그랬다'로 물러나고, 원본 스캔·명확한 파일명이라는 합의 자체가 흐릿해진다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -868,8 +877,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.1,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "세무 지인 문의와 부동산 중개 지인 문의를 '부모 확인 전 외부 의심 확산'으로 묶어 다루면, 하린과 민규 모두 부모 앞보다 바깥 문의를 먼저 택했다는 공통 위반이 드러난다.",
+        "worstActionReaction": "누가 먼저 전화를 걸었는지만 따지면 둘 다 상대 쪽 외부 문의만 키워 말하고, 부모 재산 문제를 집 밖으로 꺼낸 구조적 잘못은 사라진다."
       }
     },
     "optimalPath": {
@@ -979,13 +988,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 보기에는 직접 본 범위 안의 사실만 제한적으로 말할 수 있다."
+        "부모님이 유언 정리를 시작하면서 예금과 등기를 공동 폴더에 모으고 있었는데, 저축계좌에서 3,200만원이 빠져나간 걸 보고 형제 사이가 한순간에 얼어붙었어요.",
+        "나중에 알고 보니 부모님이 장학재단에 기부한 돈이었는데, 잘린 잔액 캡처와 모호한 파일명 때문에 형제 사이에서 서로 '빼돌렸다'는 의심이 먼저 커진 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 기부 신청서, 입금 시각, 영수증 발급 기록을 통해 돈이 형제가 아닌 장학재단으로 갔음을 확인할 수 있다."
+        "하린은 원본 거래내역을 보고도 이체 메모 상단이 잘린 잔액 캡처만 민규에게 보내며 의심을 키웠습니다. 전체를 보여줬으면 장학재단 기부라는 걸 바로 알 수 있었을 거예요.",
+        "민규도 누나가 먼저 움직일까 봐 부모 집 인감과 부동산 등기 원본을 사흘간 자기 작업실 금고에 옮겨 두고 안 알렸습니다. 둘 다 확인보다 의심을 먼저 키운 거예요."
       ],
       "tp-3": [
-        "기록상 부모의 상속 준비 메모, 기부 의사 확인 기록, 문서 보관 원칙을 원본 기준으로 설명할 수 있다."
+        "저는 3,200만원 인출이 형제 횡령이 아니라 부모가 결정한 향토장학재단 기부라는 걸 확인했습니다. 형제는 공유폴더의 잘린 자료와 모호한 파일명 때문에 서로를 의심한 거예요.",
+        "형제는 원본 스캔과 명확한 파일명을 함께 올리기로 했는데, 하린은 잘린 캡처를 올렸고 민규는 파일명을 '정리본'처럼 모호하게 바꾸며 설명을 비워 뒀습니다. 공유 원칙을 둘 다 안 지킨 겁니다."
       ]
     }
   },
@@ -993,15 +1005,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "confrontational",
-        "face_sensitive",
-        "privacy_sensitive",
-        "counter_attack"
+        "manipulative",
+        "shame_sensitive",
+        "retaliation_sensitive"
       ],
       "b": [
         "avoidant",
-        "face_sensitive",
-        "privacy_sensitive",
-        "relationship_preserving"
+        "authority_challenging",
+        "selective_quote",
+        "privacy_sensitive"
       ]
     },
     "contentTags": {
@@ -1037,11 +1049,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "core_fact",
+      "t-4": "circumstantial",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -1055,8 +1067,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "현관 도어락 기록과 임대인 취소 문자를 바로 붙이면, 은주의 방 출입과 계약 중단 압박이 같은 날 연속으로 이어졌다는 점이 살아나 '엄마가 확인만 했다'는 해명이 버티기 어려워진다.",
+        "worstActionReaction": "전세사기 직전 트라우마를 먼저 달래면 은주는 '막았으니 사고가 안 난 것'이라며 침범을 보호로 바꾸고, 실제 방 출입과 취소 연락은 가벼워진다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -1069,8 +1081,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "소현에게 왜 부모 앞에서는 단독 원룸이라 하면서 실제로는 룸메이트 계약금부터 넣었는지 묻게 되면, 애 취급받기 싫어 정보를 잘라 말한 심리가 드러나 축소 설명의 고의가 선명해진다.",
+        "worstActionReaction": "룸메이트 조항만 들이밀면 소현은 월수입, 마감 일정, 방 크기 얘기로 주변을 길게 풀어 핵심 왜곡을 또 늦춘다."
       },
       "d-3": {
         "bestAction": "confidential_protection",
@@ -1083,8 +1095,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "31초 클립을 내용보다 '편집 앱 폴더에서 나온 사적 음성 조각'으로 먼저 봉인하면, 은주가 세 통화를 잘라 붙여 임대인에게까지 넘긴 절차 위반이 정면에 선다.",
+        "worstActionReaction": "클립 문장 자체의 진실성만 따지면 은주는 '무서워서 그랬다'며 내용 일부가 맞는지로 논점을 틀고, 위조 제작과 전달 책임을 흐린다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -1097,8 +1109,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.1,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "청년주거상담 전까지는 서로 선을 넘지 않기로 한 약속을 기준선으로 세우면, 소현의 선계약과 은주의 선개입이 같은 합의 파기로 연결돼 한쪽만 피해자로 서기 어려워진다.",
+        "worstActionReaction": "누가 먼저 잘못 시작했는지만 재면 소현은 계약금을, 은주는 방 출입을 번갈아 들고 나와 순서 싸움만 길어지고 사전 상담 원칙은 사라진다."
       },
       "d-5": {
         "bestAction": "motive_search",
@@ -1111,8 +1123,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "임대인 최연우에게 왜 최종적으로 손을 뗐는지 이유를 캐묻는 방식으로 접근하면, 소현 수입보다 은주의 취소 연락과 편집 녹취 전달이 더 큰 분쟁 신호였다는 실제 판단이 드러난다.",
+        "worstActionReaction": "수입 안정성이나 보증금 숫자만 두드리면 가족 갈등 리스크라는 본심은 숨고, 거절 사유가 경제 문제였다는 오해만 굳어진다."
       }
     },
     "optimalPath": {
@@ -1224,13 +1236,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 기억하기로는 전세사기 직전 사건과 은주가 아직도 현관 비밀번호와 예비열쇠를 쥐고 있다는 점을 안다."
+        "은주는 과거 전세사기 직전 사건 때문에 딸이 계약을 하겠다고 하면 직접 확인하지 않고는 못 견디는 분이에요. 소현이 없을 때 방에 들어가 서류를 확인하고, 임대인에게 직접 전화까지 한 거예요.",
+        "반대로 소현은 부모에게 단독 원룸이라고 했지만, 실제로는 룸메이트가 있는 공유주거 계약 초안에 계약금을 먼저 넣고 있었습니다. 둘 다 상대에게 정확히 말하지 않았어요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 소현의 계약금 송금, 은주의 취소 연락, 최종 계약 거절 사유를 문자와 통화기록 기준으로 확인할 수 있다."
+        "저는 임대인으로서 한 집에서 두 목소리가 따로 오는 게 제일 부담이었습니다. 딸은 계약을 밀고, 어머니는 취소하라고 연락하고. 분쟁 위험이 크게 보여서 최종 계약을 거절한 거예요.",
+        "은주의 취소 연락과 편집된 녹취 전달이 제 결정에 영향을 줬습니다. 소현의 수입 불안정보다 가족 분쟁이 계약 후에도 이어질 것 같다는 판단이 더 컸어요."
       ],
       "tp-3": [
-        "기록상 두 사람이 사전 상담 후 계약하기로 했던 합의와, 임대인이 가족 갈등 때문에 계약을 부담스러워했다고 말한 중재 기록을 갖고 있다."
+        "저는 은주가 제시한 31초 녹취를 확인했는데, 소현의 실제 자백이 아니라 세 통화를 잘라 붙이고 오래된 음성조각을 끼워 넣은 위조본이었습니다.",
+        "두 사람은 청년주거상담 뒤에 계약 여부를 정하기로 했지만, 소현은 계약금을 먼저 걸었고 은주는 상담 전에 방 출입과 임대인 연락을 했습니다. 약속을 둘 다 깼어요."
       ]
     }
   },
@@ -1243,10 +1258,10 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
         "counter_attack"
       ],
       "b": [
-        "victimizing",
-        "face_sensitive",
+        "victim_identity",
         "selective_quote",
-        "relationship_preserving"
+        "authority_challenging",
+        "trust_broken"
       ]
     },
     "contentTags": {
@@ -1282,11 +1297,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "motive",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "hidden_motive",
+      "t-4": "emotional_context",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -1300,8 +1315,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "하준에게 왜 굳이 영정사진 일부와 동네 체육관 태그까지 묶어 올렸는지 묻게 되면, 지워지는 가족사에 대한 분노와 공감 욕구가 함께 드러나 실명 없이도 특정 가능하게 만든 의도가 보인다.",
+        "worstActionReaction": "게시물 몇 줄만 읽어주면 하준은 '은유였어'를 반복하며 조회수와 응원 DM로 옆길로 새고, 식별 가능성의 핵심은 흐려진다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -1314,8 +1329,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "선영의 협찬사 DM 시각과 친척·교회방 메시지를 같은 타임라인에 놓으면, 하준 게시물을 말리려 한 수준이 아니라 아들의 신뢰도 자체를 깎아 내린 연쇄 연락이 또렷해진다.",
+        "worstActionReaction": "지역사회 망신이 두려웠겠다고 받아주면 선영은 곧 '수습하려고 한 일'이라며 경고 DM과 친척방 비난을 훈계처럼 포장한다."
       },
       "d-3": {
         "bestAction": "confidential_protection",
@@ -1328,8 +1343,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.25,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "2014년 쉼터·채무조정 서류를 누가 보관했고 어떤 계정으로 밖에 나갔는지부터 정보 경계를 잠그면, 하준과 선영 탓 공방보다 외삼촌 병철의 백업·게스트계정 유출선이 먼저 드러난다.",
+        "worstActionReaction": "맘카페에 누가 처음 올렸는지 말만 좇으면 익명글 캡처마다 진술이 갈려 하준 저격과 선영 반격만 커지고, 정작 백업 문서 반출 경로는 놓친다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -1342,8 +1357,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.1,
           "confidential_protection": 1.28
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "2014년 서류와 예전 문제행동을 '새 갈등에 다시 꺼내지 않기로 한 금지 구역'으로 먼저 정리하면, 하준의 암시 게시물과 선영의 협찬처·친척방 비난이 같은 약속 파기로 묶인다.",
+        "worstActionReaction": "누가 더 먼저 과거를 들췄는지만 재면 둘 다 상대가 먼저였다고 버티고, 비무기화 약속 자체를 함께 깼다는 본질은 흐려진다."
       },
       "d-5": {
         "bestAction": "motive_search",
@@ -1356,8 +1371,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "협찬 매니저에게 어떤 순간 브랜드가 '이건 분쟁 리스크'라고 판단했는지 묻게 되면, 하준의 첫 게시물만이 아니라 선영의 경고 연락과 익명 PDF 도착이 겹친 실제 중단 이유가 드러난다.",
+        "worstActionReaction": "게시물 조회수나 PDF 개수만 세면 어느 하나가 결정타였는지 흐려지고, 브랜드가 본 건 겹쳐 들어온 가족 분쟁 신호였다는 판단은 놓치게 된다."
       }
     },
     "optimalPath": {
@@ -1469,13 +1484,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 기억하기로는 2014년 쉼터와 채무조정 서류를 한때 대신 스캔해 보관했고, 최근 하준의 게시물을 본 뒤 가족 평판 문제에 강하게 개입했다."
+        "하준은 실명을 쓰지 않았지만 영정사진 일부, 동네 체육관 태그, 가족이 알아볼 문장을 묶어서 선영과 집안을 충분히 특정할 수 있는 게시물을 올렸습니다.",
+        "선영도 하준의 게시물 캡처를 협찬사와 친척·교회 소모임에 보내며 '아들이 과거 일을 팔아 관심을 끈다'고 비난했어요. 둘 다 2014년 기록을 안 쓰기로 한 약속을 깬 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 하준 게시물 이후 협찬사에 도착한 경고 DM, 선영의 전화, 익명 PDF 묶음의 도착 순서를 원본 기준으로 안다."
+        "저는 협찬 중단의 원인이 하준의 첫 게시물만은 아니라고 봅니다. 선영의 경고 연락과 곧이어 도착한 익명 PDF 제보가 겹쳐서 브랜드가 분쟁 리스크를 크게 본 거예요.",
+        "같은 주제로 SNS, 맘카페, 협찬처가 동시에 흔들리면 브랜드는 내용을 따지기 전에 연결을 끊습니다. 누가 먼저 공격당했느냐보다 여러 채널이 한꺼번에 터진 점이 더 컸어요."
       ],
       "tp-3": [
-        "기록상 익명 메일 헤더, 게스트계정 접속 로그, 옛 서류 백업 파일의 유출 경로를 기술적으로 확인할 수 있다."
+        "저는 맘카페와 협찬처에 돌던 2014년 서류의 유출 경로를 추적했는데, 하준이나 선영이 직접 올린 게 아니었습니다. 옛 스캔 백업을 갖고 있던 외삼촌 오병철의 게스트계정 사용 흔적이 남아 있어요.",
+        "이번 일은 모자 갈등과 문서 유출을 분리해서 봐야 합니다. 하준의 SNS 저격과 선영의 협찬처 비난이 양쪽에서 불을 붙였지만, 과거 서류를 실제로 유포한 배후는 제3자였습니다."
       ]
     }
   },
@@ -1485,13 +1503,13 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
         "confrontational",
         "face_sensitive",
         "counter_attack",
-        "retaliation_sensitive"
+        "denial_heavy"
       ],
       "b": [
         "cold_logical",
         "fairness_obsessed",
-        "face_sensitive",
-        "shame_sensitive"
+        "detail_obsessed",
+        "trust_broken"
       ]
     },
     "contentTags": {
@@ -1527,11 +1545,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "motive",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "circumstantial",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -1545,8 +1563,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "종문에게 왜 지원사업 최종본과 지역 기사에서 지수 이름을 좁히고 대표 성과를 넓혔는지, '창업주인데 딸 덕에 버틴 사람처럼 보이기 싫었는지'를 묻게 되면 체면 동기가 먼저 튀어나온다. 그 순간 e-1의 문장 삭제가 단순 교정이 아니라 공로 회수였다는 점이 선명해진다.",
+        "worstActionReaction": "초안과 최종본 문구 차이만 들이밀면 종문은 곧 '대표 명의는 원래 그렇다'며 형식 문제로 숨어 버린다. 그러면 지수 기여를 왜 의도적으로 좁혔는지 핵심 동기는 끝까지 남는다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -1559,8 +1577,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "지수에게 왜 인터뷰마다 '제가 공방 체질을 바꿨다'는 말을 넣었는지, 승계 얘기만 나오면 자기 이름이 다시 창업주 서사에 묻힐까 두려웠는지 건드려야 한다. 인정 결핍을 말하게 만들면 e-2의 과장이 단순 자부심이 아니라 자리 확보용이었다는 맥락이 열린다.",
+        "worstActionReaction": "영상 자막과 홍보 글 표현만 줄줄 따지면 지수는 '그건 온라인 부분만 말한 거였다'며 범위를 잘게 쪼갠다. 그렇게 되면 아버지 기사에 대한 서운함이 어떻게 단독 구원자 서사로 번졌는지는 더 멀어진다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -1573,8 +1591,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "온라인몰 전환율 대시보드와 생산 불량률·납기 로그, 그리고 문서윤의 역할 진단표를 한 화면에 붙이면 어느 한쪽의 단독 구원자 서사가 버티기 어렵다. e-3과 e-6이 함께 놓여야 '누가 더 했나'가 아니라 양축 기여가 동시에 보인다.",
+        "worstActionReaction": "서운했던 마음부터 달래면 종문은 '누가 대출 도장 찍었는데'로, 지수는 '제 이름은 없잖아요'로 다시 돌아간다. 감정은 커지지만 공동 반등이라는 구조 검증은 뒤로 밀린다."
       },
       "d-4": {
         "bestAction": "evidence_present",
@@ -1587,8 +1605,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "지역상 신청 규정, 박람회 대표자 등록 기준, 상패 제작 주문서를 같이 보여 주면 '대표 이름이 적혔다=후계 확정'이라는 비약이 끊긴다. e-4가 행정상 명의와 승계 신호를 분리해 주기 때문에 해석 싸움보다 증거 대면이 빠르다.",
+        "worstActionReaction": "승계 불안만 공감해 주면 종문은 창업주 권위 쪽으로, 지수는 인정 갈증 쪽으로 더 세게 붙는다. 그러면 상패와 대표자 표기의 실제 기준 검증이 감정 싸움에 묻혀 버린다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -1601,8 +1619,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "월별 KPI 비교표와 클라우드 수정 이력을 공개 망신용이 아니라 비공개 정리용으로 다루겠다고 선을 그어 주면, 종문도 지수도 자기에게 불리한 달을 뺀 흔적을 덜 숨긴다. 둘 다 실적 프레임을 체면 문제로 붙잡고 있어 confidentiality가 먼저 먹힌다.",
+        "worstActionReaction": "최저점과 고점 월만 딱 찍어 계산문제처럼 몰아붙이면 두 사람은 각자 다른 기준월을 들고 와 숫자 전투만 키운다. 왜 특정 기간만 골랐는지 숨은 계산은 더 깊이 숨어 버린다."
       }
     },
     "optimalPath": {
@@ -1712,13 +1730,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 보기에는 종문이 새벽 생산을 지키는 모습과 지수가 밤마다 온라인몰을 고치는 모습을 모두 봤다."
+        "이 공방에서 아버지는 손에서 기름 냄새가 안 빠질 정도로 생산에 매달렸고, 딸은 온라인몰과 패키지를 처음부터 다시 짰어요. 둘 다 쉬는 날 없이 했습니다.",
+        "그런데 지원사업 기사와 수상 장면에서 아버지 이름만 대표로 나가면, 딸 표정이 잠깐 굳는 걸 여러 번 봤어요. 실제로 온라인을 살린 건 딸인데 밖에선 아버지 공방으로만 불리니까요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 지수의 패키지·온라인 기획 이후 입점 문의가 늘어난 점과, 종문이 납품 불량률과 출고 시간을 안정시켜 거래가 유지된 점을 모두 안다."
+        "종문은 지원사업 신청서와 기사 인터뷰에서 지수의 온라인·브랜드 기여를 축소했고, 지수는 자기가 공방을 완전히 살린 것처럼 말해 종문의 생산 안정화와 거래처 유지 기여를 가렸습니다.",
+        "최근 반등은 종문의 생산 표준화·불량률 관리와 지수의 온라인몰·패키지·행사 기획이 합작한 결과예요. 한 사람 공으로만 말하면 절반이 빠집니다."
       ],
       "tp-3": [
-        "기록상 지원사업 초안 작성, 지역상 신청 양식, 승계 컨설팅 기록을 통해 두 사람의 실제 역할 분담과 외부 표기 문제를 설명할 수 있다."
+        "지역상 상패와 박람회 대표자 표기는 법적 대표와 신청서 명의 기준일 뿐, 공식 승계 확정이나 단독 후계자 지정이 아닙니다. 상징적 자리가 실질 기여와 혼동되면서 감정이 커진 거예요.",
+        "종문은 온라인 개편 전의 최저점만, 지수는 생산이 안정된 뒤의 고점만 골라 각자 유리한 기간으로 성과를 비교했습니다. 비교 기간을 맞추면 양쪽 기여가 거의 같은 무게입니다."
       ]
     }
   },
@@ -1726,15 +1747,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "cold_logical",
-        "fairness_obsessed",
-        "face_sensitive",
+        "grudge_holding",
+        "trust_broken",
         "counter_attack"
       ],
       "b": [
         "avoidant",
-        "face_sensitive",
         "relationship_preserving",
-        "timeline_padding"
+        "blame_shifting",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -1770,11 +1791,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "emotion"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "core_fact",
+      "t-4": "circumstantial",
+      "t-5": "emotional_context"
     },
     "actionAffinity": {
       "d-1": {
@@ -1788,8 +1809,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "준호에게 150만원 송금 자체보다 왜 같은 날 가족 단톡에 못 올렸는지, 또 불효자로 몰릴까 겁나 시간을 끌었는지 묻는 편이 먹힌다. 그러면 그는 '일단 안전부터였다' 뒤에 숨기던 미통보 책임을 더 오래 버티지 못한다.",
+        "worstActionReaction": "입금 시각과 부재중 통화 횟수만 재면 준호는 배회, 넘어짐, 가스 경보 이야기를 길게 늘어놓으며 현장 고생으로 질문을 덮는다. 사실 확인은 남지만 왜 숨겼는지는 끝까지 비어 버린다."
       },
       "d-2": {
         "bestAction": "empathy_approach",
@@ -1802,8 +1823,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "수치심과 배신감이 강한 쟁점이라 먼저 감정을 눌러야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "세라에게 이번 폭발 뒤에 2021년 ICU 연락 지연 기억이 겹쳤다는 점을 먼저 받아주면, 친척방 공개 비난이 현재 계약 확인보다 과거 배신감에서 먼저 튀어나온 반응이었다는 말이 나온다. 상처를 분리해 줘야 e-3의 과잉 전파 책임도 스스로 보인다.",
+        "worstActionReaction": "친척 단톡 캡처와 통화 횟수만 들이밀면 세라는 곧 '결국 또 숨겼잖아'를 반복한다. 그러면 자기 공개 비난은 경고 행동처럼 포장되고, 확인 전에 퍼뜨린 책임은 흐려진다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -1816,8 +1837,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "은솔요양원 신청서의 평가입소 항목과 환불 규정 메일, 150만원 영수증을 같이 붙이면 '영구입소 계약금' 프레임이 한 번에 무너진다. e-1과 e-4는 금액의 성격을 감정이 아니라 문서로 잘라 준다.",
+        "worstActionReaction": "시설 죄책감만 달래면 세라는 '엄마를 버리는 일'로, 준호는 '안전 조치였다'로 각자 서사를 키운다. 그러는 사이 150만원이 정확히 무엇이었는지 핵심 검증은 또 늦어진다."
       },
       "d-4": {
         "bestAction": "evidence_present",
@@ -1830,8 +1851,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.12
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "작년 가족회의 노트 사진만이 아니라 치매안심센터 돌봄계획서까지 같이 대면시키면, 배회 재발 시 평가입소 진행과 같은 날 공유 원칙이 동시에 고정된다. e-5의 잘린 기억이 e-6의 서명 문구와 붙을 때만 합의 범위가 선명해진다.",
+        "worstActionReaction": "합의했느냐 안 했느냐만 정면으로 따지면 두 사람은 곧 '대기냐 입소냐' 같은 शब्द 해석 싸움으로 빠진다. 그러면 실제 문구와 통보 의무라는 본체는 다시 흐릿해진다."
       },
       "d-5": {
         "bestAction": "empathy_approach",
@@ -1844,8 +1865,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "수치심과 배신감이 강한 쟁점이라 먼저 감정을 눌러야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "세라의 오래된 ICU 상처와 준호의 밤돌봄 피로를 둘 다 인정해 주면, 이번 사건이 단순 악의가 아니라 누적된 배신 기억과 미통보 습관이 겹쳐 폭발했다는 말이 나온다. 공동 책임 구조는 감정의 층을 분리해 줄 때 가장 빨리 열린다.",
+        "worstActionReaction": "누가 먼저 잘못했는지 순번만 세우면 준호는 '현장 고생'으로, 세라는 '또 숨김'으로 되받아친다. 그 결과 현재 배신 프레임을 키운 쌍방 책임은 서로의 방패 뒤에 숨어 버린다."
       }
     },
     "optimalPath": {
@@ -1955,29 +1976,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 보기에는 작년 가을 가족회의에서 배회가 더 심해지면 잠깐 시설 평가입소를 해보자는 말이 오간 것은 어렴풋이 기억한다."
+        "준호가 요양원에 150만원을 보낸 건 저를 몰래 시설에 넣으려는 게 아니라, 작년에 배회가 재발하면 평가입소를 진행하자고 함께 정한 거였어요. 다만 세라한테 먼저 알려야 했는데 그걸 안 한 게 문제였습니다.",
+        "세라도 화가 난 건 이해하지만, 계약 내용을 확인하기 전에 친척 단톡에 '오빠가 엄마를 몰래 시설에 넣었다'고 올린 건 너무 빨랐어요. 150만원은 영구입소가 아니라 환불 가능한 대기금이었거든요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 150만원의 성격이 영구입소 계약금인지, 평가입소용 대기금인지와 준호가 어떤 표현으로 상담했는지 원본 기록으로 확인할 수 있다."
+        "저는 준호가 은솔요양원에 150만원을 보낸 건 확인했는데, 이건 영구입소 확정이 아니라 2주 평가입소용 침상 홀드와 대기등록 비용이었습니다. 환불 가능 금액이에요.",
+        "작년 가을 가족회의 기록에 배회 재발 시 은솔요양원 대기를 진행할 수 있다는 사전 합의가 남아 있었습니다. 다만 준호는 통보를 안 했고 세라는 합의 존재 자체를 축소하며 양쪽 다 사실을 다르게 말하고 있어요."
       ],
       "tp-3": [
-        "기록상 가족회의 메모, 위험 신호 기준, 사전 합의 문구와 최근 상담 기록을 통해 당시 합의의 범위와 통보 원칙을 설명할 수 있다."
+        "이 건의 핵심은 입소 결정 자체가 아니라, 작년 합의를 실행하면서 '같은 날 공유' 원칙을 준호가 안 지킨 것, 그리고 세라가 과거 ICU 지연 연락 기억을 현재에 덧씌워 배신 서사를 먼저 퍼뜨린 것이에요.",
+        "준호는 이번에도 중요한 정보를 늦게 알렸고, 세라는 과거 응급 상황의 트라우마를 사실 확인보다 앞세워 친척들에게 먼저 배신 프레임을 확산시켰습니다. 둘 다 약속을 깬 겁니다."
       ]
     }
   },
   "family-09": {
     "personalityTags": {
       "a": [
-        "victimizing",
-        "face_sensitive",
-        "counter_attack",
-        "relationship_preserving"
+        "victim_identity",
+        "martyr_complex",
+        "selective_quote",
+        "grudge_holding"
       ],
       "b": [
         "avoidant",
-        "face_sensitive",
-        "relationship_preserving",
-        "timeline_padding"
+        "timeline_padding",
+        "blame_shifting",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -2013,11 +2037,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "motive",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "hidden_motive",
+      "t-2": "core_fact",
+      "t-3": "core_fact",
+      "t-4": "circumstantial",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -2031,8 +2055,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.23
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "부모 앞 망신이나 형사 판단부터 꺼내지 말고, 먼저 공식계약 밖 6,600만원 구조를 비공개로 정리하겠다고 선을 그어야 한다. 그래야 민아도 도윤도 중개사 수기 메모와 별도 이체 흐름을 덜 숨기고 '처음부터 둘이 맞췄다'는 말을 꺼낸다.",
+        "worstActionReaction": "처음부터 '누가 횡령했냐'로 몰아붙이면 남매는 각자 2,400만원 선수령과 위임장 선서명만 상대 탓으로 세운다. 그렇게 되면 e-2와 e-5가 가리키는 공모 구조는 마지막까지 묻힌다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -2045,8 +2069,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "어머니에게 '시세만 보는 서류'라고 말한 날의 상담예약표, 부분 위임장 초안, 대기실 CCTV 확인서를 묶어 제시하면 민아의 범위 축소가 버틸 틈이 없다. e-3은 선서명 유도가 일회성 오해가 아니라 준비된 선행 행동이었음을 보여 준다.",
+        "worstActionReaction": "돌봄 부담과 효녀 서사만 받아주면 민아는 재활병원 동행과 공과금 대납을 길게 읊으며 흐름을 바꾼다. 그러면 위임장 선서명 유도는 희생의 부산물처럼 흐려진다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -2059,8 +2083,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "도윤에게 1,300만원 상환 자체보다 왜 그 돈을 '내 몫'으로 먼저 굳혀야 했는지, 또 빚 많은 아들로 찍혀 부동산 실무권을 잃을까 두려웠는지 묻는 편이 먹힌다. 그 질문이 들어가야 e-4의 채무 상환이 단순 현장 처리라는 변명에서 빠져나온다.",
+        "worstActionReaction": "리스 연체 영수증과 카드대금만 흔들면 도윤은 곧 '매수인이 빠지기 직전이었다'며 시세와 명도 상황 이야기로 도망간다. 그러면 선수령의 개인 사용 동기보다 현장 발품만 남는다."
       },
       "d-4": {
         "bestAction": "evidence_present",
@@ -2073,8 +2097,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "공식 매매계약서와 부모 설명 녹취 확인서를 같이 놓으면, 부모가 들은 건 6억4천만원과 통상 비용뿐이고 6,600만원 분배 구조는 빠져 있었다는 점이 바로 드러난다. e-6이야말로 '들었다'와 '못 들었다'를 가르는 결정 자료다.",
+        "worstActionReaction": "부모 치료비 걱정부터 공감하면 남매는 곧 '다 부모 위해서였다'로 손을 잡는다. 그 순간 공식 계약 밖 보전금 구조를 부모에게 숨긴 핵심은 정서 뒤로 물러난다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -2087,8 +2111,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.28
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "세금·명도비 핑계를 얼마나 부풀렸는지 묻기 전에, 먼저 부모에게 돌려줄 돈과 외부 노출 범위를 따로 정리하겠다고 약속해 줘야 한다. 그래야 둘 다 '남는 돈이 별로 없다'는 축소 설명을 공동 방어가 아니라 숨김 전략으로 인정하기 시작한다.",
+        "worstActionReaction": "세목과 수수료 숫자만 캐묻으면 남매는 각자 계산표를 흔들며 '생각보다 안 남는다'는 말싸움으로 빠진다. 그러면 부모에게 구조 자체를 숨긴 고의는 다시 계산 뒤로 숨어 버린다."
       }
     },
     "optimalPath": {
@@ -2196,29 +2220,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 보기에는 상가주택을 팔아 아버지 재활비와 노후자금을 마련하자는 큰 방향은 알고 있었다."
+        "저는 아이들이 집 매각을 서두르는 건 알았지만, 공식 매매가 밖으로 따로 빼 둔 보전금을 나눠 갖기로 한 줄은 몰랐어요. '세금이랑 수수료 때문에 남는 돈이 적다'고만 들었거든요.",
+        "민아가 제 인감 사용 동의를 받으러 올 때도 '시세만 물어보는 서류'라고 했습니다. 뒤에 그렇게 복잡한 셈이 붙어 있는 줄은 몰랐어요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 공식 계약 밖 6,600만원 명도·수리 보전금, 형제의 분배 요구, 별도 이체 순서를 직접 알고 있다."
+        "민아와 도윤은 공식 매매가를 정하고, 별도 보전금을 중개사와 미리 맞춰 나눠 갖기로 합의해 놓고 있었습니다. 부모님 앞에서는 효도 이야기지만 둘만 남으면 계산이 차가웠어요.",
+        "도윤은 먼저 받은 자기 몫 중 상당 부분을 개인 장비리스 연체와 카드대금에 써 버렸습니다. 민아는 어머니 인감을 '시세 확인용'이라며 미리 받아 뒀고요. 둘 다 부모에게 보전금 구조 자체를 숨겼어요."
       ],
       "tp-3": [
-        "기록상 공식 매매계약서의 가격, 부모 위임장 작성 경위, 부모가 실제로 들은 설명 범위를 원본 서류 기준으로 확인할 수 있다."
+        "저는 부모님이 공식 매매가와 통상 비용만 들었을 뿐, 별도 보전금이 형제 분배 대상으로 빠져 있다는 구조는 듣지 못했다고 확인했습니다.",
+        "이 건에서 민아가 '도윤이 혼자 숨겼다'고 몰아붙인 그 돈은 한쪽 단독 은닉이 아니라, 남매가 중개사와 함께 공식 매매가 밖으로 빼 돌려 나눠 갖기로 먼저 합의한 공모의 산물이었습니다."
       ]
     }
   },
   "family-10": {
     "personalityTags": {
       "a": [
-        "victimizing",
-        "face_sensitive",
-        "relationship_preserving",
-        "fairness_obsessed"
+        "victim_identity",
+        "martyr_complex",
+        "fairness_obsessed",
+        "emotionally_volatile"
       ],
       "b": [
         "avoidant",
-        "face_sensitive",
-        "relationship_preserving",
-        "timeline_padding"
+        "conflict_avoidant",
+        "shame_sensitive",
+        "selective_quote"
       ]
     },
     "contentTags": {
@@ -2254,11 +2281,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "subjective_claim",
+      "t-2": "core_fact",
+      "t-3": "core_fact",
+      "t-4": "core_fact",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -2272,8 +2299,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "양가 부모 앞 체면 문제로 이미 번진 사건이라, 먼저 누구 집을 더 무시했는지 공개 판정하지 않겠다고 선을 그어야 민재도 잘린 단톡 원문 전체를 꺼낸다. 비공개 안전선이 생겨야 '되면 금요일 밤'이라는 조건부 문장이 살아난다.",
+        "worstActionReaction": "잘린 캡처 한 줄만 들이대면 다은은 '금요일 밤에 갈게'만 붙잡고, 민재는 '점심쯤' 같은 뭉툭한 말로 버틴다. 표현 전체를 확인하기보다 각자 자기 해석만 더 굳힌다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -2286,8 +2313,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "민재에게 왜 오후 늦게 이미 못 간다는 걸 알고도 밤까지 미뤘는지, 무책임한 동생 소리 들을까 무서워 말을 끌었는지 묻는 게 좋다. 그 질문이 들어가야 교통 핑계 뒤에 숨은 회피가 드러난다.",
+        "worstActionReaction": "하이패스 기록과 업무표만 계산하면 민재는 거래처 미팅, 차 막힘, 과일상자 예약을 끝없이 늘어놓는다. 늦게 말한 이유라는 핵심은 바쁜 일정 더미 속에 파묻힌다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -2300,8 +2327,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "다은에게 반찬가게 영수증보다 왜 메뉴를 늘리면서도 민재와 다시 비용 얘기를 안 했는지, '어차피 내가 또 다 할 것'이라는 확신이 있었는지 묻게 되면 숨은 전제가 나온다. 그때 장보기 확대가 단순 정성이 아니라 조율 포기였다는 점이 보인다.",
+        "worstActionReaction": "정육점 수량과 전값만 따지면 다은은 곧 전, 나물, 과일, 설거지를 한꺼번에 읊으며 고생 총량으로 판을 바꾼다. 메뉴 확대 미공유라는 쟁점은 노동 경쟁에 밀려 버린다."
       },
       "d-4": {
         "bestAction": "evidence_present",
@@ -2314,8 +2341,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "20만원 이체 내역과 어머니의 '용돈 잘 받았다' 답장을 같이 보여 주면 돈의 명목이 재료비가 아니라 부모 용돈이었다는 점이 단단해진다. e-4 하나로 다은의 당연한 정산 가정이 크게 흔들린다.",
+        "worstActionReaction": "다은이 얼마나 지쳤는지만 받아주면 20만원은 다시 '당연히 내 장보기 정산'처럼 뭉개진다. 감정은 커져도 돈의 성격을 가르는 검증은 뒤로 미뤄진다."
       },
       "d-5": {
         "bestAction": "empathy_approach",
@@ -2328,8 +2355,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "수치심과 배신감이 강한 쟁점이라 먼저 감정을 눌러야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "둘 다 '또 내가 손해 봤다'는 감정이 강하니, 누가 더 힘들었는지보다 작년 역할표를 왜 문장으로 남기라 했는지 먼저 짚어 주는 게 좋다. 그 순간 이번 명절 실패가 한쪽 배신이 아니라 규칙 미이행의 공동 문제로 옮겨 간다.",
+        "worstActionReaction": "누가 몇 시에 도착했고 얼마를 썼는지만 재면 남매는 각자 자기 억울함 증거만 들고 나온다. 그러면 명절 분담 원칙을 둘 다 놓친 구조는 다시 계산표 밖으로 밀려난다."
       }
     },
     "optimalPath": {
@@ -2439,29 +2466,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 보기에는 금요일 밤이냐 토요일 아침이냐는 헷갈렸지만, 다은이 메뉴를 조금 늘렸고 민재가 부모 용돈 20만원을 따로 보낸 사실은 안다."
+        "다은은 금요일까지 과일, 고기, 전 종류를 늘리고 반찬가게 주문까지 추가했는데, 민재와 비용 항목을 다시 합의하지 않았어요. 본인이 알아서 준비한 거예요.",
+        "민재는 금요일 저녁 출발이 어렵다는 걸 오후에 이미 알았는데, 다은에게는 밤이 다 돼서야 '아침에 가겠다'고 알렸습니다. 늦은 통보와 확대된 준비가 겹쳐서 서운함이 폭발한 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 다은이 처음 잡아둔 고기 주문량과 전날 밤 갑자기 늘어난 추가 주문 시각을 확인할 수 있다."
+        "민재의 원래 메시지는 '되면 금요일 밤, 안 되면 토요일 아침'이었습니다. 무조건 금요일에 온다는 확정 약속은 아니었어요. 다만 다은은 '금요일 밤'만 기억하고 준비를 확대한 거예요.",
+        "또 문제가 된 20만원은 민재가 어머니 용돈으로 보낸 돈이지, 다은과 합의한 재료비 분담금이 아니었습니다. 같은 송금을 서로 다른 의미로 이해하면서 돈 문제까지 겹쳤어요."
       ],
       "tp-3": [
-        "기록상 작년 짧게 받았던 가족상담에서 명절 역할표와 비용 항목을 문장으로 정확히 적으라고 권고한 기록을 갖고 있다."
+        "남매는 작년에 도착 시간, 메뉴 확정, 비용 항목을 미리 적기로 약속했지만, 민재는 통보를 늦췄고 다은은 규모 변경을 공유하지 않았습니다. 작년 규칙을 둘 다 안 지킨 거예요.",
+        "이 건은 누가 더 서운한지보다, 같은 메시지를 서로 다르게 읽고 확인 한 통화를 끝까지 미룬 구조가 반복되는 게 핵심입니다."
       ]
     }
   },
   "family-11": {
     "personalityTags": {
       "a": [
-        "victimizing",
-        "face_sensitive",
-        "third_party_protective",
-        "counter_attack"
+        "martyr_complex",
+        "victim_identity",
+        "manipulative",
+        "authority_challenging"
       ],
       "b": [
         "cold_logical",
-        "fairness_obsessed",
         "privacy_sensitive",
-        "face_sensitive"
+        "detail_obsessed",
+        "authority_challenging"
       ]
     },
     "contentTags": {
@@ -2497,11 +2527,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "subjective_claim",
+      "t-3": "core_fact",
+      "t-4": "circumstantial",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -2515,8 +2545,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "하원 변경 로그, 조기 하원 시각, 사설 클리닉 신청서의 보호자 기재란을 한 묶음으로 제시하면 연숙의 행동이 '도와준 것'이 아니라 부모 동의 밖 결정이었다는 점이 분명해진다. e-2는 선의 주장보다 절차 침범을 먼저 고정해 준다.",
+        "worstActionReaction": "손주 걱정을 먼저 달래면 연숙은 곧 '내가 안 봤으면 더 큰일'로 올라탄다. 그러면 무단 하원과 보호자 허위 기재는 보호자 희생담 뒤로 숨어 버린다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -2529,8 +2559,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "하린에게 엄마 개입이 싫었다면 왜 야근 주간마다 태블릿 식사와 긴급 픽업을 다시 맡겼는지, 도움을 끊지 못한 미안함과 필요를 함께 말하게 해야 한다. 그 질문이 들어가야 일관된 양육 원칙이 왜 실제론 흔들렸는지가 열린다.",
+        "worstActionReaction": "업무캘린더와 태블릿 로그만 들이대면 하린은 '야근 주간만 그랬다'며 범위를 줄이고 버틴다. 그러면 조모 의존을 재조율하지 않은 책임은 끝까지 주변화된다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -2543,8 +2573,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "잘린 담임 메시지 앞뒤 문장과 상담일지를 함께 붙이면, '검사부터 하라'가 아니라 수면·등원 리듬과 보호자 소통을 정리하라는 실제 권고가 살아난다. e-1의 잘린 공포를 e-6의 원문이 바로잡아 주는 구조다.",
+        "worstActionReaction": "아이 발달 불안만 공감해 버리면 연숙은 학습 걱정을, 하린은 경계 침범 분노를 더 키운다. 정작 교사와 상담사의 실제 권고 원문은 감정 싸움 뒤로 밀려난다."
       },
       "d-4": {
         "bestAction": "empathy_approach",
@@ -2557,8 +2587,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "수치심과 배신감이 강한 쟁점이라 먼저 감정을 눌러야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "예전 응급실 밤을 곧바로 처벌 프레임으로 몰지 말고, 모두가 겁에 질려 기록도 정리 못 한 밤이었다는 분위기부터 받아줘야 약봉투 사진과 투약 간격 문제가 입 밖으로 나온다. 수치심이 큰 기억이라 공감이 먼저 문을 연다.",
+        "worstActionReaction": "약 이름과 시각만 캐묻으면 연숙은 '급한 밤이라 헷갈렸다'로 버티고, 하린도 흐릿한 기억을 끌어오느라 단순 고열 프레임만 더 굳힌다. 핵심은 숫자보다 숨긴 불안이다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -2571,8 +2601,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.1,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "이미 픽업권 차단과 교사 메시지 친척 전달까지 외부 노출이 생긴 사건이니, 더 퍼뜨리지 않고 부모·조모 권한선만 다시 그리겠다고 약속해 주면 두 사람 다 자기 위반을 조금씩 인정한다. 비밀 보장이 있어야 '나도 선을 넘었다'는 말이 나온다.",
+        "worstActionReaction": "동의서 문장만 들이대면 연숙은 손주 안전을, 하린은 엄마 침범을 더 크게 세우며 서로 자기 예외만 주장한다. 규칙을 둘 다 다른 방식으로 깼다는 구조는 법조문 싸움 속에 사라진다."
       }
     },
     "optimalPath": {
@@ -2684,13 +2714,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 기억하기로는 현재의 무단 하원과 클리닉 예약, 그리고 하린이 픽업권을 끊은 이유를 안다."
+        "연숙 할머니는 부모 동의 없이 유치원 하원 시간을 바꾸고, 준서를 사설 언어·집중 상담 클리닉에 데려가면서 자신을 보호자로 기재했어요. 걱정에서 출발한 건 맞지만 선을 넘었습니다.",
+        "하린도 할머니 개입에 화가 난 건 이해하지만, 야근 주간에 태블릿 식사와 할머니 긴급 픽업에 의존하면서도 다시 조율을 안 한 건 문제였어요. 과거 중복 투약 사건 이후 두려움이 깊어서 더 격하게 반응한 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 연숙이 별도 상담과 조기 하원을 요구한 사실, 그리고 원래 권고가 생활리듬 정리에 가까웠다는 점을 알고 있다."
+        "담임교사의 실제 권고는 추가 검사나 학습이 아니라 수면·등원 리듬과 부모-교사 소통을 먼저 맞추라는 거였습니다. 할머니는 그걸 다른 조치로 해석해서 사설 상담까지 데려간 거예요.",
+        "준서의 응급실 방문도 단순 고열만이 아니라, 할머니가 성인용 감기시럽과 해열제를 짧은 간격으로 중복 투약한 흐름이 겹쳐 있었습니다. 걱정에서 시작됐지만 결과는 위험했어요."
       ],
       "tp-3": [
-        "기록상 부모 동의서 원칙과 조부모의 직접 연락 금지 합의, 실제 상담 권고 내용을 기록으로 설명할 수 있다."
+        "의료·교육 결정은 부모 동의 후에 하기로 약속했는데, 연숙은 직접 클리닉을 잡고 보호자를 자기로 기재했고 하린은 즉시 픽업권을 끊고 교사 메시지를 친척에게 돌리며 규칙을 같이 무너뜨렸습니다.",
+        "이 건은 누가 아이를 아끼느냐가 아니라, 아이 돌봄의 결정 권한을 누가 갖느냐에서 선이 흐려진 겁니다. 양쪽 다 다른 명분으로 같은 약속을 어겼어요."
       ]
     }
   },
@@ -2698,15 +2731,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "confrontational",
-        "face_sensitive",
-        "counter_attack",
-        "retaliation_sensitive"
+        "manipulative",
+        "retaliation_sensitive",
+        "face_sensitive"
       ],
       "b": [
         "cold_logical",
-        "fairness_obsessed",
-        "face_sensitive",
-        "shame_sensitive"
+        "detail_obsessed",
+        "shame_sensitive",
+        "selective_quote"
       ]
     },
     "contentTags": {
@@ -2742,11 +2775,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "emotional_context",
+      "t-2": "subjective_claim",
+      "t-3": "core_fact",
+      "t-4": "core_fact",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -2760,8 +2793,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "가족방, 고모방, 제사준비방 전달 로그를 순서대로 붙이면 지연이 한 번 감정적으로 올린 게 아니라 여러 방에 같은 낙인을 반복 확산시켰다는 점이 드러난다. e-5의 순서가 공개 비난의 무게를 가장 정확히 보여 준다.",
+        "worstActionReaction": "장녀로서 얼마나 힘들었는지만 먼저 받아주면 지연은 곧 '어머니 보호' 프레임으로 숨어 버린다. 그러면 현우를 여러 방에서 공개 망신 준 책임은 보호 서사에 가려진다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -2774,8 +2807,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면과 자기정당화의 이유를 말하게 만들면, 감춰 둔 핵심이 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "현우에게 숫자 자체보다 왜 장례 중에도 사촌에게 중복 식대와 화환을 먼저 물었는지, 정산이 숨겨질까 불안했는지 묻게 되면 차가운 표현 뒤의 불신이 드러난다. 그때 비로소 무심한 말이 어디서 왔는지 보인다.",
+        "worstActionReaction": "식대 합계와 화환 수량만 다시 계산하면 현우는 곧 회계 검증 모드로 올라탄다. 상중에 그 말을 흘린 무심함은 숫자 더미 뒤로 숨어 버린다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -2788,8 +2821,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사와 명분 포장만 길어지고 핵심 확인이 늦어진다."
+        "bestActionHint": "문제 캡처와 현우-사촌 원본 채팅을 같은 문장 단위로 대조하면, 정산 질문은 있어도 '엄마 통장부터 보자' 같은 모욕 문장은 원본에 없다는 점이 바로 드러난다. e-1과 e-2를 붙여야 오해가 아닌 위조 문구 삽입이 보인다.",
+        "worstActionReaction": "현우가 억울해하는 마음만 달래면 지연은 다시 '애도 중에 그런 말을 한 것 자체가 문제'로 돌아간다. 그 순간 문제 문장이 원본이었는지 여부는 또 뒤로 밀린다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -2802,8 +2835,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "위조 여부는 이미 친척 평판과 얽혀 있으니, 재판관이 추가 전파를 막고 포렌식 감정서와 나와의 채팅 임시문장을 비공개로 보겠다고 해야 한다. 그래야 지연도 편집 흔적을 덜 숨기고 e-3, e-4 대면이 가능해진다.",
+        "worstActionReaction": "캡처 한 장만 들고 '합성이냐 아니냐'를 몰아붙이면 지연은 곧 현우의 차가운 태도 비난으로 튄다. 그러면 합성 과정 로그와 자동저장 파일이라는 결정 자료가 또 감정 뒤로 밀린다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -2816,8 +2849,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "가족 체면과 제3자 노출 불안을 낮춰야 진술 폭이 넓어지고 핵심이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석에 숨어 방어가 더 단단해진다."
+        "bestActionHint": "장례 후 정산은 원래 조용히 하기로 했던 만큼, 먼저 친척방 밖에서 문제를 수습하겠다는 안전선을 줘야 현우의 사이드채팅과 지연의 공개망신이 둘 다 규칙 위반이었다는 말이 나온다. 체면 보호가 선행돼야 공동 파기가 인정된다.",
+        "worstActionReaction": "누가 먼저 규칙을 깼는지만 따지면 현우는 사적 질문을, 지연은 가족방 보호를 내세워 서로의 파기를 정당화한다. 그러면 공유 원칙이 두 사람 손에서 함께 무너졌다는 본질은 다시 흐려진다."
       }
     },
     "optimalPath": {
@@ -2927,13 +2960,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 기억하기로는 두 자녀가 장례 후 정산은 조용히 하자고 약속한 사실과, 지연이 캡처를 보여준 뒤 친척들이 현우를 비난하기 시작했다는 점을 안다."
+        "지연이 가족방에 캡처를 올리자 '현우가 상갓집도 정산이라며 엄마 통장부터 보자고 했다'는 말이 순식간에 퍼졌어요. 슬픔이 가시기도 전에 현우를 악역으로 정해 버린 분위기였습니다.",
+        "현우가 사촌에게 화환과 식대 중복을 차갑게 따진 건 사실이에요. 다만 가족방에 돈 캡처처럼 아버지 장례와 어머니 통장을 한 문장으로 비하한 건 현우의 원문이 아니었어요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 현우가 보낸 원래 비용 문의 메시지와 지연이 나중에 돌린 캡처 문장이 서로 다르다는 점을 직접 비교할 수 있다."
+        "지연은 캡처를 가족방, 고모방, 제사준비방에 차례로 올렸습니다. 내용을 따지기 전에 '저런 마음으로 장례를 치렀냐'는 반응이 먼저 터지면 이미 캡처의 진위를 물을 분위기가 아니에요.",
+        "현우가 비용 불만을 사촌에게 차갑게 말한 건 사실이지만, 가족방 캡처처럼 장례와 통장을 한 문장으로 비하한 표현은 보내지 않았습니다. 비용 질문은 스프레드시트로 하기로 한 약속을 현우도 어긴 건 맞지만요."
       ],
       "tp-3": [
-        "기록상 문제의 이미지가 여러 메시지를 이어 붙인 합성본인지, PC 카카오톡 캐시와 클라우드 동기화 기록으로 확인할 수 있다."
+        "저는 가족방에 올라간 캡처를 보면, 현우의 원문이 아니라 서로 다른 대화의 말풍선과 지연이 따로 적어 둔 문장을 이어 붙인 위조 이미지라는 걸 확인했습니다.",
+        "현우는 정산 질문과 중복 비용 문제를 제기한 적은 있지만, 캡처처럼 장례와 통장을 비하하는 표현을 보내지 않았습니다. 비용 질문은 1:1 통화로만 하기로 했지만 현우는 사이드채팅으로, 지연은 공개 캡처로 약속을 함께 깼어요."
       ]
     }
   },
@@ -2941,15 +2977,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "avoidant",
-        "face_sensitive",
+        "shame_sensitive",
         "timeline_padding",
         "relationship_preserving"
       ],
       "b": [
         "confrontational",
-        "selective_quote",
-        "face_sensitive",
-        "counter_attack"
+        "fairness_obsessed",
+        "counter_attack",
+        "retaliation_sensitive"
       ]
     },
     "contentTags": {
@@ -2985,11 +3021,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "emotional_context",
+      "t-3": "circumstantial",
+      "t-4": "core_fact",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -3003,8 +3039,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "도윤에게 왜 숙소 환급금을 바로 말하지 않고 택시값과 스스로 상계하려 했는지 캐묻는 편이 좋다. 친구들 사이에서 계산 흐린 사람으로 보이기 싫었던 계산이 입으로 새기 시작한다.",
+        "worstActionReaction": "환급 입금 시각만 들이대면 도윤은 곧 \"여행 전체로 보면\"이라는 큰 틀로 도망친다. 정산표 반영 지연보다 전체 맥락 논쟁으로 쟁점을 바꿔 버린다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -3017,8 +3053,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "하린의 스토리 보관본과 김수아 대화창을 같이 붙이면, 단순 분노 표출이 아니라 제3자 확산 선택이었다는 점을 피하기 어렵다. 캡처 한 장이 누구에게 어떻게 나갔는지가 핵심이다.",
+        "worstActionReaction": "하린의 억울함만 먼저 받아주면 그는 18만4천 화면만 다시 꺼내 들며 피해 서사로 올라탄다. 공통 친구 공유와 SNS 저격 문제는 뒤로 밀려난다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -3031,8 +3067,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.18
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "동기를 먼저 단정하면 억측으로 받아들여 사실 확인 전부터 닫힌다."
+        "bestActionHint": "정산 앱 원본 CSV에 숙소 환급 반영 시점과 택시 결제 취소 대기를 나란히 대면하면, 둘이 붙잡은 중간 숫자가 임시 화면이었다는 점이 즉시 드러난다.",
+        "worstActionReaction": "누가 더 얄밉게 굴었는지부터 따지면 실제 차액 계산은 감정 싸움에 묻힌다. 중간 캡처가 왜 부풀려 보였는지 검증할 기회가 사라진다."
       },
       "d-4": {
         "bestAction": "empathy_approach",
@@ -3045,8 +3081,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "수치심과 관계 손상 두려움이 강해 먼저 압박을 낮춰야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "도윤에게 갚기 싫었느냐고 몰기보다 왜 혼자 환급금과 택시비를 맞춰도 된다고 여겼는지 비난 없이 묻는 쪽이 유효하다. 체면 때문에 미뤘던 차용금 얘기가 그때 나온다.",
+        "worstActionReaction": "영수증 금액만 세게 밀어붙이면 도윤은 택시비, 보증금, 전체 여행비를 한 덩어리로 뭉개 버린다. 별도 차용 문제를 끝까지 흐리게 만든다."
       },
       "d-5": {
         "bestAction": "motive_search",
@@ -3059,8 +3095,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "부산 때 정한 \"원본 보기 전엔 밖에 말하지 말자\" 규칙을 두 사람이 왜 각자 어겼는지 동기부터 가르면, 도윤의 은닉과 하린의 공개 확산이 같은 불신에서 나왔다는 구조가 드러난다.",
+        "worstActionReaction": "누가 먼저 잘못했는지만 순번으로 재면 둘 다 자기에게 유리한 장면 하나만 붙든다. 쌍방 규칙 위반이라는 결론은 끝까지 뒤로 밀린다."
       }
     },
     "optimalPath": {
@@ -3164,13 +3200,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 하린이 정산 캡처를 먼저 보냈고, 도윤이 보증금 환급을 택시비와 상계하려 했다는 말을 뒤늦게 전해 들었다. 다만 그걸 가지고 둘이 왜 그렇게까지 갔는지는 제가 단정하긴 어렵습니다."
+        "여행 직후 정산 앱에 18만4천원 차이가 찍혀 있었는데, 나중에 보니 숙소 보증금 환급과 공항 택시 취소 대기가 반영 안 돼서 부풀려진 숫자였어요. 실제 차액은 2만2천원 수준이었습니다.",
+        "도윤이 보증금 환급 9만2천원을 바로 알리지 않은 건 문제였고, 하린이 정산이 확정되기 전에 SNS 저격과 공통 친구에 캡처를 먼저 보낸 것도 문제였어요. 액수보다 태도에서 서운함이 터진 겁니다."
       ],
       "tp-2": [
-        "기록상 두 사람이 사용한 정산 앱의 분배 설정과 여행 공용 비용 업로드 시점을 원본 기준으로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "정산 앱 중간 화면의 큰 차이는 보증금 환급과 택시 카드 취소 대기가 반영되기 전의 착시였습니다. 최종 정산하면 택시 차용분 포함 실제 차액은 2만2천원 수준이에요.",
+        "도윤은 공항 택시비 자기 몫 7만원을 하린이 대신 낸 뒤, 보증금과 상계하면 된다고 혼자 판단했어요. 둘 다 '원본 영수증으로만 정산하고 제3자에게 먼저 말 안 하기' 약속을 깼습니다."
       ],
       "tp-3": [
-        "기록상 숙소 보증금 반환 시각, 환급 계좌, 체크아웃 당일 안내 메시지 원본을 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "저는 숙소 보증금 9만2천원을 도윤 계좌로 환급한 기록이 남아 있습니다. 그런데 두 분이 따로따로 연락해 오셔서, 정산이 아직 맞춰지지 않았다는 걸 바로 알았어요.",
+        "같은 환급금인데 도윤은 '상계할 돈'으로, 하린은 '숨긴 돈'으로 이해하고 있었습니다. 금액보다 설명이 공유되지 않은 게 오해를 키웠어요."
       ]
     }
   },
@@ -3178,15 +3217,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "cold_logical",
-        "fairness_obsessed",
         "privacy_sensitive",
-        "selective_quote"
+        "selective_quote",
+        "trust_broken"
       ],
       "b": [
-        "victimizing",
-        "face_sensitive",
-        "counter_attack",
-        "relationship_preserving"
+        "victim_identity",
+        "blame_shifting",
+        "relationship_preserving",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -3222,11 +3261,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "emotional_context",
+      "t-3": "circumstantial",
+      "t-4": "core_fact",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -3240,8 +3279,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "비공개 보호를 보장해야 새 확산 걱정 없이 핵심 정보를 말할 수 있다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "민재에게 배신자 낙인을 벗겨 줄 안전선부터 깔아 주고, 박서후에게 어디까지 털어놨는지를 분리해 묻는 편이 좋다. 비밀을 넘긴 범위를 수치심 없이 말하게 만들어야 한다.",
+        "worstActionReaction": "전달한 파일 양과 문장 수부터 세게 들이치면 민재는 곧 \"중간에서 막으려던 거였다\"는 선의 포장으로 숨는다. 제3자 전달 사실보다 의도 해명만 길어진다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -3254,8 +3293,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "태블릿 자동로그인 기록과 친한친구 스토리 보관본을 같이 놓고 보면, 가은이 우연히 본 척하거나 그냥 답답해서 올렸다고만 버티기 어려워진다.",
+        "worstActionReaction": "배신감부터 크게 공감해 주면 가은은 저격 스토리를 정당한 분노처럼 설명한다. 태블릿 알림 무단 확인과 공개 암시가 한꺼번에 가려진다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -3268,8 +3307,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1.02
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "보조계정 접속기기, 게시 시각, 삭제 전 보존 로그를 정면으로 붙이면 \"표현이 민재 말투였다\"는 추정이 깨진다. 직접 작성자와 의심 대상이 갈라지는 순간이다.",
+        "worstActionReaction": "민재의 억울함만 달래면 그는 상처받은 중간자 역할에 머문다. 박서후 계정 흔적을 짚어야 할 타이밍이 감정 해명으로 흘러간다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -3282,8 +3321,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.25,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "비공개 보호를 보장해야 새 확산 걱정 없이 핵심 정보를 말할 수 있다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "박서후 이름을 보호 장치 없이 들이미는 대신, 민재가 누구를 살리려다 더 꼬이게 했는지 비밀 보호 맥락에서 접근해야 한다. 그래야 편집 음성파일과 전달 순서가 입 밖으로 나온다.",
+        "worstActionReaction": "박서후를 공범이라고 초반부터 단정하면 민재는 결탁자로 보일까 봐 바로 닫힌다. 그 뒤로는 \"난 직접 올린 적 없다\"만 반복하게 된다."
       },
       "d-5": {
         "bestAction": "motive_search",
@@ -3296,8 +3335,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "가은이 왜 스토리로 쏘았고 민재가 왜 박서후를 택했는지 동기를 따로 떼어 물으면, 둘 다 사적인 비밀을 동호회 평판 싸움에 끌어온 선택이 선명해진다.",
+        "worstActionReaction": "전달 시각과 게시 순서만 줄 세우면 둘 다 상대의 큰 잘못만 고른다. 자기 쪽 외부화는 예외였다는 식으로 빠져나갈 구멍이 생긴다."
       }
     },
     "optimalPath": {
@@ -3403,29 +3442,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "민재가 저한테 가은 관련 자료 일부를 보낸 건 맞습니다. 다만 그 뒤에 그 자료가 어디까지 돌고 어떻게 편집됐는지는 운영 기록까지 같이 봐야 합니다."
+        "처음엔 가은씨와 민재 사이의 사적인 고민인 줄 알았어요. 그런데 며칠 뒤 온라인 커뮤니티에 가은의 비밀 연애와 동호회 역할 문제가 익명으로 올라왔고, 제 이름도 주변에 묶이기 시작했습니다.",
+        "더 당황스러웠던 건 그 익명 글이 민재가 올린 게 아니라는 점이에요. 나중에 알고 보니 민재가 넘긴 자료를 편집해서 익명계정으로 뿌린 건 공통 친구 서후 쪽이었습니다."
       ],
       "tp-2": [
-        "기록상 익명 제보가 들어온 시각, 운영진에게 전달된 음성파일 경로, 모임 배정 변경 요청의 흐름을 원본 기준으로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "민재는 가은이 보낸 비밀 음성메모와 대화 요약을 공통 친구 서후에게 넘기며 조언을 구했습니다. 그것 자체가 가은의 신뢰를 깬 거예요.",
+        "가은도 카페에 남겨진 민재 태블릿 알림을 무단으로 확인하고, 곧바로 민재를 겨냥한 인스타 스토리를 올렸습니다. 둘 다 '사적 비밀을 평판 싸움에 안 쓰기' 약속을 깼어요."
       ],
       "tp-3": [
-        "기록상 익명 게시글과 댓글의 작성 계정, 접속 기기 정보, 삭제 전 보존 로그를 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "저는 익명 글과 댓글의 작성자가 민재가 아니라는 걸 확인했습니다. 서후의 보조 계정에서 올라간 것이었고, 가은의 음성메모도 서후가 잘라 편집해서 뿌린 거예요.",
+        "민재는 비밀을 서후에게 넘긴 책임이 있고, 가은은 확인 안 된 상태에서 저격 스토리를 올린 책임이 있습니다. 하지만 자료를 실제로 편집하고 확산시킨 건 제3자인 서후였어요."
       ]
     }
   },
   "friend-03": {
     "personalityTags": {
       "a": [
-        "cold_logical",
-        "fairness_obsessed",
-        "face_sensitive",
-        "selective_quote"
+        "calculated_calm",
+        "detail_obsessed",
+        "manipulative",
+        "shame_sensitive"
       ],
       "b": [
-        "victimizing",
-        "face_sensitive",
-        "counter_attack",
-        "relationship_preserving"
+        "victim_identity",
+        "blame_shifting",
+        "retaliation_sensitive",
+        "face_sensitive"
       ]
     },
     "contentTags": {
@@ -3461,11 +3503,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "emotional_context",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "core_fact",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -3479,8 +3521,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "협업 게시물 댓글 보관본과 지운 스토리 로그를 함께 들이밀면, 지후가 실명은 안 적었어도 나래를 겨눈 선공이었다는 점이 살아난다. 공개 암시가 먼저였는지 확인하는 쟁점이다.",
+        "worstActionReaction": "지후의 장사 스트레스부터 받아주면 그는 문제 댓글을 소비자 경고처럼 포장한다. 협업 게시물 아래 남긴 명예훼손성 표현은 뒤로 숨어 버린다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -3493,8 +3535,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "나래 편집앱 프로젝트 파일과 원본 DM 해시 대조표를 나란히 놓아야 한다. 받은 화면을 옮긴 게 아니라 만들었다는 점이 거기서 갈린다.",
+        "worstActionReaction": "나래의 억울함을 먼저 껴안으면 그는 캡처를 \"정리한 자료\" 정도로 낮춘다. 합성 책임이 자료 형식 논쟁으로 바뀌어 버린다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -3507,8 +3549,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "나래에게 왜 굳이 \"조회수용 피해자\"라는 문장을 한 장짜리 증거처럼 완성해야 했는지 묻는 편이 좋다. 평판을 되찾고 싶었던 조작 동기가 드러나야 원문 여부가 풀린다.",
+        "worstActionReaction": "상처받은 협업자라는 자리부터 주면 그는 위조를 자기보호적 재구성처럼 부른다. 원문 export와 합성 이미지 대조가 계속 미뤄진다."
       },
       "d-4": {
         "bestAction": "motive_search",
@@ -3521,8 +3563,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "지후가 왜 배송 지연을 곧바로 \"나래가 돌렸다\"로 읽었는지 파고들면, 장사 평판 불안이 물류 지연을 도덕 문제로 키운 과정을 끌어낼 수 있다.",
+        "worstActionReaction": "고객 항의가 힘들었다는 말만 받아주면 지후는 물류 확인서보다 자기 불안만 반복한다. 반납 등록 지연이라는 실무 원인이 뒷전이 된다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -3535,8 +3577,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.12
         },
-        "bestActionHint": "비공개 보호를 보장해야 새 확산 걱정 없이 핵심 정보를 말할 수 있다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "둘 다 팔로워와 운영자 앞 체면에 묶여 있으니, 협업 채널 밖 공개행동을 일단 분리해 안전하게 다뤄야 한다. 그래야 댓글 선공과 위조 재게시가 차례로 인정된다.",
+        "worstActionReaction": "누가 더 상처받았는지만 다독이면 두 사람 모두 자기 공개행동을 맞대응으로만 줄인다. 비공개 약속을 둘 다 깼다는 핵심이 흐려진다."
       }
     },
     "optimalPath": {
@@ -3647,13 +3689,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 나래에게서 문제 캡처를 먼저 받았고, 지후가 올렸다 지운 스토리 문구도 직접 봤다. 다만 그걸 가지고 둘이 왜 그렇게까지 갔는지는 제가 단정하긴 어렵습니다."
+        "지후가 같은 협업 게시물 아래 '협찬 물건도 자기 서사로 바꿔 판다'는 식으로 나래를 특정할 수 있는 댓글과 스토리를 먼저 올렸어요. 실명은 안 썼지만 알아볼 수 있었습니다.",
+        "나래도 기존 대화 조각을 붙여서 지후가 자기를 조롱한 것처럼 보이는 캡처를 만들고, 운영자와 공통 친구에게 돌렸어요. 그 캡처가 지후의 실제 원문이 아니라는 게 나중에 밝혀졌습니다."
       ],
       "tp-2": [
-        "기록상 신고 접수 시각, 숨김 처리된 댓글, 나래가 첨부한 캡처 파일과 지후 삭제 요청 여부를 원본 기준으로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "지후의 공개 댓글이 먼저 나갔고, 나래의 위조 캡처가 뒤따랐습니다. 둘 다 '협업 갈등을 공개 게시물로 안 끌고 간다' 약속을 깼어요.",
+        "나래가 협찬품을 유용했다는 의혹도 있었는데, 실제로는 협업사의 일괄 반납 등록 지연 때문이었습니다. 개인 판매나 보관에 돌린 사실은 확인되지 않았어요."
       ],
       "tp-3": [
-        "기록상 협찬품 물류 로그, 반납 등록 지연 사유, DM export 대조 리포트 작성 과정을 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "저는 문제의 DM 캡처를 확인했는데, 지후가 보낸 단일 원문이 아니라 서로 다른 시기의 대화 버블과 프로필 레이어를 합쳐 만든 위조 이미지였습니다.",
+        "지후의 공개 저격도 문제지만, 나래가 위조 캡처를 근거로 운영자에게 신고하고 친구들에게 퍼뜨린 것도 같은 무게입니다. 둘 다 '협업 갈등 비공개' 원칙을 어겼어요."
       ]
     }
   },
@@ -3662,14 +3707,14 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       "a": [
         "confrontational",
         "fairness_obsessed",
-        "face_sensitive",
-        "counter_attack"
+        "emotionally_volatile",
+        "detail_obsessed"
       ],
       "b": [
         "avoidant",
-        "shame_sensitive",
-        "relationship_preserving",
-        "timeline_padding"
+        "conflict_avoidant",
+        "timeline_padding",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -3705,11 +3750,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "motive",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "subjective_claim",
+      "t-4": "circumstantial",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -3723,8 +3768,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "다혜에게 왜 판매자의 재촉을 듣자마자 \"일단 묶자\"로 달렸는지 묻게 되면, 거래를 놓치고 싶지 않았던 조급함이 드러난다. 예약금 선지급은 감정보다 그 초조함에서 나왔다.",
+        "worstActionReaction": "송금 시각만 세게 따지면 다혜는 곧 \"그때 바로 답했어야지\"로 방향을 튼다. 자기 선지급보다 현우의 늦은 반응이 전면에 선다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -3737,8 +3782,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "현우가 판매자에게 보낸 \"사진대로면 갈게요\" 메시지와 픽업 직후 철회 문장을 나란히 보여 주면, 검토였을 뿐이라는 후퇴가 흔들린다.",
+        "worstActionReaction": "하자 물건 떠안을까 무서웠다는 말만 받으면 현우는 자기 문장을 \"가능성 열어둔 답\" 정도로 축소한다. 확정처럼 들린 표현 책임이 사라진다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -3751,8 +3796,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "픽업 사진, 냄새 메모, 누락 부속품 고지를 한 번에 놓고 \"괜찮다\"에 각자 무엇을 넣었는지 분리해 묻는 게 정답이다. 찢김 기준과 냄새 기준이 달랐다는 점이 핵심이다.",
+        "worstActionReaction": "둘 다 캠핑 가고 싶었다는 분위기만 다독이면 찢김, 냄새, 방수, 구성품이 한데 섞인다. 결국 무엇을 합의했는지 다시 흐려진다."
       },
       "d-4": {
         "bestAction": "motive_search",
@@ -3765,8 +3810,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "누가 거래를 놓칠까 더 초조했는지부터 캐면, 다혜의 반반 발언과 현우의 애매한 확답이 왜 판매자에게는 같은 신호로 읽혔는지 풀린다.",
+        "worstActionReaction": "누구 메시지가 먼저였는지만 줄 세우면 두 사람 모두 상대 한 문장만 문제 삼는다. 자기가 보낸 확정 신호는 말투 차이로 축소해 버린다."
       },
       "d-5": {
         "bestAction": "empathy_approach",
@@ -3779,8 +3824,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "수치심과 관계 손상 두려움이 강해 먼저 압박을 낮춰야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "작년 예약금 싸움이 남긴 불신을 먼저 인정해 주면, 다혜도 현우도 왜 이번에 확인보다 자기식 해석으로 달렸는지 방어가 풀린다. 예전 규칙을 왜 어겼는지가 그다음에 나온다.",
+        "worstActionReaction": "이번 예약금 3만원 책임만 숫자로 재면 둘 다 현재 거래 하나로 몰아간다. 오래된 \"확정 문구\" 문제는 또 살아남는다."
       }
     },
     "optimalPath": {
@@ -3878,29 +3923,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 픽업에 동행해 판매자 설명, 다혜와 현우의 통화 내용, 실제 텐트 상태를 직접 봤다. 다만 그걸 가지고 둘이 왜 그렇게까지 갔는지는 제가 단정하긴 어렵습니다."
+        "현우가 '일단 잡아줘'라고 했을 때 다혜는 구매 허락으로 알아듣고 판매자에게 비환불 예약금 3만원을 바로 보냈어요. 현우는 조건부 보류였는데 다혜는 확정으로 받아들인 거예요.",
+        "픽업 후에 현우가 냄새랑 방수 상태를 보고 반반 부담을 철회하자 다혜는 배신이라고 느꼈어요. 그런데 '상태 괜찮음'의 기준을 처음부터 합의한 적이 없었습니다."
       ],
       "tp-2": [
-        "기록상 판매글 수정 이력, 거래 완료 시각, 재판매 완료 로그를 플랫폼 기준으로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "다혜는 찢김과 폴대 파손이 없으면 괜찮다고 봤고, 현우는 냄새·구성품·방수까지 포함해서 판단했습니다. '괜찮음'의 기준이 처음부터 달랐어요.",
+        "또 둘 다 판매자에게 각자 다른 확정 신호를 따로 보냈어요. 다혜는 '반반으로 가져간다', 현우도 '사진대로면 갈게요'라고 해서, 판매자는 사실상 확정 거래로 이해한 거예요."
       ],
       "tp-3": [
-        "기록상 비환불 예약금 고지 시점, 현우와 다혜가 각각 보낸 메시지, 누락 부속품 고지 여부를 원본 대화로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "저는 판매자로서 두 분이 따로 확정 메시지를 보내서 거래가 성사된 줄 알았습니다. 한쪽이 나중에 번복해도 예약금은 비환불이라 제 입장에선 난감했어요.",
+        "작년에 '비환불 예약금은 명시적 확정 뒤에만 넣기'로 한 규칙이 있었는데, 다혜는 모호한 답으로 송금했고 현우는 사실상 구매 신호를 보내놓고 해석 여지를 남겼습니다. 둘 다 약속을 안 지킨 거예요."
       ]
     }
   },
   "friend-05": {
     "personalityTags": {
       "a": [
-        "confrontational",
-        "face_sensitive",
+        "victim_identity",
+        "fairness_obsessed",
         "counter_attack",
-        "fairness_obsessed"
+        "face_sensitive"
       ],
       "b": [
         "avoidant",
         "relationship_preserving",
-        "shame_sensitive",
-        "timeline_padding"
+        "timeline_padding",
+        "grudge_holding"
       ]
     },
     "contentTags": {
@@ -3936,11 +3984,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "motive",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "hidden_motive",
+      "t-3": "circumstantial",
+      "t-4": "subjective_claim",
+      "t-5": "core_fact"
     },
     "actionAffinity": {
       "d-1": {
@@ -3954,8 +4002,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "48만원 이체내역과 상환 약속 메시지를 바로 붙이면, 태오가 오래된 보증금 얘기를 길게 꺼내도 현재 돈을 별도로 안 갚은 사실은 피하기 어렵다.",
+        "worstActionReaction": "태오의 난처함만 받아주면 그는 곧 2년 전 작업실 보증금 이야기로 넘어간다. 지금 갚지 않은 돈이 과거 맥락에 녹아 버린다."
       },
       "d-2": {
         "bestAction": "fact_pursuit",
@@ -3968,8 +4016,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1
         },
-        "bestActionHint": "의미 싸움보다 시간·순서·기록 확인이 먼저 풀리는 쟁점이라 직접 질문이 가장 빠르다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "서윤에게 독촉 캡처를 누구에게 어디까지 보냈는지, 그리고 왜 예전 보증금 맥락을 뺐는지 순서대로 고정해 묻는 게 좋다. 피해자 프레임의 편집 흔적이 선명해진다.",
+        "worstActionReaction": "야간 병원비의 절박함만 공감해 주면 서윤은 현재 억울함만 키운다. 자기 쪽에 남아 있던 더 큰 채무 맥락은 다시 뒤로 숨는다."
       },
       "d-3": {
         "bestAction": "confidential_protection",
@@ -3982,8 +4030,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "비공개 보호를 보장해야 새 확산 걱정 없이 핵심 정보를 말할 수 있다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "작업실 보증금 잔액은 오래된 체면 문제라, 태오에게 옹졸하다는 낙인부터 걷어내야 열린다. 그래야 끝난 줄 알았던 돈이 실제로는 남아 있었다는 말을 꺼낸다.",
+        "worstActionReaction": "남은 액수만 숫자로 몰아붙이면 둘 다 꽃장식 값, 영상 편집, 옛 호의까지 끌어와 본채무 계산을 다시 진흙탕으로 만든다."
       },
       "d-4": {
         "bestAction": "empathy_approach",
@@ -3996,8 +4044,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "수치심과 관계 손상 두려움이 강해 먼저 압박을 낮춰야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "태오에게 왜 굳이 말없이 계산으로만 맞추려 했는지 비난 없이 건드리면, 관계를 덜 깨뜨리려 숨긴 무단 상계 심리가 나온다. 이 쟁점은 창피함을 먼저 내려야 풀린다.",
+        "worstActionReaction": "현재 48만원만 따로 세게 압박하면 태오는 즉시 \"원래 남는 돈이 있었잖아\"로 건너뛴다. 명시적 동의 없이 상계한 핵심이 사라진다."
       },
       "d-5": {
         "bestAction": "motive_search",
@@ -4010,8 +4058,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "서윤은 왜 피해 서사를 키웠고 태오는 왜 조용히 상계하려 했는지 동기를 갈라 묻는 순간, 두 사람이 같은 기록·합의 규칙을 각자 다른 방식으로 무너뜨렸다는 구조가 보인다.",
+        "worstActionReaction": "누가 더 큰 채무자냐만 겨루게 하면 현재 미상환과 과거 은닉이 서로의 면책 카드가 된다. 규칙 위반 자체는 뒤로 사라진다."
       }
     },
     "optimalPath": {
@@ -4115,13 +4163,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 서윤에게서 현재 48만원 독촉 캡처를 먼저 받았고, 태오에게서 예전 보증금 얘기를 뒤늦게 따로 들었다. 다만 그걸 가지고 둘이 왜 그렇게까지 갔는지는 제가 단정하긴 어렵습니다."
+        "한쪽이 반려견 야간 병원비를 빌려줬는데 약속한 날까지 안 돌아와서 화가 난 거예요. 그 캡처를 공통 친구와 스토리에 올리면서 '돈을 안 갚는 사람'으로 만들었습니다.",
+        "그런데 서윤이 숨긴 게 있어요. 예전에 상대가 작업실 보증금을 대신 내 줬는데, 그 잔액을 아직 안 갚은 거예요. 현재 빌려준 돈만 보면 서윤이 피해자지만 전체 채무 관계는 다릅니다."
       ],
       "tp-2": [
-        "기록상 두 사람이 함께 쓰던 정산 시트의 입력 시각, 차용 메모, 상계 금지 문구의 원본을 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "태오는 현재 빌린 돈을 별도로 안 갚고, 예전 보증금 잔액에서 빼면 된다고 혼자 판단해서 임의 상계를 시도했습니다. 합의 없는 상계예요.",
+        "서윤은 과거 빚을 뺀 현재 피해만 공통 친구에게 퍼뜨렸고, 태오는 현재 빚을 과거 채권과 조용히 상계하려 했어요. 둘 다 '큰돈은 시트에 기록하고 상계는 합의 뒤에만' 약속을 깼습니다."
       ],
       "tp-3": [
-        "기록상 보증금 부족이 발생한 날짜, 태오의 대납 시각, 이후 서윤이 남은 금액을 분할로 갚겠다고 말한 정황을 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "저는 이 건의 핵심이 지금 돈이냐 예전 돈이냐가 아니라, 둘 다 자기에게 불리한 채무를 숨긴 채 상대만 공격했다는 점이라고 봅니다.",
+        "서윤이 현재 피해만 올린 건 과거 빚을 뺀 프레임이고, 태오가 조용히 상계한 건 합의 없는 독단이에요. 어느 쪽이 먼저 숨겼느냐보다, 공유 장부를 둘 다 비워 둔 게 불신의 시작입니다."
       ]
     }
   },
@@ -4129,15 +4180,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "cold_logical",
-        "fairness_obsessed",
-        "privacy_sensitive",
-        "face_sensitive"
+        "detail_obsessed",
+        "authority_challenging",
+        "privacy_sensitive"
       ],
       "b": [
-        "victimizing",
-        "face_sensitive",
-        "counter_attack",
-        "relationship_preserving"
+        "victim_identity",
+        "blame_shifting",
+        "relationship_preserving",
+        "manipulative"
       ]
     },
     "contentTags": {
@@ -4173,11 +4224,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "emotional_context",
+      "t-3": "circumstantial",
+      "t-4": "core_fact",
+      "t-5": "subjective_claim"
     },
     "actionAffinity": {
       "d-1": {
@@ -4191,8 +4242,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "블로그 revision, 유튜브 변경 로그, 핀댓글 삭제 시각을 한 화면에 붙이면 다솔의 \"급한 수습\"이 실제 수정 범위를 감추기 어렵다. 손댄 폭이 말보다 크다는 게 드러난다.",
+        "worstActionReaction": "밤새 살리려 했다는 고생만 받아주면 다솔은 제목과 썸네일까지 건드린 일을 선의의 보정처럼 말한다. 직접 수정의 범위는 흐려진다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -4205,8 +4256,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "업계 단톡 비교 캡처와 접근권 회수 로그를 나란히 보여 주면, 해온이 권한 확인보다 공개 비난과 차단을 먼저 눌렀다는 순서를 부정하기 어렵다.",
+        "worstActionReaction": "통제권을 뺏긴 공포만 먼저 인정하면 해온은 단톡 비난을 창작자 자기방어라고 부른다. 공개 망신을 준 부분은 뒷전이 된다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -4219,8 +4270,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "해온과 다솔 각각에게 \"수정권\"과 \"발행권\"을 어디서 다르게 상상했는지 캐묻는 쪽이 효과적이다. 무단 침입 프레임이 실제 권한 오해에서 출발했다는 점이 드러난다.",
+        "worstActionReaction": "둘 다 억울했다는 말만 주고받으면 실제 초대메일과 브랜드계정 역할 화면을 확인할 동력이 사라진다. 권한 범위 오해가 감정 싸움으로 묻힌다."
       },
       "d-4": {
         "bestAction": "motive_search",
@@ -4233,8 +4284,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "다솔에게 왜 광고 표기 정정만 받고도 제목, 썸네일, 핀댓글까지 손댔는지 묻게 되면, 클릭률과 클라이언트 압박을 동시에 해결하려 한 계산이 튀어나온다.",
+        "worstActionReaction": "브랜드 DM 문구만 기계적으로 읽으면 다솔은 곧 표현 해석 싸움으로 빠진다. 실제 수정 폭이 요청 범위를 넘었다는 사실이 흐려진다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -4247,8 +4298,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "비공개 보호를 보장해야 새 확산 걱정 없이 핵심 정보를 말할 수 있다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "둘 다 업계방 체면과 협찬 신뢰를 잃기 싫어하니, 공개 망신 문제와 권한 문제를 분리해 안전하게 다뤄야 한다. 그래야 직접 수정과 즉시 차단이 차례로 인정된다.",
+        "worstActionReaction": "누가 먼저 선을 넘었는지만 재촉하면 해온은 비난을, 다솔은 편집을 각각 응급조치라고 부른다. 최종 확인 규칙을 둘 다 깼다는 본질이 흐려진다."
       }
     },
     "optimalPath": {
@@ -4357,13 +4408,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 다솔이 브랜드 코디네이터에게서 직접 수정 요청을 받은 사실과, 해온이 그날 밤 접근권을 끊는 과정을 둘 다 봤다. 다만 그걸 가지고 둘이 왜 그렇게까지 갔는지는 제가 단정하긴 어렵습니다."
+        "다솔이 해온 블로그 본문과 유튜브 설명란을 직접 고치고 핀댓글까지 삭제한 건 사실이에요. 브랜드 쪽 수정 요청이 있었는데, 해온한테 같은 날 추가 확인을 안 했어요.",
+        "해온도 권한 범위를 확인하기 전에 창작자 단톡에 비교 캡처를 올려 다솔을 공개 비난하고 바로 접근권을 끊었습니다. 설명보다 반응이 먼저 나간 거예요."
       ],
       "tp-2": [
-        "기록상 광고 문구 수정 요청의 정확한 범위, 누구에게 먼저 연락했는지, 어떤 표현까지 바꾸라고 했는지 원본 기준으로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "브랜드 측은 광고 표기와 가격 문구 정정만 요청했는데, 다솔은 그 범위를 넘어 제목, 썸네일 문구, 핀댓글까지 바꿨어요. 수정 요청 범위를 넘긴 건 사실입니다.",
+        "다만 다솔에게는 해온이 이전에 수락한 블로그 편집자와 유튜브 브랜드계정 매니저 권한이 실제로 부여되어 있었어요. 무단 침입이 아니라 권한 범위를 둘 다 정확히 이해하지 못한 거예요."
       ],
       "tp-3": [
-        "기록상 블로그 초대 권한, 유튜브 브랜드계정 역할, 접근권 회수 시각과 변경 로그를 플랫폼 기준으로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "둘은 '최종 공개 전 상호 확인'과 '협찬 수정 요청은 공동 스레드에서 공유' 약속이 있었는데, 다솔은 직접 수정했고 해온은 단톡 공개 비난과 즉시 차단으로 대응했습니다. 둘 다 절차를 깼어요.",
+        "권한 설정은 기술 문제처럼 보여도 실제로는 신뢰 문제입니다. 불신이 생긴 뒤 바로 차단하면, 상대는 실수보다 배제로 받아들여요. 해온이 먼저 확인했으면 달랐을 겁니다."
       ]
     }
   },
@@ -4371,14 +4425,14 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "cold_logical",
-        "fairness_obsessed",
         "selective_quote",
-        "face_sensitive"
+        "detail_obsessed",
+        "trust_broken"
       ],
       "b": [
-        "victimizing",
-        "face_sensitive",
-        "counter_attack",
+        "victim_identity",
+        "blame_shifting",
+        "shame_sensitive",
         "relationship_preserving"
       ]
     },
@@ -4415,11 +4469,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "core_fact",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -4433,8 +4487,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "성호에게 원본 메신저 export와 연습 스케줄 변경표를 같이 들이대면, \"소품 정리 중이라고 좀 말해 달라\"는 부탁이 단순 일정 조율이었는지 숨김용 알리바이였는지 바로 갈린다. 이 쟁점은 감정보다 부탁 문장이 남아 있는 로그가 더 세다.",
+        "worstActionReaction": "성호의 압박감만 받아주면 그는 곧 \"그때 다들 예민했다\"는 동호회 분위기부터 길게 깐다. 비밀 연애를 숨기고 진아를 앞세운 선택은 배경 설명 속으로 숨어 버린다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -4447,8 +4501,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "진아의 한 장짜리 캡처와 원본 export, 동문 단톡 전달 기록을 차례로 맞대면 \"전달\"과 \"편집\"을 분리해서 말하기 어려워진다. 여러 시점 문장을 이어 붙였다는 구조가 보이면 확산 책임이 선명해진다.",
+        "worstActionReaction": "배신감부터 크게 공감해 주면 진아는 곧 \"내가 폭로한 게 아니라 알려준 거야\"라는 단어 싸움으로 들어간다. 편집본을 어디까지 뿌렸는지보다 감정 정당화가 앞선다."
       },
       "d-3": {
         "bestAction": "fact_pursuit",
@@ -4461,8 +4515,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1
         },
-        "bestActionHint": "의미 싸움보다 시간·순서·기록 확인이 먼저 풀리는 쟁점이라 직접 질문이 가장 빠르다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "리더 선발 점수표와 이해충돌 제외 로그를 기준으로 \"누가 실제 채점에서 빠졌는지\"를 짧게 확인하는 편이 좋다. 연애 특혜 의혹은 해석이 아니라 배정·제외 기록부터 풀어야 한다.",
+        "worstActionReaction": "성호의 억울함만 다독이면 그는 \"망치려던 게 아니었다\"는 의도 설명에 숨는다. 선발 절차를 확인해야 할 타이밍이 상처 호소로 바뀌어 버린다."
       },
       "d-4": {
         "bestAction": "empathy_approach",
@@ -4475,8 +4529,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.23
         },
-        "bestActionHint": "수치심과 관계 손상 두려움이 강해 먼저 압박을 낮춰야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "작년 소문 사태와 2년 전 서로 비밀을 막아줬던 기억을 먼저 인정해 주면, 둘 다 왜 그 합의를 믿고도 각자 선을 넘었는지 훨씬 빨리 입을 연다. 이 쟁점은 규칙 문구보다 수치심을 먼저 낮춰야 열린다.",
+        "worstActionReaction": "합의 노션 문장만 들이밀면 진아는 \"전달과 폭로는 다르다\"고 버티고, 성호는 \"타이밍을 못 잡았다\"고 빠져나간다. 신뢰 붕괴보다 단어 정의만 남는다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -4489,8 +4543,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 0.95
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "이도현 운영진이 가진 신고 경로 기록과 작년 합의 노션을 붙여 놓고 보면, 성호의 \"이미 제한 고지했다\"는 말이 실제 접수 흔적과 맞는지 바로 검증된다. 이 쟁점은 마음이 아니라 신고 시각 공백이 핵심이다.",
+        "worstActionReaction": "성호의 불안만 달래면 그는 \"말하려고는 했다\"는 의도만 붙든다. 실제로 지정 운영진 통로를 쓴 적이 없었다는 빈칸은 끝까지 흐려진다."
       }
     },
     "optimalPath": {
@@ -4593,29 +4647,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "기록상 진아에게서 편집 캡처를 먼저 받았고, 성호에게서 비밀 연애와 제한 공개 합의 얘기를 뒤늦게 들었다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "성호가 부회장과 비밀 연애를 하면서 저한테 '소품 정리 중이라고 말해 달라'고 부탁했을 때, 전 그냥 가까운 사람 부탁으로 알았어요. 알리바이 요청인 줄은 나중에 알았습니다.",
+        "진아가 성호의 여러 시점 메시지를 이어 붙여 의도가 더 나빠 보이게 편집한 건 봤어요. 공통 친구, 동문 단톡, 운영진에 연달아 보냈는데, '운영진에게만 알리자'는 약속을 진아도 안 지킨 거예요."
       ],
       "tp-2": [
-        "기록상 작년 합의 노션 원본과 이해충돌 신고 경로, 성호의 실제 사전 고지 여부를 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "성호는 리더 선발 전에 이미 운영진에게 관계를 알렸다고 주장했지만, 이해충돌 신고 기록과 DM 시각은 진아의 캡처 확산 뒤에야 남아 있었습니다. 순서가 안 맞아요.",
+        "둘은 작년에 '이해충돌이 생기는 비밀 연애는 지정 운영진 한 명에게만 함께 알린다'고 합의했는데, 성호는 먼저 숨기고 알리바이를 요청했고 진아는 편집 캡처를 여러 채널로 확산시켰습니다."
       ],
       "tp-3": [
-        "기록상 리더 선발 점수표, 심사 배정 로그, 부회장의 채점 제외 여부를 원본 기준으로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "저는 실제 리더 선발에서 부회장이 채점에서 제외돼 있었다는 걸 확인했습니다. 성호의 선발 자체가 연애 특혜라고 확정되지는 않아요.",
+        "다만 성호가 관계를 숨긴 채 선발에 참여하고, 진아가 편집 캡처로 여론을 만든 결과 공정성 의심이 커진 건 사실입니다. 의심을 막아 줄 투명한 신고가 미리 없었던 게 핵심이에요."
       ]
     }
   },
   "friend-08": {
     "personalityTags": {
       "a": [
-        "victimizing",
+        "martyr_complex",
         "face_sensitive",
-        "counter_attack",
-        "relationship_preserving"
+        "blame_shifting",
+        "victim_identity"
       ],
       "b": [
         "cold_logical",
         "fairness_obsessed",
-        "face_sensitive",
-        "selective_quote"
+        "detail_obsessed",
+        "counter_attack"
       ]
     },
     "contentTags": {
@@ -4651,11 +4708,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "circumstantial",
+      "t-5": "subjective_claim"
     },
     "actionAffinity": {
       "d-1": {
@@ -4669,8 +4726,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "시상 직후 카드뉴스, 포트폴리오 캡션, 몇 시간 뒤 edit history를 한 줄로 놓으면 은비가 \"내 프로젝트\" 인상을 실제로 만들었다는 점을 숨기기 어렵다. 이 쟁점은 문구 선택과 수정 시점이 곧 증거다.",
+        "worstActionReaction": "은비의 밤샘 수습 고생만 받아주면 그는 자신이 고친 화면 이야기만 길게 쌓는다. 단독 성과처럼 보이게 만든 공개 문구 책임은 뒤로 밀린다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -4683,8 +4740,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "깃 저장소 로그와 리허설 출석표를 함께 대면하면, 준혁의 실제 기여와 별개로 마감 직전 비운 자리가 있었다는 점이 분리된다. \"많이 했다\"는 주장과 \"제시간에 안 왔다\"는 기록을 동시에 봐야 풀린다.",
+        "worstActionReaction": "준혁이 인정 못 받았다는 서운함만 받아주면 그는 로그 더미를 한꺼번에 들이민다. 리허설 불참과 업로드 지연이라는 현재 쟁점은 기술 공로 설명 속에 묻힌다."
       },
       "d-3": {
         "bestAction": "confidential_protection",
@@ -4697,8 +4754,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "비공개 보호를 보장해야 새 확산 걱정 없이 핵심 정보를 말할 수 있다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "공모전 제출 form, 팀원 입력란, 심사위원 회신 메일을 조용히 확인해 준다고 보장해야 준혁도 바깥 인식이 팀 프로젝트였다는 불편한 사실을 받아들이기 쉽다. 공개 망신 걱정이 낮아져야 서류가 열린다.",
+        "worstActionReaction": "처음부터 \"개인작 아니었잖아\" 하고 몰아붙이면 은비는 곧 \"대표자 필드 하나였어\"라며 캡션 파급력을 축소한다. 외부 인식 검증이 표현 변명으로 새 버린다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -4711,8 +4768,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "비공개 보호를 보장해야 새 확산 걱정 없이 핵심 정보를 말할 수 있다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "교수, 동아리, 심사위원 앞 체면을 잠시 내려놓을 수 있게 비공개 보호를 깔아 주면 둘 다 회의록 빈칸과 기여도 문구 방치를 인정하기 쉬워진다. 누가 먼저 잘못했느냐보다 왜 아무도 마지막 문서를 안 닫았는지가 열쇠다.",
+        "worstActionReaction": "기여 비율을 바로 숫자로 재기 시작하면 둘 다 상대의 마감 실수만 꺼낸다. 대표자 표기와 역할 문구를 비워 둔 공동 책임은 금세 사라진다."
       },
       "d-5": {
         "bestAction": "motive_search",
@@ -4725,8 +4782,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "은비에게 왜 굳이 \"내 프로젝트\"라는 표현이 필요했는지, 준혁에게 왜 기록이 지워졌다고 느꼈는지 동기를 갈라 묻게 되면 공로 다툼의 진짜 상처가 보인다. 인정 욕구와 소외감이 풀려야 아이디어 이상으로 남은 기여도 다시 드러난다.",
+        "worstActionReaction": "준혁의 억울함만 감싸면 은비는 \"그날 누가 남아 있었는데\"라며 밤샘 구조자 프레임으로 올라탄다. 설문 구조와 프로토타입 흐름에 남은 준혁의 몫은 다시 그림자 취급된다."
       }
     },
     "optimalPath": {
@@ -4832,29 +4889,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 준혁의 리허설 불참과 은비의 밤샘 수정, 그리고 시상 직후 문제된 게시물 업로드를 모두 직접 봤다. 다만 그걸 가지고 둘이 왜 그렇게까지 갔는지는 제가 단정하긴 어렵습니다."
+        "은비가 시상 직후 카드뉴스와 포트폴리오에서 '내 프로젝트'처럼 올린 건 봤어요. 준혁 이름이 한동안 빠져 있었습니다. 실제로는 둘이 같이 만든 팀 프로젝트인데요.",
+        "다만 준혁도 최종 리허설에 안 나오고 자료 업로드를 제때 못 해서, 은비가 발표 전날 결과물을 다시 정리해야 했어요. 밤새 버틴 쪽의 지침과 마지막에 빠진 쪽의 책임이 겹친 거예요."
       ],
       "tp-2": [
-        "기록상 제출 시스템의 대표자 필드, 팀원 입력란, 심사위원 회신과 상장 표기 원본을 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "공모전 원본 제출과 심사 메일, 상장 표기는 팀 프로젝트로 되어 있었습니다. SNS와 포트폴리오에서 단독 성과처럼 보인 건 은비의 공개 문구 때문이에요.",
+        "준혁의 기여가 아이디어 한 줄뿐이라는 주장도 있었지만, 설문 구조, 프로토타입 흐름, 부록 기술 설명에 실제로 반영돼 있었습니다. 과소평가는 사실이 아니에요."
       ],
       "tp-3": [
-        "기록상 역할 분담 회의록, 부스 패널 최종 출력 파일, SNS 게시 전 확인 절차를 원본 기준으로 알고 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "둘은 대표자 표기와 역할 문구를 사전에 합의하기로 했지만, 공동 기여 로그를 비워 둔 채 마감 직전까지 역할을 흐리게 두었습니다. 양쪽 다 방치한 거예요.",
+        "저는 이 건이 은비의 단독 독식만이 아니라 준혁의 마감 불이행, 그리고 둘 다 크레딧 시트를 끝내 안 만든 공동 책임이라고 봅니다."
       ]
     }
   },
   "friend-09": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "calculated_calm",
         "selective_quote",
-        "face_sensitive",
-        "counter_attack"
+        "grudge_holding",
+        "manipulative"
       ],
       "b": [
-        "victimizing",
-        "face_sensitive",
-        "counter_attack",
-        "relationship_preserving"
+        "victim_identity",
+        "timeline_padding",
+        "blame_shifting",
+        "avoidant"
       ]
     },
     "contentTags": {
@@ -4890,11 +4950,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "motive",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "emotional_context",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -4908,8 +4968,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "익명계정 가입·로그인·삭제 로그와 첫 댓글 시각을 정면으로 붙이면, 도건이 \"계정만 판 거야\"라고 책임을 잘라 말하기 어려워진다. 이 쟁점은 계정 생성과 최종 업로드가 한 손에 이어졌는지가 핵심이다.",
+        "worstActionReaction": "도건이 끌려 들어갔다는 억울함만 받아주면 그는 금세 \"공구방 분위기가 이상했다\"는 배경으로 숨는다. 직접 만든 계정과 첫 댓글 책임이 희미해진다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -4922,8 +4982,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.08,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "유리 휴대폰 갤러리 백업과 편집앱 프로젝트 파일을 보여 주면, 후기 조각을 그냥 저장한 게 아니라 배치와 문구를 계산해 만든 콜라주였다는 점이 나온다. \"정리\"와 \"편집\"의 경계가 여기서 무너진다.",
+        "worstActionReaction": "유리의 분노와 피해의식만 먼저 받아주면 그는 곧 \"공유한 거지 조작한 건 아니야\"라고 말 수위를 낮춘다. 후기 콜라주 제작 흔적은 감정 정당화 뒤로 숨어 버린다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -4936,8 +4996,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "유리-도건 원본 메신저, 익명계정 로그, 콜라주 편집 파일을 한 화면에 놓아야 한다. 계정은 도건, 이미지 편집은 유리라는 역할 분담이 같이 보여야 단독 범행 프레임이 깨진다.",
+        "worstActionReaction": "둘 중 누가 더 상처받았는지만 다독이면 둘 다 조가람 탓, 커뮤니티 탓 이야기로 빠진다. 공모 구조를 봐야 할 자리가 피해 서사 경쟁으로 바뀐다."
       },
       "d-4": {
         "bestAction": "fact_pursuit",
@@ -4950,8 +5010,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 0.95
         },
-        "bestActionHint": "의미 싸움보다 시간·순서·기록 확인이 먼저 풀리는 쟁점이라 직접 질문이 가장 빠르다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "8개월 전 공개 지적 글, 후속 DM, 이번 폭로 시점을 시간순으로 짧게 따져 묻는 편이 좋다. 가을 시즌마켓 직전에 왜 옛 앙금이 다시 호출됐는지 드러나야 현재 행동이 단순 충동이 아니게 보인다.",
+        "worstActionReaction": "조가람에게 당한 억울함부터 받아주면 유리와 도건은 둘 다 자신을 반응자처럼 포장한다. 먼저 판을 설계한 쪽이 누구였는지는 오래된 서운함 속에 묻힌다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -4964,8 +5024,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.18
         },
-        "bestActionHint": "비공개 보호를 보장해야 새 확산 걱정 없이 핵심 정보를 말할 수 있다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "과거 가람 분쟁과 공동 준비 대화가 다시 밖으로 새지 않도록 비공개를 약속해야, 둘이 왜 들통난 뒤 서로를 단독 주범처럼 밀어냈는지 말하기 시작한다. 체면 걱정이 낮아져야 사후 책임전가 구조가 열린다.",
+        "worstActionReaction": "도건이냐 유리냐 한 사람만 찍어 사실 질문을 세게 던지면 둘은 \"조언\"과 \"공유\" 같은 말 차이에 매달린다. 과거 분쟁을 숨긴 공동 은폐는 끝까지 안 나온다."
       }
     },
     "optimalPath": {
@@ -5071,13 +5131,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "저는 직접 피해자라 그 전후 자료를 갖고 있습니다. 다만 누가 어느 단계에서 뭘 만들고 올렸는지는 운영자 로그를 같이 봐야 분명해집니다."
+        "저는 시즌마켓 심사 직전에 익명 커뮤니티에 제 가게를 겨냥한 폭로글이 뜨고, 후기를 잘라 편집한 비교 이미지까지 돌았어요. 상습 문제 셀러처럼 만들어진 판이었습니다.",
+        "나중에 알고 보니 이게 한 사람의 홧김이 아니라, 유리와 도건이 역할을 나눠서 설계한 공모였어요. 도건이 계정과 업로드를, 유리가 후기 편집과 확산을 맡았습니다."
       ],
       "tp-2": [
-        "기록상 익명 계정 가입·로그인·삭제 기록, 신고 첨부 파일, 소명 DM을 원본 기준으로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "도건은 보조 메일과 기기로 익명 계정을 만들고 폭로글과 첫 댓글을 직접 올렸습니다. 유리는 구매자 후기와 DM 일부를 잘라 문제 셀러처럼 보이게 편집한 비교 이미지를 만들어 오픈채팅으로 퍼뜨렸어요.",
+        "폭로가 들통난 뒤 둘은 8개월 전 경쟁 셀러 조가람과의 갈등과 공동 준비 사실을 숨긴 채, 공통 친구와 운영자에게 각각 '상대가 나를 끌어들였다'고 서로 다른 이야기를 했습니다."
       ],
       "tp-3": [
-        "기록상 부스 심사 일정, 조가람 부스 평가 흐름, 루머 확산이 마켓 운영에 끼친 영향을 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "시즌마켓 부스 심사 직전에 이런 글이 터지면 품질 시비가 아니라 평판 공격입니다. 경쟁자 매장 신뢰를 떨어뜨리려 익명 폭로와 후기 편집을 역할 분담한 건 계획적이에요.",
+        "이 건의 핵심은 8개월 전 조가람과의 갈등을 품은 유리와 도건이 심사 타이밍에 맞춰 함께 설계했다는 점입니다. 도건의 단독 폭주가 아니라 공모였어요."
       ]
     }
   },
@@ -5085,15 +5148,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "confrontational",
-        "face_sensitive",
+        "emotionally_volatile",
         "fairness_obsessed",
-        "counter_attack"
+        "authority_challenging"
       ],
       "b": [
+        "conflict_avoidant",
         "avoidant",
         "relationship_preserving",
-        "shame_sensitive",
-        "timeline_padding"
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -5129,11 +5192,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "motive",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "subjective_claim",
+      "t-4": "core_fact",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -5147,8 +5210,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "다정에게 왜 가족 단톡과 플래너에게 서아 이름을 먼저 돌릴 만큼 급했는지 묻는 편이 좋다. 결혼식 체면이 흔들릴까 두려운 마음이 열려야 \"검토 중\"을 \"확정\"으로 밀어 쓴 이유가 보인다.",
+        "worstActionReaction": "문자 한 줄을 붙들고 \"그래서 예스냐 노냐\"만 재촉하면 다정은 다시 체크리스트와 일정표를 읽으며 이미 합의된 일처럼 밀어붙인다. 이름 선사용의 조급함은 숨는다."
       },
       "d-2": {
         "bestAction": "confidential_protection",
@@ -5161,8 +5224,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "비공개 보호를 보장해야 새 확산 걱정 없이 핵심 정보를 말할 수 있다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "서아가 축가를 못 박지 못한 사정을 공개 창피 없이 말할 수 있게 비공개 보호를 걸어 줘야 한다. 목 상태와 행사 스케줄을 들키는 불안이 줄어야 애매한 답장을 왜 늦게 정리했는지 털어놓는다.",
+        "worstActionReaction": "확정 문장을 바로 요구하면 서아는 곧 \"나는 축가 말고 들러리 얘기였어\"라며 역할 범위를 더 잘게 좁힌다. 늦은 정정 책임보다 표현 해석 싸움만 남는다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -5175,8 +5238,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "공유 체크리스트 상태 범례, 반주자 DM, 음성메모를 나란히 놓으면 들러리와 축가가 같은 칸에 있어도 같은 확정은 아니었다는 점이 풀린다. 이 쟁점은 잘린 캡처보다 원본 상태값이 더 중요하다.",
+        "worstActionReaction": "서아의 미안함이나 다정의 서운함만 달래면 둘 다 \"도와주려던 거였다\"는 말로 흘러간다. 명시적 확정이 있었는지 확인해야 할 핵심은 감정 공감 속에 지워진다."
       },
       "d-4": {
         "bestAction": "empathy_approach",
@@ -5189,8 +5252,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.23
         },
-        "bestActionHint": "수치심과 관계 손상 두려움이 강해 먼저 압박을 낮춰야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "예전 결혼식에서 역할 이름이 엉켜 불편했던 기억을 먼저 꺼내 공감해 주면, 둘 다 왜 이번에도 \"확정 후 공지\" 규칙을 무너뜨렸는지 인정하기 쉬워진다. 친구 사이 기대와 호의가 얽힌 수치심부터 낮춰야 한다.",
+        "worstActionReaction": "규칙 캡처를 들고 누가 먼저 어겼는지만 추궁하면 다정은 공지부터, 서아는 답장부터 따로 떼어 말한다. 같은 규칙을 각자 다르게 깨뜨린 구조는 안 보인다."
       },
       "d-5": {
         "bestAction": "motive_search",
@@ -5203,8 +5266,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "서아에게 왜 싸움이 붙자마자 들러리 쪽까지 전부 미확정이었다고 좁혀 말했는지 동기를 캐야 한다. 축가 책임을 벗고 싶었던 후퇴 심리가 보여야 치수 제출과 동선 확인이 가진 무게도 다시 보인다.",
+        "worstActionReaction": "서아가 힘들었겠다고만 다독이면 그는 음성메모 길이와 컨디션 얘기만 늘어놓는다. 들러리 참여는 어느 정도 굳어져 있었다는 현실이 다시 흐릿해진다."
       }
     },
     "optimalPath": {
@@ -5305,29 +5368,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 공유 체크리스트와 드레스 피팅 일정, 서아가 '도와줄 수 있는 선'을 말한 장면을 직접 들었다. 다만 그걸 가지고 둘이 왜 그렇게까지 갔는지는 제가 단정하긴 어렵습니다."
+        "다정이 웨딩플래너와 가족 단톡에 서아를 들러리 겸 축가로 먼저 기재한 건 사실이에요. 서아의 명시적 '확정' 메시지가 없었는데 이름을 먼저 올린 거예요.",
+        "서아도 '그 주 비워볼게', 드레스 치수 제출까지 하면서 기대를 키운 뒤, 최종 불가를 드레스 피팅 이후에야 말했습니다. 애매한 수락 신호를 보내놓고 정정이 너무 늦었어요."
       ],
       "tp-2": [
-        "기록상 공유 시트 버전 기록, 라인업 전달 시점, 리허설표 수정 이력을 원본 기준으로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "공유 체크리스트를 보면, 들러리는 '진행중'이고 축가는 '후보'로 분리돼 있었습니다. 서아가 두 역할을 한 번에 확정한 메시지는 없어요.",
+        "다만 서아가 드레스 치수를 제출하고 입장 동선까지 확인한 건 사실이라, 들러리 역할은 사실상 수락 단계에 가까웠어요. 축가만 끝까지 후보였고요."
       ],
       "tp-3": [
-        "기록상 축가 곡과 키 조정이 어디까지 가예약이었는지, 실제 계약금과 최종 확정 여부를 알고 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "둘은 예전부터 웨딩 역할은 한 채팅방에서 명시적 '확정'을 받은 뒤에만 알리기로 했습니다. 다정은 먼저 이름을 써 버렸고 서아는 오해가 커지는 동안 바로 정정하지 않았어요.",
+        "서아의 '그 주 비워볼게'와 키 확인 메시지를 다정은 수락으로, 서아는 검토 단계로 기억합니다. 같은 대화를 서로 다르게 굳힌 거예요."
       ]
     }
   },
   "friend-11": {
     "personalityTags": {
       "a": [
-        "victimizing",
-        "privacy_sensitive",
-        "face_sensitive",
-        "counter_attack"
+        "victim_identity",
+        "manipulative",
+        "counter_attack",
+        "privacy_sensitive"
       ],
       "b": [
         "cold_logical",
         "privacy_sensitive",
-        "fairness_obsessed",
-        "face_sensitive"
+        "detail_obsessed",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -5363,11 +5429,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "core_fact",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -5381,8 +5447,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "계정 복구 신청서와 기기 접근 차단 로그를 같이 확인하면, 준석이 아무 설명 없이 독점한 건지 보안 사고 뒤 정리한 건지 갈린다. 이 쟁점은 \"느낌상 빼앗겼다\"보다 복구 이후 어떤 조치가 찍혔는지가 중요하다.",
+        "worstActionReaction": "민우가 잃은 저장파일 이야기에만 공감하면 준석은 보안 경고 알림을 끝없이 늘어놓는다. 일방 차단과 프로필 정리가 준 충격 자체는 설명되지 않는다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -5395,8 +5461,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "민우 휴대폰에 남아 있던 청구지 캡처와 재인증 입력 흔적을 바로 대면해야 한다. \"계정을 살리려 했다\"는 말보다 예전 본인확인 정보를 지우지 않고 다시 썼다는 사실이 먼저 잡혀야 한다.",
+        "worstActionReaction": "민우의 허탈감만 받아주면 그는 레벨과 시즌패스 손실만 반복한다. 관리자 메일을 자기 쪽으로 바꾼 출발 행동은 피해 서사 뒤로 숨어 버린다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -5409,8 +5475,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "민우에게 왜 오래된 본인확인 정보를 아직 들고 있었는지, 준석에게 왜 그걸 단순 편법이 아니라 침범으로 느꼈는지 각각 묻게 되면 출발점이 보인다. 이 쟁점은 선공·후공보다 경계 인식의 어긋남을 열어야 풀린다.",
+        "worstActionReaction": "둘 다 당황했겠다고만 다독이면 민우는 튕긴 화면을, 준석은 보안 공포를 반복할 뿐이다. 누가 먼저 관리자 권한을 바꿨는지 확인하는 축이 흐려진다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -5423,8 +5489,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.28
         },
-        "bestActionHint": "비공개 보호를 보장해야 새 확산 걱정 없이 핵심 정보를 말할 수 있다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "성인등급 게임 구매 때 세웠던 삭제 약속을 비난 없이 다시 꺼내고, 같은 채팅방 공유 원칙을 조용히 확인해 줘야 한다. 창피함이 낮아져야 둘 다 \"그때 그냥 지운 줄 알았다\"는 말 대신 실제 파기 여부를 말한다.",
+        "worstActionReaction": "규칙 위반을 곧바로 범죄처럼 몰아붙이면 민우는 \"살리려던 거야\"로, 준석은 시각 낭송으로 버틴다. 정보 보관과 관리자 변경 공유를 둘 다 어겼다는 공통점이 사라진다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -5437,8 +5503,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.03,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "아이템 이전·환불 내역과 프로필 복원 보고서를 같이 보여 주면, 민우가 도난으로 본 손실 중 무엇이 시스템 재귀속인지 바로 정리된다. 없어진 것과 옮겨진 것을 구분해야 준석 비난도 정확해진다.",
+        "worstActionReaction": "민우의 분실감에만 기대면 그는 \"준석이 먹었어\"라는 첫 인상을 못 놓는다. 서비스 복원 과정에서 자동 정리된 항목은 끝내 검토되지 않는다."
       }
     },
     "optimalPath": {
@@ -5544,13 +5610,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 민우가 잠금 화면 캡처를 먼저 보내며 준석이 계정을 먹었다고 말한 사실과, 준석이 뒤늦게 오래된 본인확인 정보 재사용 얘기를 털어놓은 장면을 모두 들었다. 다만 그걸 가지고 둘이 왜 그렇게까지 갔는지는 제가 단정하긴 어렵습니다."
+        "민우가 공유 구독 계정 접근이 잠겼다고 했을 때, 전 준석이 먼저 빼앗은 줄 알았어요. 나중에 알고 보니 민우가 예전에 일회성으로 받은 준석의 본인확인 정보를 무단으로 다시 써서 관리자 메일을 자기 것으로 바꾼 거였습니다.",
+        "준석도 그걸 발견하고 민우 접근을 끊고 프로필을 초기화했는데, 사전 설명 없이 바로 잠가 버렸어요. 이전엔 져도 웃던 사이였는데 그날부터 음성방에서 이름도 안 부르더라고요."
       ],
       "tp-2": [
-        "기록상 관리자 메일 변경 시각, 가족요금제 재인증 경로, 기기 차단과 아이템 이전 로그를 원본 기준으로 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "시스템 기록을 보면, 민우가 예전에 일회성으로 받은 본인확인 정보와 청구지 캡처를 삭제하지 않고 보관했다가 가족요금제 재인증에 다시 사용해 관리자 메일을 바꿨습니다.",
+        "민우가 사라졌다고 여긴 시즌패스와 저장 파일 일부는 준석이 가져간 게 아니라, 프로필 복원과 아이템 재귀속 과정에서 원계정으로 이동하거나 자동 환불된 거예요."
       ],
       "tp-3": [
-        "기록상 재인증 과정에서 어떤 이름·생년월일·청구지 정보가 쓰였는지, 과거 일회성 인증 자료가 재사용되었는지 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "둘은 본인확인 정보를 일회성으로만 쓰고 삭제하기로 약속했는데, 민우가 보관·재사용한 게 출발점입니다. 준석도 보안 문제를 감정적으로 처리하며 같은 채팅방 공유 원칙을 안 지켰고요.",
+        "이 건은 계정 탈취 싸움처럼 보이지만, 핵심은 일회성 개인정보를 지우기로 한 약속을 민우가 먼저 깨고, 준석이 설명 없이 잠금으로 대응한 쌍방 위반이에요."
       ]
     }
   },
@@ -5560,13 +5629,13 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
         "confrontational",
         "face_sensitive",
         "counter_attack",
-        "fairness_obsessed"
+        "trust_broken"
       ],
       "b": [
+        "calculated_calm",
         "cold_logical",
         "fairness_obsessed",
-        "face_sensitive",
-        "selective_quote"
+        "grudge_holding"
       ]
     },
     "contentTags": {
@@ -5602,11 +5671,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "motive",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "subjective_claim",
+      "t-4": "circumstantial",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -5620,8 +5689,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 0.95
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "수빈이 올린 단독형 캡션과 그 뒤 edit history를 붙여 보면, 순간 감정이 아니라 의도된 자기 브랜딩이었다는 점이 살아난다. 이 쟁점은 \"내 신곡\"이 몇 분 만에 어떻게 고쳐졌는지가 중요하다.",
+        "worstActionReaction": "수빈이 인정받고 싶었던 마음만 받아주면 그는 곧 \"캡션 한 줄이었어\"라며 파급력을 줄인다. 공동 작업물을 개인 성과처럼 밀어 낸 문제는 작아져 버린다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -5634,8 +5703,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "재윤의 릴 썸네일, 포트폴리오 메일, 크롭된 포스터를 한꺼번에 대면하면 수빈 이름이 어떻게 후순위로 밀렸는지 변명하기 어렵다. 화면을 고른 방식 자체가 크레딧 축소의 증거가 된다.",
+        "worstActionReaction": "재윤의 수고를 먼저 충분히 인정해 버리면 그는 편집과 편곡 노동 설명만 길게 늘어놓는다. 공개 자료에서 수빈을 지운 선택은 \"표시 형식\" 문제로 축소된다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -5648,8 +5717,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면이나 자기정당화의 이유를 말하게 해야 숨긴 경계가 스스로 드러난다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "수빈에게 작품의 정체성을 왜 보컬과 가사에 묶는지, 재윤에게 왜 편곡과 연출을 중심이라고 느끼는지 묻게 되면 둘의 기준이 갈린다. 누가 더 만들었는지보다 무엇을 작품의 핵심으로 보느냐를 열어야 단독작 주장도 풀린다.",
+        "worstActionReaction": "둘 다 상처받았겠다고만 공감하면 각자 자기 파트의 고생만 더 두껍게 말한다. 공동 창작물이라는 사실은 감정 경쟁 속에서 다시 흐릿해진다."
       },
       "d-4": {
         "bestAction": "empathy_approach",
@@ -5662,8 +5731,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "수치심과 관계 손상 두려움이 강해 먼저 압박을 낮춰야 사실 고백이 따라온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 시간 해석 뒤로 숨으며 방어가 더 굳어진다."
+        "bestActionHint": "지난겨울 쇼케이스 트레일러 때도 대표 표기를 함께 확인하기로 했던 합의를 먼저 상기시켜 주면, 둘 다 왜 이번엔 최종 크레딧 시트를 끝내 못 닫았는지 인정하기 쉬워진다. 이 쟁점은 게으름보다 미뤄 둔 불편함을 먼저 낮춰야 한다.",
+        "worstActionReaction": "누가 먼저 메인이라고 썼는지만 캐묻기 시작하면 수빈은 보컬 탭을, 재윤은 영상 탭을 따로 떼어 말한다. 최종 문서를 비워 둔 공동 책임은 또 빠져나간다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -5676,8 +5745,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 0.95
         },
-        "bestActionHint": "원본 로그와 보존 기록이 남아 있어 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "공감만 건네면 피해 서사만 길어지고 핵심 검증이 늦어진다."
+        "bestActionHint": "공동 메타데이터 export와 재윤이 골라 쓴 one-name 화면을 같이 보여 주면, 그는 단순 플랫폼 표시가 아니라 유리한 캡처만 재사용했다는 점을 피하기 어렵다. 어떤 화면을 골랐는지가 곧 의도다.",
+        "worstActionReaction": "재윤이 억울할 거라고만 다독이면 그는 \"표시와 소유는 다르다\"는 말만 반복한다. 포스터를 어디까지 잘라 자기 이름만 살렸는지는 검증되지 않는다."
       }
     },
     "optimalPath": {
@@ -5783,13 +5852,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 수빈의 가사·가이드 녹음과 재윤의 편곡·촬영·편집 과정을 모두 봤고, 공개 직후 서로의 게시물을 둘 다 확인했다. 다만 그걸 가지고 둘이 왜 그렇게까지 갔는지는 제가 단정하긴 어렵습니다."
+        "수빈은 공개 직후 '내 신곡', '내 프로젝트'라는 표현을 써서 단독 성과처럼 보이게 했고, 재윤은 포트폴리오 릴에서 수빈을 'voice' 수준으로만 적거나 썸네일에서 아예 빼버렸어요.",
+        "실제로는 가사·보컬·멜로디와 비트·편곡·촬영·편집이 반복 수정으로 얽혀 있어서 어느 한 사람 단독 창작물이 아닙니다. 그런데 둘 다 자기 기여를 부각하고 상대를 배경으로 밀어내려 했어요."
       ],
       "tp-2": [
-        "기록상 제출 폼의 공동 크레딧, 보도자료 초안, 쇼케이스 포스터 템플릿 구조를 원본 기준으로 알고 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "공유 노션에서 'song main: 수빈', 'video main: 재윤' 표시는 각 파트 책임 구분이었을 뿐 전체 소유권 표기가 아니었습니다. 최종 크레딧 시트를 끝내 안 만든 게 문제의 시작이에요.",
+        "재윤은 전체 메타데이터에서 공동 크레딧을 알면서도, 자기 이름이 먼저 보이는 포스터와 카드 화면만 잘라 포트폴리오에 반복 사용했어요. 의도적으로 단독 창작자처럼 보이게 한 거예요."
       ],
       "tp-3": [
-        "기록상 스트리밍 카드에 어떤 이름이 먼저 보이는지, 숨겨진 기여자 메타데이터와 수정 이력을 확인할 수 있다. 다만 개인적 의도나 사적인 합의까지는 제 확인 범위를 벗어납니다."
+        "둘은 예전부터 제출 전 역할표와 크레딧 문구를 정하자고 했지만, '나중에 정리하자'는 말만 반복한 채 최종 공개 전까지 확정 시트를 안 만들었습니다. 양쪽 다 방치한 거예요.",
+        "수빈이 '내 프로젝트'로 홍보하고 재윤이 수빈을 누락한 포트폴리오를 돌린 건 양쪽 다 문제지만, 크레딧을 미리 확정하지 않은 공동 책임이 이 다툼의 뿌리입니다."
       ]
     }
   },
@@ -6018,16 +6090,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "재판관님, 밤에 공구 가방 든 사람이 504호 쪽으로 올라가는 건 제가 현관에서 바로 봤어요.",
-        "복도에 제습기랑 물받이 통이 놓여 있던 건 맞고, 다음 날엔 한결씨 목소리가 복도 끝까지 들렸습니다."
+        "저는 그 밤에 윗층 복도에서 문 여닫는 소리와 급한 발걸음이 이어지는 걸 들었습니다. 나중에 알고 보니 경비실이 허가한 점검 기사가 올라간 거였는데, 그때는 다들 윗집에서 사고가 난 줄 알았어요.",
+        "다음 날 아침엔 천장 누수 원인을 따지기도 전에 '윗집이 뭘 했느냐'는 쪽으로 감정이 먼저 올라와 있었습니다. 복도에 이틀째 놓인 제습기와 물받이 통이 아래층 입장에선 무시당한 기분이었을 거예요."
       ],
       "tp-2": [
-        "기사는 23시 58분 승인으로 들어갔고, 그 기록은 경비실 대장에 남아 있습니다.",
-        "복도 원본 CCTV는 확보 절차만 제가 안내했지, 누수 원인 자체는 시설주임이 확인할 사안이었습니다."
+        "저희는 이런 민원이 들어오면 출입 기록과 CCTV부터 확보합니다. 이 건은 경비실에 점검 기사 출입 허가가 남아 있었는데, 아래층에 상황이 알려진 건 한참 뒤였어요.",
+        "현장에선 원인보다 감정이 먼저 뜨거워집니다. 한쪽은 단체방에 불만을 먼저 올렸고, 다른 쪽은 상황 공유를 하루 넘게 미뤘어요. 선통보 약속을 둘 다 안 지킨 겁니다."
       ],
       "tp-3": [
-        "점검 보고서상 물은 윗집 욕실 배수에서 내려온 게 아니라 옥상 우수관 역류 쪽으로 보는 게 맞았습니다.",
-        "낙엽 막힌 사진이랑 외벽 실리콘 틈 상태를 같이 보면, 504호 실내 배수와 직접 연결된 흔적은 없었습니다."
+        "현장을 볼 때 한 집 배관 문제인지 건물 공용 구조 문제인지를 먼저 구분합니다. 이 건은 윗집 실내 배수보다 공용 배수 쪽 흔적이 더 뚜렷해서, 한 세대 책임으로 보기 어렵습니다.",
+        "같은 라인 전체에 습기 민원이 몰린 시기라는 점도 중요합니다. 새벽 소음도 고의가 아니라 허가된 점검과 장비 진동이 겹친 거였어요. 건물 구조 쪽을 먼저 봐야 합니다."
       ]
     }
   },
@@ -6253,16 +6325,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "반상회 때 CCTV 예산이랑 반려동물 냄새 얘기가 한꺼번에 나와서, 두 분이 서로 예민해진 건 기억합니다.",
-        "전단 문구를 보니 민원 원문하고 회의 때 나온 표현이 섞여 있는 느낌은 받았습니다만, 그 이상은 기록으로 확인해야 합니다."
+        "반상회에서 두 분 사이 갈등이 워낙 크게 터져서, 주변 주민들도 한쪽 편을 들기 쉬운 분위기였습니다. 동대표로서 수습하고 싶었지만 감정이 이미 넘친 뒤였어요.",
+        "다음 날 익명 전단이 붙었을 때 저도 당황했습니다. 회의에서 오간 말이 워낙 거칠었으니 누군가 참지 못한 것 같은데, 정확히 누가 했는지는 저도 모릅니다."
       ],
       "tp-2": [
-        "재판관님, 원본 6분 영상을 보면 민규씨가 박스를 뜯는 장면은 없고 선반 위치만 손보고 나갑니다.",
-        "전단은 새벽 순찰 시간대 사이에 붙은 게 맞지만, 누가 만들었는지는 공용프린터 기록을 봐야 합니다."
+        "저는 CCTV 원본 6분을 확인했는데, 해당 주민은 박스를 열지 않고 선반 위치만 옮긴 뒤 나갔습니다. 경비원 무전 요청과 시각이 일치해서 오배송 정리에 따른 행동으로 보여요.",
+        "밤사이 익명 전단이 순찰 빈틈에 붙었는데, 공용 프린터 스풀 로그에 출력 27분 전 기록이 남아 있습니다. 그 계정이 두 당사자 어느 쪽도 아니라면 제3자가 개입한 겁니다."
       ],
       "tp-3": [
-        "민원 원문과 전단 PDF를 대조해 보면 문장 조합이 자연스럽지 않고, 회의 때 나온 표현이 섞여 있습니다.",
-        "공용프린터 스풀 로그는 남아 있어서, 적어도 전단이 어디서 출력됐는지는 원본으로 확인 가능합니다."
+        "전단 문구를 분석해 보면, 관리사무소 민원 문구와 반상회 발언이 짜깁기돼 있었습니다. 한 사람이 처음부터 쓴 글이 아니라 여러 출처에서 긁어 모은 구조예요.",
+        "저는 공용 프린터 로그와 문체를 대조해 보면, 두 당사자 어느 쪽 문체와도 다릅니다. 동대표 쪽에서 민원과 발언을 조합해 PDF를 만든 흔적이 있어요."
       ]
     }
   },
@@ -6483,16 +6555,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "사고 직후 서아씨가 제일 먼저 한 말이 \"문이 갑자기 닫히면서 줄이 걸렸다\"는 취지였어요.",
-        "평소 산책 모임에서 봐 온 바로는, 현우씨 개가 다른 개를 덮쳐 물던 타입이라고 느낀 적은 없습니다."
+        "사고가 나자 두 보호자 다 자기 잘못 아니라는 말부터 꺼냈습니다. 장대비에 바닥이 젖은 세척실에서 거의 동시에 들어간 건데, 다친 강아지보다 먼저 책임 세우기부터 하더라고요.",
+        "저는 평소 두 분 다 강아지 데리고 다닐 때 문제를 본 적이 없습니다. 이번 사고는 누가 공격한 게 아니라, 젖은 바닥에서 자동줄이 배수구 철망에 감기면서 벌어진 거라고 봐요."
       ],
       "tp-2": [
-        "제 기록으로는 세척실 문이 21시 47분대에 열렸고, 그때 사용된 건 주민 예약코드가 아니라 임시 PIN이었습니다.",
-        "사진 찍으러 갔을 때 바닥은 젖어 있었고, 줄이 배수구 쪽으로 길게 놓여 있었던 건 확인했습니다."
+        "제가 내려갔을 때 바닥이 빗물로 미끄러웠고, 자동줄이 배수구 철망까지 길게 늘어져 있었습니다. 한쪽은 예약 없이 들어왔고, 다른 쪽은 직원용 PIN으로 마감 시간에 문을 열었어요.",
+        "저는 잘못을 단정하진 않습니다. 다만 마감 시간에 젖은 바닥의 세척실은 반려견에게 안전한 환경이 아니었고, 예약 절차를 지킨 쪽이 없었다는 점은 기록에 남아 있습니다."
       ],
       "tp-3": [
-        "초진 차트 기준으로는 패드 상처가 찢긴 모양이 아니라 마찰로 벗겨진 형태에 가깝습니다.",
-        "물림이면 보통 관통 흔적이나 쌍공 자국이 남는데, 그날 제가 본 상처 분포는 그쪽과 달랐습니다."
+        "초진에서 본 앞발 패드 열상은 물림 특유의 관통이나 쌍공 흔적이 아닙니다. 금속면에 마찰로 긁힌 모양이어서, 배수구 철망 같은 곳에 줄이 감기면서 생긴 손상에 가까워요.",
+        "귀 찰과상도 부딪힘으로 설명 가능합니다. 상처 모양만 놓고 보면 다른 개가 물어서 생긴 것으로 단정하기 어렵고, 환경 요인이 더 크게 작용한 사고로 봅니다."
       ]
     }
   },
@@ -6721,16 +6793,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "가을에 주차칸 바꿔 쓰자는 얘기할 때 \"2월 말까지만\"이라는 문구가 분명히 있었던 걸로 기억합니다.",
-        "서림씨가 단체방에서 아버지 재활 얘기를 여러 번 한 건 맞지만, 그 이후 원상복구 이야기도 같이 나왔어요."
+        "처음엔 사정이 있으니 가까운 칸을 쓰겠다는 부탁을 다들 이해했습니다. 그런데 사정이 끝난 뒤에도 같은 칸에 차가 계속 서 있으니, 임시 배려가 당연한 자리처럼 굳어 가는 느낌이었어요.",
+        "반환 약속을 넘긴 날이 반복되니까 기다리는 쪽 표정이 점점 굳어졌습니다. 말로는 참아도 속에서 오래 쌓이면 결국 터지더라고요."
       ],
       "tp-2": [
-        "개인 콘은 관리사무소 공용 비품이 아니라, 도윤씨가 따로 가져다 세운 걸 순찰 때 확인했습니다.",
-        "쪽지가 꽂힌 직후에 큰 실랑이가 난 건 아니었고, 새벽엔 차 위치가 그대로였던 것도 원본 CCTV에 남아 있습니다."
+        "순찰하는 입장에서 보면, 관리실 민원이 접수되기 전에 이미 개인 콘이 놓이고 와이퍼에 쪽지가 꽂혀 있었습니다. 공식 절차보다 자력 제재가 먼저 나간 거예요.",
+        "갑자기 터진 게 아니라 번호인식 로그상 같은 칸이 오래 반복 점유된 패턴이 있었습니다. 누적된 불만 위에 콘과 쪽지가 더해지면서 자존심 싸움으로 불붙은 거예요."
       ],
       "tp-3": [
-        "규정상 재활 배려는 종료일 이후 자동으로 이어지는 게 아니라, 합의된 날짜가 지나면 원상복구가 원칙입니다.",
-        "출입기록을 보면 평일 7시 20분 이후까지 B-7이 비워지지 않은 날이 반복적으로 찍혀 있습니다."
+        "합의문을 보면 재활 종료 시 원상복구와 아침 반환 시각이 명시돼 있습니다. 종료 시점이 지났는데 예전 습관대로 쓴 건 합의 위반입니다.",
+        "범퍼 흠집도 확인했는데, 블랙박스와 보험 기록상 이번 건이 아니라 이전에 이미 있던 손상입니다. 이번 충돌과 직접 연결되지 않습니다."
       ]
     }
   },
@@ -6959,16 +7031,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "그 흰 상자 모서리 파란 스티커는 제 정기배송 표시라서, 화면 보고 바로 제 물건인 걸 알았습니다.",
-        "배송완료 사진 배경도 제 현관 앞하고 맞아떨어져서, 적어도 CCTV 속 상자가 서윤씨 물건은 아니에요."
+        "행사 직후 택배실에는 같은 규격 흰 박스가 수북이 쌓여 있었고, 비에 젖어 송장이 잘 안 보이는 상태였습니다. 화면만 보고 누구 물건인지 단정하기 어려운 환경이었어요.",
+        "저는 CCTV에 찍힌 흰 상자를 두 분 다 자기 것이라 확신했지만, 나중에 확인해 보니 그건 다른 세대의 정기배송 박스였습니다. 물건이 사라졌다고 느끼는 순간 상대를 바로 찍어 버린 거예요."
       ],
       "tp-2": [
-        "원본 CCTV로는 누가 흰 상자를 들었는지는 보여도, 그게 누구 택배인지는 화면만으로는 바로 안 나옵니다.",
-        "제가 본 건 기사 출입 시각과 선반 상태까지고, 배송 사고 여부는 대리점 기록을 같이 봐야 맞습니다."
+        "제가 영상을 봐도 한쪽이 상대 박스를 열거나 챙기는 장면은 없었습니다. 화면에 손이 닿았다고 곧바로 절도는 아니에요. 행사 직후라 기사 드나듦도 많고 선반도 꽉 차 있었거든요.",
+        "저는 누가 가져갔느냐보다, 비에 젖은 송장 때문에 두 택배가 선스캔 완료 처리되고 대리점 보류함에 남은 배송 사고 가능성을 먼저 봐야 한다고 생각했습니다."
       ],
       "tp-3": [
-        "저희 쪽 처리 내역을 보면 그 두 상자는 누가 가져간 물건이 아니라 분류 단계에서 보류칸으로 빠진 건입니다.",
-        "최종 회수 사진이랑 스캔 로그를 대조하면, 두 분 물건이 누군가 가져간 게 아니라 중간에 멈춘 걸 알 수 있습니다."
+        "저는 배송 기록을 대조해 보면, 두 택배 모두 젖은 송장 예외코드가 찍혀 대리점 보류함에 남아 있었습니다. 아무도 훔치지 않은 배송 사고예요.",
+        "CCTV에서 두 분이 자기 것이라 확신한 흰 상자는 모서리 파란 스티커와 배송 사진을 대조하면 다른 세대 물건이었습니다. 사람을 의심하기 전에 배송 경로부터 확인했어야 합니다."
       ]
     }
   },
@@ -7189,16 +7261,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "문이 쾅 닫히던 시기엔 세영씨 손수레도, 인호씨 카트도 번갈아 문에 기대둔 걸 같은 층에서 몇 번 봤어요.",
-        "소리가 심하다고 말이 나온 뒤에도 며칠은 계속 그렇게 받쳐 두는 장면이 있었습니다."
+        "그 층은 다들 짐 옮길 때 방화문을 카트나 손수레로 받쳐 두는 게 일상이었어요. 양쪽 다 여러 번 반복했으니 어느 한쪽만의 잘못이 아닙니다.",
+        "처음엔 쾅 닫히는 소리가 나도 서로 대수롭지 않게 여겼어요. 그 무심함이 도어클로저가 완전히 망가질 때까지 쌓인 거예요."
       ],
       "tp-2": [
-        "암이 휘고 오일이 샌 모양을 보면, 한 번 세게 친 손상보다 반복적으로 문을 받쳐 둔 흔적에 가깝습니다.",
-        "처음 드린 18만원은 수리 견적이고, 실제 주민 부담액은 보전금 처리 뒤 계산서를 봐야 정확합니다."
+        "도어클로저를 보면 한 번 세게 부딪힌 게 아니라 오래 반복해서 버티다 지친 모양이었습니다. 양쪽 세대가 번갈아 받쳐 쓴 누적 손상에 가까워요.",
+        "실제 주민 부담은 보전금 반영 후 나눠 보면 생각보다 크지 않습니다. 문제는 처음 들은 견적과 실제 분담액이 달라서, 그 차이를 부풀렸다고 느낀 거예요."
       ],
       "tp-3": [
-        "관리사무소 기준으로는 보전금 6만원이 먼저 빠졌고, 남은 주민 부담액이 12만원이라 두 세대 6만원씩이 맞습니다.",
-        "민원 접수와 통화 순서를 보면, 최종 계산서 확인 전에 송금 요구와 지급 거부가 먼저 오간 건 사실입니다."
+        "관리실 기록을 보면 보전금이 이미 처리돼서, 실제 세대별 부담은 처음 들은 금액보다 작습니다. 견적과 최종 분담 사이의 차이가 오해를 키운 겁니다.",
+        "최종 계산서가 나오기 전에 한쪽은 송금을 압박하고 다른 쪽은 전액 거부로 맞선 게 문제였습니다. 숫자를 확인하기 전에 감정이 먼저 달린 거예요."
       ]
     }
   },
@@ -7429,16 +7501,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "재판관님, 제가 나갈 때 싱크대 서랍에 열쇠 봉투를 둔 건 누수 공사 기간에만 쓰던 물건이어서였어요.",
-        "'803'이라고 적힌 쪽지는 제 짐 찾으라고 남긴 표시였지, 새 세입자에게 공식 허가를 넘긴다는 뜻은 아니었습니다."
+        "이사 직후엔 잠금함에 '803'이라고 적힌 메모가 남아 있으니 원래 그 집 전용인 것처럼 보이기 쉽습니다. 저도 처음엔 새 입주자가 쓸 수 있는 칸인 줄 알았어요.",
+        "그런데 나중에 알고 보니 그 메모는 전 세입자의 사적 표시였고, 잠금함은 누수 공사 기간에 한시 허용된 공용 비상물품함이었습니다. 퇴거와 함께 허가가 이미 끝나 있었어요."
       ],
       "tp-2": [
-        "제 순찰 기록으로는 권성호씨가 관리실 회신보다 먼저 새 자물쇠를 거는 장면이 시간대별로 잡혀 있습니다.",
-        "계단실 원본 영상 보면 유모차 들고 오간 동선하고 첫 신고 순서가 겹쳐서, 누가 무슨 말을 했는지보다 행동 시각이 먼저 보입니다."
+        "제가 본 건 관리실 회신이 오기도 전에 한쪽이 자기 자물쇠를 걸고 단지앱에 '새 803호 공용공간 점유'라는 경고 글을 올린 게 먼저였다는 점입니다.",
+        "다른 한쪽도 관리실 확인 없이 전 세입자 열쇠로 잠금함을 열고 유모차와 박스를 넣었어요. 둘 다 '관리실 확인이 먼저'라는 첫날 약속을 안 지킨 겁니다."
       ],
       "tp-3": [
-        "그 잠금함은 시설 목록상 세대 전용 칸이 아니라 비상물품함으로 관리돼 왔습니다.",
-        "윤가영씨 퇴거 직전에 반납 공지도 나가서, 새 803호 입주와 함께 사용 권한이 자동으로 이어진 상태는 아니었어요."
+        "8층 잠금함은 세대 전용이 아니라 공용 비상물품함이었습니다. 전 세입자에게 누수 공사 기간 한시 허용됐고, 퇴거일 하루 전에 허가가 종료됐어요.",
+        "저는 안쪽의 '803' 메모와 스티커도 확인했는데 승인 주체나 기간이 없습니다. 공식 허가가 아니라 전 세입자의 사적 인수인계 흔적이에요. 새 입주자가 자동으로 권한을 물려받는 구조가 아닙니다."
       ]
     }
   },
@@ -7665,16 +7737,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "설치 당일에도 말씀드렸지만 그 모델은 160도 고정렌즈라 화면이 사람을 따라 도는 방식이 아닙니다.",
-        "프리뷰에 잠깐 보이는 범위와 SD카드에 저장되는 실제 영상 범위가 달라서, 두 화면을 섞어 보면 느낌이 완전히 달라집니다."
+        "그 카메라는 팬·틸트 없는 고정렌즈 모델이라 원격으로 방향을 돌리거나 사람을 따라가는 기능이 없습니다. 다만 처음 이틀간 각도가 넓어서 맞은편 도어매트까지 찍힌 건 사실이에요.",
+        "저는 주민방에 돈 짧은 영상과 실제 저장 영상이 다르다는 걸 나중에 알았습니다. 프리뷰 화면과 저장 영상의 차이를 모르면 집 안까지 훔쳐봤다고 오해하기 쉬운 구조였어요."
       ],
       "tp-2": [
-        "하린씨 첫 글엔 '스토킹'이라는 단어가 있었고, 그 뒤에 민석씨가 귀가 시간표 비슷한 글로 바로 맞받아친 걸 제가 봤어요.",
-        "그날 라인 주민들 분위기는 관리실 판단을 기다리는 쪽이 아니라, 누가 더 선을 넘었는지 감정적으로 갈라지는 쪽이었습니다."
+        "한쪽이 주민방에 '현관을 노리는 사람'이라고 올리자 바로 편이 갈렸습니다. 반대쪽도 상대 귀가 시간표를 공개하며 맞받아쳤고요. 관리실 확인보다 공개 글이 먼저 나간 거예요.",
+        "저는 두 분 다 관리실 판단을 기다리기보다 공개 낙인과 역공 글을 먼저 택했다는 점이 문제였다고 봅니다. 사실 확인 전에 여론전이 시작된 겁니다."
       ],
       "tp-3": [
-        "저희 기록엔 설치 미통보 접수와 주민방 게시 시각, SD카드 확보 순서가 전부 남아 있습니다.",
-        "포렌식 의뢰 결과가 나오고 나서야 27초 파일이 원본 저장 영상이 아니라 편집본이라는 점이 공식적으로 정리됐어요."
+        "원본과 유포된 클립을 대조하면, 클립은 프리뷰와 다른 시점 영상을 이어붙인 뒤 줌과 반전, 타임스탬프까지 바꾼 위조본이었습니다.",
+        "초기에 촬영각이 맞은편까지 넓었던 건 사실입니다. 하지만 주민방에 돈 영상은 원본이 아니었고, 기기 자체가 실내를 추적할 수 있는 모델이 아닙니다."
       ]
     }
   },
@@ -7894,16 +7966,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "중재석 바로 옆에서 들었는데, 두 분 다 보전금 빼고 남는 공사비는 반반으로 가자는 말에 분명히 동의했습니다.",
-        "충격음 테스트 끝난 뒤에도 남지훈씨가 '일단 반씩 보는 걸로 알겠다'는 취지로 말한 건 제가 기억하고 있어요."
+        "중재 자리에서 두 분은 위아래 공사를 묶어서 비용을 반반 나누자고 합의했습니다. 관리사무소에서 서명까지 한 걸로 기억해요.",
+        "공사가 끝나고 나서 한쪽이 자기 구간만 따로 계산해서 금액을 확 줄인 건 놀랐습니다. 서명까지 한 합의를 시공 후에 번복한 거잖아요."
       ],
       "tp-2": [
-        "침실 천장 패치 한 줄은 연우씨 요청으로 뒤에 추가된 항목이라, 그 18만 원이 왜 붙었는지는 체크리스트에 따로 남겨 놨습니다.",
-        "현장에선 윗집 바닥만 손봐선 끝이 안 나고 아랫집 천장 공진까지 같이 잡아야 해서 두 공정을 묶은 겁니다."
+        "현장에서 보면 윗집 바닥만 손봐서 끝날 구조가 아니었습니다. 아랫집 천장 공진도 소음을 키우고 있어서 패키지로 묶인 건데, 추가 패치 비용이 설명 없이 올랐어요.",
+        "합의는 반반이었는데 중간에 항목이 늘어난 사정이 상대에게 전달이 안 됐습니다. 설명 없이 금액이 바뀌면 번복처럼 느껴질 수밖에 없거든요."
       ],
       "tp-3": [
-        "합의서 서명 시각이랑 추가 보전금 전표 두 건은 관리실 전산에 같이 남아 있습니다.",
-        "정산 공지는 예약해 둔 상태였는데, 글이 먼저 올라오고 부분 송금이 먼저 찍힌 순서도 로그로 확인됩니다."
+        "관리실 공지가 나오기 전에 이미 주민앱에 불만 글이 올라갔고, 일부 금액만 송금된 상태였습니다. 공식 절차보다 양쪽 행동이 먼저 나간 겁니다.",
+        "보전금 반영 후 잔여 공사비를 반반 적용하면 세대별 부담이 나옵니다. 합의를 뒤집은 순서와 공지 전 공개 압박이 이번 다툼의 핵심입니다."
       ]
     }
   },
@@ -8134,16 +8206,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "울음이 막 터진 직후 두 아이 다 '가져가려던 게 아니라 바꾸는 줄 알았다'는 취지로 말해서, 처음부터 절도 다툼처럼 들리진 않았어요.",
-        "제 느낌엔 민우가 뭔가를 숨겼다기보다, 같은 페이지를 두고 서로 다르게 이해해서 당황한 쪽에 더 가까웠습니다."
+        "제가 울음 직후에 본 건, 한 아이는 '먼저 보면 교환 확정'이고 다른 아이는 '먼저 보기는 고르기 전 탐색'이라고 생각하고 있었다는 점입니다. 규칙을 다르게 이해한 오해였어요.",
+        "어른들끼리 말이 커지기 전까지 아이들 다툼은 오래 갈 일이 아니었습니다. 그런데 한쪽 부모가 바로 부모방에 아이 실명과 물건 이름을 적어 절도 의심 글을 올리면서 완전히 달라졌어요."
       ],
       "tp-2": [
-        "복도 영상으로 보면 아이들 손에 남아 있는 건 각자 들고 온 자기 앨범 하나뿐이고, 다른 색 앨범이 추가로 따라간 컷은 없습니다.",
-        "민우가 하윤 앨범을 통째로 챙기거나 몰래 숨기는 장면은 그 시간대 영상 어디에도 없었습니다."
+        "제가 CCTV 영상을 봐도 한 아이가 상대 앨범을 만지거나 챙기는 장면은 없었습니다. 둘 다 같은 앨범 페이지를 동시에 잡아당기다 다투는 모습이 더 눈에 띄었어요.",
+        "아이들이 급하면 자기 손에 있던 것만 꼭 쥐고 나가는 경우가 많습니다. 영상만으로 누가 남의 걸 가졌다고 단정하기 어렵고, 놀이 규칙 오해에서 시작된 다툼으로 보입니다."
       ],
       "tp-3": [
-        "상담하면서 보니 하윤이는 '먼저 보면 바꾸는 것'으로, 민우는 아직 고르기 전 단계로 이해하고 있었어요.",
-        "스티커도 상담 도중 하윤 앨범 투명포켓에서 다시 나와서, 저는 절도 문제로 보지 않고 규칙 오해로 정리했습니다."
+        "다음 날 아이들을 따로 앉혀 보니 둘 다 거짓말 표정이 아니라 '내가 맞는 줄 알았다'는 얼굴이었습니다. 한정판 스티커도 결국 앨범 뒷표지 안쪽 투명포켓에 밀착돼 있었어요. 처음부터 거기 있었던 겁니다.",
+        "저는 이 사건에서 가장 중요한 건 아이들이 아니라 어른들 반응이었다고 봅니다. 한쪽은 공개 절도 지목을 먼저 올렸고 다른 쪽은 역소문을 퍼뜨렸어요. '아이 문제는 먼저 직접 확인' 약속을 둘 다 안 지켰습니다."
       ]
     }
   },
@@ -8366,16 +8438,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "그날 밤 성재씨가 복도문 앞에서 서비스 태그를 몇 번 시험하듯 대는 장면을 제가 청소하다 봤습니다.",
-        "라은씨도 평소와 다르게 창고 불을 켜 둔 채로 두고 있어서, 우연한 실랑이보다 준비된 상황처럼 보였어요."
+        "그날 밤 장면은 우연히 마주친 다툼치고 너무 준비된 느낌이었습니다. 한쪽은 4층 서비스도어 앞에서 태그를 여러 번 대 봤고, 다른 쪽은 평소와 달리 창고 안을 밝게 켜 놓고 있더라고요.",
+        "저는 침입이라고 항의하면서도 둘 다 놀라는 기색이 없었다는 점이 이상했습니다. 화가 난 사람들이 아니라 뭔가를 기다리는 사람들처럼 보였어요."
       ],
       "tp-2": [
-        "비상계단에서 들은 건 두 분이 손해 금액을 어느 정도로 적을지 맞춰 보는 대화였지, 즉석에서 화내는 분위기는 아니었습니다.",
-        "정확한 문장까진 못 옮기지만 '이 정도는 받아야 한다'는 식으로 숫자를 맞추는 느낌이 분명히 있었어요."
+        "비상계단에서 들은 대화는 놀라서 나온 목소리가 아니라 덕트 보수비와 임대료 감면을 얼마나 받아낼 수 있느냐를 계산하는 톤이었습니다.",
+        "저는 정확한 말까지는 못 적어도, 둘 다 건물주한테 보여 줄 자료를 어떻게 만들지를 맞추고 있었다는 느낌은 분명했습니다. 즉석 분노가 아니라 준비된 구도였어요."
       ],
       "tp-3": [
-        "출입통제 서버를 보면 그 문은 정상 발급 태그가 아니라 복제된 식별값으로 열린 흔적이 남아 있습니다.",
-        "건물주 측 감면안도 사건 전날 검토 메일까지 올라왔는데, 공모 정황이 보이자 바로 보류로 바뀌었습니다."
+        "NFC 태그가 복제된 흔적을 확인했고, 두 세대의 보상요구서가 같은 장비에서 짧은 간격으로 만들어졌다는 것도 확인했습니다. 단순 침입이 아니라 연출 가능성이 높습니다.",
+        "건물주 측이 사건 전날 이미 보수와 감면 초안을 검토 중이었다는 기록도 있습니다. 공모 정황 때문에 그 제안이 보류됐어요. 보상을 받아내려다 오히려 기회를 날린 구조입니다."
       ]
     }
   },
@@ -8602,23 +8674,23 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "지연씨가 '94만 원이 빈다'는 글을 올린 뒤에야 도윤씨 해명 캡처가 따라온 순서는 제가 채팅방에서 바로 봤습니다.",
-        "그 글 하나로 참가자들 사이에선 이미 도윤씨가 돈을 숨긴 사람처럼 분위기가 기울었던 것도 사실입니다."
+        "'돈을 숨겼다'는 글이 입주민방에 먼저 올라오자 해명이 뒤따라와도 이미 분위기가 한쪽으로 기울어 있었습니다. 정산서를 요구하기도 전에 공개 글이 먼저 나간 거예요.",
+        "그날 모두가 숫자를 따지기보다 누가 빼돌린 사람인지 먼저 정하려는 분위기로 변하는 걸 봤습니다. 확인 전에 낙인이 먼저 찍힌 겁니다."
       ],
       "tp-2": [
-        "돈 옮기던 순간 지연씨 말의 요지는 작년 공구에서 남은 구멍부터 이번 입금으로 메우자는 쪽이었지, 이번 라운드만 따로 닫자는 분위기는 아니었어요.",
-        "적어도 그때는 작년 금액과 이번 라운드 돈을 분리해서 보지 않고 한 통장 안에서 같이 맞추려는 인상이 강했어요."
+        "이번 환급분과 작년에 닫지 못한 미정산 금액이 같은 계좌에서 뒤섞여 있었습니다. '큰돈이 사라졌다'는 말은 두 라운드 금액을 한 덩어리로 본 거예요.",
+        "돈이 같은 통장에서 돌면 밖에서 보기엔 한 번에 빠진 것처럼 보입니다. 작년 정산을 안 닫은 채 같은 계좌를 다시 쓴 게 혼란의 시작이에요."
       ],
       "tp-3": [
-        "수입사 기준으로 이번 환급 32만 원은 국제배송료를 다시 계산한 뒤 확정된 금액이고, 그 내역서가 따로 있습니다.",
-        "작년 캐시백 41만 원과 반품차액 21만 원도 지급 흔적이 남아서, 누군가 94만 원을 한 번에 빼돌린 구조는 아닙니다."
+        "정산 기록을 보면 이번 환급분과 작년 미정산분이 분리됩니다. 한 사람이 통째로 빼돌린 게 아니라 두 라운드 돈이 같은 통장에 남아 있었던 겁니다.",
+        "이번 건의 핵심은 횡령이 아니라 정산 미마감입니다. 작년 돈을 개인계좌에 묶어 둔 채 이번 참가금으로 메우려 한 쪽이 먼저 문제였고, 확인 전 공개 지목이 터지면서 다툼이 폭발했습니다."
       ]
     }
   },
   "partnership-01": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "blame_shifting",
         "calculated_calm",
         "detail_obsessed",
         "shame_sensitive"
@@ -8838,16 +8910,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "해나가 그 송금 얘기 나오던 날 저한테 전화해서 '이게 내 승인으로 찍히면 투자도 날아가고 직원들 앞에서도 끝난다'고 거의 울먹이듯 말했습니다.",
-        "제 느낌엔 돈의 목적보다도 해나가 공동 책임자로 보이는 걸 훨씬 무서워했습니다. 그래서 서준씨한테 동의 흔적 남는 걸 유난히 꺼렸어요."
+        "법인계좌에서 큰 금액이 빠져 있는 걸 알았을 때 상대 쪽이 먼저 놀란 건 당연합니다. 최종 서면 승인 없이 움직인 거니까요. 저도 그 자리에서 들었지만 구두로 논의한 것과 서면 승인은 다르잖아요.",
+        "다만 양쪽 다 직원들에게 돈의 실제 성격을 감춘 건 같은 문제입니다. 세무사에게 임시 분개를 먼저 제안한 것도 한쪽만은 아니었어요. 절차를 건너뛴 건 둘 다예요."
       ],
       "tp-2": [
-        "2주년 회식 끝나고 택시 기다릴 때 두 분이 '직원들한텐 투자금 말고 컨설팅비처럼만 얘기하자'고 낮게 상의하는 걸 들었습니다.",
-        "제가 옆에서 본 건 서준씨가 '괜히 사무실 불안해진다'고 말하고, 해나씨가 그 말에 굳이 반대하지 않던 분위기였어요."
+        "기록을 보면 두 대표가 직원들한테 그 송금을 뭐라고 설명할지 맞추고 있었습니다. 실제로는 투자 예치금인데, 밖에는 '캠페인 컨설팅비'로 말하자고 한 거예요.",
+        "저는 세무사한테 임시 분개를 먼저 제안한 것도 한쪽만이 아니었다고 봅니다. 직원 불안을 막자는 명분 아래 둘 다 실제 목적을 감춘 건 같은 거였어요."
       ],
       "tp-3": [
-        "제 쪽 원장에는 1,800만원이 개인 계좌가 아니라 브리지 투자 검토용 신탁 예치로 잡혀 있습니다. 반환 조항이랑 비환급 검토비 문구도 같이 붙어 있었고요.",
-        "두 분 모두 처음 상담 때는 같은 방향으로 말씀하셨습니다. 나중에 직원들 앞 설명이 달라졌을 뿐, 계약 초안 자체는 그 전부터 하나였습니다."
+        "저는 단톡과 음성메모를 확인했는데, 송금 전에 한쪽이 준비금 한도 내 예치에 동의한 기록이 남아 있습니다. 나중에 그런 승인 자체가 없었다고 한 말과 맞지 않아요.",
+        "계약 초안을 봤는데 예치금 전액이 돌아오는 구조가 아니었습니다. 일부는 비환급 법률검토비로 자동 전환되게 돼 있었는데, 이 부분을 두 분 다 직원들에게 알리지 않았습니다."
       ]
     }
   },
@@ -8860,7 +8932,7 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
         "retaliation_sensitive"
       ],
       "b": [
-        "cold_logical",
+        "trust_broken",
         "fairness_obsessed",
         "calculated_calm",
         "authority_challenging"
@@ -9074,23 +9146,23 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "준오 형이 '본계약 붙기 전에 유지보수 파일럿만 우리 회사로 따로 돌릴 수 있냐'고 저한테 먼저 물은 건 사실입니다.",
-        "사업자등록증도 제가 보낸 건 맞아요. 세한리테일 본계약 파일에까지 들어갈 줄은 몰랐지만, 별도 파일럿 얘기가 오간 건 분명했습니다."
+        "수주 축하 분위기인데도 준오씨가 자꾸 밖으로 빠져 통화하는 장면이 눈에 띄었습니다. 나중에 알고 보니 본계약 옆에 사촌 회사 명의로 별도 유지보수를 타진하고 있었던 거예요.",
+        "제가 이상하다고 느낀 건 성과급과 보도자료 단계에서 한쪽 이름이 원천 영업 기여 항목에서 갑자기 빠져 있었다는 점입니다. 부속문서와 성과급 승인안에서 공로가 한 명에게로 몰렸더라고요."
       ],
       "tp-2": [
-        "처음 받은 제안서 표지는 분명 박준오, 서민경 두 이름이 같이 있었어요. 마지막 인쇄 직전 파일만 민경씨 단독 표기로 바뀌었습니다.",
-        "제가 이상했던 건 디자인 수정이 아니라 이름 빠지는 순서였어요. 본문은 거의 안 변했는데 표지랑 공로 페이지만 급하게 손봤거든요."
+        "서류 흐름을 보면 초반 자료에 있던 원천 영업 기여자의 이름이 최종 부속문서에서 빠져 있었습니다. 내용이 아니라 이름 배열과 공로 표기만 급히 바뀐 편집이 분명했어요.",
+        "저는 또 한쪽이 RACI 시트 바깥에서 별도 유지보수 거래를 타진한 기록을 봤습니다. 사촌 회사 사업자등록증까지 첨부된 제안이었어요. 공로를 빼앗긴 쪽도 깨끗하지 않았던 겁니다."
       ],
       "tp-3": [
-        "저희가 창구를 민경씨 한 명으로 정리한 건 로비 때문이 아닙니다. 준오씨 쪽에서 별도 유지보수 법인 자료가 붙으면서 컴플라이언스 검토가 걸렸어요.",
-        "메일 스레드 보시면 '시훈데이터랩 사업자등록증' 첨부 직후에 내부 경고가 뜹니다. 그 이후부터는 공식 창구를 단일화해 달라고 저희가 먼저 요청했어요."
+        "저는 고객사가 창구를 한 명으로 좁힌 건 한쪽의 로비 때문이 아니라고 봅니다. 다른 대표가 사촌 회사 명의의 별도 유지보수 제안을 보내면서 컴플라이언스 우려가 생긴 게 직접적인 이유였어요.",
+        "저는 메일 흐름을 보면, 고객사의 단일 창구 요청 시점이 별도 거래 타진 발각 직후라는 걸 확인했습니다. 두 대표 모두 서명한 RACI 공로규칙과 외부 커뮤니케이션 원칙을 각자 다른 방식으로 어겼어요."
       ]
     }
   },
   "partnership-03": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "selective_quote",
         "timeline_padding",
         "calculated_calm",
         "relationship_preserving"
@@ -9313,23 +9385,23 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "도윤이가 전날 밤 리허설하면서 '처음 4분은 내가 끊는 걸로 정리됐다'고 해서 저도 오프닝 연습만 따로 잡아 줬습니다.",
-        "제가 들은 음성메모 문장이 애매하긴 했어요. 그래도 도윤이는 그걸 자기 오프닝 확정으로 받아들인 상태였습니다."
+        "제가 본 한쪽은 IR 미팅 전날 밤부터 오프닝 발표를 자기가 맡는 줄 알고 스크립트까지 다듬고 있었습니다. 그런데 아침에 보니 상대도 따로 단독 발표용 덱을 뽑아 놓은 거예요.",
+        "솔직히 두 사람 다 자기가 오프닝을 맡을 줄 알고 있었습니다. 같은 IR 지시를 한쪽은 '전체 발표 맡으라는 뜻'으로, 다른 쪽은 '시간관리만 잡으라는 뜻'으로 이해한 거예요."
       ],
       "tp-2": [
-        "제가 '처음은 한 명이 끊고 넘기자'고 말한 건 사실인데, 그걸 전체 진행권까지 한 사람에게 주라는 뜻으로 받아들일 수 있다는 건 나중에야 알았습니다.",
-        "아젠다 코멘트도 제가 남겼습니다. 표현이 모호해서 두 분이 각자 자기에게 유리한 쪽으로 이해한 것 같아요."
+        "기록을 보면 새벽 0시 47분에 한쪽이 공유 캘린더 아젠다를 수정해서 자기를 오프닝 발표자로 올렸고, 다른 쪽은 디자이너에게 단독 발표용 인쇄본을 먼저 뽑아 달라고 지시했습니다.",
+        "전날 밤 10시까지 역할을 문서로 확정하자는 약속이 있었는데, 둘 다 안 지켰습니다. 각자 다른 버전으로 리허설까지 진행하면서도 서로 확인을 안 한 게 이 혼선의 핵심이에요."
       ],
       "tp-3": [
-        "투자사 입장에서 원한 건 발표 전체 독점이 아니라 첫 4분 오프닝과 시간관리만 한 명이 맡는 구조였습니다.",
-        "초대장 첨부파일 바뀐 기록은 남아 있지만, 저희가 '한 사람이 끝까지 다 하라'고 요구한 적은 없습니다. 그 부분은 분명히 선을 긋고 싶습니다."
+        "저는 투자자 쪽이 회의 전체를 한 사람에게 맡기라고 한 적은 없다고 확인했습니다. 원래 요청은 첫 4분 오프닝과 시간관리만 한 사람이 잡아 달라는 정도였어요.",
+        "저는 캘린더 아젠다 수정 이력을 보면, 같은 모호한 지시를 각자 다르게 해석하고 밀어붙인 공유 오해입니다. 상대가 악의적으로 발표권을 빼앗았다는 믿음은 양쪽 다 사실이 아닙니다."
       ]
     }
   },
   "partnership-04": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "denial_heavy",
         "detail_obsessed",
         "fairness_obsessed",
         "avoidant"
@@ -9549,23 +9621,23 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "2년 전 리베이트 일 뒤로 라희는 민재씨 숫자만 봐도 먼저 의심부터 했어요. 이번 주말 이체도 딱 그때 기억으로 받아들인 것 같았습니다.",
-        "제가 통화에서 들은 건 '또 같은 식이면 이번엔 진짜 끝내야 한다'는 말이었어요. 금액보다 반복 배신이라는 느낌에 훨씬 크게 반응했습니다."
+        "제가 본 라희씨는 2년 전 리베이트 건 이후로 숫자를 볼 때마다 '또 속는 거 아니냐'는 감정이 먼저 올라오는 사람이었습니다. 이번 주말 이체 내역도 곧바로 횡령으로 받아들인 거예요.",
+        "솔직히 그 협상장 공기는 현재 정산보다 과거 배신 감정이 더 지배하고 있었습니다. 종이를 넘길 때마다 2년 전 일이 다시 소환되면서, 정상적인 해지 정산도 배신의 증거처럼 읽히고 있었어요."
       ],
       "tp-2": [
-        "협상 첫 판엔 은행 도장 비슷한 PDF가 먼저 올라왔고, 원본 여부 질문은 그보다 한참 뒤에야 나왔습니다. 그 순서는 제가 분명히 기억합니다.",
-        "라희씨 쪽은 그 파일을 계속 기준처럼 들고 왔고, 민재씨 쪽은 마이그레이션 표시 방식부터 설명하려 했습니다. 테이블 공기가 완전히 달랐어요."
+        "기록상 첫 대면부터 한쪽이 들고 나온 거래내역 PDF가 분위기를 지배했습니다. 그게 은행 원본인지 편집본인지 따지기 전에 이미 상대를 압박하는 도구로 쓰이고 있었어요.",
+        "저는 'PDF가 은행 직출력본이 맞느냐'는 질문이 너무 늦게 나왔다고 봅니다. 은행 시스템 변경으로 수취인 별칭이 바뀌면서 겉보기 손실이 실제보다 훨씬 크게 보인 건데, 편집된 자료가 협상을 끌고 간 거예요."
       ],
       "tp-3": [
-        "원본 전산으로 보면 그 주말 세 줄은 서로 다른 외부 유출이 아니라 고객 환급보증금하고 퇴직충당금 이동이 분리 찍힌 겁니다.",
-        "문제 된 PDF는 은행에서 발급되는 정식 양식과 글꼴, 도장 레이어가 다릅니다. 또 마이그레이션 이후엔 원금, 부가세, 수수료가 따로 보이도록 바뀌었습니다."
+        "저는 원본 계좌 기록을 확인했는데, 주말에 나뉘어 찍힌 세 건은 고객 환급보증금과 퇴직충당금이 분리 표기된 정상 해지 정산 이동이었습니다. 한 사람이 빼돌린 구조가 아니에요.",
+        "저는 또 협상에 제시된 거래내역 PDF가 은행 직출력본과 다르다는 걸 확인했습니다. 일부 행이 편집돼 있어서, 실제 자금 이동과 보여 준 자료를 반드시 분리해서 봐야 합니다."
       ]
     }
   },
   "partnership-05": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "manipulative",
         "calculated_calm",
         "privacy_sensitive",
         "blame_shifting"
@@ -9782,16 +9854,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "소라가 등기부 캡처 본 날엔 거의 결론을 내려 버린 상태였어요. '저건 조사대응이 아니라 현우 개인 돈줄일 거다'라고 단정해서 말했습니다.",
-        "제가 느끼기엔 세무조사 자체보다도 또 속았다는 감정이 훨씬 컸습니다. 그래서 같은 메일을 받고도 현우 쪽 의심만 점점 키웠어요."
+        "세무조사 통지가 온 뒤 상대 쪽은 큰 금액 이체를 보고 곧바로 '개인 비자금'이라고 단정했습니다. 자기도 세무사한테 같은 선급금 제안 메일을 받았으면서 그건 숨기고요.",
+        "제가 인상 깊게 본 건, 해지 협상과 임원 회의에서 이걸 현우의 개인 비자금 의혹처럼 몰아간 방식이었습니다. 돈 성격을 모른 게 아니라 일부러 프레임을 씌운 거라고 느꼈어요."
       ],
       "tp-2": [
-        "제가 보정 요청을 받았을 때는 같은 2,400만원인데 설명 문구만 계속 순해졌습니다. 처음엔 조사 대응 쪽으로 올리더니, 나중엔 그냥 일반 관리비처럼 눌러 적자는 흐름이었어요.",
-        "제가 기억하는 건 금액보다 명목 바뀐 흐름이에요. 같은 2,400만원인데 설명하는 말만 계속 덜 자극적인 쪽으로 이동했습니다."
+        "제가 확인한 건, 두 대표 다 직원들에게 그 돈을 '서버 이전비'나 '관리비 선급' 정도로만 설명했다는 점입니다. 실제 목적이 세무조사 대응 자문이라는 걸 팀에 감춘 건 한쪽만이 아니었어요.",
+        "기록상 세무사 박태성이 선급금 구조를 처음 제안했고, 초반에는 두 대표 다 같은 방향으로 받아들였습니다. 투자 상황이 나빠진 뒤에야 서로 책임을 떠넘기기 시작한 거예요."
       ],
       "tp-3": [
-        "선급 구조와 계정명은 제가 먼저 제안했습니다. 그 시점엔 두 대표 모두 조사 대응이 급하다고 보고 제 설명을 따르는 분위기였어요.",
-        "제휴 자문사를 붙인 것도 사실이고, 그 관계를 충분히 또렷하게 설명했느냐고 물으면 지금 기준에선 부족했습니다. 당시엔 실무 속도를 더 앞세웠습니다."
+        "저는 선급금 구조를 처음 제안한 게 두 대표가 아니라 세무사 박태성이었다고 확인했습니다. 그리고 그 세무사가 추천 자문사와 별도 소개수수료 약정을 맺고 있었는데 이를 두 대표에게 고지하지 않았어요.",
+        "이 건의 핵심은 그 돈의 성격이라고 봅니다. 현우의 개인 유용이 아니라 세무사가 제안한 조사대응 선급금과 예납세액이었어요. 누가 비자금을 만들었느냐보다, 조언자의 이해충돌을 먼저 따져야 합니다."
       ]
     }
   },
@@ -9804,7 +9876,7 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
         "grudge_holding"
       ],
       "b": [
-        "cold_logical",
+        "shame_sensitive",
         "detail_obsessed",
         "calculated_calm",
         "selective_quote"
@@ -10026,23 +10098,23 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "보라 언니는 카운터 위치랑 사인물 톤이 바뀌면 아예 다른 가게가 된다고 봤어요. 막판까지도 그 부분만큼은 절대 못 넘긴다고 했습니다.",
-        "제가 옆에서 도운 날에도 보라 언니가 조명보다 카운터 동선부터 계속 다시 봤습니다. 예산보다 브랜드 얼굴을 지키는 쪽에 훨씬 예민했어요."
+        "제가 본 보라씨는 재오픈 이틀 전에 상대 확인 없이 카운터 위치를 다시 옮기고 철거 순서까지 바꾸라고 시공팀에 직접 지시했습니다. 동선이 가게 인상을 바꾼다고 확신하는 사람이었어요.",
+        "그런데 다른 쪽도 예산과 납기를 이유로 상대 확인 없이 진열 집기와 조명을 대체 발주했습니다. 둘 다 '지금 안 바꾸면 늦는다'는 마음으로 각자 움직인 거예요."
       ],
       "tp-2": [
-        "현장일지 기준으로는 가람씨가 집기와 조명 대체 발주를 먼저 넣었고, 그 다음에 보라씨 쪽 카운터 재지시가 들어오면서 일정이 한 번 더 꼬였습니다.",
-        "둘 중 한 사람 지시만으로 생긴 지연은 아니었습니다. 변경이 서로 겹치면서 철거 순서, 반입 시간, 추가견적이 연쇄로 밀렸어요."
+        "현장 기록을 보면 한쪽이 집기를 대체 발주하면 다른 쪽이 카운터 동선을 다시 바꾸는 식으로 수정이 겹쳤습니다. 시공팀이 서로 다른 지시를 동시에 받으면서 공정이 꼬였어요.",
+        "300만원 이상 변경은 공동 승인하기로 해 놓고 둘 다 안 지켰습니다. 각자 자기 수정안을 최종안처럼 전달해서 직원과 업체가 다른 일정표와 평면도를 동시에 참고하게 된 거예요."
       ],
       "tp-3": [
-        "허가 문의가 같은 날 두 번 방향을 바꿔 들어와서 관리실도 바로 기억합니다. 처음엔 집기 반입 쪽으로 접수됐다가, 몇 시간 뒤엔 카운터 동선이 바뀐 공정으로 다시 올라왔어요.",
-        "저희 입장에선 두 대표가 각각 다른 최종안처럼 설명해서 현장 쪽도 많이 혼란스러웠습니다. 허가 문의가 같은 날 두 번 방향을 바꿔 들어왔거든요."
+        "저는 시공팀으로 들어온 요청이 하루에 방향이 몇 번씩 바뀐 걸 확인했습니다. 같은 매장인데 두 대표가 각자 다른 최종안을 가져오니, 현장이 어느 쪽을 따라야 할지 모르는 상황이었어요.",
+        "저는 리뉴얼 지연이 한쪽의 단독 월권이 아니라 양쪽 변경이 겹친 공동 결과라고 봅니다. 서로 다른 수정안이 동시에 내려가면서 현장이 혼선을 감당할 시간이 없었던 게 직접 원인입니다."
       ]
     }
   },
   "partnership-07": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "trust_broken",
         "detail_obsessed",
         "calculated_calm",
         "privacy_sensitive"
@@ -10259,23 +10331,23 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "유나가 그날 밤 저한테 전화해서 '경쟁사가 우리 백화점 주간까지 알고 있대, 이건 내부 아니고 뭐냐'고 거의 확신하듯 말했어요. 동생이 그때 체면이 무너졌다고 느낀 건 분명합니다.",
-        "제가 옆에서 본 유나는 먼저 상처를 받아 세게 반응한 쪽이었습니다. 다만 제가 직접 본 건 유나의 불안이지, 태경씨가 일부러 경쟁사에 넘겼다는 원본 증거는 아니에요."
+        "업계 모임 직후 유나씨는 경쟁사가 자기네 도매단가와 팝업 일정을 알고 있다는 걸 듣자마자, 상대 대표가 흘렸을 거라고 단정했습니다. 바이어와 협회에 '그쪽이 흘린 것 같다'고 반복 말한 거예요.",
+        "제가 본 건 화낸 사람이라기보다 체면이 무너진 사람이었습니다. 경쟁사가 안쪽 사정까지 아는 것 같다는 불안이, 확인보다 내부 배신 의심을 먼저 키운 거였어요."
       ],
       "tp-2": [
-        "프로젝터 체크용으로 받은 파일이 따로 있었는데, follow-up 메일 보낼 때 제가 스피커 백업 폴더를 잘못 붙였습니다. 경쟁사 바이어도 같은 첨부를 받은 건 그 뒤 감사로그로 확인했고요.",
-        "태경씨가 저한테 보낸 건 점검용 자료 회신이었지 '저쪽에 돌려 달라'는 취지의 요청은 전혀 아니었습니다. 실수 지점은 제가 첨부를 선택한 단계였습니다."
+        "저는 태경씨가 프로젝터 점검 요청에 전체 도매단가와 팝업 일정이 포함된 덱을 첨부로 보낸 걸 확인했습니다. 비식별 축약본을 써야 했는데 전체 파일을 그대로 보낸 거예요.",
+        "다른 쪽도 추적 링크가 아닌 전체 파일을 QR 후속자료 폴더에 올렸습니다. 둘 다 외부 행사 자료는 축약본만 쓰기로 한 원칙을 어긴 거예요. 밖에 나갈 수 있는 환경을 만든 건 양쪽 다 책임이 있습니다."
       ],
       "tp-3": [
-        "사무국 보관본으로 보면 동일한 첨부 해시가 경쟁사 바이어 수신 메일에도 남아 있습니다. 그래서 저희는 먼저 내부 고의 유출보다 follow-up 첨부 경로를 확인했습니다.",
-        "유나씨 문의는 오발송 확인보다 앞서 들어왔습니다. 표현도 대략 '태경씨 쪽에서 샌 것 같다'는 취지였고, 확인 절차보다 의심 전달이 먼저였다는 점은 기록으로 남아 있습니다."
+        "저는 경쟁사에 자료가 도달한 경로를 확인했는데, 동업자 중 누가 고의로 넘긴 게 아닙니다. 운영사 AE가 후속메일에 스피커용 백업 폴더를 잘못 첨부하면서 경쟁사 바이어에게까지 같은 파일이 간 거예요.",
+        "저는 이 건에서 내부 배신보다 자료 관리 체계 부재가 더 큰 문제라고 봅니다. 동업자 어느 쪽도 경쟁사에 직접 보내지 않았지만, 전체 파일이 밖에 나갈 수 있는 환경을 둘 다 만들어 놓았습니다."
       ]
     }
   },
   "partnership-08": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "relationship_preserving",
         "calculated_calm",
         "conflict_avoidant",
         "shame_sensitive"
@@ -10495,16 +10567,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "시원은 2호점 얘기만 나오면 '지난 팝업처럼 보증금 먼저 묶였다가 또 무너지면 이번엔 진짜 못 버틴다'고 했어요. 제 앞에서는 늘 현금성 자산 기준부터 꺼냈습니다.",
-        "제가 들은 시원 말은 '무조건 올해 간다'보다 '돈이 버텨야 간다'에 가까웠습니다. 그렇다고 지아씨가 상처받지 않았다는 뜻은 아니고요."
+        "시원씨는 과거 팝업 손실 경험 때문에 확장 얘기만 나오면 '현금이 되느냐'부터 따지는 사람이었습니다. 2호점 열기보다 지금 버틸 돈이 먼저라는 입장이었어요.",
+        "솔직히 그분은 확장에 무조건 반대한 게 아니라, 부속합의에 적힌 현금 8천만원 유지 조건이 아직 안 됐는데 가계약을 서두르는 게 불안했던 거예요."
       ],
       "tp-2": [
-        "지아 대표가 저한테 '기존 데스크에는 아직 말하지 말고, 새 공간 컨셉부터 조용히 보자'고 한 적 있습니다. 저는 그 말을 그냥 푸념 수준으로 듣진 않았어요.",
-        "무드보드만 돌린 게 아니라 수업 운영이 가능할지, 강사 몇 명이 움직일 수 있을지까지 물었습니다. 그래서 저는 별도 스튜디오 준비가 실제라고 받아들였어요."
+        "저한테 온 문의는 전 헤드강사와 함께 별도 스튜디오를 차릴 수 있는지 실제로 떠보는 내용이었습니다. 공간 탐색과 강사 합류 가능성까지 구체적으로 물었어요.",
+        "특히 '기존 파트너한테 당장 알리지 말아 달라'는 부탁까지 있었기 때문에, 2호점 약속 파기의 피해자라는 말과 동시에 따로 사업을 준비하고 있었다는 뜻이라고 봤습니다."
       ],
       "tp-3": [
-        "제가 계산한 월말 잔액에는 리스료와 부가세 예정액이 이미 반영돼 있습니다. 그 기준으로는 부속메모에 적힌 8천만원 2개월 유지 조건에 못 미쳤습니다.",
-        "대출 사전심사에서도 숫자만이 아니라 공동대표 전념 구조가 흔들리는 점이 변수로 잡혔습니다. 그래서 당시 상태를 자동 진행 단계라고 보긴 어려웠습니다."
+        "저는 부속메모에 적힌 현금성 자산 8천만원 2개월 유지 조건이 아직 충족되지 않았다고 확인했습니다. 리스료와 세금을 반영하면 월말 보유액이 기준에 미달해요.",
+        "저는 한쪽은 단독으로 가계약을 보류했고, 다른 쪽은 단독으로 별도 스튜디오 준비를 진행했다는 점이 핵심입니다. 둘 다 같은 부속합의 틀을 각자 다른 방식으로 무너뜨린 겁니다."
       ]
     }
   },
@@ -10734,23 +10806,23 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "다예가 발표 직후에는 '내 이름이 전면에 안 보이면 다들 또 기술팀만 기억한다'는 식으로 말했습니다. 겉으로는 침착했지만 환수 얘기만 나오면 예민해졌고요.",
-        "아버지라 편을 들 수는 있어도, 공적을 먼저 선점하려는 마음까지 없었다고는 못 하겠습니다. 다예가 그 부분에 집착한 건 제가 여러 번 봤어요."
+        "지원금이 교부되자마자 다예씨는 보도자료와 브리핑 발표문에서 상대 기여를 줄이고 자기를 단독 주공로자로 올리는 데 집중했습니다.",
+        "제가 본 그분은 들뜬 사람이라기보다 '이 성과의 얼굴로 누가 남느냐'에 매달리는 쪽이었습니다. 사후점검이 올 수 있는 상황인데 공로 선점에만 에너지를 쓰고 있었어요."
       ],
       "tp-2": [
-        "마감 직전 KPI 표가 두 번 크게 바뀌었습니다. 매장 수가 늘고 절감률 문장이 올라갈 때마다 인호 대표와 다예 대표 둘 다 '이 정도면 간다'는 식으로 확인을 했어요.",
-        "추천확인서 문구도 이상하게 비슷했습니다. 현장 실증에서 바로 나온 말이라기보다 제출용 문장을 맞춰 넣는 느낌이 강했어요."
+        "실무 로그를 보면 실증 매장 수와 월 절감률이 제출할 때마다 조금씩 올라갔습니다. 두 분 다 '이 정도면 통과하겠다'는 식으로 넘겼어요.",
+        "저는 한쪽만 부풀린 게 아니라고 봅니다. 거래처 확인서 일부도 실제보다 크게 만들어졌고, 그 과정에 두 사람 다 관여하고 있었습니다. 허위 실적 공모에 가까워요."
       ],
       "tp-3": [
-        "기관 보관본에는 제출 파일 버전과 브리핑 수정 요청 메일이 모두 남아 있습니다. 교부 직후 다예 대표 이름을 앞세운 문안 요청이 실제로 들어왔어요.",
-        "또 한 가지는 중복 문구와 파일 메타데이터 이상 때문에 이미 사후점검 후보 검토가 올라가 있었다는 점입니다. 그래서 저희는 이 과제를 '완전히 종료된 건'으로 보지 않았습니다."
+        "저는 교부 직후에도 설명자료를 다시 손보려는 움직임이 있었다고 확인했습니다. 파일 메타데이터에 중복 문구와 이상 징후가 남아 있어서, 이미 사후점검 후보에 올려 둔 상태입니다.",
+        "저는 공로 다툼과 별개로, 지원서에 적힌 실증 수치와 확인서 자체를 다시 봐야 한다고 생각합니다. 누가 더 기여했느냐를 따지기 전에, 그 기여의 근거가 된 숫자가 맞는지가 먼저입니다."
       ]
     }
   },
   "partnership-10": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "timeline_padding",
         "detail_obsessed",
         "conflict_avoidant",
         "relationship_preserving"
@@ -10970,23 +11042,23 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "혜린이는 지난번 부적합 알바생 들어왔을 때 프로그램 평판이 흔들린 걸 아직도 크게 겁냅니다. 그래서 이번에도 '시범수업도 안 보고 바로 넣는 건 못 견딘다'고 했어요.",
-        "다만 제가 본 혜린의 초조함이 곧바로 준서씨를 속이려 했다는 뜻은 아닙니다. 사람을 들일 기준을 놓치면 안 된다는 쪽이 더 강했습니다."
+        "그 대표님은 예전에 기준 미달 인력을 뽑아 프로그램 신뢰가 흔들린 경험이 있어서, 출산휴가 공백이 급해도 채용 기준은 못 낮추겠다는 입장이었습니다.",
+        "솔직히 그분이 '이번 주부터 한번 같이 돌아보자'라고 한 건 체험 3일 의미였는데, 상대가 정식 채용 승인으로 알아듣고 오퍼 메일까지 보낸 거예요. 같은 말을 다르게 이해한 거였습니다."
       ],
       "tp-2": [
-        "준서 대표님 쪽에서는 오퍼 메일이 와서 계좌정보랑 첫 주 가이드까지 받았습니다. 그래서 저는 거의 확정이라고 이해했어요.",
-        "그런데 바로 뒤에 혜린 대표님이 '아직 같이 일하는 건 멈춰 달라'고 보내셔서, 두 분이 저한테 같은 상황 설명을 하고 있지 않다는 걸 그때 알았습니다."
+        "저한테 온 메시지는 완전히 다른 이야기였습니다. 한쪽에서는 오퍼 메일과 계좌 정보 요청이 왔고, 다른 쪽에서는 '채용은 없던 일'이라는 보류 통보가 왔어요.",
+        "저는 누가 말을 바꿨는지보다, 두 대표가 같은 후보자 건을 전혀 다르게 이해하고 있었다는 게 문제라고 봅니다. HR 툴 자동 캘린더 초대가 최종 채용 확정처럼 보이게 만든 것도 혼선을 키웠어요."
       ],
       "tp-3": [
-        "이 툴은 후보자 이메일을 온보딩 단계로 넘기면 'Day 1 Orientation' 일정이 자동 발송됩니다. 담당자가 최종 합격 문구를 따로 쓰지 않아도 그렇게 보일 수 있습니다.",
-        "로그상으로는 오퍼 템플릿 생성, 캘린더 초대 발송, 급여 시트 미완성 상태가 순서대로 남아 있습니다. 절차가 중간에서 멈춘 건 분명합니다."
+        "저는 HR 툴 구조를 확인했는데, 후보자를 온보딩 단계에 넣는 순간 'Day 1 Orientation' 캘린더 초대가 자동으로 나갑니다. 내부 합의가 안 끝났어도 밖에서 보기엔 채용 확정처럼 보여요.",
+        "저는 체험평가표, 급여 시트, 공동 최종 메시지를 거치기로 한 체크리스트가 아직 완료되지 않은 상태에서 자동 안내가 나간 게 이 오해의 핵심이라고 봅니다. 둘 다 채용 절차를 어겼어요."
       ]
     }
   },
   "partnership-11": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "denial_heavy",
         "calculated_calm",
         "timeline_padding",
         "avoidant"
@@ -11209,23 +11281,23 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "아린은 제 앞에서 성수 매장 얘기보다 '도매처를 내가 책임지고 붙잡을 통로가 필요하다'는 말을 더 자주 했어요. 그래서 기존 법인과는 다른 이름으로 운영 구조를 짜볼까 고민을 털어놓았습니다.",
-        "동생 편이긴 하지만, 새 법인 얘기가 성수 계약 뒤에 갑자기 나온 건 아닙니다. 이미 이름과 방향을 따로 정리해 두고 있었어요."
+        "아린씨는 오래전부터 '내가 직접 관리하는 도매 채널이 필요하다'고 말해 왔습니다. 별도 법인 '아린셀렉트F&B'를 세우고 핵심 거래처를 그쪽으로 옮길 준비를 한 게 갑자기 나온 건 아니었어요.",
+        "제가 본 건 매장보다 도매 쪽에 시선이 먼저 가 있는 사람이었습니다. 기존 구조에서 자기 도매 기여가 인정되지 않는다고 느꼈고, 상대가 단독으로 위성매장을 연 게 방아쇠가 된 거예요."
       ],
       "tp-2": [
-        "아린 대표 쪽에서 먼저 새 법인 명의 견적서를 보냈고, 결제 구조도 기존 법인과 다르게 설명했습니다. 그래서 저는 별도 거래선 전환을 실제 옵션으로 받아들였어요.",
-        "그 미팅 제안은 단순 아이디어 수준으로 느껴지진 않았습니다. 기존 브랜드는 유지하되 계약 주체만 바꾸는 식의 얘기까지 나왔거든요."
+        "저한테 온 건 아이디어가 아니라 별도 법인 이름과 실제 공급 전환 견적이었습니다. 두 핵심 도매처에 미팅 제안까지 보낸 상태라, 이미 구체적으로 움직이고 있었던 거예요.",
+        "저는 기존 브랜드 이름은 유지하면서 거래 주체만 바꾸겠다는 설명을 들었는데, 주요 도매 계약 구조상 기존 법인 동의 없이 전환하면 위약이 걸리는 건 알고 있었을 텐데요."
       ],
       "tp-3": [
-        "등기 시점으로 보면 아린셀렉트F&B는 성수 위성매장 계약 분쟁보다 먼저 준비가 시작돼 있었습니다. 반대로 성수 임대차계약도 본법인 명의로 실제 체결됐고요.",
-        "문제는 어느 쪽이 더 빨랐느냐보다, 기존 공급계약과 상표사용 구조상 두 방향 모두 단독 실행이 쉽지 않았다는 점입니다. 위약과 상표 분쟁이 동시에 걸립니다."
+        "저는 기록을 보면 성수 위성매장 계약과 별도 법인 설립이 시간적으로 거의 겹칩니다. 한쪽만 뒤늦게 배신한 구조가 아니라, 둘 다 비슷한 시점에 따로 움직이고 있었어요.",
+        "저는 핵심 문제가 두 사람의 단독 확장이 모두 기존 계약과 충돌한다는 점이라고 봅니다. 상표 사용 구조와 도매 약정상 어느 쪽이든 기존 법인 동의 없이는 위약과 상표 분쟁이 동시에 발생합니다."
       ]
     }
   },
   "partnership-12": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "passive_aggressive",
         "detail_obsessed",
         "relationship_preserving",
         "privacy_sensitive"
@@ -11445,16 +11517,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "수진은 음성전사 캡처를 보고 나서 '바이어들이 우리를 내부 불화 있는 팀으로 보면 끝난다'고 했어요. 그때는 선우씨를 거의 범인처럼 생각하는 눈치였습니다.",
-        "제가 보기엔 수진이 가장 무서워한 건 욕을 먹었다는 자체보다, 셀렉트숍 바이어들이 두 대표를 불안한 팀으로 보는 상황이었습니다."
+        "리빙페어 직후라 바이어들 사이에서 '저 팀은 둘이 안 맞는다'는 인상이 퍼질까 봐 두 대표 다 예민해져 있었습니다. 다음 시즌 발주에 영향을 줄 수 있는 시점이니까요.",
+        "제가 본 건 화를 크게 내는 사람이 아니라, 프리랜서한테 돌아온 소문에 점점 말이 없어지는 사람이었습니다. 상대가 바이어에게 직접 험담한 거라고 믿었는데, 실제로는 다른 경로였거든요."
       ],
       "tp-2": [
-        "행사 중엔 선우 대표가 '수진 대표는 약속을 너무 쉽게 잡는다'고 했고, 조금 뒤엔 수진 대표가 '선우 대표 때문에 승인과 출고가 자꾸 막힌다'고 했습니다. 둘 다 제게 따로 털어놓았어요.",
-        "문제는 제가 follow-up에서 그 불만을 정리해 바이어들한테 전달하면서 표현을 섞어 버린 겁니다. 그래서 '두 분이 서로 못 믿는다'는 문장이 생겼어요."
+        "저는 행사 중에 두 대표가 각자 저한테 상대 불만을 따로 털어놓은 걸 기억합니다. 한쪽은 '납기 약속을 너무 쉽게 한다', 다른 쪽은 '승인과 출고를 자꾸 막는다'였어요.",
+        "저는 이번 일에서 제 책임이 크다고 생각합니다. 두 분의 별도 불만을 정리해서 바이어 후속 메시지에 섞어 보내면서 '서로 못 믿는다'는 말로 와전시킨 건 제 잘못이에요."
       ],
       "tp-3": [
-        "운영사 보관본으로 보면 buyer complaint memo에 문제 문장이 처음 잡힌 시점이 홍세진 씨 follow-up 직후입니다. 현장 발언이 곧바로 접수된 형태는 아니었습니다.",
-        "라운지 출입기록과 staff briefing notes를 같이 보면, 선우 대표와 수진 대표가 각각 홍세진 씨와 접촉한 시간대가 나뉘어 있습니다. 그래서 두 사람 모두 외부 인력에게 불만을 전달한 흔적은 확인됩니다."
+        "저는 바이어들 사이에 돈 문제의 소문이 프리랜서 홍세진의 행사 후 follow-up 메시지에서 처음 등장했다는 걸 확인했습니다. 두 대표 중 누가 바이어에게 직접 한 말이 아니라, 제3자가 섞어서 와전한 거예요.",
+        "저는 두 대표 모두 행사 중 외부 인력 앞에서 서로를 평가하지 않기로 한 원칙을 어겼다는 점을 확인했습니다. 한쪽만 불만을 흘린 게 아니라 양쪽 다 같은 프리랜서에게 상대 불만을 말했어요."
       ]
     }
   },
@@ -11469,8 +11541,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       "b": [
         "confrontational",
         "selective_quote",
-        "face_sensitive",
-        "counter_attack"
+        "retaliation_sensitive",
+        "face_sensitive"
       ]
     },
     "contentTags": {
@@ -11505,11 +11577,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "core_fact",
+      "t-5": "subjective_claim"
     },
     "actionAffinity": {
       "d-1": {
@@ -11523,8 +11595,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "한지석에게 280만원 자체보다 왜 굳이 '최민정' 이름과 돌봄센터 예약금을 숨겼는지 묻게 하면, 처가 돌봄 부담을 드러내기 싫었던 체면 계산이 튀어나와 외도 프레임이 약해진다.",
+        "worstActionReaction": "송금 시각 14시 03분과 금액만 몰아붙이면 지석은 숫자와 동선을 더 촘촘히 늘어놓으며 버티고, 왜 아내에게 말을 못 했는지는 끝내 감춘다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -11537,8 +11609,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "세린이 언니에게 보낸 메신저 캡처 e-3를 먼저 들이밀면 '그냥 확인만 했다'는 말이 무너진다. 새벽 열람이 제3자 공유까지 갔다는 점이 바로 드러난다.",
+        "worstActionReaction": "세린의 불안만 먼저 달래면 그는 외도 의심의 공포를 길게 말하며 새벽 2시 폰 잠금 해제와 캡처 전송 문제를 감정 뒤로 숨긴다."
       },
       "d-3": {
         "bestAction": "confidential_protection",
@@ -11551,8 +11623,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "공개 망신과 2차 확산을 막아 준다는 신호가 있어야 숨긴 맥락이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "최민정 실명을 공개 망신용으로 쓰지 않겠다고 선을 그어 주면, 지석도 모텔 골목처럼 보인 동선을 덜 숨긴다. 그 틈에 후문 상담 일정과 카페 영수증 e-4 맥락이 붙는다.",
+        "worstActionReaction": "몇 시에 골목에 있었는지, 카페에서 얼마 썼는지만 캐물으면 둘 다 외도 프레임에 갇혀 버려 돌봄센터 후문 상담이라는 핵심 설명이 더 늦게 나온다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -11565,8 +11637,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.25,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "제3자·민감정보 노출 불안을 먼저 눌러야 입을 연다. 보호 장치를 약속할수록 진술 폭이 넓어진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "세린의 동생 월세 문제를 법정 구경거리로 만들지 않겠다는 전제를 깔면, 정우성 계좌를 거친 150만원과 '추석 지나고 말할게' 메시지 e-5·e-6를 숨기기 어려워진다.",
+        "worstActionReaction": "계좌번호와 송금액만 추궁하면 세린은 곧바로 동생 보호 쪽으로 몸을 숨기고, 왜 우회 전달까지 택했는지에 대한 설명은 더 닫힌다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -11579,8 +11651,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "금액·시각·흐름이 남는 쟁점이라 기록을 맞대면 변명보다 숫자가 먼저 무너진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "공동계좌 거래내역 e-1과 정우성 쪽 입금확인 e-6를 나란히 놓으면 280만원과 150만원이 모두 '100만원 이상 사전 상의' 선을 넘었다는 사실이 한 번에 보인다.",
+        "worstActionReaction": "누구 사정이 더 급했는지부터 위로해 버리면 지석은 처가 간병을, 세린은 동생 월세를 앞세우며 각자 예외만 말하고 공동 약속 위반 구조는 흐려진다."
       }
     },
     "optimalPath": {
@@ -11681,36 +11753,36 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 옆에서 본 바로는, 추석 연휴에 본인 돌봄 공백이 생겨 가족이 간병 인력을 알아보던 분위기가 있었다.",
-        "제가 옆에서 본 바로는, 세린이 동생 돈 문제를 남편에게 바로 말하지 못해 마음이 급해 보였다는 점은 느꼈다."
+        "제가 보기엔 추석 한 주 전부터 그 집은 차례비, 병원비, 처가 방문 일정이 한꺼번에 몰려서 누구 하나 여유 있는 얼굴이 없었어요.",
+        "특히 연휴 동안 어머니 간병을 맡아줄 사람이 비는 구간이 생겼는데, 둘 다 그걸 먼저 꺼내지 못하고 눈치만 보다가 결국 각자 몰래 움직인 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 지석이 추석 직전에 재가돌봄센터 견적과 예약 가능 여부를 여러 차례 문의했다.",
-        "제가 아는 범위에서는 업무 중에도 가족 돌봄 문제 때문에 급히 통화하거나 일정을 조정하는 모습이 있었다."
+        "평소엔 흐트러짐이 적은 사람인데 그 무렵엔 자꾸 시계를 보고 자리를 비웠습니다. 연휴 간병 공백을 메울 방법을 혼자 찾고 있었던 거예요. 들뜬 사람이 아니라 걱정에 눌린 사람이었습니다.",
+        "저는 그때 그 사람이 뭔가를 즐기며 숨긴다고는 전혀 못 느꼈어요. 추석 연휴에 차례와 간병이 동시에 겹쳐서, 혼자 감당해 보려다 표정부터 거칠어지는 쪽이었습니다."
       ],
       "tp-3": [
-        "기록상 지석이 280만원을 추석 연휴 간병 예약금으로 납부했고 대상자가 오미숙이었다.",
-        "기록상 문제의 만남은 센터 후문 상담 일정이었고 사적 밀회가 아니었다."
+        "저는 재가돌봄센터 상담팀장입니다. 그분은 추석 연휴 간병 일정이 비는 구간을 급히 메우려고 오셨어요. 모텔 골목에서 만난 것처럼 보인 장면은, 같은 블록에 붙은 센터 후문 상담실에서 간병 일정을 잡은 거였습니다.",
+        "그분은 상담 내내 자기 사정보다 집에 남은 어머니 일정부터 챙기려는 태도였어요. 사적인 설렘으로 오는 사람과 표정이 확연히 다릅니다."
       ],
       "tp-4": [
-        "제가 아는 범위에서는 세린이 자신에게 150만원을 세린 동생 쪽으로 넘겨 달라고 요청했다.",
-        "제가 아는 범위에서는 세린이 '지석한테는 추석 지나고 말할게'라는 취지로 말하며 중간 전달을 부탁했다."
+        "저한테 부탁하던 목소리가 매끈하지 않았어요. 동생 밀린 월세 3개월치를 막아야 하는데 직접 말하기 창피해서 제 계좌를 경유해 달라는 거였거든요.",
+        "저는 그 부탁에서 욕심보다 다급함을 더 크게 봤습니다. 150만원을 우회 송금하면서 '추석 지나고 말할게'라고 했는데, 남편한테 말할 용기가 없어서 빙 돌아가는 사람이었어요."
       ]
     }
   },
   "spouse-02": {
     "personalityTags": {
       "a": [
+        "cold_logical",
         "privacy_sensitive",
         "shame_sensitive",
-        "cold_logical",
-        "timeline_padding"
+        "detail_obsessed"
       ],
       "b": [
-        "victimizing",
-        "face_sensitive",
-        "relationship_preserving",
-        "counter_attack"
+        "martyr_complex",
+        "victim_identity",
+        "blame_shifting",
+        "face_sensitive"
       ]
     },
     "contentTags": {
@@ -11744,11 +11816,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "emotional_context",
+      "t-5": "core_fact"
     },
     "actionAffinity": {
       "d-1": {
@@ -11762,8 +11834,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.17
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "학교 메일 헤더 e-4와 복합기 스캔·가족클라우드 이력 e-5를 맞대면, 도윤 보조 메일에서 시작된 종결서 유출 경로가 한 줄로 이어져 '아이 보호 차원' 변명이 버티기 어렵다.",
+        "worstActionReaction": "도윤이 얼마나 입학 문제로 불안했는지부터 받아주면 그는 곧 '아이 지키려 한 아빠' 위치로 숨으면서, 아내 상담 기록을 학교에 흘린 행위는 정당화해 버린다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -11776,8 +11848,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "공유 프린터 초안 e-1과 접근 로그 e-2를 함께 보면, 희주의 메일은 실제 발송이 아니라 초안 단계였다는 점과 무단 열람 시각이 동시에 고정된다.",
+        "worstActionReaction": "희주의 공포를 먼저 인정해 버리면 그는 '당황해서 본 것'이라는 말로 밤 11시 52분 메일 접근과 연락망 배제 초안 작성을 공황 반응 속에 묻어 버린다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -11790,8 +11862,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.12
         },
-        "bestActionHint": "잘린 캡처나 추정이 섞인 쟁점이라 원본·로그를 대면시키는 순간 오해 프레임이 급격히 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "익명 글 캡처 e-3에 붙은 이미지 해시를 학교 회신 e-4, 가정용 복합기 스캔 e-5와 연결하면, 외부 오해처럼 꾸민 익명 경고글이 사실상 도윤 쪽 자료였다는 점이 드러난다.",
+        "worstActionReaction": "과거 상담이 묵살됐다는 상처부터 받아주면 희주와 도윤 모두 피해 서사로 돌아가고, 이번 익명 글의 편집·업로드 경로를 검증하는 질문은 뒤로 밀린다."
       },
       "d-4": {
         "bestAction": "motive_search",
@@ -11804,8 +11876,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "두 사람이 왜 '과거 기록은 무기로 쓰지 말자'고 약속했는지부터 파고들면, 도윤의 학교 유출과 희주의 별거 위기 문구 초안이 모두 상처 재사용이었다는 동기가 한 번에 보인다.",
+        "worstActionReaction": "메일 문장 하나, 초안 표현 하나만 따지면 둘 다 '그 표현은 발송 안 됐다'거나 '취지는 보호였다'며 단어 싸움으로 빠져 약속 파기의 본질을 흐린다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -11818,8 +11890,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.27
         },
-        "bestActionHint": "공개 망신과 2차 확산을 막아 준다는 신호가 있어야 숨긴 맥락이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "아이 입학 파일 문제를 평판전으로 키우지 않겠다고 약속받으면, 정해린 기록에서 보류 시각이 익명 메일보다 앞섰다는 점과 관리사무소 정정서 e-6가 훨씬 쉽게 받아들여진다.",
+        "worstActionReaction": "파일이 몇 시 몇 분에 멈췄는지만 윽박지르면 양쪽 모두 다시 '누가 먼저 학교를 움직였나'라는 의심 싸움으로 돌아가 행정 오류라는 답이 묻힌다."
       }
     },
     "optimalPath": {
@@ -11918,32 +11990,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 옆에서 본 바로는, 도윤이 아이 입학 문제에 유난히 예민해하며 학교 쪽 시선을 많이 의식했다.",
-        "제가 옆에서 본 바로는, 희주의 과거 상담 사실 일부를 가족 대화에서 들은 적은 있지만, 학교 전달 경위까지 직접 본 것은 아니다."
+        "희주씨는 아이 입학 시기에 학부모 시선이 쏠리는 게 특히 불안했어요. 3년 전 상담 기록이 학교 쪽에 알려질까 봐 말투부터 달라지더라고요.",
+        "예전 상담 이야기가 가족 사이에서 조심스럽게 오간 적은 있어도, 저는 그게 학교까지 흘러나가는 장면을 본 적은 없습니다. 이번에 학부모방에 익명 글이 뜬 건 누군가 일부러 넘긴 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 희주가 익명 글을 본 직후 크게 흔들렸고, 범인을 확인하려고 도윤 메일을 열어봤다고 털어놓은 적이 있다.",
-        "제가 아는 범위에서는 그 행동이 차분한 계획이라기보다 공포 반응에 가까웠다는 분위기는 알 수 있다."
+        "그날 희주는 익명 글을 발견하고 37분 만에 공유 노트북에서 도윤 메일에 접속하고 프린터 기록까지 뒤졌어요. 차분하게 움직인 게 아니라, 자기 발밑이 무너지는 공포에 반응한 거였습니다.",
+        "저는 희주가 연락망 배제 초안까지 작성한 건 봤지만, 실제로 발송하진 않았어요. 아이 일과 자기 체면이 한꺼번에 흔들린다고 느끼면 사람은 평소답지 않게 굴기도 합니다."
       ],
       "tp-3": [
-        "기록상 익명 제보 메일의 수신 시각, 보호자 연락처 관련 문의, 입학 파일 보류 시각은 학교 기록으로 확인할 수 있다.",
-        "기록상 파일 보류는 행정 오류 시각이 익명 메일보다 앞섰다는 점이 기록상 분명하다."
+        "저는 입학 파일 보류 원인을 확인했는데, 익명 메일 때문이 아니라 전입 확인서에 구 동호수가 남아 있는 행정 오류였습니다. 보류 시각이 익명 메일 도착보다 앞서요.",
+        "저는 또 학부모방 익명 글에 첨부된 이미지 해시값이 도윤의 보조 이메일과 가정용 복합기 스캔 기록으로 이어진다는 걸 확인했습니다. 두 사람 다 '과거 기록을 무기로 안 쓰겠다'는 약속을 어긴 거예요."
       ]
     }
   },
   "spouse-03": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "detail_obsessed",
+        "calculated_calm",
         "shame_sensitive",
-        "timeline_padding",
-        "relationship_preserving"
+        "conflict_avoidant"
       ],
       "b": [
+        "passive_aggressive",
         "counter_attack",
-        "face_sensitive",
-        "avoidant",
-        "relationship_preserving"
+        "blame_shifting",
+        "fairness_obsessed"
       ]
     },
     "contentTags": {
@@ -11978,11 +12050,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "hidden_motive",
+      "t-4": "subjective_claim",
+      "t-5": "subjective_claim"
     },
     "actionAffinity": {
       "d-1": {
@@ -11996,8 +12068,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.12
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "유진에게 160만원 사용처 목록보다 새 회사 첫 달에 왜 그렇게 서둘렀는지 묻게 되면, 수습 복장과 교통비를 혼자 막아야 한다는 불안이 드러나 '철없는 쇼핑' 프레임이 약해진다.",
+        "worstActionReaction": "유진의 커리어 불안을 위로만 해 주면 그는 '다음 급여 들어오면 채울 생각이었다'는 미래 계획으로 빠져, 비상금 비밀 인출 자체를 계속 축소한다."
       },
       "d-2": {
         "bestAction": "fact_pursuit",
@@ -12010,8 +12082,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "시각·순서·누가 먼저였는지처럼 좁은 사실 질문이 말꼬리와 책임 회피를 막는 데 가장 잘 먹힌다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "적금 변경기록과 건조기 할부 계약서 e-5를 시간순으로 고정해 묻는 게 좋다. 인호가 두 달 자동이체를 멈추고 그 사실을 숨긴 순서가 숫자 앞에서 도망가기 어렵다.",
+        "worstActionReaction": "집이 얼마나 빠듯했는지 공감부터 건네면 인호는 건조기를 '생활 필수품' 농담으로 돌리며, 적금을 끊고도 말하지 않은 핵심을 끝까지 흐린다."
       },
       "d-3": {
         "bestAction": "confidential_protection",
@@ -12024,8 +12096,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "공개 망신과 2차 확산을 막아 준다는 신호가 있어야 숨긴 맥락이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "유진의 옷값을 사치 낙인으로 몰지 않겠다고 선을 그어 주면, 온보딩 복장 가이드 e-4와 교통비 정산 구조가 살아나 백화점 결제가 수습 적응비였다는 설명을 끌어내기 쉽다.",
+        "worstActionReaction": "백화점 승인 알림 세 건만 붙잡고 추궁하면 인호도 유진도 '사치냐 아니냐' 감정 싸움에 매달려, 필수 복장과 익월 보전 구조라는 맥락이 묻힌다."
       },
       "d-4": {
         "bestAction": "empathy_approach",
@@ -12038,8 +12110,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "수치심이나 관계 손실 두려움이 핵심이라, 비난을 낮추고 사정을 받아줘야 사실 고백이 빨라진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "둘 다 각자 이유가 있었다는 점을 먼저 인정하면, 유진은 비상금 160만원을, 인호는 적금 중단과 건조기 할부를 방어 없이 꺼내며 '50만원 사전 상의' 약속이 쌍방 위반이었다는 결론까지 빨리 간다.",
+        "worstActionReaction": "누가 얼마를 더 크게 어겼는지 숫자만 세기 시작하면 160만원 대 84만원 비교싸움으로 흐르고, 왜 둘 다 숨겼는지에 대한 인정은 더 어려워진다."
       },
       "d-5": {
         "bestAction": "motive_search",
@@ -12052,8 +12124,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.12
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "유진의 수습 불안과 인호의 현금흐름 공포를 각각 말하게 만들면, 가계 구멍이 한 사람 낭비가 아니라 두 번의 은폐가 같은 주에 겹친 결과라는 구조가 드러난다.",
+        "worstActionReaction": "각자 고생만 위로하면 유진은 이직 스트레스를, 인호는 생활비 압박을 앞세우며 누가 더 불쌍한지 경쟁하게 되고 공동 책임 판단이 흐려진다."
       }
     },
     "optimalPath": {
@@ -12156,31 +12228,31 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 옆에서 본 바로는, 인호가 건조기를 사치품이라기보다 아침 빨래 동선을 줄일 생활가전으로 보며 서둘렀다는 건 안다.",
-        "제가 옆에서 본 바로는, 인호가 유진 이직 직후 집안 현금 흐름을 많이 걱정하고 있었다는 분위기도 봤다."
+        "인호는 생활이 빠듯해지자 적금을 몰래 멈추고 건조기 할부를 질렀어요. 사치가 아니라 둘 다 지치지 않게 가전을 바꾸려는 마음이었는데, 유진한테 한마디도 안 한 게 문제였습니다.",
+        "그 무렵엔 유진이 이직하면서 첫 급여일이 3주 밀려 있었어요. 새 출발을 축하하기보다 이번 달을 어떻게 버틸지부터 계산하는 분위기였습니다."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 수습 기간 외부 미팅에 정장과 구두가 사실상 필수였고, 교통비·업무복 일부가 익월 정산 구조였다는 점을 안다.",
-        "제가 아는 범위에서는 유진이 출근 준비 비용을 갑자기 먼저 부담해야 해서 당황해했다는 말도 들었다."
+        "유진이 수습 기간에 정장, 구두, 3개월 정기권을 한꺼번에 산 건 사치가 아니라 출근 준비였어요. 수습 첫 달엔 인상부터 평가받는 압박이 있으니까요.",
+        "그래서 저는 백화점 결제 내역만 보고 허영이라고 단정하긴 어렵습니다. 일부는 익월 복지비로 보전될 항목이었고, 공동 비상금에서 160만원을 뺀 것도 말하지 못한 게 문제였지 쓴 내용 자체가 문제는 아니었어요."
       ],
       "tp-3": [
-        "기록상 유진의 첫 급여일이 통상보다 늦춰졌고, 교통비·업무복 보전이 익월 정산이라는 점은 인사 기록으로 확인된다.",
-        "기록상 온보딩 문서상 외부 미팅 복장 기준이 있었고, 유진이 그 규정을 적용받는 대상이었다."
+        "저는 이 건의 핵심이 누가 더 과하게 썼느냐가 아니라, 둘 다 50만원 이상 사전 상의 규칙을 어겼다는 점이라고 봅니다. 유진은 160만원을 몰래 뺐고, 인호는 적금을 멈추고 84만원 할부를 혼자 질렀어요.",
+        "가계 구멍은 한쪽 탓이 아닙니다. 유진의 인출, 인호의 적금 중단과 건조기 할부가 같은 주에 겹쳤고, 급여일 3주 지연이 구멍을 더 키웠습니다. 두 사람의 침묵이 만든 결과예요."
       ]
     }
   },
   "spouse-04": {
     "personalityTags": {
       "a": [
-        "avoidant",
         "relationship_preserving",
-        "face_sensitive",
-        "timeline_padding"
+        "conflict_avoidant",
+        "shame_sensitive",
+        "blame_shifting"
       ],
       "b": [
-        "fairness_obsessed",
         "confrontational",
-        "face_sensitive",
+        "detail_obsessed",
+        "fairness_obsessed",
         "selective_quote"
       ]
     },
@@ -12215,11 +12287,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "emotional_context",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -12233,8 +12305,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "하준에게 '왜 클라이언트 급호출' 거짓말을 택했는지, 어머니 집 경유 사실을 왜 말 못 했는지 묻게 하면 엄마와 아내 사이에서 좋은 사람으로 남고 싶었던 동기가 드러난다.",
+        "worstActionReaction": "하준의 난처함을 먼저 감싸주면 그는 곧 '30분만 이해했으면 됐잖아' 식으로 잘못의 크기를 줄이며, 거짓 긴급업무 문자를 보낸 사실을 희미하게 만든다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -12247,8 +12319,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "태블릿 예약변경 알림 캡처 e-3와 친구 단톡 전송 시각을 같이 제시하면, 다은이 대면 전에 외부 공유부터 했다는 점이 선명해져 '상처받아서 그랬다'는 말이 약해진다.",
+        "worstActionReaction": "첫 결혼기념일이 깨진 상처부터 달래면 다은은 상징성 이야기만 길게 반복하고, 동기화된 태블릿 무단 열람과 친구 선공유 문제는 뒤로 숨긴다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -12261,8 +12333,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "잘린 캡처나 추정이 섞인 쟁점이라 원본·로그를 대면시키는 순간 오해 프레임이 급격히 약해진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "레스토랑 예약센터 통화기록 e-4와 픽업 변경대장을 붙이면, 알림은 하준 기기에 떴어도 실제 발신 번호가 다른 사람이라는 점이 드러나 '남편이 직접 취소' 프레임이 깨진다.",
+        "worstActionReaction": "태블릿에 뜬 '예약 변경 완료' 문구 뜻만 따지면 알림 해석 싸움에 갇혀 버리고, 제3자가 코드를 알고 움직였다는 진짜 흐름을 놓치게 된다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -12275,8 +12347,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "제3자·민감정보 노출 불안을 먼저 눌러야 입을 연다. 보호 장치를 약속할수록 진술 폭이 넓어진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "가족 끼우기 문제를 시어머니·친구 앞 망신으로 번지지 않게 하겠다고 선을 그으면, 하준의 시계 케이스 보관과 다은의 브로치 대여·예약코드 공유가 모두 더 솔직하게 나온다.",
+        "worstActionReaction": "누가 먼저 가족에게 말했는지 분 단위로만 따지면 둘 다 상대의 선행 위반만 붙들고, 기념일 경계 자체를 함께 흔들었다는 본질은 흐려진다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -12289,8 +12361,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "예약센터 통화기록 e-4, 강정희 음성메모 e-5, 가족단톡 e-6를 한 번에 붙이면 강정희가 시간과 픽업지를 의도적으로 꼬았다는 선이 또렷해져 배후 개입을 부정하기 어렵다.",
+        "worstActionReaction": "강정희의 외로움이나 하준의 효심을 먼저 공감하면, 어머니 개입이 '그럴 수도 있는 가족 일'처럼 희석돼 레스토랑 코드 사용이라는 결정적 행동이 묻힌다."
       }
     },
     "optimalPath": {
@@ -12391,32 +12463,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "하준이가 그날 선물 때문에 잠깐 들를 수 있다는 얘기는 했어요. 제가 세부 예약 기록까지 다 보고 있던 건 아닙니다.",
-        "다은씨가 얼마나 상처받았는지는 알겠지만, 누가 언제 어디에 전화를 했는지까지 제가 단정해서 말하긴 어렵습니다."
+        "제가 보기엔 하준이 기념일을 일부러 펑크 낸 건 아닙니다. 시계 케이스를 어머니 집에 맡겨 둔 게 문제였어요. '클라이언트 긴급 호출'이라고 문자를 보냈지만, 작업실 퇴실 시각과 어머니 아파트 입차 시각이 14분밖에 안 차이 나요.",
+        "하준은 뭔가 챙길 게 겹치면 허둥대는 사람이에요. 그래서 거짓말은 했어도 처음부터 기념일을 버리려 한 건 아니라고 봅니다. 케이스 찾으러 잠깐 들렀다가 동선이 꼬인 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 다은이 하준과 대면하기 전에 태블릿 알림 캡처를 먼저 친구 단톡에 보낸 건 알고 있다.",
-        "제가 아는 범위에서는 다은이 그 알림만 보고 하준이 직접 취소했다고 크게 상처받아 있었다는 분위기도 안다."
+        "다은은 하준 태블릿에서 '예약 변경 완료' 알림을 보자마자 직접 취소한 거라고 확신했어요. 대면하기 26분 전에 이미 친구 단톡에 캡처를 보냈습니다. 기기 무단 확인과 제3자 선공유가 동시에 터진 거예요.",
+        "첫 결혼기념일이라 기대가 컸으니 작은 신호도 '버림'으로 읽히기 쉬웠습니다. 그런데 태블릿 알림만으로는 누가 예약을 바꿨는지 알 수 없어요. 예약센터 통화 기록의 발신 번호가 하준 것이 아니거든요."
       ],
       "tp-3": [
-        "기록상 예약 변경 요청 통화 시각과 발신 번호, 케이크 픽업지 수정 기록은 대장 원본으로 확인할 수 있다.",
-        "기록상 하준 기기에는 변경 결과 알림만 갔고, 실제 요청 발신 번호는 하준 번호가 아니었다."
+        "저는 예약센터 통화 기록을 확인했는데, 예약 변경 전화의 발신 번호가 하준 것이 아닙니다. 예약 코드를 알고 있던 제3자가 레스토랑 시간을 옮기고 픽업지를 자기 집 근처로 바꾼 거예요.",
+        "하준은 시계 케이스를 어머니에게 맡겼고, 다은은 브로치를 빌리면서 예약 캡처와 코드를 시어머니에게 보냈습니다. 둘 다 '가족 안 끼우기' 약속을 어겼지만, 다은이 예약 정보 자체를 넘긴 차이가 결정적이었어요."
       ]
     }
   },
   "spouse-05": {
     "personalityTags": {
       "a": [
-        "privacy_sensitive",
         "cold_logical",
-        "face_sensitive",
-        "counter_attack"
+        "privacy_sensitive",
+        "manipulative",
+        "detail_obsessed"
       ],
       "b": [
         "fairness_obsessed",
+        "authority_challenging",
         "confrontational",
-        "privacy_sensitive",
-        "shame_sensitive"
+        "trust_broken"
       ]
     },
     "contentTags": {
@@ -12452,11 +12524,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "hidden_motive",
+      "t-5": "subjective_claim"
     },
     "actionAffinity": {
       "d-1": {
@@ -12470,8 +12542,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "스마트락 출입기록 e-1과 14시 화상 일정표 e-6를 나란히 두면, 소담이 구 관리자 코드로 서재에 들어간 시간이 민재 예약 블록과 정확히 겹친다는 점이 분명해진다.",
+        "worstActionReaction": "소담의 허리 통증과 거실 소음만 먼저 받아주면 그는 '살려고 그랬다'는 설명으로 들어가 무단 출입 그 자체는 계속 작게 만든다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -12484,8 +12556,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "민재에게 왜 3시간 블록을 10시간으로 늘리고 소담 앱을 읽기 전용으로 낮췄는지 묻게 하면, 보안 명분 뒤에 숨어 있던 공간 독점 욕구가 드러난다.",
+        "worstActionReaction": "권한 변경 시각과 프로토콜만 캐물으면 민재는 곧 'NDA상 어쩔 수 없었다'는 규정 언어로 숨고, 왜 그렇게까지 봉쇄했는지는 끝내 말하지 않는다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -12498,8 +12570,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "잘린 캡처나 추정이 섞인 쟁점이라 원본·로그를 대면시키는 순간 오해 프레임이 급격히 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "문제 녹취 e-3와 파형 대조 보고 e-4를 정면으로 붙이면 '회의 망쳐버릴까'와 다른 날짜 발언이 이어 붙여졌다는 게 보여, 업무방해 프레임이 한 번에 무너진다.",
+        "worstActionReaction": "민재의 회의 압박을 먼저 이해해 주면 그는 편집본을 '설명용 정리'라고 다시 부르며, 녹취가 실제로 무엇을 입증하는지 검증을 미룬다."
       },
       "d-4": {
         "bestAction": "evidence_present",
@@ -12512,8 +12584,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.17
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "오한결 편집 지시 메시지 e-5와 렌더 내역까지 함께 대면시키면, 민재가 서로 다른 날짜 음성을 하나로 묶어 원본처럼 내밀었다는 의도성이 선명해진다.",
+        "worstActionReaction": "클라이언트 보안 압박을 먼저 공감하면 민재는 위조를 '보안 설명용 요약' 정도로 축소하며, 원본 사칭의 무게를 끝까지 깎아낸다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -12526,8 +12598,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "스마트락 로그, 공유캘린더 변경, 회선 장애 접수 e-1·e-2·e-6를 한 줄로 이어 놓으면 이번 파국이 소담 한 사람의 침범도, 민재 한 사람의 통제도 아닌 복합 충돌임이 드러난다.",
+        "worstActionReaction": "누구 마음이 더 상했는지부터 어루만지면 둘 다 '한쪽이 먼저 망쳤다'는 서사로 되돌아가고, 권한 봉쇄와 일정 충돌을 함께 보려는 시도는 무너진다."
       }
     },
     "optimalPath": {
@@ -12631,32 +12703,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 옆에서 본 바로는, 소담이 거실에서 일하며 허리 통증과 소음 문제를 오래 참아 왔다는 건 안다.",
-        "제가 옆에서 본 바로는, 민재가 문제의 녹취를 소담보다 먼저 자신에게 들려주며 큰일 난 것처럼 말한 적도 있다."
+        "광고 촬영 시즌과 특허 번역 마감이 7월에 겹치면서 서재 하나를 둘 다 필요로 했어요. 민재씨가 NDA를 이유로 잠금권한을 혼자 바꿔 10시간 전용 블록을 잡으니, 다른 쪽은 사실상 쫓겨난 거나 마찬가지였습니다.",
+        "그리고 거실 인터넷이 끊긴 날 소담이 구 관리자 코드로 서재에 들어간 건 사실이에요. 해외 화상심사가 급했으니까요. 하지만 사전 고지가 없었던 건 문제입니다."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 민재가 서로 다른 날짜의 음성 두 개를 보내며 하나로 정리해 달라고 요청한 사실은 직접 안다.",
-        "제가 아는 범위에서는 결과물은 설명용 편집본처럼 이해했고, 원본이라고 쓰일 줄은 몰랐다."
+        "저는 민재가 보낸 녹취를 들었을 때, 처음부터 한 호흡으로 이어진 대화 같지 않다고 느꼈습니다. 공간감도 다르고 숨 쉬는 결도 달라서, 편집본이라는 느낌이 강했어요.",
+        "나중에 확인해 보니 '회의 망쳐버릴까'는 7월 8일 책상 배치 푸념이었고, '파일 좀 보내면 끝나'는 7월 11일 백업 불만이었어요. 다른 날 발언을 이어 붙여서 맥락이 사라진 겁니다."
       ],
       "tp-3": [
-        "기록상 스마트락 출입기록, 권한 변경 이력, 회의메모 앱 원본 날짜 불일치는 로그 원본으로 확인할 수 있다.",
-        "기록상 문제의 녹취는 단일 연속 파일이 아니라 서로 다른 날짜 원본과 메타데이터가 맞물려 있다."
+        "저는 녹취 파일의 메타데이터를 확인했는데, 민재가 오한결에게 원본 두 개를 보내 하나로 정리하라고 지시한 기록이 있습니다. 완성본을 부부상담과 임대인 면담에서 원본이라며 재생한 건 의도적 행위예요.",
+        "저는 소담의 무단 출입, 민재의 권한 봉쇄, 거실 인터넷 장애, 양쪽 화상 일정 충돌 — 이 네 가지가 겹쳐 터진 거라고 봅니다. 녹취 위조까지 더해지면 한쪽 탓만으로 설명되지 않습니다."
       ]
     }
   },
   "spouse-06": {
     "personalityTags": {
       "a": [
+        "conflict_avoidant",
+        "privacy_sensitive",
         "relationship_preserving",
-        "face_sensitive",
-        "avoidant",
-        "privacy_sensitive"
+        "calculated_calm"
       ],
       "b": [
+        "cold_logical",
         "face_sensitive",
-        "confrontational",
-        "retaliation_sensitive",
-        "counter_attack"
+        "counter_attack",
+        "retaliation_sensitive"
       ]
     },
     "contentTags": {
@@ -12692,11 +12764,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "motive",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "circumstantial",
+      "t-2": "core_fact",
+      "t-3": "hidden_motive",
+      "t-4": "core_fact",
+      "t-5": "emotional_context"
     },
     "actionAffinity": {
       "d-1": {
@@ -12710,8 +12782,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "제3자·민감정보 노출 불안을 먼저 눌러야 입을 연다. 보호 장치를 약속할수록 진술 폭이 넓어진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "서희의 글쓰기 계정과 우람의 직장 평판을 공개 재판으로 만들지 않겠다고 선을 그어 주면, 서희도 배지·주차권 같은 식별 소품을 왜 그대로 썼는지 훨씬 솔직하게 말한다.",
+        "worstActionReaction": "이름과 회사명이 없었는지만 따지면 서희는 곧 '직접 지목한 적 없다'는 문구 방어로 숨어, 실제 소품이 왜 오해를 키웠는지는 빠져나간다."
       },
       "d-2": {
         "bestAction": "confidential_protection",
@@ -12724,8 +12796,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.22
         },
-        "bestActionHint": "제3자·민감정보 노출 불안을 먼저 눌러야 입을 연다. 보호 장치를 약속할수록 진술 폭이 넓어진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "친한 친구 목록 관리 실패를 창작 전체 공격으로 몰지 않겠다고 해야, 서희가 직장 인맥 3명을 남긴 채 23명 목록을 방치했다는 사실을 덜 방어적으로 인정한다.",
+        "worstActionReaction": "조회자 수와 플랫폼 기능만 따지면 서희는 '북클럽용 목록이었다'는 기술적 설명으로 빠지고, 누굴 남겨 둔 채 올렸는지의 책임은 희미해진다."
       },
       "d-3": {
         "bestAction": "confidential_protection",
@@ -12738,8 +12810,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.22
         },
-        "bestActionHint": "제3자·민감정보 노출 불안을 먼저 눌러야 입을 연다. 보호 장치를 약속할수록 진술 폭이 넓어진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "김태훈을 곧바로 악성 유포자로 몰지 않고 확인 메시지와 캡처 전송의 경계만 따져 묻는 편이 낫다. 그래야 그도 질문하듯 보냈지만 스크린샷이 이미 유통 효과를 냈다는 점을 인정하기 쉽다.",
+        "worstActionReaction": "몇 명에게 보냈는지 숫자만 따지면 김태훈은 '선임 한 명에게 확인한 것뿐'이라며 범위를 줄이고, 캡처를 붙인 순간 소문이 시작됐다는 핵심을 피한다."
       },
       "d-4": {
         "bestAction": "fact_pursuit",
@@ -12752,8 +12824,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.02
         },
-        "bestActionHint": "시각·순서·누가 먼저였는지처럼 좁은 사실 질문이 말꼬리와 책임 회피를 막는 데 가장 잘 먹힌다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "우람이 서희에게 보낸 확인 문자 시각과 팀채널·HR 접수 시각 e-5를 분 단위로 고정하면, '선조치'라는 말이 실제로는 소문 범위를 32명으로 넓힌 행동이었다는 점이 선명해진다.",
+        "worstActionReaction": "매니저로서 얼마나 당황했는지 공감부터 해 주면 우람은 곧 '팀장이라 어쩔 수 없었다'는 직책 방패 뒤로 숨고, 배우자보다 조직에 먼저 알린 순서 문제는 흐려진다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -12766,8 +12838,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "제3자·민감정보 노출 불안을 먼저 눌러야 입을 연다. 보호 장치를 약속할수록 진술 폭이 넓어진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "이 사건은 악의적 저격보다 연쇄 오해가 커진 구조라, 누구 하나를 도둑맞듯 몰지 않고 서희의 스토리·김태훈 캡처·우람 해명문을 각각 비공개로 분리해 다루는 접근이 가장 효과적이다.",
+        "worstActionReaction": "누가 먼저 더 잘못했는지 순위만 매기면 셋 다 자기에게 불리한 한 장면을 빼고 이야기해 버려, 공유 오해가 어떻게 명예훼손으로 커졌는지 전체 고리가 끊긴다."
       }
     },
     "optimalPath": {
@@ -12870,31 +12942,31 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 옆에서 본 바로는, 문제의 문장이 서희의 북클럽 연재 초안에서 나온 표현이라는 건 안다.",
-        "제가 옆에서 본 바로는, 서희가 남편 직장을 직접 겨냥하려 했다기보다 글이 오해될까 당황해했다는 분위기를 봤다."
+        "서희는 원래 일상에서 건진 감정을 글감으로 만드는 사람이에요. 그 스토리 문장도 북클럽 연재 3회 차 픽션 초안이었습니다. 이름이나 회사명은 없었어요.",
+        "다만 배경에 우람의 컨퍼런스 배지와 주차권이 보였고, 친한 친구 목록에 직장 동료 3명이 남아 있었습니다. 그래서 북클럽 글이 남편 비리 폭로처럼 읽힌 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 배지와 주차권, 문장을 보고 우람 팀장 관련 글인가 의심해 팀 선임에게 확인 메시지를 보낸 건 사실이다.",
-        "제가 아는 범위에서는 자기가 악의적으로 퍼뜨린다기보다 확인하려는 마음이 먼저였다는 건 말할 수 있다."
+        "저는 김태훈입니다. 그 스토리를 보고 '혹시 우람 팀장 건 얘기예요?'라고 확인 질문을 한 건 맞아요. 다만 캡처를 첨부한 시점에서 이미 소문 효과가 시작됐다는 건 인정합니다.",
+        "제 마음은 확인 쪽이었지만, 캡처를 붙이는 순간 사람들 머릿속에 방향이 잡혀 버렸어요. 우람이 2명만 알던 내용을 팀 32명에게 해명문을 올리면서 범위가 더 커졌고요."
       ],
       "tp-3": [
-        "기록상 팀채널 해명문 게시 시각과 HR 문의 접수 시각, 그보다 앞선 캡처 전송 시각은 기록으로 확인할 수 있다.",
-        "기록상 우람이 배우자에게 확인하기 전에 조직 채널과 HR에 먼저 대응했다는 시간 순서는 분명하다."
+        "저는 우람이 서희에게 확인 문자를 보내기 6분 전에 이미 팀채널 32명과 HR에 해명문을 올린 걸 확인했습니다. 김태훈과 선임만 알던 내용을 팀 전체가 알게 된 건 우람의 선제 대응 때문이에요.",
+        "이번 건은 악의적 폭로가 아니라 공유 오해가 도미노로 커진 사건입니다. 서희의 모호한 픽션, 김태훈의 캡처 확인, 우람의 32명 대상 선제 해명이 연쇄로 이어졌어요. 가장 큰 범위 확대는 마지막 단계에서 생겼습니다."
       ]
     }
   },
   "spouse-07": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "detail_obsessed",
         "fairness_obsessed",
-        "relationship_preserving",
-        "shame_sensitive"
+        "shame_sensitive",
+        "relationship_preserving"
       ],
       "b": [
         "face_sensitive",
-        "victimizing",
-        "confrontational",
+        "victim_identity",
+        "martyr_complex",
         "selective_quote"
       ]
     },
@@ -12930,11 +13002,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "emotion",
-      "t-5": "motive"
+      "t-1": "circumstantial",
+      "t-2": "hidden_motive",
+      "t-3": "core_fact",
+      "t-4": "emotional_context",
+      "t-5": "subjective_claim"
     },
     "actionAffinity": {
       "d-1": {
@@ -12948,8 +13020,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.12
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "다혜에게 왜 상담 자리와 단톡에서 굳이 '거의 다 제가 해요'라고 말했는지 묻게 되면, 아침 전쟁을 아무도 고생으로 인정해 주지 않는다는 결핍이 드러난다. 그 인정 욕구가 보이면 공로 독점 발언도 단순 실수로 숨기기 어려워진다.",
+        "worstActionReaction": "등원 18일, 긴급연락 2건 같은 숫자부터 들이대면 다혜는 곧바로 '아침 40분이 얼마나 전쟁인지 아냐'는 장면 묘사로 물러나며, 공개 자리에서 태준 몫을 지운 문제는 끝까지 건드리지 않는다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -12962,8 +13034,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "태준에게 왜 단톡 발언 22분 뒤 밤·주말 항목만 따로 PDF로 뽑았는지 동기를 캐물으면, '아무도 밤 노동을 안 본다'는 억울함이 먼저 튀어나온다. 그 순간 선택 편집이 증거정리가 아니라 인정 쟁탈전이었다는 점이 선명해진다.",
+        "worstActionReaction": "태준의 서운함부터 오래 받아주면 그는 '나는 늘 안 보이는 사람'이라는 피해 위치에 머물고, 아침 루틴 18건을 빼고 내보낸 편집 행위는 감정 뒤로 숨겨 버린다."
       },
       "d-3": {
         "bestAction": "empathy_approach",
@@ -12976,8 +13048,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "수치심이나 관계 손실 두려움이 핵심이라, 비난을 낮추고 사정을 받아줘야 사실 고백이 빨라진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "다혜의 아침 부담을 먼저 인정해 주면, 그녀는 '내가 더 힘들었다'는 방어를 잠시 내려놓고 태준의 소아과 예약·세탁·밤 준비가 실제로 있었음을 받아들일 여지가 생긴다. 이 쟁점은 비교표보다 체감 난도에 대한 존중이 먼저다.",
+        "worstActionReaction": "곧바로 소아과 8건, 세탁 12건, 등원 18건을 줄세우면 두 사람은 서로 다른 종류의 노동을 한 표에 억지로 올리기 시작하고, 보이는 노동과 보이지 않는 노동을 같은 점수판으로 더 세게 싸운다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -12990,8 +13062,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.27
         },
-        "bestActionHint": "공개 망신과 2차 확산을 막아 준다는 신호가 있어야 숨긴 맥락이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "가족 단톡 캡처와 냉장고 메모를 더 퍼뜨리지 않겠다는 안전장치가 있어야, 둘 다 '아이 앞에서 점수판을 꺼냈다'는 수치심을 말할 수 있다. 공개 노출 불안을 낮춰야 점수 경쟁 자체를 인정한다.",
+        "worstActionReaction": "누가 먼저 숫자를 꺼냈는지부터 캐면 다혜는 '오늘만 4번 뛰었다'를, 태준은 '17건 중 9건'을 다시 들고 나와 법정에서도 똑같은 점수판 싸움을 재연한다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -13004,8 +13076,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "도우미 종료 문자와 야근 캘린더, 태준 명의 병원·세탁 기록을 한 번에 붙여 보여 주면 갈등의 시작점이 개인 태만이 아니라 돌봄 총량 폭증이었다는 흐름이 드러난다. 이 쟁점은 구조를 보게 하는 원본 타임라인이 가장 강하다.",
+        "worstActionReaction": "그냥 '두 분 다 힘드셨겠네요' 수준의 위로만 건네면, 다혜는 인정 부족을 탓하고 태준은 억울함만 더 말하면서 도우미 종료와 야근 겹침이라는 핵심 원인은 끝내 선명해지지 않는다."
       }
     },
     "optimalPath": {
@@ -13098,31 +13170,31 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 옆에서 본 바로는, 가족 단톡에는 다혜의 등원 사진과 아침 분투가 자주 올라왔고, 그 장면은 분명히 많이 봤다.",
-        "제가 옆에서 본 바로는, 반면 태준이 밤 준비나 세탁을 하는 장면은 가족 단톡에서 잘 보지 못했다는 정도는 말할 수 있다."
+        "다혜가 상담에서 '거의 다 제가 해요'라고 한 뒤 같은 날 저녁 단톡에도 비슷한 표현을 올렸어요. 아침 등원은 맞지만 태준이 밤마다 옷 준비하고 소아과 8번, 세탁 12번 한 건 빠져 있었습니다.",
+        "눈에 보이는 아침 장면만 보면 한쪽이 다 하는 것 같지만, 밤과 주말에 조용히 쌓이는 돌봄은 사진이나 칭찬에 잘 안 남더라고요. 총 항목을 세면 둘이 거의 같았어요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 태준이 점심시간마다 소아과 예약 전화나 생활 행정 전화를 자주 하는 모습은 봤다.",
-        "제가 아는 범위에서는 퇴근길에 세탁물이나 반찬 주문을 챙기는 습관도 알고 있어, 태준이 집안일을 아예 안 한다는 그림과는 다르다."
+        "태준은 쉬는 시간에도 소아과 예약이나 약국 픽업을 처리하고 돌아오는 사람이었어요. 한 달 기록을 보면 소아과 8건, 약국 5건, 반찬 4건이 다 점심이나 밤에 분산돼 있었습니다.",
+        "그래서 저는 태준이 손 놓은 배우자라는 인상은 전혀 없었어요. 다만 다혜 발언 22분 뒤 가사앱에서 밤·주말 항목만 골라 PDF를 뽑은 건 상대 기여를 편집한 셈이라 그것도 문제입니다."
       ],
       "tp-3": [
-        "기록상 등하원 서명 기록, 상담 메모, 긴급연락 대응 시 실제 도착 보호자는 기록으로 확인할 수 있다.",
-        "기록상 다혜의 등원 비중은 높지만, 비정기 대응과 긴급연락에는 태준이 움직인 기록도 분명히 있다."
+        "야간 도우미 종료, 야근 겹침, 소아과 일정 급증 — 돌봄 총량이 확 늘었는데 분담 구조가 재조정되지 않은 게 이 갈등의 배경입니다. 한 사람의 태만이 아니라 구조적 과부하예요.",
+        "다혜는 단톡에 '오늘만 4번 뛰었다', 태준은 냉장고에 '17건 중 9건 내가 함' 메모를 붙였습니다. 둘 다 감정 대신 점수판을 꺼냈고, 아이 앞에서 벌어졌다는 점이 문제의 본질이에요."
       ]
     }
   },
   "spouse-08": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "calculated_calm",
         "privacy_sensitive",
-        "shame_sensitive",
-        "timeline_padding"
+        "detail_obsessed",
+        "shame_sensitive"
       ],
       "b": [
-        "avoidant",
-        "relationship_preserving",
         "face_sensitive",
+        "avoidant",
+        "blame_shifting",
         "counter_attack"
       ]
     },
@@ -13158,11 +13230,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "core_fact",
+      "t-4": "subjective_claim",
+      "t-5": "circumstantial"
     },
     "actionAffinity": {
       "d-1": {
@@ -13176,8 +13248,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "잘린 캡처나 추정이 섞인 쟁점이라 원본·로그를 대면시키는 순간 오해 프레임이 급격히 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "카페 음성메모의 '상담까지만', 잘린 업로드 알림, 법무사 CRM의 무접수 기록을 나란히 대면시키면 쟁점이 '서류를 보냈느냐'가 아니라 '합의 범위 안이었느냐'로 정리된다. 현석의 독단 프레임은 원본 순서 앞에서 급격히 약해진다.",
+        "worstActionReaction": "서진의 불안부터 달래기 시작하면 현석은 곧 '나는 집도 잃고 버려질 뻔했다'는 감정으로 이동해, 접수 번호도 없이 문의 단계였다는 핵심 기록을 감정 소음 속에 묻어 버린다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -13190,8 +13262,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "금액·시각·흐름이 남는 쟁점이라 기록을 맞대면 변명보다 숫자가 먼저 무너진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "계약서 업로드 뒤 47분 후 추가된 대출 정리서 로그를 상담요약과 바로 붙이면, 서진이 합의된 상담 범위에 과거 부채 자료를 끼워 넣은 지점이 선명해진다. 막연한 불안 호소보다 버전 이력 한 줄이 훨씬 강하게 범위 이탈을 고정한다.",
+        "worstActionReaction": "주거 불안을 먼저 공감하면 서진은 그 문서를 '혹시 모를 대비자료'로 다시 포장하면서, 이미 덮은 2022년 사건을 왜 굳이 상담 폴더에 다시 올렸는지에 답하지 않는다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -13204,8 +13276,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "현석에게 알림을 본 직후 왜 누나와 임대인부터 찾았는지 묻는 순간, 법무사보다 '버려지는 사람처럼 보일까' 하는 체면 공포가 먼저 튀어나온다. 그 두려움이 보이면 카페 합의를 없던 말로 줄인 이유도 함께 드러난다.",
+        "worstActionReaction": "12분 뒤 누나, 31분 뒤 임대인 같은 시간표만 몰아붙이면 현석은 금세 '그건 그냥 달래기용 말이었지'라며 카페 합의의 효력 자체를 단어 싸움으로 축소시킨다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -13218,8 +13290,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.25,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "제3자·민감정보 노출 불안을 먼저 눌러야 입을 연다. 보호 장치를 약속할수록 진술 폭이 넓어진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "가족과 임대인, 법무사 문서 노출을 최소 범위로 다루겠다고 해 두면 서진도 대출 문서 추가를, 현석도 외부 선통보를 한 단계씩 인정하기 쉬워진다. 이 쟁점은 누가 더 나빴는지보다 경계선이 어디서 깨졌는지를 안전하게 말하게 해야 풀린다.",
+        "worstActionReaction": "바로 책임 비율부터 재면 서진은 '나는 상담 범위 안이었다'고 버티고, 현석은 '나는 집을 지키려 했다'고 맞서면서 서로 다른 위반을 같은 저울에 억지로 올리느라 본질을 더 흐린다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -13232,8 +13304,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "제3자·민감정보 노출 불안을 먼저 눌러야 입을 연다. 보호 장치를 약속할수록 진술 폭이 넓어진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "임대인 확답 시한, 은행 일정표, 현석의 선제 통화 순서를 비공개 맥락 속에서 정리하면 전세 위기가 상담 하나 때문에 난 게 아니라는 점을 차분히 말할 수 있다. 주거 불안을 방어 무기로 쓰지 못하게 만드는 데 보호 장치가 잘 먹힌다.",
+        "worstActionReaction": "누가 전세를 망쳤는지부터 추궁하면 현석은 상담 탓으로, 서진은 임대인 통화 탓으로 곧장 갈라서며 '시한 임박+답변 지연+선제 전화'라는 구조는 각자 유리한 한 장면 뒤로 사라진다."
       }
     },
     "optimalPath": {
@@ -13345,16 +13417,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "현석이가 다급하게 열쇠를 좀 맡아 달라고 하고, 서진씨가 혼자 법무사 쪽을 알아보는 것 같다고 말한 적은 있어요.",
-        "다만 두 사람이 카페에서 어디까지 합의했는지는 그때 저는 전혀 몰랐습니다."
+        "현석은 법무사 서류 알림을 보자마자 서진이 몰래 이혼을 준비하고 있다고 믿어 버렸어요. 12분 뒤 누나에게, 31분 뒤 임대인에게 '서진 독단'이라고 알렸습니다.",
+        "하지만 저는 한 달 전 카페에서 '상담까지만 해 보자'고 합의한 자리에 현석도 있었다는 걸 나중에 알았어요. 합의를 알면서 없었던 것처럼 프레임을 짠 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 서진이 법무사 상담 예약만 잡고 실제 접수는 아니라고 여러 번 말한 건 안다.",
-        "제가 아는 범위에서는 상담 폴더를 정리하는 과정에서 법무사 상담 범위를 스스로 구분하려 했다는 분위기도 봤다."
+        "서진은 법무사에 서류를 넘긴 게 맞지만, 접수 번호도 사건 번호도 없었어요. CRM 기록상 상담 단계에 머물렀습니다. 카페 합의 범위 안이었어요.",
+        "다만 서진이 계약서 47분 뒤에 과거 대출 정리서를 상담 폴더에 추가한 건 합의 범위를 넘었습니다. 상담 방어와 과거 무기화의 경계를 넘은 거예요."
       ],
       "tp-3": [
-        "기록상 상담 분류는 사전 정보 문의였고, 접수 번호나 사건 번호 없이 시나리오 설명 수준에서 끝났다.",
-        "기록상 서진이 보낸 기본 문서와 나중에 추가된 대출 관련 문서는 시차를 두고 들어왔다."
+        "저는 법무사 기록을 보면 이 건이 이혼 소송 착수가 아니라 가능성만 물은 상담 단계라고 확인했습니다. 접수 번호도 사건 번호도 생성되지 않았어요.",
+        "핵심은 서진이 합의에 없던 대출 문서를 추가해 범위를 넘겼고, 현석은 합의를 알면서 재논의 없이 바깥에 '독단'이라고 퍼뜨렸다는 점입니다. 갱신 확답 시한 3일 전에 둘 다 합의를 어긴 겁니다."
       ]
     }
   },
@@ -13362,15 +13434,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "privacy_sensitive",
-        "third_party_protective",
+        "trust_broken",
         "cold_logical",
-        "shame_sensitive"
+        "grudge_holding"
       ],
       "b": [
-        "face_sensitive",
         "relationship_preserving",
-        "avoidant",
-        "counter_attack"
+        "counter_attack",
+        "blame_shifting",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -13405,11 +13477,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "motive",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "subjective_claim",
+      "t-5": "emotional_context"
     },
     "actionAffinity": {
       "d-1": {
@@ -13423,8 +13495,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "도현에게 2022년 채무 사건 이후 왜 이번에도 먼저 송금하고 나중에 설명하려 했는지 묻는 순간, 외도보다 '또 가장 역할을 못 했다는 평가를 들을까' 하는 공포가 튀어나온다. 그 공포가 드러나야 390만원 비밀 송금도 급한 선의로만 숨기기 어렵다.",
+        "worstActionReaction": "이체 시각과 병원 주차 18분 차이만 밀어붙이면 도현은 병원 들른 동선과 원무과 절차를 길게 나열하며, 같은 날 공유 원칙을 깬 핵심은 바쁜 일정 이야기 속에 묻어 버린다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -13437,8 +13509,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "선아에게 보험금 입금 43분 만에 왜 오빠 계좌로 옮겼는지 묻게 되면, '도현 돈 문제에 또 끌려다니고 싶지 않았다'는 통제 욕구가 먼저 나온다. 그 동기가 드러나야 '보관이었을 뿐'이라는 말이 은닉의 성격을 완전히 지우지 못한다.",
+        "worstActionReaction": "처음부터 930만원 대 390만원 액수 비교로 밀어붙이면 선아는 곧 '쓴 게 아니라 맡겨 둔 거야'라는 정의 싸움으로 빠져, 왜 남편에게조차 비공개를 요청했는지 답하지 않는다."
       },
       "d-3": {
         "bestAction": "confidential_protection",
@@ -13451,8 +13523,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "공개 망신과 2차 확산을 막아 준다는 신호가 있어야 숨긴 맥락이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "잘린 메신저를 더 퍼뜨리지 않겠다고 선을 그어 주면, 도현은 최서정과의 늦은 밤 연락이 퇴원 가능일과 대기 설명 때문이었다는 맥락을 내놓기 쉬워진다. 이 쟁점은 부정행위 의심을 낮춰 줘야 업무 기록이 힘을 얻는다.",
+        "worstActionReaction": "문자 속 '밤 10시 전에 다시 봐요' 한 줄만 파고들면 선아는 사적 뉘앙스를, 도현은 말투 해명을 반복하며 병동 예약번호와 원무주임 직책이라는 기관 맥락까지 도달하지 못한다."
       },
       "d-4": {
         "bestAction": "fact_pursuit",
@@ -13465,8 +13537,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "시각·순서·누가 먼저였는지처럼 좁은 사실 질문이 말꼬리와 책임 회피를 막는 데 가장 잘 먹힌다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "2022년 공개원칙 메모의 '100만원 이상 같은 날 공유' 한 문장을 기준으로 yes/no를 좁혀 묻는 게 가장 효과적이다. 규칙 문장 앞에서는 선아의 과거 상처 호소도 930만원 비공개를 면책 논리로 끝까지 밀기 어렵다.",
+        "worstActionReaction": "선아의 상처를 먼저 길게 받아주면 그녀는 곧 2022년의 배신 전체를 현재의 허가증처럼 쓰기 시작하고, 이번 930만원 이전이 규칙 위반이었다는 현재형 사실은 희미해진다."
       },
       "d-5": {
         "bestAction": "empathy_approach",
@@ -13479,8 +13551,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "수치심이나 관계 손실 두려움이 핵심이라, 비난을 낮추고 사정을 받아줘야 사실 고백이 빨라진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "퇴원 일정이 당겨질 수 있다는 공포와 계좌 유동성 불안을 둘 다 인정해 주면, 선아도 도현도 '상대를 막기 위해 돈을 먼저 쥐었다'는 쌍방 패턴을 말할 가능성이 커진다. 병원비 공황은 비난보다 두려움을 다루는 쪽이 진실에 가깝다.",
+        "worstActionReaction": "누가 현금 부족을 만들었는지만 따지면 선아는 390만원, 도현은 930만원을 들고 상대 금액만 키우며, 두 비밀이 동시에 유동성을 말려 버렸다는 구조는 서로의 액수 공격 뒤에 숨는다."
       }
     },
     "optimalPath": {
@@ -13577,31 +13649,31 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "선아가 병원비가 걱정돼서 돈을 잠깐 자기 쪽에 맡겨 두려는 거라고 말한 건 맞아요.",
-        "그걸 도현씨한테 언제, 어떻게 말하려 했는지까지는 저도 자세히 듣지 못했습니다."
+        "도현은 밤에 공동계좌에서 큰 금액을 빼서 낯선 여자 이름으로 보냈어요. 나중에 알고 보니 병동 원무주임한테 간병 선수금을 보낸 거였는데, 아내한테 한마디도 안 한 게 문제였습니다.",
+        "저는 그 행동에서 외도보다 타이밍을 놓친 두려움을 봤어요. 어머니 퇴원이 앞당겨질 수 있다는 연락에 급했는데, 먼저 말하지 못하고 혼자 움직인 거예요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 간병보험금 930만원의 지급일, 지급 사유, 지급결정 자체는 원본 서류로 확인할 수 있다.",
-        "제가 아는 범위에서는 보험금이 선아 개인계좌로 먼저 들어온 사실까지는 알지만, 그 뒤 오빠 계좌 이전은 별도 자료가 있어야 안다."
+        "상대쪽은 보험금이 입금되자마자 전액을 다른 계좌로 옮기고 침묵했습니다. 2022년 오빠 빚 대납 전력 때문에 또 가져갈까 봐 먼저 숨긴 거예요.",
+        "시간순으로는 보험금 은닉이 먼저이고 금액도 더 큽니다. 사전 공유 약속을 먼저 깬 건 그쪽이에요. 둘 다 약속을 어겼지만 규모와 순서가 다릅니다."
       ],
       "tp-3": [
-        "기록상 390만원은 통합간병 병동 대기 확보용 선수금으로 수납됐고, 본인 직책도 병원 전산으로 확인된다.",
-        "기록상 도현과의 늦은 밤 연락은 퇴원 일정과 대기 설명 조율 차원의 업무 연락이었다."
+        "저는 병동 원무주임 최서정입니다. 밤 9시에 간병 선수금을 받은 건 맞고 영수증이 있어요. 외도 상대가 아니라 병원 직원입니다. 병원 전산으로 직책이 확인됩니다.",
+        "이 건의 핵심은 외도 여부가 아니라, 간병비를 혼자 결정한 것과 보험금을 먼저 숨긴 것이 같은 주에 겹쳤다는 점입니다. 퇴원 일정과 대기 순번까지 동시에 바뀌며 터진 거예요."
       ]
     }
   },
   "spouse-10": {
     "personalityTags": {
       "a": [
+        "detail_obsessed",
         "cold_logical",
         "fairness_obsessed",
-        "face_sensitive",
-        "timeline_padding"
+        "conflict_avoidant"
       ],
       "b": [
-        "avoidant",
         "face_sensitive",
-        "counter_attack",
+        "timeline_padding",
+        "avoidant",
         "relationship_preserving"
       ]
     },
@@ -13635,11 +13707,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "core_fact",
+      "t-5": "subjective_claim"
     },
     "actionAffinity": {
       "d-1": {
@@ -13653,8 +13725,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "기현에게 왜 배우자보다 어머니에게 먼저 '먼저 갈게요'를 보냈는지 묻게 되면, 시댁 점심상을 비우는 아들이 될까 봐 서둘러 확정해 버린 체면 계산이 드러난다. 그 동기가 보여야 일방 약속이 단순 착오가 아니라는 점이 선명해진다.",
+        "worstActionReaction": "전날 메시지 문구만 잘게 뜯으면 기현은 곧 '점심쯤이지 12시 확정은 아니었다'는 시간 흐리기로 빠져, 왜 수아 확인도 없이 어머니 기대를 먼저 만들었는지까지는 못 간다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -13667,8 +13739,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "수아에게 왜 '본가'와 '가까운 쪽 먼저'가 당연히 같은 뜻으로 읽힐 거라 생각했는지 묻게 되면, 친정 표현이 남편에게도 자동 번역될 거라는 무의식이 드러난다. 그 지점을 건드려야 캘린더 문구의 모호함을 자기 책임으로 보게 된다.",
+        "worstActionReaction": "수아의 서운함만 먼저 달래면 그녀는 금세 '본가라고 썼지 네 집이라고 안 썼잖아'라는 단어 사전으로 숨어 버리고, 확인하지 않은 책임은 인정하지 않으려 든다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -13681,8 +13753,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 0.95
         },
-        "bestActionHint": "잘린 캡처나 추정이 섞인 쟁점이라 원본·로그를 대면시키는 순간 오해 프레임이 급격히 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "기현의 오후 장인댁 메모와 반대 방향 하이패스 기록을 같이 제시하면, 처가를 일부러 무시한 의도는 아니라는 점이 물리적 동선으로 드러난다. 남는 과실만 또렷하게 남기기에 이 쟁점은 원본 기록이 가장 빠르다.",
+        "worstActionReaction": "친정 이모의 섭섭함부터 길게 공감하면 수아는 그 감정 메시지를 곧바로 '고의 배제의 증거'로 붙들고, 기현 메모에 남은 오후 방문 계획은 눈에서 멀어진다."
       },
       "d-4": {
         "bestAction": "fact_pursuit",
@@ -13695,8 +13767,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "시각·순서·누가 먼저였는지처럼 좁은 사실 질문이 말꼬리와 책임 회피를 막는 데 가장 잘 먹힌다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "수아 캘린더 생성 시각, 기현의 전날 단톡, 출발 7분 전 통화를 시간순으로 못 박아 질문하면 두 사람 모두 부모에게는 먼저 말하고 배우자에게는 나중에 확인한 구조를 피하기 어렵다. 이 쟁점은 감정보다 순서 고정이 핵심이다.",
+        "worstActionReaction": "양가 어른들 서운함부터 달래기 시작하면 이야기가 누구 부모 체면이 더 깎였는지로 새어 버리고, 정작 부부가 서로를 마지막으로 확인한 통신 우선순위 문제는 흐려진다."
       },
       "d-5": {
         "bestAction": "empathy_approach",
@@ -13709,8 +13781,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "수치심이나 관계 손실 두려움이 핵심이라, 비난을 낮추고 사정을 받아줘야 사실 고백이 빨라진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "명절 서열 시비로 몰아붙이지 않고, 각자 부모 앞에서 예의 없는 사위·며느리로 보일까 두려웠다는 점을 받아주면 본가·먼저·점심쯤이 왜 이렇게 위험한 단어였는지 스스로 설명하게 된다. 구조적 실수는 비난을 낮춰야 말로 나온다.",
+        "worstActionReaction": "한 사람을 주범으로 찍어 버리면 수아는 '본가'를, 기현은 '점심쯤'을 각각 방패로 들고 나와 사전적 의미만 싸우고 50분 이동 불가능성이라는 현실 계산은 사라진다."
       }
     },
     "optimalPath": {
@@ -13806,32 +13878,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 옆에서 본 바로는, 기현이 전날 밤 가족 단톡에 먼저 점심쯤 오겠다고 보냈고, 그 말을 믿고 식사를 준비한 건 사실이다.",
-        "제가 옆에서 본 바로는, 어머니 입장에서는 그 문구가 가능성보다 확정에 가깝게 들렸다는 정도는 말할 수 있다."
+        "기현은 전날 밤 어머니에게 '점심 먼저 가겠다'고 문자를 보내고 과일상자 픽업까지 예약했어요. 어머니 입장에선 확정된 약속이었습니다.",
+        "수아는 캘린더에 '토 11시 본가'라고만 적었는데, '본가'가 친정이라는 걸 기현에게 한 번도 말한 적이 없어요. 부부 사이에서 미정이던 단어가 양가 어른한테는 이미 확정으로 전달된 거죠."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 수아가 평소 자기 친정을 자연스럽게 본가라고 부르는 습관은 알고 있다.",
-        "제가 아는 범위에서는 그 표현이 배우자에게는 다르게 들릴 수 있다고 수아에게 말한 적이 있다는 정도는 말할 수 있다."
+        "수아는 이틀 전 이미 친정에 방문 의사를 전했고, 기현은 전날 밤 어머니에게 확정 문자를 보냈습니다. 그런데 부부 간 최종 통화는 출발 7분 전이었어요. 양가보다 배우자가 나중에 안 구조 자체가 소통 문제입니다.",
+        "기현 메모에 오후 장인댁 방문 계획이 남아 있으니 의도적 배제는 아니었어요. 하지만 '본가', '먼저', '점심쯤' — 이 세 단어 모두 해석이 둘로 갈렸고, 확인 한 통화면 막을 수 있었습니다."
       ],
       "tp-3": [
-        "기록상 기현 명의 과일상자와 수아 명의 한과세트가 서로 다른 주소 기준으로 예약돼 있었고 시차도 있었다.",
-        "기록상 주문 메모상 두 사람이 각자 다른 첫 방문지를 전제로 준비한 건 기록으로 확인된다."
+        "저는 주문서를 보면 수아는 한과세트를, 기현은 과일상자를 각자 준비했습니다. 같은 날을 준비하면서 마음속 방향이 완전히 달랐어요. 양가 사이 이동 50분도 감안하지 않은 상태였습니다.",
+        "이 건은 누가 거짓말을 한 게 아니라 처음부터 각자 다른 그림을 들고 출발한 구조적 실수입니다. 문 앞에서 마주쳐서야 전혀 다른 방향이었다는 걸 알게 된 거예요."
       ]
     }
   },
   "spouse-11": {
     "personalityTags": {
       "a": [
+        "manipulative",
         "privacy_sensitive",
-        "face_sensitive",
-        "cold_logical",
-        "counter_attack"
+        "calculated_calm",
+        "shame_sensitive"
       ],
       "b": [
-        "face_sensitive",
         "avoidant",
         "counter_attack",
-        "relationship_preserving"
+        "blame_shifting",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -13867,11 +13939,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "motive",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "hidden_motive",
+      "t-5": "core_fact"
     },
     "actionAffinity": {
       "d-1": {
@@ -13885,8 +13957,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "유림 태블릿 지문이 찍힌 포털 세션에서 공사중지 요청과 CCTV 반출이 연달아 실행된 감사로그를 바로 보여 주면, '난 캡처만 했을 뿐'이라는 선 긋기가 버티기 어렵다. 이 쟁점은 로그 한 줄이 심리 추정 열 문장보다 세다.",
+        "worstActionReaction": "리모델링이 망가질까 두려웠다는 사정부터 받아주면 유림은 곧 무단 접속을 '집을 살리려 한 기록 보존'으로 다시 부르고, 권한 침범 자체는 선의 뒤에 숨긴다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -13899,8 +13971,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "제습기 OFF 6시간 12분, 건조업체 취소, 도어락 권한 재설정이 같은 흐름이라는 원본 로그를 맞대면 승호의 '급해서 그랬다'는 말은 설 자리가 크게 줄어든다. 급한 대응이라면 왜 가장 기본인 건조를 끊었는지가 즉시 드러난다.",
+        "worstActionReaction": "예산 압박과 가장 역할부터 공감해 버리면 승호는 자신의 선택을 '가장이 내린 거친 판단'으로 포장하면서, OFF 로그와 취소 기록이라는 객관 장면을 끝까지 뒤로 미룬다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -13913,8 +13985,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "잘린 캡처나 추정이 섞인 쟁점이라 원본·로그를 대면시키는 순간 오해 프레임이 급격히 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "잘린 11초 CCTV 캡처를 수분센서 CSV와 긴급건조 권고 시점에 붙여 보면, 초기 하자는 시공사 쪽이지만 큰 손상은 건조 지연 뒤에 커졌다는 선이 분명해진다. 이 쟁점은 잘린 영상과 전체 타임라인의 충돌을 보여 주는 것이 핵심이다.",
+        "worstActionReaction": "홍대성에 대한 불신을 먼저 받아 주면 두 사람은 곧 '현장소장이 수상했다'는 의심 서사만 키우고, 제습 OFF 이후 계단형으로 오른 센서 수치에는 손을 대지 않으려 한다."
       },
       "d-4": {
         "bestAction": "evidence_present",
@@ -13927,8 +13999,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "금액·시각·흐름이 남는 쟁점이라 기록을 맞대면 변명보다 숫자가 먼저 무너진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "삭제 복원 메신저의 '손상 넓으면 천장도'와 '잔금이랑 카드대금 나누자'를 예산 메모와 함께 제시하면, 보험금 계산이 한쪽의 충동이 아니라 번갈아 구체화된 공동 기획으로 보인다. 서로의 역할을 분리해 숨길 틈이 줄어든다.",
+        "worstActionReaction": "입주 지연 스트레스만 공감하고 넘어가면 두 사람은 보험 얘기를 단순한 푸념처럼 눌러 버리고, 손상 확대와 예산 구멍을 계산해 연결한 문장들은 '그때 감정적으로 한 말'로 축소한다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -13941,8 +14013,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.02
         },
-        "bestActionHint": "금액·시각·흐름이 남는 쟁점이라 기록을 맞대면 변명보다 숫자가 먼저 무너진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "보험사 조사유예 결정일을 홍대성 분쟁 제기보다 앞에 두고, 제습 로그·센서 이상·사진 순서 불일치 사유를 함께 꺼내면 '시공사 보복' 서사는 시간표에서 무너진다. 이 쟁점은 날짜와 기관 사유서를 붙여 보는 것이 가장 빠르다.",
+        "worstActionReaction": "보험사가 너무했다는 정서부터 받아주면 부부는 곧 외부 탓으로 뭉치면서, 정작 자기들이 남긴 데이터 이상징후와 복구 지연은 방어적 침묵으로 덮어 버린다."
       }
     },
     "optimalPath": {
@@ -14046,16 +14118,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 옆에서 본 바로는, 승호가 공사 예산 초과를 크게 걱정하며 보험금이 나오면 잔금이나 카드대금을 메울 수 있을지 물은 적은 있다.",
-        "제가 옆에서 본 바로는, 돈 압박이 누수 대응 판단을 흐릴 정도로 컸다는 분위기는 알고 있다."
+        "리모델링 중 욕실 배관에서 누수가 터졌는데, 초기 보수비가 수납장·바닥까지 합치면서 몇 배로 불어나고 있었어요. 보험으로 메우려는 마음이 둘 다 급했습니다.",
+        "유림은 승호 아이디로 포털에 접속해 CCTV를 빼냈고, 승호는 제습기를 6시간 끈 채 건조를 취소했어요. 한쪽 배신이 아니라 보험금을 더 받으려는 양쪽 움직임이었습니다."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 포털 감사로그, 공사중지 요청, 긴급건조 권고, 심야 재출입 도어락 기록은 현장 원본 타임라인으로 확인할 수 있다.",
-        "제가 아는 범위에서는 초기 누수 자체는 시공 하자 범주였지만, 이후 건조 지연으로 손상 범위가 커졌다는 현장 흐름도 확인된다."
+        "저는 제습기가 여러 시간 꺼진 동안 수분센서가 계단형으로 급상승한 기록을 확인했습니다. 초기 누수는 시공 하자 수준이었지만, 제습 중단과 건조 취소가 손상을 확대한 직접 원인이에요.",
+        "삭제 복원 메신저에 유림은 '손상 넓으면 천장도 간다', 승호는 '잔금이랑 카드대금 나누자'고 답한 기록이 있습니다. 한쪽이 주도한 게 아니라 양쪽이 번갈아 보험금 계산을 구체화한 공동 기획이에요."
       ],
       "tp-3": [
-        "기록상 보험청구 초안, 수분센서 CSV, 지급 보류 사유서는 원본으로 대조할 수 있다.",
-        "기록상 보류 사유는 시공사와의 분쟁보다 먼저 포착된 제습 중단 로그, 이상 곡선, 사진 순서 불일치였다."
+        "저는 보험사 지급 보류가 시공사 분쟁 제기보다 이틀 앞서 결정됐다는 걸 확인했습니다. 사유서에 제습 중단 로그, 수분센서 이상 곡선, 사진 순서 불일치가 명시돼 있어요. 시공사 보복이 아니라 보험사 내부 탐지입니다.",
+        "저는 유림의 포털 접속 감사로그도 확인했는데, 캡처만 했다는 주장과 다르게 공사중지 요청과 CCTV 반출이 한 세션에서 처리돼 있습니다. 합의 위반이에요."
       ]
     }
   },
@@ -14063,14 +14135,14 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "face_sensitive",
-        "shame_sensitive",
         "privacy_sensitive",
-        "relationship_preserving"
+        "selective_quote",
+        "shame_sensitive"
       ],
       "b": [
-        "avoidant",
         "face_sensitive",
-        "retaliation_sensitive",
+        "conflict_avoidant",
+        "timeline_padding",
         "counter_attack"
       ]
     },
@@ -14107,11 +14179,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "emotion"
+      "t-1": "subjective_claim",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "core_fact",
+      "t-5": "subjective_claim"
     },
     "actionAffinity": {
       "d-1": {
@@ -14125,8 +14197,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.12
         },
-        "bestActionHint": "기관 기록이나 원본 로그가 강한 쟁점이라 말싸움보다 증거 대면이 가장 빨리 방어선을 흔든다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "재우 휴대폰의 전달 로그와 운영진·가족·직장 세 채널 원문을 나란히 놓으면, 세아에게 묻기 9분 전부터 이미 '아마 세아가 맞다'는 프레임을 퍼뜨린 사실이 고정된다. 직업적 선조치라는 말은 이 시차 앞에서 힘이 약해진다.",
+        "worstActionReaction": "재우의 승진 불안부터 먼저 달래면 그는 곧 '내 자리에선 먼저 선을 그어야 했다'는 공무원 역할 뒤로 숨고, 확인 전 전파라는 개인적 책임은 제도 언어 속에 녹여 버린다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -14139,8 +14211,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.17
         },
-        "bestActionHint": "체면과 평판 계산을 말로 꺼내게 하면, 숨긴 이유가 스스로 드러나며 방어 논리가 약해진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "세아에게 왜 하필 게시물 확산 두 시간 뒤 모진 2006년 메시지 한 건만 따로 빼냈는지 묻게 되면, 익명 루머와 별개로 가장 차가운 과거만 재우 앞에 노출될까 두려웠다는 심리가 드러난다. 그 두려움이 보여야 '단순 정리' 주장이 약해진다.",
+        "worstActionReaction": "파일 생성 시각과 폴더 개수만 세밀하게 따지면 세아는 곧 '그 문장은 소문이랑 다른 층위'라고 사실을 분할하며, 왜 재우 공유 묶음에서만 빼냈는지에 대한 선택 책임은 흐린다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -14153,8 +14225,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.07
         },
-        "bestActionHint": "잘린 캡처나 추정이 섞인 쟁점이라 원본·로그를 대면시키는 순간 오해 프레임이 급격히 약해진다.",
-        "worstActionReaction": "공감만 건네면 명분을 더 포장하거나 피해자 서사만 길어져 핵심 확인이 늦어진다."
+        "bestActionHint": "익명 게시물 캡처의 해상도 불일치와 계정 복구 메일·행사장 와이파이 로그를 같이 들이밀면, 한유진을 향한 막연한 의심보다 박하린 쪽 실행 흔적이 훨씬 구체적이라는 점이 선다. 오해의 대상이 누구였는지 바로잡는 데는 포렌식 교차가 제일 빠르다.",
+        "worstActionReaction": "20년 전 상처를 먼저 다독이면 재우와 세아 모두 다시 '한유진이라면 그럴 이유가 있다'는 감정적 범인론으로 돌아가고, 실제 버너계정 경로를 보여 주는 기술 기록은 뒷전이 된다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -14167,8 +14239,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.22
         },
-        "bestActionHint": "공개 망신과 2차 확산을 막아 준다는 신호가 있어야 숨긴 맥락이 나온다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "정정 범위를 넓히지 않고 필요한 채널만 바로잡겠다고 약속하면, 재우도 위조 판정을 방패로 보지 않고 인정할 가능성이 커진다. 이 쟁점은 포렌식이 맞느냐보다 '또 퍼질까' 하는 공포를 낮춰 줘야 고백이 나온다.",
+        "worstActionReaction": "레이어 해시와 스킨 연도만 차갑게 추궁하면 재우는 기술적 반박 하나하나에 매달리며 시간을 끌고, 위조임을 알게 된 뒤에도 왜 계속 퍼뜨렸는지는 끝까지 말하지 않으려 한다."
       },
       "d-5": {
         "bestAction": "empathy_approach",
@@ -14181,8 +14253,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "수치심이나 관계 손실 두려움이 핵심이라, 비난을 낮추고 사정을 받아줘야 사실 고백이 빨라진다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정표 해석에 매달리며 본론을 더 늦춘다."
+        "bestActionHint": "세아에게 2006년의 모진 메시지 책임과 2026년 위조 낙인을 분리해서 다루겠다고 해 주면, 그녀는 둘을 한 번에 자백하는 공포 없이 과거 잘못의 범위를 말할 수 있다. 이 쟁점은 죄책감과 허위 낙인을 분리해 주는 공감이 핵심이다.",
+        "worstActionReaction": "2006년 일을 검사식으로 캐묻기 시작하면 세아는 문장 하나하나를 잘게 쪼개며 방어하고, '상처 준 사실'과 '익명 소문 작성은 아님'이라는 중요한 경계가 다시 한 덩어리로 뭉개진다."
       }
     },
     "optimalPath": {
@@ -14289,16 +14361,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 옆에서 본 바로는, 세아가 옛 백업을 복원한 뒤, 모진 메시지 한 건을 별도 폴더로 빼고 재우에게는 덜 불리한 묶음부터 보여준 건 안다.",
-        "제가 옆에서 본 바로는, 세아가 지금 억울한 건 맞지만, 과거 메시지 수위까지 전부 보여주진 않으려 했다는 분위기도 봤다."
+        "20주년 동창 모임 다음 날 새벽에 익명 계정이 2006년 장학금 소문을 꺼냈어요. 재우는 세아한테 확인하기 9분 전에 이미 세 채널로 캡처를 돌리며 '아마 세아가 맞다'고 반복했습니다.",
+        "세아는 백업 복원 후 한유진에게 보낸 모진 메시지 1건을 별도 폴더로 옮겨서 재우 공유 파일에서 뺐어요. 원문 조작은 아니지만 노출 범위를 조정한 건 사실상 증거 은닉입니다."
       ],
       "tp-2": [
-        "동창들 사이에서 예전 백업 자료 얘기가 다시 도는 분위기는 분명 있었어요. 다들 그쪽 이야기에 관심을 가진 건 사실입니다.",
-        "누가 계정을 만들고 뭘 붙였는지까지 제가 처음부터 다 안다고 하긴 어렵습니다."
+        "저도 처음엔 세아와 한유진 사이 옛 갈등을 떠올렸지만, 시간이 갈수록 익명 게시가 너무 인위적이라는 느낌이 강해졌어요. 묵은 이야기가 저절로 떠오른다기보다 누가 타이밍을 잡고 올린 것 같았습니다.",
+        "계정 복구 메일은 박하린 예비 주소로 되어 있고, 게시 직전 와이파이에도 박하린 기기가 접속해 있었어요. 세아와 재우 모두 한유진을 의심했지만, 동기와 실행자가 다를 수 있습니다."
       ],
       "tp-3": [
-        "기록상 익명 계정 로그인 기록, 복구 이메일 연결, 이미지 레이어 해시는 원본 기준으로 대조 가능하다.",
-        "기록상 문제의 방명록과 문자 이미지는 2006년 원본이 아니라 2008년·2024년 소스를 2026년에 합성한 위조본이다."
+        "저는 포렌식 결과를 확인했는데, 문제의 방명록 배경은 2008년 스킨이고 문자 말풍선은 2024년 복원앱 템플릿입니다. 시간대와 출처가 다른 두 소스를 2026년에 합성한 위조본이에요.",
+        "이 증거로는 세아를 장학금 소문 유포자로 단정할 근거가 없습니다. 세아가 한유진에게 모진 메시지를 보낸 건 사실이지만, 그것과 익명 소문 유포는 별개의 층위입니다. 둘 다 2023년 합의를 어긴 건 맞아요."
       ]
     }
   },
@@ -14524,16 +14596,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "하림이 이사 날짜 다가오니까 '보증금이 그날 안 들어오면 계약금이 비어요'라고 저한테 몇 번이나 말했어요.",
-        "벽 얘기만 나오면 휴대폰에서 입주 첫날 사진을 바로 찾아 보여주면서, 고양이가 긁은 것도 거실 한쪽이라고 엄청 예민하게 구분했어요."
+        "제가 옆에서 본 하림은 새 전셋집 계약금을 보증금 반환으로 맞춰야 해서, 반환이 하루만 밀려도 다음 계약까지 흔들린다고 걱정하는 사람이었어요.",
+        "그래서 원상복구 범위가 넓어진다는 얘기만 나와도 표정이 바로 굳었습니다. 수리 문제가 아니라 보증금이 깎이면 이사 일정 자체가 무너지는 거니까요."
       ],
       "tp-2": [
-        "퇴거 전에 셋이 통화할 때 상우씨가 미납분하고 실제 손본 비용만 빼고 나머지는 보내겠다는 취지로 말한 건 제가 들었습니다.",
-        "특약 설명할 때도 전면 도배를 자동 공제한다기보다, 확인된 손상 범위만 정산하는 방향으로 안내했어요."
+        "저는 중개사 포함 통화에서 들은 건, 미납 월세와 실제 복구비만 정산하면 나머지 보증금을 이사 당일 보내겠다는 말이었습니다. 그때까지는 전면 도배 얘기가 안 나왔어요.",
+        "그런데 나중에 전면 도배와 수전 교체까지 공제 항목에 올라왔다는 이야기를 들었을 때, 처음 통화에서 정리한 범위와 많이 달라졌다는 느낌이었습니다."
       ],
       "tp-3": [
-        "수전은 열어 보니 안쪽 부품이 오래돼서 새는 상태였고, 세입자가 뭘 세게 해서 터진 모양은 아니었습니다.",
-        "거실 벽은 고양이 긁힘이 한 면에 몰려 있어서 제가 보기엔 부분 보수 견적이면 충분한 수준이었어요."
+        "저는 욕실 수전을 보면 노후 부품에서 오는 누수 흔적이었습니다. 세입자가 거칠게 써서 망가뜨린 게 아니라 입주 전부터 이어진 마모에 가까워요.",
+        "거실 벽지도 입주 사진과 비교하면 변색과 들뜸 대부분은 기존 상태였고, 세입자 책임은 반려묘가 긁은 한 면의 부분 보수 수준입니다. 전면 도배 공제는 실제 범위를 넘어섭니다."
       ]
     }
   },
@@ -14765,16 +14837,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "민석 집엔 편집 장비랑 저장장치가 많아서, 누가 허락 없이 들어갔다는 얘기 듣고 며칠을 잠도 제대로 못 잤어요.",
-        "그 뒤로는 수리기사가 온다 해도 집을 비우지 않겠다고 했고, 작업 일정이 밀리는데도 문 여는 걸 더 무서워했습니다."
+        "민석 방에는 영상 편집 장비가 가지런히 놓여 있어서, 누가 허락 없이 들어왔다는 의심이 드니까 며칠을 제대로 못 비울 수밖에 없었습니다.",
+        "민석이 수리가 필요 없다고 한 게 아니라, 합의한 점검일보다 이틀 먼저 마스터키로 들어와 사진을 찍었다는 사실 자체가 무서웠던 거예요."
       ],
       "tp-2": [
-        "갱신 계약 설명할 때 제가 분명히 긴급 하자라도 먼저 연락하고, 들어갔으면 바로 알리라고 안내했어요.",
-        "민석씨는 장비 때문에 출입 통지를 민감하게 봤고, 규철씨는 누수면 집주인이 빨리 볼 수 있다고 이해하더군요. 그 온도 차가 컸습니다."
+        "저는 두 분 온도가 처음부터 달랐다고 기억합니다. 집주인은 하자가 급하니 바로 들어가 확인할 수 있다고 여겼고, 세입자는 사전 고지와 동의가 먼저라고 생각했어요.",
+        "저는 그 차이를 처음에 더 분명히 정리해 줬어야 했습니다. 긴급 점검이 곧 자유 출입은 아니라는 선을 확인했으면, 무단 입실과 기사 방문 거부가 동시에 터지는 일은 없었을 거예요."
       ],
       "tp-3": [
-        "민석씨 쪽 무단 출입 상담은 사진 촬영 문제까지 포함해서 접수됐고, 접수 시각이 규철씨 주장보다 먼저 남아 있습니다.",
-        "반대로 규철씨도 공용배관 누수라 빨리 수리해야 한다는 취지로 문의했지만, 행정 기록상 날짜 앞당긴 출입까지 승인된 건 아니었습니다."
+        "저는 제출된 사진의 타임스탬프를 확인했는데, 합의된 점검일이 아니라 이틀 전 촬영으로 보이는 메타데이터가 남아 있었습니다. 표시 시각이 나중에 바뀐 흔적도 있어요.",
+        "곰팡이 원인도 확인했는데, 1차 원인은 세입자 환기 부족이 아니라 공용배관 공사 뒤 느슨해진 연결부 누수였습니다. 다만 무단 출입과 기사 방문 거부가 수리 지연을 키운 건 양쪽 다 책임이 있어요."
       ]
     }
   },
@@ -15014,16 +15086,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "서윤이 잔금일 앞두고 저희 가족 돈까지 들어간 전세라서, 하루만 밀려도 집안이 다 흔들린다고 울먹인 적이 있어요.",
-        "보험이 될 거란 말을 믿고 들어간 건 맞는데, 그 말이 틀리면 친척 돈까지 묶인다고 해서 정말 겁을 많이 냈습니다."
+        "제가 아는 서윤은 보증금에 가족 도움까지 얹혀 있어서, 계약서 사본에 없던 추가 담보 기록을 발견하자 곧바로 전세사기를 의심했습니다. 가족 돈이 걸려 있으니 예민할 수밖에 없었어요.",
+        "그런데 실제로 전세사기인지, 중개사가 말소 예정과 보증보험 설명을 과장한 건지는 다른 문제였습니다. 서윤은 그 구분을 확인하기 전에 감정이 먼저 앞서간 거예요."
       ],
       "tp-2": [
-        "180만원은 집주인 계좌가 아니라 제 개인 수납으로 처리됐고, 정식 중개보수 세금계산서와는 별개였습니다.",
-        "보증보험 얘기는 제가 '거의 된다'는 식으로 강하게 말한 편이고, 태수씨는 말소 예정 서류를 보여주며 맞장구친 정도였어요."
+        "저는 보증보험이 가능하다고 확정처럼 말한 책임이 있다고 인정합니다. 두 분 다 안심이 필요한 상태였고, 저는 그 불안을 달래려다 말소 예정과 보증보험 설명을 과장했어요.",
+        "'말소대행·안전확인비' 명목으로 받은 돈도 집주인한테 전달되지 않고 제 쪽에 남았습니다. 그 돈의 성격이 모호했던 게 두 분 사이 불신을 키운 거예요."
       ],
       "tp-3": [
-        "상담 기록상 그 계약은 추가 담보와 확정일자 진행 시점 때문에 '조건부 검토'였지, 바로 가입 가능으로 확답된 건 아니었습니다.",
-        "브리지대출 잔액이 최신 기준으로 정리되지 않으면 심사가 멈출 수 있다는 안내도 같이 나갔어요."
+        "저는 기록을 보면 '집주인 단독 전세사기'라는 구도 자체가 정확하지 않다고 봅니다. 추가 담보와 말소 설명을 과장한 핵심 고리는 집주인보다 중개사 쪽에 더 가까워요.",
+        "저는 누가 갑자기 판을 뒤집었다기보다, 애초에 확정되지 않은 상태를 중개사가 너무 빨리 안심으로 포장한 게 출발점이라고 봅니다. 두 분 다 그 설명에 기대서 확인을 미룬 책임은 있습니다."
       ]
     }
   },
@@ -15259,16 +15331,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "저희는 그 집이 전세로 바뀌는 걸 전제로 예식장 잔금하고 대출 상담 일정을 같이 묶어놨습니다.",
-        "다은이가 2천만원 보낸 날에도 '이제 월세는 정리되는 거지?' 하고 안심하는 분위기였어요. 그래서 한 달치 월세를 따로 챙기지 않았습니다."
+        "저희는 전세 전환이 거의 된 줄 알고 결혼 일정과 돈 계획을 그 위에 얹어 두고 있었어요. 다은이 2천만원을 보낼 때도 '이미 확정'이라는 표정이었습니다.",
+        "그래서 그 돈을 단순 송금으로 보지 않았어요. 둘이 함께 마련한 돈이었는데, 공동명의 서명과 중도상환수수료 문제가 아직 안 풀린 상태였다는 걸 다은이 정확히 알고 있었는지는 모르겠어요."
       ],
       "tp-2": [
-        "두 분 통화에서 '가자는 방향' '거의 맞춰졌다' 같은 표현이 오갔는데, 저는 그걸 최종 서명 직전 단계로 이해했습니다.",
-        "초안 계약서는 성호씨 요청으로 먼저 보냈지만, 공동명의 서명란이 비어 있어서 제가 완결본은 아니라고 따로 말씀드렸어요."
+        "제가 두 분 통화를 들을 때마다 '거의 맞춰졌다'는 말이 반복됐습니다. 문제는 다은에겐 합의 직전, 성호에겐 아직 조율 중이라는 뜻이었다는 거예요. 같은 말을 정반대로 이해하고 있었습니다.",
+        "초안 계약서가 오가긴 했지만 최종 금액, 시작일, 공동명의 서명이 빠져 있어서 완성된 전세 전환으로 보기 어려웠습니다. 핵심 조건이 열려 있는 상태에서 돈이 먼저 움직인 거예요."
       ],
       "tp-3": [
-        "다은씨 상담은 접수됐지만 공동명의 관련 서류와 최종 계약 초안이 안 들어와서 심사가 바로 멈췄습니다.",
-        "은행 입장에선 2천만원이 이미 확정 전세금인지, 단순 협의금인지 서류가 없으면 판단을 못 합니다."
+        "서류가 닫히지 않으면 들어온 돈의 성격도 확정되지 않습니다. 2천만원이 확정된 전세금 일부인지, 협의금인지가 종이 위에서 정리되지 않았어요.",
+        "성호는 협의 결렬을 분명히 말하기 전에 다른 임차인에게 집을 보여줬고, 다은은 전환 확정으로 믿고 월세를 안 냈습니다. 양쪽 다 확인보다 자기 쪽 해석을 먼저 밀고 나간 겁니다."
       ]
     }
   },
@@ -15506,16 +15578,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "이사 마지막 날 제가 장롱문 닦아 보며 닫아봤는데 그때는 멀쩡했어요.",
-        "선우가 출입카드 한 장이 안 보인다고 식은땀 흘리면서도, 보증금 깎일까 봐 바로 말 못 하겠다고 한 건 기억합니다."
+        "저는 이사 마지막까지 같이 있었는데, 장롱문이나 걸레받이가 눈에 띄게 망가진 상태가 아니었습니다. 나중에 '집을 망가뜨리고 갔다'는 말을 들었을 때 의아했어요.",
+        "선우가 출입카드 하나를 분실하고 소액 처리비를 미리 알리지 못한 건 사실이에요. 다만 그 정도가 건물 대화방에서 문제 세입자처럼 소문날 일은 아니었습니다."
       ],
       "tp-2": [
-        "민재씨가 새로 들어올 분들 앞에서 '전 세입자 때문에 집 상태가 엉망이었다'는 말을 한 건 제가 바로 옆에서 들었습니다.",
-        "퇴거 특약은 같이 점검해서 확인된 손상만 정산하자는 취지였지, 보여주기 전에 생긴 흠집까지 전 세입자 몫으로 돌리라는 내용은 아니었어요."
+        "저는 새 입주 예정자 앞에서 '전 세입자가 실내 흡연도 하고 장롱을 깨뜨렸다'는 말이 나오는 걸 들었는데, 과거 옥상 민원 한 건을 상습 문제처럼 부풀리고 퇴거 후 손상을 전 세입자 탓으로 돌린 느낌이었어요.",
+        "집주인이 공실을 빨리 메우고 싶은 마음은 이해합니다. 그래도 확인 절차가 안 끝났는데 이미 '문제 세입자'라는 인상이 건물 안에 퍼지고 있었어요. 과장된 말은 평판 문제로 번집니다."
       ],
       "tp-3": [
-        "CCTV상 선우씨 퇴거 이후에 민재씨 쪽에서 사다리 들고 다시 들어간 시간이 분명히 남아 있습니다.",
-        "관리실에 남은 옥상 관련 건은 오래전에 한 번 경고하고 끝난 수준이었고, 카드 재발급도 분쟁을 뒤집을 만큼 큰 금액은 아니었습니다."
+        "관리 기록을 보면 선우 퇴거 뒤 민재 측이 사다리와 가구를 옮기며 집 보여주기를 준비한 시간대가 있습니다. 장롱문과 걸레받이 손상이 그때 생겼을 가능성이 높아요.",
+        "과거 옥상 흡연 민원은 한 번으로 경고 후 종결됐고 이후 재발 기록이 없습니다. 보증금 공제 항목도 장롱문 전면 교체와 탈취 비용까지 포함돼 있는데, 실제 정산 가능 범위를 넘어섭니다."
       ]
     }
   },
@@ -15751,32 +15823,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "유진은 꽃 작업 자재랑 캠핑 물건을 집에 다 들이기 어려워서 옥상 건조 자리랑 지하 한 칸을 계속 번갈아 썼어요.",
-        "비밀번호 바뀐 날엔 박스가 복도에 나와 있어서 저도 같이 다시 옮겼고, 유진이 그때 '내 물건을 왜 말도 없이 건드리냐'고 많이 상해했습니다."
+        "유진은 꽃자재와 캠핑 장비를 옥상과 지하에 나눠 두고 살았는데, 처음엔 잠깐 쓰는 정도였다가 화분대와 박스가 몇 주씩 남겨지면서 사실상 전용처럼 굳어 간 거예요.",
+        "어느 날 옥상 비밀번호가 갑자기 바뀌고 지하 박스가 복도에 나와 있었는데, 유진한테 사전 통보가 없었어요. 자기 물건이 쫓겨난 것처럼 느낄 수밖에 없었습니다."
       ],
       "tp-2": [
-        "입주 설명할 때 저는 옥상은 잠깐 말리거나 건조하는 공용 공간, 지하는 왼쪽 선반 한 칸 정도만 미리 알리고 쓰는 걸로 말했습니다.",
-        "나중에 기성씨가 보낸 사용범위 정리 문자도, 처음 호의가 너무 넓게 받아들여졌다는 취지였지 전면 금지를 처음부터 통보한 건 아니었어요."
+        "처음 입주 때 설명한 건 '편하게 써도 된다'가 아니라 공용공간을 잠깐 나눠 쓰되 지하 왼쪽 선반 한 칸만 계절 물품에 쓰자는 취지였습니다. 전용 사용권을 준 적은 없어요.",
+        "집주인이 비밀번호를 바꾸고 박스를 옮긴 건 사전 합의 없이 너무 급했습니다. 그렇다고 통로를 좁히고 배수구를 가릴 정도로 물건을 쌓아 둔 것도 처음 약속을 넘은 거예요."
       ],
       "tp-3": [
-        "점검 사진으로 보면 통로가 완전히 막힌 정도는 아니고, 화분대와 박스 때문에 일부 폭이 좁아져 정리가 필요한 수준이었습니다.",
-        "지하 쪽도 배수구 주변에 적치가 있긴 했지만 즉시 대피 불가 수준으로까지 기록하지는 않았어요."
+        "점검 사진을 보면 통로 폭이 줄고 배수구 주변이 일부 가려진 건 맞지만 즉시 위험이라고 할 정도는 아니었습니다. 정리와 합의가 필요한 경고 단계에 가까웠어요.",
+        "유진이 말한 '전혀 문제없는 사용'도, 기성이 말한 '즉시 전면 금지 수준의 위반'도 양쪽 다 과장이라고 봅니다. 실제 상태는 일부 정리가 필요한 중간 수준이었습니다."
       ]
     }
   },
   "tenant-07": {
     "personalityTags": {
       "a": [
-        "cold_logical",
+        "relationship_preserving",
+        "detail_obsessed",
         "fairness_obsessed",
-        "privacy_sensitive",
-        "selective_quote"
+        "privacy_sensitive"
       ],
       "b": [
-        "victimizing",
-        "face_sensitive",
-        "counter_attack",
-        "relationship_preserving"
+        "victim_identity",
+        "blame_shifting",
+        "martyr_complex",
+        "face_sensitive"
       ]
     },
     "contentTags": {
@@ -15811,11 +15883,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "circumstantial",
+      "t-3": "core_fact",
+      "t-4": "circumstantial",
+      "t-5": "subjective_claim"
     },
     "actionAffinity": {
       "d-1": {
@@ -15829,8 +15901,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "정황 다툼보다 실제 자료를 먼저 맞대야 과장과 누락이 빨리 드러난다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "남서희가 있는 3자 카톡과 e-5 상담 일정표를 같이 붙이면, 도형·하나가 이미 '4%·2년' 문구까지 정리해 둔 뒤였다는 순서가 드러나서 '그냥 가능성만 타진했다'는 말이 설 자리가 줄어든다.",
+        "worstActionReaction": "도형의 세금 부담부터 달래 주면 그는 곧 '시세가 너무 뛰었다'는 시장 서사로 숨어 버리고, 중개사 앞에서 먼저 끝내 둔 4% 합의 자체를 흐린다."
       },
       "d-2": {
         "bestAction": "confidential_protection",
@@ -15843,8 +15915,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "사생활·평판 우려가 큰 쟁점이라 비공개 보장이 먼저 주어져야 숨긴 사실의 문이 열린다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "진우 이름과 새 문의 내용을 공개 망신용으로 쓰지 않겠다는 안전감을 먼저 주어야, 도형도 그 문의가 예약금 없는 탐색 수준이었다는 점을 가족 체면 덜 다친 채 말할 수 있다.",
+        "worstActionReaction": "'그래서 확정 계약이었냐 아니냐'만 몰아붙이면 도형은 '요즘 시장이 다 그렇다'며 단어 싸움으로 버티고, 진우가 부풀린 기대치 문제는 더 숨긴다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -15857,8 +15929,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "왜 그런 선택을 했는지 이유를 말하게 만들면, 스스로 숨긴 구간이나 뒤늦은 정당화가 드러나기 쉽다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "하나에게 사흘 지연 자체보다 왜 서명을 늦췄는지 묻게 되면, 보증인 상담과 자동이체 날짜 조정 때문에 미뤘다는 현실 사정이 나와서 악의적 버티기 프레임이 약해진다.",
+        "worstActionReaction": "메일 발송 시각만 캐묻기 시작하면 하나는 캡처 시간표만 끝없이 늘어놓고, 도형도 그 사흘을 핑계로 12% 인상 번복을 정당화한다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -15871,8 +15943,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.28
         },
-        "bestActionHint": "사생활·평판 우려가 큰 쟁점이라 비공개 보장이 먼저 주어져야 숨긴 사실의 문이 열린다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "자전거·분리배출 경고를 이번 재계약의 낙인 자료로 쓰지 않겠다고 선을 그어야, 하나도 한 번 있었던 경고를 숨기지 않고 도형도 '반복 문제'라는 과장을 조금 거둘 수 있다.",
+        "worstActionReaction": "2년 전 관리기록 문장만 들이대면 하나는 '전혀 없었다'로 버티고 도형은 '원래 그런 세입자'로 부풀려, 현재 효력 판단보다 옛 민원 싸움만 커진다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -15885,8 +15957,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "갱신 초안, 3자 카톡, 12% 인상 문자와 주차비·도배 선납 요구를 한 줄로 놓으면 도형이 기존 4% 흐름 뒤에 새 조건을 얹었다는 일방 변경 구조가 눈에 보인다.",
+        "worstActionReaction": "도형이 봐준 것 많다는 하소연을 먼저 받아 주면 그는 과거 경고와 시세 상승을 한데 묶어 버리고, 추가 조건이 합의 이후에 튀어나왔다는 핵심 순서를 흐린다."
       }
     },
     "optimalPath": {
@@ -15996,13 +16068,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 주변 원룸 시세 문의와 새 임차인 탐색 메시지를 직접 돌렸고, 아버지의 인상률 번복 시점도 알고 있다. 다만 가까운 사람 일이라 제가 본 장면보다 더 좋게 해석했을 수는 있습니다."
+        "저는 진우가 전한 새 임차인 문의가 예약금도 확정 의사도 없는 탐색 수준이었다고 알고 있습니다. 그런데 그 문의가 중개사 입회까지 한 4% 합의를 뒤집을 만큼 확실한 대안이었는지는 의문이에요.",
+        "특히 이미 4% 인상으로 정리된 뒤에 12%로 조건이 뛰는 순간, 주변에서도 '이건 시세 판단이 아니라 마음이 바뀐 것'이라는 말이 나왔습니다."
       ],
       "tp-2": [
-        "4% 인상 합의가 어떤 표현으로 정리됐는지, 서명본 전달 지연과 추가 인상 통보가 언제 나왔는지 직접 확인할 수 있다."
+        "중개사 사무실에서 본 건, 4% 인상과 2년 재계약까지 정리됐고 서명과 자동이체 날짜만 남은 수준이었다는 점입니다. 뒤집힐 여지가 이렇게 남아 있다고는 생각 못 했어요.",
+        "그런데 나중에 12% 인상, 주차비 별도, 부분 도배 선납 조건이 붙어서 돌아왔습니다. 처음 합의와 결이 완전히 달라졌어요. 새 문의가 들어온 뒤 갑자기 조건을 올린 거예요."
       ],
       "tp-3": [
-        "재계약 상담 접수 시점과, 이미 합의된 조건을 뒤집는 분쟁이 언제 어떻게 접수됐는지 행정 기록으로 설명드릴 수 있습니다."
+        "이 건이 단순 시세 다툼이 아니라, 중개사 입회 아래 방향까지 정리된 합의가 뒤집힌 사안이라고 봅니다. 서명만 남은 단계에서 조건이 세 배로 뛴 거예요.",
+        "또 2년 전 복도 자전거와 분리배출 경고를 다시 꺼낸 시점이 번복 직후라는 점도 중요합니다. 한 번 있었지만 반복 문제는 아니었거든요. 과거 문제가 아니라 현재 협상 압박용으로 소환된 겁니다."
       ]
     }
   },
@@ -16010,15 +16085,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "confrontational",
-        "face_sensitive",
         "counter_attack",
+        "authority_challenging",
         "selective_quote"
       ],
       "b": [
-        "cold_logical",
-        "fairness_obsessed",
-        "face_sensitive",
-        "selective_quote"
+        "selective_quote",
+        "detail_obsessed",
+        "manipulative",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -16054,11 +16129,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "circumstantial",
+      "t-3": "core_fact",
+      "t-4": "core_fact",
+      "t-5": "hidden_motive"
     },
     "actionAffinity": {
       "d-1": {
@@ -16072,8 +16147,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "잘린 캡처나 편집본, 원본 기록이 섞인 쟁점이라 원본·로그를 맞대면 방어 프레임이 가장 빨리 무너진다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "한미라의 원본 고지 양식과 호준이 보낸 캡처 PDF를 파일 메타데이터까지 맞대면, '실무상 다시 만든 것'이 아니라 합계와 항목 순서를 손댄 재작성본이라는 점이 바로 드러난다.",
+        "worstActionReaction": "공실 손실과 회계 고생을 먼저 이해해 주면 호준은 '양식만 정리했다'는 말로 뒤로 빠지고, 원본 부재와 편집 흔적이라는 핵심 검증이 늦어진다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -16086,8 +16161,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "왜 그런 선택을 했는지 이유를 말하게 만들면, 스스로 숨긴 구간이나 뒤늦은 정당화가 드러나기 쉽다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "지현에게 왜 인정분도 따로 안 내고 전액을 막았는지부터 묻는 게 좋다. 재택 장비 사용이 드러나면 '진상 세입자'로 찍힐까 두려웠다는 계산이 나오면서 자기 사용분 은폐가 함께 보인다.",
+        "worstActionReaction": "킬로와트 수치만 세게 추궁하면 지현은 곧 조작된 관리비표 모순만 들이밀고, 자기 PC·제습기 사용이 늘었다는 불편한 부분은 끝까지 뒤로 미룬다."
       },
       "d-3": {
         "bestAction": "confidential_protection",
@@ -16100,8 +16175,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.28
         },
-        "bestActionHint": "사생활·평판 우려가 큰 쟁점이라 비공개 보장이 먼저 주어져야 숨긴 사실의 문이 열린다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "'횡령 집주인' 낙인이 아니라 배분 기준만 보겠다고 못 박아야, 호준도 빈 1층 상가 전기료와 옥상 누수 출장비를 공용비에 섞어 세대별로 돌렸던 과정을 체면 덜 상한 채 인정할 여지가 생긴다.",
+        "worstActionReaction": "숫자 한 칸씩만 따지면 호준은 건물 전체 유지비 논리로 넓혀 버리고, 공실 상가 비용이 왜 지현 세대 고지서 안으로 들어왔는지 배분 원리는 더 숨는다."
       },
       "d-4": {
         "bestAction": "evidence_present",
@@ -16114,8 +16189,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "정황 다툼보다 실제 자료를 먼저 맞대야 과장과 누락이 빨리 드러난다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "자동이체 내역, 독촉 문자, 원본 요구 메시지를 함께 놓으면 지현이 억울하다고 느낀 이유와 별개로 두 달치 전액을 막았다는 사실이 또렷해져서 최소 인정분 미납을 피하기 어렵다.",
+        "worstActionReaction": "지현이 속을 만했다고 먼저 감싸 주면 그는 곧 '원본도 안 주는데 왜 내냐'로만 밀어붙이고, 두 달 전액 보류라는 자기 선택은 정당한 항의처럼만 남는다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -16128,8 +16203,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "사생활·평판 우려가 큰 쟁점이라 비공개 보장이 먼저 주어져야 숨긴 사실의 문이 열린다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "도장 합성과 파일 생성기록 문제를 곧바로 범죄 딱지로 덮지 않고 설명 기회를 주면, 호준도 공식 관리실 고지처럼 보이게 꾸미려 했다는 지점을 '양식 편집' 뒤에만 숨기기 어려워진다.",
+        "worstActionReaction": "도장 이미지가 맞냐 아니냐만 몰아치면 호준은 '예전 파일을 붙여 넣은 것뿐'이라며 템플릿 이야기로 빠지고, 왜 굳이 공식 문서처럼 꾸몄는지는 끝내 안 나온다."
       }
     },
     "optimalPath": {
@@ -16234,29 +16309,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 지현 집에 스마트플러그를 설치했고, 작업용 PC와 제습기 사용량이 어느 정도였는지 가까이서 알고 있다. 다만 가까운 사람 일이라 제가 본 장면보다 더 좋게 해석했을 수는 있습니다."
+        "지현 방에는 그래픽 작업용 PC와 듀얼 모니터, 제습기가 돌아가고 있었으니 전기사용이 늘어난 건 사실입니다. 다만 그것만으로 갑자기 뛴 청구 전체를 설명하긴 어려워 보였어요.",
+        "게다가 관리대행 원본을 보여 달라는데 자꾸 집주인이 직접 만든 캡처와 편집 PDF만 오니, 지현이 숫자보다 방식에 먼저 화가 난 건 이해됩니다."
       ],
       "tp-2": [
-        "관리대행 원본 고지 양식, 실제 회계 장부, 그리고 호준이 어떤 형식으로 상세표를 다시 만들어 보냈는지 직접 설명드릴 수 있습니다."
+        "저는 관리대행 원본 양식과 집주인이 보낸 캡처를 비교했는데, 최소 두 항목 금액과 합계 순서가 편집돼 있었습니다. 예전 관리실 PDF에서 도장 이미지를 떼어 붙인 흔적도 있었어요.",
+        "또 빈 1층 상가 전기료와 옥상 누수 점검비가 공용비에 묶여서 지현 세대 관리비에 배분돼 있었습니다. 전기 사용 문제가 아니라 회계 구조 자체가 뒤섞인 겁니다."
       ],
       "tp-3": [
-        "세대 계량기와 공용 계량기의 원시 로그, 검침일, 비정상 사용 구간을 기관 기록으로 확인할 수 있다."
+        "계량 기록만 보면 지현 세대 전기사용이 여름에 오른 구간은 맞습니다. 다만 같은 시기 공용부도 함께 뛰었고 빈 상가 기본 전기료까지 섞여 있어서, 세대 책임만으로 합계가 안 맞아요.",
+        "이번 건은 전기 사용량 자체보다 그 숫자를 어떻게 묶어서 보여 줬는지가 더 중요합니다. 관리대행 원본과 집주인이 만든 설명표가 같은 숫자를 말하고 있지 않았어요."
       ]
     }
   },
   "tenant-09": {
     "personalityTags": {
       "a": [
-        "cold_logical",
-        "fairness_obsessed",
-        "privacy_sensitive",
-        "selective_quote"
+        "denial_heavy",
+        "timeline_padding",
+        "detail_obsessed",
+        "shame_sensitive"
       ],
       "b": [
-        "victimizing",
-        "face_sensitive",
-        "counter_attack",
-        "relationship_preserving"
+        "victim_identity",
+        "martyr_complex",
+        "fairness_obsessed",
+        "grudge_holding"
       ]
     },
     "contentTags": {
@@ -16291,11 +16369,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "motive",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "hidden_motive",
+      "t-3": "subjective_claim",
+      "t-4": "core_fact",
+      "t-5": "core_fact"
     },
     "actionAffinity": {
       "d-1": {
@@ -16309,8 +16387,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "계약서 변경본, 분할 송금 내역, 우석 측 수령증을 한 줄로 대면시키면 8천만원 표기와 실제 태윤 수령액 6천만원 사이의 빈칸이 숫자로 드러나서 감정 호소보다 훨씬 빨리 구조가 무너진다.",
+        "worstActionReaction": "폐업 사정이나 공실 걱정만 먼저 받아 주면 세라는 '돌려받을 돈'만, 태윤은 '나도 속은 사람'만 반복해서 결국 2천만원이 어디에 머물렀는지 흐려진다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -16323,8 +16401,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "세라-우석 카톡, 허위 정리비 전표, 우석 측 세금계산서를 붙여 보면 2천만원이 단순 착오가 아니라 큰 보증금 숫자를 유지하려는 공모 구조였다는 점이 한꺼번에 드러난다.",
+        "worstActionReaction": "가족 투자금이 걸렸다는 세라의 사정만 먼저 듣고 가면 그는 순수 피해자 자리로 숨어 버리고, 우석과 같이 8천만원 표기를 유지한 동기는 끝까지 안 열린다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -16337,8 +16415,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "왜 그런 선택을 했는지 이유를 말하게 만들면, 스스로 숨긴 구간이나 뒤늦은 정당화가 드러나기 쉽다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "태윤에게 왜 다투지 않는 6천만원도 바로 안 돌려줬는지 묻게 되면, 공실 손실과 체면 손해를 한꺼번에 만회하려 공제표를 넓힌 계산이 보여서 단순 착오 지연 변명이 약해진다.",
+        "worstActionReaction": "에어컨 세척비, 공실손실 항목 숫자만 따지기 시작하면 태윤은 비용 항목을 끝없이 흩뿌리고, '왜 전체를 붙잡았는가'라는 지연 동기는 끝까지 빠져나간다."
       },
       "d-4": {
         "bestAction": "motive_search",
@@ -16351,8 +16429,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "왜 그런 선택을 했는지 이유를 말하게 만들면, 스스로 숨긴 구간이나 뒤늦은 정당화가 드러나기 쉽다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "세라에게 9일 늦은 월세와 간판 철거비를 왜 끝까지 미뤘는지 먼저 묻게 되면, 폐업 자금 압박과 전액 반환 프레임을 지키려던 계산이 드러나서 사소한 누락으로만 축소하기 어렵다.",
+        "worstActionReaction": "며칠 늦었는지, 얼마였는지만 따지면 세라는 송금 메모와 파일명으로 버티면서 자기 미정산을 '별것 아닌 말단 비용'처럼 눙치고 넘어간다."
       },
       "d-5": {
         "bestAction": "confidential_protection",
@@ -16365,8 +16443,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "사생활·평판 우려가 큰 쟁점이라 비공개 보장이 먼저 주어져야 숨긴 사실의 문이 열린다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "'허술한 건물주'로 몰기 위한 질문이 아니라 확인 절차를 보겠다고 해야, 태윤도 최종 출력본과 실제 입금 내역을 직접 맞춰 보지 않고 우석 말만 믿고 서명 넘긴 실수를 비교적 빨리 인정한다.",
+        "worstActionReaction": "도장 찍은 시점과 서명 순서만 캐묻기 시작하면 태윤은 또 '중개사가 날 속였다'는 피해 서사로 되돌아가고, 자기 확인 소홀은 그림자처럼 뒤로 숨는다."
       }
     },
     "optimalPath": {
@@ -16474,13 +16552,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 세라가 창업자금 일부를 가족에게서 빌렸고, 정책자금 상담에서 큰 보증금 숫자가 필요하다고 여러 번 말한 사실을 안다. 다만 가까운 사람 일이라 제가 본 장면보다 더 좋게 해석했을 수는 있습니다."
+        "세라는 정책자금 상담을 받고 온 뒤부터 계약서에 적힌 보증금 숫자를 유난히 중요하게 여겼습니다. 실제 낸 돈과 서류에 적힌 돈이 다르다는 걸 처음부터 알고 있는 느낌이었어요.",
+        "다만 저는 세라가 일부러 사기를 쳤다기보다, 가게를 무리하게라도 시작하려는 마음이 커서 판단이 흐려진 쪽에 가깝다고 봅니다. 8천만원 계약서가 유리했던 시기가 분명 있었거든요."
       ],
       "tp-2": [
-        "제가 아는 범위에서는 초안 변경, 분할 송금, 허위 정리비 수납, 최종 스캔 파일 생성 순서를 가장 정확히 안다."
+        "계약서에 8천만원으로 적었지만 실제 태윤에게 간 돈은 6천만원이었습니다. 나머지 2천만원은 '정리비·컨설팅비' 명목으로 저 쪽 계좌에 남았어요.",
+        "그 구조를 만든 책임이 건물주 한쪽에만 있다고 할 수 없습니다. 세라와 제가 실제보다 큰 보증금이 서류에 남도록 유지한 건, 서로에게 이익이 되는 부분이 있었기 때문입니다."
       ],
       "tp-3": [
-        "세라가 제출한 계약서 보증금 액수와 실제 이체 증빙이 맞지 않았다는 상담 기록을 기관 기준으로 확인할 수 있다."
+        "계약서 금액과 실제 이체 내역이 맞지 않으면 심사가 바로 멈춥니다. 8천만원 계약서에 6천만원만 입금된 이 건은 처음부터 구조가 매끄럽지 않았어요.",
+        "또 태윤이 다투지 않는 6천만원 부분도 5주 넘게 반환하지 않고 공실손실과 에어컨 세척비를 크게 잡아 공제를 늘린 점도 문제입니다. 양쪽 다 정산에서 자기 유리한 방향으로 움직였습니다."
       ]
     }
   },
@@ -16488,15 +16569,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "avoidant",
-        "face_sensitive",
         "relationship_preserving",
-        "timeline_padding"
+        "privacy_sensitive",
+        "shame_sensitive"
       ],
       "b": [
-        "cold_logical",
-        "fairness_obsessed",
+        "avoidant",
+        "selective_quote",
         "face_sensitive",
-        "selective_quote"
+        "fairness_obsessed"
       ]
     },
     "contentTags": {
@@ -16530,11 +16611,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "emotional_context",
+      "t-2": "core_fact",
+      "t-3": "subjective_claim",
+      "t-4": "circumstantial",
+      "t-5": "core_fact"
     },
     "actionAffinity": {
       "d-1": {
@@ -16548,8 +16629,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "사생활·평판 우려가 큰 쟁점이라 비공개 보장이 먼저 주어져야 숨긴 사실의 문이 열린다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "민주를 '문제 세입자', 상훈을 '반려동물 혐오 집주인'으로 고정하지 않겠다는 전제를 먼저 깔아야 둘 다 특약 문구가 자동 금지도 자동 승인도 아니었다는 애매한 중간지대를 말할 수 있다.",
+        "worstActionReaction": "조항 문구만 칼같이 읽어 버리면 민주는 브로커 말을 허락처럼 붙잡고, 상훈은 '원칙상 안 된다'만 반복해서 실제로 남겨 둔 조정 여지가 사라진다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -16562,8 +16643,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "정황 다툼보다 실제 자료를 먼저 맞대야 과장과 누락이 빨리 드러난다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "브로커 단톡, 강아지 사진 전송 기록, 상훈의 문자 회신을 한 화면에서 보면 민주가 사전 고지는 했지만 명확한 승인 전 입주했다는 반쪽 사실이 동시에 드러난다.",
+        "worstActionReaction": "민주의 애견 사정만 먼저 받아 주면 그는 사진을 보냈다는 부분만 강조하고, '명확한 예스 없이 들어왔다'는 가장 아픈 구멍은 끝까지 미룬다."
       },
       "d-3": {
         "bestAction": "evidence_present",
@@ -16576,8 +16657,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "계약 특약, 상훈의 24시간 반출 문자, 50만원 특별청소 예치금 요구, 현관 상태 사진을 같이 놓아야 즉시 반출과 선예치금이 실제 확인된 하자보다 훨씬 앞서 나간 조치였다는 점이 보인다.",
+        "worstActionReaction": "다른 세입자 알레르기나 건물 규칙 걱정부터 공감해 버리면 상훈은 예치금을 예방조치처럼 포장하고, 계약을 넘어선 요구였다는 쟁점이 희미해진다."
       },
       "d-4": {
         "bestAction": "motive_search",
@@ -16590,8 +16671,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "왜 그런 선택을 했는지 이유를 말하게 만들면, 스스로 숨긴 구간이나 뒤늦은 정당화가 드러나기 쉽다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "몇 번 짖었는지보다 왜 그 짧은 짖음이 이렇게 큰 싸움으로 번졌는지 묻게 되면, 민주의 '진상 세입자' 공포와 상훈의 '한 번 봐주면 끝' 불안이 동시에 드러나 과장된 민원 프레임이 흔들린다.",
+        "worstActionReaction": "초인종 때 두 번인지 세 번인지 숫자만 세기 시작하면 둘 다 각자 유리한 장면만 꺼내고, 반복 민원급이 아니었다는 전체 맥락은 사라진다."
       },
       "d-5": {
         "bestAction": "motive_search",
@@ -16604,8 +16685,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "왜 그런 선택을 했는지 이유를 말하게 만들면, 스스로 숨긴 구간이나 뒤늦은 정당화가 드러나기 쉽다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "상훈에게 왜 현관매트 오염 정도에서 곧바로 전문 탈취 청소와 바닥보수 선공제를 떠올렸는지 묻게 되면, 실제 손상보다 '반려견 선례를 남기기 싫다'는 계산이 앞섰다는 점이 드러난다.",
+        "worstActionReaction": "견적서 숫자와 오염 사진만 맞대면 상훈은 '원칙상 선공제'를 반복하고 민주는 '냄새도 없다'는 말싸움으로 버텨서, 왜 과잉 조치가 나왔는지는 끝내 안 보인다."
       }
     },
     "optimalPath": {
@@ -16719,29 +16800,32 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 민주가 입주 전 강아지 사진을 보내고 답을 기다리다 결국 괜찮은 줄 알고 함께 이사했다는 과정을 안다. 다만 가까운 사람 일이라 제가 본 장면보다 더 좋게 해석했을 수는 있습니다."
+        "민주는 입주 전 브로커한테 3.2kg 말티즈 사진까지 보내면서 '정말 괜찮냐'고 확인했습니다. 몰래 들인 게 아니라, '사진 봤다'는 애매한 답을 허락으로 받아들이고 들어간 쪽이에요.",
+        "그래서 저는 이 갈등이 처음부터 속이려 한 사람 때문에 생긴 건 아니라고 봅니다. 집주인이 확실히 '관리만 잘 해라'라고 했는지, '아직 보류'라고 했는지가 명확하지 않았던 게 문제였어요."
       ],
       "tp-2": [
-        "사진 전달과 답변 문구가 어떤 표현으로 오갔는지, 상훈이 명확한 승인이나 거절을 하지 않았는지 직접 기억한다."
+        "저는 민주가 사진을 보낸 건 확인했습니다. 문제는 돌아온 답이 반려동물 제한 특약을 덮을 만큼 명확한 승인이 아니었다는 거예요. 브로커가 '소형견이면 괜찮을 거다'라고 느슨하게 전달한 측면도 있고요.",
+        "그 모호함이 이번 다툼의 씨앗입니다. 민주는 '관리만 잘하면 된다'로 들었고, 상훈은 '아직 허락한 적 없다'는 마음이었으니까요. 불편한 말을 미뤄서 양쪽 다 다른 걸 믿게 된 거예요."
       ],
       "tp-3": [
-        "복도 민원 횟수, 실제 소음 정도, 공용부 오염 여부, 현관매트 세척 기록을 관리실 기준으로 설명드릴 수 있습니다."
+        "관리실 기록을 보면 강아지 소음은 택배와 초인종에 짧게 짖은 두세 번 수준이었고, 반복 민원이나 공용부 오염이 누적된 기록은 없었습니다.",
+        "현 시점 사진과 관리실 확인으로 보면, 전문 탈취 청소나 바닥보수를 선공제할 정도의 손상은 없었습니다. 즉시 반출이나 특별청소 예치금 요구는 확인된 피해 범위를 넘어섭니다."
       ]
     }
   },
   "tenant-11": {
     "personalityTags": {
       "a": [
-        "victimizing",
-        "face_sensitive",
-        "counter_attack",
-        "relationship_preserving"
+        "victim_identity",
+        "selective_quote",
+        "martyr_complex",
+        "timeline_padding"
       ],
       "b": [
-        "cold_logical",
-        "fairness_obsessed",
-        "face_sensitive",
-        "selective_quote"
+        "manipulative",
+        "blame_shifting",
+        "detail_obsessed",
+        "fairness_obsessed"
       ]
     },
     "contentTags": {
@@ -16776,11 +16860,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "fact",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "fact"
+      "t-1": "core_fact",
+      "t-2": "core_fact",
+      "t-3": "circumstantial",
+      "t-4": "hidden_motive",
+      "t-5": "subjective_claim"
     },
     "actionAffinity": {
       "d-1": {
@@ -16794,8 +16878,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.3
         },
-        "bestActionHint": "사생활·평판 우려가 큰 쟁점이라 비공개 보장이 먼저 주어져야 숨긴 사실의 문이 열린다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "나래를 '무단 개조 세입자', 성필을 '공짜 리뉴얼만 챙긴 집주인'으로 몰지 않겠다고 전제해야, 처음 허락이 페인트·조명 같은 되돌릴 수 있는 수준이었다는 선이 비교적 솔직하게 나온다.",
+        "worstActionReaction": "'손봐도 된다'는 한 문장만 붙잡고 늘어지면 나래는 분위기 개선을 허락으로 넓히고, 성필은 모든 변경을 금지였던 것처럼 줄여 말해서 허용 범위가 더 흐려진다."
       },
       "d-2": {
         "bestAction": "evidence_present",
@@ -16808,8 +16892,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.1
         },
-        "bestActionHint": "정황 다툼보다 실제 자료를 먼저 맞대야 과장과 누락이 빨리 드러난다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "입주·퇴거 사진, 시공업체 톡, 앵커와 배선 흔적을 같이 보면 붙박이장 문과 상부장 철거가 단순 꾸미기를 넘은 구조 변경이었다는 점이 말보다 먼저 선명해진다.",
+        "worstActionReaction": "나래가 쓴 돈과 수고만 먼저 받아 주면 그는 계속 '집을 살렸다'는 결과를 말하고, 실제로 무엇을 뜯고 배선을 건드렸는지는 뒤로 숨긴다."
       },
       "d-3": {
         "bestAction": "confidential_protection",
@@ -16822,8 +16906,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.2
         },
-        "bestActionHint": "사생활·평판 우려가 큰 쟁점이라 비공개 보장이 먼저 주어져야 숨긴 사실의 문이 열린다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "430만원 전체를 두고 바로 부풀리기라고 몰지 말고 고정 개선비와 개인 소품비를 나눠 보겠다고 해야, 나래도 이동식 거울장·지인 인건비가 섞였다는 지점을 방어 덜 한 채 꺼낼 수 있다.",
+        "worstActionReaction": "총액만 깎아치면 나래는 영수증 더미를 빠르게 쌓아 인상액으로 승부하고, 어떤 비용이 실제 임대공간 가치 상승인지 분리가 더 어려워진다."
       },
       "d-4": {
         "bestAction": "motive_search",
@@ -16836,8 +16920,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "왜 그런 선택을 했는지 이유를 말하게 만들면, 스스로 숨긴 구간이나 뒤늦은 정당화가 드러나기 쉽다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "성필에게 왜 나래가 만든 조명·페인트 사진을 '집주인 감성 리뉴얼'로 내보냈는지 묻게 되면, 공실을 빨리 메우려 세입자 기여를 자기 개선처럼 포장한 계산이 튀어나온다.",
+        "worstActionReaction": "모집글 문구 몇 단어만 파고들면 성필은 곧 원상복구 규칙으로 도망가고, 개선 성과를 광고엔 쓰면서 정산에선 0으로 친 이중 태도는 흐려진다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -16850,8 +16934,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1
         },
-        "bestActionHint": "정황 다툼보다 실제 자료를 먼저 맞대야 과장과 누락이 빨리 드러난다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "전면복구 480만원 견적과 부분복구 견적, 퇴거 사진을 한 번에 대조해야 붙박이장 문 복구 수준인지 전체 재도장·타일까지 갈 문제인지 과잉 청구 여부가 분명해진다.",
+        "worstActionReaction": "성필의 안전 우려와 새 임차인 일정부터 받아 주면 그는 모든 흔적을 전면 철거 사유로 넓혀 버리고, 실제 필요한 부분복구 범위 검증은 뒤로 밀린다."
       }
     },
     "optimalPath": {
@@ -16963,13 +17047,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 입주 초 나래와 함께 곰팡이 자국을 보고 페인트 작업을 도왔고, 이후 붙박이장 문이 떼어진 시점도 현장에서 봤다. 다만 가까운 사람 일이라 제가 본 장면보다 더 좋게 해석했을 수는 있습니다."
+        "처음엔 누수 자국을 덮는 페인트와 조명 교체 정도였어요. 그런데 어느 순간부터 붙박이장 문을 떼고 화장대 상부장까지 바꾸기 시작해서, '이건 집주인이 허용한 선을 넘는다'고 느꼈습니다.",
+        "세입자가 제시한 개선비에는 이동식 거울장, 촬영용 소품, 지인 인건비까지 섞여 있었거든요. 전부를 집 가치를 올린 비용이라고 주장하기엔 무리가 있어요."
       ],
       "tp-2": [
-        "성필이 어느 범위까지 손봐도 된다고 말했는지, 그리고 퇴거 뒤 새 임차인 모집글에 어떤 문구가 쓰였는지 직접 들은 범위까지는 말씀드릴 수 있습니다."
+        "집주인이 허용한 건 도배·페인트, 탈착 가능한 조명, 이동식 수납 설치 정도였습니다. 붙박이장 문 두 짝과 상부장 철거까지 포함된다고 보기 어렵다고 생각해요.",
+        "다만 퇴거 뒤 집주인이 새 임차인 모집글에서 나래가 설치한 조명과 페인트 사진을 '감성 리뉴얼 완료'라고 홍보한 것도 봤습니다. 기여를 가져다 쓰면서 원상복구비를 청구하는 건 일관되지 않아요."
       ],
       "tp-3": [
-        "실제 시공 범위가 페인트·조명 수준을 넘어 어떤 고정 구조 변경까지 포함됐는지, 그리고 430만원 내역 중 고정 시공비가 얼마였는지 설명할 수 있다."
+        "현장을 보면 페인트·조명 교체와는 다른 수준의 작업이 들어갔습니다. 붙박이장 문을 떼고 고정 선반 앵커와 전동 조명 배선을 추가한 건 구조 변경에 해당해요.",
+        "전면 원상복구 청구 금액은 과도하다고 봅니다. 실제 정산 가능 범위는 붙박이장 문 복구, 상부장 패널 복원, 일부 앵커 자국 보수 수준입니다. 전면 철거와 전체 재도장까지 요구하는 건 범위를 넘어요."
       ]
     }
   },
@@ -16977,15 +17064,15 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     "personalityTags": {
       "a": [
         "confrontational",
-        "face_sensitive",
         "counter_attack",
-        "selective_quote"
+        "grudge_holding",
+        "privacy_sensitive"
       ],
       "b": [
         "avoidant",
-        "face_sensitive",
         "relationship_preserving",
-        "privacy_sensitive"
+        "blame_shifting",
+        "shame_sensitive"
       ]
     },
     "contentTags": {
@@ -17021,11 +17108,11 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
       ]
     },
     "truthCategory": {
-      "t-1": "fact",
-      "t-2": "motive",
-      "t-3": "fact",
-      "t-4": "fact",
-      "t-5": "motive"
+      "t-1": "circumstantial",
+      "t-2": "emotional_context",
+      "t-3": "core_fact",
+      "t-4": "circumstantial",
+      "t-5": "core_fact"
     },
     "actionAffinity": {
       "d-1": {
@@ -17039,8 +17126,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "정황 다툼보다 실제 자료를 먼저 맞대야 과장과 누락이 빨리 드러난다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "미령 음성메모, 이웃 사이드챗, 루머 전파 시간표를 같이 펼치면 '경수가 직접 문제 세입자라고 퍼뜨렸다'는 직선 서사가 끊기고, 애매한 발언이 재전달되며 굳어진 과정이 보인다.",
+        "worstActionReaction": "소담이 느낀 수치심만 먼저 달래면 그는 곧 '집주인이 날 찍었다'는 결론으로 되돌아가고, 실제 발화 경로와 중간 전달자들이 전부 그림자처럼 사라진다."
       },
       "d-2": {
         "bestAction": "motive_search",
@@ -17053,8 +17140,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.25
         },
-        "bestActionHint": "왜 그런 선택을 했는지 이유를 말하게 만들면, 스스로 숨긴 구간이나 뒤늦은 정당화가 드러나기 쉽다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "미령에게 왜 하필 '조용히 보고 있다'는 표현을 썼는지 묻게 되면, 민원을 잠재우려다 애매한 말을 던진 의도와 그 말이 낙인처럼 들린 이유가 함께 드러난다.",
+        "worstActionReaction": "그 문장이 정확히 몇 글자였는지만 몰아붙이면 미령은 표현 수습에만 매달리고, 왜 그런 말이 나왔고 어디서 오해가 커졌는지는 끝내 안 열린다."
       },
       "d-3": {
         "bestAction": "motive_search",
@@ -17067,8 +17154,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.15
         },
-        "bestActionHint": "왜 그런 선택을 했는지 이유를 말하게 만들면, 스스로 숨긴 구간이나 뒤늦은 정당화가 드러나기 쉽다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "소담에게 왜 출처 확인 전에 건물 단톡방 공개 반박으로 갔는지 묻게 되면, 이웃 사이에서 문제 인물로 굳을까 두려워 먼저 판을 뒤집으려 한 심리가 나와 공개 역비난의 이유가 선명해진다.",
+        "worstActionReaction": "캡처 업로드 시각과 댓글 개수만 세면 소담은 더 많은 캡처를 터뜨리며 '그때는 그럴 수밖에 없었다'고만 버텨서, 공개 대응을 선택한 동기는 흐려진다."
       },
       "d-4": {
         "bestAction": "confidential_protection",
@@ -17081,8 +17168,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1.05,
           "confidential_protection": 1.28
         },
-        "bestActionHint": "사생활·평판 우려가 큰 쟁점이라 비공개 보장이 먼저 주어져야 숨긴 사실의 문이 열린다.",
-        "worstActionReaction": "사실만 몰아붙이면 단어 정의나 일정 해석으로 숨어 버려 방어가 더 단단해진다."
+        "bestActionHint": "소담을 상습 민원 유발자로 박제하지 않겠다고 약속해야, 택배·방문객으로 복도 대화가 길었던 몇 차례와 분리배출 안내 재고지 정도는 있었지만 만성 문제는 아니었다는 기록이 차분하게 나온다.",
+        "worstActionReaction": "소음이 몇 번 있었는지 숫자만 캐묻기 시작하면 이웃들 기억이 과장되고, 한두 차례 생활 불편과 '문제 세입자' 낙인 사이의 거리감이 사라진다."
       },
       "d-5": {
         "bestAction": "evidence_present",
@@ -17095,8 +17182,8 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
           "separation": 1,
           "confidential_protection": 1.05
         },
-        "bestActionHint": "기록과 원본 문서가 남는 쟁점이라, 말싸움보다 증거 대면이 가장 빨리 방어를 흔든다.",
-        "worstActionReaction": "감정적 위로부터 주면 기록으로 확인할 사실을 계속 미루며 방어가 길어진다."
+        "bestActionHint": "미령 업무일지, 경수-미령 문자, 정정문 부재가 남은 시간표를 같이 보여 주면 경수가 소문을 직접 만들지 않았더라도 정정을 늦춰 인상을 굳혔다는 책임을 피하기 어렵다.",
+        "worstActionReaction": "경수의 관리인 의존과 건물 평판 걱정부터 이해해 주면 그는 '미령이 알아서 한 말'이라는 뒤로 빠진 설명만 반복하고, 정정 지연이라는 자기 몫은 끝까지 희미해진다."
       }
     },
     "optimalPath": {
@@ -17206,13 +17293,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 아는 범위에서는 이웃에게서 '관리인이 문제 세입자라고 했다'는 말을 처음 전해 들은 시점과, 소담이 단톡방에 공개 반박 글을 올리게 된 경위를 안다. 다만 가까운 사람 일이라 제가 본 장면보다 더 좋게 해석했을 수는 있습니다."
+        "제가 처음 들은 건 '관리실이 4층을 지켜보고 있다' 정도의 막연한 말이었는데, 이웃 사이를 거치면서 '4층 세입자가 문제라서 관리실이 찍어 뒀다'로 바뀌었어요. 낙인이 붙는 속도가 너무 빨랐습니다.",
+        "소담이 단톡방에 공개 반박을 올린 것도 가만히 있으면 이름이 먼저 망가지겠다는 공포가 컸기 때문이라고 봅니다. 출처를 다 확인하기 전에 감정이 먼저 터진 거예요."
       ],
       "tp-2": [
-        "자신이 어떤 표현으로 4층 세입자 문제를 언급했는지, 누구에게 어떤 취지로 말했는지 가장 정확히 알고 있다."
+        "저는 그때 '4층 분 건은 제가 조용히 보고 있어요'라고만 말한 겁니다. 문제 세입자라고 낙인찍으려던 게 아니라 민원을 달래려고 한 말이었어요.",
+        "돌이켜 보면 그 표현이 너무 모호했다는 책임이 있습니다. '조용히 보고 있다'는 말이 이웃들 사이에서 '관리실이 찍어 뒀다'로 바뀌어 돌았으니까요."
       ],
       "tp-3": [
-        "실제 민원 횟수, 건물 공지 이력, 확인된 소음·분리배출 기록이 어느 수준이었는지 원본 민원대장으로 확인할 수 있다."
+        "민원 기록을 보면 택배 관련 대화가 한두 번 길어지고 분리배출 안내를 다시 받은 적은 있지만, 반복 소음이나 무단투숙 같은 상습 문제는 확인되지 않았습니다.",
+        "이번 사건의 핵심이 실제 민원이 아니라 말의 전파 과정이라고 봅니다. 관리인의 모호한 한마디가 이웃 재전달을 거치며 낙인이 됐고, 소담은 출처 확인 전 공개 반박을 올렸고, 경수는 정정을 늦춰서 인상이 굳어졌습니다."
       ]
     }
   },
@@ -17440,16 +17530,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "재판관님, 전날 회의에서 보고서 뼈대는 서윤씨가 만든 프레임이라는 말이 분명 나왔습니다. 다만 최종 발신 명의는 팀장 쪽으로 간다는 관행을 다들 너무 당연하게 여기고 있었죠.",
-        "제가 본부에서 봐 온 방식은 팀장 명의로 내더라도 본문이나 말미에 실무자 이름을 남기는 겁니다. 이번 제출본은 그 선을 벗어났다는 느낌이 있었습니다."
+        "보고서 마감 주간에 팀 전체가 늦은 밤까지 돌아가고 있었습니다. 최종 제출이 한 사람 이름으로 나간 것 자체는 임원 보고 관행상 특이한 일은 아니었어요. 다만 초안을 짠 쪽에서 그걸 어떻게 받아들였을지는 충분히 이해가 갑니다.",
+        "승진 심사 직전이라 양쪽 다 예민했던 건 맞습니다. 한쪽만 잘못이라고 보기엔, 명의 문제를 미리 정리할 기회가 여러 번 있었는데 다들 그냥 넘어간 부분이 있어요."
       ],
       "tp-2": [
-        "HR 화면 기준으로 보면 v1에는 서윤씨가 '보고서 오너'였고, 태성씨 비공개 메모가 들어간 뒤 v2에서 '보조 분석'으로 내려갑니다. 저는 그 순서를 중요하게 봅니다.",
-        "서윤씨가 고충을 정식 제출하진 않았지만 초안은 남아 있었습니다. 그래서 단순한 호칭 조정이었다고 보기엔 이미 문제의식이 누적돼 있었다고 판단했습니다."
+        "평가 기록을 보면, 처음 버전과 다음 버전 사이에 기여 항목이 눈에 띄게 달라져 있었습니다. 중간에 비공개 코멘트가 하나 들어온 시점이 그 변화와 겹치더라고요.",
+        "이의 제기보다 비공개 코멘트가 먼저 시스템에 들어온 순서가 눈에 걸렸습니다. 한쪽이 절차를 밟기도 전에 평가 구조가 이미 움직인 셈이에요."
       ],
       "tp-3": [
-        "포렌식 추출본상 서윤씨의 마지막 정상 편집은 20시 17분입니다. 23시 41분대 기록은 관리자 대리발급 토큰이 공용 PC 세션에서 메타를 덮은 흔적이고요.",
-        "태성씨 제출 PDF는 공식 추출본과 해시가 다릅니다. 그 파일만 가지고 '23시 48분 최종 수정자는 서윤'이라고 결론 내리는 건 원본성 기준에 맞지 않습니다."
+        "서버 원본과 제출된 이력을 대조하면, 같은 시간대 수정 기록의 접근 경로가 다릅니다. 일반 편집 패턴과 결이 달라서, 표면 정보만으로 최종 작성자를 단정하기 어렵습니다.",
+        "어느 쪽이 더 억울한지는 제 판단 범위가 아닙니다. 다만 제출된 기록 하나만으로 한쪽 책임을 확정하기엔, 이면에 검증할 경로가 더 남아 있습니다."
       ]
     }
   },
@@ -17675,16 +17765,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "제가 보고 라인에서 들은 건 규원씨가 조사 착수도 되기 전에 '민아씨부터 막아야 한다'는 취지로 말한 부분입니다. 그리고 실제로 권한이 먼저 빠졌습니다.",
-        "다만 보안 원본 로그까지 본 사람은 아닙니다. 제가 말할 수 있는 건 팀 분위기가 민아씨를 이미 유출자로 받아들이는 쪽으로 움직였다는 사실입니다."
+        "감사 착수 직전이라 팀 전체가 보안에 예민한 시기였습니다. 그 상황에서 빠르게 접근을 차단한 건, 당시 분위기를 생각하면 이해가 가는 판단이었어요.",
+        "다만 팀 앞에서 징계를 암시하는 발언까지 나온 건 좀 과했다고 느꼈습니다. 성급하긴 했지만, 처음부터 누군가를 밀어내려는 의도였는지는 저도 확신이 없어요."
       ],
       "tp-2": [
-        "HR 접수 원문에는 민아씨 면담 전에 이미 '보안상 위험 인물' 표현이 들어가 있습니다. 이후에 '주의 대상'으로 완화된 흔적까지 남아 있고요.",
-        "같은 기록 안에 '비용 건은 감사 후'라는 취지와 민아씨의 보복 우려 진술이 나란히 있습니다. 저는 그래서 이 사안을 보안 이슈 하나로만 보지 않았습니다."
+        "인사 접수 기록의 순서를 보면, 공식 절차가 열리기도 전에 접근권 회수와 내부 메모가 먼저 처리돼 있었습니다. 순서가 뒤집힌 거예요.",
+        "한쪽은 낙인이 두려워 공식 제보를 못 하고, 다른 쪽은 보안 관리 명분으로 그 상황을 덮는 구조가 됐습니다. 둘 다 정상 절차 바깥에서 움직인 거예요."
       ],
       "tp-3": [
-        "원본 로그를 대조하면 민아씨의 개인 드라이브 업로드보다 두 시간 먼저 노지원 세션에서 공유링크 열람과 임시 다운로드 토큰 발급이 이어집니다.",
-        "회의실 CCTV와 좌석 로그까지 붙여 보면 노지원이 그 시각 프린터 존을 오간 동선이 확인됩니다. 선행 반출 경로는 민아씨가 아니라 노지원 쪽입니다."
+        "접속 로그를 추적하면 원본이 외부로 나간 경로가 처음 의심받은 쪽만은 아닙니다. 시간순으로 다른 경로가 먼저 확인됩니다.",
+        "소문만으로는 한 사람이 빼돌린 것처럼 보이지만, 로그를 따라가면 경로가 한 갈래가 아닙니다. 생각보다 복잡한 구조입니다."
       ]
     }
   },
@@ -17914,16 +18004,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "그 자리에서 HJ 얘기를 먼저 꺼낸 건 저였습니다. 제 기억으로는 '한재균 라인' 이야기가 먼저였고, 그다음에 도윤씨가 문제의 표현을 덧붙였습니다.",
-        "희주씨는 그 순간 바로 옆에서 들은 사람이 아니었습니다. 다음 날 잘린 클립을 보고 자기 이야기로 받아들였을 가능성이 더 커 보였습니다."
+        "2차 술자리에서 인사 배치 얘기가 나오기 전에 이미 테이블 분위기가 과열돼 있었습니다. 그 발언 하나만 떼어 놓으면 맥락이 완전히 사라져요.",
+        "다음 날 앞뒤가 잘린 영상만 돌면서 실제보다 훨씬 나쁘게 읽혔다고 봅니다. 현장에 있던 사람과 화면으로만 본 사람의 느낌이 많이 달랐어요."
       ],
       "tp-2": [
-        "조직문화 상담 기록상 도윤씨의 '평판 리스크' 메모가 희주씨 면담보다 먼저 들어와 있습니다. 그리고 다음 날 리허설 배정표에서 희주씨 발표가 빠졌고요.",
-        "누가 더 상처받았는지를 제가 재단하진 않겠습니다. 다만 사실 확인보다 선행 조치가 먼저였다는 순서만은 분명합니다."
+        "기록을 보면, 발언이 사실인지 확인하는 절차보다 당사자를 발표에서 빼는 조치가 더 빨랐습니다. 면담도 안 했는데 배정에서 이름이 먼저 빠졌어요.",
+        "누가 먼저 화를 냈느냐보다, 확인도 안 된 상태에서 낙인이 먼저 굳은 게 더 문제라고 봅니다. 절차가 감정을 따라가 버린 거예요."
       ],
       "tp-3": [
-        "공유앨범 생성 로그를 보면 웃음 피크 지점부터 자동 하이라이트가 잘립니다. 그래서 대상 설명이 붙어 있던 앞 7.8초가 통째로 빠졌습니다.",
-        "식당 CCTV상 클립 시각 전후에 희주씨는 다른 테이블 동선입니다. 즉, 현장 청취가 아니라 잘린 영상 해석이 오해의 출발점이 됐다는 뜻입니다."
+        "원본 영상을 전체 길이로 보면, 문제가 된 발언 앞에 다른 맥락이 먼저 나옵니다. 자동으로 잘린 짧은 클립만 봐서는 발언 대상이 누구였는지 확정할 수 없습니다.",
+        "술자리 분위기까지 판단하진 않습니다. 다만 인력배치 메모에 적힌 약어와 영상에 들린 이니셜을 대조해 보면, 사람들이 처음 믿은 대상과 실제 지칭이 다를 가능성이 있습니다."
       ]
     }
   },
@@ -18153,16 +18243,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "스탠드업에서 민석씨가 '18시 전에 승인 체크하고 다시 얘기하겠다'고 말한 건 저도 들었습니다. 팀이 그 약속을 마감 기준으로 잡은 것도 사실이고요.",
-        "클라이언트 회신이 늦어진 사정은 있었습니다. 그래도 그 사이 상태가 바뀌었다면 팀에 중간 공유가 다시 들어왔어야 한다고 봅니다."
+        "데모 전날 오후부터 다들 승인 메일만 기다리고 있었습니다. 한쪽이 보드에 확인 시각을 적자 나머지는 그 말을 믿고 자기 작업에만 집중했어요.",
+        "누가 더 바빴느냐보다, 승인이 늦어지는 동안 서로 상황을 확인한 사람이 아무도 없었다는 점이 더 문제였습니다. 한쪽 실수로만 보기엔 빈 자리가 양쪽에 있어요."
       ],
       "tp-2": [
-        "보드 이력으로 보면 19시 48분에 scope freeze가 풀리고 카피 하위 작업이 추가됩니다. 그런데 담당자는 그대로라 QA 쪽에 공식 재배정이 안 됐습니다.",
-        "또 지우씨가 체크리스트를 초록으로 바꾼 시점엔 회귀 테스트 로그가 아직 비어 있었어요. 저는 그래서 한 사람 실수로만 정리하긴 어렵다고 봅니다."
+        "제가 보드 기록을 보면, QA 완료로 표시된 뒤에 카피 수정이 추가됐습니다. 그런데 범위가 늘었는데도 담당자 재배정은 안 됐고, 새로 들어온 작업을 누가 검증해야 하는지가 비어 버렸어요.",
+        "한 사람 실수로 정리하면 편하겠지만, 회귀 테스트가 안 끝난 상태에서 체크리스트를 초록으로 바꾼 쪽도 있었고, 그 초록불을 확인 없이 믿고 넘어간 쪽도 있었습니다."
       ],
       "tp-3": [
-        "파이프라인 raw log에 20시 31분 누락 파일 경고와 테스트 미완료 알림이 같은 배치로 찍혀 있습니다. 민석씨와 지우씨 둘 다 그 알림을 열람한 흔적도 남아 있고요.",
-        "운영 관점에선 승인 지연, 파일 교체, 회귀 미완료가 한꺼번에 겹친 사고입니다. 한쪽 로그만 떼어 보면 원인 진단이 어긋납니다."
+        "기록을 보면 저녁에 누락 파일 경고와 테스트 미완료 알림이 거의 동시에 떴습니다. 양쪽 다 그 알림을 열어 봤는데, 서로 상대가 처리할 거라 넘긴 흔적이 있습니다.",
+        "이 건은 단순 실수가 아니라, 승인 지연과 QA 과장 보고와 범위 변경 미공유가 차례로 쌓인 연쇄 사고에 가깝습니다. 어느 한 고리만 끊었어도 결과가 달랐을 겁니다."
       ]
     }
   },
@@ -18393,16 +18483,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "상혁씨가 브리핑 막판에 제게 '공동기획자 표기를 넣는 게 맞겠냐'고 한번 묻긴 했습니다. 그 질문 자체가 가은씨 기여를 알고 있었다는 뜻으로 들렸습니다.",
-        "최종 발표자는 상혁씨였지만, 초안 구조를 누가 짰는지는 본부 안에서도 다들 어느 정도 알고 있었습니다. 그래서 이름이 빠진 최종본이 더 낯설었습니다."
+        "브리핑 마감까지 최종 정리를 직접 한 사람이 명의를 가져가는 관행이 있었습니다. 그래서 대표 성과로 올린 것 자체는 팀 기준에서 특이한 일만은 아니었어요.",
+        "다만 초안 구조를 상당 부분 그대로 쓴 건 팀에서 다 알고 있었습니다. 명의 문제가 나왔을 때 조심스러운 공기가 돈 건, 그 인정이 빠졌기 때문이라고 봅니다."
       ],
       "tp-2": [
-        "2년 전 보류본 주석을 열어 보면 지금 '고객회복 랩'에서 쓰는 실험명과 거의 같은 표현이 이미 들어 있습니다. 나중에 가은씨가 그 구조를 템플릿으로 옮길 때 저도 일부를 봤고요.",
-        "그래서 저는 이번 안건을 어느 한 사람의 순수 창작이라고는 말하지 않습니다. 예전 파일의 뼈대가 현재 안건 안에 분명 이어져 있습니다."
+        "예전 보류 파일을 정리하다가 이번 프로젝트와 실험명이 겹치는 자료를 발견했습니다. 지금 나온 기획이 완전히 새로운 창작이라기보다, 그때 묻힌 구조 위에 살을 붙인 쪽에 가까워 보였어요.",
+        "이 건을 순수한 아이디어 도용이라고만 할 수도, 온전한 독창적 기획이라고만 할 수도 없습니다. 예전에 보류된 밑그림 위에 이번 작업이 덧붙여진 형태였어요."
       ],
       "tp-3": [
-        "승진 운영 로그상 'source citation risk' 비공개 메모가 가은씨 해명 전에 먼저 입력됐고, 발표 순서 변경은 그 다음 배치에서 처리됐습니다.",
-        "또 권한 회수 직전 승진위 폴더 일괄 다운로드가 있었고, DLP상 같은 파일 해시가 멘토방 쪽 전송 기록과 이어집니다. 두 흐름이 시간상 붙어 있습니다."
+        "기록을 보면, 해명이 오가기도 전에 인사 담당자한테 '출처 위험'이라는 메모가 먼저 들어가 있었고, 발표 순서도 뒤로 밀려 있었습니다. 사실 확인 전에 불이익이 먼저 만들어진 셈입니다.",
+        "누가 더 기여했는지는 제가 판단할 문제가 아닙니다. 다만 기록을 보면 양쪽 다 진실을 밝히기보다 먼저 자기 입장을 굳히려고 움직인 흔적이 있습니다."
       ]
     }
   },
@@ -18633,16 +18723,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "통합 첫 주에 준호씨가 수치 안정화 압박을 받은 건 맞습니다. 하지만 그 공지가 준호씨 혼자 계정과 기준을 바꾸라는 뜻은 아니었습니다.",
-        "제 기억에 킥오프 설명은 '둘이 같이 보고 PM에게 남겨라'에 가까웠습니다. 어느 한쪽에 전권을 줬다는 식으로 들리진 않았습니다."
+        "통합 직후에 양쪽 팀 다 담당 계정을 빼앗길까 봐 예민해져 있었습니다. 한쪽이 인수인계 전 계정을 먼저 재배정하자, 상대 쪽도 바로 맞대응하더라고요.",
+        "통합 공지 취지는 공동 승인으로 맞춰 가라는 거였는데, 한쪽이 서둘렀다고 해서 다른 쪽이 남아 있던 레거시 권한으로 새벽에 따로 움직여도 되는 건 아닙니다. 같은 문제예요."
       ],
       "tp-2": [
-        "임시 RACI에는 계정 재배정과 라우팅 수정 둘 다 'co-sign + PM log'가 붙어 있습니다. 실제론 두 분 모두 체크리스트만 열어보고 PM 핑은 늦었습니다.",
-        "공지 문구가 완벽히 친절했던 건 아니지만, 에스컬레이션 통로 자체가 없던 건 아닙니다. 기록을 남기지 않은 채 각자 먼저 손댄 게 문제였습니다."
+        "제가 RACI 문서를 보면, 계정 변경이나 자동화 규칙 수정은 반드시 공동 승인을 거치게 돼 있었습니다. 그런데 고객 지연이 터지자 둘 다 승인 절차를 건너뛰고 각자 손을 대기 시작했어요.",
+        "공지 내용이 모호했던 점은 인정합니다. 그래도 변경할 때마다 PM 기록을 남기게 돼 있었는데 둘 다 안 남겼어요. 나중에 서로 '그쪽이 먼저 월권했다'고 할 빌미를 만들어 준 셈입니다."
       ],
       "tp-3": [
-        "권한관리 콘솔상 서린씨 계정엔 삭제됐어야 할 레거시 관리자 그룹이 남아 있었습니다. 같은 세션에서 새벽 라우팅 규칙과 벤더 태그 수정이 이어졌고요.",
-        "CRM 감사 로그를 보면 준호씨는 대량 오너십 재배정 뒤에 헬스 점수 임계값까지 건드립니다. 두 조치 모두 원본 로그 기준으로 확인됩니다."
+        "시스템 로그를 보면, 삭제됐어야 할 레거시 관리자 권한과 새로운 통합 배정이 같은 시간대에 뒤섞여 있었습니다. 이건 한 사람이 버튼을 잘못 누른 게 아니라, 정리 안 된 권한과 성급한 조치가 동시에 터진 문제입니다.",
+        "양쪽 말이 다르지만 시스템 기록은 분명합니다. 두 사람 모두 공동 승인 없이 상대 영역에 손을 댔고, PM 에스컬레이션도 각자 늦췄습니다."
       ]
     }
   },
@@ -18870,16 +18960,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "재판관님, 게시판 글이 뜬 직후 태욱씨가 '출하 지연보다 여론이 먼저 번지면 더 위험하다'고 보고한 건 기억합니다. 그때도 원본 채팅을 따로 보자고 했고요.",
-        "제가 아는 건 공식 라인 안의 흐름입니다. 태욱씨가 세린씨를 좋게 보지 않은 건 맞지만, e-2 캡처의 진위까지 본부 차원에서 확인한 상태는 아니었습니다."
+        "익명 글이 올라오고 나서 본부 분위기가 급하게 변했습니다. 내용이 맞는지보다 누가 올렸는지부터 찾자는 쪽으로 쏠렸고, 한 사람을 향한 의심이 빠르게 굳어 갔어요.",
+        "위쪽에서 신경 쓴 건 캡처가 사실인지보다, 이 글이 밖으로 퍼지면 어떻게 되느냐였습니다. 그 상황에서 빠르게 수습하려는 판단 자체는 이해가 가요."
       ],
       "tp-2": [
-        "조사실에서 확인한 건 단순히 글이 있었단 정도가 아닙니다. 게시판 보존 시각, 태욱씨가 먼저 의심을 굳힌 장면, 세린씨가 보복을 걱정한 진술이 시간순으로 맞물려 있었습니다.",
-        "평가 기록은 표현이 바뀌어도 입력 순서는 남습니다. 그래서 저는 '협업 부적합' 코멘트가 조사보다 뒤늦게 생긴 게 아니라는 점을 중요하게 봤습니다."
+        "제가 조사 과정에서 본 건, 폭로글이 뜨기도 전에 이미 해당 직원의 리뷰 미팅 참석이 막혀 있었다는 점입니다. 포렌식 결과가 나오기 전에 배제 조치가 먼저 들어간 거예요.",
+        "겉으로는 글이 뜬 뒤에 대응한 것처럼 보이지만, 평가란에 '협업 부적합' 코멘트가 들어간 시점은 포렌식 의뢰보다 빨랐습니다. 이미 결론을 정해 두고 움직인 셈이에요."
       ],
       "tp-3": [
-        "포렌식 기준으로 말씀드리면, 문제 캡처 본문은 2년 전 메시지 해시와 일치하고 상단 헤더만 현재 프로젝트 채널 값입니다. 한 장짜리 원본 캡처로 보기 어렵습니다.",
-        "편집 PC 로그를 대조하면 세린씨 단말에서 레이어가 합쳐진 흔적이 남습니다. 이번 사건 삭제 지시 원문은 export 어디에도 없었습니다."
+        "원본과 대조하면, 문제가 된 캡처의 본문과 상단 채널명이 서로 다른 시기의 것입니다. 별개의 대화를 하나로 합친 흔적이 보입니다.",
+        "동기를 추측하진 않습니다. 다만 편집된 캡처가 사실처럼 자리 잡은 시점이 공식 접수보다 앞섰습니다. 인상이 먼저 굳은 뒤 절차가 시작된 구조입니다."
       ]
     }
   },
@@ -19110,16 +19200,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "정훈씨가 감사 전에 제게 올린 보고는 '운영 쪽 정산 실수 하나가 있다'는 톤이었습니다. 처음부터 나래씨 단독 일탈로 보겠다는 말은 아니었습니다.",
-        "승진 심사 직전이라 비용통제 얘기에 민감했던 건 사실입니다. 다만 주말 결제를 개인분으로 메우고 닫자는 분위기가 있었다는 정도까진 저도 감지했습니다."
+        "감사가 시작될 때 느낀 건, 다들 법인카드 내역보다 이게 밖으로 터지면 어쩌나를 더 걱정했다는 점입니다. 처음엔 감사 전에 개인분만 조용히 메우면 넘어갈 수 있지 않겠냐는 말이 돌았어요.",
+        "저는 이게 한 사람 잘못이라기보다, 사적 결제를 나중에 메우기로 하는 방식을 둘 다 암묵적으로 해 왔던 게 감사 앞에서 한꺼번에 터진 거라고 봤습니다."
       ],
       "tp-2": [
-        "제가 클로징 폴더를 정리할 때 상계표에 상환 예정일이랑 정훈 이니셜이 이미 들어가 있었습니다. 감사 뒤에 급조된 문서는 아니라는 뜻입니다.",
-        "나래씨가 보류 탭 묶는 방식은 봤지만, 그건 혼자 꾸민 표라기보다 둘이 구두로 미루던 건을 제가 시트로 옮긴 모양새에 가까웠어요."
+        "제가 정산 폴더에서 찾은 상계표는 감사 뒤에 급히 만든 게 아니었습니다. 클로징 시점에 자동 백업된 문서에 이미 상환 계획과 이니셜이 적혀 있었어요. 구두 합의가 기록으로 남아 있었던 겁니다.",
+        "저는 이걸 한쪽이 혼자 꾸민 이야기라고 보지 않습니다. 개인 결제분을 공식 절차 밖에서 나중에 메우자는 방식을 둘 다 써 왔는데, 감사에서 한꺼번에 드러난 겁니다."
       ],
       "tp-3": [
-        "원본 영수증과 재발급본을 겹쳐 보면 빠진 품목이 선명합니다. 새벽 2시 POS 수정 요청은 단순 정리라기보다 감사 대응용 세탁으로 읽힙니다.",
-        "반대로 정훈씨 PDF는 카드사 원본 열 구성이 아니었습니다. 상환 메모와 보류 코드가 잘린 채 문제 결제만 남아 있어, 그 파일만으로 나래씨 조작을 말하긴 어렵습니다."
+        "제가 영수증 원본과 재발급본을 대조해 보면, 주류와 개인 물품 항목이 빠진 상태로 재발급돼 있었습니다. 감사 공지 다음 날 새벽에 재발급을 요청한 기록이 남아 있어요.",
+        "누가 더 먼저 겁먹었는진 모릅니다. 다만 기록을 보면, 한쪽은 합의 자체를 부인하면서 상대를 단독 책임자로 몰았고, 다른 쪽은 영수증을 손보면서 흔적을 줄이려 했습니다."
       ]
     }
   },
@@ -19350,16 +19440,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "미팅 끝나고 준석씨가 '은채씨는 당분간 후속선에서 빼자'고 한 건 들었습니다. 자료가 어디서 샜는지 확인도 되기 전이어서 저도 성급하다고 느꼈습니다.",
-        "그 계정이 큰 건 맞습니다만, 계정 보호라는 말이 은채씨 역할 축소를 너무 빨리 정당화하는 데 쓰였다는 인상은 있었습니다."
+        "거래처 미팅 직후 빠르게 움직인 건, 핵심 계정을 지켜야 한다는 압박이 컸기 때문입니다. 고객이 내부 정보를 아는 듯한 발언을 한 순간 유출 가능성이 급팽창했으니까요.",
+        "후속 메일에서 한 사람을 뺀 건 좀 성급했을 수 있습니다. 그래도 같은 제목의 문서가 여러 곳을 오간 상황이었으니, 일단 경로를 좁히려는 판단 자체가 틀렸다고 보긴 어렵습니다."
       ],
       "tp-2": [
-        "제가 받은 건 내부 슬랙 화면 캡처랑 '팀장이 잘못 보낸 거 아니냐'는 DM이었습니다. 확인 요청이라 해도 외부 파트너 입장에선 내부 책임공방이 바로 읽혔어요.",
-        "그리고 거래처가 본 문서는 내부 준비본이 아니었습니다. 저희 쪽에선 클라이언트용 공유본과 회의요약 메일만 돌았고, 제목이 같아서 다들 헷갈린 겁니다."
+        "저한테 들어온 건 정리된 설명이 아니라, '그쪽이 보낸 거 아니냐', '나는 다른 문서를 말한 거다' 같은 엇갈린 말들이었습니다. 같은 제목 '공유본'이 여러 개 돌고 있어서 서로 다른 문서를 가리키고 있었는데, 바깥에선 그 구분이 안 보이더라고요.",
+        "같은 제목의 '공유본'이 내부용, 클라이언트용, AE 요약용으로 세 개가 있었습니다. 이 구분을 모르면 거래처가 본 것만으로 내부 자료가 샌 것처럼 보일 수 있어요. 그 혼선이 의심을 키운 겁니다."
       ],
       "tp-3": [
-        "관리자 로그상 '공유본_팔콘'은 제목만 같고 문서 ID가 둘입니다. 외부 도메인이 연 건 클라이언트용 쪽이고, 내부 준비본은 외부 열람 0건으로 남습니다.",
-        "준석씨 PDF는 제목만 보이게 잘려 있었습니다. 보안관리 쪽에선 그런 발췌본보다 링크 해시와 권한맵을 같이 봐야 누가 뭘 열었는지 단정할 수 있습니다."
+        "접속 로그를 보면, 거래처 도메인에서 열린 건 클라이언트용 공유본과 AE 요약 메일뿐이었습니다. 내부 준비자료가 거래처 쪽으로 나간 기록은 없어요. 이름만 같은 다른 문서였습니다.",
+        "문서 제목이 아니라 실제 접속 경로를 봐야 합니다. 그걸 보면 처음 유출자로 의심한 근거가 성립하지 않고, 누가 어떤 버전의 문서를 봤는지를 분리해서 따져야 합니다."
       ]
     }
   },
@@ -19588,16 +19678,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "도현씨가 팀을 붙잡아야 한다며 혜린씨 전환 얘기를 꺼낸 시점은 기억합니다. 하지만 본부 승인 자체가 완전히 닫혀 있었던 때는 아니었어요.",
-        "런칭 직후에도 '이번 사이클만 넘기면 올린다'는 말이 반복됐다는 보고를 여러 번 받았습니다. 그래서 저도 기대를 만들었다는 점은 부정하기 어렵다고 봅니다."
+        "전환 약속을 한 건 실제로 그렇게 하려는 마음이 있었기 때문이라고 봅니다. 다만 인사 사정이 중간에 바뀌면서 약속을 지키기 어려워진 거예요. 일부러 속인 건 아닙니다.",
+        "상황을 좀 더 빨리 공유했으면 좋았겠지만, 상대 쪽도 그 사이에 타사와 겹치는 근무 계약을 따로 맺고 있었어요. 한쪽만 약속을 깬 구조가 아닙니다."
       ],
       "tp-2": [
-        "HR 트래커에는 슬롯이 보류이면서도 재요청 가능으로 남아 있었습니다. 그런데 도현씨의 commitment concern 메모가 그보다 먼저 들어간 건 분명합니다.",
-        "연장 기록을 보면 혜린씨가 핵심 런칭과 교육 업무를 맡은 시기마다 전환 기대 문장이 같이 붙어 있습니다. 단순 격려라고만 보긴 어려워요."
+        "제가 인사 트래커를 보면, 전환 슬롯이 완전히 닫힌 게 아니라 보류·재요청 가능한 상태였습니다. 그런데도 '헤드카운트가 없다'고 말하면서, 한편으로는 핵심 업무를 계속 맡긴 셈이에요.",
+        "저는 이 건을 단순 오해라고만 보지 않습니다. 한쪽은 전환을 미루면서 업무는 계속 맡겼고, 다른 쪽은 그 사이에 타사와 겹치는 근무 계약을 따로 맺고 있었으니까요."
       ],
       "tp-3": [
-        "노무 쪽에선 타사 계약서 체결일, 출입 기록, VPN 세션을 같이 봅니다. 혜린씨는 전환 발표 전 이미 다른 고정 근무 계약과 시간이 일부 겹쳤습니다.",
-        "다만 로그는 병행 사실을 보여줄 뿐, 그 선택이 왜 나왔는지까지 말해주진 않습니다. 약속 번복과 생계 불안이 같이 있었던 건 별도 맥락으로 봐야 합니다."
+        "VPN 로그를 보면, 평일 일부 시간대에 양쪽 업무를 병행한 흔적이 분명합니다. 다만 그 사실만 떼어 보면, 왜 이중 계약을 맺을 수밖에 없었는지는 절반밖에 설명되지 않습니다.",
+        "누가 먼저 약속을 깼는지 단정하진 않겠습니다. 기록을 보면, 한쪽은 전환을 반복해서 미루면서 약속을 지키지 않았고, 다른 쪽은 기다리다 결국 이중 계약이라는 안전판을 만들었습니다."
       ]
     }
   },
@@ -19825,16 +19915,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "브리핑 자료를 보면 청구항 뼈대는 서린씨 초안에서 온 부분이 적지 않습니다. 그런데 발표 직전엔 대표 발명자 설명이 태준씨 쪽으로 너무 정리돼 있었어요.",
-        "태준씨가 '대표성 문제'라고 설명한 건 들었지만, 그 말이 서린씨 이름을 빼도 된다는 뜻까진 아니었습니다."
+        "투자사 데모 자리에서 한 명이 대표 성과로 올린 건, 출원 마감이 겹치면서 브리핑을 한 사람이 정리해야 하는 상황이었기 때문입니다. 상대 기여를 일부러 지운 건 아니라고 봅니다.",
+        "다만 핵심 청구항과 실험표를 설계한 사람이 따로 있다는 건 연구소에서 다 알고 있었습니다. 기여표에서 그 이름이 빠진 건 사실이라, 결과적으로 공로가 한쪽으로 쏠린 건 인정해야 합니다."
       ],
       "tp-2": [
-        "서린씨가 보낸 ZIP엔 아이디어 수준만 있는 게 아니라 청구항 문장과 실험 요약이 같이 들어 있었습니다. 태준씨 쪽에서도 추가 청구항 요구가 이어졌고요.",
-        "처음엔 브로커 검토 1건처럼 시작했지만, 링크가 다른 사람 손을 타기 시작하면서 범위가 커졌습니다. 수수료 얘기까지 오간 건 사실입니다."
+        "브로커 쪽으로 나간 파일을 봤을 때, 아이디어 메모 수준이 아니라 청구항 정리본과 실험 요약이 ZIP으로 묶여 있었습니다. '아직 형태도 없었다'는 주장은 믿기 어려웠어요.",
+        "저는 발명자 표기 싸움이 한창일 때, 동시에 외부 브로커와 수수료를 논의한 메일이 오간 걸 확인했습니다. 단순한 공로 다툼이 아니라, 다툼 자체가 바깥 거래를 가리기 위한 장치였을 수 있습니다."
       ],
       "tp-3": [
-        "DLP 경보만 보면 서린씨 단독 유출처럼 보일 수 있습니다. 하지만 원본 SMTP 로그와 외부 공유 링크를 붙이면 브로커 뒤 재전송 세션이 또 잡힙니다.",
-        "가상자산 입금 추적까지 맞춰보면, 둘 사이 갈등이 단순한 발명자 다툼만은 아니었다는 정황이 나옵니다. 자료 전달과 대가 흐름이 같이 남아 있으니까요."
+        "제가 전달 경로를 추적해 보면, 브로커 한 곳으로만 나간 게 아닙니다. 작업 링크 재공유와 자동 전달로 패키지 일부가 경쟁사 자문 변리사 폴더까지 퍼져 있었어요.",
+        "누구 마음속 계산까지 말하진 않습니다. 다만 기록을 보면, 겉으로 벌어진 발명자 다툼과 밖으로 나간 자료·수수료 논의가 시간적으로 겹칩니다. 우연으로 보기 어려운 구조입니다."
       ]
     }
   },
@@ -20061,16 +20151,16 @@ export const CASE_ENRICHMENT_DATA: Record<string, CaseEnrichment> = {
     },
     "witnessSpeechSample": {
       "tp-1": [
-        "회사 재택지침은 상태창과 티켓 응답 관리가 기본이지, 거실 배경까지 보이는 웹캠 상시 점검을 허용하진 않습니다. 지훈씨 공지는 그 선을 넘었습니다.",
-        "응답률이 떨어져 압박이 컸던 건 맞지만, 그래서 관리자 개인 규칙을 먼저 적용해도 된다는 뜻은 아니었습니다."
+        "SLA 수치가 떨어지면서 초조해진 건 이해됩니다. 응답 지연이 계속되면 팀 전체 성과에 영향이 가니까요. 다만 웹캠과 화면 캡처까지 간 건 좀 과했다는 목소리가 팀 안에도 있었어요.",
+        "상대가 자리를 비우는 시간이 늘어나니 확인이 필요했던 거겠지만, 코칭이나 정식 경고 대신 바로 감시로 간 게 순서가 아니었다고 느꼈습니다. 그래도 처음부터 악의적이었다고는 안 봅니다."
       ],
       "tp-2": [
-        "수민씨 민원엔 집 안 배경까지 비추라는 요구가 반복됐다는 취지가 들어 있었습니다. 동시에 지훈씨 근태 메모에는 응답 공백과 캡처 제출 요구가 나란히 남아 있었고요.",
-        "HR에서 보기엔 두 문제가 따로입니다. 사생활 침범 소지가 있는 관리 방식과, 수민씨가 상태를 편집해 보고한 건 각각 분리해서 봐야 했습니다."
+        "제가 상담에서 느낀 건 두 문제가 한꺼번에 엉켰다는 점입니다. 한쪽은 회사 정책을 넘어 웹캠과 화면 캡처로 감시를 강화했고, 다른 쪽은 지글러와 상태창 편집으로 자리를 지킨 것처럼 꾸몄어요.",
+        "저는 누가 먼저 잘못했는지만으로는 정리가 안 됩니다. 지나친 감시가 은폐를 낳았고, 은폐가 다시 감시를 정당화하는 악순환이었어요. 정식 경고나 업무 조정 같은 정상 절차는 양쪽 다 건너뛰었습니다."
       ],
       "tp-3": [
-        "엔드포인트 로그를 보면 타이핑은 없는데 커서만 일정 간격으로 흔들립니다. 전형적인 지글러 패턴이라 장시간 자리 비움을 의심할 만합니다.",
-        "또 raw export엔 정상 응답 구간이 꽤 남아 있는데, HR 제출 PDF엔 유휴 장면만 모여 있었습니다. 요약 방식 자체가 이미 한쪽으로 기울어 있었던 셈입니다."
+        "엔드포인트 로그를 보면, 비정상적인 커서 패턴이 반복되는 구간이 분명 있습니다. 자리를 비운 걸 의심할 근거는 있습니다. 다만 HR에 제출된 요약본은 그중 불리한 구간만 골라 편집돼 있었고, 정상 응답 시간대는 빠져 있었습니다.",
+        "저는 사람을 평가하지 않습니다. 다만 기록을 보면, 감시 쪽은 불리한 장면만 추려서 더 심각하게 보이도록 만들었고, 은폐 쪽은 상태 편집으로 문제가 없는 것처럼 꾸몄습니다."
       ]
     }
   }
