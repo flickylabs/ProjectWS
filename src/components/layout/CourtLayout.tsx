@@ -191,35 +191,56 @@ function PhaseOverlay() {
   )
 }
 
-/** 끼어들기 선택지 오버레이 */
+/** 끼어들기 선택지 — 말풍선 형태 + 버튼 */
 function InterjectionOverlay() {
   const ij = useGameStore((s) => s.pendingInterjection)
   const caseData = useGameStore((s) => s.caseData)
+  const [showConfirm, setShowConfirm] = useState(false)
   if (!ij || !caseData) return null
 
-  const name = ij.party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+  const isA = ij.party === 'a'
+  const name = isA ? caseData.duo.partyA.name : caseData.duo.partyB.name
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm pb-20 px-4">
-      <div className="bg-gray-900 border border-gray-700 rounded-2xl p-4 w-full max-w-sm animate-slide-up shadow-2xl">
-        <div className="flex items-center gap-2 mb-3">
-          <Emoji char="✋" size={20} />
-          <span className="text-sm font-bold text-amber-400">{name}이 끼어들려 합니다</span>
-        </div>
-        <p className="text-xs text-gray-400 mb-1">"{ij.text}"</p>
-        <p className="text-[10px] text-gray-600 mb-3">허용하면 추가 정보를 얻지만 권위가 하락합니다.</p>
-        <div className="flex gap-2">
-          <button onClick={allowInterjection}
-            className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600/80 text-gray-950 active:scale-95">
-            발언 허용
-          </button>
-          <button onClick={denyInterjection}
-            className="flex-1 py-2.5 rounded-xl text-xs font-medium bg-gray-800 text-gray-400 active:scale-95">
-            제지하기
-          </button>
+    <>
+      {/* 말풍선 형태 — 대화창 하단에 자연스럽게 */}
+      <div className={`fixed bottom-28 ${isA ? 'left-3' : 'right-3'} z-40 max-w-[75%] animate-slide-up`}>
+        <div className={`flex flex-col ${isA ? 'items-start' : 'items-end'} gap-1`}>
+          <span className={`text-xs font-semibold ${isA ? 'text-blue-400' : 'text-rose-400'}`}>
+            <Emoji char="✋" size={12} /> {name}
+          </span>
+          <div className={`border rounded-2xl ${isA ? 'rounded-tl-sm bg-blue-950/50 border-blue-800/30' : 'rounded-tr-sm bg-rose-950/50 border-rose-800/30'} px-3.5 py-2.5`}>
+            <p className="text-sm text-gray-200 leading-relaxed">{ij.text}</p>
+          </div>
+          <div className="flex gap-1.5 mt-1">
+            <button onClick={() => setShowConfirm(true)}
+              className="px-3 py-1.5 rounded-lg text-[11px] font-bold bg-amber-600/80 text-gray-950 active:scale-95">
+              발언 허용
+            </button>
+            <button onClick={denyInterjection}
+              className="px-3 py-1.5 rounded-lg text-[11px] bg-gray-800 text-gray-400 active:scale-95">
+              제지하기
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* 허용 확인 팝업 */}
+      {showConfirm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+          <div className="bg-gray-900 border border-gray-700 rounded-2xl p-4 w-full max-w-xs animate-fade-in">
+            <p className="text-sm text-gray-200 font-semibold mb-1">발언을 허용하시겠습니까?</p>
+            <p className="text-xs text-amber-400/80 mb-3">추가 정보를 얻을 수 있지만, 재판관의 권위가 소폭 하락합니다.</p>
+            <div className="flex gap-2">
+              <button onClick={() => setShowConfirm(false)}
+                className="flex-1 text-xs py-2 rounded-xl bg-gray-800 text-gray-400">취소</button>
+              <button onClick={() => { setShowConfirm(false); allowInterjection() }}
+                className="flex-1 text-xs py-2 rounded-xl bg-amber-600 text-gray-950 font-bold">허용</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
