@@ -61,9 +61,26 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
   },
 
   canAdvancePhase: () => {
-    const { currentPhase, phaseTurnCount } = get()
+    const state = get() as any // GameStore 전체 접근 (processMetrics 포함)
+    const { currentPhase, phaseTurnCount } = state
+    const metrics = state.processMetrics
     const minTurns = MIN_TURNS_BEFORE_ADVANCE[currentPhase]
     if (minTurns !== undefined && phaseTurnCount < minTurns) return false
+
+    // Phase별 심층 조건
+    if (currentPhase === GamePhase.Phase3_Interrogation) {
+      // 최소 3턴 + 최소 1개 거짓말 전이
+      return (metrics?.lieTransitions ?? 0) >= 1
+    }
+    if (currentPhase === GamePhase.Phase4_Evidence) {
+      // 최소 1턴 + 최소 1개 증거 효과
+      return (metrics?.evidenceEffective ?? 0) >= 1
+    }
+    if (currentPhase === GamePhase.Phase5_ReExamination) {
+      // 최소 1개 거짓말 붕괴 OR 15턴 이상
+      return (metrics?.liesCollapsed ?? 0) >= 1 || phaseTurnCount >= 15
+    }
+
     return true
   },
 

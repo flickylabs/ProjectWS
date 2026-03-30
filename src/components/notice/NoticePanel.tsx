@@ -34,6 +34,7 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
   const [notices, setNotices] = useState<Notice[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [loading, setLoading] = useState(true)
+  const [fetchError, setFetchError] = useState(false)
   const [dismissChecked, setDismissChecked] = useState(false)
   const [expanded, setExpanded] = useState(false)
 
@@ -45,8 +46,14 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
 
   useEffect(() => {
     noticeApi.list()
-      .then(list => setNotices(list.filter(n => n.is_active)))
-      .catch(() => setNotices([]))
+      .then(list => {
+        setNotices(list.filter(n => n.is_active))
+        setFetchError(false)
+      })
+      .catch(() => {
+        setNotices([])
+        setFetchError(true)
+      })
       .finally(() => setLoading(false))
   }, [])
 
@@ -87,8 +94,59 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
   }
   const onMouseUp = () => { onTouchEnd() }
 
-  if (loading) return null
-  if (notices.length === 0) return null
+  // 로딩 중 / 빈 목록 / 에러: 패널을 표시하되 상태 메시지 렌더
+  if (loading || notices.length === 0 || fetchError) {
+    const message = loading
+      ? '불러오는 중...'
+      : fetchError
+        ? '공지사항을 불러올 수 없습니다.'
+        : '현재 공지사항이 없습니다.'
+
+    return (
+      <div
+        style={{
+          position: 'fixed', inset: 0, zIndex: 100,
+          background: 'rgba(0,0,0,0.5)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}
+        onClick={onClose}
+      >
+        <div
+          style={{
+            background: '#FFFDF5', borderRadius: 20, width: '90%', maxWidth: 440,
+            boxShadow: '0 12px 40px rgba(61,51,40,0.25)',
+            overflow: 'hidden', position: 'relative',
+          }}
+          onClick={e => e.stopPropagation()}
+        >
+          {/* 상단 바 */}
+          <div style={{
+            background: '#3498DB', padding: '14px 20px',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ fontSize: '1.1rem' }}>📢</span>
+              <span style={{ color: '#fff', fontWeight: 700, fontSize: '0.85rem' }}>공지사항</span>
+            </div>
+            <button onClick={onClose} style={{
+              background: 'rgba(255,255,255,0.2)', border: 'none', color: '#fff',
+              width: 28, height: 28, borderRadius: 14, cursor: 'pointer', fontSize: '1rem',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>✕</button>
+          </div>
+          {/* 상태 메시지 */}
+          <div style={{
+            padding: '40px 24px',
+            textAlign: 'center',
+            color: '#A89E90',
+            fontSize: '0.9rem',
+          }}>
+            {message}
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   const current = notices[currentIndex]
   const typeInfo = TYPE_LABELS[current?.type] || TYPE_LABELS.info

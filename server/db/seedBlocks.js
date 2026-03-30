@@ -1,7 +1,7 @@
 /**
  * Solomon DB Seed — AI Prompt Blocks, Agents, Data Fields
  * v3: 정식출시용 프롬프트 블록 패키지
- * - 27 blocks, 9 agents, 67 compositions
+ * - 28 blocks, 9 agents, 70 compositions
  * - phase condition values: phase3/phase4/phase5 (소문자)
  * - judgeQuestion은 엔진 생성, LLM은 NPC 응답만 구조화 출력
  */
@@ -66,7 +66,8 @@ const blocks = [
 - npcResponse에는 괄호 행동묘사, 메타설명, 규칙 설명을 넣지 마라.
 - 기본 길이는 2~3문장이다. 다만 yes_no_first는 1~3문장, private_confession은 짧고 낮은 톤을 유지한다.
 - 횡설수설, 추상적 얼버무리기, 감정 호소로 시작하기 금지. 사실 → 이유 → 입장 순서로 답하라.
-- 재판관의 질문에 직접적으로 답하라. 질문을 되묻거나 화제를 전환하지 마라.`,
+- 재판관의 질문에 직접적으로 답하라. 질문을 되묻거나 화제를 전환하지 마라.
+- 상대방이 끼어들었을 때는 그 반박에 직접 반응하지 않는다. 재판관의 다음 질문을 기다린다.`,
     variables: '[]',
   },
   {
@@ -228,7 +229,8 @@ focusedDisputeId: {focusedDisputeId}
 
 공통 규칙:
 - 현재 질문 유형이 요구하지 않는 층의 정보는 과하게 풀지 마라.
-- 현재 쟁점 밖의 다른 사건, 다른 증거, 다른 금액으로 새지 마라.`,
+- 현재 쟁점 밖의 다른 사건, 다른 증거, 다른 금액으로 새지 마라.
+- interrogationDepth가 3 이상이면 더 깊은 층의 답변을 기대한다.`,
     variables: '[]',
   },
   {
@@ -642,6 +644,25 @@ speaker는 반드시 소문자 "a", "b", "system"만 사용한다.
 - 질문을 되묻거나 화제를 전환하지 마라.`,
     variables: '["responseQualityRules"]',
   },
+  {
+    key: 'interrogation_depth',
+    name: '심문 깊이 가이드',
+    description: '질문 횟수에 따른 답변 깊이 조절',
+    category: 'interrogation',
+    content: `## 심문 깊이 ({interrogationDepth}번째 질문)
+
+깊이 규칙:
+- 1~2번째: 표면적 답변. 준비된 설명, 익숙한 변명으로 버틴다. 핵심 진실은 감춘다.
+- 3~4번째: 숨겨진 배경이 드러나기 시작한다. "사실은...", "그때..." 같은 고백형 표현이 자연스럽다.
+- 5번째+: 핵심 진실에 근접한다. 더 이상 회피하기 어렵고 솔직해진다.
+
+{crossDisputeInfo}
+
+규칙:
+- 같은 질문을 반복받으면 이전보다 더 깊은 층의 답변을 해야 한다.
+- 1번째와 5번째의 답변 깊이는 확연히 달라야 한다.`,
+    variables: '["interrogationDepth","crossDisputeInfo"]',
+  },
 ];
 
 const insertBlock = db.prepare(`
@@ -737,6 +758,7 @@ const agentBlocks = [
   { agent: 'interrogation', block: 'trust_info', order: 4.2 },
   { agent: 'interrogation', block: 'action_contract', order: 4.4 },
   { agent: 'interrogation', block: 'skill_overlay', order: 4.6 },
+  { agent: 'interrogation', block: 'interrogation_depth', order: 4.8 },
   { agent: 'interrogation', block: 'question_type_guide', order: 5 },
   { agent: 'interrogation', block: 'speech_guide_short', order: 6 },
   { agent: 'interrogation', block: 'response_quality_rules', order: 6.5 },
@@ -753,6 +775,7 @@ const agentBlocks = [
   { agent: 'interrogation_private', block: 'trust_info', order: 4.2 },
   { agent: 'interrogation_private', block: 'action_contract', order: 4.4 },
   { agent: 'interrogation_private', block: 'skill_overlay', order: 4.6 },
+  { agent: 'interrogation_private', block: 'interrogation_depth', order: 4.8 },
   { agent: 'interrogation_private', block: 'question_type_guide', order: 5 },
   { agent: 'interrogation_private', block: 'speech_guide_short', order: 6 },
   { agent: 'interrogation_private', block: 'response_quality_rules', order: 6.5 },
@@ -786,6 +809,7 @@ const agentBlocks = [
   { agent: 'free_question_responder', block: 'trust_info', order: 4.2 },
   { agent: 'free_question_responder', block: 'action_contract', order: 4.4 },
   { agent: 'free_question_responder', block: 'skill_overlay', order: 4.6 },
+  { agent: 'free_question_responder', block: 'interrogation_depth', order: 4.8 },
   { agent: 'free_question_responder', block: 'question_type_guide', order: 5 },
   { agent: 'free_question_responder', block: 'free_question_responder_rules', order: 5.2 },
   { agent: 'free_question_responder', block: 'speech_guide_short', order: 6 },
@@ -878,6 +902,9 @@ const dataFields = [
   { key: 'witnessAddressB', name: '증인의 B 호칭', source: 'character', type: 'string', example: '서윤씨' },
   { key: 'witnessHiddenAgenda', name: '증인의 숨은 의도', source: 'character', type: 'text', example: '인사평가 관행 노출 회피' },
   { key: 'witnessBudget', name: '증인 발언 예산', source: 'character', type: 'text', example: 'canState: ... / forbidden: ...' },
+  // interrogation depth
+  { key: 'interrogationDepth', name: '심문 깊이 (N번째)', source: 'session', type: 'number', example: '3' },
+  { key: 'crossDisputeInfo', name: '교차 쟁점 정보', source: 'computed', type: 'text', example: '다른 쟁점에서 드러난 상황: ...' },
 ];
 
 const insertDataField = db.prepare(`

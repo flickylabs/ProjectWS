@@ -9,6 +9,7 @@ import MemoryPuzzle from '../minigame/MemoryPuzzle'
 import HeartbeatDetector from '../minigame/HeartbeatDetector'
 import MatchingPuzzle from '../minigame/MatchingPuzzle'
 import WordScramble from '../minigame/WordScramble'
+import AdCountdown from '../minigame/AdCountdown'
 import { actuallyDiscoverEvidence, applyLieCollapseSuccess, applyLieCollapseFail, applyContradictionSuccess, applyContradictionFail } from '../../hooks/useActionDispatch'
 import DisputeChecklist from '../info/DisputeChecklist'
 import ClaimGraph from '../info/ClaimGraph'
@@ -197,6 +198,29 @@ function MinigameOverlay() {
   const evidenceStates = useGameStore((s) => s.evidenceStates)
   const caseData = useGameStore((s) => s.caseData)
 
+  // 광고 카운트다운 상태: null이면 비활성, 함수이면 완료 시 실행할 성공 콜백
+  const [adSuccessCallback, setAdSuccessCallback] = useState<(() => void) | null>(null)
+
+  // 광고 카운트다운 요청 — 성공 콜백을 미리 저장
+  const showAdCountdown = (successFn: () => void) => {
+    setAdSuccessCallback(() => successFn)
+  }
+
+  const handleAdComplete = () => {
+    const cb = adSuccessCallback
+    setAdSuccessCallback(null)
+    cb?.()
+  }
+
+  const handleAdCancel = () => {
+    setAdSuccessCallback(null)
+  }
+
+  // 광고 카운트다운 중이면 최상위에 오버레이
+  if (adSuccessCallback !== null) {
+    return <AdCountdown onComplete={handleAdComplete} onCancel={handleAdCancel} />
+  }
+
   if (!mg) return null
 
   if (mg.type === 'evidence_discovery') {
@@ -207,11 +231,7 @@ function MinigameOverlay() {
       clearMg(null)
     }
     const handleFail = () => clearMg(null)
-    const handleWatchAd = () => {
-      // 광고 보기 → 즉시 성공
-      actuallyDiscoverEvidence(evidenceId)
-      clearMg(null)
-    }
+    const handleWatchAd = () => showAdCountdown(handleSuccess)
 
     if (minigameVariant === 'heartbeat') {
       return (
@@ -298,7 +318,7 @@ function MinigameOverlay() {
       })
       clearMg(null)
     }
-    const handleWatchAd = () => handleSuccess()
+    const handleWatchAd = () => showAdCountdown(handleSuccess)
 
     return (
       <MatchingPuzzle
@@ -322,7 +342,7 @@ function MinigameOverlay() {
       applyLieCollapseFail(disputeId)
       clearMg(null)
     }
-    const handleWatchAd = () => handleSuccess()
+    const handleWatchAd = () => showAdCountdown(handleSuccess)
 
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
@@ -347,7 +367,7 @@ function MinigameOverlay() {
       applyContradictionFail(disputeId)
       clearMg(null)
     }
-    const handleWatchAd = () => handleSuccess()
+    const handleWatchAd = () => showAdCountdown(handleSuccess)
 
     return (
       <WordScramble
