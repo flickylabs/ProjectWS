@@ -661,6 +661,22 @@ function maybeInterjection(target: PartyId, disputeId?: string) {
     turn: state.turnCount,
     behaviorHint: '갑자기 끼어들며 말한다.',
   })
+
+  // 후속 반박 1문장
+  const followUps: Record<string, string[]> = {
+    defensive: ['그때 상황을 보셨다면 그렇게 단정하실 수 없을 겁니다.', '제가 직접 겪은 건 그 말과 완전히 다릅니다.'],
+    confident: ['제가 가진 자료를 보시면 사실관계가 달라집니다.', '그 부분은 제 입장에서 분명히 설명드릴 수 있습니다.'],
+    shaken: ['그건... 제가 처한 상황을 모르시고 하시는 말씀입니다.', '저도 억울한 부분이 있습니다. 들어주십시오.'],
+    angry: ['거짓말을 하고 있는 건 저쪽입니다! 재판관님, 확인해 주십시오!', '그런 식으로 사실을 왜곡하면 안 됩니다!'],
+    resigned: ['... 전부는 아니지만, 제가 알고 있는 부분이 있습니다.', '재판관님, 한 가지만 보충하겠습니다.'],
+  }
+  const followPool = followUps[phase] ?? followUps.defensive
+  state.addDialogue({
+    speaker: otherParty,
+    text: followPool[Math.floor(Math.random() * followPool.length)],
+    relatedDisputes: [disputeId],
+    turn: state.turnCount,
+  })
 }
 
 function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential = false) {
@@ -1056,13 +1072,38 @@ export function applyLieCollapseFail(disputeId: string) {
 /** contradiction 미니게임 성공 시 처리 */
 export function applyContradictionSuccess(disputeId: string, target: PartyId) {
   const state = useGameStore.getState()
+  const name = target === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name
+  const dispute = state.caseData?.disputes.find(d => d.id === disputeId)
+
+  // 모순 짚어냄 메시지
   state.addDialogue({
     speaker: 'system',
-    text: `⚡ 모순을 정확히 짚어냈다!`,
+    text: `⚡ 모순을 정확히 짚어냈다! — "${dispute?.name ?? '쟁점'}"`,
     relatedDisputes: disputeId ? [disputeId] : [],
     turn: state.turnCount,
   })
-  changeEmotionWithPhaseTracking(target, 10)
+
+  // 보상 1: 감정 +15 (큰 동요)
+  changeEmotionWithPhaseTracking(target, 15)
+
+  // 보상 2: 거짓말 전이 시도
+  const transitioned = state.transitionLie(target, disputeId, 'hard_evidence')
+  if (transitioned) {
+    notifyLieTransition(target, disputeId)
+    state.addDialogue({
+      speaker: 'system',
+      text: `🔓 ${name}의 방어가 흔들렸다! 거짓말 상태가 변했다.`,
+      relatedDisputes: [disputeId],
+      turn: state.turnCount,
+    })
+  } else {
+    state.addDialogue({
+      speaker: 'system',
+      text: `💡 ${name}에게 심리적 압박을 가했다.`,
+      relatedDisputes: [disputeId],
+      turn: state.turnCount,
+    })
+  }
 }
 
 /** contradiction 미니게임 실패 시 처리 */
