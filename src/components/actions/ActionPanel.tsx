@@ -140,6 +140,7 @@ export default function ActionPanel() {
       if (r.secondaryDisputeId) { for (const t of ts) { if (s.transitionLie(ft, r.secondaryDisputeId, t)) break }; s.addDialogue({ speaker: 'system', text: '🎯 다른 쟁점까지 흔들렸다!', relatedDisputes: [r.secondaryDisputeId], turn: s.turnCount }) }
     } else if (r.questionType === 'irrelevant') { s.addDialogue({ speaker: 'system', text: '💭 쟁점에서 벗어난 질문이다.', relatedDisputes: [], turn: s.turnCount }) }
     s.incrementTurn()
+    setActiveTab(null)
   }
   const hEv = (id: string) => { if (target) { dispatch({ type: 'evidence_present', evidenceId: id, target }); setActiveTab(null) } }
 
