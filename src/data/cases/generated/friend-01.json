@@ -198,7 +198,8 @@
           "addressB": "하린씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "post_trip_settlement",

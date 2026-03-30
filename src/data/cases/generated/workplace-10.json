@@ -198,7 +198,8 @@
           "addressB": "장혜린씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "boss_employee"
   },
   "context": {
     "contextType": "contract_conversion_review",

@@ -199,7 +199,8 @@
           "addressB": "서민규씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "inheritance_preparation",

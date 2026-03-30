@@ -199,7 +199,8 @@
           "addressB": "권성호씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "post_move_in",

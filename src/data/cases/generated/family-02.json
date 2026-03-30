@@ -199,7 +199,8 @@
           "addressB": "강선우씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "post_holiday_gathering",

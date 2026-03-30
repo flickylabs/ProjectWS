@@ -204,7 +204,8 @@
           "addressB": "황기성씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "shared_space_conflict",

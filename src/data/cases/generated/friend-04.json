@@ -198,7 +198,8 @@
           "addressB": "현우씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "joint_purchase_used_market",

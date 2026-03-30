@@ -198,7 +198,8 @@
           "addressB": "민재씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "club_meet_aftermath",

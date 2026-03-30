@@ -199,7 +199,8 @@
           "addressB": "남지훈씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "interfloor_soundproofing",

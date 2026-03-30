@@ -203,7 +203,8 @@
           "addressB": "문태수씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "jeonse_risk",

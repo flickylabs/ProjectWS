@@ -198,7 +198,8 @@
           "addressB": "최보라씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "store_renovation_conflict",

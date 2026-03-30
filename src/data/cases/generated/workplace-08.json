@@ -198,7 +198,8 @@
           "addressB": "김나래씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "boss_employee"
   },
   "context": {
     "contextType": "expense_audit",

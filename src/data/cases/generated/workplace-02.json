@@ -198,7 +198,8 @@
           "addressB": "조민아씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "boss_employee"
   },
   "context": {
     "contextType": "audit_review",

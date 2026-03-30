@@ -199,7 +199,8 @@
           "addressB": "박소현씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "adult_independence_moveout",

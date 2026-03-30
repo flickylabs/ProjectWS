@@ -199,7 +199,8 @@
           "addressB": "진서아씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "pet_incident",

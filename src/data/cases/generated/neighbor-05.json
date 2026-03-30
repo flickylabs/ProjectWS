@@ -198,7 +198,8 @@
           "addressB": "임재현씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "parcel_room_mixup",

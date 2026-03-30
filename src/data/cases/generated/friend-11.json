@@ -198,7 +198,8 @@
           "addressB": "준석씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "shared_game_subscription_security_conflict",

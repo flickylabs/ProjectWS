@@ -198,7 +198,8 @@
           "addressB": "정우람씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "spouse"
   },
   "context": {
     "contextType": "sns_conflict",

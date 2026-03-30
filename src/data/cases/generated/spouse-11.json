@@ -198,7 +198,8 @@
           "addressB": "백승호씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "spouse"
   },
   "context": {
     "contextType": "home_remodel",

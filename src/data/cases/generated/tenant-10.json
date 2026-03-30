@@ -203,7 +203,8 @@
           "addressB": "최상훈씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "pet_clause_conflict",

@@ -203,7 +203,8 @@
           "addressB": "문경수씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "tenant_rumor_misunderstanding",

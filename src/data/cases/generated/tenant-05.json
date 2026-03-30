@@ -203,7 +203,8 @@
           "addressB": "조민재씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "tenant_turnover_reputation",

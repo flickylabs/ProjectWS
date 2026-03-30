@@ -198,7 +198,8 @@
           "addressB": "황인호씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "spouse"
   },
   "context": {
     "contextType": "job_transition",

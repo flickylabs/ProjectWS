@@ -198,7 +198,8 @@
           "addressB": "이소담씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "spouse"
   },
   "context": {
     "contextType": "remote_work",

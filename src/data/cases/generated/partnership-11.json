@@ -198,7 +198,8 @@
           "addressB": "정아린씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "branch_expansion_dispute",

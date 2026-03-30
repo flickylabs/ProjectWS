@@ -203,7 +203,8 @@
           "addressB": "한규철씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "repair_conflict",

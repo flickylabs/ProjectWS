@@ -198,7 +198,8 @@
           "addressB": "정다혜씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "spouse"
   },
   "context": {
     "contextType": "dual_income_parenting",

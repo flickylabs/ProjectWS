@@ -199,7 +199,8 @@
           "addressB": "강도현씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "spouse"
   },
   "context": {
     "contextType": "medical_burden",

@@ -198,7 +198,8 @@
           "addressB": "서도윤씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "group_purchase_investment_conflict",

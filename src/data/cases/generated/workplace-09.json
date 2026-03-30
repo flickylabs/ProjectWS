@@ -199,7 +199,8 @@
           "addressB": "유은채씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "boss_employee"
   },
   "context": {
     "contextType": "client_meeting_followup",

@@ -199,7 +199,8 @@
           "addressB": "장수진씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "post_trade_fair_rumor",

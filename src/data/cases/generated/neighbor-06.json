@@ -198,7 +198,8 @@
           "addressB": "조인호씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "common_facility_repair",

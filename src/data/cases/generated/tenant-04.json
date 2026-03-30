@@ -203,7 +203,8 @@
           "addressB": "장성호씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "conversion_negotiation",

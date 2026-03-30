@@ -199,7 +199,8 @@
           "addressB": "문현우씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "family_group_chat_funeral_settlement_conflict",

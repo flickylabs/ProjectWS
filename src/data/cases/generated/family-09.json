@@ -200,7 +200,8 @@
           "addressB": "최도윤씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "parent_property_sale",

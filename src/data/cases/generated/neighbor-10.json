@@ -198,7 +198,8 @@
           "addressB": "이정훈씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "after_school_conflict",

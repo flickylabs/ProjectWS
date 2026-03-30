@@ -203,7 +203,8 @@
           "addressB": "임호준씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "maintenance_fee_dispute",

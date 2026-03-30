@@ -198,7 +198,8 @@
           "addressB": "윤해나씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "anniversary_slump",

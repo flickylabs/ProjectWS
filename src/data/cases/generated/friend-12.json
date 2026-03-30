@@ -199,7 +199,8 @@
           "addressB": "재윤씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "joint_music_video_credit_conflict",

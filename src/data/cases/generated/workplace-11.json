@@ -199,7 +199,8 @@
           "addressB": "노서린씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "boss_employee"
   },
   "context": {
     "contextType": "patent_dispute",

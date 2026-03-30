@@ -198,7 +198,8 @@
           "addressB": "지후씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "sns_slander_after_collab",

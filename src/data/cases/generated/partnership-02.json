@@ -198,7 +198,8 @@
           "addressB": "서민경씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "post_award",

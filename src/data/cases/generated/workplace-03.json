@@ -198,7 +198,8 @@
           "addressB": "최희주씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "boss_employee"
   },
   "context": {
     "contextType": "after_work_dinner",

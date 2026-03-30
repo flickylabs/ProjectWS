@@ -198,7 +198,8 @@
           "addressB": "백다은씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "spouse"
   },
   "context": {
     "contextType": "anniversary",

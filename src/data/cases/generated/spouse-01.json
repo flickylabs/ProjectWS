@@ -220,7 +220,8 @@
           "addressB": "세린"
         }
       }
-    ]
+    ],
+    "relationshipType": "spouse"
   },
   "context": {
     "contextType": "holiday",

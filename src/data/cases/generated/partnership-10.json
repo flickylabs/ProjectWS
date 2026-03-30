@@ -198,7 +198,8 @@
           "addressB": "박혜린씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "staff_hiring_conflict",

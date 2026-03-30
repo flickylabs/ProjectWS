@@ -198,7 +198,8 @@
           "addressB": "서아씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "wedding_role_memory_conflict",

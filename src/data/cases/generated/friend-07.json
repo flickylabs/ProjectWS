@@ -199,7 +199,8 @@
           "addressB": "성호씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "secret_relationship_exposure_after_club_selection",

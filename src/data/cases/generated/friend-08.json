@@ -198,7 +198,8 @@
           "addressB": "준혁씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "joint_project_credit_dispute",

@@ -199,7 +199,8 @@
           "addressB": "한세린씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "boss_employee"
   },
   "context": {
     "contextType": "internal_whistleblowing",

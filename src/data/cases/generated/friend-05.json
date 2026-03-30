@@ -198,7 +198,8 @@
           "addressB": "태오씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "loan_conflict_after_emergency",

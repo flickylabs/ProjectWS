@@ -199,7 +199,8 @@
           "addressB": "윤지아씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "fifth_year_expansion_conflict",

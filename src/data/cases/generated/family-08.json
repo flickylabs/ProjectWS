@@ -200,7 +200,8 @@
           "addressB": "이준호씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "nursing_home_admission_decision",

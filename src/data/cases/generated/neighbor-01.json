@@ -198,7 +198,8 @@
           "addressB": "이주연씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "rainy_season",

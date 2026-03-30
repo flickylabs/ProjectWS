@@ -198,7 +198,8 @@
           "addressB": "나서린씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "pre_fundraising_pitch",

@@ -82,7 +82,7 @@ export default function CaseMap({ onSelectCase, onBack, initialChapterType }: Pr
 
   const chapter = CHAPTERS[chapterIdx]
   const cases = useMemo(() => {
-    const filtered = allCases.filter(c => c.duo.relationshipType === chapter.type)
+    const filtered = allCases.filter(c => (c.meta?.relationshipType ?? c.duo.relationshipType) === chapter.type)
     // 난이도 오름차순 정렬: easy → medium → hard
     const diffOrder: Record<string, number> = { easy: 0, medium: 1, hard: 2 }
     return filtered.sort((a, b) => (diffOrder[a.meta?.difficulty ?? 'medium'] ?? 1) - (diffOrder[b.meta?.difficulty ?? 'medium'] ?? 1))

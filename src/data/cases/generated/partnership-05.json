@@ -198,7 +198,8 @@
           "addressB": "정소라씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "pre_tax_audit",

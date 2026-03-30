@@ -199,7 +199,8 @@
           "addressB": "김라희씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "dissolution_talks",

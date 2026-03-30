@@ -204,7 +204,8 @@
           "addressB": "권도형씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "lease_renewal",

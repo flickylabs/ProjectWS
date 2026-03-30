@@ -198,7 +198,8 @@
           "addressB": "장민규씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "resident_meeting_aftermath",

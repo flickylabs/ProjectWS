@@ -198,7 +198,8 @@
           "addressB": "배지우씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "boss_employee"
   },
   "context": {
     "contextType": "project_deadline",

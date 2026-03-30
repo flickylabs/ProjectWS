@@ -199,7 +199,8 @@
           "addressB": "유민재씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "holiday_task_split",

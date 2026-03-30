@@ -198,7 +198,8 @@
           "addressB": "최도윤씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "shared_parking",

@@ -199,7 +199,8 @@
           "addressB": "백지수씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "family_business_succession",

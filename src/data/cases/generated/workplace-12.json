@@ -198,7 +198,8 @@
           "addressB": "오수민씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "boss_employee"
   },
   "context": {
     "contextType": "remote_work_monitoring",

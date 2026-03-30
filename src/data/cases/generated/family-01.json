@@ -199,7 +199,8 @@
           "addressB": "윤도현씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "parent_care_start",

@@ -200,7 +200,8 @@
           "addressB": "류현석씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "spouse"
   },
   "context": {
     "contextType": "trial_separation",

@@ -199,7 +199,8 @@
           "addressB": "오하린씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "grandparent_childcare_boundary_conflict",

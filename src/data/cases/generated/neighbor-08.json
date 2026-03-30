@@ -198,7 +198,8 @@
           "addressB": "주하린씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "cctv_privacy_suspicion",

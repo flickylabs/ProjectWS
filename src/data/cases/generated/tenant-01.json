@@ -203,7 +203,8 @@
           "addressB": "최상우씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "lease_end",

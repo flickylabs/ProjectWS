@@ -198,7 +198,8 @@
           "addressB": "문가은씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "boss_employee"
   },
   "context": {
     "contextType": "promotion_shortlist",

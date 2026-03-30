@@ -199,7 +199,8 @@
           "addressB": "도건씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "online_community_collusion_conflict",

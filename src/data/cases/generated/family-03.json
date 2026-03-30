@@ -199,7 +199,8 @@
           "addressB": "박정우씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "allowance_promise_conflict",

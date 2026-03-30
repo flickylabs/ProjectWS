@@ -198,7 +198,8 @@
           "addressB": "손다예씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "partnership"
   },
   "context": {
     "contextType": "post_grant_disbursement",

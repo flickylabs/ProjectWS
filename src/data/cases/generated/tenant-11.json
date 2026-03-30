@@ -203,7 +203,8 @@
           "addressB": "오성필씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "improvement_restoration_conflict",

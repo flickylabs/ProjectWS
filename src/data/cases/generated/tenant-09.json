@@ -204,7 +204,8 @@
           "addressB": "박태윤씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "tenant_landlord"
   },
   "context": {
     "contextType": "commercial_deposit_dispute",

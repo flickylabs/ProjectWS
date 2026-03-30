@@ -199,7 +199,8 @@
           "addressB": "다솔씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "friend"
   },
   "context": {
     "contextType": "content_collab_permission_conflict",

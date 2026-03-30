@@ -198,7 +198,8 @@
           "addressB": "남기현씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "spouse"
   },
   "context": {
     "contextType": "holiday_visit",

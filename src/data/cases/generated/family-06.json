@@ -200,7 +200,8 @@
           "addressB": "임하준씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "family"
   },
   "context": {
     "contextType": "family_sns_post_conflict",

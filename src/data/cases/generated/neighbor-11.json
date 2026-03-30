@@ -199,7 +199,8 @@
           "addressB": "김라은씨"
         }
       }
-    ]
+    ],
+    "relationshipType": "neighbor"
   },
   "context": {
     "contextType": "commercial_building_upper_lower_conflict",
