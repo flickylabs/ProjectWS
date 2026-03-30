@@ -56,7 +56,10 @@ export default function FactChecklist() {
           <p className="text-base font-bold text-gray-100 leading-snug mb-1">{d.name}</p>
           {d.truthDescription && (
             <p className="text-xs text-gray-400 leading-relaxed mb-2 border-l-2 border-amber-600/30 pl-2">
-              {d.truthDescription.split(/[.!?]/)[0].trim()}{d.truthDescription.includes('.') ? '.' : ''}
+              {(() => {
+                const first = d.truthDescription.split(/[.!?]/)[0].trim()
+                return first.length > 50 ? first.slice(0, 50) + '...' : first + '.'
+              })()}
             </p>
           )}
 

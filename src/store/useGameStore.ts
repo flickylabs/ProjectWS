@@ -19,6 +19,7 @@ const EMPTY_METRICS: ProcessMetrics = {
   // v2
   affinityHits: 0, affinityMisses: 0, requiredPathsCovered: 0, bonusPathsCovered: 0,
   deepTruthsUnlocked: 0, sameActionRepeats: 0, unsupportedCollapses: 0, immediateAnswerUsed: 0, trustActionsUsed: 0,
+  interjectionAllowed: 0,
 }
 
 export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & {
@@ -48,6 +49,9 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
     | { type: 'contradiction'; text: string; disputeId: string; target: PartyId }
     | null
   setPendingMinigame: (mg: GameStore['pendingMinigame']) => void
+  /** 끼어들기 대기 */
+  pendingInterjection: { party: PartyId; disputeId: string; text: string; followUp: string } | null
+  setPendingInterjection: (v: GameStore['pendingInterjection']) => void
   /** 심문 이력: party → disputeId → 질문 기록 */
   interrogationHistory: Record<string, Record<string, { questionTypes: string[]; turns: number[]; revealed: boolean }>>
   trackInterrogation: (party: 'a' | 'b', disputeId: string, questionType: string, turn: number) => void
@@ -86,6 +90,8 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     addCalledWitness: (witnessId) => set((prev) => ({ calledWitnesses: [...prev.calledWitnesses, witnessId] })),
     pendingMinigame: null,
     setPendingMinigame: (mg) => set({ pendingMinigame: mg }),
+    pendingInterjection: null,
+    setPendingInterjection: (v) => set({ pendingInterjection: v }),
 
     interrogationHistory: { a: {}, b: {} },
     trackInterrogation: (party, disputeId, questionType, turn) => set((prev) => {

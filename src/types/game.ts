@@ -54,4 +54,5 @@ export interface ProcessMetrics {
   unsupportedCollapses: number   // hard evidence/trust 없이 S5 달성 (즉답요구 제외)
   immediateAnswerUsed: number    // 즉답요구로 S5 달성 횟수
   trustActionsUsed: number       // 신뢰 행동 사용 횟수
+  interjectionAllowed: number    // 끼어들기 허용 횟수 (권위 -3/회)
 }

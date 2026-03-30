@@ -10,7 +10,7 @@ import HeartbeatDetector from '../minigame/HeartbeatDetector'
 import MatchingPuzzle from '../minigame/MatchingPuzzle'
 import WordScramble from '../minigame/WordScramble'
 import AdCountdown from '../minigame/AdCountdown'
-import { actuallyDiscoverEvidence, applyLieCollapseSuccess, applyLieCollapseFail, applyContradictionSuccess, applyContradictionFail } from '../../hooks/useActionDispatch'
+import { actuallyDiscoverEvidence, applyLieCollapseSuccess, applyLieCollapseFail, applyContradictionSuccess, applyContradictionFail, allowInterjection, denyInterjection } from '../../hooks/useActionDispatch'
 import DisputeChecklist from '../info/DisputeChecklist'
 import ClaimGraph from '../info/ClaimGraph'
 import EvidenceBoard from '../info/EvidenceBoard'
@@ -58,6 +58,7 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
 
       {/* 미니게임 모달 */}
       <MinigameOverlay />
+      <InterjectionOverlay />
       <div className="flex items-center shrink-0">
         <div className="flex-1"><TopBar /></div>
         {!isDialoguePhase && (
@@ -186,6 +187,38 @@ function PhaseOverlay() {
   return (
     <div className="fixed inset-0 z-30 flex items-center justify-center pointer-events-none bg-gray-950/30">
       <div className="text-4xl font-black text-amber-400/50 animate-fade-in tracking-wider">{label}</div>
+    </div>
+  )
+}
+
+/** 끼어들기 선택지 오버레이 */
+function InterjectionOverlay() {
+  const ij = useGameStore((s) => s.pendingInterjection)
+  const caseData = useGameStore((s) => s.caseData)
+  if (!ij || !caseData) return null
+
+  const name = ij.party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm pb-20 px-4">
+      <div className="bg-gray-900 border border-gray-700 rounded-2xl p-4 w-full max-w-sm animate-slide-up shadow-2xl">
+        <div className="flex items-center gap-2 mb-3">
+          <Emoji char="✋" size={20} />
+          <span className="text-sm font-bold text-amber-400">{name}이 끼어들려 합니다</span>
+        </div>
+        <p className="text-xs text-gray-400 mb-1">"{ij.text}"</p>
+        <p className="text-[10px] text-gray-600 mb-3">허용하면 추가 정보를 얻지만 권위가 하락합니다.</p>
+        <div className="flex gap-2">
+          <button onClick={allowInterjection}
+            className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600/80 text-gray-950 active:scale-95">
+            발언 허용
+          </button>
+          <button onClick={denyInterjection}
+            className="flex-1 py-2.5 rounded-xl text-xs font-medium bg-gray-800 text-gray-400 active:scale-95">
+            제지하기
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

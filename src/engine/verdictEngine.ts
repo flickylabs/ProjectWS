@@ -133,6 +133,7 @@ function calculateAuthority(ctx: VerdictContext): number {
   processBonus -= Math.min(6, pm.sameActionRepeats * 2)            // 반복 심문 -2 (최대 -6)
   // unsupported collapse: hard evidence/trust 없이 S5 (즉답요구 제외)
   processBonus -= Math.min(6, pm.unsupportedCollapses * 6)         // -6 (최대 -6)
+  processBonus -= Math.min(9, pm.interjectionAllowed * 3)          // 끼어들기 허용 -3 (최대 -9)
 
   return Math.max(0, Math.min(100, score + processBonus))
 }

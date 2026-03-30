@@ -654,15 +654,7 @@ function maybeInterjection(target: PartyId, disputeId?: string) {
   const pool = interjections[phase] ?? interjections.defensive
   const text = pool[Math.floor(Math.random() * pool.length)]
 
-  state.addDialogue({
-    speaker: otherParty,
-    text,
-    relatedDisputes: [disputeId],
-    turn: state.turnCount,
-    behaviorHint: '갑자기 끼어들며 말한다.',
-  })
-
-  // 후속 반박 1문장
+  // 후속 반박 대사 준비
   const followUps: Record<string, string[]> = {
     defensive: ['그때 상황을 보셨다면 그렇게 단정하실 수 없을 겁니다.', '제가 직접 겪은 건 그 말과 완전히 다릅니다.'],
     confident: ['제가 가진 자료를 보시면 사실관계가 달라집니다.', '그 부분은 제 입장에서 분명히 설명드릴 수 있습니다.'],
@@ -671,12 +663,50 @@ function maybeInterjection(target: PartyId, disputeId?: string) {
     resigned: ['... 전부는 아니지만, 제가 알고 있는 부분이 있습니다.', '재판관님, 한 가지만 보충하겠습니다.'],
   }
   const followPool = followUps[phase] ?? followUps.defensive
-  state.addDialogue({
-    speaker: otherParty,
-    text: followPool[Math.floor(Math.random() * followPool.length)],
-    relatedDisputes: [disputeId],
-    turn: state.turnCount,
-  })
+  const followUp = followPool[Math.floor(Math.random() * followPool.length)]
+
+  // 선택지 대기 — UI에서 "허용/제지" 선택
+  state.setPendingInterjection({ party: otherParty, disputeId, text, followUp })
+}
+
+/** 끼어들기 허용 — 추가 정보 획득, 권위 -3 */
+export function allowInterjection() {
+  const state = useGameStore.getState()
+  const ij = state.pendingInterjection
+  if (!ij) return
+
+  const name = ij.party === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name
+
+  // 재판관 허용 메시지
+  state.addDialogue({ speaker: 'judge', text: '계속 말씀해 보시죠.', relatedDisputes: [ij.disputeId], turn: state.turnCount })
+
+  // 끼어들기 대사
+  state.addDialogue({ speaker: ij.party, text: ij.text, relatedDisputes: [ij.disputeId], turn: state.turnCount, behaviorHint: '끼어들며 말한다.' })
+
+  // 후속 반박
+  state.addDialogue({ speaker: ij.party, text: ij.followUp, relatedDisputes: [ij.disputeId], turn: state.turnCount })
+
+  // 권위 -3 패널티
+  state.trackMetric('interjectionAllowed')
+
+  state.setPendingInterjection(null)
+}
+
+/** 끼어들기 제지 — 정보 미획득, 권위 +2 */
+export function denyInterjection() {
+  const state = useGameStore.getState()
+  const ij = state.pendingInterjection
+  if (!ij) return
+
+  const name = ij.party === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name
+
+  // 재판관 제지 메시지
+  state.addDialogue({ speaker: 'judge', text: `${name} 씨, 발언 순서를 지켜 주십시오.`, relatedDisputes: [ij.disputeId], turn: state.turnCount })
+
+  // 제지됨 시스템 메시지
+  state.addDialogue({ speaker: 'system', text: `🔇 ${name}의 발언이 제지되었다.`, relatedDisputes: [ij.disputeId], turn: state.turnCount })
+
+  state.setPendingInterjection(null)
 }
 
 function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential = false) {
