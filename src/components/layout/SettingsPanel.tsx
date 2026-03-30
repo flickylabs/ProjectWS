@@ -12,6 +12,8 @@ interface Props {
 export default function SettingsPanel({ onClose }: Props) {
   const [settings, setSettings] = useState(getSettings())
   const [llmStatus, setLlmStatus] = useState<{ connected: boolean; provider?: string; modelId?: string } | null>(null)
+  const [bgmOn, setBgmOn] = useState(isBgmEnabled())
+  const [sfxOn, setSfxOn] = useState(isSoundEnabled())
   const save = loadSave()
 
   useEffect(() => {
@@ -49,14 +51,14 @@ export default function SettingsPanel({ onClose }: Props) {
             <Toggle
               label="배경음악"
               desc="게임 플레이 중 배경 음악"
-              checked={isBgmEnabled()}
-              onChange={(v) => setBgmEnabled(v)}
+              checked={bgmOn}
+              onChange={(v) => { setBgmOn(v); setBgmEnabled(v) }}
             />
             <Toggle
               label="효과음"
               desc="Phase 전환, 붕괴, 증거 등 효과음"
-              checked={isSoundEnabled()}
-              onChange={(v) => setSoundEnabled(v)}
+              checked={sfxOn}
+              onChange={(v) => { setSfxOn(v); setSoundEnabled(v) }}
             />
             <Toggle
               label="행동 징후 표시"
@@ -122,9 +124,12 @@ function Toggle({ label, desc, checked, onChange }: { label: string; desc: strin
       </div>
       <button
         onClick={() => onChange(!checked)}
-        className={`w-10 h-5 rounded-full transition-colors ${checked ? 'bg-amber-600' : 'bg-gray-700'}`}
+        className={`w-11 h-[22px] rounded-full transition-colors duration-200 relative shrink-0 ${checked ? 'bg-amber-600' : 'bg-gray-700'}`}
       >
-        <div className={`w-4 h-4 rounded-full bg-white transition-transform ${checked ? 'translate-x-5' : 'translate-x-0.5'}`} />
+        <div className={`w-[18px] h-[18px] rounded-full bg-white shadow-sm absolute top-[2px] transition-all duration-200 ${checked ? 'left-[24px]' : 'left-[2px]'}`} />
+        <span className={`absolute text-[8px] font-bold top-[5px] ${checked ? 'left-[4px] text-amber-200' : 'right-[3px] text-gray-500'}`}>
+          {checked ? 'ON' : 'OFF'}
+        </span>
       </button>
     </div>
   )
