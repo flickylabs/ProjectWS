@@ -108,6 +108,12 @@ export default function App() {
   )
 }
 
+function formatCountdown(sec: number): string {
+  const m = Math.floor(sec / 60)
+  const s = sec % 60
+  return m > 0 ? `${m}분` : `${s}초`
+}
+
 function TitleScreen() {
   const [llmStatus, setLlmStatus] = useState<{ connected: boolean; provider?: string; modelId?: string; error?: string } | null>(null)
   const [loading, setLoading] = useState(false)
@@ -125,6 +131,19 @@ function TitleScreen() {
   const [unreadMail, setUnreadMail] = useState(0)
   const [serverConnected, setServerConnected] = useState(false)
   const initializeCase = useGameStore((s) => s.initializeCase)
+  const globalInvest = useGameStore((s) => s.globalInvestTokens)
+  const globalSkill = useGameStore((s) => s.globalSkillPoints)
+  const getCountdown = useGameStore((s) => s.getNextRechargeCountdown)
+  const tickRecharge = useGameStore((s) => s.tickInvestRecharge)
+  const [investCountdown, setInvestCountdown] = useState(0)
+
+  // 충전 타이머
+  useEffect(() => {
+    tickRecharge()
+    setInvestCountdown(getCountdown())
+    const timer = setInterval(() => { tickRecharge(); setInvestCountdown(getCountdown()) }, 10_000)
+    return () => clearInterval(timer)
+  }, [tickRecharge, getCountdown])
 
   useEffect(() => {
     checkConnection().then(setLlmStatus)
@@ -285,6 +304,19 @@ function TitleScreen() {
             )}
           </button>
           <button onClick={() => setShowSettings(true)} className="text-gray-600 hover:text-gray-300 text-lg"><Emoji char="⚙️" size={18} /></button>
+        </div>
+      </div>
+
+      {/* 리소스 표시 */}
+      <div className="flex items-center justify-center gap-4 py-1.5 bg-gray-900/50 border-b border-gray-800/30">
+        <div className="flex items-center gap-1 text-xs">
+          <Emoji char="🔍" size={12} />
+          <span className="text-amber-400 font-bold">{globalInvest}</span>
+          <span className="text-gray-600">/ {investCountdown > 0 ? formatCountdown(investCountdown) : '충전완료'}</span>
+        </div>
+        <div className="flex items-center gap-1 text-xs">
+          <Emoji char="⚡" size={12} />
+          <span className="text-amber-400 font-bold">{globalSkill}</span>
         </div>
       </div>
 

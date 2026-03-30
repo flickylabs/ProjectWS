@@ -91,7 +91,7 @@ export default function MemoryPuzzle({ clues, onSuccess, onFail, onWatchAd, time
                 </div>
               ))}
             </div>
-            <div className="text-xs text-gray-500">순서를 기억하세요...</div>
+            <div className="text-xs text-gray-500">위 순서(1→2→3)대로 탭하세요!</div>
           </div>
         )}
 
@@ -126,7 +126,10 @@ export default function MemoryPuzzle({ clues, onSuccess, onFail, onWatchAd, time
                         : 'bg-gray-800 border border-gray-700 text-gray-300 hover:border-amber-600'
                     }`}
                   >
-                    {isTapped && <Emoji char="✅" size={12} />} {item.text}
+                    {isTapped
+                      ? <><span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-600 text-white text-[10px] font-bold mr-1.5">{tapped.indexOf(item.idx) + 1}</span> {item.text}</>
+                      : <><span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-700 text-gray-500 text-[10px] font-bold mr-1.5">?</span> {item.text}</>
+                    }
                   </button>
                 )
               })}

@@ -46,6 +46,23 @@ export function saveCaseProgress(caseId: string, score: number) {
   }
 }
 
+function CaseDescription({ text }: { text: string }) {
+  const [expanded, setExpanded] = useState(false)
+  const isLong = text.length > 100
+  return (
+    <div className="mb-3">
+      <p className="text-xs text-gray-400 leading-relaxed">
+        {expanded || !isLong ? text : text.slice(0, 100) + '...'}
+      </p>
+      {isLong && (
+        <button onClick={() => setExpanded(!expanded)} className="text-xs text-amber-500 mt-1 hover:text-amber-400">
+          {expanded ? '접기 ▲' : '더보기 ▼'}
+        </button>
+      )}
+    </div>
+  )
+}
+
 export default function CaseMap({ onSelectCase, onBack, initialChapterType }: Props) {
   const initialIdx = initialChapterType ? CHAPTERS.findIndex(c => c.type === initialChapterType) : 0
   const [chapterIdx, setChapterIdx] = useState(initialIdx >= 0 ? initialIdx : 0)
@@ -245,9 +262,7 @@ export default function CaseMap({ onSelectCase, onBack, initialChapterType }: Pr
               <button onClick={() => setSelectedCase(null)} className="text-gray-500 text-lg"><Emoji char="✕" size={16} /></button>
             </div>
 
-            <p className="text-xs text-gray-400 leading-relaxed mb-3">
-              {selectedCase.context.description.slice(0, 120)}...
-            </p>
+            <CaseDescription text={selectedCase.context.description} />
 
             <div className="flex items-center gap-3 mb-3 text-xs text-gray-500">
               <span>난이도: {selectedCase.meta?.difficulty === 'easy' ? <Emoji char="⭐" size={12} /> : selectedCase.meta?.difficulty === 'hard' ? <><Emoji char="⭐" size={12} /><Emoji char="⭐" size={12} /><Emoji char="⭐" size={12} /></> : <><Emoji char="⭐" size={12} /><Emoji char="⭐" size={12} /></>}</span>

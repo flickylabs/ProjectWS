@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import Emoji from '../common/Emoji'
 import { loadGeneratedCases } from '../../data/cases/caseLoader'
+import { useGameStore } from '../../store/useGameStore'
 
 interface Props {
   onSelectSession: (sessionType: string) => void
@@ -38,6 +39,17 @@ function getSessionProgress(type: string, allCases: any[], progress: Record<stri
   return { cleared, total: cases.length, stars, avgScore }
 }
 
+function ResourceBadge() {
+  const invest = useGameStore((s) => s.globalInvestTokens)
+  const skill = useGameStore((s) => s.globalSkillPoints)
+  return (
+    <div className="flex items-center gap-2 text-xs">
+      <span><Emoji char="🔍" size={11} /> <span className="text-amber-400 font-bold">{invest}</span></span>
+      <span><Emoji char="⚡" size={11} /> <span className="text-amber-400 font-bold">{skill}</span></span>
+    </div>
+  )
+}
+
 export default function SessionSelect({ onSelectSession, onBack }: Props) {
   const allCases = useMemo(() => loadGeneratedCases(), [])
   const progress = useMemo(() => loadProgress(), [])
@@ -50,7 +62,7 @@ export default function SessionSelect({ onSelectSession, onBack }: Props) {
       <div className="flex items-center justify-between px-4 py-3 shrink-0 border-b border-gray-800/50">
         <button onClick={onBack} className="text-gray-400 hover:text-white text-sm">← 이전</button>
         <span className="text-sm font-bold text-amber-400">세션 선택</span>
-        <div className="w-10" />
+        <ResourceBadge />
       </div>
 
       {/* 세션 카드 목록 */}
