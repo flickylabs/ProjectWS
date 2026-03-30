@@ -10,6 +10,7 @@ interface Props {
   target: PartyId | null
   onPresent: (evidenceId: string) => void
   onConfront?: (evidenceId: string, question: string) => void
+  onWitnessCalled?: () => void
   llmMode?: boolean
   /** 새로 해금되어 아직 확인하지 않은 증거 ID 목록 */
   newEvidenceIds?: Set<string>
@@ -18,7 +19,7 @@ interface Props {
 /** investigationResults에서 핵심 3개를 순서대로 추출 */
 const KEY_ORDER = ['request_original', 'restore_context', 'check_edits'] as const
 
-export default function EvidencePresenter({ target, onPresent, onConfront, llmMode, newEvidenceIds }: Props) {
+export default function EvidencePresenter({ target, onPresent, onConfront, onWitnessCalled, llmMode, newEvidenceIds }: Props) {
   const evidenceStates = useGameStore((s) => s.evidenceStates)
   const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
   const resources = useGameStore((s) => s.resources)
@@ -100,13 +101,13 @@ export default function EvidencePresenter({ target, onPresent, onConfront, llmMo
       )}
 
       {/* 증인 소환 섹션 */}
-      <WitnessSection dispatch={dispatch} resources={resources} />
+      <WitnessSection dispatch={dispatch} resources={resources} onCalled={onWitnessCalled} />
     </div>
   )
 }
 
 /** 증인 소환 섹션 — 증거 탭 하단에 표시 */
-function WitnessSection({ dispatch, resources }: { dispatch: (a: any) => void; resources: any }) {
+function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) => void; resources: any; onCalled?: () => void }) {
   const [expanded, setExpanded] = useState(false)
   const caseData = useGameStore((s) => s.caseData)
   const calledWitnesses = useGameStore((s) => s.calledWitnesses)
@@ -165,7 +166,7 @@ function WitnessSection({ dispatch, resources }: { dispatch: (a: any) => void; r
                     </div>
                   </div>
                   <button
-                    onClick={() => dispatch({ type: 'call_witness', witnessId: w.id })}
+                    onClick={() => { dispatch({ type: 'call_witness', witnessId: w.id }); onCalled?.() }}
                     disabled={!canAfford}
                     className={`text-xs px-3 py-1 rounded-lg font-semibold transition-all active:scale-95 ${
                       canAfford

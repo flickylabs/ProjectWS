@@ -64,9 +64,13 @@ export function useActionDispatch() {
 }
 
 // ── 증거 제시 ──
+let evidencePresentLock = false
 async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evidence_present' }>) {
+  if (evidencePresentLock) return
+  evidencePresentLock = true
+  try {
   const state = useGameStore.getState()
-  if (!state.isUnlocked(action.evidenceId)) return
+  if (!state.isUnlocked(action.evidenceId)) { evidencePresentLock = false; return }
 
   const evDef = state.evidenceDefinitions.find((e) => e.id === action.evidenceId)
   if (!evDef) return
@@ -150,6 +154,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   }
 
   useGameStore.getState().incrementTurn()
+  } finally { evidencePresentLock = false }
 }
 
 // ── 증인 소환 ──
@@ -285,7 +290,11 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
 }
 
 // ── 질문 ──
+let questionLock = false
 async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }>) {
+  if (questionLock) return
+  questionLock = true
+  try {
   const state = useGameStore.getState()
 
   // ── 토글 모디파이어 소비 ──
@@ -476,6 +485,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   trackOptimalPath(action.disputeId, action.questionType)
 
   useGameStore.getState().incrementTurn()
+  } finally { questionLock = false }
 }
 
 // ── 신뢰/보호 행동 ──

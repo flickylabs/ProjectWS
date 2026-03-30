@@ -218,7 +218,7 @@ export default function ActionPanel() {
                   toggles={toggles} onToggle={handleToggle} />
               </div>
             )}
-            {hasToast && activeTab === 'evidence' && <div className="p-2"><EvidencePresenter target={target!} onPresent={hEv} onConfront={hConfront} llmMode={llm} newEvidenceIds={new Set(unlockedIds.filter(id => !seenEvidenceRef.current.has(id)))} /></div>}
+            {hasToast && activeTab === 'evidence' && <div className="p-2"><EvidencePresenter target={target!} onPresent={hEv} onConfront={hConfront} onWitnessCalled={() => setActiveTab(null)} llmMode={llm} newEvidenceIds={new Set(unlockedIds.filter(id => !seenEvidenceRef.current.has(id)))} /></div>}
             {hasToast && activeTab === 'skill' && (
               <div className="p-2">
                 <SkillPanel target={target!} disputes={disputes} resources={resources} canUseSkill={canUseSkill}
