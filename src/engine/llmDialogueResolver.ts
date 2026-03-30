@@ -678,7 +678,14 @@ function buildJudgeQuestion(
   }
 
   if (action.type === 'evidence_present') {
-    return `${myName} 씨, 이 증거에 대해 어떻게 생각하십니까?`
+    const evDef = caseData.evidence.find(e => e.id === action.evidenceId)
+    const evName = evDef?.name ?? '이 증거'
+    const templates = [
+      `${myName} 씨, '${evName}'을 제시합니다. 이 자료에 대해 설명해 주십시오.`,
+      `${myName} 씨, '${evName}'을 확인하셨습니까? 이 내용이 사실입니까.`,
+      `${myName} 씨, 지금 보시는 '${evName}'에 대해 어떻게 해명하시겠습니까.`,
+    ]
+    return templates[Math.floor(Math.random() * templates.length)]
   }
 
   if (action.type === 'evidence_investigate') {
