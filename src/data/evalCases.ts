@@ -610,6 +610,7 @@ export const EVAL_CASES: EvalCase[] = [
     },
     "expected": {
       "stance": [
+        "hedge",
         "partial_admit",
         "reframe",
         "admit"
@@ -722,7 +723,8 @@ export const EVAL_CASES: EvalCase[] = [
     "expected": {
       "stance": [
         "hedge",
-        "partial_admit"
+        "partial_admit",
+        "reframe"
       ],
       "responseMode": "answer_only",
       "example": {
@@ -777,6 +779,8 @@ export const EVAL_CASES: EvalCase[] = [
     },
     "expected": {
       "stance": [
+        "deny",
+        "hedge",
         "partial_admit",
         "reframe"
       ],
@@ -899,6 +903,7 @@ export const EVAL_CASES: EvalCase[] = [
     "expected": {
       "stance": [
         "partial_admit",
+        "reframe",
         "admit"
       ],
       "responseMode": "private_confession",
