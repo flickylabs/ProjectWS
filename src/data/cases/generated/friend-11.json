@@ -226,7 +226,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "접근권재설정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "준석은 민우의 접근을 차단했다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "개인정보경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "민우는 개인정보를 무단 재사용했다."
     },
     {
       "id": "d-3",
@@ -266,7 +268,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "접근권재설정",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "민우의 무단 재사용이 출발점이다."
     },
     {
       "id": "d-4",
@@ -285,7 +288,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "개인정보경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "민우는 본인확인 정보를 재사용했다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "공유정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "준석이 시즌패스 아이템을 가져가지 않았다."
     }
   ],
   "evidence": [

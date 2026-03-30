@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "거주권한",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "은주는 딸 방에 들어갔다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "계약복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "소현은 룸메이트와 공유주거 계약을 했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "증거검증",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "31초 녹취는 위조본이다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "독립경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "소현과 은주는 약속을 위반했다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "계약복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "임대인의 거절 사유는 가족 분쟁이다."
     }
   ],
   "evidence": [

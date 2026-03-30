@@ -227,7 +227,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "명예회복",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "유나는 태경을 누설자로 낙인찍었다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "행사보안프로토콜",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태경은 전체 덱을 외부에 전달했다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "대외소통복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "동업자는 경쟁사에 정보를 유출하지 않았다."
     },
     {
       "id": "d-4",
@@ -284,7 +287,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "자료통제재설계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태경과 유나는 행사 자료를 위반했다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "대외소통복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "운영사 AE의 오발송이다."
     }
   ],
   "evidence": [

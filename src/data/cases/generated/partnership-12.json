@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "외부불만금지",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "선우는 홍세진에게 불만을 털어놓았다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "외부불만금지",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "수진은 외부에 내부 불만을 전했다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "대외평판복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "홍세진이 험담을 왜곡 전달했다."
     },
     {
       "id": "d-4",
@@ -284,7 +287,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "이벤트커뮤니케이션재설계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "선우와 수진은 비방 원칙을 위반했다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "대외평판복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "문제의 소문은 홍세진의 메시지이다."
     }
   ],
   "evidence": [

@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "커뮤니티절차복구",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "도건은 익명 계정을 개설했다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "게시물정정",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "유리는 후기를 편집해 재유포했다."
     },
     {
       "id": "d-3",
@@ -266,7 +268,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "공모정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "명예훼손은 도건과 유리의 공동 범행이다."
     },
     {
       "id": "d-4",
@@ -286,7 +289,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "공모정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "조가람의 신뢰도를 떨어뜨렸다."
     },
     {
       "id": "d-5",
@@ -305,7 +309,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "친구관계재설계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "가람과의 갈등을 숨겼다."
     }
   ],
   "evidence": [

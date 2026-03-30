@@ -225,7 +225,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "평판회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "유나는 CCTV 캡처를 무단 유포했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "평판회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "민규는 악취 소문을 무검증 전파했다."
     },
     {
       "id": "d-3",
@@ -263,7 +265,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "공동체절차",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "최병규가 전단을 작성했다."
     },
     {
       "id": "d-4",
@@ -282,7 +285,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "사생활경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "민규는 박스를 열지 않았다."
     },
     {
       "id": "d-5",
@@ -301,7 +305,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "공동체절차",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "유나와 민규는 모두 합의를 위반했다."
     }
   ],
   "evidence": [

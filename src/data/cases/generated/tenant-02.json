@@ -231,7 +231,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "출입경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "규철은 사전 동의 없이 출입했다."
     },
     {
       "id": "d-2",
@@ -250,7 +251,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "수리절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "곰팡이 원인은 공용배관 누수이다."
     },
     {
       "id": "d-3",
@@ -269,7 +271,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "증거신뢰회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "규철의 사진 타임스탬프는 조작되었다."
     },
     {
       "id": "d-4",
@@ -288,7 +291,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "수리절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "민석은 수리기사 방문을 거부했다."
     },
     {
       "id": "d-5",
@@ -308,7 +312,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "계약재정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "긴급출입 조항은 1회 점검에 한정된다."
     }
   ],
   "evidence": [

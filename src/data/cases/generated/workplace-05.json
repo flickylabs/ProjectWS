@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "출처복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상혁은 공동기획자 표기를 삭제했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "증거취급경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "가은은 폴더를 무단 다운로드했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "출처복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "가은은 원출처 표기를 빼고 재사용했다."
     },
     {
       "id": "d-4",
@@ -282,7 +285,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "승진절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상혁은 발표 순서를 변경했다."
     },
     {
       "id": "d-5",
@@ -301,7 +305,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "과거청산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상혁과 가은은 은폐를 반복했다."
     }
   ],
   "evidence": [

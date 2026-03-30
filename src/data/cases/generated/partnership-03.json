@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "발표권한정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "도윤은 아젠다를 무단 수정했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "발표권한정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서린은 단독 발표용 덱을 지시했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "신뢰회복",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상대의 약속 파기는 오해이다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "의사결정문서화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "두 사람은 약속을 위반했다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "투자미팅복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "투자자는 회의 전체 주도를 원하지 않았다."
     }
   ],
   "evidence": [

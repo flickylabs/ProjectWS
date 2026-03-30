@@ -230,7 +230,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "보증금정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "하림은 월세를 5일 늦게 납부했다."
     },
     {
       "id": "d-2",
@@ -249,7 +250,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "원상복구기준",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "거실 벽지 교체는 불필요하다."
     },
     {
       "id": "d-3",
@@ -267,7 +269,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "수리책임정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "누수 책임은 상우에게 있다."
     },
     {
       "id": "d-4",
@@ -286,7 +289,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "보증금정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상우는 보증금을 이사 당일 송금하겠다고 했다."
     },
     {
       "id": "d-5",
@@ -305,7 +309,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "계약재정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상우의 공제 범위는 계약을 초과했다."
     }
   ],
   "evidence": [

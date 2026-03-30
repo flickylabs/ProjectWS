@@ -225,7 +225,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "평판회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "지연은 도윤의 94만 원 은닉을 주장했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "참가자공지",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "도윤은 카드취소를 지연했다."
     },
     {
       "id": "d-3",
@@ -263,7 +265,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "과거청산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지연이 62만 원을 개인계좌에 묶었다."
     },
     {
       "id": "d-4",
@@ -282,7 +285,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "정산분리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "사라진 94만 원은 두 라운드 금액이다."
     },
     {
       "id": "d-5",
@@ -301,7 +305,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "공동구매계좌",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지연은 같은 계좌를 사용했다."
     }
   ],
   "evidence": [

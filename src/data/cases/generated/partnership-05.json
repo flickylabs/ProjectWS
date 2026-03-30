@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "세무대응권한재설계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "현우는 소라 승인 없이 2,400만원을 이체했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "신뢰회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "소라는 조사대응 선급금을 숨겼다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "증거검증프로토콜",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "선급금 구조는 박태성 제안이다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "과거장부정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "두 사람은 조사대응 자문을 은폐했다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "세무대응권한재설계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "박태성은 자문사와 수수료 약정을 했다."
     }
   ],
   "evidence": [

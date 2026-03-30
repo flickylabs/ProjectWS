@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "평판복구",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "재우는 세아 확인 전에 전파했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "과거정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "세아는 메시지를 은닉했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "증거검증",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "계정 복구 메일은 박하린 것이다."
     },
     {
       "id": "d-4",
@@ -284,7 +287,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "허위유포정정",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "결정적 증거는 2026년 위조본이다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "과거정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "세아는 한유진에게 모진 메시지를 보냈다."
     }
   ],
   "evidence": [

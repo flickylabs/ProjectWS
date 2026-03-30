@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "비용정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "세영은 9만원을 요구했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "공동책임정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "인호는 방화문을 반복 사용했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "공동책임정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "고장은 세영과 인호의 공동 과실이다."
     },
     {
       "id": "d-4",
@@ -282,7 +285,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "비용정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "주민 부담액은 12만원이다."
     },
     {
       "id": "d-5",
@@ -301,7 +305,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "중재절차",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "세영은 송금을 요구했고 인호는 거부했다."
     }
   ],
   "evidence": [

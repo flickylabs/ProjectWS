@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "정산절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "정훈은 합의를 부인했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "개인사용차단",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "나래는 감사 직후 영수증을 재발급받았다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "제3자검증",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상계표는 홍예진이 작성했다."
     },
     {
       "id": "d-4",
@@ -282,7 +285,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "감사절차보호",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "정훈은 감사 초안에 낙인을 만들었다."
     },
     {
       "id": "d-5",
@@ -301,7 +305,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "정산절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "정훈과 나래는 오프북 상계에 가담했다."
     }
   ],
   "evidence": [

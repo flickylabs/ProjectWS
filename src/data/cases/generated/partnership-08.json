@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "확장계약재설계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "시원은 가계약금 이체를 멈췄다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "경업·지분정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "지아는 별도 스튜디오를 비밀리에 준비했다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "신뢰회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "지아는 일방적 피해자가 아니다."
     },
     {
       "id": "d-4",
@@ -284,7 +287,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "과거합의복원",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "시원과 지아는 합의를 위반했다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "과거합의복원",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "합의된 확장 조건은 발동되지 않았다."
     }
   ],
   "evidence": [

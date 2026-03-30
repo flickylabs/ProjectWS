@@ -231,7 +231,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "계약해석정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "민주와 상훈은 해석이 달랐다."
     },
     {
       "id": "d-2",
@@ -250,7 +251,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "통지절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "민주는 상훈의 명확한 승인을 받지 않았다."
     },
     {
       "id": "d-3",
@@ -269,7 +271,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "계약해석정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상훈의 요구는 계약 범위를 초과했다."
     },
     {
       "id": "d-4",
@@ -288,7 +291,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "생활관리조정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "강아지 짖음은 단발성이다."
     },
     {
       "id": "d-5",
@@ -307,7 +311,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "손해정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "전문 청소·바닥보수 필요 없다."
     }
   ],
   "evidence": [

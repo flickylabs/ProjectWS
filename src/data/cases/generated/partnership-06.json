@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "승인선복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "가람은 보라 확인 없이 대체 발주했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "승인선복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "보라는 카운터 위치를 단독 변경했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "승인선복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "두 사람은 공동 승인 없이 실행 지시를 내렸다."
     },
     {
       "id": "d-4",
@@ -284,7 +287,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "공사범위재설계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "리뉴얼 지연은 공동 결과이다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "현장소통정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "가람과 보라는 서로 다른 최종안을 전달했다."
     }
   ],
   "evidence": [

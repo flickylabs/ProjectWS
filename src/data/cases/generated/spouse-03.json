@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "재정투명화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "유진은 비상금 160만원을 비밀 인출했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "전환기예산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "인호는 적금 자동이체를 두 달 중단했다."
     },
     {
       "id": "d-3",
@@ -263,7 +265,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "신뢰회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "인호의 결제는 수습 필수품이다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "재정투명화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "유진과 인호는 약속을 위반했다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "전환기예산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "가계 공백은 유진과 인호 탓이 아니다."
     }
   ],
   "evidence": [

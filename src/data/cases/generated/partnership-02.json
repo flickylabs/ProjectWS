@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "대외거래통제",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "준오는 별도 유지보수 제안을 타진했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "공로배분재설계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "민경은 준오의 기여를 축소했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "신뢰회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "준오는 순수한 피해자가 아니다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "공로배분재설계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "준오는 공식 라인을 우회했다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "계약운영복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "민경 단독 지정 이유는 컴플라이언스 우려이다."
     }
   ],
   "evidence": [

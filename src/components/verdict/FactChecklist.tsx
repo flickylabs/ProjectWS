@@ -54,14 +54,9 @@ export default function FactChecklist() {
 
           {/* 쟁점명 + 진실 설명 */}
           <p className="text-base font-bold text-gray-100 leading-snug mb-1">{d.name}</p>
-          {d.truthDescription && (
-            <p className="text-xs text-gray-400 leading-relaxed mb-2 border-l-2 border-amber-600/30 pl-2">
-              {(() => {
-                const first = d.truthDescription.split(/[.!?]/)[0].trim()
-                return first.length > 50 ? first.slice(0, 50) + '...' : first + '.'
-              })()}
-            </p>
-          )}
+          <p className="text-xs text-gray-400 leading-relaxed mb-2 border-l-2 border-amber-600/30 pl-2">
+            {d.judgmentStatement ?? d.truthDescription?.split(/[.!?]/)[0]?.trim()?.slice(0, 50) ?? ''}
+          </p>
 
           {/* 붕괴 여부 */}
           {collapsed && (

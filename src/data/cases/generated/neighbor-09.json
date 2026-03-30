@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "비용정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지훈은 약속금액을 깎았다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "공동책임정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "연우가 천장 패치를 추가 요청했다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "공동책임정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "소음 원인은 바닥과 천장이다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "비용정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "잔여 공사비는 세대당 92만 원이다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "중재절차",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "연우는 공지 14분 전 불만 글을 올렸다."
     }
   ],
   "evidence": [

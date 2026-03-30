@@ -225,7 +225,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "사생활경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "한결은 504호 현관을 촬영했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "공용공간경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "주연은 복도에 물건을 적치했다."
     },
     {
       "id": "d-3",
@@ -263,7 +265,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "누수복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "누수 원인은 옥상 하자이다."
     },
     {
       "id": "d-4",
@@ -282,7 +285,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "생활소음조정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "소음은 허가된 점검 소음이다."
     },
     {
       "id": "d-5",
@@ -301,7 +305,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "중재절차",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "한결과 주연은 선통보 약속을 위반했다."
     }
   ],
   "evidence": [

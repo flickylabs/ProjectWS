@@ -225,7 +225,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "방문확정규칙",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "기현은 일방적으로 점심을 확정했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "방문확정규칙",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "수아는 본가를 친정으로 설명하지 않았다."
     },
     {
       "id": "d-3",
@@ -263,7 +265,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "오해정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "기현은 의도적 배제가 아니다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "부부우선확인",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "기현은 어머니에게 연락했다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "명절운영",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "모호한 표현과 착각이 있었다."
     }
   ],
   "evidence": [

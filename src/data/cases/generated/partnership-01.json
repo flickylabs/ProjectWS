@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "재정투명화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서준은 해나 승인 없이 송금했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "신뢰회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "예치금은 서준의 개인 채무가 아니다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "계약복원",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "해나는 사전 동의를 번복했다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "운영권한재설계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "해나는 회계분류 지시를 은폐했다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "계약복원",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "계약 초안상 320만원은 비환급이다."
     }
   ],
   "evidence": [

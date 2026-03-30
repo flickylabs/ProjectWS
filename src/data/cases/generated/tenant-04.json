@@ -231,7 +231,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "계약해석정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "전환 계약은 완성되지 않았다."
     },
     {
       "id": "d-2",
@@ -250,7 +251,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "정보공개복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "성호는 조건을 충분히 알리지 않았다."
     },
     {
       "id": "d-3",
@@ -269,7 +271,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "정산복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "다은은 월세를 내지 않았다."
     },
     {
       "id": "d-4",
@@ -288,7 +291,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "신뢰회복",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "성호는 다은에게 협의 결렬을 통지하지 않았다."
     },
     {
       "id": "d-5",
@@ -307,7 +311,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "정산복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "성호는 2천만원을 전액 몰취할 수 없다."
     }
   ],
   "evidence": [

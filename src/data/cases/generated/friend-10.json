@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "역할재정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "다정은 서아를 들러리로 기재했다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "일정복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서아는 드레스 피팅 후 불가 입장을 밝혔다."
     },
     {
       "id": "d-3",
@@ -266,7 +268,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "역할재정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서아는 두 역할을 확정하지 않았다."
     },
     {
       "id": "d-4",
@@ -285,7 +288,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "친구경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "다정은 규칙을 위반했다."
     },
     {
       "id": "d-5",
@@ -304,7 +308,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "일정복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서아는 들러리 역할을 수락했다."
     }
   ],
   "evidence": [

@@ -225,7 +225,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "평판회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "소연은 민우를 공개적으로 지목했다."
     },
     {
       "id": "d-2",
@@ -243,7 +244,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "평판회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "정훈은 하윤에 대한 음성을 전파했다."
     },
     {
       "id": "d-3",
@@ -262,7 +264,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "아이규칙정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "민우는 한정판 스티커를 절도하지 않았다."
     },
     {
       "id": "d-4",
@@ -281,7 +284,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "아이규칙정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "하윤과 민우는 규칙을 오해했다."
     },
     {
       "id": "d-5",
@@ -300,7 +304,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "부모소통",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "소연과 정훈은 약속을 어겼다."
     }
   ],
   "evidence": [

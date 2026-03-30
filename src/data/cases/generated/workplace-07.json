@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "제보절차보호",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태욱은 세린을 유력 작성자로 지목했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "증거진정성검증",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "세린은 익명 글을 올리고 편집 캡처를 유포했다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "평판복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태욱은 삭제 지시한 원본이 없다."
     },
     {
       "id": "d-4",
@@ -284,7 +287,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "과거사정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태욱은 세린 평가에 개입했다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "과거사정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태욱과 세린은 사건을 재활용했다."
     }
   ],
   "evidence": [

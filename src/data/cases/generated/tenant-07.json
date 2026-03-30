@@ -232,7 +232,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "증액합의복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "도형과 하나는 4% 인상 합의했다."
     },
     {
       "id": "d-2",
@@ -251,7 +252,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "제3자개입정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "진우의 문의는 탐색 수준이었다."
     },
     {
       "id": "d-3",
@@ -270,7 +272,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "재계약절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "하나는 서명본을 사흘 늦게 보냈다."
     },
     {
       "id": "d-4",
@@ -288,7 +291,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "과거분리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "경고 이후 재발 기록은 없다."
     },
     {
       "id": "d-5",
@@ -308,7 +312,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "증액합의복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "도형의 12% 인상 요구는 일방 변경이다."
     }
   ],
   "evidence": [

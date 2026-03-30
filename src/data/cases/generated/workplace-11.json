@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "출원공로복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태준은 서린 이름을 지웠다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "외부접촉차단",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "서린은 브로커에게 자료를 보냈다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "제3자누설복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "패키지 일부가 경쟁사 폴더로 갔다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "평가절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태준은 서린을 기밀위험으로 적었다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "공모조사분리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "브로커에게 자료를 넘긴 공모이다."
     }
   ],
   "evidence": [

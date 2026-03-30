@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "성과배분복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태성은 서윤 이름을 삭제했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "증거취급경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "서윤은 평가 메모를 무단 열람했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "평가절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서윤의 최종 수정자 주장은 조작이다."
     },
     {
       "id": "d-4",
@@ -282,7 +285,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "평가절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태성은 HR에 비공식 코멘트를 했다."
     },
     {
       "id": "d-5",
@@ -301,7 +305,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "성과배분복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태성과 서윤은 쌍방 위반이다."
     }
   ],
   "evidence": [

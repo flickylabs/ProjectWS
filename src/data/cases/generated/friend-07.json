@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "비밀경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "성호는 진아에게 알리바이를 요청했다."
     },
     {
       "id": "d-2",
@@ -247,7 +248,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "친구관계재설계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "진아는 성호의 메시지를 편집했다."
     },
     {
       "id": "d-3",
@@ -266,7 +268,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "운영절차복구",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "성호는 연애 특혜로 선발되지 않았다."
     },
     {
       "id": "d-4",
@@ -286,7 +289,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "운영절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "진아는 비밀 연애 내용을 확산했다."
     },
     {
       "id": "d-5",
@@ -305,7 +309,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "운영절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "성호는 운영진에 고지하지 않았다."
     }
   ],
   "evidence": [

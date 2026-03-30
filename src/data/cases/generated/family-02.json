@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "비밀경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "선우는 민지에게 자료를 공유했다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "외부유출차단",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "민지가 정보를 유출한 배후이다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "사생활경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "미옥은 민지의 태블릿을 열람했다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "승계정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "아버지 음성 메모는 임시 운영 지시이다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "비밀경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "선우는 배우자에게 정보를 넘겼다."
     }
   ],
   "evidence": [

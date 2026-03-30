@@ -226,7 +226,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "촬영범위조정",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "민석은 통보 없이 카메라를 설치했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "평판회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "하린은 민석의 평판을 훼손했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "증거절차",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "27초 클립은 위조본이다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "촬영범위조정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "카메라는 하린 집 내부를 추적하지 않았다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "중재절차",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "하린은 합의 위반으로 공개 글을 올렸다."
     }
   ],
   "evidence": [

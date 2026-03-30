@@ -231,7 +231,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "정보공개복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태수는 채무 축소를 고지하지 않았다."
     },
     {
       "id": "d-2",
@@ -250,7 +251,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "중개책임정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "한별이 먼저 확답을 사용했다."
     },
     {
       "id": "d-3",
@@ -269,7 +271,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "중개책임정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "한별이 180만원을 실제 수령했다."
     },
     {
       "id": "d-4",
@@ -288,7 +291,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "보증금안전복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서윤은 잔금을 이틀 보류했다."
     },
     {
       "id": "d-5",
@@ -308,7 +312,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "계약재정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서윤과 태수는 당일 확인 원칙을 위반했다."
     }
   ],
   "evidence": [

@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "재산관리감시",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서아는 부모 계좌에서 1,800만원을 이체했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "간병분담",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "도현은 간병비를 12일 늦게 입금했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "상속기대정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "아버지 수첩 메모는 상속 지정이 아니다."
     },
     {
       "id": "d-4",
@@ -282,7 +285,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "복지절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "형제 사비로만 감당할 필요는 없다."
     },
     {
       "id": "d-5",
@@ -301,7 +305,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "재산관리감시",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서아와 도현은 공동 기록 원칙을 위반했다."
     }
   ],
   "evidence": [

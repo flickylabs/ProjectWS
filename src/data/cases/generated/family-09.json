@@ -228,7 +228,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "매매차액정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "민아와 도윤은 6,600만원을 은닉했다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "부동산의사결정",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "민아는 어머니에게 위임장 설명했다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "매매차액정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "도윤은 1,300만원을 개인채무에 썼다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "부동산의사결정",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "부모는 보전금 구조를 몰랐다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "가족신뢰복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "형제는 보전금을 숨겼다."
     }
   ],
   "evidence": [

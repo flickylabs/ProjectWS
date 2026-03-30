@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "확장권한재배치",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "재원은 아린 동의 없이 계약했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "경업·거래처정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "아린은 법인을 설립했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "신뢰회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "아린은 순수한 피해자가 아니다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "과거합의복원",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "아린은 공동 기회를 위반했다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "경업·거래처정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "거래처 이전은 위약에 해당한다."
     }
   ],
   "evidence": [

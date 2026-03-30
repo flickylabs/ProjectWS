@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "약속기록화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "민석은 18시 승인 약속을 불이행했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "약속기록화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지우는 QA를 완료하지 않았다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "공동책임정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "마감 실패는 공동 책임이다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "범위고정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "민석은 scope freeze를 해제했다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "공동책임정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "양측은 경고 후 미보고했다."
     }
   ],
   "evidence": [

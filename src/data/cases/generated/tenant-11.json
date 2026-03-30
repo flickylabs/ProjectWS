@@ -231,7 +231,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "승인범위재정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "성필은 고정 구조 변경을 허용하지 않았다."
     },
     {
       "id": "d-2",
@@ -250,7 +251,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "원상복구범위재설정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "나래는 무단으로 구조를 변경했다."
     },
     {
       "id": "d-3",
@@ -269,7 +271,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "기여인정정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "나래의 개선비는 전액이 아니다."
     },
     {
       "id": "d-4",
@@ -287,7 +290,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "기여인정정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "성필은 나래의 개선을 가로챘다."
     },
     {
       "id": "d-5",
@@ -306,7 +310,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "원상복구범위재설정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "480만원 청구는 과도하다."
     }
   ],
   "evidence": [

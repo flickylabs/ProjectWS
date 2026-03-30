@@ -61,6 +61,8 @@ export interface Dispute {
   ambiguity: 'none' | 'low' | 'high'
   weight: 'high' | 'medium' | 'low'
   mediationLink: string
+  /** AI 생성 판정문 (30자 이내) */
+  judgmentStatement?: string
   /** 이 쟁점을 심문하려면 선행 조건 필요 (없으면 처음부터 가능) */
   unlockCondition?: {
     /** 선행 쟁점이 특정 상태 이상이어야 함 */

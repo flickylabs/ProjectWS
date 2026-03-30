@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "권한경계재설정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "준호는 계정을 재배정했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "권한경계재설정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서린은 레거시 권한으로 수정했다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "역할명문화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "통합 공지는 단독 통제권이 아니다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "평가보류",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "준호는 서린을 'boundary-blind'로 적었다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "공동운영복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "준호는 계정을 직접 돌렸다."
     }
   ],
   "evidence": [

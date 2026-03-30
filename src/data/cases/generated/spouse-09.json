@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "재정투명화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "도현은 390만원을 송금했다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "보험금공개",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "선아는 보험금을 오빠에게 송금했다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "오해정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "최서정은 가족 의료비를 결정했다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "과거청산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "2022년 전력은 선아의 면책이 아니다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "간병운영",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "공황은 390만 원만의 원인이 아니다."
     }
   ],
   "evidence": [

@@ -248,7 +248,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "재정투명화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지석은 세린에게 비밀 송금을 했다."
     },
     {
       "id": "d-2",
@@ -266,7 +267,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "사생활경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "세린은 지석의 휴대폰을 열람했다."
     },
     {
       "id": "d-3",
@@ -285,7 +287,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "신뢰회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "최민정은 외도 상대가 아니다."
     },
     {
       "id": "d-4",
@@ -304,7 +307,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "재정투명화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "세린은 150만원을 우회 송금했다."
     },
     {
       "id": "d-5",
@@ -323,7 +327,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "재정투명화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지석과 세린은 약속을 위반했다."
     }
   ],
   "evidence": [

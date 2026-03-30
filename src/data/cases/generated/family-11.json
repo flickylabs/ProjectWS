@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "돌봄권한재설정",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "연숙은 무단으로 하원을 변경했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "양육기준합의",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "하린은 양육 원칙을 조율하지 않았다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "학교소통정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "담임교사는 강한 개입을 권하지 않았다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "과거위험재확인",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "준서의 방문은 단순 고열이 아니다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "돌봄권한재설정",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "연숙은 부모 동의 없이 개입했다."
     }
   ],
   "evidence": [

@@ -229,7 +229,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "별거프로토콜",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "서진의 상담은 카페 합의 범위이다."
     },
     {
       "id": "d-2",
@@ -248,7 +249,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "과거청산",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "서진은 대출 정리서를 추가했다."
     },
     {
       "id": "d-3",
@@ -267,7 +269,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "신뢰회복",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "현석은 카페 합의에 참여했다."
     },
     {
       "id": "d-4",
@@ -286,7 +289,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "제3자경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서진과 현석은 합의를 위반했다."
     },
     {
       "id": "d-5",
@@ -306,7 +310,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "주거결정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상황은 시한과 지연 때문이었다."
     }
   ],
   "evidence": [

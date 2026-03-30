@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "공용공간경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "현우는 무단으로 PIN을 사용했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "반려동물안전",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서아는 예약 없이 입실했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "증거절차",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "19초 클립은 위조본이다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "반려동물안전",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상처 원인은 마찰 열상이다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "중재절차",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "현우와 서아는 합의를 위반했다."
     }
   ],
   "evidence": [

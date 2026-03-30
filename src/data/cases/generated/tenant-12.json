@@ -231,7 +231,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "소문출처복구",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "경수는 문제 세입자라고 퍼뜨리지 않았다."
     },
     {
       "id": "d-2",
@@ -250,7 +251,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "소문출처복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "미령은 상습 문제 세입자라고 하지 않았다."
     },
     {
       "id": "d-3",
@@ -269,7 +271,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "공개정정조율",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "소담은 출처 확인 없이 반박했다."
     },
     {
       "id": "d-4",
@@ -288,7 +291,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "생활불편분리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상습 문제는 확인되지 않았다."
     },
     {
       "id": "d-5",
@@ -307,7 +311,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "공개정정조율",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "경수는 정정을 지연했다."
     }
   ],
   "evidence": [

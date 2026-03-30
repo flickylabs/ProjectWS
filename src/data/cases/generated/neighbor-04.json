@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "주차합의복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서림은 7시 20분 이후 11차례 점유했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "공용공간경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "도윤은 자력 제재를 했다."
     },
     {
       "id": "d-3",
@@ -263,7 +265,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "평판회복",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "범퍼 흠집은 기존 손상이다."
     },
     {
       "id": "d-4",
@@ -281,7 +284,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "과거청산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "합의문에 원상복구 조건이 있다."
     },
     {
       "id": "d-5",
@@ -300,7 +304,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "중재절차",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서림과 도윤은 선확인 약속을 파기했다."
     }
   ],
   "evidence": [

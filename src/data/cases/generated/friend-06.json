@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "게시물복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "다솔은 블로그와 유튜브를 수정했다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "협업경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "해온은 다솔을 공개 비난했다."
     },
     {
       "id": "d-3",
@@ -266,7 +268,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "권한재설정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "다솔은 권한이 부여된 상태였다."
     },
     {
       "id": "d-4",
@@ -285,7 +288,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "게시물복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "다솔은 요청 범위를 초과했다."
     },
     {
       "id": "d-5",
@@ -304,7 +308,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "협업경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "다솔은 수정 요청을 무시했다."
     }
   ],
   "evidence": [

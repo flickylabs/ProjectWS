@@ -225,7 +225,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "공사권한분리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "유림은 무단으로 포털에 접속했다."
     },
     {
       "id": "d-2",
@@ -243,7 +244,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "공사권한분리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "승호는 건조를 취소하고 권한을 재설정했다."
     },
     {
       "id": "d-3",
@@ -262,7 +264,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "보험청구정정",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "손상 확대 원인은 긴급조치 지연이다."
     },
     {
       "id": "d-4",
@@ -281,7 +284,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "보험청구정정",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "유림과 승호는 공동 기획했다."
     },
     {
       "id": "d-5",
@@ -300,7 +304,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "주거복구운영",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지급 보류는 보험사 내부 탐지이다."
     }
   ],
   "evidence": [

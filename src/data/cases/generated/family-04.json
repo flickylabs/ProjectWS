@@ -227,7 +227,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "상속문서분리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "형제는 부모의 기부를 오해했다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "재산정보공유",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "하린은 잘린 잔액 캡처를 보냈다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "원본보관통제",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "민규는 인감과 등기 원본을 반출했다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "상속문서분리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "하린은 잘린 캡처를 올렸다."
     },
     {
       "id": "d-5",
@@ -301,7 +305,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "가족대화복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "하린은 세무 지인에게 문의했다."
     }
   ],
   "evidence": [

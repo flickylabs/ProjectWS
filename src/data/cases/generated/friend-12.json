@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "크레딧재정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "수빈은 단독 성과처럼 홍보했다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "크레딧재정리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "재윤은 수빈을 누락했다."
     },
     {
       "id": "d-3",
@@ -266,7 +268,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "크레딧재정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "최종작 '새벽역'은 단독 창작물이 아니다."
     },
     {
       "id": "d-4",
@@ -285,7 +288,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "작업절차복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "둘은 최종 크레딧 시트를 비워 두었다."
     },
     {
       "id": "d-5",
@@ -304,7 +308,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "크레딧재정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "재윤은 단독 창작자로 보이게 했다."
     }
   ],
   "evidence": [

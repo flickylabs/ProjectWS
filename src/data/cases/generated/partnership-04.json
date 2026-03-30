@@ -227,7 +227,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "증거검증프로토콜",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "라희는 편집본을 계속 사용했다."
     },
     {
       "id": "d-2",
@@ -246,7 +247,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "과거정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "민재는 리베이트를 은폐했다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "계좌흐름복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "주말 세 줄 이체는 분리 표기이다."
     },
     {
       "id": "d-4",
@@ -284,7 +287,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "과거정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "두 사람은 과거 사건을 반복 소환했다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "계좌흐름복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "겉보기 손실이 1,240만원 과대 표기되었다."
     }
   ],
   "evidence": [

@@ -226,7 +226,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "출입권한관리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "성재는 NFC 태그를 복제했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "증거절차",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "라은은 CCTV를 편집했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "보상청구절차",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "상·하층 분쟁은 공모이다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "임대인중재",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "건물주는 보상안을 검토 중이었다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "중재절차",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "관리대행사는 편집 영상을 먼저 배포했다."
     }
   ],
   "evidence": [

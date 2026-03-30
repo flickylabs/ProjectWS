@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "대외커뮤니케이션복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "준석은 은채를 유출자로 지목했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "제3자메모분리",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "은채는 내부 갈등을 외부에 노출했다."
     },
     {
       "id": "d-3",
@@ -265,7 +267,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "공유문서명명규칙",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "내부 자료 유출은 없었다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "평가보류",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "준석은 은채를 리스크로 메모했다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "대외커뮤니케이션복구",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "준석과 은채는 제3자를 통한 추측전을 벌였다."
     }
   ],
   "evidence": [

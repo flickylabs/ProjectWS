@@ -232,7 +232,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "계약구조재구성",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태윤이 실제 받은 보증금은 6천만원이다."
     },
     {
       "id": "d-2",
@@ -252,7 +253,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "제3자책임분리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "세라는 우석과 공모해 보증금을 부풀렸다."
     },
     {
       "id": "d-3",
@@ -270,7 +272,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "보증금정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태윤은 보증금을 지연 반환했다."
     },
     {
       "id": "d-4",
@@ -288,7 +291,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "보증금정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "세라는 월세를 9일 늦게 냈다."
     },
     {
       "id": "d-5",
@@ -307,7 +311,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "증거신뢰회복",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태윤은 계약서 확인을 소홀히 했다."
     }
   ],
   "evidence": [

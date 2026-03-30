@@ -225,7 +225,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "사생활경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "서윤은 CCTV 캡처를 유포했다."
     },
     {
       "id": "d-2",
@@ -243,7 +244,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "평판회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "재현은 서윤씨에 대한 역소문을 퍼뜨렸다."
     },
     {
       "id": "d-3",
@@ -262,7 +264,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "배송사고정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상대는 내 택배를 가져가지 않았다."
     },
     {
       "id": "d-4",
@@ -281,7 +284,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "증거절차",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "흰 상자는 류다은의 배송 박스이다."
     },
     {
       "id": "d-5",
@@ -300,7 +304,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "공동수령규칙",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "서윤과 재현은 약속을 깨트렸다."
     }
   ],
   "evidence": [

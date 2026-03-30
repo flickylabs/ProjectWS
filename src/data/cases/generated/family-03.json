@@ -227,7 +227,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "용돈계약정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "정우는 6개월간 월 60만원을 약속했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "생활비정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "정우는 자동이체를 해지했다."
     },
     {
       "id": "d-3",
@@ -263,7 +265,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "사용처투명화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "복자는 용돈을 전용했다."
     },
     {
       "id": "d-4",
@@ -281,7 +284,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "가족경계",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "복자는 정우의 약속을 공개했다."
     },
     {
       "id": "d-5",
@@ -300,7 +304,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "생활비정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "정우는 공과금을 한 번만 납부했다."
     }
   ],
   "evidence": [

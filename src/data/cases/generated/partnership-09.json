@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "공로배분정정",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "다예는 인호의 기여를 축소했다."
     },
     {
       "id": "d-2",
@@ -245,7 +246,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "증거검증프로토콜",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "인호는 피드백을 편집했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "지원금정산복구",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "지원금은 두 사람의 공동 성과이다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "지원금정산복구",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "인호와 다예는 허위 실적을 제출했다."
     },
     {
       "id": "d-5",
@@ -302,7 +306,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "대외설명통제",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "진흥원은 사후점검 후보로 지정했다."
     }
   ],
   "evidence": [

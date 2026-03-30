@@ -231,7 +231,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "증거신뢰회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "호준의 관리비 상세표는 재작성본이다."
     },
     {
       "id": "d-2",
@@ -250,7 +251,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "실사용정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지현의 전기사용 증가가 사실이다."
     },
     {
       "id": "d-3",
@@ -269,7 +271,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "항목분리정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지현 세대에 공용비가 배분됐다."
     },
     {
       "id": "d-4",
@@ -288,7 +291,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "실사용정산",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지현은 2개월 관리비를 전액 보류했다."
     },
     {
       "id": "d-5",
@@ -308,7 +312,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "증거신뢰회복",
-      "legitimacyIssue": true
+      "legitimacyIssue": true,
+      "judgmentStatement": "호준은 도장·파일을 위조했다."
     }
   ],
   "evidence": [

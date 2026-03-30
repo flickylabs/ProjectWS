@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "공개발언경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "다혜의 발언은 태준의 기여를 간과했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "기여가시화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태준은 아침 루틴을 제외했다."
     },
     {
       "id": "d-3",
@@ -264,7 +266,8 @@
       "ambiguity": "low",
       "weight": "high",
       "mediationLink": "기여가시화",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "태준은 집안일을 했다."
     },
     {
       "id": "d-4",
@@ -283,7 +286,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "공개발언경계",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "다혜와 태준은 아이 앞에서 싸웠다."
     },
     {
       "id": "d-5",
@@ -303,7 +307,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "맞벌이운영",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "구조적 과부하가 원인이다."
     }
   ],
   "evidence": [

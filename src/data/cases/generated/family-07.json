@@ -226,7 +226,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "공로기준정리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "종문은 지수의 기여를 축소했다."
     },
     {
       "id": "d-2",
@@ -244,7 +245,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "홍보발언통제",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "지수는 공방 기여를 가렸다."
     },
     {
       "id": "d-3",
@@ -263,7 +265,8 @@
       "ambiguity": "none",
       "weight": "high",
       "mediationLink": "승계역할분리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "최근 반등은 다수의 기여로 이루어졌다."
     },
     {
       "id": "d-4",
@@ -282,7 +285,8 @@
       "ambiguity": "low",
       "weight": "medium",
       "mediationLink": "승계역할분리",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "상패와 표기는 승계 확정이 아니다."
     },
     {
       "id": "d-5",
@@ -301,7 +305,8 @@
       "ambiguity": "none",
       "weight": "medium",
       "mediationLink": "실적검증",
-      "legitimacyIssue": false
+      "legitimacyIssue": false,
+      "judgmentStatement": "종문과 지수는 유리한 실적을 제시했다."
     }
   ],
   "evidence": [
