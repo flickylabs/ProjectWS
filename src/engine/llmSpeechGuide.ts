@@ -140,7 +140,8 @@ export function buildSpeechGuide(
   const { aCallsB, bCallsA } = getHonorifics(duo)
   const isSingle = phase === 'interrogation' || phase === 'free'
 
-  const lines: string[] = ['## 말투 규칙 (매우 중요)']
+  const lines: string[] = ['## 말투 규칙 (최우선 — 위반 시 출력 무효)']
+  lines.push('★ 절대 규칙: 재판관에게는 어떤 상황에서도 반드시 존댓말(~습니다, ~요, ~입니다)만 사용. 반말 절대 금지.')
   lines.push('1. 한 대사 = 한 대상. 재판관에게 하는 말과 상대에게 하는 말을 절대 한 문장 안에 섞지 마세요.')
 
   // 호칭
