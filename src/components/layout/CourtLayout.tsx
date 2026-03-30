@@ -6,6 +6,9 @@ import PartyStatusBar from '../court/PartyStatusBar'
 import DialogueLog from '../court/DialogueLog'
 import TestimonyModal from '../court/TestimonyModal'
 import MemoryPuzzle from '../minigame/MemoryPuzzle'
+import HeartbeatDetector from '../minigame/HeartbeatDetector'
+import MatchingPuzzle from '../minigame/MatchingPuzzle'
+import WordScramble from '../minigame/WordScramble'
 import { actuallyDiscoverEvidence } from '../../hooks/useActionDispatch'
 import DisputeChecklist from '../info/DisputeChecklist'
 import ClaimGraph from '../info/ClaimGraph'
@@ -190,26 +193,86 @@ function PhaseOverlay() {
 function MinigameOverlay() {
   const mg = useGameStore((s) => s.pendingMinigame)
   const clearMg = useGameStore((s) => s.setPendingMinigame)
+  const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
 
   if (!mg) return null
 
   if (mg.type === 'evidence_discovery') {
+    const { evidenceId, clues, minigameVariant } = mg
+
+    const handleSuccess = () => {
+      actuallyDiscoverEvidence(evidenceId)
+      clearMg(null)
+    }
+    const handleFail = () => clearMg(null)
+    const handleWatchAd = () => {
+      // 광고 보기 → 즉시 성공
+      actuallyDiscoverEvidence(evidenceId)
+      clearMg(null)
+    }
+
+    if (minigameVariant === 'heartbeat') {
+      return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+          <div className="bg-gray-900 border border-amber-700/50 rounded-2xl p-5 w-[340px] shadow-2xl">
+            <HeartbeatDetector onSuccess={handleSuccess} onFail={handleFail} onWatchAd={handleWatchAd} />
+          </div>
+        </div>
+      )
+    }
+
+    if (minigameVariant === 'matching') {
+      // clues [string, string, string] → pairs [string, string][]
+      const pairs: [string, string][] = clues.map((clue, i) => [`단서 ${i + 1}`, clue])
+      return (
+        <MatchingPuzzle
+          pairs={pairs}
+          onSuccess={handleSuccess}
+          onFail={handleFail}
+          onWatchAd={handleWatchAd}
+        />
+      )
+    }
+
+    if (minigameVariant === 'word_scramble') {
+      // 증거 이름을 단어로 분해 (4~7개)
+      const evDef = evidenceDefinitions.find(e => e.id === evidenceId)
+      let wordSource = evDef?.name ?? '증거를 발견했습니다'
+      let words = wordSource.split(/\s+/).filter(w => w.length > 0)
+      // 4개 미만이면 description 첫 문장 사용
+      if (words.length < 4) {
+        const desc = evDef?.description ?? ''
+        const firstSentence = desc.split(/[.!?。]/)[0].trim()
+        if (firstSentence.length > 0) words = firstSentence.split(/\s+/).filter(w => w.length > 0)
+      }
+      // 최대 7개
+      words = words.slice(0, 7)
+      // 그래도 4개 미만이면 padding
+      while (words.length < 4) words.push(`단서${words.length + 1}`)
+      return (
+        <WordScramble
+          words={words}
+          onSuccess={handleSuccess}
+          onFail={handleFail}
+          onWatchAd={handleWatchAd}
+        />
+      )
+    }
+
+    // variant === 'memory' (기본값)
     return (
       <MemoryPuzzle
-        clues={mg.clues}
-        onSuccess={() => {
-          actuallyDiscoverEvidence(mg.evidenceId)
-          clearMg(null)
-        }}
-        onFail={() => clearMg(null)}
-        onWatchAd={() => {
-          // 광고 보기 → 즉시 성공
-          actuallyDiscoverEvidence(mg.evidenceId)
-          clearMg(null)
-        }}
+        clues={clues}
+        onSuccess={handleSuccess}
+        onFail={handleFail}
+        onWatchAd={handleWatchAd}
       />
     )
   }
+
+  // TODO: evidence_depth → MatchingPuzzle
+  // TODO: lie_collapse → HeartbeatDetector
+  // TODO: contradiction → WordScramble
 
   return null
 }

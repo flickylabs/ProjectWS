@@ -793,7 +793,12 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
     name + '의 진술에서 발견',
   ]
   const lieState = lieEntry?.currentState ?? 'S0'
-  state.setPendingMinigame({ type: 'evidence_discovery', evidenceId: ev.id, clues, npcName: name, lieState, party })
+
+  // 4종 미니게임 중 랜덤 선택
+  const variants = ['memory', 'heartbeat', 'matching', 'word_scramble'] as const
+  const minigameVariant = variants[Math.floor(Math.random() * variants.length)]
+
+  state.setPendingMinigame({ type: 'evidence_discovery', evidenceId: ev.id, clues, npcName: name, lieState, party, minigameVariant })
   return // 미니게임 결과에서 actuallyDiscoverEvidence 호출
 }
 
