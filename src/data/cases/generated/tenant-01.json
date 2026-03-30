@@ -329,7 +329,8 @@
         "verify_source": "하림의 휴대폰과 클라우드 백업 해시값이 일치한다.",
         "check_edits": "색보정 흔적은 없고 자동 압축만 적용된 파일이다.",
         "question_acquisition": "자신이 거주하던 공간을 촬영한 자료라 취득 절차상 문제는 크지 않다."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-2",
@@ -352,7 +353,8 @@
         "verify_source": "집주인 계좌 입금표와 세입자 출금내역이 서로 맞아떨어진다.",
         "check_edits": "기관 PDF 원본이라 편집 흔적이 없다.",
         "question_acquisition": "정산 분쟁을 위한 계좌 자료 제출로 정당성에 큰 문제는 없다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -376,7 +378,8 @@
         "verify_source": "세 사람 단말의 메시지 순서와 통화 시각이 대체로 일치한다.",
         "check_edits": "문장 자체 편집은 없지만 핵심 앞뒤를 잘라 오해를 키운 선택적 크롭이 확인된다.",
         "question_acquisition": "중개사가 당사자였던 대화지만 통화 요약 전송에 대한 별도 동의는 명확하지 않아 사생활 우려가 남는다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -402,7 +405,8 @@
         "verify_source": "배성훈 기사와 업체 대표번호 확인 결과 발행 경로가 일치한다.",
         "check_edits": "항목 추가나 단가 수정 흔적이 없는 출력 원본이다.",
         "question_acquisition": "수리 범위 산정을 위한 통상적 자료라 적법성 문제는 낮다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -425,7 +429,8 @@
         "verify_source": "관리실 담당자 확인과 고지서 발급 기록이 서로 맞는다.",
         "check_edits": "스캔본과 원본 대조 결과 내용 변형은 없었다.",
         "question_acquisition": "건물 관리기록이라 분쟁 해결 목적의 제출 정당성은 충분하다."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-6",
@@ -451,7 +456,8 @@
         "verify_source": "중개보조원 보관 사본과 당사자 원본 내용이 동일하다.",
         "check_edits": "추가 덧씌움이나 재작성 흔적이 없다.",
         "question_acquisition": "당사자들이 각자 보유한 계약서라 제출 절차에 별다른 문제는 없다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

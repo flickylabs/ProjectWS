@@ -328,7 +328,8 @@
         "verify_source": "서윤 휴대폰 원본과 최하린이 받은 파일의 해시가 일치한다.",
         "check_edits": "문자열 조작 흔적은 없지만 상단과 하단이 선택적으로 잘려 있다.",
         "question_acquisition": "사적인 차용 대화를 제3자에게 전달한 자료라 사생활 침해 우려가 크다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -352,7 +353,8 @@
         "verify_source": "은행 거래번호와 양측 메시지 ID가 일치해 송금과 약속이 연결된다.",
         "check_edits": "기관 내역과 원본 대화라 후편집 흔적이 없다.",
         "question_acquisition": "당사자들이 직접 제출한 금융·대화 자료라 절차상 문제는 낮다."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-3",
@@ -375,7 +377,8 @@
         "verify_source": "박주연 임대인이 보관한 입금 확인 시간과 은행 기록이 일치한다.",
         "check_edits": "기관 발급 PDF라 편집 흔적이 없다.",
         "question_acquisition": "태오가 제출에 동의한 계좌 내역이라 적법성은 높다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -401,7 +404,8 @@
         "verify_source": "공유 시트 수정 시각과 수기 노트 사진의 날짜가 서로 맞아떨어진다.",
         "check_edits": "시트 버전기록과 노트 필압 흐름상 사후 조작 흔적은 없다.",
         "question_acquisition": "공동으로 관리하던 정산 자료라 제출은 적법하지만 개인 메모 일부는 최소 공개가 바람직하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -427,7 +431,8 @@
         "verify_source": "메모앱 생성 기록과 카카오톡 전송 순서가 서로 일치한다.",
         "check_edits": "삭제 복원 흔적은 없지만 메모가 개인 계산표라 해석 여지는 남는다.",
         "question_acquisition": "당사자와 수신인이 각자 제출한 자료라 위법성은 낮다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -453,7 +458,8 @@
         "verify_source": "서윤 계정 보관함, 조회 로그, 단체방 수신 화면이 동일 게시 흐름을 보여준다.",
         "check_edits": "앱 내 원본과 대화창이라 후편집 흔적은 없다.",
         "question_acquisition": "본인 계정 자료이지만 제3자 조회자 목록과 단체방 구성원 정보는 제한적으로 다뤄야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

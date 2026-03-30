@@ -327,7 +327,8 @@
         "verify_source": "담임의 원본 대화 순서와 캡처 시각이 서로 맞는다.",
         "check_edits": "텍스트 조작은 없으나 상하가 강하게 잘려 의미가 달라졌다.",
         "question_acquisition": "교사와 보호자 대화 캡처라 제출은 가능하지만 재유포는 민감하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -352,7 +353,8 @@
         "verify_source": "유치원 관리자 로그와 클리닉 접수번호가 일치한다.",
         "check_edits": "앱·기관 원본이라 편집 흔적이 없다.",
         "question_acquisition": "아동 일정과 상담 정보가 포함돼 있어 목적 외 확산은 제한돼야 한다."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-3",
@@ -376,7 +378,8 @@
         "verify_source": "원본 메시지와 기기 리포트, 회사 캘린더 시간이 서로 맞는다.",
         "check_edits": "원본 내보내기와 장치 보고서라 선택적 편집 흔적이 없다.",
         "question_acquisition": "직장 일정과 아동 기기 기록이 함께 있어 민감하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -399,7 +402,8 @@
         "verify_source": "병원 접수번호와 의무기록 일련번호가 일치한다.",
         "check_edits": "기관 보관 원본이라 편집 흔적이 없다.",
         "question_acquisition": "아동 의료정보가 포함돼 있어 사용 범위가 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -424,7 +428,8 @@
         "verify_source": "사진 EXIF와 카드 승인시각, 약국 POS 번호가 맞는다.",
         "check_edits": "사진은 원본이고 영수증도 카드사 조회본과 일치한다.",
         "question_acquisition": "개인 결제기록과 오래된 백업 사진이 포함돼 있어 민감하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -448,7 +453,8 @@
         "verify_source": "센터 접수번호와 상담사 서명이 원본과 일치한다.",
         "check_edits": "기관 보관 문서라 편집 흔적이 없다.",
         "question_acquisition": "아동 상담 내용이 포함된 기록이라 목적 외 사용은 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

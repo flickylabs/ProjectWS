@@ -327,7 +327,8 @@
         "verify_source": "HR 배포본과 팀 채널 공지 링크가 원본 서버에서 일치.",
         "check_edits": "정책 문서·공지 원본 — 사후 편집 흔적 없음.",
         "question_acquisition": "업무 지침·팀 공지 — 적법 열람."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -351,7 +352,8 @@
         "verify_source": "엔드포인트 콘솔과 VPN 세션 로그가 동일 사용자 세션을 가리킨다.",
         "check_edits": "자동 생성 로그 — 사후 편집 흔적 없음.",
         "question_acquisition": "회사 단말 로그 — 조사 범위 내 적법 활용."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -374,7 +376,8 @@
         "verify_source": "플랫폼 표 일부를 붙인 파일 — 공식 HR 첨부본 형식과 다르다.",
         "check_edits": "변조 없으나 선택적 절삭·배열로 태만 프레임이 과장됐다.",
         "question_acquisition": "지훈 자발 제출 — 입수 적법하지만 원본 대조 필요."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-4",
@@ -400,7 +403,8 @@
         "verify_source": "IT 콘솔과 감사 로그가 동일 설정 변경 시각을 가리킨다.",
         "check_edits": "플랫폼 원본 추출본 — 사후 편집 흔적 없음.",
         "question_acquisition": "시스템 설정 로그 — 조사 목적 적법 열람."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -424,7 +428,8 @@
         "verify_source": "동료 수신 단말과 수민 갤러리 파일명 일치.",
         "check_edits": "변조 없으나 상태창·일정 블록에 선택적 편집이 확인된다.",
         "question_acquisition": "개인 단말·사적 대화 포함 — 필요 범위만 제한 사용."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-6",
@@ -449,7 +454,8 @@
         "verify_source": "HR 코칭 로그와 운영 티켓이 동일 날짜·사건 번호를 공유한다.",
         "check_edits": "기관 기록 — 사후 편집 흔적 없음.",
         "question_acquisition": "인사·운영 자료 — 분쟁 해결 목적 외 공개 제한."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

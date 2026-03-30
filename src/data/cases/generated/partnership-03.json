@@ -328,7 +328,8 @@
         "verify_source": "플랫폼 감사 로그와 문서 히스토리가 일치한다.",
         "check_edits": "삭제와 삽입 이력이 모두 남아 있어 조작 흔적은 없다.",
         "question_acquisition": "회사 공용 일정과 문서 기록이라 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -351,7 +352,8 @@
         "verify_source": "디자이너 계정 알림 로그와 댓글 원문이 일치한다.",
         "check_edits": "댓글 수정 흔적 없이 원문이 남아 있다.",
         "question_acquisition": "회사 디자인 협업 도구 기록이라 적법하다."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-3",
@@ -376,7 +378,8 @@
         "verify_source": "양측 모두 자신의 대화가 맞다고 인정하지만 원본 전문은 아직 없다.",
         "check_edits": "문자열 변조 흔적은 없으나 선택적 크롭이 명확하다.",
         "question_acquisition": "사적 메신저 캡처라 제출 범위와 사생활 침해 여부를 따져야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -402,7 +405,8 @@
         "verify_source": "음성 길이, 해시값, 단톡 타임스탬프가 모두 일치한다.",
         "check_edits": "본문 조작 흔적 없이 삭제 복원만 일부 존재한다.",
         "question_acquisition": "공동 경영 논의를 담은 자료여서 제출 정당성은 높다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -428,7 +432,8 @@
         "verify_source": "회의실 예약 기록과 사진 촬영 시각이 맞아떨어진다.",
         "check_edits": "메타데이터와 이미지 원본에서 편집 흔적이 없다.",
         "question_acquisition": "회사 회의실과 공용 문서 기록이라 적법하게 수집됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -454,7 +459,8 @@
         "verify_source": "투자사 도메인 인증과 캘린더 시스템 로그가 서로 일치한다.",
         "check_edits": "헤더 포함 원본이라 편집 흔적이 없다.",
         "question_acquisition": "제3자 미팅 운영 자료지만 분쟁 해결 목적 제출은 허용됐다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

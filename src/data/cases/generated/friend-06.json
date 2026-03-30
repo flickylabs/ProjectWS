@@ -329,7 +329,8 @@
         "verify_source": "플랫폼 서버 로그와 오한결 매니저가 내려받은 기록이 서로 일치한다.",
         "check_edits": "서버 보존본이라 사후 편집 흔적은 없다.",
         "question_acquisition": "공동 채널의 운영 로그라 적법하지만 조회수와 수익 수치는 최소 범위만 공개해야 한다."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-2",
@@ -353,7 +354,8 @@
         "verify_source": "해온 휴대폰 원본과 단톡 수신자 화면의 메시지 ID가 일치한다.",
         "check_edits": "문자 조작 흔적은 없지만 비교 대상과 시간표시가 선택적으로 잘려 있다.",
         "question_acquisition": "업계 단톡 자료라 제3자 닉네임과 반응이 섞여 있어 사적 확산 문제를 낳는다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -376,7 +378,8 @@
         "verify_source": "플랫폼 보안 로그와 오한결의 관리 패널 기록이 같은 권한 부여 사실을 가리킨다.",
         "check_edits": "플랫폼 출력본이라 후편집 흔적이 없다.",
         "question_acquisition": "당사자 동의와 플랫폼 회신을 통해 확보한 자료라 적법성은 높다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -403,7 +406,8 @@
         "verify_source": "브랜드 메일 서버 기록과 다솔의 DM export가 동일한 시간대와 문구를 보여준다.",
         "check_edits": "메일 헤더와 DM 원본이라 편집 흔적이 없다.",
         "question_acquisition": "협찬 계약 내용이 일부 포함돼 있어 금액과 내부 일정은 제한적으로만 다뤄야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -426,7 +430,8 @@
         "verify_source": "노션의 작성·열람 로그와 정수민의 캡처가 내용상 일치한다.",
         "check_edits": "버전 이력상 핵심 규칙 문장은 변경된 적이 없다.",
         "question_acquisition": "공동 업무문서라 제출은 적법하지만 다른 협업 파트의 내용은 최소 공개가 바람직하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -452,7 +457,8 @@
         "verify_source": "오한결의 관리 패널 기록과 플랫폼 시스템 알림 시간이 정확히 일치한다.",
         "check_edits": "서버 보존 로그라 후편집 흔적은 없다.",
         "question_acquisition": "플랫폼 운영 로그라 적법하지만 다른 게시물 일정과 수익 정보는 가려서 다루어야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

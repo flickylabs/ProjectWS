@@ -328,7 +328,8 @@
         "verify_source": "거래은행 서버 원장과 발급본 해시가 일치한다.",
         "check_edits": "원본 파일로 편집 흔적이 없다.",
         "question_acquisition": "법인계좌 자료라 해지 협상 목적 열람은 적법하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -352,7 +353,8 @@
         "verify_source": "전자결재 기록과 메일 스레드, 계약 원본 번호가 모두 일치한다.",
         "check_edits": "원본 문서에서 후편집 흔적이 없다.",
         "question_acquisition": "과거 회사 분쟁 자료라 제출은 적법하지만 외부 공개는 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -376,7 +378,8 @@
         "verify_source": "원본 출처가 회계보조 스프레드시트인지 은행 서버인지 처음에는 확인되지 않았다.",
         "check_edits": "글꼴 혼합과 해상도 차이로 편집 가능성이 높다.",
         "question_acquisition": "출처 불명 편집본이라 증거능력이 약하고, 개인정보가 섞여 있어 사용 범위도 제한된다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -401,7 +404,8 @@
         "verify_source": "파일 해시와 수정 로그가 연속적으로 이어진다.",
         "check_edits": "행 병합, 별칭 변경, 이미지 삽입 흔적이 명확하다.",
         "question_acquisition": "회사 공용 드라이브 자료라 적법하게 확보됐지만 사용 목적은 분쟁 해결로 제한돼야 한다."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-5",
@@ -428,7 +432,8 @@
         "verify_source": "조정인 메일 서버 헤더와 수신 확인 로그가 일치한다.",
         "check_edits": "헤더 포함 원본이라 수정 흔적이 없다.",
         "question_acquisition": "중재 절차 중 생성된 자료라 적법하지만 외부 유출은 제한된다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -454,7 +459,8 @@
         "verify_source": "거래은행 문서번호와 담당자 확인 회신이 일치한다.",
         "check_edits": "기관 발급본이라 편집 흔적이 없다.",
         "question_acquisition": "은행 공용 안내 자료와 담당 확인 문서라 적법하다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

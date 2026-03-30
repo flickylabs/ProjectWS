@@ -326,7 +326,8 @@
         "verify_source": "세영 휴대폰 메시지 원문·사진 앨범 저장 시각 일치.",
         "check_edits": "견적 캡처에 합성 흔적 없으나 최종 정산 페이지가 의도적으로 제외돼 있다.",
         "question_acquisition": "사적 문자 자료라 제3자 연락처·계좌정보를 가린 후 활용해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -350,7 +351,8 @@
         "verify_source": "관리사무소 서버본과 백업본의 프레임 수·시각 일치.",
         "check_edits": "요약본이나 원본 타임코드 연결표가 있어 장면 삭제·조작 흔적 없음.",
         "question_acquisition": "공용복도 CCTV라 적법하나, 세대 식별 정보·방문객 얼굴은 최소화 필요."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -374,7 +376,8 @@
         "verify_source": "수리업체 계산서 번호와 관리사무소 전표 번호가 상호 연결 확인.",
         "check_edits": "기관 원본 출력물, 편집·금액 수정 이력 없음.",
         "question_acquisition": "공용시설 정산 자료라 정당성 높음. 개인 결제수단 정보만 마스킹 필요."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -400,7 +403,8 @@
         "verify_source": "기사 서명·업체 접수번호·부품 교체내역 상호 일치.",
         "check_edits": "사진 EXIF와 점검표 시각 일치, 조작 흔적 없음.",
         "question_acquisition": "수리업체 공식 보고서라 활용 적법. 업체 연락처·내부 코드는 최소 공개."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -423,7 +427,8 @@
         "verify_source": "메신저 발신 시각과 관리사무소 수신 기록 시간 교차 일치.",
         "check_edits": "일부 크롭됐으나 원문 대조 결과 핵심 문장·시각 동일.",
         "question_acquisition": "사적 합의 대화·통화요약 포함 — 제3자 언급 부분은 제외하고 활용."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -447,7 +452,8 @@
         "verify_source": "민원 접수 시각과 이수경 진술 날짜가 교차 일치.",
         "check_edits": "문자 진술 원본 보존, 민원 메모 수정 이력 없음.",
         "question_acquisition": "제3자 진술 포함 — 필요한 사실만 인용하고 생활패턴 노출은 최소화."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

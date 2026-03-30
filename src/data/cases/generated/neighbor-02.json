@@ -327,7 +327,8 @@
         "verify_source": "화면비·시간표시 형식이 단지 CCTV 시스템과 일치. 외부 합성 가능성 낮음.",
         "check_edits": "유나가 덧붙인 문구 외 이미지 픽셀 자체에 조작·보정 흔적 없음.",
         "question_acquisition": "공용 CCTV를 개인이 캡처·전송한 자료. 사생활 침해 및 2차 유포 문제 소지 큼."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -352,7 +353,8 @@
         "verify_source": "CCTV 저장 서버와 경비실 백업본 해시 일치. 원본 무결성 확인됨.",
         "check_edits": "NVR 직출력 원본. 프레임 누락·이어붙이기 흔적 없음.",
         "question_acquisition": "공식 보안기록으로 적법. 타 주민 택배 송장 정보는 마스킹 후 사용 원칙."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-3",
@@ -376,7 +378,8 @@
         "verify_source": "발신 계정·전화번호가 민규 본인 확인. 대리 발송 가능성 없음.",
         "check_edits": "상하 크롭 있으나 핵심 문장 '307호 개봉투 냄새'는 원본과 동일.",
         "question_acquisition": "개인 대화 포함 자료. 제3자 이름·호수는 최소 노출 원칙 적용 필요."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -401,7 +404,8 @@
         "verify_source": "관리사무소 전산 기록과 청소용역 서명본 일치. 이중 확인 완료.",
         "check_edits": "기관 전산 문서로 편집 이력 없음. 메모 추가 시각까지 기록돼 있다.",
         "question_acquisition": "공동주택 민원 자료로 적법 확보. 세대 지목 표현 재유포는 제한."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-5",
@@ -424,7 +428,8 @@
         "verify_source": "참석자 2인의 개별 녹음과 발언 순서가 일치. 교차 검증 완료.",
         "check_edits": "발췌본이라 단독 증거력은 약하나 음성 파형상 합성·이어붙이기 흔적 없음.",
         "question_acquisition": "공개 회의 녹음으로 위법성 낮음. 참석자 음성 재유포 범위는 제한 필요."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -449,7 +454,8 @@
         "verify_source": "행정주임 감사 기록과 프린터 서버 로그 일치. 최병규 계정 사용 확정.",
         "check_edits": "서버 추출본에 삭제→복원 흔적은 있으나 PDF 본문 자체 조작은 없음.",
         "question_acquisition": "기관 장비 로그로 적법 확보. 계정 접근 이력은 분쟁 해결 범위로만 한정 사용."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

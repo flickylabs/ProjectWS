@@ -332,7 +332,8 @@
         "verify_source": "계좌 거래번호와 휴대폰 수신 기록이 서로 일치한다.",
         "check_edits": "기관 발급본과 문자 원본 모두 편집 흔적이 없다.",
         "question_acquisition": "본인 계좌와 당사자 문자라 제출 적법성은 충분하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -357,7 +358,8 @@
         "verify_source": "호준의 휴대폰 발신 기록과 지현의 수신 기록이 일치해 자료 전달 경로는 명확하다.",
         "check_edits": "숫자 영역의 글꼴과 자간이 일정하지 않고 도장 이미지 경계가 자연스럽지 않은 편집 흔적이 보였다.",
         "question_acquisition": "당사자가 직접 받은 자료지만 다른 세대의 일부 금액이 함께 보일 수 있어 공개 범위는 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -381,7 +383,8 @@
         "verify_source": "전력회사 검침 번호와 건물 계량기 식별번호가 정확히 맞는다.",
         "check_edits": "기관 발급 CSV와 PDF 원본이라 조작 흔적은 없다.",
         "question_acquisition": "검침기관 자료라 적법성 문제는 낮고 신뢰도도 높다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -404,7 +407,8 @@
         "verify_source": "기기 시리얼과 앱 계정 정보가 지현 세대 장비와 일치한다.",
         "check_edits": "CSV 연속값과 앱 내 스크린샷 시간이 자연스럽게 이어져 후편집 흔적이 없다.",
         "question_acquisition": "본인 기기 기록이라 적법하지만 생활 패턴 정보가 포함돼 공개 범위는 최소화돼야 한다."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-5",
@@ -430,7 +434,8 @@
         "verify_source": "관리대행 서버 보관본과 한미라의 문서등록 이력이 서로 일치한다.",
         "check_edits": "도장 이미지의 픽셀 경계와 자간이 다르게 나타나 합성 정황이 확인됐다.",
         "question_acquisition": "정식 관리대행 보관 문서라 제출 정당성은 높다."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-6",
@@ -456,7 +461,8 @@
         "verify_source": "청구서 발급번호와 회계 장부 전표번호가 서로 맞아떨어진다.",
         "check_edits": "전표 번호가 연속적이고 삭제 흔적이 없어 장부 자체의 사후 조작 가능성은 낮다.",
         "question_acquisition": "다른 세대 정보가 포함된 내부 회계자료라 필요한 부분만 가린 채 제출해야 하는 사생활 우려가 남는다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

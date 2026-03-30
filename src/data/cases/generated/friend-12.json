@@ -330,7 +330,8 @@
         "verify_source": "각 캡처의 게시 시각과 플랫폼 공개 시점이 일치해 실제 초기 노출 화면임이 확인된다.",
         "check_edits": "문자열 조작은 없지만 선택적 크롭으로 다른 크레딧 정보가 빠져 있다.",
         "question_acquisition": "공개 자료이긴 하나, 부분 캡처만 반복 유통될 때 오해를 키울 수 있어 전체 맥락 제시가 필요하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -354,7 +355,8 @@
         "verify_source": "노션 버전 기록과 각자 저장한 링크 내용이 동일하다.",
         "check_edits": "플랫폼 revision history라 후편집 흔적은 없다.",
         "question_acquisition": "공동 작업 문서라 적법하지만 다른 미공개 기획 아이디어는 최소 범위만 다루는 것이 바람직하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -379,7 +381,8 @@
         "verify_source": "파일 타임스탬프와 노션 댓글, 음성메모 시각이 서로 이어진다.",
         "check_edits": "원본 세션과 revision log라 사후 조작 흔적은 없다.",
         "question_acquisition": "미공개 작업 파일이 포함돼 있어 외부 공유는 최종 분쟁 해결 범위에 한정돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -405,7 +408,8 @@
         "verify_source": "프로젝트 autosave 기록과 음성메모 타임스탬프가 동일한 수정 구간과 이어진다.",
         "check_edits": "원본 프로젝트와 큐시트라 후편집 흔적은 없다.",
         "question_acquisition": "클라이언트용 예시 파일과 장비 세팅 정보가 포함돼 있어 다른 상업 작업 정보는 비공개가 바람직하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -429,7 +433,8 @@
         "verify_source": "박나경 코디네이터 보관본과 최서린 매니저 export 내용이 일치한다.",
         "check_edits": "기관·플랫폼 보존본이라 후편집 흔적은 없다.",
         "question_acquisition": "제출 자료에는 다른 미공개 홍보 문안이 포함돼 있어 외부 재배포는 제한하는 것이 적절하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -457,7 +462,8 @@
         "verify_source": "플랫폼 수정 기록과 단톡 메시지 순서, 메일 발송 시간이 서로 일치한다.",
         "check_edits": "edit history와 원본 대화라 사후 조작 흔적은 없다.",
         "question_acquisition": "개인 계정 포트폴리오와 미공개 메일 초안이 섞여 있어 공개 범위는 최소화하는 것이 좋다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

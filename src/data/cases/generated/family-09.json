@@ -326,7 +326,8 @@
         "verify_source": "민아 휴대폰 앨범 원본과 메신저 백업 시간이 일치했다.",
         "check_edits": "텍스트 편집 흔적은 없으나 상단과 직전 메시지가 크게 잘려 있다.",
         "question_acquisition": "사적 메시지 캡처라 제출 자체는 가능하지만 부모 설득용 재배포 과정은 민감하다."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-2",
@@ -352,7 +353,8 @@
         "verify_source": "중개사 단말 원본과 메신저 서버 백업 시간이 서로 맞아떨어졌다.",
         "check_edits": "채팅 내보내기와 녹취 원본이라 수동 편집 흔적이 없다.",
         "question_acquisition": "제3자인 중개사의 개인 단말 자료라 사생활 침해 소지가 있으나, 당사자와의 거래분만 제한적으로 제출됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -375,7 +377,8 @@
         "verify_source": "법무사 사무실 접수번호와 CCTV 확인서 번호가 원본과 일치한다.",
         "check_edits": "기관 보관 문서라 편집 흔적이 없다.",
         "question_acquisition": "공식 사무실 기록이라 취득은 적법하지만 부모의 의사능력과 설명 수준은 별도 판단이 필요하다."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-4",
@@ -400,7 +403,8 @@
         "verify_source": "은행 발급번호와 리스사 납부번호가 원본과 일치했다.",
         "check_edits": "기관 발급 자료라 편집 흔적이 없다.",
         "question_acquisition": "도윤이 직접 제출한 자기 금융자료라 취득 정당성은 높다."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-5",
@@ -425,7 +429,8 @@
         "verify_source": "메모 앱 생성 시각과 음성 파일 해시가 중개사 단말 원본과 일치했다.",
         "check_edits": "음성 파일은 편집 흔적이 없고, 수기 메모 사진도 원본 EXIF가 보존돼 있다.",
         "question_acquisition": "중개사의 개인 업무메모라 민감하지만 분쟁 핵심 부분만 제한 제출됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -449,7 +454,8 @@
         "verify_source": "법무사 사무실 접수번호와 녹취 확인서 일련번호가 일치한다.",
         "check_edits": "기관 보관 문서라 편집 흔적이 없다.",
         "question_acquisition": "공식 거래 설명 자료라 적법하지만 부모의 건강상태와 재산 정보가 포함돼 있어 사용 범위는 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

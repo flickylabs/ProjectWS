@@ -327,7 +327,8 @@
         "verify_source": "은행 고객센터 확인 결과 발급본과 서버 원장이 일치했다.",
         "check_edits": "편집 흔적이 없는 원본 PDF다.",
         "question_acquisition": "법인계좌 자료이므로 열람 자체는 적법하지만, 공동대표 승인 방식의 적정성은 별도 쟁점이다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -353,7 +354,8 @@
         "verify_source": "법무사 사무실 문서번호와 신탁원장 번호가 일치했다.",
         "check_edits": "전자서명 검증 결과 편집 흔적이 없다.",
         "question_acquisition": "기관 제출본이라 적법하지만 미완성 투자 조건이 포함돼 사용 범위는 분쟁 해결로 한정해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -376,7 +378,8 @@
         "verify_source": "서준 계정 대화창을 촬영한 것으로 보이지만 원본 대화 내보내기는 없다.",
         "check_edits": "문자열 조작 흔적은 없으나 선택적 크롭이 명확하다.",
         "question_acquisition": "개인 단말에서 무단 확보된 자료라 사생활 및 업무비밀 침해 소지가 크다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -402,7 +405,8 @@
         "verify_source": "대화 해시와 음성파일 길이가 서로 일치했다.",
         "check_edits": "삭제 복원 흔적은 있으나 본문 자체의 조작은 없다.",
         "question_acquisition": "공동 경영 논의를 담은 자료라 제출 정당성은 높지만 사적 감정 대화 일부는 최소한으로만 사용해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -428,7 +432,8 @@
         "verify_source": "세무사 사무실 서버 보관본과 출력본이 일치했다.",
         "check_edits": "기관 보관 메일이라 수정 흔적이 없다.",
         "question_acquisition": "회사 회계자료라 적법하지만 미확정 투자 정보가 포함돼 외부 공개는 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -454,7 +459,8 @@
         "verify_source": "도메인 인증과 회신 경로가 실제 투자사 서버와 일치했다.",
         "check_edits": "헤더 포함 원본이라 편집 흔적이 없다.",
         "question_acquisition": "제3자 확인자료라 적법하지만 투자사 내부 평가 문장은 비식별 처리돼 있다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

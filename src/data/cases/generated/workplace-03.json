@@ -326,7 +326,8 @@
         "verify_source": "앨범 업로드 시각과 참석자 단말 백업 시각 일치. 당일 생성본 확인.",
         "check_edits": "이어붙이기 흔적은 없으나 자동 추출이라 맥락 손실이 핵심 문제다.",
         "question_acquisition": "직원 얼굴·음성이 포함된 사적 회식 영상. 활용 범위를 제한해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -350,7 +351,8 @@
         "verify_source": "멘토방과 동료 수신자 단말의 파일명·시각이 서로 일치한다.",
         "check_edits": "본문 변조 없으나 일부 답장이 잘려 있어 반박 맥락이 누락됐다.",
         "question_acquisition": "사적 조언 대화. 정당한 문제 제기와 명예훼손 경계를 구분해 다뤄야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -375,7 +377,8 @@
         "verify_source": "공유드라이브 버전 이력과 본부 차장 열람 기록이 일치한다.",
         "check_edits": "버전 로그 보존 문서. 사후 편집 흔적 없이 원본성 높음.",
         "question_acquisition": "업무용 공유 문서. 분쟁 해결 범위 내 열람 적법."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -401,7 +404,8 @@
         "verify_source": "총무팀 CCTV와 법인카드 정산 시각이 같은 타임라인을 형성한다.",
         "check_edits": "기관 보존본. 편집·절삭 흔적 없음.",
         "question_acquisition": "CCTV·결제 정보 포함. 필요 구간만 제한적으로 확인해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -425,7 +429,8 @@
         "verify_source": "HR 관리자 조회본과 팀 캘린더 배정 이력이 일치한다.",
         "check_edits": "초기 메모→수정본 모두 보존. 편집 경로 투명.",
         "question_acquisition": "인사자료. 분쟁 해결 목적 외 공개는 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -450,7 +455,8 @@
         "verify_source": "플랫폼 로그와 관리 콘솔 기록이 같은 자동 추출 규칙을 보여준다.",
         "check_edits": "수동 편집이 아닌 시스템 자동 추출. 조작이 아니라 오해가 핵심 문제다.",
         "question_acquisition": "단말 식별자 포함. 필요 메타만 제한 공개해야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

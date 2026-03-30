@@ -331,7 +331,8 @@
         "verify_source": "관리사무소 등록번호와 당사자 서명, 규칙 문구가 보관본과 일치한다.",
         "check_edits": "추가 삽입이나 재작성 흔적이 없다.",
         "question_acquisition": "당사자 계약 및 건물 규칙 문서라 제출 정당성은 충분하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -355,7 +356,8 @@
         "verify_source": "이웃 세입자 단말과 미령 휴대폰 백업의 시각 흐름이 대체로 일치한다.",
         "check_edits": "본문 편집은 없지만 핵심 앞뒤가 빠진 선택적 크롭이 확인된다.",
         "question_acquisition": "제3자가 있는 사적 대화라 공개 범위와 사생활 보호에 주의가 필요하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -379,7 +381,8 @@
         "verify_source": "관리실 일지 시간과 문자 발신 시각, 경수 휴대폰 수신 기록이 서로 맞는다.",
         "check_edits": "업무일지와 문자 원문 모두 사후 편집 흔적이 없다.",
         "question_acquisition": "관리실 기록과 개인 문자가 함께 포함돼 있어 필요한 부분만 사용해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -402,7 +405,8 @@
         "verify_source": "관리자 백업본과 소담 휴대폰 저장 시각이 일치한다.",
         "check_edits": "메시지 원문이라 편집 흔적이 없다.",
         "question_acquisition": "여러 입주민이 있는 단톡 자료라 공개 범위에 각별한 주의가 필요하다."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-5",
@@ -429,7 +433,8 @@
         "verify_source": "채팅 내보내기 시각과 각 단말 저장 시각, 관리실 통화 기록이 서로 맞아떨어진다.",
         "check_edits": "내보내기 원본과 정리표의 순서가 일치해 후작성 가능성은 낮다.",
         "question_acquisition": "다수 입주민 정보가 포함돼 있어 필요한 부분만 가려 사용해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -452,7 +457,8 @@
         "verify_source": "민원대장 번호와 CCTV 확인 메모 시각, 관리실 순찰 기록이 맞아떨어진다.",
         "check_edits": "전산 입력과 종이 대장이 동일해 사후 수정 가능성은 낮다.",
         "question_acquisition": "건물 관리기록이라 분쟁 해결 목적 범위에서 적법성이 높다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

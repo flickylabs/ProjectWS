@@ -326,7 +326,8 @@
         "verify_source": "서림 휴대폰 EXIF와 메신저 업로드 시각 일치. 촬영자 본인 확인.",
         "check_edits": "밝기 보정 외 합성 흔적 없으나 근접 촬영이라 주변 맥락(칸 번호 등)이 잘려 있다.",
         "question_acquisition": "개인 차량 사진으로 자기 자료 제출은 적법. 번호판 포함돼 재유포는 제한."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -351,7 +352,8 @@
         "verify_source": "주차관제 서버와 CCTV 캡처 시각이 동일 차량번호를 가리킨다. 교차 검증 완료.",
         "check_edits": "기관 서버 직출력본. 수정·삭제 흔적 없음.",
         "question_acquisition": "공용주차장 관제자료로 적법. 특정 세대 생활패턴 노출은 최소화 원칙."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-3",
@@ -375,7 +377,8 @@
         "verify_source": "발신 계정·전화번호·대화방 생성일이 양측 정보와 모두 일치.",
         "check_edits": "캡처 일부 크롭 있으나 내보내기 원문 대조 결과 합의 핵심 문장 동일.",
         "question_acquisition": "사적 메신저 대화. 공개 범위는 분쟁 해결 목적으로 한정."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -399,7 +402,8 @@
         "verify_source": "경비실 무전 로그와 사진 업로드 기록 시각 일치. 출처 신뢰도 높음.",
         "check_edits": "기관 저장본. 편집·삭제 흔적 없음 확인.",
         "question_acquisition": "공용주차장 순찰기록으로 적법. 개인 메모 문구는 필요 부분만 활용 원칙."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -424,7 +428,8 @@
         "verify_source": "블랙박스 파일 해시와 보험사 녹취 요약 날짜 일치. 교차 검증 완료.",
         "check_edits": "블랙박스 원본 프레임 연속 + 보험 기록 수정 이력 없음. 조작 가능성 배제.",
         "question_acquisition": "자기 차량 블랙박스 + 본인 보험 접수 자료. 제출 정당성 높음."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -449,7 +454,8 @@
         "verify_source": "내보내기 파일과 관리사무소 수신기록 시간대 일치. 순서 신뢰 가능.",
         "check_edits": "크롭본 있으나 내보내기 원문과 대조해 핵심 게시 문구 동일 확인.",
         "question_acquisition": "입주민 단체방 자료. 호수·제3자 댓글은 마스킹 후 사용 원칙."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

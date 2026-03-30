@@ -325,7 +325,8 @@
         "verify_source": "화면비 16:9와 상단 아이콘이 단지 공동현관 CCTV 앱 UI와 일치.",
         "check_edits": "합성 흔적은 없으나 수취인 식별 영역이 크롭돼 유리한 장면만 남았다.",
         "question_acquisition": "공용 CCTV를 개인이 캡처·전송한 자료라 사생활 침해와 2차 유포 문제가 크다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -349,7 +350,8 @@
         "verify_source": "발신 계정·전화번호가 재현 본인으로 확인.",
         "check_edits": "크롭은 있으나 핵심 문장·발신 시각이 내보내기 원문과 일치.",
         "question_acquisition": "개인 대화가 포함돼 있어 제3자 실명·호수 노출을 최소화해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -374,7 +376,8 @@
         "verify_source": "주문내역·배송사진·실물 상자 송장 일부가 교차 일치.",
         "check_edits": "EXIF 원본 보존, 비교 이미지도 크롭 외 편집 흔적 없음.",
         "question_acquisition": "본인 자발 제출이라 절차 문제는 적으나, 주문내역 상세 노출은 최소화해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -397,7 +400,8 @@
         "verify_source": "대리점 전산·본사 조회 화면에서 운송장·예외코드·기사 ID 일치 확인.",
         "check_edits": "기관 출력본, 편집 흔적 없음. 전산 조회 이력도 보존.",
         "question_acquisition": "운송장·고객 정보 포함 물류기록이므로 분쟁 해결 외 재유포 제한 필요."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -423,7 +427,8 @@
         "verify_source": "GPS 로그 사건번호와 콜센터 접수번호가 동일 운송장 묶음을 가리킴.",
         "check_edits": "통화요약은 발췌본이나, 통화번호·사건번호 역추적으로 원본 대조 가능.",
         "question_acquisition": "물류사 내부 기록이라 적법하나, 기사 개인 위치정보는 사건 시각대만 제한 활용."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -446,7 +451,8 @@
         "verify_source": "메신저 원문 발신 시각과 관리사무소 수신 시각이 교차 일치.",
         "check_edits": "일부 크롭됐으나 원문 대조 결과 핵심 문장·시각 동일.",
         "question_acquisition": "사적 합의 대화 포함 자료 — 필요한 문장만 인용하고 전문 재유포는 금지."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

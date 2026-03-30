@@ -330,7 +330,8 @@
         "verify_source": "진아 휴대폰 원본 파일과 양소라 수신본의 해시가 일치한다.",
         "check_edits": "말풍선 간 간격과 글자 안티앨리어싱 값이 일정하지 않아 합성 편집 흔적이 확인된다.",
         "question_acquisition": "사적인 비밀 연애 대화를 제3자에게 전달한 자료라 사생활 침해 우려가 크다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -356,7 +357,8 @@
         "verify_source": "플랫폼 export ID와 양측 단말의 전송 순서가 일치한다.",
         "check_edits": "다운로드 원본과 대조해 문장 내용의 사후 수정 흔적은 없다.",
         "question_acquisition": "당사자들이 각자 제출한 원본 대화라 절차상 문제는 낮지만 연애 상대의 이름은 최소 공개가 바람직하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -380,7 +382,8 @@
         "verify_source": "이도현 운영진 계정에서 내려받은 페이지와 진아가 보관한 링크 내용이 일치한다.",
         "check_edits": "핵심 규칙 문장은 작성 이후 수정된 이력이 없다.",
         "question_acquisition": "공동 운영 문서라 적법하지만 다른 동호회 내규 부분은 최소 범위만 인용하는 것이 바람직하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -406,7 +409,8 @@
         "verify_source": "정선우 운영간사의 로컬 저장본과 플랫폼 관리자 로그의 값이 서로 일치한다.",
         "check_edits": "서버 보존 기록이라 후편집 흔적이 없다.",
         "question_acquisition": "동호회 선발 자료라 적법하지만 다른 지원자 점수는 비식별화해 다루어야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -432,7 +436,8 @@
         "verify_source": "수신자 대화창과 진아 단말의 메시지 순서가 서로 맞아떨어진다.",
         "check_edits": "앱 내 원본과 대화창이라 후편집 흔적은 없지만 전달 범위가 넓다.",
         "question_acquisition": "업계와 동문이 섞인 방에 사적 비밀을 전파한 자료라 평판 훼손 위험이 높다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -457,7 +462,8 @@
         "verify_source": "스프레드시트 수정 기록과 영수증 발행 시각, 통화기록이 서로 보강된다.",
         "check_edits": "원본 전자영수증과 시트 버전 기록이라 편집 흔적이 없다.",
         "question_acquisition": "이동 동선과 통화정보가 포함돼 있어 분쟁 해결 범위 밖의 세부 위치 정보는 가려야 한다."
-      }
+      },
+      "subjectParty": "b"
     }
   ],
   "evidenceCombinations": [

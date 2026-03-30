@@ -329,7 +329,8 @@
         "verify_source": "1:1 노트와 메신저 원본이 동일 날짜·문구를 가리킨다.",
         "check_edits": "버전 이력 보존 — 사후 덧붙이기 흔적 없음.",
         "question_acquisition": "업무 1:1·메신저 자료 — 분쟁 해결 목적 적법 열람."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -353,7 +354,8 @@
         "verify_source": "혜린 제출 파일명과 타사 온보딩 메일 헤더 일치.",
         "check_edits": "변조 없으나 일부 페이지 누락 — 중복근무 범위 단독 확정 어려움.",
         "question_acquisition": "개인 고용계약 자료 — 공개 범위 최소 제한."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-3",
@@ -377,7 +379,8 @@
         "verify_source": "HR 대시보드 형식과 유사하지만 공식 출력본은 아니다.",
         "check_edits": "변조 없으나 절삭·하이라이트로 전환 불가 프레임이 과장됐다.",
         "question_acquisition": "인사 캡처 — 분쟁 해결 목적에만 한정 사용."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -403,7 +406,8 @@
         "verify_source": "HR 관리자 조회와 고현정 로그 내역 동일.",
         "check_edits": "원본 이력 기반 — 사후 편집 흔적 없음.",
         "question_acquisition": "인사자료 — 공개 최소화, 분쟁 해결 목적 적법 열람."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -427,7 +431,8 @@
         "verify_source": "메일 아카이브와 회의록 링크가 동일 캘린더 이벤트를 가리킨다.",
         "check_edits": "원본 메일·협업 문서 — 사후 수정 흔적 없음.",
         "question_acquisition": "계약 연장·배치 기록 — 적법 확인 가능."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -454,7 +459,8 @@
         "verify_source": "노무 담당 검토표와 원본 시스템 로그가 동일 날짜를 가리킨다.",
         "check_edits": "기관 보존 로그·검토문서 — 사후 편집 흔적 없음.",
         "question_acquisition": "노무·보안 자료 — 접근 엄격 제한, 조사 목적 적법."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

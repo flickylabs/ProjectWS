@@ -328,7 +328,8 @@
         "verify_source": "윤가영의 메신저 프로필·필체 특징과 일부 일치 — 전 세입자 물건일 가능성 높음.",
         "check_edits": "합성 흔적 없으나 전후 맥락 없이 필요한 부분만 촬영 — 선별적 제출.",
         "question_acquisition": "전 세입자 사적 인수인계 흔적이라 소지는 가능하나 공식 권한 증빙으로는 부적합."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -352,7 +353,8 @@
         "verify_source": "경비실 백업과 관리사무소 열람본 해시값 동일 — 무결성 확보.",
         "check_edits": "추출 구간 지정만 됐을 뿐 프레임 삭제·합성 흔적 없음.",
         "question_acquisition": "공용복도 CCTV라 적법하나, 세대 출입 패턴 노출 우려로 사건 구간만 제한 활용."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -376,7 +378,8 @@
         "verify_source": "관리사무소 전산번호와 종이 보존 문서 결재번호 상호 일치.",
         "check_edits": "기관 문서, 편집·수정 이력 없음.",
         "question_acquisition": "공용시설 관리 문서라 적법. 이전 세대 개인 사정은 최소 범위만 공개."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -399,7 +402,8 @@
         "verify_source": "양측 사진의 각도·시간대가 같은 문·같은 물건을 가리킴이 확인.",
         "check_edits": "크롭 외 편집 없음. 글씨 번짐 상태도 실물과 일치.",
         "question_acquisition": "당사자 직접 촬영이라 취득 문제는 적으나, 상대 물건·호수 정보 포함돼 재유포 주의."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-5",
@@ -423,7 +427,8 @@
         "verify_source": "앱 관리자 로그와 휴대폰 메시지 시간 교차 일치.",
         "check_edits": "일부 크롭됐으나 원문 대조 결과 핵심 문장·시각 동일.",
         "question_acquisition": "사적 대화 + 단지앱 글 포함 — 제3자 댓글·연락처를 가리고 활용."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -446,7 +451,8 @@
         "verify_source": "발신 계정·전화번호가 집주인 전달 연락처와 일치.",
         "check_edits": "분할·이어붙이기 흔적 없으나 전후 대화 미포함 — 단독 증거력은 제한적.",
         "question_acquisition": "제3자 개인 음성이라 동의 범위 안에서만 활용. 사건 외 사적 사정 확산 금지."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

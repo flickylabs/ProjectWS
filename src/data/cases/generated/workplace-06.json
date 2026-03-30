@@ -328,7 +328,8 @@
         "verify_source": "팀즈 메시지 ID와 캡처 시간은 일치. 다만 절삭 범위 때문에 해석이 달라진다.",
         "check_edits": "문장 조작은 없으나 절삭·하이라이트로 의미가 과장됐다.",
         "question_acquisition": "개인 단말 저장 조직 공지 캡처. 제출 범위·인명 노출 제한 필요."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -352,7 +353,8 @@
         "verify_source": "권한관리 콘솔과 라우팅 엔진 로그가 같은 계정·세션 ID를 가리킨다.",
         "check_edits": "자동 감사 로그. 사후 편집 흔적 없음.",
         "question_acquisition": "시스템 운영 로그. 조사 범위 내 적법 열람 가능."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -377,7 +379,8 @@
         "verify_source": "PMO 저장소와 배포 메일 첨부본이 같은 버전 해시를 가진다.",
         "check_edits": "버전 이력 보존. 배포 당시 상태 복원 가능.",
         "question_acquisition": "통합 운영 문서. 업무 확인 적법."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -401,7 +404,8 @@
         "verify_source": "CRM 감사 로그와 대시보드 기록이 같은 사용자·세션을 가리킨다.",
         "check_edits": "플랫폼 원본 로그. 사후 편집 흔적 없음.",
         "question_acquisition": "고객 계정 운영 기록. 분쟁 해결 범위 내 적법."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -424,7 +428,8 @@
         "verify_source": "HR 시스템 관리자 조회본과 출력본이 일치한다.",
         "check_edits": "수정 이력 보존. 표현 완화 전 원문까지 확인 가능.",
         "question_acquisition": "인사자료. 사용 목적은 분쟁 해결에 한정."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-6",
@@ -450,7 +455,8 @@
         "verify_source": "PM 도구 알림과 회의록 링크가 같은 이벤트 ID로 연결된다.",
         "check_edits": "보존된 협업 문서. 사후 편집 흔적 없음.",
         "question_acquisition": "통합 운영 회의 자료. 업무 목적 확인 적법."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

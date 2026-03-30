@@ -326,7 +326,8 @@
         "verify_source": "메일 서버 아카이브와 협업도구 링크 로그가 동일 문서 ID를 가리킨다.",
         "check_edits": "원본 메일·링크 기록 — 사후 편집 흔적 없음.",
         "question_acquisition": "업무 정산 자료 — 감사 범위 내 적법 열람."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -350,7 +351,8 @@
         "verify_source": "가맹점 POS 로그와 점장 문자 시각 일치.",
         "check_edits": "재발급본은 진본이지만 원본과 차이가 명확해 의도적 세탁 여부를 비교할 수 있다.",
         "question_acquisition": "가맹점 협조 자료 — 적법하지만 개인 소비 품목 노출은 최소화 필요."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -373,7 +375,8 @@
         "verify_source": "감사 리포트 형식과 열 구성이 달라 공식 출력본인지 별도 확인 필요.",
         "check_edits": "문장 변조는 없으나 선택적 절삭·강조로 해석이 나래 단독 유용 쪽으로 기운다.",
         "question_acquisition": "정훈 자발 제출 — 입수 적법하지만 완전성은 별도 검증 필요."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -398,7 +401,8 @@
         "verify_source": "홍예진 계정 백업과 로컬 시트 히스토리가 동일 셀 변경 순서를 보여 준다.",
         "check_edits": "자동저장 원본 — 사후 편집 흔적 없이 입력 시점 보존.",
         "question_acquisition": "업무 백업 적법 — 계약직 개인 폴더 식별 정보는 최소 공개."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -422,7 +426,8 @@
         "verify_source": "감사 도구와 HR 평가 시스템 타임스탬프가 동일 순서.",
         "check_edits": "초기본·수정본 모두 남아 사후 정리인지 선행 낙인인지 구분 가능.",
         "question_acquisition": "인사·감사 자료 — 분쟁 해결 목적에 한정 공개."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -448,7 +453,8 @@
         "verify_source": "카드사 메타데이터와 협업폴더 백업 로그가 동일 항목 ID를 가리킨다.",
         "check_edits": "플랫폼 원본 로그 — 사후 편집 흔적 없음.",
         "question_acquisition": "법인카드 운영 로그 — 감사 범위 내 적법 열람."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

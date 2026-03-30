@@ -329,7 +329,8 @@
         "verify_source": "플랫폼 내보내기 파일과 하준 휴대폰 스크린 기록 시간이 일치했다.",
         "check_edits": "원본 아카이브라 자르기 흔적은 없지만, 후속 게시물 일부는 수정을 거쳤다.",
         "question_acquisition": "본인 계정 자료라 제출은 적법하나 제3자 댓글과 계정명은 비식별 처리돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -354,7 +355,8 @@
         "verify_source": "메신저 원본과 협찬사 수신함 시간이 서로 맞아떨어졌다.",
         "check_edits": "원본 내보내기라 선택적 삭제 흔적은 없고, 일부 이모티콘만 자동 변환됐다.",
         "question_acquisition": "협찬 담당자와 친척이 포함된 메시지라 분쟁 외 용도로 돌리면 사생활 침해 문제가 크다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -378,7 +380,8 @@
         "verify_source": "캡처가 여러 이용자에게서 동일하게 수집돼 게시물 존재 자체는 확인됐다.",
         "check_edits": "헤더와 댓글 상단이 잘려 있어 작성자 식별에 필요한 정보가 빠져 있다.",
         "question_acquisition": "과거 쉼터와 채무조정 문서가 포함돼 있어 민감정보 유출 문제가 크다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -403,7 +406,8 @@
         "verify_source": "협찬사 메일 서버와 교회 사무실 로그의 IP 정보가 서로 일치했다.",
         "check_edits": "서버 원본이라 편집 흔적이 없고, 헤더 누락도 없다.",
         "question_acquisition": "기관이 비식별 처리 후 제공한 로그라 적법하나, 종교기관 내부 계정 정보는 목적 외 사용을 제한해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -429,7 +433,8 @@
         "verify_source": "백업 해시값과 USB 복사 로그가 디지털권익상담관 보고서와 일치했다.",
         "check_edits": "파일 자체 편집은 없지만, 묶음 복사와 재압축 흔적은 분명하다.",
         "question_acquisition": "과거 쉼터·채무조정 자료라 민감정보성이 매우 높고, 분쟁 해결 범위 외 활용은 엄격히 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -454,7 +459,8 @@
         "verify_source": "협찬사 담당자 진술과 문서 작성 시각이 상담센터 기록과 일치한다.",
         "check_edits": "기관·기업 원본이라 편집 흔적이 없다.",
         "question_acquisition": "민간 기업의 내부 판단 자료이므로 분쟁 해결 목적 외 공개는 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

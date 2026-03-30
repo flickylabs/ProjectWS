@@ -327,7 +327,8 @@
         "verify_source": "민서 수신함과 준서 발신함 헤더가 일치한다.",
         "check_edits": "메일 본문과 첨부문서에 후편집 흔적이 없다.",
         "question_acquisition": "업무용 계정에서 오간 채용 메일이라 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -350,7 +351,8 @@
         "verify_source": "민서 휴대폰과 혜린 기기 내보내기 파일이 일치한다.",
         "check_edits": "대화 원문과 타임스탬프에 조작 흔적이 없다.",
         "question_acquisition": "채용 관련 업무 대화라 제출 정당성은 높다."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-3",
@@ -373,7 +375,8 @@
         "verify_source": "혜린 계정 대화창을 찍은 것은 맞으나 전문 검증은 불가능하다.",
         "check_edits": "문자열 변조 흔적은 없지만 선택적 크롭이 명확하다.",
         "question_acquisition": "개인 기기 캡처라 사생활과 맥락 보존 문제를 함께 고려해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -400,7 +403,8 @@
         "verify_source": "메신저 서버 타임스탬프와 메일 발신 시각이 정확히 이어진다.",
         "check_edits": "원본 내보내기와 헤더에 변조 흔적이 없다.",
         "question_acquisition": "업무용 대화와 채용 메일이라 적법하게 제출됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -426,7 +430,8 @@
         "verify_source": "플랫폼 활동 로그와 두 대표 계정 열람 기록이 일치한다.",
         "check_edits": "버전 히스토리에 삭제나 조작 흔적이 없다.",
         "question_acquisition": "회사 공용 운영문서라 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -452,7 +457,8 @@
         "verify_source": "툴 관리자 로그와 민서 수신함 일정 초대 시각이 정확히 맞아떨어진다.",
         "check_edits": "기관·툴 보관 로그라 후편집 흔적이 없다.",
         "question_acquisition": "서비스 제공업체와 노무사가 확인한 시스템 기록이라 적법하다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

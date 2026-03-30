@@ -333,7 +333,8 @@
         "verify_source": "중개사 메일 헤더와 계약서 서명, 도장이 실제 보관본과 일치한다.",
         "check_edits": "문장 덧씌움이나 재작성 흔적 없이 최초 발송본 상태가 유지돼 있다.",
         "question_acquisition": "당사자 계약 관련 문서라 제출 절차상 정당성 문제는 낮다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -357,7 +358,8 @@
         "verify_source": "세 사람의 단말에서 메시지 순서와 읽음 시각이 대체로 일치한다.",
         "check_edits": "본문 편집 흔적은 없지만 앞뒤 몇 줄이 빠져 해석이 달라지는 선택적 크롭이 확인됐다.",
         "question_acquisition": "당사자와 중개사가 함께 있는 대화라 제3자 발언 공유에는 사생활 주의가 필요하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -380,7 +382,8 @@
         "verify_source": "관리사무소 문서등록번호와 당시 안내문 사본이 서로 일치했다.",
         "check_edits": "종결 메모 덧붙임이나 삭제 흔적은 보이지 않았다.",
         "question_acquisition": "건물 관리기록이라 분쟁 해결 목적 범위에서 적법성 문제는 낮다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -403,7 +406,8 @@
         "verify_source": "중개사 일정표와 진우의 메시지 기록 시간이 서로 맞아떨어진다.",
         "check_edits": "메시지 본문 조작 흔적은 없고 문의표도 원본 촬영 파일이다.",
         "question_acquisition": "가족과 중개사 사이 사적 대화라 공개 범위는 분쟁 관련 부분으로 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -429,7 +433,8 @@
         "verify_source": "캘린더 기록과 중개사 사무실 PC 일정 로그가 일치한다.",
         "check_edits": "오디오 컷 편집 흔적은 없고 캘린더 수정 이력도 없다.",
         "question_acquisition": "제3자인 중개사 개인 메모라 활용 범위에 신중함이 필요하지만, 분쟁 핵심과 직접 관련된다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -455,7 +460,8 @@
         "verify_source": "메일 서버 기록과 중개사 회계 장부의 예약금 부재 내역이 서로 맞는다.",
         "check_edits": "발송 시각과 파일 첨부 이력에 편집 흔적이 없다.",
         "question_acquisition": "기관 확인서와 당사자 메일 기록이라 적법성 문제는 낮다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

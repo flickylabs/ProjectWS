@@ -326,7 +326,8 @@
         "verify_source": "은행 상담센터와 PDF 발급번호 대조로 위변조 흔적이 없었다.",
         "check_edits": "기관 발급 원본이라 편집 흔적이 없다.",
         "question_acquisition": "부모가 자녀 둘에게 공동 열람을 허락한 관리계좌라 조회 자체는 적법하지만 사용 동의 범위는 별도 쟁점이다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -351,7 +352,8 @@
         "verify_source": "휴대폰 포렌식 보고서와 푸시 알림 로그가 일치했다.",
         "check_edits": "메모 수정은 한 차례뿐이고 본문 조작 흔적은 없다.",
         "question_acquisition": "서아 동의 없이 확보된 개인 단말 자료라 사생활 침해 소지가 크다."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-3",
@@ -375,7 +377,8 @@
         "verify_source": "카카오톡 내보내기 파일, 캘린더 변경 이력, 보호사 출근기록이 서로 일치한다.",
         "check_edits": "캡처가 아니라 원본 내보내기라 선택적 삭제 흔적이 적다.",
         "question_acquisition": "가족 공동 일정표와 당사자 대화라 제출 정당성은 높지만 제3자인 요양보호사 연락처는 비식별 처리돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -398,7 +401,8 @@
         "verify_source": "필적은 부친 것과 유사하지만 전체 노트 확인 전엔 의미 해석이 어렵다.",
         "check_edits": "문자 자체 편집 흔적은 없으나 강한 크롭이 확인된다.",
         "question_acquisition": "부친의 사적 수첩 일부라 사용 목적과 공개 범위를 엄격히 제한해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -423,7 +427,8 @@
         "verify_source": "사무실 원본 스캔 파일과 상담접수번호가 일치한다.",
         "check_edits": "전자스캔본이라 편집 흔적이 없고 페이지 누락도 없다.",
         "question_acquisition": "변호사 제출본은 적법하지만 상속 관련 사적 의사표시는 분쟁 해결 범위 내에서만 써야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -446,7 +451,8 @@
         "verify_source": "병원 사회복지팀과 국민건강보험 안내 기준이 일치했다.",
         "check_edits": "기관 출력본이라 편집 흔적이 없다.",
         "question_acquisition": "의료·복지 정보가 포함돼 있어 부모 동의 하에 분쟁 해결 목적에 한해 사용해야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

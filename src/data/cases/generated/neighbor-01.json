@@ -326,7 +326,8 @@
         "verify_source": "SHA-256 해시·기기 시리얼이 한결 휴대폰과 일치. 제3자 기기 촬영 가능성 없음.",
         "check_edits": "프레임 연속성 유지돼 컷 편집은 없으나, 시작·종료 지점이 임의로 짧아 선택적 촬영 의심.",
         "question_acquisition": "공용복도이나 504호 현관문이 정면으로 식별돼 사생활 침해 소지. 증거 사용 시 마스킹 필요."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -351,7 +352,8 @@
         "verify_source": "시설주임 최선미 자필 서명 + 관리사무소 직인 확인. 공적 문서로 출처 신뢰도 높음.",
         "check_edits": "관리사무소 전산 직출력본. PDF 메타데이터상 수정 이력 0건.",
         "question_acquisition": "관리사무소 공식 자료로 절차 적법. 단, 타 세대 위치 정보는 마스킹 후 공개 원칙."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -375,7 +377,8 @@
         "verify_source": "경비실 NVR과 백업 서버 양쪽 해시 일치. 원본 무결성 확인됨.",
         "check_edits": "NVR 원본 저장본으로 프레임 연속성 유지. 편집·삭제 흔적 없음.",
         "question_acquisition": "공용시설 CCTV로 적법 확보. 제3자 얼굴 마스킹 후 활용 가능."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-4",
@@ -400,7 +403,8 @@
         "verify_source": "보수업체 세금계산서와 관리사무소 법인카드 매출 내역 금액·일자 일치.",
         "check_edits": "사진 EXIF GPS·시각과 영수증 원본 대조 완료. 조작·보정 흔적 없음.",
         "question_acquisition": "건물 공용부 보수 자료로 제출 적법. 개인정보 포함 없어 제한 사항 없음."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -424,7 +428,8 @@
         "verify_source": "관리사무소 전산 로그와 통신사 문자 발송 기록이 같은 시각대를 가리킨다.",
         "check_edits": "전산 로그 직출력본으로 편집 흔적 없음. 문자는 통신사 CDR로 이중 확인 완료.",
         "question_acquisition": "공동주택 민원 자료로 분쟁 해결 목적 내 사용 적법. 외부 유출·재배포는 제한."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -447,7 +452,8 @@
         "verify_source": "단체방 내보내기 JSON과 참가자 2인의 개별 캡처가 시각·내용 모두 일치.",
         "check_edits": "상하 크롭이 있으나 핵심 문장 '504호에서 또 내려온다'는 원본과 동일.",
         "question_acquisition": "공개 단체방 자료로 확보 적법. 단, 504호 특정 문구 재유포 시 명예훼손 소지."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

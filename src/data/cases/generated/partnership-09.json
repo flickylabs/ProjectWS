@@ -326,7 +326,8 @@
         "verify_source": "언론 배포 이메일과 전자결재 기록의 파일 해시가 일치한다.",
         "check_edits": "트랙체인지와 결재 이력이 남아 있어 후편집 흐름이 명확하다.",
         "question_acquisition": "회사 홍보자료와 내부 결재문서라 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "b"
     },
     {
       "id": "e-2",
@@ -349,7 +350,8 @@
         "verify_source": "플랫폼 관리자 로그와 각 계정 접속 시각이 서로 맞아떨어진다.",
         "check_edits": "삭제와 삽입 이력이 연속적으로 보존돼 있어 조작이 아니라 원본 수정 흐름으로 확인된다.",
         "question_acquisition": "회사 공용 제출 폴더 자료라 확보 자체는 적법하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -373,7 +375,8 @@
         "verify_source": "인호 계정 화면을 캡처한 것은 맞지만 원본 메일 헤더와 전문은 빠져 있다.",
         "check_edits": "해상도 차이와 자르기 이력이 확인돼 선택적 편집이 명확하다.",
         "question_acquisition": "개인 기기 캡처라 맥락 훼손과 사적 편집 가능성을 함께 따져야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -399,7 +402,8 @@
         "verify_source": "기관 메일 서버 보관본과 회사 수신함 원본이 일치한다.",
         "check_edits": "이미지 EXIF와 편집 앱 로그가 캡처 후 자르기 과정을 보여준다.",
         "question_acquisition": "회사 수신 메일과 포렌식 의뢰 자료라 적법하게 제출됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -426,7 +430,8 @@
         "verify_source": "매장 장비 로그와 제출본 해시, 확인서 문서 생성 기록이 서로 연결된다.",
         "check_edits": "수치 수정과 복사 흔적이 문서 버전별로 선명하게 남아 있다.",
         "question_acquisition": "회사 장비 로그와 제출 문서, 거래처 협조자료라 적법하지만 민감한 거래처 정보는 비식별이 필요하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -452,7 +457,8 @@
         "verify_source": "진흥원 문서번호와 수신 메일 헤더가 서로 일치한다.",
         "check_edits": "기관 보관본이라 후편집 흔적이 없고 비식별 처리만 적용됐다.",
         "question_acquisition": "지원기관이 분쟁 해결 목적 제출을 허용한 자료라 적법하지만 외부 재배포는 제한된다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

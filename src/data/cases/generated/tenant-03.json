@@ -333,7 +333,8 @@
         "verify_source": "서명과 도장, 중개사 등록번호가 모두 살아 있는 원본이다.",
         "check_edits": "특약란에 덧붙이거나 재출력한 흔적 없이 최초 작성본으로 보인다.",
         "question_acquisition": "당사자 계약 문서라 제출 절차상 정당성 문제는 거의 없다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -357,7 +358,8 @@
         "verify_source": "세 사람의 단말에서 메시지 순서와 읽음 표시는 대체로 일치한다.",
         "check_edits": "문장 자체 편집은 없지만 앞뒤 두세 줄이 빠져 인상이 달라지는 선택적 크롭이 확인됐다.",
         "question_acquisition": "당사자 대화지만 제3자인 중개사 발언까지 외부 공유돼 사생활 우려가 남는다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -381,7 +383,8 @@
         "verify_source": "서윤 출금내역과 수취 계좌 입금내역의 거래번호가 서로 맞는다.",
         "check_edits": "기관 발급 PDF와 앱 원본 화면을 대조해도 수정 흔적이 없다.",
         "question_acquisition": "분쟁 정산을 위한 계좌 자료 제출로 정당성은 충분하지만 계좌번호는 최소 범위만 사용해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -407,7 +410,8 @@
         "verify_source": "등기소 열람본과 금융기관 발급번호가 각 기관 조회 결과와 일치한다.",
         "check_edits": "금액 덧쓰기나 스캔 왜곡 없이 원본 발급 상태가 유지돼 있다.",
         "question_acquisition": "등기와 상환예정 확인은 통상 열람 가능한 자료여서 적법성 문제는 낮다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -431,7 +435,8 @@
         "verify_source": "상담센터 통화내역과 휴대폰 발신 목록의 시각 차이가 1분 이내로 일치한다.",
         "check_edits": "오디오 컷 편집 흔적은 없고 파일 생성 시간도 연속적이다.",
         "question_acquisition": "당사자 통화 녹음이지만 제3자 발언과 상담 내용이 섞여 있어 활용 범위에 사생활 주의가 필요하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -456,7 +461,8 @@
         "verify_source": "사무실 회계 담당자 확인과 세금계산서 발행 기록이 서로 맞는다.",
         "check_edits": "전표 번호와 회계 로그가 끊기지 않아 사후 조작 가능성은 낮다.",
         "question_acquisition": "회계 자료는 내부 정보지만 당사자 비용 분쟁 해결을 위해 적법한 요청 절차를 거쳐 제출됐다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

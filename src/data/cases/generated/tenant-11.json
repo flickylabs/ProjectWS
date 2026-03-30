@@ -331,7 +331,8 @@
         "verify_source": "서명, 도장, 중개사 등록번호와 보관 사본 내용이 모두 일치한다.",
         "check_edits": "특약란 지움이나 덧붙임 흔적 없이 최초 작성본 상태가 유지돼 있다.",
         "question_acquisition": "당사자 계약 문서라 제출 절차상 문제는 낮다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -355,7 +356,8 @@
         "verify_source": "나래의 휴대폰과 클라우드 백업 해시값이 일치한다.",
         "check_edits": "자동 보정 외 합성이나 삭제 흔적은 없다.",
         "question_acquisition": "자신이 거주하던 내부 공간을 촬영한 자료라 취득 절차상 문제는 크지 않다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -379,7 +381,8 @@
         "verify_source": "거래번호와 각 영수증 발행번호가 서로 맞아떨어진다.",
         "check_edits": "기관 발급 문서와 카드 매출전표라 편집 흔적이 없다.",
         "question_acquisition": "비용 분쟁 해결을 위한 통상 자료라 적법성 문제는 낮다."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-4",
@@ -404,7 +407,8 @@
         "verify_source": "견적 번호와 시공업체 장부, 계좌 입금 기록이 서로 맞는다.",
         "check_edits": "본문 편집 흔적은 없고 견적서도 최초 발행본이다.",
         "question_acquisition": "사적 대화가 포함돼 공개 범위에는 주의가 필요하지만, 비용 항목의 성격을 가르는 데 직접 관련된다."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-5",
@@ -428,7 +432,8 @@
         "verify_source": "나래 휴대폰과 중개사 전달 캡처의 발신 시각, 게시글 업로드 시간대가 대체로 일치한다.",
         "check_edits": "문장 자체 편집은 없지만 승인 범위를 애매하게 만드는 선택적 크롭이 확인됐다.",
         "question_acquisition": "사적 메신저와 모집글 자료라 제3자 정보 노출 범위에 주의가 필요하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -453,7 +458,8 @@
         "verify_source": "업체 등록번호와 기사 서명, 현장 치수 메모가 서로 맞아떨어진다.",
         "check_edits": "금액 덧쓰기나 항목 삭제 흔적 없는 출력 원본이다.",
         "question_acquisition": "원상복구 범위를 가리는 통상 자료라 제출 절차상 문제는 낮다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

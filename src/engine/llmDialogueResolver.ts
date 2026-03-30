@@ -550,15 +550,14 @@ function buildUserPrompt(
 
   // ── 증거 제시 ──
   if (action.type === 'evidence_present') {
-    // 타깃별 맥락: 행위 당사자인지, 증거 제출/관찰 측인지 구분
+    // 타깃별 맥락: subjectParty 기반으로 행위 당사자 vs 관찰/제출 측 구분
     let targetContext = ''
     if (target && caseData && evidence) {
-      const relatedDispute = evidence.proves[0] ? caseData.disputes.find(d => d.id === evidence.proves[0]) : undefined
-      const quadrant = (relatedDispute as any)?.quadrant as string | undefined
+      const subjectParty = evidence.subjectParty ?? 'both'
       const myName = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
       const opName = target === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
-      const isActor = (quadrant === 'a_only' && target === 'a') || (quadrant === 'b_only' && target === 'b')
-      const isOther = (quadrant === 'a_only' && target === 'b') || (quadrant === 'b_only' && target === 'a')
+      const isActor = subjectParty === target
+      const isOther = (subjectParty === 'a' || subjectParty === 'b') && subjectParty !== target
 
       if (isActor) {
         targetContext = `\n★ 당신(${myName})은 이 증거가 지적하는 행위의 당사자다. 증거 내용에 대해 해명하거나 변명해야 한다.\n`
@@ -832,11 +831,10 @@ function buildJudgeQuestion(
     const evDef = caseData.evidence.find(e => e.id === action.evidenceId)
     const evName = evDef?.name ?? '이 증거'
 
-    // 증거가 증명하는 쟁점의 quadrant로 타깃별 질문 분기
-    const relatedDispute = evDef?.proves[0] ? caseData.disputes.find(d => d.id === evDef.proves[0]) : undefined
-    const quadrant = (relatedDispute as any)?.quadrant as string | undefined
-    const isTargetTheActor = (quadrant === 'a_only' && target === 'a') || (quadrant === 'b_only' && target === 'b')
-    const isTargetTheOther = (quadrant === 'a_only' && target === 'b') || (quadrant === 'b_only' && target === 'a')
+    // subjectParty 기반 타깃별 질문 분기
+    const subjectParty = evDef?.subjectParty ?? 'both'
+    const isTargetTheActor = subjectParty === target
+    const isTargetTheOther = (subjectParty === 'a' || subjectParty === 'b') && subjectParty !== target
 
     if (isTargetTheActor) {
       // 행위 당사자에게 → 해명/추궁

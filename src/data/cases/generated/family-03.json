@@ -324,7 +324,8 @@
         "verify_source": "두 사람 휴대폰의 채팅 원본과 메시지 순서가 일치했다.",
         "check_edits": "텍스트 자체 편집은 없지만 상단과 하단이 크게 잘린 크롭이 확인됐다.",
         "question_acquisition": "당사자 간 대화 캡처라 제출은 가능하지만, 제3자 단톡에 재배포한 행위는 별도 쟁점이 된다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -350,7 +351,8 @@
         "verify_source": "은행 상담센터 발급번호와 PDF 원본 해시가 일치했다.",
         "check_edits": "기관 발급 내역이라 편집 흔적이 없다.",
         "question_acquisition": "정우가 직접 제출한 자기 계좌 자료여서 취득 정당성 문제는 낮다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -375,7 +377,8 @@
         "verify_source": "은행 앱 거래내역과 통신사 백업 문자 내역이 서로 맞아떨어졌다.",
         "check_edits": "메시지와 거래내역 모두 원본 내보내기라 선택적 편집 흔적이 적다.",
         "question_acquisition": "복자가 동의해 제출했지만, 수빈의 계좌와 개인 사정이 함께 드러나 사생활 침해 우려가 있다."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-4",
@@ -398,7 +401,8 @@
         "verify_source": "카카오톡 내보내기 파일과 참석자 캡처 시간이 일치했다.",
         "check_edits": "원본 내보내기라 개별 메시지 잘라내기 흔적은 보이지 않는다.",
         "question_acquisition": "제3자가 포함된 단톡 원본이라 분쟁 외 용도로 재사용하면 사생활 침해 문제가 커질 수 있다."
-      }
+      },
+      "subjectParty": "a"
     },
     {
       "id": "e-5",
@@ -423,7 +427,8 @@
         "verify_source": "휴대폰 녹음 파일 정보와 메신저 전송 원본 시간이 서로 맞는다.",
         "check_edits": "녹음은 무음 구간만 짧게 정리됐지만 대화 흐름을 바꿀 절단 흔적은 없다.",
         "question_acquisition": "당사자 간 통화 녹음이라 활용 가능하지만, 상대 동의 없는 제출이라는 점은 민감하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -448,7 +453,8 @@
         "verify_source": "주민센터 접수번호와 상담사 서명이 원본과 일치한다.",
         "check_edits": "기관 발급본이라 편집 흔적이 없다.",
         "question_acquisition": "두 사람이 함께 받은 상담 자료라 제출 정당성은 높지만, 복지상담 세부 내용은 목적 외 사용을 제한해야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

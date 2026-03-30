@@ -329,7 +329,8 @@
         "verify_source": "다정 휴대폰 원본과 김나현이 받은 전달본의 해시가 일치한다.",
         "check_edits": "문자 조작 흔적은 없지만 상단과 하단이 잘려 조건부 표현이 약해 보이게 한다.",
         "question_acquisition": "사적인 웨딩 준비 대화를 가족과 지인에게 전달한 자료라 사생활 보호가 필요하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -356,7 +357,8 @@
         "verify_source": "오혜민 플래너 계정의 버전 이력과 다정이 보관한 공유 링크 내용이 일치한다.",
         "check_edits": "플랫폼 revision history라 후편집 흔적은 없다.",
         "question_acquisition": "웨딩 일정과 가족 동선이 포함돼 있어 행사 외적 정보는 최소 공개가 바람직하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -380,7 +382,8 @@
         "verify_source": "유상우 단말의 원본 DM과 서아 휴대폰 대화창 시각이 서로 일치한다.",
         "check_edits": "원본 대화와 수기 메모라 사후 조작 흔적은 없다.",
         "question_acquisition": "행사 진행과 곡 정보가 포함돼 있어 외부 공유는 결혼식 범위로 제한하는 것이 적절하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -404,7 +407,8 @@
         "verify_source": "오혜민이 받은 파일 시각과 다정 단말의 전송 기록이 일치한다.",
         "check_edits": "대화와 PDF 원본이라 후편집 흔적은 없다.",
         "question_acquisition": "가족 단톡 자료라 타인 연락처와 개인 일정은 최소 공개가 바람직하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -427,7 +431,8 @@
         "verify_source": "두 단말의 메시지 ID와 전송 순서가 일치한다.",
         "check_edits": "삭제 복원 흔적 없이 전체 대화 흐름이 보존돼 있다.",
         "question_acquisition": "사적인 친구 대화라 재유포 범위는 최소화해야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -453,7 +458,8 @@
         "verify_source": "업체 수신 기록, 플래너 표, 서아 휴대폰 음성메모 타임스탬프가 서로 맞아떨어진다.",
         "check_edits": "전자문서와 원본 음성파일이라 후편집 흔적은 없다.",
         "question_acquisition": "목 상태와 일정 사유가 포함돼 있어 건강·업무 정보는 최소한만 다루는 것이 좋다."
-      }
+      },
+      "subjectParty": "b"
     }
   ],
   "evidenceCombinations": [

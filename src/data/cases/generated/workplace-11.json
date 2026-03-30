@@ -328,7 +328,8 @@
         "verify_source": "연구소 드라이브 버전과 특허관리 시스템 문서 ID가 동일하게 연결된다.",
         "check_edits": "버전 이력 기반 — 사후 편집 흔적 없이 변경 단계 보존.",
         "question_acquisition": "회사 지식재산 문서 — 감사·분쟁 해결 목적 적법 열람."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -352,7 +353,8 @@
         "verify_source": "개인 메일 헤더와 브로커 수신 단말이 동일 파일 해시를 가리킨다.",
         "check_edits": "변조 없으나 답장·첨부 일부 절삭 — 범위 확인에 원문 대조 필요.",
         "question_acquisition": "개인 단말·사설 메신저 포함 — 조사 목적 외 재배포 제한."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -375,7 +377,8 @@
         "verify_source": "플랫폼 형식과 유사하지만 관리자 리포트 전체 열 구성과 다르다.",
         "check_edits": "변조 없으나 절삭·강조로 서린 단독 유출 프레임이 과장됐다.",
         "question_acquisition": "태준 자발 제출 — 입수 적법하지만 완전성 별도 검증 필요."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -400,7 +403,8 @@
         "verify_source": "보안 게이트웨이 로그와 외부세션 CSV가 동일 링크 해시를 가리킨다.",
         "check_edits": "플랫폼 원본 추출본 — 사후 편집 흔적 없음.",
         "question_acquisition": "보안사고 조사 범위 원본 로그 — 적법성 높음."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -424,7 +428,8 @@
         "verify_source": "HR 로그와 브리핑 일정 변경 기록이 동일 시간 순서.",
         "check_edits": "초기본·수정본 모두 남아 사후 미화 여부 구분 가능.",
         "question_acquisition": "인사자료 — 분쟁 해결 목적 외 공개 제한."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -450,7 +455,8 @@
         "verify_source": "가상자산 추적, 송장 번호, 게이트웨이 사건 ID가 서로 대응.",
         "check_edits": "감사팀 서명본·원본 거래 로그 — 사후 편집 흔적 없음.",
         "question_acquisition": "감사·법무 검토 확보 자료 — 적법하지만 외부 인물 식별 정보 최소 공개."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

@@ -328,7 +328,8 @@
         "verify_source": "발주처 메일 서버와 시공 PM의 ERP 기록이 서로 일치한다.",
         "check_edits": "문서 히스토리에 후편집 흔적 없이 최초 발주 흐름이 남아 있다.",
         "question_acquisition": "회사 발주 자료와 협력업체 로그라 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -352,7 +353,8 @@
         "verify_source": "디자인 툴 활동 로그와 시공팀 알림 기록이 서로 맞는다.",
         "check_edits": "댓글 수정 이력과 버전 비교에서 조작 흔적은 없다.",
         "question_acquisition": "회사 공용 디자인 툴 자료라 적법하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -375,7 +377,8 @@
         "verify_source": "부매니저의 실제 계정 화면은 맞지만 원본 전문은 아직 확인되지 않았다.",
         "check_edits": "텍스트 변조 흔적은 없으나 선택적 크롭이 분명하다.",
         "question_acquisition": "직원 개인 기기 캡처라 사생활 및 내부 대화 보호 이슈가 있다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -401,7 +404,8 @@
         "verify_source": "문서 히스토리와 전자서명 로그가 일치한다.",
         "check_edits": "버전 기록상 후속 삭제나 조작은 없다.",
         "question_acquisition": "회사 내부 운영문서라 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -427,7 +431,8 @@
         "verify_source": "관리소 전산 로그와 발급 확인 도장이 일치한다.",
         "check_edits": "기관 출력본이라 편집 흔적이 없다.",
         "question_acquisition": "상가 관리 주체의 공식 기록이어서 적법하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -454,7 +459,8 @@
         "verify_source": "견적서 금액과 자재 대기표의 날짜, 관리소 출입 로그가 서로 일치한다.",
         "check_edits": "원본 PDF와 사진 메타데이터상 조작 흔적이 없다.",
         "question_acquisition": "협력업체 업무자료와 회사 결제자료라 적법하게 수집됐다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

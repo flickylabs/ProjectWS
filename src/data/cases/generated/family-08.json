@@ -329,7 +329,8 @@
         "verify_source": "시설 접수번호와 회계 영수증 번호가 모두 일치했다.",
         "check_edits": "기관 원본이라 편집 흔적이 없다.",
         "question_acquisition": "입소 절차 관련 공문서라 제출 정당성은 높다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -353,7 +354,8 @@
         "verify_source": "통신사 발신내역과 메신저 원본 시간이 서로 맞았다.",
         "check_edits": "내보내기 원본이라 개별 메시지 삭제 흔적은 적다.",
         "question_acquisition": "형제 공동 대화 자료라 활용 가능하지만 다른 친척 연락처는 비식별 처리돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -377,7 +379,8 @@
         "verify_source": "메신저 원본과 사촌의 회신 시간대가 서로 맞물린다.",
         "check_edits": "원본 내보내기라 자르기 흔적은 없고, 통화 메모는 작성 시각이 남아 있다.",
         "question_acquisition": "친척들이 포함된 대화라 사생활 침해 우려가 있어 목적 외 재사용은 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -402,7 +405,8 @@
         "verify_source": "시설 메일 서버 헤더와 녹취 원본 파일 정보가 일치한다.",
         "check_edits": "기관 원본이라 편집 흔적이 없다.",
         "question_acquisition": "입소 절차 확인 자료여서 제출 정당성은 높다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -425,7 +429,8 @@
         "verify_source": "원본 사진의 촬영 일시는 회의 날짜와 맞는다.",
         "check_edits": "강한 크롭으로 하단 문장과 서명란이 사라져 있다.",
         "question_acquisition": "가족 내부 메모라 활용 가능하지만, 맥락 없는 부분제시는 오해를 키울 수 있다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -451,7 +456,8 @@
         "verify_source": "센터 접수번호와 사례관리사 서명이 원본과 일치했다.",
         "check_edits": "기관 보관 문서라 편집 흔적이 없다.",
         "question_acquisition": "공적 사례관리 자료라 적법하지만, 어머니의 건강 정보가 포함돼 있어 분쟁 해결 범위 내 사용이 원칙이다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

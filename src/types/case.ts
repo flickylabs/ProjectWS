@@ -40,6 +40,8 @@ export interface EvidenceNode {
   isTrap: boolean
   requires: string[]
   investigationResults: Record<string, string>
+  /** 이 증거가 보여주는 행위의 주체: a/b/both */
+  subjectParty?: 'a' | 'b' | 'both'
 }
 
 export interface EvidenceCombination {

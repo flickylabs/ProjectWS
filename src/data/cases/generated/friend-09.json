@@ -330,7 +330,8 @@
         "verify_source": "배서현 운영자가 보관한 신고 첨부본과 커뮤니티 재전달 이미지 해시가 일치한다.",
         "check_edits": "확대하면 말풍선 테두리와 여백 값이 일정하지 않아 합성 편집 흔적이 보인다.",
         "question_acquisition": "구매자 DM과 후기 일부가 동의 없이 유통된 자료라 개인정보와 사생활 침해 우려가 크다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -357,7 +358,8 @@
         "verify_source": "플랫폼 export ID와 각 단말의 전송 순서가 일치해 사후 조작 흔적이 없다.",
         "check_edits": "다운로드 원본과 대조해 대화 내용의 후편집 흔적은 없다.",
         "question_acquisition": "당사자 제출 자료이지만 제3자 실명과 상점명이 포함돼 있어 최소 범위 사용이 바람직하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -381,7 +383,8 @@
         "verify_source": "운영자 아카이브 글과 양측 DM 시각이 서로 맞아떨어진다.",
         "check_edits": "아카이브 보존본과 원본 대화라 사후 조작 흔적은 없다.",
         "question_acquisition": "과거 분쟁 자료라 사실관계 확인에는 유용하지만, 오래된 주문자 문의 일부는 비식별화가 필요하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -405,7 +408,8 @@
         "verify_source": "운영자 관리자 로그와 도건 보조 메일 복구 정보가 같은 계정 생성을 가리킨다.",
         "check_edits": "서버 보존 로그라 후편집 흔적은 없다.",
         "question_acquisition": "계정과 기기 정보가 포함돼 있어 분쟁 해결 범위 밖의 세부 로그인 정보는 제한적으로 써야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -433,7 +437,8 @@
         "verify_source": "프로젝트 미리보기와 커뮤니티에 퍼진 e-1 이미지의 레이어 순서가 일치한다.",
         "check_edits": "자르기, 그림자, 텍스트 강조 이력이 프로젝트 내부에 남아 있다.",
         "question_acquisition": "개인 기기 자료라 적법하지만 다른 거래 대화와 주문자 정보는 최소 공개가 필요하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -459,7 +464,8 @@
         "verify_source": "운영자 수신 기록과 양측 단말 대화 순서가 서로 일치한다.",
         "check_edits": "삭제 복원 흔적은 없고 전체 대화 흐름이 보존돼 있다.",
         "question_acquisition": "제3자 운영자와의 소명 자료가 포함돼 있어 커뮤니티 내부 징계 범위 밖 재유포는 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

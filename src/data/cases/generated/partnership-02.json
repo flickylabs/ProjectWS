@@ -327,7 +327,8 @@
         "verify_source": "플랫폼 관리자 로그와 파일 해시가 서로 맞아떨어진다.",
         "check_edits": "삭제 복원이나 이름 바꾸기 흔적 없이 연속 버전이 이어져 있다.",
         "question_acquisition": "회사 공용 영업 플랫폼 자료라 확보 자체는 적법하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -353,7 +354,8 @@
         "verify_source": "전자결재 기록과 고객사 수신본 파일명이 일치한다.",
         "check_edits": "마지막 트랙체인지에서 준오 이름과 공동 발표 문구가 삭제된 흔적이 남아 있다.",
         "question_acquisition": "계약·보상 문서라 적법하지만 보너스 산정 기준 노출 범위는 내부로 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -377,7 +379,8 @@
         "verify_source": "준오 계정의 음성메모 앱 화면과 글꼴 구성이 일치한다.",
         "check_edits": "텍스트 조작 흔적은 없지만 앞뒤 문장이 제거돼 선택적 편집이 뚜렷하다.",
         "question_acquisition": "공유기기 동기화 자료를 명시적 동의 없이 확보한 것이어서 사생활·영업비밀 침해 우려가 있다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -404,7 +407,8 @@
         "verify_source": "고객사 서버 헤더와 시훈데이터랩 등록번호가 서로 맞는다.",
         "check_edits": "헤더 포함 원본이라 수정 흔적이 없다.",
         "question_acquisition": "회사 메일과 고객사 회신을 통해 확보한 자료라 적법하지만 제3자 사업자 정보가 포함돼 사용 범위는 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -430,7 +434,8 @@
         "verify_source": "고객사 문서번호와 담당자 직인이 회신 메일 정보와 일치한다.",
         "check_edits": "기관 발급본이라 편집 흔적이 없고 비식별만 적용됐다.",
         "question_acquisition": "거래처 내부 검토자료라 제공 범위는 엄격히 제한되지만 분쟁 해결 목적 제출은 허용됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -456,7 +461,8 @@
         "verify_source": "전자서명 검증과 드라이브 활동 로그가 서로 일치한다.",
         "check_edits": "최종본에서 준오 관련 줄이 삭제되고 민경 중심 문장이 삽입된 흔적이 선명하다.",
         "question_acquisition": "회사 내부 문서와 로그라 적법하게 확보됐지만 평가·보상 정보는 내부 한정 사용이 원칙이다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

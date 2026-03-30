@@ -332,7 +332,8 @@
         "verify_source": "중개사 사본과 당사자 보관본 내용이 동일하다.",
         "check_edits": "문장 삽입이나 삭제 흔적 없이 초기 작성본 그대로다.",
         "question_acquisition": "당사자 계약서 원본이라 취득 절차에 특별한 문제는 없다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -355,7 +356,8 @@
         "verify_source": "관리소장 확인과 발급 기록이 서로 맞는다.",
         "check_edits": "스캔본 대조 결과 내용 변형은 없었다.",
         "question_acquisition": "건물 관리자료 제출이라 분쟁 해결 목적 범위에서 적법성이 높다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -380,7 +382,8 @@
         "verify_source": "세 참여자 단말의 발신 순서와 읽음 시각이 대체로 맞아떨어진다.",
         "check_edits": "본문 편집은 없지만 거절과 사후 통지 사이를 잘라 인상이 달라진 선택적 크롭이 확인된다.",
         "question_acquisition": "당사자 대화이지만 제3자인 기사 동의 없이 유통된 캡처라 사생활 우려가 남는다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -407,7 +410,8 @@
         "verify_source": "규철 휴대폰 백업 폴더와 제출본 파일명이 연결된다.",
         "check_edits": "이미지 본문 조작은 없지만 타임스탬프가 표시된 갤러리 캡처 생성 시점이 따로 확인된다.",
         "question_acquisition": "세입자 동의 전 촬영된 실내 사진이라 취득 자체가 위법 소지를 강하게 띤다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -433,7 +437,8 @@
         "verify_source": "업체 대표번호 확인과 기사 개인 메모 내용이 일치한다.",
         "check_edits": "금액 수정이나 항목 재배열 흔적이 없는 최초 발행본이다.",
         "question_acquisition": "수리 범위 산정용 통상 자료라 제출 정당성은 충분하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -459,7 +464,8 @@
         "verify_source": "은행 내역과 업체 회계장부의 예약번호가 일치한다.",
         "check_edits": "기관 발행 원본이라 편집 흔적이 없고 취소·환불 흐름도 그대로 남아 있다.",
         "question_acquisition": "공사비 정산을 위한 거래자료라 적법하지만 세부 계좌정보는 최소 범위만 사용해야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

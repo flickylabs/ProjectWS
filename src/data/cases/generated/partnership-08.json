@@ -328,7 +328,8 @@
         "verify_source": "브로커 측 수신함과 시원 기기 로그가 서로 일치한다.",
         "check_edits": "헤더와 문자 원본에 편집 흔적이 없다.",
         "question_acquisition": "후보지 협상에 사용된 업무 자료와 메시지로 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -354,7 +355,8 @@
         "verify_source": "녹취 타임스탬프와 검토표 공유 로그가 일치한다.",
         "check_edits": "원본 오디오와 문서 히스토리에 변조 흔적이 없다.",
         "question_acquisition": "공동대표 회의자료로 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -378,7 +380,8 @@
         "verify_source": "지아 계정 대화 화면은 맞지만 전문 맥락은 빠져 있다.",
         "check_edits": "문자열 조작 흔적은 없으나 크롭과 강조표시가 명확하다.",
         "question_acquisition": "개인 DM 자료라 사생활과 영업비밀 보호 이슈가 있다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -405,7 +408,8 @@
         "verify_source": "드라이브 로그, 메일 헤더, 파일 해시가 서로 일치한다.",
         "check_edits": "원본 버전 기록에 조작 흔적이 없다.",
         "question_acquisition": "업무용 클라우드와 수신 메일에 남은 자료라 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -431,7 +435,8 @@
         "verify_source": "전자서명 검증과 회계 보고서 참조번호가 일치한다.",
         "check_edits": "원본 PDF와 회계 자료에 후편집 흔적이 없다.",
         "question_acquisition": "회사 의사결정 문서와 회계 보고라 적법하지만 외부 공개 범위는 제한된다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -456,7 +461,8 @@
         "verify_source": "회계사 서버 보관본과 송부 이메일 헤더가 일치한다.",
         "check_edits": "원본 메모에 편집 흔적이 없다.",
         "question_acquisition": "외부 회계 검토자료로 적법하게 제출됐지만 사용 범위는 분쟁 해결로 제한된다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [

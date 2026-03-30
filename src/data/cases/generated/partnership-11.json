@@ -327,7 +327,8 @@
         "verify_source": "건물주 측 서명본과 회사 발신 메일, 은행 이체번호가 서로 일치한다.",
         "check_edits": "전자서명 검증 결과 후편집 흔적이 없다.",
         "question_acquisition": "본법인 계약과 법인계좌 자료라 분쟁 해결 목적 확보는 적법하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-2",
@@ -353,7 +354,8 @@
         "verify_source": "전자서명 검증과 노션 활동 로그가 서로 일치한다.",
         "check_edits": "버전 기록상 삭제나 조작 흔적이 없다.",
         "question_acquisition": "회사 내부 의사결정 문서라 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-3",
@@ -377,7 +379,8 @@
         "verify_source": "아린 계정 대화 화면은 맞지만 원본 전문과 파일 전송 내역은 빠져 있다.",
         "check_edits": "문자열 조작 흔적은 없으나 선택적 크롭과 강조 표시가 명확하다.",
         "question_acquisition": "개인 기기 캡처와 거래처 대화라 사생활 및 영업비밀 보호 이슈가 있다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-4",
@@ -403,7 +406,8 @@
         "verify_source": "법원 등기번호, 메일 헤더, 거래처 수신 확인 시각이 서로 맞아떨어진다.",
         "check_edits": "등기부와 원본 메일에 후편집 흔적이 없다.",
         "question_acquisition": "공식 등기와 업무 메일 자료라 적법하게 확보됐다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-5",
@@ -429,7 +433,8 @@
         "verify_source": "플랫폼 활동 로그와 파일 해시가 연속적으로 일치한다.",
         "check_edits": "버전 기록상 문서 조작은 없고 작성 흐름이 그대로 남아 있다.",
         "question_acquisition": "회사 공용 업무 플랫폼 자료라 적법하지만 거래처 식별 정보는 비식별이 필요하다."
-      }
+      },
+      "subjectParty": "both"
     },
     {
       "id": "e-6",
@@ -454,7 +459,8 @@
         "verify_source": "계약 문서번호와 로펌 참조번호, 상표등록 번호가 서로 맞는다.",
         "check_edits": "기관 발급본과 외부 의견서 원본에 후편집 흔적이 없다.",
         "question_acquisition": "회사 계약과 외부 법률 검토 자료라 제출은 적법하지만 외부 재배포는 제한돼야 한다."
-      }
+      },
+      "subjectParty": "both"
     }
   ],
   "evidenceCombinations": [
