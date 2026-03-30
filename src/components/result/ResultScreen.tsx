@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
-import { getRandomCase } from '../../data/cases'
+import { loadGeneratedCases } from '../../data/cases/caseLoader'
+import { saveCaseProgress } from '../phase/CaseMap'
 import ScoreBreakdown from './ScoreBreakdown'
 import TruthReveal from './TruthReveal'
 import Aftermath from './Aftermath'
 import TitleReveal from './TitleReveal'
 import ShareResult from './ShareResult'
 import Emoji from '../common/Emoji'
+import { resetPrefetch } from '../phase/Phase0_CaseIntro'
 
 type ResultTab = 'score' | 'truth' | 'titles' | 'aftermath' | 'share'
 
@@ -17,20 +19,41 @@ export default function ResultScreen() {
   const initializeCase = useGameStore((s) => s.initializeCase)
   const [tab, setTab] = useState<ResultTab>('score')
 
+  // 클리어 시 진행도 저장
+  useEffect(() => {
+    if (verdictScore && caseData) {
+      saveCaseProgress(caseData.caseId, verdictScore.total)
+    }
+  }, [verdictScore, caseData])
+
   if (!verdictScore || !caseData) return null
 
-  // 홈으로
-  const handleHome = () => {
+  const stars = verdictScore.total >= 75 ? 3 : verdictScore.total >= 55 ? 2 : verdictScore.total >= 35 ? 1 : 0
+
+  // 세션(홈)으로 나가기
+  const handleExit = () => {
     useGameStore.getState().clearSavedGame()
     useGameStore.setState({ caseData: null })
     useGameStore.getState().setPhase(GamePhase.Phase0_CaseIntro)
     useGameStore.getState().clearDialogue()
   }
 
-  // 다음 재판 (새 사건)
-  const handleReplay = () => {
-    const newCase = getRandomCase()
-    initializeCase(newCase)
+  // 다음 사건 (같은 세션의 다음 케이스)
+  const handleNextCase = () => {
+    const allCases = loadGeneratedCases()
+    const relType = caseData.duo.relationshipType
+    const diffOrder: Record<string, number> = { easy: 0, medium: 1, hard: 2 }
+    const sessionCases = allCases
+      .filter(c => c.duo.relationshipType === relType)
+      .sort((a, b) => (diffOrder[a.meta?.difficulty ?? 'medium'] ?? 1) - (diffOrder[b.meta?.difficulty ?? 'medium'] ?? 1))
+    const currentIdx = sessionCases.findIndex(c => c.caseId === caseData.caseId)
+    const nextCase = sessionCases[currentIdx + 1]
+    if (nextCase) {
+      resetPrefetch()
+      initializeCase(nextCase)
+    } else {
+      handleExit() // 마지막 사건이면 세션으로 나감
+    }
   }
 
   // 다시 판결하기 (같은 사건, 판결 단계로)
@@ -38,6 +61,18 @@ export default function ResultScreen() {
     useGameStore.getState().resetVerdict()
     useGameStore.getState().setPhase(GamePhase.Phase7_Verdict)
   }
+
+  // 다음 사건 존재 여부
+  const hasNextCase = (() => {
+    const allCases = loadGeneratedCases()
+    const relType = caseData.duo.relationshipType
+    const diffOrder: Record<string, number> = { easy: 0, medium: 1, hard: 2 }
+    const sessionCases = allCases
+      .filter(c => c.duo.relationshipType === relType)
+      .sort((a, b) => (diffOrder[a.meta?.difficulty ?? 'medium'] ?? 1) - (diffOrder[b.meta?.difficulty ?? 'medium'] ?? 1))
+    const currentIdx = sessionCases.findIndex(c => c.caseId === caseData.caseId)
+    return currentIdx < sessionCases.length - 1
+  })()
 
   const TABS: { id: ResultTab; label: string }[] = [
     { id: 'score', label: '평가' },
@@ -81,21 +116,32 @@ export default function ResultScreen() {
         {tab === 'share' && <ShareResult />}
       </div>
 
+      {/* 별점 표시 */}
+      <div className="text-center py-2">
+        {[1, 2, 3].map(i => (
+          <span key={i} className={`text-2xl mx-0.5 ${i <= stars ? 'text-amber-400' : 'text-gray-700'}`}>
+            <Emoji char="★" size={24} />
+          </span>
+        ))}
+      </div>
+
       {/* 하단 버튼 */}
       <div className="border-t border-gray-800 px-4 py-3 space-y-2">
         <div className="flex gap-2">
           <button
-            onClick={handleHome}
+            onClick={handleExit}
             className="flex-1 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold py-2.5 rounded-xl transition-colors text-sm"
           >
-            <Emoji char="🏠" size={14} /> 홈으로
+            나가기
           </button>
-          <button
-            onClick={handleReplay}
-            className="flex-1 bg-amber-600 hover:bg-amber-500 text-gray-950 font-bold py-2.5 rounded-xl transition-colors text-sm"
-          >
-            <Emoji char="⚖️" size={14} /> 다음 재판
-          </button>
+          {hasNextCase && (
+            <button
+              onClick={handleNextCase}
+              className="flex-1 bg-amber-600 hover:bg-amber-500 text-gray-950 font-bold py-2.5 rounded-xl transition-colors text-sm"
+            >
+              <Emoji char="⚖️" size={14} /> 다음 사건
+            </button>
+          )}
         </div>
         <button
           onClick={handleRetry}

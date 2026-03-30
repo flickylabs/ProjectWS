@@ -44,5 +44,5 @@ export const PHASE_ORDER: GamePhase[] = [
 export const MIN_TURNS_BEFORE_ADVANCE: Record<string, number> = {
   [GamePhase.Phase3_Interrogation]: 3,
   [GamePhase.Phase4_Evidence]: 1,
-  [GamePhase.Phase5_ReExamination]: 2,
+  [GamePhase.Phase5_ReExamination]: 0,
 }

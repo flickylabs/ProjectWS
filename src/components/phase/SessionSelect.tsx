@@ -27,14 +27,15 @@ function loadProgress(): Record<string, { bestScore: number; stars: number }> {
   try { return JSON.parse(localStorage.getItem('solomon-case-progress') || '{}') } catch { return {} }
 }
 
-function getSessionProgress(type: string, allCases: any[], progress: Record<string, { bestScore: number; stars: number }>): SessionProgress {
+function getSessionProgress(type: string, allCases: any[], progress: Record<string, { bestScore: number; stars: number }>): SessionProgress & { avgScore: number } {
   const cases = allCases.filter((c: any) => c.duo.relationshipType === type)
-  let cleared = 0, stars = 0
+  let cleared = 0, stars = 0, totalScore = 0
   cases.forEach((c: any) => {
     const p = progress[c.caseId]
-    if (p) { cleared++; stars += p.stars }
+    if (p) { cleared++; stars += p.stars; totalScore += p.bestScore }
   })
-  return { cleared, total: cases.length, stars }
+  const avgScore = cleared > 0 ? totalScore / cleared : 0
+  return { cleared, total: cases.length, stars, avgScore }
 }
 
 export default function SessionSelect({ onSelectSession, onBack }: Props) {
@@ -47,7 +48,7 @@ export default function SessionSelect({ onSelectSession, onBack }: Props) {
 
       {/* 헤더 */}
       <div className="flex items-center justify-between px-4 py-3 shrink-0 border-b border-gray-800/50">
-        <button onClick={onBack} className="text-gray-400 hover:text-white text-sm">← 홈</button>
+        <button onClick={onBack} className="text-gray-400 hover:text-white text-sm">← 이전</button>
         <span className="text-sm font-bold text-amber-400">세션 선택</span>
         <div className="w-10" />
       </div>
@@ -101,9 +102,21 @@ export default function SessionSelect({ onSelectSession, onBack }: Props) {
                   )}
                 </div>
 
-                {/* 화살표 */}
+                {/* 진행도 or 평균 점수 */}
                 {isUnlocked && (
-                  <span className="text-gray-600 text-sm shrink-0">›</span>
+                  <div className="text-right shrink-0 min-w-[48px]">
+                    {stats.cleared === stats.total && stats.total > 0 ? (
+                      <div>
+                        <div className="text-lg font-bold text-amber-400">{stats.avgScore.toFixed(1)}</div>
+                        <div className="text-[10px] text-amber-500/60">평균</div>
+                      </div>
+                    ) : (
+                      <div>
+                        <div className="text-sm font-bold text-gray-400">{stats.cleared}/{stats.total}</div>
+                        <div className="text-[10px] text-gray-600">진행</div>
+                      </div>
+                    )}
+                  </div>
                 )}
               </div>
             </button>
