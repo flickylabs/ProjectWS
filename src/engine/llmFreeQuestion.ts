@@ -33,6 +33,14 @@ interface ClassifierResult {
   confidence: number
 }
 
+export interface EvidenceContext {
+  name: string
+  description: string
+  subjectParty?: 'a' | 'b' | 'both'
+  provenance: string
+  reliability: string
+}
+
 export async function processFreeQuestion(
   question: string,
   target: PartyId,
@@ -40,6 +48,7 @@ export async function processFreeQuestion(
   agentB: AgentState,
   caseData: CaseData,
   evidenceStates?: Record<string, EvidenceRuntimeState>,
+  evidenceContext?: EvidenceContext,
 ): Promise<FreeQuestionResult> {
   const agent = target === 'a' ? agentA : agentB
   const party = target === 'a' ? caseData.duo.partyA : caseData.duo.partyB
@@ -49,7 +58,7 @@ export async function processFreeQuestion(
   const classification = await classifyQuestion(question, caseData, evidenceStates)
 
   // ── 2콜: 응답 ──
-  return generateResponse(question, classification, target, agent, party, opponent, caseData)
+  return generateResponse(question, classification, target, agent, party, opponent, caseData, evidenceContext)
 }
 
 /* ── 1콜: classifier ─────────────────────── */
@@ -139,6 +148,7 @@ async function generateResponse(
   party: CaseData['duo']['partyA'],
   opponent: CaseData['duo']['partyA'],
   caseData: CaseData,
+  evidenceContext?: EvidenceContext,
 ): Promise<FreeQuestionResult> {
   const rawCall = getMyCall(caseData.duo, target)
   const myCall = rawCall === '자기' ? '자기야' : rawCall
@@ -243,7 +253,22 @@ async function generateResponse(
     ? getAgentConfig('free_question_responder')
     : getPromptConfig('free_question')
 
-  const userMessage = `분류가 끝난 자유 질문에 캐릭터로서 응답한다.\n원문 질문: "${question}"\nclassifier 결과:\n- questionType: ${classification.questionType}\n- focusedDisputeId: ${classification.primaryDisputeId ?? 'null'}\n- secondaryDisputeId: ${classification.secondaryDisputeId ?? 'null'}\n- confidence: ${classification.confidence}\n\n규칙:\n- 분류 결과를 다시 바꾸지 않는다.\n- focusedDisputeId(${classification.primaryDisputeId ?? 'null'})를 중심으로 답한다.\n- 출력은 JSON 객체 하나만 한다.`
+  // 증거 대질인 경우 증거 맥락 추가
+  let evidenceBlock = ''
+  if (evidenceContext) {
+    const myName = party.name
+    const opName = opponent.name
+    const isActor = evidenceContext.subjectParty === target
+    const isOther = (evidenceContext.subjectParty === 'a' || evidenceContext.subjectParty === 'b') && evidenceContext.subjectParty !== target
+    const roleDesc = isActor
+      ? `당신(${myName})은 이 증거가 지적하는 행위의 당사자다. 증거 내용에 대해 해명해야 한다.`
+      : isOther
+      ? `당신(${myName})은 행위 당사자가 아니다. ${opName}의 행위에 대한 증거이므로, 이 증거에 대한 의견이나 맥락을 말해야 한다. ${opName}인 것처럼 변명하지 마라.`
+      : `이 증거는 양쪽 모두와 관련된다.`
+    evidenceBlock = `\n\n★ 증거 대질 맥락:\n- 증거명: ${evidenceContext.name}\n- 증거 설명: ${evidenceContext.description}\n- 출처: ${evidenceContext.provenance} / 신뢰도: ${evidenceContext.reliability}\n- ${roleDesc}\n- 재판관의 질문은 이 증거를 기반으로 하고 있다. 증거 내용을 고려하여 답변하라.`
+  }
+
+  const userMessage = `분류가 끝난 자유 질문에 캐릭터로서 응답한다.\n원문 질문: "${question}"\nclassifier 결과:\n- questionType: ${classification.questionType}\n- focusedDisputeId: ${classification.primaryDisputeId ?? 'null'}\n- secondaryDisputeId: ${classification.secondaryDisputeId ?? 'null'}\n- confidence: ${classification.confidence}${evidenceBlock}\n\n규칙:\n- 분류 결과를 다시 바꾸지 않는다.\n- focusedDisputeId(${classification.primaryDisputeId ?? 'null'})를 중심으로 답한다.\n- 출력은 JSON 객체 하나만 한다.`
 
   try {
     const raw = await chatCompletion(

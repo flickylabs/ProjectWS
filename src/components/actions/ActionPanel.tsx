@@ -169,13 +169,21 @@ export default function ActionPanel() {
     }
     s.changeEmotion(target, evDef.reliability === 'hard' ? 15 : 8)
 
-    // 3. 유저의 대질 질문을 자유질문으로 처리 (LLM 1회만)
+    // 3. 유저의 대질 질문을 자유질문으로 처리 (LLM 1회만, 증거 맥락 포함)
     const prefixedQuestion = `[증거 "${evDef.name}"] ${question}`
     s.addDialogue({ speaker: 'judge', text: question, relatedDisputes: evDef.proves, turn: s.turnCount })
 
+    const evCtx = {
+      name: evDef.name,
+      description: evDef.description,
+      subjectParty: evDef.subjectParty,
+      provenance: evDef.provenance,
+      reliability: evDef.reliability,
+    }
+
     s.setLLMLoading(true, target)
     try {
-      const result = await processFreeQuestion(prefixedQuestion, target, s.agentA, s.agentB, caseData)
+      const result = await processFreeQuestion(prefixedQuestion, target, s.agentA, s.agentB, caseData, undefined, evCtx)
       const fresh = useGameStore.getState()
       fresh.setLLMLoading(false)
       fresh.addDialogue({ speaker: target, text: result.response, relatedDisputes: result.disputeId ? [result.disputeId] : [], turn: fresh.turnCount, behaviorHint: result.behaviorHint })
