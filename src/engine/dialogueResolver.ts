@@ -174,7 +174,19 @@ export function generateDynamicFallback(
 
   const selectedResponses = responseMap[qt] ?? factResponses
   const stateResponses = selectedResponses[lieState] ?? selectedResponses['S0']
-  const text = stateResponses[phase] ?? stateResponses['defensive']
+  let text = stateResponses[phase] ?? stateResponses['defensive']
+
+  // 중복 방지: 직전 대사와 동일하면 다른 감정 변형을 시도
+  const recentTexts = useGameStore.getState().dialogueLog
+    .filter(d => d.speaker === target)
+    .slice(-3)
+    .map(d => d.text)
+  if (recentTexts.includes(text)) {
+    const alternatives = Object.values(stateResponses).filter(t => t !== text && !recentTexts.includes(t))
+    if (alternatives.length > 0) {
+      text = alternatives[Math.floor(Math.random() * alternatives.length)]
+    }
+  }
 
   const behaviorHints: Record<string, string> = {
     defensive: '신중하게 단어를 고르며 말한다.',

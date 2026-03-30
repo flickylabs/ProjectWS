@@ -7,7 +7,7 @@ import { generateWitnessTestimony, canCallWitness } from '../engine/witnessEngin
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
 import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
 import { iga, eunneun } from '../utils/korean'
-import { showToast } from '../components/common/Toast'
+import { showToast, showLLMErrorBanner } from '../components/common/Toast'
 import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
 import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
@@ -539,9 +539,9 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
         }
       }
     } catch (e) {
-      // LLM 실패 → 폴백 + 토스트
-      const msg = e instanceof Error && e.message.includes('fetch') ? 'AI 서버에 연결할 수 없습니다' : 'AI 응답 생성에 실패했습니다'
-      showToast(msg, 'warn')
+      // LLM 실패 → 폴백 + 에러 배너
+      console.error('[LLM] resolveAndApply 실패:', e)
+      showLLMErrorBanner()
     }
     useGameStore.getState().setLLMLoading(false)
   }
