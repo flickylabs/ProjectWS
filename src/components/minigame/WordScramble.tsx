@@ -78,33 +78,63 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
 
   const allFilled = slots.every(s => s !== null)
 
-  // 단어 카드 탭 → 다음 빈 슬롯에 배치
+  // 선택된 슬롯 인덱스 (교환용)
+  const [selectedSlot, setSelectedSlot] = useState<number | null>(null)
+
+  // 글자 카드 탭 → 다음 빈 슬롯에 배치 (또는 선택된 슬롯에 배치)
   const handleWordTap = useCallback((cardId: number) => {
     if (result !== null || isChecking) return
-    const nextEmptyIdx = slots.findIndex(s => s === null)
-    if (nextEmptyIdx === -1) return
 
-    setSlots(prev => {
-      const next = [...prev]
-      next[nextEmptyIdx] = cardId
-      return next
-    })
-    setAvailable(prev => prev.filter(id => id !== cardId))
-  }, [slots, result, isChecking])
+    if (selectedSlot !== null) {
+      // 선택된 슬롯에 배치 (기존 카드는 available로)
+      const existing = slots[selectedSlot]
+      setSlots(prev => {
+        const next = [...prev]
+        next[selectedSlot] = cardId
+        return next
+      })
+      setAvailable(prev => {
+        let updated = prev.filter(id => id !== cardId)
+        if (existing !== null) updated = [...updated, existing]
+        return updated
+      })
+      setSelectedSlot(null)
+    } else {
+      const nextEmptyIdx = slots.findIndex(s => s === null)
+      if (nextEmptyIdx === -1) return
+      setSlots(prev => {
+        const next = [...prev]
+        next[nextEmptyIdx] = cardId
+        return next
+      })
+      setAvailable(prev => prev.filter(id => id !== cardId))
+    }
+  }, [slots, result, isChecking, selectedSlot])
 
-  // 슬롯 탭 → 다시 available로 반환
+  // 슬롯 탭 → 선택/교환/제거
   const handleSlotTap = useCallback((slotIdx: number) => {
     if (result !== null || isChecking) return
     const cardId = slots[slotIdx]
-    if (cardId === null) return
 
-    setSlots(prev => {
-      const next = [...prev]
-      next[slotIdx] = null
-      return next
-    })
-    setAvailable(prev => [...prev, cardId])
-  }, [slots, result, isChecking])
+    if (selectedSlot !== null) {
+      if (selectedSlot === slotIdx) {
+        // 같은 슬롯 다시 탭 → 선택 해제
+        setSelectedSlot(null)
+      } else {
+        // 다른 슬롯 탭 → 교환
+        setSlots(prev => {
+          const next = [...prev]
+          next[selectedSlot] = prev[slotIdx]
+          next[slotIdx] = prev[selectedSlot]
+          return next
+        })
+        setSelectedSlot(null)
+      }
+    } else if (cardId !== null) {
+      // 빈 슬롯이 아니면 선택 (하이라이트)
+      setSelectedSlot(slotIdx)
+    }
+  }, [slots, result, isChecking, selectedSlot])
 
   // 확인 버튼
   const handleCheck = useCallback(() => {
@@ -179,14 +209,19 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
 
             {/* 배치 영역 (슬롯) */}
             <div className="mb-4">
-              <div className="text-xs text-gray-500 mb-1.5">배치 영역</div>
+              <div className="text-xs text-gray-500 mb-1.5">
+                배치 영역 {selectedSlot !== null && <span className="text-amber-400">— 다른 글자를 탭하면 교환</span>}
+              </div>
               <div className="flex flex-wrap gap-1.5 min-h-[44px]">
                 {slots.map((cardId, slotIdx) => {
                   const check = checkResults[slotIdx]
                   const word = cardId !== null ? shuffledWords.find(w => w.id === cardId)?.word : null
 
+                  const isSelected = selectedSlot === slotIdx
                   let slotClass = 'border-2 border-dashed border-gray-700 rounded-lg'
-                  if (cardId !== null && check === null) {
+                  if (isSelected) {
+                    slotClass = 'bg-amber-900/40 border-2 border-amber-400 rounded-lg ring-2 ring-amber-400/30'
+                  } else if (cardId !== null && check === null) {
                     slotClass = 'bg-gray-800 border border-gray-600 rounded-lg'
                   } else if (check === 'correct') {
                     slotClass = 'bg-emerald-900/40 border border-emerald-600 rounded-lg'
@@ -198,7 +233,7 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
                     <button
                       key={slotIdx}
                       onClick={() => handleSlotTap(slotIdx)}
-                      disabled={cardId === null || isChecking}
+                      disabled={(cardId === null && selectedSlot === null) || isChecking}
                       className={`
                         relative px-2 py-1.5 text-sm min-w-[36px] text-center
                         transition-all active:scale-95 cursor-pointer
