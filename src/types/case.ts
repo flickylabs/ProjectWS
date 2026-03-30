@@ -79,6 +79,8 @@ export interface ContextSeed {
 
 export interface CaseMeta {
   relationshipType: string
+  relationshipState?: string
+  familyRelation?: string
   conflictSeed: string
   variableModules?: string[]
   twistModule?: string | null

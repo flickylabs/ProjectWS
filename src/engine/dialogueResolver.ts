@@ -2,6 +2,7 @@ import type { DialogueNode, DialogueCondition, PlayerAction, PartyId } from '../
 import type { AgentState } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
 import { interrogationNodes } from '../data/dialogues/phase3-5'
+import { useGameStore } from '../store/useGameStore'
 
 export interface ResolvedDialogue {
   node: DialogueNode

@@ -190,7 +190,7 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     setItem: (name, value) => sessionStorage.setItem(name, JSON.stringify(value)),
     removeItem: (name) => sessionStorage.removeItem(name),
   },
-  partialize: (state) => ({
+  partialize: (state): any => ({
     // phase
     currentPhase: state.currentPhase,
     phaseHistory: state.phaseHistory,

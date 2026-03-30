@@ -308,7 +308,7 @@ function buildSystemPrompt(
 
   // ── 보강 데이터: 성격 태그 + 상성 힌트 + 서사 확장 ──
   let enrichmentInfo = ''
-  const caseKey = normalizeCaseKey(caseData.caseId)
+  const caseKey = normalizeCaseKey(caseData)
 
   // 성격 태그 → NPC 반응 패턴 지시
   const pTags = getPersonalityTags(caseKey)
@@ -851,8 +851,8 @@ function buildInvestigationResult(
   return state.investigatedActions
     .filter(action => results[action] != null)
     .map(action => {
-      const val = results[action]
-      const text = typeof val === 'string' ? val : val?.result ?? ''
+      const val = results[action] as string | { result: string } | undefined
+      const text = typeof val === 'string' ? val : (val && typeof val === 'object' && 'result' in val) ? val.result : ''
       return `${action}: ${text}`
     })
     .join('\n')

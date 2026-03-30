@@ -11,25 +11,14 @@ export interface EvalCase {
   phase: string
   target: string
   disputeId: string
-  action: { type: string; questionType?: string; evidenceId?: string; trustActionType?: string }
+  action: Record<string, unknown>
   judgeQuestion: string
   userMessage: string
-  actionContract: {
-    actionType: string
-    questionType?: string
-    trustActionType?: string
-    responseMode: string
-    answerStyle?: string
-    goal: string
-    revealBudget: { fact: number; motive: number; emotion: number }
-    allowedTruthIds: string[]
-    forbiddenTruthIds: string[]
-    [key: string]: unknown
-  }
+  actionContract: Record<string, unknown>
   expected: {
     stance: string[]
     responseMode: string
-    forbiddenTruthIds: string[]
+    forbiddenTruthIds?: string[]
     forbiddenKeywords?: string[]
     forbiddenDisputes?: string[]
     mustStartWithOneOf?: string[]
