@@ -26,6 +26,8 @@ const emojiMap: Record<string, string> = {
   "🧤": "1f9e4.png", "🔗": "1f517.png", "✓": "2713.png", "✕": "2715.png",
   "✗": "2717.png", "♥": "2665.png",
   "📢": "1f4e2.png", "📨": "1f4e8.png", "👈": "1f448.png", "👉": "1f449.png",
+  "❤️": "2764-fe0f.png", "💢": "1f4a2.png", "🎭": "1f3ad.png", "📡": "1f4e1.png",
+  "💑": "1f491.png", "🏘️": "1f3d8-fe0f.png",
   "🌱": "tier_01_seedling.png", "🌿": "tier_02_herb.png", "💎": "tier_06_gem.png",
   "📧": "evidence_email.png", "💻": "evidence_digital.png", "📷": "evidence_photo.png",
   "🔐": "evidence_access.png", "🔊": "evidence_audio.png",
