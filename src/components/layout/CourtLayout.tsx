@@ -235,20 +235,20 @@ function MinigameOverlay() {
     }
 
     if (minigameVariant === 'word_scramble') {
-      // 증거 이름을 단어로 분해 (4~7개)
+      // 증거 이름 기반 문장을 5~7단어로 구성
       const evDef = evidenceDefinitions.find(e => e.id === evidenceId)
-      let wordSource = evDef?.name ?? '증거를 발견했습니다'
-      let words = wordSource.split(/\s+/).filter(w => w.length > 0)
-      // 4개 미만이면 description 첫 문장 사용
-      if (words.length < 4) {
-        const desc = evDef?.description ?? ''
-        const firstSentence = desc.split(/[.!?。]/)[0].trim()
-        if (firstSentence.length > 0) words = firstSentence.split(/\s+/).filter(w => w.length > 0)
+      const evName = evDef?.name ?? '새로운 증거'
+      const nameWords = evName.split(/\s+/).filter(w => w.length > 0)
+
+      let words: string[]
+      if (nameWords.length >= 5) {
+        // 이름 자체가 충분히 길면 그대로 사용 (최대 7개)
+        words = nameWords.slice(0, 7)
+      } else {
+        // 이름이 짧으면 문장으로 확장: "새로운 증거 [이름] 확보"
+        words = ['새로운', '증거', ...nameWords, '확보']
+        if (words.length < 5) words.splice(2, 0, '핵심')
       }
-      // 최대 7개
-      words = words.slice(0, 7)
-      // 그래도 4개 미만이면 padding
-      while (words.length < 4) words.push(`단서${words.length + 1}`)
       return (
         <WordScramble
           words={words}
