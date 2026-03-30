@@ -46,3 +46,6 @@ export const MIN_TURNS_BEFORE_ADVANCE: Record<string, number> = {
   [GamePhase.Phase4_Evidence]: 1,
   [GamePhase.Phase5_ReExamination]: 0,
 }
+
+/** 최대 턴 수 — 초과 시 자동으로 Phase6(중재안)으로 전환 */
+export const MAX_TURNS = 20

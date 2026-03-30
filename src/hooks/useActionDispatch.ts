@@ -684,9 +684,28 @@ function changeEmotionWithPhaseTracking(party: PartyId, delta: number) {
     const name = party === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name
     const prevLabel = PHASE_LABELS[prevPhase] ?? prevPhase
     const newLabel = PHASE_LABELS[newPhase] ?? newPhase
+
+    let emotionText: string
+    switch (newPhase) {
+      case 'angry':
+        emotionText = `💢 ${name}이 폭발 직전이다!`
+        break
+      case 'shaken':
+        emotionText = `😰 ${name}이 흔들리고 있다...`
+        break
+      case 'resigned':
+        emotionText = `😞 ${name}이 지쳐 보인다.`
+        break
+      case 'confident':
+        emotionText = `😤 ${name}이 자신감을 되찾았다.`
+        break
+      default:
+        emotionText = `🎭 ${name}의 감정 변화: ${prevLabel} → ${newLabel}`
+    }
+
     useGameStore.getState().addDialogue({
       speaker: 'system',
-      text: `🎭 ${name}의 감정 변화: ${prevLabel} → ${newLabel}`,
+      text: emotionText,
       relatedDisputes: [],
       turn: useGameStore.getState().turnCount,
     })
@@ -718,7 +737,7 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
 
   // 발견 확률: 거짓말 상태가 깊을수록 높음
   const chanceByState: Record<string, number> = {
-    S0: 0.25, S1: 0.40, S2: 0.50, S3: 0.65, S4: 0.80, S5: 1.0,
+    S0: 0.50, S1: 0.80, S2: 1.0, S3: 1.0, S4: 1.0, S5: 1.0,
   }
   const chance = chanceByState[lieEntry?.currentState ?? 'S0'] ?? 0.2
   if (Math.random() > chance) return
@@ -929,7 +948,10 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
   if (newState && labels[newState]) {
     if (newState === 'S5') playLieCollapse()
     const icon = newState >= 'S4' ? '💥' : '⚡'
-    state.addDialogue({ speaker: 'system', text: `${icon} ${name} — "${dispute?.name}" | ${labels[newState]}`, relatedDisputes: [disputeId], turn: state.turnCount })
+    const text = newState === 'S5'
+      ? `🔥 결정적 순간 — ${name}의 '${dispute?.name}' 거짓말이 무너졌다!`
+      : `${icon} ${name} — "${dispute?.name}" | ${labels[newState]}`
+    state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
   }
 }
 

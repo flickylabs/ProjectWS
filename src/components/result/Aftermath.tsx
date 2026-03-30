@@ -29,21 +29,55 @@ export default function Aftermath() {
       const solutions = verdictInput.selectedSolutions.join(', ') || '특별한 해결책 없음'
       const score = `통찰 ${verdictScore.insight}, 권위 ${verdictScore.authority}, 지혜 ${verdictScore.wisdom}`
 
+      // 사실 판단 결과
+      const factResults = Object.entries(verdictInput.factFindings)
+        .map(([id, val]) => {
+          const dispute = caseData.disputes.find(d => d.id === id)
+          return dispute ? `${dispute.name}: ${val === 'true' ? '사실' : val === 'false' ? '허위' : val === 'pending' ? '판단 보류' : '모호'}` : ''
+        })
+        .filter(Boolean).join('\n')
+
+      // 책임 배분
+      const respResults = Object.entries(verdictInput.responsibility)
+        .map(([id, val]) => {
+          const dispute = caseData.disputes.find(d => d.id === id)
+          return dispute ? `${dispute.name}: ${nameA} ${val.a}% / ${nameB} ${val.b}%` : ''
+        })
+        .filter(Boolean).join('\n')
+
+      const endingTone = verdictScore.total >= 75 ? '희망적이고 성장하는 톤'
+        : verdictScore.total >= 55 ? '씁쓸하지만 의미 있는 톤'
+        : verdictScore.total >= 35 ? '아쉽고 불완전한 톤'
+        : '씁쓸하고 후회가 남는 톤'
+
       const prompt = `법정 심문 추리 게임의 판결 후일담을 작성하세요.
 
 당사자: ${nameA} vs ${nameB}
 관계: ${caseData.duo.relationshipType}
 배경: ${caseData.context.description}
+
+## 재판관의 판결
+사실 판단:
+${factResults}
+
+책임 배분:
+${respResults}
+
 선택한 해결책: ${solutions}
-판결 점수: ${score}
+판결 점수: ${score} (총점 ${verdictScore.total})
 
 ## 규칙
-- 판결 이후 1주일~1개월 후의 상황을 2~3문단으로 묘사
-- 선택한 해결책이 실제로 어떤 영향을 미쳤는지
-- 두 사람의 관계가 어떻게 변했는지
-- 점수가 높으면 긍정적, 낮으면 부정적 결과
-- 한국어로. 소설처럼 담담한 문체.
-- 마지막에 한 줄로 교훈이나 여운을 남겨주세요.`
+- 톤: ${endingTone}
+- 판결 이후 1주일~1개월 후의 상황을 3~4문단으로 묘사
+- 사실 판단과 책임 배분이 두 사람에게 어떤 영향을 미쳤는지 구체적으로
+- 선택한 해결책의 실제 결과를 보여줘 (잘된 점, 안 된 점 모두)
+- 두 사람이 각각 무엇을 느꼈는지 내면까지 묘사
+- 점수 75+ : 판결이 전환점이 되어 관계가 회복되는 방향
+- 점수 55~74: 일부는 해결됐지만 완전하지 않은 여운
+- 점수 35~54: 판결이 또 다른 갈등의 씨앗을 남김
+- 점수 ~34: 판결이 상황을 악화시킴
+- 한국어. 소설처럼 담담하고 현실적인 문체.
+- 마지막 문단은 한 줄로 교훈이나 여운을 남겨주세요.`
 
       const response = await chatCompletion(
         [{ role: 'user', content: prompt }],

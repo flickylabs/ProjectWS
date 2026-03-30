@@ -6,6 +6,7 @@ import SettingsPanel from './SettingsPanel'
 import ResourcePopup from '../shop/ResourcePopup'
 import Emoji from '../common/Emoji'
 import { checkConnection } from '../../engine/llmClient'
+import { MAX_TURNS } from '../../utils/constants'
 
 export default function TopBar() {
   const [showSettings, setShowSettings] = useState(false)
@@ -21,6 +22,32 @@ export default function TopBar() {
   const getCountdown = useGameStore((s) => s.getNextRechargeCountdown)
   const watchAdInvest = useGameStore((s) => s.watchAdForInvest)
   const watchAdSkill = useGameStore((s) => s.watchAdForSkill)
+
+  const currentPhase = useGameStore((s) => s.currentPhase)
+  const turnCount = useGameStore((s) => s.turnCount)
+  const processMetrics = useGameStore((s) => s.processMetrics)
+
+  // Phase3 이후 단계 여부
+  const LATE_PHASES = [
+    GamePhase.Phase3_Interrogation,
+    GamePhase.Phase4_Evidence,
+    GamePhase.Phase5_ReExamination,
+    GamePhase.Phase6_Mediation,
+    GamePhase.Phase7_Verdict,
+    GamePhase.Result,
+  ]
+  const isLatePhase = LATE_PHASES.includes(currentPhase)
+
+  // 예상 점수 계산 (최대 100)
+  const estimatedScore = Math.min(
+    100,
+    processMetrics.liesCollapsed * 10
+    + processMetrics.evidenceDiscovered * 8
+    + processMetrics.evidenceEffective * 5
+    + processMetrics.freeQuestionsRelevant * 3
+  )
+
+  const remainingTurns = MAX_TURNS - turnCount
 
   // 1분마다 자동 충전 체크
   useEffect(() => {
@@ -54,6 +81,16 @@ export default function TopBar() {
           </button>
           <PhaseIndicator />
           <div className="flex items-center gap-2 ml-2 shrink-0">
+            {isLatePhase && (
+              <>
+                <span className="text-[10px] text-indigo-300/80">
+                  📊 ~{estimatedScore}점
+                </span>
+                <span className={`text-[10px] font-semibold ${remainingTurns <= 5 ? 'text-red-400' : 'text-gray-400'}`}>
+                  턴 {turnCount}/{MAX_TURNS}
+                </span>
+              </>
+            )}
             <span className={`text-[10px] ${
               aiStatus === 'connected' ? 'text-emerald-500/70' :
               aiStatus === 'disconnected' ? 'text-red-400/70' :

@@ -106,9 +106,25 @@ export async function resolveLLMDialogue(
   // ── 재판관 질문: 폴백용 템플릿 (LLM이 생성 못 하면 사용) ──
   const fallbackJudgeQuestion = buildJudgeQuestion(action, caseData, target, dispute)
 
-  const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey, investigationResult)
+  // ── interrogationDepth: 현재 쟁점에 대한 질문 횟수 ──
+  const interrogationDepth = disputeId
+    ? (store.interrogationHistory[target]?.[disputeId]?.questionTypes.length ?? 0) + 1
+    : 1
+
+  // ── 상대방 최근 발언 (직전 상대 NPC 발언) ──
+  const opponentSpeaker = target === 'a' ? 'a' : 'b'
+  const lastOpponentLine = store.dialogueLog
+    .filter(d => d.speaker === opponentSpeaker && (d.relatedDisputes.length === 0 || (disputeId ? d.relatedDisputes.includes(disputeId) : true)))
+    .slice(-1)[0]?.text ?? ''
+
+  // ── 이 쟁점에서 드러난 truth id 목록 ──
+  const mentionedTruthIds = disputeId
+    ? (store.interrogationHistory[target]?.[disputeId]?.questionTypes ?? [])
+    : []
+
+  const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey, investigationResult, interrogationDepth)
   const contractResponseMode = (() => { try { return (JSON.parse(actionContract) as { responseMode?: string }).responseMode ?? 'answer_only' } catch { return 'answer_only' } })()
-  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode, target, caseData)
+  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode, target, caseData, interrogationDepth, lastOpponentLine, mentionedTruthIds)
 
   const config = isAgentLoaded() ? getAgentConfig(agentKey) : getPromptConfig('interrogation_system')
 
@@ -212,6 +228,7 @@ function buildSystemPrompt(
   focusedDisputeId: string,
   agentKey: string,
   investigationResult: string,
+  interrogationDepth: number = 1,
 ): string {
   const myCall = getMyCall(caseData.duo, party)
   const judgeRef = getJudgeReference(caseData.duo, party)
@@ -470,6 +487,7 @@ function buildSystemPrompt(
     evidenceAxis,
     focusedDisputeId,
     investigationResult,
+    interrogationDepth: String(interrogationDepth),
     // output 블록용
     disputeName: dispute?.name ?? '해당 사안',
   }
@@ -526,6 +544,9 @@ function buildUserPrompt(
   responseMode: string,
   target?: PartyId,
   caseData?: CaseData,
+  interrogationDepth: number = 1,
+  lastOpponentLine: string = '',
+  mentionedTruthIds: string[] = [],
 ): string {
   const disputeName = dispute?.name ?? '해당 사안'
 
@@ -545,7 +566,11 @@ function buildUserPrompt(
       empathy_approach: `질문 유형: empathy_approach (공감 접근)\n- judgeQuestion은 당시 상황이나 심정을 편하게 말할 수 있도록 유도하는 질문이어야 한다.\n- 예: "한지석 씨, 당시 어떤 어려움이 있으셨는지 말씀해 주시겠습니까?"`,
     }
     const guide = questionGuides[action.questionType] ?? ''
-    return `${addressRule}${judgeGenRule}${guide}\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n\n규칙:\n- judgeQuestion 필드에 재판관 질문을 자연스럽게 작성한다.\n- npcResponse에는 그 질문에 답한다.\n- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
+
+    // ── 심문 깊이 맥락 ──
+    const depthContext = `\n★ 심문 깊이 맥락:\n- 이 쟁점에 대한 질문 횟수: ${interrogationDepth}번째${lastOpponentLine ? `\n- 상대방이 직전에 한 말: "${lastOpponentLine.slice(0, 80)}"` : ''}${mentionedTruthIds.length > 0 ? `\n- 이 쟁점에서 지금까지 드러난 질문 유형: ${mentionedTruthIds.join(', ')}` : ''}\n- 질문 횟수가 많을수록 더 깊고 구체적인 답변을 해야 한다.`
+
+    return `${addressRule}${judgeGenRule}${guide}${depthContext}\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n\n규칙:\n- judgeQuestion 필드에 재판관 질문을 자연스럽게 작성한다.\n- npcResponse에는 그 질문에 답한다.\n- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
   }
 
   // ── 증거 제시 ──
