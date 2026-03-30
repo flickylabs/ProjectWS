@@ -200,6 +200,8 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
       relatedDisputes: testimony.relatedDisputes,
       turn: fresh.turnCount,
       behaviorHint: testimony.behaviorHint,
+      witnessName: witness.name,
+      witnessFavor: testimony.favorDirection as 'pro_a' | 'pro_b' | 'neutral' | 'mixed',
     })
 
     // 편향 방향에 따라 NPC 반응

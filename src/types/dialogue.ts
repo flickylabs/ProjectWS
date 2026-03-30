@@ -11,6 +11,10 @@ export interface DialogueEntry {
   turn: number
   behaviorHint?: string
   isConfidential?: boolean
+  /** 증인 전용: 증인 이름 */
+  witnessName?: string
+  /** 증인 전용: 어느 쪽에 유리한 증인인지 */
+  witnessFavor?: 'pro_a' | 'pro_b' | 'neutral' | 'mixed'
 }
 
 export type ClaimStatus = 'normal' | 'conflict' | 'changed' | 'official' | 'collapsed'

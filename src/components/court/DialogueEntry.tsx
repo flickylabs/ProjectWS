@@ -102,6 +102,35 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
   const isA = entry.speaker === 'a'
   const isB = entry.speaker === 'b'
   const isJudge = entry.speaker === 'judge'
+  const isWitness = entry.speaker === 'witness'
+
+  // 증인 — 편향 방향에 따라 좌(pro_a)/우(pro_b)/중앙(neutral/mixed) 배치, 녹색 계열
+  if (isWitness) {
+    const favor = entry.witnessFavor
+    const witnessAlign = favor === 'pro_a' ? 'items-start' : favor === 'pro_b' ? 'items-end' : 'items-center'
+    const witnessName = entry.witnessName ?? '증인'
+    return (
+      <div className={`flex flex-col ${witnessAlign} my-2 ${!done ? 'opacity-90' : ''}`}>
+        {/* 증인 이름 + 아이콘 */}
+        <div className={`flex items-center gap-1.5 mb-1 ${favor === 'pro_b' ? 'flex-row-reverse' : ''}`}>
+          <div className="w-7 h-7 rounded-full bg-gray-800 ring-2 ring-emerald-500/40 flex items-center justify-center text-sm">
+            <Emoji char="🧑‍⚖️" size={18} />
+          </div>
+          <span className="text-xs font-semibold text-emerald-400">{witnessName}</span>
+          <span className="text-[10px] text-emerald-600">증인</span>
+        </div>
+        {/* 증인 말풍선 — 녹색 계열 */}
+        <div className={`border rounded-2xl ${favor === 'pro_a' ? 'rounded-tl-sm' : favor === 'pro_b' ? 'rounded-tr-sm' : ''} px-3.5 py-2.5 max-w-[85%] bg-emerald-950/40 border-emerald-800/30`}>
+          <p className="text-sm text-gray-200 leading-relaxed">{displayText}{!done && <span className="animate-pulse text-emerald-400">|</span>}</p>
+          {done && entry.behaviorHint && (
+            <p className="text-xs text-emerald-500/50 mt-1.5 italic leading-relaxed border-t border-emerald-800/30 pt-1.5">
+              {entry.behaviorHint}
+            </p>
+          )}
+        </div>
+      </div>
+    )
+  }
 
   // 재판관은 아이콘/라벨 없이 구분선 + 둥근 말풍선 (어두운 갈색, 중앙)
   if (isJudge) {
