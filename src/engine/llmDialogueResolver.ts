@@ -106,7 +106,7 @@ export async function resolveLLMDialogue(
   // ── 재판관 질문: 엔진 템플릿 (LLM 호출 전에 생성하여 user message에 포함) ──
   const judgeQuestion = buildJudgeQuestion(action, caseData, target, dispute)
 
-  const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey)
+  const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey, investigationResult)
   const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, judgeQuestion, investigationResult)
 
   const config = isAgentLoaded() ? getAgentConfig(agentKey) : getPromptConfig('interrogation_system')
@@ -209,6 +209,7 @@ function buildSystemPrompt(
   evidenceAxis: string,
   focusedDisputeId: string,
   agentKey: string,
+  investigationResult: string,
 ): string {
   const myCall = getMyCall(caseData.duo, party)
   const judgeRef = getJudgeReference(caseData.duo, party)
