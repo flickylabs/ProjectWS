@@ -125,8 +125,14 @@ function TitleScreen() {
 
   useEffect(() => {
     checkConnection().then(setLlmStatus)
-    // 타이틀 BGM 재생
-    playBgmFn('/bgm/title.mp3', 0.12)
+    // 타이틀 BGM — 유저 첫 인터랙션 후 재생 (Autoplay Policy)
+    const startBgm = () => {
+      playBgmFn('/bgm/title.mp3', 0.12)
+      document.removeEventListener('click', startBgm)
+      document.removeEventListener('touchstart', startBgm)
+    }
+    document.addEventListener('click', startBgm, { once: true })
+    document.addEventListener('touchstart', startBgm, { once: true })
 
     // 서버 연결 + AI 프롬프트 로드 + 플레이어 동기화
     ;(async () => {

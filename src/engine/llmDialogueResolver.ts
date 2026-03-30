@@ -103,12 +103,12 @@ export async function resolveLLMDialogue(
   // ── 에이전트 라우팅: 액션 유형에 따라 적절한 에이전트 선택 ──
   const agentKey = resolveAgentKey(action, store, target)
 
-  // ── 재판관 질문: 엔진 템플릿 (LLM 호출 전에 생성하여 user message에 포함) ──
-  const judgeQuestion = buildJudgeQuestion(action, caseData, target, dispute)
+  // ── 재판관 질문: 폴백용 템플릿 (LLM이 생성 못 하면 사용) ──
+  const fallbackJudgeQuestion = buildJudgeQuestion(action, caseData, target, dispute)
 
   const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey, investigationResult)
   const contractResponseMode = (() => { try { return (JSON.parse(actionContract) as { responseMode?: string }).responseMode ?? 'answer_only' } catch { return 'answer_only' } })()
-  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, judgeQuestion, investigationResult, contractResponseMode)
+  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode)
 
   const config = isAgentLoaded() ? getAgentConfig(agentKey) : getPromptConfig('interrogation_system')
 
@@ -161,11 +161,12 @@ export async function resolveLLMDialogue(
       }
     }
 
-    // 재판관 질문을 대화 로그에 추가
-    if (judgeQuestion) {
+    // 재판관 질문: AI 생성 우선, 없으면 폴백 템플릿
+    const finalJudgeQuestion = parsed.judgeQuestion || fallbackJudgeQuestion
+    if (finalJudgeQuestion) {
       store.addDialogue({
         speaker: 'judge',
-        text: judgeQuestion,
+        text: finalJudgeQuestion,
         relatedDisputes: disputeId ? [disputeId] : [],
         turn: store.turnCount,
       })
@@ -532,14 +533,17 @@ function buildUserPrompt(
     ? `★ 발화 대상: 재판관. 상대방에게 말하는 것이 아니다.\n★ "자기야", "여보", "오빠" 등 상대 호칭으로 시작 금지. "재판관님"으로 시작하거나 호칭 없이 바로 답하라.\n★ 존댓말(~습니다, ~요)만 사용.\n`
     : `★ 발화 대상: 재판관에게 답한 뒤, 필요 시 상대에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말(~습니다, ~요). 상대에게는 관계에 맞는 말투.\n`
 
+  const judgeGenRule = `\n★ judgeQuestion 필드: 재판관이 NPC에게 하는 질문을 자연스러운 한국어로 직접 작성하라.\n- "${disputeName}" 쟁점에 대해 질문 유형에 맞는 자연스러운 질문을 만든다.\n- 쟁점명을 그대로 인용하지 말고, 맥락에 맞게 풀어서 질문한다.\n- 재판관 어투: 격식체, 간결, 권위 있는 톤 (예: "~주십시오", "~입니까")\n`
+
   // ── 심문 (fact_pursuit / motive_search / empathy_approach) ──
   if (action.type === 'question') {
-    const templates: Record<string, string> = {
-      fact_pursuit: `${addressRule}현재 액션은 fact_pursuit다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 날짜, 시간, 금액, 행위 여부를 중심으로 답한다.\n- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.\n- 출력은 JSON 객체 하나만 한다.`,
-      motive_search: `${addressRule}현재 액션은 motive_search다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 왜 그랬는지, 왜 숨겼는지, 무엇이 두려웠는지 같은 동기 층을 중심으로 답한다.\n- 단순한 사실 나열로만 끝내지 않는다.\n- 출력은 JSON 객체 하나만 한다.`,
-      empathy_approach: `${addressRule}현재 액션은 empathy_approach다.\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 위 질문에만 답한다.\n- 비난받는 자리라기보다 사정을 설명할 기회로 느껴야 한다.\n- 감정, 상처, 수치심, 관계 유지 욕구를 조심스럽게 드러낼 수 있다.\n- 출력은 JSON 객체 하나만 한다.`,
+    const questionGuides: Record<string, string> = {
+      fact_pursuit: `질문 유형: fact_pursuit (사실 추궁)\n- judgeQuestion은 날짜, 금액, 행위 여부를 구체적으로 묻는 질문이어야 한다.\n- 예: "한지석 씨, 9월 20일 280만원을 송금하신 사실이 있습니까?"`,
+      motive_search: `질문 유형: motive_search (동기 탐색)\n- judgeQuestion은 왜 그런 선택을 했는지, 무엇을 숨기려 했는지 묻는 질문이어야 한다.\n- 예: "한지석 씨, 아내에게 알리지 않은 이유가 무엇입니까?"`,
+      empathy_approach: `질문 유형: empathy_approach (공감 접근)\n- judgeQuestion은 당시 상황이나 심정을 편하게 말할 수 있도록 유도하는 질문이어야 한다.\n- 예: "한지석 씨, 당시 어떤 어려움이 있으셨는지 말씀해 주시겠습니까?"`,
     }
-    return templates[action.questionType] ?? `${addressRule}현재 액션은 ${action.questionType}다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관 질문: "${judgeQuestion}"\n출력은 JSON 객체 하나만 한다.`
+    const guide = questionGuides[action.questionType] ?? ''
+    return `${addressRule}${judgeGenRule}${guide}\nfocusedDisputeId: ${focusedDisputeId}\nfocusedDisputeName: ${disputeName}\n\n규칙:\n- judgeQuestion 필드에 재판관 질문을 자연스럽게 작성한다.\n- npcResponse에는 그 질문에 답한다.\n- 다른 쟁점이나 다른 증거를 새로 끌어오지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
   }
 
   // ── 증거 제시 ──
@@ -599,6 +603,7 @@ interface ParsedLLMResponse {
   mentionedTruthIds: string[]
   responseMode: string
   requestedFollowup: string
+  judgeQuestion: string
 }
 
 const VALID_STANCES: NpcStance[] = ['deny', 'hedge', 'partial_admit', 'admit', 'reframe']
@@ -617,6 +622,7 @@ function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string
     mentionedTruthIds: [],
     responseMode: 'answer_then_counter',
     requestedFollowup: '',
+    judgeQuestion: '',
   }
 
   try {
@@ -648,6 +654,7 @@ function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string
       mentionedTruthIds: Array.isArray(parsed.mentionedTruthIds) ? parsed.mentionedTruthIds : [],
       responseMode: parsed.responseMode ?? 'answer_then_counter',
       requestedFollowup: parsed.requestedFollowup ?? '',
+      judgeQuestion: parsed.judgeQuestion ?? '',
     }
   } catch {
     return fallback

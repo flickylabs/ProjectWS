@@ -301,6 +301,7 @@ focusedDisputeId: {focusedDisputeId}
 반드시 JSON 객체 하나만 출력한다. 마크다운, 설명, 코드펜스 금지.
 
 {
+  "judgeQuestion":"재판관이 NPC에게 하는 질문 (자연스러운 한국어, 격식체)",
   "npcResponse":"NPC 대사",
   "behaviorHint":"행동/표정/목소리 변화",
   "stance":"deny|hedge|partial_admit|admit|reframe",
@@ -310,6 +311,7 @@ focusedDisputeId: {focusedDisputeId}
 }
 
 필드 규칙:
+- judgeQuestion: 재판관이 NPC에게 하는 질문. 격식체("~주십시오", "~입니까"). 쟁점명을 그대로 인용하지 말고 맥락에 맞게 풀어서 질문한다. 1~2문장.
 - npcResponse: 자연스러운 한국어 2~3문장. yes_no_first일 때만 1~3문장. 괄호 행동묘사 금지.
 - behaviorHint: 행동, 표정, 목소리 변화만 짧게 쓴다.
 - stance:
