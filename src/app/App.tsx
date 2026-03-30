@@ -19,6 +19,7 @@ import AutoDialoguePhase from '../components/phase/AutoDialoguePhase'
 import Phase6_Mediation from '../components/phase/Phase6_Mediation'
 import CampaignScreen from '../components/phase/CampaignScreen'
 import CaseMap from '../components/phase/CaseMap'
+import SessionSelect from '../components/phase/SessionSelect'
 import ActionPanel from '../components/actions/ActionPanel'
 import VerdictScreen from '../components/verdict/VerdictScreen'
 import ResultScreen from '../components/result/ResultScreen'
@@ -110,7 +111,9 @@ export default function App() {
 function TitleScreen() {
   const [llmStatus, setLlmStatus] = useState<{ connected: boolean; provider?: string; modelId?: string; error?: string } | null>(null)
   const [loading, setLoading] = useState(false)
+  const [showSessionSelect, setShowSessionSelect] = useState(false)
   const [showCaseMap, setShowCaseMap] = useState(false)
+  const [selectedSessionType, setSelectedSessionType] = useState<string | undefined>(undefined)
   const [showHistory, setShowHistory] = useState(false)
   const [showLeaderboard, setShowLeaderboard] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
@@ -214,14 +217,30 @@ function TitleScreen() {
     return <ProfilePage onBack={() => setShowProfile(false)} />
   }
 
-  // 3. Case map
+  // 3. Session select
+  if (showSessionSelect && !showCaseMap) {
+    return <SessionSelect
+      onSelectSession={(type) => {
+        setSelectedSessionType(type)
+        setShowCaseMap(true)
+      }}
+      onBack={() => setShowSessionSelect(false)}
+    />
+  }
+
+  // 4. Case map (세션 선택 후)
   if (showCaseMap) {
     return <CaseMap onSelectCase={(caseData) => {
       resetPrefetch()
       setLLMMode(llmStatus?.connected ?? false)
       initializeCase(caseData)
       setShowCaseMap(false)
-    }} onBack={() => setShowCaseMap(false)} />
+      setShowSessionSelect(false)
+      setSelectedSessionType(undefined)
+    }} onBack={() => {
+      setShowCaseMap(false)
+      // 세션 선택으로 돌아감
+    }} initialChapterType={selectedSessionType} />
   }
 
   // 4. Leaderboard
@@ -289,7 +308,7 @@ function TitleScreen() {
         {/* 버튼 영역 — 중앙에서 약간 아래 */}
         <div className="relative z-10 w-full max-w-xs space-y-3">
           <button
-            onClick={() => setShowCaseMap(true)}
+            onClick={() => setShowSessionSelect(true)}
             className="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-gray-950 font-bold py-4 rounded-2xl transition-all shadow-lg shadow-amber-600/25 active:scale-95"
           >
             <span className="text-lg"><Emoji char="⚖️" size={18} /> 사건 시작</span>

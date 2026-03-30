@@ -8,6 +8,7 @@ import { mailApi } from '../../api/client'
 interface Props {
   onSelectCase: (caseData: CaseData) => void
   onBack: () => void
+  initialChapterType?: string
 }
 
 interface CaseProgress {
@@ -45,8 +46,9 @@ export function saveCaseProgress(caseId: string, score: number) {
   }
 }
 
-export default function CaseMap({ onSelectCase, onBack }: Props) {
-  const [chapterIdx, setChapterIdx] = useState(0)
+export default function CaseMap({ onSelectCase, onBack, initialChapterType }: Props) {
+  const initialIdx = initialChapterType ? CHAPTERS.findIndex(c => c.type === initialChapterType) : 0
+  const [chapterIdx, setChapterIdx] = useState(initialIdx >= 0 ? initialIdx : 0)
   const [selectedCase, setSelectedCase] = useState<CaseData | null>(null)
   const [showMail, setShowMail] = useState(false)
   const [unreadMail, setUnreadMail] = useState(0)
