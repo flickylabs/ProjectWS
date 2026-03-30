@@ -289,20 +289,13 @@ function MinigameOverlay() {
 
     if (minigameVariant === 'heartbeat') {
       return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-          <div className="bg-gray-900 border border-amber-700/50 rounded-2xl p-5 w-[340px] shadow-2xl">
-            <HeartbeatDetector onSuccess={handleSuccess} onFail={handleFail} onWatchAd={handleWatchAd} />
-          </div>
-        </div>
+        <HeartbeatDetector onSuccess={handleSuccess} onFail={handleFail} onWatchAd={handleWatchAd} />
       )
     }
 
     if (minigameVariant === 'matching') {
-      // clues [string, string, string] → pairs [string, string][]
-      const pairs: [string, string][] = clues.map((clue, i) => [`단서 ${i + 1}`, clue])
       return (
         <MatchingPuzzle
-          pairs={pairs}
           onSuccess={handleSuccess}
           onFail={handleFail}
           onWatchAd={handleWatchAd}
@@ -342,18 +335,11 @@ function MinigameOverlay() {
   if (mg.type === 'evidence_depth') {
     const { evidenceId } = mg
     const evDef = evidenceDefinitions.find((e) => e.id === evidenceId)
-    const dispute = evDef ? caseData?.disputes.find((d) => d.id === evDef.proves[0]) : undefined
 
     // 3번째 조사 subAction
     const KEY_ORDER = ['request_original', 'restore_context', 'check_edits'] as const
     const state = evidenceStates[evidenceId]
     const nextKey = KEY_ORDER.find((k) => !state?.investigatedActions?.includes(k)) ?? 'check_edits'
-
-    const pairs: [string, string][] = [
-      ['단서', dispute?.name?.slice(0, 6) ?? '쟁점'],
-      ['증거', evDef?.name?.slice(0, 6) ?? '증거물'],
-      ['핵심', '조사완료'],
-    ]
 
     const handleSuccess = () => {
       const { investigateEvidence, addDialogue, turnCount } = useGameStore.getState()
@@ -376,7 +362,6 @@ function MinigameOverlay() {
 
     return (
       <MatchingPuzzle
-        pairs={pairs}
         onSuccess={handleSuccess}
         onFail={handleFail}
         onWatchAd={handleWatchAd}

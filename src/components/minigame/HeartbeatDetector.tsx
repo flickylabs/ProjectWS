@@ -182,12 +182,13 @@ export default function HeartbeatDetector({ onSuccess, onFail, onWatchAd }: Prop
   }
 
   return (
-    <div
-      style={{
-        display: 'flex', flexDirection: 'column', alignItems: 'center',
-        gap: 16, padding: 24, userSelect: 'none',
-      }}
-    >
+    <div className="fixed inset-0 z-50 bg-gray-950 flex flex-col items-center justify-center"
+      style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)', userSelect: 'none' }}>
+      {/* 포기 버튼 */}
+      <div className="absolute top-4 right-4">
+        <button onClick={onFail} className="text-xs text-gray-500 hover:text-gray-300 px-3 py-1.5 rounded-lg bg-gray-800 border border-gray-700">✕ 포기</button>
+      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, padding: 24 }}>
       {/* 원형 SVG 게이지 */}
       <div
         onClick={handleTap}
@@ -246,6 +247,7 @@ export default function HeartbeatDetector({ onSuccess, onFail, onWatchAd }: Prop
           />
         ))}
       </div>
+    </div>
     </div>
   )
 }

@@ -151,8 +151,13 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
   const timerColor = timerRatio > 0.4 ? 'bg-amber-500' : timerRatio > 0.2 ? 'bg-orange-500' : 'bg-red-500'
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-      <div className="bg-gray-900 border border-amber-700/50 rounded-2xl p-5 w-[340px] shadow-2xl">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-950"
+      style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
+      {/* 포기 버튼 */}
+      <div className="absolute top-4 right-4">
+        <button onClick={onFail} className="text-xs text-gray-500 hover:text-gray-300 px-3 py-1.5 rounded-lg bg-gray-800 border border-gray-700">✕ 포기</button>
+      </div>
+      <div className="w-full max-w-sm px-6">
 
         {result === null && (
           <>

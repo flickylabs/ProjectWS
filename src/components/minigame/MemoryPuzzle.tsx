@@ -77,8 +77,9 @@ export default function MemoryPuzzle({ clues, onSuccess, onFail, onWatchAd, time
   }, [result, onSuccess])
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-      <div className="bg-gray-900 border border-amber-700/50 rounded-2xl p-5 w-[320px] shadow-2xl">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-950"
+      style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
+      <div className="w-full max-w-sm px-6">
         {/* 보여주기 단계 */}
         {phase === 'show' && (
           <div className="text-center space-y-3">
