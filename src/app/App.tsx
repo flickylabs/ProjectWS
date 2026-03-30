@@ -13,7 +13,7 @@ import Emoji from '../components/common/Emoji'
 import CourtLayout from '../components/layout/CourtLayout'
 import PhaseTransition from '../components/layout/PhaseTransition'
 import Tutorial from '../components/layout/Tutorial'
-import Phase0_CaseIntro from '../components/phase/Phase0_CaseIntro'
+import Phase0_CaseIntro, { resetPrefetch } from '../components/phase/Phase0_CaseIntro'
 import AutoDialoguePhase from '../components/phase/AutoDialoguePhase'
 import Phase6_Mediation from '../components/phase/Phase6_Mediation'
 import CampaignScreen from '../components/phase/CampaignScreen'
@@ -180,12 +180,14 @@ function TitleScreen() {
   }, [reputation])
 
   const handleStart = (relationshipType?: string) => {
+    resetPrefetch()
     setLLMMode(llmStatus?.connected ?? false)
     const caseData = getRandomCase(relationshipType)
     initializeCase(caseData)
   }
 
   const handleCampaignStage = (stage: StageDefinition) => {
+    resetPrefetch()
     setLLMMode(llmStatus?.connected ?? false)
     const caseData = getRandomCase(stage.relationshipType || undefined)
     initializeCase(caseData)
@@ -204,6 +206,7 @@ function TitleScreen() {
   // 3. Case map
   if (showCaseMap) {
     return <CaseMap onSelectCase={(caseData) => {
+      resetPrefetch()
       setLLMMode(llmStatus?.connected ?? false)
       initializeCase(caseData)
       setShowCaseMap(false)
@@ -331,12 +334,13 @@ function getActionPanel(phase: GamePhase) {
       )
     }
     case GamePhase.Phase2_Rebuttal: {
-      // Phase 2: 사건별 사전 생성 스크립트 우선 → 없으면 범용 폴백
+      // Phase 2: AI 생성 우선, 없으면 스크립트 폴백
       const caseScript = caseData ? loadPhase2Script(caseData.caseId) : null
       const fallback = caseScript ?? (caseData ? buildGenericPhase2(caseData) : phase2Dialogues)
       return (
         <AutoDialoguePhase
           dialogues={fallback}
+          llmGenerator={caseData ? () => generatePhase2Dialogues(caseData) : undefined}
           nextPhase={GamePhase.Phase3_Interrogation}
           nextLabel="심문 시작"
           phaseKey="phase2"

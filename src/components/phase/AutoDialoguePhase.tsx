@@ -39,24 +39,45 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
         : phaseKey === 'phase2' ? consumePrefetchedPhase2()
         : null
 
+      console.log(`[AutoDialogue] phaseKey=${phaseKey}, prefetched=${prefetched?.length ?? 'null'}, dialogues=${dialogues.length}`)
+
       if (phaseKey === 'phase2' && prefetched && prefetched.length > 0) {
         // Phase2: AI 생성 결과 우선 사용
+        console.log('[AutoDialogue] Phase2 → AI prefetch 사용')
         resolvedDialogues.current = prefetched
         setTotalCount(prefetched.length)
+      } else if (phaseKey === 'phase2' && llmGenerator) {
+        // Phase2: prefetch 비었으면 즉시 LLM 재시도
+        console.log('[AutoDialogue] Phase2 → prefetch 비어있음, LLM 즉시 생성 시도')
+        setLoading(true)
+        try {
+          const generated = await llmGenerator()
+          if (generated.length > 0) {
+            console.log(`[AutoDialogue] Phase2 → LLM 생성 성공 (${generated.length}건)`)
+            resolvedDialogues.current = generated
+            setTotalCount(generated.length)
+          } else {
+            console.warn('[AutoDialogue] Phase2 → LLM 생성 빈 결과, 스크립트 폴백')
+            resolvedDialogues.current = dialogues
+            setTotalCount(dialogues.length)
+          }
+        } catch (e) {
+          console.warn('[AutoDialogue] Phase2 → LLM 생성 실패, 스크립트 폴백:', e)
+          resolvedDialogues.current = dialogues
+          setTotalCount(dialogues.length)
+        }
+        setLoading(false)
       } else if (phaseKey === 'phase1' && dialogues.length > 0) {
-        // Phase1: 고정 스크립트 사용, prefetch 결과 버림
+        // Phase1: 고정 스크립트 사용
         resolvedDialogues.current = dialogues
         setTotalCount(dialogues.length)
       } else if (prefetched && prefetched.length > 0) {
-        // 기타: prefetch 결과 사용
         resolvedDialogues.current = prefetched
         setTotalCount(prefetched.length)
       } else if (dialogues.length > 0) {
-        // 스크립트 폴백
         resolvedDialogues.current = dialogues
         setTotalCount(dialogues.length)
       } else if (llmGenerator) {
-        // 마지막 수단: 즉시 LLM 생성
         setLoading(true)
         try {
           const generated = await llmGenerator()
