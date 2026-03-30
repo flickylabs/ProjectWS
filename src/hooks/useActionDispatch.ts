@@ -583,6 +583,11 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
 
   applyDialogueNode(node, target, isConfidential)
 
+  // ── 상대방 끼어들기 (템플릿 기반, answer_only 응답 시)
+  if (action.type === 'question' && llmMeta.responseMode === 'answer_only') {
+    maybeInterjection(target, node.conditions?.disputeId)
+  }
+
   // LLM 모드: 주장 자동 등록 (stance 기반)
   if (llmMeta.stance && node.conditions?.disputeId) {
     const stanceToConfidence: Record<string, 'high' | 'medium' | 'low'> = {
@@ -618,6 +623,43 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
 
     freshState.addClaim(newClaimData)
   }
+}
+
+// ── 상대방 끼어들기: answer_only 응답 후 확률 기반 반박 ──
+function maybeInterjection(target: PartyId, disputeId?: string) {
+  const state = useGameStore.getState()
+  if (!state.caseData || !disputeId) return
+
+  const otherParty: PartyId = target === 'a' ? 'b' : 'a'
+  const otherAgent = otherParty === 'a' ? state.agentA : state.agentB
+  const otherLie = otherAgent.lieStateMap[disputeId]
+
+  // 확률: S3+ = 50%, 그 외 = 25%
+  const chance = (otherLie?.currentState ?? 'S0') >= 'S3' ? 0.50 : 0.25
+  if (Math.random() > chance) return
+
+  // 분리 심문 중이면 끼어들기 불가
+  if (state.separationTarget === otherParty) return
+
+  const otherName = otherParty === 'a' ? state.caseData.duo.partyA.name : state.caseData.duo.partyB.name
+  const phase = otherAgent.emotionalState.phase
+  const interjections: Record<string, string[]> = {
+    defensive: ['재판관님, 그건 사실과 다릅니다.', '그건 한쪽 얘기일 뿐입니다.'],
+    confident: ['재판관님, 제가 보충 설명드려도 되겠습니까?', '잠깐, 그 부분은 제가 직접 말씀드리겠습니다.'],
+    shaken: ['그건... 그렇게 단순한 문제가 아닙니다...', '재판관님, 저도 할 말이 있습니다.'],
+    angry: ['아니, 그건 완전히 거짓말입니다!', '지금 뭐라고 한 겁니까?!'],
+    resigned: ['...그 말은 맞지만, 전부는 아닙니다.', '재판관님, 한 가지만 덧붙여도 되겠습니까.'],
+  }
+  const pool = interjections[phase] ?? interjections.defensive
+  const text = pool[Math.floor(Math.random() * pool.length)]
+
+  state.addDialogue({
+    speaker: otherParty,
+    text,
+    relatedDisputes: [disputeId],
+    turn: state.turnCount,
+    behaviorHint: '갑자기 끼어들며 말한다.',
+  })
 }
 
 function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential = false) {
