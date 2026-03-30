@@ -11,12 +11,14 @@ interface Props {
   onPresent: (evidenceId: string) => void
   onConfront?: (evidenceId: string, question: string) => void
   llmMode?: boolean
+  /** 새로 해금되어 아직 확인하지 않은 증거 ID 목록 */
+  newEvidenceIds?: Set<string>
 }
 
 /** investigationResults에서 핵심 3개를 순서대로 추출 */
 const KEY_ORDER = ['request_original', 'restore_context', 'check_edits'] as const
 
-export default function EvidencePresenter({ target, onPresent, onConfront, llmMode }: Props) {
+export default function EvidencePresenter({ target, onPresent, onConfront, llmMode, newEvidenceIds }: Props) {
   const evidenceStates = useGameStore((s) => s.evidenceStates)
   const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
   const resources = useGameStore((s) => s.resources)
@@ -72,6 +74,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, llmMo
               onInvestigate={() => handleInvestigate(ev.id)}
               canPresent canInvestigate={resources.investigationTokens >= 1}
               llmMode={llmMode}
+              isNew={newEvidenceIds?.has(ev.id)}
             />
           ))}
         </>
@@ -254,10 +257,11 @@ function generateSuggestions(ev: any, state: any): string[] {
   return suggestions.slice(0, 3)
 }
 
-function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, canPresent, canInvestigate, llmMode }: {
+function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, canPresent, canInvestigate, llmMode, isNew }: {
   ev: any; state: any; isExpanded: boolean
   onToggle: () => void; onPresent?: () => void; onConfront?: (text: string) => void
   onInvestigate: () => void; canPresent: boolean; canInvestigate: boolean; llmMode?: boolean
+  isNew?: boolean
 }) {
   const [showPresent, setShowPresent] = useState(false)
   const [confrontText, setConfrontText] = useState('')
@@ -280,6 +284,7 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
           <div className="min-w-0">
             <div className="flex items-center gap-1.5">
               <span className="text-sm text-gray-200 truncate font-medium">{ev.name}</span>
+              {isNew && <span className="bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shrink-0">N</span>}
               {state?.presented && <span className="text-emerald-500 text-xs"><Emoji char="✓" size={10} />제시</span>}
               {legWarning && <Emoji char="⚠" size={12} />}
             </div>

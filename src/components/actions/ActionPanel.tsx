@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import type { PartyId, QuestionType, TrustActionType, SkillType } from '../../types'
 import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
@@ -62,6 +62,17 @@ export default function ActionPanel() {
   // 토글 스킬 상태
   const [confidentialOn, setConfidentialOn] = useState(false)
   const [evasionReadingOn, setEvasionReadingOn] = useState(false)
+
+  // 새 증거 뱃지: 유저가 증거 탭에서 확인한 증거 ID 추적
+  const seenEvidenceRef = useRef<Set<string>>(new Set())
+  const evidenceStates = useGameStore((s) => s.evidenceStates)
+  const unlockedIds = Object.keys(evidenceStates).filter(id => evidenceStates[id]?.unlocked)
+  const newEvidenceCount = unlockedIds.filter(id => !seenEvidenceRef.current.has(id)).length
+
+  // 증거 탭 열 때 현재 해금 증거를 모두 "본 것"으로 기록
+  const markEvidenceSeen = useCallback(() => {
+    unlockedIds.forEach(id => seenEvidenceRef.current.add(id))
+  }, [unlockedIds])
 
   const dispatch = useActionDispatch()
   const caseData = useGameStore((s) => s.caseData)
@@ -190,6 +201,7 @@ export default function ActionPanel() {
 
   const handleTabClick = (tab: ActionTab) => {
     if (tab === 'evidence' && evLocked) return
+    if (tab === 'evidence' && activeTab !== 'evidence') markEvidenceSeen()
     setActiveTab(activeTab === tab ? null : tab)
     setShowAdvance(false)
   }
@@ -206,7 +218,7 @@ export default function ActionPanel() {
                   toggles={toggles} onToggle={handleToggle} />
               </div>
             )}
-            {hasToast && activeTab === 'evidence' && <div className="p-2"><EvidencePresenter target={target!} onPresent={hEv} onConfront={hConfront} llmMode={llm} /></div>}
+            {hasToast && activeTab === 'evidence' && <div className="p-2"><EvidencePresenter target={target!} onPresent={hEv} onConfront={hConfront} llmMode={llm} newEvidenceIds={new Set(unlockedIds.filter(id => !seenEvidenceRef.current.has(id)))} /></div>}
             {hasToast && activeTab === 'skill' && (
               <div className="p-2">
                 <SkillPanel target={target!} disputes={disputes} resources={resources} canUseSkill={canUseSkill}
@@ -249,12 +261,17 @@ export default function ActionPanel() {
           <Emoji char="❓" size={14} /> 심문
         </button>
         <button onClick={() => handleTabClick('evidence')}
-          className={`flex-1 text-xs rounded-xl font-semibold ${
+          className={`flex-1 text-xs rounded-xl font-semibold relative ${
             evLocked ? 'bg-gray-900/40 text-gray-600 cursor-not-allowed'
               : activeTab === 'evidence' ? 'bg-amber-600 text-gray-950 active:scale-95'
               : 'bg-gray-800/60 text-gray-400 hover:text-gray-200 active:scale-95'
           }`}>
           {evLocked ? <><Emoji char="🔒" size={14} /> 증거</> : <><Emoji char="📄" size={14} /> 증거</>}
+          {!evLocked && newEvidenceCount > 0 && activeTab !== 'evidence' && (
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+              N
+            </span>
+          )}
         </button>
         <button onClick={() => handleTabClick('skill')}
           className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 ${activeTab === 'skill' ? 'bg-amber-600 text-gray-950' : 'bg-gray-800/60 text-gray-400 hover:text-gray-200'}`}>
