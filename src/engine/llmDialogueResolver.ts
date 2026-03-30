@@ -108,7 +108,7 @@ export async function resolveLLMDialogue(
 
   const systemPrompt = buildSystemPrompt(profile, opponent, agent, lieEntry, dispute, caseData, target, recentDialogues, presentedEvidence, store.currentPhase, actionContract, trustInfo, skillOverlay, evidenceAxis, focusedDisputeId, agentKey, investigationResult)
   const contractResponseMode = (() => { try { return (JSON.parse(actionContract) as { responseMode?: string }).responseMode ?? 'answer_only' } catch { return 'answer_only' } })()
-  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode)
+  const userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode, target, caseData)
 
   const config = isAgentLoaded() ? getAgentConfig(agentKey) : getPromptConfig('interrogation_system')
 
@@ -524,6 +524,8 @@ function buildUserPrompt(
   judgeQuestion: string,
   investigationResult: string,
   responseMode: string,
+  target?: PartyId,
+  caseData?: CaseData,
 ): string {
   const disputeName = dispute?.name ?? '해당 사안'
 
@@ -548,7 +550,23 @@ function buildUserPrompt(
 
   // ── 증거 제시 ──
   if (action.type === 'evidence_present') {
-    return `${addressRule}현재 액션은 evidence_present다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관이 "${evidence?.name ?? '증거'}" 증거를 제시했다.\n증거 설명: ${evidence?.description ?? ''}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 첫 문장은 반드시 현재 증거에 대한 직접 반응이다.\n- 이 증거와 무관한 다른 쟁점을 새로 꺼내지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
+    // 타깃별 맥락: 행위 당사자인지, 증거 제출/관찰 측인지 구분
+    let targetContext = ''
+    if (target && caseData && evidence) {
+      const relatedDispute = evidence.proves[0] ? caseData.disputes.find(d => d.id === evidence.proves[0]) : undefined
+      const quadrant = (relatedDispute as any)?.quadrant as string | undefined
+      const myName = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+      const opName = target === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
+      const isActor = (quadrant === 'a_only' && target === 'a') || (quadrant === 'b_only' && target === 'b')
+      const isOther = (quadrant === 'a_only' && target === 'b') || (quadrant === 'b_only' && target === 'a')
+
+      if (isActor) {
+        targetContext = `\n★ 당신(${myName})은 이 증거가 지적하는 행위의 당사자다. 증거 내용에 대해 해명하거나 변명해야 한다.\n`
+      } else if (isOther) {
+        targetContext = `\n★ 당신(${myName})은 이 증거의 행위 당사자가 아니다. ${opName}의 행위에 대한 증거이므로, 당신은 이 증거를 어떻게 확보했는지, 이 증거에 대해 어떻게 생각하는지, 이 증거의 맥락을 설명해야 한다. ${opName}인 것처럼 변명하지 마라.\n`
+      }
+    }
+    return `${addressRule}${targetContext}현재 액션은 evidence_present다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관이 "${evidence?.name ?? '증거'}" 증거를 제시했다.\n증거 설명: ${evidence?.description ?? ''}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 첫 문장은 반드시 현재 증거에 대한 직접 반응이다.\n- 이 증거와 무관한 다른 쟁점을 새로 꺼내지 않는다.\n- judgeQuestion 필드에 재판관 질문을 자연스럽게 작성한다.\n- 출력은 JSON 객체 하나만 한다.`
   }
 
   // ── 증거 조사 6종 ──
