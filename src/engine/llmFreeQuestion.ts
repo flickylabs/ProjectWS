@@ -8,6 +8,7 @@
 import { chatCompletion } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
+import { enforceHonorifics, fixMisdirectedAddress } from './llmDialogueResolver'
 import { buildSpeechGuide, getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
 import { eunneun } from '../utils/korean'
 import type { CaseData, PartyId, QuestionType } from '../types'
@@ -281,7 +282,8 @@ function parseResponderResponse(raw: string): { response: string; behaviorHint: 
     const responseText = parsed.npcResponse ?? parsed.response ?? ''
     const behaviorMatch = responseText.match(/[（(]([^)）]+)[)）]/)
     const behaviorHint = parsed.behaviorHint || (behaviorMatch ? behaviorMatch[1] : '')
-    const response = responseText.replace(/[（(][^)）]+[)）]/g, '').trim()
+    const rawResponse = responseText.replace(/[（(][^)）]+[)）]/g, '').trim()
+    const response = enforceHonorifics(fixMisdirectedAddress(rawResponse))
 
     return { response: response || '...', behaviorHint }
   } catch {
