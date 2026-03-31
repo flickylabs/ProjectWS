@@ -143,6 +143,14 @@ export default function ResourcePopup({ type, current, countdown, adRemaining, o
           {isAtCap ? '무료 상한 도달' : adRemaining > 0 ? `광고 보고 충전 (${adRemaining}회 남음)` : '오늘 광고 소진'}
         </button>
 
+        {/* 아이템 구입 */}
+        <button
+          onClick={() => setAdResult('아이템 상점은 준비 중입니다.')}
+          className="w-full mt-2 py-2.5 rounded-xl text-sm font-medium bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-600 active:scale-95"
+        >
+          🛒 아이템으로 충전
+        </button>
+
         {adResult && (
           <div className="text-center text-xs text-amber-400 mt-2 animate-fade-in">{adResult}</div>
         )}

@@ -49,8 +49,8 @@ export interface ShopSlice {
 }
 
 const RECHARGE_INTERVAL_MS = 60 * 60 * 1000 // 1시간
-const MAX_AD_INVEST = 5
-const MAX_AD_SKILL = 2
+const MAX_AD_INVEST = 5  // 하루 5번
+const MAX_AD_SKILL = 2   // 하루 2번
 
 function getTodayString(): string {
   return new Date().toISOString().slice(0, 10)

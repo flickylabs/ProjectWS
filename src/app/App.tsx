@@ -10,6 +10,7 @@ import { loadProfile, loadExtendedHistory, getPlayerStats } from '../data/leader
 import { getCurrentSeason, getRemainingDays } from '../data/seasons'
 import { loadCampaignProgress } from '../data/campaign'
 import { playBgm as playBgmFn, stopBgm as stopBgmFn } from '../engine/soundEngine'
+import ResourcePopup from '../components/shop/ResourcePopup'
 import Emoji from '../components/common/Emoji'
 import CourtLayout from '../components/layout/CourtLayout'
 import PhaseTransition from '../components/layout/PhaseTransition'
@@ -130,11 +131,16 @@ function TitleScreen() {
   const [showMail, setShowMail] = useState(false)
   const [unreadMail, setUnreadMail] = useState(0)
   const [serverConnected, setServerConnected] = useState(false)
+  const [showResourcePopup, setShowResourcePopup] = useState<'invest' | 'skill' | null>(null)
   const initializeCase = useGameStore((s) => s.initializeCase)
   const globalInvest = useGameStore((s) => s.globalInvestTokens)
   const globalSkill = useGameStore((s) => s.globalSkillPoints)
   const getCountdown = useGameStore((s) => s.getNextRechargeCountdown)
   const tickRecharge = useGameStore((s) => s.tickInvestRecharge)
+  const adCountInvest = useGameStore((s) => s.adWatchCountInvest)
+  const adCountSkill = useGameStore((s) => s.adWatchCountSkill)
+  const watchAdInvest = useGameStore((s) => s.watchAdForInvest)
+  const watchAdSkill = useGameStore((s) => s.watchAdForSkill)
   const [investCountdown, setInvestCountdown] = useState(0)
 
   // 충전 타이머
@@ -307,18 +313,27 @@ function TitleScreen() {
         </div>
       </div>
 
-      {/* 리소스 표시 */}
+      {/* 리소스 표시 — 클릭 시 충전 팝업 */}
       <div className="flex items-center justify-center gap-4 py-1.5 bg-gray-900/50 border-b border-gray-800/30">
-        <div className="flex items-center gap-1 text-xs">
+        <button onClick={() => setShowResourcePopup('invest')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
           <Emoji char="🔍" size={12} />
           <span className="text-amber-400 font-bold">{globalInvest}</span>
           <span className="text-gray-600">/ {investCountdown > 0 ? formatCountdown(investCountdown) : '충전완료'}</span>
-        </div>
-        <div className="flex items-center gap-1 text-xs">
+        </button>
+        <button onClick={() => setShowResourcePopup('skill')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
           <Emoji char="⚡" size={12} />
           <span className="text-amber-400 font-bold">{globalSkill}</span>
-        </div>
+        </button>
       </div>
+
+      {showResourcePopup === 'invest' && (
+        <ResourcePopup type="invest" current={globalInvest} countdown={investCountdown}
+          adRemaining={5 - adCountInvest} onWatchAd={watchAdInvest} onClose={() => setShowResourcePopup(null)} />
+      )}
+      {showResourcePopup === 'skill' && (
+        <ResourcePopup type="skill" current={globalSkill}
+          adRemaining={2 - adCountSkill} onWatchAd={watchAdSkill} onClose={() => setShowResourcePopup(null)} />
+      )}
 
       {/* 중앙 — 타이틀 + 버튼 */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 relative overflow-hidden">

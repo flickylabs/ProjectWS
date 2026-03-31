@@ -80,14 +80,21 @@ export default function TopBar() {
             ← 나가기
           </button>
           <PhaseIndicator />
-          <div className="flex items-center gap-2 ml-2 shrink-0">
+          <div className="flex items-center gap-1.5 ml-2 shrink-0">
+            {/* 리소스 버튼 */}
+            <button onClick={() => setShowResource('invest')} className="flex items-center gap-0.5 text-[10px] hover:opacity-80 active:scale-95">
+              <Emoji char="🔍" size={11} /><span className="text-amber-400 font-bold">{globalInvest}</span>
+            </button>
+            <button onClick={() => setShowResource('skill')} className="flex items-center gap-0.5 text-[10px] hover:opacity-80 active:scale-95">
+              <Emoji char="⚡" size={11} /><span className="text-amber-400 font-bold">{globalSkill}</span>
+            </button>
             {isLatePhase && (
               <>
                 <span className="text-[10px] text-indigo-300/80">
-                  📊 ~{estimatedScore}점
+                  📊~{estimatedScore}
                 </span>
                 <span className={`text-[10px] font-semibold ${remainingTurns <= 5 ? 'text-red-400' : 'text-gray-400'}`}>
-                  턴 {turnCount}/{MAX_TURNS}
+                  {turnCount}/{MAX_TURNS}
                 </span>
               </>
             )}
