@@ -50,15 +50,10 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
 
     playClick()
 
-    // 3번째 조사(완료) 시 MatchingPuzzle 미니게임 트리거
-    if (state.investigatedActions.length === 2) {
-      useGameStore.getState().spend('investigationTokens', 1)
-      useGameStore.getState().setPendingMinigame({ type: 'evidence_depth', evidenceId, depth: 3 })
-      return
-    }
-
+    // 모든 조사 단계에서 미니게임/광고/아이템 선택지 제공
+    const depth = state.investigatedActions.length + 1 // 1, 2, 3
     useGameStore.getState().spend('investigationTokens', 1)
-    dispatch({ type: 'evidence_investigate', evidenceId, subAction: nextKey })
+    useGameStore.getState().setPendingMinigame({ type: 'evidence_depth', evidenceId, depth })
   }
 
   if (!target) return null

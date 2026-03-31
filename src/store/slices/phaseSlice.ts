@@ -67,18 +67,18 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     const minTurns = MIN_TURNS_BEFORE_ADVANCE[currentPhase]
     if (minTurns !== undefined && phaseTurnCount < minTurns) return false
 
-    // Phase별 심층 조건
+    // Phase별 심층 조건 — 10턴 + 진실 발견 기반
     if (currentPhase === GamePhase.Phase3_Interrogation) {
-      // 최소 3턴 + 최소 1개 거짓말 전이
-      return (metrics?.lieTransitions ?? 0) >= 1
+      // 10턴 + 거짓말 전이 2회 이상
+      return (metrics?.lieTransitions ?? 0) >= 2
     }
     if (currentPhase === GamePhase.Phase4_Evidence) {
-      // 최소 1턴 + 최소 1개 증거 효과
-      return (metrics?.evidenceEffective ?? 0) >= 1
+      // 10턴 + 증거 효과 1회 이상 + 거짓말 전이 총 3회 이상
+      return (metrics?.evidenceEffective ?? 0) >= 1 && (metrics?.lieTransitions ?? 0) >= 3
     }
     if (currentPhase === GamePhase.Phase5_ReExamination) {
-      // 최소 1개 거짓말 붕괴 OR 15턴 이상
-      return (metrics?.liesCollapsed ?? 0) >= 1 || phaseTurnCount >= 15
+      // 10턴 + 거짓말 붕괴 1회 이상 OR 전체 20턴 경과
+      return (metrics?.liesCollapsed ?? 0) >= 1 || phaseTurnCount >= 20
     }
 
     return true

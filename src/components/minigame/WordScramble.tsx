@@ -210,7 +210,9 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
             {/* 배치 영역 (슬롯) */}
             <div className="mb-4">
               <div className="text-xs text-gray-500 mb-1.5">
-                배치 영역 {selectedSlot !== null && <span className="text-amber-400">— 다른 글자를 탭하면 교환</span>}
+                {selectedSlot !== null
+                  ? <span className="text-amber-400">교환할 위치를 탭하세요</span>
+                  : '배치된 글자를 탭하면 교환할 수 있습니다'}
               </div>
               <div className="flex flex-wrap gap-1.5 min-h-[44px]">
                 {slots.map((cardId, slotIdx) => {
@@ -244,7 +246,7 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
                       {word !== null ? (
                         <span className="text-gray-200">{word}</span>
                       ) : (
-                        <span className="text-transparent select-none">_</span>
+                        <span className="text-gray-700 text-[10px]">{slotIdx + 1}</span>
                       )}
                       {/* O/X 뱃지 */}
                       {check === 'correct' && (

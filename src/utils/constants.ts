@@ -42,9 +42,9 @@ export const PHASE_ORDER: GamePhase[] = [
 ]
 
 export const MIN_TURNS_BEFORE_ADVANCE: Record<string, number> = {
-  [GamePhase.Phase3_Interrogation]: 3,
-  [GamePhase.Phase4_Evidence]: 1,
-  [GamePhase.Phase5_ReExamination]: 0,
+  [GamePhase.Phase3_Interrogation]: 10,
+  [GamePhase.Phase4_Evidence]: 10,
+  [GamePhase.Phase5_ReExamination]: 10,
 }
 
 /** 최대 턴 수 — 초과 시 자동으로 Phase6(중재안)으로 전환 */

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
@@ -5,6 +6,7 @@ export default function ResponsibilitySlider() {
   const caseData = useGameStore((s) => s.caseData)
   const verdictInput = useGameStore((s) => s.verdictInput)
   const setResponsibility = useGameStore((s) => s.setResponsibility)
+  const [currentIdx, setCurrentIdx] = useState(0)
 
   if (!caseData) return null
 
@@ -14,18 +16,29 @@ export default function ResponsibilitySlider() {
 
   const nameA = caseData.duo.partyA.name
   const nameB = caseData.duo.partyB.name
+  const judgedCount = Object.keys(verdictInput.responsibility).length
+
+  if (activeDisputes.length === 0) {
+    return (
+      <div className="space-y-3">
+        <h3 className="text-sm font-bold text-amber-400">② 책임 배분</h3>
+        <div className="text-xs text-gray-600">사실 인정 단계에서 판단한 쟁점이 없습니다.</div>
+      </div>
+    )
+  }
+
+  const safeIdx = Math.min(currentIdx, activeDisputes.length - 1)
 
   return (
     <div className="space-y-3">
-      <h3 className="text-sm font-bold text-amber-400">② 책임 배분</h3>
+      <div className="flex items-center justify-between">
+        <h3 className="text-sm font-bold text-amber-400">② 책임 배분</h3>
+        <span className="text-xs text-gray-500">{judgedCount}/{activeDisputes.length} 배분</span>
+      </div>
       <p className="text-xs text-gray-500">슬라이더를 밀어 누구의 잘못이 더 큰지 정하세요.</p>
 
-      {activeDisputes.length === 0 && (
-        <div className="text-xs text-gray-600">사실 인정 단계에서 판단한 쟁점이 없습니다.</div>
-      )}
-
-      <div className="space-y-3">
-        {activeDisputes.map((d) => {
+      <div>
+        {[activeDisputes[safeIdx]].map((d) => {
           const resp = verdictInput.responsibility[d.id] ?? { a: 50, b: 50 }
           const tiltAngle = ((resp.b - resp.a) / 100) * 12 // A 무거우면 왼쪽 기울어짐(음수), B 무거우면 오른쪽(양수)
           const aHeavy = resp.a > 50
@@ -85,6 +98,8 @@ export default function ResponsibilitySlider() {
                     const b = Number(e.target.value)
                     setResponsibility(d.id, 100 - b, b)
                   }}
+                  onMouseUp={() => { if (safeIdx < activeDisputes.length - 1) setTimeout(() => setCurrentIdx(safeIdx + 1), 500) }}
+                  onTouchEnd={() => { if (safeIdx < activeDisputes.length - 1) setTimeout(() => setCurrentIdx(safeIdx + 1), 500) }}
                   className="w-full accent-amber-500 h-2 relative z-10 opacity-80"
                 />
               </div>
@@ -93,6 +108,21 @@ export default function ResponsibilitySlider() {
                 <div className="text-xs text-amber-500/60 mt-1"><Emoji char="⚠️" size={12} /> 모호성이 높은 쟁점</div>
               )}
             </div>
+          )
+        })}
+      </div>
+
+      {/* 네비게이션 dot */}
+      <div className="flex items-center justify-center gap-2">
+        {activeDisputes.map((dd, i) => {
+          const hasResp = verdictInput.responsibility[dd.id]
+          return (
+            <button key={dd.id} onClick={() => setCurrentIdx(i)}
+              className={`w-6 h-6 rounded-full text-xs font-bold transition-all ${
+                i === safeIdx ? 'ring-2 ring-amber-400 scale-110' : ''
+              } ${hasResp ? 'bg-amber-600 text-gray-950' : 'bg-gray-800 text-gray-500'}`}>
+              {i + 1}
+            </button>
           )
         })}
       </div>

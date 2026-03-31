@@ -5,7 +5,7 @@ import { loadGeneratedCases } from '../../data/cases/caseLoader'
 import { saveCaseProgress } from '../phase/CaseMap'
 import ScoreBreakdown from './ScoreBreakdown'
 import TruthReveal from './TruthReveal'
-import Aftermath from './Aftermath'
+import Aftermath, { resetAftermathCache } from './Aftermath'
 import TitleReveal from './TitleReveal'
 import ShareResult from './ShareResult'
 import Emoji from '../common/Emoji'
@@ -32,6 +32,7 @@ export default function ResultScreen() {
 
   // 세션(홈)으로 나가기
   const handleExit = () => {
+    resetAftermathCache()
     useGameStore.getState().clearSavedGame()
     useGameStore.setState({ caseData: null })
     useGameStore.getState().setPhase(GamePhase.Phase0_CaseIntro)

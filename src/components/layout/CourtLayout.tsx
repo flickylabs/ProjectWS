@@ -251,6 +251,7 @@ function MinigameOverlay() {
   const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
   const evidenceStates = useGameStore((s) => s.evidenceStates)
   const caseData = useGameStore((s) => s.caseData)
+  const [chosenMethod, setChosenMethod] = useState<'minigame' | null>(null)
 
   // 광고 카운트다운 상태: null이면 비활성, 함수이면 완료 시 실행할 성공 콜백
   const [adSuccessCallback, setAdSuccessCallback] = useState<(() => void) | null>(null)
@@ -331,15 +332,14 @@ function MinigameOverlay() {
     )
   }
 
-  // evidence_depth → MatchingPuzzle
+  // evidence_depth → 단계별 미니게임 + 선택지
   if (mg.type === 'evidence_depth') {
-    const { evidenceId } = mg
+    const { evidenceId, depth } = mg
     const evDef = evidenceDefinitions.find((e) => e.id === evidenceId)
 
-    // 3번째 조사 subAction
     const KEY_ORDER = ['request_original', 'restore_context', 'check_edits'] as const
-    const state = evidenceStates[evidenceId]
-    const nextKey = KEY_ORDER.find((k) => !state?.investigatedActions?.includes(k)) ?? 'check_edits'
+    const evState = evidenceStates[evidenceId]
+    const nextKey = KEY_ORDER.find((k) => !evState?.investigatedActions?.includes(k)) ?? 'check_edits'
 
     const handleSuccess = () => {
       const { investigateEvidence, addDialogue, turnCount } = useGameStore.getState()
@@ -360,13 +360,52 @@ function MinigameOverlay() {
     }
     const handleWatchAd = () => showAdCountdown(handleSuccess)
 
-    return (
-      <MatchingPuzzle
-        onSuccess={handleSuccess}
-        onFail={handleFail}
-        onWatchAd={handleWatchAd}
-      />
-    )
+    // 선택지 화면: 미니게임 / 광고 / 아이템(=즉시 성공) 택1
+    if (!chosenMethod) {
+      const depthLabel = depth === 1 ? '1단계: 원본 확보' : depth === 2 ? '2단계: 맥락 복원' : '3단계: 편집 검증'
+      const miniLabel = depth === 1 ? '짝 맞추기' : depth === 2 ? '글자 배치' : '거짓말 탐지기'
+      return (
+        <div className="fixed inset-0 z-50 bg-gray-950 flex flex-col items-center justify-center px-6"
+          style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
+          <div className="text-center mb-6">
+            <Emoji char="🔍" size={48} />
+            <div className="text-lg font-bold text-amber-400 mt-3">{depthLabel}</div>
+            <div className="text-xs text-gray-500 mt-1">"{evDef?.name ?? '증거'}" 조사</div>
+          </div>
+          <div className="w-full max-w-xs space-y-3">
+            <button onClick={() => setChosenMethod('minigame')}
+              className="w-full py-3.5 rounded-2xl text-sm font-bold bg-amber-600 text-gray-950 active:scale-95">
+              🎮 {miniLabel} 미니게임
+            </button>
+            <button onClick={() => { setChosenMethod(null); handleWatchAd() }}
+              className="w-full py-3.5 rounded-2xl text-sm font-medium bg-gray-800 text-gray-300 border border-gray-700 active:scale-95">
+              📺 광고 보기
+            </button>
+            <button onClick={() => { setChosenMethod(null); handleSuccess() }}
+              className="w-full py-3.5 rounded-2xl text-sm font-medium bg-gray-800 text-gray-300 border border-gray-700 active:scale-95">
+              🔍 조사 토큰 사용 (즉시)
+            </button>
+            <button onClick={() => clearMg(null)}
+              className="w-full py-2 text-xs text-gray-600">
+              취소
+            </button>
+          </div>
+        </div>
+      )
+    }
+
+    // 미니게임 실행 — depth별 분기
+    if (depth === 1) {
+      return <MatchingPuzzle onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
+    }
+    if (depth === 2) {
+      const evName = evDef?.name ?? '증거조사'
+      const chars = evName.replace(/\s+/g, '').split('')
+      const words = chars.length >= 6 ? chars.slice(0, 10) : (evName + '조사').replace(/\s+/g, '').split('').slice(0, 10)
+      return <WordScramble words={words} onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
+    }
+    // depth === 3
+    return <HeartbeatDetector onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
   }
 
   // lie_collapse → HeartbeatDetector

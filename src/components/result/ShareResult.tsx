@@ -16,8 +16,21 @@ export default function ShareResult() {
 
   if (!verdictScore || !caseData) return null
 
-  const text = buildShareText(verdictScore.total, verdictScore.insight, verdictScore.authority, verdictScore.wisdom, caseData.duo.relationshipType)
+  // 이미지 저장 (다운로드)
+  const handleDownload = async () => {
+    if (!canvasRef.current) return
+    try {
+      const blob = await new Promise<Blob | null>((res) => canvasRef.current!.toBlob(res, 'image/png'))
+      if (!blob) return
+      const a = document.createElement('a')
+      a.href = URL.createObjectURL(blob)
+      a.download = 'solomon-result.png'
+      a.click()
+      URL.revokeObjectURL(a.href)
+    } catch { /* */ }
+  }
 
+  // 공유하기 (OS 공유 시트 — SNS 앱 목록 표시)
   const handleShareImage = async () => {
     if (!canvasRef.current) return
     try {
@@ -25,14 +38,10 @@ export default function ShareResult() {
       if (!blob) return
       const file = new File([blob], 'solomon-result.png', { type: 'image/png' })
       if (navigator.share && navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ title: '솔로몬 판결 결과', text, files: [file] })
+        await navigator.share({ title: '솔로몬 판결 결과', files: [file] })
       } else {
-        // 파일 공유 불가 → 다운로드
-        const a = document.createElement('a')
-        a.href = URL.createObjectURL(blob)
-        a.download = 'solomon-result.png'
-        a.click()
-        URL.revokeObjectURL(a.href)
+        // Web Share API 미지원 → 다운로드 폴백
+        handleDownload()
       }
     } catch { /* 취소 */ }
   }
@@ -48,11 +57,13 @@ export default function ShareResult() {
       )}
 
       <div className="flex gap-2">
-        <button
-          onClick={handleShareImage}
-          className="flex-1 bg-amber-700 hover:bg-amber-600 text-white py-2 rounded-lg text-xs font-semibold transition-colors"
-        >
-          <Emoji char="📤" size={12} /> 이미지 공유
+        <button onClick={handleDownload}
+          className="flex-1 bg-gray-800 hover:bg-gray-700 text-gray-300 py-2.5 rounded-lg text-xs font-semibold transition-colors border border-gray-700">
+          이미지 저장
+        </button>
+        <button onClick={handleShareImage}
+          className="flex-1 bg-amber-700 hover:bg-amber-600 text-white py-2.5 rounded-lg text-xs font-semibold transition-colors">
+          공유하기
         </button>
       </div>
     </div>

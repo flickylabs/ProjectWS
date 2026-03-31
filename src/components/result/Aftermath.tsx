@@ -1,22 +1,45 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { chatCompletion } from '../../engine/llmClient'
 import { isLLMMode } from '../../hooks/useActionDispatch'
+
+function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] {
+  const lines: string[] = []
+  for (const paragraph of text.split('\n')) {
+    let line = ''
+    for (const char of paragraph) {
+      const test = line + char
+      if (ctx.measureText(test).width > maxWidth && line) {
+        lines.push(line); line = char
+      } else { line = test }
+    }
+    if (line) lines.push(line)
+  }
+  return lines
+}
+
+// 후일담 캐시 — 한 번 생성되면 같은 세션에서 고정
+let cachedAftermath: string | null = null
+
+export function resetAftermathCache() { cachedAftermath = null }
 
 export default function Aftermath() {
   const caseData = useGameStore((s) => s.caseData)
   const verdictInput = useGameStore((s) => s.verdictInput)
   const verdictScore = useGameStore((s) => s.verdictScore)
-  const [aftermath, setAftermath] = useState<string | null>(null)
+  const [aftermath, setAftermath] = useState<string | null>(cachedAftermath)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    if (cachedAftermath) return // 이미 생성된 후일담이 있으면 재생성하지 않음
     if (!caseData || !verdictScore) return
 
     if (isLLMMode()) {
       generateAftermath()
     } else {
-      setAftermath(buildFallbackAftermath())
+      const fb = buildFallbackAftermath()
+      cachedAftermath = fb
+      setAftermath(fb)
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -95,9 +118,12 @@ ${respResults}
         [{ role: 'user', content: prompt }],
         { temperature: 0.9, maxTokens: 500 },
       )
+      cachedAftermath = response
       setAftermath(response)
     } catch {
-      setAftermath(buildFallbackAftermath())
+      const fb = buildFallbackAftermath()
+      cachedAftermath = fb
+      setAftermath(fb)
     }
     setLoading(false)
   }
@@ -128,6 +154,67 @@ ${respResults}
 
   if (!aftermath) return null
 
+  const aftermathCanvasRef = useRef<HTMLCanvasElement>(null)
+
+  const renderAftermathImage = (): string | null => {
+    const canvas = aftermathCanvasRef.current
+    if (!canvas || !aftermath || !caseData) return null
+    const W = 600, H = 500
+    const ctx = canvas.getContext('2d')!
+    const dpr = window.devicePixelRatio || 1
+    canvas.width = W * dpr; canvas.height = H * dpr
+    ctx.scale(dpr, dpr)
+
+    // 배경
+    const bg = ctx.createLinearGradient(0, 0, 0, H)
+    bg.addColorStop(0, '#0c0f1a'); bg.addColorStop(1, '#030712')
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H)
+
+    // 타이틀
+    ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 28px Pretendard, sans-serif'; ctx.textAlign = 'center'
+    ctx.fillText('⚖️ 솔로몬 — 판결 후일담', W / 2, 45)
+
+    // 당사자
+    ctx.fillStyle = '#9ca3af'; ctx.font = '14px Pretendard, sans-serif'
+    ctx.fillText(`${caseData.duo.partyA.name} vs ${caseData.duo.partyB.name}`, W / 2, 75)
+
+    // 후일담 본문
+    ctx.fillStyle = '#d1d5db'; ctx.font = '14px Pretendard, sans-serif'; ctx.textAlign = 'left'
+    const lines = wrapText(ctx, aftermath.replace(/\n\n/g, '\n'), W - 80)
+    lines.slice(0, 18).forEach((line, i) => ctx.fillText(line, 40, 110 + i * 22))
+
+    // 해시태그
+    ctx.fillStyle = '#4b5563'; ctx.font = '12px Pretendard, sans-serif'; ctx.textAlign = 'center'
+    ctx.fillText('#솔로몬 #법정추리게임 #후일담', W / 2, H - 20)
+
+    return canvas.toDataURL('image/png')
+  }
+
+  const handleShareAftermath = async () => {
+    const canvas = aftermathCanvasRef.current
+    if (!canvas || !aftermath) return
+    renderAftermathImage()
+    try {
+      const blob = await new Promise<Blob | null>((res) => canvas.toBlob(res, 'image/png'))
+      if (!blob) return
+      const file = new File([blob], 'solomon-aftermath.png', { type: 'image/png' })
+      if (navigator.share && navigator.canShare?.({ files: [file] })) {
+        await navigator.share({ title: '솔로몬 판결 후일담', files: [file] })
+      } else {
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob)
+        a.download = 'solomon-aftermath.png'; a.click(); URL.revokeObjectURL(a.href)
+      }
+    } catch { /* 취소 */ }
+  }
+
+  const handleDownloadAftermath = () => {
+    const canvas = aftermathCanvasRef.current
+    if (!canvas || !aftermath) return
+    renderAftermathImage()
+    const a = document.createElement('a'); a.href = canvas.toDataURL('image/png')
+    a.download = 'solomon-aftermath.png'; a.click()
+  }
+
   return (
     <div className="space-y-4">
       <h3 className="text-sm font-bold text-amber-400 text-center">판결 이후</h3>
@@ -141,6 +228,19 @@ ${respResults}
             {paragraph}
           </p>
         ))}
+      </div>
+
+      {/* 후일담 이미지 공유 */}
+      <canvas ref={aftermathCanvasRef} width={600} height={500} className="hidden" />
+      <div className="flex gap-2">
+        <button onClick={handleDownloadAftermath}
+          className="flex-1 bg-gray-800 hover:bg-gray-700 text-gray-300 py-2 rounded-lg text-xs font-semibold border border-gray-700">
+          이미지 저장
+        </button>
+        <button onClick={handleShareAftermath}
+          className="flex-1 bg-amber-700 hover:bg-amber-600 text-white py-2 rounded-lg text-xs font-semibold">
+          공유하기
+        </button>
       </div>
     </div>
   )

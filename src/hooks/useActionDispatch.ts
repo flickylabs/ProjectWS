@@ -613,10 +613,12 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
       const npcName = target === 'a'
         ? freshState.caseData?.duo.partyA.name ?? '당사자A'
         : freshState.caseData?.duo.partyB.name ?? '당사자B'
-      // 모순 감지 시 WordScramble 미니게임 트리거
+      // 모순 감지 시 WordScramble 미니게임 트리거 — 쟁점명 사용
+      const disputeForText = freshState.caseData?.disputes.find(d => d.id === node.conditions.disputeId)
+      const scrambleText = disputeForText?.name ?? `${npcName}의 진술 모순`
       useGameStore.getState().setPendingMinigame({
         type: 'contradiction',
-        text: `${npcName}의 진술 모순`,
+        text: scrambleText,
         disputeId: node.conditions.disputeId,
         target,
       })
