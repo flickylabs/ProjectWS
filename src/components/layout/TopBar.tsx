@@ -96,23 +96,7 @@ export default function TopBar() {
         </div>
       </header>
 
-      {/* 2행: 점수 / 🔍돋보기 / ⚡번개 / 턴 */}
-      {isLatePhase && (
-        <div className="bg-gray-950/80 border-b border-gray-800/30 px-3 h-7 flex items-center justify-between shrink-0">
-          <span className="text-[10px] text-indigo-300/80">📊 ~{estimatedScore}점</span>
-          <div className="flex items-center gap-3">
-            <button onClick={() => setShowResource('invest')} className="flex items-center gap-0.5 text-[10px] hover:opacity-80 active:scale-95">
-              <Emoji char="🔍" size={12} /><span className="text-amber-400 font-bold">{globalInvest}</span>
-            </button>
-            <button onClick={() => setShowResource('skill')} className="flex items-center gap-0.5 text-[10px] hover:opacity-80 active:scale-95">
-              <Emoji char="⚡" size={12} /><span className="text-amber-400 font-bold">{globalSkill}</span>
-            </button>
-          </div>
-          <span className={`text-[10px] font-semibold ${remainingTurns <= 5 ? 'text-red-400' : 'text-gray-400'}`}>
-            턴 {turnCount}/{MAX_TURNS}
-          </span>
-        </div>
-      )}
+      {/* 2행: PartyStatusBar에서 통합 표시 */}
       {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
 
       {/* 돋보기/번개 팝업 */}

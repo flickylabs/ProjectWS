@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
-import { INITIAL_RESOURCES } from '../../utils/constants'
+import { INITIAL_RESOURCES, MAX_TURNS } from '../../utils/constants'
+import { GamePhase } from '../../types'
 import Emoji from '../common/Emoji'
+import ResourcePopup from '../shop/ResourcePopup'
 
 const EMOTION_EMOJI: Record<string, string> = {
   defensive: '😐', confident: '😤', shaken: '😰', angry: '😡', resigned: '😞',
@@ -15,8 +17,26 @@ export default function PartyStatusBar() {
   const resources = useGameStore((s) => s.resources)
   const separationTarget = useGameStore((s) => s.separationTarget)
   const [showInfo, setShowInfo] = useState<'a' | 'b' | null>(null)
+  const [showResource, setShowResource] = useState<'invest' | 'skill' | null>(null)
+  const turnCount = useGameStore((s) => s.turnCount)
+  const processMetrics = useGameStore((s) => s.processMetrics)
+  const currentPhase = useGameStore((s) => s.currentPhase)
+  const globalInvest = useGameStore((s) => s.globalInvestTokens)
+  const globalSkill = useGameStore((s) => s.globalSkillPoints)
+  const adCountInvest = useGameStore((s) => s.adWatchCountInvest)
+  const adCountSkill = useGameStore((s) => s.adWatchCountSkill)
+  const watchAdInvest = useGameStore((s) => s.watchAdForInvest)
+  const watchAdSkill = useGameStore((s) => s.watchAdForSkill)
+  const getCountdown = useGameStore((s) => s.getNextRechargeCountdown)
 
   if (!caseData) return null
+
+  const remainingTurns = MAX_TURNS - turnCount
+  const estimatedScore = Math.min(100,
+    processMetrics.liesCollapsed * 10 + processMetrics.evidenceDiscovered * 8
+    + processMetrics.evidenceEffective * 5 + processMetrics.freeQuestionsRelevant * 3
+  )
+  const isLatePhase = [GamePhase.Phase3_Interrogation, GamePhase.Phase4_Evidence, GamePhase.Phase5_ReExamination, GamePhase.Phase6_Mediation, GamePhase.Phase7_Verdict].includes(currentPhase)
 
   const phaseA = agentA.emotionalState.phase
   const phaseB = agentB.emotionalState.phase
@@ -35,10 +55,20 @@ export default function PartyStatusBar() {
           <span className="text-sm font-bold text-blue-400">{caseData.duo.partyA.name}</span>
         </button>
 
-        {/* 중앙: Stat */}
-        <div className="flex items-center gap-3">
-          <StatPill icon="🔍" value={resources.investigationTokens} max={INITIAL_RESOURCES.investigationTokens} color="text-blue-400" />
-          <StatPill icon="⚡" value={resources.skillPoints} max={INITIAL_RESOURCES.skillPoints} color="text-amber-400" />
+        {/* 중앙: 점수 | 🔍 | ⚡ | 턴 */}
+        <div className="flex items-center gap-1.5">
+          {isLatePhase && <span className="text-[10px] text-indigo-300/80">📊{estimatedScore}</span>}
+          <button onClick={() => setShowResource('invest')} className="flex items-center gap-0.5 text-[10px] hover:opacity-80 active:scale-95">
+            <Emoji char="🔍" size={11} /><span className="text-amber-400 font-bold">{resources.investigationTokens}</span>
+          </button>
+          <button onClick={() => setShowResource('skill')} className="flex items-center gap-0.5 text-[10px] hover:opacity-80 active:scale-95">
+            <Emoji char="⚡" size={11} /><span className="text-amber-400 font-bold">{resources.skillPoints}</span>
+          </button>
+          {isLatePhase && (
+            <span className={`text-[10px] font-semibold ${remainingTurns <= 5 ? 'text-red-400' : 'text-gray-400'}`}>
+              {turnCount}/{MAX_TURNS}
+            </span>
+          )}
         </div>
 
         {/* B */}
@@ -50,6 +80,16 @@ export default function PartyStatusBar() {
           <Emoji char={bExcluded ? '🚪' : (EMOTION_EMOJI[phaseB] ?? '😐')} size={20} />
         </button>
       </div>
+
+      {/* 리소스 충전 팝업 */}
+      {showResource === 'invest' && (
+        <ResourcePopup type="invest" current={globalInvest} countdown={getCountdown()}
+          adRemaining={5 - adCountInvest} onWatchAd={watchAdInvest} onClose={() => setShowResource(null)} />
+      )}
+      {showResource === 'skill' && (
+        <ResourcePopup type="skill" current={globalSkill}
+          adRemaining={2 - adCountSkill} onWatchAd={watchAdSkill} onClose={() => setShowResource(null)} />
+      )}
 
       {/* 캐릭터 정보 팝업 */}
       {showInfo && (
