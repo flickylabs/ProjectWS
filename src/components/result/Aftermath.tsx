@@ -116,8 +116,9 @@ export default function Aftermath() {
       setAftermath(response)
       updateLatestAftermath(response)
     } catch (err) {
-      console.error('[Aftermath] 후일담 생성 실패:', err)
-      const fb = buildFallbackAftermath()
+      const errMsg = err instanceof Error ? err.message : String(err)
+      console.error('[Aftermath] 후일담 생성 실패:', errMsg)
+      const fb = buildFallbackAftermath() + `\n\n⚠️ AI 후일담 생성 실패: ${errMsg.slice(0, 80)}`
       cachedAftermath = fb
       setAftermath(fb)
       updateLatestAftermath(fb)

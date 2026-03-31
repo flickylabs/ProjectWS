@@ -85,7 +85,8 @@ export async function chatCompletion(
 
   if (!res.ok) {
     const text = await res.text().catch(() => '')
-    throw new Error(`LLM API error: ${res.status} ${res.statusText} ${text}`)
+    console.error(`[LLM API] ${res.status} ${res.statusText}`, text.slice(0, 200))
+    throw new Error(`LLM API error: ${res.status} ${res.statusText} ${text.slice(0, 100)}`)
   }
 
   const data: ChatCompletionResponse = await res.json()
