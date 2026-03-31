@@ -94,11 +94,21 @@ export default function VerdictScreen() {
     })
     setVerdictScore(score)
     recordGameComplete(caseData.caseId, score.total)
+    // 쟁점명 맵 생성
+    const disputeNames: Record<string, string> = {}
+    caseData.disputes.forEach(d => { disputeNames[d.id] = d.name })
+
     recordHistory({
       caseId: caseData.caseId, score: score.total,
       insight: score.insight, authority: score.authority, wisdom: score.wisdom,
       relationshipType: caseData.duo.relationshipType,
       nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name,
+      verdictDetail: {
+        factFindings: { ...verdictInput.factFindings },
+        responsibility: { ...verdictInput.responsibility },
+        selectedSolutions: [...verdictInput.selectedSolutions],
+        disputeNames,
+      },
     })
     // 캠페인 Stage 진행 (관계 유형으로 매칭)
     const stageMap: Record<string, number> = {

@@ -13,6 +13,13 @@ export interface ExtendedHistoryEntry {
   playerName: string
   titles: string[]
   campaignStage?: number
+  verdictDetail?: {
+    factFindings: Record<string, string>
+    responsibility: Record<string, { a: number; b: number }>
+    selectedSolutions: string[]
+    disputeNames: Record<string, string>
+    aftermath?: string
+  }
 }
 
 export interface Season {

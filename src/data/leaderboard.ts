@@ -66,6 +66,15 @@ export function addHistoryEntry(entry: ExtendedHistoryEntry): void {
   updateHallOfFame(entry)
 }
 
+/** 최근 기록에 후일담 추가 */
+export function updateLatestAftermath(aftermath: string): void {
+  const history = loadExtendedHistory()
+  if (history.length > 0 && history[0].verdictDetail) {
+    history[0].verdictDetail.aftermath = aftermath
+    saveExtendedHistory(history)
+  }
+}
+
 /** 기존 HistoryEntry → ExtendedHistoryEntry 마이그레이션 */
 function migrateEntry(old: any): ExtendedHistoryEntry {
   if ('insight' in old && 'seasonId' in old) return old as ExtendedHistoryEntry

@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { chatCompletion } from '../../engine/llmClient'
 import { isLLMMode } from '../../hooks/useActionDispatch'
+import { updateLatestAftermath } from '../../data/leaderboard'
 
 function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] {
   const lines: string[] = []
@@ -40,6 +41,7 @@ export default function Aftermath() {
       const fb = buildFallbackAftermath()
       cachedAftermath = fb
       setAftermath(fb)
+      updateLatestAftermath(fb)
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -120,11 +122,13 @@ ${respResults}
       )
       cachedAftermath = response
       setAftermath(response)
+      updateLatestAftermath(response)
     } catch (err) {
       console.error('[Aftermath] 후일담 생성 실패:', err)
       const fb = buildFallbackAftermath()
       cachedAftermath = fb
       setAftermath(fb)
+      updateLatestAftermath(fb)
     }
     setLoading(false)
   }
