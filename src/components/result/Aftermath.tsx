@@ -50,11 +50,23 @@ export default function Aftermath() {
         : verdictScore.total >= 35 ? '아쉽고 불완전한 톤'
         : '씁쓸하고 후회가 남는 톤'
 
+      const partyA = caseData.duo.partyA
+      const partyB = caseData.duo.partyB
+      const relType = caseData.meta?.relationshipType ?? caseData.duo.relationshipType ?? ''
+      const familyRel = caseData.meta?.relationshipState ?? caseData.meta?.familyRelation ?? ''
+      const callA = partyA.callTerms?.toPartner ?? ''
+      const callB = partyB.callTerms?.toPartner ?? ''
+
       const prompt = `법정 심문 추리 게임의 판결 후일담을 작성하세요.
 
-당사자: ${nameA} vs ${nameB}
-관계: ${caseData.duo.relationshipType}
+당사자:
+- ${nameA} (${partyA.age ?? ''}세, ${partyA.occupation ?? ''})
+- ${nameB} (${partyB.age ?? ''}세, ${partyB.occupation ?? ''})
+관계 유형: ${relType}${familyRel ? ` (${familyRel})` : ''}
+호칭: ${nameA}→${nameB}: "${callA}", ${nameB}→${nameA}: "${callB}"
 배경: ${caseData.context.description}
+
+★ 두 사람의 나이와 관계에 맞는 호칭을 사용하세요. 형/누나/오빠/언니 등을 혼동하지 마세요.
 
 ## 재판관의 판결
 사실 판단:
