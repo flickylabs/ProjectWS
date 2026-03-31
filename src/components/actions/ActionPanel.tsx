@@ -244,7 +244,7 @@ export default function ActionPanel() {
             {hasToast && activeTab === 'skill' && (
               <div className="p-2">
                 <SkillPanel target={target!} disputes={disputes} resources={resources} canUseSkill={canUseSkill}
-                  onObj={hObj} onSkill={hSkill} onTrust={hTrust} currentPhase={currentPhase} />
+                  onObj={hObj} onSkill={hSkill} onTrust={hTrust} currentPhase={currentPhase} onClose={() => setActiveTab(null)} />
               </div>
             )}
             {hasAdvanceConfirm && !hasToast && (
@@ -313,9 +313,10 @@ export default function ActionPanel() {
 
 /* ── 액티브 스킬 패널 (이의 제기 / 분리 심문 / 즉답 요구) ── */
 
-function SkillPanel({ target, disputes, resources, canUseSkill, onObj, onSkill, onTrust, currentPhase }: {
+function SkillPanel({ target, disputes, resources, canUseSkill, onObj, onSkill, onTrust, currentPhase, onClose }: {
   target: PartyId; disputes: {id:string;name:string}[]; resources: any; canUseSkill: (s:SkillType)=>boolean
   onObj: ()=>void; onSkill: (s:SkillType,d?:string)=>void; onTrust: (a:TrustActionType)=>void; currentPhase: GamePhase
+  onClose?: ()=>void
 }) {
   const [exp, setExp] = useState<string|null>(null)
   const [analyzing, setAnalyzing] = useState(false)
@@ -351,6 +352,7 @@ function SkillPanel({ target, disputes, resources, canUseSkill, onObj, onSkill, 
       })
     }
     setAnalyzing(false)
+    onClose?.()
   }
 
   return (

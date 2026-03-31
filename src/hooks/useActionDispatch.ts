@@ -181,7 +181,8 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
 
   // 비용: 조사 토큰 1개
   if (state.resources.investigationTokens < 1) {
-    state.addDialogue({ speaker: 'system', text: '조사 토큰이 부족하다.', relatedDisputes: [], turn: state.turnCount })
+    state.addDialogue({ speaker: 'system', text: '조사 토큰이 모두 소진되었습니다.', relatedDisputes: [], turn: state.turnCount })
+    import('../components/court/PartyStatusBar').then(m => m.openResourcePopup('invest'))
     return
   }
   state.spend('investigationTokens', 1)
@@ -640,8 +641,8 @@ function maybeInterjection(target: PartyId, disputeId?: string) {
   const chance = (otherLie?.currentState ?? 'S0') >= 'S3' ? 0.50 : 0.25
   if (Math.random() > chance) return
 
-  // 분리 심문 중이면 끼어들기 불가
-  if (state.separationTarget === otherParty) return
+  // 분리 심문 중이면 끼어들기 완전 차단
+  if (state.separationTarget) return
 
   const otherName = otherParty === 'a' ? state.caseData.duo.partyA.name : state.caseData.duo.partyB.name
   const phase = otherAgent.emotionalState.phase
@@ -665,6 +666,15 @@ function maybeInterjection(target: PartyId, disputeId?: string) {
   }
   const followPool = followUps[phase] ?? followUps.defensive
   const followUp = followPool[Math.floor(Math.random() * followPool.length)]
+
+  // 대화 로그에 끼어들기 대사 기록 (본페이지에 남도록)
+  state.addDialogue({
+    speaker: otherParty,
+    text,
+    relatedDisputes: [disputeId],
+    turn: state.turnCount,
+    behaviorHint: '끼어들며 말한다.',
+  })
 
   // 딜레이 후 선택지 대기 — B의 대사가 먼저 렌더링되도록
   setTimeout(() => {
@@ -871,16 +881,16 @@ function changeEmotionWithPhaseTracking(party: PartyId, delta: number) {
     let emotionText: string
     switch (newPhase) {
       case 'angry':
-        emotionText = `💢 ${name}이 폭발 직전이다!`
+        emotionText = `💢 ${iga(name ?? '')} 폭발 직전이다!`
         break
       case 'shaken':
-        emotionText = `😰 ${name}이 흔들리고 있다...`
+        emotionText = `😰 ${iga(name ?? '')} 흔들리고 있다...`
         break
       case 'resigned':
-        emotionText = `😞 ${name}이 지쳐 보인다.`
+        emotionText = `😞 ${iga(name ?? '')} 지쳐 보인다.`
         break
       case 'confident':
-        emotionText = `😤 ${name}이 자신감을 되찾았다.`
+        emotionText = `😤 ${iga(name ?? '')} 자신감을 되찾았다.`
         break
       default:
         emotionText = `🎭 ${name}의 감정 변화: ${prevLabel} → ${newLabel}`

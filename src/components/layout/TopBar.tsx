@@ -73,14 +73,27 @@ export default function TopBar() {
 
   return (
     <>
-      {/* 1행: 나가기 / Phase / AI + 설정 */}
+      {/* 1행: 나가기 / 수치 4종 / AI + 설정 */}
       <header className="bg-gray-900/95 backdrop-blur-sm border-b border-gray-800/60 px-3 h-9 flex items-center shrink-0">
         <div className="flex items-center justify-between w-full">
           <button onClick={() => setShowExitConfirm(true)}
             className="text-gray-500 hover:text-white text-xs mr-2 shrink-0">
             ← 나가기
           </button>
-          <PhaseIndicator />
+          {isLatePhase && (
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-indigo-300/80"><Emoji char="📊" size={14} /> {estimatedScore}</span>
+              <button onClick={() => setShowResource('invest')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
+                <Emoji char="🔍" size={16} /><span className="text-amber-400 font-bold">{globalInvest}</span>
+              </button>
+              <button onClick={() => setShowResource('skill')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
+                <Emoji char="⚡" size={16} /><span className="text-amber-400 font-bold">{globalSkill}</span>
+              </button>
+              <span className={`text-xs font-semibold ${remainingTurns <= 5 ? 'text-red-400' : 'text-gray-400'}`}>
+                {turnCount}/{MAX_TURNS}
+              </span>
+            </div>
+          )}
           <div className="flex items-center gap-1.5 ml-2 shrink-0">
             <span className={`text-[10px] ${
               aiStatus === 'connected' ? 'text-emerald-500/70' :

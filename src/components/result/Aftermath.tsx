@@ -82,44 +82,36 @@ export default function Aftermath() {
       const callA = partyA.callTerms?.toPartner ?? ''
       const callB = partyB.callTerms?.toPartner ?? ''
 
-      const prompt = `법정 심문 추리 게임의 판결 후일담을 작성하세요.
+      const prompt = `법정 심문 게임의 판결 후일담을 작성하세요.
 
-당사자:
-- ${nameA} (${partyA.age ?? ''}세, ${partyA.occupation ?? ''})
-- ${nameB} (${partyB.age ?? ''}세, ${partyB.occupation ?? ''})
-관계 유형: ${relType}${familyRel ? ` (${familyRel})` : ''}
-호칭: ${nameA}→${nameB}: "${callA}", ${nameB}→${nameA}: "${callB}"
-배경: ${caseData.context.description}
+당사자: ${nameA}(${partyA.age ?? ''}세) vs ${nameB}(${partyB.age ?? ''}세)
+관계: ${relType}${familyRel ? `(${familyRel})` : ''}. 호칭: ${callA}/${callB}
+배경: ${caseData.context.description.slice(0, 150)}
+해결책: ${solutions}
+점수: ${verdictScore.total}점 (${endingTone})
 
-★ 두 사람의 나이와 관계에 맞는 호칭을 사용하세요. 형/누나/오빠/언니 등을 혼동하지 마세요.
+규칙:
+- 판결 이후 1주~1개월 후 상황을 2~3문단으로 묘사
+- 두 사람의 관계 변화와 내면을 담담하게
+- 호칭을 나이/관계에 맞게 사용
+- 마지막 한 줄: 교훈이나 여운
+- 한국어 소설체`
 
-## 재판관의 판결
-사실 판단:
-${factResults}
-
-책임 배분:
-${respResults}
-
-선택한 해결책: ${solutions}
-판결 점수: ${score} (총점 ${verdictScore.total})
-
-## 규칙
-- 톤: ${endingTone}
-- 판결 이후 1주일~1개월 후의 상황을 3~4문단으로 묘사
-- 사실 판단과 책임 배분이 두 사람에게 어떤 영향을 미쳤는지 구체적으로
-- 선택한 해결책의 실제 결과를 보여줘 (잘된 점, 안 된 점 모두)
-- 두 사람이 각각 무엇을 느꼈는지 내면까지 묘사
-- 점수 75+ : 판결이 전환점이 되어 관계가 회복되는 방향
-- 점수 55~74: 일부는 해결됐지만 완전하지 않은 여운
-- 점수 35~54: 판결이 또 다른 갈등의 씨앗을 남김
-- 점수 ~34: 판결이 상황을 악화시킴
-- 한국어. 소설처럼 담담하고 현실적인 문체.
-- 마지막 문단은 한 줄로 교훈이나 여운을 남겨주세요.`
-
-      const response = await chatCompletion(
-        [{ role: 'user', content: prompt }],
-        { temperature: 0.85, maxTokens: 400 },
-      )
+      // 재시도 로직 (최대 2회)
+      let response = ''
+      for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+          response = await chatCompletion(
+            [{ role: 'user', content: prompt }],
+            { temperature: 0.85, maxTokens: 500 },
+          )
+          if (response.trim()) break
+        } catch (retryErr) {
+          console.warn(`[Aftermath] 시도 ${attempt + 1} 실패:`, retryErr)
+          if (attempt === 0) await new Promise(r => setTimeout(r, 2000)) // 2초 대기 후 재시도
+          else throw retryErr
+        }
+      }
       cachedAftermath = response
       setAftermath(response)
       updateLatestAftermath(response)

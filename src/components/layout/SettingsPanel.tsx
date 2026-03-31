@@ -28,13 +28,15 @@ export default function SettingsPanel({ onClose }: Props) {
 
   return (
     <div className="fixed inset-0 z-40 bg-gray-950/90 flex items-center justify-center px-4">
-      <div className="bg-gray-900 border border-gray-700 rounded-xl w-full max-w-md max-h-[80vh] overflow-y-auto">
-        <div className="flex items-center justify-between p-4 border-b border-gray-800">
+      <div className="bg-gray-900 border border-gray-700 rounded-xl w-full max-w-md max-h-[80vh] flex flex-col">
+        {/* 상단 고정 */}
+        <div className="flex items-center justify-between p-4 border-b border-gray-800 shrink-0">
           <h2 className="text-sm font-bold text-amber-400">설정</h2>
           <button onClick={onClose} className="text-gray-500 hover:text-white text-lg"><Emoji char="✕" size={16} /></button>
         </div>
 
-        <div className="p-4 space-y-5">
+        {/* 스크롤 내용 */}
+        <div className="p-4 space-y-5 overflow-y-auto flex-1">
           {/* LLM 상태 */}
           <Section title="AI 연결">
             <div className={`text-xs p-2.5 rounded-lg border ${
@@ -122,15 +124,17 @@ function Toggle({ label, desc, checked, onChange }: { label: string; desc: strin
         <div className="text-xs text-gray-200">{label}</div>
         <div className="text-xs text-gray-500">{desc}</div>
       </div>
-      <button
-        onClick={() => onChange(!checked)}
-        className={`w-11 h-[22px] rounded-full transition-colors duration-200 relative shrink-0 ${checked ? 'bg-amber-600' : 'bg-gray-700'}`}
-      >
-        <div className={`w-[18px] h-[18px] rounded-full bg-white shadow-sm absolute top-[2px] transition-all duration-200 ${checked ? 'left-[24px]' : 'left-[2px]'}`} />
-        <span className={`absolute text-[8px] font-bold top-[5px] ${checked ? 'left-[4px] text-amber-200' : 'right-[3px] text-gray-500'}`}>
+      <div className="flex flex-col items-end shrink-0">
+        <button
+          onClick={() => onChange(!checked)}
+          className={`w-12 h-[14px] rounded-full transition-colors duration-200 relative ${checked ? 'bg-amber-600' : 'bg-gray-700'}`}
+        >
+          <div className={`w-[12px] h-[12px] rounded-full bg-white shadow-sm absolute top-[1px] transition-all duration-200 ${checked ? 'left-[35px]' : 'left-[1px]'}`} />
+        </button>
+        <span className={`text-[9px] mt-0.5 ${checked ? 'text-amber-500' : 'text-gray-600'}`}>
           {checked ? 'ON' : 'OFF'}
         </span>
-      </button>
+      </div>
     </div>
   )
 }
@@ -151,21 +155,20 @@ function CheatSection() {
   const caseData = useGameStore((s) => s.caseData)
 
   // 대기 중인 변경사항 (확인 누르기 전까지 적용 안 됨)
-  const [pending, setPending] = useState<{ invest: number; skill: number; court: number }>({ invest: 0, skill: 0, court: 0 })
-  const hasPending = pending.invest !== 0 || pending.skill !== 0 || pending.court !== 0
+  const [pending, setPending] = useState<{ invest: number; skill: number }>({ invest: 0, skill: 0 })
+  const hasPending = pending.invest !== 0 || pending.skill !== 0
 
-  const addPending = (key: 'invest' | 'skill' | 'court', amount: number) => {
+  const addPending = (key: 'invest' | 'skill', amount: number) => {
     setPending(prev => ({ ...prev, [key]: prev[key] + amount }))
   }
 
   const applyPending = () => {
     if (pending.invest > 0) gain('investigationTokens', pending.invest)
     if (pending.skill > 0) gain('skillPoints', pending.skill)
-    if (pending.court > 0) gain('courtControl', pending.court)
-    setPending({ invest: 0, skill: 0, court: 0 })
+    setPending({ invest: 0, skill: 0 })
   }
 
-  const resetPending = () => setPending({ invest: 0, skill: 0, court: 0 })
+  const resetPending = () => setPending({ invest: 0, skill: 0 })
 
   return (
     <Section title={<><Emoji char="🛠" size={14} /> DEV 치트키</>}>
@@ -196,17 +199,6 @@ function CheatSection() {
           </div>
         </div>
 
-        {caseData && (
-          <div className="flex items-center justify-between">
-            <span className="text-xs text-gray-300">
-              <Emoji char="⚖️" size={12} /> 법정 통제력: {resources.courtControl}
-              {pending.court > 0 && <span className="text-emerald-400"> (+{pending.court})</span>}
-            </span>
-            <div className="flex gap-1">
-              <button onClick={() => addPending('court', 5)} className="px-2 py-0.5 text-xs rounded bg-gray-700 hover:bg-gray-600 text-gray-200 active:scale-95">+5</button>
-            </div>
-          </div>
-        )}
 
         {/* 확인/취소 버튼 — 변경사항이 있을 때만 표시 */}
         {hasPending && (

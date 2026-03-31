@@ -69,9 +69,11 @@ export async function chatCompletion(
     headers['Authorization'] = `Bearer ${config.apiKey}`
   }
 
+  const timeout = options.maxTokens && options.maxTokens >= 400 ? 90000 : 60000
   const res = await fetch(`${config.baseUrl}/chat/completions`, {
     method: 'POST',
     headers,
+    signal: AbortSignal.timeout(timeout),
     body: JSON.stringify({
       model: modelId,
       messages,

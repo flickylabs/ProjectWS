@@ -4,11 +4,18 @@ import { INITIAL_RESOURCES, MAX_TURNS } from '../../utils/constants'
 import { GamePhase } from '../../types'
 import Emoji from '../common/Emoji'
 import ResourcePopup from '../shop/ResourcePopup'
+import PhaseIndicator from '../layout/PhaseIndicator'
 
 const EMOTION_EMOJI: Record<string, string> = {
   defensive: '😐', confident: '😤', shaken: '😰', angry: '😡', resigned: '😞',
 }
 
+
+// 외부에서 리소스 팝업을 여는 전역 함수
+let openResourcePopupFn: ((type: 'invest' | 'skill') => void) | null = null
+export function openResourcePopup(type: 'invest' | 'skill') {
+  openResourcePopupFn?.(type)
+}
 
 export default function PartyStatusBar() {
   const caseData = useGameStore((s) => s.caseData)
@@ -18,6 +25,8 @@ export default function PartyStatusBar() {
   const separationTarget = useGameStore((s) => s.separationTarget)
   const [showInfo, setShowInfo] = useState<'a' | 'b' | null>(null)
   const [showResource, setShowResource] = useState<'invest' | 'skill' | null>(null)
+  // 전역 접근용
+  openResourcePopupFn = setShowResource
   const turnCount = useGameStore((s) => s.turnCount)
   const processMetrics = useGameStore((s) => s.processMetrics)
   const currentPhase = useGameStore((s) => s.currentPhase)
@@ -55,21 +64,8 @@ export default function PartyStatusBar() {
           <span className="text-sm font-bold text-blue-400">{caseData.duo.partyA.name}</span>
         </button>
 
-        {/* 중앙: 점수 | 🔍 | ⚡ | 턴 */}
-        <div className="flex items-center gap-1.5">
-          {isLatePhase && <span className="text-[10px] text-indigo-300/80">📊{estimatedScore}</span>}
-          <button onClick={() => setShowResource('invest')} className="flex items-center gap-0.5 text-[10px] hover:opacity-80 active:scale-95">
-            <Emoji char="🔍" size={11} /><span className="text-amber-400 font-bold">{resources.investigationTokens}</span>
-          </button>
-          <button onClick={() => setShowResource('skill')} className="flex items-center gap-0.5 text-[10px] hover:opacity-80 active:scale-95">
-            <Emoji char="⚡" size={11} /><span className="text-amber-400 font-bold">{resources.skillPoints}</span>
-          </button>
-          {isLatePhase && (
-            <span className={`text-[10px] font-semibold ${remainingTurns <= 5 ? 'text-red-400' : 'text-gray-400'}`}>
-              {turnCount}/{MAX_TURNS}
-            </span>
-          )}
-        </div>
+        {/* 중앙: Phase 표시 */}
+        <PhaseIndicator />
 
         {/* B */}
         <button

@@ -7,7 +7,8 @@
 import type { StateCreator } from 'zustand'
 
 /** 자동 충전 상한 (무료) */
-const FREE_CAP = 10
+const FREE_CAP_INVEST = 10  // 돋보기 최대
+const FREE_CAP_SKILL = 5    // 번개 최대
 /** 유료 구입 시 절대 상한 */
 const PAID_CAP = 99
 
@@ -59,7 +60,7 @@ function getTodayString(): string {
 export const createShopSlice: StateCreator<ShopSlice, [], [], ShopSlice> = (set, get) => ({
   globalInvestTokens: 6,
   globalSkillPoints: 5,
-  freeCap: FREE_CAP,
+  freeCap: FREE_CAP_INVEST,
   lastInvestRechargeAt: Date.now(),
   adWatchCountInvest: 0,
   adWatchCountSkill: 0,
@@ -68,12 +69,12 @@ export const createShopSlice: StateCreator<ShopSlice, [], [], ShopSlice> = (set,
   tickInvestRecharge: () => {
     const { lastInvestRechargeAt, globalInvestTokens } = get()
     // 10 이상이면 충전 안 함
-    if (globalInvestTokens >= FREE_CAP) return
+    if (globalInvestTokens >= FREE_CAP_INVEST) return
     const now = Date.now()
     const elapsed = now - lastInvestRechargeAt
     const charges = Math.floor(elapsed / RECHARGE_INTERVAL_MS)
     if (charges > 0) {
-      const newTokens = Math.min(globalInvestTokens + charges, FREE_CAP)
+      const newTokens = Math.min(globalInvestTokens + charges, FREE_CAP_INVEST)
       set({
         globalInvestTokens: newTokens,
         lastInvestRechargeAt: lastInvestRechargeAt + charges * RECHARGE_INTERVAL_MS,
@@ -85,9 +86,9 @@ export const createShopSlice: StateCreator<ShopSlice, [], [], ShopSlice> = (set,
     const { adWatchCountInvest, globalInvestTokens } = get()
     get().checkAdReset()
     if (adWatchCountInvest >= MAX_AD_INVEST) return false
-    if (globalInvestTokens >= FREE_CAP) return false // 광고는 10까지만
+    if (globalInvestTokens >= FREE_CAP_INVEST) return false
     set({
-      globalInvestTokens: Math.min(globalInvestTokens + 1, FREE_CAP),
+      globalInvestTokens: Math.min(globalInvestTokens + 1, FREE_CAP_INVEST),
       adWatchCountInvest: adWatchCountInvest + 1,
     })
     return true
@@ -97,9 +98,9 @@ export const createShopSlice: StateCreator<ShopSlice, [], [], ShopSlice> = (set,
     const { adWatchCountSkill, globalSkillPoints } = get()
     get().checkAdReset()
     if (adWatchCountSkill >= MAX_AD_SKILL) return false
-    if (globalSkillPoints >= FREE_CAP) return false
+    if (globalSkillPoints >= FREE_CAP_SKILL) return false
     set({
-      globalSkillPoints: Math.min(globalSkillPoints + 1, FREE_CAP),
+      globalSkillPoints: Math.min(globalSkillPoints + 1, FREE_CAP_SKILL),
       adWatchCountSkill: adWatchCountSkill + 1,
     })
     return true
@@ -107,8 +108,8 @@ export const createShopSlice: StateCreator<ShopSlice, [], [], ShopSlice> = (set,
 
   grantSkillReward: (amount, _reason) => {
     const { globalSkillPoints } = get()
-    // 보상은 FREE_CAP까지만
-    set({ globalSkillPoints: Math.min(globalSkillPoints + amount, FREE_CAP) })
+    // 보상은 FREE_CAP_SKILL까지만
+    set({ globalSkillPoints: Math.min(globalSkillPoints + amount, FREE_CAP_SKILL) })
   },
 
   purchaseInvest: (amount) => {
@@ -130,7 +131,7 @@ export const createShopSlice: StateCreator<ShopSlice, [], [], ShopSlice> = (set,
       globalSkillPoints: globalSkillPoints - actualSkill,
     })
     // 소비 후 10 미만이면 충전 타이머 리셋
-    if (globalInvestTokens - actualInvest < FREE_CAP) {
+    if (globalInvestTokens - actualInvest < FREE_CAP_INVEST) {
       set({ lastInvestRechargeAt: Date.now() })
     }
     return { invest: actualInvest, skill: actualSkill }
@@ -145,13 +146,13 @@ export const createShopSlice: StateCreator<ShopSlice, [], [], ShopSlice> = (set,
 
   getNextRechargeCountdown: () => {
     const { lastInvestRechargeAt, globalInvestTokens } = get()
-    if (globalInvestTokens >= FREE_CAP) return 0 // 10 이상이면 카운트다운 없음
+    if (globalInvestTokens >= FREE_CAP_INVEST) return 0
     const nextAt = lastInvestRechargeAt + RECHARGE_INTERVAL_MS
     const remaining = Math.max(0, nextAt - Date.now())
     return Math.ceil(remaining / 1000)
   },
 
   isRecharging: () => {
-    return get().globalInvestTokens < FREE_CAP
+    return get().globalInvestTokens < FREE_CAP_INVEST
   },
 })
