@@ -18,21 +18,6 @@ export default function ShareResult() {
 
   const text = buildShareText(verdictScore.total, verdictScore.insight, verdictScore.authority, verdictScore.wisdom, caseData.duo.relationshipType)
 
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(text)
-      alert('클립보드에 복사되었습니다!')
-    } catch {
-      const textarea = document.createElement('textarea')
-      textarea.value = text
-      document.body.appendChild(textarea)
-      textarea.select()
-      document.execCommand('copy')
-      document.body.removeChild(textarea)
-      alert('클립보드에 복사되었습니다!')
-    }
-  }
-
   const handleShareImage = async () => {
     if (!canvasRef.current) return
     try {
@@ -52,36 +37,17 @@ export default function ShareResult() {
     } catch { /* 취소 */ }
   }
 
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({ title: '솔로몬 판결 결과', text })
-      } catch { /* 취소 */ }
-    } else {
-      handleCopy()
-    }
-  }
-
   return (
     <div className="space-y-3">
       {/* 공유 이미지 미리보기 */}
       <canvas ref={canvasRef} width={600} height={400} className="hidden" />
       {imageUrl && (
-        <div className="rounded-lg overflow-hidden border border-gray-700">
+        <div className="flex justify-center rounded-lg overflow-hidden border border-gray-700">
           <img src={imageUrl} alt="판결 결과 카드" className="w-full" />
         </div>
       )}
 
-      <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3">
-        <pre className="text-xs text-gray-300 whitespace-pre-wrap font-sans leading-relaxed">{text}</pre>
-      </div>
       <div className="flex gap-2">
-        <button
-          onClick={handleCopy}
-          className="flex-1 bg-gray-700 hover:bg-gray-600 text-gray-200 py-2 rounded-lg text-xs font-semibold transition-colors"
-        >
-          <Emoji char="📋" size={12} /> 텍스트 복사
-        </button>
         <button
           onClick={handleShareImage}
           className="flex-1 bg-amber-700 hover:bg-amber-600 text-white py-2 rounded-lg text-xs font-semibold transition-colors"
@@ -89,14 +55,6 @@ export default function ShareResult() {
           <Emoji char="📤" size={12} /> 이미지 공유
         </button>
       </div>
-      {typeof navigator.share === 'function' && (
-        <button
-          onClick={handleShare}
-          className="w-full bg-gray-800 hover:bg-gray-700 text-gray-300 py-2 rounded-lg text-xs font-semibold transition-colors"
-        >
-          텍스트로 공유
-        </button>
-      )}
     </div>
   )
 }
@@ -137,8 +95,8 @@ function renderShareImage(
   // 장식 원
   ctx.globalAlpha = 0.06
   ctx.fillStyle = '#d97706'
-  ctx.beginPath(); ctx.arc(W * 0.2, H * 0.3, 120, 0, Math.PI * 2); ctx.fill()
-  ctx.beginPath(); ctx.arc(W * 0.8, H * 0.7, 80, 0, Math.PI * 2); ctx.fill()
+  ctx.beginPath(); ctx.arc(W / 2 - 160, H * 0.3, 120, 0, Math.PI * 2); ctx.fill()
+  ctx.beginPath(); ctx.arc(W / 2 + 160, H * 0.7, 80, 0, Math.PI * 2); ctx.fill()
   ctx.globalAlpha = 1
 
   // 타이틀

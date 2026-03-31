@@ -234,7 +234,7 @@ function InterjectionOverlay() {
             <div className="flex gap-2">
               <button onClick={() => setShowConfirm(false)}
                 className="flex-1 text-xs py-2 rounded-xl bg-gray-800 text-gray-400">취소</button>
-              <button onClick={() => { setShowConfirm(false); allowInterjection() }}
+              <button onClick={() => { setShowConfirm(false); void allowInterjection() }}
                 className="flex-1 text-xs py-2 rounded-xl bg-amber-600 text-gray-950 font-bold">허용</button>
             </div>
           </div>

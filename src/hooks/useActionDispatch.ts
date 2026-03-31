@@ -670,7 +670,7 @@ function maybeInterjection(target: PartyId, disputeId?: string) {
 }
 
 /** 끼어들기 허용 — 추가 정보 획득, 권위 -3 */
-export function allowInterjection() {
+export async function allowInterjection() {
   const state = useGameStore.getState()
   const ij = state.pendingInterjection
   if (!ij) return
@@ -680,15 +680,85 @@ export function allowInterjection() {
   // 재판관 허용 메시지
   state.addDialogue({ speaker: 'judge', text: '계속 말씀해 보시죠.', relatedDisputes: [ij.disputeId], turn: state.turnCount })
 
-  // 끼어들기 대사
-  state.addDialogue({ speaker: ij.party, text: ij.text, relatedDisputes: [ij.disputeId], turn: state.turnCount, behaviorHint: '끼어들며 말한다.' })
+  // LLM으로 반박 생성
+  state.setLLMLoading(true, ij.party)
+  try {
+    const { chatCompletion } = await import('../engine/llmClient')
+    const caseData = state.caseData!
+    const party = ij.party === 'a' ? caseData.duo.partyA : caseData.duo.partyB
+    const opponent = ij.party === 'a' ? caseData.duo.partyB : caseData.duo.partyA
+    const dispute = caseData.disputes.find(d => d.id === ij.disputeId)
 
-  // 후속 반박
-  state.addDialogue({ speaker: ij.party, text: ij.followUp, relatedDisputes: [ij.disputeId], turn: state.turnCount })
+    // 최근 상대방 발언 가져오기
+    const otherParty = ij.party === 'a' ? 'b' : 'a'
+    const recentOpponent = state.dialogueLog
+      .filter(d => d.speaker === otherParty)
+      .slice(-1)[0]?.text ?? ''
 
-  // 권위 -3 패널티
+    const prompt = `당신은 "${party.name}"(${party.age}세)입니다. 상대: ${opponent.name}.
+관계: ${caseData.duo.relationshipType}
+현재 쟁점: ${dispute?.name ?? ''}
+
+상대방이 방금 한 말: "${recentOpponent}"
+
+당신은 이 말에 끼어들어 반박합니다. 규칙:
+- 재판관에게 존댓말로 2~3문장
+- 상대 발언의 구체적인 허점이나 빠진 사실을 지적
+- 새로운 정보나 다른 관점을 제시
+- 단순 부정("그건 아닙니다")이 아닌, 구체적 근거가 있는 반박
+- behaviorHint도 포함
+
+JSON만 출력:
+{"response":"반박 내용","behaviorHint":"행동 묘사"}`
+
+    const raw = await chatCompletion(
+      [{ role: 'user', content: prompt }],
+      { temperature: 0.7, maxTokens: 200 },
+    )
+
+    state.setLLMLoading(false)
+
+    // 파싱
+    const match = raw.match(/\{[\s\S]*\}/)
+    if (match) {
+      const parsed = JSON.parse(match[0])
+      const { enforceHonorifics, fixMisdirectedAddress } = await import('../engine/llmDialogueResolver')
+      const polished = enforceHonorifics(fixMisdirectedAddress(parsed.response ?? ''))
+
+      state.addDialogue({
+        speaker: ij.party,
+        text: polished,
+        relatedDisputes: [ij.disputeId],
+        turn: state.turnCount,
+        behaviorHint: parsed.behaviorHint,
+      })
+    } else {
+      // 파싱 실패 시 폴백
+      state.addDialogue({
+        speaker: ij.party,
+        text: ij.followUp,
+        relatedDisputes: [ij.disputeId],
+        turn: state.turnCount,
+      })
+    }
+  } catch {
+    state.setLLMLoading(false)
+    // 실패 시 기존 템플릿 사용
+    state.addDialogue({
+      speaker: ij.party,
+      text: ij.text,
+      relatedDisputes: [ij.disputeId],
+      turn: state.turnCount,
+    })
+    state.addDialogue({
+      speaker: ij.party,
+      text: ij.followUp,
+      relatedDisputes: [ij.disputeId],
+      turn: state.turnCount,
+    })
+  }
+
   state.trackMetric('interjectionAllowed')
-
   state.setPendingInterjection(null)
 }
 
