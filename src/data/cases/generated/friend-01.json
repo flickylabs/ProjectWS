@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "도윤씨",
           "addressB": "하린"
-        }
+        },
+        "addressA": "도윤",
+        "addressB": "하린"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "서도윤씨",
           "addressB": "정하린씨"
-        }
+        },
+        "addressA": "도윤씨",
+        "addressB": "하린씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "도윤씨",
           "addressB": "하린씨"
-        }
+        },
+        "addressA": "도윤씨",
+        "addressB": "하린씨"
       }
     ],
     "relationshipType": "friend"
@@ -206,7 +212,9 @@
     "description": "제주 3박 4일 여행이 끝난 다음 날, 두 사람은 각자 찍은 영수증과 카드 승인 알림을 붙여 가며 정산을 맞추기 시작했다. 그러나 중간 화면과 취소 대기 내역이 뒤섞인 상태에서 서로 다른 숫자를 먼저 보게 되었고, 피곤과 서운함이 겹치면서 '누가 더 썼느냐'가 사실 확인보다 먼저 싸움의 중심이 됐다.",
     "emotionalPressure": 7,
     "affects": "both",
-    "triggerAmplifier": "여행 사진과 스토리가 아직 남아 있어 겉으로는 즐거워 보이는데 정산만 틀어지자, 작은 금액 차이도 배신이나 얌체 행동처럼 과장되어 읽히기 쉬웠다."
+    "triggerAmplifier": "여행 사진과 스토리가 아직 남아 있어 겉으로는 즐거워 보이는데 정산만 틀어지자, 작은 금액 차이도 배신이나 얌체 행동처럼 과장되어 읽히기 쉬웠다.",
+    "caseNumber": "E-FR-N-0001",
+    "caseName": "여행비 정산 갈등"
   },
   "disputes": [
     {

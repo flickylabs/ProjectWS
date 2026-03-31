@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "세영씨",
           "addressB": "인호씨"
-        }
+        },
+        "addressA": "문세영씨",
+        "addressB": "조인호씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "세영씨",
           "addressB": "인호씨"
-        }
+        },
+        "addressA": "문세영씨",
+        "addressB": "조인호씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "문세영씨",
           "addressB": "조인호씨"
-        }
+        },
+        "addressA": "문세영씨",
+        "addressB": "조인호씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -206,7 +212,9 @@
     "description": "3층 공동복도 방화문은 물건을 옮길 때마다 카트나 손수레로 받쳐두는 구간이었다. 쾅 닫히는 소리가 몇 주 반복된 끝에 도어클로저가 완전히 나갔고, 세영이 먼저 기사를 불렀다. 그런데 정산 문자를 받은 인호는 금액이 부풀려졌다고 느꼈고, 단순한 수리비 분담이 돈과 책임 공방으로 번졌다.",
     "emotionalPressure": 5,
     "affects": "both",
-    "triggerAmplifier": "액수는 크지 않지만 매일 지나는 문이고 소음이 몇 주째 쌓인 문제였다. 만원 단위 차이가 곧 '누가 더 얄밉게 굴었는가'의 감정 싸움으로 번졌다."
+    "triggerAmplifier": "액수는 크지 않지만 매일 지나는 문이고 소음이 몇 주째 쌓인 문제였다. 만원 단위 차이가 곧 '누가 더 얄밉게 굴었는가'의 감정 싸움으로 번졌다.",
+    "caseNumber": "E-NB-E-0006",
+    "caseName": "보전금 은닉"
   },
   "disputes": [
     {

@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "다은씨",
           "addressB": "민재"
-        }
+        },
+        "addressA": "우리 다은",
+        "addressB": "우리 민재"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "다은씨",
           "addressB": "민재씨"
-        }
+        },
+        "addressA": "다은씨",
+        "addressB": "민재씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "유다은씨",
           "addressB": "유민재씨"
-        }
+        },
+        "addressA": "유다은씨",
+        "addressB": "유민재씨"
       }
     ],
     "relationshipType": "family"
@@ -207,7 +213,9 @@
     "description": "설 연휴를 앞두고 남매는 부모 집 상차림과 부모 용돈, 도착 시간을 나눠 보려 했지만, 서로 바쁜 일정 속에서 정확한 시간과 비용 항목을 끝까지 문장으로 고정하지 못했다. 그 결과 민재의 늦은 통보와 다은의 확대된 장보기가 한꺼번에 부딪히며, 단순 조율 실패가 매번 반복되는 불공정 패턴처럼 느껴졌다.",
     "emotionalPressure": 6,
     "affects": "both",
-    "triggerAmplifier": "명절은 짧은 시간에 음식 노동과 귀성 스트레스가 몰리기 때문에, 애매한 한 줄 메시지와 작은 송금도 곧 성의와 책임의 상징처럼 받아들여졌다."
+    "triggerAmplifier": "명절은 짧은 시간에 음식 노동과 귀성 스트레스가 몰리기 때문에, 애매한 한 줄 메시지와 작은 송금도 곧 성의와 책임의 상징처럼 받아들여졌다.",
+    "caseNumber": "E-FM-E-0010",
+    "caseName": "명절 준비 갈등"
   },
   "disputes": [
     {

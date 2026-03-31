@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "현우씨",
           "addressB": "서아씨"
-        }
+        },
+        "addressA": "강현우씨",
+        "addressB": "진서아씨"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "현우씨",
           "addressB": "서아씨"
-        }
+        },
+        "addressA": "강현우씨",
+        "addressB": "진서아씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "강현우씨",
           "addressB": "진서아씨"
-        }
+        },
+        "addressA": "강현우씨",
+        "addressB": "진서아씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -207,7 +213,9 @@
     "description": "장대비 내리던 밤 21시 47분, 마감 직전 바닥이 젖은 지하 세척실에 두 사람이 거의 동시에 들어왔다. 자동줄이 배수구 철망에 감기며 작은 개가 다쳤고, 직후 유포된 19초 CCTV 클립이 갈등을 폭발시켰다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "피 묻은 귀와 울음소리는 보호자의 죄책감과 방어심을 동시에 자극했다. 단체방에서 19초 클립 하나가 곧 보호자 자격 전체를 재단하는 재료가 됐다."
+    "triggerAmplifier": "피 묻은 귀와 울음소리는 보호자의 죄책감과 방어심을 동시에 자극했다. 단체방에서 19초 클립 하나가 곧 보호자 자격 전체를 재단하는 재료가 됐다.",
+    "caseNumber": "E-NB-H-0003",
+    "caseName": "CCTV 클립 논란"
   },
   "disputes": [
     {

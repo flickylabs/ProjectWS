@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "서준씨",
           "addressB": "해나씨"
-        }
+        },
+        "addressA": "서준",
+        "addressB": "해나"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "서준씨",
           "addressB": "해나씨"
-        }
+        },
+        "addressA": "서준씨",
+        "addressB": "해나씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "이서준씨",
           "addressB": "윤해나씨"
-        }
+        },
+        "addressA": "이서준씨",
+        "addressB": "윤해나씨"
       }
     ],
     "relationshipType": "partnership"
@@ -206,7 +212,9 @@
     "description": "브랜드 2주년 행사를 막 끝낸 시점이었지만, 실제 매출은 석 달 연속 빠지고 있었다. 직원 사기와 거래처 신뢰를 동시에 붙잡아야 하는 압박 속에서 두 사람은 외부 자금 유치 준비를 비공식적으로 서두르다가, 결과가 흔들리자 서로가 먼저 책임을 떼어내려 들었다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "기념행사 직후라 겉으로는 성장 서사를 유지해야 했고, 내부적으로는 현금이 마르는 구간이어서 작은 은닉도 곧 횡령이나 배신처럼 보이게 됐다."
+    "triggerAmplifier": "기념행사 직후라 겉으로는 성장 서사를 유지해야 했고, 내부적으로는 현금이 마르는 구간이어서 작은 은닉도 곧 횡령이나 배신처럼 보이게 됐다.",
+    "caseNumber": "E-PT-H-0001",
+    "caseName": "예치금 분쟁"
   },
   "disputes": [
     {

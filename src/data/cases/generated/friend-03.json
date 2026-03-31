@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "나래씨",
           "addressB": "지후"
-        }
+        },
+        "addressA": "나래",
+        "addressB": "지후"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "강나래씨",
           "addressB": "오지후씨"
-        }
+        },
+        "addressA": "나래씨",
+        "addressB": "지후씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "나래씨",
           "addressB": "지후씨"
-        }
+        },
+        "addressA": "나래씨",
+        "addressB": "지후씨"
       }
     ],
     "relationshipType": "friend"
@@ -206,7 +212,9 @@
     "description": "주말 팝업 협업이 끝난 뒤 사은품 배송 지연 문의가 쌓이자, 지후는 같은 협업 게시물 아래에서 나래가 협찬 물건과 서사를 이용한다는 식으로 댓글과 스토리를 남겼다. 나래는 이에 대응해 지후가 자신을 조롱하고 루머를 의도했다는 DM 캡처를 운영자와 공통 친구들에게 퍼뜨렸고, 사건은 곧 공개 평판전으로 번졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "두 사람 모두 팔로워와 협업사를 의식해야 하는 상황이어서, 한 문장짜리 댓글과 한 장의 캡처만으로도 장사와 작업 평판이 동시에 흔들릴 수 있었다."
+    "triggerAmplifier": "두 사람 모두 팔로워와 협업사를 의식해야 하는 상황이어서, 한 문장짜리 댓글과 한 장의 캡처만으로도 장사와 작업 평판이 동시에 흔들릴 수 있었다.",
+    "caseNumber": "E-FR-H-0003",
+    "caseName": "협업 갈등 의혹"
   },
   "disputes": [
     {

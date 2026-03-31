@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "성재씨",
           "addressB": "라은씨"
-        }
+        },
+        "addressA": "유성재씨",
+        "addressB": "김라은씨"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "성재씨",
           "addressB": "라은씨"
-        }
+        },
+        "addressA": "유성재씨",
+        "addressB": "김라은씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "유성재씨",
           "addressB": "김라은씨"
-        }
+        },
+        "addressA": "성재씨",
+        "addressB": "라은씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -207,7 +213,9 @@
     "description": "5층 스튜디오(성재)와 4층 카페(라은)는 공용 덕트 누수와 냉방 장애로 두 달째 건물주에게 보수를 요구했지만 묵살당했다. 두 사람은 윗층이 아랫층 창고를 침입한 것처럼 연출해 하자 문제를 보안 침해·영업 손실 분쟁으로 키웠다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "영업 손실과 임대료 부담이 쌓인 상태에서 실제 누수 사진과 연출된 침입 영상이 섞이자, 다른 임차인들도 '5층이 4층을 공격했다'는 구도를 그대로 믿었다."
+    "triggerAmplifier": "영업 손실과 임대료 부담이 쌓인 상태에서 실제 누수 사진과 연출된 침입 영상이 섞이자, 다른 임차인들도 '5층이 4층을 공격했다'는 구도를 그대로 믿었다.",
+    "caseNumber": "E-NB-H-0011",
+    "caseName": "공용 덕트 분쟁"
   },
   "disputes": [
     {

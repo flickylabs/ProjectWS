@@ -157,7 +157,9 @@
           "addressJudge": "재판관님",
           "addressA": "서윤씨",
           "addressB": "태수씨"
-        }
+        },
+        "addressA": "강서윤씨",
+        "addressB": "문태수씨"
       },
       {
         "id": "tp-2",
@@ -179,7 +181,9 @@
           "addressJudge": "재판관님",
           "addressA": "서윤씨",
           "addressB": "태수씨"
-        }
+        },
+        "addressA": "강서윤씨",
+        "addressB": "문태수씨"
       },
       {
         "id": "tp-3",
@@ -201,7 +205,9 @@
           "addressJudge": "재판관님",
           "addressA": "강서윤씨",
           "addressB": "문태수씨"
-        }
+        },
+        "addressA": "강서윤씨",
+        "addressB": "문태수씨"
       }
     ],
     "relationshipType": "tenant_landlord"
@@ -211,7 +217,9 @@
     "description": "입주 닷새 전, 서윤은 대출 실행 준비를 하다가 계약서 사본에 없던 추가 담보 기록을 확인했고 곧바로 전세사기를 의심했다. 태수는 그 잔금으로 브리지대출을 갚아야 했고, 한별은 '말소랑 보험 둘 다 문제 없다'며 서류 정리를 미루지 말라고 압박했다. 서로가 먼저 속였다고 믿는 사이, 중개사가 가운데서 만들었던 안심 프레임이 뒤늦게 드러나기 시작했다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "서윤에게는 가족 차용금과 보증보험 일정이, 태수에게는 당일 대출 상환과 다른 호실 계약 평판이 동시에 걸려 있어 서류 한 장과 입금 한 번이 곧 생계 문제로 번졌다."
+    "triggerAmplifier": "서윤에게는 가족 차용금과 보증보험 일정이, 태수에게는 당일 대출 상환과 다른 호실 계약 평판이 동시에 걸려 있어 서류 한 장과 입금 한 번이 곧 생계 문제로 번졌다.",
+    "caseNumber": "E-TN-H-0003",
+    "caseName": "전세사기 의혹"
   },
   "disputes": [
     {

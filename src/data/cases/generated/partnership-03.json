@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "도윤씨",
           "addressB": "서린씨"
-        }
+        },
+        "addressA": "도윤",
+        "addressB": "서린"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "도윤씨",
           "addressB": "서린씨"
-        }
+        },
+        "addressA": "강도윤씨",
+        "addressB": "나서린씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "강도윤씨",
           "addressB": "나서린씨"
-        }
+        },
+        "addressA": "강도윤씨",
+        "addressB": "나서린씨"
       }
     ],
     "relationshipType": "partnership"
@@ -206,7 +212,9 @@
     "description": "리드 투자사 미팅을 반나절 앞둔 상황에서 런웨이가 길지 않아 이번 피치의 성패가 곧 다음 달 인건비와 연결되고 있었다. 두 사람 모두 상대보다 자신이 오프닝을 맡아야 설득력이 높다고 믿었지만, 막판에는 합의를 다시 확인할 여유보다 준비를 밀어붙이는 쪽으로 기울었다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "투자 유치 직전이라 발표권 자체가 단순 역할 문제가 아니라 향후 회사 내 권력과 대외 대표성의 신호로 읽혔고, 새벽 메시지 몇 줄이 곧 배신처럼 느껴졌다."
+    "triggerAmplifier": "투자 유치 직전이라 발표권 자체가 단순 역할 문제가 아니라 향후 회사 내 권력과 대외 대표성의 신호로 읽혔고, 새벽 메시지 몇 줄이 곧 배신처럼 느껴졌다.",
+    "caseNumber": "E-PT-N-0003",
+    "caseName": "발표권 갈등"
   },
   "disputes": [
     {

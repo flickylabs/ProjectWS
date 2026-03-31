@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "희주씨",
           "addressB": "도윤"
-        }
+        },
+        "addressA": "희주씨",
+        "addressB": "우리 도윤"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "희주씨",
           "addressB": "도윤씨"
-        }
+        },
+        "addressA": "희주씨",
+        "addressB": "도윤씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "나희주씨",
           "addressB": "강도윤씨"
-        }
+        },
+        "addressA": "희주씨",
+        "addressB": "도윤씨"
       }
     ],
     "relationshipType": "spouse"
@@ -207,7 +213,9 @@
     "description": "아이 초등학교 입학이 열흘 앞이다. 보호자 연락처, 전입 확인, 오리엔테이션 명단이 한꺼번에 확정되는 시기다. 학교와 학부모의 시선이 쏠리는 이 타이밍에 3년 전 상담 기록이 소환됐고, 누가 아이를 더 안전하게 돌볼 수 있는가라는 프레임이 갈등의 한가운데 놓였다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "입학 열흘 전이라 사소한 소문도 아이의 반 배정과 보호자 권한에 직결됐다. 과거 상담 이력을 꺼낸 순간, 부부 싸움이 자격 전쟁으로 번졌다."
+    "triggerAmplifier": "입학 열흘 전이라 사소한 소문도 아이의 반 배정과 보호자 권한에 직결됐다. 과거 상담 이력을 꺼낸 순간, 부부 싸움이 자격 전쟁으로 번졌다.",
+    "caseNumber": "E-SP-H-0002",
+    "caseName": "상담 기록 유출"
   },
   "disputes": [
     {

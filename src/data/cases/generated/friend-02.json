@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "가은씨",
           "addressB": "민재"
-        }
+        },
+        "addressA": "가은",
+        "addressB": "민재"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "윤가은씨",
           "addressB": "박민재씨"
-        }
+        },
+        "addressA": "가은씨",
+        "addressB": "민재씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "가은씨",
           "addressB": "민재씨"
-        }
+        },
+        "addressA": "가은씨",
+        "addressB": "민재씨"
       }
     ],
     "relationshipType": "friend"
@@ -206,7 +212,9 @@
     "description": "봄 정모 뒤풀이가 끝난 뒤, 가은은 민재에게만 자신의 비밀 연애와 동호회 역할 조정 고민을 털어놨다. 며칠 뒤 같은 내용이 익명글과 댓글, 운영진 제보 파일로 번지면서 둘의 사적 신뢰 문제는 곧바로 동호회 내 자리와 평판의 문제로 확대됐다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "친구 관계와 동호회 역할, 연애 감정선이 겹쳐 있어 작은 누설도 즉시 편 가르기와 삼각관계 해석으로 번졌고, 누구를 믿느냐가 곧 모임 안에서의 생존 문제처럼 느껴졌다."
+    "triggerAmplifier": "친구 관계와 동호회 역할, 연애 감정선이 겹쳐 있어 작은 누설도 즉시 편 가르기와 삼각관계 해석으로 번졌고, 누구를 믿느냐가 곧 모임 안에서의 생존 문제처럼 느껴졌다.",
+    "caseNumber": "E-FR-H-0002",
+    "caseName": "비밀 연애 폭로"
   },
   "disputes": [
     {

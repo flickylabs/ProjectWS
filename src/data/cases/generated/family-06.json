@@ -154,7 +154,9 @@
           "addressJudge": "재판관님",
           "addressA": "선영씨",
           "addressB": "하준씨"
-        }
+        },
+        "addressA": "선영씨",
+        "addressB": "하준씨"
       },
       {
         "id": "tp-2",
@@ -176,7 +178,9 @@
           "addressJudge": "재판관님",
           "addressA": "선영씨",
           "addressB": "하준씨"
-        }
+        },
+        "addressA": "선영씨",
+        "addressB": "하준씨"
       },
       {
         "id": "tp-3",
@@ -198,7 +202,9 @@
           "addressJudge": "재판관님",
           "addressA": "오선영씨",
           "addressB": "임하준씨"
-        }
+        },
+        "addressA": "오선영씨",
+        "addressB": "임하준씨"
       }
     ],
     "relationshipType": "family"
@@ -208,7 +214,9 @@
     "description": "하준이 가족과의 다툼 뒤 인스타그램 스토리와 쓰레드에 '빚과 폭언을 미화하는 집의 침묵'을 암시하는 글을 올리자, 지역 지인들이 가족을 짐작하기 시작했다. 그런데 하루도 지나지 않아 맘카페와 협찬처에 2014년 쉼터·채무조정 서류가 붙은 익명 제보가 돌면서, 모자의 공개 감정싸움은 과거 가정사 유출 전쟁으로 번졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "작은 지역사회라 흐린 사진과 장소 태그만으로도 가족이 쉽게 특정됐고, 오래 덮어둔 과거 기록이 문서 형태로 등장하자 SNS 감정표현이 곧바로 명예훼손과 생계 문제로 확대됐다."
+    "triggerAmplifier": "작은 지역사회라 흐린 사진과 장소 태그만으로도 가족이 쉽게 특정됐고, 오래 덮어둔 과거 기록이 문서 형태로 등장하자 SNS 감정표현이 곧바로 명예훼손과 생계 문제로 확대됐다.",
+    "caseNumber": "E-FM-H-0006",
+    "caseName": "가족 갈등 폭로"
   },
   "disputes": [
     {

@@ -233,7 +233,7 @@ export default function ActionPanel() {
       {/* 토스트 */}
       {(hasToast || hasAdvanceConfirm) && (
         <div className="absolute bottom-full left-0 right-0 mb-1 z-40">
-          <div className="bg-gray-800/95 backdrop-blur-sm border border-gray-700/50 rounded-xl max-h-[40vh] overflow-y-auto animate-fade-in">
+          <div className="bg-gray-800/95 backdrop-blur-sm border border-gray-700/50 rounded-xl max-h-[55vh] overflow-y-auto animate-fade-in">
             {hasToast && activeTab === 'question' && (
               <div className="p-2">
                 <QuestionSelector target={target!} onSelect={hQ} llmMode={llm} onFreeResult={hFree}

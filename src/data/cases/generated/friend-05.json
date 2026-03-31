@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "서윤씨",
           "addressB": "태오"
-        }
+        },
+        "addressA": "서윤",
+        "addressB": "태오"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "전서윤씨",
           "addressB": "민태오씨"
-        }
+        },
+        "addressA": "서윤씨",
+        "addressB": "태오씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "서윤씨",
           "addressB": "태오씨"
-        }
+        },
+        "addressA": "서윤씨",
+        "addressB": "태오씨"
       }
     ],
     "relationshipType": "friend"
@@ -206,7 +212,9 @@
     "description": "민태오가 반려견 야간 병원비가 급하다며 전서윤에게 48만원을 빌린 뒤 몇 주째 명확한 상환을 하지 않자, 서윤은 독촉 캡처를 공통 친구들에게 보내기 시작했다. 그런데 현재 차용금 공방을 따지는 과정에서 2년 전 작업실 보증금 대납과 남은 잔액 문제가 다시 떠오르며 누가 진짜 피해자인지 구도가 뒤집혔다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "응급 상황에 빌려준 돈이라는 명분과 오래 묻어 둔 과거 큰돈 문제가 겹쳐, 지금의 미상환은 배신처럼 읽히고 과거의 미정산은 착취처럼 읽히기 쉬웠다."
+    "triggerAmplifier": "응급 상황에 빌려준 돈이라는 명분과 오래 묻어 둔 과거 큰돈 문제가 겹쳐, 지금의 미상환은 배신처럼 읽히고 과거의 미정산은 착취처럼 읽히기 쉬웠다.",
+    "caseNumber": "E-FR-H-0005",
+    "caseName": "차용금 분쟁"
   },
   "disputes": [
     {

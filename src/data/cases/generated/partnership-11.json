@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "재원씨",
           "addressB": "아린씨"
-        }
+        },
+        "addressA": "재원",
+        "addressB": "아린"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "재원씨",
           "addressB": "아린씨"
-        }
+        },
+        "addressA": "김재원씨",
+        "addressB": "정아린씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "김재원씨",
           "addressB": "정아린씨"
-        }
+        },
+        "addressA": "김재원씨",
+        "addressB": "정아린씨"
       }
     ],
     "relationshipType": "partnership"
@@ -206,7 +212,9 @@
     "description": "브랜드가 입소문을 타며 백화점 팝업과 도매 문의가 동시에 늘자, 두 사람은 어느 채널을 먼저 키워야 하는지를 두고 점점 다른 그림을 갖게 됐다. 공실이 빨리 빠지는 상권 특성상 지점을 먼저 잡지 않으면 기회를 놓칠 수 있다는 압박과, 반대로 도매 거래처를 브랜드 중심으로 묶어야 한다는 조급함이 동시에 커졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "확장은 단순히 매장 하나를 더 내는 문제가 아니라 누가 앞으로 브랜드의 중심축이 될지에 대한 신호처럼 읽혔고, 과거 팝업 손실의 상처까지 얹혀 작은 단독 행동도 곧 배신으로 보였다."
+    "triggerAmplifier": "확장은 단순히 매장 하나를 더 내는 문제가 아니라 누가 앞으로 브랜드의 중심축이 될지에 대한 신호처럼 읽혔고, 과거 팝업 손실의 상처까지 얹혀 작은 단독 행동도 곧 배신으로 보였다.",
+    "caseNumber": "E-PT-H-0011",
+    "caseName": "지점 계약 분쟁"
   },
   "disputes": [
     {

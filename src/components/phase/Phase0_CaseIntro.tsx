@@ -41,19 +41,13 @@ export default function Phase0_CaseIntro() {
 
   // AI 사전 로딩 — 첫 스텝부터 백그라운드 시작
   useEffect(() => {
-    if (!caseData || prefetchStarted || !isLLMMode()) {
-      setAiReady(true)
-      return
-    }
+    if (!caseData || prefetchStarted || !isLLMMode()) return
     prefetchStarted = true
 
-    // Phase1은 고정 스크립트 사용 — AI 생성 불필요 (토큰 절약)
-    // Phase2만 AI prefetch
-    Promise.all([
-      generatePhase2Dialogues(caseData).then(r => { prefetchedPhase2 = r }),
-    ])
+    // Phase2 AI prefetch — 백그라운드 (유저 대기 없음)
+    generatePhase2Dialogues(caseData)
+      .then(r => { prefetchedPhase2 = r })
       .catch(() => { /* 실패해도 폴백 사용 */ })
-      .finally(() => setAiReady(true))
   }, [caseData])
 
   if (!caseData) return null
@@ -263,12 +257,6 @@ export default function Phase0_CaseIntro() {
                   {duo.partyA.name}과 {duo.partyB.name}의<br />초기 진술을 들을 준비가 되셨습니까?
                 </p>
               </div>
-              {!aiReady && isLLMMode() && (
-                <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
-                  <div className="w-3 h-3 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
-                  AI 진술 준비 중...
-                </div>
-              )}
               <button
                 onClick={handleStart}
                 className="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-gray-950 font-bold px-12 py-3.5 rounded-xl transition-all shadow-lg shadow-amber-600/20 active:scale-95 text-base"

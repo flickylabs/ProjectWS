@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "정훈씨",
           "addressB": "나래씨"
-        }
+        },
+        "addressA": "정훈씨",
+        "addressB": "나래씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "정훈씨",
           "addressB": "나래씨"
-        }
+        },
+        "addressA": "최정훈씨",
+        "addressB": "김나래씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "최정훈씨",
           "addressB": "김나래씨"
-        }
+        },
+        "addressA": "최정훈씨",
+        "addressB": "김나래씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -206,7 +212,9 @@
     "description": "분기 말 법인카드 감사가 열리자 영업전략실 주말 결제 5건이 재검토 대상에 올랐다. 고객 접대와 개인 소비가 뒤섞인 항목이 터지며, 구두로만 미뤄 온 상계 관행이 한꺼번에 폭발해 감사 결과와 인사평가에 직결됐다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "감사 시즌이라 결제 한 건만 걸려도 비용통제 평판·승진 심사·포렌식이 연쇄로 터질 수 있었고, 구두 합의는 문서가 없으면 단독 유용으로 읽혔다."
+    "triggerAmplifier": "감사 시즌이라 결제 한 건만 걸려도 비용통제 평판·승진 심사·포렌식이 연쇄로 터질 수 있었고, 구두 합의는 문서가 없으면 단독 유용으로 읽혔다.",
+    "caseNumber": "E-WK-H-0007",
+    "caseName": "법인카드 감사"
   },
   "disputes": [
     {

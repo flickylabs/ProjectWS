@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "준오씨",
           "addressB": "민경씨"
-        }
+        },
+        "addressA": "준오씨",
+        "addressB": "민경씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "준오씨",
           "addressB": "민경씨"
-        }
+        },
+        "addressA": "박준오씨",
+        "addressB": "서민경씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "박준오씨",
           "addressB": "서민경씨"
-        }
+        },
+        "addressA": "박준오씨",
+        "addressB": "서민경씨"
       }
     ],
     "relationshipType": "partnership"
@@ -206,7 +212,9 @@
     "description": "대형 리테일 체인 수주가 막 확정된 직후라 내부적으로는 성과급·보도자료·프로젝트 리더 지정이 한꺼번에 진행되고 있었다. 축하 분위기 속에서 공로를 먼저 선점하려는 욕구와, 드러나면 계약을 흔들 수 있는 별도 거래 시도가 동시에 충돌하면서 갈등이 폭발했다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "수주 직후라 이름이 누락된 사실 하나만으로도 향후 보너스와 승진 서사가 갈렸고, 고객사 쪽 컴플라이언스 이슈는 누구도 겉으로 꺼내기 어려워 의심이 더 커졌다."
+    "triggerAmplifier": "수주 직후라 이름이 누락된 사실 하나만으로도 향후 보너스와 승진 서사가 갈렸고, 고객사 쪽 컴플라이언스 이슈는 누구도 겉으로 꺼내기 어려워 의심이 더 커졌다.",
+    "caseNumber": "E-PT-H-0002",
+    "caseName": "성과급 갈등"
   },
   "disputes": [
     {

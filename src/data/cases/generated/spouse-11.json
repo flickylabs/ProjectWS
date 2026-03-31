@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "유림씨",
           "addressB": "승호씨"
-        }
+        },
+        "addressA": "유림",
+        "addressB": "승호"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "유림씨",
           "addressB": "승호씨"
-        }
+        },
+        "addressA": "유림씨",
+        "addressB": "승호씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "차유림씨",
           "addressB": "백승호씨"
-        }
+        },
+        "addressA": "유림씨",
+        "addressB": "승호씨"
       }
     ],
     "relationshipType": "spouse"
@@ -206,7 +212,9 @@
     "description": "지하층 리모델링 중 욕실 배관에서 누수. 부분 보수비 120만 원이었지만 수납장·바닥에 이미 480만 원 초과한 상태. 유림은 승호 아이디로 포털에 들어갔고, 승호는 제습기를 끈 채 건조를 취소했다. 보험사 지급 보류가 걸리자 서로의 침범만 부각하기 시작했다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "입주 3주 지연, 카드 대금과 잔금이 겹치는 상태에서 누수까지 터졌다. 보험금이라는 편법을 함께 밟은 순간부터, 들키면 상대를 먼저 배신자로 만드는 쪽이 유리한 구조가 됐다."
+    "triggerAmplifier": "입주 3주 지연, 카드 대금과 잔금이 겹치는 상태에서 누수까지 터졌다. 보험금이라는 편법을 함께 밟은 순간부터, 들키면 상대를 먼저 배신자로 만드는 쪽이 유리한 구조가 됐다.",
+    "caseNumber": "E-SP-H-0011",
+    "caseName": "누수 배상 분쟁"
   },
   "disputes": [
     {

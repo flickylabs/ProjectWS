@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "연숙씨",
           "addressB": "하린씨"
-        }
+        },
+        "addressA": "연숙",
+        "addressB": "하린"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "연숙씨",
           "addressB": "하린씨"
-        }
+        },
+        "addressA": "연숙씨",
+        "addressB": "하린씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "오연숙씨",
           "addressB": "오하린씨"
-        }
+        },
+        "addressA": "오연숙씨",
+        "addressB": "오하린씨"
       }
     ],
     "relationshipType": "family"
@@ -207,7 +213,9 @@
     "description": "맞벌이와 발달상담이 겹치면서 연숙은 손주 하원과 저녁 돌봄을 자주 맡았고, 점점 학교·병원 판단까지 자신이 해야 한다고 느끼기 시작했다. 반면 하린은 도움은 받되 결정권은 부모에게 남겨 두려 했지만, 담임과 클리닉, 하원 로그가 몰래 움직인 뒤부터 양육 갈등이 권한 침범 싸움으로 커졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "아이 발달과 안전 문제는 작은 선택도 크게 느껴지고, 예전 응급실 밤이 제대로 정리되지 않은 채 묻혀 있어 현재의 개입이 오래된 불신까지 건드렸다."
+    "triggerAmplifier": "아이 발달과 안전 문제는 작은 선택도 크게 느껴지고, 예전 응급실 밤이 제대로 정리되지 않은 채 묻혀 있어 현재의 개입이 오래된 불신까지 건드렸다.",
+    "caseNumber": "E-FM-H-0011",
+    "caseName": "양육 갈등"
   },
   "disputes": [
     {

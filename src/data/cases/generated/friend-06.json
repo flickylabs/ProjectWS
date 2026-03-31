@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "해온씨",
           "addressB": "다솔씨"
-        }
+        },
+        "addressA": "해온씨",
+        "addressB": "다솔씨"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "윤해온씨",
           "addressB": "최다솔씨"
-        }
+        },
+        "addressA": "해온씨",
+        "addressB": "다솔씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "해온씨",
           "addressB": "다솔씨"
-        }
+        },
+        "addressA": "해온씨",
+        "addressB": "다솔씨"
       }
     ],
     "relationshipType": "friend"
@@ -207,7 +213,9 @@
     "description": "공동으로 운영하던 여행 블로그 글과 유튜브 브이로그가 올라간 뒤, 브랜드 측에서 광고 표기와 가격 문구를 빨리 바로잡아 달라는 요청이 들어왔다. 최다솔은 자신에게 준 권한으로 직접 수정해도 되는 줄 알고 제목과 썸네일, 핀댓글까지 손봤고, 윤해온은 이를 무단 침범으로 받아들여 업계 단톡에 비교 캡처를 올린 뒤 접근권을 회수했다.",
     "emotionalPressure": 7,
     "affects": "both",
-    "triggerAmplifier": "광고 표기 오류는 곧 협찬 취소와 수익 손실로 이어질 수 있는 문제였고, 공개된 제목과 썸네일이 바뀐 화면은 창작 통제권을 건드리는 상징처럼 보여 감정을 더 키웠다."
+    "triggerAmplifier": "광고 표기 오류는 곧 협찬 취소와 수익 손실로 이어질 수 있는 문제였고, 공개된 제목과 썸네일이 바뀐 화면은 창작 통제권을 건드리는 상징처럼 보여 감정을 더 키웠다.",
+    "caseNumber": "E-FR-N-0006",
+    "caseName": "수정 권한 분쟁"
   },
   "disputes": [
     {

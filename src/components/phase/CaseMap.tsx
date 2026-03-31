@@ -40,7 +40,7 @@ function getReputation(score: number): number {
 export function saveCaseProgress(caseId: string, score: number) {
   const progress = loadProgress()
   const existing = progress[caseId]
-  if (!existing || score > existing.bestScore) {
+  if (!existing || score >= existing.bestScore) {
     progress[caseId] = { bestScore: score, stars: getStars(score), reputation: getReputation(score), clearedAt: new Date().toISOString() }
     localStorage.setItem('solomon-case-progress', JSON.stringify(progress))
   }

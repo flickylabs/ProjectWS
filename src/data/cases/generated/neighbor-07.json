@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "나리씨",
           "addressB": "성호씨"
-        }
+        },
+        "addressA": "박나리씨",
+        "addressB": "권성호씨"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "나리씨",
           "addressB": "성호씨"
-        }
+        },
+        "addressA": "박나리씨",
+        "addressB": "권성호씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "박나리씨",
           "addressB": "권성호씨"
-        }
+        },
+        "addressA": "박나리씨",
+        "addressB": "권성호씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -207,7 +213,9 @@
     "description": "이사 직후 8층 복도는 박스로 어수선했고, 계단실 잠금함은 겉보기에 803호가 오래 써온 수납칸 같았다. 나리는 싱크대 서랍 속 옛 열쇠를 믿고 잠깐 짐을 넣었고, 성호는 과거와 같은 사유화가 시작됐다고 판단해 즉각 자물쇠를 걸었다.",
     "emotionalPressure": 7,
     "affects": "both",
-    "triggerAmplifier": "첫 인사와 첫 갈등이 같은 주에 겹쳤고, 둘 다 전 세입자 이야기를 절반씩만 알았다. 작은 행동 하나가 의도적 권한 침범으로 읽힐 수밖에 없었다."
+    "triggerAmplifier": "첫 인사와 첫 갈등이 같은 주에 겹쳤고, 둘 다 전 세입자 이야기를 절반씩만 알았다. 작은 행동 하나가 의도적 권한 침범으로 읽힐 수밖에 없었다.",
+    "caseNumber": "E-NB-N-0007",
+    "caseName": "잠금함 분쟁"
   },
   "disputes": [
     {

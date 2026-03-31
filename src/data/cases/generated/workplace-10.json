@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "도현씨",
           "addressB": "혜린씨"
-        }
+        },
+        "addressA": "도현씨",
+        "addressB": "혜린씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "도현씨",
           "addressB": "혜린씨"
-        }
+        },
+        "addressA": "임도현씨",
+        "addressB": "장혜린씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "임도현씨",
           "addressB": "장혜린씨"
-        }
+        },
+        "addressA": "임도현씨",
+        "addressB": "장혜린씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -206,7 +212,9 @@
     "description": "분기 말 전환 심사 주간, 혜린은 런칭 막판 인수인계·교육을 맡고 도현은 인력 공백을 막아야 했다. 구두 약속과 지연이 반복된 끝에 전환 발표일이 되자, 누가 어떤 말을 했고 누가 무엇을 숨겼는지가 동시에 터졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "전환 여부가 곧 생계와 팀 재편으로 직결되는 시기라, 약속 문구 하나와 숨긴 계약 하나가 배신·착취·자격박탈 프레임으로 즉시 확대됐다."
+    "triggerAmplifier": "전환 여부가 곧 생계와 팀 재편으로 직결되는 시기라, 약속 문구 하나와 숨긴 계약 하나가 배신·착취·자격박탈 프레임으로 즉시 확대됐다.",
+    "caseNumber": "E-WK-H-0010",
+    "caseName": "전환 약속 갈등"
   },
   "disputes": [
     {

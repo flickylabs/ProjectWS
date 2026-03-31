@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "지석씨",
           "addressB": "세린"
-        }
+        },
+        "addressA": "지석씨",
+        "addressB": "우리 세린"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "지석씨",
           "addressB": "세린씨"
-        }
+        },
+        "addressA": "지석씨",
+        "addressB": "세린씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "한지석씨",
           "addressB": "오세린씨"
-        }
+        },
+        "addressA": "지석씨",
+        "addressB": "세린씨"
       },
       {
         "id": "tp-4",
@@ -218,7 +224,9 @@
           "addressJudge": "재판관님",
           "addressA": "지석씨",
           "addressB": "세린"
-        }
+        },
+        "addressA": "지석씨",
+        "addressB": "세린씨"
       }
     ],
     "relationshipType": "spouse"
@@ -228,7 +236,9 @@
     "description": "추석이 일주일 앞으로 다가왔다. 차례비, 병원비, 처가 방문 일정이 한꺼번에 몰렸고, 연휴 동안 어머니 간병을 맡아줄 사람이 빈 구간이 생겼다. 돈도 시간도 빠듯한데, 두 사람은 상대가 먼저 입을 열어주길 기다리다 결국 말 대신 의심부터 키워버렸다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "명절 직전이라 추가 지출을 꺼내기 어려웠고, 시댁·처가 일정이 빈틈없이 맞물려 있어 사소한 비밀도 곧장 외도나 배신의 증거처럼 부풀어올랐다."
+    "triggerAmplifier": "명절 직전이라 추가 지출을 꺼내기 어려웠고, 시댁·처가 일정이 빈틈없이 맞물려 있어 사소한 비밀도 곧장 외도나 배신의 증거처럼 부풀어올랐다.",
+    "caseNumber": "E-SP-N-0001",
+    "caseName": "비밀 송금 의혹"
   },
   "disputes": [
     {

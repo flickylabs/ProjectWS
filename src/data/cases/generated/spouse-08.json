@@ -154,7 +154,9 @@
           "addressJudge": "재판관님",
           "addressA": "서진씨",
           "addressB": "현석씨"
-        }
+        },
+        "addressA": "서진",
+        "addressB": "현석"
       },
       {
         "id": "tp-2",
@@ -176,7 +178,9 @@
           "addressJudge": "재판관님",
           "addressA": "서진씨",
           "addressB": "현석씨"
-        }
+        },
+        "addressA": "서진씨",
+        "addressB": "현석씨"
       },
       {
         "id": "tp-3",
@@ -198,7 +202,9 @@
           "addressJudge": "재판관님",
           "addressA": "한서진씨",
           "addressB": "류현석씨"
-        }
+        },
+        "addressA": "서진씨",
+        "addressB": "현석씨"
       }
     ],
     "relationshipType": "spouse"
@@ -208,7 +214,9 @@
     "description": "주말마다 따로 지내지만 외부에는 정상 부부. 전세 확답 시한 사흘 앞이었다. 카페 합의를 근거로 서진이 서류를 보냈고, 현석은 3분 뒤 알림을 열어 이혼 준비로 읽었다. 12분 뒤 누나에게, 31분 뒤 임대인에게 서진 독단이라 알렸다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "둘 다 별거를 상상하면서도 확정이 무서워 아무것도 못 정하던 시기였다. 전세계약서 한 장이 최종 결별 선언처럼, 임대인 통화 한 번이 돌이킬 수 없는 폭로가 되었다."
+    "triggerAmplifier": "둘 다 별거를 상상하면서도 확정이 무서워 아무것도 못 정하던 시기였다. 전세계약서 한 장이 최종 결별 선언처럼, 임대인 통화 한 번이 돌이킬 수 없는 폭로가 되었다.",
+    "caseNumber": "E-SP-H-0008",
+    "caseName": "이혼 합의 논란"
   },
   "disputes": [
     {

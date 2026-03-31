@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "미옥씨",
           "addressB": "선우"
-        }
+        },
+        "addressA": "우리 미옥",
+        "addressB": "우리 선우"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "미옥씨",
           "addressB": "선우씨"
-        }
+        },
+        "addressA": "미옥씨",
+        "addressB": "선우씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "정미옥씨",
           "addressB": "강선우씨"
-        }
+        },
+        "addressA": "정미옥씨",
+        "addressB": "강선우씨"
       }
     ],
     "relationshipType": "family"
@@ -207,7 +213,9 @@
     "description": "추석 가족 모임에서 아버지 건강 악화 가능성과 창고 매각, 누가 공장을 이어받을지 이야기가 한꺼번에 나왔다. 그런데 48시간도 안 돼 거래처와 중개업소가 같은 내용을 입에 올리기 시작하면서, 식탁 위 대화가 시장 소문으로 번져 집안 전체가 배신 프레임에 갇혔다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "명절 직후라 친척과 거래처의 시선이 동시에 몰렸고, 건강과 승계 정보가 섞여 작은 공유도 곧 가업 매각 신호처럼 받아들여졌다."
+    "triggerAmplifier": "명절 직후라 친척과 거래처의 시선이 동시에 몰렸고, 건강과 승계 정보가 섞여 작은 공유도 곧 가업 매각 신호처럼 받아들여졌다.",
+    "caseNumber": "E-FM-H-0002",
+    "caseName": "가족 비밀 유출"
   },
   "disputes": [
     {

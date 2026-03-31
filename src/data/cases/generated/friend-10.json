@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "다정씨",
           "addressB": "서아"
-        }
+        },
+        "addressA": "다정",
+        "addressB": "서아"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "문다정씨",
           "addressB": "한서아씨"
-        }
+        },
+        "addressA": "다정씨",
+        "addressB": "서아씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "다정씨",
           "addressB": "서아씨"
-        }
+        },
+        "addressA": "다정씨",
+        "addressB": "서아씨"
       }
     ],
     "relationshipType": "friend"
@@ -206,7 +212,9 @@
     "description": "결혼식을 몇 주 앞두고 문다정은 가장 가까운 친구 한서아에게 들러리와 축가를 함께 부탁했고, 공유 체크리스트와 카톡 대화 속에서 준비가 진행됐다. 하지만 다정은 서아가 두 역할을 다 수락했다고 믿은 반면, 서아는 들러리는 거의 도와주되 축가는 끝까지 검토 단계라고 생각해 서로 다른 기억이 굳어졌다.",
     "emotionalPressure": 7,
     "affects": "both",
-    "triggerAmplifier": "가족과 플래너, 드레스 피팅, 밴드 스케줄이 모두 움직이는 와중에 애매한 답장이 곧 확정 신호처럼 읽혔고, 친구의 호의가 공식 역할처럼 굳어지며 감정이 커졌다."
+    "triggerAmplifier": "가족과 플래너, 드레스 피팅, 밴드 스케줄이 모두 움직이는 와중에 애매한 답장이 곧 확정 신호처럼 읽혔고, 친구의 호의가 공식 역할처럼 굳어지며 감정이 커졌다.",
+    "caseNumber": "E-FR-N-0010",
+    "caseName": "결혼식 역할 갈등"
   },
   "disputes": [
     {

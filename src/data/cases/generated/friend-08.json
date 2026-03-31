@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "은비씨",
           "addressB": "준혁씨"
-        }
+        },
+        "addressA": "은비씨",
+        "addressB": "준혁씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "조은비씨",
           "addressB": "김준혁씨"
-        }
+        },
+        "addressA": "은비씨",
+        "addressB": "준혁씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "은비씨",
           "addressB": "준혁씨"
-        }
+        },
+        "addressA": "은비씨",
+        "addressB": "준혁씨"
       }
     ],
     "relationshipType": "friend"
@@ -206,7 +212,9 @@
     "description": "교내 사회혁신 공모전과 동아리 전시를 함께 준비한 뒤, 조은비는 대표 발표자로 무대에 올랐고 김준혁은 설문 분석과 프로토타입 정리를 맡았다. 시상 직후 올라온 카드뉴스와 포트폴리오 문구에서 은비 이름만 크게 보이자 준혁은 성과를 빼앗겼다고 느꼈고, 은비는 마감 직전 수습은 자신이 다 했다고 맞섰다.",
     "emotionalPressure": 6,
     "affects": "both",
-    "triggerAmplifier": "발표자와 제작자의 공로가 원래 다르게 보이는 구조에서, 제출 시스템의 대표자 표시와 SNS 캡션 한 줄이 기여도 전체를 대신하는 것처럼 읽히며 감정이 더 커졌다."
+    "triggerAmplifier": "발표자와 제작자의 공로가 원래 다르게 보이는 구조에서, 제출 시스템의 대표자 표시와 SNS 캡션 한 줄이 기여도 전체를 대신하는 것처럼 읽히며 감정이 더 커졌다.",
+    "caseNumber": "E-FR-E-0008",
+    "caseName": "성과 누락 갈등"
   },
   "disputes": [
     {

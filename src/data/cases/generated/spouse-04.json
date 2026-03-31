@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "하준",
           "addressB": "다은씨"
-        }
+        },
+        "addressA": "우리 하준",
+        "addressB": "다은씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "하준씨",
           "addressB": "다은"
-        }
+        },
+        "addressA": "하준",
+        "addressB": "다은"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "윤하준씨",
           "addressB": "백다은씨"
-        }
+        },
+        "addressA": "하준씨",
+        "addressB": "다은씨"
       }
     ],
     "relationshipType": "spouse"
@@ -206,7 +212,9 @@
     "description": "허니문을 미룬 대신 잡은 첫 결혼기념일 — 청담 레스토랑 코스와 호텔 1박을 묶은 저녁이었다. 하준은 시계 케이스를 어머니 집에 맡겼고, 다은은 브로치를 빌리며 예약 캡처와 코드를 시어머니에게 보냈다. 양쪽 연락이 어머니 손에 모이면서 예약은 변경되고 저녁은 의심으로 터졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "'기념일만큼은 둘이서만' — 허니문을 미루면서까지 지킨 원칙이었다. 선물 하나 맡기고 브로치 하나 빌리는 사소한 연락이 어머니를 경유하자, 한 번의 예외가 약속 전체를 배신으로 보이게 만들었다."
+    "triggerAmplifier": "'기념일만큼은 둘이서만' — 허니문을 미루면서까지 지킨 원칙이었다. 선물 하나 맡기고 브로치 하나 빌리는 사소한 연락이 어머니를 경유하자, 한 번의 예외가 약속 전체를 배신으로 보이게 만들었다.",
+    "caseNumber": "E-SP-H-0004",
+    "caseName": "기념일 갈등"
   },
   "disputes": [
     {

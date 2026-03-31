@@ -157,7 +157,9 @@
           "addressJudge": "재판관님",
           "addressA": "하림씨",
           "addressB": "상우씨"
-        }
+        },
+        "addressA": "하림",
+        "addressB": "상우"
       },
       {
         "id": "tp-2",
@@ -179,7 +181,9 @@
           "addressJudge": "재판관님",
           "addressA": "하림씨",
           "addressB": "상우씨"
-        }
+        },
+        "addressA": "윤하림씨",
+        "addressB": "최상우씨"
       },
       {
         "id": "tp-3",
@@ -201,7 +205,9 @@
           "addressJudge": "재판관님",
           "addressA": "윤하림씨",
           "addressB": "최상우씨"
-        }
+        },
+        "addressA": "윤하림씨",
+        "addressB": "최상우씨"
       }
     ],
     "relationshipType": "tenant_landlord"
@@ -211,7 +217,9 @@
     "description": "계약 만료를 한 달 앞두고 하림은 새 전셋집 계약금을 맞추기 위해 보증금 반환 시점을 서둘러야 했다. 상우는 다음 임차인 도배와 수리 일정을 미리 잡고 싶어 했고, 두 사람 모두 퇴거 직전 한 번에 정리하자는 방식에 기대다가 원상복구 범위에서 충돌했다.",
     "emotionalPressure": 7,
     "affects": "both",
-    "triggerAmplifier": "이사 일정과 다음 계약금이 동시에 걸려 있어, 작은 해석 차이도 곧 '보증금을 떼이느냐' 혹은 '수리비를 떠안느냐'의 문제로 커졌다."
+    "triggerAmplifier": "이사 일정과 다음 계약금이 동시에 걸려 있어, 작은 해석 차이도 곧 '보증금을 떼이느냐' 혹은 '수리비를 떠안느냐'의 문제로 커졌다.",
+    "caseNumber": "E-TN-E-0001",
+    "caseName": "보증금 반환 분쟁"
   },
   "disputes": [
     {

@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "태준씨",
           "addressB": "다혜"
-        }
+        },
+        "addressA": "태준씨",
+        "addressB": "우리 다혜"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "태준씨",
           "addressB": "다혜씨"
-        }
+        },
+        "addressA": "우리 태준",
+        "addressB": "다혜씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "이태준씨",
           "addressB": "정다혜씨"
-        }
+        },
+        "addressA": "태준씨",
+        "addressB": "다혜씨"
       }
     ],
     "relationshipType": "spouse"
@@ -206,7 +212,9 @@
     "description": "야간 도우미 종료 후, 아침은 다혜, 밤·병원·세탁은 태준 식으로 나눴다. 수요일 상담에서 다혜가 \"거의 다 제가 해요\"라며 칭찬받고, 같은 저녁 단톡에 비슷한 표현을 올렸다. 태준은 자기 노동이 지워진 기분, 다혜는 인정받은 걸 공격당한다고 느꼈다.",
     "emotionalPressure": 6,
     "affects": "both",
-    "triggerAmplifier": "도우미 종료 후 야근 겹침으로 공백이 커졌다. 보이는 노동은 즉시 인정받지만 밤 준비·예약·세탁은 기록 없이는 존재하지 않는다. 가시성 차이가 점수 싸움으로 번졌다."
+    "triggerAmplifier": "도우미 종료 후 야근 겹침으로 공백이 커졌다. 보이는 노동은 즉시 인정받지만 밤 준비·예약·세탁은 기록 없이는 존재하지 않는다. 가시성 차이가 점수 싸움으로 번졌다.",
+    "caseNumber": "E-SP-E-0007",
+    "caseName": "공로 독점 갈등"
   },
   "disputes": [
     {

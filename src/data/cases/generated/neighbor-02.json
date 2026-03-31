@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "유나씨",
           "addressB": "민규씨"
-        }
+        },
+        "addressA": "유나씨",
+        "addressB": "민규씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "유나씨",
           "addressB": "민규씨"
-        }
+        },
+        "addressA": "서유나씨",
+        "addressB": "장민규씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "서유나씨",
           "addressB": "장민규씨"
-        }
+        },
+        "addressA": "서유나씨",
+        "addressB": "장민규씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -206,7 +212,9 @@
     "description": "반상회에서 CCTV 증설·반려동물 악취·택배 분실이 한꺼번에 터지며 특정 호수가 공개 거론됐다. 다음 날 엘리베이터에 익명 전단이 붙고 단체방에 캡처가 돌자, 두 사람은 서로가 먼저 여론전을 걸었다고 확신했다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "반상회 직후라 찬반 기억이 생생하고, 택배·반려동물처럼 매일 마주치는 주제라 소문 하나가 곧바로 평판과 생활 동선에 타격을 줬다."
+    "triggerAmplifier": "반상회 직후라 찬반 기억이 생생하고, 택배·반려동물처럼 매일 마주치는 주제라 소문 하나가 곧바로 평판과 생활 동선에 타격을 줬다.",
+    "caseNumber": "E-NB-H-0002",
+    "caseName": "CCTV 유포 논란"
   },
   "disputes": [
     {

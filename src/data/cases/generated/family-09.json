@@ -154,7 +154,9 @@
           "addressJudge": "재판관님",
           "addressA": "민아씨",
           "addressB": "도윤"
-        }
+        },
+        "addressA": "우리 민아",
+        "addressB": "우리 도윤"
       },
       {
         "id": "tp-2",
@@ -176,7 +178,9 @@
           "addressJudge": "재판관님",
           "addressA": "민아씨",
           "addressB": "도윤씨"
-        }
+        },
+        "addressA": "민아씨",
+        "addressB": "도윤씨"
       },
       {
         "id": "tp-3",
@@ -198,7 +202,9 @@
           "addressJudge": "재판관님",
           "addressA": "최민아씨",
           "addressB": "최도윤씨"
-        }
+        },
+        "addressA": "민아씨",
+        "addressB": "도윤씨"
       }
     ],
     "relationshipType": "family"
@@ -208,7 +214,9 @@
     "description": "아버지 재활비와 부모 노후자금이 동시에 필요해지자 남매는 재개발 기대감이 붙은 부모 상가주택 매각을 서둘러 검토했다. 그런데 매수인이 빠른 명도와 수리비 조정을 요구하면서 공식 계약 밖 돈이 생겼고, 남매는 부모에게 다 보여주기로 한 약속과 달리 중개사를 사이에 두고 차액을 숨기기 시작했다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "부모 치료비와 시세 상승 기대가 같이 걸린 부동산이라 작은 차액도 곧 효도와 탐욕의 경계로 읽혔고, 과거 도윤의 채무 기억 때문에 잘린 메시지 하나만으로도 단독 횡령 서사가 폭발했다."
+    "triggerAmplifier": "부모 치료비와 시세 상승 기대가 같이 걸린 부동산이라 작은 차액도 곧 효도와 탐욕의 경계로 읽혔고, 과거 도윤의 채무 기억 때문에 잘린 메시지 하나만으로도 단독 횡령 서사가 폭발했다.",
+    "caseNumber": "E-FM-H-0009",
+    "caseName": "형제 은닉 공모"
   },
   "disputes": [
     {

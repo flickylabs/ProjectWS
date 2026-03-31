@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "복자씨",
           "addressB": "정우씨"
-        }
+        },
+        "addressA": "복자",
+        "addressB": "정우"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "복자씨",
           "addressB": "정우씨"
-        }
+        },
+        "addressA": "최복자씨",
+        "addressB": "박정우씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "최복자씨",
           "addressB": "박정우씨"
-        }
+        },
+        "addressA": "최복자씨",
+        "addressB": "박정우씨"
       }
     ],
     "relationshipType": "family"
@@ -207,7 +213,9 @@
     "description": "복자가 손목 통증으로 근무 시간을 줄인 직후, 정우는 독립하며 당분간 생활비를 보태겠다고 약속했다. 하지만 몇 달 지나지 않아 정우의 현장 수입이 들쭉날쭉해지고 복자의 공과금 독촉이 겹치면서, 정기 용돈 약속이 효도 문제와 체면 문제로 부풀어 올랐다.",
     "emotionalPressure": 7,
     "affects": "both",
-    "triggerAmplifier": "매달 같은 날짜에 돈이 들어오지 않자 작은 지연도 곧 버림이나 불효처럼 느껴졌고, 친척 단톡의 공개 압박이 갈등을 훨씬 크게 만들었다."
+    "triggerAmplifier": "매달 같은 날짜에 돈이 들어오지 않자 작은 지연도 곧 버림이나 불효처럼 느껴졌고, 친척 단톡의 공개 압박이 갈등을 훨씬 크게 만들었다.",
+    "caseNumber": "E-FM-E-0003",
+    "caseName": "용돈 약속 갈등"
   },
   "disputes": [
     {

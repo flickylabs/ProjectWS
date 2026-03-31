@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "하린씨",
           "addressB": "민규"
-        }
+        },
+        "addressA": "우리 하린",
+        "addressB": "우리 민규"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "하린씨",
           "addressB": "민규씨"
-        }
+        },
+        "addressA": "하린씨",
+        "addressB": "민규씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "서하린씨",
           "addressB": "서민규씨"
-        }
+        },
+        "addressA": "서하린씨",
+        "addressB": "서민규씨"
       }
     ],
     "relationshipType": "family"
@@ -207,7 +213,9 @@
     "description": "부모가 유언과 사전 정리를 준비하자 형제는 예금과 등기, 보험 서류를 공동 폴더에 모으기 시작했다. 그런데 한 저축계좌에서 3,200만원이 빠져나간 직후 폴더에는 잘린 잔액 캡처와 모호한 파일명이 남았고, 예전 민규의 차용금 기억과 하린의 문서 통제가 겹치며 서로가 먼저 손댔다고 의심하게 됐다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "상속 준비는 작은 서류 하나도 지분과 신뢰의 신호처럼 읽히기 때문에, 합법적 기부조차 몰래 빼돌린 돈처럼 보이게 만들었다."
+    "triggerAmplifier": "상속 준비는 작은 서류 하나도 지분과 신뢰의 신호처럼 읽히기 때문에, 합법적 기부조차 몰래 빼돌린 돈처럼 보이게 만들었다.",
+    "caseNumber": "E-FM-N-0004",
+    "caseName": "예금 횡령 의혹"
   },
   "disputes": [
     {

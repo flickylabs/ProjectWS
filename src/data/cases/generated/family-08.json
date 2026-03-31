@@ -154,7 +154,9 @@
           "addressJudge": "재판관님",
           "addressA": "세라씨",
           "addressB": "준호"
-        }
+        },
+        "addressA": "우리 세라",
+        "addressB": "우리 준호"
       },
       {
         "id": "tp-2",
@@ -176,7 +178,9 @@
           "addressJudge": "재판관님",
           "addressA": "세라씨",
           "addressB": "준호씨"
-        }
+        },
+        "addressA": "이세라씨",
+        "addressB": "이준호씨"
       },
       {
         "id": "tp-3",
@@ -198,7 +202,9 @@
           "addressJudge": "재판관님",
           "addressA": "이세라씨",
           "addressB": "이준호씨"
-        }
+        },
+        "addressA": "이세라씨",
+        "addressB": "이준호씨"
       }
     ],
     "relationshipType": "family"
@@ -208,7 +214,9 @@
     "description": "어머니의 야간 배회와 가스 경보가 반복되자 형제는 재가 돌봄을 더 버틸지, 평가입소를 먼저 해볼지 사이에서 오래 흔들렸다. 그런데 준호가 은솔요양원에 먼저 대기금을 보내고 침상 확보 문자를 받자 세라는 또 중요한 결정을 숨겼다고 느꼈고, 과거 ICU 연락 지연 기억까지 겹치면서 입소 논의가 곧 배신 싸움으로 폭발했다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "시설 입소는 죄책감과 불효 불안을 강하게 건드리는 데다, 이미 한 번 늦은 통보로 큰 상처를 겪은 형제라 작은 생략도 곧바로 오래된 배신의 반복으로 읽혔다."
+    "triggerAmplifier": "시설 입소는 죄책감과 불효 불안을 강하게 건드리는 데다, 이미 한 번 늦은 통보로 큰 상처를 겪은 형제라 작은 생략도 곧바로 오래된 배신의 반복으로 읽혔다.",
+    "caseNumber": "E-FM-H-0008",
+    "caseName": "입소 대기금 갈등"
   },
   "disputes": [
     {

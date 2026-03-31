@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "민재씨",
           "addressB": "라희씨"
-        }
+        },
+        "addressA": "민재",
+        "addressB": "라희"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "민재씨",
           "addressB": "라희씨"
-        }
+        },
+        "addressA": "오민재씨",
+        "addressB": "김라희씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "오민재씨",
           "addressB": "김라희씨"
-        }
+        },
+        "addressA": "오민재씨",
+        "addressB": "김라희씨"
       }
     ],
     "relationshipType": "partnership"
@@ -207,7 +213,9 @@
     "description": "공동대표 해지와 지분 정산을 논의하던 중이라 계좌 하나, 전표 한 줄이 곧 평가액과 책임 비율로 연결되고 있었다. 서로 신뢰가 바닥난 상태에서 현재 거래의 의미를 따지기보다, 과거 누가 먼저 배신했는지를 끌어와 지금 협상력을 높이려는 유인이 강했다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "동업 해지 직전이라 숫자 하나가 곧 buyout 가격과 향후 명예에 직결됐고, 이미 있던 과거 상처가 현재 자료의 진위 검토보다 훨씬 빠르게 판단을 굳혀 버렸다."
+    "triggerAmplifier": "동업 해지 직전이라 숫자 하나가 곧 buyout 가격과 향후 명예에 직결됐고, 이미 있던 과거 상처가 현재 자료의 진위 검토보다 훨씬 빠르게 판단을 굳혀 버렸다.",
+    "caseNumber": "E-PT-H-0004",
+    "caseName": "신뢰 붕괴 갈등"
   },
   "disputes": [
     {

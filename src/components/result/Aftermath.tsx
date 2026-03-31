@@ -30,6 +30,7 @@ export default function Aftermath() {
   const verdictScore = useGameStore((s) => s.verdictScore)
   const [aftermath, setAftermath] = useState<string | null>(cachedAftermath)
   const [loading, setLoading] = useState(false)
+  const aftermathCanvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
     if (cachedAftermath) return // 이미 생성된 후일담이 있으면 재생성하지 않음
@@ -46,6 +47,7 @@ export default function Aftermath() {
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const generateAftermath = async () => {
+    if (cachedAftermath) return // 이중 호출 방지
     if (!caseData || !verdictScore) return
     setLoading(true)
     try {
@@ -82,19 +84,54 @@ export default function Aftermath() {
       const callA = partyA.callTerms?.toPartner ?? ''
       const callB = partyB.callTerms?.toPartner ?? ''
 
+      // 3인칭 서술용 관계 명칭 자동 추론
+      const relLabel = (() => {
+        if (relType === 'spouse') return '부부'
+        if (relType === 'friend') return '친구'
+        if (relType === 'neighbor') return '이웃'
+        if (relType === 'partnership') return '동업자'
+        if (relType === 'boss_employee') return '동료'
+        if (relType === 'tenant_landlord') return '임대인과 임차인'
+        if (relType === 'family') {
+          const all = `${callA} ${callB} ${partyA.callTerms?.toJudge ?? ''} ${partyB.callTerms?.toJudge ?? ''}`
+          const hasMom = all.includes('엄마') || all.includes('어머니') || all.includes('어머님')
+          const hasDad = all.includes('아빠') || all.includes('아버지') || all.includes('아버님')
+          const hasSon = all.includes('아들')
+          const hasDaughter = all.includes('딸')
+          // 부모-자식
+          if (hasMom && hasDaughter) return '모녀'
+          if (hasMom && (hasSon || !hasDaughter)) return '모자'
+          if (hasDad && hasDaughter) return '부녀'
+          if (hasDad && (hasSon || !hasDaughter)) return '부자'
+          // 형제자매 — 호칭으로 판단
+          if (all.includes('언니')) return '자매'
+          if (all.includes('누나')) return '남매'
+          if (all.includes('오빠')) return '남매'
+          if (all.includes('형')) return '형제'
+          return '가족'
+        }
+        return '두 사람'
+      })()
+
       const prompt = `법정 심문 게임의 판결 후일담을 작성하세요.
 
-당사자: ${nameA}(${partyA.age ?? ''}세) vs ${nameB}(${partyB.age ?? ''}세)
-관계: ${relType}${familyRel ? `(${familyRel})` : ''}. 호칭: ${callA}/${callB}
+당사자:
+- ${nameA} (${partyA.age ?? ''}세${partyA.occupation ? ', ' + partyA.occupation : ''})
+- ${nameB} (${partyB.age ?? ''}세${partyB.occupation ? ', ' + partyB.occupation : ''})
+두 사람의 관계: ${relLabel}
+대화 시 호칭: ${nameA}→${nameB}: "${callA}", ${nameB}→${nameA}: "${callB}"
+
+★ 3인칭 서술 시 "${relLabel}"로 관계를 표현하세요. 다른 관계 명칭으로 바꾸지 마세요.
 배경: ${caseData.context.description.slice(0, 150)}
 해결책: ${solutions}
 점수: ${verdictScore.total}점 (${endingTone})
 
 규칙:
 - 판결 이후 1주~1개월 후 상황을 2~3문단으로 묘사
+- 각 문단 2~3문장. 총 270~360자
 - 두 사람의 관계 변화와 내면을 담담하게
 - 호칭을 나이/관계에 맞게 사용
-- 마지막 한 줄: 교훈이나 여운
+- 마지막 줄은 반드시 "교훈 한 문장"만. 형식: "~~~" (큰따옴표로 감싼 한 문장). 부연 설명 없이 교훈만.
 - 한국어 소설체`
 
       // 재시도 로직 (최대 2회)
@@ -152,14 +189,27 @@ export default function Aftermath() {
 
   if (!aftermath) return null
 
-  const aftermathCanvasRef = useRef<HTMLCanvasElement>(null)
-
   const renderAftermathImage = (): string | null => {
     const canvas = aftermathCanvasRef.current
-    if (!canvas || !aftermath || !caseData) return null
-    const W = 600, H = 500
+    if (!canvas || !aftermath || !caseData || !verdictScore) return null
+    const W = 600, FIXED_H = 600 // 정사각
     const ctx = canvas.getContext('2d')!
     const dpr = window.devicePixelRatio || 1
+
+    const paragraphs = aftermath.split('\n\n')
+    const isLastQuote = (i: number) => i === paragraphs.length - 1
+
+    // 본문 줄 수 계산 (높이 동적)
+    ctx.font = '14px Pretendard, sans-serif'
+    let totalLines = 0
+    const paraLines: string[][] = []
+    for (const p of paragraphs) {
+      const lines = wrapText(ctx, p, W - 80)
+      paraLines.push(lines)
+      totalLines += lines.length
+    }
+    const H = FIXED_H // 정사각 고정
+
     canvas.width = W * dpr; canvas.height = H * dpr
     ctx.scale(dpr, dpr)
 
@@ -168,22 +218,42 @@ export default function Aftermath() {
     bg.addColorStop(0, '#0c0f1a'); bg.addColorStop(1, '#030712')
     ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H)
 
-    // 타이틀
-    ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 28px Pretendard, sans-serif'; ctx.textAlign = 'center'
-    ctx.fillText('⚖️ 솔로몬 — 판결 후일담', W / 2, 45)
+    // 상단 프레임 라인
+    ctx.strokeStyle = '#d9770620'; ctx.lineWidth = 1
+    ctx.strokeRect(20, 20, W - 40, H - 40)
 
-    // 당사자
-    ctx.fillStyle = '#9ca3af'; ctx.font = '14px Pretendard, sans-serif'
-    ctx.fillText(`${caseData.duo.partyA.name} vs ${caseData.duo.partyB.name}`, W / 2, 75)
+    // ⚖️ 이모지 + 타이틀
+    ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 24px Pretendard, sans-serif'; ctx.textAlign = 'center'
+    ctx.fillText('⚖️ 솔로몬 — 판결 후일담', W / 2, 55)
 
-    // 후일담 본문
-    ctx.fillStyle = '#d1d5db'; ctx.font = '14px Pretendard, sans-serif'; ctx.textAlign = 'left'
-    const lines = wrapText(ctx, aftermath.replace(/\n\n/g, '\n'), W - 80)
-    lines.slice(0, 18).forEach((line, i) => ctx.fillText(line, 40, 110 + i * 22))
+    // 점수 + 당사자
+    ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 18px Pretendard, sans-serif'
+    ctx.fillText(`${verdictScore.total}점`, W / 2, 85)
+    ctx.fillStyle = '#6b7280'; ctx.font = '13px Pretendard, sans-serif'
+    ctx.fillText(`${caseData.duo.partyA.name} vs ${caseData.duo.partyB.name}`, W / 2, 105)
+
+    // 구분선
+    ctx.strokeStyle = '#374151'; ctx.lineWidth = 0.5
+    ctx.beginPath(); ctx.moveTo(60, 118); ctx.lineTo(W - 60, 118); ctx.stroke()
+
+    // 본문 — 단락별 간격
+    let y = 140
+    paraLines.forEach((lines, pi) => {
+      if (isLastQuote(pi)) {
+        // 마지막 명언: 중앙 정렬 + 노란색
+        ctx.fillStyle = '#fbbf24'; ctx.font = 'italic 14px Pretendard, sans-serif'; ctx.textAlign = 'center'
+        lines.forEach(line => { ctx.fillText(line, W / 2, y); y += 20 })
+      } else {
+        // 본문: 좌측 정렬 + 흰색
+        ctx.fillStyle = '#d1d5db'; ctx.font = '14px Pretendard, sans-serif'; ctx.textAlign = 'left'
+        lines.forEach(line => { ctx.fillText(line, 40, y); y += 20 })
+      }
+      y += 12 // 단락 간격
+    })
 
     // 해시태그
     ctx.fillStyle = '#4b5563'; ctx.font = '12px Pretendard, sans-serif'; ctx.textAlign = 'center'
-    ctx.fillText('#솔로몬 #법정추리게임 #후일담', W / 2, H - 20)
+    ctx.fillText('#솔로몬 #법정추리게임', W / 2, H - 30)
 
     return canvas.toDataURL('image/png')
   }
@@ -216,12 +286,12 @@ export default function Aftermath() {
   return (
     <div className="space-y-4">
       <h3 className="text-sm font-bold text-amber-400 text-center">판결 이후</h3>
-      <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
-        {aftermath.split('\n\n').map((paragraph, i) => (
+      <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-5">
+        {aftermath.split('\n\n').map((paragraph, i, arr) => (
           <p key={i} className={`text-sm leading-relaxed ${
-            i === aftermath.split('\n\n').length - 1
-              ? 'text-amber-400/80 italic mt-3 text-center'
-              : 'text-gray-300 mb-3'
+            i === arr.length - 1
+              ? 'text-amber-400 italic mt-5 text-center font-medium'
+              : 'text-gray-300 mb-5'
           }`}>
             {paragraph}
           </p>
@@ -229,7 +299,7 @@ export default function Aftermath() {
       </div>
 
       {/* 후일담 이미지 공유 */}
-      <canvas ref={aftermathCanvasRef} width={600} height={500} className="hidden" />
+      <canvas ref={aftermathCanvasRef} className="hidden" />
       <div className="flex gap-2">
         <button onClick={handleDownloadAftermath}
           className="flex-1 bg-gray-800 hover:bg-gray-700 text-gray-300 py-2 rounded-lg text-xs font-semibold border border-gray-700">

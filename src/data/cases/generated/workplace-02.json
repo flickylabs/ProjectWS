@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "규원씨",
           "addressB": "민아씨"
-        }
+        },
+        "addressA": "규원씨",
+        "addressB": "민아씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "규원씨",
           "addressB": "민아씨"
-        }
+        },
+        "addressA": "한규원씨",
+        "addressB": "조민아씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "한규원씨",
           "addressB": "조민아씨"
-        }
+        },
+        "addressA": "한규원씨",
+        "addressB": "조민아씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -206,7 +212,9 @@
     "description": "외부 감사 착수 48시간 전. 운영기획실은 비용처리 이상 징후와 내부통제 보고서를 동시에 정리하고 있었다. 누가 자료를 봤고 누가 먼저 밖과 접촉했는지 한 줄만 어긋나도 감사 대응이 무너지는 시점이다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "감사 직전이라 유출자 낙인은 곧 권한 회수와 인사 불이익으로 직결된다. 문제 제기 자체가 조직 배신으로 읽히는 시점이다."
+    "triggerAmplifier": "감사 직전이라 유출자 낙인은 곧 권한 회수와 인사 불이익으로 직결된다. 문제 제기 자체가 조직 배신으로 읽히는 시점이다.",
+    "caseNumber": "E-WK-H-0002",
+    "caseName": "감사 대응 혼란"
   },
   "disputes": [
     {

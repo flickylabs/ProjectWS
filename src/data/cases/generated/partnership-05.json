@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "현우씨",
           "addressB": "소라씨"
-        }
+        },
+        "addressA": "현우",
+        "addressB": "소라"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "현우씨",
           "addressB": "소라씨"
-        }
+        },
+        "addressA": "최현우씨",
+        "addressB": "정소라씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "최현우씨",
           "addressB": "정소라씨"
-        }
+        },
+        "addressA": "최현우씨",
+        "addressB": "정소라씨"
       }
     ],
     "relationshipType": "partnership"
@@ -206,7 +212,9 @@
     "description": "국세청 세무조사 통지가 막 도착해 일주일 안에 주요 장부와 판촉비 증빙을 정리해야 하는 상황이었다. 조사 결과에 따라 가맹점 정산과 추가 대출 연장이 흔들릴 수 있어, 두 사람 모두 장부와 현금흐름을 동시에 방어해야 한다는 압박을 받고 있었다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "조사 직전이라 자금 이동 하나가 곧 탈루 은닉이나 횡령처럼 읽혔고, 외부 전문가가 끼어들수록 책임 주체가 더 흐려져 상대를 먼저 의심하게 만들었다."
+    "triggerAmplifier": "조사 직전이라 자금 이동 하나가 곧 탈루 은닉이나 횡령처럼 읽혔고, 외부 전문가가 끼어들수록 책임 주체가 더 흐려져 상대를 먼저 의심하게 만들었다.",
+    "caseNumber": "E-PT-H-0005",
+    "caseName": "세무조사 압박"
   },
   "disputes": [
     {

@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "준서씨",
           "addressB": "혜린씨"
-        }
+        },
+        "addressA": "준서",
+        "addressB": "혜린"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "준서씨",
           "addressB": "혜린씨"
-        }
+        },
+        "addressA": "오준서씨",
+        "addressB": "박혜린씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "오준서씨",
           "addressB": "박혜린씨"
-        }
+        },
+        "addressA": "오준서씨",
+        "addressB": "박혜린씨"
       }
     ],
     "relationshipType": "partnership"
@@ -206,7 +212,9 @@
     "description": "핵심 훈련사의 출산휴가가 시작되기 직전이라 주말 반 운영을 유지하려면 바로 대체 인력을 붙여야 하는 상황이었다. 하루라도 공백이 나면 보호자 항의와 환불 요청이 이어질 수 있어 준서는 채용을 서두르고 싶었고, 혜린은 기준 미달 인력이 들어와 프로그램 신뢰가 흔들릴까 더 예민해졌다.",
     "emotionalPressure": 6,
     "affects": "both",
-    "triggerAmplifier": "반려견 케어 서비스는 직원 한 명의 자질이 곧 사고와 평판으로 이어지기 때문에, 모호한 말 한 줄과 자동 발송 알림도 금세 배신이나 독단처럼 느껴지기 쉬웠다."
+    "triggerAmplifier": "반려견 케어 서비스는 직원 한 명의 자질이 곧 사고와 평판으로 이어지기 때문에, 모호한 말 한 줄과 자동 발송 알림도 금세 배신이나 독단처럼 느껴지기 쉬웠다.",
+    "caseNumber": "E-PT-E-0010",
+    "caseName": "채용 갈등"
   },
   "disputes": [
     {

@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "지훈씨",
           "addressB": "수민씨"
-        }
+        },
+        "addressA": "백지훈씨",
+        "addressB": "오수민씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "지훈씨",
           "addressB": "수민씨"
-        }
+        },
+        "addressA": "백지훈씨",
+        "addressB": "오수민씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "백지훈씨",
           "addressB": "오수민씨"
-        }
+        },
+        "addressA": "백지훈씨",
+        "addressB": "오수민씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -206,7 +212,9 @@
     "description": "분기 말 SLA가 흔들리자 지훈은 응답 지연 뒤 웹캠·화면 캡처를 일상화했고, 수민은 압박 속에서 상태창 편집과 지글러로 버텼다. 감시와 은폐가 서로를 키우며 정면충돌했다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "재택 한 명의 응답 공백이 고객 불만과 팀 성과에 직결되는 구조라 감시 강화와 편법 은폐가 악순환으로 자극했다."
+    "triggerAmplifier": "재택 한 명의 응답 공백이 고객 불만과 팀 성과에 직결되는 구조라 감시 강화와 편법 은폐가 악순환으로 자극했다.",
+    "caseNumber": "E-WK-E-0012",
+    "caseName": "모니터링 갈등"
   },
   "disputes": [
     {

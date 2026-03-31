@@ -89,7 +89,7 @@ function renderShareImage(
   score: { total: number; insight: number; authority: number; wisdom: number },
   relationType: string,
 ): string {
-  const W = 600, H = 400
+  const W = 600, H = 600
   const ctx = canvas.getContext('2d')!
   const dpr = window.devicePixelRatio || 1
   canvas.width = W * dpr

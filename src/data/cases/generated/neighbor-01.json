@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "한결씨",
           "addressB": "주연씨"
-        }
+        },
+        "addressA": "정한결씨",
+        "addressB": "이주연씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "한결씨",
           "addressB": "주연씨"
-        }
+        },
+        "addressA": "정한결씨",
+        "addressB": "이주연씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "정한결씨",
           "addressB": "이주연씨"
-        }
+        },
+        "addressA": "정한결씨",
+        "addressB": "이주연씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -206,7 +212,9 @@
     "description": "7월 장마 셋째 주, 4라인 세대마다 습기 민원이 쏟아지던 때였다. 한결 집 욕실 천장에서 누런 물이 떨어지고, 같은 밤 504호 앞 복도에 제습기와 물받이 통이 놓인 걸 보자 두 사람은 상대를 원인으로 확신했다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "새벽 소음에 딸이 울고, 천장 물자국은 날마다 번졌다. 설명 한마디 늦은 것도 고의 은폐로 읽히는 온도였다."
+    "triggerAmplifier": "새벽 소음에 딸이 울고, 천장 물자국은 날마다 번졌다. 설명 한마디 늦은 것도 고의 은폐로 읽히는 온도였다.",
+    "caseNumber": "E-NB-E-0001",
+    "caseName": "누수 갈등"
   },
   "disputes": [
     {

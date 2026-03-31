@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "서림씨",
           "addressB": "도윤씨"
-        }
+        },
+        "addressA": "박서림씨",
+        "addressB": "최도윤씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "서림씨",
           "addressB": "도윤씨"
-        }
+        },
+        "addressA": "박서림씨",
+        "addressB": "최도윤씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "박서림씨",
           "addressB": "최도윤씨"
-        }
+        },
+        "addressA": "박서림씨",
+        "addressB": "최도윤씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -206,7 +212,9 @@
     "description": "3월 새 학기, 출근 차량이 몰리는 아침 102동 앞 탄력주차면이 다시 민감해졌다. 서림은 2월 말 종료된 재활 배려 습관대로 가까운 칸을 계속 점유했고, 도윤은 참다 못해 개인 콘과 쪽지로 맞서며 갈등이 터졌다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "범퍼 흠집과 경고 쪽지는 물리적 피해처럼 보이기 쉬웠다. 아버지 지팡이 기억이 얹히자 현재의 11차례 약속 위반보다 감정적 피해 서사가 먼저 퍼졌다."
+    "triggerAmplifier": "범퍼 흠집과 경고 쪽지는 물리적 피해처럼 보이기 쉬웠다. 아버지 지팡이 기억이 얹히자 현재의 11차례 약속 위반보다 감정적 피해 서사가 먼저 퍼졌다.",
+    "caseNumber": "E-NB-N-0004",
+    "caseName": "주차 갈등"
   },
   "disputes": [
     {

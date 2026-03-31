@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "소연씨",
           "addressB": "정훈씨"
-        }
+        },
+        "addressA": "박소연씨",
+        "addressB": "이정훈씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "소연씨",
           "addressB": "정훈씨"
-        }
+        },
+        "addressA": "박소연씨",
+        "addressB": "이정훈씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "박소연씨",
           "addressB": "이정훈씨"
-        }
+        },
+        "addressA": "박소연씨",
+        "addressB": "이정훈씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -206,7 +212,9 @@
     "description": "비 오는 하교길, 공동학습실에서 스티커 앨범을 함께 보던 하윤과 민우가 울음 섞인 실랑이를 벌였다. 아이들 설명이 엇갈리자, 서로 비 오는 날 픽업까지 맡기던 두 부모는 직접 확인 전에 채팅방 공개 글과 역소문으로 싸움을 키웠다.",
     "emotionalPressure": 6,
     "affects": "both",
-    "triggerAmplifier": "울며 돌아온 아이와 한정판 스티커는 보호본능을 건드렸고, 비 오는 날 서로 아이를 맡기던 신뢰가 깊었기 때문에 작은 오해도 배신처럼 증폭됐다."
+    "triggerAmplifier": "울며 돌아온 아이와 한정판 스티커는 보호본능을 건드렸고, 비 오는 날 서로 아이를 맡기던 신뢰가 깊었기 때문에 작은 오해도 배신처럼 증폭됐다.",
+    "caseNumber": "E-NB-E-0010",
+    "caseName": "스티커 절도 논란"
   },
   "disputes": [
     {

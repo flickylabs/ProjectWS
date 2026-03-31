@@ -145,8 +145,8 @@ function buildWitnessVars(
     witnessDistortionGuide: distortionGuide[witness.distortionRisk] ?? distortionGuide.accurate,
     witnessHiddenAgenda: wp?.hiddenAgenda ?? '',
     witnessAddressJudge: wp?.addressJudge ?? '재판관님',
-    witnessAddressA: wp?.addressA ?? caseData.duo.partyA.name + '씨',
-    witnessAddressB: wp?.addressB ?? caseData.duo.partyB.name + '씨',
+    witnessAddressA: wp?.addressA ?? inferWitnessAddress(witness, caseData.duo.partyA.name, 'a'),
+    witnessAddressB: wp?.addressB ?? inferWitnessAddress(witness, caseData.duo.partyB.name, 'b'),
     witnessSpeechStyle: wp?.speechStyle ?? '조심스럽게 사실 위주로 말한다.',
     // few-shot 증언 예시 (보강 데이터)
     witnessSpeechSamples: buildSpeechSampleBlock(caseData, witness.id),
@@ -219,6 +219,32 @@ ${vars.disputeList}
 }
 
 /* ── witnessBudget 포매팅 (v4 데이터) ────── */
+
+/** 증인의 관계에서 호칭 자동 추론 */
+function inferWitnessAddress(witness: any, partyName: string, _party: 'a' | 'b'): string {
+  const wName = witness.name ?? ''
+  const givenName = partyName.slice(1) // 성 제거
+
+  // 괄호 안 관계 정보 추출: "윤복순 (어머니)" → "어머니"
+  const relMatch = wName.match(/\((.+?)\)/)
+  const rel = relMatch?.[1] ?? ''
+
+  // 가족 관계 — 증인이 부모/조부모면 당사자를 "우리 [이름]"으로
+  if (rel.includes('어머니') || rel.includes('엄마') || rel.includes('아버지') || rel.includes('아빠')) return `우리 ${givenName}`
+  if (rel.includes('할머니') || rel.includes('할아버지')) return `우리 ${givenName}`
+  // 형제자매
+  if (rel.includes('누나') || rel.includes('언니') || rel.includes('형') || rel.includes('오빠') || rel.includes('동생')) return givenName
+  // 배우자
+  if (rel.includes('배우자') || rel.includes('남편') || rel.includes('아내')) return givenName
+
+  // 직장/사회 관계
+  if (rel.includes('동료') || rel.includes('동기')) return `${givenName}씨`
+  if (rel.includes('상사') || rel.includes('팀장') || rel.includes('부장')) return `${givenName}씨`
+  if (rel.includes('부하') || rel.includes('후배')) return `${givenName}씨`
+
+  // 기본 폴백
+  return `${partyName}씨`
+}
 
 function formatWitnessBudget(caseData: CaseData, witnessId: string): string {
   const caseKey = normalizeCaseKey(caseData)

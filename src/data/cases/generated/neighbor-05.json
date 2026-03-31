@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "서윤씨",
           "addressB": "재현씨"
-        }
+        },
+        "addressA": "오서윤씨",
+        "addressB": "임재현씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "서윤씨",
           "addressB": "재현씨"
-        }
+        },
+        "addressA": "오서윤씨",
+        "addressB": "임재현씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "오서윤씨",
           "addressB": "임재현씨"
-        }
+        },
+        "addressA": "서윤씨",
+        "addressB": "재현씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -206,7 +212,9 @@
     "description": "행사 직후 택배실은 포화 상태, 비에 젖은 같은 규격 흰 박스가 수북이 쌓였다. 서윤과 재현은 각자 자기 물건이 사라졌다고 느낀 순간, CCTV에 찍힌 단 하나의 상자를 붙잡고 서로가 먼저 가져갔다고 확신해버렸다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "서윤에게는 업무용 자재, 재현에게는 생활필수품이었다. 서로 택배를 맡아주던 신뢰가 있었기에 작은 설명 누락 하나가 곧바로 배신으로 읽혔다."
+    "triggerAmplifier": "서윤에게는 업무용 자재, 재현에게는 생활필수품이었다. 서로 택배를 맡아주던 신뢰가 있었기에 작은 설명 누락 하나가 곧바로 배신으로 읽혔다.",
+    "caseNumber": "E-NB-N-0005",
+    "caseName": "택배 분쟁"
   },
   "disputes": [
     {

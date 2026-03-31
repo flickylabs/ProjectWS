@@ -157,7 +157,9 @@
           "addressJudge": "재판관님",
           "addressA": "다은씨",
           "addressB": "성호씨"
-        }
+        },
+        "addressA": "이다은씨",
+        "addressB": "장성호씨"
       },
       {
         "id": "tp-2",
@@ -179,7 +181,9 @@
           "addressJudge": "재판관님",
           "addressA": "다은씨",
           "addressB": "성호씨"
-        }
+        },
+        "addressA": "이다은씨",
+        "addressB": "장성호씨"
       },
       {
         "id": "tp-3",
@@ -201,7 +205,9 @@
           "addressJudge": "재판관님",
           "addressA": "이다은씨",
           "addressB": "장성호씨"
-        }
+        },
+        "addressA": "다은씨",
+        "addressB": "성호씨"
       }
     ],
     "relationshipType": "tenant_landlord"
@@ -211,7 +217,9 @@
     "description": "계약 기간이 아직 넉 달 남은 시점, 다은은 결혼을 앞두고 월세를 전세 형태로 바꾸면 이사를 미루지 않아도 된다고 판단했다. 성호 역시 목돈이 들어오면 기존 대출을 조정할 수 있어 긍정적으로 말했지만, 공동명의자인 아내 서명과 수수료 문제가 남아 있었다. 서로가 '거의 됐다'는 같은 말을 다른 단계로 받아들이는 사이, 초안 계약서와 추가 보증금이 오가며 오해가 사실처럼 굳어졌다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "다은에겐 결혼 준비 일정과 대출 심사 마감이, 성호에겐 기존 담보 정리 비용과 공실 위험이 동시에 걸려 있어 말 한 줄과 송금 한 번이 곧 배신감으로 번졌다."
+    "triggerAmplifier": "다은에겐 결혼 준비 일정과 대출 심사 마감이, 성호에겐 기존 담보 정리 비용과 공실 위험이 동시에 걸려 있어 말 한 줄과 송금 한 번이 곧 배신감으로 번졌다.",
+    "caseNumber": "E-TN-N-0004",
+    "caseName": "전세 전환 갈등"
   },
   "disputes": [
     {

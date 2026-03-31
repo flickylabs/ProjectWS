@@ -196,17 +196,28 @@ function InterjectionOverlay() {
   const ij = useGameStore((s) => s.pendingInterjection)
   const caseData = useGameStore((s) => s.caseData)
   const [showConfirm, setShowConfirm] = useState(false)
+  const [processing, setProcessing] = useState(false)
   if (!ij || !caseData) return null
 
   const isA = ij.party === 'a'
   const name = isA ? caseData.duo.partyA.name : caseData.duo.partyB.name
+
+  const handleAllow = () => {
+    if (processing) return
+    setProcessing(true)
+    void allowInterjection()
+  }
+  const handleDeny = () => {
+    if (processing) return
+    setProcessing(true)
+    denyInterjection()
+  }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
       <div className="bg-gray-900 border border-gray-700 rounded-2xl p-5 w-full max-w-sm animate-fade-in shadow-2xl">
         {!showConfirm ? (
           <>
-            {/* 끼어들기 알림 */}
             <div className="flex items-center gap-2 mb-3">
               <Emoji char="✋" size={24} />
               <div>
@@ -218,29 +229,28 @@ function InterjectionOverlay() {
               <p className="text-sm text-gray-200 leading-relaxed">"{ij.text}"</p>
             </div>
             <div className="flex gap-2">
-              <button onClick={() => setShowConfirm(true)}
-                className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600 text-gray-950 active:scale-95">
+              <button onClick={() => { if (!processing) setShowConfirm(true) }} disabled={processing}
+                className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600 text-gray-950 active:scale-95 disabled:opacity-50">
                 발언 허용
               </button>
-              <button onClick={denyInterjection}
-                className="flex-1 py-2.5 rounded-xl text-xs bg-gray-800 text-gray-400 active:scale-95">
+              <button onClick={handleDeny} disabled={processing}
+                className="flex-1 py-2.5 rounded-xl text-xs bg-gray-800 text-gray-400 active:scale-95 disabled:opacity-50">
                 제지하기
               </button>
             </div>
           </>
         ) : (
           <>
-            {/* 허용 확인 */}
             <div className="text-center mb-3">
               <Emoji char="⚠️" size={28} />
             </div>
             <p className="text-sm text-gray-200 font-semibold text-center mb-1">정말 허용하시겠습니까?</p>
             <p className="text-xs text-amber-400/80 text-center mb-4">추가 정보를 얻을 수 있지만,<br />재판관의 <span className="font-bold">권위가 소폭 하락</span>합니다.</p>
             <div className="flex gap-2">
-              <button onClick={() => setShowConfirm(false)}
-                className="flex-1 py-2.5 rounded-xl text-xs bg-gray-800 text-gray-400 active:scale-95">돌아가기</button>
-              <button onClick={() => { void allowInterjection() }}
-                className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600 text-gray-950 active:scale-95">허용</button>
+              <button onClick={() => { if (!processing) setShowConfirm(false) }} disabled={processing}
+                className="flex-1 py-2.5 rounded-xl text-xs bg-gray-800 text-gray-400 active:scale-95 disabled:opacity-50">돌아가기</button>
+              <button onClick={handleAllow} disabled={processing}
+                className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600 text-gray-950 active:scale-95 disabled:opacity-50">허용</button>
             </div>
           </>
         )}

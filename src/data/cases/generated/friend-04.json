@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "다혜씨",
           "addressB": "현우"
-        }
+        },
+        "addressA": "다혜",
+        "addressB": "현우"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "송다혜씨",
           "addressB": "류현우씨"
-        }
+        },
+        "addressA": "송다혜씨",
+        "addressB": "류현우씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "다혜씨",
           "addressB": "현우씨"
-        }
+        },
+        "addressA": "다혜씨",
+        "addressB": "현우씨"
       }
     ],
     "relationshipType": "friend"
@@ -206,7 +212,9 @@
     "description": "초여름 캠핑을 앞두고 다혜와 현우는 중고마켓에서 4인용 텐트와 타프 묶음 상품을 함께 사기로 했다. 판매자가 문의가 많다며 서두르자 다혜는 현우의 '텐트만 멀쩡하면 반반 가능, 일단 잡아줘'라는 답을 확정으로 받아들이고 예약금을 보냈고, 픽업 뒤 상태를 두고 두 사람의 기준이 엇갈리며 다툼이 커졌다.",
     "emotionalPressure": 6,
     "affects": "both",
-    "triggerAmplifier": "이미 주말 캠핑 일정이 잡혀 있었고 판매자도 빠른 결제를 재촉해, 한쪽의 모호한 문장과 다른 한쪽의 서두른 행동이 곧바로 책임 공방으로 번졌다."
+    "triggerAmplifier": "이미 주말 캠핑 일정이 잡혀 있었고 판매자도 빠른 결제를 재촉해, 한쪽의 모호한 문장과 다른 한쪽의 서두른 행동이 곧바로 책임 공방으로 번졌다.",
+    "caseNumber": "E-FR-E-0004",
+    "caseName": "텐트 구매 분쟁"
   },
   "disputes": [
     {

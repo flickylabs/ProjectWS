@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "시원씨",
           "addressB": "지아씨"
-        }
+        },
+        "addressA": "시원",
+        "addressB": "지아"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "시원씨",
           "addressB": "지아씨"
-        }
+        },
+        "addressA": "배시원씨",
+        "addressB": "윤지아씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "배시원씨",
           "addressB": "윤지아씨"
-        }
+        },
+        "addressA": "배시원씨",
+        "addressB": "윤지아씨"
       }
     ],
     "relationshipType": "partnership"
@@ -207,7 +213,9 @@
     "description": "동업 5년차에 들어서며 회원 수는 늘었지만, 인건비와 장비 리스 부담도 함께 커진 상태였다. 지아는 5주년 시즌을 2호점 확장의 신호로 받아들였고, 시원은 과거 손실을 이유로 현금보유 조건을 우선시하면서도 이를 정면으로 다시 합의하지 않아 갈등이 증폭됐다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "확장은 단순 투자 결정이 아니라 누가 앞으로 회사를 끌 대표인지의 신호처럼 읽혔고, 5년간 누가 성장을 만들었는지에 대한 인정 욕구까지 얹히면서 약속 문제 하나가 곧 존재감 싸움으로 번졌다."
+    "triggerAmplifier": "확장은 단순 투자 결정이 아니라 누가 앞으로 회사를 끌 대표인지의 신호처럼 읽혔고, 5년간 누가 성장을 만들었는지에 대한 인정 욕구까지 얹히면서 약속 문제 하나가 곧 존재감 싸움으로 번졌다.",
+    "caseNumber": "E-PT-H-0008",
+    "caseName": "동업 갈등"
   },
   "disputes": [
     {

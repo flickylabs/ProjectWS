@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "지연씨",
           "addressB": "현우"
-        }
+        },
+        "addressA": "우리 지연",
+        "addressB": "우리 현우"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "지연씨",
           "addressB": "현우씨"
-        }
+        },
+        "addressA": "지연씨",
+        "addressB": "현우씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "문지연씨",
           "addressB": "문현우씨"
-        }
+        },
+        "addressA": "지연씨",
+        "addressB": "현우씨"
       }
     ],
     "relationshipType": "family"
@@ -207,7 +213,9 @@
     "description": "아버지 장례가 끝난 뒤 지연은 장례비와 부의금, 어머니 생활비 정산을 맡아 공유 시트를 정리했고, 현우는 일부 숫자가 중복된다고 느껴 사촌에게 불만을 흘리기 시작했다. 그러다 지연이 현우의 사적 질문을 더 악질적인 문장처럼 꾸민 캡처를 가족 카톡방에 올리면서, 장례 후 피로와 슬픔이 명예 훼손과 증거 위조 싸움으로 번졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "장례 직후라 누구도 냉정하지 못한 상황에서 카톡 캡처 한 장이 곧 본심처럼 받아들여졌고, 친척방 전달 속도가 빨라 사실 확인보다 낙인이 먼저 굳어졌다."
+    "triggerAmplifier": "장례 직후라 누구도 냉정하지 못한 상황에서 카톡 캡처 한 장이 곧 본심처럼 받아들여졌고, 친척방 전달 속도가 빨라 사실 확인보다 낙인이 먼저 굳어졌다.",
+    "caseNumber": "E-FM-H-0012",
+    "caseName": "장례비 정산 갈등"
   },
   "disputes": [
     {

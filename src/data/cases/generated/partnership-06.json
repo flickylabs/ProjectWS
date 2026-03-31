@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "가람씨",
           "addressB": "보라씨"
-        }
+        },
+        "addressA": "이가람씨",
+        "addressB": "최보라씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "가람씨",
           "addressB": "보라씨"
-        }
+        },
+        "addressA": "이가람씨",
+        "addressB": "최보라씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "이가람씨",
           "addressB": "최보라씨"
-        }
+        },
+        "addressA": "이가람씨",
+        "addressB": "최보라씨"
       }
     ],
     "relationshipType": "partnership"
@@ -206,7 +212,9 @@
     "description": "주말 재오픈을 앞두고 이틀 안에 간판, 집기, 카운터 동선, 철거 잔여 공정을 모두 마쳐야 하는 상황이었다. 임대료와 직원 인건비는 그대로 나가는 반면 문을 닫아둔 매출 공백이 커서, 둘 다 자기 판단을 미루면 손실이 커진다고 느끼고 있었다.",
     "emotionalPressure": 7,
     "affects": "both",
-    "triggerAmplifier": "매장 리뉴얼은 브랜딩과 운영이 동시에 걸리는 일이라 작은 변경도 곧 상대 영역 침범으로 느껴졌고, 현장에서는 늦은 승인보다 단독 결정이 더 쉬워 보였다."
+    "triggerAmplifier": "매장 리뉴얼은 브랜딩과 운영이 동시에 걸리는 일이라 작은 변경도 곧 상대 영역 침범으로 느껴졌고, 현장에서는 늦은 승인보다 단독 결정이 더 쉬워 보였다.",
+    "caseNumber": "E-PT-E-0006",
+    "caseName": "리뉴얼 갈등"
   },
   "disputes": [
     {

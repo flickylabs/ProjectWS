@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "서희씨",
           "addressB": "우람씨"
-        }
+        },
+        "addressA": "서희",
+        "addressB": "우람"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "우람씨",
           "addressB": "서희씨"
-        }
+        },
+        "addressA": "서희씨",
+        "addressB": "우람씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "전서희씨",
           "addressB": "정우람씨"
-        }
+        },
+        "addressA": "서희씨",
+        "addressB": "우람씨"
       }
     ],
     "relationshipType": "spouse"
@@ -206,7 +212,9 @@
     "description": "컨퍼런스에서 돌아온 우람이 셔츠를 던지고 잠든 사이, 서희가 셔츠·주차권·배지를 소품으로 북클럽 문장과 함께 친한 친구 스토리에 올렸다. 우람은 승진 면담을 앞두고 있었고, 목록에 남아 있던 동료 김태훈이 11분 만에 캡처했다.",
     "emotionalPressure": 7,
     "affects": "both",
-    "triggerAmplifier": "승진 면담 D-3, 숙박비·외근비 정산이 인사위원 검토 항목에 포함된 시기였다. 이름 없는 스토리라도 배지+주차권+의미심장한 문장이 모이면 경비 의혹으로 읽힐 조건이 갖춰진 상태였다."
+    "triggerAmplifier": "승진 면담 D-3, 숙박비·외근비 정산이 인사위원 검토 항목에 포함된 시기였다. 이름 없는 스토리라도 배지+주차권+의미심장한 문장이 모이면 경비 의혹으로 읽힐 조건이 갖춰진 상태였다.",
+    "caseNumber": "E-SP-N-0006",
+    "caseName": "친구 스토리 논란"
   },
   "disputes": [
     {

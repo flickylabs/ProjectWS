@@ -113,7 +113,8 @@ export default function ResultScreen() {
         {tab === 'score' && <ScoreBreakdown score={verdictScore} />}
         {tab === 'truth' && <TruthReveal />}
         {tab === 'titles' && <TitleReveal />}
-        {tab === 'aftermath' && <Aftermath />}
+        {/* Aftermath는 항상 마운트 — 결과 진입 시 미리 생성, 탭 아닐 때 숨김 */}
+        <div className={tab === 'aftermath' ? '' : 'hidden'}><Aftermath /></div>
         {tab === 'share' && <ShareResult />}
       </div>
 

@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "민석씨",
           "addressB": "하린씨"
-        }
+        },
+        "addressA": "황민석씨",
+        "addressB": "주하린씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "민석씨",
           "addressB": "하린씨"
-        }
+        },
+        "addressA": "황민석씨",
+        "addressB": "주하린씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "황민석씨",
           "addressB": "주하린씨"
-        }
+        },
+        "addressA": "황민석씨",
+        "addressB": "주하린씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -206,7 +212,9 @@
     "description": "복도 전단지 분실이 반복되자 민석은 도어벨카메라를 달았고, 맞은편 하린은 자기 현관이 찍힐까 불안해했다. 촬영 범위를 두고 언성이 높아진 어느 날, 주민방에 '카메라가 안쪽까지 따라왔다'는 27초 클립이 돌면서 갈등이 폭발했다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "현관문은 사적 공간의 경계선이라 렌즈 각도 몇 도 차이가 강한 불쾌감을 만든다. '스토킹'이라는 단어가 한번 붙자 기술 문제는 뒷전, 평판 전쟁이 먼저 커졌다."
+    "triggerAmplifier": "현관문은 사적 공간의 경계선이라 렌즈 각도 몇 도 차이가 강한 불쾌감을 만든다. '스토킹'이라는 단어가 한번 붙자 기술 문제는 뒷전, 평판 전쟁이 먼저 커졌다.",
+    "caseNumber": "E-NB-H-0008",
+    "caseName": "도어벨 카메라 갈등"
   },
   "disputes": [
     {

@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "은주씨",
           "addressB": "소현"
-        }
+        },
+        "addressA": "우리 은주",
+        "addressB": "우리 소현"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "은주씨",
           "addressB": "소현씨"
-        }
+        },
+        "addressA": "은주씨",
+        "addressB": "소현씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "박은주씨",
           "addressB": "박소현씨"
-        }
+        },
+        "addressA": "박은주씨",
+        "addressB": "박소현씨"
       }
     ],
     "relationshipType": "family"
@@ -207,7 +213,9 @@
     "description": "소현이 재택 작업이 길어지면서 부모 집에서 벗어나 독립 원룸을 구하려 하자, 은주는 과거 전세사기 직전 사건을 이유로 계약 전반을 직접 확인하려 들었다. 그런데 상담을 거치자는 말과 별개로 소현이 계약금을 먼저 걸고, 은주는 임대인에게 직접 연락하며 방 출입까지 이어지면서 독립 갈등이 거주권 침범 싸움으로 커졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "같은 집에 살며 비밀번호와 예비열쇠가 남아 있는 상태라 작은 의심도 즉시 공간 침범으로 번졌고, 편집된 녹취가 등장하자 보호와 통제의 경계가 한꺼번에 무너졌다."
+    "triggerAmplifier": "같은 집에 살며 비밀번호와 예비열쇠가 남아 있는 상태라 작은 의심도 즉시 공간 침범으로 번졌고, 편집된 녹취가 등장하자 보호와 통제의 경계가 한꺼번에 무너졌다.",
+    "caseNumber": "E-FM-H-0005",
+    "caseName": "계약 갈등"
   },
   "disputes": [
     {

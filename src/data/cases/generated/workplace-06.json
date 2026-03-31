@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "준호씨",
           "addressB": "서린씨"
-        }
+        },
+        "addressA": "박준호씨",
+        "addressB": "이서린씨"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "준호씨",
           "addressB": "서린씨"
-        }
+        },
+        "addressA": "박준호씨",
+        "addressB": "이서린씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "박준호씨",
           "addressB": "이서린씨"
-        }
+        },
+        "addressA": "박준호씨",
+        "addressB": "이서린씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -207,7 +213,9 @@
     "description": "고객성공팀과 수익운영팀 통합 직후. 계정 오너십, 에스컬레이션 큐, 자동화 규칙이 전부 과도기다. 버튼 하나가 매출과 고객 지연을 바로 움직이는 시기에, 모호한 공지와 레거시 권한이 월권의 근거로 쓰이고 있다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "첫 2주 성과가 새 조직 평가로 직결된다. 작은 권한 충돌도 리더십 논란과 고객 손실 책임 공방으로 확대되는 구조."
+    "triggerAmplifier": "첫 2주 성과가 새 조직 평가로 직결된다. 작은 권한 충돌도 리더십 논란과 고객 손실 책임 공방으로 확대되는 구조.",
+    "caseNumber": "E-WK-N-0006",
+    "caseName": "권한 갈등"
   },
   "disputes": [
     {

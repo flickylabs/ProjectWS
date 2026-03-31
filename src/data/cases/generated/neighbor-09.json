@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "연우씨",
           "addressB": "지훈씨"
-        }
+        },
+        "addressA": "최연우씨",
+        "addressB": "남지훈씨"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "연우씨",
           "addressB": "지훈씨"
-        }
+        },
+        "addressA": "최연우씨",
+        "addressB": "남지훈씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "최연우씨",
           "addressB": "남지훈씨"
-        }
+        },
+        "addressA": "최연우씨",
+        "addressB": "남지훈씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -207,7 +213,9 @@
     "description": "석 달째 충격음 민원 끝에 관리사무소 중재로 윗집 바닥 보강 + 아랫집 천장 패치를 묶은 패키지 공사가 진행됐다. 그런데 정산서가 나오자 지훈이 반반 약속을 뒤집고 30만 원만 보냈고, 연우는 관리실 공지 전에 주민앱에 불만 글을 올리며 갈등이 재폭발했다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "석 달간 녹음하고 관리실 오가며 참아온 시간, 이미 끝나 되돌릴 수 없는 공사―그 위에 '30만 원이면 됐지'라는 한 줄이 떨어지자 인내 전부가 배신당한 것처럼 느껴졌다."
+    "triggerAmplifier": "석 달간 녹음하고 관리실 오가며 참아온 시간, 이미 끝나 되돌릴 수 없는 공사―그 위에 '30만 원이면 됐지'라는 한 줄이 떨어지자 인내 전부가 배신당한 것처럼 느껴졌다.",
+    "caseNumber": "E-NB-H-0009",
+    "caseName": "소음 갈등 재발"
   },
   "disputes": [
     {

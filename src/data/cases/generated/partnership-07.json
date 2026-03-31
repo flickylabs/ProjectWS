@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "태경씨",
           "addressB": "유나씨"
-        }
+        },
+        "addressA": "태경",
+        "addressB": "유나"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "태경씨",
           "addressB": "유나씨"
-        }
+        },
+        "addressA": "문태경씨",
+        "addressB": "서유나씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "문태경씨",
           "addressB": "서유나씨"
-        }
+        },
+        "addressA": "태경씨",
+        "addressB": "유나씨"
       }
     ],
     "relationshipType": "partnership"
@@ -207,7 +213,9 @@
     "description": "대형 카페·유통 바이어가 모이는 업계 모임 직후라 follow-up 한 통이 곧 납품 기회와 평판으로 이어지는 시점이었다. 그런데 경쟁사가 곧바로 그들의 백화점 팝업 주간과 도매 할인표를 언급하자, 두 사람은 자료 유출 여부보다 먼저 내부 배신 가능성부터 의심하게 됐다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "업계가 좁아 한 번 붙은 소문이 바로 거래처 신뢰와 연결되고, 특히 전 직장 인맥·행사 자료·후속메일이 겹치면 작은 실수도 의도적 누설처럼 읽히기 쉬웠다."
+    "triggerAmplifier": "업계가 좁아 한 번 붙은 소문이 바로 거래처 신뢰와 연결되고, 특히 전 직장 인맥·행사 자료·후속메일이 겹치면 작은 실수도 의도적 누설처럼 읽히기 쉬웠다.",
+    "caseNumber": "E-PT-N-0007",
+    "caseName": "내부 배신 의혹"
   },
   "disputes": [
     {

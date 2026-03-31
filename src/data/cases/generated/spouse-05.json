@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "민재씨",
           "addressB": "소담씨"
-        }
+        },
+        "addressA": "민재",
+        "addressB": "소담"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "민재씨",
           "addressB": "소담씨"
-        }
+        },
+        "addressA": "민재씨",
+        "addressB": "소담씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "강민재씨",
           "addressB": "이소담씨"
-        }
+        },
+        "addressA": "민재씨",
+        "addressB": "소담씨"
       }
     ],
     "relationshipType": "spouse"
@@ -206,7 +212,9 @@
     "description": "광고 촬영 시즌과 특허 번역 마감이 겹친 7월, 서재 하나를 둘 다 필요로 했다. 민재는 NDA를 이유로 잠금권한을 혼자 바꿔 10시간 전용 블록을 잡았고, 소담은 거실 인터넷이 끊긴 날 구 관리자 코드로 서재 문을 열었다. 한 번의 출입 뒤 녹취 파일이 등장하며 증거 싸움으로 번졌다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "서재 문을 닫는 행위가 '네 일은 내 일만큼 중요하지 않다'는 선언처럼 읽혔다. '내 일은 진짜 일인가'라는 불안이 양쪽 모두에게 있어 온도가 빠르게 올랐다."
+    "triggerAmplifier": "서재 문을 닫는 행위가 '네 일은 내 일만큼 중요하지 않다'는 선언처럼 읽혔다. '내 일은 진짜 일인가'라는 불안이 양쪽 모두에게 있어 온도가 빠르게 올랐다.",
+    "caseNumber": "E-SP-H-0005",
+    "caseName": "서재 출입 분쟁"
   },
   "disputes": [
     {

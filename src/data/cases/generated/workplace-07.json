@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "태욱씨",
           "addressB": "세린씨"
-        }
+        },
+        "addressA": "장태욱씨",
+        "addressB": "한세린씨"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "태욱씨",
           "addressB": "세린씨"
-        }
+        },
+        "addressA": "장태욱씨",
+        "addressB": "한세린씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "장태욱씨",
           "addressB": "한세린씨"
-        }
+        },
+        "addressA": "장태욱씨",
+        "addressB": "한세린씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -207,7 +213,9 @@
     "description": "협력사 결함 보고가 3건째 올라온 수요일 오후, 사내 익명 게시판에 태욱을 겨냥한 캡처 폭로글이 떴다. 핫라인 접수 전에 본부 200명이 먼저 읽었고, 편집 캡처가 사실로 굳으며 과거 품질 축소·출하 압박·제보자 보호 문제가 한꺼번에 뒤엉켰다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "전사 공개 게시판이라 캡처 한 장이 조사 전에 평판 사실로 굳었고, 2년 전 미종결 품질 사건이 남아 있어 편집본의 진위를 가리기 전에 '역시 그 사람'이라는 확증편향이 먼저 작동했다."
+    "triggerAmplifier": "전사 공개 게시판이라 캡처 한 장이 조사 전에 평판 사실로 굳었고, 2년 전 미종결 품질 사건이 남아 있어 편집본의 진위를 가리기 전에 '역시 그 사람'이라는 확증편향이 먼저 작동했다.",
+    "caseNumber": "E-WK-H-0008",
+    "caseName": "익명 폭로 논란"
   },
   "disputes": [
     {

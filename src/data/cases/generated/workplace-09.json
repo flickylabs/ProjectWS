@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "준석씨",
           "addressB": "은채씨"
-        }
+        },
+        "addressA": "송준석씨",
+        "addressB": "유은채씨"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "준석씨",
           "addressB": "은채씨"
-        }
+        },
+        "addressA": "송준석씨",
+        "addressB": "유은채씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "송준석씨",
           "addressB": "유은채씨"
-        }
+        },
+        "addressA": "송준석씨",
+        "addressB": "유은채씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -207,7 +213,9 @@
     "description": "핵심 거래처 미팅 직후 고객이 '팔콘 가격가드'를 꺼내고, AE 후속 메일까지 겹치며 유출 의심이 급팽창했다. 같은 날 '공유본' 제목 문서가 3곳을 오가던 상황이라 누가 어떤 문서를 뜻했는지가 핵심이었다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "재계약이 걸린 대형 거래처라 보안 의심 하나가 계정 교체·신뢰 하락으로 직결됐고, 같은 제목 문서가 둘 이상 있어 오해가 사실처럼 굳었다."
+    "triggerAmplifier": "재계약이 걸린 대형 거래처라 보안 의심 하나가 계정 교체·신뢰 하락으로 직결됐고, 같은 제목 문서가 둘 이상 있어 오해가 사실처럼 굳었다.",
+    "caseNumber": "E-WK-N-0009",
+    "caseName": "문서 유출 의혹"
   },
   "disputes": [
     {

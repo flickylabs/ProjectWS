@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "태준씨",
           "addressB": "서린씨"
-        }
+        },
+        "addressA": "권태준씨",
+        "addressB": "노서린씨"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "태준씨",
           "addressB": "서린씨"
-        }
+        },
+        "addressA": "태준씨",
+        "addressB": "서린씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "권태준씨",
           "addressB": "노서린씨"
-        }
+        },
+        "addressA": "권태준씨",
+        "addressB": "노서린씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -207,7 +213,9 @@
     "description": "잠정출원 마감과 투자사 데모가 겹친 주간, 청구항·기여표를 급히 정리하던 중 발명자 다툼이 터졌다. 겉으로는 성과 가로채기지만, 실제로는 외부 브로커 접촉이 함께 얽혀 공 빼앗기와 기밀 판매가 한 사건으로 합쳐졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "특허 선점이 투자·보상과 직결되는 시기라, 발명자 이름 한 줄과 외부 전송 한 건이 승진·해고·형사 검토까지 연쇄로 이어질 수 있었다."
+    "triggerAmplifier": "특허 선점이 투자·보상과 직결되는 시기라, 발명자 이름 한 줄과 외부 전송 한 건이 승진·해고·형사 검토까지 연쇄로 이어질 수 있었다.",
+    "caseNumber": "E-WK-H-0011",
+    "caseName": "발명자 다툼"
   },
   "disputes": [
     {

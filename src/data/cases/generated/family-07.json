@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "종문씨",
           "addressB": "지수"
-        }
+        },
+        "addressA": "우리 종문",
+        "addressB": "우리 지수"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "종문씨",
           "addressB": "지수씨"
-        }
+        },
+        "addressA": "종문씨",
+        "addressB": "지수씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "백종문씨",
           "addressB": "백지수씨"
-        }
+        },
+        "addressA": "종문씨",
+        "addressB": "지수씨"
       }
     ],
     "relationshipType": "family"
@@ -207,7 +213,9 @@
     "description": "전통한과 공방이 온라인몰과 백화점 팝업으로 다시 성장하자, 지역 기사와 지원사업 발표가 종문을 중심으로 쏟아졌다. 그런데 지수는 자신이 만든 패키지 개편과 신규 매출이 창업주 서사에 흡수된다고 느꼈고, 종문은 지수가 몇 년 성과만으로 회사를 자기 프로젝트처럼 말한다고 느끼며 승계 갈등이 본격화됐다.",
     "emotionalPressure": 7,
     "affects": "both",
-    "triggerAmplifier": "성과가 눈에 보이는 시기일수록 외부 표기 한 줄과 기사 제목 하나가 곧 후계자 신호처럼 읽혀, 공로 논쟁이 곧 권한과 승계 자격 싸움으로 커졌다."
+    "triggerAmplifier": "성과가 눈에 보이는 시기일수록 외부 표기 한 줄과 기사 제목 하나가 곧 후계자 신호처럼 읽혀, 공로 논쟁이 곧 권한과 승계 자격 싸움으로 커졌다.",
+    "caseNumber": "E-FM-E-0007",
+    "caseName": "성과 갈등"
   },
   "disputes": [
     {

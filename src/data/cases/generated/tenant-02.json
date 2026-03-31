@@ -157,7 +157,9 @@
           "addressJudge": "재판관님",
           "addressA": "민석씨",
           "addressB": "규철씨"
-        }
+        },
+        "addressA": "민석",
+        "addressB": "규철"
       },
       {
         "id": "tp-2",
@@ -179,7 +181,9 @@
           "addressJudge": "재판관님",
           "addressA": "민석씨",
           "addressB": "규철씨"
-        }
+        },
+        "addressA": "정민석씨",
+        "addressB": "한규철씨"
       },
       {
         "id": "tp-3",
@@ -201,7 +205,9 @@
           "addressJudge": "재판관님",
           "addressA": "정민석씨",
           "addressB": "한규철씨"
-        }
+        },
+        "addressA": "정민석씨",
+        "addressB": "한규철씨"
       }
     ],
     "relationshipType": "tenant_landlord"
@@ -211,7 +217,9 @@
     "description": "장마 직전 주방 천장에서 물자국과 곰팡이가 번지자 민석은 장비 보호 때문에 출입 고지를 예민하게 요구했고, 규철은 공사 일정을 놓치면 피해가 커진다고 느꼈다. 서로의 불안을 먼저 설명하지 않은 채 누수와 출입 문제를 동시에 밀어붙이면서, 수리 갈등이 곧 권한 침범과 증거 다툼으로 번졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "민석에겐 장비 손상과 작업 중단이 걸려 있었고, 규철에겐 장마 전에 공사를 못 하면 누수 책임이 커질 상황이라, 한 번의 출입과 한 장의 사진이 곧 신뢰 전체를 무너뜨렸다."
+    "triggerAmplifier": "민석에겐 장비 손상과 작업 중단이 걸려 있었고, 규철에겐 장마 전에 공사를 못 하면 누수 책임이 커질 상황이라, 한 번의 출입과 한 장의 사진이 곧 신뢰 전체를 무너뜨렸다.",
+    "caseNumber": "E-TN-H-0002",
+    "caseName": "수리 갈등"
   },
   "disputes": [
     {

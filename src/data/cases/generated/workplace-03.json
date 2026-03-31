@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "도윤씨",
           "addressB": "희주씨"
-        }
+        },
+        "addressA": "강도윤씨",
+        "addressB": "최희주씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "도윤씨",
           "addressB": "희주씨"
-        }
+        },
+        "addressA": "강도윤씨",
+        "addressB": "최희주씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "강도윤씨",
           "addressB": "최희주씨"
-        }
+        },
+        "addressA": "강도윤씨",
+        "addressB": "최희주씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -206,7 +212,9 @@
     "description": "캠페인 통과 축하 회식, 2차까지 이어진 술자리. 본부 차장과 임원 추천 전배자가 같은 테이블에 있었다. 다음 날 아침 7시 42분, 19초짜리 클립과 DM이 회사 안을 돌기 시작했다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "알코올, 상하 직급 혼재, 전배 직후 민감한 시기가 겹쳤다. 한 문장만 잘려도 명예훼손과 리더십 논란으로 번지는 조건."
+    "triggerAmplifier": "알코올, 상하 직급 혼재, 전배 직후 민감한 시기가 겹쳤다. 한 문장만 잘려도 명예훼손과 리더십 논란으로 번지는 조건.",
+    "caseNumber": "E-WK-N-0003",
+    "caseName": "취중 발언 논란"
   },
   "disputes": [
     {

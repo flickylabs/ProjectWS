@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "상혁씨",
           "addressB": "가은씨"
-        }
+        },
+        "addressA": "상혁씨",
+        "addressB": "가은씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "상혁씨",
           "addressB": "가은씨"
-        }
+        },
+        "addressA": "오상혁씨",
+        "addressB": "문가은씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "오상혁씨",
           "addressB": "문가은씨"
-        }
+        },
+        "addressA": "오상혁씨",
+        "addressB": "문가은씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -206,7 +212,9 @@
     "description": "내일 오전 승진 발표. 혁신 브리핑이 사실상 마지막 가점이다. 아이디어 원출처와 이번 기여가 엉킨 채, 2년 전 덮인 유사 사건까지 다시 떠올랐다. 누가 누구 생각을 훔쳤는지가 곧 승진과 평판을 가른다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "발표 전날이라 슬라이드 한 장, 노트 사진 한 장이 곧바로 승진위원회 판단에 반영된다. 2년 전 출처 문제까지 한 번에 재소환."
+    "triggerAmplifier": "발표 전날이라 슬라이드 한 장, 노트 사진 한 장이 곧바로 승진위원회 판단에 반영된다. 2년 전 출처 문제까지 한 번에 재소환.",
+    "caseNumber": "E-WK-H-0005",
+    "caseName": "아이디어 도용"
   },
   "disputes": [
     {

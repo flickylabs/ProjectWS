@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "수아씨",
           "addressB": "기현"
-        }
+        },
+        "addressA": "수아씨",
+        "addressB": "우리 기현"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "수아씨",
           "addressB": "기현씨"
-        }
+        },
+        "addressA": "수아씨",
+        "addressB": "기현씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "배수아씨",
           "addressB": "남기현씨"
-        }
+        },
+        "addressA": "수아씨",
+        "addressB": "기현씨"
       }
     ],
     "relationshipType": "spouse"
@@ -206,7 +212,9 @@
     "description": "설 연휴 첫날 오전. 수아는 친정용 한과세트를 들고, 기현은 시댁용 과일상자를 싣고 있었다. 수아는 캘린더에 토 11시 본가, 기현은 어머니에게 점심 먼저 가겠다고 확정한 상태. 문 앞에서 마주치며 전혀 다른 그림이 드러났다.",
     "emotionalPressure": 5,
     "affects": "both",
-    "triggerAmplifier": "명절 점심은 한 번뿐이다. 한쪽 부모에게 안 온다가 되면 일정 착오가 아니라 서열 문제로 읽힌다. 양쪽 모두 이미 식사를 준비한 뒤라 작은 오해가 체면 손상으로 불어났다."
+    "triggerAmplifier": "명절 점심은 한 번뿐이다. 한쪽 부모에게 안 온다가 되면 일정 착오가 아니라 서열 문제로 읽힌다. 양쪽 모두 이미 식사를 준비한 뒤라 작은 오해가 체면 손상으로 불어났다.",
+    "caseNumber": "E-SP-E-0010",
+    "caseName": "부모 방문 갈등"
   },
   "disputes": [
     {

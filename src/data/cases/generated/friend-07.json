@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "진아씨",
           "addressB": "성호"
-        }
+        },
+        "addressA": "진아",
+        "addressB": "성호"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "서진아씨",
           "addressB": "박성호씨"
-        }
+        },
+        "addressA": "진아씨",
+        "addressB": "성호씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "진아씨",
           "addressB": "성호씨"
-        }
+        },
+        "addressA": "진아씨",
+        "addressB": "성호씨"
       }
     ],
     "relationshipType": "friend"
@@ -207,7 +213,9 @@
     "description": "연합공연제 리더 선발을 앞두고 박성호가 동호회 부회장과 비밀 연애 중이라는 사실이 드러나자, 서진아는 자신이 그 관계를 덮는 알리바이 역할까지 해 왔다고 느꼈다. 성호는 곧 공개하려 했다고 주장했지만, 진아가 편집된 메시지 캡처를 공통 친구와 운영진에 보내면서 갈등은 단순 연애 문제가 아니라 신뢰 배신과 절차 위반 문제로 번졌다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "동호회 리더 선발과 연애 비밀이 겹쳐 있어 작은 채팅 문장 하나도 특혜, 배신, 질투로 과장되기 쉬웠고 예전 소문 사태의 기억까지 다시 살아났다."
+    "triggerAmplifier": "동호회 리더 선발과 연애 비밀이 겹쳐 있어 작은 채팅 문장 하나도 특혜, 배신, 질투로 과장되기 쉬웠고 예전 소문 사태의 기억까지 다시 살아났다.",
+    "caseNumber": "E-FR-H-0007",
+    "caseName": "비밀 연애 갈등"
   },
   "disputes": [
     {

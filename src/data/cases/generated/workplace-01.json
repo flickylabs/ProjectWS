@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "태성씨",
           "addressB": "서윤씨"
-        }
+        },
+        "addressA": "태성씨",
+        "addressB": "서윤씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "태성씨",
           "addressB": "서윤씨"
-        }
+        },
+        "addressA": "윤태성씨",
+        "addressB": "박서윤씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "윤태성씨",
           "addressB": "박서윤씨"
-        }
+        },
+        "addressA": "윤태성씨",
+        "addressB": "박서윤씨"
       }
     ],
     "relationshipType": "boss_employee"
@@ -206,7 +212,9 @@
     "description": "승진 심사와 분기 평가가 같은 주에 닫힌다. 임원 보고용 전환율 개선 보고서가 마지막 성과 근거인데, 마감 전야 밤 11시 수정 지시와 명의 문제가 엉켜 '누가 만들고 누가 망쳤는가'가 곧바로 인사 결과를 가르는 뇌관이 됐다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "평가 점수와 승진 추천서 마감이 72시간 안에 겹쳤다. 로그 한 줄, 캡처 한 장이 공로 귀속과 징계 가능성으로 직결되는 타이밍이다."
+    "triggerAmplifier": "평가 점수와 승진 추천서 마감이 72시간 안에 겹쳤다. 로그 한 줄, 캡처 한 장이 공로 귀속과 징계 가능성으로 직결되는 타이밍이다.",
+    "caseNumber": "E-WK-H-0001",
+    "caseName": "성과 평가 갈등"
   },
   "disputes": [
     {

@@ -152,7 +152,9 @@
           "addressJudge": "재판관님",
           "addressA": "지연씨",
           "addressB": "도윤씨"
-        }
+        },
+        "addressA": "배지연씨",
+        "addressB": "서도윤씨"
       },
       {
         "id": "tp-2",
@@ -174,7 +176,9 @@
           "addressJudge": "재판관님",
           "addressA": "지연씨",
           "addressB": "도윤씨"
-        }
+        },
+        "addressA": "배지연씨",
+        "addressB": "서도윤씨"
       },
       {
         "id": "tp-3",
@@ -196,7 +200,9 @@
           "addressJudge": "재판관님",
           "addressA": "배지연씨",
           "addressB": "서도윤씨"
-        }
+        },
+        "addressA": "배지연씨",
+        "addressB": "서도윤씨"
       }
     ],
     "relationshipType": "neighbor"
@@ -206,7 +212,9 @@
     "description": "같은 동 이웃 12명이 참여한 음식물처리기 공동구매는 선입금·부분취소·국제배송료 재정산이 겹쳐 복잡해졌다. 지연이 '도윤이 94만 원을 숨겼다'고 먼저 공개했지만, 94만 원의 정체는 이번 환급 32만 원과 작년에 닫지 못한 62만 원이 뒤섞인 숫자였다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "참가자 12명의 돈을 대신 쥔 상태에서 여러 번 함께한 신뢰가 걸려 있었기 때문에, 도윤의 사흘간 고지 지연만으로도 즉시 '횡령' '은닉'이라는 단어가 올라왔다."
+    "triggerAmplifier": "참가자 12명의 돈을 대신 쥔 상태에서 여러 번 함께한 신뢰가 걸려 있었기 때문에, 도윤의 사흘간 고지 지연만으로도 즉시 '횡령' '은닉'이라는 단어가 올라왔다.",
+    "caseNumber": "E-NB-H-0012",
+    "caseName": "94만 원 은닉"
   },
   "disputes": [
     {

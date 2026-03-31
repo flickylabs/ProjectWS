@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "유리씨",
           "addressB": "도건씨"
-        }
+        },
+        "addressA": "유리씨",
+        "addressB": "도건씨"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "한유리씨",
           "addressB": "윤도건씨"
-        }
+        },
+        "addressA": "유리씨",
+        "addressB": "도건씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "유리씨",
           "addressB": "도건씨"
-        }
+        },
+        "addressA": "유리씨",
+        "addressB": "도건씨"
       }
     ],
     "relationshipType": "friend"
@@ -207,7 +213,9 @@
     "description": "가을 시즌마켓 부스 심사를 앞두고, 커뮤니티에 경쟁 셀러 조가람의 후기와 DM을 모은 익명 폭로글이 올라왔다. 이후 운영자가 계정 로그를 추적하자 친구인 한유리와 윤도건은 서로를 단독 주범처럼 몰기 시작했지만, 조사 과정에서 둘이 역할을 나눠 공모했다는 정황이 드러났다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "부스 선정과 매출이 직접 걸린 시기였고, 과거 공개 망신과 사업 손실 기억까지 겹쳐 작은 캡처 한 장도 경쟁자 제거용 무기로 과열되기 쉬웠다."
+    "triggerAmplifier": "부스 선정과 매출이 직접 걸린 시기였고, 과거 공개 망신과 사업 손실 기억까지 겹쳐 작은 캡처 한 장도 경쟁자 제거용 무기로 과열되기 쉬웠다.",
+    "caseNumber": "E-FR-H-0009",
+    "caseName": "익명 폭로 사건"
   },
   "disputes": [
     {

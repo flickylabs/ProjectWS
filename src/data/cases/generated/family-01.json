@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "서아씨",
           "addressB": "도현"
-        }
+        },
+        "addressA": "우리 서아",
+        "addressB": "우리 도현"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "서아씨",
           "addressB": "도현씨"
-        }
+        },
+        "addressA": "윤서아씨",
+        "addressB": "윤도현씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "윤서아씨",
           "addressB": "윤도현씨"
-        }
+        },
+        "addressA": "윤서아씨",
+        "addressB": "윤도현씨"
       }
     ],
     "relationshipType": "family"
@@ -207,7 +213,9 @@
     "description": "아버지가 폐렴으로 퇴원했다. 어머니 혼자 돌보긴 어렵다는 판단이 나오면서 형제는 간병비, 교대표, 통장 관리를 동시에 떠안게 됐다. 첫 달 비용이 크게 불어나자 오래된 상속 불안과 과거 금전 지원 기억까지 한꺼번에 되살아났다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "간병 첫 달이라 현금 부담이 유독 커 보였고, 장녀의 희생 서사와 동생의 늦은 송금이 맞물리면서 작은 은닉도 '재산 탈취'처럼 폭발했다."
+    "triggerAmplifier": "간병 첫 달이라 현금 부담이 유독 커 보였고, 장녀의 희생 서사와 동생의 늦은 송금이 맞물리면서 작은 은닉도 '재산 탈취'처럼 폭발했다.",
+    "caseNumber": "E-FM-H-0001",
+    "caseName": "상속 갈등"
   },
   "disputes": [
     {

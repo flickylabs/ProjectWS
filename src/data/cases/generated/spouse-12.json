@@ -153,7 +153,9 @@
           "addressJudge": "재판관님",
           "addressA": "세아씨",
           "addressB": "재우씨"
-        }
+        },
+        "addressA": "세아",
+        "addressB": "재우"
       },
       {
         "id": "tp-2",
@@ -175,7 +177,9 @@
           "addressJudge": "재판관님",
           "addressA": "세아씨",
           "addressB": "재우씨"
-        }
+        },
+        "addressA": "세아씨",
+        "addressB": "재우씨"
       },
       {
         "id": "tp-3",
@@ -197,7 +201,9 @@
           "addressJudge": "재판관님",
           "addressA": "문세아씨",
           "addressB": "최재우씨"
-        }
+        },
+        "addressA": "세아씨",
+        "addressB": "재우씨"
       }
     ],
     "relationshipType": "spouse"
@@ -207,7 +213,9 @@
     "description": "동창 부부 세아와 재우가 20주년 모임에 참석한 다음 날 새벽 익명 계정이 2006년 장학금 소문을 꺼냈다. 재우는 확인 전에 세 채널로 캡처를 돌렸고, 세아는 불리한 옛 메시지를 백업에서 빼고 억울함만 강조했다. 포렌식 결과 증거는 박하린이 합성한 위조본.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "20년 전 미해결 감정이 익명 게시물 하나로 현재 직업 평판에 직결됐다. 세아에겐 가게와 학부모 커뮤니티가, 재우에겐 승진 심사가 걸려 있어 오래된 상처가 생업 전체를 흔드는 위기로 번졌다."
+    "triggerAmplifier": "20년 전 미해결 감정이 익명 게시물 하나로 현재 직업 평판에 직결됐다. 세아에겐 가게와 학부모 커뮤니티가, 재우에겐 승진 심사가 걸려 있어 오래된 상처가 생업 전체를 흔드는 위기로 번졌다.",
+    "caseNumber": "E-SP-H-0012",
+    "caseName": "장학금 소문"
   },
   "disputes": [
     {
