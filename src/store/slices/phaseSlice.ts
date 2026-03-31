@@ -64,7 +64,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     const state = get() as any // GameStore 전체 접근 (processMetrics 포함)
     const { currentPhase, phaseTurnCount } = state
     const metrics = state.processMetrics
-    // MIN_TURNS 제거 — 조건 자체에 10턴 포함
+    const { turnCount } = state
 
     // Phase별 조건 — 진실 발견 OR 10턴 경과 (둘 중 하나)
     if (currentPhase === GamePhase.Phase3_Interrogation) {
@@ -74,6 +74,8 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       return (metrics?.evidenceEffective ?? 0) >= 1 || phaseTurnCount >= 10
     }
     if (currentPhase === GamePhase.Phase5_ReExamination) {
+      // 전체 30턴 미만이면 판결 불가
+      if (turnCount < MAX_TURNS) return false
       return (metrics?.liesCollapsed ?? 0) >= 1 || phaseTurnCount >= 10
     }
 

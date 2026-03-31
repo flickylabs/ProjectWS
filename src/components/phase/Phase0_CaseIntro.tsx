@@ -47,8 +47,9 @@ export default function Phase0_CaseIntro() {
     }
     prefetchStarted = true
 
+    // Phase1은 고정 스크립트 사용 — AI 생성 불필요 (토큰 절약)
+    // Phase2만 AI prefetch
     Promise.all([
-      generatePhase1Dialogues(caseData).then(r => { prefetchedPhase1 = r }),
       generatePhase2Dialogues(caseData).then(r => { prefetchedPhase2 = r }),
     ])
       .catch(() => { /* 실패해도 폴백 사용 */ })
