@@ -250,6 +250,14 @@ function InterjectionOverlay() {
 }
 
 /** 미니게임 오버레이 — pendingMinigame이 있으면 모달 표시 */
+/** 증거/쟁점명을 단어 단위로 분해 (4~7단어). 띄어쓰기 기준. */
+function splitToWords(text: string): string[] {
+  let words = text.split(/\s+/).filter(w => w.length > 0)
+  if (words.length > 7) words = words.slice(0, 7)
+  while (words.length < 4) words.push('확인')
+  return words
+}
+
 function MinigameOverlay() {
   const mg = useGameStore((s) => s.pendingMinigame)
   const clearMg = useGameStore((s) => s.setPendingMinigame)
@@ -312,10 +320,8 @@ function MinigameOverlay() {
     if (minigameVariant === 'word_scramble') {
       // 증거 이름을 글자 단위로 분해 (공백 제거, 6~10글자)
       const evDef = evidenceDefinitions.find(e => e.id === evidenceId)
-      const evName = evDef?.name ?? '새로운증거확보'
-      const chars = evName.replace(/\s+/g, '').split('')
-      // 6~10글자로 조정
-      const words = chars.length >= 5 ? chars.slice(0, 7) : (evName + '확보').replace(/\s+/g, '').split('').slice(0, 7)
+      const evName = evDef?.name ?? '새로운 증거 확보'
+      const words = splitToWords(evName)
       return (
         <WordScramble
           words={words}
@@ -368,7 +374,7 @@ function MinigameOverlay() {
     // 선택지 화면: 미니게임 / 광고 / 아이템(=즉시 성공) 택1
     if (!chosenMethod) {
       const depthLabel = depth === 1 ? '1단계: 원본 확보' : depth === 2 ? '2단계: 맥락 복원' : '3단계: 편집 검증'
-      const miniLabel = depth === 1 ? '짝 맞추기' : depth === 2 ? '글자 배치' : '거짓말 탐지기'
+      const miniLabel = depth === 1 ? '하트 맞추기' : depth === 2 ? '그림 짝 맞추기' : '글자 순서 맞추기'
       return (
         <div className="fixed inset-0 z-50 bg-gray-950 flex flex-col items-center justify-center px-6"
           style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
@@ -400,17 +406,17 @@ function MinigameOverlay() {
     }
 
     // 미니게임 실행 — depth별 분기
+    // 1단계: 하트 맞추기, 2단계: 그림 짝 맞추기, 3단계: 글자 순서 맞추기
     if (depth === 1) {
-      return <MatchingPuzzle onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
+      return <HeartbeatDetector onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
     }
     if (depth === 2) {
-      const evName = evDef?.name ?? '증거조사'
-      const chars = evName.replace(/\s+/g, '').split('')
-      const words = chars.length >= 5 ? chars.slice(0, 7) : (evName + '조사').replace(/\s+/g, '').split('').slice(0, 7)
-      return <WordScramble words={words} onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
+      return <MatchingPuzzle onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
     }
-    // depth === 3
-    return <HeartbeatDetector onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
+    // depth === 3: 글자 순서 맞추기
+    const evName3 = evDef?.name ?? '증거 조사'
+    const words3 = splitToWords(evName3)
+    return <WordScramble words={words3} onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
   }
 
   // lie_collapse → HeartbeatDetector
@@ -439,8 +445,7 @@ function MinigameOverlay() {
   // contradiction → WordScramble
   if (mg.type === 'contradiction') {
     const { text, disputeId, target } = mg
-    const chars = text.replace(/\s+/g, '').split('')
-    const words = chars.length >= 5 ? chars.slice(0, 7) : (text + '모순발견').replace(/\s+/g, '').split('').slice(0, 7)
+    const words = splitToWords(text)
 
     const handleSuccess = () => {
       applyContradictionSuccess(disputeId, target)

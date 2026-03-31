@@ -13,14 +13,21 @@ interface Props {
 
 const RADIUS = 80
 const CENTER = 100
-const HIT_ZONE_START = 330
-const HIT_ZONE_END = 30   // wraps around 0
 const SPEED = 180          // degrees per second
-const TARGET_HITS = 3
+const TARGET_HITS = 5
 
-function isInHitZone(angle: number): boolean {
-  // 히트 존: 330~360 또는 0~30
-  return angle >= HIT_ZONE_START || angle <= HIT_ZONE_END
+// 히트 존 폭: 1회차 60도 → 5회차 20도 (점점 좁아짐)
+const HIT_ZONE_WIDTHS = [60, 50, 40, 30, 20]
+
+function getHitZone(hits: number): { start: number; end: number; width: number } {
+  const width = HIT_ZONE_WIDTHS[Math.min(hits, HIT_ZONE_WIDTHS.length - 1)]
+  const half = width / 2
+  return { start: (360 - half) % 360, end: half, width }
+}
+
+function isInHitZone(angle: number, hits: number): boolean {
+  const { start, end } = getHitZone(hits)
+  return angle >= start || angle <= end
 }
 
 /** 각도 → SVG 원 위의 좌표 (12시 방향이 0도, 시계방향) */
@@ -80,7 +87,7 @@ export default function HeartbeatDetector({ onSuccess, onFail, onWatchAd }: Prop
   const handleTap = useCallback(() => {
     if (phaseRef.current !== 'play') return
 
-    if (isInHitZone(angleRef.current)) {
+    if (isInHitZone(angleRef.current, hits)) {
       const newHits = hitsRef.current + 1
       hitsRef.current = newHits
       setHits(newHits)
@@ -115,7 +122,8 @@ export default function HeartbeatDetector({ onSuccess, onFail, onWatchAd }: Prop
   // 현재 점(빨간 점) 좌표
   const dotPos = polarToXY(angle, RADIUS, CENTER, CENTER)
   // 히트존 arc
-  const hitArc = arcPath(CENTER, CENTER, RADIUS, HIT_ZONE_START, HIT_ZONE_END + 360) // 330→390(=30)
+  const hz = getHitZone(hits)
+  const hitArc = arcPath(CENTER, CENTER, RADIUS, hz.start, hz.end + 360)
 
   // 심장 크기: hits에 따라 커짐
   const heartSize = 28 + hits * 8
