@@ -666,8 +666,10 @@ function maybeInterjection(target: PartyId, disputeId?: string) {
   const followPool = followUps[phase] ?? followUps.defensive
   const followUp = followPool[Math.floor(Math.random() * followPool.length)]
 
-  // 선택지 대기 — UI에서 "허용/제지" 선택
-  state.setPendingInterjection({ party: otherParty, disputeId, text, followUp })
+  // 딜레이 후 선택지 대기 — B의 대사가 먼저 렌더링되도록
+  setTimeout(() => {
+    useGameStore.getState().setPendingInterjection({ party: otherParty, disputeId, text, followUp })
+  }, 800)
 }
 
 /** 끼어들기 허용 — 추가 정보 획득, 권위 -3 */
