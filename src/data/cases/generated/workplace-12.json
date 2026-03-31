@@ -342,7 +342,7 @@
         "check_edits": "정책 문서·공지 원본 — 사후 편집 흔적 없음.",
         "question_acquisition": "업무 지침·팀 공지 — 적법 열람."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-2",
@@ -367,7 +367,7 @@
         "check_edits": "자동 생성 로그 — 사후 편집 흔적 없음.",
         "question_acquisition": "회사 단말 로그 — 조사 범위 내 적법 활용."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     },
     {
       "id": "e-3",
@@ -418,7 +418,7 @@
         "check_edits": "플랫폼 원본 추출본 — 사후 편집 흔적 없음.",
         "question_acquisition": "시스템 설정 로그 — 조사 목적 적법 열람."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-5",
@@ -469,7 +469,17 @@
         "check_edits": "기관 기록 — 사후 편집 흔적 없음.",
         "question_acquisition": "인사·운영 자료 — 분쟁 해결 목적 외 공개 제한."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "백지훈에게: \"사적 감시·편법의 쌍방 책임\" 관련 자신이 아는 바를 진술",
+          "implication": "이 증거는 백지훈이 직접적 당사자가 아닌 쟁점이다. 백지훈이 이 상황에 대해 알고 있는 바를 확인한다."
+        },
+        "b": {
+          "questionAngle": "오수민에게: \"사적 감시·편법의 쌍방 책임\" 관련 자신이 아는 바를 진술",
+          "implication": "이 증거는 오수민이 직접적 당사자가 아닌 쟁점이다. 오수민이 이 상황에 대해 알고 있는 바를 확인한다."
+        }
+      }
     }
   ],
   "evidenceCombinations": [

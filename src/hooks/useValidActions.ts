@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { useGameStore } from '../store/useGameStore'
 import type { PartyId, QuestionType, Dispute, CaseData, AgentState } from '../types'
 import type { EvidenceRuntimeState } from '../engine/evidenceEngine'
+import type { DiscoveryState } from '../types/discovery'
 
 interface ValidDispute {
   id: string
@@ -27,12 +28,21 @@ export function useValidActions(target: PartyId | null) {
   const agentA = useGameStore((s: { agentA: AgentState }) => s.agentA)
   const agentB = useGameStore((s: { agentB: AgentState }) => s.agentB)
   const evidenceStates = useGameStore((s: { evidenceStates: Record<string, EvidenceRuntimeState> }) => s.evidenceStates)
+  const discovery = useGameStore((s: { discovery: DiscoveryState }) => s.discovery)
 
   return useMemo(() => {
     if (!caseData || !target) return { questions: [], validDisputeIds: [] }
 
     const agent = target === 'a' ? agentA : agentB
-    const disputes = caseData.disputes
+
+    // Discovery 가시성 필터: hidden 제외 + 해당 캐릭터 관련 쟁점만
+    const disputes = caseData.disputes.filter((d) => {
+      const vis = discovery.disputeVisibility[d.id]
+      if (!vis) return true  // discovery 미초기화 시 fallback
+      if (vis.visibility === 'hidden') return false
+      if (vis.visibility === 'inactive') return false
+      return vis.relevantParties.includes(target)
+    })
 
     // 이 대상이 거짓말 전략을 가진 쟁점들
     const lieDisputes = new Set(Object.keys(agent.lieStateMap))
@@ -92,5 +102,5 @@ export function useValidActions(target: PartyId | null) {
     const validDisputeIds = [...lieDisputes]
 
     return { questions, validDisputeIds }
-  }, [caseData, target, agentA, agentB, evidenceStates])
+  }, [caseData, target, agentA, agentB, evidenceStates, discovery])
 }

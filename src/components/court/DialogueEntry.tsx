@@ -7,6 +7,7 @@ interface Props {
   entry: DialogueEntryType
   animate?: boolean
   onTestimonyClick?: () => void
+  onContradictionClick?: (meta: NonNullable<DialogueEntryType['contradictionMeta']>) => void
 }
 
 /** 감정 상태 → 이모지 매핑 */
@@ -28,7 +29,7 @@ function getEmotionEmoji(speaker: string, emotionPhase?: string): string {
   return emojiMap[speaker]?.[emotionPhase] ?? (speaker === 'a' ? '👨' : '👩')
 }
 
-export default function DialogueEntry({ entry, animate = false, onTestimonyClick }: Props) {
+export default function DialogueEntry({ entry, animate = false, onTestimonyClick, onContradictionClick }: Props) {
   const caseData = useGameStore((s) => s.caseData)
   const agentA = useGameStore((s) => s.agentA)
   const agentB = useGameStore((s) => s.agentB)
@@ -75,6 +76,22 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
             className="text-xs px-4 py-2 rounded-xl bg-cyan-950/40 text-cyan-300 ring-1 ring-cyan-600/30 hover:ring-cyan-500/50 hover:bg-cyan-900/40 transition-all active:scale-95 flex items-center gap-2">
             <Emoji char="📋" size={16} />
             <span>분석 완료 — 탭해서 확인</span>
+          </button>
+        </div>
+      )
+    }
+
+    // 모순 감지 — 클릭하면 추궁 가능
+    if (entry.contradictionMeta && onContradictionClick) {
+      return (
+        <div className="flex justify-center my-2.5 animate-shake">
+          <button
+            onClick={() => onContradictionClick(entry.contradictionMeta!)}
+            className="text-xs px-4 py-2.5 rounded-xl bg-amber-950/50 text-amber-300 ring-1 ring-amber-600/40 hover:ring-amber-500/60 hover:bg-amber-900/40 transition-all active:scale-95 flex items-center gap-2"
+          >
+            <Emoji char="⚡" size={16} />
+            <span>{displayText.replace('— 탭하여 추궁', '').trim()}</span>
+            <span className="text-amber-500/60 text-[10px] ml-1">탭하여 추궁</span>
           </button>
         </div>
       )

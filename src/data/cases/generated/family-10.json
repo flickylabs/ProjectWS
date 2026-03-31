@@ -339,7 +339,7 @@
         "check_edits": "텍스트 편집 흔적은 없으나 상하가 강하게 크롭돼 조건 문장이 빠져 있다.",
         "question_acquisition": "당사자 간 대화 캡처라 활용 가능하지만 제3자 전달은 감정 확산의 별도 문제를 낳는다."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     },
     {
       "id": "e-2",
@@ -366,7 +366,7 @@
         "check_edits": "원본 내보내기와 장치 기록이라 수동 수정 흔적이 없다.",
         "question_acquisition": "개인 이동 기록이 포함돼 있어 분쟁 해결 범위 내에서만 사용해야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     },
     {
       "id": "e-3",
@@ -414,7 +414,7 @@
         "check_edits": "원본 거래내역과 문자라 편집 흔적이 없다.",
         "question_acquisition": "당사자 가족 간 금융자료라 제출은 가능하지만 제3자 공유는 제한돼야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-5",
@@ -438,7 +438,17 @@
         "check_edits": "기관 메모와 원본 사진이라 편집 흔적이 없다.",
         "question_acquisition": "짧은 상담 기록이라 제출 정당성은 높지만 상담 세부 내용은 목적 외 사용을 제한해야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "유다은에게: \"명절 분담 원칙의 공동 실패\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 유다은의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유다은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "유민재에게: \"명절 분담 원칙의 공동 실패\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 유민재의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-6",
@@ -462,7 +472,17 @@
         "check_edits": "사진은 원본이고 체크리스트도 생성·수정 이력이 남아 있다.",
         "question_acquisition": "가정 내부 사진이지만 명절 분담 확인 범위에서는 활용 가능하다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "유다은에게: \"명절 분담 원칙의 공동 실패\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 유다은의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유다은은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "유민재에게: \"명절 분담 원칙의 공동 실패\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 유민재의 \"명절 분담 원칙의 공동 실패\" 쟁점과 관련된다. 유민재은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     }
   ],
   "evidenceCombinations": [

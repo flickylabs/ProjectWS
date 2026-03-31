@@ -7,6 +7,7 @@ import { createEvidenceSlice, type EvidenceSlice } from './slices/evidenceSlice'
 import { createDialogueSlice, type DialogueSlice } from './slices/dialogueSlice'
 import { createVerdictSlice, type VerdictSlice } from './slices/verdictSlice'
 import { createShopSlice, type ShopSlice } from './slices/shopSlice'
+import { createDiscoverySlice, type DiscoverySlice } from './slices/discoverySlice'
 import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
@@ -22,7 +23,7 @@ const EMPTY_METRICS: ProcessMetrics = {
   interjectionAllowed: 0,
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & DiscoverySlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -74,6 +75,7 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     ...createDialogueSlice(...args),
     ...createVerdictSlice(...args),
     ...createShopSlice(...args),
+    ...createDiscoverySlice(...args),
 
     caseData: null,
     lieConfigs: null,
@@ -208,6 +210,9 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
 
       // 판결 초기화
       store.resetVerdict()
+
+      // 디스커버리 초기화
+      store.initDiscovery(caseData)
     },
   }
 }, {

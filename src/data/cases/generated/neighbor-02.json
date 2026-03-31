@@ -342,7 +342,17 @@
         "check_edits": "유나가 덧붙인 문구 외 이미지 픽셀 자체에 조작·보정 흔적 없음.",
         "question_acquisition": "공용 CCTV를 개인이 캡처·전송한 자료. 사생활 침해 및 2차 유포 문제 소지 큼."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "서유나에게: \"CCTV 캡처 무단 유포\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 서유나의 \"CCTV 캡처 무단 유포\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장민규에게: \"선확인 약속 쌍방 파기\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 장민규의 \"선확인 약속 쌍방 파기\" 쟁점과 관련된다. 장민규은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-2",
@@ -368,7 +378,7 @@
         "check_edits": "NVR 직출력 원본. 프레임 누락·이어붙이기 흔적 없음.",
         "question_acquisition": "공식 보안기록으로 적법. 타 주민 택배 송장 정보는 마스킹 후 사용 원칙."
       },
-      "subjectParty": "b"
+      "subjectParty": "a"
     },
     {
       "id": "e-3",
@@ -393,7 +403,17 @@
         "check_edits": "상하 크롭 있으나 핵심 문장 '307호 개봉투 냄새'는 원본과 동일.",
         "question_acquisition": "개인 대화 포함 자료. 제3자 이름·호수는 최소 노출 원칙 적용 필요."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "서유나에게: \"선확인 약속 쌍방 파기\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 서유나의 \"선확인 약속 쌍방 파기\" 쟁점과 관련된다. 서유나은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장민규에게: \"악취 소문 무검증 전파\" 관련 해명 요구 (방어 동기: 복수심)",
+          "implication": "이 증거는 장민규의 \"악취 소문 무검증 전파\" 쟁점과 관련된다. 장민규은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-4",
@@ -443,7 +463,7 @@
         "check_edits": "발췌본이라 단독 증거력은 약하나 음성 파형상 합성·이어붙이기 흔적 없음.",
         "question_acquisition": "공개 회의 녹음으로 위법성 낮음. 참석자 음성 재유포 범위는 제한 필요."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     },
     {
       "id": "e-6",
@@ -469,7 +489,7 @@
         "check_edits": "서버 추출본에 삭제→복원 흔적은 있으나 PDF 본문 자체 조작은 없음.",
         "question_acquisition": "기관 장비 로그로 적법 확보. 계정 접근 이력은 분쟁 해결 범위로만 한정 사용."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     }
   ],
   "evidenceCombinations": [

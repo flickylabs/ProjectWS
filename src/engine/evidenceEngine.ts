@@ -1,4 +1,5 @@
 import type { EvidenceNode, EvidenceCombination } from '../types'
+import type { AppraisalVerdict, EvidenceAppraisalEntry, PartialTrustDetail } from '../types/discovery'
 
 export interface EvidenceRuntimeState {
   id: string
@@ -93,4 +94,52 @@ export function investigateEvidence(
       investigatedActions: [...new Set([...state.investigatedActions, subAction])],
     },
   }
+}
+
+// ─────────────────────────────────────────
+// 증거 감별 (Evidence Appraisal)
+// ─────────────────────────────────────────
+
+/** 감별에 필요한 최소 조사 횟수 */
+const MIN_INVESTIGATIONS_FOR_APPRAISAL = 2
+
+/** 증거를 감별할 수 있는 상태인지 */
+export function canAppraise(
+  state: EvidenceRuntimeState,
+): boolean {
+  return state.unlocked && state.investigatedActions.length >= MIN_INVESTIGATIONS_FOR_APPRAISAL
+}
+
+/** 감별 결과 생성 */
+export function createAppraisal(
+  evidenceId: string,
+  verdict: AppraisalVerdict,
+  partialDetails: PartialTrustDetail[],
+  turn: number,
+): EvidenceAppraisalEntry {
+  return {
+    evidenceId,
+    verdict,
+    partialDetails: verdict === 'partial' ? partialDetails : [],
+    turnAppraised: turn,
+    wasCorrect: null,  // 게임 종료 시 채점
+  }
+}
+
+/** 부분 신뢰 시 신뢰하는 조사 항목만 추출 */
+export function getTrustedInvestigationResults(
+  evidence: EvidenceNode,
+  appraisal: EvidenceAppraisalEntry | undefined,
+): Record<string, string> {
+  if (!appraisal || appraisal.verdict !== 'partial') {
+    return evidence.investigationResults
+  }
+
+  const trusted: Record<string, string> = {}
+  for (const detail of appraisal.partialDetails) {
+    if (detail.trusted && evidence.investigationResults[detail.subAction]) {
+      trusted[detail.subAction] = evidence.investigationResults[detail.subAction]
+    }
+  }
+  return trusted
 }

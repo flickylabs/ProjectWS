@@ -176,48 +176,45 @@ export default function Phase0_CaseIntro() {
             </div>
           )}
 
-          {step === 'disputes' && (
+          {step === 'disputes' && (() => {
+            const visibleDisputes = caseData.disputes.filter(
+              (d) => d.quadrant !== 'neither_knows' && d.quadrant !== 'shared_misconception'
+            )
+            const hiddenCount = caseData.disputes.length - visibleDisputes.length
+            return (
             <div className="space-y-3">
               <div className="text-center">
                 <Emoji char="⚡" size={30} />
-                <h3 className="text-sm font-bold text-gray-300 mt-2">쟁점 {caseData.disputes.length}개</h3>
+                <h3 className="text-sm font-bold text-gray-300 mt-2">확인된 쟁점 {visibleDisputes.length}개</h3>
                 <p className="text-xs text-gray-600 mt-1">심문을 통해 각 쟁점의 진실을 밝혀야 합니다</p>
               </div>
               <div className="space-y-2">
-                {caseData.disputes.map((d, i) => {
-                  const isHidden = d.quadrant === 'neither_knows' || d.quadrant === 'shared_misconception'
-                  return (
+                {visibleDisputes.map((d, i) => (
                   <div key={d.id} className={`flex items-center gap-3 rounded-xl p-3 ${
-                    isHidden ? 'bg-gray-900/40 border border-dashed border-gray-700/50' :
                     d.weight === 'high' ? 'bg-red-950/30 border border-red-800/30' :
                     d.weight === 'medium' ? 'bg-amber-950/20 border border-amber-800/20' :
                     'bg-gray-900/60 border border-gray-800/60'
                   }`}>
                     <span className={`text-lg font-bold w-7 text-center ${
-                      isHidden ? 'text-gray-700' :
                       d.weight === 'high' ? 'text-red-400' : d.weight === 'medium' ? 'text-amber-400' : 'text-gray-500'
                     }`}>{i + 1}</span>
                     <div className="flex-1">
-                      {isHidden ? (
-                        <>
-                          <span className="text-sm text-gray-600 tracking-widest">????????</span>
-                          <span className="ml-2 text-xs text-gray-700">심문 중 발견</span>
-                        </>
-                      ) : (
-                        <>
-                          <span className="text-sm text-gray-200">{d.name}</span>
-                          <span className={`ml-2 text-xs ${
-                            d.weight === 'high' ? 'text-red-400/60' : d.weight === 'medium' ? 'text-amber-400/60' : 'text-gray-600'
-                          }`}>{d.weight === 'high' ? '핵심' : d.weight === 'medium' ? '중요' : '부차'}</span>
-                        </>
-                      )}
+                      <span className="text-sm text-gray-200">{d.name}</span>
+                      <span className={`ml-2 text-xs ${
+                        d.weight === 'high' ? 'text-red-400/60' : d.weight === 'medium' ? 'text-amber-400/60' : 'text-gray-600'
+                      }`}>{d.weight === 'high' ? '핵심' : d.weight === 'medium' ? '중요' : '부차'}</span>
                     </div>
                   </div>
-                  )
-                })}
+                ))}
               </div>
+              {hiddenCount > 0 && (
+                <p className="text-xs text-gray-600 text-center mt-2">
+                  심문 과정에서 추가 쟁점이 드러날 수 있습니다
+                </p>
+              )}
             </div>
-          )}
+            )
+          })()}
 
           {step === 'history' && (
             <div className="space-y-3">

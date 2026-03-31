@@ -15,6 +15,15 @@ export interface DialogueEntry {
   witnessName?: string
   /** 증인 전용: 어느 쪽에 유리한 증인인지 */
   witnessFavor?: 'pro_a' | 'pro_b' | 'neutral' | 'mixed'
+  /** 모순 감지 전용: 클릭하면 추궁 가능 */
+  contradictionMeta?: {
+    party: PartyId
+    disputeId: string
+    /** 이전 주장 요약 */
+    previousClaim: string
+    /** 현재(모순된) 주장 요약 */
+    currentClaim: string
+  }
 }
 
 export type ClaimStatus = 'normal' | 'conflict' | 'changed' | 'official' | 'collapsed'

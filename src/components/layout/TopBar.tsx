@@ -84,10 +84,10 @@ export default function TopBar() {
             <div className="flex items-center gap-3">
               <span className="text-xs text-indigo-300/80"><Emoji char="📊" size={14} /> {estimatedScore}</span>
               <button onClick={() => setShowResource('invest')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
-                <Emoji char="🔍" size={16} /><span className="text-amber-400 font-bold">{globalInvest}</span>
+                <Emoji char="🔍" size={16} /><span className={`font-bold ${globalInvest === 0 ? 'text-red-400' : 'text-amber-400'}`}>{globalInvest}</span>
               </button>
               <button onClick={() => setShowResource('skill')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
-                <Emoji char="⚡" size={16} /><span className="text-amber-400 font-bold">{globalSkill}</span>
+                <Emoji char="⚡" size={16} /><span className={`font-bold ${globalSkill === 0 ? 'text-red-400' : 'text-amber-400'}`}>{globalSkill}</span>
               </button>
               <span className={`text-xs font-semibold ${remainingTurns <= 5 ? 'text-red-400' : 'text-gray-400'}`}>
                 {turnCount}/{MAX_TURNS}

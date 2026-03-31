@@ -342,7 +342,17 @@
         "check_edits": "텍스트 조작은 없으나 상하가 강하게 잘려 의미가 달라졌다.",
         "question_acquisition": "교사와 보호자 대화 캡처라 제출은 가능하지만 재유포는 민감하다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오연숙에게: \"연숙의 무단 하원 변경과 사설 클리닉 개입\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오연숙의 \"연숙의 무단 하원 변경과 사설 클리닉 개입\" 쟁점과 관련된다. 오연숙은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "오하린에게: \"담임교사가 강한 학습·병원 개입을 권했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오하린의 \"담임교사가 강한 학습·병원 개입을 권했는가\" 쟁점과 관련된다. 오하린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-2",
@@ -393,7 +403,7 @@
         "check_edits": "원본 내보내기와 장치 보고서라 선택적 편집 흔적이 없다.",
         "question_acquisition": "직장 일정과 아동 기기 기록이 함께 있어 민감하다."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     },
     {
       "id": "e-4",
@@ -417,7 +427,7 @@
         "check_edits": "기관 보관 원본이라 편집 흔적이 없다.",
         "question_acquisition": "아동 의료정보가 포함돼 있어 사용 범위가 제한돼야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-5",
@@ -443,7 +453,7 @@
         "check_edits": "사진은 원본이고 영수증도 카드사 조회본과 일치한다.",
         "question_acquisition": "개인 결제기록과 오래된 백업 사진이 포함돼 있어 민감하다."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-6",
@@ -468,7 +478,17 @@
         "check_edits": "기관 보관 문서라 편집 흔적이 없다.",
         "question_acquisition": "아동 상담 내용이 포함된 기록이라 목적 외 사용은 제한돼야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "오연숙에게: \"담임교사가 강한 학습·병원 개입을 권했는가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 오연숙의 \"담임교사가 강한 학습·병원 개입을 권했는가\" 쟁점과 관련된다. 오연숙은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "오하린에게: \"담임교사가 강한 학습·병원 개입을 권했는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 오하린의 \"담임교사가 강한 학습·병원 개입을 권했는가\" 쟁점과 관련된다. 오하린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     }
   ],
   "evidenceCombinations": [

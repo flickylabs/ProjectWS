@@ -15,6 +15,12 @@ import DisputeChecklist from '../info/DisputeChecklist'
 import ClaimGraph from '../info/ClaimGraph'
 import EvidenceBoard from '../info/EvidenceBoard'
 import Emoji from '../common/Emoji'
+import {
+  TruthConfrontationModal,
+  JudgmentConflictModal,
+  DisputeEmergenceModal,
+  EmotionalSlipModal,
+} from '../discovery'
 
 interface Props {
   actionPanel?: ReactNode
@@ -55,6 +61,9 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
       style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
     >
       {showTestimony && <TestimonyModal onClose={() => setShowTestimony(false)} />}
+
+      {/* Discovery 모달들 */}
+      <DiscoveryOverlay />
 
       {/* 미니게임 모달 */}
       <MinigameOverlay />
@@ -156,6 +165,19 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
       )}
     </div>
   )
+}
+
+/** Discovery 모달 오버레이 — pendingXxx 상태에 따라 적절한 모달 표시 */
+function DiscoveryOverlay() {
+  const discovery = useGameStore((s) => s.discovery)
+
+  // 우선순위: 감정실수 > 쟁점발현 > 진실공방 > 판단충돌
+  if (discovery.pendingSlip) return <EmotionalSlipModal />
+  if (discovery.pendingEmergence) return <DisputeEmergenceModal />
+  if (discovery.pendingConfrontation) return <TruthConfrontationModal />
+  if (discovery.pendingConflict) return <JudgmentConflictModal />
+
+  return null
 }
 
 function PhaseOverlay() {

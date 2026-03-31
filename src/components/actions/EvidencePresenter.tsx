@@ -3,8 +3,10 @@ import type { PartyId } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import { getAvailableWitnesses } from '../../engine/witnessEngine'
+import { canAppraise } from '../../engine/evidenceEngine'
 import { playClick, playEvidenceUnlock } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
+import { EvidenceAppraisalModal } from '../discovery'
 
 interface Props {
   target: PartyId | null
@@ -23,15 +25,22 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
   const evidenceStates = useGameStore((s) => s.evidenceStates)
   const evidenceDefinitions = useGameStore((s) => s.evidenceDefinitions)
   const resources = useGameStore((s) => s.resources)
+  const globalInvest = useGameStore((s) => s.globalInvestTokens)
+  const discovery = useGameStore((s) => s.discovery)
   const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [appraisalTarget, setAppraisalTarget] = useState<string | null>(null)
   const dispatch = useActionDispatch()
 
   const { available, presented, locked } = useMemo(() => {
-    const avail = evidenceDefinitions.filter((e) => evidenceStates[e.id]?.unlocked && !evidenceStates[e.id]?.presented)
-    const pres = evidenceDefinitions.filter((e) => evidenceStates[e.id]?.presented)
-    const lock = evidenceDefinitions.filter((e) => !evidenceStates[e.id]?.unlocked)
+    // 대상 캐릭터와 관련된 증거만 필터링 (subjectParty 기준)
+    const isRelevant = (e: any) => !e.subjectParty || e.subjectParty === 'both' || e.subjectParty === target
+    // 이 캐릭터에게 이미 제시했는지 확인 (presentedTo에 target 포함 여부)
+    const isPresentedToTarget = (e: any) => evidenceStates[e.id]?.presentedTo?.includes(target) ?? false
+    const avail = evidenceDefinitions.filter((e) => isRelevant(e) && evidenceStates[e.id]?.unlocked && !isPresentedToTarget(e))
+    const pres = evidenceDefinitions.filter((e) => isRelevant(e) && isPresentedToTarget(e))
+    const lock = evidenceDefinitions.filter((e) => isRelevant(e) && !evidenceStates[e.id]?.unlocked)
     return { available: avail, presented: pres, locked: lock }
-  }, [evidenceDefinitions, evidenceStates])
+  }, [evidenceDefinitions, evidenceStates, target])
 
   const handleInvestigate = (evidenceId: string) => {
     const state = evidenceStates[evidenceId]
@@ -41,7 +50,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
     const nextKey = KEY_ORDER.find(k => !state.investigatedActions.includes(k))
     if (!nextKey) return
 
-    if (resources.investigationTokens < 1) {
+    if (globalInvest < 1) {
       useGameStore.getState().addDialogue({
         speaker: 'system', text: '조사 토큰이 모두 소진되었습니다. 충전이 필요합니다.', relatedDisputes: [], turn: useGameStore.getState().turnCount,
       })
@@ -61,6 +70,11 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
 
   return (
     <div className="space-y-2 animate-fade-in">
+      {/* 증거 감별 모달 */}
+      {appraisalTarget && (
+        <EvidenceAppraisalModal evidenceId={appraisalTarget} onClose={() => setAppraisalTarget(null)} />
+      )}
+
       {available.length > 0 && (
         <>
           <div className="text-xs text-gray-400">제시 가능 ({available.length})</div>
@@ -72,7 +86,10 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
               onPresent={() => onPresent(ev.id)}
               onConfront={onConfront ? (text) => onConfront(ev.id, text) : undefined}
               onInvestigate={() => handleInvestigate(ev.id)}
-              canPresent canInvestigate={resources.investigationTokens >= 1}
+              onAppraise={() => setAppraisalTarget(ev.id)}
+              canPresent canInvestigate={globalInvest >= 1}
+              appraisal={discovery.appraisals[ev.id]}
+              canAppraise={canAppraise(evidenceStates[ev.id])}
               llmMode={llmMode}
               isNew={newEvidenceIds?.has(ev.id)}
             />
@@ -88,7 +105,10 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
               isExpanded={expandedId === ev.id}
               onToggle={() => setExpandedId(expandedId === ev.id ? null : ev.id)}
               onInvestigate={() => handleInvestigate(ev.id)}
-              canPresent={false} canInvestigate={resources.investigationTokens >= 1}
+              onAppraise={() => setAppraisalTarget(ev.id)}
+              canPresent={false} canInvestigate={globalInvest >= 1}
+              appraisal={discovery.appraisals[ev.id]}
+              canAppraise={canAppraise(evidenceStates[ev.id])}
             />
           ))}
         </>
@@ -110,6 +130,7 @@ function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) 
   const [expanded, setExpanded] = useState(false)
   const caseData = useGameStore((s) => s.caseData)
   const calledWitnesses = useGameStore((s) => s.calledWitnesses)
+  const witGlobalInvest = useGameStore((s) => s.globalInvestTokens)
 
   const available = useMemo(() => {
     if (!caseData) return []
@@ -123,7 +144,7 @@ function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) 
 
   if (!caseData || (available.length === 0 && called.length === 0)) return null
 
-  const canAfford = resources.investigationTokens >= 1
+  const canAfford = witGlobalInvest >= 1
 
   const biasChar = (bias: string) => {
     if (bias.startsWith('pro_a')) return '🔵'
@@ -257,10 +278,11 @@ function generateSuggestions(ev: any, state: any): string[] {
   return suggestions.slice(0, 3)
 }
 
-function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, canPresent, canInvestigate, llmMode, isNew }: {
+function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, onAppraise, canPresent, canInvestigate, appraisal, canAppraise: canDoAppraise, llmMode, isNew }: {
   ev: any; state: any; isExpanded: boolean
   onToggle: () => void; onPresent?: () => void; onConfront?: (text: string) => void
-  onInvestigate: () => void; canPresent: boolean; canInvestigate: boolean; llmMode?: boolean
+  onInvestigate: () => void; onAppraise?: () => void; canPresent: boolean; canInvestigate: boolean
+  appraisal?: any; canAppraise?: boolean; llmMode?: boolean
   isNew?: boolean
 }) {
   const [showPresent, setShowPresent] = useState(false)
@@ -289,9 +311,23 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
               {legWarning && <Emoji char="⚠" size={12} />}
             </div>
             <div className="flex items-center gap-2 mt-0.5">
-              <span className={`text-xs ${ev.reliability === 'hard' ? 'text-emerald-500/60' : 'text-yellow-500/60'}`}>
-                {ev.reliability === 'hard' ? 'Hard' : 'Soft'}
-              </span>
+              {/* 감별 상태에 따른 신뢰도 표시 */}
+              {appraisal ? (
+                <span className={`text-xs ${
+                  appraisal.verdict === 'trustworthy' ? 'text-emerald-400/80' :
+                  appraisal.verdict === 'suspicious' ? 'text-red-400/80' :
+                  appraisal.verdict === 'partial' ? 'text-amber-400/80' :
+                  'text-gray-500'
+                }`}>
+                  {appraisal.verdict === 'trustworthy' ? '✅ 신뢰' :
+                   appraisal.verdict === 'suspicious' ? '❌ 의심' :
+                   appraisal.verdict === 'partial' ? '⚠️ 부분 신뢰' : '미감별'}
+                </span>
+              ) : (
+                <span className="text-xs text-gray-600">
+                  {investigatedCount >= 2 ? '🔍 감별 가능' : '미감별'}
+                </span>
+              )}
               {/* 조사 진행도 */}
               <div className="flex gap-0.5">
                 {[0, 1, 2].map(i => (
@@ -340,8 +376,28 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
                 <Emoji char="🔍" size={12} /> 조사 ({investigatedCount}/3) {canInvestigate ? '· 토큰 1' : '· 토큰 부족'}
               </button>
             )}
-            {fullyInvestigated && (
+            {fullyInvestigated && !appraisal && (
               <div className="flex-1 text-xs py-2 text-center text-emerald-400/60"><Emoji char="✓" size={12} /> 조사 완료</div>
+            )}
+            {/* 감별 버튼 — 조사 2회 이상 + 아직 미감별 */}
+            {canDoAppraise && !appraisal && onAppraise && (
+              <button
+                onClick={onAppraise}
+                className="flex-1 text-xs py-2 rounded-xl font-bold bg-cyan-800 hover:bg-cyan-700 text-cyan-100 transition-all active:scale-95"
+              >
+                <Emoji char="🔍" size={12} /> 증거 감별
+              </button>
+            )}
+            {appraisal && (
+              <div className={`flex-1 text-xs py-2 text-center rounded-xl ${
+                appraisal.verdict === 'trustworthy' ? 'text-emerald-400/80 bg-emerald-950/20' :
+                appraisal.verdict === 'suspicious' ? 'text-red-400/80 bg-red-950/20' :
+                'text-amber-400/80 bg-amber-950/20'
+              }`}>
+                {appraisal.verdict === 'trustworthy' ? '✅ 신뢰 판정' :
+                 appraisal.verdict === 'suspicious' ? '❌ 의심 판정' :
+                 '⚠️ 부분 신뢰'}
+              </div>
             )}
             {canPresent && onPresent && !showPresent && (
               <button

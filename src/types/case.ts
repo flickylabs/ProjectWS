@@ -42,6 +42,21 @@ export interface EvidenceNode {
   investigationResults: Record<string, string>
   /** 이 증거가 보여주는 행위의 주체: a/b/both */
   subjectParty?: 'a' | 'b' | 'both'
+  /** 캐릭터별 증거 제시 맥락 (subjectParty: both일 때 활용) */
+  partyContext?: {
+    a?: {
+      /** A에게 이 증거를 제시할 때의 질문 각도 */
+      questionAngle: string
+      /** A 관점에서 이 증거가 의미하는 것 */
+      implication: string
+    }
+    b?: {
+      /** B에게 이 증거를 제시할 때의 질문 각도 */
+      questionAngle: string
+      /** B 관점에서 이 증거가 의미하는 것 */
+      implication: string
+    }
+  }
 }
 
 export interface EvidenceCombination {

@@ -341,7 +341,17 @@
         "check_edits": "이어붙이기 흔적은 없으나 자동 추출이라 맥락 손실이 핵심 문제다.",
         "question_acquisition": "직원 얼굴·음성이 포함된 사적 회식 영상. 활용 범위를 제한해야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "강도윤에게: \"도윤의 취중 HJ 발언\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 강도윤의 \"도윤의 취중 HJ 발언\" 쟁점과 관련된다. 강도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최희주에게: \"HJ 발언의 실제 대상은 누구인가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 최희주의 \"HJ 발언의 실제 대상은 누구인가\" 쟁점과 관련된다. 최희주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-2",
@@ -366,7 +376,17 @@
         "check_edits": "본문 변조 없으나 일부 답장이 잘려 있어 반박 맥락이 누락됐다.",
         "question_acquisition": "사적 조언 대화. 정당한 문제 제기와 명예훼손 경계를 구분해 다뤄야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "강도윤에게: \"정정 전 쌍방 소문전 가담\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 강도윤의 \"정정 전 쌍방 소문전 가담\" 쟁점과 관련된다. 강도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최희주에게: \"희주의 단정 DM 전파\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최희주의 \"희주의 단정 DM 전파\" 쟁점과 관련된다. 최희주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-3",
@@ -392,7 +412,7 @@
         "check_edits": "버전 로그 보존 문서. 사후 편집 흔적 없이 원본성 높음.",
         "question_acquisition": "업무용 공유 문서. 분쟁 해결 범위 내 열람 적법."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     },
     {
       "id": "e-4",
@@ -419,7 +439,17 @@
         "check_edits": "기관 보존본. 편집·절삭 흔적 없음.",
         "question_acquisition": "CCTV·결제 정보 포함. 필요 구간만 제한적으로 확인해야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "강도윤에게: \"도윤의 취중 HJ 발언\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 강도윤의 \"도윤의 취중 HJ 발언\" 쟁점과 관련된다. 강도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최희주에게: \"HJ 발언의 실제 대상은 누구인가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 최희주의 \"HJ 발언의 실제 대상은 누구인가\" 쟁점과 관련된다. 최희주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-5",
@@ -444,7 +474,17 @@
         "check_edits": "초기 메모→수정본 모두 보존. 편집 경로 투명.",
         "question_acquisition": "인사자료. 분쟁 해결 목적 외 공개는 제한돼야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "강도윤에게: \"도윤의 선제 HR 메모와 발표 배제\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 강도윤의 \"도윤의 선제 HR 메모와 발표 배제\" 쟁점과 관련된다. 강도윤은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최희주에게: \"정정 전 쌍방 소문전 가담\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 최희주의 \"정정 전 쌍방 소문전 가담\" 쟁점과 관련된다. 최희주은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-6",
@@ -470,7 +510,7 @@
         "check_edits": "수동 편집이 아닌 시스템 자동 추출. 조작이 아니라 오해가 핵심 문제다.",
         "question_acquisition": "단말 식별자 포함. 필요 메타만 제한 공개해야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     }
   ],
   "evidenceCombinations": [

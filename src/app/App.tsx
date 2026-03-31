@@ -303,7 +303,7 @@ function TitleScreen() {
             className="hover:opacity-80 active:scale-95">
             <Emoji char="🎵" size={16} className={bgmOn ? 'opacity-100' : 'opacity-30'} />
           </button>
-          <button onClick={() => setShowNotice(true)} className="text-gray-600 hover:text-gray-300 text-lg relative">
+          <button onClick={() => { setShowNotice(true); setNoticeAutoPopup(true) }} className="text-gray-600 hover:text-gray-300 text-lg relative">
             <Emoji char="📢" size={16} />
           </button>
           <button onClick={() => setShowMail(true)} className="text-gray-600 hover:text-gray-300 text-lg relative">

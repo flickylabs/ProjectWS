@@ -194,14 +194,27 @@ export async function resolveLLMDialogue(
     }
 
     // 재판관 질문: AI 생성 우선, 없으면 폴백 템플릿
-    const finalJudgeQuestion = parsed.judgeQuestion || fallbackJudgeQuestion
-    if (finalJudgeQuestion) {
-      store.addDialogue({
-        speaker: 'judge',
-        text: finalJudgeQuestion,
-        relatedDisputes: disputeId ? [disputeId] : [],
-        turn: store.turnCount,
-      })
+    // 모순 추궁 등에서 이미 재판관 질문을 직접 추가한 경우 스킵
+    const { shouldSkipJudgeQuestion } = await import('../hooks/useActionDispatch')
+    if (!shouldSkipJudgeQuestion()) {
+      let finalJudgeQuestion = parsed.judgeQuestion || fallbackJudgeQuestion
+      // 방어: LLM이 NPC 화법으로 생성한 경우 보정
+      if (finalJudgeQuestion) {
+        // "재판관님, ~" 으로 시작하면 NPC가 말하는 것 → 제거
+        finalJudgeQuestion = finalJudgeQuestion.replace(/^재판관님[,\s]*/, '')
+        // "저는~", "제가~" 로 시작하면 NPC 화법 → 폴백 사용
+        if (/^(저는|제가|저의)\s/.test(finalJudgeQuestion)) {
+          finalJudgeQuestion = fallbackJudgeQuestion
+        }
+      }
+      if (finalJudgeQuestion) {
+        store.addDialogue({
+          speaker: 'judge',
+          text: finalJudgeQuestion,
+          relatedDisputes: disputeId ? [disputeId] : [],
+          turn: store.turnCount,
+        })
+      }
     }
 
     // responseMode는 엔진이 강제 (LLM 출력 무시)
@@ -289,13 +302,24 @@ function buildSystemPrompt(
   // 쟁점 + 거짓말 상태
   let disputeInfo = ''
   if (lieEntry && dispute) {
+    // 거짓말 유형별 구체적 지시 — lieType에 따라 어떻게 거짓말하는지 명시
+    const lieTypeGuide: Record<string, string> = {
+      'LT-1': '사실 자체를 완전히 부인한다 ("그런 일 없었습니다")',
+      'LT-2': '사실은 인정하되 의미를 축소한다 ("별거 아닌 일이었습니다", "잠깐 그랬을 뿐입니다")',
+      'LT-3': '사실을 자기에게 유리하게 재해석한다 ("상대가 먼저 그랬기 때문입니다")',
+      'LT-4': '모른다, 기억나지 않는다고 회피한다 ("잘 기억나지 않습니다")',
+      'LT-5': '다른 주제로 화제를 돌린다 ("그것보다 더 중요한 건...")',
+      'LT-6': '감정에 호소하여 동정을 유도한다 ("그때 얼마나 힘들었는지 아십니까")',
+      'LT-7': '상대를 역공격하여 초점을 흐린다 ("그쪽이야말로...")',
+    }
+
     const stateInstructions: Record<string, string> = {
-      S0: '이 쟁점을 완전히 부정하세요. 자신감 있게.',
-      S1: '약간 흔들리고 있습니다. 배경을 설명하되 핵심은 부정하세요.',
-      S2: '일부를 인정합니다. "맞지만 이유가 다르다"고 하세요.',
-      S3: '상대 탓으로 돌리세요. "내가 그런 건 상대 때문"이라고.',
-      S4: '감정적으로 호소하세요. 논리보다 감정으로.',
-      S5: '인정합니다. 사실을 인정하되 자기 입장에서 재해석하세요.',
+      S0: `이 쟁점을 완전히 부정하세요. 자신감 있게, 흔들림 없이.\n거짓말 방식: ${lieTypeGuide[lieEntry.lieType] ?? '사실을 부인한다'}\n★ 핵심 행위를 절대 인정하지 마세요.\n★ "안 했다"면 끝까지 "안 했다"로 밀어야 합니다.\n★ 부정하면서 동시에 죄책감/불안/후회를 표현하지 마세요. 모순됩니다.\n  ❌ "안 했습니다. 다만 불안한 마음에..." (부정과 죄책감이 동시에 → 모순)\n  ❌ "그런 적 없습니다. 잘못된 생각을 했을 뿐..." (부정과 인정이 섞임 → 모순)\n  ✅ "그런 적 없습니다. 상대방의 오해입니다." (깨끗한 부정)\n  ✅ "그 일은 제가 한 것이 아닙니다. 확인해 보시면 알 수 있습니다." (근거 있는 부정)\n★ 자신의 입장에서 합리적이고 일관된 부정 논리를 만드세요.`,
+      S1: `약간 흔들리고 있지만 아직 핵심은 부정합니다.\n거짓말 방식: ${lieTypeGuide[lieEntry.lieType] ?? '핵심을 축소한다'}\n★ 배경이나 주변 상황은 인정할 수 있지만, 핵심 행위 자체는 부정을 유지하세요.\n★ S0보다 자신감이 떨어지되, 아직 논리적 구조는 유지. 감정적으로 답하지 마세요.\n★ "그런 면이 있지만 제가 한 건 아닙니다" 식의 부분적 인정 + 핵심 부정.`,
+      S2: `일부를 인정합니다. "맞지만 이유가 달랐다"는 식으로.\n★ 행위 자체는 인정하되, 의도나 맥락을 다르게 설명하세요.\n★ 이전에 부정했던 것과 달라졌다면, 그 변화를 자연스럽게 설명하세요 ("사실은...", "정확히 말하면...").`,
+      S3: `상대 탓으로 돌리세요. "내가 그런 건 상대 때문이다".\n★ 자기 행위는 인정하되 책임을 상대에게 전가하세요.\n★ 이전 진술과 달라진 부분이 있다면 "그때는 말하기 어려웠다"고 변명하세요.`,
+      S4: `감정적으로 호소하세요. 논리보다 감정으로.\n★ "그때 얼마나 힘들었는지", "다 이유가 있었다"는 식.\n★ 이전에 거짓말한 것에 대해 "말하기 두려웠다", "숨기고 싶었다"고 인정할 수 있습니다.`,
+      S5: `인정합니다. 사실을 인정하되 자기 입장에서 재해석하세요.\n★ 진실을 말하되, 자신의 동기와 사정을 설명하세요.`,
     }
     const motiveHints: Record<string, string> = {
       self_protection: '자기를 보호하려는 마음',
@@ -308,13 +332,28 @@ function buildSystemPrompt(
     }
 
     // truthDescription을 그대로 주면 LLM이 정답을 보고 시작 → 누출 위험
-    // lie state에 맞는 중립 요약만 제공
-    const neutralDesc = lieEntry.currentState <= 'S2'
-      ? `상대가 "${dispute.name}"에 대해 문제를 제기하고 있다.`  // S0~S2: 쟁점명만, 진실 내용 숨김
-      : lieEntry.currentState <= 'S4'
-        ? `"${dispute.name}"에 대해 일부 사실이 드러나고 있다.`  // S3~S4: 약간 더 열림
-        : dispute.truthDescription  // S5: 전체 공개 (이미 인정한 상태)
-    disputeInfo = `\n## 현재 쟁점: "${dispute.name}"\n내용: ${neutralDesc}\n${stateInstructions[lieEntry.currentState] ?? ''}`
+    // lie state에 맞는 중립 요약만 제공, 단 쟁점의 핵심 내용은 파악할 수 있도록
+    // dispute.name을 상세 맥락으로 풀어줌
+    const disputeContext = (() => {
+      const myConfigs = party === 'a' ? caseData.lieConfigA : caseData.lieConfigB
+      const myLieConfig = myConfigs.find(lc => lc.disputeId === dispute.id)
+      const motiveLabel = motiveHints[myLieConfig?.lieMotive ?? ''] ?? ''
+
+      if (lieEntry.currentState <= 'S1') {
+        // S0~S1: 쟁점의 핵심만 알려주되, 진실 내용은 숨김
+        // NPC는 "무엇에 대해 의심받고 있는지"는 알지만 "진짜 뭘 했는지"는 프롬프트에 없음
+        return `상대방이 "${dispute.name}" 건에 대해 당신을 추궁하고 있다.\n당신은 이 사안의 핵심을 부정하는 입장이다.${motiveLabel ? `\n숨기려는 이유: ${motiveLabel}` : ''}\n★ 진실을 모르는 것처럼 행동하세요. 구체적 사실을 스스로 꺼내지 마세요.`
+      } else if (lieEntry.currentState <= 'S3') {
+        // S2~S3: 일부 드러남 — "무언가 있긴 했다"는 인정하되 핵심은 왜곡
+        return `"${dispute.name}" 건에 대해 압박을 받고 있다. 일부 사실이 드러나고 있다.\n당신은 행위 자체는 부분적으로 인정하지만, 의도나 맥락은 다르게 설명하는 입장이다.${motiveLabel ? `\n방어 동기: ${motiveLabel}` : ''}`
+      } else if (lieEntry.currentState === 'S4') {
+        // S4: 거의 무너짐 — 감정적 호소
+        return `"${dispute.name}" 건에 대해 거의 모든 것이 드러났다. 더 이상 논리적 부정이 어렵다.\n감정에 기대어 자신의 사정을 호소하는 상태다.${motiveLabel ? `\n핵심 감정: ${motiveLabel}` : ''}`
+      }
+      // S5: 전체 공개
+      return `당신은 "${dispute.name}" 건의 진실을 인정한 상태다.\n사실: ${dispute.truthDescription}`
+    })()
+    disputeInfo = `\n## 현재 쟁점: "${dispute.name}"\n상황: ${disputeContext}\n${stateInstructions[lieEntry.currentState] ?? ''}`
     if (!dispute.truth && lieEntry.currentState <= 'S1') {
       disputeInfo += `\n(이 쟁점에서 상대가 주장하는 것은 사실이 아닙니다 — 당신은 진짜로 안 했습니다. 억울하게 부정하세요.)`
     }
@@ -411,6 +450,7 @@ function buildSystemPrompt(
 
   // 심문 이력 컨텍스트
   let historyContext = ''
+  let crossDisputeInfo = '다른 쟁점에서 아직 드러난 사실이 없습니다.'
   try {
     const storeRef = useGameStore.getState()
     const ctx = storeRef.getInterrogationContext(party, dispute?.id ?? '')
@@ -439,6 +479,10 @@ function buildSystemPrompt(
       historyContext += `\n\n이미 인정한 다른 쟁점: ${revealedDisputes.join(', ')}`
       historyContext += `\n이미 인정한 것과 모순되는 주장은 하지 마세요. 일관성을 유지하세요.`
     }
+    // crossDisputeInfo 변수용 문자열 저장
+    crossDisputeInfo = revealedDisputes.length > 0
+      ? `다른 쟁점에서 드러난 상황:\n${revealedDisputes.map(name => `- "${name}" — 이미 인정/붕괴됨`).join('\n')}\n위 사실과 모순되는 주장은 하지 마세요.`
+      : '다른 쟁점에서 아직 드러난 사실이 없습니다.'
   } catch { /* store 접근 실패 시 무시 */ }
 
   // Phase 1/2 대화 요약 (이전 스테이지에서 양측이 주장한 내용)
@@ -465,9 +509,11 @@ function buildSystemPrompt(
   }
 
   // 말투 가이드 (짧은 버전)
+  const opponentName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
+  const speechGuideCommon = `\n\n★ 호칭 사용 규칙 (최우선):\n- 재판관에게 상대를 언급할 때: "${judgeRef}"로 지칭 (예: "${judgeRef}이(가) ~했습니다", "${judgeRef}은(는) ~")\n  ✅ "${judgeRef}이 그렇게 했습니다" / "${judgeRef}은 ~라고 주장하지만"\n  ❌ "${callForm}" 또는 애칭으로 재판관에게 말하기 ("자기가~", "여보가~" 등 절대 금지)\n- 상대에게 직접 말할 때: "${callForm}"으로 호칭 (예: "${callForm}, ~했잖아")\n\n★ 인용 시 높임법 규칙:\n- 재판관에게 말할 때 상대의 말/행동을 언급하면, 상대를 높이지 않는다.\n  ✅ "${judgeRef}이(가) ~했다고 하지만" / "~한다고 하지만"\n  ❌ "${judgeRef}이(가) ~하셨지만" (상대를 높이는 것은 잘못)\n- 재판관에게 보고하는 전체 문장은 존댓말로 끝낸다 (~습니다, ~있습니다).\n\n★ 연속 발언 시 대상 전환 규칙:\n- 재판관에게 말한 뒤 이어서 상대에게 직접 말하려면, 반드시 호칭("${callForm}", "${angryCall}" 등)으로 시작하여 대상이 바뀌었음을 명확히 한다.\n  ✅ "책임이 있습니다. ${callForm}, 약속을 지키는 게 그렇게 어려웠어?"\n  ❌ "책임이 있습니다. 약속을 지키는 게 그렇게 어려웠어?" (누구에게 하는 말인지 불명확)\n`
   const speechGuideShort = canInformalThis
-    ? `\n말투 규칙 (최우선 — 위반 시 출력 무효):\n★ 재판관에게는 어떤 상황에서도 반드시 존댓말만 사용 (~습니다, ~요, ~입니다). 반말 절대 금지.\n- 상대에게: 반말만 사용 (~야, ~잖아, ~거야, ~했어)\n- 절대 금지: "~냐?", "~냐고?", "~했냐?", "~것이냐?" → 대신 "~야?", "~한 거야?", "~했어?" 사용\n- 문장 끝에 "~다"로 끝나는 평서문 금지 → "~야", "~거야", "~잖아"로 마무리`
-    : `\n말투 규칙 (최우선 — 위반 시 출력 무효):\n★ 재판관에게는 어떤 상황에서도 반드시 존댓말만 사용 (~습니다, ~요, ~입니다). 반말 절대 금지.\n- 상대에게: 존댓말 (~요, ~습니다, ~했습니다)\n- 절대 금지: "~냐?", "~냐고?", "~했냐?" → 대신 "~요?", "~습니까?" 사용\n- 감정이 격해진 경우에만 상대에게 반말 전환 허용 (재판관에게는 불가)`
+    ? `\n말투 규칙 (최우선 — 위반 시 출력 무효):\n★ 재판관에게는 어떤 상황에서도 반드시 존댓말만 사용 (~습니다, ~요, ~입니다). 반말 절대 금지.\n- 상대에게: 반말만 사용 (~야, ~잖아, ~거야, ~했어)\n- 절대 금지: "~냐?", "~냐고?", "~했냐?", "~것이냐?" → 대신 "~야?", "~한 거야?", "~했어?" 사용\n- 문장 끝에 "~다"로 끝나는 평서문 금지 → "~야", "~거야", "~잖아"로 마무리${speechGuideCommon}`
+    : `\n말투 규칙 (최우선 — 위반 시 출력 무효):\n★ 재판관에게는 어떤 상황에서도 반드시 존댓말만 사용 (~습니다, ~요, ~입니다). 반말 절대 금지.\n- 상대에게: 존댓말 (~요, ~습니다, ~했습니다)\n- 절대 금지: "~냐?", "~냐고?", "~했냐?" → 대신 "~요?", "~습니까?" 사용\n- 감정이 격해진 경우에만 상대에게 반말 전환 허용 (재판관에게는 불가)${speechGuideCommon}`
 
   // ── 변수 맵 조립 ──
   const vars: Record<string, string> = {
@@ -506,6 +552,7 @@ function buildSystemPrompt(
     interrogationDepth: String(interrogationDepth),
     // output 블록용
     disputeName: dispute?.name ?? '해당 사안',
+    crossDisputeInfo,
   }
 
   // ── Agent 블록 조합 우선, 폴백으로 기존 promptManager ──
@@ -574,14 +621,14 @@ function buildUserPrompt(
     ? `★ 당신은 "${myName}"이다. 지금 재판관에게만 답한다. ${opName}에게 말하는 것이 아니다.\n★ 상대 호칭("자기야","여보","오빠" 등)으로 시작 금지. 호칭 없이 바로 답하거나 "재판관님"으로 시작.\n★ npcResponse 전체가 재판관을 향한 존댓말(~습니다, ~요)이어야 한다.\n★ "${opName}"에게 직접 말하는 문장을 넣지 마라.\n`
     : `★ 당신은 "${myName}"이다. 재판관에게 답한 뒤, ${opName}에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.\n★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.\n`
 
-  const judgeGenRule = `\n★ judgeQuestion 필드: 재판관이 NPC에게 하는 질문을 자연스러운 한국어로 직접 작성하라.\n- "${disputeName}" 쟁점에 대해 질문 유형에 맞는 자연스러운 질문을 만든다.\n- 쟁점명을 그대로 인용하지 말고, 맥락에 맞게 풀어서 질문한다.\n- 재판관 어투: 격식체, 간결, 권위 있는 톤 (예: "~주십시오", "~입니까")\n`
+  const judgeGenRule = `\n★ judgeQuestion 필드 규칙 (최우선):\n- judgeQuestion은 "재판관"이 "${myName}" 씨에게 묻는 질문이다.\n- 재판관은 제3자 시점의 권위적 심문관이다. 절대로 NPC가 아니다.\n- "${myName} 씨, ~" 로 시작하거나 바로 질문으로 시작한다.\n- ❌ 절대 금지: "재판관님"으로 시작하는 문장. judgeQuestion은 재판관 본인이 말하는 것이므로 자기 자신을 "재판관님"이라 부르지 않는다.\n- ❌ 절대 금지: NPC 입장에서 쓴 문장 (존댓말로 보고하는 톤, "저는~", "제가~" 등)\n- ✅ 올바른 예: "${myName} 씨, ~에 대해 설명해 주십시오", "왜 ~하신 겁니까?", "~한 사실을 인정하십니까?"\n- 재판관 어투: 격식체, 간결, 권위 있는 톤 (~주십시오, ~입니까, ~하셨습니까)\n- "${disputeName}" 쟁점에 대해 질문 유형에 맞는 자연스러운 질문을 만든다.\n- 쟁점명을 그대로 인용하지 말고, 맥락에 맞게 풀어서 질문한다.\n`
 
   // ── 심문 (fact_pursuit / motive_search / empathy_approach) ──
   if (action.type === 'question') {
     const questionGuides: Record<string, string> = {
-      fact_pursuit: `질문 유형: fact_pursuit (사실 추궁)\n- judgeQuestion은 날짜, 금액, 행위 여부를 구체적으로 묻는 질문이어야 한다.\n- 예: "한지석 씨, 9월 20일 280만원을 송금하신 사실이 있습니까?"`,
-      motive_search: `질문 유형: motive_search (동기 탐색)\n- judgeQuestion은 왜 그런 선택을 했는지, 무엇을 숨기려 했는지 묻는 질문이어야 한다.\n- 예: "한지석 씨, 아내에게 알리지 않은 이유가 무엇입니까?"`,
-      empathy_approach: `질문 유형: empathy_approach (공감 접근)\n- judgeQuestion은 당시 상황이나 심정을 편하게 말할 수 있도록 유도하는 질문이어야 한다.\n- 예: "한지석 씨, 당시 어떤 어려움이 있으셨는지 말씀해 주시겠습니까?"`,
+      fact_pursuit: `질문 유형: fact_pursuit (사실 추궁)\n- judgeQuestion은 "${disputeName}" 쟁점에서 문제가 되는 행위, 은닉, 거짓말에 대해 구체적으로 추궁하는 질문이어야 한다.\n- 날짜, 금액, 행위 여부를 묻되, 단순 사실 확인("~하셨습니까?")이 아니라 문제의 핵심을 짚어야 한다.\n- 예: "~을 숨기신 이유를 설명해 주십시오", "~에 대해 상대방의 주장과 다른 점을 해명해 주십시오"`,
+      motive_search: `질문 유형: motive_search (동기 탐색)\n- judgeQuestion은 "${disputeName}" 쟁점에서 왜 그런 선택을 했는지, 무엇이 두려웠는지, 무엇을 숨기려 했는지 동기를 묻는 질문이어야 한다.\n- 예: "~을 상대방에게 알리지 않은 특별한 이유가 있습니까?", "당시 어떤 판단으로 그런 결정을 내리신 겁니까?"`,
+      empathy_approach: `질문 유형: empathy_approach (공감 접근)\n- judgeQuestion은 "${disputeName}" 쟁점과 관련된 당시 상황이나 심정을 편하게 말할 수 있도록 유도하는 질문이어야 한다.\n- 예: "당시 어떤 어려움이 있으셨는지 말씀해 주시겠습니까?", "그 상황에서 다른 선택지는 없었습니까?"`,
     }
     const guide = questionGuides[action.questionType] ?? ''
 
@@ -593,7 +640,7 @@ function buildUserPrompt(
 
   // ── 증거 제시 ──
   if (action.type === 'evidence_present') {
-    // 타깃별 맥락: subjectParty 기반으로 행위 당사자 vs 관찰/제출 측 구분
+    // 타깃별 맥락: subjectParty + partyContext 기반으로 구체적 질문 각도 제공
     let targetContext = ''
     if (target && caseData && evidence) {
       const subjectParty = evidence.subjectParty ?? 'both'
@@ -602,25 +649,24 @@ function buildUserPrompt(
       const isActor = subjectParty === target
       const isOther = (subjectParty === 'a' || subjectParty === 'b') && subjectParty !== target
 
-      const prov = evidence.provenance
-      if (isActor) {
+      // partyContext가 있으면 우선 사용
+      const pCtx = evidence.partyContext?.[target]
+      if (pCtx) {
+        targetContext = `\n★ 이 증거의 ${myName} 관점 맥락:\n- 질문 각도: ${pCtx.questionAngle}\n- 의미: ${pCtx.implication}\n- 이 맥락에 맞게 답변하라. 상대방의 쟁점에 대해 답하지 마라.\n`
+      } else if (isActor) {
         targetContext = `\n★ 당신(${myName})은 이 증거가 지적하는 행위의 당사자다. 증거 내용에 대해 해명하거나 변명해야 한다.\n`
       } else if (isOther) {
-        // provenance에 따라 관찰/제출 측의 응답 방향이 달라짐
+        const prov = evidence.provenance
         if (prov === 'institutional') {
           targetContext = `\n★ 당신(${myName})은 이 증거의 행위 당사자가 아니다. 이 자료는 기관에서 제공된 것이다. 이 증거 내용에 대해 당신이 아는 바와 생각을 말하라. ${opName}인 것처럼 변명하지 마라.\n`
         } else if (prov === 'third_party') {
           targetContext = `\n★ 당신(${myName})은 이 증거의 행위 당사자가 아니다. 이 자료는 제3자가 제출한 것이다. 이 증거의 존재를 알고 있었는지, 내용에 대해 어떻게 생각하는지 말하라. ${opName}인 것처럼 변명하지 마라.\n`
         } else {
-          targetContext = `\n★ 당신(${myName})은 이 증거의 행위 당사자가 아니다. ${opName}의 행위에 대한 증거이므로, 이 증거를 어떻게 확보했는지, 이 증거에 대해 어떻게 생각하는지 말하라. ${opName}인 것처럼 변명하지 마라.\n`
+          targetContext = `\n★ 당신(${myName})은 이 증거의 행위 당사자가 아니다. ${opName}의 행위에 대한 증거이므로, 이 증거에 대해 어떻게 생각하는지 말하라. ${opName}인 것처럼 변명하지 마라.\n`
         }
       } else {
-        // subjectParty === 'both': provenance에 따라 맥락 제공
-        if (prov === 'institutional') {
-          targetContext = `\n★ 이 증거는 기관에서 제공된 공식 기록이다. 기록된 내용에 대해 당신의 입장을 말하라.\n`
-        } else if (prov === 'third_party') {
-          targetContext = `\n★ 이 증거는 제3자가 제출한 자료다. 내용에 대한 당신의 입장과, 이 자료의 존재를 알고 있었는지 말하라.\n`
-        }
+        // subjectParty === 'both', partyContext 없음 → 일반 맥락
+        targetContext = `\n★ 이 증거는 양측 모두와 관련된 기록이다. 당신(${myName})의 입장에서 이 증거에 대해 답하라.\n`
       }
     }
     return `${addressRule}${targetContext}현재 액션은 evidence_present다.\nfocusedDisputeId: ${focusedDisputeId}\n재판관이 "${evidence?.name ?? '증거'}" 증거를 제시했다.\n증거 설명: ${evidence?.description ?? ''}\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- 첫 문장은 반드시 현재 증거에 대한 직접 반응이다.\n- 이 증거와 무관한 다른 쟁점을 새로 꺼내지 않는다.\n- judgeQuestion 필드에 재판관 질문을 자연스럽게 작성한다.\n- 출력은 JSON 객체 하나만 한다.`

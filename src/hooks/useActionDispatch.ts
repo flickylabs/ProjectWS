@@ -12,6 +12,7 @@ import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
 import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { detectStatementChange } from '../engine/contradictionEngine'
+import { runDiscoveryChecks, updateCascadeTargets } from './useDiscoveryIntegration'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -21,6 +22,10 @@ export function isLLMMode() { return true }
 /** 다음 질문에 적용할 토글 모디파이어 */
 let _nextConfidential = false
 let _nextEvasionTarget: { target: PartyId; disputeId: string } | null = null
+/** 다음 resolveAndApply 호출에서 재판관 질문 생성을 스킵 (모순 추궁 등 이미 직접 추가한 경우) */
+let _skipNextJudgeQuestion = false
+export function setSkipNextJudgeQuestion(skip: boolean) { _skipNextJudgeQuestion = skip }
+export function shouldSkipJudgeQuestion(): boolean { const v = _skipNextJudgeQuestion; _skipNextJudgeQuestion = false; return v }
 
 export function setNextConfidential(on: boolean) { _nextConfidential = on }
 export function setNextEvasionReading(target: PartyId, disputeId: string) {
@@ -101,6 +106,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   const trigger = evDef.reliability === 'hard' ? 'hard_evidence' : 'soft_evidence'
   let evDidTransition = false
   for (const disputeId of evDef.proves) {
+    snapshotLieState(action.target, disputeId)
     const transitioned = state.transitionLie(action.target, disputeId, trigger)
     if (transitioned) {
       notifyLieTransition(action.target, disputeId); evDidTransition = true
@@ -160,6 +166,9 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   if (evDef.proves.length > 0) {
     await resolveAndApply(action, action.target)
   }
+
+  // Discovery 체크 — 진실공방/쟁점발현/감정실수/판단충돌
+  runDiscoveryChecks(action.target, evDef.proves[0])
 
   useGameStore.getState().incrementTurn()
   } finally { evidencePresentLock = false }
@@ -263,6 +272,47 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
     }
 
     fresh.trackMetric('questionsAsked')
+
+    // ── 증인 증언으로 인한 진실 발견 ──
+    // 증인의 knowledgeScope가 truthTable의 사실과 매칭되면 해당 truth를 발견 처리
+    if (witness.knowledgeScope) {
+      const freshStore = useGameStore.getState()
+      const caseData2 = freshStore.caseData!
+      const scope = witness.knowledgeScope
+
+      for (let i = 0; i < caseData2.truthTable.length; i++) {
+        const truth = caseData2.truthTable[i]
+        const truthId = truth.id ?? `t-${i + 1}`
+
+        // 이미 발견된 truth는 스킵
+        if (freshStore.discovery.discoveredTruths.includes(truthId)) continue
+
+        // knowledgeScope에서 truth.fact의 핵심 키워드 매칭
+        const keywords = truth.fact
+          .replace(/[은는이가을를의에서로도만~,.!?]/g, ' ')
+          .split(/\s+/)
+          .filter(w => w.length >= 3)
+        const matchCount = keywords.filter(kw => scope.includes(kw)).length
+        const matchRatio = keywords.length > 0 ? matchCount / keywords.length : 0
+
+        // 40% 이상 키워드 매칭 → 이 증인이 이 사실을 알고 있음
+        if (matchRatio >= 0.4) {
+          freshStore.addDiscoveredTruth(truthId)
+
+          // 시스템 메시지: 새로운 사실 발견
+          freshStore.addDialogue({
+            speaker: 'system',
+            text: `💡 증인 증언으로 새로운 사실이 확인되었습니다 — "${truth.fact}"`,
+            relatedDisputes: testimony.relatedDisputes,
+            turn: freshStore.turnCount,
+          })
+        }
+      }
+    }
+
+    // Discovery 체크 — 증인 증언 후 (숨겨진 쟁점 발현 포함)
+    const favorParty: 'a' | 'b' = testimony.favorDirection === 'pro_a' ? 'a' : 'b'
+    runDiscoveryChecks(favorParty)
   } catch {
     useGameStore.getState().setLLMLoading(false)
     useGameStore.getState().addDialogue({
@@ -371,6 +421,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     : true
 
   if (affinityPass) {
+    snapshotLieState(action.target, action.disputeId)
     for (const trigger of triggers) {
       const transitioned = state.transitionLie(action.target, action.disputeId, trigger)
       if (transitioned) {
@@ -499,6 +550,9 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   // ── optimalPath 추적 ──
   trackOptimalPath(action.disputeId, action.questionType)
 
+  // Discovery 체크 — 질문 후
+  runDiscoveryChecks(action.target, action.disputeId)
+
   useGameStore.getState().incrementTurn()
   } finally { questionLock = false }
 }
@@ -610,64 +664,60 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
       turn: freshState.turnCount,
       isConfidential,
     }
-    if (detectStatementChange(freshState.claimGraph, newClaimData)) {
-      const npcName = target === 'a'
-        ? freshState.caseData?.duo.partyA.name ?? '당사자A'
-        : freshState.caseData?.duo.partyB.name ?? '당사자B'
-      // 모순 감지 시 시스템 메시지만 (미니게임 제거)
-      freshState.addDialogue({
-        speaker: 'system',
-        text: `⚡ ${npcName}의 진술이 이전 주장과 모순됩니다!`,
-        relatedDisputes: [node.conditions.disputeId],
-        turn: freshState.turnCount,
-      })
-      changeEmotionWithPhaseTracking(target, 10)
-    }
+    // 텍스트 기반 모순 감지 제거 — lie state 전이 기반으로 이동 (notifyLieTransition에서 처리)
 
     freshState.addClaim(newClaimData)
   }
 }
 
-// ── 상대방 끼어들기: answer_only 응답 후 확률 기반 반박 ──
+// ── 상대방 끼어들기: answer_only 응답 후 반박 근거가 있을 때만 발동 ──
 function maybeInterjection(target: PartyId, disputeId?: string) {
   const state = useGameStore.getState()
   if (!state.caseData || !disputeId) return
+
+  // 분리 심문 중이면 끼어들기 완전 차단
+  if (state.separationTarget) return
 
   const otherParty: PartyId = target === 'a' ? 'b' : 'a'
   const otherAgent = otherParty === 'a' ? state.agentA : state.agentB
   const otherLie = otherAgent.lieStateMap[disputeId]
 
-  // 확률: S3+ = 50%, 그 외 = 25%
-  const chance = (otherLie?.currentState ?? 'S0') >= 'S3' ? 0.50 : 0.25
+  // ── 트리거 조건: 반박 근거가 있는 경우에만 ──
+  // 1) 상대(끼어드는 쪽)가 이 쟁점에 대해 lie 전략이 있어야 함 (관련 있는 쟁점)
+  if (!otherLie) return
+
+  // 2) 상대의 거짓말 상태가 S1 이상이어야 함 (S0이면 아직 이 주제에 대해 할 말이 없음)
+  if (otherLie.currentState < 'S1') return
+
+  // 3) 이 쟁점에서 양측 다 발언한 적이 있어야 함 (반박할 수 있는 맥락이 있어야)
+  const otherClaims = state.claimGraph.filter(c => c.claimant === otherParty && c.disputeId === disputeId)
+  const targetClaims = state.claimGraph.filter(c => c.claimant === target && c.disputeId === disputeId)
+  if (otherClaims.length === 0 || targetClaims.length === 0) return
+
+  // 4) 확률 게이팅: angry = 60%, shaken/confident = 40%, 나머지 = 20%
+  const phase = otherAgent.emotionalState.phase
+  const chance = phase === 'angry' ? 0.60 : (phase === 'shaken' || phase === 'confident') ? 0.40 : 0.20
   if (Math.random() > chance) return
 
-  // 분리 심문 중이면 끼어들기 완전 차단
-  if (state.separationTarget) return
-
   const otherName = otherParty === 'a' ? state.caseData.duo.partyA.name : state.caseData.duo.partyB.name
-  const phase = otherAgent.emotionalState.phase
+
+  // 감정별 끼어들기 첫 마디 (간결하게)
   const interjections: Record<string, string[]> = {
-    defensive: ['재판관님, 그건 사실과 다릅니다.', '그건 한쪽 얘기일 뿐입니다.'],
-    confident: ['재판관님, 제가 보충 설명드려도 되겠습니까?', '잠깐, 그 부분은 제가 직접 말씀드리겠습니다.'],
-    shaken: ['그건... 그렇게 단순한 문제가 아닙니다...', '재판관님, 저도 할 말이 있습니다.'],
-    angry: ['아니, 그건 완전히 거짓말입니다!', '지금 뭐라고 한 겁니까?!'],
-    resigned: ['...그 말은 맞지만, 전부는 아닙니다.', '재판관님, 한 가지만 덧붙여도 되겠습니까.'],
+    defensive: ['그건 사실과 다릅니다.', '그건 한쪽 얘기일 뿐입니다.'],
+    confident: ['잠깐, 그 부분은 제가 직접 말씀드리겠습니다.'],
+    shaken: ['그건... 그렇게 단순한 문제가 아닙니다.'],
+    angry: ['아니, 그건 거짓말입니다!', '지금 뭐라고 한 겁니까?!'],
+    resigned: ['그 말은 맞지만, 전부는 아닙니다.'],
   }
   const pool = interjections[phase] ?? interjections.defensive
   const text = pool[Math.floor(Math.random() * pool.length)]
 
-  // 후속 반박 대사 준비
-  const followUps: Record<string, string[]> = {
-    defensive: ['그때 상황을 보셨다면 그렇게 단정하실 수 없을 겁니다.', '제가 직접 겪은 건 그 말과 완전히 다릅니다.'],
-    confident: ['제가 가진 자료를 보시면 사실관계가 달라집니다.', '그 부분은 제 입장에서 분명히 설명드릴 수 있습니다.'],
-    shaken: ['그건... 제가 처한 상황을 모르시고 하시는 말씀입니다.', '저도 억울한 부분이 있습니다. 들어주십시오.'],
-    angry: ['거짓말을 하고 있는 건 저쪽입니다! 재판관님, 확인해 주십시오!', '그런 식으로 사실을 왜곡하면 안 됩니다!'],
-    resigned: ['... 전부는 아니지만, 제가 알고 있는 부분이 있습니다.', '재판관님, 한 가지만 보충하겠습니다.'],
-  }
-  const followPool = followUps[phase] ?? followUps.defensive
-  const followUp = followPool[Math.floor(Math.random() * followPool.length)]
+  // 반박 근거 (LLM 프롬프트용 — UI에 직접 노출 안 됨)
+  const myLastClaim = otherClaims[otherClaims.length - 1].summary
+  const opponentLastClaim = targetClaims[targetClaims.length - 1].summary
+  const followUp = `${myLastClaim} ||| ${opponentLastClaim}`
 
-  // 대화 로그에 끼어들기 대사 기록 (본페이지에 남도록)
+  // 대화 로그에 끼어들기 대사 기록
   state.addDialogue({
     speaker: otherParty,
     text,
@@ -676,7 +726,7 @@ function maybeInterjection(target: PartyId, disputeId?: string) {
     behaviorHint: '끼어들며 말한다.',
   })
 
-  // 딜레이 후 선택지 대기 — B의 대사가 먼저 렌더링되도록
+  // 딜레이 후 선택지 대기
   setTimeout(() => {
     useGameStore.getState().setPendingInterjection({ party: otherParty, disputeId, text, followUp })
   }, 800)
@@ -702,32 +752,52 @@ export async function allowInterjection() {
     const opponent = ij.party === 'a' ? caseData.duo.partyB : caseData.duo.partyA
     const dispute = caseData.disputes.find(d => d.id === ij.disputeId)
 
-    // 최근 상대방 발언 가져오기
+    // 최근 상대방 발언 가져오기 (여러 줄)
     const otherParty = ij.party === 'a' ? 'b' : 'a'
-    const recentOpponent = state.dialogueLog
+    const recentOpponentLines = state.dialogueLog
       .filter(d => d.speaker === otherParty)
-      .slice(-1)[0]?.text ?? ''
+      .slice(-3)
+      .map(d => d.text)
+      .join('\n')
+
+    // 끼어드는 쪽의 이 쟁점에 대한 기존 주장
+    const myClaims = state.claimGraph
+      .filter(c => c.claimant === ij.party && c.disputeId === ij.disputeId)
+      .map(c => c.summary)
+      .slice(-2)
+      .join('; ')
 
     const callForm = party.callTerms?.toPartner ?? opponent.name.slice(1) + '씨'
+    const canInformal = party.callTerms?.toPartner && !party.callTerms.toPartner.includes('씨')
 
     const prompt = `당신은 "${party.name}"(${party.age}세)입니다. 상대: ${opponent.name}.
 관계: ${caseData.duo.relationshipType}
 상대 호칭: "${callForm}"
-현재 쟁점: ${dispute?.name ?? ''}
+현재 쟁점: "${dispute?.name ?? ''}"
 
-상대방(${opponent.name})이 방금 한 말: "${recentOpponent}"
+## 상대방(${opponent.name})이 방금 한 말:
+${recentOpponentLines}
 
-당신은 끼어들어 반박합니다.
+## 이 쟁점에서 당신(${party.name})이 이전에 주장한 내용:
+${myClaims || '(아직 이 쟁점에서 발언한 적 없음)'}
 
-★ 중요: 메시지를 2개로 분리하세요.
-1. toJudge: 재판관에게 하는 말 (존댓말 ~습니다/~요). 1~2문장.
-2. toOpponent: 상대방(${opponent.name})에게 직접 하는 말 (관계에 맞는 어법). 1문장.
+## 상황
+당신은 상대방의 발언이 사실과 다르다고 생각하여 끼어들었습니다.
+상대방의 구체적인 발언 내용에 대해 반박해야 합니다.
 
-규칙:
-- toJudge는 재판관에게 새로운 사실이나 반박 근거를 제시
-- toOpponent는 상대에게 직접 따지는 말 (짧고 날카롭게)
-- 단순 부정 금지. 구체적 근거가 있는 반박
-- toOpponent가 불필요하면 빈 문자열
+★ 핵심 규칙:
+- 상대방이 방금 한 말의 어떤 부분이 틀렸는지, 사실과 다른지 구체적으로 지적하라.
+- 추상적 동조("소통 부족이 있었던 것은 사실", "오해가 생길 수 있다" 등) 절대 금지.
+- 상대 입장에 동의하거나 이해를 표하는 내용 절대 금지. 끼어들기는 반박이다.
+- 새로운 사건이나 언급된 적 없는 사실을 지어내지 마라. 이미 나온 내용만 사용.
+
+★ 메시지를 2개로 분리:
+1. toJudge: 재판관에게 반박 근거를 제시 (존댓말 ~습니다/~요). 1~2문장.
+   - "재판관님, 지금 ${opponent.name}${canInformal ? '이' : '씨가'} ~ 라고 했는데, 사실은 ~입니다." 형태
+   - 상대의 말을 인용할 때 상대를 높이지 않는다 (~했다, ~한다)
+2. toOpponent: 상대에게 직접 따지는 말 (1문장). 반드시 호칭("${callForm}")으로 시작.
+   - "${callForm}, ~" 형태로 시작
+   - 상대의 거짓/왜곡을 직접 따지는 날카로운 한 마디
 
 JSON만 출력:
 {"toJudge":"재판관에게 할 말","toOpponent":"상대에게 할 말","behaviorHint":"행동 묘사"}`
@@ -768,25 +838,20 @@ JSON만 출력:
         })
       }
     } else {
+      // 파싱 실패 시 간단한 폴백 (raw 데이터 노출 방지)
       state.addDialogue({
         speaker: ij.party,
-        text: ij.followUp,
+        text: `재판관님, ${name === (ij.party === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name) ? '제' : ''} 입장에서 말씀드리면, 지금 상대방이 말한 것과 사실이 다릅니다.`,
         relatedDisputes: [ij.disputeId],
         turn: state.turnCount,
       })
     }
   } catch {
     state.setLLMLoading(false)
-    // 실패 시 기존 템플릿 사용
+    // 실패 시 간단한 폴백 (초기 메시지는 이미 출력됨 → 중복 방지)
     state.addDialogue({
       speaker: ij.party,
-      text: ij.text,
-      relatedDisputes: [ij.disputeId],
-      turn: state.turnCount,
-    })
-    state.addDialogue({
-      speaker: ij.party,
-      text: ij.followUp,
+      text: '재판관님, 지금 상대방이 한 말은 사실과 다릅니다. 확인해 주십시오.',
       relatedDisputes: [ij.disputeId],
       turn: state.turnCount,
     })
@@ -1130,12 +1195,24 @@ function showEvasionReadingResult(party: PartyId, disputeId: string) {
   })
 }
 
+/** lie state 전이 이전 상태를 추적하기 위한 스냅샷 */
+const _lieStateBeforeTransition: Record<string, string> = {}
+
+/** 전이 시도 전에 호출하여 이전 상태 저장 */
+export function snapshotLieState(party: PartyId, disputeId: string) {
+  const state = useGameStore.getState()
+  const agent = party === 'a' ? state.agentA : state.agentB
+  const current = agent.lieStateMap[disputeId]?.currentState ?? 'S0'
+  _lieStateBeforeTransition[`${party}:${disputeId}`] = current
+}
+
 function notifyLieTransition(party: PartyId, disputeId: string) {
   const state = useGameStore.getState()
   const agent = party === 'a' ? state.agentA : state.agentB
   const name = party === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name
   const dispute = state.caseData?.disputes.find((d) => d.id === disputeId)
   const newState = agent.lieStateMap[disputeId]?.currentState
+  const prevState = _lieStateBeforeTransition[`${party}:${disputeId}`] ?? 'S0'
 
   // S4/S5에 도달하면 revealed 마킹
   if (newState && (newState === 'S4' || newState === 'S5')) {
@@ -1156,9 +1233,76 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       : `${icon} ${name} — "${dispute?.name}" | ${labels[newState]}`
     state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
 
-    // S5 도달 시 연출만 (미니게임 제거)
-    if (newState === 'S5') {
+    // S5 도달 시 진실 발견 + 정답지 기록
+    if (newState === 'S5' && dispute) {
       playLieCollapse()
+
+      // 관련 truthTable에서 해당 쟁점의 진실 찾아서 발견 처리
+      const caseData = state.caseData
+      if (caseData) {
+        const disputeIdx = caseData.disputes.findIndex(d => d.id === disputeId)
+        if (disputeIdx >= 0) {
+          const truthId = caseData.truthTable[disputeIdx]?.id ?? `t-${disputeIdx + 1}`
+          const truth = caseData.truthTable[disputeIdx]
+
+          // 진실 발견 기록
+          if (!state.discovery.discoveredTruths.includes(truthId)) {
+            state.addDiscoveredTruth(truthId)
+            // 시스템 메시지: 진실 발견
+            state.addDialogue({
+              speaker: 'system',
+              text: `✅ 사실 확인 — ${truth?.fact ?? dispute.truthDescription}`,
+              relatedDisputes: [disputeId],
+              turn: state.turnCount,
+            })
+          }
+
+          // 정답지에 자동 기록
+          state.setFactFinding(disputeId, dispute.truth ? 'true' : 'false')
+        }
+      }
+    }
+  }
+
+  // ── 모순 감지: 부정→인정 전이 시 이전 주장과의 실질적 모순 ──
+  // S0/S1(부정) → S2+(인정) 으로 넘어갈 때만 모순 발생 (같은 구간 내 전이는 모순 아님)
+  const DENIAL_STATES = ['S0', 'S1']
+  const ADMISSION_STATES = ['S2', 'S3', 'S4', 'S5']
+  const crossedBoundary = DENIAL_STATES.includes(prevState) && ADMISSION_STATES.includes(newState ?? '')
+
+  if (crossedBoundary && dispute) {
+    // 이전 부정 단계에서의 주장 찾기
+    const prevClaims = state.claimGraph.filter(
+      (c) => c.claimant === party && c.disputeId === disputeId,
+    )
+    if (prevClaims.length > 0) {
+      const previousClaim = prevClaims[prevClaims.length - 1].summary
+
+      // 입장 변화 설명 생성 (프로그래밍 기반, LLM 불필요)
+      const transitionDesc: Record<string, string> = {
+        'S0→S2': `이전에는 완전히 부정했지만, 이제 일부를 인정하기 시작했습니다`,
+        'S0→S3': `이전에는 완전히 부정했지만, 이제 상대 탓으로 돌리고 있습니다`,
+        'S0→S4': `이전에는 완전히 부정했지만, 이제 감정적으로 호소하고 있습니다`,
+        'S0→S5': `이전에는 완전히 부정했지만, 결국 사실을 인정했습니다`,
+        'S1→S2': `이전에는 핵심을 부정했지만, 이제 일부를 인정하기 시작했습니다`,
+        'S1→S3': `이전에는 핵심을 부정했지만, 이제 책임을 전가하고 있습니다`,
+        'S1→S4': `이전에는 핵심을 부정했지만, 이제 감정적으로 호소하고 있습니다`,
+        'S1→S5': `이전에는 핵심을 부정했지만, 결국 사실을 인정했습니다`,
+      }
+      const desc = transitionDesc[`${prevState}→${newState}`] ?? `이전 진술과 입장이 달라졌습니다`
+
+      state.addDialogue({
+        speaker: 'system',
+        text: `⚡ ${name}의 진술이 이전 주장과 모순됩니다! — 탭하여 추궁`,
+        relatedDisputes: [disputeId],
+        turn: state.turnCount,
+        contradictionMeta: {
+          party,
+          disputeId,
+          previousClaim,
+          currentClaim: desc,
+        },
+      })
     }
   }
 }
@@ -1371,4 +1515,104 @@ function trackOptimalPath(disputeId: string, actionType: string) {
   // bonusActions 체크
   const matchesBonus = path.bonusActions.some(ba => ba === actionType || ba.startsWith(actionType))
   if (matchesBonus) state.trackMetric('bonusPathsCovered')
+}
+
+// ── 모순 추궁 ──
+export async function handleContradictionPursue(
+  party: PartyId,
+  disputeId: string,
+  previousClaim: string,
+  currentClaim: string,
+) {
+  if (globalDispatchLock) return
+  globalDispatchLock = true
+  try {
+    const state = useGameStore.getState()
+    if (!state.caseData) return
+
+    const npcName = party === 'a'
+      ? state.caseData.duo.partyA.name
+      : state.caseData.duo.partyB.name
+    const dispute = state.caseData.disputes.find(d => d.id === disputeId)
+
+    // 핵심 차이점을 요약하여 재판관 질문 생성
+    // LLM으로 정밀 질문 생성 시도, 실패하면 폴백
+    let judgeQuestion = ''
+    try {
+      const { chatCompletion } = await import('../engine/llmClient')
+      const raw = await chatCompletion(
+        [{
+          role: 'user',
+          content: `당신은 재판관입니다. 아래 두 진술 사이의 핵심 차이점을 짚어 추궁하는 질문을 1~2문장으로 작성하세요.
+
+당사자: ${npcName}
+쟁점: ${dispute?.name ?? ''}
+
+이전 진술: "${previousClaim}"
+현재 진술: "${currentClaim}"
+
+규칙:
+- "${npcName} 씨, "로 시작
+- 두 진술의 구체적인 차이점을 명시 ("이전에는 ~라고 했는데 지금은 ~라고 하셨습니다")
+- "어느 쪽이 사실입니까?" 또는 "왜 달라진 것입니까?"로 마무리
+- 격식체 (~십시오, ~입니까)
+- 2문장 이내, 질문만 출력`,
+        }],
+        { temperature: 0.3, maxTokens: 150 },
+      )
+      judgeQuestion = raw.trim()
+      // "재판관님"으로 시작하면 보정
+      judgeQuestion = judgeQuestion.replace(/^재판관님[,\s]*/, '')
+    } catch {
+      // LLM 실패 시 폴백
+      judgeQuestion = `${npcName} 씨, 이전에는 "${previousClaim.slice(0, 30)}…"라고 하셨는데, 방금은 "${currentClaim.slice(0, 30)}…"라고 하셨습니다. 진술이 달라진 이유를 설명해 주십시오.`
+    }
+
+    state.addDialogue({
+      speaker: 'judge',
+      text: judgeQuestion,
+      relatedDisputes: [disputeId],
+      turn: state.turnCount,
+    })
+
+    // 모순 맥락을 시스템 메시지로 LLM 컨텍스트에 포함 (UI 표시 안 함, 프롬프트용)
+    state.addDialogue({
+      speaker: 'system',
+      text: `[모순 추궁 맥락] 이전: "${previousClaim.slice(0, 60)}" → 현재: "${currentClaim.slice(0, 60)}". 이 모순에 대해 해명해야 합니다.`,
+      relatedDisputes: [disputeId],
+      turn: state.turnCount,
+    })
+
+    // LLM으로 NPC 응답 생성 — 재판관 질문은 이미 추가했으므로 스킵
+    _skipNextJudgeQuestion = true
+    const action: PlayerAction = {
+      type: 'question',
+      questionType: 'fact_pursuit',
+      target: party,
+      disputeId,
+    }
+    await resolveAndApply(action, party)
+
+    // 모순 추궁은 거짓말 전이에 유리 — 추가 전이 시도
+    snapshotLieState(party, disputeId)
+    const transitioned = state.transitionLie(party, disputeId, 'contradiction_pursuit')
+    if (transitioned) {
+      notifyLieTransition(party, disputeId)
+      state.trackMetric('lieTransitions')
+      const freshAgent = party === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+      if (freshAgent.lieStateMap[disputeId]?.currentState === 'S5') {
+        state.trackMetric('liesCollapsed')
+      }
+    }
+
+    // 감정 상승 (모순 추궁은 압박이 강함)
+    changeEmotionWithPhaseTracking(party, 12)
+
+    // Discovery 체크
+    runDiscoveryChecks(party, disputeId)
+
+    useGameStore.getState().incrementTurn()
+  } finally {
+    globalDispatchLock = false
+  }
 }

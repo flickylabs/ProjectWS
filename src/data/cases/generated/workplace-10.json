@@ -344,7 +344,17 @@
         "check_edits": "버전 이력 보존 — 사후 덧붙이기 흔적 없음.",
         "question_acquisition": "업무 1:1·메신저 자료 — 분쟁 해결 목적 적법 열람."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "임도현에게: \"반복된 전환 약속과 막판 번복\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 임도현의 \"반복된 전환 약속과 막판 번복\" 쟁점과 관련된다. 임도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장혜린에게: \"구두 약속 위의 쌍방 의존\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 장혜린의 \"구두 약속 위의 쌍방 의존\" 쟁점과 관련된다. 장혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-2",
@@ -394,7 +404,7 @@
         "check_edits": "변조 없으나 절삭·하이라이트로 전환 불가 프레임이 과장됐다.",
         "question_acquisition": "인사 캡처 — 분쟁 해결 목적에만 한정 사용."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-4",
@@ -421,7 +431,7 @@
         "check_edits": "원본 이력 기반 — 사후 편집 흔적 없음.",
         "question_acquisition": "인사자료 — 공개 최소화, 분쟁 해결 목적 적법 열람."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-5",
@@ -446,7 +456,17 @@
         "check_edits": "원본 메일·협업 문서 — 사후 수정 흔적 없음.",
         "question_acquisition": "계약 연장·배치 기록 — 적법 확인 가능."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "임도현에게: \"반복된 전환 약속과 막판 번복\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 임도현의 \"반복된 전환 약속과 막판 번복\" 쟁점과 관련된다. 임도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장혜린에게: \"구두 약속 위의 쌍방 의존\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 장혜린의 \"구두 약속 위의 쌍방 의존\" 쟁점과 관련된다. 장혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-6",
@@ -474,7 +494,17 @@
         "check_edits": "기관 보존 로그·검토문서 — 사후 편집 흔적 없음.",
         "question_acquisition": "노무·보안 자료 — 접근 엄격 제한, 조사 목적 적법."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "임도현에게: \"구두 약속 위의 쌍방 의존\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 임도현의 \"구두 약속 위의 쌍방 의존\" 쟁점과 관련된다. 임도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "장혜린에게: \"이중 계약과 근무시간 은폐\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 장혜린의 \"이중 계약과 근무시간 은폐\" 쟁점과 관련된다. 장혜린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     }
   ],
   "evidenceCombinations": [

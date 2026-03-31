@@ -343,7 +343,17 @@
         "check_edits": "버전 이력 기반 — 사후 편집 흔적 없이 변경 단계 보존.",
         "question_acquisition": "회사 지식재산 문서 — 감사·분쟁 해결 목적 적법 열람."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "권태준에게: \"발명자 삭제와 성과 단독화\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 권태준의 \"발명자 삭제와 성과 단독화\" 쟁점과 관련된다. 권태준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "노서린에게: \"다툼의 공모 은폐 설계 여부\" 관련 해명 요구 (방어 동기: 복수심)",
+          "implication": "이 증거는 노서린의 \"다툼의 공모 은폐 설계 여부\" 쟁점과 관련된다. 노서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-2",
@@ -368,7 +378,17 @@
         "check_edits": "변조 없으나 답장·첨부 일부 절삭 — 범위 확인에 원문 대조 필요.",
         "question_acquisition": "개인 단말·사설 메신저 포함 — 조사 목적 외 재배포 제한."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "권태준에게: \"다툼의 공모 은폐 설계 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 권태준의 \"다툼의 공모 은폐 설계 여부\" 쟁점과 관련된다. 권태준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "노서린에게: \"브로커 우회 접촉과 전달\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 노서린의 \"브로커 우회 접촉과 전달\" 쟁점과 관련된다. 노서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-3",
@@ -392,7 +412,7 @@
         "check_edits": "변조 없으나 절삭·강조로 서린 단독 유출 프레임이 과장됐다.",
         "question_acquisition": "태준 자발 제출 — 입수 적법하지만 완전성 별도 검증 필요."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     },
     {
       "id": "e-4",
@@ -418,7 +438,7 @@
         "check_edits": "플랫폼 원본 추출본 — 사후 편집 흔적 없음.",
         "question_acquisition": "보안사고 조사 범위 원본 로그 — 적법성 높음."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     },
     {
       "id": "e-5",
@@ -443,7 +463,7 @@
         "check_edits": "초기본·수정본 모두 남아 사후 미화 여부 구분 가능.",
         "question_acquisition": "인사자료 — 분쟁 해결 목적 외 공개 제한."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-6",
@@ -470,7 +490,17 @@
         "check_edits": "감사팀 서명본·원본 거래 로그 — 사후 편집 흔적 없음.",
         "question_acquisition": "감사·법무 검토 확보 자료 — 적법하지만 외부 인물 식별 정보 최소 공개."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "권태준에게: \"다툼의 공모 은폐 설계 여부\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 권태준의 \"다툼의 공모 은폐 설계 여부\" 쟁점과 관련된다. 권태준은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "노서린에게: \"유출 범위 — 브로커 1건인가\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 노서린의 \"유출 범위 — 브로커 1건인가\" 쟁점과 관련된다. 노서린은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     }
   ],
   "evidenceCombinations": [

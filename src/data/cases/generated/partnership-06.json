@@ -343,7 +343,7 @@
         "check_edits": "문서 히스토리에 후편집 흔적 없이 최초 발주 흐름이 남아 있다.",
         "question_acquisition": "회사 발주 자료와 협력업체 로그라 적법하게 확보됐다."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-2",
@@ -368,7 +368,17 @@
         "check_edits": "댓글 수정 이력과 버전 비교에서 조작 흔적은 없다.",
         "question_acquisition": "회사 공용 디자인 툴 자료라 적법하다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "이가람에게: \"리뉴얼 지연은 한 사람의 월권만으로 생겼는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 이가람의 \"리뉴얼 지연은 한 사람의 월권만으로 생겼는가\" 쟁점과 관련된다. 이가람은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최보라에게: \"보라의 카운터 위치·철거 일정 단독 변경\" 관련 해명 요구 (방어 동기: 직장/평판 보호)",
+          "implication": "이 증거는 최보라의 \"보라의 카운터 위치·철거 일정 단독 변경\" 쟁점과 관련된다. 최보라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-3",
@@ -392,7 +402,7 @@
         "check_edits": "텍스트 변조 흔적은 없으나 선택적 크롭이 분명하다.",
         "question_acquisition": "직원 개인 기기 캡처라 사생활 및 내부 대화 보호 이슈가 있다."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     },
     {
       "id": "e-4",
@@ -419,7 +429,7 @@
         "check_edits": "버전 기록상 후속 삭제나 조작은 없다.",
         "question_acquisition": "회사 내부 운영문서라 적법하게 확보됐다."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-5",
@@ -446,7 +456,7 @@
         "check_edits": "기관 출력본이라 편집 흔적이 없다.",
         "question_acquisition": "상가 관리 주체의 공식 기록이어서 적법하다."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     },
     {
       "id": "e-6",
@@ -474,7 +484,17 @@
         "check_edits": "원본 PDF와 사진 메타데이터상 조작 흔적이 없다.",
         "question_acquisition": "협력업체 업무자료와 회사 결제자료라 적법하게 수집됐다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "이가람에게: \"리뉴얼 지연은 한 사람의 월권만으로 생겼는가\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 이가람의 \"리뉴얼 지연은 한 사람의 월권만으로 생겼는가\" 쟁점과 관련된다. 이가람은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "최보라에게: \"직원·협력업체에 서로 다른 최종안을 전달한 혼선\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 최보라의 \"직원·협력업체에 서로 다른 최종안을 전달한 혼선\" 쟁점과 관련된다. 최보라은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     }
   ],
   "evidenceCombinations": [

@@ -341,7 +341,17 @@
         "check_edits": "기관 발급 원본이라 편집 흔적이 없다.",
         "question_acquisition": "부모가 자녀 둘에게 공동 열람을 허락한 관리계좌라 조회 자체는 적법하지만 사용 동의 범위는 별도 쟁점이다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "윤서아에게: \"서아의 부모 예금 선이체\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 윤서아의 \"서아의 부모 예금 선이체\" 쟁점과 관련된다. 윤서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "윤도현에게: \"공동 기록 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 윤도현의 \"공동 기록 원칙의 쌍방 위반\" 쟁점과 관련된다. 윤도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-2",
@@ -392,7 +402,17 @@
         "check_edits": "캡처가 아니라 원본 내보내기라 선택적 삭제 흔적이 적다.",
         "question_acquisition": "가족 공동 일정표와 당사자 대화라 제출 정당성은 높지만 제3자인 요양보호사 연락처는 비식별 처리돼야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "윤서아에게: \"공동 기록 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 윤서아의 \"공동 기록 원칙의 쌍방 위반\" 쟁점과 관련된다. 윤서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "윤도현에게: \"도현의 간병비 분담 지연\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 윤도현의 \"도현의 간병비 분담 지연\" 쟁점과 관련된다. 윤도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      }
     },
     {
       "id": "e-4",
@@ -416,7 +436,7 @@
         "check_edits": "문자 자체 편집 흔적은 없으나 강한 크롭이 확인된다.",
         "question_acquisition": "부친의 사적 수첩 일부라 사용 목적과 공개 범위를 엄격히 제한해야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-5",
@@ -442,7 +462,7 @@
         "check_edits": "전자스캔본이라 편집 흔적이 없고 페이지 누락도 없다.",
         "question_acquisition": "변호사 제출본은 적법하지만 상속 관련 사적 의사표시는 분쟁 해결 범위 내에서만 써야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "a"
     },
     {
       "id": "e-6",
@@ -466,7 +486,7 @@
         "check_edits": "기관 출력본이라 편집 흔적이 없다.",
         "question_acquisition": "의료·복지 정보가 포함돼 있어 부모 동의 하에 분쟁 해결 목적에 한해 사용해야 한다."
       },
-      "subjectParty": "both"
+      "subjectParty": "b"
     }
   ],
   "evidenceCombinations": [
