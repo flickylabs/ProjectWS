@@ -9,7 +9,7 @@ import type { StageDefinition } from '../data/campaign'
 import { loadProfile, loadExtendedHistory, getPlayerStats } from '../data/leaderboard'
 import { getCurrentSeason, getRemainingDays } from '../data/seasons'
 import { loadCampaignProgress } from '../data/campaign'
-import { playBgm as playBgmFn, stopBgm as stopBgmFn } from '../engine/soundEngine'
+import { playBgm as playBgmFn, stopBgm as stopBgmFn, isBgmEnabled, setBgmEnabled } from '../engine/soundEngine'
 import ResourcePopup from '../components/shop/ResourcePopup'
 import Emoji from '../components/common/Emoji'
 import CourtLayout from '../components/layout/CourtLayout'
@@ -132,6 +132,7 @@ function TitleScreen() {
   const [unreadMail, setUnreadMail] = useState(0)
   const [serverConnected, setServerConnected] = useState(false)
   const [showResourcePopup, setShowResourcePopup] = useState<'invest' | 'skill' | null>(null)
+  const [bgmOn, setBgmOn] = useState(isBgmEnabled())
   const initializeCase = useGameStore((s) => s.initializeCase)
   const globalInvest = useGameStore((s) => s.globalInvestTokens)
   const globalSkill = useGameStore((s) => s.globalSkillPoints)
@@ -298,6 +299,10 @@ function TitleScreen() {
           <span className="text-xs text-amber-400 font-bold">{reputation.toLocaleString()}</span>
         </button>
         <div className="flex items-center gap-2">
+          <button onClick={() => { const next = !bgmOn; setBgmOn(next); setBgmEnabled(next) }}
+            className="hover:opacity-80 active:scale-95">
+            <Emoji char="🎵" size={16} className={bgmOn ? 'opacity-100' : 'opacity-30'} />
+          </button>
           <button onClick={() => setShowNotice(true)} className="text-gray-600 hover:text-gray-300 text-lg relative">
             <Emoji char="📢" size={16} />
           </button>

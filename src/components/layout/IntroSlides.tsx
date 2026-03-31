@@ -143,7 +143,7 @@ export default function IntroSlides({ onComplete }: Props) {
       </div>
 
       {/* dots */}
-      <div className="flex justify-center gap-2 pb-10">
+      <div className="flex justify-center gap-3 pb-10">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -151,10 +151,8 @@ export default function IntroSlides({ onComplete }: Props) {
               e.stopPropagation()
               setCurrent(i)
             }}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              i === current
-                ? 'bg-amber-400 w-6'
-                : 'bg-gray-700 hover:bg-gray-600'
+            className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${
+              i === current ? 'bg-amber-500' : 'bg-gray-700'
             }`}
           />
         ))}

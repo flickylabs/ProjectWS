@@ -132,6 +132,31 @@ let bgmEnabled = (() => {
   try { return localStorage.getItem('solomon-bgm') !== 'off' } catch { return true }
 })()
 let currentBgmTrack = ''
+let audioUnlocked = false
+
+// 브라우저 Autoplay Policy 해제 — 첫 유저 인터랙션 시 실행
+function unlockAudio() {
+  if (audioUnlocked) return
+  audioUnlocked = true
+  // 무음 AudioContext 생성으로 오디오 잠금 해제
+  try {
+    const ctx = new AudioContext()
+    const buf = ctx.createBuffer(1, 1, 22050)
+    const src = ctx.createBufferSource()
+    src.buffer = buf
+    src.connect(ctx.destination)
+    src.start(0)
+    ctx.resume().catch(() => {})
+  } catch { /* */ }
+  // 대기 중인 BGM이 있으면 재생
+  if (currentBgmTrack && bgmEnabled && bgmAudio) {
+    bgmAudio.play().catch(() => {})
+  }
+  document.removeEventListener('click', unlockAudio)
+  document.removeEventListener('touchstart', unlockAudio)
+}
+document.addEventListener('click', unlockAudio, { passive: true })
+document.addEventListener('touchstart', unlockAudio, { passive: true })
 
 export function setBgmEnabled(v: boolean) {
   bgmEnabled = v
@@ -148,13 +173,16 @@ export function isBgmEnabled() { return bgmEnabled }
 export function playBgm(track: string, volume = 0.15) {
   if (currentBgmTrack === track && bgmAudio && !bgmAudio.paused) return
   stopBgm()
-  if (!bgmEnabled) { currentBgmTrack = track; return }
+  currentBgmTrack = track
+  if (!bgmEnabled) return
   try {
     bgmAudio = new Audio(track)
     bgmAudio.loop = true
     bgmAudio.volume = volume
-    bgmAudio.play().catch(() => {})
-    currentBgmTrack = track
+    if (audioUnlocked) {
+      bgmAudio.play().catch(() => {})
+    }
+    // audioUnlocked가 false면 unlockAudio에서 자동 재생
   } catch { /* */ }
 }
 

@@ -124,17 +124,17 @@ function Toggle({ label, desc, checked, onChange }: { label: string; desc: strin
         <div className="text-xs text-gray-200">{label}</div>
         <div className="text-xs text-gray-500">{desc}</div>
       </div>
-      <div className="flex flex-col items-end shrink-0">
-        <button
-          onClick={() => onChange(!checked)}
-          className={`w-12 h-[14px] rounded-full transition-colors duration-200 relative ${checked ? 'bg-amber-600' : 'bg-gray-700'}`}
-        >
-          <div className={`w-[12px] h-[12px] rounded-full bg-white shadow-sm absolute top-[1px] transition-all duration-200 ${checked ? 'left-[35px]' : 'left-[1px]'}`} />
-        </button>
-        <span className={`text-[9px] mt-0.5 ${checked ? 'text-amber-500' : 'text-gray-600'}`}>
-          {checked ? 'ON' : 'OFF'}
-        </span>
-      </div>
+      <button
+        onClick={() => onChange(!checked)}
+        className="relative w-14 h-7 shrink-0 active:scale-95"
+      >
+        {/* 가이드 선 */}
+        <div className={`absolute top-1/2 left-1 right-1 h-[2px] -translate-y-1/2 rounded-full transition-colors duration-200 ${checked ? 'bg-amber-600' : 'bg-gray-700'}`} />
+        {/* 노브 */}
+        <div className={`absolute top-1/2 -translate-y-1/2 w-6 h-6 rounded-full shadow-md border-2 transition-all duration-200 ${
+          checked ? 'left-[30px] bg-amber-500 border-amber-400' : 'left-0 bg-gray-500 border-gray-600'
+        }`} />
+      </button>
     </div>
   )
 }

@@ -165,6 +165,9 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       // 프롬프트 스냅샷: 세션 시작 시 현재 블록 버전 고정
       snapshotForSession()
 
+      // 이전 세션 데이터 완전 삭제
+      sessionStorage.removeItem(SAVE_KEY)
+
       // 사건 데이터 저장 + 전체 초기화
       set({
         caseData,
