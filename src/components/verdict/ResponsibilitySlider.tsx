@@ -1,12 +1,15 @@
-import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
-export default function ResponsibilitySlider() {
+interface Props {
+  currentIdx: number
+  onChangeIdx: (i: number) => void
+}
+
+export default function ResponsibilitySlider({ currentIdx, onChangeIdx }: Props) {
   const caseData = useGameStore((s) => s.caseData)
   const verdictInput = useGameStore((s) => s.verdictInput)
   const setResponsibility = useGameStore((s) => s.setResponsibility)
-  const [currentIdx, setCurrentIdx] = useState(0)
 
   if (!caseData) return null
 
@@ -98,8 +101,6 @@ export default function ResponsibilitySlider() {
                     const b = Number(e.target.value)
                     setResponsibility(d.id, 100 - b, b)
                   }}
-                  onMouseUp={() => { if (safeIdx < activeDisputes.length - 1) setTimeout(() => setCurrentIdx(safeIdx + 1), 500) }}
-                  onTouchEnd={() => { if (safeIdx < activeDisputes.length - 1) setTimeout(() => setCurrentIdx(safeIdx + 1), 500) }}
                   className="w-full accent-amber-500 h-2 relative z-10 opacity-80"
                 />
               </div>
@@ -117,7 +118,7 @@ export default function ResponsibilitySlider() {
         {activeDisputes.map((dd, i) => {
           const hasResp = verdictInput.responsibility[dd.id]
           return (
-            <button key={dd.id} onClick={() => setCurrentIdx(i)}
+            <button key={dd.id} onClick={() => onChangeIdx(i)}
               className={`w-6 h-6 rounded-full text-xs font-bold transition-all ${
                 i === safeIdx ? 'ring-2 ring-amber-400 scale-110' : ''
               } ${hasResp ? 'bg-amber-600 text-gray-950' : 'bg-gray-800 text-gray-500'}`}>

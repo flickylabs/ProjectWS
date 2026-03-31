@@ -696,25 +696,33 @@ export async function allowInterjection() {
       .filter(d => d.speaker === otherParty)
       .slice(-1)[0]?.text ?? ''
 
+    const callForm = party.callTerms?.toPartner ?? opponent.name.slice(1) + '씨'
+
     const prompt = `당신은 "${party.name}"(${party.age}세)입니다. 상대: ${opponent.name}.
 관계: ${caseData.duo.relationshipType}
+상대 호칭: "${callForm}"
 현재 쟁점: ${dispute?.name ?? ''}
 
-상대방이 방금 한 말: "${recentOpponent}"
+상대방(${opponent.name})이 방금 한 말: "${recentOpponent}"
 
-당신은 이 말에 끼어들어 반박합니다. 규칙:
-- 재판관에게 존댓말로 2~3문장
-- 상대 발언의 구체적인 허점이나 빠진 사실을 지적
-- 새로운 정보나 다른 관점을 제시
-- 단순 부정("그건 아닙니다")이 아닌, 구체적 근거가 있는 반박
-- behaviorHint도 포함
+당신은 끼어들어 반박합니다.
+
+★ 중요: 메시지를 2개로 분리하세요.
+1. toJudge: 재판관에게 하는 말 (존댓말 ~습니다/~요). 1~2문장.
+2. toOpponent: 상대방(${opponent.name})에게 직접 하는 말 (관계에 맞는 어법). 1문장.
+
+규칙:
+- toJudge는 재판관에게 새로운 사실이나 반박 근거를 제시
+- toOpponent는 상대에게 직접 따지는 말 (짧고 날카롭게)
+- 단순 부정 금지. 구체적 근거가 있는 반박
+- toOpponent가 불필요하면 빈 문자열
 
 JSON만 출력:
-{"response":"반박 내용","behaviorHint":"행동 묘사"}`
+{"toJudge":"재판관에게 할 말","toOpponent":"상대에게 할 말","behaviorHint":"행동 묘사"}`
 
     const raw = await chatCompletion(
       [{ role: 'user', content: prompt }],
-      { temperature: 0.7, maxTokens: 200 },
+      { temperature: 0.7, maxTokens: 250 },
     )
 
     state.setLLMLoading(false)
@@ -723,18 +731,31 @@ JSON만 출력:
     const match = raw.match(/\{[\s\S]*\}/)
     if (match) {
       const parsed = JSON.parse(match[0])
-      const { enforceHonorifics, fixMisdirectedAddress } = await import('../engine/llmDialogueResolver')
-      const polished = enforceHonorifics(fixMisdirectedAddress(parsed.response ?? ''))
+      const { enforceHonorifics } = await import('../engine/llmDialogueResolver')
 
-      state.addDialogue({
-        speaker: ij.party,
-        text: polished,
-        relatedDisputes: [ij.disputeId],
-        turn: state.turnCount,
-        behaviorHint: parsed.behaviorHint,
-      })
+      // 1. 재판관에게 하는 말 (존댓말 강제)
+      const judgeMsg = enforceHonorifics(parsed.toJudge ?? parsed.response ?? '')
+      if (judgeMsg) {
+        state.addDialogue({
+          speaker: ij.party,
+          text: judgeMsg,
+          relatedDisputes: [ij.disputeId],
+          turn: state.turnCount,
+          behaviorHint: parsed.behaviorHint,
+        })
+      }
+
+      // 2. 상대에게 하는 말 (별도 메시지)
+      const opponentMsg = parsed.toOpponent ?? ''
+      if (opponentMsg.trim()) {
+        state.addDialogue({
+          speaker: ij.party,
+          text: opponentMsg,
+          relatedDisputes: [ij.disputeId],
+          turn: state.turnCount,
+        })
+      }
     } else {
-      // 파싱 실패 시 폴백
       state.addDialogue({
         speaker: ij.party,
         text: ij.followUp,

@@ -1,12 +1,15 @@
-import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 
-export default function SolutionPicker() {
+interface Props {
+  currentIdx: number
+  onChangeIdx: (i: number) => void
+}
+
+export default function SolutionPicker({ currentIdx, onChangeIdx }: Props) {
   const caseData = useGameStore((s) => s.caseData)
   const verdictInput = useGameStore((s) => s.verdictInput)
   const selectSolution = useGameStore((s) => s.selectSolution)
   const removeSolution = useGameStore((s) => s.removeSolution)
-  const [currentIdx, setCurrentIdx] = useState(0)
 
   if (!caseData) return null
 
@@ -59,7 +62,7 @@ export default function SolutionPicker() {
             verdictInput.selectedSolutions.includes(`${categories[i][0]}::${opt}`)
           )
           return (
-            <button key={cat} onClick={() => setCurrentIdx(i)}
+            <button key={cat} onClick={() => onChangeIdx(i)}
               className={`w-6 h-6 rounded-full text-xs font-bold transition-all ${
                 i === safeIdx ? 'ring-2 ring-amber-400 scale-110' : ''
               } ${hasSelection ? 'bg-amber-600 text-gray-950' : 'bg-gray-800 text-gray-500'}`}>

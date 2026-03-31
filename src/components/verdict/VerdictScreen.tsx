@@ -23,8 +23,10 @@ const STEPS: { id: VerdictStep; label: string; icon: string }[] = [
   { id: 'confirm', label: '확정', icon: '⚖️' },
 ]
 
+type FlatItem = { step: VerdictStep; subIdx: number }
+
 export default function VerdictScreen() {
-  const [step, setStep] = useState<VerdictStep>('fact')
+  const [globalIdx, setGlobalIdx] = useState(0)
   const caseData = useGameStore((s) => s.caseData)
   const verdictInput = useGameStore((s) => s.verdictInput)
   const setVerdictScore = useGameStore((s) => s.setVerdictScore)
@@ -35,13 +37,52 @@ export default function VerdictScreen() {
 
   if (!caseData) return null
 
-  const currentIdx = STEPS.findIndex((s) => s.id === step)
+  const disputes = caseData.disputes
+  const activeDisputes = disputes.filter(
+    (d) => verdictInput.factFindings[d.id] && verdictInput.factFindings[d.id] !== 'pending',
+  )
+  const solutionCategories = Object.keys(caseData.solutions)
   const factCount = Object.keys(verdictInput.factFindings).length
-  const _hasFactFindings = factCount > 0
-  const allFactsJudged = factCount >= caseData.disputes.length
+  const allFactsJudged = factCount >= disputes.length
   const hasLegalityIssue = caseData.evidence.some(
     (e) => (e.legitimacy !== 'lawful' || evidenceStates[e.id]?.confidentialSource) && evidenceStates[e.id]?.presented,
   )
+
+  // flat 진행 목록 계산
+  const flatSteps: FlatItem[] = [
+    ...disputes.map((_, i) => ({ step: 'fact' as VerdictStep, subIdx: i })),
+    ...activeDisputes.map((_, i) => ({ step: 'responsibility' as VerdictStep, subIdx: i })),
+    ...solutionCategories.map((_, i) => ({ step: 'solution' as VerdictStep, subIdx: i })),
+    ...(hasLegalityIssue ? [{ step: 'legality' as VerdictStep, subIdx: 0 }] : []),
+    { step: 'confirm' as VerdictStep, subIdx: 0 },
+  ]
+
+  const safeGlobalIdx = Math.min(globalIdx, flatSteps.length - 1)
+  const current = flatSteps[safeGlobalIdx]
+
+  const goNext = () => setGlobalIdx(Math.min(safeGlobalIdx + 1, flatSteps.length - 1))
+  const goPrev = () => setGlobalIdx(Math.max(safeGlobalIdx - 1, 0))
+
+  // dot 클릭: 해당 step+subIdx를 globalIdx로 변환
+  const handleFactDotClick = (i: number) => {
+    const idx = flatSteps.findIndex((f) => f.step === 'fact' && f.subIdx === i)
+    if (idx >= 0) setGlobalIdx(idx)
+  }
+  const handleRespDotClick = (i: number) => {
+    const idx = flatSteps.findIndex((f) => f.step === 'responsibility' && f.subIdx === i)
+    if (idx >= 0) setGlobalIdx(idx)
+  }
+  const handleSolDotClick = (i: number) => {
+    const idx = flatSteps.findIndex((f) => f.step === 'solution' && f.subIdx === i)
+    if (idx >= 0) setGlobalIdx(idx)
+  }
+
+  // 현재 step 결정 (step indicator용)
+  const currentStep = current.step
+
+  // step indicator: 상위 step 기준으로 현재 위치 표시
+  const visibleSteps = STEPS.filter((s) => s.id !== 'legality' || hasLegalityIssue)
+  const stepIndicatorIdx = visibleSteps.findIndex((s) => s.id === currentStep)
 
   const handleSubmit = () => {
     playGavel()
@@ -71,26 +112,6 @@ export default function VerdictScreen() {
     advancePhase(GamePhase.Result)
   }
 
-  const goNext = () => {
-    const nextIdx = currentIdx + 1
-    if (STEPS[nextIdx]?.id === 'legality' && !hasLegalityIssue) {
-      setStep('confirm')
-    } else if (nextIdx < STEPS.length) {
-      setStep(STEPS[nextIdx].id)
-    }
-  }
-
-  const goPrev = () => {
-    const prevIdx = currentIdx - 1
-    if (STEPS[prevIdx]?.id === 'legality' && !hasLegalityIssue) {
-      setStep('solution')
-    } else if (prevIdx >= 0) {
-      setStep(STEPS[prevIdx].id)
-    }
-  }
-
-  const visibleSteps = STEPS.filter((s) => s.id !== 'legality' || hasLegalityIssue)
-
   return (
     <div className="flex flex-col">
       {/* 스텝 표시기 */}
@@ -98,10 +119,14 @@ export default function VerdictScreen() {
         {visibleSteps.map((s, i) => (
           <div key={s.id} className="flex items-center gap-1">
             <button
-              onClick={() => setStep(s.id)}
+              onClick={() => {
+                // 상위 step 버튼 클릭 시 해당 step의 첫 항목으로 이동
+                const idx = flatSteps.findIndex((f) => f.step === s.id)
+                if (idx >= 0) setGlobalIdx(idx)
+              }}
               className={`text-xs px-2 py-0.5 rounded-full transition-colors ${
-                step === s.id ? 'bg-amber-600 text-gray-950 font-bold' :
-                STEPS.findIndex((x) => x.id === s.id) < currentIdx ? 'bg-gray-700 text-gray-300' :
+                currentStep === s.id ? 'bg-amber-600 text-gray-950 font-bold' :
+                stepIndicatorIdx > i ? 'bg-gray-700 text-gray-300' :
                 'bg-gray-800 text-gray-500'
               }`}
             >
@@ -113,12 +138,27 @@ export default function VerdictScreen() {
       </div>
 
       {/* 스텝 내용 */}
-      <div className="overflow-y-auto px-1 py-2 max-h-[30vh]">
-        {step === 'fact' && <FactChecklist />}
-        {step === 'responsibility' && <ResponsibilitySlider />}
-        {step === 'solution' && <SolutionPicker />}
-        {step === 'legality' && <EvidenceLegality />}
-        {step === 'confirm' && (
+      <div className="overflow-y-auto px-1 py-2 max-h-[50vh]">
+        {currentStep === 'fact' && (
+          <FactChecklist
+            currentIdx={current.subIdx}
+            onChangeIdx={handleFactDotClick}
+          />
+        )}
+        {currentStep === 'responsibility' && (
+          <ResponsibilitySlider
+            currentIdx={current.subIdx}
+            onChangeIdx={handleRespDotClick}
+          />
+        )}
+        {currentStep === 'solution' && (
+          <SolutionPicker
+            currentIdx={current.subIdx}
+            onChangeIdx={handleSolDotClick}
+          />
+        )}
+        {currentStep === 'legality' && <EvidenceLegality />}
+        {currentStep === 'confirm' && (
           <div className="space-y-3 px-2">
             <div className="text-center">
               <div className="text-4xl mb-2 animate-pulse-glow"><Emoji char="⚖️" size={36} /></div>
@@ -149,11 +189,11 @@ export default function VerdictScreen() {
 
       {/* 네비게이션 */}
       <div className="flex items-center justify-between px-2 py-2 border-t border-gray-800">
-        <button onClick={goPrev} disabled={currentIdx === 0}
-          className={`text-xs px-3 py-1.5 rounded-lg ${currentIdx === 0 ? 'text-gray-700' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}>
+        <button onClick={goPrev} disabled={safeGlobalIdx === 0}
+          className={`text-xs px-3 py-1.5 rounded-lg ${safeGlobalIdx === 0 ? 'text-gray-700' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}>
           ← 이전
         </button>
-        {step === 'confirm' ? (
+        {currentStep === 'confirm' ? (
           <button onClick={handleSubmit} disabled={!allFactsJudged}
             className={`text-xs px-5 py-2 rounded-lg font-bold ${allFactsJudged ? 'bg-amber-600 hover:bg-amber-500 text-gray-950' : 'bg-gray-800 text-gray-600'}`}>
             {allFactsJudged ? <><Emoji char="⚖️" size={12} /> 판결 확정</> : <><Emoji char="⚖️" size={12} /> 모든 쟁점을 판단하세요 ({factCount}/{caseData.disputes.length})</>}

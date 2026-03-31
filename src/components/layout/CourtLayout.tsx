@@ -202,45 +202,50 @@ function InterjectionOverlay() {
   const name = isA ? caseData.duo.partyA.name : caseData.duo.partyB.name
 
   return (
-    <>
-      {/* 말풍선 형태 — 대화창 하단에 자연스럽게 */}
-      <div className={`fixed bottom-28 ${isA ? 'left-3' : 'right-3'} z-40 max-w-[75%] animate-slide-up`}>
-        <div className={`flex flex-col ${isA ? 'items-start' : 'items-end'} gap-1`}>
-          <span className={`text-xs font-semibold ${isA ? 'text-blue-400' : 'text-rose-400'}`}>
-            <Emoji char="✋" size={12} /> {name}
-          </span>
-          <div className={`border rounded-2xl ${isA ? 'rounded-tl-sm bg-blue-950/50 border-blue-800/30' : 'rounded-tr-sm bg-rose-950/50 border-rose-800/30'} px-3.5 py-2.5`}>
-            <p className="text-sm text-gray-200 leading-relaxed">{ij.text}</p>
-          </div>
-          <div className="flex gap-1.5 mt-1">
-            <button onClick={() => setShowConfirm(true)}
-              className="px-3 py-1.5 rounded-lg text-[11px] font-bold bg-amber-600/80 text-gray-950 active:scale-95">
-              발언 허용
-            </button>
-            <button onClick={denyInterjection}
-              className="px-3 py-1.5 rounded-lg text-[11px] bg-gray-800 text-gray-400 active:scale-95">
-              제지하기
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* 허용 확인 팝업 */}
-      {showConfirm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
-          <div className="bg-gray-900 border border-gray-700 rounded-2xl p-4 w-full max-w-xs animate-fade-in">
-            <p className="text-sm text-gray-200 font-semibold mb-1">발언을 허용하시겠습니까?</p>
-            <p className="text-xs text-amber-400/80 mb-3">추가 정보를 얻을 수 있지만, 재판관의 권위가 소폭 하락합니다.</p>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+      <div className="bg-gray-900 border border-gray-700 rounded-2xl p-5 w-full max-w-sm animate-fade-in shadow-2xl">
+        {!showConfirm ? (
+          <>
+            {/* 끼어들기 알림 */}
+            <div className="flex items-center gap-2 mb-3">
+              <Emoji char="✋" size={24} />
+              <div>
+                <span className={`text-sm font-bold ${isA ? 'text-blue-400' : 'text-rose-400'}`}>{name}</span>
+                <span className="text-sm text-gray-400">이 끼어들려 합니다</span>
+              </div>
+            </div>
+            <div className={`border rounded-xl px-3.5 py-2.5 mb-4 ${isA ? 'bg-blue-950/30 border-blue-800/30' : 'bg-rose-950/30 border-rose-800/30'}`}>
+              <p className="text-sm text-gray-200 leading-relaxed">"{ij.text}"</p>
+            </div>
+            <div className="flex gap-2">
+              <button onClick={() => setShowConfirm(true)}
+                className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600 text-gray-950 active:scale-95">
+                발언 허용
+              </button>
+              <button onClick={denyInterjection}
+                className="flex-1 py-2.5 rounded-xl text-xs bg-gray-800 text-gray-400 active:scale-95">
+                제지하기
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* 허용 확인 */}
+            <div className="text-center mb-3">
+              <Emoji char="⚠️" size={28} />
+            </div>
+            <p className="text-sm text-gray-200 font-semibold text-center mb-1">정말 허용하시겠습니까?</p>
+            <p className="text-xs text-amber-400/80 text-center mb-4">추가 정보를 얻을 수 있지만,<br />재판관의 <span className="font-bold">권위가 소폭 하락</span>합니다.</p>
             <div className="flex gap-2">
               <button onClick={() => setShowConfirm(false)}
-                className="flex-1 text-xs py-2 rounded-xl bg-gray-800 text-gray-400">취소</button>
+                className="flex-1 py-2.5 rounded-xl text-xs bg-gray-800 text-gray-400 active:scale-95">돌아가기</button>
               <button onClick={() => { setShowConfirm(false); void allowInterjection() }}
-                className="flex-1 text-xs py-2 rounded-xl bg-amber-600 text-gray-950 font-bold">허용</button>
+                className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600 text-gray-950 active:scale-95">허용</button>
             </div>
-          </div>
-        </div>
-      )}
-    </>
+          </>
+        )}
+      </div>
+    </div>
   )
 }
 

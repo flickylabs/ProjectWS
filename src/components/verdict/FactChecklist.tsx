@@ -1,15 +1,18 @@
-import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { playClick } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
 
-export default function FactChecklist() {
+interface Props {
+  currentIdx: number
+  onChangeIdx: (i: number) => void
+}
+
+export default function FactChecklist({ currentIdx, onChangeIdx }: Props) {
   const caseData = useGameStore((s) => s.caseData)
   const verdictInput = useGameStore((s) => s.verdictInput)
   const setFactFinding = useGameStore((s) => s.setFactFinding)
   const agentA = useGameStore((s) => s.agentA)
   const agentB = useGameStore((s) => s.agentB)
-  const [currentIdx, setCurrentIdx] = useState(0)
 
   if (!caseData) return null
 
@@ -24,10 +27,6 @@ export default function FactChecklist() {
   const handleSwipe = (value: 'true' | 'false' | 'pending') => {
     playClick()
     setFactFinding(d.id, value)
-    // 자동으로 다음 쟁점
-    if (currentIdx < disputes.length - 1) {
-      setTimeout(() => setCurrentIdx(currentIdx + 1), 300)
-    }
   }
 
   return (
@@ -99,7 +98,7 @@ export default function FactChecklist() {
           return (
             <button
               key={dd.id}
-              onClick={() => setCurrentIdx(i)}
+              onClick={() => onChangeIdx(i)}
               className={`w-6 h-6 rounded-full text-xs font-bold transition-all ${
                 i === currentIdx ? 'ring-2 ring-amber-400 scale-110' : ''
               } ${

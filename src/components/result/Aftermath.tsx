@@ -116,11 +116,12 @@ ${respResults}
 
       const response = await chatCompletion(
         [{ role: 'user', content: prompt }],
-        { temperature: 0.9, maxTokens: 500 },
+        { temperature: 0.85, maxTokens: 400 },
       )
       cachedAftermath = response
       setAftermath(response)
-    } catch {
+    } catch (err) {
+      console.error('[Aftermath] 후일담 생성 실패:', err)
       const fb = buildFallbackAftermath()
       cachedAftermath = fb
       setAftermath(fb)

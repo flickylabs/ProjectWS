@@ -567,10 +567,12 @@ function buildUserPrompt(
   const disputeName = dispute?.name ?? '해당 사안'
 
   // responseMode에 따라 발화 대상을 명시
+  const myName = target && caseData ? (target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name) : ''
+  const opName = target && caseData ? (target === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name) : ''
   const isJudgeOnly = responseMode === 'answer_only' || responseMode === 'private_confession' || responseMode === 'yes_no_first'
   const addressRule = isJudgeOnly
-    ? `★ 발화 대상: 재판관. 상대방에게 말하는 것이 아니다.\n★ "자기야", "여보", "오빠" 등 상대 호칭으로 시작 금지. "재판관님"으로 시작하거나 호칭 없이 바로 답하라.\n★ 존댓말(~습니다, ~요)만 사용.\n`
-    : `★ 발화 대상: 재판관에게 답한 뒤, 필요 시 상대에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말(~습니다, ~요). 상대에게는 관계에 맞는 말투.\n`
+    ? `★ 당신은 "${myName}"이다. 지금 재판관에게만 답한다. ${opName}에게 말하는 것이 아니다.\n★ 상대 호칭("자기야","여보","오빠" 등)으로 시작 금지. 호칭 없이 바로 답하거나 "재판관님"으로 시작.\n★ npcResponse 전체가 재판관을 향한 존댓말(~습니다, ~요)이어야 한다.\n★ "${opName}"에게 직접 말하는 문장을 넣지 마라.\n`
+    : `★ 당신은 "${myName}"이다. 재판관에게 답한 뒤, ${opName}에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.\n★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.\n`
 
   const judgeGenRule = `\n★ judgeQuestion 필드: 재판관이 NPC에게 하는 질문을 자연스러운 한국어로 직접 작성하라.\n- "${disputeName}" 쟁점에 대해 질문 유형에 맞는 자연스러운 질문을 만든다.\n- 쟁점명을 그대로 인용하지 말고, 맥락에 맞게 풀어서 질문한다.\n- 재판관 어투: 격식체, 간결, 권위 있는 톤 (예: "~주십시오", "~입니까")\n`
 
