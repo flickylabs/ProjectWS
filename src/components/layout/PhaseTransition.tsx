@@ -32,7 +32,7 @@ export default function PhaseTransition() {
   const currentPhase = useGameStore((s) => s.currentPhase)
   const caseData = useGameStore((s) => s.caseData)
   const [visible, setVisible] = useState(false)
-  const [lastPhase, setLastPhase] = useState(currentPhase)
+  const [lastPhase, setLastPhase] = useState<GamePhase | null>(null)
 
   useEffect(() => {
     if (currentPhase !== lastPhase) {

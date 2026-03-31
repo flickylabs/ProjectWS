@@ -1,7 +1,7 @@
 {
   "name": "솔로몬",
   "short_name": "솔로몬",
-  "description": "AI 둘의 싸움을 인간의 지혜로 재판하는 게임",
+  "description": "현대판 솔로몬이 되어 판결을 내려보세요!",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

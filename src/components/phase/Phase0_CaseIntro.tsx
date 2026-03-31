@@ -4,6 +4,7 @@ import { GamePhase } from '../../types'
 import type { DialogueEntry } from '../../types'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import { generatePhase1Dialogues, generatePhase2Dialogues } from '../../engine/llmPhaseDialogue'
+import { stopBgm } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
 
 type Step = 'parties' | 'context' | 'disputes' | 'history' | 'ready'
@@ -38,6 +39,9 @@ export default function Phase0_CaseIntro() {
   const advancePhase = useGameStore((s) => s.advancePhase)
   const [step, setStep] = useState<Step>('parties')
   const [aiReady, setAiReady] = useState(false)
+
+  // 타이틀 BGM 정지 — Stage 진입 시
+  useEffect(() => { stopBgm() }, [])
 
   // AI 사전 로딩 — 첫 스텝부터 백그라운드 시작
   useEffect(() => {
