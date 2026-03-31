@@ -165,11 +165,24 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       // 프롬프트 스냅샷: 세션 시작 시 현재 블록 버전 고정
       snapshotForSession()
 
-      // 사건 데이터 저장 + 분리심문 초기화
-      set({ caseData, lieConfigs: { a: caseData.lieConfigA, b: caseData.lieConfigB }, separationTarget: null, separationTurns: 0, isLLMLoading: false, processMetrics: { ...EMPTY_METRICS }, testimonyAnalysis: null, calledWitnesses: [], interrogationHistory: { a: {}, b: {} }, pendingMinigame: null })
-
-      // Phase 초기화
-      store.setPhase(GamePhase.Phase0_CaseIntro)
+      // 사건 데이터 저장 + 전체 초기화
+      set({
+        caseData,
+        lieConfigs: { a: caseData.lieConfigA, b: caseData.lieConfigB },
+        separationTarget: null, separationTurns: 0,
+        isLLMLoading: false,
+        processMetrics: { ...EMPTY_METRICS },
+        testimonyAnalysis: null,
+        calledWitnesses: [],
+        interrogationHistory: { a: {}, b: {} },
+        pendingMinigame: null,
+        pendingInterjection: null,
+        // 턴/Phase 완전 초기화
+        turnCount: 0,
+        phaseTurnCount: 0,
+        phaseHistory: [],
+        currentPhase: GamePhase.Phase0_CaseIntro,
+      })
 
       // 에이전트 초기화
       store.initializeAgents(

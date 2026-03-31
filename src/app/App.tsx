@@ -318,11 +318,12 @@ function TitleScreen() {
         <button onClick={() => setShowResourcePopup('invest')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
           <Emoji char="🔍" size={12} />
           <span className="text-amber-400 font-bold">{globalInvest}</span>
-          <span className="text-gray-600">/ {investCountdown > 0 ? formatCountdown(investCountdown) : '충전완료'}</span>
+          <span className="text-gray-600">/10</span>
         </button>
         <button onClick={() => setShowResourcePopup('skill')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
           <Emoji char="⚡" size={12} />
           <span className="text-amber-400 font-bold">{globalSkill}</span>
+          <span className="text-gray-600">/5</span>
         </button>
       </div>
 
