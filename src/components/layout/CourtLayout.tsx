@@ -310,7 +310,7 @@ function MinigameOverlay() {
       const evName = evDef?.name ?? '새로운증거확보'
       const chars = evName.replace(/\s+/g, '').split('')
       // 6~10글자로 조정
-      const words = chars.length >= 6 ? chars.slice(0, 10) : (evName + '확보').replace(/\s+/g, '').split('').slice(0, 10)
+      const words = chars.length >= 5 ? chars.slice(0, 7) : (evName + '확보').replace(/\s+/g, '').split('').slice(0, 7)
       return (
         <WordScramble
           words={words}
@@ -401,7 +401,7 @@ function MinigameOverlay() {
     if (depth === 2) {
       const evName = evDef?.name ?? '증거조사'
       const chars = evName.replace(/\s+/g, '').split('')
-      const words = chars.length >= 6 ? chars.slice(0, 10) : (evName + '조사').replace(/\s+/g, '').split('').slice(0, 10)
+      const words = chars.length >= 5 ? chars.slice(0, 7) : (evName + '조사').replace(/\s+/g, '').split('').slice(0, 7)
       return <WordScramble words={words} onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
     }
     // depth === 3
@@ -435,7 +435,7 @@ function MinigameOverlay() {
   if (mg.type === 'contradiction') {
     const { text, disputeId, target } = mg
     const chars = text.replace(/\s+/g, '').split('')
-    const words = chars.length >= 6 ? chars.slice(0, 10) : (text + '모순발견').replace(/\s+/g, '').split('').slice(0, 10)
+    const words = chars.length >= 5 ? chars.slice(0, 7) : (text + '모순발견').replace(/\s+/g, '').split('').slice(0, 7)
 
     const handleSuccess = () => {
       applyContradictionSuccess(disputeId, target)

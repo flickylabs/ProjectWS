@@ -613,15 +613,14 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
       const npcName = target === 'a'
         ? freshState.caseData?.duo.partyA.name ?? '당사자A'
         : freshState.caseData?.duo.partyB.name ?? '당사자B'
-      // 모순 감지 시 WordScramble 미니게임 트리거 — 쟁점명 사용
-      const disputeForText = freshState.caseData?.disputes.find(d => d.id === node.conditions.disputeId)
-      const scrambleText = disputeForText?.name ?? `${npcName}의 진술 모순`
-      useGameStore.getState().setPendingMinigame({
-        type: 'contradiction',
-        text: scrambleText,
-        disputeId: node.conditions.disputeId,
-        target,
+      // 모순 감지 시 시스템 메시지만 (미니게임 제거)
+      freshState.addDialogue({
+        speaker: 'system',
+        text: `⚡ ${npcName}의 진술이 이전 주장과 모순됩니다!`,
+        relatedDisputes: [node.conditions.disputeId],
+        turn: freshState.turnCount,
       })
+      changeEmotionWithPhaseTracking(target, 10)
     }
 
     freshState.addClaim(newClaimData)
@@ -887,18 +886,24 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
   const lieEntry = agent.lieStateMap[disputeId]
   const dispute = state.caseData.disputes.find(d => d.id === disputeId)
 
-  // 이 쟁점을 증명하는 잠긴 증거 찾기
+  // 이 쟁점을 증명하는 잠긴 증거 찾기 (선행 조건 충족된 것만)
   const lockedRelated = state.evidenceDefinitions.filter(e => {
     const rs = state.evidenceStates[e.id]
     if (!rs || rs.unlocked) return false
-    return e.proves.includes(disputeId)
+    if (!e.proves.includes(disputeId)) return false
+    // requires 조건 체크: 선행 증거가 모두 해금되어야 함
+    if (e.requires && e.requires.length > 0) {
+      const allRequiresMet = e.requires.every(reqId => state.evidenceStates[reqId]?.unlocked)
+      if (!allRequiresMet) return false
+    }
+    return true
   })
 
   if (lockedRelated.length === 0) return
 
   // 발견 확률: 거짓말 상태가 깊을수록 높음
   const chanceByState: Record<string, number> = {
-    S0: 0.50, S1: 0.80, S2: 1.0, S3: 1.0, S4: 1.0, S5: 1.0,
+    S0: 0.15, S1: 0.25, S2: 0.40, S3: 0.55, S4: 0.70, S5: 0.90,
   }
   const chance = chanceByState[lieEntry?.currentState ?? 'S0'] ?? 0.2
   if (Math.random() > chance) return
@@ -913,9 +918,8 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
   ]
   const lieState = lieEntry?.currentState ?? 'S0'
 
-  // 4종 미니게임 중 랜덤 선택
-  const variants = ['memory', 'heartbeat', 'matching', 'word_scramble'] as const
-  const minigameVariant = variants[Math.floor(Math.random() * variants.length)]
+  // 증거 발견 → MemoryPuzzle(순서 맞추기) 고정
+  const minigameVariant = 'memory' as const
 
   state.setPendingMinigame({ type: 'evidence_discovery', evidenceId: ev.id, clues, npcName: name, lieState, party, minigameVariant })
   return // 미니게임 결과에서 actuallyDiscoverEvidence 호출
@@ -1119,9 +1123,9 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       : `${icon} ${name} — "${dispute?.name}" | ${labels[newState]}`
     state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
 
-    // S5 도달 시 HeartbeatDetector 미니게임 트리거
+    // S5 도달 시 연출만 (미니게임 제거)
     if (newState === 'S5') {
-      useGameStore.getState().setPendingMinigame({ type: 'lie_collapse', disputeId, party })
+      playLieCollapse()
     }
   }
 }
