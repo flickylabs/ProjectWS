@@ -13,7 +13,7 @@ import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { detectStatementChange } from '../engine/contradictionEngine'
 import { runDiscoveryChecks, updateCascadeTargets } from './useDiscoveryIntegration'
-import { emitStateTransitionEvent } from '../components/discovery/StateTransitionFeedback'
+import { emitStateTransitionEvent } from '../engine/stateTransitionHelper'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true

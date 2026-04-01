@@ -31,7 +31,7 @@ import { getBridgeEntry } from './bridgeEngine'
 import { generateJudgeQuestion } from './judgeQuestionEngine'
 import type { QuestionType, EmotionTier } from '../types'
 import { getTransitionBeat, getFallbackBeat } from './v3GameLoopLoader'
-import { emitStateTransitionEvent } from '../components/discovery/StateTransitionFeedback'
+import { emitStateTransitionEvent } from './stateTransitionHelper'
 
 export async function resolveLLMDialogue(
   action: PlayerAction,
