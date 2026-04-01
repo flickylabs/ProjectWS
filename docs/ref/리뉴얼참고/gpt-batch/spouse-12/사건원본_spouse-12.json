@@ -1,0 +1,651 @@
+{
+"caseId": "case-spouse-12",
+"meta": {
+"relationshipType": "spouse",
+"conflictSeed": "CS-5",
+"variableModules": [
+"VM-B",
+"VM-E"
+],
+"twistModule": "TW-4",
+"difficulty": "hard",
+"anchorTruth": "동창회 직후 세아를 가해자로 보이게 한 2006년 미니홈피 방명록 캡처와 문자 증거는 2026년에 박하린이 조합한 위조본이었다.",
+"emotionalBait": "익명 계정의 오래된 닉네임 캡처, 동창회 단체사진, 재우의 급한 전달 메시지가 겹치며 세아가 실제로 과거 소문을 퍼뜨린 장본인처럼 보인다.",
+"resolutionDilemma": "세아는 과거의 모진 메시지를 숨기려 했고 재우는 확인 없이 위조 증거를 퍼뜨렸기 때문에, 실제 과거 잘못과 현재의 허위 유포를 어디서 분리해 책임을 묻느냐가 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "문세아",
+"age": 36,
+"occupation": "수제디저트 가게 대표",
+"incomeBracket": "mid",
+"archetype": "reputation_shield",
+"speechStyle": "사실관계와 이미지 손상을 동시에 계산하며 말한다. 몰리면 '그건 내가 잘못한 장면이 맞지만 이번 글과는 다른 이야기야'라며 과거와 현재를 강하게 분리하려 한다.",
+"pride": 8,
+"fear": "현재의 가게 평판이 학창시절 오해 하나로 무너지고, 좋은 어른이 되지 못했다는 낙인이 다시 찍히는 것",
+"riskAppetite": 4,
+"digitalHabit": "archive_backup_keeper",
+"dailyRoutine": "새벽에는 매장 준비와 발주를 하고, 오후에는 클래스 운영과 SNS 홍보를 보며, 밤에는 주문 정산과 옛 사진 백업 폴더를 정리한다.",
+"sensitivePoints": [
+"과거 학창시절 평판",
+"가게 리뷰",
+"학창시절 친구와의 공개 충돌"
+],
+"verbalTells": [
+{
+"type": "fact_partition",
+"trigger": "lying",
+"pattern": "불리한 기록이 나오면 '그 문장은 내 거 맞아도 이 계정은 내 게 아니야'처럼 사실을 잘게 쪼개 방어한다."
+},
+{
+"type": "archive_narrowing",
+"trigger": "cornered",
+"pattern": "전체 자료를 보여 달라는 말에 '그건 너무 오래돼서'라며 자신에게 유리한 백업 구간만 먼저 제시한다."
+},
+{
+"type": "moral_offset",
+"trigger": "hurt",
+"pattern": "'내가 차갑게 군 건 맞지만 사람 인생을 망칠 글을 쓰진 않았어'처럼 과거 잘못의 성격을 바꿔 설명한다."
+}
+]
+},
+"partyB": {
+"name": "최재우",
+"age": 38,
+"occupation": "구청 홍보팀 주무관",
+"incomeBracket": "mid",
+"archetype": "panic_distancer",
+"speechStyle": "평판 위기가 생기면 사실 확인보다 거리 두기를 먼저 한다. 불리해지면 '공무원 입장에선 선조치가 필요했다'고 자신의 확대 대응을 역할의 문제로 포장한다.",
+"pride": 8,
+"fear": "배우자의 과거 학교 루머가 자신의 공적 신뢰도와 승진 심사에까지 번지는 것",
+"riskAppetite": 5,
+"digitalHabit": "forward_then_call",
+"dailyRoutine": "아침에는 보도자료와 일정 공지를 정리하고, 낮에는 행사 현장을 돌며, 밤에는 지역 커뮤니티와 동창회 메시지를 확인한다.",
+"sensitivePoints": [
+"공적 신뢰",
+"가족 체면",
+"배우자가 과거 가해자로 비치는 일"
+],
+"verbalTells": [
+{
+"type": "damage_tally",
+"trigger": "lying",
+"pattern": "누가 얼마나 봤는지를 실제보다 크게 혹은 들쭉날쭉하게 말하며 피해 규모를 앞세운다."
+},
+{
+"type": "authority_frame",
+"trigger": "cornered",
+"pattern": "'내 자리에서는 먼저 설명해야 했어'라며 확인 없는 전달을 불가피한 직업 습관처럼 말한다."
+},
+{
+"type": "retro_edit",
+"trigger": "shame",
+"pattern": "과거 사건을 다시 설명하면서 자신이 불리해지는 세아의 해명이나 애매한 부분은 빠뜨린 버전을 만든다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "2023년에 지역 맘카페에서 재우 관련 오해 글이 돌았을 때, 두 사람은 평판 관련 루머는 서로 확인하기 전 외부로 보내지 않기로 합의했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "2018년 동문행사에서 한유진이 일찍 자리를 뜬 일을 두 사람은 전혀 다르게 해석한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '아직 나를 불편해한 거였다' / B: '그건 그냥 다른 일정 때문이었다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "indirect"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "세아는 2006년에 한유진에게 보냈던 모진 메시지의 수위를 정확히 말하지 않았고, 재우는 그 과거가 자신의 공적 이미지에 미칠 영향을 오래 걱정해 왔지만 드러내지 않았다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "문가은 (세아의 사촌언니이자 매장 매니저)",
+"relationTo": "a",
+"knowledgeScope": "세아가 옛 백업 자료를 복원한 뒤 불리한 2006년 메시지 한 개를 따로 숨기고 댓글 대응만 먼저 하자고 말한 사실을 안다.",
+"witnessedDirectly": true,
+"bias": "pro_a",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "박하린 (동창회 준비위원)",
+"relationTo": "both",
+"knowledgeScope": "동창회 참석자 명단, 2006년 백업 이미지 접근 경로, 익명 계정 생성 흐름과 위조 게시물 업로드를 실질적으로 알고 있다.",
+"witnessedDirectly": true,
+"bias": "anti_a",
+"distortionRisk": "strategic"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "오정민 (플랫폼 포렌식 대응팀 분석관)",
+"relationTo": "both",
+"knowledgeScope": "익명 계정 로그인 기록, 이미지 레이어 해시, 게시물 생성 시각과 원본 백업 불일치를 원본 기준으로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "class_reunion",
+"description": "두 사람은 같은 고등학교 동창이자 부부로 20주년 동창회에 참석했다. 모임 직후 익명 SNS 계정이 2006년 장학금 특혜 소문 사건을 다시 끌어오며 세아를 가해자로 지목했고, 오래된 미니홈피 방명록 캡처와 문자 이미지가 붙었다. 재우는 자신의 공적 이미지에 불똥이 튈까 두려워 해당 캡처를 동창회 운영진과 몇몇 외부 사람에게 먼저 돌렸고, 세아는 스스로에게 불리한 옛 메시지를 숨긴 채 억울함만 강조했다. 뒤늦게 플랫폼 포렌식이 들어오면서 결정적 증거가 2026년에 새로 합성된 위조본이라는 사실이 드러났다.",
+"emotionalPressure": 8,
+"affects": "both",
+"triggerAmplifier": "학창시절의 미해결 감정과 현재의 직업 평판이 한 번에 연결되면서, 오래된 상처 하나가 지금의 가족과 생업 전체를 흔드는 문제처럼 번졌다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "재우의 확인 없는 외부 전달과 사실상 가해자 단정",
+"truth": true,
+"truthDescription": "재우는 세아와 충분히 확인하기 전에 동창회 운영진, 가족, 가까운 직장 인맥에게 위조 가능성이 있는 캡처를 보내며 세아가 실제 장본인일 수 있다고 설명했다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-1"
+],
+"correctResponsibility": {
+"a": 15,
+"b": 85
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "평판복구",
+"legitimacyIssue": true
+},
+{
+"id": "d-2",
+"name": "세아의 2006년 원자료 선택 삭제",
+"truth": true,
+"truthDescription": "세아는 옛 백업 자료를 복원하면서 한유진에게 보낸 모진 메시지 한 개를 따로 숨기고, 자신에게 유리한 자료만 재우에게 먼저 보여 주었다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-2",
+"e-6"
+],
+"correctResponsibility": {
+"a": 75,
+"b": 25
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "과거정리",
+"legitimacyIssue": false
+},
+{
+"id": "d-3",
+"name": "익명 계정은 한유진의 복수였나",
+"truth": false,
+"truthDescription": "두 사람 모두 처음에는 과거 피해자인 한유진이 익명 계정을 운영한다고 의심했지만, 실제 운영과 조작은 동창회 준비위원 박하린 쪽에서 이뤄졌다.",
+"quadrant": "shared_misconception",
+"requiredEvidence": [
+"e-3",
+"e-5"
+],
+"correctResponsibility": {
+"a": 40,
+"b": 60
+},
+"ambiguity": "low",
+"weight": "medium",
+"mediationLink": "증거검증",
+"legitimacyIssue": true
+},
+{
+"id": "d-4",
+"name": "결정적 2006년 증거는 2026년 위조본이었다",
+"truth": true,
+"truthDescription": "세아를 가해자로 보이게 한 미니홈피 방명록 캡처와 문자 이미지는 서로 다른 원본을 2026년에 합성한 위조본이었다.",
+"quadrant": "neither_knows",
+"requiredEvidence": [
+"e-3",
+"e-4",
+"e-5"
+],
+"correctResponsibility": {
+"a": 20,
+"b": 80
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "허위유포정정",
+"legitimacyIssue": true
+},
+{
+"id": "d-5",
+"name": "2006년 과거 사건은 완전한 누명만은 아니었다",
+"truth": true,
+"truthDescription": "세아는 2006년에 한유진과 공개적으로 다퉜고 모진 메시지를 보냈지만, 장학금 특혜 소문을 익명으로 유포한 장본인은 아니었다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-2",
+"e-6"
+],
+"correctResponsibility": {
+"a": 60,
+"b": 40
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "과거정리",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "재우의 전달 로그와 운영진 단톡 원문",
+"description": "재우가 익명 계정 캡처를 동창회 운영진 단톡, 가족 단톡, 가까운 직장 인맥에게 순차적으로 보내며 세아를 사실상 장본인처럼 설명한 원문이다.",
+"type": "chat",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-1"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "운영진 단톡 백업, 가족 단톡 원문, 재우 휴대폰 전달 로그가 함께 제출됐다.",
+"check_metadata": "첫 전달은 세아에게 직접 확인 문자를 보내기 9분 전에 이뤄졌고, 이후 세 채널로 연속 전송됐다.",
+"restore_context": "재우는 확정적 표현을 피한 것처럼 말했지만 실제 메시지에는 '아마 세아가 맞는 것 같다'는 단정형 문장이 반복된다.",
+"verify_source": "각 채널 참여자 백업본과 재우 기기 전송 시간이 일치한다.",
+"check_edits": "삭제 흔적 없이 서버 원문이 남아 있다.",
+"question_acquisition": "대화 참여자와 발신자 기기에서 함께 확인된 자료다."
+}
+},
+{
+"id": "e-2",
+"name": "세아의 옛 백업 복원 로그와 삭제 표시된 메시지",
+"description": "세아가 2006년 미니홈피·메일 백업을 복원하면서 한유진에게 보낸 모진 메시지 한 개를 별도 폴더로 이동해 재우에게는 보이지 않게 한 로그다.",
+"type": "cloud_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "platform",
+"legitimacy": "lawful",
+"proves": [
+"d-2",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "백업 복원 이력, 폴더 이동 기록, 숨김 처리된 메시지 메타데이터가 함께 확인됐다.",
+"check_metadata": "문제 메시지는 익명 게시물 확산 2시간 뒤 별도 폴더로 옮겨졌고, 재우에게 공유된 압축파일에서는 빠져 있다.",
+"restore_context": "세아는 자신이 익명 계정 운영자가 아님을 입증하려 했지만, 과거의 거친 표현까지 그대로 보여 주지는 않았다.",
+"verify_source": "클라우드 서버 이력과 세아 노트북 동기화 기록이 일치한다.",
+"check_edits": "메시지 원문 조작은 없고 노출 범위만 선택적으로 조정됐다.",
+"question_acquisition": "본인 계정의 복원 로그로 적법하게 확인됐다."
+}
+},
+{
+"id": "e-3",
+"name": "익명 SNS 게시물 캡처와 오래된 문자 이미지",
+"description": "세아의 옛 닉네임이 적힌 미니홈피 방명록 캡처와 2006년 피처폰 문자처럼 보이는 이미지가 결합된 익명 게시물 캡처다.",
+"type": "social_post",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "third_party",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-3",
+"d-4"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "게시물 전체가 아니라 저장된 캡처와 리포스트 이미지들만 남아 있다.",
+"check_metadata": "저장 시각은 동창회 다음 날 새벽이며, 상단 계정 생성 정보와 댓글 흐름이 잘려 있다.",
+"restore_context": "오래된 자료처럼 보이지만 실제로는 해상도와 폰트가 서로 다른 소스가 섞여 있어 단독 증거력은 약하다.",
+"verify_source": "여러 명의 기기에서 같은 게시물 캡처가 확인되지만 원본 계정은 이미 비활성화됐다.",
+"check_edits": "문장 합성 가능성과 배경 레이어 불일치가 관찰된다.",
+"question_acquisition": "사적 SNS 캡처가 외부 채널로 유통된 자료라 사생활·명예 침해 소지가 있다."
+}
+},
+{
+"id": "e-4",
+"name": "플랫폼 포렌식 보고서와 이미지 레이어 해시 대조표",
+"description": "익명 게시물에 쓰인 방명록 캡처와 문자 이미지가 서로 다른 원본을 2026년에 합성한 것임을 보여 주는 플랫폼 포렌식 보고서다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-4"
+],
+"isTrap": false,
+"requires": [
+"e-3"
+],
+"investigationResults": {
+"request_original": "포렌식 보고서, 이미지 레이어 해시, 원본 비교 시트가 함께 제출됐다.",
+"check_metadata": "방명록 배경 레이어는 2008년 서비스 스킨에서, 문자 말풍선은 2024년 복원앱 템플릿에서 추출된 흔적이 확인된다.",
+"restore_context": "겉보기에는 오래된 한 장의 증거처럼 보였지만 실제로는 시간대와 해상도가 다른 두 이미지를 이어 붙인 결과였다.",
+"verify_source": "플랫폼 대응팀 내부 검증과 외부 이미지 포렌식 자문 결과가 일치한다.",
+"check_edits": "합성 지점과 저장 재압축 흔적이 명확하다.",
+"question_acquisition": "플랫폼 신고 절차를 거쳐 적법하게 확인된 자료다."
+}
+},
+{
+"id": "e-5",
+"name": "버너계정 복구 메일과 동창회장 와이파이 접속기록",
+"description": "익명 계정의 복구 메일이 박하린의 예비 주소와 연결되고, 게시 시각 직전 동창회장 와이파이에 박하린 기기가 접속한 기록이다.",
+"type": "platform_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-3",
+"d-4"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "플랫폼 계정 복구기록, 와이파이 접속로그, 동창회 준비위원 명단이 함께 제출됐다.",
+"check_metadata": "익명 계정 로그인과 게시 예약은 모두 동창회 이후 12시간 안에 이뤄졌고, 같은 시간대 박하린 기기 식별값이 확인된다.",
+"restore_context": "두 사람은 한유진을 의심했지만 실제 운영 흔적은 박하린 쪽 네트워크에 집중된다.",
+"verify_source": "플랫폼 계정 기록과 행사장 와이파이 로그가 서로 부합한다.",
+"check_edits": "기관·플랫폼 원본이라 편집 흔적이 없다.",
+"question_acquisition": "행사장 동의 고지와 플랫폼 신고 절차에 따라 최소 범위로 제공된 자료다."
+}
+},
+{
+"id": "e-6",
+"name": "2006년 원본 메일 묶음과 생활지도실 메모",
+"description": "세아와 한유진의 공개 충돌, 모진 개인 메시지, 그리고 당시 학교가 익명 소문의 발신자를 특정하지 못했다는 생활지도실 메모다.",
+"type": "document",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-2",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "원본 메일, 생활지도실 메모 사본, 당시 학급 운영진 메일이 함께 제출됐다.",
+"check_metadata": "세아의 모진 메시지는 익명 게시물 유포 전후가 아니라 공개 다툼 직후에 발송된 것으로 확인된다.",
+"restore_context": "세아가 상처를 준 사실은 분명하지만, 익명 블로그나 미니홈피 소문의 발신 주체는 기록상 특정되지 않았다.",
+"verify_source": "학교 보존 문서와 개인 이메일 백업의 날짜가 일치한다.",
+"check_edits": "원문 조작 흔적은 없고 스캔 보정만 있었다.",
+"question_acquisition": "개인 동의와 학교 기록 열람 허가 범위 내에서 확인됐다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-3",
+"e-4"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-4"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "재우는 세아와 확인하기 전에 익명 게시물 캡처를 외부로 돌리며 세아를 사실상 가해자로 단정했다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "b_only"
+},
+{
+"id": "t-2",
+"fact": "세아는 옛 백업 자료 중 자신에게 불리한 모진 메시지 한 개를 먼저 숨겼다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "a_only"
+},
+{
+"id": "t-3",
+"fact": "익명 계정 운영자는 한유진이 아니라 박하린 쪽이었다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "shared_misconception"
+},
+{
+"id": "t-4",
+"fact": "결정적 증거처럼 보인 2006년 방명록과 문자 이미지는 2026년에 합성된 위조본이었다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "neither_knows"
+},
+{
+"id": "t-5",
+"fact": "세아는 과거에 한유진에게 상처를 줬지만 익명 소문의 원작성자는 아니었다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "both_know"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-2",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "old_archive_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "why_hide_that_message"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-6_or_responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-6",
+"lieIntensity": "L2",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "what_happened_in_2006_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-6_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "did_you_apologize_followup"
+},
+{
+"from": "S3",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_guilt"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "shared_past_question"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-1",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "reputation_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "did_you_forward_it_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "why_before_asking_spouse"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-4",
+"lieIntensity": "L2",
+"lieMotive": "hurt",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "who_did_you_think_ran_the_account"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "why_blame_yujin_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-1",
+"lieIntensity": "L3",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "forgery_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-4_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "did_you_still_keep_forwarding"
+},
+{
+"from": "S3",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_public_fear"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "e-1_or_emotion_threshold"
+}
+]
+}
+],
+"solutions": {
+"허위유포정정": [
+"익명 계정 게시물과 리포스트 캡처에 대해 플랫폼 삭제·보존 요청을 동시에 넣고, 동창회 운영진 채널에는 위조 사실만 짧게 정정한다.",
+"위조 증거를 전달받은 사람들에게는 같은 범위의 정정 메시지를 보내 더 넓은 사과문 경쟁으로 번지지 않게 한다.",
+"향후 과거 사진이나 캡처가 다시 돌면 원본 해시와 포렌식 확인 전에는 누구의 과거 잘못으로도 단정하지 않기로 한다."
+],
+"과거정리": [
+"세아는 2006년의 모진 메시지와 공개 다툼에 대해 별도로 책임을 인정하되, 익명 소문 작성자라는 허위 낙인과는 분리해 설명한다.",
+"한유진과의 과거 상처를 다시 다룰 필요가 있다면 SNS가 아니라 비공개 사과나 중재 경로만 사용한다.",
+"부부 사이에서는 과거 잘못의 범위와 현재 허위 유포의 범위를 섞지 않도록 각각 다른 문장으로 기록해 둔다."
+],
+"증거검증": [
+"오래된 캡처, 메신저, 복원 이미지는 원본 경로와 메타데이터가 없으면 결론 근거로 쓰지 않는다.",
+"한쪽이 백업 자료를 제출할 때는 불리한 자료를 포함한 전체 목록부터 보여 주고, 필요한 부분만 함께 골라 본다.",
+"재차 캡처 전쟁이 벌어지면 중립 포렌식 담당자 확인 전까지는 가족과 동창회 채널 공유를 모두 중단한다."
+],
+"평판복구": [
+"재우는 확인 없는 외부 전달에 대해 세아와 영향받은 채널에 각각 사과하고, 직장 쪽에는 배우자 해명보다 위조물 정정 사실만 최소 범위로 알린다.",
+"가게 리뷰나 지역 커뮤니티에 파급이 생겼다면 법적 대응 문구보다 사실 정정과 삭제 요청을 먼저 일관되게 넣는다.",
+"비슷한 평판 위기가 다시 생기면 배우자 확인이 외부 전달보다 반드시 앞서는 순서를 문서화한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-2",
+"tp-3"
+]
+}

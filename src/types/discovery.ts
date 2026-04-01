@@ -102,7 +102,9 @@ export interface EmergenceRoute {
 // 4. 감정 전략 (Emotional Leverage)
 // ─────────────────────────────────────────
 
-export type EmotionTier = 'calm' | 'agitated' | 'explosive' | 'shutdown'
+// EmotionTier는 renewal.ts에서 정의
+import type { EmotionTier } from './renewal'
+export type { EmotionTier }
 
 export interface EmotionTierConfig {
   tier: EmotionTier

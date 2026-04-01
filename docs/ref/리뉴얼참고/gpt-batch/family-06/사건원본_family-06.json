@@ -1,0 +1,676 @@
+{
+"caseId": "case-family-06",
+"meta": {
+"relationshipType": "family",
+"conflictSeed": "CS-5",
+"variableModules": [
+"VM-A",
+"VM-E"
+],
+"twistModule": "TW-2",
+"difficulty": "hard",
+"anchorTruth": "임하준의 SNS 저격이 가족 평판을 흔든 건 맞지만, 지역 맘카페와 협찬처에 2014년 쉼터·채무조정 서류를 돌린 실질적 배후는 하준이나 선영이 아니라 외삼촌 오병철이었다.",
+"emotionalBait": "가족이 누구인지 짐작되는 스토리 문구, 흐린 영정사진, 곧바로 도착한 협찬 중단 연락이 겹치며 처음에는 아들이 과거 가정사를 스스로 풀어 sympathy를 얻으려 한 듯 보인다.",
+"resolutionDilemma": "아들이 식별 가능한 공개 저격을 한 책임과 어머니가 협찬처와 친척방에 반격성 비난을 돌린 책임을 분명히 하면서도, 실제 상세 유출 배후가 제3가족이었을 때 누구에게 어떤 회복과 차단 조치를 우선할지 정하기가 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "오선영",
+"age": 58,
+"occupation": "교회 행정간사",
+"incomeBracket": "mid",
+"archetype": "confrontational",
+"speechStyle": "질문을 받으면 사실 확인보다 먼저 '가족 망신을 왜 밖에 파느냐'는 도덕 프레임을 세운다. 불리해지면 자신의 발언을 훈계나 수습으로 바꾸며, 상대의 SNS 행위를 미성숙 전체로 일반화한다.",
+"pride": 8,
+"fear": "작은 지역사회에서 2014년 가정 위기가 다시 퍼지고, 자신이 무능한 어머니로 낙인찍히는 것",
+"riskAppetite": 6,
+"digitalHabit": "group_chat_broadcaster",
+"dailyRoutine": "아침엔 교회 사무실 공지를 올리고 낮에는 행사 자료를 정리하며, 저녁에는 친척 단톡과 지역 커뮤니티 글을 번갈아 확인한다.",
+"sensitivePoints": [
+"교회와 지역사회 평판",
+"2014년 쉼터·채무조정 기록",
+"아들의 공개 저격"
+],
+"verbalTells": [
+{
+"type": "family_shame_frame",
+"trigger": "lying",
+"pattern": "불리한 메시지 유포 질문이 나오면 '그게 다 가족 망신 막으려고 한 거야'라고 목적을 먼저 강조해 행위를 축소한다."
+},
+{
+"type": "ranked_scolding",
+"trigger": "cornered",
+"pattern": "목소리가 높아지며 아들의 실수와 게시물 내용을 번호 매기듯 순서대로 나열해 반박 틈을 줄인다."
+},
+{
+"type": "moral_redirect",
+"trigger": "emotional",
+"pattern": "명예훼손 지적이 나오면 '네가 먼저 시작했잖아'라며 윤리 비난으로 논점을 돌린다."
+}
+]
+},
+"partyB": {
+"name": "임하준",
+"age": 27,
+"occupation": "헬스장 트레이너 겸 숏폼 크리에이터",
+"incomeBracket": "mid",
+"archetype": "victim_cosplay",
+"speechStyle": "자신의 게시물을 설명할 때 사실 조각과 감정 문구를 섞어, 표현의 자유와 상처 호소를 동시에 앞세운다. 궁지에 몰리면 게시물은 예술적 은유였다고 낮추면서도 댓글 반응을 근거로 자신이 공감받았다고 주장한다.",
+"pride": 6,
+"fear": "또다시 가족사 때문에 입을 막히고, 거짓말로 관심 끄는 사람처럼 보이는 것",
+"riskAppetite": 6,
+"digitalHabit": "story_archive_and_metrics",
+"dailyRoutine": "오전엔 회원 수업을 하고 오후엔 짧은 운동 영상을 편집하며, 밤에는 스토리 반응과 DM을 정리해 다음 콘텐츠 방향을 잡는다.",
+"sensitivePoints": [
+"가족사가 지워지는 느낌",
+"협찬 중단",
+"외삼촌의 개입"
+],
+"verbalTells": [
+{
+"type": "caption_reframe",
+"trigger": "lying",
+"pattern": "문제가 된 게시물은 '직접 지칭이 아니라 은유'였다고 반복하며 식별 가능성을 축소한다."
+},
+{
+"type": "injured_prelude",
+"trigger": "emotional",
+"pattern": "반박 전에 '또 나만 과한 사람 만들지'라고 먼저 상처받은 위치를 선점한다."
+},
+{
+"type": "engagement_shield",
+"trigger": "cornered",
+"pattern": "궁지에 몰리면 조회수와 응원 DM을 언급하며 자신의 말이 사회적으로 정당했다고 방패 삼는다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "2014년 가정 폭력과 빚 문제로 선영과 하준이 임시 쉼터와 채무조정을 거친 뒤, 두 사람은 관련 서류를 새로운 싸움의 무기로 쓰지 않기로 합의했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "아버지 장례 직후 외삼촌이 '밖에서는 집안 얘기 그만하자'고 했던 말을 두 사람은 보호 조언인지 침묵 강요인지 다르게 기억한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '더 상처받지 말자는 보호의 말이었다' / B: '가족 체면 때문에 내 입을 막으려던 말이었다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "하준이 대학 휴학기 때 익명 블로그에 집안 빚과 폭언을 썼다가 선영과 외삼촌이 함께 삭제하게 만든 일은 지금까지 제대로 이야기되지 않았다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "오병철 (외삼촌)",
+"relationTo": "both",
+"knowledgeScope": "2014년 쉼터와 채무조정 서류를 한때 대신 스캔해 보관했고, 최근 하준의 게시물을 본 뒤 가족 평판 문제에 강하게 개입했다.",
+"witnessedDirectly": true,
+"bias": "pro_a",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "윤채린 (보충제 협찬 매니저)",
+"relationTo": "b",
+"knowledgeScope": "하준 게시물 이후 협찬사에 도착한 경고 DM, 선영의 전화, 익명 PDF 묶음의 도착 순서를 원본 기준으로 안다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "박민서 (디지털권익상담관)",
+"relationTo": "both",
+"knowledgeScope": "익명 메일 헤더, 게스트계정 접속 로그, 옛 서류 백업 파일의 유출 경로를 기술적으로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "family_sns_post_conflict",
+"description": "하준이 가족과의 다툼 뒤 인스타그램 스토리와 쓰레드에 '빚과 폭언을 미화하는 집의 침묵'을 암시하는 글을 올리자, 지역 지인들이 가족을 짐작하기 시작했다. 그런데 하루도 지나지 않아 맘카페와 협찬처에 2014년 쉼터·채무조정 서류가 붙은 익명 제보가 돌면서, 모자의 공개 감정싸움은 과거 가정사 유출 전쟁으로 번졌다.",
+"emotionalPressure": 9,
+"affects": "both",
+"triggerAmplifier": "작은 지역사회라 흐린 사진과 장소 태그만으로도 가족이 쉽게 특정됐고, 오래 덮어둔 과거 기록이 문서 형태로 등장하자 SNS 감정표현이 곧바로 명예훼손과 생계 문제로 확대됐다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "하준의 식별 가능한 가족 저격 게시물",
+"truth": true,
+"truthDescription": "하준은 실명을 쓰지 않았지만 영정사진 일부, 동네 체육관 태그, 가족이 알아볼 문장을 묶어 선영과 집안을 충분히 특정 가능한 게시물을 올렸다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-1"
+],
+"correctResponsibility": {
+"a": 25,
+"b": 75
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "가족경계",
+"legitimacyIssue": false
+},
+{
+"id": "d-2",
+"name": "선영의 협찬처·친척방 비난 연락",
+"truth": true,
+"truthDescription": "선영은 하준의 게시물 캡처를 협찬사와 친척·교회 소모임에 보내며, 아들이 과거 일을 팔아 관심을 끈다는 취지로 비난했다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-2"
+],
+"correctResponsibility": {
+"a": 80,
+"b": 20
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "명예회복",
+"legitimacyIssue": true
+},
+{
+"id": "d-3",
+"name": "과거 가정사 문서 유출의 실제 배후",
+"truth": true,
+"truthDescription": "맘카페와 협찬처에 돌던 2014년 쉼터·채무조정 서류의 실질적 유출 출발점은 하준이나 선영이 아니라, 옛 스캔 백업을 갖고 있던 외삼촌 병철의 게스트계정 사용이었다.",
+"quadrant": "neither_knows",
+"requiredEvidence": [
+"e-3",
+"e-4",
+"e-5"
+],
+"correctResponsibility": {
+"a": 45,
+"b": 55
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "온라인확산차단",
+"legitimacyIssue": true
+},
+{
+"id": "d-4",
+"name": "과거 기록 비무기화 약속의 파기",
+"truth": true,
+"truthDescription": "두 사람은 2014년 기록을 새 갈등에 쓰지 않기로 했지만, 하준은 게시물에서 빚과 쉼터 기억을 공개적으로 암시했고 선영은 협찬사와 친척들에게 하준의 예전 문제행동과 휴학기를 끌어와 약속을 깼다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-1",
+"e-2",
+"e-5"
+],
+"correctResponsibility": {
+"a": 60,
+"b": 40
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "과거청산",
+"legitimacyIssue": false
+},
+{
+"id": "d-5",
+"name": "협찬 중단의 실제 원인",
+"truth": true,
+"truthDescription": "협찬 중단의 직접 원인은 하준의 첫 게시물만이 아니라, 선영의 경고 연락과 곧이어 도착한 익명 PDF 제보가 겹쳐 브랜드가 분쟁 리스크를 크게 본 데 있었다.",
+"quadrant": "shared_misconception",
+"requiredEvidence": [
+"e-2",
+"e-6"
+],
+"correctResponsibility": {
+"a": 65,
+"b": 35
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "명예회복",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "하준의 쓰레드·인스타 스토리 원본과 게시 통계",
+"description": "하준이 올린 게시물 원본과 조회·저장 통계로, 실명은 없지만 지역과 가족을 짐작할 수 있는 단서가 여럿 남아 있다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "platform",
+"legitimacy": "lawful",
+"proves": [
+"d-1",
+"d-4"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "게시물 원본과 삭제 전 스토리 아카이브가 함께 제출됐다.",
+"check_metadata": "영정사진 일부와 동네 체육관 위치 태그가 같은 게시물 묶음 안에서 연속으로 노출됐다.",
+"restore_context": "하준은 실명 언급이 없었다고 하지만, 댓글 반응에는 가족을 특정한 추정이 빠르게 붙기 시작한다.",
+"verify_source": "플랫폼 내보내기 파일과 하준 휴대폰 스크린 기록 시간이 일치했다.",
+"check_edits": "원본 아카이브라 자르기 흔적은 없지만, 후속 게시물 일부는 수정을 거쳤다.",
+"question_acquisition": "본인 계정 자료라 제출은 적법하나 제3자 댓글과 계정명은 비식별 처리돼야 한다."
+}
+},
+{
+"id": "e-2",
+"name": "선영의 협찬사 DM·친척 단톡·교회 소모임 메시지",
+"description": "선영이 하준의 게시물 캡처를 보내며 아들의 말을 신뢰하지 말라는 취지로 적은 DM과 단톡 원본이다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-2",
+"d-4",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "캡처가 아니라 대화 내보내기 파일과 협찬사 수신 DM 원본이 함께 확인됐다.",
+"check_metadata": "선영의 첫 경고 메시지는 익명 PDF가 도착하기 38분 전에 이미 발송돼 있다.",
+"restore_context": "선영은 상담을 구한 것뿐이라 했지만, 문장에는 '과거에도 문제를 만들었다'는 평가 문구가 반복된다.",
+"verify_source": "메신저 원본과 협찬사 수신함 시간이 서로 맞아떨어졌다.",
+"check_edits": "원본 내보내기라 선택적 삭제 흔적은 없고, 일부 이모티콘만 자동 변환됐다.",
+"question_acquisition": "협찬 담당자와 친척이 포함된 메시지라 분쟁 외 용도로 돌리면 사생활 침해 문제가 크다."
+}
+},
+{
+"id": "e-3",
+"name": "맘카페 익명글 캡처와 첨부 PDF 묶음",
+"description": "지역 맘카페에 올라온 익명글 캡처와 함께 돌던 PDF 묶음으로, 처음 보면 하준이나 그의 연인이 직접 퍼뜨린 것처럼 보인다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "partial",
+"provenance": "mixed",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-3",
+"d-5"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "초기에는 캡처본만 있었고 작성자 헤더와 업로드 경로는 보이지 않았다.",
+"check_metadata": "PDF 파일명은 일반적인 스캔명으로 남아 있어 발신자를 바로 특정할 수 없었다.",
+"restore_context": "게시물 본문은 하준 게시물을 인용하는 듯 보여 그가 직접 흘린 것처럼 읽히지만, 세부 문서 출처는 드러나지 않는다.",
+"verify_source": "캡처가 여러 이용자에게서 동일하게 수집돼 게시물 존재 자체는 확인됐다.",
+"check_edits": "헤더와 댓글 상단이 잘려 있어 작성자 식별에 필요한 정보가 빠져 있다.",
+"question_acquisition": "과거 쉼터와 채무조정 문서가 포함돼 있어 민감정보 유출 문제가 크다."
+}
+},
+{
+"id": "e-4",
+"name": "익명 메일 헤더와 교회 사무실 게스트계정 접속로그",
+"description": "협찬사와 맘카페 운영진에게 간 익명 메일의 원본 헤더와, 교회 사무실 게스트계정으로 대용량 파일이 전송된 접속로그다.",
+"type": "email",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-3"
+],
+"isTrap": false,
+"requires": [
+"e-3"
+],
+"investigationResults": {
+"request_original": "메일 헤더 원본과 게스트계정 발신 로그가 기관 확인 하에 제출됐다.",
+"check_metadata": "전송 시각은 하준 게시물 업로드 3시간 뒤이며, 교회 사무실 PC의 외부 저장장치 연결 기록과 겹친다.",
+"restore_context": "겉으로는 익명 메일이지만, 발신 직전 게스트계정에 저장된 PDF 묶음 경로가 확인돼 내부 반출 정황이 드러난다.",
+"verify_source": "협찬사 메일 서버와 교회 사무실 로그의 IP 정보가 서로 일치했다.",
+"check_edits": "서버 원본이라 편집 흔적이 없고, 헤더 누락도 없다.",
+"question_acquisition": "기관이 비식별 처리 후 제공한 로그라 적법하나, 종교기관 내부 계정 정보는 목적 외 사용을 제한해야 한다."
+}
+},
+{
+"id": "e-5",
+"name": "2014년 서류 스캔 백업과 외삼촌 USB 동기화 기록",
+"description": "병철이 예전에 보관하던 2014년 쉼터·채무조정 서류 스캔 백업과, 최근 해당 폴더가 USB로 동기화된 기록이다.",
+"type": "cloud_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-3",
+"d-4"
+],
+"isTrap": false,
+"requires": [
+"e-4"
+],
+"investigationResults": {
+"request_original": "오래된 가족 PC 백업본과 USB 동기화 로그를 원본 경로까지 열어 확인했다.",
+"check_metadata": "문제가 된 폴더는 병철 계정에서 최근 다시 열렸고, 익명 메일 발송 직전 USB 연결 시각과 맞물린다.",
+"restore_context": "하준이나 선영 개인 단말의 최근 열람 흔적은 없고, 오래된 서류 접근 권한은 병철 쪽에 더 가깝다.",
+"verify_source": "백업 해시값과 USB 복사 로그가 디지털권익상담관 보고서와 일치했다.",
+"check_edits": "파일 자체 편집은 없지만, 묶음 복사와 재압축 흔적은 분명하다.",
+"question_acquisition": "과거 쉼터·채무조정 자료라 민감정보성이 매우 높고, 분쟁 해결 범위 외 활용은 엄격히 제한돼야 한다."
+}
+},
+{
+"id": "e-6",
+"name": "협찬사 내부 중단 메모와 상담센터 통화 확인서",
+"description": "협찬사가 협업을 잠정 중단하며 남긴 내부 메모와, 담당자가 상담센터에 설명한 통화 확인서다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-2"
+],
+"investigationResults": {
+"request_original": "협찬사 내부 메모 원본과 상담센터 제출용 확인서가 함께 나왔다.",
+"check_metadata": "잠정 중단 결정은 하준의 첫 게시물 직후가 아니라, 선영의 전화와 익명 PDF 수신이 모두 끝난 뒤 찍혀 있다.",
+"restore_context": "브랜드는 단순 SNS 논란보다 가족 내부 고발이 문서로 번지는 상황을 더 큰 리스크로 평가했다.",
+"verify_source": "협찬사 담당자 진술과 문서 작성 시각이 상담센터 기록과 일치한다.",
+"check_edits": "기관·기업 원본이라 편집 흔적이 없다.",
+"question_acquisition": "민간 기업의 내부 판단 자료이므로 분쟁 해결 목적 외 공개는 제한돼야 한다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-2",
+"e-3"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-5"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "하준의 게시물은 실명은 없었지만 가족과 지역을 특정할 수 있는 단서를 담고 있었다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "b_only"
+},
+{
+"id": "t-2",
+"fact": "선영은 협찬사와 친척·교회 소모임에 하준을 신뢰하지 말라는 취지의 연락을 돌렸다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "a_only"
+},
+{
+"id": "t-3",
+"fact": "2014년 쉼터·채무조정 서류 유출의 실제 출발점은 외삼촌 병철의 백업과 게스트계정 사용이었다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "neither_knows"
+},
+{
+"id": "t-4",
+"fact": "모자는 2014년 기록을 새 갈등의 무기로 쓰지 않겠다는 약속을 서로 다른 방식으로 깼다.",
+"isTrue": true,
+"weight": 7,
+"quadrant": "both_know"
+},
+{
+"id": "t-5",
+"fact": "협찬 중단은 하준의 첫 게시물 하나보다 선영의 경고 연락과 익명 PDF 도착이 겹쳐 생긴 결과였다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "shared_misconception"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-2",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "sponsor_contact_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "group_size_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-5",
+"lieIntensity": "L1",
+"lieMotive": "relationship_maintenance",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "old_records_promise_question"
+},
+{
+"from": "S1",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_family_shame"
+},
+{
+"from": "S4",
+"to": "S3",
+"trigger": "e-5_presented"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-4",
+"lieIntensity": "L1",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "sponsorship_pause_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-6_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "timeline_reconstruction"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-1",
+"lieType": "LT-3",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "sns_identifiability_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "local_acquaintance_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-2",
+"lieIntensity": "L1",
+"lieMotive": "third_party_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "document_leak_source_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "girlfriend_share_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-4_or_e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-6",
+"lieIntensity": "L1",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "old_records_promise_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "promise_reminder_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"solutions": {
+"가족경계": [
+"가족 관련 게시물은 실명뿐 아니라 장소 태그, 영정사진, 가족만 아는 문장까지 식별 요소로 보고 사전 삭제한다.",
+"SNS에 감정표현이 필요하면 24시간 보류 후 제3자 한 명에게만 먼저 보여주는 절차를 둔다.",
+"같은 유형의 공개 저격이 반복되면 서로의 가족 관련 게시물 언급과 태그를 일정 기간 전면 금지한다."
+],
+"명예회복": [
+"선영은 협찬사와 친척·교회 소모임에 보낸 비난 메시지를 회수하고, 하준은 식별 가능성이 있었던 게시물에 정정 또는 삭제 조치를 한다.",
+"협찬사와 지역 커뮤니티에는 동일한 사실관계 정정문을 한 번만 보내고 추가 해명 창구를 하나로 묶는다.",
+"반복적인 공개 비난이 이어지면 직접 연락을 끊고 상담센터 또는 법률대리인을 통한 문서 소통만 허용한다."
+],
+"온라인확산차단": [
+"익명 PDF와 맘카페 글의 원본 링크, 헤더, 업로드 경로를 즉시 보존하고 삭제 요청을 병행한다.",
+"오래된 스캔 백업과 게스트계정 접근권을 전부 재설정하고, 외삼촌 포함 제3자의 파일 접근 권한을 끊는다.",
+"유출이 다시 발생하면 플랫폼 신고와 함께 디지털권익상담관을 통한 정식 보존·통지 절차로 바로 전환한다."
+],
+"과거청산": [
+"2014년 쉼터·채무조정 자료는 현재 갈등에 재사용하지 않는다는 문구를 가족 합의문 첫 줄에 적는다.",
+"과거 가족사를 말해야 할 때는 사건 해석과 현재 비난을 분리해, 상담자 앞에서만 정리된 서술로 다룬다.",
+"과거 기록을 다시 무기화하면 명절 모임과 가족 단톡에서 일정 기간 발언권과 자료공유 권한을 제한한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-1",
+"tp-3"
+]
+}

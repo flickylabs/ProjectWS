@@ -241,22 +241,22 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       return result
     },
 
-    getQuestionMeterEffects: (party) => {
+    getQuestionMeterEffects: (party: 'a' | 'b') => {
       return getMeterEffects(useGameStore.getState().questionMeters[party])
     },
 
-    pushGameEvent: (event) => {
+    pushGameEvent: (event: GameEvent) => {
       set((prev) => ({ gameEventLog: [...prev.gameEventLog, event] }))
     },
 
     pendingGameEvent: null,
-    setPendingGameEvent: (event) => set({ pendingGameEvent: event }),
+    setPendingGameEvent: (event: GameEventTrigger | null) => set({ pendingGameEvent: event }),
     pendingEvidenceResult: null,
-    setPendingEvidenceResult: (r) => set({ pendingEvidenceResult: r }),
+    setPendingEvidenceResult: (r: GameStore['pendingEvidenceResult']) => set({ pendingEvidenceResult: r }),
     disputeBoardAction: null,
-    setDisputeBoardAction: (a) => set({ disputeBoardAction: a }),
+    setDisputeBoardAction: (a: GameStore['disputeBoardAction']) => set({ disputeBoardAction: a }),
 
-    evaluateTurnEvents: (questionType, focusDisputeId, transitionsThisTurn) => {
+    evaluateTurnEvents: (questionType: QuestionType, focusDisputeId: string, transitionsThisTurn: { party: 'a' | 'b'; disputeId: string; from: import('../types').LieState; to: import('../types').LieState }[]) => {
       const s = useGameStore.getState()
       if (!s.caseData) return null
 
@@ -276,7 +276,7 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
         },
         meters: s.questionMeters,
         disputeVisibility: Object.fromEntries(
-          Object.entries(s.discovery.disputeVisibility).map(([id, entry]) => [id, entry.visibility]),
+          Object.entries(s.discovery.disputeVisibility).map(([id, entry]) => [id, (entry as any).visibility]),
         ),
         transitionsThisTurn,
         readiness: s.readinessState,
@@ -326,9 +326,9 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       const caseId = state.caseData?.caseId?.replace(/^case-/, '') ?? ''
 
       // 양측 lieStateMap 병합
-      const allLieStates: Record<string, { currentState: string }> = {}
-      for (const [k, v] of Object.entries(state.agentA.lieStateMap)) allLieStates[`a:${k}`] = v
-      for (const [k, v] of Object.entries(state.agentB.lieStateMap)) allLieStates[`b:${k}`] = v
+      const allLieStates: Record<string, { currentState: import('../types').LieState }> = {}
+      for (const [k, v] of Object.entries(state.agentA.lieStateMap)) allLieStates[`a:${k}`] = v as { currentState: import('../types').LieState }
+      for (const [k, v] of Object.entries(state.agentB.lieStateMap)) allLieStates[`b:${k}`] = v as { currentState: import('../types').LieState }
 
       const { investigationSuccessEvidenceIds, fullCollapseEvidenceIds } = getReadinessSets(caseId)
       const hiddenReveals = (state as any).discoveredTruths?.length ?? 0

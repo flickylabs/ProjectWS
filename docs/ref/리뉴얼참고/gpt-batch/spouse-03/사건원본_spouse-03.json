@@ -1,0 +1,641 @@
+{
+"caseId": "case-spouse-03",
+"meta": {
+"relationshipType": "spouse",
+"conflictSeed": "CS-1",
+"variableModules": [
+"VM-D"
+],
+"twistModule": null,
+"difficulty": "easy",
+"anchorTruth": "노유진의 160만원 인출과 황인호의 적금 자동이체 중단이 동시에 벌어져, 이직 직후의 가계 공백을 둘이 함께 만들었다.",
+"emotionalBait": "백화점 정장 결제와 새 건조기 할부가 사치 경쟁처럼 보여 한쪽의 철없는 소비가 원인처럼 보인다.",
+"resolutionDilemma": "두 지출 모두 생활을 굴리려는 논리가 있었지만 약속 없이 숨긴 행동이라, 이해와 통제 중 어디에 무게를 둘지 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "노유진",
+"age": 31,
+"occupation": "출판사 홍보 AE",
+"incomeBracket": "mid",
+"archetype": "planner",
+"speechStyle": "말할 때 먼저 예산표를 꺼내 숫자로 정리한다. 불편한 지점이 나오면 '일단 결론부터'라며 감정 표현을 생략한다. 억울해지면 설명을 더 촘촘히 붙여 자신이 합리적이었다는 인상을 만들려 한다.",
+"pride": 7,
+"fear": "새 직장에서 허술해 보이거나 이직을 후회하는 사람처럼 보이는 것",
+"riskAppetite": 4,
+"digitalHabit": "household_sheet",
+"dailyRoutine": "아침 7시에 집을 나서 지하철로 편도 70분을 이동하고, 점심시간에는 회사 메신저와 카드앱을 번갈아 확인한다.",
+"sensitivePoints": [
+"이직 성공 여부",
+"옷차림과 업무 적응",
+"비상금 사용"
+],
+"verbalTells": [
+{
+"type": "over_precision",
+"trigger": "lying",
+"pattern": "숨긴 지출을 설명할 때 '159만 8천원이었어'처럼 세부 숫자를 과하게 정밀하게 말한다."
+},
+{
+"type": "minimization",
+"trigger": "shame",
+"pattern": "'잠깐 메꾼 거야', '며칠만 쓰려던 거야'라며 행동 규모를 줄여 말한다."
+},
+{
+"type": "future_offset",
+"trigger": "cornered",
+"pattern": "현재 잘못을 묻는 질문에 '다음 급여 들어오면 바로' 같은 미래 계획으로 답을 옮긴다."
+}
+]
+},
+"partyB": {
+"name": "황인호",
+"age": 34,
+"occupation": "오토바이 정비기사",
+"incomeBracket": "mid",
+"archetype": "improviser",
+"speechStyle": "불편한 이야기를 농담으로 풀다가도 책임 추궁이 오면 갑자기 짧게 끊어 말한다. 자신이 계산한 생활 요령을 상식처럼 밀어붙이는 편이다. 맞받아치고 싶을수록 '내가 살림 모르냐' 같은 문장을 먼저 꺼낸다.",
+"pride": 6,
+"fear": "가계를 못 지탱하는 사람으로 보이는 것",
+"riskAppetite": 6,
+"digitalHabit": "card_alerts",
+"dailyRoutine": "오전에는 정비소 오픈 준비, 오후에는 출장 수리, 밤에는 배달기사 커뮤니티와 카드 승인 알림을 함께 본다.",
+"sensitivePoints": [
+"가장 역할",
+"생활가전 구매",
+"현금 흐름 통제"
+],
+"verbalTells": [
+{
+"type": "joke_shield",
+"trigger": "lying",
+"pattern": "찔리는 질문이 나오면 '건조기도 질투하네' 같은 농담으로 시간을 번다."
+},
+{
+"type": "commonsense_frame",
+"trigger": "defensive",
+"pattern": "'이 정도는 다들 해'라며 숨긴 결정을 생활 상식으로 포장한다."
+},
+{
+"type": "question_flip",
+"trigger": "cornered",
+"pattern": "자신의 지출을 묻는 순간 '그럼 네 건 뭐였는데?'라고 곧바로 되묻는다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "유진이 이직을 확정한 뒤 두 사람은 수습 기간 두 달 동안 50만원 이상 지출은 반드시 먼저 상의하자고 합의했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "작년 겨울 인호가 타이어 교체비를 메우려고 여가 적금을 잠시 늦춘 일을 두 사람은 다른 의미로 기억한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '그때도 말 없이 돌렸다' / B: '그때는 살림 지키려고 임시로 조정한 거다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "indirect"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "유진은 새 회사에서 복장과 장비가 생각보다 중요하다는 불안을 자세히 말하지 못했고, 인호는 그 불안을 사치처럼 들을까 봐 묻지 않았다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "황미정 (인호의 누나)",
+"relationTo": "b",
+"knowledgeScope": "인호가 아침 세탁 동선을 줄이려고 건조기 할부를 서둘렀다는 사정을 안다.",
+"witnessedDirectly": false,
+"bias": "pro_b",
+"distortionRisk": "unconscious"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "임도현 (유진의 온보딩 동기)",
+"relationTo": "a",
+"knowledgeScope": "수습 기간 복장 기준과 교통비·복지비 지급 일정을 직접 알고 있다.",
+"witnessedDirectly": false,
+"bias": "pro_a",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "손주희 (출판사 급여·복지 담당)",
+"relationTo": "both",
+"knowledgeScope": "유진의 첫 급여일 변경과 교통비·업무복 보전 규정을 원본 기준으로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "job_transition",
+"description": "유진이 계약직 편집 일을 그만두고 정규직 홍보 AE로 옮긴 직후라 첫 급여일이 예전보다 3주 늦어졌다. 출근복, 정기권, 점심값처럼 새로 생긴 고정비가 한꺼번에 늘었고, 인호는 그 공백을 메운다는 명목으로 자동이체와 가전 결제를 조용히 손봤다. 둘 다 상대를 안심시키겠다는 이유로 먼저 말하지 않으면서 오히려 가계 구멍을 키웠다.",
+"emotionalPressure": 6,
+"affects": "both",
+"triggerAmplifier": "이직 직후라 누구도 불안해 보이고 싶지 않았고, 잘 적응하고 있다는 체면 때문에 숨긴 지출이 곧 신뢰 문제로 번졌다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "유진의 비밀 비상금 인출",
+"truth": true,
+"truthDescription": "유진은 공동 비상금 계좌에서 160만원을 빼 수습 기간용 정장, 구두, 3개월 정기권을 결제하면서도 인호에게 미리 알리지 않았다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-1",
+"e-2"
+],
+"correctResponsibility": {
+"a": 65,
+"b": 35
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "재정투명화",
+"legitimacyIssue": false
+},
+{
+"id": "d-2",
+"name": "인호의 적금 자동이체 중단",
+"truth": true,
+"truthDescription": "인호는 생활비 압박을 이유로 두 달치 적금 자동이체를 멈춰 현금 흐름을 돌려썼지만 이를 유진에게 알리지 않았다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-5"
+],
+"correctResponsibility": {
+"a": 25,
+"b": 75
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "전환기예산",
+"legitimacyIssue": false
+},
+{
+"id": "d-3",
+"name": "백화점 결제는 사치성 쇼핑이었나",
+"truth": false,
+"truthDescription": "인호가 사치로 의심한 백화점 결제는 대부분 수습 기간 복장 기준을 맞추기 위한 정장·구두 구매였고, 일부는 다음 달 복지비로 보전될 항목이었다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-3",
+"e-4"
+],
+"correctResponsibility": {
+"a": 35,
+"b": 65
+},
+"ambiguity": "low",
+"weight": "medium",
+"mediationLink": "신뢰회복",
+"legitimacyIssue": true
+},
+{
+"id": "d-4",
+"name": "50만원 이상 사전 상의 규칙의 공동 위반",
+"truth": true,
+"truthDescription": "유진은 비상금 인출로, 인호는 건조기 할부 계약과 적금 이체 중단으로 둘 다 50만원 이상 지출·조정을 사전 상의 없이 진행했다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-1",
+"e-5",
+"e-6"
+],
+"correctResponsibility": {
+"a": 55,
+"b": 45
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "재정투명화",
+"legitimacyIssue": false
+},
+{
+"id": "d-5",
+"name": "이직 직후 생활비 구멍은 한 사람 탓이었나",
+"truth": false,
+"truthDescription": "생활비 공백은 유진의 비상금 인출과 인호의 자동이체 중단·건조기 할부가 겹친 결과였고, 첫 급여일 지연이 이를 더 크게 보이게 했다.",
+"quadrant": "shared_misconception",
+"requiredEvidence": [
+"e-1",
+"e-5",
+"e-6"
+],
+"correctResponsibility": {
+"a": 50,
+"b": 50
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "전환기예산",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "공동 비상금 계좌 인출내역",
+"description": "이직 첫 주에 공동 비상금 계좌에서 160만원이 유진 명의 인증으로 빠져나간 원본 거래내역이다.",
+"type": "bank",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-1",
+"d-4",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "은행 PDF 원본에는 인출 시각과 인증 수단이 그대로 남아 있다.",
+"check_metadata": "인출 직전 유진 휴대폰의 공동뱅킹 앱 접속 기록이 확인된다.",
+"restore_context": "인출 다음 날과 그다음 날에 백화점·교통카드 결제가 연달아 이어진다.",
+"verify_source": "은행 고객센터 검증으로 위·변조 흔적이 없었다.",
+"check_edits": "발급본이라 편집 흔적이 없다.",
+"question_acquisition": "공동 비상금 계좌 자료라 조회 자체는 적법하다."
+}
+},
+{
+"id": "e-2",
+"name": "온보딩 안내문과 정기권 영수증",
+"description": "회사 온보딩 문서의 복장 기준과 유진이 결제한 3개월 정기권 영수증, 업무복 보전 규정이 묶인 자료다.",
+"type": "document",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-1",
+"d-3"
+],
+"isTrap": false,
+"requires": [
+"e-1"
+],
+"investigationResults": {
+"request_original": "온보딩 포털 출력본과 교통카드 영수증 원본이 일치한다.",
+"check_metadata": "문서 생성 시각이 인출 직후 이틀 안에 몰려 있다.",
+"restore_context": "복장 규정은 수습 4주 동안 외부 미팅용 정장을 요구하고, 교통비 일부는 익월 정산으로 안내돼 있다.",
+"verify_source": "인사 포털 링크와 담당자 확인이 일치했다.",
+"check_edits": "전자문서 서명값이 살아 있어 수정 흔적이 없다.",
+"question_acquisition": "회사 자료이지만 비용 사유 입증 범위에서 제출돼 적법하다."
+}
+},
+{
+"id": "e-3",
+"name": "인호가 캡처한 카드 승인 알림 묶음",
+"description": "유진 휴대폰 잠금 화면에 뜬 백화점 카드 승인 알림만 연속 캡처한 이미지다.",
+"type": "device_log",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-3"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "승인 알림 캡처본만 있고 카드명세 전체는 포함되지 않았다.",
+"check_metadata": "촬영 시각이 새벽 1시 18분으로 남아 있다.",
+"restore_context": "금액과 상호는 보이지만 품목과 회사 보전 여부는 확인되지 않는다.",
+"verify_source": "유진 기기 화면을 인호가 직접 촬영한 것으로 보인다.",
+"check_edits": "텍스트 합성 흔적은 없지만 필요한 부분만 잘린 선택적 크롭이 있다.",
+"question_acquisition": "잠금 화면 무단 열람으로 얻은 자료라 사생활 침해 소지가 있다."
+}
+},
+{
+"id": "e-4",
+"name": "회사 복장 가이드와 복지비 지급 공지",
+"description": "수습 기간 외부 미팅 복장 가이드와 익월 복지비 지급 범위를 설명한 사내 메일이다.",
+"type": "email",
+"reliability": "soft",
+"completeness": "partial",
+"provenance": "platform",
+"legitimacy": "lawful",
+"proves": [
+"d-3"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "메일 헤더와 본문 일부가 원본 서버에서 확인된다.",
+"check_metadata": "발송 시각이 유진 첫 출근 전날 오후다.",
+"restore_context": "정장·구두가 선택이 아니라 대외 일정 준비 항목으로 안내돼 있다.",
+"verify_source": "사내 메일 주소와 정책 문서 링크가 일치한다.",
+"check_edits": "전달본이라 전체 스레드는 없지만 본문 조작 흔적은 없다.",
+"question_acquisition": "업무 관련 메일로 제출 범위가 제한돼 적법하다."
+}
+},
+{
+"id": "e-5",
+"name": "적금 자동이체 변경기록과 건조기 할부 계약서",
+"description": "인호가 공동 적금 자동이체를 두 달 정지한 은행 기록과, 같은 주간에 체결한 84만원 건조기 할부 계약서다.",
+"type": "contract",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-2",
+"d-4",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "은행 이체변경 로그와 가전 할부 계약 원본 번호가 서로 이어진다.",
+"check_metadata": "자동이체 정지 시각과 건조기 계약 시각이 같은 날 오후로 붙어 있다.",
+"restore_context": "인호는 현금 여유를 만든 뒤 건조기 초회금을 결제했다.",
+"verify_source": "은행과 판매점 양쪽 확인으로 진본성이 확보됐다.",
+"check_edits": "기관 문서라 편집 흔적이 없다.",
+"question_acquisition": "본인 명의 자료 제출이라 위법성은 없다."
+}
+},
+{
+"id": "e-6",
+"name": "생활비 메모장과 건조기 배송 완료 문자",
+"description": "인호가 '첫 급여 들어오면 적금 다시 채움'이라고 적어둔 메모와 건조기 배송 완료 문자다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "personal_device",
+"legitimacy": "lawful",
+"proves": [
+"d-2",
+"d-4",
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-5"
+],
+"investigationResults": {
+"request_original": "메모앱 원본과 배송 문자 수신함이 함께 확인됐다.",
+"check_metadata": "메모 작성 시간이 자동이체 정지 당일 밤으로 기록돼 있다.",
+"restore_context": "인호는 건조기 할부와 적금 정지를 같은 현금 흐름 계획 안에서 다루고 있었다.",
+"verify_source": "기기 백업본과 문자 서버 기록이 일치한다.",
+"check_edits": "메모 수정 이력은 있으나 핵심 문구 삭제 흔적은 없다.",
+"question_acquisition": "인호가 동의해 제출한 개인 기기 자료다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-3",
+"e-4"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-3"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "유진은 이직 직후 공동 비상금에서 160만원을 빼고도 먼저 말하지 않았다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "a_only"
+},
+{
+"id": "t-2",
+"fact": "인호는 적금 자동이체를 멈추고 건조기 할부를 계약하면서 이를 숨겼다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "b_only"
+},
+{
+"id": "t-3",
+"fact": "백화점 결제의 핵심은 수습 기간 복장 적응비였지, 단순한 사치 쇼핑만은 아니었다.",
+"isTrue": true,
+"weight": 7,
+"quadrant": "b_only"
+},
+{
+"id": "t-4",
+"fact": "두 사람 모두 50만원 이상 지출·조정을 사전 상의하자는 규칙을 어겼다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "both_know"
+},
+{
+"id": "t-5",
+"fact": "이직 직후의 생활비 구멍은 한 사람의 탓이 아니라 둘의 숨김이 겹친 결과였다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "shared_misconception"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-1",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "withdrawal_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "purpose_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-2_or_responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-6",
+"lieIntensity": "L1",
+"lieMotive": "relationship_maintenance",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "department_store_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_work_adaptation"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "e-4_or_emotion_threshold"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-2",
+"lieType": "LT-1",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "auto_transfer_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-5_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "cashflow_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-6_presented"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-7",
+"lieIntensity": "L1",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "appliance_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "small_admission_about_convenience"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "installment_term_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-6_presented"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-4",
+"lieIntensity": "L1",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "who_caused_shortage_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "e-5_presented"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_budget_question"
+}
+]
+}
+],
+"solutions": {
+"전환기예산": [
+"이직 후 2개월만 한시 예산표를 따로 만들어 고정비와 적응비를 분리한다.",
+"첫 급여일까지는 의류·교통·가전처럼 전환기 비용을 별도 한도로 묶어 매주 같이 확인한다.",
+"이직기마다 3주치 현금성 예비비를 자동 적립해 같은 유형의 숨김 지출이 반복되지 않게 한다."
+],
+"재정투명화": [
+"50만원 이상 지출은 금액보다 목적부터 먼저 공유하고, 영수증은 주 1회 함께 본다.",
+"공동 비상금 사용 후 24시간 안에 메모라도 남기도록 간단한 알림 규칙을 만든다.",
+"규칙을 다시 어기면 한 달간 공동계좌 직접 결제를 멈추고 승인 절차를 둔다."
+],
+"신뢰회복": [
+"유진은 복장 불안을, 인호는 현금 흐름 압박을 사실대로 설명하는 짧은 정산 대화를 한다.",
+"사치처럼 보였던 결제와 생활필수처럼 포장된 할부를 같은 기준으로 다시 분류한다.",
+"다음 급여일 전까지는 숨김을 공격 재료로 쓰지 말고 해결 순서만 합의한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-2",
+"tp-3"
+]
+}

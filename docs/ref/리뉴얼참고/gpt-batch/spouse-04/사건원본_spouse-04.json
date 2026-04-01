@@ -1,0 +1,674 @@
+{
+"caseId": "case-spouse-04",
+"meta": {
+"relationshipType": "spouse",
+"conflictSeed": "CS-6",
+"variableModules": [
+"VM-A"
+],
+"twistModule": "TW-2",
+"difficulty": "hard",
+"anchorTruth": "윤하준의 결혼기념일 약속 파기는 단순한 변심이 아니라, 어머니 강정희가 예약 코드와 선물 계획을 이용해 동선을 비튼 결과였다.",
+"emotionalBait": "태블릿의 '예약 변경 완료' 알림과 하준의 거짓 긴급업무 문자가 겹치며, 하준이 일부러 결혼기념일을 버린 것처럼 보인다.",
+"resolutionDilemma": "하준은 직접 취소하지 않았지만 어머니를 끊지 못했고 거짓말까지 했으며, 다은도 위치추적과 일정 공유로 빌미를 제공해 어디까지를 배신으로 볼지 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "윤하준",
+"age": 38,
+"occupation": "맞춤가구 스튜디오 대표",
+"incomeBracket": "high",
+"archetype": "appeaser",
+"speechStyle": "갈등이 커질수록 사실보다 '그때는 다 급했다'는 분위기 설명을 먼저 한다. 어머니 이야기가 나오면 주어를 흐리고 수동형 표현을 많이 쓴다. 직접 잘못을 인정해야 할 때도 해결 방안부터 말하며 감정을 뒤로 미룬다.",
+"pride": 7,
+"fear": "어머니와 아내 사이에서 둘 다 놓친 무책임한 사람으로 보이는 것",
+"riskAppetite": 4,
+"digitalHabit": "voice_call_first",
+"dailyRoutine": "오전에는 작업실 제작 지시를 보고, 오후에는 클라이언트 미팅과 배송 일정을 챙긴 뒤 밤에 다음 날 도면을 수정한다.",
+"sensitivePoints": [
+"가족 충성심",
+"특별한 날 약속",
+"사업 안정성"
+],
+"verbalTells": [
+{
+"type": "task_listing",
+"trigger": "lying",
+"pattern": "핵심 질문을 받으면 '공방 정리하고, 차 빼고, 전화 받고'처럼 자잘한 동선을 길게 나열한다."
+},
+{
+"type": "passive_voice",
+"trigger": "shame",
+"pattern": "'그렇게 되더라', '일이 꼬였다'처럼 주체를 흐리는 수동형을 쓴다."
+},
+{
+"type": "time_bargain",
+"trigger": "cornered",
+"pattern": "'30분만 이해했으면 됐잖아'처럼 잘못의 크기를 시간 단위로 깎아 말한다."
+}
+]
+},
+"partyB": {
+"name": "백다은",
+"age": 35,
+"occupation": "문화재단 큐레이터",
+"incomeBracket": "mid",
+"archetype": "precision_seeker",
+"speechStyle": "약속을 날짜와 문구 단위로 기억해 그대로 되짚는다. 상처가 커질수록 상징적 의미를 강조하며 '첫 결혼기념일인데' 같은 말을 반복한다. 불신이 생기면 타임라인을 분 단위로 맞추려 든다.",
+"pride": 8,
+"fear": "기념일 하나도 지켜지지 않는 결혼의 당사자로 남는 것",
+"riskAppetite": 5,
+"digitalHabit": "shared_calendar_main",
+"dailyRoutine": "낮에는 전시 일정과 협력사 응대를 하고, 퇴근 후에는 캘린더와 예약 메일을 정리하며 생활 일정을 미리 짠다.",
+"sensitivePoints": [
+"기념일의 상징성",
+"시가 개입",
+"사생활 침해 지적"
+],
+"verbalTells": [
+{
+"type": "timeline_crosscheck",
+"trigger": "lying",
+"pattern": "상대가 시간을 말하면 곧바로 다른 기록과 분 단위로 대조한다."
+},
+{
+"type": "symbolic_weight",
+"trigger": "hurt",
+"pattern": "'그날이 첫 기념일이었다'며 행동의 의미를 더 크게 부풀려 말한다."
+},
+{
+"type": "evidence_stack",
+"trigger": "defensive",
+"pattern": "한 증거가 부족해도 세 개쯤 연달아 꺼내며 이미 결론이 났다는 듯 압박한다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "허니문을 미룬 대신 첫 결혼기념일 저녁은 오후 6시 이후 어떤 가족·업무 일정도 넣지 않겠다고 두 사람이 약속했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "지난겨울 일요일 브런치 전에 하준이 어머니 집에 잠깐 들렀던 일을 두 사람은 다른 사건으로 기억한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '10분 들른 예의였다' / B: '그 10분 때문에 하루 분위기가 다 무너졌다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "indirect"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "하준은 스튜디오 보안이 불안하다는 이유로 중요한 선물이나 소품을 종종 어머니 집에 맡겨 왔지만, 다은은 그 습관을 정확히 알지 못했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "강정희 (하준의 어머니)",
+"relationTo": "a",
+"knowledgeScope": "기념일 예약 코드, 호텔 체크인 시간, 하준의 선물 계획을 알고 있었고 실제로 예약센터와 제과점에 연락했다.",
+"witnessedDirectly": true,
+"bias": "pro_a",
+"distortionRisk": "strategic"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "한예슬 (다은의 대학 친구)",
+"relationTo": "b",
+"knowledgeScope": "다은이 하준과 직접 대면하기 전에 태블릿 캡처를 먼저 공유하며 의심을 키운 과정을 안다.",
+"witnessedDirectly": false,
+"bias": "pro_b",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "이상현 (레스토랑 예약매니저)",
+"relationTo": "both",
+"knowledgeScope": "예약 변경 요청, 변경 시각, 케이크 픽업장 수정 기록을 원본 기준으로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "anniversary",
+"description": "허니문을 미룬 상태라 첫 결혼기념일 저녁은 두 사람 모두에게 상징적 의미가 컸다. 레스토랑 디너와 호텔 1박을 묶어 예약했지만, 하준은 선물 소품을 어머니 집에 맡겨 두었고 다은은 가족 브로치를 빌리려다 예약 캡처를 시어머니에게 보냈다. 둘 다 '깜짝 준비'라고 생각한 가족 연락이 같은 날 한꺼번에 엮이며 약속 파기와 의심이 폭발했다.",
+"emotionalPressure": 9,
+"affects": "both",
+"triggerAmplifier": "첫 결혼기념일이라는 상징성과 비밀 선물 준비가 겹쳐, 가족을 끼우지 않겠다는 원칙이 한번만 흔들려도 배신처럼 보이게 됐다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "하준의 가짜 긴급업무 핑계",
+"truth": true,
+"truthDescription": "하준은 '클라이언트 긴급 호출'이라고 문자를 보냈지만 실제로는 작업실에서 바로 어머니 아파트로 향해 선물 케이스를 찾으러 갔다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-1",
+"e-2"
+],
+"correctResponsibility": {
+"a": 75,
+"b": 25
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "신뢰회복",
+"legitimacyIssue": false
+},
+{
+"id": "d-2",
+"name": "다은의 태블릿 무단 확인과 제3자 공유",
+"truth": true,
+"truthDescription": "다은은 하준의 동기화된 태블릿을 무단 확인해 예약 변경 알림을 캡처했고, 이를 대학 친구 단톡에 먼저 공유했다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-3"
+],
+"correctResponsibility": {
+"a": 20,
+"b": 80
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "사생활경계",
+"legitimacyIssue": true
+},
+{
+"id": "d-3",
+"name": "하준이 예약을 직접 취소했는가",
+"truth": false,
+"truthDescription": "태블릿 알림 때문에 하준이 직접 취소한 것처럼 보였지만, 실제 변경 요청은 예약 코드를 알고 있던 다른 발신자가 넣은 것이었다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-3",
+"e-4"
+],
+"correctResponsibility": {
+"a": 30,
+"b": 70
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "기념일복구",
+"legitimacyIssue": true
+},
+{
+"id": "d-4",
+"name": "가족을 끼우지 않겠다는 기념일 약속의 쌍방 위반",
+"truth": true,
+"truthDescription": "하준은 선물 케이스와 케이크 장식을 어머니에게 맡겼고, 다은은 가족 브로치를 빌리며 예약 캡처와 코드를 시어머니에게 보냈다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-2",
+"e-6"
+],
+"correctResponsibility": {
+"a": 45,
+"b": 55
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "경계재설정",
+"legitimacyIssue": false
+},
+{
+"id": "d-5",
+"name": "약속 파기의 배후는 강정희의 의도적 개입이었다",
+"truth": true,
+"truthDescription": "강정희는 예약 코드와 선물 계획을 알고 레스토랑과 제과점에 따로 연락했으며, 하준에게는 다른 이유를 대고 다은에게는 변경 사실만 보이게 해 둘이 제시간에 만나지 못하게 만들었다.",
+"quadrant": "neither_knows",
+"requiredEvidence": [
+"e-4",
+"e-5",
+"e-6"
+],
+"correctResponsibility": {
+"a": 60,
+"b": 40
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "제3자차단",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "작업실 출입기록과 클라이언트 납품 캘린더",
+"description": "결혼기념일 당일 저녁 작업실 출입기록과 납품 일정표로, 하준이 말한 긴급업무가 실제로는 없었음을 보여준다.",
+"type": "access_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-1"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "출입 게이트 로그와 납품 캘린더 원본이 제출됐다.",
+"check_metadata": "하준은 18시 07분에 작업실을 나갔고 이후 긴급 납품 일정은 비어 있다.",
+"restore_context": "그가 보낸 '클라이언트 호출' 문자와 실제 작업 일정이 맞지 않는다.",
+"verify_source": "스튜디오 관리 시스템과 캘린더 서버 기록이 일치했다.",
+"check_edits": "시스템 추출본이라 수정 흔적이 없다.",
+"question_acquisition": "사업장 운영자료로 적법하게 확보됐다."
+}
+},
+{
+"id": "e-2",
+"name": "하준-정희 메신저와 아파트 주차기록",
+"description": "하준이 어머니에게 '시계 케이스 잠깐 찾고 바로 갈게'라고 보낸 대화와, 같은 시각 어머니 아파트 지하주차장 입차기록이다.",
+"type": "access_log",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "lawful",
+"proves": [
+"d-1",
+"d-4"
+],
+"isTrap": false,
+"requires": [
+"e-1"
+],
+"investigationResults": {
+"request_original": "메신저 원본 대화와 차량 입차기록 원본 번호가 연결된다.",
+"check_metadata": "입차 시각은 하준이 다은에게 긴급업무 문자를 보낸 뒤 14분 후다.",
+"restore_context": "하준은 이미 기념일 저녁 전 어머니와 물건 수령 약속을 잡아두고 있었다.",
+"verify_source": "관리사무소 기록과 메신저 백업이 서로 부합한다.",
+"check_edits": "대화 삭제 흔적은 일부 있으나 핵심 문장은 복원 가능하다.",
+"question_acquisition": "주차기록과 당사자 대화 제출이라 절차상 문제는 적다."
+}
+},
+{
+"id": "e-3",
+"name": "다은이 캡처한 태블릿 예약변경 알림과 친구 단톡 전송본",
+"description": "동기화된 태블릿 화면의 '예약 변경 완료' 알림 캡처와, 다은이 이를 대학 친구 단톡에 먼저 보낸 전송 내역이다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-2",
+"d-3"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "태블릿 전체 메일함이 아니라 알림 화면과 전송본만 있다.",
+"check_metadata": "캡처 생성 시각은 하준과 대면하기 26분 전이며, 직후 친구 단톡으로 전달됐다.",
+"restore_context": "알림에는 예약이 바뀌었다는 사실만 보이고 변경 요청자 정보는 없다.",
+"verify_source": "태블릿 기기정보와 단톡 전송 시간이 일치한다.",
+"check_edits": "문구 합성 흔적은 없지만 발신자 정보가 보이지 않도록 잘려 있다.",
+"question_acquisition": "상대의 동기화 기기를 무단 확인해 얻은 자료라 사생활 침해 소지가 크다."
+}
+},
+{
+"id": "e-4",
+"name": "레스토랑 예약센터 통화기록 요약과 케이크 픽업 변경대장",
+"description": "예약센터로 걸려온 변경 요청 통화 요약과, 제과점이 케이크 픽업 장소를 어머니 아파트 인근으로 바꾼 대장이다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-3",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "예약센터 내역과 제과점 변경대장 원본이 함께 제출됐다.",
+"check_metadata": "변경 시각은 하준이 작업실을 떠나기 전이며, 호출자는 예약 코드와 케이크 문구를 정확히 알고 있었다.",
+"restore_context": "하준의 기기에는 변경 결과만 알림으로 갔고, 실제 요청 주체는 별도 발신자였다.",
+"verify_source": "레스토랑과 제과점 양측 기록이 서로 부합한다.",
+"check_edits": "기관 관리대장이라 편집 흔적이 없다.",
+"question_acquisition": "사업장 기록을 비식별 처리해 제공받아 적법하다."
+}
+},
+{
+"id": "e-5",
+"name": "정희의 음성메모 복원본과 제과점 문자",
+"description": "강정희가 딸에게 남긴 음성메모와 제과점 직원에게 보낸 문자로, 둘만의 기념일을 못마땅해하며 일부러 집 쪽으로 돌리려 했다는 정황이 담겨 있다.",
+"type": "chat",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "personal_device",
+"legitimacy": "lawful",
+"proves": [
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-4"
+],
+"investigationResults": {
+"request_original": "음성메모 파일과 문자 원본이 가족 측 기기에서 직접 추출됐다.",
+"check_metadata": "음성메모 작성 시간은 예약 변경 직후 9분 뒤다.",
+"restore_context": "메모에는 '둘만 보내면 다음부터도 빠질 거다'라는 취지의 발언이 포함돼 있다.",
+"verify_source": "파일 해시와 발신 번호가 가족 측 단말과 일치한다.",
+"check_edits": "복원본이지만 중간 잘림 없이 연속 재생된다.",
+"question_acquisition": "가족 구성원이 자발적으로 제출한 자료라 위법성은 낮다."
+}
+},
+{
+"id": "e-6",
+"name": "가족단톡 백업본과 브로치 대여 요청 메시지",
+"description": "다은이 가족 브로치를 빌리려며 예약 캡처와 코드를 시어머니에게 보낸 대화, 그리고 하준이 시계 케이스를 맡겨달라 한 같은 주간의 단톡 백업본이다.",
+"type": "chat",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "platform",
+"legitimacy": "lawful",
+"proves": [
+"d-4",
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-2"
+],
+"investigationResults": {
+"request_original": "가족단톡 서버 백업본에서 해당 주간 대화가 원본 형태로 추출됐다.",
+"check_metadata": "다은의 예약 캡처 전송은 행사 이틀 전, 하준의 케이스 부탁은 행사 당일 오전이다.",
+"restore_context": "어머니는 기념일 일정과 코드, 케이크 문구, 선물 소품 정보를 모두 알 수 있는 상태였다.",
+"verify_source": "메신저 플랫폼 백업과 각자 기기 화면이 일치한다.",
+"check_edits": "서버 추출본이라 삭제 후 재편집 흔적이 없다.",
+"question_acquisition": "가족 단톡 참여자 중 한 명의 동의로 제출된 자료다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-3",
+"e-4"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-3"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "하준은 클라이언트 긴급업무라고 거짓말하고 실제로는 어머니 집으로 향했다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "a_only"
+},
+{
+"id": "t-2",
+"fact": "다은은 하준의 동기화된 태블릿을 무단 확인하고 그 캡처를 친구들에게 먼저 보냈다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "b_only"
+},
+{
+"id": "t-3",
+"fact": "예약 변경 알림은 하준의 직접 취소를 뜻하지 않았고, 다른 발신자의 코드 사용 결과였다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "b_only"
+},
+{
+"id": "t-4",
+"fact": "두 사람 모두 가족을 끼우지 않겠다는 기념일 약속을 각자의 방식으로 먼저 흔들었다.",
+"isTrue": true,
+"weight": 7,
+"quadrant": "both_know"
+},
+{
+"id": "t-5",
+"fact": "약속 파기의 배후에는 강정희의 의도적 개입이 있었고, 두 사람은 그 사실을 처음엔 몰랐다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "neither_knows"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-1",
+"lieType": "LT-1",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "emergency_text_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "route_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-2_or_responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-6",
+"lieIntensity": "L2",
+"lieMotive": "relationship_maintenance",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "family_involvement_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_surprise_gift"
+},
+{
+"from": "S4",
+"to": "S5",
+"trigger": "e-6_or_emotion_threshold"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-3",
+"lieIntensity": "L1",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "mother_influence_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-4_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "intent_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-5_or_responsibility_question"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-2",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "tablet_access_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "friend_share_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "friend_name_reference"
+}
+]
+},
+{
+"disputeId": "d-3",
+"lieType": "LT-4",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "cancellation_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "caller_identity_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-4_presented"
+}
+]
+},
+{
+"disputeId": "d-4",
+"lieType": "LT-7",
+"lieIntensity": "L1",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "mother_contact_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "small_admission_about_brooch"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "booking_code_question"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-6_presented"
+}
+]
+}
+],
+"solutions": {
+"기념일복구": [
+"이번 기념일 파탄의 경위를 공동 타임라인으로 정리한 뒤, 가족 개입이 없는 대체 기념일을 새로 정한다.",
+"기념일 예약과 변경 코드는 한 사람만 관리하고, 결과 알림은 상대 배우자에게만 공유한다.",
+"이미 생긴 오해가 크면 양가 가족에게는 사실만 짧게 공지하고 다음 기념일 전까지는 관련 정보를 차단한다."
+],
+"경계재설정": [
+"양가 가족에게 특별한 날의 일정표·예약 코드·체크인 정보를 공유하지 않는 원칙을 세운다.",
+"선물 보관이나 의상 대여도 배우자에게 먼저 알리고 가족을 통한 우회 조율을 금지한다.",
+"가족이 일정 변경에 개입하면 즉시 예약 권한과 일정 접근 권한을 전면 회수한다."
+],
+"사생활경계": [
+"공유 기기 동기화 범위를 줄이고 태블릿·노트북 잠금을 다시 설정한다.",
+"의심이 생겨도 친구 단톡 공유 전에 당사자 확인을 1회 의무화한다.",
+"재차 무단 열람이나 제3자 유포가 발생하면 별거 상태의 디지털 경계 규칙을 적용한다."
+],
+"제3자차단": [
+"강정희와의 기념일 관련 연락은 한 달간 중단하고, 향후 예약 변경 권한에서 완전히 배제한다.",
+"양가 가족행사와 부부행사를 분리한 연간 캘린더를 만들어 누가 어디까지 관여할지 명시한다.",
+"의도적 방해가 반복되면 중립적 가족중재 또는 법적 보존조치를 검토한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-1",
+"tp-3"
+]
+}

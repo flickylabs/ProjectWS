@@ -39,8 +39,8 @@ export interface ClaimNode {
   isConfidential?: boolean
 }
 
-// 통합된 질문 유형 (6종 → 3종)
-export type QuestionType = 'fact_pursuit' | 'motive_search' | 'empathy_approach'
+// QuestionType은 renewal.ts에서 정의 (evidence_present 포함)
+// 하위 호환용 re-export는 index.ts에서 처리
 
 // 보호 행동 (5종 → 2종)
 export type TrustActionType = 'confidential_protection' | 'separation' | 'emotional_stabilization' | 'retaliation_check'

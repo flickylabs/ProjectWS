@@ -1,0 +1,671 @@
+{
+"caseId": "case-family-09",
+"meta": {
+"relationshipType": "family",
+"conflictSeed": "CS-1",
+"variableModules": [
+"VM-A",
+"VM-D"
+],
+"twistModule": "TW-3",
+"difficulty": "hard",
+"anchorTruth": "최민아가 '도윤이 부모 집값 차액을 혼자 숨겼다'고 몰아붙인 6,600만원 계약 외 보전금은 사실 도윤 단독 은닉이 아니라, 남매가 동네 중개사와 함께 공식 매매가 밖으로 빼 돌려 나눠 갖기로 먼저 합의한 공모의 산물이었다.",
+"emotionalBait": "공인중개사와 도윤 사이의 '네 몫 먼저 보냈다'는 잘린 메시지, 급하게 찍힌 부모 위임장, 비어 있는 잔금 예상표가 겹치면서 처음에는 부동산을 맡은 남동생이 누나와 부모를 동시에 속인 듯 보인다.",
+"resolutionDilemma": "도윤이 숨긴 돈 일부를 자기 채무에 먼저 쓴 점은 분명히 무겁지만, 민아 역시 부모 동의가 불완전한 상태에서 위임장을 앞당기고 계약 외 보전금 공모에 참여했다는 점이 드러나, 누구를 피해자처럼 다뤄야 하는지보다 숨긴 차액을 어떻게 부모에게 되돌리고 이후 부동산 결정을 누가 맡을지 정하는 일이 더 어렵다."
+},
+"duo": {
+"partyA": {
+"name": "최민아",
+"age": 48,
+"occupation": "피부관리실 실장",
+"incomeBracket": "mid",
+"archetype": "victim_cosplay",
+"speechStyle": "부모 병원 동행과 재활비 정산, 장보기, 약 챙김을 먼저 길게 열거하며 자신이 가장 많이 떠안은 사람이라는 위치를 선점한다. 불리한 질문이 나오면 거래 구조보다 '내가 아니면 누가 부모 챙기냐'는 희생 서사로 초점을 돌린다.",
+"pride": 7,
+"fear": "돌봄 부담을 핑계로 재산을 노린 딸처럼 보이거나, 부모 부동산 결정에서 완전히 밀려나는 것",
+"riskAppetite": 6,
+"digitalHabit": "scan_folder_and_family_chat_archiver",
+"dailyRoutine": "아침에 부모 병원 예약과 약값 내역을 확인하고, 점심 이후에는 미용실 근무를 하며 틈틈이 부동산 서류와 영수증을 휴대폰 폴더로 정리한다.",
+"sensitivePoints": [
+"부모 돌봄 기여",
+"부동산 차액 은닉",
+"동생의 과거 채무"
+],
+"verbalTells": [
+{
+"type": "care_rollcall",
+"trigger": "lying",
+"pattern": "차액 공모 질문이 나오면 재활병원 동행, 식사 준비, 공과금 대납을 한 호흡에 열거해 재산 논쟁을 돌봄 경쟁으로 바꾼다."
+},
+{
+"type": "betrayed_sigh",
+"trigger": "emotional",
+"pattern": "결정적 반박 직전에 한숨을 길게 쉬며 '결국 또 내가 뒤늦게 알았잖아'를 반복해 자신의 과장과 누락을 배신감의 부산물처럼 보이게 만든다."
+},
+{
+"type": "partial_scope",
+"trigger": "cornered",
+"pattern": "불리한 위임장 질문에는 '그날은 가격 알아보는 정도였어'라며 당시 행동의 범위를 좁혀 실제 선서명 유도를 축소한다."
+}
+]
+},
+"partyB": {
+"name": "최도윤",
+"age": 44,
+"occupation": "인테리어 현장소장",
+"incomeBracket": "mid",
+"archetype": "avoidant",
+"speechStyle": "시세, 명도 일정, 공실 상태 같은 외부 사정부터 길게 설명해 핵심 돈 흐름 답변을 뒤로 미룬다. 궁지에 몰리면 자신이 발품 판 시간과 거래 리스크를 앞세워 절차 위반과 차액 사용을 '현장 처리'로 축소한다.",
+"pride": 5,
+"fear": "빚 많은 아들이 또 부모 재산을 건드렸다는 낙인이 찍혀 가족 결정에서 배제되는 것",
+"riskAppetite": 6,
+"digitalHabit": "voice_note_and_estimate_archive",
+"dailyRoutine": "새벽에 현장 출근 전 부모 집에 들러 우편과 부동산 전단을 챙기고, 저녁에는 중개사 통화 음성과 견적 메모를 폴더별로 모아 둔다.",
+"sensitivePoints": [
+"과거 사업 채무",
+"부동산 실무권",
+"누나의 돌봄 명분"
+],
+"verbalTells": [
+{
+"type": "urgency_buffer",
+"trigger": "avoiding",
+"pattern": "돈 얘기가 나오면 '매수인이 빠지기 직전이었다'며 긴급한 시세와 명도 상황을 먼저 길게 늘어놓는다."
+},
+{
+"type": "soft_minimizing",
+"trigger": "lying",
+"pattern": "계약 외 보전금과 선수령은 '자리만 잡아둔 돈', '잠깐 묶어둔 거'처럼 실제 의미보다 작게 말한다."
+},
+{
+"type": "fieldwork_shield",
+"trigger": "cornered",
+"pattern": "궁지에 몰리면 자신이 몇 번이나 매수인과 구청, 중개사무소를 오갔는지 반복해 공모와 개인 사용 책임을 현장 노고로 덮으려 한다."
+}
+]
+},
+"relationshipLedger": [
+{
+"id": "ledger-1",
+"category": "confirmed",
+"description": "아버지 뇌경색 뒤 부모의 상가주택 매각을 검토하면서, 남매는 매매가·중개수수료·추가 합의금이 생기면 부모와 형제에게 같은 날 원본 서류로 공유하기로 합의했다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-2",
+"category": "distorted",
+"description": "어머니가 예전에 '도윤이가 발품은 빠르니 부동산 먼저 알아봐라'라고 말한 일을 두 사람은 실무 권한 위임인지 단순 정보 수집 지시인지 다르게 기억한다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "both",
+"distortionDirection": "A: '시세만 알아보라는 말이었지 돈 흐름까지 맡긴 건 아니었다' / B: '어머니가 결국 내가 실무를 맡으라는 뜻으로 말한 거였다'",
+"currentlyResolved": "unresolved",
+"emotionalResidue": "mild",
+"connectionToCurrent": "direct"
+},
+{
+"id": "ledger-3",
+"category": "silenced",
+"description": "도윤이 2021년 인테리어 쇼룸 정리 때 부모 돈 3,000만원으로 급한 채무를 막았던 일은 겉으로 정리됐지만 부동산 이야기만 나오면 다시 떠오른다.",
+"isReal": true,
+"whoRemembersAccurately": "both",
+"whoDistorts": "none",
+"distortionDirection": "",
+"currentlyResolved": "surface_only",
+"emotionalResidue": "strong",
+"connectionToCurrent": "direct"
+}
+],
+"socialGraph": [
+{
+"id": "tp-1",
+"slot": "family_1",
+"name": "최정자 (어머니)",
+"relationTo": "both",
+"knowledgeScope": "상가주택을 팔아 아버지 재활비와 노후자금을 마련하자는 큰 방향은 알고 있었다. 다만 공식 매매가 밖의 보전금 구조와 형제 분배 약속은 듣지 못했다.",
+"witnessedDirectly": false,
+"bias": "neutral",
+"distortionRisk": "unconscious"
+},
+{
+"id": "tp-2",
+"slot": "acquaintance_1",
+"name": "김태범 (동네 공인중개사)",
+"relationTo": "both",
+"knowledgeScope": "공식 계약 밖 6,600만원 명도·수리 보전금, 형제의 분배 요구, 별도 이체 순서를 직접 알고 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+},
+{
+"id": "tp-3",
+"slot": "institutional",
+"name": "윤하나 (법무사 사무장)",
+"relationTo": "both",
+"knowledgeScope": "공식 매매계약서의 가격, 부모 위임장 작성 경위, 부모가 실제로 들은 설명 범위를 원본 서류 기준으로 확인할 수 있다.",
+"witnessedDirectly": true,
+"bias": "neutral",
+"distortionRisk": "accurate"
+}
+]
+},
+"context": {
+"contextType": "parent_property_sale",
+"description": "아버지 재활비와 부모 노후자금이 동시에 필요해지자 남매는 재개발 기대감이 붙은 부모 상가주택 매각을 서둘러 검토했다. 그런데 매수인이 빠른 명도와 수리비 조정을 요구하면서 공식 계약 밖 돈이 생겼고, 남매는 부모에게 다 보여주기로 한 약속과 달리 중개사를 사이에 두고 차액을 숨기기 시작했다.",
+"emotionalPressure": 9,
+"affects": "both",
+"triggerAmplifier": "부모 치료비와 시세 상승 기대가 같이 걸린 부동산이라 작은 차액도 곧 효도와 탐욕의 경계로 읽혔고, 과거 도윤의 채무 기억 때문에 잘린 메시지 하나만으로도 단독 횡령 서사가 폭발했다."
+},
+"disputes": [
+{
+"id": "d-1",
+"name": "형제의 계약 외 6,600만원 은닉 공모",
+"truth": true,
+"truthDescription": "민아와 도윤은 공식 매매가를 6억4천만원으로 두고, 별도 6,600만원 명도·수리 보전금을 부모와 계약서에서 빼 두기로 중개사와 미리 맞춘 뒤 나눠 갖기로 합의했다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-2",
+"e-5"
+],
+"correctResponsibility": {
+"a": 50,
+"b": 50
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "매매차액정리",
+"legitimacyIssue": true
+},
+{
+"id": "d-2",
+"name": "민아의 부모 위임장 선서명 유도",
+"truth": true,
+"truthDescription": "민아는 어머니에게 '시세만 물어보는 서류'라고 설명하며 법무사 사무실에서 일부 위임장과 인감 사용 동의를 먼저 받아 두었다.",
+"quadrant": "a_only",
+"requiredEvidence": [
+"e-3"
+],
+"correctResponsibility": {
+"a": 80,
+"b": 20
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "부동산의사결정",
+"legitimacyIssue": true
+},
+{
+"id": "d-3",
+"name": "도윤의 차액 선수령과 개인채무 상환",
+"truth": true,
+"truthDescription": "도윤은 계약 외 보전금 중 자신의 몫이라며 먼저 받은 2,400만원 가운데 1,300만원을 개인 장비리스 연체와 카드대금 상환에 썼다.",
+"quadrant": "b_only",
+"requiredEvidence": [
+"e-1",
+"e-4"
+],
+"correctResponsibility": {
+"a": 15,
+"b": 85
+},
+"ambiguity": "none",
+"weight": "high",
+"mediationLink": "매매차액정리",
+"legitimacyIssue": true
+},
+{
+"id": "d-4",
+"name": "부모는 계약 외 보전금 구조까지 알고 동의했는가",
+"truth": false,
+"truthDescription": "부모는 공식 매매가와 통상적 비용만 들었을 뿐, 별도 6,600만원 보전금이 형제 분배 대상으로 빠져 있다는 구조는 듣지 못했다.",
+"quadrant": "shared_misconception",
+"requiredEvidence": [
+"e-6"
+],
+"correctResponsibility": {
+"a": 55,
+"b": 45
+},
+"ambiguity": "low",
+"weight": "high",
+"mediationLink": "부동산의사결정",
+"legitimacyIssue": true
+},
+{
+"id": "d-5",
+"name": "세금·명도비 핑계의 공동 축소 설명",
+"truth": true,
+"truthDescription": "형제는 부모에게 '세금, 수수료, 명도비 때문에 남는 돈이 생각보다 적다'고 함께 설명하며 공식 계약 밖 보전금을 숨긴 채 순수 매매대금만 있는 것처럼 말했다.",
+"quadrant": "both_know",
+"requiredEvidence": [
+"e-2",
+"e-6"
+],
+"correctResponsibility": {
+"a": 50,
+"b": 50
+},
+"ambiguity": "none",
+"weight": "medium",
+"mediationLink": "가족신뢰복구",
+"legitimacyIssue": false
+}
+],
+"evidence": [
+{
+"id": "e-1",
+"name": "잘린 중개사-도윤 메시지 캡처",
+"description": "민아가 제출한 캡처로, 김태범 중개사가 도윤에게 '네 몫 먼저 보냈다'고 말한 부분과 2,400만원 이체 알림만 보인다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "cropped",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-3"
+],
+"isTrap": true,
+"requires": [],
+"investigationResults": {
+"request_original": "원본 대화 내보내기를 요구하자 같은 스레드 앞부분에 민아가 '내 건 왜 아직이냐'고 묻는 문장이 있었다.",
+"check_metadata": "캡처는 민아가 부모에게 보여주기 9분 전에 잘라 저장한 기록이 남아 있다.",
+"restore_context": "겉으로는 도윤 단독 선수령처럼 보이지만 원본 맥락에선 형제 분배 약속이 이미 존재했다.",
+"verify_source": "민아 휴대폰 앨범 원본과 메신저 백업 시간이 일치했다.",
+"check_edits": "텍스트 편집 흔적은 없으나 상단과 직전 메시지가 크게 잘려 있다.",
+"question_acquisition": "사적 메시지 캡처라 제출 자체는 가능하지만 부모 설득용 재배포 과정은 민감하다."
+}
+},
+{
+"id": "e-2",
+"name": "중개사 원본 메시지·통화녹취와 별도 이체 지시 내역",
+"description": "김태범 중개사의 휴대폰 원본 채팅과 통화녹취, 그리고 보전금 분리 이체 지시 메모로 형제가 계약 밖 돈을 함께 조율한 흐름이 보인다.",
+"type": "document",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "mixed",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-1",
+"d-5"
+],
+"isTrap": false,
+"requires": [
+"e-1"
+],
+"investigationResults": {
+"request_original": "중개사 휴대폰의 원본 스레드와 통화 파일 전체를 확인하자 민아와 도윤이 각각 '계약서 밖으로', '부모님 앞에서는 순수 매매가만' 같은 표현을 사용한 사실이 드러났다.",
+"check_metadata": "도윤과의 통화, 민아와의 메시지, 별도 이체 메모 작성 시각이 같은 날 연속으로 이어져 있다.",
+"restore_context": "도윤의 단독 횡령이 아니라 남매가 보전금을 계약 외로 빼 두고 나중에 정산하기로 한 공동 설계가 확인된다.",
+"verify_source": "중개사 단말 원본과 메신저 서버 백업 시간이 서로 맞아떨어졌다.",
+"check_edits": "채팅 내보내기와 녹취 원본이라 수동 편집 흔적이 없다.",
+"question_acquisition": "제3자인 중개사의 개인 단말 자료라 사생활 침해 소지가 있으나, 당사자와의 거래분만 제한적으로 제출됐다."
+}
+},
+{
+"id": "e-3",
+"name": "법무사 상담예약표와 위임장 작성 CCTV 확인서",
+"description": "민아가 어머니를 데리고 법무사 사무실에 먼저 방문한 예약표, 부분 위임장 초안, 대기실 CCTV 확인서다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-2"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "예약표, 초안, 확인서를 함께 대조하자 민아가 동생에게 알리기 전 어머니 서명을 일부 받아 둔 흐름이 확인됐다.",
+"check_metadata": "방문 시각은 공식 시세 브리핑 하루 전 오후 2시 16분으로 기록돼 있다.",
+"restore_context": "민아는 가격 문의용이라고 설명했지만, 초안에는 인감 사용과 매매 관련 문구가 이미 포함돼 있었다.",
+"verify_source": "법무사 사무실 접수번호와 CCTV 확인서 번호가 원본과 일치한다.",
+"check_edits": "기관 보관 문서라 편집 흔적이 없다.",
+"question_acquisition": "공식 사무실 기록이라 취득은 적법하지만 부모의 의사능력과 설명 수준은 별도 판단이 필요하다."
+}
+},
+{
+"id": "e-4",
+"name": "도윤 계좌 입금내역과 장비리스 연체 상환서",
+"description": "중개사 측 계좌에서 도윤에게 2,400만원이 들어온 내역과, 같은 날 장비리스 연체금 및 카드대금을 낸 금융 기록이다.",
+"type": "bank",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-3"
+],
+"isTrap": false,
+"requires": [
+"e-1"
+],
+"investigationResults": {
+"request_original": "은행 원본 거래내역과 리스사 납부확인서를 함께 확인하자 입금 뒤 2시간 안에 개인 채무 상환이 이어졌다.",
+"check_metadata": "이체와 상환 모두 도윤 본인 휴대폰 생체인증으로 처리됐다.",
+"restore_context": "도윤은 잠깐 보관만 했다고 하지만 실제 흐름은 부모나 공동보관계좌가 아니라 개인 채무 정리에 먼저 사용된 것이다.",
+"verify_source": "은행 발급번호와 리스사 납부번호가 원본과 일치했다.",
+"check_edits": "기관 발급 자료라 편집 흔적이 없다.",
+"question_acquisition": "도윤이 직접 제출한 자기 금융자료라 취득 정당성은 높다."
+}
+},
+{
+"id": "e-5",
+"name": "중개사 수기 분배 메모와 음성메모",
+"description": "김태범 중개사가 남긴 수기 메모와 이동 중 남긴 음성메모로, 보전금 6,600만원을 남매에게 3,300만원씩 잡아 두겠다는 내용이 담겨 있다.",
+"type": "document",
+"reliability": "soft",
+"completeness": "original",
+"provenance": "personal_device",
+"legitimacy": "privacy_concern",
+"proves": [
+"d-1"
+],
+"isTrap": false,
+"requires": [
+"e-2"
+],
+"investigationResults": {
+"request_original": "휴대폰 메모 원본과 음성 파일 전체를 열자 '민아/도윤 각 33, 부모한테는 순매매가 기준 설명'이라는 문구가 확인됐다.",
+"check_metadata": "메모 작성과 음성녹음은 공식 계약서 작성 전날 밤으로 찍혀 있다.",
+"restore_context": "차액 분배는 사후 오해가 아니라 공식 계약 이전에 이미 합의된 설계였다.",
+"verify_source": "메모 앱 생성 시각과 음성 파일 해시가 중개사 단말 원본과 일치했다.",
+"check_edits": "음성 파일은 편집 흔적이 없고, 수기 메모 사진도 원본 EXIF가 보존돼 있다.",
+"question_acquisition": "중개사의 개인 업무메모라 민감하지만 분쟁 핵심 부분만 제한 제출됐다."
+}
+},
+{
+"id": "e-6",
+"name": "공식 매매계약서와 부모 설명 녹취 확인서",
+"description": "윤하나 법무사 사무장이 보관한 공식 매매계약서, 설명 체크리스트, 부모에게 들려준 브리핑 녹취 확인서다.",
+"type": "institutional_note",
+"reliability": "hard",
+"completeness": "original",
+"provenance": "institutional",
+"legitimacy": "lawful",
+"proves": [
+"d-4",
+"d-5"
+],
+"isTrap": false,
+"requires": [],
+"investigationResults": {
+"request_original": "계약서 원본과 설명 체크리스트, 브리핑 확인서를 함께 대조하자 부모가 들은 것은 공식 매매가와 통상 비용뿐이었다.",
+"check_metadata": "브리핑 시각은 위임장 방문 이틀 뒤 잔금 조건 확정 직전으로 남아 있다.",
+"restore_context": "형제는 부모도 대략 알았다고 주장했지만 공식 설명 과정에는 별도 보전금이나 형제 분배 문구가 전혀 없다.",
+"verify_source": "법무사 사무실 접수번호와 녹취 확인서 일련번호가 일치한다.",
+"check_edits": "기관 보관 문서라 편집 흔적이 없다.",
+"question_acquisition": "공식 거래 설명 자료라 적법하지만 부모의 건강상태와 재산 정보가 포함돼 있어 사용 범위는 제한돼야 한다."
+}
+}
+],
+"evidenceCombinations": [
+{
+"requires": [
+"e-2",
+"e-5"
+],
+"upgradesTo": "hard",
+"proves": [
+"d-1"
+]
+}
+],
+"truthTable": [
+{
+"id": "t-1",
+"fact": "민아와 도윤은 공식 계약 밖 6,600만원 보전금을 숨기고 나눠 갖기로 함께 맞췄다.",
+"isTrue": true,
+"weight": 10,
+"quadrant": "both_know"
+},
+{
+"id": "t-2",
+"fact": "민아는 부모에게 충분히 설명하지 않은 채 위임장과 인감 사용 동의를 일부 먼저 받았다.",
+"isTrue": true,
+"weight": 8,
+"quadrant": "a_only"
+},
+{
+"id": "t-3",
+"fact": "도윤은 보전금 일부를 먼저 받아 자기 채무 상환에 썼다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "b_only"
+},
+{
+"id": "t-4",
+"fact": "부모는 공식 계약 밖 보전금 구조와 형제 분배 약속을 듣지 못했다.",
+"isTrue": true,
+"weight": 9,
+"quadrant": "shared_misconception"
+},
+{
+"id": "t-5",
+"fact": "형제는 부모에게 세금과 명도비만 강조하며 실제 남는 구조를 함께 축소 설명했다.",
+"isTrue": true,
+"weight": 7,
+"quadrant": "both_know"
+}
+],
+"lieConfigA": [
+{
+"disputeId": "d-2",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "self_protection",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "power_of_attorney_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-3_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "mother_consent_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "responsibility_question"
+}
+]
+},
+{
+"disputeId": "d-1",
+"lieType": "LT-1",
+"lieIntensity": "L3",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "off_contract_money_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "broker_memo_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-5",
+"lieIntensity": "L1",
+"lieMotive": "relationship_maintenance",
+"initialState": "S0",
+"collapseViaTrust": true,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "parent_explanation_question"
+},
+{
+"from": "S1",
+"to": "S4",
+"trigger": "nonjudgmental_question_about_rehab_cost_pressure"
+},
+{
+"from": "S4",
+"to": "S3",
+"trigger": "e-6_presented"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"lieConfigB": [
+{
+"disputeId": "d-3",
+"lieType": "LT-2",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "side_transfer_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-1_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "debt_payment_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-4_presented"
+}
+]
+},
+{
+"disputeId": "d-1",
+"lieType": "LT-3",
+"lieIntensity": "L2",
+"lieMotive": "face_saving",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "off_contract_money_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-2_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "split_agreement_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "e-5_presented"
+}
+]
+},
+{
+"disputeId": "d-5",
+"lieType": "LT-6",
+"lieIntensity": "L1",
+"lieMotive": "shame_avoidance",
+"initialState": "S0",
+"collapseViaTrust": false,
+"transitions": [
+{
+"from": "S0",
+"to": "S1",
+"trigger": "parent_explanation_question"
+},
+{
+"from": "S1",
+"to": "S2",
+"trigger": "e-6_presented"
+},
+{
+"from": "S2",
+"to": "S3",
+"trigger": "same_day_disclosure_followup"
+},
+{
+"from": "S3",
+"to": "S5",
+"trigger": "shared_responsibility_question"
+}
+]
+}
+],
+"solutions": {
+"매매차액정리": [
+"공식 계약금과 계약 외 보전금을 모두 표로 다시 묶어 부모 명의의 한시 에스크로 계좌로 환원한 뒤, 이미 쓴 금액은 상환 일정표를 만든다.",
+"중개사에게서 나온 모든 별도 이체 내역과 수수료 명목을 원본으로 받아 차액이 누구 계좌를 거쳤는지 하루 단위로 정리한다.",
+"계약 밖 돈을 다시 만들거나 숨긴 흔적이 나오면 현재 매매 절차를 중단하고 외부 회계 검증과 법률 검토를 먼저 진행한다."
+],
+"부동산의사결정": [
+"부모 부동산과 관련한 위임장, 인감 사용, 가격 협상은 부모 설명 확인서와 형제 공동 열람 원칙 아래에서만 진행한다.",
+"앞으로의 매매·임대·명도 협상은 부모가 들은 설명 문구와 실제 계약 문구를 나란히 적은 서면으로만 남긴다.",
+"다시 한쪽이 선서명이나 선협상을 시도하면 그 사람의 단독 실무권을 중단하고 법무사 입회 하의 공동 의사결정으로 전환한다."
+],
+"중개경계": [
+"현재 중개사와의 사적 메신저·구두 합의를 중단하고, 추가 조건은 법무사 또는 새 중개사에게 공식 문서로만 받는다.",
+"명도비, 수리보전금, 소개료처럼 계약 밖으로 빠질 수 있는 항목은 정의부터 표준화해 부모 앞에서 함께 확인한다.",
+"같은 유형의 구두 공모가 반복되면 매매 창구를 외부 신탁 또는 변호사 관리 체계로 넘긴다."
+],
+"가족신뢰복구": [
+"민아와 도윤은 부모 앞에서 서로를 단독 횡령범처럼 몰기 전에 먼저 공모와 개인 사용 사실을 분리해 인정하고, 과거 채무 비난은 별도 시간에만 다룬다.",
+"중대한 재산 결정은 같은 날 단톡 공지와 원본 서류 업로드를 기본 규칙으로 되돌린다.",
+"공개 비난이나 선택적 캡처 제시가 다시 나오면 부모 동석 회의를 중단하고 제3자 조정자 앞에서만 재산 이야기를 한다."
+]
+},
+"activeLedgerEntries": [
+"ledger-1",
+"ledger-3"
+],
+"activeThirdParties": [
+"tp-2",
+"tp-3"
+]
+}
