@@ -35,7 +35,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
     // 대상 캐릭터와 관련된 증거만 필터링 (subjectParty 기준)
     const isRelevant = (e: any) => !e.subjectParty || e.subjectParty === 'both' || e.subjectParty === target
     // 이 캐릭터에게 이미 제시했는지 확인 (presentedTo에 target 포함 여부)
-    const isPresentedToTarget = (e: any) => evidenceStates[e.id]?.presentedTo?.includes(target) ?? false
+    const isPresentedToTarget = (e: any) => (target && evidenceStates[e.id]?.presentedTo?.includes(target)) ?? false
     const avail = evidenceDefinitions.filter((e) => isRelevant(e) && evidenceStates[e.id]?.unlocked && !isPresentedToTarget(e))
     const pres = evidenceDefinitions.filter((e) => isRelevant(e) && isPresentedToTarget(e))
     const lock = evidenceDefinitions.filter((e) => isRelevant(e) && !evidenceStates[e.id]?.unlocked)
