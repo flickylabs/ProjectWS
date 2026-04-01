@@ -160,8 +160,8 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
             </button>
           )
         })}
-        {/* 자유 질문 카드 */}
-        {llmMode && onFreeResult && (
+        {/* 자유 질문 카드 — V3 게임 루프에서는 비활성 (Blueprint 우회 방지) */}
+        {false && llmMode && onFreeResult && (
           <button
             onClick={() => setSelectedCard('free_question')}
             className={`text-left rounded-xl border p-3 bg-gradient-to-br transition-all active:scale-95 ${CARD_COLORS.free_question.border} ${CARD_COLORS.free_question.bg} hover:shadow-lg ${CARD_COLORS.free_question.glow} hover:scale-[1.02]`}
