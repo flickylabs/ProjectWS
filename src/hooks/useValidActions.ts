@@ -54,15 +54,11 @@ export function useValidActions(target: PartyId | null) {
     ]
 
     const questions: ValidQuestion[] = QUESTION_DEFS.map((qDef) => {
-      const validDisputes: ValidDispute[] = disputes.map((d) => {
-        const hasLie = lieDisputes.has(d.id)
+      // 이 대상이 거짓말 전략을 가진 쟁점만 표시 (무관한 쟁점은 숨김)
+      const relevantDisputes = disputes.filter((d) => lieDisputes.has(d.id))
+      const validDisputes: ValidDispute[] = relevantDisputes.map((d) => {
         const lieEntry = agent.lieStateMap[d.id]
         const isCollapsed = lieEntry?.currentState === 'S5'
-
-        // 이 대상이 이 쟁점에 거짓말 전략이 없으면 → 비활성
-        if (!hasLie) {
-          return { id: d.id, name: d.name, enabled: false, reason: '이 대상과 무관한 쟁점' }
-        }
 
         // 이미 완전 붕괴 → 사실 추궁/동기 탐색은 비활성 (이미 인정함)
         if (isCollapsed && ['fact_pursuit', 'motive_search'].includes(qDef.type)) {
