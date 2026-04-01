@@ -616,10 +616,18 @@ function buildUserPrompt(
   // responseMode에 따라 발화 대상을 명시
   const myName = target && caseData ? (target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name) : ''
   const opName = target && caseData ? (target === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name) : ''
+  // 호칭 정보 추출 (output 블록용)
+  const myCallTerms = target && caseData
+    ? (target === 'a' ? caseData.duo.partyA.callTerms : caseData.duo.partyB.callTerms)
+    : null
+  const judgeRefOut = myCallTerms?.toJudge ?? '상대방'
+  const callFormOut = myCallTerms?.toPartner ? (myCallTerms.toPartner === '자기' ? '자기야' : myCallTerms.toPartner) : opName + '씨'
+
   const isJudgeOnly = responseMode === 'answer_only' || responseMode === 'private_confession' || responseMode === 'yes_no_first'
+  const honorificRule = `\n★★ 호칭 규칙 (절대 위반 금지):\n- 재판관에게 ${opName}을(를) 언급할 때: 반드시 "${judgeRefOut}"로 지칭\n  ✅ "${judgeRefOut}이 그렇게 했습니다", "${judgeRefOut}도 알고 있었습니다"\n  ❌ "${callFormOut}가~", "${callFormOut}도~" (애칭을 재판관 앞에서 쓰지 마라)\n- ${opName}에게 직접 말할 때만: "${callFormOut}" 사용 가능\n`
   const addressRule = isJudgeOnly
-    ? `★ 당신은 "${myName}"이다. 지금 재판관에게만 답한다. ${opName}에게 말하는 것이 아니다.\n★ 상대 호칭("자기야","여보","오빠" 등)으로 시작 금지. 호칭 없이 바로 답하거나 "재판관님"으로 시작.\n★ npcResponse 전체가 재판관을 향한 존댓말(~습니다, ~요)이어야 한다.\n★ "${opName}"에게 직접 말하는 문장을 넣지 마라.\n`
-    : `★ 당신은 "${myName}"이다. 재판관에게 답한 뒤, ${opName}에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.\n★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.\n`
+    ? `★ 당신은 "${myName}"이다. 지금 재판관에게만 답한다. ${opName}에게 말하는 것이 아니다.\n★ 상대 호칭("${callFormOut}" 등)으로 시작 금지. 호칭 없이 바로 답하거나 "재판관님"으로 시작.\n★ npcResponse 전체가 재판관을 향한 존댓말(~습니다, ~요)이어야 한다.\n★ "${opName}"에게 직접 말하는 문장을 넣지 마라.\n${honorificRule}`
+    : `★ 당신은 "${myName}"이다. 재판관에게 답한 뒤, ${opName}에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.\n★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.\n${honorificRule}`
 
   const judgeGenRule = `\n★ judgeQuestion 필드 규칙 (최우선):\n- judgeQuestion은 "재판관"이 "${myName}" 씨에게 묻는 질문이다.\n- 재판관은 제3자 시점의 권위적 심문관이다. 절대로 NPC가 아니다.\n- "${myName} 씨, ~" 로 시작하거나 바로 질문으로 시작한다.\n- ❌ 절대 금지: "재판관님"으로 시작하는 문장. judgeQuestion은 재판관 본인이 말하는 것이므로 자기 자신을 "재판관님"이라 부르지 않는다.\n- ❌ 절대 금지: NPC 입장에서 쓴 문장 (존댓말로 보고하는 톤, "저는~", "제가~" 등)\n- ✅ 올바른 예: "${myName} 씨, ~에 대해 설명해 주십시오", "왜 ~하신 겁니까?", "~한 사실을 인정하십니까?"\n- 재판관 어투: 격식체, 간결, 권위 있는 톤 (~주십시오, ~입니까, ~하셨습니까)\n- "${disputeName}" 쟁점에 대해 질문 유형에 맞는 자연스러운 질문을 만든다.\n- 쟁점명을 그대로 인용하지 말고, 맥락에 맞게 풀어서 질문한다.\n`
 
