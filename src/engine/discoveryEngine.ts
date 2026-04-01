@@ -16,11 +16,11 @@ import type {
   DisputeVisibility,
   DisputeVisibilityEntry,
   EmergenceRoute,
-  EmotionTier,
   EmotionTierConfig,
   EmotionalSlipEvent,
   DiscoveryState,
 } from '../types/discovery'
+import type { EmotionTier } from '../types'
 import type { CaseData, Dispute, EvidenceNode, TruthItem, PartyId } from '../types'
 import type { ClaimNode } from '../types/dialogue'
 import type { LieState } from '../types/agent'

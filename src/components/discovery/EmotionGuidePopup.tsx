@@ -2,7 +2,7 @@
  * 감정 안내 팝업 — 감정 아이콘 클릭 시 감정 상태별 설명 표시
  */
 import { EMOTION_TIER_CONFIG, getEmotionTier } from '../../engine/discoveryEngine'
-import type { EmotionTier } from '../../types/discovery'
+import type { EmotionTier } from '../../types'
 
 interface Props {
   partyName: string

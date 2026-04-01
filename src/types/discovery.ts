@@ -103,8 +103,8 @@ export interface EmergenceRoute {
 // ─────────────────────────────────────────
 
 // EmotionTier는 renewal.ts에서 정의
+// 이 파일 내부에서만 사용, re-export 안 함
 import type { EmotionTier } from './renewal'
-export type { EmotionTier }
 
 export interface EmotionTierConfig {
   tier: EmotionTier

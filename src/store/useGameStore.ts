@@ -75,7 +75,7 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** V3: 질문 효과 미터 (파티별) */
   questionMeters: { a: QuestionMeterState; b: QuestionMeterState }
   applyQuestionEffect: (questionType: QuestionType, party: 'a' | 'b', disputeId: string, stance: Stance, emotionTier: EmotionTier) => QuestionEffectResult | null
-  getQuestionMeterEffects: (party: 'a' | 'b') => ReturnType<typeof getMeterEffects>
+  getQuestionMeterEffects: (party: 'a' | 'b') => { contradictionActive: boolean; leakWarning: boolean; leakCritical: boolean; trustWindowOpen: boolean }
   /** V3: 이벤트 로그 (UI 피드백용) */
   gameEventLog: GameEvent[]
   pushGameEvent: (event: GameEvent) => void
@@ -241,7 +241,7 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       return result
     },
 
-    getQuestionMeterEffects: (party: 'a' | 'b') => {
+    getQuestionMeterEffects: (party: 'a' | 'b'): { contradictionActive: boolean; leakWarning: boolean; leakCritical: boolean; trustWindowOpen: boolean } => {
       return getMeterEffects(useGameStore.getState().questionMeters[party])
     },
 

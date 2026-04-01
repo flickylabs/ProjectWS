@@ -40,7 +40,8 @@ export interface ClaimNode {
 }
 
 // QuestionType은 renewal.ts에서 정의 (evidence_present 포함)
-// 하위 호환용 re-export는 index.ts에서 처리
+// 이 파일 내부에서만 사용, re-export 안 함
+import type { QuestionType } from './renewal'
 
 // 보호 행동 (5종 → 2종)
 export type TrustActionType = 'confidential_protection' | 'separation' | 'emotional_stabilization' | 'retaliation_check'
