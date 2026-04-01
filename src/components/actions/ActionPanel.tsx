@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react'
+import React, { useState, useRef, useCallback, useEffect } from 'react'
 import type { PartyId, QuestionType, TrustActionType, SkillType } from '../../types'
 import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
@@ -9,11 +9,14 @@ import { analyzeTestimony } from '../../engine/llmTestimonyAnalysis'
 import QuestionSelector from './QuestionSelector'
 import type { QuestionToggles } from './QuestionSelector'
 import EvidencePresenter from './EvidencePresenter'
+import DossierCardPanel from './DossierCardPanel'
+import { QuestionMeterHUD } from '../discovery/StateTransitionFeedback'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
+import { getDossierCards } from '../../engine/v3GameLoopLoader'
 
 import Emoji from '../common/Emoji'
 
-type ActionTab = 'question' | 'evidence' | 'skill' | null
+type ActionTab = 'question' | 'evidence' | 'skill' | 'dossier' | null
 
 const EMOTION_EMOJI: Record<string, string> = { defensive: '😐', confident: '😤', shaken: '😰', angry: '😡', resigned: '😞' }
 
@@ -29,9 +32,9 @@ function phaseAtLeast(current: GamePhase, required: GamePhase): boolean {
   return (PHASE_NUM[current] ?? 0) >= (PHASE_NUM[required] ?? 0)
 }
 
-/** 증거 탭 잠금 여부 */
-function isEvidenceLocked(phase: GamePhase): boolean {
-  return phase === GamePhase.Phase3_Interrogation
+/** 증거 탭 잠금 여부 — Phase 통합으로 Phase 3에서도 증거 사용 가능 */
+function isEvidenceLocked(_phase: GamePhase): boolean {
+  return false
 }
 
 /** 액티브 스킬별 해금 Phase */
@@ -84,11 +87,23 @@ export default function ActionPanel() {
   const resources = useGameStore((s) => s.resources)
   const agentA = useGameStore((s) => s.agentA)
   const agentB = useGameStore((s) => s.agentB)
+  const disputeBoardAction = useGameStore((s) => s.disputeBoardAction)
+
+  // DisputeBoard에서 "~에게 질문" 선택 시 자동 라우팅
+  useEffect(() => {
+    if (disputeBoardAction) {
+      setTarget(disputeBoardAction.party)
+      setActiveTab('question')
+      useGameStore.getState().setDisputeBoardAction(null)
+    }
+  }, [disputeBoardAction])
 
   if (!caseData) return null
   const disputes = caseData.disputes.map(d => ({ id: d.id, name: d.name }))
   const llm = isLLMMode()
   const evLocked = isEvidenceLocked(currentPhase)
+  const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
+  const hasDossierCards = getDossierCards(caseKey).length > 0
 
   // ── 토글 스킬 해금 상태 ──
   const toggles: QuestionToggles = {
@@ -240,6 +255,17 @@ export default function ActionPanel() {
                   toggles={toggles} onToggle={handleToggle} />
               </div>
             )}
+            {hasToast && activeTab === 'dossier' && (
+              <div className="p-2">
+                <DossierCardPanel
+                  target={target!}
+                  onQuestionAsked={() => setActiveTab(null)}
+                  onDispatchEvidence={(evId, t) => {
+                    dispatch({ type: 'evidence_present', evidenceId: evId, target: t })
+                  }}
+                />
+              </div>
+            )}
             {hasToast && activeTab === 'evidence' && <div className="p-2"><EvidencePresenter target={target!} onPresent={hEv} onConfront={hConfront} onWitnessCalled={() => setActiveTab(null)} llmMode={llm} newEvidenceIds={new Set(unlockedIds.filter(id => !seenEvidenceRef.current.has(id)))} /></div>}
             {hasToast && activeTab === 'skill' && (
               <div className="p-2">
@@ -277,11 +303,25 @@ export default function ActionPanel() {
         </button>
       </div>
 
-      <div className="flex gap-1.5 mt-2 h-10">
+      {/* V3 미터 HUD — 심문 대상 선택 시 표시 */}
+      {target && (
+        <div className="mt-1.5 px-1 flex items-center justify-between">
+          <span className="text-[9px] text-gray-600">{target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name}</span>
+          <QuestionMeterHUD party={target} />
+        </div>
+      )}
+
+      <div className={`flex gap-1.5 mt-1.5 h-10`}>
         <button onClick={() => handleTabClick('question')}
           className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 ${activeTab === 'question' ? 'bg-amber-600 text-gray-950' : 'bg-gray-800/60 text-gray-400 hover:text-gray-200'}`}>
           <Emoji char="❓" size={14} /> 심문
         </button>
+        {hasDossierCards && (
+          <button onClick={() => handleTabClick('dossier')}
+            className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 ${activeTab === 'dossier' ? 'bg-amber-600 text-gray-950' : 'bg-gray-800/60 text-amber-500/70 hover:text-amber-400'}`}>
+            <Emoji char="📋" size={14} /> 도시에
+          </button>
+        )}
         <button onClick={() => handleTabClick('evidence')}
           className={`flex-1 text-xs rounded-xl font-semibold relative ${
             evLocked ? 'bg-gray-900/40 text-gray-600 cursor-not-allowed'

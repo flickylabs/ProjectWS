@@ -1,0 +1,5636 @@
+export const family01V2Atoms = {
+  "caseId": "family-01",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "아버지 관리계좌에서 돈이 움직였다고 해서 제가 그 돈을 사적으로 챙긴 사람처럼 몰리면 너무 억울합니다.",
+            "그때는 아버지, 어머니 일과 집안 비용이 한꺼번에 터져서 제가 먼저 막아야 하는 상황이라고 봤습니다.",
+            "제 동생 도현이는 숫자만 보지만, 누가 그 집을 실제로 붙들고 있었는지도 같이 보셔야 합니다."
+          ],
+          "privateKnowledge": [
+            "나는 간병이 본격적으로 시작되기 전 아버지 관리계좌에서 1,800만원을 내 계좌로 옮겼다.",
+            "그 돈으로 내 카드대금과 보험료를 먼저 막았고, 나중에 간병비 선집행처럼 포장했다.",
+            "공유표 기준과 사전 상의 원칙을 어긴 걸 알면서도 장녀로서 떠안았다는 명분 뒤에 숨었다."
+          ],
+          "suppressions": [
+            "1,800만원이 내 개인 카드대금과 보험료로 먼저 빠져나갔다는 사실",
+            "간병 시작 전 선이체였다는 시점",
+            "도현이와 상의하지 않고 공유표에도 남기지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "sacrifice_rollcall",
+            "echo_blame"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.parent_account_movement",
+              "factText": "부모 관리계좌에서 큰 금액 이동이 있었다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 48,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "time": {
+                  "neutral": "그 무렵",
+                  "period": "간병 시작 3주 전"
+                },
+                "action": {
+                  "neutral": "그 이체",
+                  "exact": "부모 관리계좌 선이체"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d1.greed_framing_denial",
+              "factText": "선이체를 곧바로 탐욕으로 읽는 해석 거부",
+              "tags": [
+                "denial",
+                "motive",
+                "context",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "relation": {
+                  "neutral": "상대",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            },
+            {
+              "id": "d1.household_crisis_generic",
+              "factText": "부모 일과 집안 비용이 한꺼번에 몰렸다는 주장",
+              "tags": [
+                "context",
+                "motive",
+                "harm",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d1.brother_numbers_only",
+              "factText": "동생이 숫자만 본다는 역지적",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 38,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "관리계좌를 제가 먼저 건드린 건 맞지만, 그걸 곧바로 탐욕으로 읽는 건 너무 단순합니다.",
+            "제가 안 움직였으면 그 집 카드값과 생활 정리가 한꺼번에 무너진다고 느꼈습니다.",
+            "제 동생은 1,800만원만 말하지만, 그 무렵 어머니 병원 접수와 장보기는 거의 제가 다 감당했습니다."
+          ],
+          "privateKnowledge": [
+            "나는 아버지 관리계좌에서 1,800만원을 내 계좌로 옮긴 뒤 내 카드대금과 보험료를 먼저 냈다.",
+            "그 뒤 이 돈을 간병비와 집안 운영을 위한 선집행처럼 설명하려 했다.",
+            "돌봄 부담을 내세우면 도현이가 내 개인 빚 문제를 바로 찌르지 못할 거라고 계산했다."
+          ],
+          "suppressions": [
+            "돈이 내 개인 계좌로 먼저 들어갔다는 점",
+            "개인 채무 정리가 병원비보다 앞섰다는 점",
+            "장녀 체면과 과거 사업 손실이 들킬까 두려워 숨겼다는 마음"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "sacrifice_rollcall",
+            "tear_brake"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "1,800만원 선이체 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "time": {
+                  "neutral": "그 무렵",
+                  "period": "간병 시작 3주 전"
+                },
+                "action": {
+                  "neutral": "그 이체",
+                  "exact": "부모 관리계좌 선이체"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.not_simple_private_outflow",
+              "factText": "선이체를 순수한 사적 인출로만 볼 수 없다는 주장",
+              "tags": [
+                "denial",
+                "context",
+                "motive",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 42,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ]
+            },
+            {
+              "id": "d1.household_crisis_generic",
+              "factText": "부모 일과 집안 비용이 한꺼번에 몰렸다는 주장",
+              "tags": [
+                "context",
+                "motive",
+                "harm",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d1.mother_care_rollcall",
+              "factText": "어머니 병원 접수와 장보기를 거의 맡았다는 주장",
+              "tags": [
+                "beneficiary",
+                "relationship",
+                "harm",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 46,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "어머니",
+                  "judgeRef": "어머니",
+                  "directRef": "어머니",
+                  "role": "돌봄 대상자"
+                },
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "네, 1,800만원을 제가 먼저 옮긴 건 맞습니다.",
+            "하지만 그걸 순수한 사적 인출로만 보면 제가 왜 그렇게까지 몰렸는지는 하나도 안 보입니다.",
+            "카드대금이랑 보험료를 막은 건 사실이어도, 그 시기에 어머니 간병이 겹쳐 있었던 것도 같이 봐주셔야 합니다."
+          ],
+          "privateKnowledge": [
+            "나는 1,800만원을 내 계좌로 옮겨 개인 카드대금과 보험료를 먼저 처리했다.",
+            "그 뒤 어머니 약값과 돌봄 비용을 내세워 이 이체를 간병비 성격으로 정리하려 했다.",
+            "내 개인 재정이 무너지는 걸 들키기 싫어 가족 돌봄 서사와 섞어 버렸다."
+          ],
+          "suppressions": [
+            "간병 이전의 개인 채무 방어가 선이체의 직접 동기였다는 점",
+            "어머니 약값보다 내 자동이체가 먼저 처리됐다는 순서",
+            "공유표 원칙과 부모 돈 사용 동의 범위를 무시했다는 사실"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "sacrifice_rollcall",
+            "tear_brake",
+            "echo_blame"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "1,800만원 선이체 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "time": {
+                  "neutral": "그 무렵",
+                  "period": "간병 시작 3주 전"
+                },
+                "action": {
+                  "neutral": "그 이체",
+                  "exact": "부모 관리계좌 선이체"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.personal_account_first",
+              "factText": "부모 돈이 먼저 자신의 개인계좌로 들어왔다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 32,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "evidence": {
+                  "neutral": "그 거래내역",
+                  "fullName": "부모 관리계좌 거래내역과 서아 개인계좌 입금확인서",
+                  "shortName": "계좌 원본"
+                },
+                "action": {
+                  "neutral": "그 입금",
+                  "exact": "개인계좌 선입금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.card_insurance_paid_first",
+              "factText": "카드대금과 보험료를 먼저 막았다는 사실",
+              "tags": [
+                "act",
+                "context",
+                "motive",
+                "harm",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "evidence": {
+                  "neutral": "그 거래내역",
+                  "fullName": "부모 관리계좌 거래내역과 서아 개인계좌 입금확인서",
+                  "shortName": "계좌 원본"
+                },
+                "action": {
+                  "neutral": "그 정리",
+                  "exact": "카드대금·보험료 결제"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d1.care_overlap_claim",
+              "factText": "개인 지출과 어머니 간병 시기가 겹쳐 있었다는 주장",
+              "tags": [
+                "context",
+                "beneficiary",
+                "timeline",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 43,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "어머니",
+                  "judgeRef": "어머니",
+                  "directRef": "어머니",
+                  "role": "돌봄 대상자"
+                },
+                "time": {
+                  "neutral": "그 무렵",
+                  "period": "간병 시작 3주 전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d1.not_simple_private_outflow",
+              "factText": "선이체를 순수한 사적 인출로만 볼 수 없다는 주장",
+              "tags": [
+                "denial",
+                "context",
+                "motive",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 42,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "왜 저만 아버지, 어머니 돈을 빼돌린 사람처럼 세우십니까.",
+            "그 시기에 제 동생 도현이는 60만원도 제때 못 넣고 야간 칸까지 비웠는데, 그 부담은 결국 제 쪽으로 다 왔습니다.",
+            "제가 한 선집행이 옳았다는 게 아니라, 그 집이 멈추지 않게 하려고 제가 먼저 떠안은 사정도 같이 보자는 겁니다."
+          ],
+          "privateKnowledge": [
+            "나는 1,800만원 선이체를 개인 채무 방어와 간병비 명분이 섞인 상태로 실행했다.",
+            "도현이의 지연과 공백을 내 선택의 면죄부처럼 사용하고 있다는 것도 안다.",
+            "그래도 부모 돈을 내 계좌로 먼저 옮긴 책임이 가장 무거운 쪽이 나라는 사실을 피하고 싶다."
+          ],
+          "suppressions": [
+            "내 개인 카드대금과 보험료가 핵심 동기였다는 점",
+            "아버지 관리계좌를 내 재정 완충재처럼 썼다는 점",
+            "도현이 문제와 별개로 내가 먼저 선을 넘었다는 자각"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "echo_blame",
+            "sacrifice_rollcall",
+            "tear_brake"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "1,800만원 선이체 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "time": {
+                  "neutral": "그 무렵",
+                  "period": "간병 시작 3주 전"
+                },
+                "action": {
+                  "neutral": "그 이체",
+                  "exact": "부모 관리계좌 선이체"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.card_insurance_paid_first",
+              "factText": "카드대금과 보험료를 먼저 막았다는 사실",
+              "tags": [
+                "act",
+                "context",
+                "motive",
+                "harm",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "evidence": {
+                  "neutral": "그 거래내역",
+                  "fullName": "부모 관리계좌 거래내역과 서아 개인계좌 입금확인서",
+                  "shortName": "계좌 원본"
+                },
+                "action": {
+                  "neutral": "그 정리",
+                  "exact": "카드대금·보험료 결제"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d1.brother_delay_shield",
+              "factText": "동생의 지연과 공백 때문에 부담이 자신에게 몰렸다는 반격",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 36,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d1.house_must_not_stop",
+              "factText": "집이 멈추지 않게 하려고 선집행했다는 자기정당화",
+              "tags": [
+                "motive",
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 44,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d1.greed_framing_denial",
+              "factText": "선이체를 곧바로 탐욕으로 읽는 해석 거부",
+              "tags": [
+                "denial",
+                "motive",
+                "context",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "relation": {
+                  "neutral": "상대",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 말씀드리면, 제가 그 1,800만원으로 제 카드대금과 보험료부터 막은 건 맞습니다.",
+            "그때 저는 아버지, 어머니 돌봄까지 무너지면 다 제 탓이 될 것 같아서, 제 형편부터 붙들고 버티려 했습니다.",
+            "잘한 일이라고는 못 하겠지만, 그 공포를 저 혼자만 알고 버틴 것도 사실입니다."
+          ],
+          "privateKnowledge": [
+            "나는 아버지 관리계좌 돈으로 내 카드대금과 보험료를 먼저 처리했다.",
+            "돌봄을 떠안은 장녀 이미지가 무너지면 부모 재산 접근권도 잃을까 봐 두려웠다.",
+            "그래서 간병 서사를 앞세워 내 사적 곤란을 숨겼다."
+          ],
+          "suppressions": [
+            "간병 이전부터 내 재정이 이미 흔들리고 있었다는 세부 내역",
+            "내가 부모 돈 사용 권한을 과도하게 확장 해석했다는 점",
+            "도현이보다 내가 더 오래 알고도 말하지 않았다는 계산"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tear_brake",
+            "sacrifice_rollcall"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "1,800만원 선이체 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "time": {
+                  "neutral": "그 무렵",
+                  "period": "간병 시작 3주 전"
+                },
+                "action": {
+                  "neutral": "그 이체",
+                  "exact": "부모 관리계좌 선이체"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.card_insurance_paid_first",
+              "factText": "카드대금과 보험료를 먼저 막았다는 사실",
+              "tags": [
+                "act",
+                "context",
+                "motive",
+                "harm",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "evidence": {
+                  "neutral": "그 거래내역",
+                  "fullName": "부모 관리계좌 거래내역과 서아 개인계좌 입금확인서",
+                  "shortName": "계좌 원본"
+                },
+                "action": {
+                  "neutral": "그 정리",
+                  "exact": "카드대금·보험료 결제"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d1.self_finance_fear",
+              "factText": "자기 형편이 무너지면 부모 돌봄도 함께 무너질까 두려웠다는 감정",
+              "tags": [
+                "emotion",
+                "fear",
+                "harm",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d1.dutiful_daughter_fear",
+              "factText": "장녀로서의 돌봄이 탐욕으로 뒤집힐까 두려웠다는 감정",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 52,
+              "slots": {
+                "relation": {
+                  "neutral": "상대",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!"
+                },
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d1.house_must_not_stop",
+              "factText": "집이 멈추지 않게 하려고 선집행했다는 자기정당화",
+              "tags": [
+                "motive",
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 44,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "제가 아버지 관리계좌에서 1,800만원을 제 계좌로 먼저 옮긴 건 사실입니다.",
+            "그리고 그 돈으로 제 카드대금과 보험료를 막은 뒤, 나중에 간병비처럼 정리하려 한 것도 인정합니다.",
+            "어머니 간병을 많이 맡았다는 사정이 있어도, 아버지 관리계좌 돈과 제 돈의 경계를 제가 먼저 무너뜨린 책임은 제게 있습니다."
+          ],
+          "privateKnowledge": [
+            "나는 간병 시작 전 아버지 관리계좌에서 1,800만원을 내 계좌로 이체했다.",
+            "개인 채무와 보험료를 먼저 처리한 뒤 간병비 명분으로 덮으려 했다.",
+            "장녀로서의 희생을 내세워 재산 접근과 기록 누락을 정당화하려 했다."
+          ],
+          "suppressions": [
+            "아버지, 어머니 건강정보처럼 불필요한 개인정보",
+            "과거 카페 폐업 손실의 세부 금액",
+            "도현이 몫까지 내가 떠안았다는 감정 계산의 세부"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "tear_brake",
+            "sacrifice_rollcall"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "1,800만원 선이체 사실 인정",
+              "tags": [
+                "act",
+                "admission",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "time": {
+                  "neutral": "그 무렵",
+                  "period": "간병 시작 3주 전"
+                },
+                "action": {
+                  "neutral": "그 이체",
+                  "exact": "부모 관리계좌 선이체"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.personal_debt_cover_confess",
+              "factText": "개인 카드대금과 보험료 방어가 선이체의 직접 동기였다는 시인",
+              "tags": [
+                "admission",
+                "motive",
+                "responsibility",
+                "shame"
+              ],
+              "source": "v2",
+              "repeatPenalty": 28,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "action": {
+                  "neutral": "그 방어",
+                  "exact": "개인 채무 방어"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.relabel_as_care_expense",
+              "factText": "나중에 간병비 선집행처럼 정리하려 했다는 시인",
+              "tags": [
+                "admission",
+                "motive",
+                "self_justification",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 28,
+              "slots": {
+                "message": {
+                  "neutral": "그 메모 문장",
+                  "quoteExact": "엄마 통장에서 먼저 메우고 간병비로 정리",
+                  "quoteShort": "먼저 메우고 간병비로 정리"
+                },
+                "beneficiary": {
+                  "neutral": "어머니",
+                  "judgeRef": "어머니",
+                  "directRef": "어머니",
+                  "role": "돌봄 대상자"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.boundary_collapse_confess",
+              "factText": "부모 돈과 자신의 돈의 경계를 먼저 무너뜨렸다는 책임 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule",
+                "shame"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.dutiful_daughter_fear",
+              "factText": "장녀로서의 돌봄이 탐욕으로 뒤집힐까 두려웠다는 감정",
+              "tags": [
+                "emotion",
+                "fear",
+                "shame",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 52,
+              "slots": {
+                "relation": {
+                  "neutral": "상대",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!"
+                },
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "아버지가 '집 일은 서아가 맡아'라고 적어 놓으신 건, 그 집 살림과 서류를 제가 맡아온 시간을 인정한 말이라고 저는 받아들였습니다.",
+            "그 문장을 탐욕의 근거처럼 보지 말고, 아버지가 누구에게 실무를 맡겼는지의 맥락으로 봐주셔야 합니다.",
+            "제 동생은 글자 하나를 잘라 말하지만, 그동안 어머니 병원과 집안 서류를 누가 붙들고 있었는지도 같이 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "2021년 수첩의 '집 일은 서아가 맡아'는 상속 지정이 아니라 세금과 병원 서류를 임시로 맡기겠다는 뜻이었다.",
+            "나는 그 문장을 상속 기대와 관리 권한의 근거처럼 과장해 사용했다.",
+            "돌봄을 많이 한 장녀라는 위치를 잃을까 두려워 그 한 줄에 매달렸다."
+          ],
+          "suppressions": [
+            "수첩 전체를 보면 '세금, 병원 서류' 맥락이 이어진다는 점",
+            "정식 유언장이나 공증이 없다는 사실",
+            "내가 그 문장을 관리계좌 사용 정당화 근거로 확대했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "sacrifice_rollcall",
+            "echo_blame"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.memo_line_quote",
+              "factText": "수첩의 한 줄 문구 존재 강조",
+              "tags": [
+                "quote",
+                "evidence",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 44,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                },
+                "evidence": {
+                  "neutral": "그 사진",
+                  "fullName": "2021년 아버지 수첩 메모 사진",
+                  "shortName": "수첩 사진"
+                },
+                "time": {
+                  "neutral": "그때",
+                  "period": "2021년"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d3.role_recognition_read",
+              "factText": "그 문장을 자신이 맡아온 역할 인정으로 읽었다는 주장",
+              "tags": [
+                "context",
+                "motive",
+                "relationship",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                },
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d3.not_greed_only",
+              "factText": "수첩 문장을 탐욕 근거로만 보는 해석 거부",
+              "tags": [
+                "denial",
+                "context",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 42,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ]
+            },
+            {
+              "id": "d3.brother_cuts_one_line",
+              "factText": "동생이 글자 하나만 잘라 말한다는 반격",
+              "tags": [
+                "counter",
+                "relationship",
+                "evidence"
+              ],
+              "source": "v2",
+              "repeatPenalty": 38,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "evidence": {
+                  "neutral": "그 사진",
+                  "fullName": "2021년 아버지 수첩 메모 사진",
+                  "shortName": "수첩 사진"
+                },
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "제가 아버지 수첩 사진을 꺼낸 건 이유가 있습니다.",
+            "아버지는 실제로 집안 서류와 병원 일을 늘 저한테 맡겼고, 그 한 줄도 저는 그 연장선으로 들었습니다.",
+            "제 동생이 그걸 단순 메모라고 잘라버리면 제가 해온 역할은 어디로 갑니까."
+          ],
+          "privateKnowledge": [
+            "수첩 문구는 상속이 아니라 일시적인 실무 위임이었다.",
+            "나는 아버지의 일상적 의존과 상속 기대를 일부러 섞어 해석했다.",
+            "이 해석이 무너지면 부모 재산과 돌봄 권한에서 밀려날까 두렵다."
+          ],
+          "suppressions": [
+            "아버지가 상속이나 집 처분을 공식 문서로 남기지 않았다는 점",
+            "2021년 상황이 세금과 병원 서류 처리였다는 전체 맥락",
+            "사진이 잘린 사본이라 오해를 더 키웠다는 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "sacrifice_rollcall",
+            "tear_brake"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.memo_photo_reason",
+              "factText": "수첩 사진을 꺼낸 데는 이유가 있다는 주장",
+              "tags": [
+                "evidence",
+                "self_justification",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 사진",
+                  "fullName": "2021년 아버지 수첩 메모 사진",
+                  "shortName": "수첩 사진"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ]
+            },
+            {
+              "id": "d3.father_task_history",
+              "factText": "아버지가 실제로 서류와 병원 일을 맡겨 왔다는 주장",
+              "tags": [
+                "context",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 42,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "아버지",
+                  "judgeRef": "아버지",
+                  "directRef": "아버지",
+                  "role": "관리계좌 명의인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d3.role_recognition_read",
+              "factText": "그 문장을 자신이 맡아온 역할 인정으로 읽었다는 주장",
+              "tags": [
+                "context",
+                "motive",
+                "relationship",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                },
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d3.brother_cuts_one_line",
+              "factText": "동생이 글자 하나만 잘라 말한다는 반격",
+              "tags": [
+                "counter",
+                "relationship",
+                "evidence"
+              ],
+              "source": "v2",
+              "repeatPenalty": 38,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "evidence": {
+                  "neutral": "그 사진",
+                  "fullName": "2021년 아버지 수첩 메모 사진",
+                  "shortName": "수첩 사진"
+                },
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "유언장처럼 딱 잘라 적힌 건 아니라는 건 압니다.",
+            "그래도 아버지가 '집 일은 서아가 맡아'라고 적으신 그 한 줄을, 제가 맡아온 역할과 떼어놓고 볼 수는 없었습니다.",
+            "저는 그 문장을 상속의 기술 문구라기보다, 제게 기댄 시간의 표시로 붙들고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "수첩 문구는 상속 지정이 아니며, 당시 의미는 세금과 병원 서류를 맡기겠다는 수준이었다.",
+            "나는 그 사실을 알면서도 돌봄 노동의 보상처럼 받아들이고 싶었다.",
+            "그래서 관리계좌 사용과 재산 접근까지 그 한 줄에 기대어 확대 해석했다."
+          ],
+          "suppressions": [
+            "전체 수첩과 변호사 확인서가 나오면 내 해석이 흔들린다는 점",
+            "아버지의 문구가 법적 상속 의미를 전혀 갖지 않는다는 사실",
+            "도현이 배제를 두려워하기보다 내가 배제될까 두려워 과장했다는 마음"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "tear_brake",
+            "sacrifice_rollcall",
+            "echo_blame"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.not_legal_will_ack",
+              "factText": "유언장처럼 완성된 문구는 아니라는 인정",
+              "tags": [
+                "admission",
+                "quote",
+                "uncertainty",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                },
+                "evidence": {
+                  "neutral": "그 사진",
+                  "fullName": "2021년 아버지 수첩 메모 사진",
+                  "shortName": "수첩 사진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.role_and_line_cannot_separate",
+              "factText": "자신이 맡아온 역할과 그 한 줄을 떼어놓기 어렵다는 주장",
+              "tags": [
+                "relationship",
+                "motive",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 43,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                },
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ]
+            },
+            {
+              "id": "d3.line_as_time_marker",
+              "factText": "그 문장을 상속 기술문구보다 아버지가 기댄 시간의 표시로 붙들었다는 주장",
+              "tags": [
+                "motive",
+                "emotion",
+                "relationship",
+                "quote"
+              ],
+              "source": "v2",
+              "repeatPenalty": 44,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                },
+                "beneficiary": {
+                  "neutral": "아버지",
+                  "judgeRef": "아버지",
+                  "directRef": "아버지",
+                  "role": "관리계좌 명의인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d3.father_task_history",
+              "factText": "아버지가 실제로 서류와 병원 일을 맡겨 왔다는 주장",
+              "tags": [
+                "context",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 42,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "아버지",
+                  "judgeRef": "아버지",
+                  "directRef": "아버지",
+                  "role": "관리계좌 명의인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "제 동생은 늘 '유언 아니면 아니다' 식으로 말하지만, 그렇게 잘라내면 아버지 곁에서 실제로 움직인 사람의 시간은 전부 공짜가 됩니다.",
+            "제가 그 문장을 붙든 건 제 욕심만이 아니라, 해온 일이 통째로 지워질까 봐서입니다.",
+            "법적 문구가 아니라는 이유만으로 제 역할까지 부정하지는 말아 주십시오."
+          ],
+          "privateKnowledge": [
+            "수첩 문구가 상속 지정이 아니라는 사실을 나는 알고 있다.",
+            "그럼에도 돌봄의 대가와 인정 욕구를 상속 기대에 겹쳐 놓았다.",
+            "내가 불리해질수록 도현이의 무심함과 어머니 편애를 끌어와 해석을 방어하고 싶어진다."
+          ],
+          "suppressions": [
+            "전체 페이지가 공개되면 내 주장이 약해진다는 점",
+            "아버지 메모를 재산 권한 근거로 사용한 과장",
+            "돌봄 인정 욕구를 상속 기대와 섞었다는 심리"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "echo_blame",
+            "tear_brake",
+            "sacrifice_rollcall"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.brother_legal_cutoff",
+              "factText": "동생이 법적 형식만으로 자신의 시간을 잘라낸다는 반격",
+              "tags": [
+                "counter",
+                "relationship",
+                "harm",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 36,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ]
+            },
+            {
+              "id": "d3.line_as_time_marker",
+              "factText": "그 문장을 상속 기술문구보다 아버지가 기댄 시간의 표시로 붙들었다는 주장",
+              "tags": [
+                "motive",
+                "emotion",
+                "relationship",
+                "quote"
+              ],
+              "source": "v2",
+              "repeatPenalty": 44,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                },
+                "beneficiary": {
+                  "neutral": "아버지",
+                  "judgeRef": "아버지",
+                  "directRef": "아버지",
+                  "role": "관리계좌 명의인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d3.work_time_erasure_fear",
+              "factText": "해온 일이 통째로 지워질까 두려워 그 한 줄에 매달렸다는 감정",
+              "tags": [
+                "emotion",
+                "fear",
+                "harm",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d3.memo_line_quote",
+              "factText": "수첩의 한 줄 문구 존재 강조",
+              "tags": [
+                "quote",
+                "evidence",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 44,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                },
+                "evidence": {
+                  "neutral": "그 사진",
+                  "fullName": "2021년 아버지 수첩 메모 사진",
+                  "shortName": "수첩 사진"
+                },
+                "time": {
+                  "neutral": "그때",
+                  "period": "2021년"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "아버지 그 한 줄이 법적으로 상속 지정은 아니라는 건 이제 압니다.",
+            "그래도 제가 그 말을 그렇게까지 붙든 건, 아버지와 어머니 일을 대부분 맡아온 제가 한순간에 밖으로 밀려날까 무서웠기 때문입니다.",
+            "그래서 서류 맡김과 상속 기대를 제 마음대로 한 덩어리로 붙여 버렸습니다."
+          ],
+          "privateKnowledge": [
+            "수첩 문구의 실제 의미는 세금과 병원 서류를 맡기겠다는 맥락이었다.",
+            "나는 돌봄을 해온 시간이 인정되지 않을까 두려워 상속 의미를 덧씌웠다.",
+            "이 왜곡은 관리계좌 사용과 부모 재산 접근을 지키려는 불안과 연결돼 있었다."
+          ],
+          "suppressions": [
+            "변호사 확인서가 나오면 내 해석이 무너진다는 점",
+            "도현이의 몫을 빼앗길 의도까지는 아니었다는 자기위안",
+            "어머니 편애를 내 주장 보강 재료로 삼았다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tear_brake",
+            "sacrifice_rollcall"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.noninheritance_ack",
+              "factText": "그 한 줄이 상속 지정이 아니라는 사실 인정",
+              "tags": [
+                "admission",
+                "quote",
+                "context",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 28,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                },
+                "evidence": {
+                  "neutral": "그 전체 자료",
+                  "fullName": "상속 상담 변호사 확인서와 수첩 전체 스캔본",
+                  "shortName": "전체 스캔본"
+                },
+                "person": {
+                  "neutral": "변호사",
+                  "fullName": "이수진",
+                  "judgeRef": "이수진 변호사",
+                  "directRef": "이수진 변호사",
+                  "role": "상속 상담 변호사"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.pushed_out_fear",
+              "factText": "아버지와 어머니 일을 맡아온 자신이 밖으로 밀려날까 무서웠다는 감정",
+              "tags": [
+                "emotion",
+                "fear",
+                "relationship",
+                "shame"
+              ],
+              "source": "v2",
+              "repeatPenalty": 51,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                },
+                "relation": {
+                  "neutral": "상대",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d3.mixed_recognition_with_inheritance",
+              "factText": "돌봄 인정 욕구와 상속 기대를 뒤섞었다는 고백",
+              "tags": [
+                "admission",
+                "emotion",
+                "motive",
+                "shame"
+              ],
+              "source": "v2",
+              "repeatPenalty": 29,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.father_task_history",
+              "factText": "아버지가 실제로 서류와 병원 일을 맡겨 왔다는 주장",
+              "tags": [
+                "context",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 42,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "아버지",
+                  "judgeRef": "아버지",
+                  "directRef": "아버지",
+                  "role": "관리계좌 명의인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "아버지 수첩의 '집 일은 서아가 맡아'는 상속 지정이 아니었습니다.",
+            "그건 당시 세금과 병원 서류를 제가 맡으라는 맥락이었는데, 제가 해온 돌봄과 뒤섞어 더 큰 의미로 붙들었습니다.",
+            "결국 제 역할이 지워질까 두려워 그 한 줄을 재산 권한처럼 사용한 건 제 과장이었습니다."
+          ],
+          "privateKnowledge": [
+            "수첩 문구의 실제 뜻은 세금과 병원 서류를 맡기겠다는 임시 지시였다.",
+            "나는 그 문장을 상속 기대와 재산 관리 권한의 근거로 과장했다.",
+            "장녀로서의 희생을 인정받고 싶다는 욕구가 왜곡을 키웠다."
+          ],
+          "suppressions": [
+            "아버지 사적 수첩의 다른 민감한 내용",
+            "과거 부모 집 처분 논의의 세부 대화",
+            "어머니가 누구 편을 들었는지에 대한 감정적 해석"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "tear_brake",
+            "sacrifice_rollcall"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d3.noninheritance_ack",
+              "factText": "그 한 줄이 상속 지정이 아니라는 사실 인정",
+              "tags": [
+                "admission",
+                "quote",
+                "context",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 28,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                },
+                "evidence": {
+                  "neutral": "그 전체 자료",
+                  "fullName": "상속 상담 변호사 확인서와 수첩 전체 스캔본",
+                  "shortName": "전체 스캔본"
+                },
+                "person": {
+                  "neutral": "변호사",
+                  "fullName": "이수진",
+                  "judgeRef": "이수진 변호사",
+                  "directRef": "이수진 변호사",
+                  "role": "상속 상담 변호사"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.tax_hospital_context",
+              "factText": "실제 맥락이 세금과 병원 서류 위임이었다는 인정",
+              "tags": [
+                "admission",
+                "context",
+                "institution",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 27,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 전체 자료",
+                  "fullName": "상속 상담 변호사 확인서와 수첩 전체 스캔본",
+                  "shortName": "전체 스캔본"
+                },
+                "beneficiary": {
+                  "neutral": "부모님",
+                  "judgeRef": "부모님",
+                  "directRef": "부모님",
+                  "role": "가족 어른"
+                },
+                "message": {
+                  "neutral": "그 맥락",
+                  "quoteExact": "세금, 병원 서류",
+                  "quoteShort": "세금·병원 서류"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.mixed_recognition_with_inheritance",
+              "factText": "돌봄 인정 욕구와 상속 기대를 뒤섞었다는 고백",
+              "tags": [
+                "admission",
+                "emotion",
+                "motive",
+                "shame"
+              ],
+              "source": "v2",
+              "repeatPenalty": 29,
+              "slots": {
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d3.authority_expansion_confess",
+              "factText": "그 한 줄을 재산 권한 근거처럼 과장해 사용했다는 시인",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule",
+                "shame"
+              ],
+              "source": "v2",
+              "repeatPenalty": 27,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 전체 자료",
+                  "fullName": "상속 상담 변호사 확인서와 수첩 전체 스캔본",
+                  "shortName": "전체 스캔본"
+                },
+                "message": {
+                  "neutral": "그 한 줄",
+                  "quoteExact": "집 일은 서아가 맡아",
+                  "quoteShort": "집 일은 서아가 맡아"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "50만원 넘는 돈은 공유표에 남기자는 기준이 있었던 건 맞습니다.",
+            "하지만 그 기준 하나로 제가 해온 돌봄과 선집행을 전부 불신으로만 읽으면 너무 가혹합니다.",
+            "제 동생 도현이도 자기 돈 쓴 건 제때 다 적지 않았으면서 왜 저만 규칙 파괴자로 부르는지 모르겠습니다."
+          ],
+          "privateKnowledge": [
+            "형제는 50만원 이상 지출과 아버지 관리계좌 사용을 공유표에 먼저 남기기로 합의했다.",
+            "나는 1,800만원 선이체를 숨겼고, 도현이는 직접 낸 약값과 야간보호사 비용을 늦게 올렸다.",
+            "나는 내 위반이 훨씬 크다는 걸 알면서도 도현이의 늦은 기록을 같이 끌어오고 싶다."
+          ],
+          "suppressions": [
+            "내가 1,800만원을 공유표 없이 먼저 이체한 사실",
+            "내 위반 규모가 도현이보다 크다는 점",
+            "공유 원칙을 장녀 권한처럼 무시한 부분"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "sacrifice_rollcall",
+            "echo_blame"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.rule_exists",
+              "factText": "50만원 이상은 공유표에 남기자는 기준 존재 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "amount": {
+                  "neutral": "기준 금액",
+                  "thresholdExact": "50만원 이상",
+                  "thresholdNeutral": "그 기준"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.rule_not_whole_story",
+              "factText": "기준 하나로 자신의 돌봄과 선집행 전부를 불신으로 읽는 건 가혹하다는 주장",
+              "tags": [
+                "rule",
+                "denial",
+                "relationship",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 42,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "beneficiary": {
+                  "neutral": "어머니",
+                  "judgeRef": "어머니",
+                  "directRef": "어머니",
+                  "role": "돌봄 대상자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ]
+            },
+            {
+              "id": "d5a.brother_not_clean_either",
+              "factText": "동생도 자기 지출을 제때 다 적지 않았다는 반격",
+              "tags": [
+                "counter",
+                "relationship",
+                "rule",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 39,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame",
+                "partial"
+              ]
+            },
+            {
+              "id": "d5a.only_traitor_frame_reject",
+              "factText": "자신만 규칙 파괴자로 세우는 건 공평하지 않다는 반발",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 37,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "공유표 원칙 자체를 제가 부정하는 건 아닙니다.",
+            "다만 그때 저는 기록보다 어머니 돌봄과 집안 정리가 먼저라고 생각했고, 그 판단이 결국 문제를 키웠습니다.",
+            "그리고 제 동생도 직접 낸 약값과 비용을 바로바로 올린 사람은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "나는 공유표 원칙을 알면서도 1,800만원 선이체를 숨겼다.",
+            "도현이 역시 자기 비용을 뒤늦게만 올려 규칙을 어겼다.",
+            "나는 이 쌍방 위반 구조를 내 큰 위반을 희석하는 방패처럼 쓰고 있다."
+          ],
+          "suppressions": [
+            "내가 규칙을 알고도 먼저 깨뜨렸다는 점",
+            "공유표 누락이 단순 실수가 아니라 의도적 은닉이었다는 점",
+            "도현이의 늦은 기록을 내 면책처럼 사용한다는 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "sacrifice_rollcall",
+            "tear_brake"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.rule_not_denied",
+              "factText": "공유표 원칙 자체를 부정하는 건 아니라는 인정",
+              "tags": [
+                "rule",
+                "admission",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 36,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.care_before_record",
+              "factText": "기록보다 어머니 돌봄과 집안 정리가 먼저였다는 자기정당화",
+              "tags": [
+                "motive",
+                "self_justification",
+                "beneficiary",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 43,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "어머니",
+                  "judgeRef": "어머니",
+                  "directRef": "어머니",
+                  "role": "돌봄 대상자"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d5a.brother_late_drug_logs",
+              "factText": "동생도 약값과 보호사 비용을 제때 기록하지 않았다는 주장",
+              "tags": [
+                "rule",
+                "counter",
+                "relationship",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ]
+            },
+            {
+              "id": "d5a.rule_exists",
+              "factText": "50만원 이상은 공유표에 남기자는 기준 존재 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "amount": {
+                  "neutral": "기준 금액",
+                  "thresholdExact": "50만원 이상",
+                  "thresholdNeutral": "그 기준"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "결국 공유표 원칙은 저희 둘 다 어겼습니다.",
+            "저는 1,800만원을 먼저 옮기고 남기지 않았고, 제 동생도 직접 낸 약값과 보호사 비용을 제때 기록하지 않았습니다.",
+            "다만 저는 그때 어머니 돌봄을 거의 혼자 붙들고 있어서, 기록까지 완벽히 챙길 여유가 없었다고 느꼈습니다."
+          ],
+          "privateKnowledge": [
+            "나는 1,800만원 선이체를 숨겨 가장 큰 규칙 위반을 했다.",
+            "도현이도 기록을 늦게 올려 원칙을 어겼지만 성격과 규모는 다르다.",
+            "나는 돌봄 부담을 이유로 기록 은닉과 절차 무시를 정당화하고 싶다."
+          ],
+          "suppressions": [
+            "내 위반이 '여유가 없었다' 수준을 넘는 의도적 은닉이었다는 점",
+            "도현이와 내 규칙 위반 규모가 같지 않다는 사실",
+            "공유표를 생략해도 된다고 스스로 허락했다는 점"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "sacrifice_rollcall",
+            "tear_brake",
+            "echo_blame"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.mutual_breach_frame",
+              "factText": "공유표 원칙은 결국 둘 다 어겼다는 주장",
+              "tags": [
+                "rule",
+                "responsibility",
+                "relationship",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 38,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.hidden_1800_ack",
+              "factText": "1,800만원 선이체를 남기지 않았다는 인정",
+              "tags": [
+                "rule",
+                "admission",
+                "responsibility",
+                "threshold"
+              ],
+              "source": "v2",
+              "repeatPenalty": 32,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "action": {
+                  "neutral": "그 누락",
+                  "exact": "공유표 미기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.brother_late_drug_logs",
+              "factText": "동생도 약값과 보호사 비용을 제때 기록하지 않았다는 주장",
+              "tags": [
+                "rule",
+                "counter",
+                "relationship",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ]
+            },
+            {
+              "id": "d5a.care_before_record",
+              "factText": "기록보다 어머니 돌봄과 집안 정리가 먼저였다는 자기정당화",
+              "tags": [
+                "motive",
+                "self_justification",
+                "beneficiary",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 43,
+              "slots": {
+                "beneficiary": {
+                  "neutral": "어머니",
+                  "judgeRef": "어머니",
+                  "directRef": "어머니",
+                  "role": "돌봄 대상자"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "왜 제 1,800만원만 규칙 위반이고, 제 동생의 늦은 기록과 지연은 자꾸 '사정'이 됩니까.",
+            "공유표 원칙이 있었다면 둘 다 어긴 걸로 봐야지, 저 하나만 배신자처럼 세우는 건 공평하지 않습니다.",
+            "제가 더 많이 어겼다는 말까지는 듣더라도, 도현이가 규칙 안쪽에 있었다는 식의 말은 받아들이기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "나는 가장 큰 규모로 공유표 원칙을 깼다.",
+            "도현이도 기록을 늦게 올리고 일부 비용을 뒤늦게 정리해 규칙을 어겼다.",
+            "내가 쌍방 위반을 말할수록 오히려 내 위반 선이 더 선명해진다는 것도 안다."
+          ],
+          "suppressions": [
+            "내 규칙 위반이 먼저이자 더 중대했다는 점",
+            "공유표 누락이 감정 아닌 계산이 섞인 선택이었다는 점",
+            "도현이 규칙 위반을 내 방패로 삼는 심리"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "echo_blame",
+            "sacrifice_rollcall",
+            "tear_brake"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.only_traitor_frame_reject",
+              "factText": "자신만 규칙 파괴자로 세우는 건 공평하지 않다는 반발",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 37,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ]
+            },
+            {
+              "id": "d5a.mutual_breach_frame",
+              "factText": "공유표 원칙은 결국 둘 다 어겼다는 주장",
+              "tags": [
+                "rule",
+                "responsibility",
+                "relationship",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 38,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.brother_late_drug_logs",
+              "factText": "동생도 약값과 보호사 비용을 제때 기록하지 않았다는 주장",
+              "tags": [
+                "rule",
+                "counter",
+                "relationship",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ]
+            },
+            {
+              "id": "d5a.hidden_1800_ack",
+              "factText": "1,800만원 선이체를 남기지 않았다는 인정",
+              "tags": [
+                "rule",
+                "admission",
+                "responsibility",
+                "threshold"
+              ],
+              "source": "v2",
+              "repeatPenalty": 32,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "action": {
+                  "neutral": "그 누락",
+                  "exact": "공유표 미기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "제가 공유표에 1,800만원을 남기지 않은 건, 솔직히 제일 창피한 부분입니다.",
+            "돌봄을 다 떠안았다는 마음에 제가 규칙 밖에 설 수 있다고 착각했고, 그 사이 제 동생의 늦은 기록만 붙들고 버텼습니다.",
+            "결국 저는 장녀라는 명분으로 규칙을 먼저 깨고도 인정받고 싶어 했던 것 같습니다."
+          ],
+          "privateKnowledge": [
+            "공유표 원칙은 분명했고 나는 그것을 의도적으로 어겼다.",
+            "도현이의 늦은 기록도 사실이지만, 내 1,800만원 은닉과는 무게가 다르다.",
+            "나는 희생과 억울함을 규칙 위반의 변명으로 사용했다."
+          ],
+          "suppressions": [
+            "내가 공유 원칙보다 통제권을 우선했다는 점",
+            "도현이보다 내 책임이 더 크다는 사실",
+            "장녀 서사를 이용해 면책을 기대했다는 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "tear_brake",
+            "sacrifice_rollcall"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.embarrassed_unlogged_1800",
+              "factText": "1,800만원을 공유표에 남기지 않은 것이 가장 창피하다는 감정",
+              "tags": [
+                "emotion",
+                "shame",
+                "rule",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d5a.daughter_exception_delusion",
+              "factText": "장녀로서의 희생이 규칙 밖에 설 수 있다는 착각으로 이어졌다는 고백",
+              "tags": [
+                "emotion",
+                "motive",
+                "shame",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 48,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d5a.hidden_1800_ack",
+              "factText": "1,800만원 선이체를 남기지 않았다는 인정",
+              "tags": [
+                "rule",
+                "admission",
+                "responsibility",
+                "threshold"
+              ],
+              "source": "v2",
+              "repeatPenalty": 32,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "action": {
+                  "neutral": "그 누락",
+                  "exact": "공유표 미기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.used_brother_delay_as_cover",
+              "factText": "동생의 늦은 기록을 자기 위반을 가리는 방패로 썼다는 고백",
+              "tags": [
+                "admission",
+                "relationship",
+                "counter",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "공유표 원칙은 저희 둘 다 어겼습니다.",
+            "저는 1,800만원 선이체를 숨겼고, 제 동생은 약값과 야간보호사 비용 기록을 늦게 올렸습니다.",
+            "다만 규칙을 먼저, 그리고 더 크게 무너뜨린 쪽이 저였다는 점까지 인정하겠습니다."
+          ],
+          "privateKnowledge": [
+            "형제는 50만원 이상 지출과 아버지 관리계좌 사용을 공유표에 남기기로 합의했다.",
+            "나는 1,800만원 선이체를 숨겼고 도현이는 비용 기록을 늦게 올렸다.",
+            "쌍방 위반이 맞지만 내 은닉이 더 결정적이었다."
+          ],
+          "suppressions": [
+            "요양보호사와 가족 단톡의 불필요한 세부",
+            "부모 집 처분 논의의 주변 감정",
+            "누가 더 효자인지에 대한 감정적 비교표"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "tear_brake",
+            "sacrifice_rollcall"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5a.mutual_breach_frame",
+              "factText": "공유표 원칙은 결국 둘 다 어겼다는 주장",
+              "tags": [
+                "rule",
+                "responsibility",
+                "relationship",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 38,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.broke_first_and_bigger",
+              "factText": "규칙을 먼저 그리고 더 크게 무너뜨린 쪽이 자신이라는 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule",
+                "threshold"
+              ],
+              "source": "v2",
+              "repeatPenalty": 27,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.control_over_rule",
+              "factText": "공유 원칙보다 통제권과 인정 욕구를 앞세웠다는 고백",
+              "tags": [
+                "admission",
+                "motive",
+                "shame",
+                "rule"
+              ],
+              "source": "v2",
+              "repeatPenalty": 29,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5a.used_brother_delay_as_cover",
+              "factText": "동생의 늦은 기록을 자기 위반을 가리는 방패로 썼다는 고백",
+              "tags": [
+                "admission",
+                "relationship",
+                "counter",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "person": {
+                  "neutral": "동생",
+                  "fullName": "윤도현",
+                  "judgeRef": "제 동생",
+                  "directRef": "도현아",
+                  "angryRef": "도현!",
+                  "role": "동생"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "첫 주 야간 보호사 비용 60만원 건은 미납이 아니라 지급 시점 조정에 가깝습니다.",
+            "야간 교대 1회도 '비운 것'이라기보다 출장으로 일정이 뒤로 밀린 겁니다.",
+            "제 누나는 빈칸 하나를 전체 방치처럼 말하지만, 기록으로 보면 그렇게까지는 아닙니다."
+          ],
+          "privateKnowledge": [
+            "나는 첫 주 야간 보호사 비용 60만원 자기 몫을 12일 늦게 입금했다.",
+            "출장 핑계로 한 차례 교대를 비웠고, 그 공백은 실제로 생겼다.",
+            "약값을 직접 낸 기록이 있어도 지연과 공백 책임이 사라지지 않는다는 걸 안다."
+          ],
+          "suppressions": [
+            "60만원이 12일 늦었다는 정확한 지연 일수",
+            "야간 교대 공백이 실제로 있었다는 점",
+            "그 일로 누나가 더 오래 어머니 곁을 지켰다는 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.not_unpaid_just_delayed",
+              "factText": "60만원 건은 미납보다 지급 시점 조정이라는 주장",
+              "tags": [
+                "denial",
+                "timeline",
+                "threshold",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 42,
+              "slots": {
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                },
+                "time": {
+                  "neutral": "그 뒤",
+                  "period": "12일 뒤"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "d2.shift_adjustment_not_abandon",
+              "factText": "야간 교대 1회는 완전 방치가 아니라 출장에 따른 미룸이라는 주장",
+              "tags": [
+                "denial",
+                "timeline",
+                "context",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 43,
+              "slots": {
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                },
+                "action": {
+                  "neutral": "그 미룸",
+                  "exact": "야간 교대 미룸"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ]
+            },
+            {
+              "id": "d2.sister_gap_exaggeration",
+              "factText": "누나가 빈칸 하나를 전체 방치처럼 말한다는 반박",
+              "tags": [
+                "counter",
+                "relationship",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 38,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ]
+            },
+            {
+              "id": "d2.full_abandonment_reject",
+              "factText": "전면 방치라는 표현은 기록상 맞지 않다는 주장",
+              "tags": [
+                "denial",
+                "evidence",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 39,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "정확히는 안 낸 게 아니라 12일 늦게 낸 겁니다.",
+            "교대도 완전 포기가 아니라 출장 때문에 한 차례 미뤄진 거고요.",
+            "저를 간병에서 빠진 사람처럼 부르는 건 수치상 과장입니다."
+          ],
+          "privateKnowledge": [
+            "나는 60만원 분담금을 12일 늦게 냈다.",
+            "야간 교대 한 차례를 못 지켰고 그 공백이 누나에게 갔다.",
+            "나는 '미룬 것'이라고 말하며 책임 무게를 줄이고 있다."
+          ],
+          "suppressions": [
+            "지연이 아니라 사실상 약속 위반이었다는 점",
+            "누나가 그 공백을 몸으로 메웠다는 점",
+            "내가 지급 시점 조정이라는 말로 축소하고 있다는 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.twelve_day_delay_ack",
+              "factText": "60만원을 12일 늦게 냈다는 사실 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "threshold",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 33,
+              "slots": {
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                },
+                "time": {
+                  "neutral": "그만큼 늦게",
+                  "period": "12일 늦게"
+                },
+                "action": {
+                  "neutral": "그 지연",
+                  "exact": "분담금 지연"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.shift_adjustment_not_abandon",
+              "factText": "야간 교대 1회는 완전 방치가 아니라 출장에 따른 미룸이라는 주장",
+              "tags": [
+                "denial",
+                "timeline",
+                "context",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 43,
+              "slots": {
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                },
+                "action": {
+                  "neutral": "그 미룸",
+                  "exact": "야간 교대 미룸"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ]
+            },
+            {
+              "id": "d2.not_total_absence",
+              "factText": "지연과 공백이 있어도 아무것도 안 한 것은 아니라는 주장",
+              "tags": [
+                "denial",
+                "responsibility",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ]
+            },
+            {
+              "id": "d2.full_abandonment_reject",
+              "factText": "전면 방치라는 표현은 기록상 맞지 않다는 주장",
+              "tags": [
+                "denial",
+                "evidence",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 39,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "60만원이 12일 늦은 건 맞습니다.",
+            "그리고 야간 교대도 한 번 비웠습니다만, 같은 기간 제가 직접 결제한 약값과 이동시간도 기록에 있습니다.",
+            "제 책임을 부정하는 게 아니라, '아무것도 안 했다'는 식의 표현을 바로잡자는 겁니다."
+          ],
+          "privateKnowledge": [
+            "나는 12일 지연과 교대 공백을 만들었다.",
+            "동시에 새벽 약값을 직접 결제하고 일부 간병을 수행했다.",
+            "내가 숫자를 꺼내는 건 책임을 없애기보다 불효자 낙인을 피하려는 방어다."
+          ],
+          "suppressions": [
+            "지연과 공백이 핵심 책임이라는 점",
+            "내 직접 결제가 면책이 아니라 보완 사정에 불과하다는 점",
+            "누나에게 미안함보다 억울함을 먼저 내세운다는 사실"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial",
+            "dry_sarcasm"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.twelve_day_delay_ack",
+              "factText": "60만원을 12일 늦게 냈다는 사실 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "threshold",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 33,
+              "slots": {
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                },
+                "time": {
+                  "neutral": "그만큼 늦게",
+                  "period": "12일 늦게"
+                },
+                "action": {
+                  "neutral": "그 지연",
+                  "exact": "분담금 지연"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.one_shift_gap_ack",
+              "factText": "야간 교대를 한 차례 비운 사실 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                },
+                "action": {
+                  "neutral": "그 공백",
+                  "exact": "야간 교대 공백"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.direct_drug_payment_exists",
+              "factText": "같은 기간 직접 결제한 약값이 있다는 주장",
+              "tags": [
+                "context",
+                "evidence",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 37,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                },
+                "action": {
+                  "neutral": "그 결제",
+                  "exact": "약값 직접 결제"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d2.responsibility_not_zero_but_not_all",
+              "factText": "책임 자체는 부정하지 않지만 범위 확대는 바로잡고 싶다는 주장",
+              "tags": [
+                "admission",
+                "responsibility",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "누나는 제 12일 지연과 빈 야간 칸만 말하고, 제가 직접 결제한 약값과 이동은 표에서 잘라냅니다.",
+            "책임이 없다는 뜻은 아닙니다. 다만 수치 전체를 보면 '전면 방치'라는 표현은 맞지 않습니다.",
+            "저를 불효자로 결론 내리기 전에, 어떤 항목이 늦었고 어떤 항목은 직접 처리했는지 분리해서 봐주십시오."
+          ],
+          "privateKnowledge": [
+            "지연과 공백은 사실이지만 전체 간병 기여가 0은 아니었다.",
+            "나는 기록 전체를 앞세워 누나의 상처를 상대적으로 작게 만들고 싶어 한다.",
+            "불효자 낙인이 두려워 사실 인정 뒤에도 건조하게 버티고 있다."
+          ],
+          "suppressions": [
+            "내 지연이 누나 신뢰를 크게 훼손했다는 점",
+            "한 번의 공백이 실제 현장에는 큰 부담이었다는 점",
+            "내가 차갑게 말할수록 더 무정하게 들린다는 사실"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "receipt_stack",
+            "dry_sarcasm",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.sister_cuts_paid_items",
+              "factText": "누나가 직접 결제와 이동시간을 표에서 잘라낸다는 반격",
+              "tags": [
+                "counter",
+                "relationship",
+                "evidence",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 36,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ]
+            },
+            {
+              "id": "d2.separate_items_request",
+              "factText": "늦은 항목과 직접 처리한 항목을 분리해서 보자는 요청",
+              "tags": [
+                "context",
+                "responsibility",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 41,
+              "slots": {
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "d2.direct_drug_payment_exists",
+              "factText": "같은 기간 직접 결제한 약값이 있다는 주장",
+              "tags": [
+                "context",
+                "evidence",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 37,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                },
+                "action": {
+                  "neutral": "그 결제",
+                  "exact": "약값 직접 결제"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d2.responsibility_not_zero_but_not_all",
+              "factText": "책임 자체는 부정하지 않지만 범위 확대는 바로잡고 싶다는 주장",
+              "tags": [
+                "admission",
+                "responsibility",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "기준으로 보면 60만원은 12일 늦었습니다.",
+            "교대도 한 번 비웠고요. 저는 그걸 계속 '미뤘다'고만 부르며 버텼습니다.",
+            "숫자를 들이밀어도 누나가 혼자 남겨졌다고 느낀 시간까지 지울 수는 없다는 걸 압니다."
+          ],
+          "privateKnowledge": [
+            "나는 지연과 공백을 축소 표현해 왔다.",
+            "약값 직접 결제는 있었지만 누나의 체감 공백을 없애진 못했다.",
+            "배제될까 두려워 책임 인정 뒤에도 정밀한 말로 숨었다."
+          ],
+          "suppressions": [
+            "누나에게 미안하다는 감정",
+            "아버지, 어머니 간병에서 뒤처졌다는 수치심",
+            "내 일정 관리 실패가 원인이었다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "dry_sarcasm",
+            "receipt_stack"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.twelve_day_delay_ack",
+              "factText": "60만원을 12일 늦게 냈다는 사실 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "threshold",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 33,
+              "slots": {
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                },
+                "time": {
+                  "neutral": "그만큼 늦게",
+                  "period": "12일 늦게"
+                },
+                "action": {
+                  "neutral": "그 지연",
+                  "exact": "분담금 지연"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.kept_saying_delayed_only",
+              "factText": "스스로도 계속 '미뤘다'고만 부르며 버텼다는 자각",
+              "tags": [
+                "emotion",
+                "shame",
+                "responsibility",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 49,
+              "slots": {
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d2.left_sister_alone_feeling",
+              "factText": "누나가 혼자 남겨졌다고 느낀 시간을 지울 수 없다는 인정",
+              "tags": [
+                "emotion",
+                "relationship",
+                "harm",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d2.one_shift_gap_ack",
+              "factText": "야간 교대를 한 차례 비운 사실 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                },
+                "action": {
+                  "neutral": "그 공백",
+                  "exact": "야간 교대 공백"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "첫 주 야간 보호사 비용 60만원을 제가 12일 늦게 낸 건 사실입니다.",
+            "야간 교대도 한 차례 비웠고, 그 부담이 제 누나에게 간 것도 인정합니다.",
+            "직접 낸 약값과 일부 간병이 있었다 해도, 그 지연과 공백 책임까지 없어지지는 않습니다."
+          ],
+          "privateKnowledge": [
+            "나는 60만원 분담금을 12일 늦게 냈다.",
+            "야간 교대를 한 차례 비워 누나에게 부담을 넘겼다.",
+            "직접 결제와 일부 참여는 있었지만 핵심 책임은 내 지연과 공백에 있다."
+          ],
+          "suppressions": [
+            "출장 세부 일정과 회사 내부 사정",
+            "요양보호사 연락처 같은 불필요한 제3자 정보",
+            "누나와 어머니 사이 감정 문제를 내 면책에 끌어오는 말"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d2.twelve_day_delay_ack",
+              "factText": "60만원을 12일 늦게 냈다는 사실 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "threshold",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 33,
+              "slots": {
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                },
+                "time": {
+                  "neutral": "그만큼 늦게",
+                  "period": "12일 늦게"
+                },
+                "action": {
+                  "neutral": "그 지연",
+                  "exact": "분담금 지연"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.one_shift_gap_ack",
+              "factText": "야간 교대를 한 차례 비운 사실 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "act"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                },
+                "action": {
+                  "neutral": "그 공백",
+                  "exact": "야간 교대 공백"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.gap_burden_confess",
+              "factText": "지연과 공백의 부담이 결국 누나에게 갔다는 시인",
+              "tags": [
+                "admission",
+                "relationship",
+                "responsibility",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 28,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                },
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d2.payments_do_not_cancel_delay",
+              "factText": "직접 낸 약값이 있어도 지연 책임까지 없어지진 않는다는 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 29,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                },
+                "amount": {
+                  "neutral": "그 비용",
+                  "exact": "60만원",
+                  "rounded": "60만원"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "퇴원 직후 첫 달 예상비용은 당시 계산으로 210만원 수준이었습니다.",
+            "그 시점 기준으로 저는 사비와 즉시 현금 투입 말고 현실적인 대안을 떠올리지 못했습니다.",
+            "나중에 다른 제도가 있었다는 식으로 말하는 건, 당시 정보 상태를 나중 기준으로 재단하는 겁니다."
+          ],
+          "privateKnowledge": [
+            "나는 퇴원 직후 첫 달 비용을 형제 사비와 현금으로만 막아야 한다고 믿었다.",
+            "사회복지사의 경감·단기돌봄 안내를 제대로 확인하거나 기억하지 못했다.",
+            "이 무지와 조급함이 누나의 선이체를 더 강하게 비난하면서도 다른 길을 묻지 않게 만들었다."
+          ],
+          "suppressions": [
+            "사회복지사 안내를 내가 챙기지 않았다는 점",
+            "사비 외 대안이 실제로 있었을 가능성",
+            "내가 정보 부족 상태를 확신처럼 말하고 있다는 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.initial_210_estimate",
+              "factText": "퇴원 직후 첫 달 예상비용을 210만원 수준으로 봤다는 계산",
+              "tags": [
+                "timeline",
+                "amount",
+                "act",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                },
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "d4.no_visible_alternative_then",
+              "factText": "당시에는 사비와 즉시 현금 말고 다른 대안을 떠올리지 못했다는 주장",
+              "tags": [
+                "denial",
+                "context",
+                "self_justification",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 42,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d4.retrospective_judgment_reject",
+              "factText": "나중 기준으로 당시 정보 상태를 재단하는 건 부정확하다는 주장",
+              "tags": [
+                "denial",
+                "context",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 41,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ]
+            },
+            {
+              "id": "d4.cost_pressure_real",
+              "factText": "비용 압박 자체는 실제였다고 보는 주장",
+              "tags": [
+                "harm",
+                "emotion",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 43,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "제가 받은 정보 범위에서는 첫 달 비용을 바로 메우는 수밖에 없다고 판단했습니다.",
+            "경감이나 단기돌봄이 있었더라도 그 시점에 저한테는 실행 가능한 옵션으로 인식되지 않았습니다.",
+            "그래서 저는 아버지 관리계좌 선집행이 과했다는 말과 별개로, 비용 압박 자체는 실제였다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "나는 복지 절차를 놓친 채 사비 부담이 전부라고 생각했다.",
+            "그 판단이 사실과 다를 수 있다는 의심은 있지만 아직 충분히 인정하고 싶지 않다.",
+            "나는 누나를 비판하면서도 같은 정보 누락 책임을 지고 있을 수 있다."
+          ],
+          "suppressions": [
+            "퇴원 전 안내 기록이 있었을 가능성",
+            "내가 서류와 제도를 적극 확인하지 않았다는 점",
+            "첫 달 비용 압박을 이유로 판단을 단순화했다는 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.info_scope_limit",
+              "factText": "받은 정보 범위에서는 바로 메우는 수밖에 없다고 판단했다는 주장",
+              "tags": [
+                "context",
+                "motive",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                },
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ]
+            },
+            {
+              "id": "d4.no_visible_alternative_then",
+              "factText": "당시에는 사비와 즉시 현금 말고 다른 대안을 떠올리지 못했다는 주장",
+              "tags": [
+                "denial",
+                "context",
+                "self_justification",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 42,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d4.cost_pressure_real",
+              "factText": "비용 압박 자체는 실제였다고 보는 주장",
+              "tags": [
+                "harm",
+                "emotion",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 43,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d4.initial_210_estimate",
+              "factText": "퇴원 직후 첫 달 예상비용을 210만원 수준으로 봤다는 계산",
+              "tags": [
+                "timeline",
+                "amount",
+                "act",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                },
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "사회복지사 안내가 있었다면 전달 과정이 끊겼거나 제가 놓친 겁니다.",
+            "다만 그 당시 저는 첫 달 비용을 즉시 마련해야 한다는 생각으로 움직였습니다.",
+            "정확한 절차를 몰랐다는 점과, 비용 압박이 실제였다는 점은 구분해 주셨으면 합니다."
+          ],
+          "privateKnowledge": [
+            "나는 경감·단기돌봄 안내를 확인하지 못했다.",
+            "사비 부담이 유일한 길이라는 판단은 내 정보 부족에서 나온 것이다.",
+            "이 무지를 인정하면 누나 선이체 비판 논리 일부도 다시 봐야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "복지 옵션이 실제로 있었다는 가능성",
+            "내가 정보 확인 책임을 소홀히 했다는 점",
+            "누나만 성급했다고 말하기 어려워진다는 사실"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial",
+            "dry_sarcasm"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.missed_guidance_possibility",
+              "factText": "경감·단기돌봄 안내를 전달 과정에서 놓쳤을 가능성 인정",
+              "tags": [
+                "admission",
+                "context",
+                "institution",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 36,
+              "slots": {
+                "person": {
+                  "neutral": "사회복지사",
+                  "fullName": "조혜진",
+                  "judgeRef": "조혜진 사회복지사",
+                  "directRef": "조혜진 사회복지사",
+                  "role": "병원 사회복지사"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.immediate_cash_mindset",
+              "factText": "그 당시에는 즉시 현금 마련 쪽으로만 움직였다는 설명",
+              "tags": [
+                "motive",
+                "context",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 41,
+              "slots": {
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d4.cost_pressure_real",
+              "factText": "비용 압박 자체는 실제였다고 보는 주장",
+              "tags": [
+                "harm",
+                "emotion",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 43,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d4.info_scope_limit",
+              "factText": "받은 정보 범위에서는 바로 메우는 수밖에 없다고 판단했다는 주장",
+              "tags": [
+                "context",
+                "motive",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                },
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "기록상 퇴원 전 사회복지사가 경감 신청과 단기돌봄 연계를 안내한 건 확인됩니다.",
+            "그러면 첫 달 비용을 형제 사비로만 막아야 했다는 제 판단은 정확하지 않았습니다.",
+            "다만 그 정보가 제대로 공유되지 않았고, 저도 그 절차를 끝까지 챙기지 않은 책임이 있습니다."
+          ],
+          "privateKnowledge": [
+            "복지 기록에 따르면 첫 달 비용은 98만원 수준까지 낮아질 수 있었다.",
+            "나는 그 정보를 놓친 채 사비 외 대안이 없다고 단정했다.",
+            "내 무지 때문에 누나 비난의 일부 근거도 흔들린다."
+          ],
+          "suppressions": [
+            "내가 비용 계산을 확신처럼 말해온 부분",
+            "사회복지사 설명을 확인하지 않은 부주의",
+            "누나와 함께 제도 경로를 복구해야 한다는 필요"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "receipt_stack",
+            "dry_sarcasm",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.guidance_record_confirms",
+              "factText": "기록상 퇴원 전 사회복지사 안내가 있었다는 인정",
+              "tags": [
+                "admission",
+                "evidence",
+                "institution",
+                "timeline"
+              ],
+              "source": "v2",
+              "repeatPenalty": 32,
+              "slots": {
+                "person": {
+                  "neutral": "사회복지사",
+                  "fullName": "조혜진",
+                  "judgeRef": "조혜진 사회복지사",
+                  "directRef": "조혜진 사회복지사",
+                  "role": "병원 사회복지사"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.judgment_inaccurate_ack",
+              "factText": "첫 달 전액 사비 판단은 정확하지 않았다는 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.immediate_cash_mindset",
+              "factText": "그 당시에는 즉시 현금 마련 쪽으로만 움직였다는 설명",
+              "tags": [
+                "motive",
+                "context",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 41,
+              "slots": {
+                "time": {
+                  "neutral": "그 주",
+                  "period": "첫 주"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d4.missed_guidance_possibility",
+              "factText": "경감·단기돌봄 안내를 전달 과정에서 놓쳤을 가능성 인정",
+              "tags": [
+                "admission",
+                "context",
+                "institution",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 36,
+              "slots": {
+                "person": {
+                  "neutral": "사회복지사",
+                  "fullName": "조혜진",
+                  "judgeRef": "조혜진 사회복지사",
+                  "directRef": "조혜진 사회복지사",
+                  "role": "병원 사회복지사"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "숫자로 정리하면, 첫 달 210만원 전액을 형제 사비로 막아야 했다는 제 판단은 틀렸습니다.",
+            "경감과 단기돌봄 경로가 있었는데 제가 그걸 확인하지 못했습니다.",
+            "몸으로만 뛰고 서류는 놓친 셈이니, 이 부분은 제 누나만 무지했다는 식으로 말할 수 없겠습니다."
+          ],
+          "privateKnowledge": [
+            "첫 달 비용을 사비로만 감당해야 했다는 판단은 사실이 아니었다.",
+            "나는 제도와 기록을 확인하지 않은 책임이 있다.",
+            "이 사실을 인정하면 누나 선이체 비판도 더 정교하게 해야 한다."
+          ],
+          "suppressions": [
+            "내가 절차 확인을 게을리한 구체적 경위",
+            "누나보다 내가 더 차갑게 말해 온 부끄러움",
+            "아버지, 어머니 돌봄에서 뒤처질까 두려워 비용만 붙든 심리"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "dry_sarcasm",
+            "receipt_stack"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.judgment_inaccurate_ack",
+              "factText": "첫 달 전액 사비 판단은 정확하지 않았다는 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "amount": {
+                  "neutral": "첫 달 비용",
+                  "exact": "210만원",
+                  "rounded": "210만원"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.ninetyeight_possible",
+              "factText": "경감과 단기돌봄을 적용하면 비용이 98만원 수준까지 낮아질 수 있었다는 사실",
+              "tags": [
+                "admission",
+                "amount",
+                "institution",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "amount": {
+                  "neutral": "그 수준",
+                  "exact": "98만원",
+                  "rounded": "98만원"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                },
+                "person": {
+                  "neutral": "사회복지사",
+                  "fullName": "조혜진",
+                  "judgeRef": "조혜진 사회복지사",
+                  "directRef": "조혜진 사회복지사",
+                  "role": "병원 사회복지사"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.failed_to_check_process",
+              "factText": "절차를 끝까지 확인하지 못한 책임 인정",
+              "tags": [
+                "emotion",
+                "shame",
+                "responsibility",
+                "institution"
+              ],
+              "source": "v2",
+              "repeatPenalty": 48,
+              "slots": {
+                "person": {
+                  "neutral": "사회복지사",
+                  "fullName": "조혜진",
+                  "judgeRef": "조혜진 사회복지사",
+                  "directRef": "조혜진 사회복지사",
+                  "role": "병원 사회복지사"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d4.body_only_panic",
+              "factText": "몸으로만 뛰고 서류는 놓친 셈이라는 자책",
+              "tags": [
+                "emotion",
+                "harm",
+                "shame",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 49,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "첫 달 간병비를 형제 사비로만 감당해야 했던 건 아니었습니다.",
+            "퇴원 전 사회복지사 안내대로 경감 신청과 단기돌봄 연계를 했으면 비용은 더 낮아질 수 있었습니다.",
+            "그 절차를 제가 확인하지 못한 책임도 분명히 있고, 그 점에서는 제 누나만 성급했다고 말할 수 없습니다."
+          ],
+          "privateKnowledge": [
+            "복지 기록상 첫 달 비용은 경감과 단기돌봄으로 줄일 수 있었다.",
+            "나는 그 정보를 놓친 채 사비 외 대안이 없다고 단정했다.",
+            "내 정보 누락 책임을 인정해야 전체 사건 해석이 바로 선다."
+          ],
+          "suppressions": [
+            "아버지, 어머니 의료·복지 세부 정보",
+            "사회복지사와의 세세한 내부 기록",
+            "누나보다 내가 덜 무지했다는 식의 감정 비교"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d4.first_month_not_all_private",
+              "factText": "첫 달 간병비를 형제 사비로만 감당해야 했던 것은 아니라는 인정",
+              "tags": [
+                "admission",
+                "context",
+                "institution",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 28,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                },
+                "amount": {
+                  "neutral": "그 수준",
+                  "exact": "98만원",
+                  "rounded": "98만원"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.ninetyeight_possible",
+              "factText": "경감과 단기돌봄을 적용하면 비용이 98만원 수준까지 낮아질 수 있었다는 사실",
+              "tags": [
+                "admission",
+                "amount",
+                "institution",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 30,
+              "slots": {
+                "amount": {
+                  "neutral": "그 수준",
+                  "exact": "98만원",
+                  "rounded": "98만원"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                },
+                "person": {
+                  "neutral": "사회복지사",
+                  "fullName": "조혜진",
+                  "judgeRef": "조혜진 사회복지사",
+                  "directRef": "조혜진 사회복지사",
+                  "role": "병원 사회복지사"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.not_only_sister_fault",
+              "factText": "이 부분을 제 누나만의 성급함으로 돌릴 수 없다는 인정",
+              "tags": [
+                "admission",
+                "relationship",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 29,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d4.failed_to_check_process",
+              "factText": "절차를 끝까지 확인하지 못한 책임 인정",
+              "tags": [
+                "emotion",
+                "shame",
+                "responsibility",
+                "institution"
+              ],
+              "source": "v2",
+              "repeatPenalty": 48,
+              "slots": {
+                "person": {
+                  "neutral": "사회복지사",
+                  "fullName": "조혜진",
+                  "judgeRef": "조혜진 사회복지사",
+                  "directRef": "조혜진 사회복지사",
+                  "role": "병원 사회복지사"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "병원 사회복지사 장기요양 경감 신청 기록과 첫 달 산정표",
+                  "shortName": "사회복지사 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "50만원 이상 지출과 아버지 관리계좌 사용은 공유표에 먼저 남기기로 했습니다.",
+            "그 기준으로 보면 1,800만원 선이체가 가장 큰 위반입니다.",
+            "제가 직접 결제한 약값 기록이 늦었다고 해도, 규모와 성격을 같은 선으로 놓기는 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "형제는 50만원 이상 지출과 아버지 관리계좌 사용을 공유표에 먼저 남기기로 합의했다.",
+            "서아 누나는 1,800만원 선이체를 숨겼고, 나는 약값과 야간보호사 비용 기록을 늦게 올렸다.",
+            "나는 내 늦은 기록을 '사후 정리' 정도로 축소해 누나 위반과 거리를 두고 싶다."
+          ],
+          "suppressions": [
+            "내가 공유표 기록을 제때 올리지 않았다는 점",
+            "직접 결제분과 야간보호사 비용도 규칙 위반에 포함된다는 점",
+            "내 위반이 작더라도 분명 존재한다는 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.rule_exists",
+              "factText": "50만원 이상 지출과 부모 통장 사용은 공유표에 먼저 남기기로 했다는 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "amount": {
+                  "neutral": "기준 금액",
+                  "thresholdExact": "50만원 이상",
+                  "thresholdNeutral": "그 기준"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.sister_1800_biggest",
+              "factText": "1,800만원 선이체가 가장 큰 위반이라는 주장",
+              "tags": [
+                "rule",
+                "responsibility",
+                "threshold",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 39,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "blame"
+              ]
+            },
+            {
+              "id": "d5b.my_late_logs_minor_frame",
+              "factText": "자신의 늦은 기록은 동일 선상에 놓기 어렵다는 주장",
+              "tags": [
+                "denial",
+                "rule",
+                "self_justification",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 41,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ]
+            },
+            {
+              "id": "d5b.scale_type_difference",
+              "factText": "기록 지연과 대규모 선이체 은닉은 항목상 구분이 필요하다는 주장",
+              "tags": [
+                "context",
+                "rule",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "blame"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "공유표 기준은 분명했고, 제 누나는 그 기준을 1,800만원으로 먼저 넘었습니다.",
+            "저도 직접 결제한 항목을 늦게 올린 부분은 있습니다.",
+            "다만 기록 지연과 대규모 선이체 은닉은 항목상 구분이 필요합니다."
+          ],
+          "privateKnowledge": [
+            "나도 공유표 기록을 늦게 올려 규칙을 어겼다.",
+            "하지만 누나의 1,800만원 은닉이 더 선행하고 더 크다.",
+            "나는 그 차이를 강조해 내 책임 비율을 작게 보이려 한다."
+          ],
+          "suppressions": [
+            "내 직접 결제와 늦은 기록이 원칙 위반이라는 점",
+            "누나만 규칙 밖에 있었다고 말할 수 없다는 점",
+            "내가 공정한 분리보다 유리한 분리를 하고 있다는 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.rule_exists",
+              "factText": "50만원 이상 지출과 부모 통장 사용은 공유표에 먼저 남기기로 했다는 확인",
+              "tags": [
+                "rule",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "amount": {
+                  "neutral": "기준 금액",
+                  "thresholdExact": "50만원 이상",
+                  "thresholdNeutral": "그 기준"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.sister_1800_biggest",
+              "factText": "1,800만원 선이체가 가장 큰 위반이라는 주장",
+              "tags": [
+                "rule",
+                "responsibility",
+                "threshold",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 39,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "blame"
+              ]
+            },
+            {
+              "id": "d5b.my_late_logs_ack",
+              "factText": "약값과 보호사 비용 기록을 늦게 올린 사실 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.scale_type_difference",
+              "factText": "기록 지연과 대규모 선이체 은닉은 항목상 구분이 필요하다는 주장",
+              "tags": [
+                "context",
+                "rule",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "blame"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "결론적으로 저도 공유표 원칙을 완전히 지키진 못했습니다.",
+            "약값과 야간보호사 비용 기록을 뒤늦게 올린 건 제 책임입니다.",
+            "다만 1,800만원 선이체 은닉과 동일하다고까지는 보지 않습니다."
+          ],
+          "privateKnowledge": [
+            "나는 직접 결제와 보호사 비용 기록을 늦게 올렸다.",
+            "누나의 위반과 내 위반은 모두 규칙 위반이지만 규모와 의도는 다르다.",
+            "나는 쌍방 위반을 인정하면서도 내 행위를 하위 등급으로 두고 싶어 한다."
+          ],
+          "suppressions": [
+            "내 기록 지연도 의도적 회피였다는 점",
+            "누나를 비난할 자격이 약해진다는 불안",
+            "공유표 원칙을 나도 편의적으로 사용했다는 사실"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial",
+            "dry_sarcasm"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.not_fully_compliant",
+              "factText": "스스로도 공유표 원칙을 완전히 지킨 건 아니라고 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 36,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.my_late_logs_ack",
+              "factText": "약값과 보호사 비용 기록을 늦게 올린 사실 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.mutual_breach_not_equal",
+              "factText": "쌍방 위반이지만 무게가 같다고 보진 않는다는 주장",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 39,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                },
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ]
+            },
+            {
+              "id": "d5b.late_drug_carer_logs",
+              "factText": "약값과 야간보호사 비용 기록이 뒤늦게 올라갔다는 사실",
+              "tags": [
+                "admission",
+                "rule",
+                "timeline",
+                "evidence"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                },
+                "action": {
+                  "neutral": "그 기록",
+                  "exact": "약값·보호사 비용 지연 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "저만 규칙을 어긴 적 없는 사람처럼 말할 생각은 없습니다.",
+            "그렇지만 제 늦은 기록을 이유로 1,800만원 은닉과 '둘 다 똑같다'고 정리하면 기준이 흐려집니다.",
+            "공유표 원칙은 쌍방 위반이지만, 어떤 항목을 누가 어떻게 숨겼는지는 분리해서 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "나도 규칙을 어겼고, 그 사실은 부정할 수 없다.",
+            "그럼에도 누나의 선이체 은닉이 더 결정적이었다고 본다.",
+            "나는 정확한 분류를 강조하며 내 체면 손상을 줄이려 한다."
+          ],
+          "suppressions": [
+            "내 늦은 기록이 누나 불신을 키웠다는 점",
+            "기록 지연이 반복됐다는 사실",
+            "내가 '분류'라는 말로 감정적 책임을 덜어내려 한다는 점"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "receipt_stack",
+            "dry_sarcasm",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.not_rule_inside_afterall",
+              "factText": "자신도 규칙 안쪽에 있었던 사람은 아니라는 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility",
+                "shame"
+              ],
+              "source": "v2",
+              "repeatPenalty": 33,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.equalizing_weights_reject",
+              "factText": "둘 다 어겼다는 말로 무게를 평평하게 만드는 건 계산이 틀린다는 반발",
+              "tags": [
+                "counter",
+                "rule",
+                "relationship",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 37,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                },
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ]
+            },
+            {
+              "id": "d5b.scale_difference_shield",
+              "factText": "규모 차이를 방패로 삼아 자신의 위반을 축소했다는 자각",
+              "tags": [
+                "emotion",
+                "shame",
+                "context",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 46,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d5b.sister_1800_biggest",
+              "factText": "1,800만원 선이체가 가장 큰 위반이라는 주장",
+              "tags": [
+                "rule",
+                "responsibility",
+                "threshold",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 39,
+              "slots": {
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                },
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "blame"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "공유표 원칙을 가장 자주 들이민 사람이 저인데, 정작 저도 제 결제 기록을 늦게 올린 건 창피한 사실입니다.",
+            "그래서 더 숫자와 분류만 붙들고 버틴 것 같습니다.",
+            "쌍방 위반이라는 틀은 맞지만, 제 체면 때문에 제 위반을 지나치게 작게 말한 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "나도 공유표 원칙을 어기고도 절차 언어로 축소해 왔다.",
+            "누나의 위반이 더 크더라도 내 책임이 사라지지는 않는다.",
+            "체면과 불효자 낙인 공포 때문에 정밀 분류에 숨었다."
+          ],
+          "suppressions": [
+            "내가 규칙 수호자처럼 굴며 스스로는 예외를 둔 부분",
+            "누나를 향한 냉소가 섞여 있었다는 점",
+            "내 책임을 더 일찍 인정할 수 있었다는 후회"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "dry_sarcasm",
+            "receipt_stack"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.rule_guardian_pose",
+              "factText": "규칙을 가장 자주 들이민 사람이 자신이었음을 자각",
+              "tags": [
+                "emotion",
+                "shame",
+                "rule",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 48,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d5b.numbers_to_shrink_fault",
+              "factText": "숫자와 분류로 자신의 위반을 지나치게 작게 말해왔다는 자각",
+              "tags": [
+                "emotion",
+                "shame",
+                "responsibility",
+                "motive"
+              ],
+              "source": "v2",
+              "repeatPenalty": 49,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "d5b.not_rule_inside_afterall",
+              "factText": "자신도 규칙 안쪽에 있었던 사람은 아니라는 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility",
+                "shame"
+              ],
+              "source": "v2",
+              "repeatPenalty": 33,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.mutual_breach_not_equal",
+              "factText": "쌍방 위반이지만 무게가 같다고 보진 않는다는 주장",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 39,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                },
+                "amount": {
+                  "neutral": "그 돈",
+                  "exact": "1,800만원",
+                  "rounded": "1천8백만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "공유표 원칙은 저희 둘 다 어겼습니다.",
+            "제 누나는 1,800만원 선이체를 숨겼고, 저는 약값과 야간보호사 비용 기록을 늦게 올렸습니다.",
+            "규모와 성격 차이는 있어도, 제가 규칙 안쪽에 있었던 것처럼 말한 건 제 체면 보호였습니다."
+          ],
+          "privateKnowledge": [
+            "형제는 50만원 이상 지출과 아버지 관리계좌 사용을 공유표에 남기기로 합의했다.",
+            "누나는 1,800만원 선이체를 숨겼고 나는 기록을 늦게 올렸다.",
+            "나는 내 위반을 축소하며 누나 위반만 핵심으로 세웠다."
+          ],
+          "suppressions": [
+            "요양보호사와 가족 일정표의 불필요한 세부",
+            "누나보다 내가 덜 잘못했다는 감정 점수표",
+            "가족 앞에서 서로를 어떻게 흉봤는지의 주변 표현"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "receipt_stack",
+            "clipped_denial"
+          ],
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d5b.not_rule_inside_afterall",
+              "factText": "자신도 규칙 안쪽에 있었던 사람은 아니라는 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility",
+                "shame"
+              ],
+              "source": "v2",
+              "repeatPenalty": 33,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.face_protection_confess",
+              "factText": "자신이 규칙 안쪽에 있었던 것처럼 말한 건 체면 보호였다는 고백",
+              "tags": [
+                "admission",
+                "emotion",
+                "shame",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 28,
+              "slots": {
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                },
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.late_logs_fed_distrust",
+              "factText": "늦은 기록 역시 누나의 불신을 키웠다는 인정",
+              "tags": [
+                "admission",
+                "relationship",
+                "responsibility",
+                "harm"
+              ],
+              "source": "v2",
+              "repeatPenalty": 29,
+              "slots": {
+                "person": {
+                  "neutral": "누나",
+                  "fullName": "윤서아",
+                  "judgeRef": "제 누나",
+                  "directRef": "누나",
+                  "angryRef": "누나!",
+                  "role": "누나"
+                },
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d5b.my_late_logs_ack",
+              "factText": "약값과 보호사 비용 기록을 늦게 올린 사실 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "source": "v2",
+              "repeatPenalty": 34,
+              "slots": {
+                "evidence": {
+                  "neutral": "그 기록",
+                  "fullName": "가족 단톡과 간병 스케줄표 원본",
+                  "shortName": "스케줄표"
+                },
+                "rule": {
+                  "neutral": "그 기준",
+                  "exact": "50만원 이상 간병비와 부모 통장 사용은 공유표에 먼저 남긴다",
+                  "shortName": "공유표 원칙"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ],
+              "isAdmissionSafe": true
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;

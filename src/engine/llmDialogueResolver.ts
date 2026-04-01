@@ -18,6 +18,20 @@ import { useGameStore } from '../store/useGameStore'
 import { TRUTH_POLICIES, getFallbackPolicy, type LieStateKey } from '../data/truthPolicy'
 import { normalizeCaseKey, getRelationshipType } from '../utils/caseHelpers'
 import { getPersonalityTags, getActionAffinityForDispute, getNarrativeExpansion } from '../data/caseEnrichment'
+// ── Blueprint 기반 경로 (리뉴얼) ──
+import { generateBlueprint } from './blueprintEngine'
+import { buildBlueprintSystemPrompt, buildBlueprintUserPrompt } from './blueprintPromptBuilder'
+import { getClaimPolicy } from '../data/claimPolicyLoader'
+import { getExecutableTells } from '../data/executableTellLoader'
+// ── V2 경로 (atom 기반) ──
+import { buildAtomPlan, normalizeClaimPolicy } from './atomSelectionEngine'
+import { buildBlueprintSystemPromptV2, buildBlueprintUserPromptV2 } from './blueprintPromptBuilderV2'
+import { getDisputeBlockedCount } from './evidenceChallengeEngine'
+import { getBridgeEntry } from './bridgeEngine'
+import { generateJudgeQuestion } from './judgeQuestionEngine'
+import type { QuestionType, EmotionTier } from '../types'
+import { getTransitionBeat, getFallbackBeat } from './v3GameLoopLoader'
+import { emitStateTransitionEvent } from '../components/discovery/StateTransitionFeedback'
 
 export async function resolveLLMDialogue(
   action: PlayerAction,
@@ -31,6 +45,12 @@ export async function resolveLLMDialogue(
   }
 
   const store = useGameStore.getState()
+
+  // ── Blueprint 경로 분기: ClaimPolicy가 있는 사건은 새 경로 ──
+  const blueprintResult = await tryBlueprintPath(action, agentA, agentB, evidenceStates, caseData, store)
+  if (blueprintResult !== null) return blueprintResult
+
+  // ── 기존 경로 (ClaimPolicy 없는 사건) ──
   try {
   const target: PartyId = 'target' in action ? action.target : 'a'
   const agent = target === 'a' ? agentA : agentB
@@ -1205,4 +1225,249 @@ function getTruthIds(
   const anchorTruthIds = dispute ? [`t-${parseInt(disputeId.split('-')[1])}`] : []
   const fallback = getFallbackPolicy(allTruthIds, anchorTruthIds, stateKey)
   return fallback[field]
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// Blueprint 기반 경로 (리뉴얼)
+// ClaimPolicy 데이터가 있는 사건에서만 활성화.
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+async function tryBlueprintPath(
+  action: PlayerAction,
+  agentA: AgentState,
+  agentB: AgentState,
+  evidenceStates: Record<string, EvidenceRuntimeState>,
+  caseData: CaseData,
+  store: ReturnType<typeof useGameStore.getState>,
+): Promise<ResolvedDialogue | null> {
+  // question, evidence_present만 blueprint 경로 지원 (나머지는 기존 경로)
+  if (action.type !== 'question' && action.type !== 'evidence_present') return null
+
+  const target: PartyId = 'target' in action ? action.target : 'a'
+  const agent = target === 'a' ? agentA : agentB
+  let disputeId = 'disputeId' in action ? (action as { disputeId?: string }).disputeId : undefined
+
+  // evidence_present: 증거에서 쟁점 추출
+  if (action.type === 'evidence_present' && !disputeId) {
+    const ev = caseData.evidence.find(e => e.id === action.evidenceId)
+    if (ev?.proves.length) disputeId = ev.proves[0]
+  }
+
+  if (!disputeId) return null
+
+  const lieEntry = agent.lieStateMap[disputeId]
+  if (!lieEntry) return null
+
+  // ClaimPolicy 조회 — 없으면 기존 경로로 폴백
+  const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
+  const claimPolicy = getClaimPolicy(caseKey, target, disputeId, lieEntry.currentState)
+  if (!claimPolicy) return null
+  console.log(`[Blueprint] ${caseKey}/${target}/${disputeId}/${lieEntry.currentState} — blueprint 경로 활성`)
+
+  // ExecutableVerbalTell 조회
+  const tells = getExecutableTells(caseKey, target)
+
+  // 감정 tier 매핑
+  const emotionTier = mapEmotionTier(agent.emotionalState.internalValue)
+
+  // 질문 유형 매핑
+  const questionType: QuestionType = action.type === 'evidence_present'
+    ? 'evidence_present'
+    : (action as { questionType?: string }).questionType as QuestionType ?? 'fact_pursuit'
+
+  // 봉쇄된 벡터 계산 — evidenceChallengeEngine에서 현재 쟁점 관련 증거의 봉쇄 상태 집계
+  const blocked = getDisputeBlockedCount(caseKey, disputeId)
+  const evidenceBlockedVectors = blocked.blockedVectors
+  const availableAttackVectors = blocked.availableAttackVectors
+
+  // Blueprint 생성
+  // Phase 1에서 이미 인정한 사실 (admission floor용)
+  const bridgeEntry = getBridgeEntry(caseKey, target, disputeId)
+  const alreadyAdmitted = bridgeEntry?.alreadyPubliclyAdmitted ?? []
+
+  const blueprint = generateBlueprint(
+    {
+      lieState: lieEntry.currentState,
+      emotionTier,
+      evidenceBlockedVectors,
+      availableAttackVectors,
+      questionType,
+      trustTowardJudge: agent.trustState.trustTowardJudge,
+    },
+    claimPolicy,
+    disputeId,
+    tells,
+    alreadyAdmitted,
+    store.turnCount,
+  )
+
+  // 최근 대화
+  const recentDialogues = store.dialogueLog.slice(-8).filter(d =>
+    d.relatedDisputes.length === 0 || d.relatedDisputes.includes(disputeId!),
+  ).slice(-5)
+
+  // 프롬프트 조립
+  const dispute = caseData.disputes.find(d => d.id === disputeId)
+  const interrogationDepth = disputeId
+    ? (store.interrogationHistory[target]?.[disputeId]?.questionTypes.length ?? 0) + 1
+    : 1
+  const judgeQuestion = generateJudgeQuestion(questionType, caseData, target, disputeId, interrogationDepth)
+
+  // V2 경로: claimAtoms가 있으면 atom 기반 프롬프트
+  const normalizedPolicy = normalizeClaimPolicy(claimPolicy)
+  let systemPrompt: string
+  let userPrompt: string
+
+  if (normalizedPolicy.compatMode === 'v2') {
+    const atomPlan = buildAtomPlan({
+      policy: normalizedPolicy,
+      subAction: questionType,
+      stance: blueprint.stance,
+      mustUseTell: blueprint.mustUseTell,
+      recentlyUsedAtomIds: [], // TODO: 턴별 추적
+      evidenceId: action.type === 'evidence_present' ? action.evidenceId : undefined,
+      isJudgeAudience: true,
+      caseId: caseKey,
+      party: target,
+      currentLieState: lieEntry.currentState,
+    })
+    systemPrompt = buildBlueprintSystemPromptV2(
+      blueprint, normalizedPolicy, atomPlan, caseData, target, recentDialogues,
+    )
+    userPrompt = buildBlueprintUserPromptV2(blueprint, judgeQuestion)
+    console.log(`[Blueprint V2] atom 경로: ${atomPlan.selectedAtoms.map(a => a.atomId).join(', ')}`)
+    console.log(`[Blueprint V2] slots: ${atomPlan.slotSelections.map(s => `${s.family}=${s.value}`).join(', ')}`)
+    console.log(`[Blueprint V2] system prompt (처음 200자):`, systemPrompt.slice(0, 200))
+  } else {
+    // Legacy V1 경로
+    systemPrompt = buildBlueprintSystemPrompt(
+      blueprint, claimPolicy, caseData, target, recentDialogues, questionType,
+    )
+    userPrompt = buildBlueprintUserPrompt(blueprint, judgeQuestion, dispute?.name ?? '해당 사안')
+  }
+
+  const config = getPromptConfig('interrogation_system')
+
+  try {
+    const response = await chatCompletion(
+      [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt },
+      ],
+      { temperature: config.temperature, maxTokens: config.maxTokens },
+    )
+
+    if (!response.trim()) throw new Error('Empty blueprint response')
+
+    // 파싱 (간소화된 JSON: npcResponse + behaviorHint)
+    const jsonMatch = response.match(/\{[\s\S]*\}/)
+    if (!jsonMatch) throw new Error('No JSON in blueprint response')
+    const parsed = JSON.parse(jsonMatch[0])
+    const rawText = (parsed.npcResponse ?? '').replace(/[（(][^)）]+[)）]/g, '').trim()
+    if (!rawText || rawText.length < 5) throw new Error('Blueprint response too short')
+    // 호칭 post-process (재판관 앞 애칭 → judgeRef 치환)
+    const text = enforceHonorifics(fixMisdirectedAddress(rawText))
+
+    // 재판관 질문 추가
+    const { shouldSkipJudgeQuestion } = await import('../hooks/useActionDispatch')
+    if (!shouldSkipJudgeQuestion() && judgeQuestion) {
+      store.addDialogue({
+        speaker: 'judge',
+        text: judgeQuestion,
+        relatedDisputes: [disputeId],
+        turn: store.turnCount,
+      })
+    }
+
+    // ── V3: lie 전이 감지 + TransitionBeat 강제 삽입 ──
+    const prevLieState = lieEntry.currentState
+    // blueprint 응답 후 store에서 최신 lieState 확인
+    const freshStore = useGameStore.getState()
+    const freshAgent = target === 'a' ? freshStore.agentA : freshStore.agentB
+    const freshLieEntry = freshAgent.lieStateMap[disputeId]
+    const newLieState = freshLieEntry?.currentState ?? prevLieState
+
+    let finalText = text
+    if (newLieState !== prevLieState) {
+      const beat = getTransitionBeat(caseKey, target, disputeId, prevLieState, newLieState)
+      if (beat) {
+        // TransitionBeat가 있으면 LLM 응답 대신 사전 작성 대사로 교체
+        finalText = beat.line
+        console.log(`[V3 Beat] ${target}/${disputeId}: ${prevLieState}→${newLieState} — beat 삽입: ${beat.id}`)
+
+        // behaviorHint도 beat 것으로 교체
+        if (beat.behaviorHint) {
+          store.addDialogue({
+            speaker: 'system',
+            text: `🎭 ${beat.behaviorHint}`,
+            relatedDisputes: [disputeId],
+            turn: store.turnCount,
+          })
+        }
+      }
+
+      // State 전이 시각 피드백 이벤트 발행
+      const profile = target === 'a' ? caseData.duo.partyA : caseData.duo.partyB
+      emitStateTransitionEvent(target, disputeId, prevLieState, newLieState, store.turnCount, profile.name)
+    }
+
+    return {
+      node: {
+        id: `bp-${Date.now()}`,
+        conditions: { disputeId },
+        speaker: target,
+        text: finalText,
+        behaviorHint: parsed.behaviorHint ?? blueprint.emotionHint,
+        effects: {},
+      },
+      target,
+      stance: blueprint.stance as any,
+      responseMode: blueprint.defenseMode === 'concession' ? 'answer_only' : 'answer_then_counter',
+      answerStyle: 'factual',
+      mentionedTruthIds: [],
+      requestedFollowup: '',
+    }
+  } catch (error) {
+    console.warn('[Blueprint] LLM 호출 실패, BeatScript fallback 시도:', error)
+
+    // V3: BeatScript fallback — 사전 작성 대사로 응답
+    const fallbackBeat = getFallbackBeat(
+      caseKey, target, disputeId, lieEntry.currentState, blueprint.stance,
+      action.type === 'evidence_present' ? action.evidenceId : undefined,
+    )
+    if (fallbackBeat) {
+      console.log(`[Blueprint Fallback] beat 사용: ${fallbackBeat.beatType}/${fallbackBeat.applicableStates}`)
+
+      // 재판관 질문은 여전히 삽입
+      if (judgeQuestion) {
+        store.addDialogue({
+          speaker: 'judge', text: judgeQuestion,
+          relatedDisputes: [disputeId], turn: store.turnCount,
+        })
+      }
+
+      return {
+        node: {
+          id: `fb-${Date.now()}`, conditions: { disputeId },
+          speaker: target, text: fallbackBeat.line,
+          behaviorHint: fallbackBeat.behaviorHint, effects: {},
+        },
+        target,
+        stance: blueprint.stance as any,
+        responseMode: 'answer_only',
+        answerStyle: 'factual',
+        mentionedTruthIds: [],
+        requestedFollowup: '',
+      }
+    }
+
+    return null // BeatScript도 없으면 기존 경로로 처리
+  }
+}
+
+function mapEmotionTier(internalValue: number): EmotionTier {
+  if (internalValue >= 85) return 'shutdown'
+  if (internalValue >= 65) return 'explosive'
+  if (internalValue >= 40) return 'agitated'
+  return 'calm'
 }

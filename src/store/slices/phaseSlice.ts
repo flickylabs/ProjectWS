@@ -1,17 +1,22 @@
 import type { StateCreator } from 'zustand'
 import { GamePhase } from '../../types'
-import { MIN_TURNS_BEFORE_ADVANCE, PHASE_ORDER, MAX_TURNS } from '../../utils/constants'
+import type { VerdictMode } from '../../types'
+import { PHASE_ORDER, MAX_TURNS } from '../../utils/constants'
+import { checkVerdictEligible } from '../../engine/readinessEngine'
 
 export interface PhaseSlice {
   currentPhase: GamePhase
   phaseHistory: GamePhase[]
   turnCount: number
   phaseTurnCount: number
+  /** 판결 모드: normal(정상) / forced_incomplete(불충분 심리) */
+  verdictMode: VerdictMode
 
   advancePhase: (skipTo?: GamePhase) => void
   incrementTurn: () => void
   canAdvancePhase: () => boolean
   setPhase: (phase: GamePhase) => void
+  setVerdictMode: (mode: VerdictMode) => void
 }
 
 export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (set, get) => ({
@@ -19,6 +24,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
   phaseHistory: [],
   turnCount: 0,
   phaseTurnCount: 0,
+  verdictMode: 'normal',
 
   advancePhase: (skipTo) => {
     const { currentPhase } = get()
@@ -41,6 +47,16 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       separationTarget: null,
       separationTurns: 0,
     } as Partial<typeof state>))
+
+    // Phase 3 진입 시 브리지 자동 적용
+    if (nextPhase === GamePhase.Phase3_Interrogation) {
+      const fullState = get() as any
+      if (fullState.applyPhase3Bridge && fullState.caseData) {
+        const caseId = fullState.caseData.caseId
+          ?.replace(/^case-/, '') // "case-spouse-01" → "spouse-01"
+        if (caseId) fullState.applyPhase3Bridge(caseId)
+      }
+    }
   },
 
   incrementTurn: () => {
@@ -48,35 +64,43 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       turnCount: state.turnCount + 1,
       phaseTurnCount: state.phaseTurnCount + 1,
     }))
-    // 최대 턴 초과 시 Phase6(중재안)으로 자동 전환
-    const { turnCount, currentPhase, advancePhase } = get()
-    const activePhases = [
+
+    // 매 턴 끝: readiness 자동 갱신
+    const fullState = get() as any
+    if (fullState.updateReadiness) fullState.updateReadiness()
+
+    // 최대 턴 초과 시 강제 판결 전환
+    const { turnCount, currentPhase, advancePhase, setVerdictMode } = get()
+    const interrogationPhases = [
       GamePhase.Phase3_Interrogation,
       GamePhase.Phase4_Evidence,
       GamePhase.Phase5_ReExamination,
     ]
-    if (turnCount >= MAX_TURNS && activePhases.includes(currentPhase)) {
+    if (turnCount >= MAX_TURNS && interrogationPhases.includes(currentPhase)) {
+      setVerdictMode('forced_incomplete')
       advancePhase(GamePhase.Phase6_Mediation)
     }
   },
 
   canAdvancePhase: () => {
-    const state = get() as any // GameStore 전체 접근 (processMetrics 포함)
-    const { currentPhase, phaseTurnCount } = state
-    const metrics = state.processMetrics
-    const { turnCount } = state
+    const state = get() as any // GameStore 전체 접근 (readinessState 포함)
+    const { currentPhase } = state
 
-    // Phase별 조건 — 진실 발견 OR 10턴 경과 (둘 중 하나)
+    // Phase 3 통합 심문: readinessEngine에서 판결 가능 여부 확인
     if (currentPhase === GamePhase.Phase3_Interrogation) {
-      return (metrics?.lieTransitions ?? 0) >= 2 || phaseTurnCount >= 10
+      // readinessState가 store에 있으면 사용, 없으면 기본 허용
+      if (state.readinessState) {
+        const { eligible } = checkVerdictEligible(state.turnCount, state.readinessState)
+        return eligible
+      }
+      // 폴백: 기존 로직 (하위 호환)
+      const metrics = state.processMetrics
+      return (metrics?.lieTransitions ?? 0) >= 2 || state.phaseTurnCount >= 10
     }
-    if (currentPhase === GamePhase.Phase4_Evidence) {
-      return (metrics?.evidenceEffective ?? 0) >= 1 || phaseTurnCount >= 10
-    }
-    if (currentPhase === GamePhase.Phase5_ReExamination) {
-      // 전체 30턴 미만이면 판결 불가
-      if (turnCount < MAX_TURNS) return false
-      return (metrics?.liesCollapsed ?? 0) >= 1 || phaseTurnCount >= 10
+
+    // Phase4, Phase5가 레거시로 진입한 경우에도 처리
+    if (currentPhase === GamePhase.Phase4_Evidence || currentPhase === GamePhase.Phase5_ReExamination) {
+      return true // 즉시 다음으로 넘김
     }
 
     return true
@@ -88,5 +112,9 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       phaseHistory: [...state.phaseHistory, state.currentPhase],
       phaseTurnCount: 0,
     }))
+  },
+
+  setVerdictMode: (mode) => {
+    set({ verdictMode: mode })
   },
 })

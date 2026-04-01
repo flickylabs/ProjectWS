@@ -22,8 +22,8 @@
     <a class="topbar-sec-link" href="#llm">LLM 분업 구조</a>
   </div>
   <div class="topbar-meta">
-    <span>v5.0</span>
-    <span>2026-03-28</span>
+    <span>v7.0</span>
+    <span>2026-03-31</span>
   </div>
 </header>
 
@@ -145,6 +145,12 @@
     </div>
     <div class="card"><div class="stat"><div class="k">USP 05</div><div class="v">판결이 아니라 지혜</div></div>
       <p class="text-sm">사실 확정 후에도 게임은 끝나지 않는다. 증거의 정당성, 관계별 맞춤 해결책, 중재안 제시까지 — 탐정이 아니라 솔로몬이 되는 게임.</p>
+    </div>
+    <div class="card"><div class="stat"><div class="k">USP 06</div><div class="v">편향 역이용</div></div>
+      <p class="text-sm">플레이어의 판단 습관(감정 과신, 하드 증거 맹신 등)을 추적하고, 다음 사건에서 한 요소만 역이용한다. "내가 AI를 읽는 줄 알았는데, 시스템이 나를 읽고 있었다."</p>
+    </div>
+    <div class="card"><div class="stat"><div class="k">USP 07</div><div class="v">Discovery 시스템</div></div>
+      <p class="text-sm">단순한 질문-답변이 아닌 4가지 능동적 발견 메커닉. 진실 공방에서 판정하고, 증거를 감별하고, 숨겨진 쟁점을 발현시키고, 감정을 전략적으로 활용하는 다층적 추리 경험.</p>
     </div>
   </div>
 
@@ -300,6 +306,27 @@
       </tr>
     </tbody>
   </table></div>
+
+
+  <h3>콘텐츠 규모 (v7.0)</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">Discovery 시스템</div>
+      <ul>
+        <li><strong>Discovery 컴포넌트:</strong> 7 UI 모달 (진실 공방, 증거 감별, 판정 충돌, 쟁점 발현, 감정 실언, 감정 가이드, 쟁점 목록)</li>
+        <li><strong>Discovery 엔진:</strong> 478줄 (discoveryEngine.ts)</li>
+        <li><strong>감정 4티어:</strong> calm / agitated / explosive / shutdown</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>게임 플로우 노트 (v7.0)</h3>
+  <ul>
+    <li><strong>Phase 3~5 Discovery 체크:</strong> Phase 3~5 내에서 Discovery 체크가 자동 실행된다.</li>
+    <li><strong>숨겨진 쟁점 발현:</strong> 숨겨진 쟁점은 플레이 중 5가지 경로를 통해 발현된다.</li>
+    <li><strong>30턴 미만 판결 불가:</strong> Phase 5에서 Phase 7로 진입하려면 최소 30턴이 필요하다.</li>
+    <li><strong>Phase 전환 조건:</strong> MIN_TURNS_BEFORE_ADVANCE = 10 (Phase 3/4/5 모두). OR 조건 (전이 OR 10턴)으로 다음 Phase 진입.</li>
+  </ul>
 
 
   <!-- ── LLM 분업 구조 ───────────────────────────── -->

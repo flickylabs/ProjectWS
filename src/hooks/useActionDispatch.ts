@@ -13,6 +13,7 @@ import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { detectStatementChange } from '../engine/contradictionEngine'
 import { runDiscoveryChecks, updateCascadeTargets } from './useDiscoveryIntegration'
+import { emitStateTransitionEvent } from '../components/discovery/StateTransitionFeedback'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -129,6 +130,14 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   }
   if (evDidTransition) state.trackMetric('evidenceEffective')
 
+  // V3: 증거 결과 토스트 — 전이 여부에 따라 hold/crack/collapse
+  {
+    const toastState = useGameStore.getState()
+    const resultType = !evDidTransition ? 'hold'
+      : evDef.reliability === 'hard' ? 'collapse' : 'crack'
+    toastState.setPendingEvidenceResult({ type: resultType, evidenceName: evDef.name })
+  }
+
   changeEmotionWithPhaseTracking(action.target, evDef.reliability === 'hard' ? 15 : 8)
 
   for (const id of newUnlocks) {
@@ -169,6 +178,23 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
 
   // Discovery 체크 — 진실공방/쟁점발현/감정실수/판단충돌
   runDiscoveryChecks(action.target, evDef.proves[0])
+
+  // ── V3: 증거 제시 후 이벤트 트리거 평가 ──
+  {
+    const v3State = useGameStore.getState()
+    const transitions = []
+    for (const dId of evDef.proves) {
+      const prev = _lieStateBeforeTransition[`${action.target}:${dId}`]
+      const v3Agent = action.target === 'a' ? v3State.agentA : v3State.agentB
+      const cur = v3Agent.lieStateMap[dId]?.currentState
+      if (prev && cur && prev !== cur) {
+        transitions.push({ party: action.target, disputeId: dId, from: prev, to: cur })
+        const pName = action.target === 'a' ? v3State.caseData?.duo.partyA.name : v3State.caseData?.duo.partyB.name
+        emitStateTransitionEvent(action.target, dId, prev, cur, v3State.turnCount, pName ?? '')
+      }
+    }
+    v3State.evaluateTurnEvents('evidence_present', evDef.proves[0], transitions)
+  }
 
   useGameStore.getState().incrementTurn()
   } finally { evidencePresentLock = false }
@@ -552,6 +578,34 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
 
   // Discovery 체크 — 질문 후
   runDiscoveryChecks(action.target, action.disputeId)
+
+  // ── V3: 질문 효과 미터 적용 ──
+  {
+    const v3State = useGameStore.getState()
+    const v3Agent = action.target === 'a' ? v3State.agentA : v3State.agentB
+    const v3Lie = v3Agent.lieStateMap[action.disputeId]
+    if (v3Lie) {
+      const emotionVal = v3Agent.emotionalState.internalValue
+      const emotionTier = emotionVal >= 85 ? 'shutdown' : emotionVal >= 65 ? 'explosive' : emotionVal >= 40 ? 'agitated' : 'calm'
+      // Blueprint의 stance를 근사 — lieState로 추정
+      const stanceGuess = { S0: 'deny', S1: 'hedge', S2: 'partial', S3: 'blame', S4: 'emotional', S5: 'confess' }[v3Lie.currentState] ?? 'deny'
+      v3State.applyQuestionEffect(action.questionType, action.target, action.disputeId, stanceGuess, emotionTier)
+    }
+
+    // ── V3: 이벤트 트리거 평가 ──
+    const prevState = _lieStateBeforeTransition[`${action.target}:${action.disputeId}`] ?? 'S0'
+    const newState = v3Lie?.currentState ?? prevState
+    const transitions = prevState !== newState
+      ? [{ party: action.target, disputeId: action.disputeId, from: prevState, to: newState }]
+      : []
+    v3State.evaluateTurnEvents(action.questionType, action.disputeId, transitions)
+
+    // ── V3: lieState 전이 시각 피드백 ──
+    if (prevState !== newState) {
+      const pName = action.target === 'a' ? v3State.caseData?.duo.partyA.name : v3State.caseData?.duo.partyB.name
+      emitStateTransitionEvent(action.target, action.disputeId, prevState, newState, v3State.turnCount, pName ?? '')
+    }
+  }
 
   useGameStore.getState().incrementTurn()
   } finally { questionLock = false }

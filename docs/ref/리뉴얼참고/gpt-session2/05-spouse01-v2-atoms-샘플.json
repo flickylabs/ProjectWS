@@ -1,0 +1,514 @@
+{
+  "caseId": "spouse-01",
+  "note": "V2 atom 구조 참고용 샘플 (d-1 S0~S2만 발췌)",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.movement_only",
+              "factText": "공동계좌 금액 이동 사실만 인정",
+              "tags": [
+                "act",
+                "timeline",
+                "uncertainty"
+              ],
+              "source": "v2",
+              "repeatPenalty": 50,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "dateExact": "9월 20일",
+                  "timeExact": "14시 03분",
+                  "dateTimeExact": "9월 20일 14시 03분",
+                  "period": "추석 연휴 직전",
+                  "neutral": "그날"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ]
+            },
+            {
+              "id": "d1.recipient_name_overread",
+              "factText": "수취인 이름만으로 외도 추정 거부",
+              "tags": [
+                "identity",
+                "context",
+                "denial",
+                "evidence"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d1.illicit_intent_denial",
+              "factText": "부정한 관계 자금 단정 거부",
+              "tags": [
+                "motive",
+                "denial",
+                "context",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            },
+            {
+              "id": "d1.purpose_withhold",
+              "factText": "송금 용도 설명 유보",
+              "tags": [
+                "motive",
+                "uncertainty",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 60,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ],
+          "fallbackPublicClaim": [
+            "9월 20일 기준으로 2,800,000원이 움직인 사실만으로 그 돈을 부정한 관계 자금처럼 몰아갈 수는 없습니다.",
+            "받는 사람 이름 하나가 낯설다고 해서 제가 가정을 등진 데 돈을 썼다고 단정하는 건 순서가 아닙니다.",
+            "제가 바로 용도를 다 말하지 못했다고 해도, 그 송금 자체가 잘못된 곳으로 간 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "그 2,800,000원은 재가돌봄센터 상담팀장 최민정에게 보낸 추석 연휴 간병 예약금이다.",
+            "대상자는 오세린의 어머니 오미숙이며, 송금은 내 휴대폰과 인증으로 내가 직접 했다.",
+            "100만원 이상은 미리 상의하기로 한 약속을 내가 먼저 어겼다."
+          ],
+          "suppressions": [
+            "최민정이 외도 상대가 아니라 돌봄센터 상담팀장이라는 사실",
+            "오미숙 간병 예약금이라는 정확한 용도",
+            "처가 살림을 감당 못 하는 사람처럼 보일까 두려워 숨겼다는 동기"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "over_precision",
+            "timeline_padding"
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "공동계좌 송금 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "dateExact": "9월 20일",
+                  "timeExact": "14시 03분",
+                  "dateTimeExact": "9월 20일 14시 03분",
+                  "period": "추석 연휴 직전",
+                  "neutral": "그날"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.purpose_withhold",
+              "factText": "송금 용도 설명 유보",
+              "tags": [
+                "motive",
+                "uncertainty",
+                "self_justification"
+              ],
+              "source": "v2",
+              "repeatPenalty": 60,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "d1.recipient_name_overread",
+              "factText": "수취인 이름만으로 외도 추정 거부",
+              "tags": [
+                "identity",
+                "context",
+                "denial",
+                "evidence"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "d1.prior_consult_missed",
+              "factText": "사전 상의 누락 일부 인정",
+              "tags": [
+                "rule",
+                "responsibility",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            }
+          ],
+          "fallbackPublicClaim": [
+            "공동계좌에서 2,800,000원을 보낸 건 제가 맞습니다.",
+            "다만 그 돈의 용도에는 설명 순서가 있고, 이름만 보고 외도 자금처럼 말하는 건 과합니다.",
+            "미리 상의하지 못한 건 제 잘못이지만, 그 돈이 부정한 데 쓰인 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "그 2,800,000원은 재가돌봄센터 상담팀장 최민정에게 보낸 추석 연휴 간병 예약금이다.",
+            "대상자는 오세린의 어머니 오미숙이며, 송금은 내 휴대폰과 인증으로 내가 직접 했다.",
+            "100만원 이상은 미리 상의하기로 한 약속을 내가 먼저 어겼다."
+          ],
+          "suppressions": [
+            "최민정이 돌봄센터 상담팀장이라는 직함",
+            "오미숙 간병 예약이라는 구체적 목적",
+            "장모님 일과 내 자존심이 얽혀 말을 미뤘다는 사정"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "over_precision",
+            "timeline_padding",
+            "counter_question"
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "schemaVersion": "v2",
+          "claimAtoms": [
+            {
+              "id": "d1.transfer_ack",
+              "factText": "공동계좌 송금 사실 인정",
+              "tags": [
+                "act",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 40,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "dateExact": "9월 20일",
+                  "timeExact": "14시 03분",
+                  "dateTimeExact": "9월 20일 14시 03분",
+                  "period": "추석 연휴 직전",
+                  "neutral": "그날"
+                },
+                "action": {
+                  "exact": "공동계좌 송금",
+                  "neutral": "그 송금"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.family_need_generic",
+              "factText": "가족 쪽 급한 일 사용 주장",
+              "tags": [
+                "motive",
+                "context",
+                "relationship",
+                "beneficiary"
+              ],
+              "source": "v2",
+              "repeatPenalty": 45,
+              "slots": {
+                "beneficiary": {
+                  "fullName": "오미숙",
+                  "judgeRef": "장모님",
+                  "directRef": "장모님",
+                  "role": "돌봄 대상자",
+                  "neutral": "가족 어른"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.professional_link_generic",
+              "factText": "수취인 업무상 연결 인물 주장",
+              "tags": [
+                "identity",
+                "institution",
+                "context"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "person": {
+                  "fullName": "최민정",
+                  "judgeRef": "최민정 씨",
+                  "directRef": "최민정 씨",
+                  "role": "재가돌봄센터 상담팀장",
+                  "neutral": "그 사람"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.prior_consult_missed",
+              "factText": "사전 상의 누락 일부 인정",
+              "tags": [
+                "rule",
+                "responsibility",
+                "threshold",
+                "admission"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "100만원 이상은 반드시 상의",
+                  "shortName": "사전 상의 약속",
+                  "neutral": "그 약속"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial",
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "isAdmissionSafe": true
+            },
+            {
+              "id": "d1.illicit_intent_denial",
+              "factText": "부정한 관계 자금 단정 거부",
+              "tags": [
+                "motive",
+                "denial",
+                "context",
+                "relationship"
+              ],
+              "source": "v2",
+              "repeatPenalty": 35,
+              "slots": {
+                "amount": {
+                  "exact": "2,800,000원",
+                  "rounded": "280만원",
+                  "neutral": "해당 금액"
+                },
+                "relation": {
+                  "judgeRef": "제 아내",
+                  "directRef": "자기",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge",
+                "partial"
+              ]
+            }
+          ],
+          "fallbackPublicClaim": [
+            "그 송금은 제가 한 게 맞고, 다른 여자에게 생활비를 빼돌린 돈도 아닙니다.",
+            "가족 쪽 급한 일 때문에 먼저 움직인 돈이었는데, 제가 설명을 늦췄습니다.",
+            "약속을 어긴 책임은 인정하지만, 상대를 속여 딴 데 쓴 돈처럼 보시는 건 다릅니다."
+          ],
+          "privateKnowledge": [
+            "그 2,800,000원은 재가돌봄센터 상담팀장 최민정에게 보낸 추석 연휴 간병 예약금이다.",
+            "대상자는 오세린의 어머니 오미숙이며, 송금은 내 휴대폰과 인증으로 내가 직접 했다.",
+            "처가 지원 문제 앞에서 쩔쩔매는 가장으로 보일까 두려워 사실을 숨겼다."
+          ],
+          "suppressions": [
+            "돌봄센터명과 상담팀장 최민정의 정확한 신분",
+            "오미숙 이름이 적힌 예약 문서",
+            "자존심 때문에 장모님 간병 문제를 혼자 처리하려 했다는 감정"
+          ],
+          "emotionalLeakRisk": "mid",
+          "tellPool": [
+            "over_precision",
+            "counter_question",
+            "timeline_padding"
+          ]
+        }
+      }
+    }
+  }
+}

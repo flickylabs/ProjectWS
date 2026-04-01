@@ -16,8 +16,8 @@
   <span class="topbar-title">홈</span>
   <div class="topbar-sections"></div>
   <div class="topbar-meta">
-    <span>v5.0</span>
-    <span>2026-03-28</span>
+    <span>v7.0</span>
+    <span>2026-03-31</span>
   </div>
 </header>
 
@@ -67,92 +67,92 @@
 
 <main class="content">
   <div class="index-hero">
-    <h1>⚖️ 솔로몬 <span class="badge">GDD v5.0</span></h1>
-    <p class="subtitle">LLM 심문 추리 게임 · Procedural Case Drama — 반복 등장하는 인물쌍의 생활 위에서 사건이 발생하고, 플레이어는 사실과 오해, 압박과 신뢰, 판결과 중재 사이를 가르며 '지혜'를 증명하는 리플레이형 추리 게임</p>
+    <h1>⚖️ 솔로몬 <span class="badge">GDD v7.0</span></h1>
+    <p class="subtitle">LLM 심문 추리 게임 · Procedural Case Drama — 반복 등장하는 인물쌍의 생활 위에서 사건이 발생하고, 플레이어는 사실과 오해, 압박과 신뢰, 판결과 중재 사이를 가르며 '지혜'를 증명하는 리플레이형 추리 게임. 이 GDD만으로 완전히 동일한 게임을 개발할 수 있도록 모든 기획, 타입 정의, 엔진 로직, 프롬프트 구조를 상세히 기술합니다.</p>
   </div>
 
   <div class="index-cards">
     <a class="index-card" href="solomon-concept.html">
       <div class="card-icon">🎭</div>
       <div class="card-title">세계관 & 컨셉</div>
-      <div class="card-desc">게임 정체성, 세계관, 플레이어 역할, 톤 & 분위기, 언어/호칭 규칙(callTerms), 비주얼 아이덴티티(MS Fluent Emoji 81종), 레퍼런스.</div>
-      <div class="card-tags"><span>세계관</span><span>톤</span><span>callTerms 호칭</span><span>Fluent Emoji</span></div>
+      <div class="card-desc">게임 정체성, 세계관, 플레이어 역할, 톤 &amp; 분위기, 7가지 관계 유형, 호칭 시스템(callTerms), 말투 규칙 v6(반말/존댓말 판별), 4 아키타입×5감정 행동 매트릭스, VerbalTell, 비주얼/오디오 설계.</div>
+      <div class="card-tags"><span>세계관</span><span>7관계</span><span>callTerms</span><span>Speech Guide v6</span><span>4 아키타입</span></div>
     </a>
 
     <a class="index-card" href="solomon-overview.html">
       <div class="card-icon">⚖️</div>
       <div class="card-title">게임 개요</div>
-      <div class="card-desc">프로젝트 핵심 구조, USP 5종, 디자인 원칙 7종, 3층 데이터 아키텍처(DuoSeed/ContextSeed/CaseSeed), LLM 분업 구조를 정리합니다.</div>
-      <div class="card-tags"><span>USP</span><span>3층 아키텍처</span><span>디자인 원칙</span><span>LLM 분업</span></div>
+      <div class="card-desc">USP 7종, 디자인 원칙 7종, 3층 데이터 아키텍처, Discovery 4시스템(진실공방/증거감별/숨겨진쟁점/감정전략), LLM 10에이전트, Phase 0~7+Result, 미니게임 5종, SessionSelect 플로우.</div>
+      <div class="card-tags"><span>USP 7종</span><span>Discovery 4시스템</span><span>미니게임 5종</span><span>Phase 0~7</span></div>
     </a>
 
     <a class="index-card" href="solomon-case.html">
       <div class="card-icon">🧱</div>
       <div class="card-title">사건 구조</div>
-      <div class="card-desc">84개 사건 스키마, callTerms 호칭 시스템, 504개 증거(hard 341/soft 163/trap 85), 253명 증인, unlockCondition, 증거 조합 격상, CaseMeta 타입.</div>
-      <div class="card-tags"><span>84사건</span><span>504증거</span><span>253증인</span><span>callTerms</span></div>
+      <div class="card-desc">CaseData 스키마 + Discovery 타입(TruthJudgment/AppraisalVerdict/DisputeVisibility/EmotionTier), EvidenceNode(subjectParty/partyContext), Dispute(judgmentStatement), 증거 4축, 조합 격상, 로딩 파이프라인.</div>
+      <div class="card-tags"><span>Discovery 타입</span><span>subjectParty</span><span>감별 3등급</span><span>숨겨진 쟁점</span></div>
     </a>
 
     <a class="index-card" href="solomon-generator.html">
       <div class="card-icon">⚙️</div>
       <div class="card-title">생성 엔진</div>
-      <div class="card-desc">사건 생성 파이프라인, 48h 이벤트 타임라인, 증거 4축 시스템, 증거 조사 6종 하위액션, 드라마 비트 템플릿, 편향 디렉터, 반복 방지, CaseSeed v2 데이터 모델.</div>
-      <div class="card-tags"><span>48h 타임라인</span><span>증거 4축</span><span>조사 6종</span><span>편향 디렉터</span></div>
+      <div class="card-desc">7 Session 배치 생성 구조, 사건 조합 공식(CS×VM×TW), 48h 이벤트 타임라인, 29개 배치 프롬프트, 검증 6단계, caseLoader.ts 정규화, 편향 디렉터, 동적 사건 생성기(llmCaseGenerator).</div>
+      <div class="card-tags"><span>7 Session</span><span>CS×VM×TW</span><span>정규화</span><span>동적 생성기</span></div>
     </a>
 
     <a class="index-card" href="solomon-ai.html">
       <div class="card-icon">🤖</div>
       <div class="card-title">에이전트 설계</div>
-      <div class="card-desc">거짓말 6단계 상태머신(S0-S5), 253명 증인 시스템, callTerms LLM 주입, 교차 당사자 자동반응, 심문 이력 추적, 9블록 LLM 프롬프트, Phase별 깊이 가이드.</div>
-      <div class="card-tags"><span>S0-S5 상태머신</span><span>증인 시스템</span><span>교차 반응</span><span>프롬프트 9블록</span></div>
+      <div class="card-desc">S0-S5 상태머신 + Discovery Engine(진실공방/감별/발현/감정전략), 감정 4티어(calm/agitated/explosive/shutdown), LLM 모순검증, 끼어들기 LLM 생성, 상성 7×6, 27블록, evalRunner 7검증.</div>
+      <div class="card-tags"><span>Discovery Engine</span><span>감정 4티어</span><span>LLM 모순검증</span><span>끼어들기</span><span>AI 평가</span></div>
     </a>
 
     <a class="index-card" href="solomon-mechanics.html">
       <div class="card-icon">🎮</div>
       <div class="card-title">플레이 메커닉</div>
-      <div class="card-desc">Phase 0-7 + 결과, 질문 3종+자유질문, 토글/액티브 스킬, 증거 대질, 증인 소환, 리소스 시스템(게임 내+글로벌), 미니게임(기억 퍼즐), 보상 시스템.</div>
-      <div class="card-tags"><span>Phase 0-7</span><span>토글/액티브 스킬</span><span>리소스</span><span>미니게임</span></div>
+      <div class="card-desc">Discovery 4시스템 UI(6 모달), 미니게임 5종(4 트리거), 끼어들기 허용/거부(권위-3), Phase 전환(전이2 OR 10턴), 30턴 미만 판결 불가, MAX_TURNS=20 자동전환, 분리 심문, 5종 스킬.</div>
+      <div class="card-tags"><span>Discovery UI</span><span>미니게임 5종</span><span>끼어들기</span><span>30턴 판결</span><span>Phase 전환</span></div>
     </a>
 
     <a class="index-card" href="solomon-content.html">
       <div class="card-icon">📈</div>
       <div class="card-title">콘텐츠 &amp; 밸런스</div>
-      <div class="card-desc">CaseMap 7챕터x12스테이지, 84개 사건, 리더보드/시즌/프로필, 명성 티어 6단계, 보상 시스템, 상점/글로벌 리소스, 밸런스 원칙.</div>
-      <div class="card-tags"><span>CaseMap</span><span>84사건</span><span>리더보드</span><span>보상/상점</span></div>
+      <div class="card-desc">판결 채점 v3 — 끼어들기 허용 패널티(-3×회, 최대-9), 감별 정확도 보너스, Phase별 MIN_TURNS=10, 캠페인 10단계, 12칭호, CaseMap, 명성 6단계, 밸런스 원칙.</div>
+      <div class="card-tags"><span>끼어들기 패널티</span><span>감별 채점</span><span>MIN_TURNS=10</span><span>12칭호</span><span>밸런스</span></div>
     </a>
 
     <a class="index-card" href="solomon-server.html">
       <div class="card-icon">🗄️</div>
       <div class="card-title">서버 & DB 아키텍처</div>
-      <div class="card-desc">Express.js 백엔드, SQLite DB(WAL), 8개 테이블 스키마, REST API 24개 엔드포인트, AI 프롬프트 모듈화 & 실시간 적용, Vite 프록시 연동.</div>
-      <div class="card-tags"><span>Express.js</span><span>SQLite</span><span>REST API</span><span>AI 모듈화</span></div>
+      <div class="card-desc">Express 5.1, SQLite 17테이블, REST API 60+, AI 에이전트/블록 CRUD, 평가 시스템, LLM 비용 추적, 시딩 데이터, API 클라이언트.</div>
+      <div class="card-tags"><span>Express 5.1</span><span>17 테이블</span><span>60+ API</span><span>AI 모듈화</span><span>비용 추적</span></div>
     </a>
 
     <a class="index-card" href="solomon-admin.html">
       <div class="card-icon">🖥️</div>
       <div class="card-title">WebAdmin 대시보드</div>
-      <div class="card-desc">관리자 콘솔 — 공지/우편 CRUD, AI 프롬프트 에디터(버전관리+롤백), 플레이어 관리, 게임 기록 열람, 대시보드 통계 8종, 글로벌 설정.</div>
-      <div class="card-tags"><span>Dashboard</span><span>AI 프롬프트</span><span>공지/우편</span><span>설정</span></div>
+      <div class="card-desc">SPA 관리자 콘솔 — 8종 KPI, AI 에이전트/블록/필드, Eval 테스트, Case Meta, 공지/우편 CRUD, 플레이어/기록, 시즌, LLM 비용, 전역 설정.</div>
+      <div class="card-tags"><span>Dashboard</span><span>AI 에이전트</span><span>Eval 테스트</span><span>Case Meta</span><span>LLM 비용</span></div>
     </a>
 
     <a class="index-card" href="solomon-systems.html">
       <div class="card-icon">📬</div>
       <div class="card-title">공지 & 우편 시스템</div>
-      <div class="card-desc">게임 내 공지 시스템(4타입, 우선순위, 고정, 기간제), 우편 시스템(보상 첨부, 읽음/수령 추적, 만료), Frontend 통합, 오프라인 폴백.</div>
-      <div class="card-tags"><span>공지 4타입</span><span>우편 보상</span><span>읽음 추적</span><span>실시간 반영</span></div>
+      <div class="card-desc">공지(4타입, 우선순위, 고정, 기간제), 우편(보상 첨부, 읽음/수령), 시즌(Hall of Fame), 리더보드, 보상 경제, 오프라인 폴백.</div>
+      <div class="card-tags"><span>공지 4타입</span><span>우편 보상</span><span>시즌</span><span>리더보드</span><span>오프라인</span></div>
     </a>
 
     <a class="index-card" href="solomon-production.html">
       <div class="card-icon">🔧</div>
       <div class="card-title">제작 계획</div>
-      <div class="card-desc">React+Vite+Zustand 기술스택, 모바일 퍼스트 UI, Phase 1/2 사전생성 JSON + Phase 3-5 GPT-4o-mini, 168개 대사 스크립트, DEV 치트 설정, 구현 현황.</div>
-      <div class="card-tags"><span>기술스택</span><span>168 스크립트</span><span>구현현황</span><span>DEV 도구</span></div>
+      <div class="card-desc">기술 스택(React 19/Zustand 5/Vite 8), 프로젝트 디렉토리, Zustand 8슬라이스(+discoverySlice), 빌드/배포, PWA, 구현 현황 전체 체크리스트.</div>
+      <div class="card-tags"><span>기술스택</span><span>8슬라이스</span><span>Discovery</span><span>구현현황</span></div>
     </a>
   </div>
 
   <div class="alert alert-info"><span class="alert-icon">⚖️</span><div>
-    <strong>핵심 포지셔닝</strong><br>
-    반복 등장하는 인물쌍(DuoSeed)의 생활 위에서 사건이 발생하고, 플레이어는 사실과 오해, 압박과 신뢰, 판결과 중재 사이를 가르며 '지혜'를 증명한다. 같은 인물, 매번 다른 사건으로 수백 가지 경우의 수를 만드는 Procedural Case Drama.
+    <strong>v7.0 핵심 변경</strong><br>
+    Discovery 4시스템 추가(진실 공방 · 증거 감별 · 숨겨진 쟁점 발현 · 감정 전략), 감정 4티어(calm/agitated/explosive/shutdown), 끼어들기 허용/거부 시스템(권위 -3 패널티), Phase 전환 조건 개편(OR 조건 + 30턴 미만 판결 불가), MIN_TURNS=10, 증거 감별 3등급(trustworthy/partial/suspicious), EvidenceNode에 subjectParty/partyContext 추가, Dispute에 judgmentStatement 추가, interjectionAllowed 채점 반영.
   </div></div>
 </main>
 

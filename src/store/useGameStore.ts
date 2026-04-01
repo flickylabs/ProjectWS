@@ -12,6 +12,15 @@ import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
 import { snapshotForSession, clearSessionSnapshot } from '../api/agentManager'
+import { registerSpouse01Data } from '../data/claimPolicies/spouse-01'
+import { registerFamily01Data } from '../data/claimPolicies/family-01'
+import { aggregateReadiness } from '../engine/readinessEngine'
+import { resetTellTracker } from '../engine/tellValidator'
+import { getReadinessSets } from '../engine/evidenceChallengeEngine'
+import { createInitialMeterState, resolveQuestionEffect, getMeterEffects, type QuestionMeterState, type QuestionEffectResult } from '../engine/questionEffectEngine'
+import { evaluateEventTriggers, resetEventTriggerState, type GameEventTrigger, type TurnSnapshot } from '../engine/gameEventTriggerEngine'
+import { resetV3State } from '../engine/v3GameLoopLoader'
+import type { QuestionType, EmotionTier, Stance } from '../types'
 
 const EMPTY_METRICS: ProcessMetrics = {
   questionsAsked: 0, lieTransitions: 0, liesCollapsed: 0,
@@ -60,6 +69,36 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   getInterrogationContext: (party: 'a' | 'b', disputeId: string) => { firstTime: boolean; previousTypes: string[]; otherPartyAsked: boolean; otherPartyRevealed: boolean }
   initializeCase: (caseData: CaseData) => void
   clearSavedGame: () => void
+  /** 리뉴얼: 성과 조건 상태 */
+  readinessState: import('../types').ReadinessState | null
+  updateReadiness: () => void
+  /** V3: 질문 효과 미터 (파티별) */
+  questionMeters: { a: QuestionMeterState; b: QuestionMeterState }
+  applyQuestionEffect: (questionType: QuestionType, party: 'a' | 'b', disputeId: string, stance: Stance, emotionTier: EmotionTier) => QuestionEffectResult | null
+  getQuestionMeterEffects: (party: 'a' | 'b') => ReturnType<typeof getMeterEffects>
+  /** V3: 이벤트 로그 (UI 피드백용) */
+  gameEventLog: GameEvent[]
+  pushGameEvent: (event: GameEvent) => void
+  /** V3: 턴 종료 시 이벤트 트리거 평가 */
+  evaluateTurnEvents: (questionType: QuestionType, focusDisputeId: string, transitionsThisTurn: { party: 'a' | 'b'; disputeId: string; from: import('../types').LieState; to: import('../types').LieState }[]) => GameEventTrigger | null
+  /** V3: 대기 중인 게임 이벤트 */
+  pendingGameEvent: GameEventTrigger | null
+  setPendingGameEvent: (event: GameEventTrigger | null) => void
+  /** V3: 증거 결과 토스트 */
+  pendingEvidenceResult: { type: 'hold' | 'crack' | 'collapse'; evidenceName: string } | null
+  setPendingEvidenceResult: (r: GameStore['pendingEvidenceResult']) => void
+  /** V3: DisputeBoard → ActionPanel 라우팅 */
+  disputeBoardAction: { disputeId: string; party: 'a' | 'b' } | null
+  setDisputeBoardAction: (a: GameStore['disputeBoardAction']) => void
+}
+
+export interface GameEvent {
+  id: number
+  turn: number
+  type: 'question_effect' | 'state_transition' | 'event_trigger' | 'discovery'
+  meter?: 'contradiction' | 'leak' | 'trust'
+  message: string
+  timestamp: number
 }
 
 const SAVE_KEY = 'solomon-game-save'
@@ -150,6 +189,156 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       clearSessionSnapshot()
     },
 
+    readinessState: null,
+    questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
+    gameEventLog: [],
+
+    applyQuestionEffect: (questionType, party, disputeId, stance, emotionTier) => {
+      const state = useGameStore.getState()
+      const lieState = state.getLieState(party, disputeId)
+      if (!lieState) return null
+
+      const meter = state.questionMeters[party]
+      const { result, updatedMeter } = resolveQuestionEffect(
+        questionType, party, disputeId, lieState, stance, emotionTier, meter,
+      )
+
+      // 미터 업데이트
+      set({
+        questionMeters: { ...state.questionMeters, [party]: updatedMeter },
+      })
+
+      // 효과 적용
+      for (const effect of result.effects) {
+        switch (effect.type) {
+          case 'trust_boost':
+            state.changeTrust(effect.party as 'a' | 'b', 'trustTowardJudge', effect.amount)
+            break
+          case 'emotion_shift':
+            state.changeEmotion(effect.party as 'a' | 'b', effect.delta)
+            break
+          case 'lie_transition_bonus':
+            // 보너스는 다음 전이 시 참조 (미터에 축적)
+            break
+        }
+      }
+
+      // 이벤트 로그 추가
+      if (result.feedback) {
+        const eventId = state.gameEventLog.length + 1
+        set({
+          gameEventLog: [...state.gameEventLog, {
+            id: eventId,
+            turn: state.turnCount,
+            type: 'question_effect',
+            meter: result.meter === 'none' ? undefined : result.meter,
+            message: result.feedback,
+            timestamp: Date.now(),
+          }],
+        })
+      }
+
+      return result
+    },
+
+    getQuestionMeterEffects: (party) => {
+      return getMeterEffects(useGameStore.getState().questionMeters[party])
+    },
+
+    pushGameEvent: (event) => {
+      set((prev) => ({ gameEventLog: [...prev.gameEventLog, event] }))
+    },
+
+    pendingGameEvent: null,
+    setPendingGameEvent: (event) => set({ pendingGameEvent: event }),
+    pendingEvidenceResult: null,
+    setPendingEvidenceResult: (r) => set({ pendingEvidenceResult: r }),
+    disputeBoardAction: null,
+    setDisputeBoardAction: (a) => set({ disputeBoardAction: a }),
+
+    evaluateTurnEvents: (questionType, focusDisputeId, transitionsThisTurn) => {
+      const s = useGameStore.getState()
+      if (!s.caseData) return null
+
+      const snapshot: TurnSnapshot = {
+        caseId: s.caseData.caseId?.replace(/^case-/, '') ?? '',
+        turn: s.turnCount,
+        activeParty: s.separationTarget ?? 'a',
+        questionType,
+        lieStates: { a: s.agentA.lieStateMap, b: s.agentB.lieStateMap },
+        emotions: {
+          a: s.agentA.emotionalState,
+          b: s.agentB.emotionalState,
+        },
+        trust: {
+          a: { trustTowardJudge: s.agentA.trustState.trustTowardJudge },
+          b: { trustTowardJudge: s.agentB.trustState.trustTowardJudge },
+        },
+        meters: s.questionMeters,
+        disputeVisibility: Object.fromEntries(
+          Object.entries(s.discovery.disputeVisibility).map(([id, entry]) => [id, entry.visibility]),
+        ),
+        transitionsThisTurn,
+        readiness: s.readinessState,
+        focusDisputeId,
+      }
+
+      const trigger = evaluateEventTriggers(snapshot)
+      if (trigger) {
+        set({ pendingGameEvent: trigger })
+
+        // 이벤트 로그에 기록
+        const eventId = s.gameEventLog.length + 1
+        set((prev) => ({
+          gameEventLog: [...prev.gameEventLog, {
+            id: eventId,
+            turn: s.turnCount,
+            type: 'event_trigger',
+            message: `[${trigger.type}] ${trigger.description}`,
+            timestamp: Date.now(),
+          }],
+        }))
+
+        // 효과 자동 적용
+        for (const effect of trigger.effects) {
+          switch (effect.type) {
+            case 'emotion_spike':
+              s.changeEmotion(effect.party, effect.delta)
+              break
+            case 'trust_change':
+              s.changeTrust(effect.party, 'trustTowardJudge', effect.delta)
+              break
+            case 'lie_advance':
+              s.transitionLie(effect.party, effect.disputeId, `event_${trigger.type}`)
+              break
+            case 'reveal_dispute':
+              s.emergeDispute(effect.disputeId, effect.via, s.turnCount, trigger.description)
+              break
+          }
+        }
+      }
+
+      return trigger
+    },
+
+    updateReadiness: () => {
+      const state = useGameStore.getState()
+      const caseId = state.caseData?.caseId?.replace(/^case-/, '') ?? ''
+
+      // 양측 lieStateMap 병합
+      const allLieStates: Record<string, { currentState: string }> = {}
+      for (const [k, v] of Object.entries(state.agentA.lieStateMap)) allLieStates[`a:${k}`] = v
+      for (const [k, v] of Object.entries(state.agentB.lieStateMap)) allLieStates[`b:${k}`] = v
+
+      const { investigationSuccessEvidenceIds, fullCollapseEvidenceIds } = getReadinessSets(caseId)
+      const hiddenReveals = (state as any).discoveredTruths?.length ?? 0
+
+      const readiness = aggregateReadiness(
+        allLieStates, investigationSuccessEvidenceIds, fullCollapseEvidenceIds, hiddenReveals,
+      )
+      set({ readinessState: readiness })
+    },
+
     initializeCase: (caseData: CaseData) => {
       const store = useGameStore.getState()
 
@@ -182,6 +371,9 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
         interrogationHistory: { a: {}, b: {} },
         pendingMinigame: null,
         pendingInterjection: null,
+        questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
+        gameEventLog: [],
+        pendingGameEvent: null,
         // 턴/Phase 완전 초기화
         turnCount: 0,
         phaseTurnCount: 0,
@@ -198,6 +390,15 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
         'defensive',    // A 시작 감정
         'defensive',    // B 시작 감정 (A와 동일, 게임 진행에 따라 자연스럽게 변화)
       )
+
+      // 리뉴얼 데이터 등록 (ClaimPolicy/Bridge/EvidenceChallenge/V3)
+      resetTellTracker()
+      resetEventTriggerState()
+      const caseKey2 = caseData.caseId?.replace(/^case-/, '') ?? ''
+      if (caseKey2) resetV3State(caseKey2)
+      const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
+      if (caseKey === 'spouse-01') registerSpouse01Data()
+      if (caseKey === 'family-01') registerFamily01Data()
 
       // 리소스 초기화
       store.initResources()

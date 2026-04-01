@@ -29,23 +29,28 @@ export const TRUST_DELTAS = {
   sidingWithOpponent: { trustTowardJudge: -20 },
 }
 
+/**
+ * Phase 순서 — Phase 3/4/5를 통합 심문(Phase3)으로 병합.
+ * Phase4_Evidence, Phase5_ReExamination은 enum에 남아 있지만 흐름에서 제외.
+ * Phase3 → Phase6(조정) → Phase7(판결)로 직행.
+ */
 export const PHASE_ORDER: GamePhase[] = [
   GamePhase.Phase0_CaseIntro,
   GamePhase.Phase1_InitialStatement,
   GamePhase.Phase2_Rebuttal,
   GamePhase.Phase3_Interrogation,
-  GamePhase.Phase4_Evidence,
-  GamePhase.Phase5_ReExamination,
   GamePhase.Phase6_Mediation,
   GamePhase.Phase7_Verdict,
   GamePhase.Result,
 ]
 
+/** @deprecated Phase 통합으로 미사용 — readinessEngine 참조 */
 export const MIN_TURNS_BEFORE_ADVANCE: Record<string, number> = {
   [GamePhase.Phase3_Interrogation]: 10,
-  [GamePhase.Phase4_Evidence]: 10,
-  [GamePhase.Phase5_ReExamination]: 10,
 }
 
-/** 최대 턴 수 — 초과 시 자동으로 Phase6(중재안)으로 전환 */
-export const MAX_TURNS = 20
+/**
+ * 최대 턴 수 — readinessEngine.MAX_INTERROGATION_TURNS(16)이 기준.
+ * 기존 코드 호환을 위해 유지하되, 값은 16으로 맞춤.
+ */
+export const MAX_TURNS = 16

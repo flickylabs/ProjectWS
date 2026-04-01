@@ -43,8 +43,7 @@ echo   Press Ctrl+C to stop.
 echo ============================================
 echo.
 
-start "" http://localhost:3001/admin
-
+REM WebAdmin 브라우저 열기는 start-all.bat에서 처리
 node index.js
 
 pause

@@ -23,8 +23,8 @@
     <a class="topbar-sec-link" href="#mvp">구현 현황</a>
   </div>
   <div class="topbar-meta">
-    <span>v5.0</span>
-    <span>2026-03-28</span>
+    <span>v7.0</span>
+    <span>2026-03-31</span>
   </div>
 </header>
 
@@ -145,6 +145,26 @@
   </div></div>
 
 
+  <h3>Discovery 시스템 파일 구조 (v7.0)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>경로</th><th>파일</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td><code>src/types/</code></td><td><code>discovery.ts</code></td><td>Discovery 시스템 타입 (TruthJudgment, AppraisalVerdict, DisputeVisibility, EmotionTier 등)</td></tr>
+      <tr><td><code>src/engine/</code></td><td><code>discoveryEngine.ts</code></td><td>Discovery 4시스템 핵심 로직 (478줄)</td></tr>
+      <tr><td><code>src/store/slices/</code></td><td><code>discoverySlice.ts</code></td><td>Discovery 상태 관리 (249줄)</td></tr>
+      <tr><td><code>src/hooks/</code></td><td><code>useDiscoveryIntegration.ts</code></td><td>Discovery 체크 통합 훅 (161줄)</td></tr>
+      <tr><td rowspan="8"><code>src/components/discovery/</code></td><td><code>TruthConfrontationModal.tsx</code></td><td>진실 공방 모달</td></tr>
+      <tr><td><code>EvidenceAppraisalModal.tsx</code></td><td>증거 감별 모달</td></tr>
+      <tr><td><code>JudgmentConflictModal.tsx</code></td><td>판정 충돌 모달</td></tr>
+      <tr><td><code>DisputeEmergenceModal.tsx</code></td><td>쟁점 발현 모달</td></tr>
+      <tr><td><code>EmotionalSlipModal.tsx</code></td><td>감정 실언 모달</td></tr>
+      <tr><td><code>EmotionGuidePopup.tsx</code></td><td>감정 가이드 팝업</td></tr>
+      <tr><td><code>DisputeList.tsx</code></td><td>쟁점 목록</td></tr>
+      <tr><td><code>index.ts</code></td><td>배럴 익스포트</td></tr>
+    </tbody>
+  </table></div>
+
+
   <!-- ── 엔진 모듈 ────────────────────────── -->
   <h2 id="engines">엔진 모듈 구조 (v4.1)</h2>
   <p>게임의 핵심 로직을 처리하는 엔진 모듈 목록.</p>
@@ -163,12 +183,13 @@
       <tr><td><code>evidenceEngine.ts</code></td><td>증거 관리</td><td>잠금 해제, 조합 격상, 조사 진행</td></tr>
       <tr><td><code>verdictEngine.ts</code></td><td>판결 채점</td><td>insight + authority + wisdom + processBonus</td></tr>
       <tr><td><code>soundEngine.ts</code></td><td>효과음 관리</td><td>Phase 전환, 붕괴, 증거 발견 등</td></tr>
+      <tr><td><code>discoveryEngine.ts</code></td><td>Discovery 4시스템 핵심 로직</td><td>진실 공방 + 증거 감별 + 쟁점 발현 + 감정 전략 (478줄)</td></tr>
       <tr><td><code>dialogueResolver.ts</code></td><td>고정 대사 트리 (폴백)</td><td>LLM 없을 때 정적 대사 생성</td></tr>
       <tr><td><code>korean.ts</code></td><td>한국어 조사 처리</td><td>이/가, 은/는, 을/를, 과/와, 으로/로 + NameMap</td></tr>
     </tbody>
   </table></div>
 
-  <h3>Zustand Store 구조</h3>
+  <h3>Zustand Store 구조 (8 슬라이스)</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>슬라이스</th><th>역할</th></tr></thead>
     <tbody>
@@ -176,6 +197,7 @@
       <tr><td><code>phaseSlice</code></td><td>Phase 전이 관리</td></tr>
       <tr><td><code>evidenceSlice</code></td><td>증거 상태 관리</td></tr>
       <tr><td><code>shopSlice</code></td><td>글로벌 리소스 (영구 저장, 자동 충전, 광고 보상)</td></tr>
+      <tr><td><code>discoverySlice</code></td><td>Discovery 상태 관리 — DiscoveryState: judgments, appraisals, disputeVisibility, emotionalSlips, discoveredTruths. 주요 액션: submitJudgment, reviseJudgment, submitAppraisal, emergeDispute, addEmotionalSlip</td></tr>
     </tbody>
   </table></div>
 
@@ -273,6 +295,12 @@
         <li><strong>시스템 메시지 톤:</strong> 관찰자 톤, 생동감</li>
         <li><strong>폴백 시스템:</strong> dialogueResolver.ts + generic-phase1.ts (LLM 없이도 플레이 가능)</li>
         <li><strong>DEV 치트:</strong> SettingsPanel 치트 섹션 (confirm 방식)</li>
+        <li><strong>Discovery 시스템:</strong> 진실 공방 + 감별 + 발현 + 감정 전략 (완료)</li>
+        <li><strong>감정 4티어:</strong> calm / agitated / explosive / shutdown (완료)</li>
+        <li><strong>끼어들기 허용/거부:</strong> Allow(-3 권위) / Deny (완료)</li>
+        <li><strong>숨겨진 쟁점 발현:</strong> 5가지 경로 (완료)</li>
+        <li><strong>증거 감별:</strong> 3등급 (trustworthy / partial / suspicious) (완료)</li>
+        <li><strong>LLM 모순 검증:</strong> verifyContradictionWithLLM (완료)</li>
       </ul>
     </div>
     <div class="card">
@@ -301,6 +329,8 @@
       <li>84 사건 · 504 증거 · 253 증인 · 420 쟁점 · 252 관계이력 · 168 대사 스크립트</li>
       <li>7 관계유형 · 8 Phase · 3 질문유형 · 5 스킬 · 6 조사액션 · 6 거짓말상태 · 7 동기</li>
       <li>81 Fluent Emoji PNG · 36+ 컴포넌트 이모지 변환</li>
+      <li>Discovery 컴포넌트 7 UI 모달 · discoveryEngine 478줄 · 감정 4티어 (calm/agitated/explosive/shutdown)</li>
+      <li>MIN_TURNS_BEFORE_ADVANCE: Phase 3/4/5 모두 10 · Phase 전환: OR 조건 (전이 OR 10턴) · Phase 5: 30턴 미만 판결 불가</li>
     </ul>
   </div></div>
 
@@ -308,7 +338,7 @@
 
   <div class="card" style="margin-top: 28px;">
     <div class="card-title">결론</div>
-    <p>솔로몬 v4.1은 v4.0 기반에서 <strong>스크립트 로더 안정화 (caseId 매핑 수정, 168개 0 mismatch), LLM 프롬프트 전면 압축 ("자기"→"자기야" 강제 보정, 혼합 발화 규칙, 안티패턴 차단), 재판관 질문 이름 자동 제거, 글로벌 리소스 밸런스 확정 (무료 캡 10, 유료 99, 판당 조사 6/스킬 5/통제 3)</strong>을 완료한 상태이다. 비주얼 에셋 확보와 온라인 리더보드가 다음 단계의 핵심 과제다.</p>
+    <p>솔로몬 v7.0은 기존 기반에 <strong>Discovery 시스템 (진실 공방 + 증거 감별 + 숨겨진 쟁점 발현 + 감정 전략), 감정 4티어 (calm/agitated/explosive/shutdown), 끼어들기 허용/거부, LLM 모순 검증 (verifyContradictionWithLLM)</strong>을 추가 완료한 상태이다. Phase 3~5 내에서 Discovery 체크가 자동 실행되며, 30턴 미만 판결 불가 조건이 적용된다. 비주얼 에셋 확보와 온라인 리더보드가 다음 단계의 핵심 과제다.</p>
   </div>
 
 </main>

@@ -22,6 +22,8 @@
     <a class="topbar-sec-link" href="#boards">관계별 보드</a>
     <a class="topbar-sec-link" href="#examples">반복 예시</a>
     <a class="topbar-sec-link" href="#sample">샘플 사건</a>
+    <a class="topbar-sec-link" href="#phase-transition">Phase 전환</a>
+    <a class="topbar-sec-link" href="#discovery-bonus">Discovery</a>
     <a class="topbar-sec-link" href="#balance">밸런스</a>
   </div>
   <div class="topbar-meta">
@@ -72,7 +74,7 @@
 <main class="content">
 
   <h1>콘텐츠 &amp; 밸런스 <span class="badge">GDD v4.1</span></h1>
-  <p class="subtitle">진행 구조 · 점수 & 티어 · 리소스 & 보상 · Context Pack · 관계별 보드 · 반복 예시 · 샘플 사건 · 밸런스</p>
+  <p class="subtitle">진행 구조 · 점수 & 티어 · 리소스 & 보상 · Context Pack · 관계별 보드 · 반복 예시 · 샘플 사건 · Phase 전환 · Discovery 보너스 · 밸런스</p>
 
 
   <!-- ── 진행 구조 ─────────────────────────────── -->
@@ -125,6 +127,17 @@
   </div>
 
   <h3>총점 = insight + authority + wisdom + processBonus</h3>
+
+  <h3>판결 채점 v3 — 권위(Authority) processBonus 계산</h3>
+  <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
+    <strong>끼어들기 허용 패널티 (v3 신규):</strong>
+    <pre><code>processBonus -= Math.min(9, pm.interjectionAllowed * 3)  // 끼어들기 허용 -3 (최대 -9)</code></pre>
+    <ul style="margin:0;padding-left:20px;">
+      <li>끼어들기를 허용할 때마다 권위(Authority) <strong>-3점</strong></li>
+      <li>최대 3회 허용 시 <strong>-9점</strong> (전략적 판단 필요)</li>
+      <li>끼어들기 <strong>거부</strong>는 패널티 없음</li>
+    </ul>
+  </div></div>
 
   <h3>명성 티어 (6단계)</h3>
   <div class="table-wrap"><table>
@@ -291,6 +304,49 @@
     <strong>비공개 진술 보호 + 공감 질문</strong>으로 자발적 고백을 이끌어낼 수도 있다. 이 경우 민준은 "제가 사실은..."으로 시작하며
     과거 도박 빚(Ledger의 침묵된 과거)까지 함께 고백할 수 있다. 압박 루트보다 더 많은 정보를 얻는 보너스.
   </div></div>
+
+
+  <!-- ── Phase 전환 조건 ─────────────────────── -->
+  <h2 id="phase-transition">Phase 전환 조건 (v3 업데이트)</h2>
+  <p>각 Phase 진입에는 특정 메트릭 조건 <strong>OR</strong> 최소 턴 수가 필요하다. 30턴 미만에서는 판결 불가.</p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>Phase</th><th>진입 조건</th><th>MIN_TURNS_BEFORE_ADVANCE</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Phase 3</strong></td><td><code>lieTransitions >= 2</code> <strong>OR</strong> <code>phaseTurnCount >= 10</code></td><td>10</td></tr>
+      <tr><td><strong>Phase 4</strong></td><td><code>evidenceEffective >= 1</code> <strong>OR</strong> <code>phaseTurnCount >= 10</code></td><td>10</td></tr>
+      <tr><td><strong>Phase 5</strong></td><td><code>turnCount >= 20</code> 필수 <strong>AND</strong> (<code>liesCollapsed >= 1</code> <strong>OR</strong> <code>phaseTurnCount >= 10</code>)</td><td>10</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="alert alert-warning"><span class="alert-icon">📌</span><div>
+    <strong>30턴 미만 판결 불가:</strong> 충분한 심문 없이 성급한 판결을 방지한다. turnCount가 30 미만이면 판결(중재안) 진입이 차단된다.
+  </div></div>
+
+
+  <!-- ── Discovery 보너스/패널티 ─────────────── -->
+  <h2 id="discovery-bonus">Discovery 보너스/패널티</h2>
+  <p>Discovery Engine 관련 행동에 대한 점수 보상. 심문 과정에서 발견한 정보의 질과 정확도를 평가한다.</p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>조건</th><th>보상</th></tr></thead>
+    <tbody>
+      <tr><td><strong>증거 감별 정확도</strong></td><td>trap 증거를 suspicious로 정확히 감별</td><td><strong>+5 insight</strong></td></tr>
+      <tr><td><strong>숨겨진 쟁점 발현</strong></td><td>플레이어가 발현시킨 쟁점 수</td><td>쟁점당 <strong>+3 insight</strong></td></tr>
+      <tr><td><strong>감정 실언 활용</strong></td><td>실언에서 진실 획득 시</td><td><strong>+4 wisdom</strong></td></tr>
+      <tr><td><strong>진실 공방 정확도</strong></td><td>정답 판정 비율</td><td>비율 x <strong>10 insight</strong></td></tr>
+    </tbody>
+  </table></div>
+
+
+  <!-- ── interjectionAllowed 메트릭 ─────────── -->
+  <h2 id="interjection-metric">interjectionAllowed 메트릭</h2>
+  <p>ProcessMetrics에 추가된 끼어들기 추적 필드.</p>
+
+  <pre><code>// ProcessMetrics 확장
+interjectionAllowed: number  // 끼어들기 허용 횟수 (권위 -3/회, 최대 -9)</code></pre>
+
+  <p>끼어들기 허용은 정보 획득(상대방의 즉각 반응에서 실언/모순 유도)과 권위 하락의 트레이드오프. 전략적으로 0~3회 범위에서 운용한다.</p>
 
 
   <!-- ── 밸런스 원칙 ─────────────────────────── -->

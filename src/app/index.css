@@ -76,6 +76,14 @@
   animation: shake 0.4s ease-out;
 }
 
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down {
+  animation: slide-down 0.35s ease-out;
+}
+
 @keyframes evidence-slam {
   0% { transform: translateY(-20px) scale(1.1); opacity: 0; }
   50% { transform: translateY(2px) scale(0.98); opacity: 1; }

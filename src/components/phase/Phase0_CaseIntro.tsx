@@ -161,15 +161,27 @@ export default function Phase0_CaseIntro() {
                 <div className="pt-2">
                   <div className="text-xs text-gray-500 mb-2"><Emoji char="👥" size={12} /> 관련 인물</div>
                   <div className="flex flex-wrap gap-2">
-                    {duo.socialGraph.slice(0, 3).map((tp) => (
-                      <div key={tp.id} className="flex items-center gap-1.5 text-xs bg-gray-800/60 ring-1 ring-gray-700/50 rounded-full px-3 py-1.5">
-                        <span className={`w-1.5 h-1.5 rounded-full ${
-                          tp.bias === 'pro_a' ? 'bg-blue-400' :
-                          tp.bias === 'pro_b' ? 'bg-rose-400' : 'bg-gray-400'
-                        }`} />
-                        <span className="text-gray-300">{tp.name}</span>
-                      </div>
-                    ))}
+                    {duo.socialGraph
+                      .filter(tp => tp.slot === 'family_1' || tp.slot === 'family_2' || tp.slot === 'acquaintance_1')
+                      .slice(0, 3)
+                      .map((tp) => {
+                        // 이름에서 역할/직업 제거 (진실 스포일러 방지)
+                        const displayName = tp.name.replace(/\s*[（(][^)）]+[)）]\s*$/, '')
+                        // 관계만 표시: 가족이면 슬롯 기반, 아니면 중립
+                        const relation = tp.relationTo === 'a' ? `${caseData.duo.partyA.name.slice(0, 3)} 측`
+                          : tp.relationTo === 'b' ? `${caseData.duo.partyB.name.slice(0, 3)} 측`
+                          : '관련인'
+                        return (
+                          <div key={tp.id} className="flex items-center gap-1.5 text-xs bg-gray-800/60 ring-1 ring-gray-700/50 rounded-full px-3 py-1.5">
+                            <span className={`w-1.5 h-1.5 rounded-full ${
+                              tp.bias === 'pro_a' ? 'bg-blue-400' :
+                              tp.bias === 'pro_b' ? 'bg-rose-400' : 'bg-gray-400'
+                            }`} />
+                            <span className="text-gray-300">{displayName}</span>
+                            <span className="text-gray-600">({relation})</span>
+                          </div>
+                        )
+                      })}
                   </div>
                 </div>
               )}
@@ -177,37 +189,30 @@ export default function Phase0_CaseIntro() {
           )}
 
           {step === 'disputes' && (() => {
-            const visibleDisputes = caseData.disputes.filter(
-              (d) => d.quadrant !== 'neither_knows' && d.quadrant !== 'shared_misconception'
-            )
-            const hiddenCount = caseData.disputes.length - visibleDisputes.length
+            // 초기에는 핵심(high) 쟁점 최대 2개만 노출, 나머지는 숨김
+            const initialDisputes = caseData.disputes
+              .filter(d => d.weight === 'high' && d.quadrant !== 'neither_knows' && d.quadrant !== 'shared_misconception')
+              .slice(0, 2)
+            const remainingCount = caseData.disputes.length - initialDisputes.length
             return (
             <div className="space-y-3">
               <div className="text-center">
                 <Emoji char="⚡" size={30} />
-                <h3 className="text-sm font-bold text-gray-300 mt-2">확인된 쟁점 {visibleDisputes.length}개</h3>
-                <p className="text-xs text-gray-600 mt-1">심문을 통해 각 쟁점의 진실을 밝혀야 합니다</p>
+                <h3 className="text-sm font-bold text-gray-300 mt-2">주요 쟁점</h3>
+                <p className="text-xs text-gray-600 mt-1">심문을 통해 진실을 밝혀야 합니다</p>
               </div>
               <div className="space-y-2">
-                {visibleDisputes.map((d, i) => (
-                  <div key={d.id} className={`flex items-center gap-3 rounded-xl p-3 ${
-                    d.weight === 'high' ? 'bg-red-950/30 border border-red-800/30' :
-                    d.weight === 'medium' ? 'bg-amber-950/20 border border-amber-800/20' :
-                    'bg-gray-900/60 border border-gray-800/60'
-                  }`}>
-                    <span className={`text-lg font-bold w-7 text-center ${
-                      d.weight === 'high' ? 'text-red-400' : d.weight === 'medium' ? 'text-amber-400' : 'text-gray-500'
-                    }`}>{i + 1}</span>
+                {initialDisputes.map((d, i) => (
+                  <div key={d.id} className="flex items-center gap-3 rounded-xl p-3 bg-red-950/30 border border-red-800/30">
+                    <span className="text-lg font-bold w-7 text-center text-red-400">{i + 1}</span>
                     <div className="flex-1">
                       <span className="text-sm text-gray-200">{d.name}</span>
-                      <span className={`ml-2 text-xs ${
-                        d.weight === 'high' ? 'text-red-400/60' : d.weight === 'medium' ? 'text-amber-400/60' : 'text-gray-600'
-                      }`}>{d.weight === 'high' ? '핵심' : d.weight === 'medium' ? '중요' : '부차'}</span>
+                      <span className="ml-2 text-xs text-red-400/60">핵심</span>
                     </div>
                   </div>
                 ))}
               </div>
-              {hiddenCount > 0 && (
+              {remainingCount > 0 && (
                 <p className="text-xs text-gray-600 text-center mt-2">
                   심문 과정에서 추가 쟁점이 드러날 수 있습니다
                 </p>

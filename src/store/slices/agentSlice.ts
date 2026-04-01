@@ -5,6 +5,7 @@ import type { Archetype } from '../../types'
 import { initializeLieStates, attemptLieTransition } from '../../engine/lieStateMachine'
 import { createInitialEmotionalState, updateEmotion } from '../../engine/emotionEngine'
 import { createInitialTrustState, updateTrust as updateTrustState } from '../../engine/trustEngine'
+import { applyBridge } from '../../engine/bridgeEngine'
 
 export interface AgentSlice {
   agentA: AgentState
@@ -22,6 +23,8 @@ export interface AgentSlice {
     startEmotionA: EmotionalPhase,
     startEmotionB: EmotionalPhase,
   ) => void
+  /** Phase 3 진입 시 브리지 적용 — Phase 1~2에서 인정된 사실 반영 */
+  applyPhase3Bridge: (caseId: string) => void
   transitionLie: (party: 'a' | 'b', disputeId: string, trigger: string) => boolean
   forceSetLieState: (party: 'a' | 'b', disputeId: string, state: LieState) => void
   changeEmotion: (party: 'a' | 'b', delta: number) => void
@@ -63,6 +66,20 @@ export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (s
       archetypeB,
       lieConfigsA: lieConfigA,
       lieConfigsB: lieConfigB,
+    })
+  },
+
+  applyPhase3Bridge: (caseId) => {
+    const state = get()
+    set({
+      agentA: {
+        ...state.agentA,
+        lieStateMap: applyBridge(caseId, 'a', state.agentA.lieStateMap),
+      },
+      agentB: {
+        ...state.agentB,
+        lieStateMap: applyBridge(caseId, 'b', state.agentB.lieStateMap),
+      },
     })
   },
 

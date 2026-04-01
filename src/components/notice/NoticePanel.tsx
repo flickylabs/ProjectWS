@@ -109,7 +109,7 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
           background: 'rgba(0,0,0,0.5)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}
-        onClick={onClose}
+        onClick={handleClose}
       >
         <div
           style={{
@@ -128,7 +128,7 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
               <span style={{ fontSize: '1.1rem' }}>📢</span>
               <span style={{ color: '#fff', fontWeight: 700, fontSize: '0.85rem' }}>공지사항</span>
             </div>
-            <button onClick={onClose} style={{
+            <button onClick={handleClose} style={{
               background: 'rgba(255,255,255,0.2)', border: 'none', color: '#fff',
               width: 28, height: 28, borderRadius: 14, cursor: 'pointer', fontSize: '1rem',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -142,6 +142,25 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
             fontSize: '0.9rem',
           }}>
             {message}
+          </div>
+          {/* 하루동안 보지 않기 */}
+          <div style={{
+            borderTop: '1px solid rgba(61,51,40,0.08)',
+            padding: '12px 24px',
+            display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
+          }}>
+            <label style={{
+              display: 'flex', alignItems: 'center', gap: 6,
+              fontSize: '0.8rem', color: '#A89E90', cursor: 'pointer',
+            }}>
+              <input
+                type="checkbox"
+                checked={dismissChecked}
+                onChange={e => setDismissChecked(e.target.checked)}
+                style={{ accentColor: '#3498DB' }}
+              />
+              하루동안 보지 않기
+            </label>
           </div>
         </div>
       </div>
@@ -242,20 +261,18 @@ export default function NoticePanel({ onClose, autoPopup = false }: Props) {
           padding: '12px 24px',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         }}>
-          {autoPopup ? (
-            <label style={{
-              display: 'flex', alignItems: 'center', gap: 6,
-              fontSize: '0.8rem', color: '#A89E90', cursor: 'pointer',
-            }}>
-              <input
-                type="checkbox"
-                checked={dismissChecked}
-                onChange={e => setDismissChecked(e.target.checked)}
-                style={{ accentColor: typeInfo.color }}
-              />
-              하루동안 보지 않기
-            </label>
-          ) : <div />}
+          <label style={{
+            display: 'flex', alignItems: 'center', gap: 6,
+            fontSize: '0.8rem', color: '#A89E90', cursor: 'pointer',
+          }}>
+            <input
+              type="checkbox"
+              checked={dismissChecked}
+              onChange={e => setDismissChecked(e.target.checked)}
+              style={{ accentColor: typeInfo.color }}
+            />
+            하루동안 보지 않기
+          </label>
           <span style={{ fontSize: '0.78rem', color: '#A89E90' }}>
             {currentIndex + 1} / {notices.length}
           </span>

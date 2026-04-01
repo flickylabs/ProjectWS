@@ -33,6 +33,13 @@ const CARD_EFFECTS: Record<string, string> = {
   free_question: '자유롭게 질문합니다',
 }
 
+const CARD_METER_HINTS: Record<string, { meter: string; color: string }> = {
+  fact_pursuit: { meter: '모순 토큰 ↑', color: 'text-yellow-500/60' },
+  motive_search: { meter: '누설 미터 ↑', color: 'text-orange-500/60' },
+  empathy_approach: { meter: '신뢰 창구 ↑', color: 'text-blue-400/60' },
+  free_question: { meter: '', color: '' },
+}
+
 type CardType = QuestionType | 'free_question'
 
 export default function QuestionSelector({ target, onSelect, llmMode, onFreeResult, toggles, onToggle }: Props) {
@@ -145,6 +152,11 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
               <div className="text-xl mb-1"><Emoji char={q.icon} size={20} /></div>
               <div className={`text-xs font-bold ${q.anyEnabled ? 'text-gray-200' : 'text-gray-600'}`}>{q.label}</div>
               <div className="text-xs text-gray-500 mt-0.5 leading-snug">{effect}</div>
+              {CARD_METER_HINTS[q.type]?.meter && (
+                <div className={`text-[9px] mt-1 font-semibold ${CARD_METER_HINTS[q.type].color}`}>
+                  {CARD_METER_HINTS[q.type].meter}
+                </div>
+              )}
             </button>
           )
         })}

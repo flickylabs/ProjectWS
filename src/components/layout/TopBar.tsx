@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import PhaseIndicator from './PhaseIndicator'
@@ -8,11 +8,30 @@ import Emoji from '../common/Emoji'
 import { checkConnection } from '../../engine/llmClient'
 import { MAX_TURNS } from '../../utils/constants'
 
+const DisputeBoard = lazy(() => import('../discovery/DisputeBoard'))
+const StateTransitionToast = lazy(() => import('../discovery/StateTransitionFeedback').then(m => ({ default: m.StateTransitionToast })))
+const GameEventModal = lazy(() => import('../discovery/GameEventModal'))
+const EvidenceResultToast = lazy(() => import('../discovery/EvidenceResultToast'))
+const ForcedVerdictBanner = lazy(() => import('../discovery/ForcedVerdictBanner'))
+
+/** 판결 준비도 칩 — 달성/미달성 시각 표시 */
+function ReadinessChip({ label, value, target }: { label: string; value: number; target: number }) {
+  const met = value >= target
+  return (
+    <span className={`text-[10px] px-1.5 py-0.5 rounded font-semibold ${
+      met ? 'bg-emerald-900/50 text-emerald-400' : 'bg-gray-800/60 text-gray-500'
+    }`}>
+      {label} {value}/{target}
+    </span>
+  )
+}
+
 export default function TopBar() {
   const [showSettings, setShowSettings] = useState(false)
   const [aiStatus, setAiStatus] = useState<'checking' | 'connected' | 'disconnected'>('checking')
   const [showExitConfirm, setShowExitConfirm] = useState(false)
   const [showResource, setShowResource] = useState<'invest' | 'skill' | null>(null)
+  const [showDisputeBoard, setShowDisputeBoard] = useState(false)
 
   const globalInvest = useGameStore((s) => s.globalInvestTokens)
   const globalSkill = useGameStore((s) => s.globalSkillPoints)
@@ -26,6 +45,10 @@ export default function TopBar() {
   const currentPhase = useGameStore((s) => s.currentPhase)
   const turnCount = useGameStore((s) => s.turnCount)
   const processMetrics = useGameStore((s) => s.processMetrics)
+  const readinessState = useGameStore((s) => s.readinessState)
+  const verdictMode = useGameStore((s) => s.verdictMode)
+  const pendingEvidenceResult = useGameStore((s) => s.pendingEvidenceResult)
+  const setPendingEvidenceResult = useGameStore((s) => s.setPendingEvidenceResult)
 
   // Phase3 이후 단계 여부
   const LATE_PHASES = [
@@ -37,15 +60,16 @@ export default function TopBar() {
     GamePhase.Result,
   ]
   const isLatePhase = LATE_PHASES.includes(currentPhase)
+  const isInterrogation = [
+    GamePhase.Phase3_Interrogation,
+    GamePhase.Phase4_Evidence,
+    GamePhase.Phase5_ReExamination,
+  ].includes(currentPhase)
 
-  // 예상 점수 계산 (최대 100)
-  const estimatedScore = Math.min(
-    100,
-    processMetrics.liesCollapsed * 10
-    + processMetrics.evidenceDiscovered * 8
-    + processMetrics.evidenceEffective * 5
-    + processMetrics.freeQuestionsRelevant * 3
-  )
+  // 예상 점수 (기존 호환) 또는 readinessScore
+  const estimatedScore = readinessState
+    ? readinessState.readinessScore
+    : Math.min(100, processMetrics.liesCollapsed * 10 + processMetrics.evidenceDiscovered * 8 + processMetrics.evidenceEffective * 5 + processMetrics.freeQuestionsRelevant * 3)
 
   const remainingTurns = MAX_TURNS - turnCount
 
@@ -82,7 +106,16 @@ export default function TopBar() {
           </button>
           {isLatePhase && (
             <div className="flex items-center gap-3">
-              <span className="text-xs text-indigo-300/80"><Emoji char="📊" size={14} /> {estimatedScore}</span>
+              {/* 판결 준비도 (readiness 있으면 3칸 요약, 없으면 기존 점수) */}
+              {readinessState && isInterrogation ? (
+                <div className="flex items-center gap-2">
+                  <ReadinessChip label="균열" value={readinessState.crackedDisputeCount + readinessState.resolvedDisputeCount} target={2} />
+                  <ReadinessChip label="조사" value={readinessState.investigationSuccessCount} target={2} />
+                  <ReadinessChip label="돌파" value={readinessState.resolvedDisputeCount + readinessState.fullCollapseCount + readinessState.confessionCount} target={1} />
+                </div>
+              ) : (
+                <span className="text-xs text-indigo-300/80"><Emoji char="📊" size={14} /> {estimatedScore}</span>
+              )}
               <button onClick={() => setShowResource('invest')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
                 <Emoji char="🔍" size={16} /><span className={`font-bold ${globalInvest === 0 ? 'text-red-400' : 'text-amber-400'}`}>{globalInvest}</span>
               </button>
@@ -92,6 +125,15 @@ export default function TopBar() {
               <span className={`text-xs font-semibold ${remainingTurns <= 5 ? 'text-red-400' : 'text-gray-400'}`}>
                 {turnCount}/{MAX_TURNS}
               </span>
+              {/* 쟁점 현황 보드 버튼 */}
+              {isInterrogation && (
+                <button
+                  onClick={() => setShowDisputeBoard(true)}
+                  className="text-[10px] px-1.5 py-0.5 rounded bg-amber-900/40 text-amber-400 hover:bg-amber-900/60 font-semibold transition-colors"
+                >
+                  쟁점
+                </button>
+              )}
             </div>
           )}
           <div className="flex items-center gap-1.5 ml-2 shrink-0">
@@ -131,6 +173,51 @@ export default function TopBar() {
           onWatchAd={watchAdSkill}
           onClose={() => setShowResource(null)}
         />
+      )}
+
+      {/* 쟁점 현황 보드 */}
+      {showDisputeBoard && (
+        <Suspense fallback={null}>
+          <DisputeBoard
+            onClose={() => setShowDisputeBoard(false)}
+            onSelectDispute={(disputeId, party) => {
+              useGameStore.getState().setDisputeBoardAction({ disputeId, party })
+              setShowDisputeBoard(false)
+            }}
+          />
+        </Suspense>
+      )}
+
+      {/* 상태 전이 토스트 */}
+      {isInterrogation && (
+        <Suspense fallback={null}>
+          <StateTransitionToast />
+        </Suspense>
+      )}
+
+      {/* 게임 이벤트 모달 (모순/끼어들기/감정폭발/새쟁점) */}
+      {isInterrogation && (
+        <Suspense fallback={null}>
+          <GameEventModal />
+        </Suspense>
+      )}
+
+      {/* 증거 결과 토스트 */}
+      {pendingEvidenceResult && (
+        <Suspense fallback={null}>
+          <EvidenceResultToast
+            result={pendingEvidenceResult.type}
+            evidenceName={pendingEvidenceResult.evidenceName}
+            onDone={() => setPendingEvidenceResult(null)}
+          />
+        </Suspense>
+      )}
+
+      {/* 불충분 심리 경고 배너 */}
+      {verdictMode === 'forced_incomplete' && (
+        <Suspense fallback={null}>
+          <ForcedVerdictBanner />
+        </Suspense>
       )}
 
       {/* 나가기 확인 */}

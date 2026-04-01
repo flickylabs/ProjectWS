@@ -25,6 +25,7 @@
     <a class="topbar-sec-link" href="#callterms">callTerms</a>
     <a class="topbar-sec-link" href="#casemeta">CaseMeta</a>
     <a class="topbar-sec-link" href="#evidence-detail">증거 상세</a>
+    <a class="topbar-sec-link" href="#discovery-types">Discovery 타입</a>
   </div>
   <div class="topbar-meta">
     <span>v5.0</span>
@@ -639,8 +640,126 @@
     </tbody>
   </table></div>
 
+  <h3>EvidenceNode 신규 필드 (v5.0)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>필드</th><th>타입</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td><code>subjectParty?</code></td><td><code>'a' | 'b' | 'both'</code></td><td>증거가 보여주는 행위의 주체. A의 행위인지, B의 행위인지, 양쪽 모두인지.</td></tr>
+      <tr><td><code>partyContext?</code></td><td><code>{ a?: { questionAngle: string; implication: string }, b?: { questionAngle: string; implication: string } }</code></td><td><code>both</code>일 때 각 당사자에게 증거를 제시할 때의 질문 각도와 함의가 다름. 당사자별 제시 맥락.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>partyContext 활용:</strong> 같은 증거라도 A에게 제시할 때와 B에게 제시할 때 질문의 각도(<code>questionAngle</code>)와 함의(<code>implication</code>)가 달라진다.
+    예: 공동 계좌 내역을 A에게 제시하면 "왜 이 금액을 인출했나?"이고, B에게 제시하면 "이 인출을 알고 있었나?"가 된다.
+  </div></div>
+
   <h3>증거 조합 격상</h3>
   <p>사건 JSON의 <code>evidenceCombinations</code> 배열에 정의된 Soft 증거 조합이 모두 제시되면 Hard로 자동 격상된다.</p>
+
+
+  <!-- ── Dispute 신규 필드 ──────────────────── -->
+  <h3>Dispute 신규 필드 (v5.0)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>필드</th><th>타입</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td><code>judgmentStatement?</code></td><td><code>string</code></td><td>AI 생성 판정문 (30자 이내). 판결 결과 화면에서 표시되는 간결한 판정 요약.</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <!-- ── Discovery 타입 시스템 ──────────────────── -->
+  <h2 id="discovery-types">Discovery 타입 시스템 (v5.0)</h2>
+  <p><strong>types/discovery.ts</strong>에 정의되는 전체 타입. 진실 공방, 증거 감별, 숨겨진 쟁점 발현, 감정 전략의 4대 시스템 상태를 관리한다.</p>
+
+  <h3>진실 공방 (Truth Confrontation) 타입</h3>
+  <pre style="background:var(--bg-card);padding:16px;border-radius:8px;overflow-x:auto;font-size:13px;">
+type TruthJudgment = 'believe_a' | 'believe_b' | 'both_partial' | 'undetermined'
+
+interface PlayerJudgmentEntry {
+  disputeId: string
+  judgment: TruthJudgment
+  turnSubmitted: number
+  revised: boolean
+  previousJudgment?: TruthJudgment
+  cascadeTargets?: string[]    // 판정 수정 시 연쇄 갱신 대상 쟁점 ID
+}
+  </pre>
+
+  <h3>증거 감별 (Evidence Appraisal) 타입</h3>
+  <pre style="background:var(--bg-card);padding:16px;border-radius:8px;overflow-x:auto;font-size:13px;">
+type AppraisalVerdict = 'trustworthy' | 'partial' | 'suspicious' | 'unappraised'
+
+interface EvidenceAppraisalEntry {
+  evidenceId: string
+  verdict: AppraisalVerdict
+  partialDetails: PartialTrustDetail[]
+  turnAppraised: number
+  wasCorrect: boolean | null   // 게임 종료 시 채점
+}
+
+interface PartialTrustDetail {
+  subAction: string
+  trusted: boolean
+}
+  </pre>
+
+  <h3>숨겨진 쟁점 발현 (Hidden Dispute Emergence) 타입</h3>
+  <pre style="background:var(--bg-card);padding:16px;border-radius:8px;overflow-x:auto;font-size:13px;">
+type DisputeVisibility = 'visible' | 'hidden' | 'emerged' | 'inactive'
+
+interface DisputeVisibilityEntry {
+  disputeId: string
+  visibility: DisputeVisibility
+  emergenceRoutes: EmergenceRoute[]
+  emergedAtTurn?: number
+  emergedVia?: string
+}
+
+interface EmergenceRoute {
+  type: 'evidence' | 'truth_confrontation' | 'witness' | 'lie_collapse' | 'emotional_slip'
+  condition: string
+}
+  </pre>
+
+  <h3>감정 전략 (Emotional Leverage) 타입</h3>
+  <pre style="background:var(--bg-card);padding:16px;border-radius:8px;overflow-x:auto;font-size:13px;">
+type EmotionTier = 'calm' | 'agitated' | 'explosive' | 'shutdown'
+
+interface EmotionalSlipEvent {
+  party: 'a' | 'b'
+  disputeId: string
+  slipText: string
+  tier: EmotionTier
+  turn: number
+}
+  </pre>
+
+  <h3>DiscoveryState — 통합 상태</h3>
+  <pre style="background:var(--bg-card);padding:16px;border-radius:8px;overflow-x:auto;font-size:13px;">
+interface DiscoveryState {
+  judgments: Record&lt;string, PlayerJudgmentEntry&gt;
+  appraisals: Record&lt;string, EvidenceAppraisalEntry&gt;
+  disputeVisibility: Record&lt;string, DisputeVisibilityEntry&gt;
+  emotionalSlips: EmotionalSlipEvent[]
+  discoveredTruths: string[]
+  pendingConfrontation: { disputeId: string; claimA: string; claimB: string } | null
+  pendingEmergence: { disputeId: string; route: string } | null
+  pendingSlip: EmotionalSlipEvent | null
+}
+  </pre>
+
+
+  <!-- ── DialogueEntry 신규 필드 ──────────────────── -->
+  <h3>DialogueEntry 신규 필드 (v5.0)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>필드</th><th>타입</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td><code>contradictionMeta?</code></td><td><code>{ party: PartyId, disputeId: string, previousClaim: string, currentClaim: string }</code></td><td>모순 감지 시 대화 엔트리에 첨부되는 메타데이터. 클릭으로 상세 확인 가능.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="alert alert-info"><span class="alert-icon">💡</span><div>
+    <strong>contradictionMeta 활용:</strong> 대화 로그에서 모순이 감지된 발언에 마커가 표시되며, 탭하면 이전 주장(<code>previousClaim</code>)과 현재 주장(<code>currentClaim</code>)을 나란히 비교할 수 있다. 진실 공방(Truth Confrontation) 트리거의 근거가 된다.
+  </div></div>
 
 </main>
 
