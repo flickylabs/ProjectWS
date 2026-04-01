@@ -7,6 +7,7 @@ import { canAppraise } from '../../engine/evidenceEngine'
 import { playClick, playEvidenceUnlock } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
 import { EvidenceAppraisalModal } from '../discovery'
+import { getDossierCards, getAvailableDossierQuestions, resolveDossierQuestion } from '../../engine/v3GameLoopLoader'
 
 interface Props {
   target: PartyId | null
@@ -92,6 +93,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
               canAppraise={canAppraise(evidenceStates[ev.id])}
               llmMode={llmMode}
               isNew={newEvidenceIds?.has(ev.id)}
+              target={target}
             />
           ))}
         </>
@@ -240,24 +242,38 @@ const INVESTIGATION_LABELS: Record<string, string> = {
 }
 
 /** 증거 기반 자동 제안 질문 생성 */
-function generateSuggestions(ev: any, state: any): string[] {
+function generateSuggestions(ev: any, state: any, target?: PartyId | null): string[] {
+  // V3: DossierCard challenge 질문이 있으면 우선 사용
+  if (target) {
+    const caseData = useGameStore.getState().caseData
+    const caseKey = caseData?.caseId?.replace(/^case-/, '') ?? ''
+    const dossierCards = getDossierCards(caseKey)
+    const matchingCard = dossierCards.find(c => c.evidenceIds.includes(ev.id))
+
+    if (matchingCard) {
+      const dossierQuestions = getAvailableDossierQuestions(caseKey, matchingCard.id, target)
+      if (dossierQuestions.length > 0) {
+        return dossierQuestions.slice(0, 3).map(q => q.text)
+      }
+    }
+  }
+
+  // Fallback: 기존 유형별 제안
   const suggestions: string[] = []
   const investigatedCount = state?.investigatedActions?.filter((a: string) => KEY_ORDER.includes(a as any))?.length ?? 0
 
-  // 증거 유형별 기본 제안
   const typeQuestions: Record<string, string> = {
-    bank: '이 거래 내역에 대해 설명해주세요.',
+    bank: '이 거래 내역에 대해 설명하십시오.',
     chat: '이 대화 내용이 사실입니까?',
     cctv: '이 영상에 찍힌 게 본인이 맞습니까?',
     contract: '이 계약 내용을 인정하십니까?',
     testimony: '이 증언 내용에 대해 어떻게 생각하십니까?',
-    log: '이 기록에 대해 설명해주세요.',
+    log: '이 기록에 대해 설명하십시오.',
     device: '이 기기 데이터를 확인하셨습니까?',
     sns: '이 게시물을 직접 올리셨습니까?',
   }
-  suggestions.push(typeQuestions[ev.type] ?? '이 증거에 대해 설명해주세요.')
+  suggestions.push(typeQuestions[ev.type] ?? '이 증거에 대해 설명하십시오.')
 
-  // 조사 결과 기반 추가 제안
   if (investigatedCount > 0 && ev.investigationResults) {
     const results = KEY_ORDER.slice(0, investigatedCount).map((k: string) => ev.investigationResults[k]).filter(Boolean)
     if (results.length > 0) {
@@ -267,23 +283,22 @@ function generateSuggestions(ev: any, state: any): string[] {
       else if (lastResult.includes('편집') || lastResult.includes('조작'))
         suggestions.push('이 증거가 조작되지 않았다고 확신합니까?')
       else
-        suggestions.push('이 증거의 출처를 설명해주세요.')
+        suggestions.push('이 증거의 출처를 설명하십시오.')
     }
   }
 
-  // reliability 기반
   if (ev.reliability === 'soft')
     suggestions.push('이 증거만으로는 부족한데, 추가로 증명할 수 있습니까?')
 
   return suggestions.slice(0, 3)
 }
 
-function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, onAppraise, canPresent, canInvestigate, appraisal, canAppraise: canDoAppraise, llmMode, isNew }: {
+function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, onInvestigate, onAppraise, canPresent, canInvestigate, appraisal, canAppraise: canDoAppraise, llmMode, isNew, target }: {
   ev: any; state: any; isExpanded: boolean
   onToggle: () => void; onPresent?: () => void; onConfront?: (text: string) => void
   onInvestigate: () => void; onAppraise?: () => void; canPresent: boolean; canInvestigate: boolean
   appraisal?: any; canAppraise?: boolean; llmMode?: boolean
-  isNew?: boolean
+  isNew?: boolean; target?: PartyId | null
 }) {
   const [showPresent, setShowPresent] = useState(false)
   const [confrontText, setConfrontText] = useState('')
@@ -415,7 +430,7 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
               {/* 자동 제안 질문 */}
               <p className="text-xs text-gray-400">질문과 함께 제시하면 더 효과적입니다:</p>
               <div className="space-y-1">
-                {generateSuggestions(ev, state).map((q, i) => (
+                {generateSuggestions(ev, state, target).map((q, i) => (
                   <button key={i}
                     onClick={() => { onConfront?.(q); setShowPresent(false); setConfrontText('') }}
                     className="w-full text-left text-xs px-3 py-2 rounded-lg bg-gray-800/60 border border-gray-700/40 hover:border-amber-600 hover:bg-amber-950/20 text-gray-300 transition-all active:scale-[0.98]"
@@ -425,24 +440,7 @@ function EvidenceCard({ ev, state, isExpanded, onToggle, onPresent, onConfront, 
                 ))}
               </div>
 
-              {/* 직접 입력 (고득점) */}
-              <div className="flex items-center gap-1.5">
-                <input
-                  type="text"
-                  value={confrontText}
-                  onChange={e => setConfrontText(e.target.value)}
-                  onKeyDown={e => { if (e.key === 'Enter' && confrontText.trim().length >= 2 && onConfront) { onConfront(confrontText.trim()); setShowPresent(false); setConfrontText('') } }}
-                  placeholder="직접 추궁 (고득점)"
-                  maxLength={120}
-                  className="flex-1 bg-gray-900 border border-amber-800/40 rounded-lg px-2.5 py-1.5 text-xs text-white placeholder-gray-600 focus:border-amber-500 focus:outline-none"
-                  autoFocus
-                />
-                <button
-                  onClick={() => { if (confrontText.trim().length >= 2 && onConfront) { onConfront(confrontText.trim()); setShowPresent(false); setConfrontText('') } }}
-                  disabled={confrontText.trim().length < 2}
-                  className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${confrontText.trim().length >= 2 ? 'bg-amber-600 text-gray-950' : 'bg-gray-800 text-gray-600'}`}
-                ><Emoji char="⚔️" size={14} /></button>
-              </div>
+              {/* 직접 입력 제거 — V3 Blueprint 우회 방지 */}
 
               {/* 질문 없이 제시 */}
               <div className="flex gap-2">
