@@ -133,7 +133,13 @@ export function StateTransitionToast() {
 /** 미터 바 HUD — 3개 미터를 컴팩트하게 표시 */
 export function QuestionMeterHUD({ party }: { party: 'a' | 'b' }) {
   const meters = useGameStore(s => s.questionMeters[party])
-  const meterEffects = useGameStore(s => s.getQuestionMeterEffects(party))
+  // selector에서 새 객체 생성 방지 — 값을 직접 계산
+  const meterEffects = {
+    contradictionActive: meters.contradictionTokens >= 2,
+    leakWarning: meters.leakMeter >= 50,
+    leakCritical: meters.leakMeter >= 80,
+    trustWindowOpen: meters.trustWindow >= 60,
+  }
 
   return (
     <div className="flex items-center gap-3">

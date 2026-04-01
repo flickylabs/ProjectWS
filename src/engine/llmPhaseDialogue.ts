@@ -104,9 +104,9 @@ function parseDialogueArray(response: string, nameA?: string, nameB?: string): O
   }>
 
   return parsed.map((d) => {
-    const behaviorMatch = d.text.match(/[（(]([^)）]+)[)）]/)
+    const behaviorMatch = (d.text || '').match(/[（(]([^)）]+)[)）]/)
     const behaviorHint = d.behaviorHint || (behaviorMatch ? behaviorMatch[1] : undefined)
-    const text = d.text.replace(/[（(][^)）]+[)）]/g, '').trim()
+    const text = (d.text || '').replace(/[（(][^)）]+[)）]/g, '').trim()
 
     return {
       speaker: normalizeSpeaker(d.speaker, nameA, nameB),
