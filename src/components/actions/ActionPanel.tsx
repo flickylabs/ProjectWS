@@ -103,7 +103,8 @@ export default function ActionPanel() {
   const llm = isLLMMode()
   const evLocked = isEvidenceLocked(currentPhase)
   const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
-  const hasDossierCards = getDossierCards(caseKey).length > 0
+  const turnCount = useGameStore((s) => s.turnCount)
+  const hasDossierCards = getDossierCards(caseKey).length > 0 && turnCount >= 4
 
   // ── 토글 스킬 해금 상태 ──
   const toggles: QuestionToggles = {
