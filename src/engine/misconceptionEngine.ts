@@ -487,7 +487,7 @@ export function applyMisconceptionTrigger(
   }
 
   // M4 도달 시 effect 추가
-  if (from !== 'M4' && entry.currentState === 'M4') {
+  if (entry.currentState === 'M4') {
     entry.progress.disprovedAtTurn = trigger.turn
     effects.push({ type: 'set_flag', flag: `${disputeId}.red_herring_disproved` })
     effects.push({ type: 'clear_flag', flag: `${disputeId}.trap_active` })

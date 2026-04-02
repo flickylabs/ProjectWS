@@ -4,7 +4,7 @@ import Emoji from './Emoji'
 interface ToastMessage {
   id: number
   text: string
-  type: 'error' | 'warn' | 'info'
+  type: 'error' | 'warn' | 'info' | 'success'
 }
 
 let nextId = 0

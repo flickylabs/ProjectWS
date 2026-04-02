@@ -31,7 +31,7 @@ export default function FreeQuestionInput({ target, onResult }: Props) {
     setLoading(true)
 
     const state = useGameStore.getState()
-    const v2CaseId = normalizeCaseKey(caseData.caseId ?? '')
+    const v2CaseId = normalizeCaseKey(caseData)
     const v2Active = hasV2Data(v2CaseId) && state.phase3Flags.useBeatSelectorV2
     const agent = target === 'a' ? state.agentA : state.agentB
     const focusDisputeId = state.disputeBoardAction?.disputeId ?? Object.keys(agent.lieStateMap)[0] ?? ''
@@ -41,7 +41,8 @@ export default function FreeQuestionInput({ target, onResult }: Props) {
     if (v2Active) {
       const rState = getBeatRuntimeState(v2CaseId)
       const structure = getStructureV2(v2CaseId)
-      const hooks = structure?.freeQuestionHooks ?? []
+      if (!structure) return
+      const hooks = structure.freeQuestionHooks ?? []
 
       const gateOpen = canUseFreeQuestionV2({
         isV2Case: true,

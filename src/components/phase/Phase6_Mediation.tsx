@@ -27,8 +27,8 @@ export default function Phase6_Mediation() {
     if (!hasV2Data(caseKey)) return
     const bridge = buildBridgeFromStore(
       caseKey,
-      store.agentA,
-      store.agentB,
+      { emotion: store.agentA.emotionalState.internalValue },
+      { emotion: store.agentB.emotionalState.internalValue },
       store.dialogueLog,
       caseData.disputes,
     )

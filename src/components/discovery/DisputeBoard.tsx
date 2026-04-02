@@ -332,7 +332,7 @@ function DepthLayerDisplay({ disputeId, caseData, aState }: {
   caseData: CaseData
   aState: LieState | null
 }) {
-  const caseKey = normalizeCaseKey(caseData.caseId ?? '')
+  const caseKey = normalizeCaseKey(caseData)
   if (!hasV2Data(caseKey)) return null
 
   const disputeV2 = getDisputeV2(caseKey, disputeId)
