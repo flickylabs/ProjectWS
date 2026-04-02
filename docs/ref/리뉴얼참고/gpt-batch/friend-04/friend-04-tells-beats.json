@@ -1,0 +1,557 @@
+{
+  "caseId": "friend-04",
+  "executableTells": {
+    "a": [
+      {
+        "id": "friend04:a:tell:deadline_push",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "그때",
+          "바로",
+          "답했어야지",
+          "지금 와서"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "불리한 질문이 나오면 '그때 바로 답했어야지'라며 시간 압박을 꺼내 본질보다 대응 속도를 문제 삼는다."
+      },
+      {
+        "id": "friend04:a:tell:yes_no_loop",
+        "appliesWhen": [
+          "cornered",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "그래서",
+          "산다는 거야",
+          "아니야",
+          "예 아니오"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "상대의 긴 설명을 자르고 '그래서 산다는 거였어, 아니었어?'처럼 이분법으로 몰아간다."
+      },
+      {
+        "id": "friend04:a:tell:receipt_tap",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "3만원",
+          "이체",
+          "영수증",
+          "여기 있잖아"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "계좌이체나 영수증 화면을 손가락으로 두드리며 이미 결론이 끝났다는 듯 말한다."
+      }
+    ],
+    "b": [
+      {
+        "id": "friend04:b:tell:qualification_stack",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "일단",
+          "아마",
+          "사진대로면",
+          "그 기준에선"
+        ],
+        "sentenceShape": "conditional",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "답을 흐릴 때 '일단, 아마, 사진대로면' 같은 단서를 연달아 붙여 명확한 약속처럼 들리지 않게 만든다."
+      },
+      {
+        "id": "friend04:b:tell:scope_narrowing",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "두 가지",
+          "냄새",
+          "구성품",
+          "그 범위"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "on_trigger_only",
+        "originalPattern": "자신의 문장을 지적받으면 '나는 냄새랑 구성품까지 포함해서 말한 거야'라며 뜻의 범위를 뒤늦게 좁힌다."
+      },
+      {
+        "id": "friend04:b:tell:long_pause",
+        "appliesWhen": [
+          "avoiding",
+          "hurt",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "조금만",
+          "생각해보면",
+          "그 부분까지",
+          "그렇지 않나"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "직접 거절해야 할 때 바로 답하지 않고 한참 뜸을 들인 뒤 조건을 추가하는 식으로 말을 잇는다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "friend04:beat:a:d-1:deny",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "내가 그냥 독단으로 질렀다는 식은 아니야. 현우가 잡아두라는 흐름을 만들었고 판매자도 바로 입금하라고 재촉했어.",
+      "behaviorHint": "턱을 들고 바로 끊어 말하며 상대 설명을 중간에서 자른다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-1:hedge",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "확정이라는 단어까지는 없었지. 그런데 그때 대화 흐름이면 거래를 묶자는 뜻으로 들린 건 사실이야.",
+      "behaviorHint": "말은 빠르지만 '그 흐름이면' 같은 표현으로 자기 판단을 정당화한다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-1:partial",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "예약금 3만원을 먼저 보낸 건 맞아. 그래도 그 전에 현우가 반반 가능하다고 읽히게 말한 것도 같이 봐야 해.",
+      "behaviorHint": "인정하는 대목에서 잠깐 시선을 내렸다가 곧바로 반박 포인트를 올린다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-1:blame",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "문제는 내가 입금한 뒤가 아니라, 그 전에 현우가 빠질 길을 남겨둔 채 긍정 신호를 준 거야. 그 공백 때문에 결국 내가 선결제한 거지.",
+      "behaviorHint": "손바닥으로 테이블을 한 번 짚으며 책임 화살표를 현우 쪽으로 돌린다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-1:confession",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "맞아, 명시적 확정 없이 비환불 예약금을 넣은 건 내 실수야. 조급했고, 이번에도 내가 먼저 움직여야 굴러간다고 생각했어.",
+      "behaviorHint": "폰을 내려두고 짧게 숨을 고른 뒤 문장을 짧게 끊는다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-1:evidence_hit",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "환불 고지를 송금 전에 읽은 기록까지 나오면 더 버티기 어렵지. 내가 급해서 선을 넘은 건 부정 못 하겠어.",
+      "behaviorHint": "환불 고지 화면 앞에서 말끝이 짧아지고 손가락이 멈춘다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "friend04:beat:a:d-3:deny",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "나는 구조적으로 멀쩡하냐를 본 거야. 없는 기준을 내가 임의로 줄인 게 아니라, 현우가 자기 기준을 안 적은 거지.",
+      "behaviorHint": "결론부터 내뱉고 손으로 구조 부분을 가리키듯 크게 제스처한다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-3:hedge",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "'상태 괜찮음'에 냄새랑 구성품까지 다 들어간다는 얘긴 못 들었어. 적어도 당시 대화 기준은 외관 쪽으로 읽혔어.",
+      "behaviorHint": "말을 몰아붙이면서도 '적어도 그때는' 같은 시간을 붙여 여지를 남긴다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-3:partial",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "내가 외관 위주로 이해한 건 맞아. 그래도 현우도 자기 기준을 구체적으로 적어 보내진 않았잖아.",
+      "behaviorHint": "한 항목을 인정한 뒤 바로 '근데'로 이어 상대 공백을 찌른다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-3:blame",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "캡처가 아래 설명을 다 담지 못한 건 인정해. 그런데 애초에 서로 같은 기준을 맞춰 본 적이 없었으니 한쪽 탓으로만 못 돌려.",
+      "behaviorHint": "캡처 얘기가 나오면 손바닥을 펼친 채 '서로 안 맞춘 거'라고 강조한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-3:confession",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "맞아, 나는 구조만 보고 괜찮다고 너무 빨리 정리했어. 현우도 나랑 비슷하게 볼 거라고 단정한 게 내 실수야.",
+      "behaviorHint": "목소리가 한 톤 내려가고 문장 사이 간격이 길어진다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-3:evidence_hit",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "원본 판매글과 픽업 영상이 같이 나오면 더는 '같은 기준이었다'고 못 하겠어. 애초에 서로 다른 말을 한 거였네.",
+      "behaviorHint": "사진·영상이 펼쳐지자 강한 말투가 잠깐 멈추고 시선이 옆으로 흐른다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "friend04:beat:a:d-5:deny",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "작년 규칙이 있었다고 해서 이번까지 똑같이 보긴 어려워. 현우가 또 애매하게 산다는 쪽으로 말해 놓고 빠질 가능성을 안 보였던 게 더 컸어.",
+      "behaviorHint": "표정이 굳고 과거 얘기를 끌어오며 현재 책임을 밀어낸다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-5:hedge",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "확정 뒤에만 예약금 넣자는 원칙은 기억해. 다만 이번엔 현우 답과 판매자 압박이 겹쳐서 그 선이 무너진 거야.",
+      "behaviorHint": "과거 합의를 인정하면서도 이번만은 예외였다고 빠르게 덧붙인다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-5:partial",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "내가 규칙을 먼저 지키지 못한 건 맞아. 그래도 현우도 사실상 구매 신호를 주면서 빠질 여지를 남겼잖아.",
+      "behaviorHint": "짧게 인정한 뒤 곧바로 상대의 모호함을 세게 물고 늘어진다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-5:blame",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "예전에도 결국 내가 먼저 돈 넣고 정리하는 쪽이었어. 이번에도 그 불신이 있으니 내가 선을 넘었고, 현우는 또 모호함 뒤로 숨었지.",
+      "behaviorHint": "과거 패턴을 끌어오며 '항상 내가 정리했다'는 감정을 실어 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-5:confession",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "맞아, 이번엔 우리 둘 다 작년 규칙을 어겼어. 나는 모호한 답에 송금했고, 그게 결국 예전 합의까지 무너뜨렸어.",
+      "behaviorHint": "한숨을 내쉰 뒤 예전 일과 지금 일을 한 문장으로 묶어 인정한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "friend04:beat:a:d-5:evidence_hit",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "이체 시각과 작년 규칙을 같이 놓고 보면 내가 예외를 만든 게 선명하지. 더는 '이번은 달랐다'고만 말할 수 없어.",
+      "behaviorHint": "이체 내역이 나오자 목소리가 순간 낮아지고 말끝이 눌린다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-3"
+    },
+    {
+      "id": "friend04:beat:b:d-2:deny",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "나는 산다고 확정한 적 없어. 일단 상태가 맞으면 보자는 정도였지, 픽업 뒤에 갑자기 빠진 건 아니라는 거야.",
+      "behaviorHint": "시선을 피한 채 문장 앞에 단서를 여러 개 붙인다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-2:hedge",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "참여 가능성은 열어뒀지만 끝까지 보류였어. 냄새, 구성품, 그런 기준은 처음부터 내 안에 있었고.",
+      "behaviorHint": "말끝을 흐리다가 마지막에 기준 항목을 좁혀 덧붙인다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-2:partial",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "내가 의사 있는 것처럼 보이게 말한 건 맞아. 그래도 실제 물건을 보니까 사진에서 안 보이던 부분이 있어서 바로 부담하기 어려웠어.",
+      "behaviorHint": "짧게 인정하고 바로 하자 기준을 숫자 세듯 열거한다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-2:blame",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "문제는 다혜가 그 가능성 표현을 너무 확정처럼 굳힌 거야. 나는 계속 조건을 남겼는데, 진행은 이미 확정 속도로 갔잖아.",
+      "behaviorHint": "손가락으로 공기 중에 항목을 세며 다혜의 확정 해석을 문제 삼는다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-2:confession",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "맞아, 내가 참여 의사처럼 말해놓고 픽업 뒤에 빠진 건 사실이야. 상태 문제가 있어도 그 판단을 더 빨리, 더 분명히 말했어야 했어.",
+      "behaviorHint": "잠깐 침묵했다가 낮은 목소리로 문장을 천천히 이어 간다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-2:evidence_hit",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "철회 시각과 재판매 손실이 같이 찍히면 내가 늦었다는 건 피하기 어렵네. 그 순간 미루지 말고 바로 끊었어야 했어.",
+      "behaviorHint": "재판매 로그가 나오자 숨을 들이마신 뒤 인정 문장으로 돌아선다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "friend04:beat:b:d-3:deny",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "나는 처음부터 상태를 넓게 본 거야. 다혜가 자기 기준으로만 '괜찮음'을 정리한 거지, 내가 말을 바꾼 건 아니야.",
+      "behaviorHint": "고개를 조금 젖힌 채 '원래 그 뜻이었다'고 범위를 먼저 고정한다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-3:hedge",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "적어도 내 쪽에선 냄새랑 구성품도 포함이었어. 다만 그걸 채팅에 하나하나 다 적진 않았다는 거지.",
+      "behaviorHint": "문장 사이에 멈춤을 넣고 기준 항목을 하나씩 붙인다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-3:partial",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "내 기준을 더 분명히 적지 않은 건 맞아. 그래도 사진과 캡처만으로 실제 상태를 확정할 수 없다는 경계는 계속 있었어.",
+      "behaviorHint": "자기 공백을 인정하면서도 사진 한계를 즉시 다시 꺼낸다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-3:blame",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "픽업 뒤에 강하게 말해서 늦어 보였겠지. 하지만 다혜가 외관 기준으로만 먼저 정리한 것도 같은 문제였어.",
+      "behaviorHint": "말을 좁혀 정의하면서 다혜의 외관 중심 해석을 반박한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-3:confession",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "맞아, 내 '상태 괜찮음'은 다혜가 이해한 말이 아니었어. 내가 기준을 명확히 적지 않고 뒤늦게 뜻을 좁혀 설명한 책임이 있어.",
+      "behaviorHint": "손을 모은 채 시선을 내리고 말의 강도가 눈에 띄게 줄어든다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-3:evidence_hit",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "현장 메모와 원본 영상까지 나오면 더는 '처음부터 다 말했다'고 하기 어렵지. 내가 머릿속 기준을 뒤늦게 꺼낸 건 맞아.",
+      "behaviorHint": "픽업 영상과 메모가 제시되자 뒤늦은 범위 축소가 스스로도 불편해진다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "friend04:beat:b:d-4:deny",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "내 메시지는 확인 의사였지 확정 신호가 아니었어. 판매자가 그렇게 읽은 건 다혜가 먼저 단정적으로 말했기 때문이야.",
+      "behaviorHint": "양손을 작게 펴며 '그건 확정이 아니었다'고 선을 그린다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-4:hedge",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "'사진대로면 갈 수 있다'고 한 건 조건 확인 차원이었어. 바로 산다고 못 박은 건 아니었고, 다혜 메시지까지 합쳐져서 커진 거지.",
+      "behaviorHint": "짧게 멈춘 뒤 조건부였다는 설명을 다시 붙인다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-4:partial",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "내 문장이 확정처럼 보였을 수는 있어. 그래도 그때는 상태만 맞으면 갈 생각도 있었고 완전히 빈말은 아니었어.",
+      "behaviorHint": "자기 문장을 인정하면서도 빈말은 아니었다고 낮게 덧붙인다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-4:blame",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "혼선이 생긴 건 내 메시지 하나 때문만은 아니야. 다혜의 '둘이 반반'이 같이 깔려 있어서 판매자가 더 확정처럼 읽은 거지.",
+      "behaviorHint": "다혜 메시지와 합쳐졌다는 점을 반복하며 책임을 나눠 갖게 한다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-4:confession",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "맞아, 내 '사진대로면 갈게요'는 판매자 입장에선 확정 신호처럼 읽힐 만했어. 내가 바로 정정하지 않은 책임도 있어.",
+      "behaviorHint": "목소리가 작아지고 정정하지 않은 순간을 스스로 짚는다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "friend04:beat:b:d-4:evidence_hit",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "판매자 원본 대화를 보면 내가 오해 가능성을 그대로 두고 있었다는 게 보이네. 그 시점에 정리했어야 했어.",
+      "behaviorHint": "판매자 전체 대화가 보이자 더는 '오해였다'만으로 버티지 못한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": "e-4"
+    }
+  ]
+}

@@ -10,9 +10,12 @@ import { registerExecutableTells } from '../executableTellLoader'
 import { registerBridge } from '../../engine/bridgeEngine'
 import { registerEvidenceChallenges } from '../../engine/evidenceChallengeEngine'
 import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3GameLoopLoader'
+import { registerStructureV2, registerBeatsV2 } from '../../engine/v2DataLoader'
 import session1 from './spouse-01-data.json'
 import session2 from './spouse-01-tells-beats.json'
 import v2Atoms from './spouse-01-v2-atoms.json'
+import structureV2 from './spouse-01-structure-v2.json'
+import beatsV2 from './spouse-01-beats-v2-full.json'
 import { spouse01V3GameLoopData } from '../../../docs/ref/리뉴얼참고/spouse-01-v3-game-loop-data'
 import { spouse01V3Supplement } from '../../../docs/ref/리뉴얼참고/gpt-session1/output/spouse-01-v3-supplement'
 
@@ -63,7 +66,11 @@ export function registerSpouse01Data(): void {
   // BeatScript 런타임 fallback 등록
   registerBeatScripts('spouse-01', session2.beatScripts as any)
 
-  console.log('[Renewal] spouse-01 등록 완료: V2 + Bridge + EvidenceChallenge + Tell + V3 GameLoop + BeatFallback')
+  // V2 Structure + BeatScript V2 등록
+  registerStructureV2(structureV2 as any)
+  registerBeatsV2(beatsV2 as any)
+
+  console.log('[Renewal] spouse-01 등록 완료: V2 + Bridge + EvidenceChallenge + Tell + V3 GameLoop + BeatFallback + StructureV2 + BeatsV2')
 }
 
 /** Session 2 beat 데이터 직접 접근용 */

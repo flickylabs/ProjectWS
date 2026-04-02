@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { GamePhase } from '../../types'
 import { useGameStore } from '../../store/useGameStore'
 import { resolveLLMDialogue } from '../../engine/llmDialogueResolver'
 import { isLLMMode } from '../../hooks/useActionDispatch'
+import { buildBridgeFromStore } from '../../engine/phase6ResultPromptV2'
+import { hasV2Data } from '../../engine/v2DataLoader'
 import Emoji from '../common/Emoji'
 import type { PlayerAction } from '../../types'
 
@@ -15,6 +17,23 @@ export default function Phase6_Mediation() {
   const caseData = useGameStore((s) => s.caseData)
   const addDialogue = useGameStore((s) => s.addDialogue)
   const turnCount = useGameStore((s) => s.turnCount)
+
+  // V2 bridge 빌드 (Phase 6 진입 시 1회)
+  useEffect(() => {
+    if (!caseData) return
+    const store = useGameStore.getState()
+    if (store.phase3PromptBridge) return // 이미 빌드됨
+    const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
+    if (!hasV2Data(caseKey)) return
+    const bridge = buildBridgeFromStore(
+      caseKey,
+      store.agentA,
+      store.agentB,
+      store.dialogueLog,
+      caseData.disputes,
+    )
+    if (bridge) store.setPhase3PromptBridge(bridge)
+  }, [caseData])
 
   if (!caseData) return null
 

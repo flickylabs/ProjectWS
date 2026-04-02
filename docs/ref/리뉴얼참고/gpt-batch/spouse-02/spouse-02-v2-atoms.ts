@@ -1,0 +1,6836 @@
+export const spouse02V2Atoms = {
+  "caseId": "spouse-02",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "학교 쪽으로 제 상담 기록이 흘러간 건 아직 단정하지 않겠습니다.",
+            "다만 집 안에만 있던 서류가 바깥 판단 자료처럼 돌기 시작한 건 이상합니다."
+          ],
+          "privateKnowledge": [
+            "도윤은 예전부터 그 종결서 보관 위치와 내용의 결을 알고 있었다."
+          ],
+          "suppressions": [
+            "익명 글을 본 직후 도윤의 메일과 프린터 기록을 뒤진 일은 먼저 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-1:uncertainty:0",
+              "factText": "학교 쪽으로 제 상담 기록이 흘러간 건 아직 단정하지 않겠습니다",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "그 무렵",
+                  "neutral": "그 무렵",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-1:identity:0",
+              "factText": "다만 집 안에만 있던 서류가 바깥 판단 자료처럼 돌기 시작한 건 이상합니다",
+              "tags": [
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "그 무렵",
+                  "neutral": "그 무렵",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "익명 글이 뜬 직후 학교 반응이 바뀌었습니다.",
+            "우연이라기보다 집 안 사정을 아는 누군가가 먼저 움직인 흐름에 가깝습니다."
+          ],
+          "privateKnowledge": [
+            "도윤은 학교 네트워크에서 좋은 아빠 이미지가 흔들리는 상황을 유독 두려워했다."
+          ],
+          "suppressions": [
+            "도윤의 보조 계정을 이미 의심하고 있다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:a:tell:legalistic_framing",
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-1:uncertainty:1",
+              "factText": "익명 글이 뜬 직후 학교 반응이 바뀌었습니다",
+              "tags": [
+                "uncertainty",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "그 무렵",
+                  "neutral": "그 무렵",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-1:motive:0",
+              "factText": "우연이라기보다 집 안 사정을 아는 누군가가 먼저 움직인 흐름에 가깝습니다",
+              "tags": [
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "그 무렵",
+                  "neutral": "그 무렵",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "가정용 복합기 기록은 그 서류가 집 안 장비에서 먼저 스캔됐다는 점을 보여줍니다.",
+            "그 무렵 장비는 대부분 도윤 로그인 상태로 남아 있었습니다."
+          ],
+          "privateKnowledge": [
+            "스캔 시각이 익명 글보다 사흘 앞선다는 점이 내 의심을 거의 확신으로 바꿨다."
+          ],
+          "suppressions": [
+            "학교에 바로 따지지 못하고 혼자 메모만 정리한 밤의 불안은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:a:tell:self_editing",
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-1:evidence:0",
+              "factText": "가정용 복합기 기록은 그 서류가 집 안 장비에서 먼저 스캔됐다는 점을 보여줍니다",
+              "tags": [
+                "evidence",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-1:context:0",
+              "factText": "그 무렵 장비는 대부분 도윤 로그인 상태로 남아 있었습니다",
+              "tags": [
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "익명 글보다 앞선 스캔 흔적까지 나오면 외부 오해만으로 설명되지는 않습니다.",
+            "이건 학교에 흘러갈 준비가 집 안에서 이뤄졌다는 뜻에 가깝습니다."
+          ],
+          "privateKnowledge": [
+            "도윤의 보조 이메일이 학교와 연결됐을 가능성을 이미 염두에 두고 있었다."
+          ],
+          "suppressions": [
+            "내가 직접 도윤 계정 흔적을 확인했다는 말은 여전히 피한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:a:tell:legalistic_framing",
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-1:responsibility:0",
+              "factText": "익명 글보다 앞선 스캔 흔적까지 나오면 외부 오해만으로 설명되지는 않습니다",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-1:harm:0",
+              "factText": "이건 학교에 흘러갈 준비가 집 안에서 이뤄졌다는 뜻에 가깝습니다",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "아이를 위한 경고였다는 말로 제 기록을 먼저 밖에 꺼낸 일을 덮을 수는 없습니다.",
+            "그건 보호가 아니라 제 양육 자격을 흔드는 공격처럼 들렸습니다."
+          ],
+          "privateKnowledge": [
+            "2023년 약속 이후만은 그 서류가 다시 칼이 되지 않을 거라고 믿고 있었다."
+          ],
+          "suppressions": [
+            "도윤이 무섭기보다 배신감이 더 크다는 표현을 억누른다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:a:tell:breath_counting",
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-1:emotion:0",
+              "factText": "아이를 위한 경고였다는 말로 제 기록을 먼저 밖에 꺼낸 일을 덮을 수는 없습니다",
+              "tags": [
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-1:rule:0",
+              "factText": "그건 보호가 아니라 제 양육 자격을 흔드는 공격처럼 들렸습니다",
+              "tags": [
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-1:fear:0",
+              "factText": "2023년 약속 이후만은 그 서류가 다시 칼이 되지 않을 거라고 믿고 있었다",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "도윤이 제 상담 종결서 일부를 동의 없이 학교 학부모지원 담당 쪽 판단 재료로 돌린 건 사실입니다.",
+            "아이를 지킨다는 명분이 있어도 배우자의 기록을 무기화한 책임은 남습니다."
+          ],
+          "privateKnowledge": [
+            "학교 메일 헤더와 집 안 스캔 기록이 같은 방향을 가리킨다는 점을 이제 부정할 수 없다고 느낀다."
+          ],
+          "suppressions": [
+            "상담 시기에 서류를 도윤에게 맡겼던 과거의 고마움과 원망이 동시에 올라온다는 말은 삼킨다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-1:responsibility:1",
+              "factText": "도윤이 제 상담 종결서 일부를 동의 없이 학교 학부모지원 담당 쪽 판단 재료로 돌린 건 사실입니다",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-1:institution:0",
+              "factText": "아이를 지킨다는 명분이 있어도 배우자의 기록을 무기화한 책임은 남습니다",
+              "tags": [
+                "institution",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-1:rule:1",
+              "factText": "학교 메일 헤더와 집 안 스캔 기록이 같은 방향을 가리킨다는 점을 이제 부정할 수 없다고 느낀다",
+              "tags": [
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "저는 학교에 실제로 뭘 보낸 적 없습니다.",
+            "연락망에서 도윤을 빼달라는 조치를 실행한 적도 없습니다."
+          ],
+          "privateKnowledge": [
+            "공유 프린터에 남은 초안 출력물과 밤늦은 접근 흔적이 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "공유 노트북에서 도윤 계정을 무단 확인한 사실은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-2:denial:0",
+              "factText": "저는 학교에 실제로 뭘 보낸 적 없습니다",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "그날 밤",
+                  "neutral": "그날 밤",
+                  "period": "입학 직전 밤"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-2:fear:0",
+              "factText": "연락망에서 도윤을 빼달라는 조치를 실행한 적도 없습니다",
+              "tags": [
+                "fear",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "그날 밤",
+                  "neutral": "그날 밤",
+                  "period": "입학 직전 밤"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "초안 비슷한 건 있었어도 감정을 정리한 메모에 가까웠습니다.",
+            "아니, 정확히는 확인을 한 거지 정식 열람이나 발송을 한 건 아니라는 뜻입니다."
+          ],
+          "privateKnowledge": [
+            "밤 11시 52분 프린터 로그와 삭제 시도가 남아 있다는 점이 계속 신경 쓰인다."
+          ],
+          "suppressions": [
+            "익명 글을 본 뒤 37분 만에 도윤 계정에 접속한 사실은 입 밖에 내지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:a:tell:legalistic_framing",
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-2:uncertainty:0",
+              "factText": "초안 비슷한 건 있었어도 감정을 정리한 메모에 가까웠습니다",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "그날 밤",
+                  "neutral": "그날 밤",
+                  "period": "입학 직전 밤"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-2:self_justification:0",
+              "factText": "아니, 정확히는 확인을 한 거지 정식 열람이나 발송을 한 건 아니라는 뜻입니다",
+              "tags": [
+                "self_justification",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "그날 밤",
+                  "neutral": "그날 밤",
+                  "period": "입학 직전 밤"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "출력은 제가 했습니다.",
+            "다만 익명 글을 본 직후 너무 불안해서 학교에 보낼 말을 정리만 해본 수준이었고 실제 발송은 하지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "도윤을 임시 연락망에서 빼달라는 문구를 직접 적어 넣은 건 맞다."
+          ],
+          "suppressions": [
+            "그 초안에 예전 별거 위기 문장까지 적었다는 사실은 아직 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:a:tell:self_editing",
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-2:admission:0",
+              "factText": "출력은 제가 했습니다",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-2:motive:0",
+              "factText": "다만 익명 글을 본 직후 너무 불안해서 학교에 보낼 말을 정리만 해본 수준이었고 실제 발송은 하지 않았습니다",
+              "tags": [
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "도윤 계정을 본 건 맞습니다.",
+            "익명 글과 학교 반응의 출발점을 확인하지 않고는 버틸 수가 없어서 선을 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "접속 시각이 익명 글 노출 37분 뒤라는 기록이 내 행동을 더 변명하기 어렵게 만든다."
+          ],
+          "suppressions": [
+            "그때 이미 도윤을 학교 연락망에서 잠시라도 떼어내고 싶었다는 감정의 강도는 줄여 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:a:tell:legalistic_framing",
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-2:admission:1",
+              "factText": "도윤 계정을 본 건 맞습니다",
+              "tags": [
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-2:responsibility:0",
+              "factText": "익명 글과 학교 반응의 출발점을 확인하지 않고는 버틸 수가 없어서 선을 넘었습니다",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "무단 열람은 제 잘못입니다.",
+            "그래도 먼저 밖으로 제 기록이 흘러나간 이유를 확인하지 않고는 아이를 맡길 수 없다는 공포가 있었습니다."
+          ],
+          "privateKnowledge": [
+            "내가 절차보다 공포를 앞세웠다는 사실이 부끄럽다."
+          ],
+          "suppressions": [
+            "도윤을 아예 배제하고 싶었다는 순간의 충동은 끝까지 낮춰 말한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:a:tell:breath_counting",
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-2:emotion:0",
+              "factText": "무단 열람은 제 잘못입니다",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-2:self_justification:1",
+              "factText": "그래도 먼저 밖으로 제 기록이 흘러나간 이유를 확인하지 않고는 아이를 맡길 수 없다는 공포가 있었습니다",
+              "tags": [
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-2:fear:1",
+              "factText": "내가 절차보다 공포를 앞세웠다는 사실이 부끄럽다",
+              "tags": [
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "저는 도윤 계정과 프린터 기록을 무단 확인했고, 학교 연락망에서 빼달라는 초안도 작성했습니다.",
+            "발송하지는 않았지만 사생활 경계를 넘은 행동이었고 불안과 자기방어로 한 일입니다."
+          ],
+          "privateKnowledge": [
+            "삭제 시도까지 했다는 점이 내 부끄러움을 더 크게 만든다."
+          ],
+          "suppressions": [
+            "그 초안을 끝내 보내지 않은 걸 마지막 자제력으로 붙들고 싶다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-2:admission:2",
+              "factText": "저는 도윤 계정과 프린터 기록을 무단 확인했고, 학교 연락망에서 빼달라는 초안도 작성했습니다",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-2:harm:0",
+              "factText": "발송하지는 않았지만 사생활 경계를 넘은 행동이었고 불안과 자기방어로 한 일입니다",
+              "tags": [
+                "harm",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-2:relationship:0",
+              "factText": "삭제 시도까지 했다는 점이 내 부끄러움을 더 크게 만든다",
+              "tags": [
+                "relationship",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 익명 글은 처음엔 바깥 학부모의 오해처럼 보였습니다.",
+            "그런데 문장과 첨부 방식이 우리 집 안 사정을 너무 정확히 알고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "상담 기록 일부를 알고 있는 사람의 범위가 생각보다 좁다는 걸 안다."
+          ],
+          "suppressions": [
+            "도윤을 바로 의심했다는 표현은 아직 누른다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-3:uncertainty:0",
+              "factText": "그 익명 글은 처음엔 바깥 학부모의 오해처럼 보였습니다",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 직후",
+                  "neutral": "그 무렵",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-3:identity:0",
+              "factText": "그런데 문장과 첨부 방식이 우리 집 안 사정을 너무 정확히 알고 있었습니다",
+              "tags": [
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 직후",
+                  "neutral": "그 무렵",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "익명 작성자는 보호자 한쪽의 과거 기록이라는 말을 썼습니다.",
+            "그 정도 표현은 내부 사정과 학교 흐름을 아는 사람 쪽에 가깝습니다."
+          ],
+          "privateKnowledge": [
+            "도윤은 학부모 오리엔테이션 명단이 뜨기 전후로 채팅방과 학교 공지를 계속 확인했다."
+          ],
+          "suppressions": [
+            "도윤의 여러 계정 습관을 문제 삼고 싶지만 아직 단정하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:a:tell:legalistic_framing",
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-3:uncertainty:1",
+              "factText": "익명 작성자는 보호자 한쪽의 과거 기록이라는 말을 썼습니다",
+              "tags": [
+                "uncertainty",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 직후",
+                  "neutral": "그 무렵",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-3:motive:0",
+              "factText": "그 정도 표현은 내부 사정과 학교 흐름을 아는 사람 쪽에 가깝습니다",
+              "tags": [
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 직후",
+                  "neutral": "그 무렵",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "캡처만으로 최종 출처를 단정할 수는 없어도 첨부 파일과 학교 반응은 이어집니다.",
+            "누군가가 단순 소문이 아니라 자료를 붙여 의도적으로 겁을 만든 흔적이 있습니다."
+          ],
+          "privateKnowledge": [
+            "익명 글을 본 순간 학교보다 도윤이 먼저 떠올랐다는 사실을 스스로도 인정하기 싫었다."
+          ],
+          "suppressions": [
+            "내가 이미 다른 증거와 연결해 보고 있다는 말은 아낀다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:a:tell:self_editing",
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-3:evidence:0",
+              "factText": "캡처만으로 최종 출처를 단정할 수는 없어도 첨부 파일과 학교 반응은 이어집니다",
+              "tags": [
+                "evidence",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-3:context:0",
+              "factText": "누군가가 단순 소문이 아니라 자료를 붙여 의도적으로 겁을 만든 흔적이 있습니다",
+              "tags": [
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "스캔 기록과 보조 계정 흐름을 함께 보면 외부 오해만의 일로 두기 어렵습니다.",
+            "익명 글의 실질적 출발점이 도윤 쪽이라는 의심을 피하기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "도윤이 직접 쓰지 않았어도 의도적으로 닿게 만들었다고 거의 확신한다."
+          ],
+          "suppressions": [
+            "도윤을 공개적으로 망가뜨리고 싶다는 분노는 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:a:tell:legalistic_framing",
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-3:responsibility:0",
+              "factText": "스캔 기록과 보조 계정 흐름을 함께 보면 외부 오해만의 일로 두기 어렵습니다",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-3:harm:0",
+              "factText": "익명 글의 실질적 출발점이 도윤 쪽이라는 의심을 피하기 어렵습니다",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "낯선 학부모의 경고가 아니라 배우자가 뒤에서 겁을 만든 셈이라면 훨씬 잔인합니다.",
+            "아이 앞에서 저를 위험한 보호자처럼 보이게 한 상처가 남습니다."
+          ],
+          "privateKnowledge": [
+            "익명성 뒤에 숨어 제 불안을 다시 호출한 방식이 가장 견디기 어렵다."
+          ],
+          "suppressions": [
+            "도윤과 같은 집에 계속 있어야 한다는 공포를 직접 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:a:tell:breath_counting",
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-3:emotion:0",
+              "factText": "낯선 학부모의 경고가 아니라 배우자가 뒤에서 겁을 만든 셈이라면 훨씬 잔인합니다",
+              "tags": [
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-3:rule:0",
+              "factText": "아이 앞에서 저를 위험한 보호자처럼 보이게 한 상처가 남습니다",
+              "tags": [
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-3:fear:0",
+              "factText": "익명성 뒤에 숨어 제 불안을 다시 호출한 방식이 가장 견디기 어렵다",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "익명 학부모방 경고글과 첨부 파일의 실질적 출처는 도윤이 사용한 보조 계정과 집 안 스캔 기록으로 이어집니다.",
+            "외부의 오해처럼 꾸몄지만 실제로는 배우자가 제 과거를 유포한 구조였습니다."
+          ],
+          "privateKnowledge": [
+            "학교가 이미 그 흐름을 헤더 기준으로 확인했다는 사실이 내 판단을 굳혔다."
+          ],
+          "suppressions": [
+            "나도 그 증거를 본 뒤 도윤을 완전히 배제하고 싶었다는 감정은 줄여 말한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-3:responsibility:1",
+              "factText": "익명 학부모방 경고글과 첨부 파일의 실질적 출처는 도윤이 사용한 보조 계정과 집 안 스캔 기록으로 이어집니다",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-3:institution:0",
+              "factText": "외부의 오해처럼 꾸몄지만 실제로는 배우자가 제 과거를 유포한 구조였습니다",
+              "tags": [
+                "institution",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-3:rule:1",
+              "factText": "학교가 이미 그 흐름을 헤더 기준으로 확인했다는 사실이 내 판단을 굳혔다",
+              "tags": [
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "저는 학교에 과거 상처를 공식 사실처럼 올린 적은 없습니다.",
+            "약속을 먼저 깬 쪽은 제 상담 기록을 꺼낸 도윤이라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "초안 본문에 예전 별거 위기 발언을 적어 넣었던 건 기억난다."
+          ],
+          "suppressions": [
+            "내 초안도 약속을 건드렸다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-4:denial:0",
+              "factText": "저는 학교에 과거 상처를 공식 사실처럼 올린 적은 없습니다",
+              "tags": [
+                "denial",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-4:relationship:0",
+              "factText": "약속을 먼저 깬 쪽은 제 상담 기록을 꺼낸 도윤이라고 봅니다",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "초안에 감정 섞인 표현이 조금 있었던 건 맞습니다.",
+            "그래도 실제로 내보낸 말과 머릿속에서 적어 본 말은 구분돼야 한다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "보내지 않았다는 사실에 기대어 스스로를 덜 나쁘게 보려 했다."
+          ],
+          "suppressions": [
+            "도윤의 예전 별거 위기 발언을 학교 판단 근거처럼 적었다는 대목은 아직 뺀다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:a:tell:legalistic_framing",
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-4:uncertainty:0",
+              "factText": "초안에 감정 섞인 표현이 조금 있었던 건 맞습니다",
+              "tags": [
+                "uncertainty",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-4:self_justification:0",
+              "factText": "그래도 실제로 내보낸 말과 머릿속에서 적어 본 말은 구분돼야 한다고 생각했습니다",
+              "tags": [
+                "self_justification",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "예전 별거 위기 발언을 초안에 적은 건 사실입니다.",
+            "보내지는 않았지만 저도 과거를 현재 분쟁에 끌어올릴 문턱까지 갔습니다."
+          ],
+          "privateKnowledge": [
+            "도윤이 상담 기록을 유포한 뒤라서라도 내가 선을 지켜야 했다는 자책이 있다."
+          ],
+          "suppressions": [
+            "그 문장을 적을 때 잠깐이나마 학교가 도윤을 의심하길 바랐다는 마음은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:a:tell:self_editing",
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-4:admission:0",
+              "factText": "예전 별거 위기 발언을 초안에 적은 건 사실입니다",
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-4:responsibility:0",
+              "factText": "보내지는 않았지만 저도 과거를 현재 분쟁에 끌어올릴 문턱까지 갔습니다",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "도윤이 먼저 상담 기록을 무기화했기 때문에 저도 방어적으로 과거를 꺼냈습니다.",
+            "그렇다고 해도 약속을 깼다는 사실 자체가 사라지지는 않습니다."
+          ],
+          "privateKnowledge": [
+            "내가 피해자이면서도 동시에 약속 위반 당사자라는 점이 가장 불편하다."
+          ],
+          "suppressions": [
+            "도윤에게 똑같이 상처를 돌려주고 싶었던 순간은 약하게 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:a:tell:legalistic_framing",
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-4:responsibility:1",
+              "factText": "도윤이 먼저 상담 기록을 무기화했기 때문에 저도 방어적으로 과거를 꺼냈습니다",
+              "tags": [
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-4:relationship:1",
+              "factText": "그렇다고 해도 약속을 깼다는 사실 자체가 사라지지는 않습니다",
+              "tags": [
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "우리가 다시는 꺼내지 말자고 했던 칼을 둘 다 다시 집은 셈입니다.",
+            "도윤이 더 크게 선을 넘었지만 저도 초안 안에서 같은 문을 열었습니다."
+          ],
+          "privateKnowledge": [
+            "약속이 깨진 순간 아이 문제보다 부부 싸움의 복수심이 앞섰다는 걸 안다."
+          ],
+          "suppressions": [
+            "내가 먼저 사과하면 약해 보일까 두렵다는 감정은 감춘다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:a:tell:breath_counting",
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-4:emotion:0",
+              "factText": "우리가 다시는 꺼내지 말자고 했던 칼을 둘 다 다시 집은 셈입니다",
+              "tags": [
+                "emotion",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-4:shame:0",
+              "factText": "도윤이 더 크게 선을 넘었지만 저도 초안 안에서 같은 문을 열었습니다",
+              "tags": [
+                "shame",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-4:fear:0",
+              "factText": "약속이 깨진 순간 아이 문제보다 부부 싸움의 복수심이 앞섰다는 걸 안다",
+              "tags": [
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "도윤은 상담 기록을 실제로 유포했고, 저는 예전 별거 위기 발언을 학교 초안에 적어 넣었습니다.",
+            "크기와 실행 정도는 달라도 두 사람 모두 과거 상처를 새 싸움의 무기로 쓰지 않겠다는 약속을 훼손했습니다."
+          ],
+          "privateKnowledge": [
+            "이 쟁점에서는 내가 완전히 깨끗한 위치가 아니라는 점을 인정해야 한다."
+          ],
+          "suppressions": [
+            "도윤보다 덜 나쁘다고 계속 비교하고 싶은 마음은 삼킨다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-4:admission:1",
+              "factText": "도윤은 상담 기록을 실제로 유포했고, 저는 예전 별거 위기 발언을 학교 초안에 적어 넣었습니다",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-4:rule:0",
+              "factText": "크기와 실행 정도는 달라도 두 사람 모두 과거 상처를 새 싸움의 무기로 쓰지 않겠다는 약속을 훼손했습니다",
+              "tags": [
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-4:harm:0",
+              "factText": "이 쟁점에서는 내가 완전히 깨끗한 위치가 아니라는 점을 인정해야 한다",
+              "tags": [
+                "harm",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "강도윤",
+                  "fullName": "강도윤",
+                  "judgeRef": "남편",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "예전 별거 위기 발언",
+                  "neutral": "그 과거 발언"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "입학 파일이 묶인 건 익명 제보나 도윤 쪽 움직임 때문이라고 생각했습니다.",
+            "학교가 보호자 문제를 이미 위험 신호로 본 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "실제 보류 사유를 확인하지 못한 채 최악의 해석부터 했다."
+          ],
+          "suppressions": [
+            "파일 보류를 보고 나도 학교를 압박할 문장을 초안으로 적었다는 점은 줄여 말한다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-5:uncertainty:0",
+              "factText": "입학 파일이 묶인 건 익명 제보나 도윤 쪽 움직임 때문이라고 생각했습니다",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "보류 처리 시점",
+                  "neutral": "그때",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-5:fear:0",
+              "factText": "학교가 보호자 문제를 이미 위험 신호로 본 줄 알았습니다",
+              "tags": [
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "보류 처리 시점",
+                  "neutral": "그때",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "학교가 설명을 아끼는 방식 때문에 더 그렇게 믿었습니다.",
+            "연락망과 익명 글이 얽혀 있으니 당연히 배우자 신고가 원인이라고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "입학 직전이라 작은 반응 하나도 곧바로 양육 자격 판단으로 확대해서 받아들였다."
+          ],
+          "suppressions": [
+            "주소 서류 자체를 다시 검토하지 않았다는 허점은 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:a:tell:legalistic_framing",
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-5:uncertainty:1",
+              "factText": "학교가 설명을 아끼는 방식 때문에 더 그렇게 믿었습니다",
+              "tags": [
+                "uncertainty",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "보류 처리 시점",
+                  "neutral": "그때",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-5:motive:0",
+              "factText": "연락망과 익명 글이 얽혀 있으니 당연히 배우자 신고가 원인이라고 봤습니다",
+              "tags": [
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "보류 처리 시점",
+                  "neutral": "그때",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "보류 시각이 익명 메일보다 앞섰다면 제가 붙들고 있던 인과는 틀릴 수 있습니다.",
+            "적어도 직접 원인은 다른 행정 문제였을 가능성을 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "관리사무소 정정서가 나오면 내가 너무 빨리 도윤과 학교를 적으로 만든 셈이 된다."
+          ],
+          "suppressions": [
+            "부끄러워서라도 행정 오류 가능성을 스스로 먼저 떠올리지 못했다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:a:tell:self_editing",
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-5:evidence:0",
+              "factText": "보류 시각이 익명 메일보다 앞섰다면 제가 붙들고 있던 인과는 틀릴 수 있습니다",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-5:responsibility:0",
+              "factText": "적어도 직접 원인은 다른 행정 문제였을 가능성을 봐야 합니다",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "직접 원인이 행정 오류라면 우리 싸움은 파일 보류를 만든 게 아니라 혼선을 키운 쪽입니다.",
+            "아이 자리를 두고 서로를 가해자로 몰아간 시간이 더 커 보입니다."
+          ],
+          "privateKnowledge": [
+            "보류 이유를 잘못 짚은 채 도윤의 행동만 원인으로 묶어버리고 싶었다."
+          ],
+          "suppressions": [
+            "내가 학교 담당에게 공격적으로 굴었던 장면은 흐리게 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:a:tell:legalistic_framing",
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-5:context:0",
+              "factText": "직접 원인이 행정 오류라면 우리 싸움은 파일 보류를 만든 게 아니라 혼선을 키운 쪽입니다",
+              "tags": [
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-5:harm:0",
+              "factText": "아이 자리를 두고 서로를 가해자로 몰아간 시간이 더 커 보입니다",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "아이 자리까지 우리 감정으로 해석했다는 게 부끄럽습니다.",
+            "보류의 직접 원인도 모른 채 서로의 자격만 의심한 셈이 됐습니다."
+          ],
+          "privateKnowledge": [
+            "아이에게 미안하다는 말보다 내 체면이 먼저 흔들렸다는 사실이 괴롭다."
+          ],
+          "suppressions": [
+            "파일 보류를 보자마자 도윤을 학교에서 떼어놓고 싶었다는 생각은 줄인다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:a:tell:breath_counting",
+            "spouse02:a:tell:self_editing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-5:shame:0",
+              "factText": "아이 자리까지 우리 감정으로 해석했다는 게 부끄럽습니다",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-5:relationship:0",
+              "factText": "보류의 직접 원인도 모른 채 서로의 자격만 의심한 셈이 됐습니다",
+              "tags": [
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-5:fear:1",
+              "factText": "아이에게 미안하다는 말보다 내 체면이 먼저 흔들렸다는 사실이 괴롭다",
+              "tags": [
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "입학 파일 보류의 직접 원인은 관리사무소 전입 확인서의 구 동호수 기재 오류였습니다.",
+            "우리 부부 갈등과 익명 제보는 사후 혼선을 키웠지만 최초 보류 사유 자체는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "도윤을 원인으로 단정한 채 대응한 시간이 아이에게 더 큰 불안을 줬다고 느낀다."
+          ],
+          "suppressions": [
+            "행정 오류를 몰랐다는 안도와 부끄러움이 동시에 든다는 말은 조심한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:a:tell:breath_counting"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:a:d-5:admission:0",
+              "factText": "입학 파일 보류의 직접 원인은 관리사무소 전입 확인서의 구 동호수 기재 오류였습니다",
+              "tags": [
+                "admission",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-5:responsibility:1",
+              "factText": "우리 부부 갈등과 익명 제보는 사후 혼선을 키웠지만 최초 보류 사유 자체는 아니었습니다",
+              "tags": [
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:a:d-5:context:1",
+              "factText": "도윤을 원인으로 단정한 채 대응한 시간이 아이에게 더 큰 불안을 줬다고 느낀다",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "나는 학교에 희주 상담 기록을 보낸 적 없다.",
+            "그런 식으로 배우자 자료를 들고 갈 만큼 무리한 사람은 아니다."
+          ],
+          "privateKnowledge": [
+            "보조 이메일과 집 복합기 스캔 기록이 서로 이어진다는 걸 안다."
+          ],
+          "suppressions": [
+            "학교가 미리 알아야 할 사정이라고 스스로 정당화했던 판단은 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-1:denial:0",
+              "factText": "나는 학교에 희주 상담 기록을 보낸 적 없다",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "그 무렵",
+                  "neutral": "그 무렵",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-1:fear:0",
+              "factText": "그런 식으로 배우자 자료를 들고 갈 만큼 무리한 사람은 아니다",
+              "tags": [
+                "fear",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "그 무렵",
+                  "neutral": "그 무렵",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "걱정을 한 적은 있어도 실제 전달까지 한 건 아니다.",
+            "희주 상태를 학교가 알아야 하나 고민만 했지 실행했다고 볼 일은 아니다."
+          ],
+          "privateKnowledge": [
+            "자료를 정리한 시점과 보조 계정 복구 정보가 내 쪽으로 이어진다."
+          ],
+          "suppressions": [
+            "기록을 보내면 학교가 선제적으로 대비할 거라 기대했던 마음은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:sacrifice_stack",
+            "spouse02:b:tell:victim_preload"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-1:uncertainty:0",
+              "factText": "걱정을 한 적은 있어도 실제 전달까지 한 건 아니다",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "그 무렵",
+                  "neutral": "그 무렵",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-1:self_justification:0",
+              "factText": "희주 상태를 학교가 알아야 하나 고민만 했지 실행했다고 볼 일은 아니다",
+              "tags": [
+                "self_justification",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "그 무렵",
+                  "neutral": "그 무렵",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "집에서 그 서류가 스캔된 건 맞다.",
+            "하지만 그건 아이 학교 문제를 대비해 참고하려던 정리였지 바로 넘기려던 건 아니었다."
+          ],
+          "privateKnowledge": [
+            "파일명을 school_ref로 바꿔 올린 순간 이미 학교 제출 방향을 떠올렸다는 걸 안다."
+          ],
+          "suppressions": [
+            "보조 이메일을 일부러 따로 쓴 이유는 들키면 안 된다는 계산이었다는 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:moral_reframe",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-1:admission:0",
+              "factText": "집에서 그 서류가 스캔된 건 맞다",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-1:motive:0",
+              "factText": "하지만 그건 아이 학교 문제를 대비해 참고하려던 정리였지 바로 넘기려던 건 아니었다",
+              "tags": [
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "내가 한 행동이 공격으로 보인다면 억울한 면도 있다.",
+            "나는 아이가 학교에서 문제를 겪기 전에 미리 방어한다고 생각했다."
+          ],
+          "privateKnowledge": [
+            "아이를 앞세우면 내 행동이 덜 악해 보인다고 스스로 기대했다."
+          ],
+          "suppressions": [
+            "희주에게 직접 묻지 않고 학교 판단부터 움직이게 하려 했다는 계산은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload",
+            "spouse02:b:tell:moral_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-1:admission:1",
+              "factText": "내가 한 행동이 공격으로 보인다면 억울한 면도 있다",
+              "tags": [
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-1:responsibility:0",
+              "factText": "나는 아이가 학교에서 문제를 겪기 전에 미리 방어한다고 생각했다",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "보조 계정을 쓴 건 맞다.",
+            "들키면 배신처럼 보일 줄 알았지만 그때는 아이 안전을 먼저 챙긴다고 스스로 믿었다."
+          ],
+          "privateKnowledge": [
+            "2023년 약속을 떠올리면서도 이번만은 예외라고 변명했다."
+          ],
+          "suppressions": [
+            "학교 네트워크에서 좋은 아빠로 보이고 싶다는 욕심도 섞여 있었다는 점은 아직 흐린다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:b:tell:moral_reframe",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-1:emotion:0",
+              "factText": "보조 계정을 쓴 건 맞다",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-1:self_justification:1",
+              "factText": "들키면 배신처럼 보일 줄 알았지만 그때는 아이 안전을 먼저 챙긴다고 스스로 믿었다",
+              "tags": [
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-1:fear:1",
+              "factText": "2023년 약속을 떠올리면서도 이번만은 예외라고 변명했다",
+              "tags": [
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "나는 희주 동의 없이 상담 종결서 일부를 학교 학부모지원 담당 쪽에 전달했다.",
+            "아이를 지킨다는 명분을 붙였지만 배우자의 기록을 무기화한 책임은 내 쪽에 있다."
+          ],
+          "privateKnowledge": [
+            "보조 이메일 헤더가 복구 정보까지 내게 이어질 줄은 알면서도 멈추지 못했다."
+          ],
+          "suppressions": [
+            "희주가 먼저 이상하게 보이길 바란 마음까지는 끝까지 작게 말하고 싶다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-1:admission:2",
+              "factText": "나는 희주 동의 없이 상담 종결서 일부를 학교 학부모지원 담당 쪽에 전달했다",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-1:harm:0",
+              "factText": "아이를 지킨다는 명분을 붙였지만 배우자의 기록을 무기화한 책임은 내 쪽에 있다",
+              "tags": [
+                "harm",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-1:relationship:0",
+              "factText": "보조 이메일 헤더가 복구 정보까지 내게 이어질 줄은 알면서도 멈추지 못했다",
+              "tags": [
+                "relationship",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "상담 종결서 일부",
+                  "neutral": "그 기록"
+                },
+                "institution": {
+                  "exact": "학교 학부모지원 담당",
+                  "neutral": "학교 쪽"
+                },
+                "time": {
+                  "exact": "익명 글 게시 사흘 전",
+                  "neutral": "그 무렵",
+                  "dateExact": "익명 글 게시 사흘 전",
+                  "period": "익명 글 직전"
+                },
+                "account": {
+                  "exact": "보조 이메일",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "희주는 내 계정을 들여다봤고 학교 연락망에서 나를 빼달라는 초안까지 썼다.",
+            "발송 여부와 별개로 그건 선을 넘은 행동이다."
+          ],
+          "privateKnowledge": [
+            "내가 만든 익명 글 공포가 희주를 그 지점까지 밀었다는 걸 안다."
+          ],
+          "suppressions": [
+            "희주가 왜 그렇게 급해졌는지에 대한 내 책임은 먼저 꺼내지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-2:uncertainty:0",
+              "factText": "희주는 내 계정을 들여다봤고 학교 연락망에서 나를 빼달라는 초안까지 썼다",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "그날 밤",
+                  "neutral": "그날 밤",
+                  "period": "입학 직전 밤"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-2:identity:0",
+              "factText": "발송 여부와 별개로 그건 선을 넘은 행동이다",
+              "tags": [
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "그날 밤",
+                  "neutral": "그날 밤",
+                  "period": "입학 직전 밤"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "초안이 실제 발송되지 않았다고 해도 의도는 분명했다.",
+            "나를 보호자 연락망 밖으로 밀어내려는 생각 자체가 문제였다."
+          ],
+          "privateKnowledge": [
+            "학교가 그 초안을 실제로 받은 적은 없다는 걸 안다."
+          ],
+          "suppressions": [
+            "희주가 익명 글 뒤에 무너졌다는 맥락은 흐린다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:sacrifice_stack",
+            "spouse02:b:tell:victim_preload"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-2:uncertainty:1",
+              "factText": "초안이 실제 발송되지 않았다고 해도 의도는 분명했다",
+              "tags": [
+                "uncertainty",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "그날 밤",
+                  "neutral": "그날 밤",
+                  "period": "입학 직전 밤"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-2:motive:0",
+              "factText": "나를 보호자 연락망 밖으로 밀어내려는 생각 자체가 문제였다",
+              "tags": [
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "그날 밤",
+                  "neutral": "그날 밤",
+                  "period": "입학 직전 밤"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "희주가 익명 글을 본 뒤 불안해졌다는 건 안다.",
+            "그래도 내 계정과 프린터 기록을 무단으로 확인한 건 따로 책임져야 할 행동이다."
+          ],
+          "privateKnowledge": [
+            "초안 저장과 삭제 시도가 모두 공포 반응이라는 걸 알면서도 그걸 내 방패로 쓴다."
+          ],
+          "suppressions": [
+            "내가 먼저 학교와 학부모방을 흔들었다는 사실은 빼고 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:moral_reframe",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-2:evidence:0",
+              "factText": "희주가 익명 글을 본 뒤 불안해졌다는 건 안다",
+              "tags": [
+                "evidence",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-2:context:0",
+              "factText": "그래도 내 계정과 프린터 기록을 무단으로 확인한 건 따로 책임져야 할 행동이다",
+              "tags": [
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "내가 판을 흐려놓은 탓에 희주가 확인 욕구를 키운 면은 있다.",
+            "그렇다고 상대 계정 열람이 정당해지는 건 아니지만 출발점은 나 쪽에도 있다."
+          ],
+          "privateKnowledge": [
+            "희주를 가해자로만 세우면 내 유포 책임이 가려진다는 계산을 하고 있다."
+          ],
+          "suppressions": [
+            "희주를 학교에서 잠시라도 배제하고 싶게 만든 장본인이 나라는 말은 늦게 꺼낸다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload",
+            "spouse02:b:tell:moral_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-2:responsibility:0",
+              "factText": "내가 판을 흐려놓은 탓에 희주가 확인 욕구를 키운 면은 있다",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-2:harm:0",
+              "factText": "그렇다고 상대 계정 열람이 정당해지는 건 아니지만 출발점은 나 쪽에도 있다",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "희주 행동이 잘못이어도 내가 만든 공포가 그걸 밀어 올린 건 부정하기 어렵다.",
+            "내가 먼저 불안을 퍼뜨리지 않았다면 여기까지 오지 않았을 가능성이 크다."
+          ],
+          "privateKnowledge": [
+            "초안을 본 순간보다 내가 먼저 자료를 흘린 순간이 더 무겁다는 걸 안다."
+          ],
+          "suppressions": [
+            "내가 그 점을 인정하면 좋은 아빠 이미지가 무너진다는 두려움은 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:b:tell:moral_reframe",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-2:emotion:0",
+              "factText": "희주 행동이 잘못이어도 내가 만든 공포가 그걸 밀어 올린 건 부정하기 어렵다",
+              "tags": [
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-2:rule:0",
+              "factText": "내가 먼저 불안을 퍼뜨리지 않았다면 여기까지 오지 않았을 가능성이 크다",
+              "tags": [
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-2:fear:0",
+              "factText": "초안을 본 순간보다 내가 먼저 자료를 흘린 순간이 더 무겁다는 걸 안다",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "희주가 내 계정과 프린터 기록을 무단 열람하고 연락망 제외 초안을 쓴 건 사실이다.",
+            "하지만 그 배경에는 내가 상담 기록을 유포하고 익명 제보를 돌린 책임이 먼저 있었다."
+          ],
+          "privateKnowledge": [
+            "희주의 위법 가능성을 앞세워 내 잘못을 희석하려 했다는 걸 인정해야 한다."
+          ],
+          "suppressions": [
+            "희주를 끝까지 더 나쁜 사람으로 만들고 싶었던 순간은 감춘다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-2:responsibility:1",
+              "factText": "희주가 내 계정과 프린터 기록을 무단 열람하고 연락망 제외 초안을 쓴 건 사실이다",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-2:institution:0",
+              "factText": "하지만 그 배경에는 내가 상담 기록을 유포하고 익명 제보를 돌린 책임이 먼저 있었다",
+              "tags": [
+                "institution",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-2:rule:1",
+              "factText": "희주의 위법 가능성을 앞세워 내 잘못을 희석하려 했다는 걸 인정해야 한다",
+              "tags": [
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "학교 메일 초안",
+                  "neutral": "그 초안"
+                },
+                "institution": {
+                  "exact": "임시 연락망",
+                  "neutral": "학교 연락망"
+                },
+                "time": {
+                  "exact": "밤 11시 52분",
+                  "neutral": "그날 밤",
+                  "dateExact": "밤 11시 52분",
+                  "period": "익명 글 직후"
+                },
+                "accessTime": {
+                  "exact": "익명 글 노출 37분 뒤",
+                  "neutral": "그 직후",
+                  "dateExact": "익명 글 노출 37분 뒤",
+                  "period": "같은 밤"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "학부모방 익명 글은 누군가 과민하게 퍼뜨린 소문일 뿐이다.",
+            "나와 직접 연결할 근거는 없다."
+          ],
+          "privateKnowledge": [
+            "보조 계정과 스캔 파일이 결국 그 글 방향으로 흘렀다는 걸 안다."
+          ],
+          "suppressions": [
+            "내가 먼저 학교와 채널을 테스트하듯 건드렸다는 사실은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-3:denial:0",
+              "factText": "학부모방 익명 글은 누군가 과민하게 퍼뜨린 소문일 뿐이다",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 직후",
+                  "neutral": "그 무렵",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-3:fear:0",
+              "factText": "나와 직접 연결할 근거는 없다",
+              "tags": [
+                "fear",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 직후",
+                  "neutral": "그 무렵",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "캡처는 잘린 화면이라 출처를 단정하기 어렵다.",
+            "외부 학부모가 과장해서 올렸을 가능성도 충분하다."
+          ],
+          "privateKnowledge": [
+            "오리엔테이션 명단 공지 직후에 움직이면 가장 효과적이라고 계산했다."
+          ],
+          "suppressions": [
+            "내 여러 계정 중 보조 계정을 고른 이유는 추적을 피하려는 거였다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:sacrifice_stack",
+            "spouse02:b:tell:victim_preload"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-3:uncertainty:0",
+              "factText": "캡처는 잘린 화면이라 출처를 단정하기 어렵다",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 직후",
+                  "neutral": "그 무렵",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-3:self_justification:0",
+              "factText": "외부 학부모가 과장해서 올렸을 가능성도 충분하다",
+              "tags": [
+                "self_justification",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 직후",
+                  "neutral": "그 무렵",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "그 글이 올라온 건 봤다.",
+            "하지만 누가 올렸는지, 누가 자료를 붙였는지까지 내가 안다고 볼 수는 없다."
+          ],
+          "privateKnowledge": [
+            "캡처만으로 약하다는 걸 알아서 일부러 모호함 뒤에 숨고 있다."
+          ],
+          "suppressions": [
+            "학교 메일 헤더가 내 복구 정보와 이어질 수 있다는 걱정은 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:moral_reframe",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-3:admission:0",
+              "factText": "그 글이 올라온 건 봤다",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-3:motive:0",
+              "factText": "하지만 누가 올렸는지, 누가 자료를 붙였는지까지 내가 안다고 볼 수는 없다",
+              "tags": [
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "집에서 서류를 스캔한 기록은 있다.",
+            "다만 그걸 학부모방에 직접 올렸다기보다 학교가 미리 알았으면 좋겠다고 생각한 쪽에 가까웠다."
+          ],
+          "privateKnowledge": [
+            "익명 글과 학교 제보를 사실상 한 흐름으로 움직였다는 걸 안다."
+          ],
+          "suppressions": [
+            "희주를 직접 공격하는 대신 익명성 뒤에 숨은 비겁함은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload",
+            "spouse02:b:tell:moral_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-3:admission:1",
+              "factText": "집에서 서류를 스캔한 기록은 있다",
+              "tags": [
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-3:responsibility:0",
+              "factText": "다만 그걸 학부모방에 직접 올렸다기보다 학교가 미리 알았으면 좋겠다고 생각한 쪽에 가까웠다",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "보조 계정과 스캔 파일이 같은 방향을 가리킨다는 건 이제 부정하기 어렵다.",
+            "난 아이 생각만 했다고 덮으려 했지만 그 말로는 비겁함까지 지워지지 않는다."
+          ],
+          "privateKnowledge": [
+            "희주를 학교 커뮤니티 바깥에서부터 먼저 불안한 보호자로 만들고 싶었다."
+          ],
+          "suppressions": [
+            "좋은 아빠라는 평판을 지키려던 계산은 여전히 작게 말한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:b:tell:moral_reframe",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-3:emotion:0",
+              "factText": "보조 계정과 스캔 파일이 같은 방향을 가리킨다는 건 이제 부정하기 어렵다",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-3:self_justification:1",
+              "factText": "난 아이 생각만 했다고 덮으려 했지만 그 말로는 비겁함까지 지워지지 않는다",
+              "tags": [
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-3:fear:1",
+              "factText": "희주를 학교 커뮤니티 바깥에서부터 먼저 불안한 보호자로 만들고 싶었다",
+              "tags": [
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "익명 학부모방 경고글과 첨부 파일의 실질적 출처는 내 보조 계정과 집 안 스캔 기록으로 이어진다.",
+            "외부 오해처럼 보이게 꾸몄지만 실제로는 내가 희주의 과거를 유통시킨 흐름이었다."
+          ],
+          "privateKnowledge": [
+            "학교와 학부모방을 따로 움직이면 더 안전할 거라고 계산했던 게 가장 비겁했다."
+          ],
+          "suppressions": [
+            "희주가 완전히 무너질 수도 있다는 상상을 했다는 말은 삼킨다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-3:admission:2",
+              "factText": "익명 학부모방 경고글과 첨부 파일의 실질적 출처는 내 보조 계정과 집 안 스캔 기록으로 이어진다",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-3:harm:0",
+              "factText": "외부 오해처럼 보이게 꾸몄지만 실제로는 내가 희주의 과거를 유통시킨 흐름이었다",
+              "tags": [
+                "harm",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-3:relationship:0",
+              "factText": "학교와 학부모방을 따로 움직이면 더 안전할 거라고 계산했던 게 가장 비겁했다",
+              "tags": [
+                "relationship",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "document": {
+                  "exact": "익명 경고글과 첨부 파일",
+                  "neutral": "그 글과 첨부"
+                },
+                "institution": {
+                  "exact": "입학 예정 학부모방",
+                  "neutral": "학부모방"
+                },
+                "time": {
+                  "exact": "오리엔테이션 명단 공지 직후",
+                  "neutral": "그 직후",
+                  "dateExact": "오리엔테이션 명단 공지 직후",
+                  "period": "입학 준비 직전"
+                },
+                "account": {
+                  "exact": "보조 계정",
+                  "neutral": "별도 계정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "이번 일은 예전 약속과는 조금 다르다.",
+            "나는 현재 학교 문제를 걱정한 거지 과거 상처를 무기로 쓴 건 아니라고 생각했다."
+          ],
+          "privateKnowledge": [
+            "상담 기록을 꺼낸 순간 사실상 약속 경계를 밟았다는 걸 안다."
+          ],
+          "suppressions": [
+            "내가 먼저 금지선을 무너뜨렸다는 표현은 피한다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-4:denial:0",
+              "factText": "이번 일은 예전 약속과는 조금 다르다",
+              "tags": [
+                "denial",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-4:relationship:0",
+              "factText": "나는 현재 학교 문제를 걱정한 거지 과거 상처를 무기로 쓴 건 아니라고 생각했다",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "희주 상태를 걱정한 건 현재 문제에 대한 대응이었다.",
+            "과거를 공격하려는 마음과는 달랐다고 스스로 여겼다."
+          ],
+          "privateKnowledge": [
+            "말만 그렇게 붙였을 뿐 실제론 과거 기록의 낙인을 이용했다."
+          ],
+          "suppressions": [
+            "2023년 합의를 떠올리면서도 예외라고 우긴 사실은 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:sacrifice_stack",
+            "spouse02:b:tell:victim_preload"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-4:uncertainty:0",
+              "factText": "희주 상태를 걱정한 건 현재 문제에 대한 대응이었다",
+              "tags": [
+                "uncertainty",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-4:self_justification:0",
+              "factText": "과거를 공격하려는 마음과는 달랐다고 스스로 여겼다",
+              "tags": [
+                "self_justification",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "상담 기록을 다시 꺼낸 건 불안 때문이었고 그 점은 인정한다.",
+            "약속을 건드린 건 맞지만 그때는 아이 문제라 예외라고 자기합리화했다."
+          ],
+          "privateKnowledge": [
+            "희주가 초안에 내 예전 별거 위기 말을 적었다는 걸 알면 서로 비슷해진다고 기대했다."
+          ],
+          "suppressions": [
+            "내가 먼저 실제 유포까지 했다는 질적 차이는 흐리게 만든다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:moral_reframe",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-4:admission:0",
+              "factText": "상담 기록을 다시 꺼낸 건 불안 때문이었고 그 점은 인정한다",
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-4:responsibility:0",
+              "factText": "약속을 건드린 건 맞지만 그때는 아이 문제라 예외라고 자기합리화했다",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "희주도 초안 안에서 예전 별거 위기 발언을 꺼냈다.",
+            "약속 파기가 나만의 일은 아니지만 시작을 만든 책임은 가볍지 않다."
+          ],
+          "privateKnowledge": [
+            "상대도 약속을 어겼다는 사실에 기대어 내 죄책감을 나누고 싶다."
+          ],
+          "suppressions": [
+            "내가 먼저 더 크게 칼을 휘둘렀다는 말은 끝까지 늦춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload",
+            "spouse02:b:tell:moral_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-4:responsibility:1",
+              "factText": "희주도 초안 안에서 예전 별거 위기 발언을 꺼냈다",
+              "tags": [
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-4:relationship:1",
+              "factText": "약속 파기가 나만의 일은 아니지만 시작을 만든 책임은 가볍지 않다",
+              "tags": [
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "결국 먼저 칼을 뽑은 건 사실상 나였다.",
+            "희주가 뒤따라 과거를 건드리게 만든 출발점도 내 행동이었다."
+          ],
+          "privateKnowledge": [
+            "좋은 아빠라는 얼굴을 지키려다 배우자와의 최소한 약속을 스스로 찢었다."
+          ],
+          "suppressions": [
+            "학교가 아니라 희주에게 먼저 무릎 꿇어야 한다는 생각은 감춘다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:b:tell:moral_reframe",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-4:emotion:0",
+              "factText": "결국 먼저 칼을 뽑은 건 사실상 나였다",
+              "tags": [
+                "emotion",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-4:shame:0",
+              "factText": "희주가 뒤따라 과거를 건드리게 만든 출발점도 내 행동이었다",
+              "tags": [
+                "shame",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-4:fear:0",
+              "factText": "좋은 아빠라는 얼굴을 지키려다 배우자와의 최소한 약속을 스스로 찢었다",
+              "tags": [
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "과거 상처와 상담 기록을 새 싸움의 무기로 쓰지 않겠다는 약속을 내가 먼저 크게 깼다.",
+            "희주도 초안으로 약속을 건드렸지만 실제 유포의 책임과 시작점은 내 쪽이 더 무겁다."
+          ],
+          "privateKnowledge": [
+            "약속을 깬 순간 관계를 지키려던 사람이라는 자기이미지도 같이 무너졌다."
+          ],
+          "suppressions": [
+            "희주가 나를 다시 신뢰하지 못해도 당연하다는 말은 어렵게 삼킨다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-4:admission:1",
+              "factText": "과거 상처와 상담 기록을 새 싸움의 무기로 쓰지 않겠다는 약속을 내가 먼저 크게 깼다",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-4:rule:0",
+              "factText": "희주도 초안으로 약속을 건드렸지만 실제 유포의 책임과 시작점은 내 쪽이 더 무겁다",
+              "tags": [
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-4:harm:0",
+              "factText": "약속을 깬 순간 관계를 지키려던 사람이라는 자기이미지도 같이 무너졌다",
+              "tags": [
+                "harm",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "나희주",
+                  "fullName": "나희주",
+                  "judgeRef": "아내",
+                  "neutral": "상대 배우자"
+                },
+                "rule": {
+                  "exact": "과거 상처 비무기화 약속",
+                  "neutral": "그 약속"
+                },
+                "time": {
+                  "exact": "2023년 별거 직전",
+                  "neutral": "그때",
+                  "dateExact": "2023년 별거 직전",
+                  "period": "별거 위기 무렵"
+                },
+                "past": {
+                  "exact": "상담 기록",
+                  "neutral": "그 과거 기록"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "입학 파일이 묶인 건 학교가 희주 쪽 불안을 민감하게 본 탓이라고 생각했다.",
+            "익명 제보와 보호자 연락처 문제가 곧바로 영향을 줬다고 믿었다."
+          ],
+          "privateKnowledge": [
+            "실제 보류 사유를 확인하지 않은 채 희주 문제로 해석하면 내 제보가 더 정당해 보인다고 느꼈다."
+          ],
+          "suppressions": [
+            "관리사무소 서류를 제대로 다시 본 적 없다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-5:uncertainty:0",
+              "factText": "입학 파일이 묶인 건 학교가 희주 쪽 불안을 민감하게 본 탓이라고 생각했다",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "보류 처리 시점",
+                  "neutral": "그때",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-5:fear:0",
+              "factText": "익명 제보와 보호자 연락처 문제가 곧바로 영향을 줬다고 믿었다",
+              "tags": [
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "보류 처리 시점",
+                  "neutral": "그때",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "학교가 말끝을 흐리는 방식 때문에 더 그렇게 받아들였다.",
+            "내가 보기에 보류는 행정 실수보다 보호자 신뢰 문제에 가까워 보였다."
+          ],
+          "privateKnowledge": [
+            "희주 쪽 기록을 미리 흘린 일이 결국 학교 판단에도 먹혔다고 믿고 싶었다."
+          ],
+          "suppressions": [
+            "익명 메일 도착 시각과 보류 시각을 대조해보지 않았다는 사실은 뺀다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:sacrifice_stack",
+            "spouse02:b:tell:victim_preload"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-5:uncertainty:1",
+              "factText": "학교가 말끝을 흐리는 방식 때문에 더 그렇게 받아들였다",
+              "tags": [
+                "uncertainty",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "보류 처리 시점",
+                  "neutral": "그때",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-5:motive:0",
+              "factText": "내가 보기에 보류는 행정 실수보다 보호자 신뢰 문제에 가까워 보였다",
+              "tags": [
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "보류 처리 시점",
+                  "neutral": "그때",
+                  "period": "입학 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "보류 메모 시각이 익명 메일보다 앞서 있다면 내가 짚은 원인은 틀린 거다.",
+            "직접 원인은 다른 행정 오류였다고 봐야 한다."
+          ],
+          "privateKnowledge": [
+            "파일 보류 원인을 희주에게 뒤집어씌우면 내 제보가 더 설득력 있어 보인다고 생각했다."
+          ],
+          "suppressions": [
+            "아이 문제까지 내 프레임에 끌어다 쓴 계산은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:moral_reframe",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-5:evidence:0",
+              "factText": "보류 메모 시각이 익명 메일보다 앞서 있다면 내가 짚은 원인은 틀린 거다",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-5:responsibility:0",
+              "factText": "직접 원인은 다른 행정 오류였다고 봐야 한다",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "주소 확인 오류가 직접 원인이면 우리는 엉뚱한 상대만 공격한 셈이다.",
+            "내 제보는 보류 원인이 아니라 사후 혼란을 키운 일로 남는다."
+          ],
+          "privateKnowledge": [
+            "희주 자격 문제로 보류를 설명하고 싶었던 건 나 자신을 옳게 보이게 하려는 욕심이었다."
+          ],
+          "suppressions": [
+            "학교가 내 말을 곧바로 받아주길 바랐다는 기대는 줄여 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload",
+            "spouse02:b:tell:moral_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-5:context:0",
+              "factText": "주소 확인 오류가 직접 원인이면 우리는 엉뚱한 상대만 공격한 셈이다",
+              "tags": [
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-5:harm:0",
+              "factText": "내 제보는 보류 원인이 아니라 사후 혼란을 키운 일로 남는다",
+              "tags": [
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "아이 문제를 배우자 흠결 입증 싸움으로 바꾼 게 제일 부끄럽다.",
+            "보류의 직접 원인을 모르면서도 나는 이미 희주를 원인으로 확정해버렸다."
+          ],
+          "privateKnowledge": [
+            "좋은 아빠로 보이려던 마음이 아이 행정 절차보다 앞섰다."
+          ],
+          "suppressions": [
+            "학교 앞에서 희주보다 내가 더 신뢰받길 바랐다는 마음은 감춘다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:b:tell:moral_reframe",
+            "spouse02:b:tell:sacrifice_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-5:shame:0",
+              "factText": "아이 문제를 배우자 흠결 입증 싸움으로 바꾼 게 제일 부끄럽다",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-5:relationship:0",
+              "factText": "보류의 직접 원인을 모르면서도 나는 이미 희주를 원인으로 확정해버렸다",
+              "tags": [
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-5:fear:1",
+              "factText": "좋은 아빠로 보이려던 마음이 아이 행정 절차보다 앞섰다",
+              "tags": [
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "입학 파일 보류의 직접 원인은 관리사무소의 구 동호수 기재 오류였다.",
+            "내 익명 제보와 유포는 최초 원인은 아니었지만 그 뒤 혼선과 상처를 키운 일로 남는다."
+          ],
+          "privateKnowledge": [
+            "보류 사유를 틀리게 믿으면서도 그 오해를 내 정당성으로 사용했다."
+          ],
+          "suppressions": [
+            "희주보다 학교에 먼저 사과해야 할 부분이 있다는 생각은 어렵게 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse02:b:tell:victim_preload"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse02:b:d-5:admission:0",
+              "factText": "입학 파일 보류의 직접 원인은 관리사무소의 구 동호수 기재 오류였다",
+              "tags": [
+                "admission",
+                "institution"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-5:responsibility:1",
+              "factText": "내 익명 제보와 유포는 최초 원인은 아니었지만 그 뒤 혼선과 상처를 키운 일로 남는다",
+              "tags": [
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse02:b:d-5:context:1",
+              "factText": "보류 사유를 틀리게 믿으면서도 그 오해를 내 정당성으로 사용했다",
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "전입 확인서",
+                  "neutral": "그 서류"
+                },
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리사무소"
+                },
+                "school": {
+                  "exact": "학교 파일 보류 메모",
+                  "neutral": "학교 메모"
+                },
+                "time": {
+                  "exact": "익명 메일 도착 전",
+                  "neutral": "그보다 앞선 시점",
+                  "dateExact": "익명 메일 도착 전",
+                  "period": "보류 처리 시점"
+                },
+                "address": {
+                  "exact": "구 동호수",
+                  "neutral": "이전 주소 정보"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+
+export default spouse02V2Atoms;

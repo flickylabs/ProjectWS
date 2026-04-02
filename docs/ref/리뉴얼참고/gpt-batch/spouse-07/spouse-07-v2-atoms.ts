@@ -1,0 +1,3053 @@
+export const spouse07V2Atoms = {
+  "caseId": "spouse-07",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "다혜가 상담 자리와 가족 단톡에서 자기만 평일 돌봄을 맡는 것처럼 말했다."
+          ],
+          "privateKnowledge": [
+            "등원 비중이 다혜 쪽에 더 있었던 건 맞아도, 밤 준비와 병원·세탁은 내가 꾸준히 맡고 있었다."
+          ],
+          "suppressions": [
+            "상담 직후 바로 말하지 못하고 뒤늦게 기록으로만 맞받아친 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:a:tell:late_correction",
+            "spouse07:a:tell:numeric_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-1:responsibility:0",
+              "factText": "공개 자리의 단수형 표현이 자신의 기여를 지워 보이게 만들었다고 느낀다.",
+              "tags": [
+                "responsibility",
+                "quote",
+                "harm"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "평일은 거의 내가 돌린다",
+                  "neutral": "그 표현"
+                },
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 일정·세탁 수거",
+                  "neutral": "보이지 않는 영역"
+                },
+                "b": {
+                  "exact": "정다혜",
+                  "fullName": "정다혜",
+                  "judgeRef": "정다혜 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "아침은 다혜가 더 했어도, 상담에선 너무 크게 말해버렸다고 본다."
+          ],
+          "privateKnowledge": [
+            "자기 공을 먼저 챙기는 말투에 오래 쌓인 서운함이 섞여 있다고 느낀다."
+          ],
+          "suppressions": [
+            "내가 밤 일들을 먼저 설명하기보다 상대 말의 과장만 붙잡고 있는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:a:tell:numeric_flattening",
+            "spouse07:a:tell:late_correction"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-1:context:1",
+              "factText": "보이는 아침 비중을 전체 돌봄 기여와 같은 문장으로 묶는 건 과장이라고 판단한다.",
+              "tags": [
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "아침 등원",
+                  "neutral": "보이는 아침 영역"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 일정·세탁 수거",
+                  "neutral": "보이지 않는 영역"
+                },
+                "quote": {
+                  "exact": "평일은 거의 내가 돌린다",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "그 말이 완전 거짓은 아니어도, 내 이름이 빠진 상태로 들린 건 사실이다."
+          ],
+          "privateKnowledge": [
+            "다혜가 인정받고 싶어 했다는 것도 안다."
+          ],
+          "suppressions": [
+            "가족 단톡 말다툼 뒤 선택 내보내기로 나도 판을 키운 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:a:tell:numeric_flattening",
+            "spouse07:a:tell:evidence_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-1:counter:2",
+              "factText": "상대의 아침 부담은 인정하지만 공개 표현의 방향은 문제였다고 본다.",
+              "tags": [
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "아침 등원",
+                  "neutral": "보이는 아침 영역"
+                },
+                "quote": {
+                  "exact": "평일은 거의 내가 돌린다",
+                  "neutral": "그 표현"
+                },
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "다혜가 칭찬받고 싶었던 건 이해하지만, 그때부터 나는 집안일 안 하는 사람처럼 굳어졌다."
+          ],
+          "privateKnowledge": [
+            "내 체면이 상한 감정 때문에 사건을 더 확대했다."
+          ],
+          "suppressions": [
+            "아이 앞에서 표정과 메모로 점수판 싸움을 시작한 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:a:tell:evidence_dump",
+            "spouse07:a:tell:numeric_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-1:self_justification:3",
+              "factText": "상담 이후 자신이 무심한 아빠처럼 보이게 굳어졌다고 느끼며 그 상처를 정당화한다.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "praise": {
+                  "exact": "상담 자리의 칭찬",
+                  "neutral": "그 칭찬"
+                },
+                "role": {
+                  "exact": "무심한 아빠",
+                  "neutral": "그 낙인"
+                },
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 그 문장보다, 내가 아이에게 무심한 사람처럼 남을까 봐 더 무서웠다."
+          ],
+          "privateKnowledge": [
+            "다혜가 일부러 나를 깎아내리려 한 건 아닐 수도 있다는 생각도 든다."
+          ],
+          "suppressions": [
+            "그 불안을 바로 말하지 못해 기록 싸움으로 돌린 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:a:tell:evidence_dump",
+            "spouse07:a:tell:late_correction"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-1:fear:4",
+              "factText": "평판이 무너질 수 있다는 두려움이 분노 아래 깔려 있었다.",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "무심한 아빠",
+                  "neutral": "그 낙인"
+                },
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "다혜가 공개적으로 공을 독점한 건 맞다. 그래도 나는 그 상처를 숫자와 자료로 되갚으며 일을 더 키웠다."
+          ],
+          "privateKnowledge": [
+            "공개 정정과 사적 사과가 둘 다 필요하다는 걸 안다."
+          ],
+          "suppressions": [
+            "정정보다 승부를 원했던 내 마음."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:a:tell:late_correction",
+            "spouse07:a:tell:evidence_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-1:admission:5",
+              "factText": "공개 정정이 필요하지만 자신의 보복적 대응도 갈등을 키웠다고 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 일정·세탁 수거",
+                  "neutral": "보이지 않는 영역"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "그 PDF는 편집이 아니라 내가 실제로 맡은 밤·주말 영역을 보여준 거다."
+          ],
+          "privateKnowledge": [
+            "가족 단톡 말다툼 직후 일부러 아침 카테고리를 뺐다."
+          ],
+          "suppressions": [
+            "원본에는 아침 루틴도 다수 있었다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:a:tell:late_correction",
+            "spouse07:a:tell:numeric_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-2:denial:0",
+              "factText": "선택 내보내기를 단순 정리라고 부르며 편집성을 부인한다.",
+              "tags": [
+                "denial",
+                "evidence",
+                "privacy"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                },
+                "time": {
+                  "exact": "가족 단톡 말다툼 직후 22분 뒤",
+                  "dateExact": "가족 단톡 말다툼 직후 22분 뒤",
+                  "period": "그 직후",
+                  "neutral": "그때"
+                },
+                "morning": {
+                  "exact": "아침 루틴 카테고리",
+                  "neutral": "빠진 아침 영역"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "전체 원본을 숨기려던 건 아니고, 그 순간 내 억울함이 가장 잘 보이는 부분만 뽑은 거다."
+          ],
+          "privateKnowledge": [
+            "보여주고 싶은 장면만 남기면 다혜 말에 바로 맞설 수 있다고 생각했다."
+          ],
+          "suppressions": [
+            "선택 내보내기가 상대 아침 노동을 지우는 효과를 낸다는 자각."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:a:tell:numeric_flattening",
+            "spouse07:a:tell:late_correction"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-2:context:1",
+              "factText": "억울함을 보여 주려는 명분으로 맥락 삭제를 합리화한다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                },
+                "original": {
+                  "exact": "공유 체크리스트 원본 전체",
+                  "neutral": "원본 전체"
+                },
+                "b": {
+                  "exact": "정다혜",
+                  "fullName": "정다혜",
+                  "judgeRef": "정다혜 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "맞다, 내가 밤·주말만 뽑았다. 다만 그건 없던 일을 만든 게 아니라, 안 보이는 일을 보이게 하려는 과한 방식이었다."
+          ],
+          "privateKnowledge": [
+            "선택 편집이었다는 사실이 들키면 체면이 상한다고 느꼈다."
+          ],
+          "suppressions": [
+            "상대도 억울함을 느낄 수 있다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:a:tell:numeric_flattening",
+            "spouse07:a:tell:evidence_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-2:admission:2",
+              "factText": "선택 편집을 인정하지만 목적을 보이지 않는 노동의 가시화로 설명한다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "counter"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 일정·세탁 수거",
+                  "neutral": "보이지 않는 영역"
+                },
+                "original": {
+                  "exact": "공유 체크리스트 원본 전체",
+                  "neutral": "원본 전체"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "다혜가 공개적으로 크게 말하니까 나도 자료를 유리하게 잘랐다."
+          ],
+          "privateKnowledge": [
+            "복수처럼 숫자와 로그를 꺼낸 면이 있다."
+          ],
+          "suppressions": [
+            "먼저 원본을 같이 보자고 제안하지 않은 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:a:tell:evidence_dump",
+            "spouse07:a:tell:numeric_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-2:self_justification:3",
+              "factText": "상대의 공개 과장을 이유로 자신의 편집 대응을 정당화한다.",
+              "tags": [
+                "self_justification",
+                "motive",
+                "harm"
+              ],
+              "slots": {
+                "b": {
+                  "exact": "정다혜",
+                  "fullName": "정다혜",
+                  "judgeRef": "정다혜 씨",
+                  "neutral": "상대방"
+                },
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                },
+                "time": {
+                  "exact": "가족 단톡 말다툼 직후 22분 뒤",
+                  "dateExact": "가족 단톡 말다툼 직후 22분 뒤",
+                  "period": "그 직후",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "그때는 내가 정말 집안일 안 하는 남편으로 굳어질까 봐 무서워서, 있는 기록을 다 쥐고도 일부만 내밀었다."
+          ],
+          "privateKnowledge": [
+            "사실 전부 펼치면 아침 쪽이 비어 보이지 않는다는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "두려움을 설명하는 대신 편집으로 방어한 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:a:tell:evidence_dump",
+            "spouse07:a:tell:late_correction"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-2:fear:4",
+              "factText": "낙인 공포 때문에 일부 기록만 내미는 방어를 택했다.",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "image": {
+                  "exact": "집안일 안 하는 남편",
+                  "neutral": "그 이미지"
+                },
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                },
+                "original": {
+                  "exact": "공유 체크리스트 원본 전체",
+                  "neutral": "원본 전체"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "내보내기 파일은 선택 편집이 맞다. 나는 억울함을 증명하려고 맥락을 잘랐고, 그게 다혜의 아침 노동을 지우는 방식이 됐다."
+          ],
+          "privateKnowledge": [
+            "원본 기준으로 다시 정리해야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "내 설명이 공정한 표 대신 승부용 자료가 된 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:a:tell:late_correction",
+            "spouse07:a:tell:evidence_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-2:responsibility:5",
+              "factText": "선택 편집이 상대의 아침 노동을 지우는 방식이었다고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                },
+                "morning": {
+                  "exact": "아침 루틴 카테고리",
+                  "neutral": "빠진 아침 영역"
+                },
+                "original": {
+                  "exact": "공유 체크리스트 원본 전체",
+                  "neutral": "원본 전체"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "내가 집안일과 육아를 거의 안 했다는 말은 사실이 아니다."
+          ],
+          "privateKnowledge": [
+            "내 일은 낮·밤·주말로 흩어져 있어서 티가 덜 났다."
+          ],
+          "suppressions": [
+            "아침 혼란을 직접 버틴 시간은 다혜가 더 많았다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:a:tell:late_correction",
+            "spouse07:a:tell:numeric_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-3:denial:0",
+              "factText": "자신의 기여가 보이지 않게 분산되어 있을 뿐 거의 안 한 것은 아니라고 본다.",
+              "tags": [
+                "denial",
+                "counter"
+              ],
+              "slots": {
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                },
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "등원 장면만 보면 그렇게 보일 수 있어도, 병원 예약이랑 밤 준비까지 빼면 안 된다."
+          ],
+          "privateKnowledge": [
+            "보이는 노동이 더 강하게 기억된다는 걸 안다."
+          ],
+          "suppressions": [
+            "그 차이를 미리 설명하지 않고 숫자로만 맞선 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:a:tell:numeric_flattening",
+            "spouse07:a:tell:late_correction"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-3:context:1",
+              "factText": "보이는 아침 노동과 보이지 않는 생활행정을 같은 층위로 봐야 한다고 주장한다.",
+              "tags": [
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                },
+                "records": {
+                  "exact": "긴급연락 대응과 하원 변경 요청",
+                  "neutral": "그 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "아침 비중은 다혜가 컸지만, 총량으로 보면 내가 거의 안 한 사람은 아니다."
+          ],
+          "privateKnowledge": [
+            "긴급연락 대응과 하원 변경처럼 중간에 끼어든 일을 증명할 자료가 있다."
+          ],
+          "suppressions": [
+            "자료를 낼 때도 내 유리한 장면만 먼저 꺼낸 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:a:tell:numeric_flattening",
+            "spouse07:a:tell:evidence_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-3:evidence:2",
+              "factText": "긴급연락 대응과 밤·행정 기록이 누적되면 자신의 총 기여가 거의 안 한 수준은 아니라고 본다.",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "records": {
+                  "exact": "긴급연락 대응과 하원 변경 요청",
+                  "neutral": "그 기록"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                },
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "솔직히 나는 안 보이는 일을 많이 했고, 그래서 '거의 안 했다'는 말에 더 집착했다."
+          ],
+          "privateKnowledge": [
+            "인정받지 못한 서운함을 기록으로 갚으려 했다."
+          ],
+          "suppressions": [
+            "아이 앞 점수판에 내가 가담한 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:a:tell:evidence_dump",
+            "spouse07:a:tell:numeric_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-3:self_justification:3",
+              "factText": "자신의 보이지 않는 기여가 지워졌다는 상처 때문에 표현을 더 공격적으로 만들었다.",
+              "tags": [
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                },
+                "place": {
+                  "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                  "neutral": "그 점수판 자리"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "그 말이 제일 아픈 건, 나 스스로도 좋은 아빠인지 늘 불안한데 거기에 도장이 찍히는 느낌이어서다."
+          ],
+          "privateKnowledge": [
+            "다혜가 아침에 버틴 강도를 내가 충분히 말해 준 적은 없다."
+          ],
+          "suppressions": [
+            "불안을 서운함으로만 포장한 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:a:tell:evidence_dump",
+            "spouse07:a:tell:late_correction"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-3:fear:4",
+              "factText": "좋은 아빠인지에 대한 불안이 공격적 해명 아래 깔려 있었다.",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "role": {
+                  "exact": "좋은 아빠",
+                  "neutral": "그 역할"
+                },
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "나는 집안일과 육아를 거의 안 한 사람이 아니다. 다만 내 기여가 안 보인다고 느낀 나머지, 그 사실을 설명하는 방식이 공격적이었다."
+          ],
+          "privateKnowledge": [
+            "아침·밤·행정을 같은 표로 놓아야 공정하다는 걸 안다."
+          ],
+          "suppressions": [
+            "사실 확인보다 내 무고함 입증을 먼저 밀어붙인 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:a:tell:late_correction",
+            "spouse07:a:tell:evidence_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-3:responsibility:5",
+              "factText": "자신의 총 기여를 인정받고 싶어 공격적 설명 방식을 택했다고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "내가 점수판을 먼저 꺼낸 건 아니다. 다혜가 단톡에서 그렇게 말하니까 해명하려고 적기 시작한 거다."
+          ],
+          "privateKnowledge": [
+            "냉장고 메모와 메신저에서 횟수를 세기 시작했다."
+          ],
+          "suppressions": [
+            "아이 앞에서도 그 언어를 멈추지 못한 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:a:tell:late_correction",
+            "spouse07:a:tell:numeric_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-4:denial:0",
+              "factText": "자신의 숫자 세기를 해명 수단이라고 부르며 점수판화 자체를 축소한다.",
+              "tags": [
+                "denial",
+                "counter"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                  "neutral": "그 점수판 자리"
+                },
+                "family_chat": {
+                  "exact": "가족 단톡",
+                  "neutral": "그 공개 채널"
+                },
+                "count_a": {
+                  "exact": "이번 주 11건",
+                  "neutral": "그 횟수"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "정산하려고 적은 건 맞지만, 상대를 깎아내리려던 건 아니다."
+          ],
+          "privateKnowledge": [
+            "숫자로 말하면 감정보다 내가 덜 흔들린다고 느꼈다."
+          ],
+          "suppressions": [
+            "숫자 자체가 이미 비교의 언어라는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:a:tell:numeric_flattening",
+            "spouse07:a:tell:late_correction"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-4:context:1",
+              "factText": "정산이라는 이름으로 점수판 언어를 완곡화한다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "count_a": {
+                  "exact": "이번 주 11건",
+                  "neutral": "그 횟수"
+                },
+                "place": {
+                  "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                  "neutral": "그 점수판 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "내가 횟수를 세며 대응한 건 사실이다. 다만 그전부터 다혜 쪽 공개 발언이 있었다."
+          ],
+          "privateKnowledge": [
+            "내 메모가 아이에게도 보였다는 게 걸린다."
+          ],
+          "suppressions": [
+            "내가 먼저 멈출 수도 있었는데 그러지 않은 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:a:tell:numeric_flattening",
+            "spouse07:a:tell:evidence_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-4:admission:2",
+              "factText": "숫자 세기로 대응한 사실은 인정하지만 선행 자극을 이유로 든다.",
+              "tags": [
+                "admission",
+                "counter"
+              ],
+              "slots": {
+                "count_a": {
+                  "exact": "이번 주 11건",
+                  "neutral": "그 횟수"
+                },
+                "place": {
+                  "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                  "neutral": "그 점수판 자리"
+                },
+                "family_chat": {
+                  "exact": "가족 단톡",
+                  "neutral": "그 공개 채널"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "결국 나도 '이번 주 몇 건'으로 말하면서 다혜를 상대가 아니라 비교 대상처럼 만들었다."
+          ],
+          "privateKnowledge": [
+            "내 억울함이 부끄러움보다 앞섰다."
+          ],
+          "suppressions": [
+            "숫자로 정리하면 내가 옳아 보일 거라는 계산."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:a:tell:evidence_dump",
+            "spouse07:a:tell:numeric_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-4:self_justification:3",
+              "factText": "비교 언어를 쓰며 상대를 동료가 아니라 경쟁자로 만들었다는 점을 드러낸다.",
+              "tags": [
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "count_a": {
+                  "exact": "이번 주 11건",
+                  "neutral": "그 횟수"
+                },
+                "place": {
+                  "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                  "neutral": "그 점수판 자리"
+                },
+                "child": {
+                  "exact": "아이 앞",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "아이 앞 냉장고에 그걸 붙여 둔 건, 지금 생각하면 제일 창피한 장면이다."
+          ],
+          "privateKnowledge": [
+            "아이가 듣고 있다는 걸 알면서도 멈추지 못했다."
+          ],
+          "suppressions": [
+            "가족 앞 체면에 끌려 더 세게 나간 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:a:tell:evidence_dump",
+            "spouse07:a:tell:late_correction"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-4:shame:4",
+              "factText": "공동 공간에 숫자 메모를 붙인 행동을 가장 부끄러운 장면으로 인식한다.",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "child": {
+                  "exact": "아이 앞",
+                  "neutral": "그 자리"
+                },
+                "place": {
+                  "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                  "neutral": "그 점수판 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "나도 점수판을 꺼냈다. 다혜 말에 반발한 건 이유일 뿐이고, 아이와 가족 앞에서 횟수로 서로를 재단한 건 내 책임이다."
+          ],
+          "privateKnowledge": [
+            "공개 자리와 정산 자리를 분리해야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "반박의 명분 뒤에 숨어 아이 앞 언어를 정당화한 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:a:tell:late_correction",
+            "spouse07:a:tell:evidence_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-4:responsibility:5",
+              "factText": "공개 자리에서 숫자로 상대를 재단한 책임이 자신에게도 있다고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "child": {
+                  "exact": "아이 앞",
+                  "neutral": "그 자리"
+                },
+                "place": {
+                  "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                  "neutral": "그 점수판 자리"
+                },
+                "count_a": {
+                  "exact": "이번 주 11건",
+                  "neutral": "그 횟수"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "최근 무너진 건 다혜가 내 기여를 깎아 말하고 계속 몰아붙였기 때문이다."
+          ],
+          "privateKnowledge": [
+            "도우미 종료와 야근 겹침이 큰 변수였다는 걸 안다."
+          ],
+          "suppressions": [
+            "구조 문제를 알면서도 상대 한 사람 탓으로 붙든 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:a:tell:late_correction",
+            "spouse07:a:tell:numeric_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-5:responsibility:0",
+              "factText": "갈등 붕괴의 원인을 상대의 태도에 우선 귀속한다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "b": {
+                  "exact": "정다혜",
+                  "fullName": "정다혜",
+                  "judgeRef": "정다혜 씨",
+                  "neutral": "상대방"
+                },
+                "cause1": {
+                  "exact": "야간 도우미 종료",
+                  "neutral": "그 공백"
+                },
+                "cause2": {
+                  "exact": "겹치는 야근 일정",
+                  "neutral": "그 일정 충돌"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "다혜 말이 불을 붙인 건 맞지만, 일정이 겹친 주간이 더 버거워진 것도 사실이다."
+          ],
+          "privateKnowledge": [
+            "도우미가 끝난 뒤 공백이 커졌다는 체감이 있다."
+          ],
+          "suppressions": [
+            "내가 먼저 운영 대안을 제안하지 않고 점수 싸움에 머문 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:a:tell:numeric_flattening",
+            "spouse07:a:tell:late_correction"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-5:context:1",
+              "factText": "상대의 말과 구조 압박이 함께 작용했다고 본다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "cause1": {
+                  "exact": "야간 도우미 종료",
+                  "neutral": "그 공백"
+                },
+                "cause2": {
+                  "exact": "겹치는 야근 일정",
+                  "neutral": "그 일정 충돌"
+                },
+                "system": {
+                  "exact": "운영 구조 문제",
+                  "neutral": "그 구조 문제"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "한 사람의 태만만으로 설명되진 않는다. 그래도 나는 다혜의 공개 발언이 결정타였다고 봤다."
+          ],
+          "privateKnowledge": [
+            "병원 일정과 생활행정 급증이 이미 한계선을 넘기고 있었다."
+          ],
+          "suppressions": [
+            "운영 실패를 감정 싸움으로 바꿔 버린 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:a:tell:numeric_flattening",
+            "spouse07:a:tell:evidence_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-5:admission:2",
+              "factText": "개인 태만만의 문제는 아니라고 인정하면서도 상대 발언을 결정타로 본다.",
+              "tags": [
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "cause3": {
+                  "exact": "병원 일정 급증",
+                  "neutral": "그 추가 부담"
+                },
+                "system": {
+                  "exact": "운영 구조 문제",
+                  "neutral": "그 구조 문제"
+                },
+                "b": {
+                  "exact": "정다혜",
+                  "fullName": "정다혜",
+                  "judgeRef": "정다혜 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "도우미 종료, 야근 겹침, 병원 일정이 다 한꺼번에 왔다. 나는 그 압박을 다혜 탓으로 단순화했다."
+          ],
+          "privateKnowledge": [
+            "상대도 같은 구조 압박 속에 있었다는 걸 안다."
+          ],
+          "suppressions": [
+            "구조를 말하기 전에 상대 태도를 먼저 심판한 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:a:tell:evidence_dump",
+            "spouse07:a:tell:numeric_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-5:context:3",
+              "factText": "외부 구조 요인이 한꺼번에 몰렸는데 그 압박을 상대 탓으로 단순화했다.",
+              "tags": [
+                "context",
+                "threshold"
+              ],
+              "slots": {
+                "cause1": {
+                  "exact": "야간 도우미 종료",
+                  "neutral": "그 공백"
+                },
+                "cause2": {
+                  "exact": "겹치는 야근 일정",
+                  "neutral": "그 일정 충돌"
+                },
+                "cause3": {
+                  "exact": "병원 일정 급증",
+                  "neutral": "그 추가 부담"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 그때는 누가 게을러서가 아니라 둘 다 버틸 힘이 없어진 상태였는데, 나는 인정받고 싶어서 사람 탓으로 몰았다."
+          ],
+          "privateKnowledge": [
+            "운영 체계가 무너졌다는 공포가 있었다."
+          ],
+          "suppressions": [
+            "두려움을 비난으로 번역한 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:a:tell:evidence_dump",
+            "spouse07:a:tell:late_correction"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-5:emotion:4",
+              "factText": "버틸 힘이 없어진 공포를 사람 비난으로 번역했다.",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "system": {
+                  "exact": "운영 구조 문제",
+                  "neutral": "그 구조 문제"
+                },
+                "b": {
+                  "exact": "정다혜",
+                  "fullName": "정다혜",
+                  "judgeRef": "정다혜 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "최근 붕괴가 한 사람의 태만 때문만은 아니다. 도우미 종료와 겹치는 야근이 핵심이었고, 나는 그 구조 문제를 다혜 책임으로 몰며 더 악화시켰다."
+          ],
+          "privateKnowledge": [
+            "운영 규칙을 다시 짜야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "사건 리뷰보다 사람 평가를 먼저 내린 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:a:tell:late_correction",
+            "spouse07:a:tell:evidence_dump"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:a:d-5:responsibility:5",
+              "factText": "구조 문제를 상대 책임으로 몰아 갈등을 악화시켰다고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "cause1": {
+                  "exact": "야간 도우미 종료",
+                  "neutral": "그 공백"
+                },
+                "cause2": {
+                  "exact": "겹치는 야근 일정",
+                  "neutral": "그 일정 충돌"
+                },
+                "system": {
+                  "exact": "운영 구조 문제",
+                  "neutral": "그 구조 문제"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "내가 그렇게 말한 건, 그만큼 아침이 내 몫이었기 때문이다."
+          ],
+          "privateKnowledge": [
+            "그 표현이 태준의 밤 준비와 행정노동을 지워 보이게 한 건 알고 있다."
+          ],
+          "suppressions": [
+            "상담에서 칭찬받는 순간 기분이 좋아 정정하지 않은 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:b:tell:selective_memory",
+            "spouse07:b:tell:scene_expansion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-1:denial:0",
+              "factText": "아침 비중을 전체 기여처럼 말해도 괜찮다고 스스로 정당화한다.",
+              "tags": [
+                "denial",
+                "quote",
+                "self_justification"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "평일은 거의 내가 돌린다",
+                  "neutral": "그 표현"
+                },
+                "morning": {
+                  "exact": "아침 등원",
+                  "neutral": "보이는 아침 영역"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "내가 과장했더라도 그날 아침 강도를 생각하면 그렇게 말할 만했다고 본다."
+          ],
+          "privateKnowledge": [
+            "가족 앞에서 인정받고 싶어 표현을 세게 잡았다."
+          ],
+          "suppressions": [
+            "평일 전체라는 단어 선택이 지나쳤다는 자각."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:selective_memory"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-1:context:1",
+              "factText": "체감 난도를 근거로 전체 표현을 합리화한다.",
+              "tags": [
+                "context",
+                "motive"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "그날 아침 전쟁",
+                  "neutral": "그 혼란"
+                },
+                "quote": {
+                  "exact": "평일은 거의 내가 돌린다",
+                  "neutral": "그 표현"
+                },
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "등원만 두고 보면 내가 많이 한 건 맞지만, 평일 전체처럼 말한 건 컸다."
+          ],
+          "privateKnowledge": [
+            "상담 칭찬과 단톡 반응이 좋아서 말을 바로 고치지 못했다."
+          ],
+          "suppressions": [
+            "태준이 긴급연락·하원 변경·밤 준비를 반복했다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:hero_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-1:admission:2",
+              "factText": "보이는 아침 비중과 평일 전체 표현을 혼동했다는 부분을 인정한다.",
+              "tags": [
+                "admission",
+                "counter"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "아침 등원",
+                  "neutral": "보이는 아침 영역"
+                },
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                },
+                "quote": {
+                  "exact": "평일은 거의 내가 돌린다",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "인정은 받고 싶었고, 그래서 내가 한 장면을 너무 크게 펼쳐 말했다."
+          ],
+          "privateKnowledge": [
+            "태준이 억울해할 걸 알면서도 가족들 앞 체면 때문에 접지 못했다."
+          ],
+          "suppressions": [
+            "정정 한마디면 늦지 않았는데 버틴 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:b:tell:hero_frame",
+            "spouse07:b:tell:scene_expansion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-1:motive:3",
+              "factText": "인정 욕구가 한 장면을 전체 공로처럼 부풀리는 동기가 되었다.",
+              "tags": [
+                "motive",
+                "self_justification",
+                "shame"
+              ],
+              "slots": {
+                "praise": {
+                  "exact": "상담 자리의 칭찬",
+                  "neutral": "그 칭찬"
+                },
+                "quote": {
+                  "exact": "결국 제가 뛰었잖아",
+                  "neutral": "그 영웅 서사"
+                },
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "사실은 칭찬받는 자리에서 내가 버틴 아침이 드디어 보인다고 느껴서 멈추기 싫었다."
+          ],
+          "privateKnowledge": [
+            "그 순간 태준 쪽 기여가 사라지는 걸 모른 척했다."
+          ],
+          "suppressions": [
+            "상대 기여를 빼고 인정받고 싶었던 부끄러움."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:b:tell:hero_frame",
+            "spouse07:b:tell:selective_memory"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-1:shame:4",
+              "factText": "인정받고 싶은 마음이 상대 기여 누락을 외면하게 만들었다.",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "praise": {
+                  "exact": "드디어 알아준다",
+                  "neutral": "그 인정"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "내가 상담과 단톡에서 공을 너무 단수형으로 말했다. 아침은 내 비중이 컸지만, 평일 전체를 내가 다 돌린 것처럼 들리게 만든 건 내 잘못이다."
+          ],
+          "privateKnowledge": [
+            "같은 채널에서 정정해야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "태준도 숫자 싸움으로 받아쳤다는 서운함."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:hero_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-1:responsibility:5",
+              "factText": "공개 표현을 정정하고 상대의 밤·행정 기여를 함께 언급해야 한다고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                },
+                "morning": {
+                  "exact": "아침 등원",
+                  "neutral": "보이는 아침 영역"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 일정·세탁 수거",
+                  "neutral": "보이지 않는 영역"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "태준은 원본 전체가 아니라 자기 유리한 밤·주말만 내보냈다."
+          ],
+          "privateKnowledge": [
+            "내 공개 발언이 먼저 상처를 건드린 건 안다."
+          ],
+          "suppressions": [
+            "아침 루틴이 보이는 노동이라 더 설득력 있어 보였다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:b:tell:selective_memory",
+            "spouse07:b:tell:scene_expansion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-2:responsibility:0",
+              "factText": "상대가 원본 전체 대신 유리한 일부만 내보냈다고 본다.",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "본인"
+                },
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                },
+                "original": {
+                  "exact": "공유 체크리스트 원본 전체",
+                  "neutral": "원본 전체"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "그가 억울한 건 알아도, 원본을 다 안 보여 준 건 사실이다."
+          ],
+          "privateKnowledge": [
+            "내 말이 커질수록 그도 자료로 맞받아칠 거라 예상했다."
+          ],
+          "suppressions": [
+            "내가 먼저 가족 앞 프레임을 만든 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:selective_memory"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-2:context:1",
+              "factText": "상대의 억울함을 이해하면서도 선택 내보내기의 맥락 절단을 문제 삼는다.",
+              "tags": [
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "original": {
+                  "exact": "공유 체크리스트 원본 전체",
+                  "neutral": "원본 전체"
+                },
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                },
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "그 PDF가 조작 문서는 아니지만, 선택 내보내기라 맥락이 잘렸다."
+          ],
+          "privateKnowledge": [
+            "원본을 같이 봤으면 점수 싸움까진 안 갔을 수도 있다."
+          ],
+          "suppressions": [
+            "내가 태준 일을 잘 보이게 말한 적이 거의 없었다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:hero_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-2:counter:2",
+              "factText": "문서 자체의 진위와 별개로 선택 내보내기 때문에 맥락이 잘렸다고 본다.",
+              "tags": [
+                "counter",
+                "evidence",
+                "admission"
+              ],
+              "slots": {
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                },
+                "original": {
+                  "exact": "공유 체크리스트 원본 전체",
+                  "neutral": "원본 전체"
+                },
+                "time": {
+                  "exact": "가족 단톡 말다툼 직후 22분 뒤",
+                  "dateExact": "가족 단톡 말다툼 직후 22분 뒤",
+                  "period": "그 직후",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "태준이 억울해서 그랬다 해도, 나를 반박하려고 아침을 지운 건 맞다."
+          ],
+          "privateKnowledge": [
+            "내가 인정받으려 했던 욕구가 그를 편집으로 밀어 넣었다."
+          ],
+          "suppressions": [
+            "내 말이 먼저 사건의 판을 만들었다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:b:tell:hero_frame",
+            "spouse07:b:tell:scene_expansion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-2:self_justification:3",
+              "factText": "상대의 편집을 비판하면서도 자신의 공개 과장이 촉발점이었다는 걸 안다.",
+              "tags": [
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "본인"
+                },
+                "morning": {
+                  "exact": "아침 루틴 카테고리",
+                  "neutral": "빠진 아침 영역"
+                },
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 그 PDF를 봤을 때는, 내가 해온 아침 전쟁까지 지워 버렸다는 느낌에 더 분해졌다."
+          ],
+          "privateKnowledge": [
+            "내가 먼저 태준 기여를 지우는 말을 했다는 죄책감도 있었다."
+          ],
+          "suppressions": [
+            "분노와 죄책감이 동시에 있었다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:b:tell:hero_frame",
+            "spouse07:b:tell:selective_memory"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-2:emotion:4",
+              "factText": "선택 편집을 마주한 분노와 자신의 선행 과장에 대한 죄책감이 함께 있었다.",
+              "tags": [
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "아침 전쟁",
+                  "neutral": "그 아침 부담"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "태준이 선택 편집을 한 건 맞다. 하지만 그 직전까지 내가 공개 자리에서 태준 쪽 기여를 누락해 왔던 것도 맞다."
+          ],
+          "privateKnowledge": [
+            "둘 다 자기 유리한 장면만 앞세웠다는 걸 안다."
+          ],
+          "suppressions": [
+            "내가 먼저 공정한 표 대신 공개 인정에 기대었던 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:hero_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-2:admission:5",
+              "factText": "상대의 선택 편집을 인정하면서 자신의 선행 누락도 함께 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "본인"
+                },
+                "scope": {
+                  "exact": "밤·주말 항목만",
+                  "neutral": "선택된 일부 항목"
+                },
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "체감상으로는 내가 거의 다 버틴 것 같았으니 그렇게 느낄 수밖에 없었다."
+          ],
+          "privateKnowledge": [
+            "태준이 병원·세탁·주문을 반복했다는 건 알고 있었다."
+          ],
+          "suppressions": [
+            "보이는 일 위주로만 설명한 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:b:tell:selective_memory",
+            "spouse07:b:tell:scene_expansion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-3:denial:0",
+              "factText": "체감상 버틴 강도를 근거로 상대 기여를 낮게 잡아도 된다고 느낀다.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "내가 '거의 안 했다'고 단정한 건 아닐 수도 있지만, 적어도 아침과 행사 쪽은 내가 거의 다 뛰었다."
+          ],
+          "privateKnowledge": [
+            "체감 난도가 높아 다른 영역을 뒤로 밀었다."
+          ],
+          "suppressions": [
+            "긴급연락과 야간 준비를 태준이 가져간 날들."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:selective_memory"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-3:context:1",
+              "factText": "보이는 아침 장면의 강도가 다른 영역을 가리게 만들었다.",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                },
+                "records": {
+                  "exact": "긴급연락 대응과 하원 변경 요청",
+                  "neutral": "그 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "아침 루틴만 보면 내가 많이 했지만, 태준이 거의 안 했다고 말한 건 과했다."
+          ],
+          "privateKnowledge": [
+            "그렇게 말해야 내 고생이 겨우 인정받는다고 느꼈다."
+          ],
+          "suppressions": [
+            "상대가 맡은 보이지 않는 노동."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:hero_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-3:admission:2",
+              "factText": "아침의 강도를 전체 돌봄 평가로 확장한 건 과했다고 인정한다.",
+              "tags": [
+                "admission",
+                "motive"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "나는 늘 눈앞 전쟁부터 말했고, 그래서 태준의 밤·행정 일을 뒤로 밀어 버렸다."
+          ],
+          "privateKnowledge": [
+            "가족들 앞에서는 더 극적으로 말한 면이 있다."
+          ],
+          "suppressions": [
+            "같은 채널에서 바로 고치지 않은 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:b:tell:hero_frame",
+            "spouse07:b:tell:scene_expansion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-3:self_justification:3",
+              "factText": "장면 중심의 설명 습관 때문에 상대의 보이지 않는 노동을 계속 뒤로 밀었다.",
+              "tags": [
+                "self_justification",
+                "legacy_sentence",
+                "harm"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "눈앞 전쟁 같은 아침",
+                  "neutral": "그 장면"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                },
+                "channel": {
+                  "exact": "어린이집 상담과 가족 단톡",
+                  "neutral": "그 공개 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "사실은 내가 매일 버틴 아침이 너무 힘들어서, 다른 영역을 볼 여유가 없었다. 그렇다고 태준이 거의 안 한 것처럼 말한 건 미안하다."
+          ],
+          "privateKnowledge": [
+            "관계가 망가질까 봐 처음엔 일부러 수위를 낮춰 말했지만 마음속 비교는 셌다."
+          ],
+          "suppressions": [
+            "인정 욕구와 관계 유지 욕구가 섞여 있었다는 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:b:tell:hero_frame",
+            "spouse07:b:tell:selective_memory"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-3:relationship:4",
+              "factText": "관계를 지키고 싶은 마음과 인정 욕구가 동시에 작동해 표현을 왜곡했다.",
+              "tags": [
+                "relationship",
+                "emotion"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "태준이 집안일과 육아를 거의 안 한 건 아니다. 내가 보이는 아침 전쟁을 전체로 말하면서 밤 준비와 행정노동을 축소했다."
+          ],
+          "privateKnowledge": [
+            "내가 먼저 그 프레임을 퍼뜨렸다는 걸 안다."
+          ],
+          "suppressions": [
+            "인정받고 싶다는 이유로 총량 판단을 왜곡한 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:hero_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-3:responsibility:5",
+              "factText": "보이는 아침 전쟁을 전체 기여처럼 말해 상대의 총량을 축소했다고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "내가 먼저 숫자를 세운 게 아니라, 이미 태준이 메모랑 기록으로 압박했다."
+          ],
+          "privateKnowledge": [
+            "가족 단톡에서 내 표현도 사실상 점수판 역할을 했다."
+          ],
+          "suppressions": [
+            "아이 앞에서 '오늘 아침만 몇 번' 같은 말을 한 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:b:tell:selective_memory",
+            "spouse07:b:tell:scene_expansion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-4:denial:0",
+              "factText": "상대의 메모를 먼저 지목하며 자신의 점수판 언어를 축소한다.",
+              "tags": [
+                "denial",
+                "counter"
+              ],
+              "slots": {
+                "count_b": {
+                  "exact": "오늘 아침만 4번",
+                  "neutral": "그 횟수"
+                },
+                "family_chat": {
+                  "exact": "가족 단톡",
+                  "neutral": "그 공개 채널"
+                },
+                "place": {
+                  "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                  "neutral": "그 점수판 자리"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "내가 횟수를 말한 건 억울해서였지, 경쟁하려고 한 건 아니었다."
+          ],
+          "privateKnowledge": [
+            "보이는 일을 숫자로 말하면 인정받기 쉬웠다."
+          ],
+          "suppressions": [
+            "숫자를 꺼내는 순간 이미 경쟁이 된다는 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:selective_memory"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-4:context:1",
+              "factText": "억울함 해소라는 이유로 숫자 경쟁의 성격을 완화한다.",
+              "tags": [
+                "context",
+                "motive"
+              ],
+              "slots": {
+                "count_b": {
+                  "exact": "오늘 아침만 4번",
+                  "neutral": "그 횟수"
+                },
+                "morning": {
+                  "exact": "등원과 행사 준비",
+                  "neutral": "보이는 아침 영역"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "맞다, 나도 '오늘 아침만 4번' 같은 식으로 세기 시작했다."
+          ],
+          "privateKnowledge": [
+            "태준이 밤 일을 들이밀수록 나도 더 세게 셌다."
+          ],
+          "suppressions": [
+            "먼저 멈추기보다 이겨 보려 한 마음."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:hero_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-4:admission:2",
+              "factText": "숫자 세기 시작을 인정하면서도 상호 경쟁 구도로 설명한다.",
+              "tags": [
+                "admission",
+                "counter"
+              ],
+              "slots": {
+                "count_b": {
+                  "exact": "오늘 아침만 4번",
+                  "neutral": "그 횟수"
+                },
+                "place": {
+                  "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                  "neutral": "그 점수판 자리"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "가족 앞에서까지 내 몫을 세어 말한 건, 인정받고 싶은 마음이 너무 앞선 행동이었다."
+          ],
+          "privateKnowledge": [
+            "아이가 듣고 있다는 걸 알면서도 멈추지 못했다."
+          ],
+          "suppressions": [
+            "내가 만든 공개 프레임을 계속 지킨 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:b:tell:hero_frame",
+            "spouse07:b:tell:scene_expansion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-4:motive:3",
+              "factText": "인정 욕구가 가족 앞 점수판 언어를 지속시키는 힘이었다.",
+              "tags": [
+                "motive",
+                "harm"
+              ],
+              "slots": {
+                "family_chat": {
+                  "exact": "가족 단톡",
+                  "neutral": "그 공개 채널"
+                },
+                "child": {
+                  "exact": "아이 앞",
+                  "neutral": "그 자리"
+                },
+                "count_b": {
+                  "exact": "오늘 아침만 4번",
+                  "neutral": "그 횟수"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 제일 부끄러운 건 아이 앞에서까지 '오늘은 내가 몇 번 했다'고 말한 거예요."
+          ],
+          "privateKnowledge": [
+            "그 순간엔 그 말이 아니면 내 고생이 사라질 것 같았다."
+          ],
+          "suppressions": [
+            "인정 욕구를 아이 앞에서 제어 못 한 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:b:tell:hero_frame",
+            "spouse07:b:tell:selective_memory"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-4:shame:4",
+              "factText": "인정받고 싶다는 불안 때문에 아이 앞에서까지 점수판 언어를 사용했다.",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "child": {
+                  "exact": "아이 앞",
+                  "neutral": "그 자리"
+                },
+                "count_b": {
+                  "exact": "오늘 아침만 4번",
+                  "neutral": "그 횟수"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "나도 점수판을 꺼냈다. 태준이 먼저였든 아니든, 아이와 가족 앞에서 서로의 기여를 숫자로 세게 만든 책임이 있다."
+          ],
+          "privateKnowledge": [
+            "공개 자리 정정과 사적 리뷰를 나눠야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "숫자로 인정받으려 했던 내 버릇."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:hero_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-4:responsibility:5",
+              "factText": "가족과 아이 앞에서 기여를 숫자로 세게 만든 책임을 자신도 진다고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "child": {
+                  "exact": "아이 앞",
+                  "neutral": "그 자리"
+                },
+                "place": {
+                  "exact": "아이 앞 냉장고 메모와 부부 메신저",
+                  "neutral": "그 점수판 자리"
+                },
+                "count_b": {
+                  "exact": "오늘 아침만 4번",
+                  "neutral": "그 횟수"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "최근 무너진 건 태준이 제때 움직이지 않고 뒤늦게 자료만 들이민 탓이 크다."
+          ],
+          "privateKnowledge": [
+            "도우미 종료와 야근 겹침이 버거웠다."
+          ],
+          "suppressions": [
+            "구조 공백을 인정하면 내 분노 명분이 약해질까 두려운 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:b:tell:selective_memory",
+            "spouse07:b:tell:scene_expansion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-5:responsibility:0",
+              "factText": "최근 붕괴의 원인을 상대의 반응 방식에 우선 귀속한다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                },
+                "cause1": {
+                  "exact": "야간 도우미 종료",
+                  "neutral": "그 공백"
+                },
+                "cause2": {
+                  "exact": "겹치는 야근 일정",
+                  "neutral": "그 일정 충돌"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "태준 대응이 느렸던 건 맞지만, 일정이 한꺼번에 꼬인 것도 있었다."
+          ],
+          "privateKnowledge": [
+            "혼자 버틴 느낌 뒤에 실제 돌봄 공백이 있었다."
+          ],
+          "suppressions": [
+            "운영 실패를 모두 태준 습관 탓으로 묶은 점."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:selective_memory"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-5:context:1",
+              "factText": "상대 대응의 문제와 구조 압박이 같이 있었다고 본다.",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "cause1": {
+                  "exact": "야간 도우미 종료",
+                  "neutral": "그 공백"
+                },
+                "cause2": {
+                  "exact": "겹치는 야근 일정",
+                  "neutral": "그 일정 충돌"
+                },
+                "system": {
+                  "exact": "운영 구조 문제",
+                  "neutral": "그 구조 문제"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "한 사람의 게으름만으로 보긴 어렵다. 그래도 당시엔 태준이 안 움직인다는 감정이 가장 크게 남았다."
+          ],
+          "privateKnowledge": [
+            "야근 겹침 주간엔 누구라도 늦어질 상황이었다."
+          ],
+          "suppressions": [
+            "상대의 낮·밤 행정노동이 동시에 쌓인 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:hero_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-5:admission:2",
+              "factText": "개인 게으름만의 문제는 아니라고 인정하지만 감정 기억은 상대에게 남겨 둔다.",
+              "tags": [
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "cause2": {
+                  "exact": "겹치는 야근 일정",
+                  "neutral": "그 일정 충돌"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                },
+                "hidden": {
+                  "exact": "밤 준비·병원 예약·세탁·행정노동",
+                  "neutral": "보이지 않는 영역"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "도우미가 빠지고 병원 일정이 늘자 둘 다 한계였는데, 나는 그 피로를 태준이 무심하다는 말로 바꿔 버렸다."
+          ],
+          "privateKnowledge": [
+            "내가 운영 문제를 관계 평가로 확대했다."
+          ],
+          "suppressions": [
+            "분노가 구조 설명보다 앞섰다는 점."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse07:b:tell:hero_frame",
+            "spouse07:b:tell:scene_expansion"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-5:context:3",
+              "factText": "운영 문제를 상대 성향 문제로 번역해 갈등을 키웠다.",
+              "tags": [
+                "context",
+                "threshold"
+              ],
+              "slots": {
+                "cause1": {
+                  "exact": "야간 도우미 종료",
+                  "neutral": "그 공백"
+                },
+                "cause3": {
+                  "exact": "병원 일정 급증",
+                  "neutral": "그 추가 부담"
+                },
+                "a": {
+                  "exact": "이태준",
+                  "fullName": "이태준",
+                  "judgeRef": "이태준 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "사실 그 시기엔 누가 더 게을러서가 아니라 둘 다 숨이 찼다. 그런데 나는 '결국 또 내가 뛰었다'는 말로 사람 문제처럼 만들었다."
+          ],
+          "privateKnowledge": [
+            "내가 느낀 외로움이 구조 판단을 흐렸다."
+          ],
+          "suppressions": [
+            "도움을 다시 짜자는 말보다 인정 요구를 먼저 낸 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:b:tell:hero_frame",
+            "spouse07:b:tell:selective_memory"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-5:emotion:4",
+              "factText": "외로움과 피로가 구조 판단을 흐리게 만들었다.",
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "cause2": {
+                  "exact": "겹치는 야근 일정",
+                  "neutral": "그 일정 충돌"
+                },
+                "cause1": {
+                  "exact": "야간 도우미 종료",
+                  "neutral": "그 공백"
+                },
+                "quote": {
+                  "exact": "결국 또 내가 뛰었다",
+                  "neutral": "그 말"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "최근 붕괴는 태준 한 사람의 태만이 아니라 도우미 종료와 일정 충돌이 겹친 결과였다. 나는 그 압박을 태준 성향 문제처럼 말해 갈등을 키웠다."
+          ],
+          "privateKnowledge": [
+            "사건 리뷰와 기여 평가를 분리해야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "상황보다 사람 평가를 먼저 내린 점."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse07:b:tell:scene_expansion",
+            "spouse07:b:tell:hero_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse07:b:d-5:responsibility:5",
+              "factText": "구조 압박을 상대 성향 문제로 말해 갈등을 키웠다고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "cause1": {
+                  "exact": "야간 도우미 종료",
+                  "neutral": "그 공백"
+                },
+                "cause2": {
+                  "exact": "겹치는 야근 일정",
+                  "neutral": "그 일정 충돌"
+                },
+                "system": {
+                  "exact": "운영 구조 문제",
+                  "neutral": "그 구조 문제"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+
+

@@ -1,0 +1,590 @@
+export const neighbor12TellsBeats = {
+  "caseId": "neighbor-12",
+  "executableTells": {
+    "a": [
+      {
+        "id": "neighbor12:a:tell:pressure_stack",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "emotional",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "참가자들",
+          "재촉",
+          "제가 먼저",
+          "환불 문의",
+          "제 부담"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "참가자 불만 메시지와 자기 부담액을 길게 열거해 자신의 의심이 당연했다는 분위기를 만든다."
+      },
+      {
+        "id": "neighbor12:a:tell:old_effort_shield",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "shame",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "제가 그동안",
+          "몇 번이나",
+          "다 맡아왔는데",
+          "예전에도"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "과거 정산을 묻는 질문이 나오면 '제가 그동안 몇 번이나 다 맡아왔는데요'라며 수고를 먼저 앞세운다."
+      },
+      {
+        "id": "neighbor12:a:tell:number_blur",
+        "appliesWhen": [
+          "avoiding",
+          "lying",
+          "cornered",
+          "fear"
+        ],
+        "lexicalHooks": [
+          "그때그때",
+          "섞인 게",
+          "한 칸에",
+          "정확히는"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "구체 금액을 묻는 순간 '그때그때 섞인 게 있었다'며 과거 돈과 현재 돈의 경계를 흐린다."
+      }
+    ],
+    "b": [
+      {
+        "id": "neighbor12:b:tell:statement_wall",
+        "appliesWhen": [
+          "lying",
+          "defensive",
+          "cornered",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "정산서",
+          "열",
+          "행",
+          "승인번호",
+          "합계"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "every_turn",
+        "originalPattern": "자신이 늦게 알린 책임을 묻는 질문이 나오면 정산서 열과 행을 차례로 읽으며 감정 논의를 막는다."
+      },
+      {
+        "id": "neighbor12:b:tell:scope_shrink",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "shame",
+          "lying"
+        ],
+        "lexicalHooks": [
+          "이틀",
+          "삼일",
+          "정도",
+          "큰 차이는",
+          "그 범위"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "고지 지연 범위를 묻는 말에 '이틀, 삼일 늦은 정도'라며 영향 범위를 줄여 말한다."
+      },
+      {
+        "id": "neighbor12:b:tell:past_cutoff",
+        "appliesWhen": [
+          "avoiding",
+          "defensive",
+          "cornered",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "이번 건부터",
+          "일단 이번",
+          "과거는 나중에",
+          "분리해서"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "이전 라운드 정산을 왜 닫지 않았냐는 질문이 나오면 '이번 건부터 보자'며 과거 연결고리를 끊으려 한다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "neighbor12:beat:a:d-1:deny",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "제가 괜히 그 방에 올린 게 아니에요. 94만 원이 비는 것처럼 보이는데 가만히 있으면 참가자들이 저한테 다 물었어요.",
+      "behaviorHint": "재촉 메시지를 떠올리듯 손가락으로 숫자를 세며 빠르게 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-1:hedge",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "숨겼다고 단정했다기보다 비어 보인다고 올린 거예요. 제가 본 표에는 분명 빈칸이 있었거든요.",
+      "behaviorHint": "휴대폰 화면을 내밀듯 하지만 끝까지 원본은 보여주지 않는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-1:partial",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "제가 너무 앞서나간 건 맞아요. 그래도 카드취소 얘기가 바로 안 오니까 의심이 더 커졌어요.",
+      "behaviorHint": "말끝이 약해지다가도 상대 이름을 말할 때 다시 목소리가 올라간다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-1:blame",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "제가 흥분한 건 제 몫이지만, 사흘만 빨리 말했다면 공개 글까지는 안 갔을 거예요.",
+      "behaviorHint": "고개를 숙였다가 마지막 문장에서 상대를 쳐다본다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-1:confession",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "확인 전에 서도윤 씨를 공개적으로 지목한 건 제 잘못입니다. 94만 원을 현재 환불금 은닉처럼 말한 것도 제가 철회하겠습니다.",
+      "behaviorHint": "어깨가 내려가고 휴대폰을 무릎 쪽으로 내린다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-1:evidence_hit",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "이 캡처 시각이 그때보다 빠르네요… 제가 원본 받기 전에 먼저 올린 건 부인 못 하겠습니다.",
+      "behaviorHint": "증거를 보자마자 말을 멈추고 짧게 숨을 들이마신다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-3:deny",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "작년 돈이 이번에 섞였다는 말은 과장이에요. 잠깐 제 계좌로 옮겨 두고 맞추려던 거였어요.",
+      "behaviorHint": "손바닥을 펴 보이며 '잠깐'이라는 말을 반복한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-3:hedge",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "개인계좌로 들어온 건 맞지만 먹으려던 건 아니었어요. 여러 라운드가 겹치다 보니 경계가 흐려진 겁니다.",
+      "behaviorHint": "시선을 피한 채 설명이 길어진다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-3:partial",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "작년 캐시백 41만 원과 반품차액 21만 원을 따로 닫지 못한 건 맞아요. 그래서 이번 돈을 보면서 그 빈칸부터 메우려 했습니다.",
+      "behaviorHint": "액수를 말할 때만 또렷해지고 그 뒤 문장은 작아진다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-3:blame",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "도윤 씨도 그 구조를 몰랐던 건 아니잖아요. 제가 먼저 손댄 건 인정하지만 저 혼자 만든 구멍처럼 말하면 곤란해요.",
+      "behaviorHint": "억울한 표정으로 손을 모았다가 상대 쪽으로 살짝 뻗는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-3:confession",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "실제 재정 은닉의 출발은 제 쪽이었습니다. 작년 62만 원을 닫지 않은 채 남겨 두고 이번 참가금 일부로 그 구멍을 메우려 했습니다.",
+      "behaviorHint": "한숨을 길게 내쉬고 숫자를 또렷하게 끊어 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-3:evidence_hit",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "'지난번 정리' 메모까지 남아 있네요… 이번 돈으로 작년 빈칸을 메우려 한 건 더 이상 숨길 수 없겠습니다.",
+      "behaviorHint": "계좌거래내역을 보며 손끝이 멈춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-5:deny",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "그동안도 같은 계좌로 굴리면서 맞춰 왔어요. 이번만 유난히 문제인 것처럼 볼 일은 아니에요.",
+      "behaviorHint": "예전 관행을 들먹이며 손으로 원을 그리듯 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-5:hedge",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "시간이 없어서 이번에 같이 맞추자는 뜻이었지, 숨기려던 건 아니었어요. 급하게 굴러가다 보니 넘긴 겁니다.",
+      "behaviorHint": "말이 빨라지고 '다들 바빴다'는 식의 보편화가 섞인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-5:partial",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "원칙대로라면 지난 라운드부터 끊었어야 했어요. 그런데 제가 제 계좌를 계속 쓰자고 밀어붙인 건 맞습니다.",
+      "behaviorHint": "고개를 끄덕이며 자기 쪽 책임 문장을 짧게 끊는다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-5:blame",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "도윤 씨도 위험하다는 걸 알면서 강하게 막지는 않았잖아요. 둘이서 멈췄어야 했어요.",
+      "behaviorHint": "상대와 자신을 번갈아 가리키며 공동 책임을 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-5:confession",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "작년 라운드를 닫지 않고 같은 개인계좌를 다시 쓴 건 제 잘못이 큽니다. 그 구조를 계속 밀어붙인 쪽은 저였습니다.",
+      "behaviorHint": "수치심이 묻어나듯 목소리가 낮아진다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:a:d-5:evidence_hit",
+      "caseId": "neighbor-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "이 대화면 제가 '이번에 같이 맞추자'고 한 게 분명하네요. 관행이었다고만 버티긴 어렵겠습니다.",
+      "behaviorHint": "메신저 원문을 보고 입술을 깨문다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-2:deny",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "숨긴 게 아니라 아직 확정 전이었습니다. 카드취소 32만 원만 따로 말하면 합계가 더 틀어질 수 있어서 기다린 겁니다.",
+      "behaviorHint": "손가락으로 보이지 않는 표의 열과 행을 짚듯 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-2:hedge",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "이틀, 삼일 늦은 정도를 곧바로 은닉으로 볼 수는 없습니다. 국제배송료 재계산이 끝나야 정확한 환급액을 말할 수 있었어요.",
+      "behaviorHint": "문장 길이는 짧지만 숫자와 기간만 또렷하게 반복한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-2:partial",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "즉시 알리지 않은 건 제 잘못입니다. 다만 32만 원만 먼저 말하면 최종 정산과 어긋날까 봐 한 번에 설명하려 했습니다.",
+      "behaviorHint": "잘못을 인정하는 대목 뒤에 곧바로 계산 논리를 덧붙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-2:blame",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "사흘 지연이 짧다고만 말할 일은 아니었습니다. 그래도 그 지연이 곧 환불금 은닉이라는 뜻은 아니고, 배지연 씨도 너무 빨리 결론을 냈습니다.",
+      "behaviorHint": "말수는 적지만 마지막 문장에만 미세한 비아냥이 섞인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-2:confession",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "카드취소 32만 원 알림을 받고도 사흘 가까이 즉시 공유하지 않은 건 제 책임입니다. 미확정 항목이라도 잠정 공지를 했어야 했습니다.",
+      "behaviorHint": "표를 내려놓고 처음으로 정면을 바라본다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-2:evidence_hit",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "알림 시각과 발신 시각이 이렇게 벌어져 있군요. 그 공백은 제가 설명을 미룬 결과라고 인정하겠습니다.",
+      "behaviorHint": "화면을 한 번 훑고 짧게 입을 다문다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-4:deny",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "94만 원이라는 숫자 자체가 틀렸습니다. 이번 라운드에서 실제 환급 가능 금액은 32만 원뿐이었습니다.",
+      "behaviorHint": "정산서 수치를 먼저 내세우고 감정 표현은 자른다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-4:hedge",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "94만 원은 이번 환급금이 아니라 다른 금액이 섞인 숫자예요. 다만 그 혼입분 출처를 그때 바로 펼쳐 설명하진 못했습니다.",
+      "behaviorHint": "'섞인 숫자'라는 표현만 되풀이하며 구조 설명을 늦춘다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-4:partial",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "수입사 최종 정산서상 현재 라운드 환급분은 32만 원입니다. 94만 원은 이 32만 원에 작년 미정산 금액이 겹쳐진 숫자라고 보는 게 맞습니다.",
+      "behaviorHint": "서류를 차례로 넘기며 계산 구조를 건조하게 읽는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-4:blame",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "제가 94만 원이 틀렸다고만 말한 건 부족했습니다. 그렇다고 그 숫자를 현재 은닉금처럼 퍼뜨린 책임까지 제 몫으로 돌릴 수는 없습니다.",
+      "behaviorHint": "한숨을 짧게 쉬고 단어 하나하나를 끊어 말한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-4:confession",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "지연 씨가 말한 94만 원은 이번 환급 32만 원과 작년 미정산 62만 원이 섞인 숫자였습니다. 저는 그 구조를 더 빨리 설명했어야 했습니다.",
+      "behaviorHint": "표정 변화는 적지만 마지막 문장에서 속도가 느려진다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-4:evidence_hit",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "최종 정산서와 작년 내역을 같이 놓고 보니 32와 62가 겹친 수치라는 점은 부인할 수 없겠습니다.",
+      "behaviorHint": "서류 두 장을 나란히 놓고 손을 떼지 못한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-5:deny",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "작년 라운드 얘기까지 끌고 와서 이번 건을 흐릴 필요는 없습니다. 일단 이번 정산부터 끝내고 보자는 뜻이었습니다.",
+      "behaviorHint": "과거를 잘라 내듯 손으로 선을 긋는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-5:hedge",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "제가 먼저 마감 얘기를 하긴 했습니다. 다만 배지연 씨가 이번에 같이 맞추자고 해서 실무상 넘어간 겁니다.",
+      "behaviorHint": "자신의 경고를 먼저 언급한 뒤 책임 문장을 줄인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-5:partial",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "같은 계좌를 다시 쓴 건 잘못이었습니다. 제가 반대 의사를 더 분명히 하고 서면 종료를 먼저 요구했어야 했습니다.",
+      "behaviorHint": "짧게 인정하고 다시 문서 절차 언어로 돌아간다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-5:blame",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "계좌를 계속 쓰자고 먼저 민 건 배지연 씨지만, 그걸 허용한 저는 책임에서 빠질 수 없습니다. 숫자를 아는 사람답게 더 강하게 끊었어야 했습니다.",
+      "behaviorHint": "상대를 보지 못한 채 앞만 보며 말한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-5:confession",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "작년 라운드를 닫지 않은 채 같은 개인계좌를 다시 쓰게 둔 건 공동 책임입니다. 제가 서면 마감과 분리 계좌를 끝까지 요구하지 않은 책임을 인정합니다.",
+      "behaviorHint": "손에 쥔 서류를 내려놓고 문장을 짧게 마무리한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor12:beat:b:d-5:evidence_hit",
+      "caseId": "neighbor-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "제가 먼저 '작년 금액부터 닫자'고 말해 놓고도 결국 넘겼군요. 그 지점은 제 소극성이 맞습니다.",
+      "behaviorHint": "대화 원문을 보고 턱을 한 번 만지며 멈춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    }
+  ]
+}

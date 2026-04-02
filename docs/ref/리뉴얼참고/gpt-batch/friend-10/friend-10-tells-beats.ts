@@ -1,0 +1,570 @@
+export const friend10TellsBeats = {
+  "caseId": "friend-10",
+  "executableTells": {
+    "a": [
+      {
+        "id": "friend10:a:tell:checklist_press",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "정리하면",
+          "첫째",
+          "둘째",
+          "리허설표",
+          "플래너 전달본"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "답이 흐려지면 날짜와 준비 항목을 차례로 읽으며 이미 약속된 일처럼 결론을 먼저 놓는다."
+      },
+      {
+        "id": "friend10:a:tell:yes_no_loop",
+        "appliesWhen": [
+          "cornered",
+          "avoiding",
+          "lying"
+        ],
+        "lexicalHooks": [
+          "그래서",
+          "한다는 거였어",
+          "아니었어",
+          "예스냐 노냐"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "'그래서 한다는 거였어, 아니었어'라고 길게 설명할 틈 없이 이분법으로 자른다."
+      },
+      {
+        "id": "friend10:a:tell:tight_breath",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "됐고",
+          "그때",
+          "내가",
+          "바로 그거야"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "감정이 올라오면 숨이 짧아지고 문장 끝을 세게 끊어 말한다."
+      }
+    ],
+    "b": [
+      {
+        "id": "friend10:b:tell:qualification_stack",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "아마",
+          "일정만 되면",
+          "목만 괜찮으면",
+          "가능하면"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "every_turn",
+        "originalPattern": "'아마, 일정만 되면, 목만 괜찮으면' 같은 단서를 이어 붙여 약속과 검토를 흐린다."
+      },
+      {
+        "id": "friend10:b:tell:scope_narrowing",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "그건",
+          "축가가 아니라",
+          "들러리 쪽은",
+          "그 얘기만이었어"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "지적받으면 '나는 축가가 아니라 들러리 쪽 얘기였어'라고 역할 범위를 뒤늦게 좁힌다."
+      },
+      {
+        "id": "friend10:b:tell:long_pause",
+        "appliesWhen": [
+          "avoiding",
+          "emotional",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "잠깐만",
+          "내가 길게 설명할게",
+          "음성으로 말할게",
+          "…"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "on_trigger_only",
+        "originalPattern": "거절을 미루다가 한참 뜸을 들인 뒤 음성메모로 길게 설명한다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "아니, 제가 무슨 최종 확정 공지를 돌린 것처럼 말하지 마세요. 플래너용, 가족 공유, 리허설표 순서로 먼저 정리만 한 거예요.",
+      "behaviorHint": "손가락으로 항목 순서를 세며 상대보다 서류 흐름을 먼저 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend10:beat:a:d-1:deny"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "서아가 그 주 비워본다 했고, 키도 본다 했고, 이름 넣어 두는 게 이상한 흐름은 아니었어요. 저는 그냥 준비를 미리 맞춘 거예요.",
+      "behaviorHint": "체크리스트를 읽듯 짧게 끊어 말하고 마지막 문장을 단정한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend10:beat:a:d-1:hedge"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "확정 문구가 먼저 온 건 아니죠. 그런데 준비가 이미 굴러가고 있어서, 저는 내부 정리 정도는 해도 된다고 봤어요.",
+      "behaviorHint": "시선을 아래로 떨구지만 여전히 설명의 주도권을 놓지 않는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend10:beat:a:d-1:partial"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "서아가 정 아니라면 그때 바로 끊었어야죠. 아무 말 없이 두고 보니까 저도 계속 가는 걸로 읽게 된 거예요.",
+      "behaviorHint": "짧게 숨을 몰아쉬고 상대 쪽으로 몸을 기울인다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "id": "friend10:beat:a:d-1:blame"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "네, 이름을 먼저 쓴 건 제 판단이었어요. 가족이랑 플래너 앞에서 준비가 비는 꼴이 너무 싫어서요.",
+      "behaviorHint": "말끝을 세게 끊다가 마지막 문장에서만 작게 흔들린다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend10:beat:a:d-1:confession"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "…상태 범례까지 보면 변명 안 되네요. 들러리랑 축가를 같은 확정처럼 놓고 제가 결론을 앞질렀어요.",
+      "behaviorHint": "서류를 다시 보다가 호흡이 짧아지고 목소리가 낮아진다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "afterEvidence": "e-2",
+      "id": "friend10:beat:a:d-1:evidence_hit"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "한 줄짜리 '확정합니다'가 없었다는 건 알아요. 그래도 캡처, 체크리스트, 키 확인이 다 같은 방향으로 보였어요.",
+      "behaviorHint": "증거 이름을 차례로 열거하며 자신의 해석을 사실처럼 눌러 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend10:beat:a:d-3:deny"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "들러리냐 축가냐 항목만 다를 뿐, 당시 흐름은 둘 다 같이 가는 걸로 읽혔어요. 적어도 저는 그렇게 받아들일 수밖에 없었어요.",
+      "behaviorHint": "질문을 끊고 바로 결론을 덧붙여 상대 설명 공간을 줄인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend10:beat:a:d-3:hedge"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "지금 보니 시트 상태는 갈라져 있었죠. 그런데 모바일에선 이름만 먼저 보여서, 저는 그 차이를 놓쳤어요.",
+      "behaviorHint": "처음으로 화면 차이를 인정하지만 어조는 여전히 방어적이다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend10:beat:a:d-3:partial"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "서아도 둘을 분리해서 문자로 못 박지 않았잖아요. 제가 혼자 상상한 게 아니라, 그렇게 읽히는 여지를 계속 줬어요.",
+      "behaviorHint": "상대 말을 따라 하듯 반복하고 마지막에 '계속'을 세게 눌러 말한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "id": "friend10:beat:a:d-3:blame"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "맞아요. 둘 다를 명시적으로 확정한 메시지는 없었어요. 제가 준비 편의대로 한 덩어리 수락으로 묶어 버렸어요.",
+      "behaviorHint": "입술을 한번 깨물고 나서 시선을 피하지 않고 인정한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend10:beat:a:d-3:confession"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "e-2하고 e-3까지 겹치면 제가 버틸 말이 없어요. 들러리는 진행중, 축가는 후보였는데 제가 둘을 같은 칸처럼 읽은 거예요.",
+      "behaviorHint": "화면을 멈춰 보며 말 속도가 갑자기 느려진다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "afterEvidence": "e-2",
+      "id": "friend10:beat:a:d-3:evidence_hit"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "그 규칙 모르는 사람 아니에요. 다만 이번 건 공식 공지라기보다 내부 정리였다고 생각했어요.",
+      "behaviorHint": "규칙 문구를 먼저 받아 적듯 반복하며 방어선을 친다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend10:beat:a:d-4:deny"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "그리고 서아도 아니라고 바로 끊지 않았어요. 저만 규칙을 깬 것처럼 몰아가면 좀 억울하죠.",
+      "behaviorHint": "짧게 어깨를 들썩이며 책임을 나눠 가진다고 주장한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend10:beat:a:d-4:hedge"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "명시적 '확정' 문구를 받아야 했다는 건 알아요. 그런데 준비가 급했고, 그 침묵을 허락처럼 쓴 것도 사실이에요.",
+      "behaviorHint": "말을 고르다 마지막 절에서만 낮게 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend10:beat:a:d-4:partial"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "서아가 그때 문자로 한 줄만 보냈어도 여기까지 안 왔어요. 관계 깨기 싫다고 미룬 선택도 규칙 위반에 들어가죠.",
+      "behaviorHint": "상대의 늦은 정정을 끊어 읽으며 논리를 되받아친다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "id": "friend10:beat:a:d-4:blame"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "그래도 먼저 선 넘은 건 저예요. 예전 일 겪고도 제가 또 이름을 먼저 돌렸어요.",
+      "behaviorHint": "호흡이 짧아지면서도 문장 끝을 강하게 찍는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend10:beat:a:d-4:confession"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "e-5가 나오면 핑계가 안 되네요. 그 규칙을 정확히 알고도 제가 이번엔 제 편의대로 무시했어요.",
+      "behaviorHint": "과거 대화가 보이자 눈을 잠깐 감고 바로 인정 쪽으로 넘어간다.",
+      "applicableStates": [
+        "S2",
+        "S4"
+      ],
+      "afterEvidence": "e-5",
+      "id": "friend10:beat:a:d-4:evidence_hit"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "저는 확정이라고 말한 적 없어요. 아마 일정만 되면, 목만 괜찮으면, 그 정도로만 열어 둔 거예요.",
+      "behaviorHint": "조건을 차곡차곡 붙이며 한 문장을 끝까지 닫지 않는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend10:beat:b:d-2:deny"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "비워볼게, 키 보자, 치수 보낸 것까지 다 yes라고 보실 줄은 몰랐어요. 저는 가능성 확인이랑 최종 수락을 다르게 생각했어요.",
+      "behaviorHint": "손끝을 모으며 역할의 선을 작게 그어 보인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend10:beat:b:d-2:hedge"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "제가 늦게 정리한 건 맞아요. 다만 속이려던 건 아니고, 친구 결혼식에 안 된다고 끊는 말을 계속 미뤘어요.",
+      "behaviorHint": "말 앞에 잠깐 뜸을 두고 이유를 길게 덧붙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend10:beat:b:d-2:partial"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "다정이 먼저 이름을 올려 버리니까, 그다음엔 제가 아니라고 말할수록 더 큰 파토처럼 되더라고요.",
+      "behaviorHint": "상대를 직접 보지 못하고 옆으로 시선을 빼면서도 책임의 일부를 돌린다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "id": "friend10:beat:b:d-2:blame"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "그래도 책임은 있어요. 제 말이 예스로 들릴 수 있다는 걸 알면서, 음성메모로 돌려 말하며 시간을 끌었어요.",
+      "behaviorHint": "조용히 숨을 내쉬고 음성메모라는 단어에서 목소리가 더 작아진다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend10:beat:b:d-2:confession"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "e-6까지 보면 숨을 데가 없네요. 들러리는 꽤 진행했고, 축가는 못 할 수도 있다는 말을 제가 너무 늦게 했어요.",
+      "behaviorHint": "서류를 내려다본 채 긴 정적 뒤에 인정 문장을 꺼낸다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "afterEvidence": "e-6",
+      "id": "friend10:beat:b:d-2:evidence_hit"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "들러리도 끝까지 확정은 아니었어요. 저는 도와줄 수 있는 선을 보며 움직인 거지, 계약처럼 yes를 준 건 아니에요.",
+      "behaviorHint": "역할의 의미를 좁히며 말끝마다 완충 표현을 붙인다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend10:beat:b:d-5:deny"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "치수랑 동선 확인이 있었다고 바로 확정은 아니잖아요. 준비를 봐 주는 것과 최종 수락은 제 안에서 달랐어요.",
+      "behaviorHint": "손바닥을 펴 보이며 '그건 그거'라는 식으로 범위를 나눈다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend10:beat:b:d-5:hedge"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "솔직히 들러리 쪽은 많이 기울어 있었죠. 그런데 제가 붙잡고 있던 건 주로 축가 확답이었어요.",
+      "behaviorHint": "처음으로 들러리 쪽을 인정하면서도 축가 쪽으로 화제를 빼려 한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend10:beat:b:d-5:partial"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "다정이 둘을 같이 묶어 버리니까, 제가 들러리만은 하겠다고 꺼내도 축가까지 다 yes처럼 읽힐 것 같았어요.",
+      "behaviorHint": "조심스럽게 말하다가 '같이 묶어'에서만 어조가 조금 단단해진다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "id": "friend10:beat:b:d-5:blame"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "네, 들러리는 사실상 받아들이는 쪽이었어요. 전부 미확정이었다고 밀어붙인 건 제 체면이었어요.",
+      "behaviorHint": "어깨를 떨구고 시선을 아래로 둔 채 짧게 인정한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend10:beat:b:d-5:confession"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "치수표랑 동선표가 같이 놓이면 부정 못 해요. 저는 들러리까지는 거의 들어와 있었고, 축가만 끝까지 망설였어요.",
+      "behaviorHint": "한참 멈춘 뒤 역할을 둘로 쪼개어 설명한다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "afterEvidence": "e-6",
+      "id": "friend10:beat:b:d-5:evidence_hit"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "그 규칙 기억해요. 저는 먼저 공지한 게 아니라, 상처 줄까 봐 정정을 세게 못 한 쪽에 가깝죠.",
+      "behaviorHint": "문장 앞은 단정하고 뒤는 흐리며 직접 책임 표현을 피한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend10:beat:b:d-4:deny"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "그때 바로 문자를 못 보낸 건 맞지만, 저는 상황을 더 망치고 싶지 않았어요. 그래서 말이 길어지고 늦어진 거예요.",
+      "behaviorHint": "한 박자 쉬고 변명과 사과의 중간 어조로 늘어놓는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend10:beat:b:d-4:hedge"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "규칙을 안 건 맞아요. 그런데 다정이 이미 굴린 준비를 제가 한 줄로 멈추게 하는 게 너무 크게 느껴졌어요.",
+      "behaviorHint": "양손을 모으며 자신이 감당하기 버거웠다는 쪽으로 설명을 옮긴다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend10:beat:b:d-4:partial"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "다정이 이름을 먼저 돌린 순간부터 저는 되돌리기 어려운 자리로 밀렸어요. 그래도 제 침묵이 오해를 키웠다는 건 압니다.",
+      "behaviorHint": "상대 탓을 하다가 마지막 문장에서 급히 스스로를 수습한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "id": "friend10:beat:b:d-4:blame"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "결국 저도 규칙을 깼어요. 확정 아니면 아니라고 문자로 바로 써야 했는데, 좋은 사람처럼 보이려다가 늦췄어요.",
+      "behaviorHint": "작게 웃듯 숨을 내쉬지만 표정은 굳어 있다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend10:beat:b:d-4:confession"
+    },
+    {
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "e-5를 보면 더 말 못 하겠네요. 저도 그 약속을 분명히 기억했고, 그래서 더 빨리 끊었어야 했어요.",
+      "behaviorHint": "예전 대화를 보자마자 길게 멈춘 뒤 낮은 목소리로 인정한다.",
+      "applicableStates": [
+        "S2",
+        "S4"
+      ],
+      "afterEvidence": "e-5",
+      "id": "friend10:beat:b:d-4:evidence_hit"
+    }
+  ]
+}

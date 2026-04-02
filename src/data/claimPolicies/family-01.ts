@@ -9,10 +9,13 @@ import { registerExecutableTells } from '../executableTellLoader'
 import { registerBridge } from '../../engine/bridgeEngine'
 import { registerEvidenceChallenges } from '../../engine/evidenceChallengeEngine'
 import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3GameLoopLoader'
+import { registerStructureV2, registerBeatsV2 } from '../../engine/v2DataLoader'
 import session3 from './family-01-data.json'
 import { family01TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-session1/output/family-01-tells-beats'
 import { family01V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-session2/output/family-01-v2-atoms'
 import { family01V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-session2/output/family-01-v3-game-loop-data'
+import structureV2 from './family-01-structure-v2.json'
+import beatsV2 from './family-01-beats-v2-full.json'
 
 export function registerFamily01Data(): void {
   console.log('[Renewal] family-01 리뉴얼 데이터 등록 시작')
@@ -39,5 +42,9 @@ export function registerFamily01Data(): void {
   // BeatScript 런타임 fallback 등록
   registerBeatScripts('family-01', (family01TellsBeats as any).beatScripts)
 
-  console.log('[Renewal] family-01 등록 완료: V2 + Bridge + EvidenceChallenge + Tell + V3 GameLoop + BeatFallback')
+  // V2 Structure + BeatScript V2 등록
+  registerStructureV2(structureV2 as any)
+  registerBeatsV2(beatsV2 as any)
+
+  console.log('[Renewal] family-01 등록 완료: V2 + Bridge + EvidenceChallenge + Tell + V3 GameLoop + BeatFallback + StructureV2 + BeatsV2')
 }

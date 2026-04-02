@@ -736,6 +736,20 @@ function buildUserPrompt(
 
   // ── 중재안 ──
   if (action.type === 'mediation') {
+    // V2 bridge가 있으면 구조화 로그 기반 프롬프트 사용
+    const bridge = useGameStore.getState().phase3PromptBridge
+    if (bridge) {
+      const { buildPhase6UserPrompt } = require('./phase6ResultPromptV2') as typeof import('./phase6ResultPromptV2')
+      const caseData = useGameStore.getState().caseData
+      const caseMeta = {
+        caseId: bridge.caseId,
+        nameA: caseData?.duo?.partyA?.name ?? 'A',
+        nameB: caseData?.duo?.partyB?.name ?? 'B',
+        relLabel: '',
+        contextDesc: caseData?.context?.description?.slice(0, 150) ?? '',
+      }
+      return buildPhase6UserPrompt(bridge, caseMeta) + `\n\n재판관 질문: "${judgeQuestion}"\n\n추가로 accept, reject, conditional_accept, counterproposal 중 하나의 반응도 포함하라.\n출력은 JSON 객체 하나만 한다.`
+    }
     return `현재 단계는 phase6 중재안이다.\nfocusedDisputeId: ${focusedDisputeId}\n\n재판관 질문: "${judgeQuestion}"\n\n규칙:\n- accept, reject, conditional_accept, counterproposal 중 하나로 반응한다.\n- 이미 드러난 사실과 감정, 손해를 바탕으로만 반응한다.\n- 새 비밀을 갑자기 고백하지 않는다.\n- 출력은 JSON 객체 하나만 한다.`
   }
 

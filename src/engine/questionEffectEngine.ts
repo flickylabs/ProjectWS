@@ -106,6 +106,17 @@ export function createInitialMeterState(): QuestionMeterState {
 // 공개 API
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+/** V2 피로도 엔진 연동 옵션 */
+export interface ResolveQuestionEffectOptions {
+  /**
+   * QuestionFatigueEngineV2가 계산한 최종 배율.
+   * 제공 시 legacy consecutiveSameType 감쇠를 우회한다.
+   */
+  externalMultiplier?: number
+  /** 명시적으로 legacy 감쇠를 끈다. externalMultiplier 있으면 자동 true. */
+  bypassLegacyDiminish?: boolean
+}
+
 /**
  * 질문 후 NPC 응답을 분석하여 게임 효과를 계산한다.
  *
@@ -116,6 +127,7 @@ export function createInitialMeterState(): QuestionMeterState {
  * @param stance        NPC의 이번 턴 stance (blueprintEngine 결과)
  * @param emotionTier   NPC의 감정 단계
  * @param meterState    현재 미터 상태 (업데이트 전)
+ * @param options       V2 피로도 엔진 연동 옵션
  * @returns 효과 결과 + 업데이트된 미터 상태
  */
 export function resolveQuestionEffect(
@@ -126,11 +138,18 @@ export function resolveQuestionEffect(
   stance: Stance,
   emotionTier: EmotionTier,
   meterState: QuestionMeterState,
+  options: ResolveQuestionEffectOptions = {},
 ): { result: QuestionEffectResult; updatedMeter: QuestionMeterState } {
-  // 연속 같은 유형 추적
+  // 연속 같은 유형 추적 (필드는 항상 기록 — analytics/rollback용)
   const isSameType = meterState.lastQuestionType === questionType
   const consecutive = isSameType ? meterState.consecutiveSameType + 1 : 1
-  const diminish = consecutive >= 3 ? DIMINISHING_FACTOR : 1
+
+  // V2 모드: externalMultiplier 사용, legacy 감쇠 우회
+  const useExternal = typeof options.externalMultiplier === 'number'
+  const legacyDiminish = consecutive >= 3 ? DIMINISHING_FACTOR : 1
+  const diminish = (useExternal || options.bypassLegacyDiminish)
+    ? (options.externalMultiplier ?? 1)
+    : legacyDiminish
 
   // evidence_present는 별도 처리 (증거 효과 엔진 담당)
   if (questionType === 'evidence_present') {

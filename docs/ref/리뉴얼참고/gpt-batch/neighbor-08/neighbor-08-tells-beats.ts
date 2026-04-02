@@ -1,0 +1,582 @@
+export const neighbor08TellsBeats = {
+  "caseId": "neighbor-08",
+  "executableTells": {
+    "a": [
+      {
+        "id": "neighbor08:a:tell:spec_recital",
+        "appliesWhen": [
+          "lying",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "렌즈 각도",
+          "프레임레이트",
+          "저장방식",
+          "원본 기준"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "잘못을 줄일 때는 렌즈 각도, 프레임레이트, 저장방식 같은 사양을 길게 읊어 문제의 체감도를 낮춘다."
+      },
+      {
+        "id": "neighbor08:a:tell:log_wall",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "로그상",
+          "기록상",
+          "초 단위로",
+          "작업 순서"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "설치 과정 질문을 받으면 초 단위 로그를 연속으로 나열해 질문자가 끼어들 틈을 줄인다."
+      },
+      {
+        "id": "neighbor08:a:tell:empathy_skip",
+        "appliesWhen": [
+          "avoiding",
+          "cornered",
+          "hurt",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "원본을 보면",
+          "느낌과 별개로",
+          "기술적으로",
+          "사실은"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "상대가 불안했다고 말해도 바로 '원본을 보면 안 그렇다'며 감정 공감을 건너뛴다."
+      }
+    ],
+    "b": [
+      {
+        "id": "neighbor08:b:tell:fear_loop",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "문을 열었는데",
+          "따라오는 것처럼",
+          "안쪽 불빛",
+          "그 순간"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "불안이 올라오면 '문을 열었는데 화면이 따라왔고, 안쪽 불빛까지 보였고' 같은 장면을 반복해 공포감을 먼저 고정한다."
+      },
+      {
+        "id": "neighbor08:b:tell:overlabel",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "감시가 아니라",
+          "스토킹처럼",
+          "정상은 아니죠",
+          "선 넘은"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "상대 행동을 묘사할 때 '이건 감시가 아니라 스토킹'처럼 한 단계 더 강한 낙인어로 밀어붙인다."
+      },
+      {
+        "id": "neighbor08:b:tell:audience_check",
+        "appliesWhen": [
+          "cornered",
+          "shame",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "저만 그런 게 아니라",
+          "다들",
+          "다른 주민도",
+          "분위기 자체가"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "불리해지면 '다른 주민도 다 불편해했다'며 자신의 감정을 공동체 의견처럼 부풀린다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "neighbor08:beat:a:d-1:deny",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "설치 기준으로 보면 그 정도 범위는 바로 문제라고 볼 만한 수치가 아닙니다. 초기값이 약간 넓어 보였더라도 저장 쪽은 다르게 잡힙니다.",
+      "behaviorHint": "시선을 피하지 않고 손가락으로 순서를 세며 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-1:hedge",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "프리뷰가 넓게 보였을 수는 있습니다. 다만 그걸 곧바로 불법 촬영처럼 단정하는 건 과합니다.",
+      "behaviorHint": "짧게 숨을 고른 뒤 건조하게 덧붙인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-1:partial",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "관리실 통보를 먼저 했어야 했고 초기 이틀 범위가 넓었던 건 인정합니다. 그 부분은 제가 놓친 겁니다.",
+      "behaviorHint": "어깨를 굳힌 채 작게 고개를 끄덕인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-1:blame",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "그렇다고 확인 절차도 없이 주민방부터 돌린 대응까지 제 책임으로 묶을 수는 없습니다. 공개 낙인이 먼저 상황을 터뜨렸습니다.",
+      "behaviorHint": "입술을 얇게 다문 채 문장 끝을 단단히 끊는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-1:confession",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "결론적으로는 제가 먼저 알리고 바로 각도를 좁혔어야 했습니다. 기술 설명으로 버틴 건 제 책임 회피였습니다.",
+      "behaviorHint": "한 번 시선을 내리고 낮은 톤으로 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-1:evidence_hit",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "각도 사진과 접수 기록이 그렇게 남아 있으면 부정할 수는 없겠네요. 초기 이틀 범위 초과와 미통보는 제 쪽 과실로 보셔도 됩니다.",
+      "behaviorHint": "목소리가 짧아지고 손의 움직임이 멈춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "neighbor08:beat:a:d-4:deny",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "제 장비는 고정렌즈 모델이라 집 안을 따라갈 기능 자체가 없습니다. 추적 촬영이라는 표현은 사실과 맞지 않습니다.",
+      "behaviorHint": "즉답한 뒤 장비 사양을 덧붙인다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-4:hedge",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "문이 열릴 때 프리뷰가 넓어 보이면 그렇게 느낄 수는 있습니다. 하지만 느낌과 저장 원본은 구분해서 보셔야 합니다.",
+      "behaviorHint": "손바닥을 아래로 누르듯 천천히 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-4:partial",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "실내 추적은 아니었지만 프리뷰와 저장 화면 차이를 먼저 설명했어야 했습니다. 그 점은 제 설명 책임입니다.",
+      "behaviorHint": "턱을 괴던 손을 내리고 짧게 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-4:blame",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "실제 원본이 아닌 27초 편집본이 계속 돌면서 그 체감이 더 과장됐습니다. 공포를 키운 방식까지 제가 책임질 수는 없습니다.",
+      "behaviorHint": "건조한 표정으로 '원본'을 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-4:confession",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "집 안을 찍은 건 아니지만, 오해를 풀 의무를 제가 너무 늦게 다했습니다. '원본 보면 안다'고만 말한 건 무책임했습니다.",
+      "behaviorHint": "눈을 내리깐 채 짧게 한숨을 쉰다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-4:evidence_hit",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "원본 SD와 사양서가 저렇게 맞아떨어지면 추적 촬영 주장은 접겠습니다. 다만 제가 오해를 풀 설명을 늦춘 건 남습니다.",
+      "behaviorHint": "말속도가 느려지고 논리식 설명이 짧아진다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "neighbor08:beat:a:d-5:deny",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "그 글은 반격이라기보다 즉시 정정하려는 대응이었습니다. 절차를 일부러 무시한 건 아닙니다.",
+      "behaviorHint": "입꼬리를 굳힌 채 변명하듯 빠르게 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-5:hedge",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "이미 스토킹 낙인이 돈 뒤라 관리실만 기다리면 저는 끝이라고 느꼈습니다. 순서를 어긴 건 맞아도 상황은 보셔야 합니다.",
+      "behaviorHint": "말끝을 낮추며 체면 손상을 먼저 꺼낸다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-5:partial",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "원칙상 관리실 확인이 먼저였다는 건 압니다. 그걸 못 지킨 건 제 쪽도 잘한 대응은 아닙니다.",
+      "behaviorHint": "두 손을 맞잡고 잠깐 멈춘다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-5:blame",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "하지만 공개 낙인 글이 먼저 올라오지 않았다면 저도 그런 식으로까지 맞대응하진 않았을 겁니다. 시작을 만든 쪽이 따로 있습니다.",
+      "behaviorHint": "상대를 잠깐 쳐다본 뒤 바로 시선을 돌린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-5:confession",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "생활패턴까지 올린 건 과했습니다. 수치심 때문에 절차보다 반격을 택한 건 제 잘못입니다.",
+      "behaviorHint": "목소리가 작아지며 마지막 문장을 끊어 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:a:d-5:evidence_hit",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "채팅 기록과 접수 순서가 남아 있으면 제 대응도 절차 위반으로 봐야겠네요. 관리실 보관본으로 갔어야 했습니다.",
+      "behaviorHint": "어깨 힘이 빠지고 시선이 아래로 향한다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "neighbor08:beat:b:d-2:deny",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "저는 위험하다고 느낀 걸 알린 겁니다. 사람을 망신 주려고 일부러 낙인찍으려던 건 아니에요.",
+      "behaviorHint": "목이 잠긴 듯 시작하지만 끝은 단단하게 닫는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-2:hedge",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "저만 그렇게 느낀 게 아니었어요. 다들 불편해하는 분위기였으니까 제가 혼자 과민한 건 아니라고 생각했어요.",
+      "behaviorHint": "주변 반응을 세어 보이듯 손가락을 접는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-2:partial",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "표현이 셌다는 건 알아요. 그래도 그때는 누가 먼저라도 멈추라고 해야 한다고 느꼈어요.",
+      "behaviorHint": "입술을 깨물다 말을 이어간다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-2:blame",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "민석 씨가 처음부터 관리실 절차를 지켰다면 제가 그렇게까지 몰리지도 않았을 거예요. 제 말만 떼어 놓고 볼 일은 아니죠?",
+      "behaviorHint": "상대를 향해 짧게 되묻는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-2:confession",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "결과적으로는 제가 '스토킹' 같은 말을 붙이고 편집 영상을 돌려서 평판을 해쳤어요. 그건 제 책임이에요.",
+      "behaviorHint": "눈시울이 붉어지지만 문장은 또렷하게 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-2:evidence_hit",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "그 채팅방 캡처를 보면 제가 먼저 세게 몰아간 건 부정 못 하겠네요. 불안을 설명하려다 사람 자체에 딱지를 붙였어요.",
+      "behaviorHint": "숨이 짧아지고 양손을 가슴 쪽으로 모은다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "neighbor08:beat:b:d-3:deny",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "그 27초는 제가 느낀 장면을 담은 거예요. 완전히 없는 걸 꾸며낸 건 아니라고 생각했어요.",
+      "behaviorHint": "급히 고개를 젓고 '느낌'을 먼저 꺼낸다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-3:hedge",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "전달본이라 포맷은 달라졌을 수 있어요. 그래도 핵심 장면은 같다고 믿고 싶었어요.",
+      "behaviorHint": "말끝이 흐려지며 시선이 흔들린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-3:partial",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "확대하거나 자른 부분은 있었어요. 그런데 그때 제 불안 자체는 진짜라서 그걸 보여주고 싶었어요.",
+      "behaviorHint": "두 손으로 장면을 그리듯 허공을 가른다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-3:blame",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "처음부터 원본 확인이 쉽게 됐으면 제가 그런 편집까지 붙들 이유가 없었을 거예요. 민석 씨 설명도 늘 너무 기술적이었어요.",
+      "behaviorHint": "울컥하는 표정으로 빠르게 되받아친다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-3:confession",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "네, 그 27초를 원본 CCTV처럼 돌린 건 제 잘못이에요. 편집본이었고, 그걸 숨기려 했어요.",
+      "behaviorHint": "고개를 숙인 채 짧게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-3:evidence_hit",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "포렌식이 저렇게 나오면 더는 원본이라고 못 하겠어요. 제가 붙이고 바꾼 부분이 있었다는 걸 인정할게요.",
+      "behaviorHint": "말문이 막힌 뒤 겨우 이어서 말한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "neighbor08:beat:b:d-5:deny",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "관리실은 늘 늦었고, 저는 당장 멈춰야 한다고 느꼈어요. 그래서 먼저 알린 거지 규칙을 무시하려던 건 아니에요.",
+      "behaviorHint": "급하게 숨을 들이쉬며 서두른다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-5:hedge",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "그때는 절차보다 공개 경고가 더 빠르다고 생각했어요. 혼자 참으면 또 넘어갈 것 같았거든요.",
+      "behaviorHint": "스스로를 설득하듯 고개를 여러 번 끄덕인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-5:partial",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "원칙상 관리실이 먼저였다는 건 알아요. 제가 그 순서를 깬 건 맞아요.",
+      "behaviorHint": "작게 한숨을 쉬고 목소리를 낮춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-5:blame",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "그 뒤 민석 씨도 시간표까지 올렸잖아요. 절차를 깬 건 저 하나만이 아니라는 말이에요.",
+      "behaviorHint": "울컥한 표정으로 손바닥을 펴 보인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-5:confession",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "그래도 시작은 제가 공개 채널로 돌린 쪽이었어요. 관리실 확인보다 여론을 앞세운 건 제 잘못입니다.",
+      "behaviorHint": "말끝에서 힘이 빠지고 어깨가 내려간다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "neighbor08:beat:b:d-5:evidence_hit",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "접수 순서가 저렇게 찍혀 있으면 제가 먼저 원칙을 깬 건 맞네요. 불안을 이유로 절차를 건너뛴 셈이에요.",
+      "behaviorHint": "눈을 질끈 감았다가 천천히 뜬다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-6"
+    }
+  ]
+}

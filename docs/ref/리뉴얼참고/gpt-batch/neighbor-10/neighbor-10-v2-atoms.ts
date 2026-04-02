@@ -1,0 +1,4779 @@
+export const neighbor10V2Atoms = {
+  "caseId": "neighbor-10",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "저는 민우를 도둑으로 단정한 게 아니라, 하윤이 울면서 들어와서 같이 확인해 달라는 뜻으로 글을 올렸어요."
+          ],
+          "privateKnowledge": [
+            "정훈에게 직접 묻기 전에 부모방 공개 글이 먼저 올라갔다는 사실을 알고 있다."
+          ],
+          "suppressions": [
+            "민우 이름과 한정판 종류를 함께 적어 사실상 특정이 됐다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-1:act:0",
+              "factText": "부모방에 민우 이름과 한정판 종류를 적은 글을 먼저 올린 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "identity"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                },
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                },
+                "time": {
+                  "exact": "사건 당일",
+                  "neutral": "그날",
+                  "dateExact": "사건 당일",
+                  "period": "비 오는 날"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-1:denial:0",
+              "factText": "그 글을 단순 확인 요청으로 축소하며 공개 절도 암시의 무게를 부정하는 태도",
+              "tags": [
+                "denial",
+                "self_justification",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                },
+                "source": {
+                  "exact": "울면서 돌아온 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "이름을 적은 건 맞지만, 그때는 너무 급했고 의심 상황을 공유한 거였어요."
+          ],
+          "privateKnowledge": [
+            "공개 글이 정훈에게 보낸 메시지보다 8분 빨랐다는 점을 의식한다."
+          ],
+          "suppressions": [
+            "공개방 동의를 먼저 얻고 싶었던 마음을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-1:timeline:0",
+              "factText": "공개 글 시각이 직접 연락보다 앞섰다는 타임라인",
+              "tags": [
+                "timeline",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                },
+                "person": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                },
+                "timeGap": {
+                  "exact": "8분",
+                  "neutral": "잠깐 뒤"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-1:self_justification:0",
+              "factText": "아이 울음 때문에 먼저 공유할 수밖에 없었다고 스스로 정당화하는 심리",
+              "tags": [
+                "self_justification",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "scene": {
+                  "exact": "울면서 돌아온 장면",
+                  "neutral": "그 장면"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "네, 공개 글이 먼저 나간 건 제 불찰이에요.",
+            "하지만 그 순간엔 하윤이 정말 가져간 줄 알고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "의심이라고 적어도 사람들은 절도 암시로 받아들일 수 있다는 점을 인정하기 시작한다."
+          ],
+          "suppressions": [
+            "부모방 반응으로 자신의 판단을 굳힌 부분을 아직 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-1:responsibility:0",
+              "factText": "직접 확인보다 공개 글이 먼저였음을 부분적으로 인정하는 사실",
+              "tags": [
+                "responsibility",
+                "timeline",
+                "act"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                },
+                "person": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                },
+                "time": {
+                  "exact": "사건 당일",
+                  "neutral": "그날",
+                  "dateExact": "사건 당일",
+                  "period": "비 오는 날"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-1:emotion:0",
+              "factText": "하윤의 울음과 놀란 표정이 판단을 서두르게 만들었다는 이유",
+              "tags": [
+                "emotion",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "scene": {
+                  "exact": "울면서 돌아온 장면",
+                  "neutral": "그 장면"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "제가 서두른 건 맞지만, 정훈 씨도 바로 사실 설명을 해주지 않았잖아요.",
+            "그 공백이 더 불안을 키웠어요."
+          ],
+          "privateKnowledge": [
+            "이미 공개 글 자체가 민우 평판을 건드렸다는 점을 안다."
+          ],
+          "suppressions": [
+            "처음부터 부모방 동의를 구하려 했던 마음을 끝까지 말하진 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-1:counter:0",
+              "factText": "정훈의 즉각 해명이 없었다는 점을 근거로 자신의 서두름을 분산시키는 반발",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                },
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-1:harm:0",
+              "factText": "의심 글 하나로도 민우 평판이 손상될 수 있었다는 사실",
+              "tags": [
+                "harm",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "channel": {
+                  "exact": "부모방·입주민방",
+                  "neutral": "단체 대화방"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "하윤이 울던 얼굴이 너무 크게 남았어요.",
+            "확인보다 아이를 보호해야 한다는 생각이 먼저 튀어나왔습니다."
+          ],
+          "privateKnowledge": [
+            "공개 글이 사실 확인 절차를 밀어냈다는 걸 스스로 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-1:emotion:1",
+              "factText": "하윤의 울음 장면이 사실 판단보다 보호 본능을 먼저 자극한 상태",
+              "tags": [
+                "emotion",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "scene": {
+                  "exact": "울면서 돌아온 장면",
+                  "neutral": "그 장면"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-1:relationship:0",
+              "factText": "같은 동 부모 신뢰가 흔들리자 더 배신처럼 느껴졌다는 정서",
+              "tags": [
+                "relationship",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                },
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "직접 확인보다 공개 글이 먼저였고, 그건 제 책임입니다.",
+            "의심이라고 써도 민우에게는 공개 절도 암시가 됐습니다."
+          ],
+          "privateKnowledge": [
+            "이 일로 민우 평판과 부모 사이 신뢰가 동시에 흔들렸다는 점을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-1:admission:0",
+              "factText": "민우 실명과 한정판 정보를 적은 공개 글이 사실상 절도 암시였다고 인정하는 진술",
+              "tags": [
+                "admission",
+                "responsibility",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                },
+                "channel": {
+                  "exact": "부모방·입주민방",
+                  "neutral": "단체 대화방"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-1:relationship:1",
+              "factText": "부모끼리 먼저 확인하자는 신뢰 절차를 자신이 먼저 무너뜨렸다는 인정",
+              "tags": [
+                "relationship",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "정훈 씨는 사실이 확인되기도 전에 하윤이를 '원래 그런 아이'처럼 말하고 다녔어요."
+          ],
+          "privateKnowledge": [
+            "자신의 공개 글이 정훈의 방어심을 자극했다는 사실을 안다."
+          ],
+          "suppressions": [
+            "하윤 평판이 상처받은 분노 때문에 자신의 선행 잘못을 뒤로 미룬다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-2:harm:0",
+              "factText": "정훈이 하윤을 '또 규칙을 바꾸고 운다'는 식으로 일반화해 전달한 사실",
+              "tags": [
+                "harm",
+                "quote",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "evidence": {
+                  "exact": "46초 음성메시지",
+                  "neutral": "그 음성"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-2:fear:0",
+              "factText": "하윤이 이번 일 하나로 평소 성격 전체가 평가될까 걱정하는 반응",
+              "tags": [
+                "fear",
+                "emotion",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "몇 사람에게만 말했다고 해도 이미 하윤 평판은 상처받습니다. 범위보다 내용이 더 문제였어요."
+          ],
+          "privateKnowledge": [
+            "자신이 먼저 공개 글을 올렸다는 사실 때문에 비난이 완전히 단순하진 않다는 걸 안다."
+          ],
+          "suppressions": [
+            "상대에게 되받아치고 싶은 감정을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-2:context:0",
+              "factText": "전달 범위가 적어도 아이 성격 일반화는 충분히 해가 된다는 판단",
+              "tags": [
+                "context",
+                "harm",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-2:timeline:0",
+              "factText": "소연 공개 글 직후 빠르게 음성메시지가 돌았다는 시간 흐름",
+              "tags": [
+                "timeline",
+                "act",
+                "harm"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "46초 음성메시지",
+                  "neutral": "그 음성"
+                },
+                "time": {
+                  "exact": "20분 안",
+                  "neutral": "곧바로"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "음성을 보면 '또 규칙을 바꾸고 울었다'는 말이 분명히 들어 있습니다."
+          ],
+          "privateKnowledge": [
+            "정훈이 절도 단정은 피했지만 성향 일반화는 했다는 점을 구분해 인식한다."
+          ],
+          "suppressions": [
+            "자신이 먼저 분쟁을 공개로 키운 점은 아직 함께 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-2:evidence:0",
+              "factText": "46초 음성 속에 하윤의 평소 행동을 일반화하는 표현이 들어 있다는 근거",
+              "tags": [
+                "evidence",
+                "quote",
+                "harm"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "46초 음성메시지",
+                  "neutral": "그 음성"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-2:identity:0",
+              "factText": "이번 사건 설명이 아니라 하윤이라는 아이 전체를 평가하게 만든 표현",
+              "tags": [
+                "identity",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 공개 글을 먼저 올렸다고 해도, 하윤이를 '원래 그런 애'로 돌려 말한 건 다른 문제입니다."
+          ],
+          "privateKnowledge": [
+            "상대의 잘못과 자신의 잘못이 분리돼야 한다는 판단을 굳힌다."
+          ],
+          "suppressions": [
+            "정훈의 방어심을 자극했을 수 있다는 부분을 전면에는 내세우지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-2:counter:0",
+              "factText": "소연의 선공개와 별개로 정훈의 성향 일반화는 독립된 잘못이라는 구분",
+              "tags": [
+                "counter",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                },
+                "person2": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-2:relationship:0",
+              "factText": "아이들 다툼을 부모 평판 싸움으로 키웠다는 문제의식",
+              "tags": [
+                "relationship",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "personB": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "저는 하윤이 이번 일로만 힘든 줄 알았는데, '원래 그런 애'라는 말은 더 오래 남아요."
+          ],
+          "privateKnowledge": [
+            "상대 부모에게 받은 평판 상처가 공개 글 책임 인정과 별개로 깊다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-2:emotion:0",
+              "factText": "하윤이 사건 하나가 아니라 성격 전체로 낙인찍힐까 두려운 감정",
+              "tags": [
+                "emotion",
+                "fear",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-2:harm:1",
+              "factText": "정훈의 말이 사실관계보다 평소 이미지 손상으로 남는다는 인식",
+              "tags": [
+                "harm",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "제 글이 먼저였더라도, 하윤 평소 성격까지 끌어다 말한 건 분명 과했습니다."
+          ],
+          "privateKnowledge": [
+            "상대 잘못을 인정받더라도 자신의 잘못을 덮을 수는 없다는 균형을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-2:admission:0",
+              "factText": "소연의 선행 잘못과 별개로 정훈의 역소문은 분명히 별도 책임이라는 결론",
+              "tags": [
+                "admission",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                },
+                "person2": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-2:relationship:1",
+              "factText": "평판 회복을 위해 두 부모가 함께 정정해야 한다는 지향",
+              "tags": [
+                "relationship",
+                "beneficiary",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "personB": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "빈 칸이 있었고 하윤도 민우가 가져갔다고 했어요. 그 상황이면 없어졌다고 볼 수밖에 없었습니다."
+          ],
+          "privateKnowledge": [
+            "앨범 안쪽 포켓까지 끝까지 확인하지 않았다는 걸 안다."
+          ],
+          "suppressions": [
+            "분실 확인보다 절도 추정이 먼저였다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-3:act:0",
+              "factText": "비어 있던 앨범 칸과 아이 첫말을 근거로 민우 절도 가능성을 높게 본 판단",
+              "tags": [
+                "act",
+                "quote",
+                "uncertainty"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "비어 있던 앨범 칸",
+                  "neutral": "그 자리"
+                },
+                "source": {
+                  "exact": "아이의 첫말",
+                  "neutral": "처음 들은 말"
+                },
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-3:fear:0",
+              "factText": "한정판이 사라졌다고 느끼며 즉시 상대 아이를 의심한 보호 본능",
+              "tags": [
+                "fear",
+                "emotion",
+                "beneficiary"
+              ],
+              "slots": {
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "완전히 확인했다는 뜻은 아니지만, 그때는 가져간 쪽으로 보였어요."
+          ],
+          "privateKnowledge": [
+            "자신이 사실상 '분실 확인 미흡' 상태였다는 걸 안다."
+          ],
+          "suppressions": [
+            "빈 칸과 울음에 판단을 과도하게 실었다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-3:uncertainty:0",
+              "factText": "앨범을 완전히 확인하지 않았으면서도 절도 쪽으로 기울어 있던 불완전한 확신",
+              "tags": [
+                "uncertainty",
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "비어 있던 앨범 칸",
+                  "neutral": "그 자리"
+                },
+                "source": {
+                  "exact": "아이의 첫말",
+                  "neutral": "처음 들은 말"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-3:quote:0",
+              "factText": "하윤의 첫말을 그대로 절도 의미로 받아들인 해석",
+              "tags": [
+                "quote",
+                "emotion",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "person2": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "source": {
+                  "exact": "아이의 첫말",
+                  "neutral": "처음 들은 말"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "포켓에서 나온 건 맞아요. 하지만 그 전까진 정말 안 보였고, 저는 분실이 아니라 가져간 걸로 느꼈습니다."
+          ],
+          "privateKnowledge": [
+            "스티커가 하윤 앨범 안에 있었다는 사실을 받아들인다."
+          ],
+          "suppressions": [
+            "절도와 분실을 스스로 섞어 생각한 부분은 아직 다 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-3:evidence:0",
+              "factText": "문제의 한정판 스티커가 하윤 앨범 안쪽 투명포켓에서 발견된 사실",
+              "tags": [
+                "evidence",
+                "context",
+                "act"
+              ],
+              "slots": {
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "place": {
+                  "exact": "하윤 앨범 안쪽 투명포켓",
+                  "neutral": "앨범 안쪽 자리"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-3:self_justification:0",
+              "factText": "발견 전까지는 정말 없어졌다고 믿었다며 절도 판단을 정당화하려는 태도",
+              "tags": [
+                "self_justification",
+                "emotion",
+                "uncertainty"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "비어 있던 앨범 칸",
+                  "neutral": "그 자리"
+                },
+                "scene": {
+                  "exact": "울면서 돌아온 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "민우가 훔친 건 아닐 수 있어도, 둘이 잡아당기며 상황을 키운 건 사실이잖아요. 그 혼란 때문에 제가 더 확신해 버렸어요."
+          ],
+          "privateKnowledge": [
+            "아이들 실랑이와 자신의 절도 확신 사이에 비약이 있었다는 걸 안다."
+          ],
+          "suppressions": [
+            "상대 아이를 먼저 범인처럼 본 초기 판단 자체의 문제를 약하게 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-3:counter:0",
+              "factText": "절도는 아니더라도 실랑이가 혼란을 키웠다는 점으로 판단 오류를 분산시키는 말",
+              "tags": [
+                "counter",
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "공동학습실",
+                  "neutral": "그 장소"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-3:responsibility:0",
+              "factText": "분실 확인보다 절도 추정을 먼저 한 자신의 판단 비약",
+              "tags": [
+                "responsibility",
+                "uncertainty",
+                "act"
+              ],
+              "slots": {
+                "source": {
+                  "exact": "아이의 첫말",
+                  "neutral": "처음 들은 말"
+                },
+                "place": {
+                  "exact": "비어 있던 앨범 칸",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "빈 칸이랑 하윤이 울던 얼굴이 같이 떠오르니까, 제 머릿속에선 그게 거의 절도처럼 굳어졌어요."
+          ],
+          "privateKnowledge": [
+            "감정이 사실 판단을 밀어붙였다는 걸 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-3:emotion:0",
+              "factText": "비어 보인 칸과 울음 장면이 결합돼 절도 확신으로 굳어진 감정 흐름",
+              "tags": [
+                "emotion",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "비어 있던 앨범 칸",
+                  "neutral": "그 자리"
+                },
+                "scene": {
+                  "exact": "울면서 돌아온 장면",
+                  "neutral": "그 장면"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-3:shame:0",
+              "factText": "분실 확인을 충분히 하지 못한 채 다른 아이를 의심한 데서 오는 부끄러움",
+              "tags": [
+                "shame",
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "결론적으로 민우가 훔친 건 아니었습니다. 저는 비어 보인 칸과 아이 첫말을 절도랑 섞어 받아들였어요."
+          ],
+          "privateKnowledge": [
+            "민우 절도 의심이 틀렸음을 수용한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-3:admission:0",
+              "factText": "민우가 스티커를 훔친 것이 아니라는 점을 명확히 인정하는 진술",
+              "tags": [
+                "admission",
+                "responsibility",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                },
+                "evidence": {
+                  "exact": "공동학습실 CCTV 5분 영상",
+                  "neutral": "영상 자료"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-3:context:0",
+              "factText": "비어 보인 칸과 아이 첫말을 절도 의미로 과해석한 자신의 오류 인정",
+              "tags": [
+                "context",
+                "admission",
+                "quote"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "비어 있던 앨범 칸",
+                  "neutral": "그 자리"
+                },
+                "source": {
+                  "exact": "아이의 첫말",
+                  "neutral": "처음 들은 말"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "규칙 오해만으로 저렇게 울 일이었는지는 아직 잘 모르겠습니다. 그땐 더 나쁜 일이 있었던 줄 알았어요."
+          ],
+          "privateKnowledge": [
+            "자신이 규칙 문제를 충분히 생각하지 못했다는 걸 안다."
+          ],
+          "suppressions": [
+            "절도 의심이 먼저 머리를 채웠다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-4:uncertainty:0",
+              "factText": "아이들 다툼 원인을 규칙 오해보다 더 큰 문제로 받아들였던 초기 판단",
+              "tags": [
+                "uncertainty",
+                "context",
+                "emotion"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                },
+                "scene": {
+                  "exact": "울면서 돌아온 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-4:fear:0",
+              "factText": "한정판 분실 가능성이 규칙 설명보다 먼저 떠올랐던 보호 본능",
+              "tags": [
+                "fear",
+                "beneficiary",
+                "emotion"
+              ],
+              "slots": {
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "규칙 얘기가 있었을 수는 있죠. 그래도 그 순간엔 민우 쪽이 더 세게 밀어붙인 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "규칙 오해 가능성을 일부 인정한다."
+          ],
+          "suppressions": [
+            "아이들 오해를 부모가 방치한 배경은 아직 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-4:rule:0",
+              "factText": "교환 규칙 차이가 있었을 수 있다고 약하게 인정하는 태도",
+              "tags": [
+                "rule",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-4:counter:0",
+              "factText": "그럼에도 민우 쪽 행동이 더 강하게 느껴졌다고 해석하는 시선",
+              "tags": [
+                "counter",
+                "act",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "place": {
+                  "exact": "공동학습실",
+                  "neutral": "그 장소"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "교사 메모를 보니 둘이 규칙을 다르게 이해한 건 맞네요."
+          ],
+          "privateKnowledge": [
+            "직접 원인이 절도가 아니라 규칙 오해일 수 있음을 받아들인다."
+          ],
+          "suppressions": [
+            "부모 둘 다 규칙을 미리 정리하지 않은 책임은 아직 약하게 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-4:institution:0",
+              "factText": "담임교사 상담 메모가 서로 다른 규칙 이해를 기록한 사실",
+              "tags": [
+                "institution",
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "담임교사 상담 메모",
+                  "neutral": "교사 기록"
+                },
+                "person": {
+                  "exact": "장예원",
+                  "neutral": "담임교사",
+                  "fullName": "장예원",
+                  "judgeRef": "담임교사"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-4:context:0",
+              "factText": "직접 원인이 절도가 아니라 오해일 수 있다는 방향 전환",
+              "tags": [
+                "context",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                },
+                "place": {
+                  "exact": "공동학습실",
+                  "neutral": "그 장소"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "다만 그런 오해가 쌓이게 된 건 부모가 규칙을 제대로 정리해 주지 않은 탓도 있습니다."
+          ],
+          "privateKnowledge": [
+            "아이들 경쟁을 금방 지나갈 일로 본 부모 책임을 떠올린다."
+          ],
+          "suppressions": [
+            "하윤 쪽 불안이 더 컸다는 주장도 유지하고 싶어 한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-4:responsibility:0",
+              "factText": "희귀 스티커 교환 규칙을 부모들이 미리 정리하지 않은 구조적 책임",
+              "tags": [
+                "responsibility",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                },
+                "person": {
+                  "exact": "박소연",
+                  "neutral": "상대 보호자",
+                  "fullName": "박소연",
+                  "judgeRef": "박소연 씨"
+                },
+                "person2": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-4:relationship:0",
+              "factText": "아이들 경쟁과 말다툼을 오래 방치해 온 부모 공통 배경",
+              "tags": [
+                "relationship",
+                "context",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                },
+                "place": {
+                  "exact": "공동학습실",
+                  "neutral": "그 장소"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "하윤이 한정판에 예민했고, 저는 그 예민함을 불안으로만 읽었습니다. 그래서 규칙 오해 설명이 늦었어요."
+          ],
+          "privateKnowledge": [
+            "아이 감정과 사실 확인을 구분하지 못했다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-4:emotion:0",
+              "factText": "하윤의 집착과 불안을 위험 신호로만 읽어 규칙 오해를 늦게 본 감정 해석",
+              "tags": [
+                "emotion",
+                "beneficiary",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-4:shame:0",
+              "factText": "부모가 아이 감정을 사건 의미와 곧바로 묶어버린 데서 오는 민망함",
+              "tags": [
+                "shame",
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박소연",
+                  "neutral": "상대 보호자",
+                  "fullName": "박소연",
+                  "judgeRef": "박소연 씨"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "네, 직접 원인은 절도가 아니라 교환 규칙 오해와 앨범 실랑이였습니다."
+          ],
+          "privateKnowledge": [
+            "이제는 사건 핵심을 규칙 정리 문제로 옮겨 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-4:admission:0",
+              "factText": "아이들 싸움의 직접 원인이 절도가 아니라 규칙 오해였다고 인정하는 진술",
+              "tags": [
+                "admission",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                },
+                "place": {
+                  "exact": "공동학습실",
+                  "neutral": "그 장소"
+                },
+                "evidence": {
+                  "exact": "담임교사 상담 메모",
+                  "neutral": "교사 기록"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-4:relationship:1",
+              "factText": "앞으로는 부모가 먼저 규칙을 정리해 주어야 한다는 결론",
+              "tags": [
+                "relationship",
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "person2": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "약속을 깨려던 건 아니에요. 그날은 너무 급했고, 먼저 알리면 같이 확인이 빨라질 거라고 생각했어요."
+          ],
+          "privateKnowledge": [
+            "아이 문제는 부모끼리 먼저 확인하기로 했다는 약속을 정확히 기억한다."
+          ],
+          "suppressions": [
+            "단체방 동의를 먼저 얻고 싶었던 마음을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-5:denial:0",
+              "factText": "공개 글이 약속 파기가 아니라 긴급 공유였다고 주장하는 태도",
+              "tags": [
+                "denial",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-5:timeline:0",
+              "factText": "사건 당일 직접 확인보다 공개 공유가 먼저 이루어진 순서",
+              "tags": [
+                "timeline",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "사건 당일",
+                  "neutral": "그날",
+                  "dateExact": "사건 당일",
+                  "period": "비 오는 날"
+                },
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                },
+                "person": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "순서가 조금 어긋난 건 맞아요. 그래도 바로 연락하려던 참이었고, 몰아가려던 의도는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "약속 위반이 '조금'으로 줄일 수 없는 일임을 안다."
+          ],
+          "suppressions": [
+            "공개방 반응이 자신에게 안도감을 준 점을 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-5:denial:1",
+              "factText": "약속 파기를 '순서가 조금 어긋난 일'로 축소하는 설명",
+              "tags": [
+                "denial",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-5:relationship:0",
+              "factText": "직접 대화보다 단체방을 먼저 택한 선택이 신뢰 절차를 흔든 사실",
+              "tags": [
+                "relationship",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "네, 부모끼리 먼저 보자던 약속보다 단체방 글이 먼저였어요.",
+            "다만 그만큼 제가 하윤 말을 급하게 믿었던 겁니다."
+          ],
+          "privateKnowledge": [
+            "직접 확인 약속을 자신이 먼저 넘겼다는 사실을 인정한다."
+          ],
+          "suppressions": [
+            "다른 부모들 동의로 스스로 안심한 부분은 남겨 둔다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-5:responsibility:0",
+              "factText": "직접 확인 약속보다 공개 글이 먼저였음을 부분 인정하는 진술",
+              "tags": [
+                "responsibility",
+                "timeline",
+                "relationship"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                },
+                "time": {
+                  "exact": "사건 당일",
+                  "neutral": "그날",
+                  "dateExact": "사건 당일",
+                  "period": "비 오는 날"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-5:emotion:0",
+              "factText": "하윤 말을 급하게 믿은 감정이 절차보다 앞섰다는 설명",
+              "tags": [
+                "emotion",
+                "fear",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "source": {
+                  "exact": "아이의 첫말",
+                  "neutral": "처음 들은 말"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "저만 순서를 어긴 건 아니잖아요. 정훈 씨도 저한테 바로 묻기보다 다른 부모들부터 접촉했으니까요."
+          ],
+          "privateKnowledge": [
+            "서로 약속을 깼다는 사실을 알고 있다."
+          ],
+          "suppressions": [
+            "선행 위반이 자신이라는 핵심은 흐리고 싶어 한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-5:counter:0",
+              "factText": "정훈도 직접 확인보다 다른 부모 접촉을 먼저 했다고 맞세우는 주장",
+              "tags": [
+                "counter",
+                "relationship",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                },
+                "timeline": {
+                  "exact": "연락 순서표",
+                  "neutral": "연락 기록"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-5:responsibility:1",
+              "factText": "선행 위반 사실을 상대의 뒤이은 위반과 묶어 희석시키는 태도",
+              "tags": [
+                "responsibility",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "time": {
+                  "exact": "사건 당일",
+                  "neutral": "그날",
+                  "dateExact": "사건 당일",
+                  "period": "비 오는 날"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "서로 아이를 맡길 정도였으니 더 배신감이 컸어요. 그래서 더 조급하게 단체방으로 갔습니다."
+          ],
+          "privateKnowledge": [
+            "신뢰 관계가 오히려 감정적 과속을 만들었다는 걸 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-5:emotion:1",
+              "factText": "공동픽업으로 쌓인 신뢰가 무너졌다고 느끼며 조급함이 커진 감정",
+              "tags": [
+                "emotion",
+                "relationship",
+                "fear"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "person": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-5:self_justification:0",
+              "factText": "배신감 때문에 절차보다 공감과 동의를 먼저 구하려 했다는 속내",
+              "tags": [
+                "self_justification",
+                "relationship",
+                "emotion"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                },
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "공동픽업까지 맡기던 사이였는데 제가 먼저 그 신뢰 절차를 무너뜨렸어요. 먼저 1:1로 확인했어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "정정과 사과가 필요하다는 결론을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:a:tell:crying_anchor",
+            "neighbor10:a:tell:missing_slot_focus",
+            "neighbor10:a:tell:quick_publicity"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:a:d-5:admission:0",
+              "factText": "부모끼리 먼저 확인하자는 약속을 자신이 먼저 깼다고 인정하는 진술",
+              "tags": [
+                "admission",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:a:d-5:beneficiary:0",
+              "factText": "하윤을 지키려던 마음이 오히려 부모 간 신뢰와 두 아이 평판 모두를 해쳤다는 자각",
+              "tags": [
+                "beneficiary",
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                },
+                "person2": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "소연 씨가 우리 애를 공개적으로 몰아간 건 분명합니다. 의심이라고 적었어도 다들 민우 이름부터 봤어요."
+          ],
+          "privateKnowledge": [
+            "공개 글 때문에 민우 평판 방어에 집착하게 됐다는 걸 안다."
+          ],
+          "suppressions": [
+            "그 뒤 자신도 역소문으로 맞대응한 사실을 앞부분에서는 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-1:harm:0",
+              "factText": "소연의 공개 글이 민우 이름을 중심으로 절도 의심을 퍼뜨린 사실",
+              "tags": [
+                "harm",
+                "identity",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "channel": {
+                  "exact": "부모방·입주민방",
+                  "neutral": "단체 대화방"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-1:fear:0",
+              "factText": "공개 지목으로 인해 민우가 도둑으로 굳어질까 두려워진 반응",
+              "tags": [
+                "fear",
+                "emotion",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "'의심'이라고 써도 실명과 한정판 종류가 같이 돌면 이미 공개 지목입니다."
+          ],
+          "privateKnowledge": [
+            "소연이 먼저 글을 올린 시점이 자신의 감정을 크게 자극했다는 걸 안다."
+          ],
+          "suppressions": [
+            "방어를 명분으로 다른 부모들에게 말한 부분은 아직 줄여 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-1:identity:0",
+              "factText": "실명과 한정판 종류가 함께 적힌 순간 당사자 특정이 완성됐다는 인식",
+              "tags": [
+                "identity",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                },
+                "channel": {
+                  "exact": "부모방·입주민방",
+                  "neutral": "단체 대화방"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-1:timeline:0",
+              "factText": "공개 글이 직접 대화보다 먼저 퍼졌다는 타임라인이 분노를 키운 사실",
+              "tags": [
+                "timeline",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                },
+                "time": {
+                  "exact": "사건 당일",
+                  "neutral": "그날",
+                  "dateExact": "사건 당일",
+                  "period": "비 오는 날"
+                },
+                "person": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "채팅 캡처를 보면 우리 애가 먼저 특정된 건 부정할 수 없죠."
+          ],
+          "privateKnowledge": [
+            "소연의 잘못과 별개로 자신도 과잉 대응했다는 사실을 떠올린다."
+          ],
+          "suppressions": [
+            "자신의 역소문이 별개 잘못이라는 말은 아직 꺼내지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-1:evidence:0",
+              "factText": "채팅 캡처만으로도 민우 특정과 절도 의심이 읽힌다는 근거",
+              "tags": [
+                "evidence",
+                "harm",
+                "identity"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "부모방·입주민방",
+                  "neutral": "단체 대화방"
+                },
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-1:responsibility:0",
+              "factText": "소연의 공개 글이 사건 확산의 첫 출발점이었다는 판단",
+              "tags": [
+                "responsibility",
+                "timeline",
+                "act"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                },
+                "timeGap": {
+                  "exact": "8분",
+                  "neutral": "잠깐 뒤"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "그 글이 먼저였기에 저도 예민해졌습니다. 우리 애 평판을 바로 막아야 한다고 느꼈어요."
+          ],
+          "privateKnowledge": [
+            "자신의 뒤이은 역소문이 방어 이상이 됐다는 점을 안다."
+          ],
+          "suppressions": [
+            "하윤에 대한 일반화 발언이 있었다는 부분을 아직 스스로 먼저 꺼내지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-1:beneficiary:0",
+              "factText": "민우 평판을 지키려는 마음이 대응 수위를 올린 동기",
+              "tags": [
+                "beneficiary",
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-1:counter:0",
+              "factText": "소연의 선공개를 이유로 자신의 반응을 일정 부분 정당화하려는 프레임",
+              "tags": [
+                "counter",
+                "self_justification",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박소연",
+                  "neutral": "상대 보호자",
+                  "fullName": "박소연",
+                  "judgeRef": "박소연 씨"
+                },
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "우리 애 이름이 먼저 돈 순간, 저는 그게 제일 무서웠습니다. 민우가 사실보다 이미지로 남을까 봐요."
+          ],
+          "privateKnowledge": [
+            "공개 지목과 자신의 방어 반응이 한 묶음으로 커졌다는 걸 이해한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-1:emotion:0",
+              "factText": "민우가 도둑으로 기억될까 봐 먼저 평판 손상을 두려워한 감정",
+              "tags": [
+                "emotion",
+                "fear",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-1:relationship:0",
+              "factText": "비 오는 날 공동픽업까지 하던 신뢰가 무너진 사건으로 받아들인 정서",
+              "tags": [
+                "relationship",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "person": {
+                  "exact": "박소연",
+                  "neutral": "상대 보호자",
+                  "fullName": "박소연",
+                  "judgeRef": "박소연 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "소연 씨 공개 글이 먼저였고 그건 분명 잘못이지만, 그걸 핑계로 제 대응까지 정당화할 수는 없습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 잘못과 자신의 잘못을 분리해서 말할 준비가 된다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-1:admission:0",
+              "factText": "소연의 공개 지목이 잘못이었더라도 자신이 뒤에 한 일은 별개라는 인식",
+              "tags": [
+                "admission",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박소연",
+                  "neutral": "상대 보호자",
+                  "fullName": "박소연",
+                  "judgeRef": "박소연 씨"
+                },
+                "channel": {
+                  "exact": "부모방·입주민방",
+                  "neutral": "단체 대화방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-1:relationship:1",
+              "factText": "민우 평판 피해를 회복하려면 맞대응 소문이 아니라 정정이 필요하다는 자각",
+              "tags": [
+                "relationship",
+                "beneficiary",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "소문을 돌린 게 아니라 우리 애 상황을 설명한 겁니다. 민우가 도둑처럼 보이는 걸 그냥 둘 순 없었어요."
+          ],
+          "privateKnowledge": [
+            "음성과 1:1 전달이 여러 개 남아 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "하윤의 평소 성향을 일반화해 말한 부분을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-2:denial:0",
+              "factText": "역소문이 아니라 민우 방어를 위한 설명이었다고 규정하는 주장",
+              "tags": [
+                "denial",
+                "self_justification",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-2:act:0",
+              "factText": "사건 직후 음성메시지와 개별 전달이 실제로 이루어진 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "46초 음성메시지",
+                  "neutral": "그 음성"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                },
+                "time": {
+                  "exact": "20분 안",
+                  "neutral": "곧바로"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "몇 분에게만 조심스럽게 말한 거예요. 하윤이를 깎아내리려던 의도는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "전달 범위를 줄여 말하고 있다는 자각이 있다."
+          ],
+          "suppressions": [
+            "'또 규칙을 바꾼다'는 표현이 성격 일반화라는 점을 인정하지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-2:timeline:0",
+              "factText": "전달 범위를 '몇 분' 수준으로 축소해 설명하는 태도",
+              "tags": [
+                "timeline",
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                },
+                "time": {
+                  "exact": "20분 안",
+                  "neutral": "곧바로"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-2:self_justification:0",
+              "factText": "민우 평판을 지키려는 목적이었기에 문제되지 않는다고 여기는 심리",
+              "tags": [
+                "self_justification",
+                "beneficiary",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "음성을 보낸 건 맞습니다. 다만 절도라고 단정한 건 아니고, 규칙 문제를 설명하려던 겁니다."
+          ],
+          "privateKnowledge": [
+            "하윤의 평소 행동을 끌어와 말한 건 사실이라는 걸 안다."
+          ],
+          "suppressions": [
+            "전달 횟수와 상대 아이 평가를 최소화해 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-2:evidence:0",
+              "factText": "정훈 본인 계정의 음성과 1:1 전달이 남아 있다는 사실",
+              "tags": [
+                "evidence",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "46초 음성메시지",
+                  "neutral": "그 음성"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-2:quote:0",
+              "factText": "'또 규칙을 바꾸고 울었다'는 식의 표현이 들어갔다는 사실",
+              "tags": [
+                "quote",
+                "harm",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                },
+                "evidence": {
+                  "exact": "46초 음성메시지",
+                  "neutral": "그 음성"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "그런데 하윤이가 평소에도 기준을 자주 바꿔서 애들이 헷갈린 건 사실 아닙니까. 그 맥락을 말한 거예요."
+          ],
+          "privateKnowledge": [
+            "이번 사건의 특수성을 흐리고 있다는 걸 알면서도 일반화로 밀어붙인다."
+          ],
+          "suppressions": [
+            "민우 평판 방어가 상대 아이 평판 손상과 연결됐다는 점을 인정하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-2:counter:0",
+              "factText": "이번 일 설명을 넘어 하윤의 평소 습관으로 논점을 넓히는 일반화",
+              "tags": [
+                "counter",
+                "quote",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-2:beneficiary:0",
+              "factText": "민우 평판 방어를 위해 상대 아이 책임을 더 크게 보이게 하는 전략",
+              "tags": [
+                "beneficiary",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "person2": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "우리 애가 도둑처럼 남을까 봐 저도 눈이 좁아졌습니다. 그래서 하윤 쪽 얘기를 더 붙였습니다."
+          ],
+          "privateKnowledge": [
+            "평판 방어가 자신의 말 수위를 올렸다는 걸 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-2:emotion:0",
+              "factText": "민우 평판 손상 공포가 상대 아이 평판을 건드리는 말로 이어진 상태",
+              "tags": [
+                "emotion",
+                "fear",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                },
+                "person2": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-2:responsibility:0",
+              "factText": "사실 확인 전 말 수위를 키운 책임이 자신에게 있다는 자각",
+              "tags": [
+                "responsibility",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                },
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "네, 사실 확인 전부터 하윤이를 '원래 그런 아이'처럼 말하고 다녔습니다. 우리 애를 지키겠다고 상대 아이 평판을 건드렸어요."
+          ],
+          "privateKnowledge": [
+            "상대 부모에게 직접 사과와 정정이 필요하다는 점을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-2:admission:0",
+              "factText": "하윤을 평소 성향 문제로 일반화해 여러 부모에게 전달한 일을 인정하는 진술",
+              "tags": [
+                "admission",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                },
+                "evidence": {
+                  "exact": "46초 음성메시지",
+                  "neutral": "그 음성"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-2:relationship:0",
+              "factText": "민우 평판을 지키려던 방어가 부모 간 신뢰까지 깎았다는 인정",
+              "tags": [
+                "relationship",
+                "beneficiary",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                },
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "민우는 안 훔쳤습니다. 애가 울었다고 바로 절도가 되는 건 아니에요."
+          ],
+          "privateKnowledge": [
+            "스티커 실물이 하윤 앨범 안에서 나올 가능성을 아직 모른다."
+          ],
+          "suppressions": [
+            "상대 아이와 부모에 대한 분노 때문에 규칙 문제를 덜 보려 한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-3:denial:0",
+              "factText": "민우 절도 주장을 정면으로 부인하는 방어",
+              "tags": [
+                "denial",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-3:counter:0",
+              "factText": "아이 울음만으로 절도를 성립시킬 수 없다고 맞서는 논리",
+              "tags": [
+                "counter",
+                "context",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "scene": {
+                  "exact": "울면서 돌아온 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "울었다는 장면과 빈 칸만으로는 부족합니다. 확인되지 않은 추정이 먼저 앞선 거죠."
+          ],
+          "privateKnowledge": [
+            "민우 무고 가능성만 크게 보고 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "자신도 상황을 규칙 오해보다는 억울함으로 받아들였다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-3:evidence:0",
+              "factText": "빈 칸과 첫 진술만으로는 절도를 확정할 수 없다는 기준",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "비어 있던 앨범 칸",
+                  "neutral": "그 자리"
+                },
+                "source": {
+                  "exact": "아이의 첫말",
+                  "neutral": "처음 들은 말"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-3:fear:0",
+              "factText": "민우가 근거 부족한 의심으로 도둑처럼 남을까 두려운 마음",
+              "tags": [
+                "fear",
+                "emotion",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "포켓 사진만 봐도 민우가 가져간 게 아니라는 건 드러납니다."
+          ],
+          "privateKnowledge": [
+            "이제는 절도 부정 근거가 확실하다고 느낀다."
+          ],
+          "suppressions": [
+            "하윤과 부모에 대한 공격적 표현을 줄이지 못한 점은 뒤로 미룬다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-3:evidence:1",
+              "factText": "하윤 앨범 안쪽 투명포켓 사진이 절도 부정을 직접 뒷받침하는 사실",
+              "tags": [
+                "evidence",
+                "act",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "place": {
+                  "exact": "하윤 앨범 안쪽 투명포켓",
+                  "neutral": "앨범 안쪽 자리"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-3:identity:0",
+              "factText": "민우 절도 프레임이 근거를 잃었다는 판단",
+              "tags": [
+                "identity",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "규칙이 헷갈린 상황을 절도로 몰아간 게 문제입니다. 사건의 이름 자체가 잘못 붙었어요."
+          ],
+          "privateKnowledge": [
+            "문제 핵심이 규칙 오해라는 방향으로 인식이 이동한다."
+          ],
+          "suppressions": [
+            "그럼에도 하윤의 평소 문제를 끌어다 쓰고 싶은 마음은 남아 있다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-3:rule:0",
+              "factText": "절도 여부보다 규칙 오해와 실랑이가 본질이라는 재정의",
+              "tags": [
+                "rule",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                },
+                "place": {
+                  "exact": "공동학습실",
+                  "neutral": "그 장소"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-3:harm:0",
+              "factText": "사건을 절도 프레임으로 부른 순간 아이 평판 피해가 커졌다는 인식",
+              "tags": [
+                "harm",
+                "identity",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "우리 애가 도둑 취급받은 충격이 커서, 저는 규칙 얘기보다 무고를 먼저 막으려 했습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 감정이 설명 순서를 바꿨다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-3:emotion:0",
+              "factText": "민우가 도둑으로 낙인찍힐까 봐 규칙 설명보다 방어가 먼저 나온 감정",
+              "tags": [
+                "emotion",
+                "fear",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-3:relationship:0",
+              "factText": "아이들 오해가 부모 간 평판 싸움으로 번졌다는 자각",
+              "tags": [
+                "relationship",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박소연",
+                  "neutral": "상대 보호자",
+                  "fullName": "박소연",
+                  "judgeRef": "박소연 씨"
+                },
+                "person2": {
+                  "exact": "이정훈",
+                  "neutral": "상대 보호자",
+                  "fullName": "이정훈",
+                  "judgeRef": "이정훈 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "민우가 훔친 건 아니었습니다. 다만 저도 처음부터 규칙 오해 가능성을 더 차분히 설명했어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "절도 부정과 별개로 부모 대응 책임도 있다는 점을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-3:admission:0",
+              "factText": "민우 절도 의심이 사실이 아니었다는 결론을 명확히 받아들이는 진술",
+              "tags": [
+                "admission",
+                "identity",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "item": {
+                  "exact": "한정판 스티커",
+                  "neutral": "문제의 물건"
+                },
+                "evidence": {
+                  "exact": "공동학습실 CCTV 5분 영상",
+                  "neutral": "영상 자료"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-3:responsibility:0",
+              "factText": "절도 부정만 외칠 것이 아니라 규칙 오해 설명과 진정이 더 빨랐어야 했다는 인정",
+              "tags": [
+                "responsibility",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                },
+                "person": {
+                  "exact": "박소연",
+                  "neutral": "상대 보호자",
+                  "fullName": "박소연",
+                  "judgeRef": "박소연 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "오해라고 보기엔 하윤 쪽이 먼저 교환이 끝난 것처럼 받아들인 겁니다. 민우는 자기 기준대로 보고 있었어요."
+          ],
+          "privateKnowledge": [
+            "규칙 설명이 애매했다는 사실을 어렴풋이 안다."
+          ],
+          "suppressions": [
+            "이번 일의 특수성을 하윤 성향 문제로 넓혀 말하려는 마음을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-4:denial:0",
+              "factText": "이번 다툼을 규칙 오해보다 하윤의 일방 해석으로 밀어두는 주장",
+              "tags": [
+                "denial",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-4:beneficiary:0",
+              "factText": "민우가 자기 기준대로 놀았을 뿐이라고 방어하는 프레임",
+              "tags": [
+                "beneficiary",
+                "identity",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "규칙을 다르게 이해했을 가능성은 있겠죠. 그래도 먼저 울음으로 번진 쪽은 하윤이었습니다."
+          ],
+          "privateKnowledge": [
+            "오해 가능성을 일부 받아들인다."
+          ],
+          "suppressions": [
+            "상담 메모가 나오면 자신의 설명이 약해진다는 걸 안다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-4:uncertainty:0",
+              "factText": "규칙 오해 가능성을 일부 인정하면서도 결과 책임을 하윤 쪽에 더 두는 태도",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-4:emotion:0",
+              "factText": "울음이 먼저 번진 장면을 근거로 하윤 책임을 크게 느끼는 반응",
+              "tags": [
+                "emotion",
+                "quote",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "scene": {
+                  "exact": "울면서 돌아온 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "교사 메모대로 서로 다르게 받아들인 건 맞습니다. 다만 민우 입장에선 갑자기 판이 바뀐 느낌이었을 거예요."
+          ],
+          "privateKnowledge": [
+            "직접 원인에 규칙 오해가 있었다는 걸 인정한다."
+          ],
+          "suppressions": [
+            "하윤 전체 성향을 끌어오는 버릇은 아직 남아 있다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-4:institution:0",
+              "factText": "담임교사 메모가 두 아이의 서로 다른 규칙 이해를 기록한 사실",
+              "tags": [
+                "institution",
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "담임교사 상담 메모",
+                  "neutral": "교사 기록"
+                },
+                "person": {
+                  "exact": "장예원",
+                  "neutral": "담임교사",
+                  "fullName": "장예원",
+                  "judgeRef": "담임교사"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-4:beneficiary:1",
+              "factText": "민우 입장에선 갑자기 기준이 바뀐 느낌이었다고 방어하는 설명",
+              "tags": [
+                "beneficiary",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 하윤 쪽이 규칙을 자주 바꾼다고 느낀 누적이 있었어요. 이번 일만 뚝 떼서 보면 민우도 억울합니다."
+          ],
+          "privateKnowledge": [
+            "이번 사건 특수성과 평소 누적 인상을 섞어 말하고 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "일반화 자체가 사건 핵심을 흐린다는 점을 아직 인정하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-4:counter:0",
+              "factText": "이번 사건 오해를 설명하면서 하윤의 평소 습관으로 논점을 확대하는 말",
+              "tags": [
+                "counter",
+                "quote",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-4:harm:0",
+              "factText": "평소 일반화가 이번 사건 원인 분석을 흐리게 만든다는 문제",
+              "tags": [
+                "harm",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "민우가 도둑처럼 찍힐까 봐 저도 규칙 설명보다 방어를 먼저 했습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 두려움이 설명 순서를 바꿨다는 걸 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-4:fear:0",
+              "factText": "민우가 도둑으로 보일까 두려워 사실 설명보다 방어를 먼저 세운 감정",
+              "tags": [
+                "fear",
+                "emotion",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-4:responsibility:0",
+              "factText": "규칙 오해 설명보다 상대 아이 책임을 먼저 밀어붙인 선택",
+              "tags": [
+                "responsibility",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "맞습니다. 절도가 아니라 규칙 오해와 앨범 실랑이가 핵심이었습니다."
+          ],
+          "privateKnowledge": [
+            "이제는 사건 원인을 오해와 실랑이로 명확히 정리한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-4:admission:0",
+              "factText": "이번 사건의 직접 원인이 절도가 아니라 규칙 오해와 앨범 실랑이였다고 인정하는 진술",
+              "tags": [
+                "admission",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "교환 규칙",
+                  "neutral": "놀이 규칙"
+                },
+                "place": {
+                  "exact": "공동학습실",
+                  "neutral": "그 장소"
+                },
+                "evidence": {
+                  "exact": "공동학습실 CCTV 5분 영상",
+                  "neutral": "영상 자료"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-4:relationship:0",
+              "factText": "민우를 방어하려다 하윤과 부모 관계를 더 꼬이게 만들었다는 자각",
+              "tags": [
+                "relationship",
+                "beneficiary",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "person2": {
+                  "exact": "하윤",
+                  "neutral": "상대 아이",
+                  "fullName": "하윤",
+                  "judgeRef": "하윤이"
+                },
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "제가 약속을 깬 게 아니라 공개 글 뒤에 대응한 겁니다. 먼저 방어하지 않으면 우리 애만 그대로 남는다고 봤어요."
+          ],
+          "privateKnowledge": [
+            "아이 문제는 부모끼리 먼저 확인하자는 약속을 기억한다."
+          ],
+          "suppressions": [
+            "다른 부모들에게 먼저 접촉한 사실을 축소하고 있다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-5:denial:0",
+              "factText": "자신의 연락 확산은 약속 파기가 아니라 사후 방어였다고 주장하는 태도",
+              "tags": [
+                "denial",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-5:beneficiary:0",
+              "factText": "민우 평판을 지키기 위해 먼저 움직일 수밖에 없었다고 여기는 심리",
+              "tags": [
+                "beneficiary",
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "직접 확인보다 앞선 연락이 조금 있었던 건 사실입니다. 그래도 불을 키우려는 의도보단 수습하려는 마음이 컸어요."
+          ],
+          "privateKnowledge": [
+            "자신도 약속 절차를 어겼다는 걸 안다."
+          ],
+          "suppressions": [
+            "수습이라는 이름으로 평판 방어를 우선한 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-5:timeline:0",
+              "factText": "직접 확인보다 다른 부모 연락이 앞선 순서를 '조금 있었던 일'로 줄여 말하는 태도",
+              "tags": [
+                "timeline",
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                },
+                "time": {
+                  "exact": "사건 당일",
+                  "neutral": "그날",
+                  "dateExact": "사건 당일",
+                  "period": "비 오는 날"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-5:self_justification:0",
+              "factText": "수습 명분으로 자신의 순서 위반을 합리화하는 설명",
+              "tags": [
+                "self_justification",
+                "relationship",
+                "beneficiary"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "네, 다른 부모들에게 먼저 말한 건 맞습니다. 그때는 민우가 도둑으로 굳어질까 봐 눈앞이 좁아졌어요."
+          ],
+          "privateKnowledge": [
+            "약속보다 평판 방어를 앞세운 사실을 부분 인정한다."
+          ],
+          "suppressions": [
+            "공개 글 때문이었다는 항변을 아직 붙들고 있다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-5:responsibility:0",
+              "factText": "직접 확인보다 주변 부모 연락을 먼저 택한 일을 인정하는 진술",
+              "tags": [
+                "responsibility",
+                "timeline",
+                "relationship"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                },
+                "time": {
+                  "exact": "사건 당일",
+                  "neutral": "그날",
+                  "dateExact": "사건 당일",
+                  "period": "비 오는 날"
+                },
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-5:fear:0",
+              "factText": "민우가 도둑으로 굳어질까 봐 평판 방어가 절차보다 앞섰다는 감정",
+              "tags": [
+                "fear",
+                "emotion",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 순서를 먼저 무너뜨린 건 소연 씨 쪽 공개 글이었잖아요. 저는 그 뒤에 방어적으로 움직인 겁니다."
+          ],
+          "privateKnowledge": [
+            "자신의 순서 위반이 독립된 책임이라는 걸 안다."
+          ],
+          "suppressions": [
+            "선행 위반을 이유로 자기 책임을 희석시키려 한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-5:counter:0",
+              "factText": "소연의 공개 글을 근거로 자신의 뒤이은 확산을 방어적 대응으로 재포장하는 주장",
+              "tags": [
+                "counter",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박소연",
+                  "neutral": "상대 보호자",
+                  "fullName": "박소연",
+                  "judgeRef": "박소연 씨"
+                },
+                "channel": {
+                  "exact": "부모방",
+                  "neutral": "단체 대화방"
+                },
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-5:timeline:1",
+              "factText": "연락 순서표상 자신도 직접 확인보다 주변 반응 관리가 먼저였던 사실",
+              "tags": [
+                "timeline",
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "timeline": {
+                  "exact": "연락 순서표",
+                  "neutral": "연락 기록"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                },
+                "time": {
+                  "exact": "사건 당일",
+                  "neutral": "그날",
+                  "dateExact": "사건 당일",
+                  "period": "비 오는 날"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "민우가 '도둑 집 아이'처럼 남을까 봐 약속이고 절차고 눈에 안 들어왔습니다."
+          ],
+          "privateKnowledge": [
+            "두려움 때문에 약속 위반을 스스로 정당화했다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-5:emotion:0",
+              "factText": "민우 평판이 무너질까 두려워 약속 절차가 보이지 않았던 감정",
+              "tags": [
+                "emotion",
+                "fear",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-5:relationship:0",
+              "factText": "직접 확인 약속보다 방어를 우선한 선택이 부모 신뢰를 더 깎았다는 자각",
+              "tags": [
+                "relationship",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "person": {
+                  "exact": "박소연",
+                  "neutral": "상대 보호자",
+                  "fullName": "박소연",
+                  "judgeRef": "박소연 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "결국 저도 약속을 지키지 못했습니다. 부모끼리 먼저 확인하자던 원칙보다 민우 평판 방어를 앞세웠어요."
+          ],
+          "privateKnowledge": [
+            "상대보다 먼저 잘못했는지를 따지기보다 자신의 책임을 따로 인정할 수 있다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor10:b:tell:reputation_shield",
+            "neighbor10:b:tell:habit_generalization",
+            "neighbor10:b:tell:low_scope_claim"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor10:b:d-5:admission:0",
+              "factText": "부모끼리 먼저 확인하자는 약속을 자신도 지키지 못했다고 인정하는 진술",
+              "tags": [
+                "admission",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "promise": {
+                  "exact": "비 오는 날 공동픽업 약속",
+                  "neutral": "기존 약속"
+                },
+                "channel": {
+                  "exact": "1:1 전달 메시지",
+                  "neutral": "개별 전달"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor10:b:d-5:beneficiary:1",
+              "factText": "민우 평판 방어를 앞세운 선택이 사건 수습보다 앞섰다는 인정",
+              "tags": [
+                "beneficiary",
+                "admission",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "민우",
+                  "neutral": "상대 아이",
+                  "fullName": "민우",
+                  "judgeRef": "민우"
+                },
+                "benefit": {
+                  "exact": "아이 평판",
+                  "neutral": "아이 이미지"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

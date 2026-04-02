@@ -1,0 +1,1337 @@
+export const neighbor10V3GameLoopData = {
+  "caseId": "neighbor-10",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "초기 확산 경로",
+      "description": "공개 글과 초기 대응 음성으로 사건이 어떻게 퍼졌는지 추적하는 카드다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "박소연 씨, 민우 이름과 한정판 종류를 함께 적은 글을 올리고도 단순 확인 요청이었다고 보십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor10:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "직접 1:1 연락보다 단체방 공개가 먼저였다는 점은, 부모끼리 먼저 확인하자는 약속을 스스로 넘긴 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor10:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "하윤이 울던 장면이 강하게 남았더라도, 그 감정이 사실 확인 절차를 밀어낸 부분은 인정하셔야 하지 않겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor10:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "이정훈 씨, 이 46초 음성에서 하윤이가 '또 규칙을 바꾸고 울었다'고 말한 건 사실 설명이 아니라 성격 일반화 아닙니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor10:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "'몇 분에게만 말했다'고 하셨지만 같은 취지의 1:1 전달이 여러 갈래로 남아 있습니다. 전달 범위를 줄여 말한 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor10:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "결국 민우 평판을 지키려는 마음 때문에, 사실 확인 전부터 상대 아이의 평소 성향을 덧붙인 것 아닌지 답해 보십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor10:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "현장 장면 재구성",
+      "description": "CCTV와 상담 메모를 맞대어 실제 다툼 원인을 복원하는 카드다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "CCTV에는 두 아이가 각자 자기 앨범을 들고 나갑니다. 이 장면 앞에서도 민우가 가져갔다고 단정하실 수 있습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor10:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "앨범 전체를 다시 확인하기 전, 하윤의 첫말을 곧바로 절도 의미로 받아들인 과정이 있었던 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor10:a:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "재판부는 사실이 아니라 판단이 굳어지는 순간을 묻고 있습니다. 빈 칸과 울음이 겹치며 절도처럼 확신한 부분이 있었습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor10:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "담임교사 메모에는 두 아이가 교환 규칙을 다르게 이해했다고 적혀 있습니다. 단순히 하윤 쪽 문제라고만 보실 수 있습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor10:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "이번 사건의 특수한 오해를 따지기보다 '원래 규칙을 자주 바꾼다'는 표현으로 하윤 전체를 일반화한 건 아니었습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor10:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "민우가 도둑처럼 보일까 두려워 규칙 오해 설명보다 상대 아이 책임을 먼저 세운 것인지, 그 동기를 말씀해 보십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor10:b:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "발견 이후의 책임",
+      "description": "스티커 발견 사진과 연락 순서표로, 진실이 드러난 뒤에도 남은 책임을 점검하는 카드다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "스티커가 하윤 앨범 안쪽 투명포켓에서 나온 이상, 이제는 민우 절도 의심이 틀렸다는 점을 명확히 인정하셔야 하지 않겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor10:a:d-3:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "공동픽업까지 맡기던 신뢰가 있었다면 더더욱 직접 확인이 먼저였어야 합니다. 그 신뢰가 깨졌다는 감정을 이유로 삼고 계신 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor10:a:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "사실이 정리된 지금, 공개 의심 글로 생긴 손상을 직접 바로잡을 책임까지 받아들이십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor10:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "연락 순서표를 보면 이정훈 씨 쪽도 직접 정리보다 다른 부모 연락이 먼저입니다. 약속을 깬 출발점이 본인 쪽에도 있었던 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor10:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "공개 글에 밀린 방어였다고 하셔도, 주변 부모 반응 관리가 직접 확인보다 앞선 건 결국 선택의 문제였습니다. 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor10:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "스티커가 포켓에서 발견된 뒤라면 더 이상 방어 명분만으로는 부족합니다. 부모끼리 먼저 확인하자는 약속을 본인도 지키지 못했다는 점을 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor10:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "neighbor10:a:d-1:unlock:s2:0",
+            "factText": "부모방 공개 글 작성 시각이 이정훈에게 보낸 직접 확인 메시지보다 8분 빨랐다는 점이 드러난다.",
+            "tags": [
+              "act",
+              "timeline",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "channel": {
+                "exact": "부모방",
+                "neutral": "단체 대화방"
+              },
+              "timeGap": {
+                "exact": "8분",
+                "neutral": "잠깐 뒤"
+              },
+              "person": {
+                "exact": "이정훈",
+                "neutral": "상대 보호자",
+                "fullName": "이정훈",
+                "judgeRef": "이정훈 씨"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor10:a:d-1:unlock:s3:0",
+            "factText": "'의심'이라고 적었더라도 민우 이름과 한정판 종류를 함께 올리면 사실상 공개 절도 암시로 받아들여질 수 있다는 맥락이 드러난다.",
+            "tags": [
+              "identity",
+              "harm",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "민우",
+                "neutral": "상대 아이",
+                "fullName": "민우",
+                "judgeRef": "민우"
+              },
+              "item": {
+                "exact": "한정판 스티커",
+                "neutral": "문제의 물건"
+              },
+              "channel": {
+                "exact": "부모방·입주민방",
+                "neutral": "단체 대화방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor10:a:d-1:unlock:s4:0",
+            "factText": "소연은 하윤의 울음과 놀란 표정을 먼저 믿으면서 확인보다 보호 행동이 앞섰다고 털어놓을 여지가 생긴다.",
+            "tags": [
+              "emotion",
+              "self_justification",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "scene": {
+                "exact": "울면서 돌아온 장면",
+                "neutral": "그 장면"
+              },
+              "person": {
+                "exact": "하윤",
+                "neutral": "상대 아이",
+                "fullName": "하윤",
+                "judgeRef": "하윤이"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor10:a:d-1:unlock:s5:0",
+            "factText": "소연이 직접 확인보다 단체방 동의를 먼저 구한 행동이 부모 간 기본 절차를 무너뜨린 일이라는 점을 스스로 인정할 수 있는 상태가 된다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "channel": {
+                "exact": "부모방·입주민방",
+                "neutral": "단체 대화방"
+              },
+              "promise": {
+                "exact": "비 오는 날 공동픽업 약속",
+                "neutral": "기존 약속"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "neighbor10:a:d-3:unlock:s2:0",
+            "factText": "문제의 한정판 스티커가 민우 쪽이 아니라 하윤 앨범 안쪽 투명포켓에 붙어 있었다는 사실이 확인된다.",
+            "tags": [
+              "evidence",
+              "context",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "item": {
+                "exact": "한정판 스티커",
+                "neutral": "문제의 물건"
+              },
+              "person": {
+                "exact": "하윤",
+                "neutral": "상대 아이",
+                "fullName": "하윤",
+                "judgeRef": "하윤이"
+              },
+              "place": {
+                "exact": "하윤 앨범 안쪽 투명포켓",
+                "neutral": "앨범 안쪽 자리"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor10:a:d-3:unlock:s3:0",
+            "factText": "소연은 앨범을 다시 끝까지 확인하지 않은 채 아이의 첫말을 '가져갔다'는 뜻으로 받아들였다는 빈틈과 마주하게 된다.",
+            "tags": [
+              "quote",
+              "uncertainty",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "source": {
+                "exact": "아이의 첫말",
+                "neutral": "처음 들은 말"
+              },
+              "place": {
+                "exact": "비어 있던 앨범 칸",
+                "neutral": "그 자리"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor10:a:d-3:unlock:s4:0",
+            "factText": "비어 보인 칸과 하윤의 울음이 겹치며 분실 가능성을 절도처럼 확신하게 된 감정적 경로가 드러난다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "self_justification"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "scene": {
+                "exact": "울면서 돌아온 장면",
+                "neutral": "그 장면"
+              },
+              "place": {
+                "exact": "비어 있던 앨범 칸",
+                "neutral": "그 자리"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor10:a:d-3:unlock:s5:0",
+            "factText": "CCTV에서 두 아이가 각자 자기 앨범을 들고 나간 장면까지 확인되면 민우 절도 의심이 성립하지 않는다는 점을 소연도 받아들일 수 있다.",
+            "tags": [
+              "evidence",
+              "admission",
+              "timeline"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "evidence": {
+                "exact": "공동학습실 CCTV 5분 영상",
+                "neutral": "영상 자료"
+              },
+              "person": {
+                "exact": "민우",
+                "neutral": "상대 아이",
+                "fullName": "민우",
+                "judgeRef": "민우"
+              },
+              "place": {
+                "exact": "공동학습실",
+                "neutral": "그 장소"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor10:a:d-5:unlock:s2:0",
+            "factText": "사건 당일 단체방 공개 글이 부모 간 1:1 직접 확인보다 먼저였다는 순서가 드러난다.",
+            "tags": [
+              "timeline",
+              "relationship",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "사건 당일",
+                "neutral": "그날",
+                "dateExact": "사건 당일",
+                "period": "비 오는 날"
+              },
+              "channel": {
+                "exact": "부모방",
+                "neutral": "단체 대화방"
+              },
+              "promise": {
+                "exact": "비 오는 날 공동픽업 약속",
+                "neutral": "기존 약속"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor10:a:d-5:unlock:s3:0",
+            "factText": "소연은 공동픽업으로 쌓인 신뢰가 오히려 '다른 부모도 바로 알아야 한다'는 조급함으로 뒤집혔음을 변명처럼 꺼낼 수 있다.",
+            "tags": [
+              "relationship",
+              "self_justification",
+              "emotion"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "promise": {
+                "exact": "비 오는 날 공동픽업 약속",
+                "neutral": "기존 약속"
+              },
+              "channel": {
+                "exact": "부모방",
+                "neutral": "단체 대화방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor10:a:d-5:unlock:s4:0",
+            "factText": "서로 아이를 맡길 만큼 믿던 사이였기에 더 배신감이 커졌고, 그 감정이 약속 순서를 밀어냈다는 속내가 드러난다.",
+            "tags": [
+              "emotion",
+              "relationship",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "promise": {
+                "exact": "비 오는 날 공동픽업 약속",
+                "neutral": "기존 약속"
+              },
+              "person": {
+                "exact": "이정훈",
+                "neutral": "상대 보호자",
+                "fullName": "이정훈",
+                "judgeRef": "이정훈 씨"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor10:a:d-5:unlock:s5:0",
+            "factText": "소연이 여론 형성보다 직접 확인을 먼저 했어야 한다는 점을 받아들이며 신뢰 약속 파기를 명시적으로 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "promise": {
+                "exact": "비 오는 날 공동픽업 약속",
+                "neutral": "기존 약속"
+              },
+              "channel": {
+                "exact": "1:1 전달 메시지",
+                "neutral": "개별 전달"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "neighbor10:b:d-2:unlock:s2:0",
+            "factText": "정훈 본인 계정의 46초 음성에 '하윤이가 또 규칙 바꾸고 울었다'는 취지의 성격 일반화가 담겨 있었다는 점이 드러난다.",
+            "tags": [
+              "quote",
+              "act",
+              "harm"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "46초 음성메시지",
+                "neutral": "그 음성"
+              },
+              "person": {
+                "exact": "하윤",
+                "neutral": "상대 아이",
+                "fullName": "하윤",
+                "judgeRef": "하윤이"
+              },
+              "rule": {
+                "exact": "교환 규칙",
+                "neutral": "놀이 규칙"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor10:b:d-2:unlock:s3:0",
+            "factText": "전달 범위를 '몇 분'이라고 줄여 말했지만 실제로는 복수의 1:1 대화로 같은 취지의 말이 퍼졌다는 점이 확인된다.",
+            "tags": [
+              "timeline",
+              "counter",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "channel": {
+                "exact": "1:1 전달 메시지",
+                "neutral": "개별 전달"
+              },
+              "time": {
+                "exact": "20분 안",
+                "neutral": "곧바로"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor10:b:d-2:unlock:s4:0",
+            "factText": "정훈이 민우 평판을 먼저 지키려다 상대 아이의 '평소 성향'까지 끌어와 방어한 감정 구조가 드러난다.",
+            "tags": [
+              "emotion",
+              "beneficiary",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "민우",
+                "neutral": "상대 아이",
+                "fullName": "민우",
+                "judgeRef": "민우"
+              },
+              "benefit": {
+                "exact": "아이 평판",
+                "neutral": "아이 이미지"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor10:b:d-2:unlock:s5:0",
+            "factText": "정훈이 사실 확인 전부터 하윤을 '원래 그런 아이'처럼 말한 것이 역소문 전파였음을 인정할 수 있는 상태가 된다.",
+            "tags": [
+              "admission",
+              "harm",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "하윤",
+                "neutral": "상대 아이",
+                "fullName": "하윤",
+                "judgeRef": "하윤이"
+              },
+              "channel": {
+                "exact": "1:1 전달 메시지",
+                "neutral": "개별 전달"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "neighbor10:b:d-4:unlock:s2:0",
+            "factText": "담임교사 상담 메모에는 두 아이가 같은 놀이를 서로 다른 교환 규칙으로 이해했다고 각각 기록돼 있다.",
+            "tags": [
+              "institution",
+              "rule",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "담임교사 상담 메모",
+                "neutral": "교사 기록"
+              },
+              "person": {
+                "exact": "장예원",
+                "neutral": "담임교사",
+                "fullName": "장예원",
+                "judgeRef": "담임교사"
+              },
+              "rule": {
+                "exact": "교환 규칙",
+                "neutral": "놀이 규칙"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor10:b:d-4:unlock:s3:0",
+            "factText": "정훈이 이번 사건의 특수성을 보기보다 '하윤이가 원래 규칙을 바꾼다'는 일반화로 오해의 핵심을 흐렸다는 점이 드러난다.",
+            "tags": [
+              "counter",
+              "harm",
+              "quote"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "하윤",
+                "neutral": "상대 아이",
+                "fullName": "하윤",
+                "judgeRef": "하윤이"
+              },
+              "rule": {
+                "exact": "교환 규칙",
+                "neutral": "놀이 규칙"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor10:b:d-4:unlock:s4:0",
+            "factText": "민우가 도둑처럼 찍힐까 두려워 규칙 오해 설명보다 상대 아이 책임을 먼저 밀어붙인 심리가 드러난다.",
+            "tags": [
+              "fear",
+              "emotion",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "민우",
+                "neutral": "상대 아이",
+                "fullName": "민우",
+                "judgeRef": "민우"
+              },
+              "benefit": {
+                "exact": "아이 평판",
+                "neutral": "아이 이미지"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor10:b:d-4:unlock:s5:0",
+            "factText": "CCTV와 상담 메모를 함께 보면 직접 원인은 절도가 아니라 규칙 오해와 앨범 실랑이였다는 점을 정훈도 인정할 수 있다.",
+            "tags": [
+              "admission",
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "evidence": {
+                "exact": "공동학습실 CCTV 5분 영상",
+                "neutral": "영상 자료"
+              },
+              "institution": {
+                "exact": "담임교사 상담 메모",
+                "neutral": "교사 기록"
+              },
+              "rule": {
+                "exact": "교환 규칙",
+                "neutral": "놀이 규칙"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor10:b:d-5:unlock:s2:0",
+            "factText": "정훈의 음성메시지와 1:1 전달 시각 역시 소연과 직접 정리하기 전에 먼저 찍혀 있다는 순서가 드러난다.",
+            "tags": [
+              "timeline",
+              "relationship",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "46초 음성메시지",
+                "neutral": "그 음성"
+              },
+              "channel": {
+                "exact": "1:1 전달 메시지",
+                "neutral": "개별 전달"
+              },
+              "time": {
+                "exact": "사건 당일",
+                "neutral": "그날",
+                "dateExact": "사건 당일",
+                "period": "비 오는 날"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor10:b:d-5:unlock:s3:0",
+            "factText": "정훈은 공개 글 직후 자기 쪽 평판 방어를 우선하며 약속보다 주변 부모 반응 관리에 먼저 들어갔다는 점과 마주하게 된다.",
+            "tags": [
+              "beneficiary",
+              "relationship",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "benefit": {
+                "exact": "아이 평판",
+                "neutral": "아이 이미지"
+              },
+              "channel": {
+                "exact": "1:1 전달 메시지",
+                "neutral": "개별 전달"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor10:b:d-5:unlock:s4:0",
+            "factText": "민우가 '도둑으로 찍힌 아이'가 될까 봐 두려워 약속된 직접 확인 절차를 놓쳤다는 감정이 드러난다.",
+            "tags": [
+              "fear",
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "민우",
+                "neutral": "상대 아이",
+                "fullName": "민우",
+                "judgeRef": "민우"
+              },
+              "promise": {
+                "exact": "비 오는 날 공동픽업 약속",
+                "neutral": "기존 약속"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor10:b:d-5:unlock:s5:0",
+            "factText": "정훈 역시 부모끼리 먼저 확인하자는 약속을 지키지 못했고, 방어 명분으로도 그 순서 위반이 사라지지 않는다는 점을 인정하게 된다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "promise": {
+                "exact": "비 오는 날 공동픽업 약속",
+                "neutral": "기존 약속"
+              },
+              "channel": {
+                "exact": "1:1 전달 메시지",
+                "neutral": "개별 전달"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "neighbor10:contradiction:0",
+        "targetParty": "a",
+        "trigger": "소연이 '의심만 했을 뿐 공개 지목은 아니었다'고 주장할 때",
+        "text": "의심이라고 적었다 해도 민우 이름과 한정판 종류를 함께 올린 순간, 공개 절도 암시는 이미 성립합니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "neighbor10:contradiction:1",
+        "targetParty": "b",
+        "trigger": "정훈이 '몇 분에게만 설명했다'며 역소문 범위를 축소할 때",
+        "text": "범위를 줄여 말해도 46초 음성과 복수의 1:1 전달이 남아 있습니다. 설명이 아니라 반복 전파였습니다.",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "neighbor10:contradiction:2",
+        "targetParty": "a",
+        "trigger": "소연이 여전히 민우 절도 가능성을 강하게 붙들 때",
+        "text": "포켓 사진과 CCTV를 함께 보면 스티커는 하윤 앨범 안에 있었고, 민우가 남의 앨범을 챙겨 나간 장면도 없습니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-5"
+        ]
+      },
+      {
+        "id": "neighbor10:contradiction:3",
+        "targetParty": "b",
+        "trigger": "정훈이 이번 사건을 단순히 하윤의 성향 문제로 몰아갈 때",
+        "text": "담임교사 메모에는 두 아이가 교환 규칙을 다르게 이해했다고 따로 적혀 있습니다. 이번 사건의 원인을 평소 습관 하나로 덮을 수는 없습니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "neighbor10:interjection:0",
+        "speaker": "a",
+        "trigger": "정훈이 '하윤이가 원래 규칙을 바꾼다'는 일반화를 반복할 때",
+        "text": "또 원래 그랬다고 몰아가시네요? 그날 일부터 정확히 보자는 거잖아요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      },
+      {
+        "id": "neighbor10:interjection:1",
+        "speaker": "b",
+        "trigger": "소연이 계속 하윤의 울음만 근거로 민우 의심을 이어갈 때",
+        "text": "울었다는 장면만으로 우리 애를 계속 도둑 취급하시면 안 되죠.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "neighbor10:interjection:2",
+        "speaker": "judge",
+        "trigger": "두 사람이 동시에 상대 부모 책임만 강조하며 겹쳐 말할 때",
+        "text": "두 분 다 멈추십시오. 지금은 누가 더 크게 상처받았는지가 아니라, 누가 어떤 순서로 사실을 벗어났는지를 확인합니다.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "neighbor10:outburst:a:0",
+        "party": "a",
+        "trigger": "포켓 사진이 제시된 뒤에도 하윤의 첫말이 가볍게 취급된다고 소연이 느낄 때",
+        "text": "전 애가 떨면서 들어온 그 얼굴을 봤어요. 그 순간에 어떤 엄마가 '잠깐만, 앨범부터 끝까지 보자'고 바로 말하겠어요?",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      },
+      {
+        "id": "neighbor10:outburst:a:1",
+        "party": "a",
+        "trigger": "정훈이 공개 글 책임을 인정하지 않은 채 하윤 성향만 문제 삼을 때",
+        "text": "제가 서두른 건 인정해도, 우리 아이를 '원래 그런 애'로 돌려 말한 건 더 오래 남아요. 그 말은 하윤 얼굴에 바로 붙습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "neighbor10:outburst:b:0",
+        "party": "b",
+        "trigger": "민우 절도 의심이 사실처럼 반복될 때",
+        "text": "우리 애는 안 가져갔습니다. 그 한마디를 제일 먼저 들어야 했는데, 다들 이름부터 기억하게 됐잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "neighbor10:outburst:b:1",
+        "party": "b",
+        "trigger": "정훈에게 약속 파기 책임을 묻는 질문이 이어질 때",
+        "text": "저도 순서 지킨 거 아니라는 건 압니다. 그런데 공개 글이 뜬 뒤엔 우리 애 평판부터 막아야 한다는 생각밖에 안 났어요.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "neighbor10:transition:a:d-1:s0_s1",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "public_accusation_question",
+      "line": "절도라고 확정하려던 건 아니었어요. 다만 그때는 그렇게 의심할 수밖에 없었다는 뜻이었습니다.",
+      "behaviorHint": "손을 내저으며 어조를 한 단계 낮춘다."
+    },
+    {
+      "id": "neighbor10:transition:a:d-1:s1_s2",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "캡처 시각까지 보면 제가 먼저 올린 건 맞네요. 그 부분은 더 숨기기 어렵습니다.",
+      "behaviorHint": "휴대폰 화면을 확인하고 말이 짧아진다."
+    },
+    {
+      "id": "neighbor10:transition:a:d-1:s2_s4",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_child_crying",
+      "line": "하윤이 울던 얼굴이 너무 크게 남았어요. 그래서 확인보다 보호가 먼저 튀어나왔습니다.",
+      "behaviorHint": "눈가가 굳고 손을 모아 쥔다."
+    },
+    {
+      "id": "neighbor10:transition:a:d-1:s4_s5",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "네, 결국 공개 글을 먼저 올린 책임은 제 몫이에요. 직접 묻지 않은 채 이름을 올린 건 잘못이었습니다.",
+      "behaviorHint": "한 박자 쉬고 고개를 숙인다."
+    },
+    {
+      "id": "neighbor10:transition:a:d-3:s0_s1",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "theft_basis_question",
+      "line": "저도 100퍼센트 봤다는 건 아니에요. 다만 그때는 사라진 걸로밖에 안 보였습니다.",
+      "behaviorHint": "빈 칸을 떠올리듯 손끝을 움찔한다."
+    },
+    {
+      "id": "neighbor10:transition:a:d-3:s1_s2",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "포켓 사진이 나오면 제가 놓친 부분이 있었던 거죠. 없어졌다고 본 전제가 흔들리네요.",
+      "behaviorHint": "사진을 보다 눈썹이 내려간다."
+    },
+    {
+      "id": "neighbor10:transition:a:d-3:s2_s3",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "album_pocket_followup",
+      "line": "그래도 그 혼란이 왜 생겼는지는 봐야죠. 둘이 잡아당기며 상황을 키운 건 사실이니까요.",
+      "behaviorHint": "인정을 하면서도 곧바로 책임을 나눈다."
+    },
+    {
+      "id": "neighbor10:transition:a:d-3:s3_s5",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-3_presented",
+      "line": "CCTV까지 보면 민우가 가져간 건 아니네요. 제가 분실과 절도를 섞어 받아들였던 겁니다.",
+      "behaviorHint": "어깨 힘이 빠지며 시선을 떨군다."
+    },
+    {
+      "id": "neighbor10:transition:a:d-5:s0_s1",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "parent_first_contact_reminder",
+      "line": "원래 먼저 연락하기로 한 건 맞죠. 다만 그날은 너무 급해서 순서를 놓쳤어요.",
+      "behaviorHint": "단호함이 누그러지고 변명조가 섞인다."
+    },
+    {
+      "id": "neighbor10:transition:a:d-5:s1_s4",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_pickup_trust",
+      "line": "서로 아이를 맡길 정도였으니 더 배신감이 컸어요. 그래서 더 조급하게 단체방으로 갔습니다.",
+      "behaviorHint": "숨을 길게 내쉬며 감정을 드러낸다."
+    },
+    {
+      "id": "neighbor10:transition:a:d-5:s4_s5",
+      "caseId": "neighbor-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "연락 순서표를 보면 제가 약속보다 여론을 먼저 잡으려 한 셈이네요. 그건 인정합니다.",
+      "behaviorHint": "입술을 깨물고 짧게 고개를 끄덕인다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-2:s0_s1",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "rumor_question",
+      "line": "소문이라기보단 몇 사람에게 설명한 정도입니다. 그렇게까지 번질 줄은 몰랐어요.",
+      "behaviorHint": "자세를 고쳐 앉으며 범위를 줄여 말한다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-2:s1_s2",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "그 음성이 제 것이라면 아예 부인할 순 없겠네요. 다만 절도를 단정한 건 아니었습니다.",
+      "behaviorHint": "짧게 숨을 들이쉬고 말을 골라 잇는다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-2:s2_s3",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "share_scope_followup",
+      "line": "전달 범위보다도 문제 상황이 반복된다는 맥락을 말한 겁니다. 하윤 쪽도 늘 기준이 흔들렸어요.",
+      "behaviorHint": "시선을 세우며 상대 아이 습관을 끌어온다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-2:s3_s5",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "neighbor_count_question",
+      "line": "네, 범위를 줄여 말해도 결국 제가 여러 부모에게 하윤이를 일반화한 건 맞습니다.",
+      "behaviorHint": "턱 힘이 풀리고 인정하는 쪽으로 기울어진다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-4:s0_s1",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "misunderstanding_question",
+      "line": "서로 다르게 받아들였을 가능성은 있습니다. 다만 그때 민우 입장도 꽤 당황스러웠어요.",
+      "behaviorHint": "어조를 낮추고 단정을 조금 거둔다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-4:s1_s2",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "교사 메모까지 보면 규칙 이해가 엇갈린 건 부정하기 어렵네요.",
+      "behaviorHint": "메모를 보고 한참 뜸을 들인다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-4:s2_s4",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_child_pride",
+      "line": "민우가 도둑처럼 찍힐까 봐 저도 규칙 문제보다 방어부터 했습니다. 그게 솔직한 마음입니다.",
+      "behaviorHint": "입꼬리가 굳고 목소리가 낮아진다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-4:s4_s5",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-3_presented",
+      "line": "영상까지 합치면 원인은 절도가 아니라 규칙 오해와 실랑이였다고 봐야 합니다.",
+      "behaviorHint": "두 손을 내려놓고 사실관계를 정리하듯 말한다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-5:s0_s1",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "parent_first_contact_reminder",
+      "line": "직접 확인이 먼저였다는 건 압니다. 다만 공개 글이 떠버린 뒤라 저도 급했습니다.",
+      "behaviorHint": "고개를 살짝 끄덕이며 완전 부인을 거둔다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-5:s1_s2",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "timeline_question",
+      "line": "제쪽도 다른 부모에게 먼저 말한 건 맞아요. 그때는 평판부터 막아야 한다고 생각했습니다.",
+      "behaviorHint": "손가락을 맞물리며 부분 인정한다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-5:s2_s3",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-6_presented",
+      "line": "순서를 보면 저도 약속을 지킨 건 아니네요. 그래도 저는 공개 글에 밀려 방어적으로 움직였습니다.",
+      "behaviorHint": "인정 뒤 곧바로 책임 비율을 따진다."
+    },
+    {
+      "id": "neighbor10:transition:b:d-5:s3_s5",
+      "caseId": "neighbor-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "네, 선후를 따져도 결국 저 역시 약속을 깼습니다. 직접 확인보다 주변 부모 반응을 먼저 신경 썼어요.",
+      "behaviorHint": "시선을 내리고 차분히 자인한다."
+    }
+  ]
+}

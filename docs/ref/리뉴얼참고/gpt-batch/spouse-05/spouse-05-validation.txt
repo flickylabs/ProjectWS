@@ -1,0 +1,8 @@
+caseId normalized: spouse05
+claimPolicies states: 60
+executable tells: 6
+beatScripts: 36
+dossierCards: 3
+stateUnlockAtoms: 24
+transitionBeats: 21
+validation errors: 0

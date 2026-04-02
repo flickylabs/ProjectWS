@@ -13,6 +13,8 @@ import DossierCardPanel from './DossierCardPanel'
 import { QuestionMeterHUD } from '../discovery/StateTransitionFeedback'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
 import { getDossierCards } from '../../engine/v3GameLoopLoader'
+import { evaluateDossierUnlock } from '../../engine/meterStagingV2'
+import { showToast } from '../common/Toast'
 
 import Emoji from '../common/Emoji'
 
@@ -104,7 +106,29 @@ export default function ActionPanel() {
   const evLocked = isEvidenceLocked(currentPhase)
   const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
   const turnCount = useGameStore((s) => s.turnCount)
-  const hasDossierCards = getDossierCards(caseKey).length > 0 && turnCount >= 4
+
+  // 사건카드 조건 해금 (meterStagingV2 엔진 기반)
+  const metersA = useGameStore((s) => s.questionMeters.a)
+  const metersB = useGameStore((s) => s.questionMeters.b)
+  const anyLieCracked = useGameStore((s) => {
+    const checkAgent = (agent: { lieStateMap: Record<string, { currentState: string }> }) =>
+      Object.values(agent.lieStateMap).some(e => e.currentState !== 'S0')
+    return checkAgent(s.agentA) || checkAgent(s.agentB)
+  })
+  const dossierUnlockPrevRef = useRef(false)
+  const dossierUnlockResult = evaluateDossierUnlock({
+    turn: turnCount,
+    alreadyUnlocked: dossierUnlockPrevRef.current,
+    hasAnyCrack: anyLieCracked,
+    highestContradictionTokens: Math.max(metersA.contradictionTokens, metersB.contradictionTokens),
+    highestTrustWindow: Math.max(metersA.trustWindow, metersB.trustWindow),
+  })
+  if (dossierUnlockResult.newlyUnlocked) {
+    dossierUnlockPrevRef.current = true
+    showToast(dossierUnlockResult.label, 'success')
+  }
+  if (dossierUnlockResult.unlocked) dossierUnlockPrevRef.current = true
+  const hasDossierCards = getDossierCards(caseKey).length > 0 && dossierUnlockResult.unlocked
 
   // ── 토글 스킬 해금 상태 ──
   const toggles: QuestionToggles = {

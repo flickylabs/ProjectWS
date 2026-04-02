@@ -13,7 +13,11 @@ import { useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import type { CaseData, PartyId } from '../../types'
 import type { LieState } from '../../types'
+import type { DisputeDepthLayer } from '../../types'
 import { QuestionMeterHUD } from './StateTransitionFeedback'
+import { getDisputeV2, getActiveLayer, getBeatRuntimeState, hasV2Data } from '../../engine/v2DataLoader'
+import { getMisconceptionState } from '../../engine/misconceptionEngine'
+import { normalizeCaseKey } from '../../utils/caseHelpers'
 
 type DisputeStatus = 'unopened' | 'contested' | 'cracked' | 'resolved'
 
@@ -172,6 +176,13 @@ function DisputeCard({
       {/* Tier 2: 확장 시 보이는 정보 */}
       {isExpanded && (
         <div className="border-t border-gray-800/40 px-3 py-2 animate-fade-in">
+
+          {/* 쟁점 층위 (V2 데이터가 있을 때만) */}
+          <DepthLayerDisplay disputeId={card.disputeId} caseData={caseData} aState={card.aState} />
+
+          {/* Misconception 상태 (red_herring만) */}
+          <MisconceptionDisplay disputeId={card.disputeId} />
+
           {/* 관련 증거 칩 */}
           {relatedEvidence.length > 0 && (
             <div className="mb-2">
@@ -304,4 +315,110 @@ function buildCards(
       isHidden: false,
     }
   })
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 쟁점 층위 표시 (카드 펼침)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+const LAYER_STYLES = {
+  surface: { icon: '📄', activeClass: 'border-amber-500/50 bg-amber-950/30 text-amber-300', lockedClass: 'border-gray-700/30 bg-gray-900/30 text-gray-500' },
+  motive: { icon: '🔍', activeClass: 'border-blue-500/50 bg-blue-950/30 text-blue-300', lockedClass: 'border-gray-700/30 bg-gray-900/30 text-gray-500' },
+  core: { icon: '💎', activeClass: 'border-purple-500/50 bg-purple-950/30 text-purple-300', lockedClass: 'border-gray-700/30 bg-gray-900/30 text-gray-500' },
+} as const
+
+function DepthLayerDisplay({ disputeId, caseData, aState }: {
+  disputeId: string
+  caseData: CaseData
+  aState: LieState | null
+}) {
+  const caseKey = normalizeCaseKey(caseData.caseId ?? '')
+  if (!hasV2Data(caseKey)) return null
+
+  const disputeV2 = getDisputeV2(caseKey, disputeId)
+  if (!disputeV2?.depthLayers || disputeV2.depthLayers.length === 0) return null
+
+  const runtimeState = getBeatRuntimeState(caseKey)
+  const currentLieState = aState ?? 'S0'
+  const activeLayerId = getActiveLayer(caseKey, disputeId, currentLieState, runtimeState.flags, new Set())
+
+  const layers = disputeV2.depthLayers
+  const activeRank = { surface: 0, motive: 1, core: 2 }[activeLayerId] ?? 0
+
+  return (
+    <div className="mb-2">
+      <span className="text-[10px] text-gray-500 block mb-1">쟁점 깊이</span>
+      <div className="space-y-1">
+        {layers.map((layer, i) => {
+          const layerRank = { surface: 0, motive: 1, core: 2 }[layer.id] ?? 0
+          const isUnlocked = layerRank <= activeRank
+          const isCurrent = layer.id === activeLayerId
+          const style = LAYER_STYLES[layer.id as keyof typeof LAYER_STYLES] ?? LAYER_STYLES.surface
+
+          return (
+            <div
+              key={layer.id}
+              className={`flex items-start gap-2 px-2 py-1.5 rounded-lg border transition-all ${
+                isUnlocked ? style.activeClass : style.lockedClass
+              } ${isCurrent ? 'ring-1 ring-white/20' : ''}`}
+            >
+              <span className="text-sm shrink-0">{isUnlocked ? style.icon : '🔒'}</span>
+              <div className="min-w-0">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[10px] font-bold">{layer.label}</span>
+                  {isCurrent && <span className="text-[8px] px-1 py-0.5 bg-white/10 rounded font-semibold">현재</span>}
+                </div>
+                <p className="text-[10px] leading-tight mt-0.5 opacity-80">
+                  {isUnlocked ? layer.summary : (layer.lockedSummary ?? '아직 이 층은 잠겨 있습니다.')}
+                </p>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// Misconception 상태 표시 (red_herring / shared_misconception만)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+const M_LABELS: Record<string, { label: string; color: string }> = {
+  M0: { label: '외형상 의심', color: 'text-red-400/70' },
+  M1: { label: '방어/당황', color: 'text-orange-400/70' },
+  M2: { label: '오해 고착', color: 'text-yellow-400/70' },
+  M3: { label: '확신 약화', color: 'text-blue-400/70' },
+  M4: { label: '오해 해소', color: 'text-emerald-400/70' },
+}
+
+function MisconceptionDisplay({ disputeId }: { disputeId: string }) {
+  const mState = getMisconceptionState(disputeId)
+  if (!mState) return null
+
+  const info = M_LABELS[mState] ?? { label: mState, color: 'text-gray-400' }
+  const rank = { M0: 0, M1: 1, M2: 2, M3: 3, M4: 4 }[mState] ?? 0
+
+  return (
+    <div className="mb-2">
+      <span className="text-[10px] text-gray-500 block mb-1">오해 상태</span>
+      <div className="flex items-center gap-1">
+        {['M0', 'M1', 'M2', 'M3', 'M4'].map((m, i) => {
+          const isActive = i <= rank
+          const isCurrent = m === mState
+          return (
+            <div
+              key={m}
+              className={`flex-1 h-1.5 rounded-full transition-all ${
+                isActive
+                  ? i <= 1 ? 'bg-red-500/60' : i <= 2 ? 'bg-yellow-500/60' : 'bg-emerald-500/60'
+                  : 'bg-gray-800'
+              } ${isCurrent ? 'ring-1 ring-white/30' : ''}`}
+            />
+          )
+        })}
+      </div>
+      <span className={`text-[10px] mt-1 block ${info.color}`}>{info.label}</span>
+    </div>
+  )
 }

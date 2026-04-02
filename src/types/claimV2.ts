@@ -42,6 +42,7 @@ export type ClaimAtomTag =
   | 'threshold'          // 기준선 (100만원 등)
   | 'beneficiary'        // 대상자
   | 'institution'        // 기관/센터
+  | 'location'           // 장소/위치
   | 'legacy_sentence'    // v1 fallback 합성
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -57,6 +58,7 @@ export interface AmountSlot {
 export interface TimeSlot {
   dateExact?: string        // "9월 20일"
   timeExact?: string        // "오후 2시 03분"
+  dateTimeExact?: string    // "9월 20일 14시 03분"
   period?: string           // "추석 연휴 직전"
   neutral: string           // "그날" | "그 시점"
 }
@@ -93,6 +95,18 @@ export interface ActionSlot {
   neutral: string           // "그 일"
 }
 
+export interface PlaceSlot {
+  exact?: string            // "모텔가 인근 골목"
+  shortName?: string        // "그 골목"
+  neutral: string           // "그곳"
+}
+
+export interface ThresholdSlot {
+  thresholdExact?: string   // "100만원"
+  thresholdNeutral?: string // "기준선"
+  neutral: string           // "그 금액 기준"
+}
+
 export interface ClaimAtomSlots {
   amount?: AmountSlot
   time?: TimeSlot
@@ -102,11 +116,13 @@ export interface ClaimAtomSlots {
   message?: MessageSlot
   rule?: RuleSlot
   action?: ActionSlot
+  place?: PlaceSlot
+  threshold?: ThresholdSlot
   beneficiary?: PersonSlot
 }
 
 export type SlotFamily = keyof ClaimAtomSlots
-export type SlotSurfaceMode = 'exact' | 'rounded' | 'neutral' | 'dateExact' | 'timeExact' | 'period' | 'judgeRef' | 'directRef' | 'angryRef' | 'role' | 'fullName' | 'shortName' | 'quoteExact' | 'quoteShort'
+export type SlotSurfaceMode = 'exact' | 'rounded' | 'neutral' | 'dateExact' | 'timeExact' | 'dateTimeExact' | 'period' | 'judgeRef' | 'directRef' | 'angryRef' | 'role' | 'fullName' | 'shortName' | 'quoteExact' | 'quoteShort' | 'thresholdExact' | 'thresholdNeutral'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // ClaimAtom 인터페이스
@@ -154,6 +170,8 @@ export interface ClaimPolicyV2 {
   tellPool: string[]
   /** legacy 호환용 (Board 요약, fallback) */
   publicClaim?: string[]
+  /** legacy fallback: publicClaim을 합성할 수 없을 때의 대체 문장 */
+  fallbackPublicClaim?: string[]
   /** 스키마 버전 */
   schemaVersion: 'v2'
 }

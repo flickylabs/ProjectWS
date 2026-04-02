@@ -174,7 +174,7 @@ export interface ExecutableVerbalTell {
 // 6. BeatScript — 핵심 대사 사전 생성
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-export type BeatType = 'deny' | 'hedge' | 'partial' | 'blame' | 'confession' | 'evidence_hit'
+export type BeatType = 'deny' | 'hedge' | 'partial' | 'blame' | 'emotional' | 'confession' | 'evidence_hit'
 
 export interface BeatScript {
   caseId: string

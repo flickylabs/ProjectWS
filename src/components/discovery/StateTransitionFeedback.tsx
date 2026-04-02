@@ -13,6 +13,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import type { LieState } from '../../types'
+import { getMeterHudModel, type MeterDisplayMode } from '../../engine/meterStagingV2'
 
 type TransitionLabel = 'cracked' | 'cornered' | 'opening' | 'confessed' | null
 
@@ -130,45 +131,43 @@ export function StateTransitionToast() {
   )
 }
 
-/** 미터 바 HUD — 3개 미터를 컴팩트하게 표시 */
+/** 미터 바 HUD — meterStagingV2 엔진 기반 */
 export function QuestionMeterHUD({ party }: { party: 'a' | 'b' }) {
   const meters = useGameStore(s => s.questionMeters[party])
-  // selector에서 새 객체 생성 방지 — 값을 직접 계산
-  const meterEffects = {
-    contradictionActive: meters.contradictionTokens >= 2,
-    leakWarning: meters.leakMeter >= 50,
-    leakCritical: meters.leakMeter >= 80,
-    trustWindowOpen: meters.trustWindow >= 60,
-  }
+  const hardcoreMode = useGameStore(s => s.phase3Flags?.useBeatSelectorV2 === false)
+  const mode: MeterDisplayMode = hardcoreMode ? 'exact' : 'staged'
+  const hud = getMeterHudModel(meters, mode)
 
   return (
     <div className="flex items-center gap-3">
-      {/* 모순토큰 */}
+      {/* 모순토큰 — 이산형, 변경 없음 */}
       <MeterPip
-        label="모순"
-        value={meters.contradictionTokens}
-        max={5}
-        active={meterEffects.contradictionActive}
+        label={hud.contradiction.label}
+        value={hud.contradiction.value}
+        max={hud.contradiction.max}
+        active={hud.contradiction.active}
         color="yellow"
       />
-      {/* 누설미터 */}
+      {/* 누설미터 — 단계형 */}
       <MeterBar
-        label="누설"
+        label={hud.leak.label}
         value={meters.leakMeter}
         max={100}
-        warning={meterEffects.leakWarning}
-        critical={meterEffects.leakCritical}
+        warning={meters.leakMeter >= 50}
+        critical={meters.leakMeter >= 80}
         color="orange"
+        stageLabel={hud.leak.stageLabel}
       />
-      {/* 신뢰창구 */}
+      {/* 신뢰창구 — 단계형 */}
       <MeterBar
-        label="신뢰"
+        label={hud.trust.label}
         value={meters.trustWindow}
         max={100}
         warning={false}
         critical={false}
-        active={meterEffects.trustWindowOpen}
+        active={meters.trustWindow >= 60}
         color="blue"
+        stageLabel={hud.trust.stageLabel}
       />
     </div>
   )
@@ -206,8 +205,8 @@ function MeterPip({ label, value, max, active, color }: {
   )
 }
 
-/** 연속형 미터 (바 형태) */
-function MeterBar({ label, value, max, warning, critical, active, color }: {
+/** 연속형 미터 (바 형태) — stageLabel이 있으면 단계형, 없으면 % 표시 */
+function MeterBar({ label, value, max, warning, critical, active, color, stageLabel }: {
   label: string
   value: number
   max: number
@@ -215,6 +214,7 @@ function MeterBar({ label, value, max, warning, critical, active, color }: {
   critical: boolean
   active?: boolean
   color: 'yellow' | 'orange' | 'blue'
+  stageLabel?: string
 }) {
   const pct = Math.round((value / max) * 100)
   const barColor = critical
@@ -246,7 +246,7 @@ function MeterBar({ label, value, max, warning, critical, active, color }: {
           style={{ width: `${pct}%` }}
         />
       </div>
-      <span className={`text-[8px] ${labelColor}`}>{pct}%</span>
+      <span className={`text-[8px] ${labelColor}`}>{stageLabel ?? `${pct}%`}</span>
     </div>
   )
 }

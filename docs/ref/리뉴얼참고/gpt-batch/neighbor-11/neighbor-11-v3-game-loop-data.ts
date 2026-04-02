@@ -1,0 +1,1685 @@
+export const neighbor11V3GameLoopData = {
+  "caseId": "neighbor-11",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "출입 흔적과 편집 클립 묶음",
+      "description": "복제 태그 출입 방식과 31초 편집 클립의 선행 유포를 동시에 겨냥하는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "출입로그와 휴대폰 NFC 기록이 같은 UID를 가리키는데, 정식 승인 없이 4층 서비스도어를 연 사실부터 답하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor11:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "점검 목적이었다면 왜 관리대행사 절차가 아니라 복제 태그를 택했는지 설명하십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor11:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "31초 편집본이 돌기 전부터 공개 압박을 염두에 두고 자료 순서를 잡은 것 아닙니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor11:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "이 31초 클립이 원본이 아니라 편집본이라는 점을 알고도 핵심 증거라고 주장했습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor11:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "창고 출입 장면을 전혀 몰랐다면 왜 조명과 동선이 그렇게 정확히 맞아떨어집니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor11:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "관리대행사 원본 확인보다 이 영상을 먼저 돌린 이유가 무엇입니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor11:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "손실 연출과 보상안 오판 카드",
+      "description": "재고손실 연출과 건물주 초안 이메일을 함께 대조해 과장과 오판을 드러내는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "라은 측 사진과 메모가 실제 누수 피해와 연출 손실을 섞고 있다는 걸 알고도 왜 그대로 보상 요구 근거로 썼습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor11:a:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "건물주 측 초안 이메일이 사건 전날 밤에 존재했다면, '아무 검토도 없었다'는 단정은 무엇을 근거로 한 겁니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor11:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "보상안 부재라는 전제를 사실 확인도 없이 공개 압박 명분으로 쓴 것 아닙니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor11:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "같은 상자를 각도만 바꿔 반복 촬영한 사진까지 손실 범위 입증이라고 제출한 이유를 말씀하십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor11:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "직원에게 '성재가 만진 것처럼' 진술해 달라는 초안은 왜 필요했습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor11:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "건물주 측이 이미 보수·감면안을 검토 중이었다면, 당신이 말한 '완전 무시'는 과장 아닙니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor11:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "공모 대화와 문서 포렌식 카드",
+      "description": "비밀 메신저와 요구서 포렌식을 엮어 갈등 자체의 공동 설계를 드러내는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "이 비밀 대화에서 '이제 들어가면 된다'는 취지의 확인은 무엇을 위한 것이었습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor11:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "서로 독립 작성이라던 요구서가 같은 노트북 템플릿에서 나온 이유를 설명하십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor11:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "관리대행사 확인 전 여론과 보상 압박 순서를 함께 맞춘 사실이 있습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor11:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "공동 피해자라고 했지만, 메신저에서 보상 금액과 시점을 맞춘 건 사실이지요.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor11:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "서로 다른 날 따로 만든 요구서라면서 작성자 계정과 템플릿이 같은 이유는 무엇입니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor11:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "다른 임차인 여론을 먼저 붙이려고 피해자 서사와 공개 문구를 조정한 사실이 있습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor11:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "neighbor11:a:d-1:unlock:s2:0",
+            "factText": "유성재가 정식 승인 대신 휴대폰 NFC 복제앱으로 야간관리 태그 UID를 읽어 출입 방식을 준비했다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "method": {
+                "exact": "휴대폰 NFC 복제앱 기록",
+                "neutral": "그 앱 기록"
+              },
+              "location": {
+                "exact": "4층 서비스도어",
+                "neutral": "그 문"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor11:a:d-1:unlock:s3:0",
+            "factText": "김라은이 창고 불을 켜 두고 출입 장면이 찍히도록 동선을 맞춰 줬다.",
+            "tags": [
+              "relationship",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "김라은",
+                "neutral": "그 사람",
+                "fullName": "김라은",
+                "judgeRef": "김라은 씨"
+              },
+              "location": {
+                "exact": "4층 창고",
+                "neutral": "그 공간"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor11:a:d-1:unlock:s4:0",
+            "factText": "유성재는 장비 피해 기록을 내세워 복제 태그 사용을 정당한 점검처럼 포장했다.",
+            "tags": [
+              "self_justification",
+              "rule"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "problem": {
+                "exact": "공용 덕트 누수와 냉방 장애",
+                "neutral": "그 하자"
+              },
+              "method": {
+                "exact": "야간관리 태그 복제본",
+                "neutral": "그 출입수단"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor11:a:d-1:unlock:s5:0",
+            "factText": "복제 태그 출입은 보상 압박을 위한 갈등 연출의 시작점이었다.",
+            "tags": [
+              "admission",
+              "motive"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "goal": {
+                "exact": "보수와 임대료 감면",
+                "neutral": "그 보상안"
+              },
+              "location": {
+                "exact": "4층 서비스도어",
+                "neutral": "그 문"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "neighbor11:a:d-2:unlock:s2:0",
+            "factText": "유성재는 31초 편집본이라는 점을 알면서도 실제 하자 피해와 한 문장으로 묶어 사용했다.",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "31초 편집 클립",
+                "neutral": "그 영상"
+              },
+              "problem": {
+                "exact": "공용 덕트 누수와 냉방 장애",
+                "neutral": "그 하자"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor11:a:d-2:unlock:s3:0",
+            "factText": "재고 재배열과 직원 진술 프레임은 김라은 쪽 주도였다는 사실을 유성재도 알고 있었다.",
+            "tags": [
+              "relationship",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "김라은",
+                "neutral": "그 사람",
+                "fullName": "김라은",
+                "judgeRef": "김라은 씨"
+              },
+              "document": {
+                "exact": "직원 진술 초안",
+                "neutral": "그 메모"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor11:a:d-2:unlock:s4:0",
+            "factText": "같은 상자를 각도만 바꿔 반복 촬영한 과장이 있었는데도 유성재는 제동을 걸지 않았다.",
+            "tags": [
+              "shame",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "document": {
+                "exact": "재고손실 사진 묶음",
+                "neutral": "그 사진들"
+              },
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor11:a:d-2:unlock:s5:0",
+            "factText": "유성재는 편집 영상과 연출 손실을 보상 요구 자료로 함께 이용했다.",
+            "tags": [
+              "admission",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "evidence": {
+                "exact": "31초 편집 클립",
+                "neutral": "그 영상"
+              },
+              "goal": {
+                "exact": "보수와 임대료 감면",
+                "neutral": "그 보상안"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "neighbor11:a:d-3:unlock:s2:0",
+            "factText": "사건 전날 밤 메신저에서 출입 실행 직전 확인 메시지가 오갔다.",
+            "tags": [
+              "quote",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "비밀 메신저 대화",
+                "neutral": "그 대화"
+              },
+              "time": {
+                "exact": "사건 전날 밤",
+                "neutral": "그 전날",
+                "period": "전날 밤"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor11:a:d-3:unlock:s3:0",
+            "factText": "보상 요구 금액과 '싸우는 그림'의 강도를 둘이 함께 맞췄다.",
+            "tags": [
+              "motive",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "김라은",
+                "neutral": "그 사람",
+                "fullName": "김라은",
+                "judgeRef": "김라은 씨"
+              },
+              "goal": {
+                "exact": "보수와 임대료 감면",
+                "neutral": "그 보상안"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor11:a:d-3:unlock:s4:0",
+            "factText": "독립 문서처럼 보인 요구서 두 건이 같은 노트북 계정과 템플릿에서 이어서 작성됐다.",
+            "tags": [
+              "evidence",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "document": {
+                "exact": "보상요구서 포렌식 비교표",
+                "neutral": "그 문서 비교표"
+              },
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor11:a:d-3:unlock:s5:0",
+            "factText": "상층-하층 갈등 전체가 하자 보상과 감면을 끌어내기 위한 공동 연출이었다.",
+            "tags": [
+              "admission",
+              "motive"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "goal": {
+                "exact": "보수와 임대료 감면",
+                "neutral": "그 보상안"
+              },
+              "person": {
+                "exact": "김라은",
+                "neutral": "그 사람",
+                "fullName": "김라은",
+                "judgeRef": "김라은 씨"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "neighbor11:a:d-4:unlock:s2:0",
+            "factText": "건물주 측 보수·감면 초안 이메일이 사건 전날 밤 이미 내부 전달됐다.",
+            "tags": [
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "보수·임대료 감면안 초안 이메일",
+                "neutral": "그 초안"
+              },
+              "time": {
+                "exact": "사건 전날 밤",
+                "neutral": "그 전날",
+                "period": "전날 밤"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor11:a:d-4:unlock:s3:0",
+            "factText": "공모와 증거 조작 정황이 확인되면서 그 초안 검토가 보류됐다.",
+            "tags": [
+              "institution",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "document": {
+                "exact": "보수·임대료 감면안 초안 이메일",
+                "neutral": "그 초안"
+              },
+              "evidence": {
+                "exact": "보상요구서 포렌식 비교표",
+                "neutral": "그 문서 비교표"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor11:a:d-4:unlock:s4:0",
+            "factText": "공식 통지가 없었다는 사정과 내부 보상안 검토 부재는 같은 사실이 아니었다.",
+            "tags": [
+              "rule",
+              "context"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "procedure": {
+                "exact": "관리대행사 원본 확인",
+                "neutral": "그 확인 절차"
+              },
+              "document": {
+                "exact": "보수·임대료 감면안 초안 이메일",
+                "neutral": "그 초안"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor11:a:d-4:unlock:s5:0",
+            "factText": "건물주 완전 무대응이라는 단정은 사건 전날 존재한 초안 때문에 성립하지 않는다.",
+            "tags": [
+              "admission",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "document": {
+                "exact": "보수·임대료 감면안 초안 이메일",
+                "neutral": "그 초안"
+              },
+              "time": {
+                "exact": "사건 전날 밤",
+                "neutral": "그 전날",
+                "period": "전날 밤"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor11:a:d-5:unlock:s2:0",
+            "factText": "관리대행사 원본 확인 전 편집본과 손실 요약이 먼저 유통됐다.",
+            "tags": [
+              "rule",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "procedure": {
+                "exact": "관리대행사 원본 확인",
+                "neutral": "그 확인 절차"
+              },
+              "evidence": {
+                "exact": "31초 편집 클립",
+                "neutral": "그 영상"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor11:a:d-5:unlock:s3:0",
+            "factText": "유성재와 김라은은 다른 임차인 반응을 의식해 발송 문구와 순서를 함께 맞췄다.",
+            "tags": [
+              "relationship",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "김라은",
+                "neutral": "그 사람",
+                "fullName": "김라은",
+                "judgeRef": "김라은 씨"
+              },
+              "audience": {
+                "exact": "다른 임차인 여론",
+                "neutral": "주변 반응"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor11:a:d-5:unlock:s4:0",
+            "factText": "장기적인 냉방 장애 손실이 절차보다 즉각 반응을 택하게 만들었다.",
+            "tags": [
+              "emotion",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "loss": {
+                "exact": "장기화된 냉방 장애 손실",
+                "neutral": "누적된 손실"
+              },
+              "procedure": {
+                "exact": "관리대행사 원본 확인",
+                "neutral": "그 확인 절차"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor11:a:d-5:unlock:s5:0",
+            "factText": "공식 확인보다 공개 압박 효과를 우선한 공동 선택이었다.",
+            "tags": [
+              "admission",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "procedure": {
+                "exact": "관리대행사 원본 확인",
+                "neutral": "그 확인 절차"
+              },
+              "audience": {
+                "exact": "다른 임차인 여론",
+                "neutral": "주변 반응"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "neighbor11:b:d-1:unlock:s2:0",
+            "factText": "창고 출입 장면 자체는 김라은도 미리 알고 있었다.",
+            "tags": [
+              "relationship",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              },
+              "location": {
+                "exact": "4층 창고",
+                "neutral": "그 공간"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor11:b:d-1:unlock:s3:0",
+            "factText": "복제 태그 방식은 유성재가 주도했지만, 김라은은 그 장면을 피해 서사로 전환했다.",
+            "tags": [
+              "responsibility",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              },
+              "method": {
+                "exact": "야간관리 태그 복제본",
+                "neutral": "그 출입수단"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor11:b:d-1:unlock:s4:0",
+            "factText": "김라은은 사실상 허락한 출입을 사후에는 완전한 침입처럼 말해 피해자 자리를 선점했다.",
+            "tags": [
+              "shame",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              },
+              "location": {
+                "exact": "4층 창고",
+                "neutral": "그 공간"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor11:b:d-1:unlock:s5:0",
+            "factText": "사전 합의된 출입 장면을 침입 피해로 돌린 사실을 김라은이 인정하게 된다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              },
+              "location": {
+                "exact": "4층 창고",
+                "neutral": "그 공간"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "neighbor11:b:d-2:unlock:s2:0",
+            "factText": "31초 MP4는 사건 다음 날 아침 휴대폰 편집 앱을 거친 재인코딩본이었다.",
+            "tags": [
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "evidence": {
+                "exact": "31초 편집 클립",
+                "neutral": "그 영상"
+              },
+              "time": {
+                "exact": "사건 다음 날 아침",
+                "neutral": "그 다음 날",
+                "period": "다음 날 아침"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor11:b:d-2:unlock:s3:0",
+            "factText": "같은 상자를 각도만 바꿔 반복 촬영해 피해 범위가 넓은 것처럼 보이게 했다.",
+            "tags": [
+              "evidence",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "document": {
+                "exact": "재고손실 사진 묶음",
+                "neutral": "그 사진들"
+              },
+              "person": {
+                "exact": "김라은",
+                "neutral": "그 사람",
+                "fullName": "김라은",
+                "judgeRef": "김라은 씨"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor11:b:d-2:unlock:s4:0",
+            "factText": "직원에게 '성재가 만진 것처럼' 말해 달라는 메모 초안이 사진 촬영보다 먼저 작성돼 있었다.",
+            "tags": [
+              "quote",
+              "evidence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "document": {
+                "exact": "직원 진술 초안",
+                "neutral": "그 메모"
+              },
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor11:b:d-2:unlock:s5:0",
+            "factText": "실제 누수 피해와 연출 손실이 한 묶음으로 제출돼 손해가 부풀려졌다.",
+            "tags": [
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "problem": {
+                "exact": "공용 덕트 누수와 냉방 장애",
+                "neutral": "그 하자"
+              },
+              "document": {
+                "exact": "재고손실 사진 묶음",
+                "neutral": "그 사진들"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "neighbor11:b:d-3:unlock:s2:0",
+            "factText": "김라은은 보상 요구 시점과 금액을 성재와 비밀 대화방에서 맞췄다.",
+            "tags": [
+              "relationship",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              },
+              "evidence": {
+                "exact": "비밀 메신저 대화",
+                "neutral": "그 대화"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor11:b:d-3:unlock:s3:0",
+            "factText": "둘은 '싸우는 그림이 나와야 움직인다'는 판단을 공유했다.",
+            "tags": [
+              "quote",
+              "motive"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              },
+              "goal": {
+                "exact": "보수와 임대료 감면",
+                "neutral": "그 보상안"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor11:b:d-3:unlock:s4:0",
+            "factText": "서로 독립적으로 썼다고 한 요구서가 같은 노트북 템플릿에서 이어서 생성됐다.",
+            "tags": [
+              "evidence",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "document": {
+                "exact": "보상요구서 포렌식 비교표",
+                "neutral": "그 문서 비교표"
+              },
+              "person": {
+                "exact": "김라은",
+                "neutral": "그 사람",
+                "fullName": "김라은",
+                "judgeRef": "김라은 씨"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor11:b:d-3:unlock:s5:0",
+            "factText": "김라은은 공동 피해 언어로 공모 사실을 덮어 왔다는 점까지 드러난다.",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              },
+              "evidence": {
+                "exact": "비밀 메신저 대화",
+                "neutral": "그 대화"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "neighbor11:b:d-4:unlock:s2:0",
+            "factText": "건물주 법무대리인의 보수·감면 초안 이메일 발송 시각은 사건 전날 밤이었다.",
+            "tags": [
+              "institution",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "document": {
+                "exact": "보수·임대료 감면안 초안 이메일",
+                "neutral": "그 초안"
+              },
+              "time": {
+                "exact": "사건 전날 밤",
+                "neutral": "그 전날",
+                "period": "전날 밤"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor11:b:d-4:unlock:s3:0",
+            "factText": "초안이 보류된 계기에는 공모와 증거 조작 정황이 포함돼 있었다.",
+            "tags": [
+              "institution",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "document": {
+                "exact": "보수·임대료 감면안 초안 이메일",
+                "neutral": "그 초안"
+              },
+              "evidence": {
+                "exact": "비밀 메신저 대화",
+                "neutral": "그 대화"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor11:b:d-4:unlock:s4:0",
+            "factText": "답변 부재와 내부 검토 부재는 동일한 사실이 아니었다.",
+            "tags": [
+              "rule",
+              "context"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "procedure": {
+                "exact": "관리대행사 원본 확인",
+                "neutral": "그 확인 절차"
+              },
+              "document": {
+                "exact": "보수·임대료 감면안 초안 이메일",
+                "neutral": "그 초안"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor11:b:d-4:unlock:s5:0",
+            "factText": "건물주 쪽이 이미 제한적 구제안을 검토 중이었다는 사실이 확인된다.",
+            "tags": [
+              "admission",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "document": {
+                "exact": "보수·임대료 감면안 초안 이메일",
+                "neutral": "그 초안"
+              },
+              "goal": {
+                "exact": "보수와 임대료 감면",
+                "neutral": "그 보상안"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor11:b:d-5:unlock:s2:0",
+            "factText": "관리대행사 확인 전 영상과 손실 정리가 다른 임차인에게 먼저 전달됐다.",
+            "tags": [
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "procedure": {
+                "exact": "관리대행사 원본 확인",
+                "neutral": "그 확인 절차"
+              },
+              "audience": {
+                "exact": "다른 임차인 여론",
+                "neutral": "주변 반응"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor11:b:d-5:unlock:s3:0",
+            "factText": "김라은은 피해자 어조와 공개 문구를 앞세워 여론을 빨리 붙이려 했다.",
+            "tags": [
+              "beneficiary",
+              "emotion"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "audience": {
+                "exact": "다른 임차인 여론",
+                "neutral": "주변 반응"
+              },
+              "person": {
+                "exact": "김라은",
+                "neutral": "그 사람",
+                "fullName": "김라은",
+                "judgeRef": "김라은 씨"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor11:b:d-5:unlock:s4:0",
+            "factText": "매출 손실과 체면 불안이 확인 절차보다 선행 공개를 택하게 만들었다.",
+            "tags": [
+              "emotion",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "loss": {
+                "exact": "장기화된 냉방 장애 손실",
+                "neutral": "누적된 손실"
+              },
+              "procedure": {
+                "exact": "관리대행사 원본 확인",
+                "neutral": "그 확인 절차"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor11:b:d-5:unlock:s5:0",
+            "factText": "편집 자료 선배포와 공개 압박이 유성재와 공동으로 계산된 행동이었다.",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "유성재",
+                "neutral": "그 사람",
+                "fullName": "유성재",
+                "judgeRef": "유성재 씨"
+              },
+              "evidence": {
+                "exact": "31초 편집 클립",
+                "neutral": "그 영상"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "neighbor11:contradiction:0",
+        "targetParty": "a",
+        "trigger": "유성재가 d-1에서 허락 여부를 로그 설명으로만 버티면서 e-2가 제시된 직후",
+        "text": "정식 허락을 말하지 못한 채 출입시각만 반복한다면, 그 설명은 권한을 증명하는 것이 아니라 회피를 드러냅니다.",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "neighbor11:contradiction:1",
+        "targetParty": "b",
+        "trigger": "김라은이 d-2에서 '핵심만 잘랐다'고 주장하면서 e-3의 반복 촬영 정황이 드러날 때",
+        "text": "핵심만 남긴 편집이라고 하면서 같은 상자를 여러 번 찍었다면, 자료는 설명이 아니라 연출에 가깝습니다.",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-3"
+        ]
+      },
+      {
+        "id": "neighbor11:contradiction:2",
+        "targetParty": "a",
+        "trigger": "양측이 d-3 공모를 부인하는데 e-5와 e-6이 함께 연결될 때",
+        "text": "서로 별개라고 한 갈등이 같은 대화방과 같은 템플릿 문서에서 이어진다면, 우연보다 공동 설계가 더 자연스럽습니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-5",
+          "e-6"
+        ]
+      },
+      {
+        "id": "neighbor11:contradiction:3",
+        "targetParty": "b",
+        "trigger": "건물주 완전 무대응을 강조하던 김라은 앞에 e-4가 제시될 때",
+        "text": "전혀 검토가 없었다는 서사는 사건 전날 밤의 초안 이메일 한 장으로 바로 무너집니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "neighbor11:interjection:0",
+        "speaker": "b",
+        "trigger": "유성재가 d-1 책임을 김라은 쪽 준비로 돌리기 시작할 때",
+        "text": "제가 문 여는 방식까지 시킨 건 아니에요. 그건 성재 씨가 먼저 가져온 수단이었어요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "neighbor11:interjection:1",
+        "speaker": "a",
+        "trigger": "김라은이 d-2를 전부 실제 피해처럼 밀어붙일 때",
+        "text": "실제 누수는 있었지만, 그 사진 배열이 그대로였다고는 저도 못 말합니다.",
+        "relatedDisputes": [
+          "d-2"
+        ]
+      },
+      {
+        "id": "neighbor11:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 d-4를 감정 호소로만 밀어붙여 사실 확인이 흐려질 때",
+        "text": "무시당했다는 감정과 보상안이 존재하지 않았다는 사실은 분리해서 답하십시오.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "neighbor11:outburst:a:0",
+        "party": "a",
+        "trigger": "유성재에게 '야간 침입자'라는 표현이 반복될 때",
+        "text": "저를 그냥 밤손님 취급하지 마십시오. 실제로 장비랑 공용 설비 피해를 몇 달째 기록한 사람입니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "neighbor11:outburst:a:1",
+        "party": "a",
+        "trigger": "e-6으로 공모 문서 작성이 확정된 뒤에도 전부 단독 책임으로 몰릴 때",
+        "text": "제가 선을 넘은 건 맞지만, 이걸 저 혼자 설계한 일처럼만 말하면 사실이 또 비틀립니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      },
+      {
+        "id": "neighbor11:outburst:b:0",
+        "party": "b",
+        "trigger": "김라은이 편집과 연출을 추궁받으면서도 실제 영업 손실이 무시된다고 느낄 때",
+        "text": "네, 제가 세게 보이게 만든 건 맞아요. 그렇다고 냄새와 취소와 손실까지 다 거짓은 아니었잖아요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "neighbor11:outburst:b:1",
+        "party": "b",
+        "trigger": "건물주 초안 이메일이 제시되어 피해자 서사가 흔들릴 때",
+        "text": "그 초안을 제가 알았다면 저렇게까지 몰리지 않았을 거예요. 저는 정말 끝까지 무시당한 줄 알았어요.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "neighbor11:transition:a:d-1:s0_s1",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "service_tag_question",
+      "line": "태그 얘기부터 나오면 일단 로그부터 말씀드리죠. 출입은 짧았고 장비 체크 때문에 내려간 겁니다.",
+      "behaviorHint": "시간대와 기록을 손가락으로 짚으며 핵심 허락 관계를 뒤로 미룬다."
+    },
+    {
+      "id": "neighbor11:transition:a:d-1:s1_s2",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "e-2 정도로 찍히면 문 연 방식은 더 못 숨깁니다. 복제 흔적은 제 쪽이 맞습니다.",
+      "behaviorHint": "자료를 한 번 오래 본 뒤 짧게 인정으로 방향을 튼다."
+    },
+    {
+      "id": "neighbor11:transition:a:d-1:s2_s3",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_copy_instead_of_permission",
+      "line": "왜 허락을 안 구했냐고 하시면, 그때는 이미 라은 씨와 동선이 맞춰진 상황이었습니다.",
+      "behaviorHint": "상대 이름을 낮게 꺼내며 단독행동이 아니었다는 쪽으로 선회를 시도한다."
+    },
+    {
+      "id": "neighbor11:transition:a:d-1:s3_s5",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "authority_boundary_question",
+      "line": "권한 경계를 넘은 건 사실입니다. 복제 태그를 쓴 순간부터 그건 점검이 아니라 연출이었습니다.",
+      "behaviorHint": "표정이 굳고 마지막 단어를 짧게 끊는다."
+    },
+    {
+      "id": "neighbor11:transition:a:d-3:s0_s1",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "collusion_question",
+      "line": "공모까지는 아닙니다. 서로 같은 하자 얘기를 하다 보니 말이 겹친 겁니다.",
+      "behaviorHint": "관계를 축소하는 표현으로 한 걸음 물러난다."
+    },
+    {
+      "id": "neighbor11:transition:a:d-3:s1_s2",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "대화가 나오면 공동 대응 문구를 맞춘 건 인정해야겠네요. 다만 그때도 저는 민원 정리라고 봤습니다.",
+      "behaviorHint": "메신저 문구를 확인하고 기술적 설명으로 수위를 낮춘다."
+    },
+    {
+      "id": "neighbor11:transition:a:d-3:s2_s3",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "same_template_followup",
+      "line": "금액과 문구까지 맞춘 건 맞습니다. 둘 다 갈등 그림이 필요하다고 본 겁니다.",
+      "behaviorHint": "입술을 굳게 다물었다가 공동 책임 문장을 내놓는다."
+    },
+    {
+      "id": "neighbor11:transition:a:d-3:s3_s5",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "같은 템플릿 요구서까지 확인되면 부정할 수 없습니다. 아예 같이 설계한 겁니다.",
+      "behaviorHint": "체념한 듯 숨을 내쉬고 완전 시인으로 넘어간다."
+    },
+    {
+      "id": "neighbor11:transition:a:d-5:s0_s1",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "management_first_reminder",
+      "line": "원래 확인부터 하자는 얘기는 있었죠. 그래도 손실이 쌓여 먼저 공유했습니다.",
+      "behaviorHint": "부정을 거두고 절차 지연과 누적 손실을 먼저 내세운다."
+    },
+    {
+      "id": "neighbor11:transition:a:d-5:s1_s4",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_long_term_hvac_loss",
+      "line": "냉방 장애가 길어지니 기다리는 쪽이 더 무섭더군요. 그 조급함 때문에 절차보다 반응을 택했습니다.",
+      "behaviorHint": "어깨 힘이 풀리며 감정 고백으로 급격히 내려간다."
+    },
+    {
+      "id": "neighbor11:transition:a:d-5:s4_s5",
+      "caseId": "neighbor-11",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "네, 그건 저 혼자도 라은 씨 혼자도 아니었습니다. 둘이 같이 공개 압박을 만든 겁니다.",
+      "behaviorHint": "고개를 작게 끄덕이며 공동 책임을 명시한다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-2:s0_s1",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "edited_clip_question",
+      "line": "편집이요? 길어서 자른 거예요. 핵심은 그대로라고 생각했어요.",
+      "behaviorHint": "피해 항목을 나열하다가 편집 이유를 짧게 덧붙인다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-2:s1_s2",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "재인코딩 흔적까지 나오면 앞뒤를 자른 건 인정할게요. 그래도 실제 피해가 있었잖아요.",
+      "behaviorHint": "인정 직후 바로 실제 피해 문장을 붙여 버틴다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-2:s2_s3",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "inventory_staging_followup",
+      "line": "박스도 더 드러나게 다시 놨습니다. 실제 피해를 더 세게 보이게 하려고요.",
+      "behaviorHint": "작게 한숨을 쉬고 연출의 일부를 털어놓는다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-2:s3_s5",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-3_presented",
+      "line": "직원 메모 초안까지 나오면 제가 연출한 걸 못 숨겨요. 성재 씨가 만진 것처럼 꾸민 것도 맞습니다.",
+      "behaviorHint": "목이 잠긴 채 문장 사이를 길게 끊는다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-3:s0_s1",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "joint_claim_question",
+      "line": "같이 민원 얘기한 건 맞아요. 하지만 그걸 바로 공모라고 하긴 어렵잖아요?",
+      "behaviorHint": "되묻는 말투로 방어하면서도 일부 접점을 인정한다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-3:s1_s2",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "메신저 대화가 나오면 시점과 금액을 맞춘 건 인정하겠습니다. 그때는 같이 버티는 방법이라고 여겼어요.",
+      "behaviorHint": "시선을 내리며 공모 범위를 좁혀 보려 한다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-3:s2_s3",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "compensation_amount_followup",
+      "line": "네, 어느 선까지 요구할지도 같이 정했어요. 싸우는 그림이 있어야 한다고 봤죠.",
+      "behaviorHint": "말끝이 떨리지만 핵심 문장을 결국 입 밖에 낸다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-3:s3_s5",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "문서가 같은 템플릿이면 끝이네요. 따로 낸 척한 것도 다 연출이었어요.",
+      "behaviorHint": "자료를 오래 보다가 스스로 체념한 듯 고개를 숙인다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-5:s0_s1",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "management_first_reminder",
+      "line": "원래 대행사 확인 뒤에 가자는 말은 있었어요. 그런데 장사 손실이 계속 나니까 먼저 밀어붙였죠.",
+      "behaviorHint": "부정하던 톤에서 바로 손실 하소연으로 이동한다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-5:s1_s4",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_real_business_loss",
+      "line": "매출이 빠지고 냄새가 남는데 기다리기만 하라니까 겁이 났어요. 그래서 체면 지키려 공개부터 했습니다.",
+      "behaviorHint": "눈가가 붉어지고 말이 감정 쪽으로 쏠린다."
+    },
+    {
+      "id": "neighbor11:transition:b:d-5:s4_s5",
+      "caseId": "neighbor-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-1_presented",
+      "line": "편집 흔적 있는 영상까지 제가 먼저 돌린 거, 맞아요. 확인보다 반응을 먼저 만든 겁니다.",
+      "behaviorHint": "되묻던 말투를 멈추고 낮은 목소리로 완전히 인정한다."
+    }
+  ]
+}

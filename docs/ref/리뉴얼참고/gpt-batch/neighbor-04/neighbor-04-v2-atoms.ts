@@ -1,0 +1,5808 @@
+export const neighbor04V2Atoms = {
+  "caseId": "neighbor-04",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그 시기엔 아버지 재활 때문에 새벽 동선이 계속 바뀌어서, 제가 약속을 대놓고 어겼다고 보긴 어렵습니다.",
+            "가끔 몇 분 밀린 날이 있었더라도 그렇게까지 반복 위반처럼 말할 일은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "2월 말 종료와 평일 오전 7시 20분 반환 조건을 문자로 분명히 확인했다.",
+            "합의 종료 뒤에도 102동 앞 탄력주차면을 11차례 늦게 비운 흐름이 남아 있다.",
+            "급한 병원 변수가 없는 날에도 예전 습관대로 가까운 칸을 택한 적이 있다."
+          ],
+          "suppressions": [
+            "합의 종료 뒤 11차례 늦은 출차 흐름",
+            "7시 20분 전 반환 문구를 재확인한 문자"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-1:context:0",
+              "factText": "그 시기엔 아버지 재활 때문에 새벽 동선이 계속 바뀌어서, 제가 약속을 대놓고 어겼다고 보긴 어렵습니다.",
+              "tags": [
+                "context",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-1:denial:0",
+              "factText": "가끔 몇 분 밀린 날이 있었더라도 그렇게까지 반복 위반처럼 말할 일은 아니었습니다.",
+              "tags": [
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "2월 말 이후에도 병원 일정이 완전히 끊긴 건 아니라서, 저도 예외가 조금 더 이어지는 줄 알았습니다.",
+            "분 단위까지 딱 잘라 제가 늘 늦었다는 표현은 과장이라고 생각합니다."
+          ],
+          "privateKnowledge": [
+            "2월 말 종료와 평일 오전 7시 20분 반환 조건을 문자로 분명히 확인했다.",
+            "합의 종료 뒤에도 102동 앞 탄력주차면을 11차례 늦게 비운 흐름이 남아 있다.",
+            "급한 병원 변수가 없는 날에도 예전 습관대로 가까운 칸을 택한 적이 있다."
+          ],
+          "suppressions": [
+            "예외 연장에 대한 별도 동의를 받지 않았다는 점",
+            "반환 시각 이후 출차한 날짜들"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-1:timeline:0",
+              "factText": "2월 말 이후에도 병원 일정이 완전히 끊긴 건 아니라서, 저도 예외가 조금 더 이어지는 줄 알았습니다.",
+              "tags": [
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-1:uncertainty:0",
+              "factText": "분 단위까지 딱 잘라 제가 늘 늦었다는 표현은 과장이라고 생각합니다.",
+              "tags": [
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "몇 번 늦어진 건 맞지만, 그날그날 병원 확인이 급해 차를 바로 못 뺀 날이 있었습니다.",
+            "다만 그걸 상습 점유처럼 말하는 건 제 사정을 전혀 보지 않은 겁니다."
+          ],
+          "privateKnowledge": [
+            "2월 말 종료와 평일 오전 7시 20분 반환 조건을 문자로 분명히 확인했다.",
+            "합의 종료 뒤에도 102동 앞 탄력주차면을 11차례 늦게 비운 흐름이 남아 있다.",
+            "급한 병원 변수가 없는 날에도 예전 습관대로 가까운 칸을 택한 적이 있다."
+          ],
+          "suppressions": [
+            "급한 사정이 없는 날도 있었다는 점",
+            "지적 뒤에도 반복 점유가 이어졌다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-1:admission:0",
+              "factText": "몇 번 늦어진 건 맞지만, 그날그날 병원 확인이 급해 차를 바로 못 뺀 날이 있었습니다.",
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-1:self_justification:0",
+              "factText": "다만 그걸 상습 점유처럼 말하는 건 제 사정을 전혀 보지 않은 겁니다.",
+              "tags": [
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "약속을 더 명확히 다시 정리했어야 했던 건 인정하지만, 도윤 씨도 매번 사람 몰아붙이듯 반응해서 제가 더 버티게 됐습니다.",
+            "처음부터 관리사무소를 통했으면 이렇게 꼬이진 않았을 겁니다."
+          ],
+          "privateKnowledge": [
+            "2월 말 종료와 평일 오전 7시 20분 반환 조건을 문자로 분명히 확인했다.",
+            "합의 종료 뒤에도 102동 앞 탄력주차면을 11차례 늦게 비운 흐름이 남아 있다.",
+            "급한 병원 변수가 없는 날에도 예전 습관대로 가까운 칸을 택한 적이 있다."
+          ],
+          "suppressions": [
+            "먼저 위반이 누적된 사실",
+            "원상복구 조치를 미룬 책임"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-1:responsibility:0",
+              "factText": "약속을 더 명확히 다시 정리했어야 했던 건 인정하지만, 도윤 씨도 매번 사람 몰아붙이듯 반응해서 제가 더 버티게 됐습니다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-1:counter:0",
+              "factText": "처음부터 관리사무소를 통했으면 이렇게 꼬이진 않았을 겁니다.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "아버지 재활이 끝난 뒤에도 제가 그 시기를 못 놓고 같은 방식으로 움직인 건 맞아요.",
+            "그걸 배려가 계속돼도 된다는 식으로 받아들인 건 제 불안이 섞인 판단이었습니다."
+          ],
+          "privateKnowledge": [
+            "2월 말 종료와 평일 오전 7시 20분 반환 조건을 문자로 분명히 확인했다.",
+            "합의 종료 뒤에도 102동 앞 탄력주차면을 11차례 늦게 비운 흐름이 남아 있다.",
+            "급한 병원 변수가 없는 날에도 예전 습관대로 가까운 칸을 택한 적이 있다."
+          ],
+          "suppressions": [
+            "규칙 위반자로 보일까 두려워 인정이 늦었다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-1:emotion:0",
+              "factText": "아버지 재활이 끝난 뒤에도 제가 그 시기를 못 놓고 같은 방식으로 움직인 건 맞아요.",
+              "tags": [
+                "emotion",
+                "admission"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-1:fear:0",
+              "factText": "그걸 배려가 계속돼도 된다는 식으로 받아들인 건 제 불안이 섞인 판단이었습니다.",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "제가 2월 말 이후에도 7시 20분 전에 비워주기로 한 약속을 반복해서 어겼습니다.",
+            "아버지 사정을 앞세워 설명했지만, 끝난 합의를 제가 제때 원상복구하지 않은 게 핵심이었습니다."
+          ],
+          "privateKnowledge": [
+            "2월 말 종료와 평일 오전 7시 20분 반환 조건을 문자로 분명히 확인했다.",
+            "합의 종료 뒤에도 102동 앞 탄력주차면을 11차례 늦게 비운 흐름이 남아 있다.",
+            "급한 병원 변수가 없는 날에도 예전 습관대로 가까운 칸을 택한 적이 있다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-1:admission:1",
+              "factText": "제가 2월 말 이후에도 7시 20분 전에 비워주기로 한 약속을 반복해서 어겼습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-1:responsibility:1",
+              "factText": "아버지 사정을 앞세워 설명했지만, 끝난 합의를 제가 제때 원상복구하지 않은 게 핵심이었습니다.",
+              "tags": [
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "도윤 씨가 공식 절차보다 먼저 개인 콘을 세우고 쪽지를 꽂은 건 분명히 과했습니다.",
+            "저는 그 행동이 공용주차장을 사적으로 막는 압박으로 느껴졌습니다."
+          ],
+          "privateKnowledge": [
+            "도윤이 공식 신고 전에 개인 콘과 메모를 사용했다.",
+            "다만 자신의 반복 위반이 그 분노를 키운 건 안다.",
+            "사적 콘과 경고문은 그럼에도 정당화될 수 없다고 본다."
+          ],
+          "suppressions": [
+            "자신의 반복 위반이 분노의 배경이 된 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-2:act:0",
+              "factText": "도윤 씨가 공식 절차보다 먼저 개인 콘을 세우고 쪽지를 꽂은 건 분명히 과했습니다.",
+              "tags": [
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-2:harm:0",
+              "factText": "저는 그 행동이 공용주차장을 사적으로 막는 압박으로 느껴졌습니다.",
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "관리사무소 확인도 없이 바로 콘과 손글씨 메모가 나온 건 절차를 넘은 행동이었어요.",
+            "제가 잘못한 부분이 있더라도 그렇게 막을 권한까지 생기는 건 아니잖아요."
+          ],
+          "privateKnowledge": [
+            "도윤이 공식 신고 전에 개인 콘과 메모를 사용했다.",
+            "다만 자신의 반복 위반이 그 분노를 키운 건 안다.",
+            "사적 콘과 경고문은 그럼에도 정당화될 수 없다고 본다."
+          ],
+          "suppressions": [
+            "상대를 자극한 선행 위반"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-2:rule:0",
+              "factText": "관리사무소 확인도 없이 바로 콘과 손글씨 메모가 나온 건 절차를 넘은 행동이었어요.",
+              "tags": [
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-2:counter:0",
+              "factText": "제가 잘못한 부분이 있더라도 그렇게 막을 권한까지 생기는 건 아니잖아요.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "적어도 그날 아침엔 제 차 앞을 개인 물건으로 막고 '약속 좀 지키라'는 메모를 꽂아둔 사실이 있습니다.",
+            "그 장면 자체는 제게 위협처럼 받아들여졌어요."
+          ],
+          "privateKnowledge": [
+            "도윤이 공식 신고 전에 개인 콘과 메모를 사용했다.",
+            "다만 자신의 반복 위반이 그 분노를 키운 건 안다.",
+            "사적 콘과 경고문은 그럼에도 정당화될 수 없다고 본다."
+          ],
+          "suppressions": [
+            "공포를 키운 본인의 해석이 일부 섞였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-2:evidence:0",
+              "factText": "적어도 그날 아침엔 제 차 앞을 개인 물건으로 막고 '약속 좀 지키라'는 메모를 꽂아둔 사실이 있습니다.",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-2:emotion:0",
+              "factText": "그 장면 자체는 제게 위협처럼 받아들여졌어요.",
+              "tags": [
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "explain"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 약속을 어긴 탓에 도윤 씨가 화가 났을 수는 있지만, 그래서 자력 제재를 선택한 건 별개 문제입니다.",
+            "공식 신고보다 먼저 압박한 건 도윤 씨 책임이 큽니다."
+          ],
+          "privateKnowledge": [
+            "도윤이 공식 신고 전에 개인 콘과 메모를 사용했다.",
+            "다만 자신의 반복 위반이 그 분노를 키운 건 안다.",
+            "사적 콘과 경고문은 그럼에도 정당화될 수 없다고 본다."
+          ],
+          "suppressions": [
+            "갈등의 촉발점이 자신의 위반에도 있었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-2:responsibility:0",
+              "factText": "제가 약속을 어긴 탓에 도윤 씨가 화가 났을 수는 있지만, 그래서 자력 제재를 선택한 건 별개 문제입니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "balance"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-2:counter:1",
+              "factText": "공식 신고보다 먼저 압박한 건 도윤 씨 책임이 큽니다.",
+              "tags": [
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "balance"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "쪽지를 보는 순간 제가 동네에서 공개적으로 찍힌 사람 같아 숨이 막혔어요.",
+            "그래서 그 문제를 더 크게 느끼고 방어적으로 반응했습니다."
+          ],
+          "privateKnowledge": [
+            "도윤이 공식 신고 전에 개인 콘과 메모를 사용했다.",
+            "다만 자신의 반복 위반이 그 분노를 키운 건 안다.",
+            "사적 콘과 경고문은 그럼에도 정당화될 수 없다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-2:emotion:1",
+              "factText": "쪽지를 보는 순간 제가 동네에서 공개적으로 찍힌 사람 같아 숨이 막혔어요.",
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-2:fear:0",
+              "factText": "그래서 그 문제를 더 크게 느끼고 방어적으로 반응했습니다.",
+              "tags": [
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "제 위반과 별개로 도윤 씨가 개인 콘과 경고문으로 먼저 제재한 건 잘못이 맞습니다.",
+            "다만 그 분노가 왜 생겼는지까지는 제가 함께 인정해야 공정합니다."
+          ],
+          "privateKnowledge": [
+            "도윤이 공식 신고 전에 개인 콘과 메모를 사용했다.",
+            "다만 자신의 반복 위반이 그 분노를 키운 건 안다.",
+            "사적 콘과 경고문은 그럼에도 정당화될 수 없다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-2:admission:0",
+              "factText": "제 위반과 별개로 도윤 씨가 개인 콘과 경고문으로 먼저 제재한 건 잘못이 맞습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-2:context:0",
+              "factText": "다만 그 분노가 왜 생겼는지까지는 제가 함께 인정해야 공정합니다.",
+              "tags": [
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "범퍼 흠집과 구겨진 메모를 같이 본 이상, 저는 도윤 씨 보복을 의심할 수밖에 없었습니다.",
+            "적어도 그 아침 상황만 보면 다른 설명이 더 떠오르지 않았어요."
+          ],
+          "privateKnowledge": [
+            "범퍼 흠집이 일주일 전 접촉에서 생겼을 수 있다는 단서를 이미 알고 있다.",
+            "보험 상담 이력과 블랙박스가 남아 있다는 것도 안다.",
+            "메모와 콘을 본 분노 때문에 단체방에서 의심을 단정적으로 키웠다."
+          ],
+          "suppressions": [
+            "일주일 전 손상 가능성과 보험 문의 이력",
+            "직접 목격이 없다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-3:context:0",
+              "factText": "범퍼 흠집과 구겨진 메모를 같이 본 이상, 저는 도윤 씨 보복을 의심할 수밖에 없었습니다.",
+              "tags": [
+                "context",
+                "emotion"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-3:denial:0",
+              "factText": "적어도 그 아침 상황만 보면 다른 설명이 더 떠오르지 않았어요.",
+              "tags": [
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "직접 본 건 아니지만, 메모까지 남긴 사람이면 차에 손댔을 가능성도 있다고 봤습니다.",
+            "그 전에 생긴 흠집인지까지 제가 바로 알 수는 없었어요."
+          ],
+          "privateKnowledge": [
+            "범퍼 흠집이 일주일 전 접촉에서 생겼을 수 있다는 단서를 이미 알고 있다.",
+            "보험 상담 이력과 블랙박스가 남아 있다는 것도 안다.",
+            "메모와 콘을 본 분노 때문에 단체방에서 의심을 단정적으로 키웠다."
+          ],
+          "suppressions": [
+            "이전 손상 가능성을 이미 의식했다는 점",
+            "보험 접수 기록 존재"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-3:timeline:0",
+              "factText": "직접 본 건 아니지만, 메모까지 남긴 사람이면 차에 손댔을 가능성도 있다고 봤습니다.",
+              "tags": [
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-3:uncertainty:0",
+              "factText": "그 전에 생긴 흠집인지까지 제가 바로 알 수는 없었어요.",
+              "tags": [
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "확실한 증거가 있었던 건 아니고, 그날 분위기 때문에 제가 그렇게 연결해서 본 건 맞습니다.",
+            "메모와 콘을 본 직후라 감정이 먼저 튀었어요."
+          ],
+          "privateKnowledge": [
+            "범퍼 흠집이 일주일 전 접촉에서 생겼을 수 있다는 단서를 이미 알고 있다.",
+            "보험 상담 이력과 블랙박스가 남아 있다는 것도 안다.",
+            "메모와 콘을 본 분노 때문에 단체방에서 의심을 단정적으로 키웠다."
+          ],
+          "suppressions": [
+            "단체방에 단정적 표현을 넣어 여론을 움직인 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-3:admission:0",
+              "factText": "확실한 증거가 있었던 건 아니고, 그날 분위기 때문에 제가 그렇게 연결해서 본 건 맞습니다.",
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-3:self_justification:0",
+              "factText": "메모와 콘을 본 직후라 감정이 먼저 튀었어요.",
+              "tags": [
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "도윤 씨가 그렇게까지 압박하지 않았으면 저도 범퍼 얘기까지 꺼내진 않았을 겁니다.",
+            "제 의심이 과했던 건 인정하지만, 그 상황을 만든 쪽도 도윤 씨였어요."
+          ],
+          "privateKnowledge": [
+            "범퍼 흠집이 일주일 전 접촉에서 생겼을 수 있다는 단서를 이미 알고 있다.",
+            "보험 상담 이력과 블랙박스가 남아 있다는 것도 안다.",
+            "메모와 콘을 본 분노 때문에 단체방에서 의심을 단정적으로 키웠다."
+          ],
+          "suppressions": [
+            "범퍼 손상 자체는 도윤과 무관할 수 있다는 판단",
+            "감정적 여론전 목적"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-3:responsibility:0",
+              "factText": "도윤 씨가 그렇게까지 압박하지 않았으면 저도 범퍼 얘기까지 꺼내진 않았을 겁니다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-3:counter:0",
+              "factText": "제 의심이 과했던 건 인정하지만, 그 상황을 만든 쪽도 도윤 씨였어요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "사실 속으로는 그 흠집이 그날 생긴 게 아닐 수도 있다는 생각이 계속 있었어요.",
+            "그래도 메모까지 본 뒤엔 제가 완전히 피해자인 것처럼 붙잡고 싶었습니다."
+          ],
+          "privateKnowledge": [
+            "범퍼 흠집이 일주일 전 접촉에서 생겼을 수 있다는 단서를 이미 알고 있다.",
+            "보험 상담 이력과 블랙박스가 남아 있다는 것도 안다.",
+            "메모와 콘을 본 분노 때문에 단체방에서 의심을 단정적으로 키웠다."
+          ],
+          "suppressions": [
+            "완전한 피해자로 보이고 싶은 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-3:emotion:0",
+              "factText": "사실 속으로는 그 흠집이 그날 생긴 게 아닐 수도 있다는 생각이 계속 있었어요.",
+              "tags": [
+                "emotion",
+                "admission"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-3:fear:0",
+              "factText": "그래도 메모까지 본 뒤엔 제가 완전히 피해자인 것처럼 붙잡고 싶었습니다.",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "범퍼 흠집을 도윤 씨 보복이라고 단정한 건 제 잘못이었습니다.",
+            "일주일 전 손상 가능성을 알고도 그날 분노에 기대서 더 강하게 몰아갔습니다."
+          ],
+          "privateKnowledge": [
+            "범퍼 흠집이 일주일 전 접촉에서 생겼을 수 있다는 단서를 이미 알고 있다.",
+            "보험 상담 이력과 블랙박스가 남아 있다는 것도 안다.",
+            "메모와 콘을 본 분노 때문에 단체방에서 의심을 단정적으로 키웠다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-3:admission:1",
+              "factText": "범퍼 흠집을 도윤 씨 보복이라고 단정한 건 제 잘못이었습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-3:responsibility:1",
+              "factText": "일주일 전 손상 가능성을 알고도 그날 분노에 기대서 더 강하게 몰아갔습니다.",
+              "tags": [
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "상대방",
+                  "fullName": "최도윤",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "지난가을 배려가 재활 기간 한정이었다는 말 자체는 있었습니다.",
+            "다만 그때는 상황이 워낙 급해서 저는 그 약속을 엄격한 종료선보다 도움의 연장처럼 받아들였어요."
+          ],
+          "privateKnowledge": [
+            "재활 종료와 원상복구 시점이 대화에 명시됐다.",
+            "평일 오전 7시 20분 전 반환 조건도 반복 확인했다.",
+            "그래도 그 종료를 행동으로 바꾸지 못했다."
+          ],
+          "suppressions": [
+            "문자에 종료 시점과 반환 조건이 명시된 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-4:act:0",
+              "factText": "지난가을 배려가 재활 기간 한정이었다는 말 자체는 있었습니다.",
+              "tags": [
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-4:harm:0",
+              "factText": "다만 그때는 상황이 워낙 급해서 저는 그 약속을 엄격한 종료선보다 도움의 연장처럼 받아들였어요.",
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "문자로 2월 말과 7시 20분이 적힌 건 사실입니다.",
+            "그런데 저는 그 뒤에도 병원 변수가 남아 있다는 생각에 완전히 끝났다는 감각이 둔했습니다."
+          ],
+          "privateKnowledge": [
+            "재활 종료와 원상복구 시점이 대화에 명시됐다.",
+            "평일 오전 7시 20분 전 반환 조건도 반복 확인했다.",
+            "그래도 그 종료를 행동으로 바꾸지 못했다."
+          ],
+          "suppressions": [
+            "행동으로 원상복구하지 못한 책임"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-4:rule:0",
+              "factText": "문자로 2월 말과 7시 20분이 적힌 건 사실입니다.",
+              "tags": [
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-4:counter:0",
+              "factText": "그런데 저는 그 뒤에도 병원 변수가 남아 있다는 생각에 완전히 끝났다는 감각이 둔했습니다.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "합의 문구 자체는 분명했고, 원래 순서로 돌아가자는 말도 있었습니다.",
+            "제가 그 종료를 제때 행동으로 옮기지 못한 거예요."
+          ],
+          "privateKnowledge": [
+            "재활 종료와 원상복구 시점이 대화에 명시됐다.",
+            "평일 오전 7시 20분 전 반환 조건도 반복 확인했다.",
+            "그래도 그 종료를 행동으로 바꾸지 못했다."
+          ],
+          "suppressions": [
+            "합의 종료 뒤에도 관성적으로 같은 칸을 쓴 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-4:evidence:0",
+              "factText": "합의 문구 자체는 분명했고, 원래 순서로 돌아가자는 말도 있었습니다.",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-4:emotion:0",
+              "factText": "제가 그 종료를 제때 행동으로 옮기지 못한 거예요.",
+              "tags": [
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "explain"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "도윤 씨도 과거 도움을 자꾸 현재 규칙의 증거처럼 꺼냈지만, 기본적으로는 끝난 합의였다는 점을 부정하긴 어렵습니다.",
+            "결국 원상복구를 미룬 쪽은 저였습니다."
+          ],
+          "privateKnowledge": [
+            "재활 종료와 원상복구 시점이 대화에 명시됐다.",
+            "평일 오전 7시 20분 전 반환 조건도 반복 확인했다.",
+            "그래도 그 종료를 행동으로 바꾸지 못했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-4:responsibility:0",
+              "factText": "도윤 씨도 과거 도움을 자꾸 현재 규칙의 증거처럼 꺼냈지만, 기본적으로는 끝난 합의였다는 점을 부정하긴 어렵습니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "balance"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-4:counter:1",
+              "factText": "결국 원상복구를 미룬 쪽은 저였습니다.",
+              "tags": [
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "balance"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "배려가 끝났다는 문자를 보면서도 제가 그 시기를 놓지 못한 건 사실이에요.",
+            "아버지 상태가 나아져도 제 마음은 아직 비상상태에 묶여 있었습니다."
+          ],
+          "privateKnowledge": [
+            "재활 종료와 원상복구 시점이 대화에 명시됐다.",
+            "평일 오전 7시 20분 전 반환 조건도 반복 확인했다.",
+            "그래도 그 종료를 행동으로 바꾸지 못했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-4:emotion:1",
+              "factText": "배려가 끝났다는 문자를 보면서도 제가 그 시기를 놓지 못한 건 사실이에요.",
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-4:fear:0",
+              "factText": "아버지 상태가 나아져도 제 마음은 아직 비상상태에 묶여 있었습니다.",
+              "tags": [
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "지난가을 임시주차 합의는 재활 종료와 함께 끝나는 약속이 맞았습니다.",
+            "저는 그 종료를 알고도 생활을 다시 돌리지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "재활 종료와 원상복구 시점이 대화에 명시됐다.",
+            "평일 오전 7시 20분 전 반환 조건도 반복 확인했다.",
+            "그래도 그 종료를 행동으로 바꾸지 못했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-4:admission:0",
+              "factText": "지난가을 임시주차 합의는 재활 종료와 함께 끝나는 약속이 맞았습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-4:context:0",
+              "factText": "저는 그 종료를 알고도 생활을 다시 돌리지 못했습니다.",
+              "tags": [
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저는 괴롭힘받는 상황을 알리려고 단체방에 쓴 거지, 도윤 씨를 먼저 공개 비난하려던 건 아니었습니다.",
+            "관리사무소 확인 전 약속을 제가 깼다고만 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "단체방 게시가 공식 민원 접수보다 9분 빨랐다.",
+            "게시글에서 종료된 합의와 반복 점유 사실을 뺐다.",
+            "피해자처럼 보이는 서술이 자신에게 유리하다고 느꼈다."
+          ],
+          "suppressions": [
+            "게시글이 공식 민원 접수보다 9분 빨랐다는 점",
+            "게시글에서 종료된 합의와 반복 점유를 뺀 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-5:context:0",
+              "factText": "저는 괴롭힘받는 상황을 알리려고 단체방에 쓴 거지, 도윤 씨를 먼저 공개 비난하려던 건 아니었습니다.",
+              "tags": [
+                "context",
+                "emotion"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-5:denial:0",
+              "factText": "관리사무소 확인 전 약속을 제가 깼다고만 보긴 어렵습니다.",
+              "tags": [
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "사진과 쪽지를 보고 너무 놀라서 도움을 구한 것뿐입니다.",
+            "사실관계 전체를 다 못 적은 건 맞지만 먼저 망신주려던 의도는 없었어요."
+          ],
+          "privateKnowledge": [
+            "단체방 게시가 공식 민원 접수보다 9분 빨랐다.",
+            "게시글에서 종료된 합의와 반복 점유 사실을 뺐다.",
+            "피해자처럼 보이는 서술이 자신에게 유리하다고 느꼈다."
+          ],
+          "suppressions": [
+            "피해자처럼 보이는 서술을 골랐다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-5:timeline:0",
+              "factText": "사진과 쪽지를 보고 너무 놀라서 도움을 구한 것뿐입니다.",
+              "tags": [
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-5:uncertainty:0",
+              "factText": "사실관계 전체를 다 못 적은 건 맞지만 먼저 망신주려던 의도는 없었어요.",
+              "tags": [
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "제가 단체방에 먼저 올린 건 사실이지만, 그때는 콘과 메모를 본 직후라 제정신이 아니었습니다.",
+            "다만 도윤 씨도 공개 압박을 먼저 시작했잖아요."
+          ],
+          "privateKnowledge": [
+            "단체방 게시가 공식 민원 접수보다 9분 빨랐다.",
+            "게시글에서 종료된 합의와 반복 점유 사실을 뺐다.",
+            "피해자처럼 보이는 서술이 자신에게 유리하다고 느꼈다."
+          ],
+          "suppressions": [
+            "자신에게 불리한 맥락을 빠뜨린 채 공개 호소를 한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-5:admission:0",
+              "factText": "제가 단체방에 먼저 올린 건 사실이지만, 그때는 콘과 메모를 본 직후라 제정신이 아니었습니다.",
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-5:self_justification:0",
+              "factText": "다만 도윤 씨도 공개 압박을 먼저 시작했잖아요.",
+              "tags": [
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "확인 전 공개글을 올린 건 제가 약속을 어긴 셈입니다.",
+            "그래도 도윤 씨가 개인 콘과 쪽지로 먼저 몰아붙인 게 없었다면 그렇게까지 하진 않았을 겁니다."
+          ],
+          "privateKnowledge": [
+            "단체방 게시가 공식 민원 접수보다 9분 빨랐다.",
+            "게시글에서 종료된 합의와 반복 점유 사실을 뺐다.",
+            "피해자처럼 보이는 서술이 자신에게 유리하다고 느꼈다."
+          ],
+          "suppressions": [
+            "확인 전 공개글이 약속 위반이라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-5:responsibility:0",
+              "factText": "확인 전 공개글을 올린 건 제가 약속을 어긴 셈입니다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-5:counter:0",
+              "factText": "그래도 도윤 씨가 개인 콘과 쪽지로 먼저 몰아붙인 게 없었다면 그렇게까지 하진 않았을 겁니다.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "사실 저는 합의 종료와 제 반복 점유를 쓰지 않으면 사람들이 왜 내가 놀랐는지 봐줄 거라고 생각했어요.",
+            "부끄러워서 제 잘못까지 같이 올릴 용기가 없었습니다."
+          ],
+          "privateKnowledge": [
+            "단체방 게시가 공식 민원 접수보다 9분 빨랐다.",
+            "게시글에서 종료된 합의와 반복 점유 사실을 뺐다.",
+            "피해자처럼 보이는 서술이 자신에게 유리하다고 느꼈다."
+          ],
+          "suppressions": [
+            "제 잘못을 함께 쓰면 믿음을 잃을까 두려웠던 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-5:emotion:0",
+              "factText": "사실 저는 합의 종료와 제 반복 점유를 쓰지 않으면 사람들이 왜 내가 놀랐는지 봐줄 거라고 생각했어요.",
+              "tags": [
+                "emotion",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-5:fear:0",
+              "factText": "부끄러워서 제 잘못까지 같이 올릴 용기가 없었습니다.",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "관리사무소 확인 전에 단체방에 피해자처럼 글을 올린 건 제 잘못입니다.",
+            "종료된 합의와 제 반복 위반을 빼고 쓴 탓에 공개 비난 금지 약속을 제가 먼저 깨뜨렸습니다."
+          ],
+          "privateKnowledge": [
+            "단체방 게시가 공식 민원 접수보다 9분 빨랐다.",
+            "게시글에서 종료된 합의와 반복 점유 사실을 뺐다.",
+            "피해자처럼 보이는 서술이 자신에게 유리하다고 느꼈다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:a:tell:sympathy_stack",
+            "neighbor04:a:tell:omission_wrap",
+            "neighbor04:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:a:d-5:admission:1",
+              "factText": "관리사무소 확인 전에 단체방에 피해자처럼 글을 올린 건 제 잘못입니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:a:d-5:responsibility:1",
+              "factText": "종료된 합의와 제 반복 위반을 빼고 쓴 탓에 공개 비난 금지 약속을 제가 먼저 깨뜨렸습니다.",
+              "tags": [
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 9분 전 게시글",
+                  "neutral": "먼저 올라간 글"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "박서림의 아버지",
+                  "neutral": "가족",
+                  "fullName": "박서림의 아버지",
+                  "judgeRef": "아버님"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "서림 씨가 평일 오전 7시 20분 전까지 비워주기로 한 약속을 여러 번 지키지 않은 건 사실입니다.",
+            "저는 그 반복 때문에 출근 동선이 계속 흔들렸습니다."
+          ],
+          "privateKnowledge": [
+            "출입기록과 CCTV에 11차례 반복 점유가 남아 있다.",
+            "반복 위반 이전에는 자신도 배려를 해주려 했었다.",
+            "그러나 스스로도 감정이 커져 절차 밖 대응으로 갔다."
+          ],
+          "suppressions": [
+            "절차 밖 대응으로 감정이 이미 커진 상태"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-1:act:0",
+              "factText": "서림 씨가 평일 오전 7시 20분 전까지 비워주기로 한 약속을 여러 번 지키지 않은 건 사실입니다.",
+              "tags": [
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-1:harm:0",
+              "factText": "저는 그 반복 때문에 출근 동선이 계속 흔들렸습니다.",
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "한두 번 지각이 아니라 날짜와 시각이 누적됐습니다.",
+            "저는 합의가 끝났는데도 같은 칸이 계속 막혀 있었다고 기억합니다."
+          ],
+          "privateKnowledge": [
+            "출입기록과 CCTV에 11차례 반복 점유가 남아 있다.",
+            "반복 위반 이전에는 자신도 배려를 해주려 했었다.",
+            "그러나 스스로도 감정이 커져 절차 밖 대응으로 갔다."
+          ],
+          "suppressions": [
+            "배려했던 과거 감정이 현재 판단에 섞인 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-1:rule:0",
+              "factText": "한두 번 지각이 아니라 날짜와 시각이 누적됐습니다.",
+              "tags": [
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-1:counter:0",
+              "factText": "저는 합의가 끝났는데도 같은 칸이 계속 막혀 있었다고 기억합니다.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "출입기록과 CCTV를 보면 7시 20분을 넘긴 날이 여러 번 확인됩니다.",
+            "제가 예민했던 이유는 그 수치가 반복이었기 때문입니다."
+          ],
+          "privateKnowledge": [
+            "출입기록과 CCTV에 11차례 반복 점유가 남아 있다.",
+            "반복 위반 이전에는 자신도 배려를 해주려 했었다.",
+            "그러나 스스로도 감정이 커져 절차 밖 대응으로 갔다."
+          ],
+          "suppressions": [
+            "숫자를 앞세워 감정을 차단한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-1:evidence:0",
+              "factText": "출입기록과 CCTV를 보면 7시 20분을 넘긴 날이 여러 번 확인됩니다.",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-1:emotion:0",
+              "factText": "제가 예민했던 이유는 그 수치가 반복이었기 때문입니다.",
+              "tags": [
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "explain"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "제가 화를 키운 건 맞지만, 그 전에 서림 씨의 반복 점유가 먼저 있었던 것도 분리해서 봐야 합니다.",
+            "규정과 생활 동선이 함께 흔들린 상태였습니다."
+          ],
+          "privateKnowledge": [
+            "출입기록과 CCTV에 11차례 반복 점유가 남아 있다.",
+            "반복 위반 이전에는 자신도 배려를 해주려 했었다.",
+            "그러나 스스로도 감정이 커져 절차 밖 대응으로 갔다."
+          ],
+          "suppressions": [
+            "자신의 과잉 대응이 갈등을 키운 부분"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-1:responsibility:0",
+              "factText": "제가 화를 키운 건 맞지만, 그 전에 서림 씨의 반복 점유가 먼저 있었던 것도 분리해서 봐야 합니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "balance"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-1:counter:1",
+              "factText": "규정과 생활 동선이 함께 흔들린 상태였습니다.",
+              "tags": [
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "balance"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "저도 처음엔 돌봄 사정을 봐주려 했는데, 끝난 약속이 계속 이어지는 걸 보면서 배려가 당연한 권리처럼 쓰인다는 느낌이 들었습니다.",
+            "그 감정이 저를 더 딱딱하게 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "출입기록과 CCTV에 11차례 반복 점유가 남아 있다.",
+            "반복 위반 이전에는 자신도 배려를 해주려 했었다.",
+            "그러나 스스로도 감정이 커져 절차 밖 대응으로 갔다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-1:emotion:1",
+              "factText": "저도 처음엔 돌봄 사정을 봐주려 했는데, 끝난 약속이 계속 이어지는 걸 보면서 배려가 당연한 권리처럼 쓰인다는 느낌이 들었습니다.",
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-1:fear:0",
+              "factText": "그 감정이 저를 더 딱딱하게 만들었습니다.",
+              "tags": [
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "핵심은 서림 씨가 종료된 탄력주차 합의를 반복 위반했다는 점입니다.",
+            "다만 그 문제를 제가 절차 밖 방식으로 다룬 건 별개 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "출입기록과 CCTV에 11차례 반복 점유가 남아 있다.",
+            "반복 위반 이전에는 자신도 배려를 해주려 했었다.",
+            "그러나 스스로도 감정이 커져 절차 밖 대응으로 갔다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-1:admission:0",
+              "factText": "핵심은 서림 씨가 종료된 탄력주차 합의를 반복 위반했다는 점입니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-1:context:0",
+              "factText": "다만 그 문제를 제가 절차 밖 방식으로 다룬 건 별개 잘못입니다.",
+              "tags": [
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "평일 오전 7시 20분",
+                  "neutral": "반환 시각",
+                  "dateExact": "2월 말 이후",
+                  "period": "합의 종료 뒤"
+                },
+                "count": {
+                  "exact": "11차례",
+                  "neutral": "여러 차례",
+                  "rounded": "열한 번"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "해당 칸"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "저는 차를 막으려고 콘을 세운 게 아니라 그 칸이 또 비워지지 않았다는 걸 표시만 해둔 겁니다.",
+            "메모도 위협이 아니라 약속 상기 수준이었습니다."
+          ],
+          "privateKnowledge": [
+            "관리사무소 신고 전에 개인 콘과 메모를 직접 사용했다.",
+            "경비원이 회수할 때까지 현장 압박 효과가 있었다.",
+            "규정으로 포장했지만 실제로는 억울함과 망신주기 감정이 섞였다."
+          ],
+          "suppressions": [
+            "공식 신고 전에 직접 콘과 메모를 사용한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-2:context:0",
+              "factText": "저는 차를 막으려고 콘을 세운 게 아니라 그 칸이 또 비워지지 않았다는 걸 표시만 해둔 겁니다.",
+              "tags": [
+                "context",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-2:denial:0",
+              "factText": "메모도 위협이 아니라 약속 상기 수준이었습니다.",
+              "tags": [
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "잠깐 두었던 개인 물건이었고, 통행을 완전히 막을 생각은 없었습니다.",
+            "감정적으로 보였을 수는 있어도 자력 제재라고까지 할 건 아니라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "관리사무소 신고 전에 개인 콘과 메모를 직접 사용했다.",
+            "경비원이 회수할 때까지 현장 압박 효과가 있었다.",
+            "규정으로 포장했지만 실제로는 억울함과 망신주기 감정이 섞였다."
+          ],
+          "suppressions": [
+            "상대가 보게 하려는 의도가 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-2:timeline:0",
+              "factText": "잠깐 두었던 개인 물건이었고, 통행을 완전히 막을 생각은 없었습니다.",
+              "tags": [
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-2:uncertainty:0",
+              "factText": "감정적으로 보였을 수는 있어도 자력 제재라고까지 할 건 아니라고 봅니다.",
+              "tags": [
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "공식 신고 전에 콘과 메모를 둔 건 맞습니다.",
+            "다만 반복 위반이 계속돼 순간적으로 선을 넘은 겁니다."
+          ],
+          "privateKnowledge": [
+            "관리사무소 신고 전에 개인 콘과 메모를 직접 사용했다.",
+            "경비원이 회수할 때까지 현장 압박 효과가 있었다.",
+            "규정으로 포장했지만 실제로는 억울함과 망신주기 감정이 섞였다."
+          ],
+          "suppressions": [
+            "규정상 허용되지 않는 방식임을 알고 있었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-2:admission:0",
+              "factText": "공식 신고 전에 콘과 메모를 둔 건 맞습니다.",
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-2:self_justification:0",
+              "factText": "다만 반복 위반이 계속돼 순간적으로 선을 넘은 겁니다.",
+              "tags": [
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "개인 콘을 세운 건 제 잘못이지만, 몇 차례고 같은 일이 반복되다 보니 관리사무소만 기다리기 어렵다고 느꼈습니다.",
+            "먼저 약속이 지켜졌다면 저는 그렇게까지 안 했을 겁니다."
+          ],
+          "privateKnowledge": [
+            "관리사무소 신고 전에 개인 콘과 메모를 직접 사용했다.",
+            "경비원이 회수할 때까지 현장 압박 효과가 있었다.",
+            "규정으로 포장했지만 실제로는 억울함과 망신주기 감정이 섞였다."
+          ],
+          "suppressions": [
+            "망신주기 감정이 섞였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-2:responsibility:0",
+              "factText": "개인 콘을 세운 건 제 잘못이지만, 몇 차례고 같은 일이 반복되다 보니 관리사무소만 기다리기 어렵다고 느꼈습니다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-2:counter:0",
+              "factText": "먼저 약속이 지켜졌다면 저는 그렇게까지 안 했을 겁니다.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "사실 제가 그 칸을 '규정' 말로 포장했지만, 그 아침엔 억울한 마음이 먼저였습니다.",
+            "그래서 제 행동 수위를 스스로 줄여 생각하려 했습니다."
+          ],
+          "privateKnowledge": [
+            "관리사무소 신고 전에 개인 콘과 메모를 직접 사용했다.",
+            "경비원이 회수할 때까지 현장 압박 효과가 있었다.",
+            "규정으로 포장했지만 실제로는 억울함과 망신주기 감정이 섞였다."
+          ],
+          "suppressions": [
+            "억울함을 규정 언어로 포장한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-2:emotion:0",
+              "factText": "사실 제가 그 칸을 '규정' 말로 포장했지만, 그 아침엔 억울한 마음이 먼저였습니다.",
+              "tags": [
+                "emotion",
+                "admission"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-2:fear:0",
+              "factText": "그래서 제 행동 수위를 스스로 줄여 생각하려 했습니다.",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "관리사무소 신고 전에 개인 콘과 경고문으로 압박한 건 제 책임입니다.",
+            "반복 위반에 화가 났더라도 공용공간을 사적으로 제재하면 안 됐습니다."
+          ],
+          "privateKnowledge": [
+            "관리사무소 신고 전에 개인 콘과 메모를 직접 사용했다.",
+            "경비원이 회수할 때까지 현장 압박 효과가 있었다.",
+            "규정으로 포장했지만 실제로는 억울함과 망신주기 감정이 섞였다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-2:admission:1",
+              "factText": "관리사무소 신고 전에 개인 콘과 경고문으로 압박한 건 제 책임입니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-2:responsibility:1",
+              "factText": "반복 위반에 화가 났더라도 공용공간을 사적으로 제재하면 안 됐습니다.",
+              "tags": [
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "정식 절차 전"
+                },
+                "place": {
+                  "exact": "102동 앞 탄력주차면",
+                  "neutral": "그 칸"
+                },
+                "object": {
+                  "exact": "개인 접이식 콘과 '약속 좀 지키라' 메모",
+                  "neutral": "사적 제재 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "범퍼 흠집은 제가 낸 게 아닙니다.",
+            "메모를 남긴 일과 별개로 차량 손상까지 제 보복으로 연결하는 건 비약입니다."
+          ],
+          "privateKnowledge": [
+            "자신은 범퍼를 건드리지 않았고 손상 시점은 몰랐다.",
+            "메모와 콘 때문에 의심을 살 수 있다는 건 안다.",
+            "그 억울함을 차갑게 말해 공감 부족으로 비칠 수 있다."
+          ],
+          "suppressions": [
+            "메모와 콘 때문에 의심받기 쉬운 상황임을 안다"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-3:act:0",
+              "factText": "범퍼 흠집은 제가 낸 게 아닙니다.",
+              "tags": [
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-3:harm:0",
+              "factText": "메모를 남긴 일과 별개로 차량 손상까지 제 보복으로 연결하는 건 비약입니다.",
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "저는 차에 손댄 적이 없고, 그 흠집이 언제 생긴 건지도 그때는 몰랐습니다.",
+            "감정상으로 저를 의심한 건 이해하지만 사실은 별개입니다."
+          ],
+          "privateKnowledge": [
+            "자신은 범퍼를 건드리지 않았고 손상 시점은 몰랐다.",
+            "메모와 콘 때문에 의심을 살 수 있다는 건 안다.",
+            "그 억울함을 차갑게 말해 공감 부족으로 비칠 수 있다."
+          ],
+          "suppressions": [
+            "흠집 시점을 몰랐다는 한계"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-3:rule:0",
+              "factText": "저는 차에 손댄 적이 없고, 그 흠집이 언제 생긴 건지도 그때는 몰랐습니다.",
+              "tags": [
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-3:counter:0",
+              "factText": "감정상으로 저를 의심한 건 이해하지만 사실은 별개입니다.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "일주일 전 손상 기록이 나온 뒤엔 더 분명해졌습니다.",
+            "적어도 범퍼 문제만큼은 그날 제 행동과 묶을 수 없습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 범퍼를 건드리지 않았고 손상 시점은 몰랐다.",
+            "메모와 콘 때문에 의심을 살 수 있다는 건 안다.",
+            "그 억울함을 차갑게 말해 공감 부족으로 비칠 수 있다."
+          ],
+          "suppressions": [
+            "차갑게 설명해 공감 부족으로 보였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-3:evidence:0",
+              "factText": "일주일 전 손상 기록이 나온 뒤엔 더 분명해졌습니다.",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "evidence"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-3:emotion:0",
+              "factText": "적어도 범퍼 문제만큼은 그날 제 행동과 묶을 수 없습니다.",
+              "tags": [
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "explain"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "제 콘과 쪽지가 의심을 부른 건 맞습니다.",
+            "하지만 그래서 존재하지 않는 보복까지 제 몫으로 얹는 건 부당합니다."
+          ],
+          "privateKnowledge": [
+            "자신은 범퍼를 건드리지 않았고 손상 시점은 몰랐다.",
+            "메모와 콘 때문에 의심을 살 수 있다는 건 안다.",
+            "그 억울함을 차갑게 말해 공감 부족으로 비칠 수 있다."
+          ],
+          "suppressions": [
+            "자신의 과잉 대응이 의심의 배경이 된 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-3:responsibility:0",
+              "factText": "제 콘과 쪽지가 의심을 부른 건 맞습니다.",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "balance"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-3:counter:1",
+              "factText": "하지만 그래서 존재하지 않는 보복까지 제 몫으로 얹는 건 부당합니다.",
+              "tags": [
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "balance"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "그때 저는 억울하다는 생각이 너무 커서, 왜 그렇게 의심받는지 감정적으로 설명하지도 못했습니다.",
+            "차갑게 굴어서 더 나빠 보였을 수 있습니다."
+          ],
+          "privateKnowledge": [
+            "자신은 범퍼를 건드리지 않았고 손상 시점은 몰랐다.",
+            "메모와 콘 때문에 의심을 살 수 있다는 건 안다.",
+            "그 억울함을 차갑게 말해 공감 부족으로 비칠 수 있다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-3:emotion:1",
+              "factText": "그때 저는 억울하다는 생각이 너무 커서, 왜 그렇게 의심받는지 감정적으로 설명하지도 못했습니다.",
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-3:fear:0",
+              "factText": "차갑게 굴어서 더 나빠 보였을 수 있습니다.",
+              "tags": [
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "범퍼 흠집은 제 보복이 아니었습니다.",
+            "다만 제 과잉 대응이 있었기에 서림 씨가 그렇게 연결해 본 배경까지는 인정합니다."
+          ],
+          "privateKnowledge": [
+            "자신은 범퍼를 건드리지 않았고 손상 시점은 몰랐다.",
+            "메모와 콘 때문에 의심을 살 수 있다는 건 안다.",
+            "그 억울함을 차갑게 말해 공감 부족으로 비칠 수 있다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-3:admission:0",
+              "factText": "범퍼 흠집은 제 보복이 아니었습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-3:context:0",
+              "factText": "다만 제 과잉 대응이 있었기에 서림 씨가 그렇게 연결해 본 배경까지는 인정합니다.",
+              "tags": [
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "범퍼 흠집 사진과 구겨진 경고문",
+                  "neutral": "그 사진들"
+                },
+                "time": {
+                  "exact": "사건 당일 아침",
+                  "neutral": "그 아침"
+                },
+                "prior": {
+                  "exact": "일주일 전 블랙박스 충돌",
+                  "neutral": "이전 손상 가능성"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "지난가을에 서로 편의 보자는 얘기는 있었지만, 저는 그걸 딱 끊기는 계약처럼 받아들이진 않았습니다.",
+            "상황이 좀 더 안정될 때까지 유연하게 가는 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "재활 종료 후 원상복구와 7시 20분 반환 문구를 명확히 알고 있었다.",
+            "그 사실을 즉시 정리하기보다 나중에 근거처럼 쥐고 있었다.",
+            "예전 배려를 현재 우위의 근거로 삼고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "종료 문구를 정확히 알고 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-4:context:0",
+              "factText": "지난가을에 서로 편의 보자는 얘기는 있었지만, 저는 그걸 딱 끊기는 계약처럼 받아들이진 않았습니다.",
+              "tags": [
+                "context",
+                "emotion"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-4:denial:0",
+              "factText": "상황이 좀 더 안정될 때까지 유연하게 가는 줄 알았습니다.",
+              "tags": [
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "문자에 종료 시점이 적혀 있었던 건 맞지만, 실제 생활에선 서로 조금씩 봐주자는 뉘앙스도 있었습니다.",
+            "그래서 완전 원상복구 시점을 단정하기 어렵다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "재활 종료 후 원상복구와 7시 20분 반환 문구를 명확히 알고 있었다.",
+            "그 사실을 즉시 정리하기보다 나중에 근거처럼 쥐고 있었다.",
+            "예전 배려를 현재 우위의 근거로 삼고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "재활 종료 직전에도 종료 확인이 있었던 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-4:timeline:0",
+              "factText": "문자에 종료 시점이 적혀 있었던 건 맞지만, 실제 생활에선 서로 조금씩 봐주자는 뉘앙스도 있었습니다.",
+              "tags": [
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-4:uncertainty:0",
+              "factText": "그래서 완전 원상복구 시점을 단정하기 어렵다고 봤습니다.",
+              "tags": [
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "재활 종료 후 원래 순서로 돌아가자는 문구가 있었던 건 사실입니다.",
+            "다만 저는 그걸 갑자기 하루아침에 끊으라는 뜻보다는 정리 단계로 이해했습니다."
+          ],
+          "privateKnowledge": [
+            "재활 종료 후 원상복구와 7시 20분 반환 문구를 명확히 알고 있었다.",
+            "그 사실을 즉시 정리하기보다 나중에 근거처럼 쥐고 있었다.",
+            "예전 배려를 현재 우위의 근거로 삼고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "즉시 정리하기보다 애매함을 남겨둔 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-4:admission:0",
+              "factText": "재활 종료 후 원래 순서로 돌아가자는 문구가 있었던 건 사실입니다.",
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-4:self_justification:0",
+              "factText": "다만 저는 그걸 갑자기 하루아침에 끊으라는 뜻보다는 정리 단계로 이해했습니다.",
+              "tags": [
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "합의 종료가 명시됐다는 점은 인정합니다.",
+            "그래도 서림 씨도 그 이후 사정을 설명했고, 저도 그때 더 분명히 선을 다시 그었어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "재활 종료 후 원상복구와 7시 20분 반환 문구를 명확히 알고 있었다.",
+            "그 사실을 즉시 정리하기보다 나중에 근거처럼 쥐고 있었다.",
+            "예전 배려를 현재 우위의 근거로 삼고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "문제를 키운 뒤 근거처럼 쓰려 한 마음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-4:responsibility:0",
+              "factText": "합의 종료가 명시됐다는 점은 인정합니다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-4:counter:0",
+              "factText": "그래도 서림 씨도 그 이후 사정을 설명했고, 저도 그때 더 분명히 선을 다시 그었어야 했습니다.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 말하면 저는 종료 문구를 알고도, 나중에 분쟁에서 제 입장이 더 또렷해지도록 기록처럼 쥐고 있었습니다.",
+            "그걸 그때 바로 대화로 풀기보다 속으로만 계산했습니다."
+          ],
+          "privateKnowledge": [
+            "재활 종료 후 원상복구와 7시 20분 반환 문구를 명확히 알고 있었다.",
+            "그 사실을 즉시 정리하기보다 나중에 근거처럼 쥐고 있었다.",
+            "예전 배려를 현재 우위의 근거로 삼고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "예전 배려를 현재 우위의 근거로 삼고 싶었던 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-4:emotion:0",
+              "factText": "솔직히 말하면 저는 종료 문구를 알고도, 나중에 분쟁에서 제 입장이 더 또렷해지도록 기록처럼 쥐고 있었습니다.",
+              "tags": [
+                "emotion",
+                "admission"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-4:fear:0",
+              "factText": "그걸 그때 바로 대화로 풀기보다 속으로만 계산했습니다.",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "지난가을 임시 배려는 재활 종료와 함께 끝나는 약속이 맞았습니다.",
+            "저는 그 사실을 알고도 나중에 문제 제기할 근거처럼만 들고 있었고, 즉시 정리하진 못했습니다."
+          ],
+          "privateKnowledge": [
+            "재활 종료 후 원상복구와 7시 20분 반환 문구를 명확히 알고 있었다.",
+            "그 사실을 즉시 정리하기보다 나중에 근거처럼 쥐고 있었다.",
+            "예전 배려를 현재 우위의 근거로 삼고 싶은 마음이 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-4:admission:1",
+              "factText": "지난가을 임시 배려는 재활 종료와 함께 끝나는 약속이 맞았습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-4:responsibility:1",
+              "factText": "저는 그 사실을 알고도 나중에 문제 제기할 근거처럼만 들고 있었고, 즉시 정리하진 못했습니다.",
+              "tags": [
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "agreement": {
+                  "exact": "재활 종료 후 원상복구",
+                  "neutral": "그 종료 약속"
+                },
+                "time": {
+                  "exact": "2월 말",
+                  "neutral": "종료 시점"
+                },
+                "rule": {
+                  "exact": "평일 오전 7시 20분 전 반환",
+                  "neutral": "아침 반환 조건"
+                },
+                "person": {
+                  "exact": "박서림",
+                  "neutral": "상대방",
+                  "fullName": "박서림",
+                  "judgeRef": "상대방"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "공개 비난을 먼저 시작한 건 제가 아니라 서림 씨였습니다.",
+            "저는 관리사무소 확인 전에 공개글을 쓰지 말자는 약속을 깨려 한 적 없습니다."
+          ],
+          "privateKnowledge": [
+            "예전 접촉사고 뒤 확인 전 공개 비난과 자력 제재를 하지 않기로 한 약속이 있었다.",
+            "공식 민원 전에 이미 개인 콘과 쪽지로 상대를 압박했다.",
+            "단체방 글보다 먼저 통제하고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "공식 민원 전에 콘과 메모를 먼저 쓴 점",
+            "자력 제재 금지 약속이 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-5:context:0",
+              "factText": "공개 비난을 먼저 시작한 건 제가 아니라 서림 씨였습니다.",
+              "tags": [
+                "context",
+                "emotion"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-5:denial:0",
+              "factText": "저는 관리사무소 확인 전에 공개글을 쓰지 말자는 약속을 깨려 한 적 없습니다.",
+              "tags": [
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "단체방 글이 먼저 올라왔으니, 적어도 공개 망신은 그쪽에서 먼저 시작된 셈입니다.",
+            "제 행동은 현장 대응이었지 공개 비난은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "예전 접촉사고 뒤 확인 전 공개 비난과 자력 제재를 하지 않기로 한 약속이 있었다.",
+            "공식 민원 전에 이미 개인 콘과 쪽지로 상대를 압박했다.",
+            "단체방 글보다 먼저 통제하고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "현장 대응도 공개 압박과 같은 효과를 냈다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-5:timeline:0",
+              "factText": "단체방 글이 먼저 올라왔으니, 적어도 공개 망신은 그쪽에서 먼저 시작된 셈입니다.",
+              "tags": [
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-5:uncertainty:0",
+              "factText": "제 행동은 현장 대응이었지 공개 비난은 아니었습니다.",
+              "tags": [
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "자력 제재를 하지 않기로 한 약속이 있었는데도 제가 콘과 메모를 쓴 건 맞습니다.",
+            "다만 공개글을 먼저 올린 건 서림 씨였고, 저는 그 전에 현장에서 끝내려 했습니다."
+          ],
+          "privateKnowledge": [
+            "예전 접촉사고 뒤 확인 전 공개 비난과 자력 제재를 하지 않기로 한 약속이 있었다.",
+            "공식 민원 전에 이미 개인 콘과 쪽지로 상대를 압박했다.",
+            "단체방 글보다 먼저 통제하고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "단체방보다 먼저 스스로 통제하려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-5:admission:0",
+              "factText": "자력 제재를 하지 않기로 한 약속이 있었는데도 제가 콘과 메모를 쓴 건 맞습니다.",
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-5:self_justification:0",
+              "factText": "다만 공개글을 먼저 올린 건 서림 씨였고, 저는 그 전에 현장에서 끝내려 했습니다.",
+              "tags": [
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "절차를 어긴 건 저도 같습니다.",
+            "하지만 공식 확인 전에 단체방으로 여론을 돌린 책임까지 제 것과 같다고 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "예전 접촉사고 뒤 확인 전 공개 비난과 자력 제재를 하지 않기로 한 약속이 있었다.",
+            "공식 민원 전에 이미 개인 콘과 쪽지로 상대를 압박했다.",
+            "단체방 글보다 먼저 통제하고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "자기 책임을 상대 책임보다 가볍게 보려는 태도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-5:responsibility:0",
+              "factText": "절차를 어긴 건 저도 같습니다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-5:counter:0",
+              "factText": "하지만 공식 확인 전에 단체방으로 여론을 돌린 책임까지 제 것과 같다고 보긴 어렵습니다.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "사실 저는 공개글보다 먼저 제 손으로 통제하고 싶었습니다.",
+            "규정을 지킨다고 말했지만, 속으론 망신을 돌려주고 싶은 마음이 있었습니다."
+          ],
+          "privateKnowledge": [
+            "예전 접촉사고 뒤 확인 전 공개 비난과 자력 제재를 하지 않기로 한 약속이 있었다.",
+            "공식 민원 전에 이미 개인 콘과 쪽지로 상대를 압박했다.",
+            "단체방 글보다 먼저 통제하고 싶은 마음이 있었다."
+          ],
+          "suppressions": [
+            "망신을 돌려주고 싶은 감정"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-5:emotion:0",
+              "factText": "사실 저는 공개글보다 먼저 제 손으로 통제하고 싶었습니다.",
+              "tags": [
+                "emotion",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-5:fear:0",
+              "factText": "규정을 지킨다고 말했지만, 속으론 망신을 돌려주고 싶은 마음이 있었습니다.",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "관리사무소 확인 전 공개 압박과 자력 제재를 하지 않기로 한 약속은 저도 깼습니다.",
+            "단체방 글이 먼저였더라도, 개인 콘과 쪽지로 압박한 제 책임이 분명합니다."
+          ],
+          "privateKnowledge": [
+            "예전 접촉사고 뒤 확인 전 공개 비난과 자력 제재를 하지 않기로 한 약속이 있었다.",
+            "공식 민원 전에 이미 개인 콘과 쪽지로 상대를 압박했다.",
+            "단체방 글보다 먼저 통제하고 싶은 마음이 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor04:b:tell:clause_recital",
+            "neighbor04:b:tell:timestamp_wall",
+            "neighbor04:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor04:b:d-5:admission:1",
+              "factText": "관리사무소 확인 전 공개 압박과 자력 제재를 하지 않기로 한 약속은 저도 깼습니다.",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor04:b:d-5:responsibility:1",
+              "factText": "단체방 글이 먼저였더라도, 개인 콘과 쪽지로 압박한 제 책임이 분명합니다.",
+              "tags": [
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지",
+                  "neutral": "그 비공개 확인 약속"
+                },
+                "time": {
+                  "exact": "공식 민원 접수 전",
+                  "neutral": "확인 전 시점"
+                },
+                "object": {
+                  "exact": "개인 콘과 쪽지",
+                  "neutral": "현장 압박 수단"
+                },
+                "person": {
+                  "exact": "최도윤",
+                  "neutral": "본인",
+                  "fullName": "최도윤",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

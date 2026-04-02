@@ -1,0 +1,1251 @@
+/* Auto-generated export */
+export const family01StructureV2 = {
+  "caseId": "family-01",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "서아의 부모 예금 선이체",
+      "truth": true,
+      "truthDescription": "서아는 간병이 시작되기 전 부모 관리계좌에서 1,800만원을 자기 계좌로 옮겨 카드대금과 보험료를 먼저 막았다. 이후 '간병비 선집행'이라고 포장했다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-1",
+        "e-2"
+      ],
+      "correctResponsibility": {
+        "a": 85,
+        "b": 15
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "재산관리감시",
+      "legitimacyIssue": false,
+      "judgmentStatement": "서아는 부모 계좌에서 1,800만원을 이체했다.",
+      "disputeKind": "core_truth",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "1,800만원의 겉흐름",
+          "summary": "부모 관리계좌에서 서아 개인계좌로 1,800만원이 먼저 움직인 사실, 그리고 그 시점이 간병 정식 시작 전이었다는 표면 층.",
+          "lockedSummary": "큰 금액이 먼저 빠진 건 보이지만, 왜 그때 그 순서로 움직였는지는 아직 잠겨 있다.",
+          "revealAtomIds": [
+            "d1.unlock.s2.transfer_before_care_formal_start",
+            "d1.unlock.s2.personal_account_first_route"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "왜 집안 위기라는 말이 앞섰나",
+          "summary": "도현의 지연과 공백을 방패로 세우며, 선이체를 '집이 멈추지 않게 한 조치'로 정당화하는 동기를 다루는 층.",
+          "lockedSummary": "돈의 이동이 아니라, 왜 서아가 그 돈을 '내가 먼저 막아야 할 위기'로 말하는지가 아직 남아 있다.",
+          "revealAtomIds": [
+            "d1.unlock.s3.brother_delay_used_as_shield",
+            "d1.unlock.s4.fear_of_losing_dutiful_daughter_role"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d1.surface.money_pressed"
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "장녀 체면과 자기빚의 경계",
+          "summary": "부모 돌봄을 계속하려면 먼저 자기 카드대금과 보험료부터 막아야 한다고 믿었던 공포, 그리고 장녀라는 명분으로 경계를 무너뜨린 핵심 층.",
+          "lockedSummary": "이 쟁점의 안쪽에는 간병 명분보다, 자기 형편과 장녀 체면을 뒤섞은 선택이 남아 있다.",
+          "revealAtomIds": [
+            "d1.unlock.s4.propping_self_to_keep_care_going",
+            "d1.unlock.s5.card_and_insurance_paid_first",
+            "d1.unlock.s5.relabel_as_care_expense_plan"
+          ],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d1.household_crisis_challenged"
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "id": "link.d1.to.d5.supports",
+          "fromDisputeId": "d-1",
+          "toDisputeId": "d-5",
+          "type": "supports",
+          "when": {
+            "minState": "S2",
+            "minLayer": "surface",
+            "requireFlags": [
+              "d1.surface.money_pressed"
+            ]
+          },
+          "effect": {
+            "supportBonus": 14,
+            "grantFlag": "d5.first_breach_frame_enabled"
+          },
+          "uiLabel": "1,800만원의 표면이 열리면 '누가 규칙을 먼저 크게 깼나' 축이 강해진다"
+        },
+        {
+          "id": "link.d1.to.d4.weakens_counter",
+          "fromDisputeId": "d-1",
+          "toDisputeId": "d-4",
+          "type": "weakens_counter",
+          "when": {
+            "minState": "S3",
+            "minLayer": "motive"
+          },
+          "effect": {
+            "weakenCounterTags": [
+              "cash_only",
+              "no_alternative",
+              "retrospective_judgment"
+            ],
+            "grantFlag": "d4.no_emergency_monopoly"
+          },
+          "uiLabel": "선이체의 안쪽 이유를 파면 '그때는 다른 길이 없었다'는 절대화가 약해진다"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "도현의 간병비 분담 지연",
+      "truth": true,
+      "truthDescription": "도현은 첫 주 야간 보호사 비용 60만원 중 자기 몫 입금을 12일이나 늦췄다. 교대도 한 차례 출장 핑계로 비웠다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "간병분담",
+      "legitimacyIssue": false,
+      "judgmentStatement": "도현은 간병비를 12일 늦게 입금했다.",
+      "disputeKind": "core_truth",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "12일 지연과 빈 야간칸",
+          "summary": "60만원을 12일 늦게 낸 사실과, 야간 교대를 한 차례 비운 기록이 드러나는 표면 층.",
+          "lockedSummary": "도현이 늦었는지는 보이지만, 그가 왜 계속 '미뤘다'는 말만 반복하는지는 아직 안쪽이다.",
+          "revealAtomIds": [
+            "d2.unlock.s2.twelve_day_delay_exact",
+            "d2.unlock.s2.one_shift_gap_exact"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "왜 끝까지 '완전 방치'는 아니라고 버텼나",
+          "summary": "직접 결제한 약값을 근거로 책임 범위를 줄이려는 계산과, '불효자' 낙인을 피하려는 방어를 다루는 층.",
+          "lockedSummary": "도현은 늦은 책임을 인정하면서도 왜 계속 숫자를 잘라 말하는지, 그 동기가 남아 있다.",
+          "revealAtomIds": [
+            "d2.unlock.s3.direct_payment_not_zero",
+            "d2.unlock.s4.kept_calling_it_delay_only"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ],
+            "requireFlags": [
+              "d2.surface.delay_pressed"
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "불효자 낙인 공포",
+          "summary": "직접 낸 비용이 있어도, 누나를 혼자 남겨 둔 시간 자체는 지워지지 않는다는 깨달음과 수치심을 드러내는 핵심 층.",
+          "lockedSummary": "이 쟁점의 핵심은 60만원보다, 왜 도현이 '늦었다'는 말 뒤에 숨어 버텼는가에 있다.",
+          "revealAtomIds": [
+            "d2.unlock.s4.knew_sister_was_left_alone",
+            "d2.unlock.s5.gap_burden_went_to_sister",
+            "d2.unlock.s5.direct_payments_do_not_cancel_delay"
+          ],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d2.delay_frame_pressed"
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "id": "link.d2.to.d5.weakens_counter",
+          "fromDisputeId": "d-2",
+          "toDisputeId": "d-5",
+          "type": "weakens_counter",
+          "when": {
+            "minState": "S2",
+            "minLayer": "surface"
+          },
+          "effect": {
+            "weakenCounterTags": [
+              "rule_guardian",
+              "scale_only",
+              "numbers_only"
+            ],
+            "grantFlag": "d5b.rule_guardian_weakened"
+          },
+          "uiLabel": "도현의 지연과 공백이 열리면 '나는 규칙 안쪽이었다'는 방어가 얇아진다"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "아버지 수첩 메모는 상속 예고인가",
+      "truth": false,
+      "truthDescription": "2021년 수첩에 적힌 '집 일은 서아가 맡아'는 상속 지정이 아니다. 당시 세금과 병원 서류를 임시로 맡기겠다는 맥락이었다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-4",
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 65,
+        "b": 35
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "상속기대정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "아버지 수첩 메모는 상속 지정이 아니다.",
+      "disputeKind": "red_herring",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "상속처럼 보이는 한 줄",
+          "summary": "잘린 수첩 사진의 '집 일은 서아가 맡아' 한 줄이 상속 예고처럼 읽히는 표면 층.",
+          "lockedSummary": "한 줄은 강하지만, 왜 그 사진이 잘린 상태로만 떠도는지는 아직 보이지 않는다.",
+          "revealAtomIds": [
+            "d3a.unlock.m0.one_line_reads_like_inheritance",
+            "d3a.unlock.m1.role_and_property_blurred",
+            "d3.unlock.s2.cropped_photo_not_full_context",
+            "d3.unlock.s2.line_meant_task_delegation"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "왜 그 한 줄에 권한을 덧씌웠나",
+          "summary": "역할 인정 욕구와 재산 권한 기대가 뒤섞이며 잘린 사진이 주장만 굳히게 된 과정을 다루는 층.",
+          "lockedSummary": "이 오해는 문장 하나가 아니라, 잘린 증거와 자리 불안이 겹쳐 커졌다.",
+          "revealAtomIds": [
+            "d3a.unlock.m2.cropped_note_hardens_claim",
+            "d3.unlock.s3.used_line_as_authority",
+            "d3a.unlock.m3.full_scan_shakes_authority"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "M2"
+              }
+            ],
+            "requireEvidenceIds": [
+              "e-4"
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "상속은 아니지만 자리는 무서웠다",
+          "summary": "상속 지정은 아니었음을 인정한 뒤에도, 왜 그 한 줄에 매달릴 만큼 자신의 자리가 위태롭게 느껴졌는지 드러나는 핵심 층.",
+          "lockedSummary": "가짜 쟁점이 벗겨지고 나면, 남는 건 상속이 아니라 '나는 집에서 뭐였나'라는 공포다.",
+          "revealAtomIds": [
+            "d3.unlock.s4.outside_family_role_fear",
+            "d3.unlock.s4.mixed_care_credit_with_inheritance_expectation",
+            "d3.unlock.s5.full_scan_shows_tax_hospital_context",
+            "d3.unlock.s5.used_note_as_property_authority",
+            "d3a.unlock.m4.inheritance_false_role_pain_remains"
+          ],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "M3"
+              }
+            ],
+            "requireEvidenceIds": [
+              "e-5"
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "id": "link.d3.to.d5.retaliation",
+          "fromDisputeId": "d-3",
+          "toDisputeId": "d-5",
+          "type": "retaliation",
+          "when": {
+            "disproved": true,
+            "requireFlags": [
+              "d3.red_herring_disproved"
+            ]
+          },
+          "effect": {
+            "retaliationAngleTag": "responsibility",
+            "grantFlag": "d5.role_authority_fell"
+          },
+          "uiLabel": "수첩 오해가 벗겨지면 서아의 '내가 맡아 왔다' 권한 프레임이 흔들리고 규칙 책임 반격이 열린다"
+        }
+      ],
+      "misconception": {
+        "beliefModeByParty": {
+          "a": "weaponizes",
+          "b": "suspects"
+        },
+        "stages": [
+          {
+            "state": "M0",
+            "summary": "잘린 수첩 한 줄만 보면 상속 예고처럼 보이는 외형상 의심",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M1",
+            "summary": "돌봄 역할 인정과 재산 권한 기대가 같은 문장 안에서 섞이기 시작하는 방어/당황",
+            "npcMode": "confused_defensive"
+          },
+          {
+            "state": "M2",
+            "summary": "잘린 사진만 붙잡고 '아버지가 맡겼다'는 해석이 거의 권한 주장처럼 굳는 구간",
+            "npcMode": "mistaken_certainty"
+          },
+          {
+            "state": "M3",
+            "summary": "전체 스캔과 변호사 확인서가 붙으면서 상속 예고라는 확신이 흔들리고, 자리 상실의 공포만 더 선명해지는 구간",
+            "npcMode": "doubt_creeping"
+          },
+          {
+            "state": "M4",
+            "summary": "상속 오해는 해소되지만, 왜 그 한 줄을 권한 근거처럼 붙들었는지가 관계 상처로 남는 구간",
+            "npcMode": "clarified"
+          }
+        ],
+        "trapSignals": [
+          "잘린 수첩 사진 한 장만 떠 있고 앞뒤 문맥이 없다",
+          "'집 일은 서아가 맡아'라는 문구가 상속 지정처럼 읽히도록 사진이 짧게 잘려 있다",
+          "2021년 메모라는 시점과 세금·병원 서류 맥락이 빠져 있다",
+          "서아의 돌봄 인정 욕구가 문장 해석을 더 넓게 끌고 간다"
+        ],
+        "truthExitEvidenceIds": [
+          "e-5"
+        ],
+        "clarifyOutcomeLabel": "수첩 상속 오해 해소"
+      }
+    },
+    {
+      "id": "d-4",
+      "name": "첫 달 간병비는 전액 형제 사비로만 감당해야 했는가",
+      "truth": false,
+      "truthDescription": "퇴원 전 병원 사회복지사가 이미 본인부담 경감과 단기돌봄 연계를 안내했다. 서둘러 부모 예금을 빼 쓸 필요는 없었다.",
+      "quadrant": "neither_knows",
+      "requiredEvidence": [
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 55,
+        "b": 45
+      },
+      "ambiguity": "none",
+      "weight": "high",
+      "mediationLink": "복지절차복구",
+      "legitimacyIssue": false,
+      "judgmentStatement": "형제 사비로만 감당할 필요는 없다.",
+      "disputeKind": "sub_truth",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "210만원 전액 사비 전제",
+          "summary": "퇴원 직후 첫 달 비용을 210만원 전액 사비라고 전제한 계산과 압박이 드러나는 표면 층.",
+          "lockedSummary": "비용 압박은 보이지만, 정말 다른 절차가 없었는지는 아직 잠겨 있다.",
+          "revealAtomIds": [
+            "d4.unlock.s2.social_worker_guidance_existed",
+            "d4.unlock.s2.ninetyeight_possible_with_relief"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "왜 '다른 길이 없었다'고 굳혔나",
+          "summary": "사회복지사 안내를 끝까지 확인하지 못한 채, 현금부터 구해야 한다는 패닉이 판단을 사실처럼 굳힌 과정을 다루는 층.",
+          "lockedSummary": "이 쟁점의 중간에는 비용 자체보다, 왜 절차를 끝까지 확인하지 못했는지가 있다.",
+          "revealAtomIds": [
+            "d4.unlock.s3.assumption_spoken_as_fact",
+            "d4.unlock.s4.did_not_check_process_to_end"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "패닉이 만든 현금만능 가정",
+          "summary": "몸으로 먼저 뛰며 절차를 놓친 공포, 그리고 '전액 사비 수밖에 없다'는 전제를 누나만의 성급함으로 돌릴 수 없다는 핵심 층.",
+          "lockedSummary": "이 쟁점의 안쪽은 복지기록보다, 왜 형제가 둘 다 현금부터 떠올렸는가에 닿아 있다.",
+          "revealAtomIds": [
+            "d4.unlock.s4.panic_made_cash_only_assumption",
+            "d4.unlock.s5.first_month_not_all_private",
+            "d4.unlock.s5.cannot_blame_sister_only"
+          ],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S3"
+              }
+            ],
+            "requireEvidenceIds": [
+              "e-6"
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "id": "link.d4.to.d1.weakens_counter",
+          "fromDisputeId": "d-4",
+          "toDisputeId": "d-1",
+          "type": "weakens_counter",
+          "when": {
+            "minState": "S3",
+            "minLayer": "motive"
+          },
+          "effect": {
+            "weakenCounterTags": [
+              "no_choice",
+              "cash_only",
+              "care_requires_preempt"
+            ],
+            "grantFlag": "d1.no_private_only_excuse"
+          },
+          "uiLabel": "복지 경로가 열려 있었다는 점이 드러나면 '먼저 뺄 수밖에 없었다'는 절대화가 약해진다"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "공동 기록 원칙의 쌍방 위반",
+      "truth": true,
+      "truthDescription": "형제는 50만원 이상 쓸 때 공유표에 남기기로 했다. 서아는 1,800만원 선이체를 숨겼고, 도현은 직접 결제한 약값과 야간보호사 비용을 뒤늦게만 올렸다. 둘 다 어겼다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "none",
+      "weight": "medium",
+      "mediationLink": "재산관리감시",
+      "legitimacyIssue": false,
+      "judgmentStatement": "서아와 도현은 공동 기록 원칙을 위반했다.",
+      "disputeKind": "sub_truth",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "50만원 공유표 기준의 표면",
+          "summary": "50만원 이상은 공유표에 먼저 남기기로 한 원칙과, 1,800만원 선이체·60만원 지연·늦은 약값 기록이 서로 얽히는 표면 층.",
+          "lockedSummary": "기준은 보이지만, 왜 서로 자기 위반만 예외처럼 만들었는지는 아직 안쪽이다.",
+          "revealAtomIds": [
+            "d5a.unlock.s2.unlogged_1800_despite_rule",
+            "d5a.unlock.s2.brother_late_logs_exist",
+            "d5b.unlock.s2.late_logs_of_drugs_and_carer",
+            "d5b.unlock.s2.not_rule_inside_afterall"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "왜 자기 위반만 덜 크다고 말했나",
+          "summary": "서아는 동생 지연을 방패로 썼고, 도현은 규모 차이를 방패로 삼으며 서로를 '진짜 배신자'로 세우려 한 동기를 다루는 층.",
+          "lockedSummary": "같은 규칙 위반인데도, 왜 서로 '내 건 예외'를 만들었는지가 남아 있다.",
+          "revealAtomIds": [
+            "d5a.unlock.s3.not_only_betrayer_frame",
+            "d5a.unlock.s4.daughter_role_as_exception",
+            "d5b.unlock.s3.scale_difference_used_as_shield",
+            "d5b.unlock.s4.played_rule_guardian_to_save_face"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "규칙보다 체면을 지킨 사람들",
+          "summary": "누가 먼저 더 크게 깼는지, 그리고 결국 둘 다 체면을 지키려 숫자와 역할을 방패로 삼았다는 핵심 층.",
+          "lockedSummary": "이 쟁점의 핵심은 기록표가 아니라, 서로를 지키는 규칙보다 자기 체면과 통제를 앞세운 방식이다.",
+          "revealAtomIds": [
+            "d5a.unlock.s4.wanted_credit_more_than_rule",
+            "d5a.unlock.s5.i_broke_first_and_bigger",
+            "d5a.unlock.s5.used_brother_delay_as_cover",
+            "d5b.unlock.s4.numbers_first_to_shrink_fault",
+            "d5b.unlock.s5.both_broke_rule_but_i_minimized_mine",
+            "d5b.unlock.s5.my_delay_also_fed_distrust"
+          ],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d5.first_breach_frame_enabled"
+            ]
+          }
+        }
+      ],
+      "linkEdges": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "부모 관리계좌 거래내역과 서아 개인계좌 입금확인서",
+      "description": "간병 시작 3주 전, 부친 명의 관리계좌에서 서아 개인계좌로 1,800만원이 빠져나간 원본 거래내역이다. 이체 직후 카드대금과 보험료가 줄줄이 출금된 기록도 붙어 있다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "은행 원본에는 이체 시각, 수취 계좌주, 이어진 자동이체 내역이 모두 남아 있다.",
+        "check_metadata": "접속 단말은 서아 휴대폰이고 OTP 인증도 본인 명의로 확인된다.",
+        "restore_context": "이체 당일 부모 병원비 결제보다 서아 카드연체와 보험료 자동이체가 먼저 처리됐다.",
+        "verify_source": "은행 상담센터와 PDF 발급번호 대조로 위변조 흔적이 없었다.",
+        "check_edits": "기관 발급 원본이라 편집 흔적이 없다.",
+        "question_acquisition": "부모가 자녀 둘에게 공동 열람을 허락한 관리계좌라 조회 자체는 적법하지만 사용 동의 범위는 별도 쟁점이다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "윤서아에게: \"서아의 부모 예금 선이체\" 관련 해명 요구 (방어 동기: 수치심 회피)",
+          "implication": "이 증거는 윤서아의 \"서아의 부모 예금 선이체\" 쟁점과 관련된다. 윤서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "윤도현에게: \"공동 기록 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 자기 보호)",
+          "implication": "이 증거는 윤도현의 \"공동 기록 원칙의 쌍방 위반\" 쟁점과 관련된다. 윤도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S0",
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S4",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "authenticity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S1",
+            "multiplier": 1.45,
+            "note": "서아가 선이체 사실은 흐리되 탐욕 프레임만 거부하는 흔들림 구간에서 가장 강하다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S1",
+            "multiplier": 1.3,
+            "note": "공유표 위반의 시작점을 숫자로 못 박을 때 가장 선명하다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "서아 휴대폰 메모 복원본과 자동이체 실패 알림",
+      "description": "서아 휴대폰에서 복원된 메모와 보험료 연체 알림이다. '엄마 통장에서 먼저 메우고 간병비로 정리'라는 문장이 고스란히 남아 있다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "복원본에는 작성 시각과 삭제 시각이 함께 남아 있다.",
+        "check_metadata": "메모 생성은 이체 14분 전, 보험 알림은 같은 오전 8시대로 찍혀 있다.",
+        "restore_context": "문장 앞뒤에 '도현 오기 전까지'와 '나중에 간병비로 맞추자'가 있어 임시 은닉 의도가 드러난다.",
+        "verify_source": "휴대폰 포렌식 보고서와 푸시 알림 로그가 일치했다.",
+        "check_edits": "메모 수정은 한 차례뿐이고 본문 조작 흔적은 없다.",
+        "question_acquisition": "서아 동의 없이 확보된 개인 단말 자료라 사생활 침해 소지가 크다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "expose",
+        "role": "impeach",
+        "bestAtStates": [
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "context",
+          "motive"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "authenticity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.55,
+            "note": "'간병비 선집행' 포장과 실제 카드·보험료 처리 순서를 정면으로 뒤집는다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "가족 단톡과 간병 스케줄표 원본",
+      "description": "퇴원 첫 2주간 가족 단톡, 공유 캘린더, 요양보호사 교대표를 합친 기록이다. 도현의 60만원 지연, 한 차례 교대 공백, 대신 결제한 약값 내역이 함께 보인다.",
+      "type": "schedule",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "mixed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "공유 캘린더 원본과 단톡 내보내기 파일, 요양보호사 교대표가 날짜별로 맞물린다.",
+        "check_metadata": "도현의 '월요일 송금' 메시지와 실제 입금은 12일 차이로 남아 있다.",
+        "restore_context": "동시에 도현이 새벽 약값을 직접 결제한 내역도 있어 전면 방치로 보기는 어렵다.",
+        "verify_source": "카카오톡 내보내기 파일, 캘린더 변경 이력, 보호사 출근기록이 서로 일치한다.",
+        "check_edits": "캡처가 아니라 원본 내보내기라 선택적 삭제 흔적이 적다.",
+        "question_acquisition": "가족 공동 일정표와 당사자 대화라 제출 정당성은 높지만 제3자인 요양보호사 연락처는 비식별 처리돼야 한다."
+      },
+      "subjectParty": "both",
+      "partyContext": {
+        "a": {
+          "questionAngle": "윤서아에게: \"공동 기록 원칙의 쌍방 위반\" 관련 해명 요구 (방어 동기: 관계 유지)",
+          "implication": "이 증거는 윤서아의 \"공동 기록 원칙의 쌍방 위반\" 쟁점과 관련된다. 윤서아은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        },
+        "b": {
+          "questionAngle": "윤도현에게: \"도현의 간병비 분담 지연\" 관련 해명 요구 (방어 동기: 체면 유지)",
+          "implication": "이 증거는 윤도현의 \"도현의 간병비 분담 지연\" 쟁점과 관련된다. 윤도현은 이에 대해 해명하거나 자신의 입장을 밝혀야 한다."
+        }
+      },
+      "timing": {
+        "intent": "corroborate",
+        "role": "establish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "authenticity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.4,
+            "note": "도현이 '늦었지만 완전 방치는 아니었다'고 버틸 때 지연과 공백을 동시에 고정한다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.25,
+            "note": "도현의 늦은 기록이 규칙 위반 구조 안에 실제로 들어간다는 점을 굳힌다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "2021년 아버지 수첩 메모 사진",
+      "description": "서아가 제출한 '집 일은 서아가 맡아'라는 한 줄이 찍힌 수첩 사진으로, 상속 예고처럼 보이게 잘린 상태다.",
+      "type": "document",
+      "reliability": "soft",
+      "completeness": "cropped",
+      "provenance": "personal_device",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": true,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "사진 원본이 아니라 메시지 앱으로 다시 저장된 사본만 제출됐다.",
+        "check_metadata": "촬영 날짜는 2021년이 아니라 올해 2월 재촬영본으로 남아 있다.",
+        "restore_context": "뒷줄과 맞은편 페이지가 잘려 있어 무엇을 '집 일'로 지칭하는지 단정할 수 없다.",
+        "verify_source": "필적은 부친 것과 유사하지만 전체 노트 확인 전엔 의미 해석이 어렵다.",
+        "check_edits": "문자 자체 편집 흔적은 없으나 강한 크롭이 확인된다.",
+        "question_acquisition": "부친의 사적 수첩 일부라 사용 목적과 공개 범위를 엄격히 제한해야 한다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "reframe",
+        "bestAtStates": [
+          "M0",
+          "M1"
+        ],
+        "weakAtStates": [
+          "M4"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "identity"
+        ],
+        "blockedVectorsHelp": [
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "M1",
+            "multiplier": 1.2,
+            "note": "잘린 사진이라는 사실 자체를 먼저 보게 해 red-herring의 외형을 드러낸다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "상속 상담 변호사 확인서와 수첩 전체 스캔본",
+      "description": "이수진 변호사가 확인한 전체 수첩 스캔과 상담 메모로, 해당 문장이 상속이 아니라 세금·병원 서류를 맡기겠다는 2021년 맥락임을 보여준다.",
+      "type": "institutional_note",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "investigationResults": {
+        "request_original": "전체 스캔본에는 같은 페이지 아래에 '세금, 병원 서류'라는 문구가 이어져 있다.",
+        "check_metadata": "스캔 시각과 상담 접수 시각이 최근 분쟁 직후로 기록돼 있다.",
+        "restore_context": "변호사 메모에는 정식 유언장 작성이나 공증 이력은 없다고 적혀 있다.",
+        "verify_source": "사무실 원본 스캔 파일과 상담접수번호가 일치한다.",
+        "check_edits": "전자스캔본이라 편집 흔적이 없고 페이지 누락도 없다.",
+        "question_acquisition": "변호사 제출본은 적법하지만 상속 관련 사적 의사표시는 분쟁 해결 범위 내에서만 써야 한다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "disarm_trap",
+        "role": "finish",
+        "bestAtStates": [
+          "M2",
+          "M3",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "M0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "authenticity",
+          "context",
+          "identity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "M2",
+            "multiplier": 1.6,
+            "note": "상속 예고처럼 굳은 해석을 전체 맥락으로 끝내 무너뜨리는 결정타다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "사회복지사 장기요양 경감 신청 기록",
+      "description": "퇴원 전 병원 사회복지사가 작성한 장기요양 본인부담 경감 신청 기록과 단기돌봄 연계표로, 첫 달 비용이 210만원 전액이 아니라 98만원 수준까지 낮아질 수 있었음을 보여준다.",
+      "type": "medical_record",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "퇴원상담 기록지와 비용 산정표 원본이 병원 시스템에서 출력됐다.",
+        "check_metadata": "상담 완료 시각은 형제 첫 다툼 하루 전 오후 4시 18분이다.",
+        "restore_context": "신청 완료만 되면 단기돌봄 5일과 본인부담 경감이 동시에 적용되는 구조였다.",
+        "verify_source": "병원 사회복지팀과 국민건강보험 안내 기준이 일치했다.",
+        "check_edits": "기관 출력본이라 편집 흔적이 없다.",
+        "question_acquisition": "의료·복지 정보가 포함돼 있어 부모 동의 하에 분쟁 해결 목적에 한해 사용해야 한다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "contextualize",
+        "role": "finish",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "authenticity"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.5,
+            "note": "'전액 사비뿐'이라는 전제를 절차 문서로 깨뜨린다."
+          },
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.25,
+            "note": "서아의 '그때는 먼저 빼는 수밖에 없었다'는 절대화를 약하게 만든다."
+          }
+        ]
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq.d1.before_formal_care_started",
+      "intentTag": "timeline_probe",
+      "description": "왜 간병 정식 시작 전부터 1,800만원을 먼저 옮겼는지, 시점과 선집행 논리를 직접 찌르는 자유 질문 훅.",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "d1.personal_account_first",
+          "d1.card_insurance_paid_first"
+        ],
+        "forbidAtomIds": [
+          "d1.boundary_collapse_confess"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "그 시점을 먼저 답하면 제 동기까지 한꺼번에 탐욕으로 읽힐까 두렵습니다.",
+        "언제부터였는지보다, 왜 제가 먼저 움직였는지를 같이 보셔야 합니다."
+      ]
+    },
+    {
+      "id": "fq.d1.why_mix_my_bills_with_parent_money",
+      "intentTag": "motive_hidden",
+      "description": "부모 돈과 자기 카드대금/보험료 경계가 왜 섞였는지, 공포와 수치심 축을 여는 훅.",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "d1.self_finance_fear",
+          "d1.personal_debt_cover_confess",
+          "d1.dutiful_daughter_fear"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 부분은 숫자보다 더 부끄러운 이야기라 바로 꺼내기 어렵습니다.",
+        "이체 이유보다 더 안쪽의 문제라, 지금 답하면 변명처럼 들릴 것 같습니다."
+      ]
+    },
+    {
+      "id": "fq.d2.why_keep_calling_it_delay",
+      "intentTag": "responsibility_soften",
+      "description": "왜 끝까지 '미뤘다'고만 부르며 책임을 줄이려 했는지, 낙인 공포를 묻는 훅.",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "d2.kept_saying_delayed_only",
+          "d2.left_sister_alone_feeling"
+        ],
+        "preferredAngleTags": [
+          "responsibility",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 말 하나로 제가 어떤 사람처럼 보일지 너무 잘 알아서요.",
+        "지연이냐 방치냐를 묻는 순간, 낙인부터 찍힐까 봐 싫었습니다."
+      ]
+    },
+    {
+      "id": "fq.d2.what_did_you_pay_directly",
+      "intentTag": "context_balance",
+      "description": "도현이 직접 결제한 약값과 이동시간을 통해 '완전 방치 아님' 방어의 실제 근거를 묻는 훅.",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "d2.direct_drug_payment_exists",
+          "d2.payments_do_not_cancel_delay"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "제가 낸 것만 꺼내면 오히려 핑계처럼 들릴까 봐 조심스럽습니다.",
+        "그 항목을 말해도 지연 책임이 사라지진 않는다는 걸 압니다."
+      ]
+    },
+    {
+      "id": "fq.d3.what_did_father_mean",
+      "intentTag": "trap_clarify",
+      "description": "수첩 한 줄이 실제로 어떤 맥락이었는지, 상속 오해를 풀고 역할 상실 공포로 넘어가는 훅.",
+      "allowedAtStates": [
+        "M2",
+        "M3",
+        "M4",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "red_herring"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "d3.noninheritance_ack",
+          "d3.tax_hospital_context",
+          "d3a.unlock.m4.inheritance_false_role_pain_remains"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 한 줄의 뜻을 바로 말하는 순간, 제가 왜 거기에 매달렸는지도 같이 인정해야 합니다.",
+        "상속이 아니었다고 말하면 끝나는 문제가 아니라서, 아직은 쉽게 답이 안 납니다."
+      ]
+    },
+    {
+      "id": "fq.d4.was_there_really_no_other_route",
+      "intentTag": "procedural_reframe",
+      "description": "첫 달 비용을 정말 사비로만 막아야 했는지, 사회복지사 안내와 누락된 절차를 직접 찌르는 훅.",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "d4.guidance_record_confirms",
+          "d4.ninetyeight_possible",
+          "d4.first_month_not_all_private"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "지금 와서는 다른 길이 있었다고 말할 수 있어도, 그때는 그렇게 못 봤습니다.",
+        "절차를 놓친 책임과 당시 압박을 한 줄로 답하긴 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq.d5.why_be_rule_guardian",
+      "intentTag": "relation_rule",
+      "description": "왜 서로 규칙을 가장 크게 들이밀며 자기 체면을 지키려 했는지, 관계 핵심을 여는 훅.",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "sub_truth",
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "d5a.control_over_rule",
+          "d5b.face_protection_confess",
+          "d5b.numbers_to_shrink_fault"
+        ],
+        "preferredAngleTags": [
+          "emotion",
+          "relationship"
+        ]
+      },
+      "refusalTemplates": [
+        "규칙 얘기를 하면 결국 누가 더 창피했는지도 같이 드러납니다.",
+        "그 질문은 장부보다 체면을 묻는 거라 바로 답하기 어렵습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "d-3",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "presses_timeline",
+      "presses_responsibility",
+      "builds_context_before_finishing",
+      "shows_empathy_when_open",
+      "loops_same_angle",
+      "switches_targets_well",
+      "allows_interjection",
+      "blocks_interjection",
+      "trap_chaser",
+      "red_herring_disprover",
+      "evidence_finisher",
+      "relation_core_hunter"
+    ]
+  },
+  "proposedUnlockAtoms": [
+    {
+      "id": "d3a.unlock.m0.one_line_reads_like_inheritance",
+      "sourceDisputeId": "d-3",
+      "ownerParty": "a",
+      "stage": "M0",
+      "factText": "잘린 수첩 한 줄만 보면 상속 예고처럼 읽힌다는 초기 인상",
+      "tags": [
+        "quote",
+        "evidence",
+        "context",
+        "misbelief"
+      ],
+      "usedByCoverageKeys": [
+        "a.d3.surface.early.trap.context"
+      ],
+      "note": "ref-04에는 a:d-3 claim atom은 있지만 misconception 단계용 bridge atom이 없어 surface trap selector용으로 제안."
+    },
+    {
+      "id": "d3a.unlock.m1.role_and_property_blurred",
+      "sourceDisputeId": "d-3",
+      "ownerParty": "a",
+      "stage": "M1",
+      "factText": "돌봄 역할 인정과 재산 권한 기대가 한 문장 안에서 뒤섞였다는 초기 고착",
+      "tags": [
+        "relationship",
+        "quote",
+        "context",
+        "misbelief"
+      ],
+      "usedByCoverageKeys": [
+        "a.d3.surface.early.trap.context"
+      ],
+      "note": "상속 지정이 아닌 역할 인정 문장을 권한 신호처럼 읽는 중간 bridge atom."
+    },
+    {
+      "id": "d3a.unlock.m2.cropped_note_hardens_claim",
+      "sourceDisputeId": "d-3",
+      "ownerParty": "a",
+      "stage": "M2",
+      "factText": "잘린 수첩 사진이 전체 맥락을 가린 채 주장만 굳히게 만들었다는 고착",
+      "tags": [
+        "evidence",
+        "context",
+        "misbelief"
+      ],
+      "usedByCoverageKeys": [
+        "a.d3.surface.early.trap.context",
+        "a.d3.core.clarify.evidence.context"
+      ],
+      "note": "cropped trap 상태를 거치는 beat truthEnvelope용."
+    },
+    {
+      "id": "d3a.unlock.m3.full_scan_shakes_authority",
+      "sourceDisputeId": "d-3",
+      "ownerParty": "a",
+      "stage": "M3",
+      "factText": "전체 스캔이 붙자 상속 근거라는 확신이 흔들리고 역할 인정의 상처만 남기 시작했다는 구간",
+      "tags": [
+        "context",
+        "quote",
+        "misbelief"
+      ],
+      "usedByCoverageKeys": [
+        "a.d3.core.clarify.evidence.context"
+      ],
+      "note": "full-scan 이후 red herring가 무너지는 중간 단계."
+    },
+    {
+      "id": "d3a.unlock.m4.inheritance_false_role_pain_remains",
+      "sourceDisputeId": "d-3",
+      "ownerParty": "a",
+      "stage": "M4",
+      "factText": "상속 예고는 아니었지만, 그 한 줄에 매달릴 만큼 자신의 자리가 위태로웠다는 핵심만 남았다는 정리",
+      "tags": [
+        "clarify_false",
+        "relationship",
+        "emotion",
+        "context"
+      ],
+      "usedByCoverageKeys": [
+        "a.d3.core.clarify.evidence.context"
+      ],
+      "note": "가짜 쟁점 해소 후 relation-core로 넘어가는 bridge atom."
+    }
+  ]
+} as const

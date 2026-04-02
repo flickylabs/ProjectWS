@@ -1,0 +1,2063 @@
+export const friend08V3GameLoopData = {
+  "caseId": "friend-08",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "대표자 노출과 제출 원본",
+      "description": "시상 직후 공개 화면과 공모전 제출 원본을 나란히 대조하는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "조은비, 시상 직후 카드뉴스 첫 장과 포트폴리오 캡처에서 왜 본인 이름만 전면에 두었습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.a.unlock.s2.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "공모전 제출 form엔 팀원 칸이 살아 있는데, 공개 게시물에선 그 맥락을 왜 지웠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.a.unlock.s3.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "역할 서술란을 끝내 비워 둔 채 대표자 필드만 믿은 이유는 무엇입니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.a.unlock.s2.core",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "김준혁, 공식 제출본에 본인 이름이 들어간 걸 알면서도 왜 '공모전 전체가 개인작으로 인식됐다'고 단정합니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.b.unlock.s2.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "대표자 필드 구조와 크롭된 카드뉴스를 같은 층위의 증거로 본 건 아닌지 설명해 보십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.b.unlock.s3.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "역할 문구 공백을 대표자 책임으로만 넘긴 근거가 무엇입니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.b.unlock.s2.core",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "기여 로그와 마감 붕괴",
+      "description": "기술 기여의 흔적과 최종 리허설·업로드 공백을 함께 겨누는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "조은비, 깃 로그에 남은 설문 구조와 프로토타입 흐름을 보고도 왜 준혁 기여를 '거의 없었다'고 말합니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.a.unlock.s2.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "발표 전날 수습이 컸다는 사정이, 그 이전 기술 기여를 축소할 근거가 됩니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.a.unlock.s3.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "두 사람이 체크리스트를 만들지 않은 상태에서 왜 역할 확인을 미뤘습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.a.unlock.s4.core",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "김준혁, 리허설 출석표와 회의록상 최종 리허설 공백을 부인하실 겁니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.b.unlock.s2.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "업로드 지연과 병합 충돌이 있었는데도 '필요한 건 다 보냈다'는 표현을 유지합니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.b.unlock.s3.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "기술 작업에 몰렸다는 이유로 제출 문구 확인을 놓친 걸 공동 책임으로 인정합니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.b.unlock.s4.core",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "수정 기록과 외부 평가",
+      "description": "사후 수정 흔적과 심사위원 회신을 맞물려 최종 인정 단계로 밀어붙이는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "항의 메시지 뒤에야 팀 표기로 고친 edit history를 보면, 처음 표현이 실수 이상이었다는 점을 인정합니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.a.unlock.s5.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "심사위원 회신에 기술 구현과 설문 구조가 따로 언급됐는데도, 준혁 기여를 아이디어 수준으로 낮춘 이유는 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.a.unlock.s5.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "친구와의 갈등을 피하려고 크레딧 문제를 미뤄 둔 것이 결국 더 큰 왜곡을 만든 것 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.a.unlock.s5.core",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "심사위원 회신과 상장 원본이 팀 기준임을 보고도 아직 '외부가 전부 개인작으로 봤다'고 말하겠습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.b.unlock.s5.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "기여 로그가 남아 있어도 마지막 지연이 그 기여를 가리게 만들었다는 점은 인정합니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.b.unlock.s5.core",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "은비 게시물의 잘못과 별개로, 공식 제출 구조까지 개인작이었다고 확장해 말한 건 감정의 과장 아닌지 답하십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.b.unlock.s5.core",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.a.unlock.s2.core",
+            "factText": "카드뉴스 첫 장과 포트폴리오 초안의 문구가 시상 직후에는 팀보다 조은비 개인 성과처럼 읽혔다.",
+            "tags": [
+              "act",
+              "timeline",
+              "context",
+              "admission",
+              "identity",
+              "rule"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "상대 팀원",
+                "neutral": "상대"
+              },
+              "quote": {
+                "exact": "내 프로젝트",
+                "neutral": "단독 성과처럼 읽히는 표현"
+              },
+              "time": {
+                "period": "발표 전날 밤~시상 직후",
+                "neutral": "마감 막판"
+              },
+              "duration": {
+                "exact": "약 4시간",
+                "neutral": "한동안"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.a.unlock.s3.core",
+            "factText": "조은비는 발표 전날 수습 기억을 근거로 단독표기를 스스로 정당화했다.",
+            "tags": [
+              "act",
+              "timeline",
+              "context",
+              "counter",
+              "identity"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "상대 팀원",
+                "neutral": "상대"
+              },
+              "quote": {
+                "exact": "내 프로젝트",
+                "neutral": "단독 성과처럼 읽히는 표현"
+              },
+              "time": {
+                "period": "발표 전날 밤~시상 직후",
+                "neutral": "마감 막판"
+              },
+              "duration": {
+                "exact": "약 4시간",
+                "neutral": "한동안"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.a.unlock.s4.core",
+            "factText": "조은비는 밤샘이 지워질까 두려워 자신의 이름을 전면에 둔 욕심을 숨기지 못한다.",
+            "tags": [
+              "act",
+              "timeline",
+              "emotion",
+              "fear",
+              "identity",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "상대 팀원",
+                "neutral": "상대"
+              },
+              "quote": {
+                "exact": "내 프로젝트",
+                "neutral": "단독 성과처럼 읽히는 표현"
+              },
+              "time": {
+                "period": "발표 전날 밤~시상 직후",
+                "neutral": "마감 막판"
+              },
+              "duration": {
+                "exact": "약 4시간",
+                "neutral": "한동안"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "open_up"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.a.unlock.s5.core",
+            "factText": "준혁의 항의 뒤에야 약 4시간 만에 팀 표기로 고쳤다는 점까지 인정한다.",
+            "tags": [
+              "act",
+              "timeline",
+              "admission",
+              "responsibility",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "상대 팀원",
+                "neutral": "상대"
+              },
+              "quote": {
+                "exact": "내 프로젝트",
+                "neutral": "단독 성과처럼 읽히는 표현"
+              },
+              "time": {
+                "period": "발표 전날 밤~시상 직후",
+                "neutral": "마감 막판"
+              },
+              "duration": {
+                "exact": "약 4시간",
+                "neutral": "한동안"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.a.unlock.s2.core",
+            "factText": "은비도 준혁의 중반 설문·프로토타입 작업 자체는 실질적이었다고 인정한다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "context",
+              "admission",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "본인"
+              },
+              "time": {
+                "period": "발표 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.a.unlock.s3.core",
+            "factText": "그러나 마지막 손넘김과 리허설 공백이 은비에게 발표 직전 부담으로 집중됐다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "context",
+              "counter",
+              "identity",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "본인"
+              },
+              "time": {
+                "period": "발표 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.a.unlock.s4.core",
+            "factText": "발표 직전 문제가 터지면 모든 책임이 자신에게 올까 봐 공포가 커졌다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "본인"
+              },
+              "time": {
+                "period": "발표 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "open_up"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.a.unlock.s5.core",
+            "factText": "은비는 마지막 공백의 분노 때문에 준혁이 '아예 안 했다'는 식으로 넓혀 말한 부분도 시인한다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "admission",
+              "counter",
+              "quote",
+              "identity",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "본인"
+              },
+              "time": {
+                "period": "발표 직전",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.a.unlock.s2.core",
+            "factText": "공모전 제출 form에는 대표자 조은비 아래 팀원으로 김준혁이 이미 입력돼 있었다.",
+            "tags": [
+              "institution",
+              "rule",
+              "context",
+              "admission",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "institution": {
+                "fullName": "교내 사회혁신 공모전 제출 시스템",
+                "judgeRef": "공모전 시스템",
+                "neutral": "제출 시스템"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표자",
+                "neutral": "본인"
+              },
+              "time": {
+                "period": "시상 직후 공개 노출 구간",
+                "neutral": "첫 노출 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.a.unlock.s3.core",
+            "factText": "둘이 역할 서술란을 비워 둔 탓에 바깥 화면엔 대표자 이름만 먼저 튀었다.",
+            "tags": [
+              "institution",
+              "rule",
+              "context",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "institution": {
+                "fullName": "교내 사회혁신 공모전 제출 시스템",
+                "judgeRef": "공모전 시스템",
+                "neutral": "제출 시스템"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표자",
+                "neutral": "본인"
+              },
+              "time": {
+                "period": "시상 직후 공개 노출 구간",
+                "neutral": "첫 노출 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.a.unlock.s4.core",
+            "factText": "은비는 SNS 한 줄이 공식 평가까지 덮어버릴까 봐 두려워 더 방어적으로 굴었다.",
+            "tags": [
+              "institution",
+              "rule",
+              "emotion",
+              "fear",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "institution": {
+                "fullName": "교내 사회혁신 공모전 제출 시스템",
+                "judgeRef": "공모전 시스템",
+                "neutral": "제출 시스템"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표자",
+                "neutral": "본인"
+              },
+              "time": {
+                "period": "시상 직후 공개 노출 구간",
+                "neutral": "첫 노출 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "open_up"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.a.unlock.s5.core",
+            "factText": "은비는 공식 제출과 심사 메일, 상장이 모두 팀 기준이었다는 점을 분명히 말한다.",
+            "tags": [
+              "institution",
+              "rule",
+              "admission",
+              "responsibility",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "institution": {
+                "fullName": "교내 사회혁신 공모전 제출 시스템",
+                "judgeRef": "공모전 시스템",
+                "neutral": "제출 시스템"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표자",
+                "neutral": "본인"
+              },
+              "time": {
+                "period": "시상 직후 공개 노출 구간",
+                "neutral": "첫 노출 시점"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.a.unlock.s2.core",
+            "factText": "은비도 역할 서술란과 공동 기여 로그를 비운 채 제출한 사실을 인정한다.",
+            "tags": [
+              "rule",
+              "responsibility",
+              "context",
+              "admission",
+              "identity",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "대표자 표기와 팀원 크레딧 문구를 함께 확인하기",
+                "neutral": "사전 크레딧 확인 약속"
+              },
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "공동 제출자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "마감 직전",
+                "neutral": "급한 시점"
+              },
+              "relationship": {
+                "exact": "친구 사이 협업",
+                "neutral": "사적인 관계"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.a.unlock.s3.core",
+            "factText": "지난 학기 약속을 알면서도 마감 직전에 그 규칙을 다시 꺼내지 않았다.",
+            "tags": [
+              "rule",
+              "responsibility",
+              "context",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "대표자 표기와 팀원 크레딧 문구를 함께 확인하기",
+                "neutral": "사전 크레딧 확인 약속"
+              },
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "공동 제출자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "마감 직전",
+                "neutral": "급한 시점"
+              },
+              "relationship": {
+                "exact": "친구 사이 협업",
+                "neutral": "사적인 관계"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.a.unlock.s4.core",
+            "factText": "친구 사이에서 공로 문구를 따지는 싸움이 될까 봐 일부러 선을 흐렸다.",
+            "tags": [
+              "rule",
+              "responsibility",
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "rule": {
+                "exact": "대표자 표기와 팀원 크레딧 문구를 함께 확인하기",
+                "neutral": "사전 크레딧 확인 약속"
+              },
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "공동 제출자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "마감 직전",
+                "neutral": "급한 시점"
+              },
+              "relationship": {
+                "exact": "친구 사이 협업",
+                "neutral": "사적인 관계"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "open_up"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.a.unlock.s5.core",
+            "factText": "결국 대표자 표기와 기여도 기록을 둘 다 제대로 남기지 않은 공동 책임을 인정한다.",
+            "tags": [
+              "rule",
+              "responsibility",
+              "admission",
+              "counter"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "대표자 표기와 팀원 크레딧 문구를 함께 확인하기",
+                "neutral": "사전 크레딧 확인 약속"
+              },
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "공동 제출자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "마감 직전",
+                "neutral": "급한 시점"
+              },
+              "relationship": {
+                "exact": "친구 사이 협업",
+                "neutral": "사적인 관계"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.a.unlock.s2.core",
+            "factText": "은비도 설문 구조와 프로토타입 흐름에 준혁 손이 실제로 들어갔다는 점을 인정한다.",
+            "tags": [
+              "act",
+              "counter",
+              "context",
+              "admission",
+              "identity",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "본인"
+              },
+              "evidence": {
+                "exact": "깃 저장소와 공유드라이브 revision log",
+                "neutral": "기술 작업 로그"
+              },
+              "time": {
+                "period": "발표 전날과 최종본 정리 시점",
+                "neutral": "마감 막판"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.a.unlock.s3.core",
+            "factText": "발표와 마감 수습이 눈앞에서 보였기 때문에 은비는 보이지 않는 기술 기여를 과소평가했다.",
+            "tags": [
+              "act",
+              "counter",
+              "context",
+              "identity"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "본인"
+              },
+              "evidence": {
+                "exact": "깃 저장소와 공유드라이브 revision log",
+                "neutral": "기술 작업 로그"
+              },
+              "time": {
+                "period": "발표 전날과 최종본 정리 시점",
+                "neutral": "마감 막판"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.a.unlock.s4.core",
+            "factText": "혼자 버틴 밤의 체감이 커지면서 준혁의 이전 작업을 일부러 작게 본 감정이 드러난다.",
+            "tags": [
+              "act",
+              "counter",
+              "emotion",
+              "uncertainty",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "본인"
+              },
+              "evidence": {
+                "exact": "깃 저장소와 공유드라이브 revision log",
+                "neutral": "기술 작업 로그"
+              },
+              "time": {
+                "period": "발표 전날과 최종본 정리 시점",
+                "neutral": "마감 막판"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "open_up"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.a.unlock.s5.core",
+            "factText": "준혁의 기여가 아이디어 한 줄을 넘어서 제출 부록 설명까지 이어졌음을 시인한다.",
+            "tags": [
+              "act",
+              "counter",
+              "admission",
+              "responsibility",
+              "identity",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "본인"
+              },
+              "evidence": {
+                "exact": "깃 저장소와 공유드라이브 revision log",
+                "neutral": "기술 작업 로그"
+              },
+              "time": {
+                "period": "발표 전날과 최종본 정리 시점",
+                "neutral": "마감 막판"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.b.unlock.s2.core",
+            "factText": "준혁도 공식 제출과 상장은 팀 기준이었지만, 공개 노출 화면이 단독 성과처럼 보였다고 구분한다.",
+            "tags": [
+              "act",
+              "timeline",
+              "context",
+              "admission",
+              "identity",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "기술 담당 팀원",
+                "neutral": "본인"
+              },
+              "quote": {
+                "exact": "내 프로젝트",
+                "neutral": "단독 성과처럼 읽히는 표현"
+              },
+              "time": {
+                "period": "시상 직후",
+                "neutral": "그 시점"
+              },
+              "duration": {
+                "exact": "약 4시간",
+                "neutral": "한동안"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.b.unlock.s3.core",
+            "factText": "준혁은 수정이 항의 뒤에 이뤄진 점 때문에 은비의 행동을 단순 실수보다 선택으로 해석했다.",
+            "tags": [
+              "act",
+              "timeline",
+              "context",
+              "counter",
+              "denial",
+              "identity"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "기술 담당 팀원",
+                "neutral": "본인"
+              },
+              "quote": {
+                "exact": "내 프로젝트",
+                "neutral": "단독 성과처럼 읽히는 표현"
+              },
+              "time": {
+                "period": "시상 직후",
+                "neutral": "그 시점"
+              },
+              "duration": {
+                "exact": "약 4시간",
+                "neutral": "한동안"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.b.unlock.s4.core",
+            "factText": "준혁은 자신의 작업이 무대 뒤에서 지워진다는 수치심 때문에 판단이 더 날카로워졌다.",
+            "tags": [
+              "act",
+              "timeline",
+              "emotion",
+              "counter",
+              "shame",
+              "identity",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "기술 담당 팀원",
+                "neutral": "본인"
+              },
+              "quote": {
+                "exact": "내 프로젝트",
+                "neutral": "단독 성과처럼 읽히는 표현"
+              },
+              "time": {
+                "period": "시상 직후",
+                "neutral": "그 시점"
+              },
+              "duration": {
+                "exact": "약 4시간",
+                "neutral": "한동안"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "open_up"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.b.unlock.s5.core",
+            "factText": "준혁은 공개 게시물 문제를 공식 평가 전체의 진실처럼 확대해 화를 냈다는 점도 인정한다.",
+            "tags": [
+              "act",
+              "timeline",
+              "admission",
+              "responsibility",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "김준혁",
+                "judgeRef": "기술 담당 팀원",
+                "neutral": "본인"
+              },
+              "quote": {
+                "exact": "내 프로젝트",
+                "neutral": "단독 성과처럼 읽히는 표현"
+              },
+              "time": {
+                "period": "시상 직후",
+                "neutral": "그 시점"
+              },
+              "duration": {
+                "exact": "약 4시간",
+                "neutral": "한동안"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.b.unlock.s2.core",
+            "factText": "준혁은 최종 리허설 일부에 빠지고 업로드가 늦어진 사실 자체는 인정한다.",
+            "tags": [
+              "act",
+              "rule",
+              "context",
+              "admission",
+              "identity",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "최종 리허설과 발표 전날",
+                "neutral": "마감 직전"
+              },
+              "evidence": {
+                "exact": "팀 회의록과 리허설 출석표",
+                "neutral": "리허설 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.b.unlock.s3.core",
+            "factText": "업로드 책임자를 명확히 정하지 않은 채 발표 자료와 기술 파일이 섞이며 마지막 손넘김이 꼬였다.",
+            "tags": [
+              "act",
+              "rule",
+              "context",
+              "counter",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "최종 리허설과 발표 전날",
+                "neutral": "마감 직전"
+              },
+              "evidence": {
+                "exact": "팀 회의록과 리허설 출석표",
+                "neutral": "리허설 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.b.unlock.s4.core",
+            "factText": "준혁은 보이지 않는 기술 작업이 묻힐까 봐 리허설 공백을 자꾸 축소해서 말했다.",
+            "tags": [
+              "act",
+              "rule",
+              "emotion",
+              "identity",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "최종 리허설과 발표 전날",
+                "neutral": "마감 직전"
+              },
+              "evidence": {
+                "exact": "팀 회의록과 리허설 출석표",
+                "neutral": "리허설 기록"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "open_up"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.b.unlock.s5.core",
+            "factText": "결국 자신의 지연 때문에 은비가 발표 직전 자료 일부를 다시 정리해야 했음을 시인한다.",
+            "tags": [
+              "act",
+              "rule",
+              "admission",
+              "responsibility",
+              "counter",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "최종 리허설과 발표 전날",
+                "neutral": "마감 직전"
+              },
+              "evidence": {
+                "exact": "팀 회의록과 리허설 출석표",
+                "neutral": "리허설 기록"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.b.unlock.s2.core",
+            "factText": "준혁도 제출 원본의 팀원 칸에 자기 이름이 들어가 있었다는 사실을 인정한다.",
+            "tags": [
+              "institution",
+              "context",
+              "admission",
+              "identity",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "institution": {
+                "fullName": "교내 사회혁신 공모전 제출 시스템",
+                "judgeRef": "공모전 시스템",
+                "neutral": "제출 시스템"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "시상 직후 노출 화면",
+                "neutral": "첫 화면"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.b.unlock.s3.core",
+            "factText": "대표자 필드와 카드뉴스 첫인상이 강해서 그는 공식 구조보다 체감 인상을 더 크게 잡았다.",
+            "tags": [
+              "institution",
+              "context",
+              "counter",
+              "uncertainty",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "institution": {
+                "fullName": "교내 사회혁신 공모전 제출 시스템",
+                "judgeRef": "공모전 시스템",
+                "neutral": "제출 시스템"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "시상 직후 노출 화면",
+                "neutral": "첫 화면"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.b.unlock.s4.core",
+            "factText": "기록에는 있는데 기억에서는 빠지는 사람이 된 것 같다는 상실감이 드러난다.",
+            "tags": [
+              "institution",
+              "context",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "institution": {
+                "fullName": "교내 사회혁신 공모전 제출 시스템",
+                "judgeRef": "공모전 시스템",
+                "neutral": "제출 시스템"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "시상 직후 노출 화면",
+                "neutral": "첫 화면"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "open_up"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.b.unlock.s5.core",
+            "factText": "심사위원과 상장 원본 기준으로는 팀 프로젝트로 인식됐음을 준혁도 인정한다.",
+            "tags": [
+              "institution",
+              "context",
+              "admission",
+              "responsibility",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "institution": {
+                "fullName": "교내 사회혁신 공모전 제출 시스템",
+                "judgeRef": "공모전 시스템",
+                "neutral": "제출 시스템"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "time": {
+                "period": "시상 직후 노출 화면",
+                "neutral": "첫 화면"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.b.unlock.s2.core",
+            "factText": "준혁은 제출 문구와 역할 로그를 대표자 쪽이 챙길 일이라 여기며 스스로 확인을 미뤘다.",
+            "tags": [
+              "rule",
+              "relationship",
+              "context",
+              "admission",
+              "identity",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "대표자 표기와 기여도 문구 공동 확인",
+                "neutral": "제출 전 확인 규칙"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 제출자",
+                "neutral": "상대"
+              },
+              "relationship": {
+                "exact": "친구 사이 협업",
+                "neutral": "사적인 관계"
+              },
+              "time": {
+                "period": "마감 직전",
+                "neutral": "급한 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.b.unlock.s3.core",
+            "factText": "이전 팀플 약속을 기억하고도 이번엔 다시 확인하지 않은 채 기술 파일 쪽으로만 갔다.",
+            "tags": [
+              "rule",
+              "relationship",
+              "context",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "대표자 표기와 기여도 문구 공동 확인",
+                "neutral": "제출 전 확인 규칙"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 제출자",
+                "neutral": "상대"
+              },
+              "relationship": {
+                "exact": "친구 사이 협업",
+                "neutral": "사적인 관계"
+              },
+              "time": {
+                "period": "마감 직전",
+                "neutral": "급한 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.b.unlock.s4.core",
+            "factText": "먼저 크레딧 문구를 따지면 쪼잔해 보일까 봐 피했다는 감정이 드러난다.",
+            "tags": [
+              "rule",
+              "relationship",
+              "emotion",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "rule": {
+                "exact": "대표자 표기와 기여도 문구 공동 확인",
+                "neutral": "제출 전 확인 규칙"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 제출자",
+                "neutral": "상대"
+              },
+              "relationship": {
+                "exact": "친구 사이 협업",
+                "neutral": "사적인 관계"
+              },
+              "time": {
+                "period": "마감 직전",
+                "neutral": "급한 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "open_up"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.b.unlock.s5.core",
+            "factText": "대표자 표기와 기여도 기록을 흐린 채 넘긴 공동 책임을 준혁도 인정한다.",
+            "tags": [
+              "rule",
+              "relationship",
+              "admission",
+              "responsibility",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "대표자 표기와 기여도 문구 공동 확인",
+                "neutral": "제출 전 확인 규칙"
+              },
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 제출자",
+                "neutral": "상대"
+              },
+              "relationship": {
+                "exact": "친구 사이 협업",
+                "neutral": "사적인 관계"
+              },
+              "time": {
+                "period": "마감 직전",
+                "neutral": "급한 시점"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.b.unlock.s2.core",
+            "factText": "깃 로그와 부록 설명은 준혁의 기여가 아이디어 수준을 넘었다는 점을 뒷받침한다.",
+            "tags": [
+              "act",
+              "harm",
+              "context",
+              "admission",
+              "uncertainty",
+              "identity"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "evidence": {
+                "exact": "깃 로그, 설문 구조, 제출 부록 설명",
+                "neutral": "기술 기여 흔적"
+              },
+              "time": {
+                "period": "시상 직후와 포트폴리오 정리 시점",
+                "neutral": "사후 정리 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.b.unlock.s3.core",
+            "factText": "발표자 공이 크게 보이는 구조가 기술 작업을 보조처럼 밀어냈다고 준혁은 느낀다.",
+            "tags": [
+              "act",
+              "harm",
+              "context",
+              "counter",
+              "identity"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "evidence": {
+                "exact": "깃 로그, 설문 구조, 제출 부록 설명",
+                "neutral": "기술 기여 흔적"
+              },
+              "time": {
+                "period": "시상 직후와 포트폴리오 정리 시점",
+                "neutral": "사후 정리 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.b.unlock.s4.core",
+            "factText": "기록이 있는데도 '아이디어만 낸 사람'으로 줄여 불리는 모욕감이 감정적으로 터진다.",
+            "tags": [
+              "act",
+              "harm",
+              "emotion",
+              "quote",
+              "shame",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "evidence": {
+                "exact": "깃 로그, 설문 구조, 제출 부록 설명",
+                "neutral": "기술 기여 흔적"
+              },
+              "time": {
+                "period": "시상 직후와 포트폴리오 정리 시점",
+                "neutral": "사후 정리 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "open_up"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.b.unlock.s5.core",
+            "factText": "자신의 마지막 지연이 기여를 체감하기 어렵게 만들어 축소 평가를 부른 점도 인정한다.",
+            "tags": [
+              "act",
+              "harm",
+              "admission",
+              "responsibility",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "조은비",
+                "judgeRef": "대표 발표자",
+                "neutral": "상대"
+              },
+              "evidence": {
+                "exact": "깃 로그, 설문 구조, 제출 부록 설명",
+                "neutral": "기술 기여 흔적"
+              },
+              "time": {
+                "period": "시상 직후와 포트폴리오 정리 시점",
+                "neutral": "사후 정리 시점"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admit"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "contradiction-1",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "trigger": "e-1만 제시된 상태에서 e-2 또는 e-5가 뒤이어 결합될 때",
+        "severity": "major",
+        "text": "공개 캡처는 은비 개인 프로젝트처럼 보이지만, 공식 제출 원본과 상장은 팀 프로젝트로 유지되어 있다."
+      },
+      {
+        "id": "contradiction-2",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "trigger": "e-3 또는 e-5 제시 후에도 '아이디어 한 줄' 프레임이 반복될 때",
+        "severity": "major",
+        "text": "준혁의 기여를 아이디어 수준이라 부르지만, 로그와 심사 코멘트는 설문 구조·프로토타입 흐름·기술 설명까지 남겨 둔다."
+      },
+      {
+        "id": "contradiction-3",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "trigger": "리허설 불참을 축소하면서 e-3와 e-4가 함께 제시될 때",
+        "severity": "major",
+        "text": "중반 기여가 크다는 사실과 별개로, 마지막 리허설 공백과 업로드 지연은 별도의 실패로 남는다."
+      },
+      {
+        "id": "contradiction-4",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "trigger": "둘 다 상대에게 제출 책임을 넘길 때",
+        "severity": "medium",
+        "text": "과거엔 크레딧 문구를 함께 확인하기로 했지만, 이번엔 대표자 표기와 역할 서술란을 둘 다 비운 채 마감을 넘겼다."
+      }
+    ],
+    "interjections": [
+      {
+        "id": "interjection-a-1",
+        "speaker": "a",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "trigger": "b가 '심사위원도 다 개인작으로 봤다'고 강하게 단정할 때",
+        "text": "그 화면 하나만 보고 전부였다고 하지 마. 제출본에는 팀원 칸이 있었잖아."
+      },
+      {
+        "id": "interjection-b-1",
+        "speaker": "b",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "trigger": "a가 준혁 기여를 계속 '아이디어 수준'으로 축소할 때",
+        "text": "아이디어만요? 설문 구조랑 흐름도 제가 짰는데 그걸 한 줄로 접지 마세요."
+      },
+      {
+        "id": "interjection-b-2",
+        "speaker": "b",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "trigger": "a가 대표자 관성만을 이유로 들며 책임을 흐릴 때",
+        "text": "관성이 아니라 확인 안 한 거죠. 약속 있었잖아요, 같이 문구 보자고."
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "emotional-a-1",
+        "speaker": "a",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "applicableStates": [
+          "S4",
+          "S5"
+        ],
+        "behaviorHint": "웃음이 짧게 새고 목이 잠긴다.",
+        "text": "그날 누가 끝까지 남아서 화면 붙이고 출력 다시 뽑았는지 생각해 보세요. 저는 그 시간이 통째로 없던 일이 되는 게 제일 무서웠어요."
+      },
+      {
+        "id": "emotional-a-2",
+        "speaker": "a",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "applicableStates": [
+          "S4",
+          "S5"
+        ],
+        "behaviorHint": "손을 모았다가 놓으며 말을 급히 이어 간다.",
+        "text": "친구랑 공로 문구 줄 단위로 싸우는 사람이 되기 싫었어요. 그런데 피한 게 더 못난 결과를 만들었네요."
+      },
+      {
+        "id": "emotional-b-1",
+        "speaker": "b",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "applicableStates": [
+          "S4",
+          "S5"
+        ],
+        "behaviorHint": "짧게 침묵한 뒤 더 낮은 톤으로 말한다.",
+        "text": "기록엔 있는데 기억에선 빠지는 사람이 된 기분이 뭔지 아세요. 저는 그 화면 보고 제 작업이 통째로 삭제된 줄 알았습니다."
+      },
+      {
+        "id": "emotional-b-2",
+        "speaker": "b",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "applicableStates": [
+          "S4",
+          "S5"
+        ],
+        "behaviorHint": "턱을 굳힌 채 숫자를 세려다 멈춘다.",
+        "text": "제가 마지막에 틀어진 건 맞아요. 그런데 그 한 번의 실패로 그전 기록까지 다 0처럼 취급되는 건, 솔직히 너무 모욕적이었습니다."
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "friend08:transition:a:d-1:s0_s1",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "solo_credit_post_question",
+      "line": "문제가 된 건 캡션 한 줄과 카드뉴스 첫 장이었지, 전체 제출 맥락까지 개인 작품으로 바꾼 건 아니에요. 팀원 표기를 늦게 붙인 건 맞아도 그걸 고의적인 삭제처럼 말하는 건 과해요.",
+      "behaviorHint": "말을 빨리 이어 붙이며 문제를 표현 수준으로 줄여 본다."
+    },
+    {
+      "id": "friend08:transition:a:d-1:s1_s2",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "시상 직후 문구가 제 단독 성과처럼 읽힐 수 있었던 건 인정해요. 다만 공모전 제출 자체는 팀으로 들어갔고, 대표자 계정 관성 때문에 먼저 제 이름이 전면에 나온 거예요.",
+      "behaviorHint": "고개를 한번 숙이고 일부만 인정한 뒤 대표자 구조를 근거로 든다.",
+      "revealAtom": "d1.a.unlock.s2.core"
+    },
+    {
+      "id": "friend08:transition:a:d-1:s2_s3",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "caption_history_question",
+      "line": "준혁이 리허설이랑 일부 자료 정리를 비운 밤에 제가 발표물을 끝까지 붙잡고 있었던 건 사실이에요. 그 압박 때문에 포트폴리오 톤으로 먼저 올린 건데, 그게 면책 사유는 아니라도 배경은 돼요.",
+      "behaviorHint": "짧게 웃고는 발표 전날 수습을 길게 들고 온다.",
+      "revealAtom": "d1.a.unlock.s3.core"
+    },
+    {
+      "id": "friend08:transition:a:d-1:s3_s5",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "제가 시상 직후 가장 노출이 큰 시간대에 제 이름과 '내 프로젝트' 같은 표현을 그대로 둔 건 잘못이었어요. 준혁 이름을 바로 넣지 않은 채 항의가 온 뒤에야 고친 건, 제 공을 더 크게 보이게 둔 선택이 맞습니다.",
+      "behaviorHint": "시선을 내리고, 잘못과 지연 수정 시점을 또렷하게 인정한다.",
+      "revealAtom": "d1.a.unlock.s5.core"
+    },
+    {
+      "id": "friend08:transition:a:d-5:s0_s1",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "juneok_contribution_question",
+      "line": "기술 표현 몇 개랑 의견은 냈죠. 그런데 최종본으로 굳힌 건 거의 제가 했어요.",
+      "behaviorHint": "말을 빨리 이어 붙이며 문제를 표현 수준으로 줄여 본다."
+    },
+    {
+      "id": "friend08:transition:a:d-5:s1_s2",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "설문 구조랑 프로토타입 흐름에 준혁 손이 들어간 건 맞아요. 다만 마감 직전에 빠진 부분 때문에 저는 그게 결과물로 잘 안 보였어요.",
+      "behaviorHint": "고개를 한번 숙이고 일부만 인정한 뒤 대표자 구조를 근거로 든다.",
+      "revealAtom": "d5.a.unlock.s2.core"
+    },
+    {
+      "id": "friend08:transition:a:d-5:s2_s3",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "judge_comment_question",
+      "line": "발표랑 마감 수습이 전부 제 쪽으로 쏠리니까, 저는 눈앞에 보이는 작업만 공로로 세게 잡았어요. 그래서 준혁이 이전에 한 기술 작업을 스스로도 점점 작게 보게 됐어요.",
+      "behaviorHint": "짧게 웃고는 발표 전날 수습을 길게 들고 온다.",
+      "revealAtom": "d5.a.unlock.s3.core"
+    },
+    {
+      "id": "friend08:transition:a:d-5:s3_s5",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "준혁 기여를 아이디어 수준으로 줄여 말한 건 잘못이었어요. 설문 구조, 프로토타입 흐름, 제출 부록 설명까지 실제 반영된 게 맞습니다.",
+      "behaviorHint": "시선을 내리고, 잘못과 지연 수정 시점을 또렷하게 인정한다.",
+      "revealAtom": "d5.a.unlock.s5.core"
+    },
+    {
+      "id": "friend08:transition:a:d-4:s0_s1",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "role_log_question",
+      "line": "마감이 몰리다 보니 역할 문구를 세세하게 못 적은 거지, 규칙을 방치하려던 건 아니었어요. 친구끼리 협업하면서 그 정도 빈칸은 나중에 정리할 수 있다고 본 거예요.",
+      "behaviorHint": "말을 빨리 이어 붙이며 문제를 표현 수준으로 줄여 본다."
+    },
+    {
+      "id": "friend08:transition:a:d-4:s1_s2",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "네, 역할 서술란이 비어 있었고 저도 다시 확인 안 했어요. 그 부분은 둘 다 느슨했던 게 맞아요.",
+      "behaviorHint": "고개를 한번 숙이고 일부만 인정한 뒤 대표자 구조를 근거로 든다.",
+      "revealAtom": "d4.a.unlock.s2.core"
+    },
+    {
+      "id": "friend08:transition:a:d-4:s2_s4",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_deadline_panic",
+      "line": "솔직히 친구랑 공로 문구를 줄 단위로 따지는 순간 분위기가 깨질까 봐 피했어요. 갈등을 미루는 게 관계를 지키는 일이라고 착각했어요.",
+      "behaviorHint": "목이 잠기고 관계를 해치기 싫었다는 감정을 먼저 내놓는다.",
+      "revealAtom": "d4.a.unlock.s4.core"
+    },
+    {
+      "id": "friend08:transition:a:d-4:s4_s5",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "결국 저도, 준혁도 대표자 표기와 기여 로그를 제대로 안 남겼어요. 갈등 피하려고 미뤄 둔 게 공동 책임입니다.",
+      "behaviorHint": "시선을 내리고, 잘못과 지연 수정 시점을 또렷하게 인정한다.",
+      "revealAtom": "d4.a.unlock.s5.core"
+    },
+    {
+      "id": "friend08:transition:b:d-2:s0_s1",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "rehearsal_absence_question",
+      "line": "늦어진 건 일부 동기화랑 병합 문제였지, 발표가 멈출 정도로 빈 건 아니에요. 제가 완전히 손을 놓은 것처럼 말하면 과장입니다.",
+      "behaviorHint": "짧게 잘라 말하며 책임 범위를 좁혀 본다."
+    },
+    {
+      "id": "friend08:transition:b:d-2:s1_s2",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "최종 리허설 일부를 놓친 건 맞습니다. 그래도 설문 구조랑 프로토타입 쪽 핵심 작업은 이미 끝내 둔 상태였어요.",
+      "behaviorHint": "턱을 굳힌 채 일부 사실을 인정하고 앞선 기여를 덧붙인다.",
+      "revealAtom": "d2.b.unlock.s2.core"
+    },
+    {
+      "id": "friend08:transition:b:d-2:s2_s3",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "upload_delay_question",
+      "line": "한 사람을 업로드 단일 책임자로 정하지도 않았고, 발표 자료랑 기술 파일이 섞이면서 마지막 손넘김이 꼬였어요. 그 구조 문제를 전부 제 지각 하나로만 읽는 건 불공평합니다.",
+      "behaviorHint": "날짜와 구조 문제를 연달아 열거하며 해석 싸움으로 옮긴다.",
+      "revealAtom": "d2.b.unlock.s3.core"
+    },
+    {
+      "id": "friend08:transition:b:d-2:s3_s5",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-3_presented",
+      "line": "네, 제가 최종 리허설 일부에 빠졌고 업로드도 지연됐습니다. 그 때문에 은비가 발표 직전 자료를 다시 정리한 게 맞아요.",
+      "behaviorHint": "건조하게 사실을 정정하며 더 이상 과장 없이 인정한다.",
+      "revealAtom": "d2.b.unlock.s5.core"
+    },
+    {
+      "id": "friend08:transition:b:d-3:s0_s1",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "solo_recognition_question",
+      "line": "적어도 심사위원도 대표자 이름이랑 발표 화면을 먼저 봤을 거예요. 팀원 칸이 있었다 해도 체감은 개인전이었죠.",
+      "behaviorHint": "짧게 잘라 말하며 책임 범위를 좁혀 본다."
+    },
+    {
+      "id": "friend08:transition:b:d-3:s1_s2",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "제출 원본에 제 이름이 들어간 건 압니다. 그래도 첫인상과 시상 직후 노출은 은비 단독 작품처럼 흘렀어요.",
+      "behaviorHint": "턱을 굳힌 채 일부 사실을 인정하고 앞선 기여를 덧붙인다.",
+      "revealAtom": "d3.b.unlock.s2.core"
+    },
+    {
+      "id": "friend08:transition:b:d-3:s2_s3",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "submission_form_question",
+      "line": "대표자 필드만 앞으로 튀고 역할 서술란도 비어 있었으니, 공식 구조 자체가 개인 성과처럼 읽히게 만들었습니다. 그래서 저는 오해가 아니라 거의 그렇게 받아들여졌다고 본 거예요.",
+      "behaviorHint": "날짜와 구조 문제를 연달아 열거하며 해석 싸움으로 옮긴다.",
+      "revealAtom": "d3.b.unlock.s3.core"
+    },
+    {
+      "id": "friend08:transition:b:d-3:s3_s5",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_or_e-2_presented",
+      "line": "공식 제출과 심사 메일, 상장 기준으로 보면 팀 프로젝트로 인식된 게 맞습니다. 제가 '심사위원도 은비 개인 작품으로 봤다'고 단정한 건 감정이 섞인 과장이었어요.",
+      "behaviorHint": "건조하게 사실을 정정하며 더 이상 과장 없이 인정한다.",
+      "revealAtom": "d3.b.unlock.s5.core"
+    },
+    {
+      "id": "friend08:transition:b:d-4:s0_s1",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_credit_rule_reminder",
+      "line": "역할 문구를 자세히 못 적은 건 맞아도, 그게 둘 다 규칙을 방치했다는 말까지 가는 건 과하죠. 기술 파일 마감이 우선이었을 뿐입니다.",
+      "behaviorHint": "짧게 잘라 말하며 책임 범위를 좁혀 본다."
+    },
+    {
+      "id": "friend08:transition:b:d-4:s1_s2",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "예, 저도 역할 로그를 끝까지 안 채웠습니다. 기술 파일 쪽에 몰리면서 제출 문구를 뒤로 미뤘어요.",
+      "behaviorHint": "턱을 굳힌 채 일부 사실을 인정하고 앞선 기여를 덧붙인다.",
+      "revealAtom": "d4.b.unlock.s2.core"
+    },
+    {
+      "id": "friend08:transition:b:d-4:s2_s4",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_why_he_left_roles_undefined",
+      "line": "솔직히 제가 먼저 크레딧 문구를 따지면 쪼잔해 보일까 봐 피한 면이 있습니다. 그래서 대표자 책임이라는 말 뒤에 숨었습니다.",
+      "behaviorHint": "한 박자 침묵 뒤 감정과 체면 문제를 처음 꺼낸다.",
+      "revealAtom": "d4.b.unlock.s4.core"
+    },
+    {
+      "id": "friend08:transition:b:d-4:s4_s5",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "결국 제출 규칙과 기여 로그를 둘 다 흐린 채 넘긴 건 공동 책임이에요. 저도 그걸 대표자 일이라고만 밀어 둔 책임이 있습니다.",
+      "behaviorHint": "건조하게 사실을 정정하며 더 이상 과장 없이 인정한다.",
+      "revealAtom": "d4.b.unlock.s5.core"
+    }
+  ]
+}

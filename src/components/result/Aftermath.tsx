@@ -3,6 +3,8 @@ import { useGameStore } from '../../store/useGameStore'
 import { chatCompletion } from '../../engine/llmClient'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import { updateLatestAftermath } from '../../data/leaderboard'
+import { buildResultSystemPrompt, buildResultUserPrompt, formatResultAsNarrative } from '../../engine/phase6ResultPromptV2'
+import type { VerdictData, ResultV2Response, CaseMeta } from '../../engine/phase6ResultPromptV2'
 
 function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] {
   const lines: string[] = []
@@ -51,6 +53,20 @@ export default function Aftermath() {
     if (!caseData || !verdictScore) return
     setLoading(true)
     try {
+      // V2 bridge가 있으면 구조화 로그 기반 프롬프트 사용
+      const bridge = useGameStore.getState().phase3PromptBridge
+      if (bridge) {
+        const result = await generateAftermathV2(bridge)
+        if (result) {
+          cachedAftermath = result
+          setAftermath(result)
+          updateLatestAftermath(result)
+          setLoading(false)
+          return
+        }
+        // V2 실패 시 기존 로직으로 fallback
+      }
+
       const nameA = caseData.duo.partyA.name
       const nameB = caseData.duo.partyB.name
       const solutions = verdictInput.selectedSolutions.join(', ') || '특별한 해결책 없음'
@@ -161,6 +177,63 @@ export default function Aftermath() {
       updateLatestAftermath(fb)
     }
     setLoading(false)
+  }
+
+  const generateAftermathV2 = async (bridge: NonNullable<ReturnType<typeof useGameStore.getState>['phase3PromptBridge']>): Promise<string | null> => {
+    if (!caseData || !verdictScore || !verdictInput || !bridge) return null
+    try {
+      const relLabel = caseData.meta?.relationshipType ?? caseData.duo.relationshipType ?? '두 사람'
+      const caseMeta: CaseMeta = {
+        caseId: bridge.caseId,
+        nameA: caseData.duo.partyA.name,
+        nameB: caseData.duo.partyB.name,
+        relLabel,
+        contextDesc: caseData.context.description.slice(0, 150),
+      }
+      const endingTone = verdictScore.total >= 75 ? '희망적'
+        : verdictScore.total >= 55 ? '씁쓸하지만 의미 있는'
+        : verdictScore.total >= 35 ? '아쉽고 불완전한'
+        : '씁쓸하고 후회가 남는'
+      const verdict: VerdictData = {
+        factFindings: verdictInput.factFindings,
+        responsibility: verdictInput.responsibility,
+        selectedSolutions: verdictInput.selectedSolutions,
+        total: verdictScore.total,
+        endingTone,
+      }
+      const systemPrompt = buildResultSystemPrompt()
+      const userPrompt = buildResultUserPrompt(bridge, caseMeta, verdict)
+        + `\n\n출력은 반드시 위 JSON 형식으로만 답하라. 한국어 소설체로 작성하라.`
+
+      let response = ''
+      for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+          response = await chatCompletion(
+            [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }],
+            { temperature: 0.85, maxTokens: 600 },
+          )
+          if (response.trim()) break
+        } catch (retryErr) {
+          if (attempt === 0) await new Promise(r => setTimeout(r, 2000))
+          else throw retryErr
+        }
+      }
+
+      // JSON 파싱 시도 → 서술형 변환
+      try {
+        const jsonStr = response.replace(/```json?\s*/g, '').replace(/```/g, '').trim()
+        const parsed: ResultV2Response = JSON.parse(jsonStr)
+        const narrative = formatResultAsNarrative(parsed)
+        if (narrative.length > 50) return narrative
+      } catch {
+        // JSON 파싱 실패 시 raw text 사용
+      }
+      if (response.trim().length > 50) return response.trim()
+      return null
+    } catch (err) {
+      console.warn('[Aftermath V2] fallback to legacy:', err)
+      return null
+    }
   }
 
   const buildFallbackAftermath = (): string => {

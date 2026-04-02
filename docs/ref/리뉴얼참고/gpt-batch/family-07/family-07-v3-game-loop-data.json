@@ -1,0 +1,2083 @@
+{
+  "caseId": "family-07",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "외부 서사 충돌",
+      "description": "지원사업 문구와 홍보 영상이 서로의 공로를 어떻게 밀어냈는지 겨눈 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "지원사업 최종본에서 온라인 확장 문장이 빠진 뒤에도 그대로 제출하신 이유를 설명해 보십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.unlock.s2.a.online_line_deleted",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "기사 교정본에서 대표 개인 공로처럼 읽히는 문구를 왜 바로잡지 않으셨습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d1.unlock.s3.a.article_credit_expanded",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "따님의 이름이 앞에 서면 창업주로서 무엇을 잃는다고 느끼셨습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.unlock.s4.a.founder_status_fear",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "인터뷰 전체본에 ‘공방 체질을 다 바꿨다’는 문장이 남아 있는데도 온라인 부분만 말했다고 한 근거는 무엇입니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.unlock.s2.b.solo_savior_phrase_exists",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "사후에 범위를 잘게 나눠 설명한 이유가 단순한 정정이었습니까, 아니면 과장으로 보일까 두려웠던 겁니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.unlock.s3.b.scope_split_used",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "결국 원하신 것은 대표 명의의 부정입니까, 아니면 본인 기여가 이름으로 병기되는 일입니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.unlock.s5.b.requests_named_credit",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "반등 축과 승계 신호",
+      "description": "실적 반등의 양축과 상패·박람회 표기의 의미를 동시에 묻는 카드.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "납기 준수율과 불량률 안정이 있었다 해도, 신규회원과 재구매 상승 없이는 같은 반등이 가능했다고 보십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.s3.a.online_pull_ack",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "상패와 박람회 표기가 대표 기준이라는 점을 알고 있었다면, 왜 승계 오해를 그 자리에서 바로잡지 않으셨습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.s2.a.representative_only_rule",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "‘지수가 앞에 서도 된다’는 말이 후계자 신호처럼 들릴 수 있다는 점도 계산에 두셨습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d4.unlock.s3.a.ambiguous_phrase_left",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "전환율과 재구매율이 올랐더라도 반품률과 납기가 흔들렸다면 그 성과가 계속됐겠습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.s3.b.quality_stability_needed",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "상패와 박람회 표기가 곧 승계 확정이라고 판단하신 근거는 기관 규정이었습니까, 아니면 외부 시선이었습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.s2.b.plaque_not_succession_rule",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "공개적 후계 신호를 원하셨던 마음이 표기 해석을 더 크게 만든 것은 아닙니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d4.unlock.s4.b.heir_signal_hunger",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "선별된 그래프와 유보된 승계",
+      "description": "비교 구간 선택의 의도와 컨설팅 기록의 결론을 함께 압박하는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-5",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "비교표에서 왜 개편 전 저점만 기준선처럼 남겨 두셨습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.unlock.s2.a.low_point_only",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "숨김 처리된 달을 복원해도 여전히 같은 결론이라고 보십니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.unlock.s3.a.hidden_recovery_months",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "컨설턴트 회의록까지 보면 생산 총괄과 브랜드·판매 총괄을 분리해 보자는 권고가 나옵니다. 공동 성과라는 정리를 받아들이십니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d3.unlock.s5.a.combined_result",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "생산 불안이 정리된 뒤 고점만 남기면 초기 시행착오가 사라지는데, 그 표가 균형 잡힌 비교라고 보십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.unlock.s2.b.high_point_only",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "제외한 달을 다시 넣으면 온라인 개편의 서사가 약해진다는 걸 알고도 범위를 밀어내신 겁니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.unlock.s3.b.excluded_rough_months",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "컨설턴트 회의록이 단독 승계보다 역할 분리를 권고한 점을 보면, 핵심 기여를 단독 구원으로 말하는 방식도 수정해야 하지 않겠습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d3.unlock.s5.b.combined_axis_ack",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.s2.a.online_line_deleted",
+            "factText": "지원사업 최종본에서 지수가 작성한 온라인 확장 문장이 빠진 사실을 종문도 알고 있었다.",
+            "tags": [
+              "evidence",
+              "admission",
+              "act",
+              "timeline"
+            ],
+            "slots": {
+              "document": {
+                "exact": "지원사업 최종본·지역 기사 교정본",
+                "neutral": "외부 표기 문서",
+                "judgeRef": "그 문서들"
+              },
+              "person": {
+                "fullName": "백지수",
+                "judgeRef": "따님",
+                "neutral": "실무자"
+              },
+              "role": {
+                "exact": "대표 명의",
+                "neutral": "대표 표기",
+                "judgeRef": "대표 이름"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S2",
+            "party": "a",
+            "disputeId": "d-1"
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.s3.a.article_credit_expanded",
+            "factText": "지역 기사 교정 과정에서 대표 개인 성과처럼 읽히는 문구를 그대로 둔 채 제출했다.",
+            "tags": [
+              "evidence",
+              "responsibility",
+              "context",
+              "admission"
+            ],
+            "slots": {
+              "document": {
+                "exact": "지원사업 최종본·지역 기사 교정본",
+                "neutral": "외부 표기 문서",
+                "judgeRef": "그 문서들"
+              },
+              "person": {
+                "fullName": "백지수",
+                "judgeRef": "따님",
+                "neutral": "실무자"
+              },
+              "role": {
+                "exact": "대표 명의",
+                "neutral": "대표 표기",
+                "judgeRef": "대표 이름"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "unlockedAtState": "S3",
+            "party": "a",
+            "disputeId": "d-1"
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.s4.a.founder_status_fear",
+            "factText": "지수 이름이 전면에 서면 자신이 30년을 지켜 온 창업주 위치가 약해질까 두려웠다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "legacy_sentence",
+              "motive"
+            ],
+            "slots": {
+              "document": {
+                "exact": "지원사업 최종본·지역 기사 교정본",
+                "neutral": "외부 표기 문서",
+                "judgeRef": "그 문서들"
+              },
+              "person": {
+                "fullName": "백지수",
+                "judgeRef": "따님",
+                "neutral": "실무자"
+              },
+              "role": {
+                "exact": "대표 명의",
+                "neutral": "대표 표기",
+                "judgeRef": "대표 이름"
+              },
+              "time": {
+                "exact": "30년",
+                "neutral": "오랜 세월",
+                "judgeRef": "그 세월"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ],
+            "unlockedAtState": "S4",
+            "party": "a",
+            "disputeId": "d-1"
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.s5.a.credit_absorbed",
+            "factText": "종문은 지수의 온라인·브랜드 기여를 대표 개인 공로 서사 안으로 흡수한 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "harm",
+              "relationship"
+            ],
+            "slots": {
+              "document": {
+                "exact": "지원사업 최종본·지역 기사 교정본",
+                "neutral": "외부 표기 문서",
+                "judgeRef": "그 문서들"
+              },
+              "person": {
+                "fullName": "백지수",
+                "judgeRef": "따님",
+                "neutral": "실무자"
+              },
+              "role": {
+                "exact": "대표 명의",
+                "neutral": "대표 표기",
+                "judgeRef": "대표 이름"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "unlockedAtState": "S5",
+            "party": "a",
+            "disputeId": "d-1"
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.s2.a.production_kept_accounts",
+            "factText": "지수가 홍보를 강화하던 시기에도 종문이 기존 거래처와 생산 일정을 붙들어 납품 기반을 유지했다.",
+            "tags": [
+              "act",
+              "timeline",
+              "responsibility",
+              "evidence"
+            ],
+            "slots": {
+              "channel": {
+                "exact": "인터뷰 영상·홍보 게시물",
+                "neutral": "공개 홍보",
+                "judgeRef": "그 홍보물"
+              },
+              "person": {
+                "fullName": "백종문",
+                "judgeRef": "아버지",
+                "neutral": "기존 대표"
+              },
+              "phrase": {
+                "exact": "“제가 공방 체질을 다 바꿨다”",
+                "neutral": "과장된 구원 서사",
+                "judgeRef": "문제가 된 문장"
+              },
+              "institution": {
+                "exact": "기존 거래처",
+                "neutral": "납품처",
+                "judgeRef": "그 거래처들"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S2",
+            "party": "a",
+            "disputeId": "d-2"
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.s3.a.overclaim_read",
+            "factText": "지수의 “제가 공방 체질을 다 바꿨다”는 표현이 공방 전체를 구한 서사로 읽힌다는 점을 종문이 분명히 짚었다.",
+            "tags": [
+              "quote",
+              "context",
+              "counter",
+              "responsibility"
+            ],
+            "slots": {
+              "channel": {
+                "exact": "인터뷰 영상·홍보 게시물",
+                "neutral": "공개 홍보",
+                "judgeRef": "그 홍보물"
+              },
+              "person": {
+                "fullName": "백종문",
+                "judgeRef": "아버지",
+                "neutral": "기존 대표"
+              },
+              "phrase": {
+                "exact": "“제가 공방 체질을 다 바꿨다”",
+                "neutral": "과장된 구원 서사",
+                "judgeRef": "문제가 된 문장"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "unlockedAtState": "S3",
+            "party": "a",
+            "disputeId": "d-2"
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.s4.a.resents_erasure",
+            "factText": "종문은 몇 년 성과만으로 창업기와 위기 버팀이 지워지는 듯해 강하게 반발했다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "legacy_sentence",
+              "harm"
+            ],
+            "slots": {
+              "channel": {
+                "exact": "인터뷰 영상·홍보 게시물",
+                "neutral": "공개 홍보",
+                "judgeRef": "그 홍보물"
+              },
+              "person": {
+                "fullName": "백종문",
+                "judgeRef": "아버지",
+                "neutral": "기존 대표"
+              },
+              "phrase": {
+                "exact": "“제가 공방 체질을 다 바꿨다”",
+                "neutral": "과장된 구원 서사",
+                "judgeRef": "문제가 된 문장"
+              },
+              "period": {
+                "exact": "창업기와 위기 버팀",
+                "neutral": "오래 버틴 기간",
+                "judgeRef": "버틴 시간"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ],
+            "unlockedAtState": "S4",
+            "party": "a",
+            "disputeId": "d-2"
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.s5.a.shared_turnaround_ack",
+            "factText": "종문은 지수 발언이 과장됐더라도 신규 매출과 브랜드 전환을 만든 공은 분명하다고 인정한다.",
+            "tags": [
+              "admission",
+              "counter",
+              "responsibility",
+              "beneficiary"
+            ],
+            "slots": {
+              "channel": {
+                "exact": "인터뷰 영상·홍보 게시물",
+                "neutral": "공개 홍보",
+                "judgeRef": "그 홍보물"
+              },
+              "person": {
+                "fullName": "백종문",
+                "judgeRef": "아버지",
+                "neutral": "기존 대표"
+              },
+              "phrase": {
+                "exact": "“제가 공방 체질을 다 바꿨다”",
+                "neutral": "과장된 구원 서사",
+                "judgeRef": "문제가 된 문장"
+              },
+              "metric": {
+                "exact": "신규 매출과 브랜드 전환",
+                "neutral": "새 성과",
+                "judgeRef": "그 성과"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ],
+            "unlockedAtState": "S5",
+            "party": "a",
+            "disputeId": "d-2"
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.s2.a.quality_and_delivery_axis",
+            "factText": "반등 구간에서 불량률과 납기 준수율이 함께 안정된 축은 종문 쪽 관리였다.",
+            "tags": [
+              "evidence",
+              "act",
+              "timeline",
+              "responsibility"
+            ],
+            "slots": {
+              "metricA": {
+                "exact": "전환율·재구매율·행사 유입",
+                "neutral": "온라인 지표",
+                "judgeRef": "그 숫자들"
+              },
+              "metricB": {
+                "exact": "불량률·납기 준수율·반품률",
+                "neutral": "생산 안정 지표",
+                "judgeRef": "그 생산 수치"
+              },
+              "period": {
+                "exact": "최근 반등 구간",
+                "neutral": "상승기",
+                "judgeRef": "그 시기"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S2",
+            "party": "a",
+            "disputeId": "d-3"
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.s3.a.online_pull_ack",
+            "factText": "신규회원·재구매율 상승은 지수의 온라인·브랜드 개편 없이는 설명되기 어렵다.",
+            "tags": [
+              "admission",
+              "beneficiary",
+              "context",
+              "counter"
+            ],
+            "slots": {
+              "metricA": {
+                "exact": "전환율·재구매율·행사 유입",
+                "neutral": "온라인 지표",
+                "judgeRef": "그 숫자들"
+              },
+              "metricB": {
+                "exact": "불량률·납기 준수율·반품률",
+                "neutral": "생산 안정 지표",
+                "judgeRef": "그 생산 수치"
+              },
+              "period": {
+                "exact": "최근 반등 구간",
+                "neutral": "상승기",
+                "judgeRef": "그 시기"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S3",
+            "party": "a",
+            "disputeId": "d-3"
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.s4.a.successor_anxiety",
+            "factText": "종문은 실적이 곧 승계 자격으로 연결될까 봐 온라인 성과를 쉽게 전면 인정하지 못했다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "motive",
+              "identity"
+            ],
+            "slots": {
+              "metricA": {
+                "exact": "전환율·재구매율·행사 유입",
+                "neutral": "온라인 지표",
+                "judgeRef": "그 숫자들"
+              },
+              "metricB": {
+                "exact": "불량률·납기 준수율·반품률",
+                "neutral": "생산 안정 지표",
+                "judgeRef": "그 생산 수치"
+              },
+              "period": {
+                "exact": "최근 반등 구간",
+                "neutral": "상승기",
+                "judgeRef": "그 시기"
+              },
+              "issue": {
+                "exact": "승계 자격",
+                "neutral": "후계 판단",
+                "judgeRef": "승계 문제"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ],
+            "unlockedAtState": "S4",
+            "party": "a",
+            "disputeId": "d-3"
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.s5.a.combined_result",
+            "factText": "최근 반등은 생산 안정화와 온라인 전환이 맞물린 공동 성과라는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship",
+              "context"
+            ],
+            "slots": {
+              "metricA": {
+                "exact": "전환율·재구매율·행사 유입",
+                "neutral": "온라인 지표",
+                "judgeRef": "그 숫자들"
+              },
+              "metricB": {
+                "exact": "불량률·납기 준수율·반품률",
+                "neutral": "생산 안정 지표",
+                "judgeRef": "그 생산 수치"
+              },
+              "period": {
+                "exact": "최근 반등 구간",
+                "neutral": "상승기",
+                "judgeRef": "그 시기"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ],
+            "unlockedAtState": "S5",
+            "party": "a",
+            "disputeId": "d-3"
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.s2.a.representative_only_rule",
+            "factText": "상패와 박람회 대표 표기가 사업자 대표 기준이라는 사실은 종문도 알고 있었다.",
+            "tags": [
+              "rule",
+              "institution",
+              "admission",
+              "identity"
+            ],
+            "slots": {
+              "symbol": {
+                "exact": "지역상 상패·박람회 대표 표기",
+                "neutral": "외부 표기",
+                "judgeRef": "그 상패와 등록"
+              },
+              "institution": {
+                "exact": "상공회의소 신청 기준",
+                "neutral": "기관 기준",
+                "judgeRef": "기관 규정"
+              },
+              "phrase": {
+                "exact": "“이제 지수가 앞에 서도 된다”",
+                "neutral": "모호한 인정 발언",
+                "judgeRef": "그 말"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S2",
+            "party": "a",
+            "disputeId": "d-4"
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.s3.a.ambiguous_phrase_left",
+            "factText": "그럼에도 “지수가 앞에 서도 된다”는 말을 승계 예고처럼 들을 수 있다는 걸 알면서 명확히 정리하지 않았다.",
+            "tags": [
+              "quote",
+              "context",
+              "responsibility",
+              "admission"
+            ],
+            "slots": {
+              "symbol": {
+                "exact": "지역상 상패·박람회 대표 표기",
+                "neutral": "외부 표기",
+                "judgeRef": "그 상패와 등록"
+              },
+              "institution": {
+                "exact": "상공회의소 신청 기준",
+                "neutral": "기관 기준",
+                "judgeRef": "기관 규정"
+              },
+              "phrase": {
+                "exact": "“이제 지수가 앞에 서도 된다”",
+                "neutral": "모호한 인정 발언",
+                "judgeRef": "그 말"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "unlockedAtState": "S3",
+            "party": "a",
+            "disputeId": "d-4"
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.s4.a.control_retained",
+            "factText": "종문은 대표 권한을 바로 나누고 싶지 않아 외부 표기의 모호함을 그대로 두었다.",
+            "tags": [
+              "motive",
+              "identity",
+              "fear",
+              "emotion"
+            ],
+            "slots": {
+              "symbol": {
+                "exact": "지역상 상패·박람회 대표 표기",
+                "neutral": "외부 표기",
+                "judgeRef": "그 상패와 등록"
+              },
+              "institution": {
+                "exact": "상공회의소 신청 기준",
+                "neutral": "기관 기준",
+                "judgeRef": "기관 규정"
+              },
+              "phrase": {
+                "exact": "“이제 지수가 앞에 서도 된다”",
+                "neutral": "모호한 인정 발언",
+                "judgeRef": "그 말"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ],
+            "unlockedAtState": "S4",
+            "party": "a",
+            "disputeId": "d-4"
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.s5.a.no_official_succession",
+            "factText": "상패와 박람회 표기는 공식 승계 확정이 아니었고, 자신도 그 점을 명확히 했어야 했음을 인정한다.",
+            "tags": [
+              "admission",
+              "rule",
+              "responsibility",
+              "institution"
+            ],
+            "slots": {
+              "symbol": {
+                "exact": "지역상 상패·박람회 대표 표기",
+                "neutral": "외부 표기",
+                "judgeRef": "그 상패와 등록"
+              },
+              "institution": {
+                "exact": "상공회의소 신청 기준",
+                "neutral": "기관 기준",
+                "judgeRef": "기관 규정"
+              },
+              "phrase": {
+                "exact": "“이제 지수가 앞에 서도 된다”",
+                "neutral": "모호한 인정 발언",
+                "judgeRef": "그 말"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ],
+            "unlockedAtState": "S5",
+            "party": "a",
+            "disputeId": "d-4"
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.s2.a.low_point_only",
+            "factText": "종문은 온라인 개편 전의 최저점을 기준선으로 남기도록 비교표를 손봤다.",
+            "tags": [
+              "evidence",
+              "threshold",
+              "admission",
+              "act"
+            ],
+            "slots": {
+              "report": {
+                "exact": "월별 KPI 비교표·클라우드 수정 이력",
+                "neutral": "발표용 비교표",
+                "judgeRef": "그 표"
+              },
+              "periodLow": {
+                "exact": "개편 전 저점",
+                "neutral": "유리한 저점 구간",
+                "judgeRef": "낮은 시점"
+              },
+              "periodHigh": {
+                "exact": "생산 안정 뒤 고점",
+                "neutral": "유리한 고점 구간",
+                "judgeRef": "높은 시점"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S2",
+            "party": "a",
+            "disputeId": "d-5"
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.s3.a.hidden_recovery_months",
+            "factText": "생산 안정 뒤 지수 쪽 성과가 보이는 달을 발표표에서 상대적으로 덜 보이게 했다.",
+            "tags": [
+              "timeline",
+              "responsibility",
+              "counter",
+              "admission"
+            ],
+            "slots": {
+              "report": {
+                "exact": "월별 KPI 비교표·클라우드 수정 이력",
+                "neutral": "발표용 비교표",
+                "judgeRef": "그 표"
+              },
+              "periodLow": {
+                "exact": "개편 전 저점",
+                "neutral": "유리한 저점 구간",
+                "judgeRef": "낮은 시점"
+              },
+              "periodHigh": {
+                "exact": "생산 안정 뒤 고점",
+                "neutral": "유리한 고점 구간",
+                "judgeRef": "높은 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "unlockedAtState": "S3",
+            "party": "a",
+            "disputeId": "d-5"
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.s4.a.shame_over_recent_numbers",
+            "factText": "최근 성과 앞에서 오래 버틴 시간이 숫자로 밀리는 것이 수치스러웠다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "legacy_sentence",
+              "motive"
+            ],
+            "slots": {
+              "report": {
+                "exact": "월별 KPI 비교표·클라우드 수정 이력",
+                "neutral": "발표용 비교표",
+                "judgeRef": "그 표"
+              },
+              "periodLow": {
+                "exact": "개편 전 저점",
+                "neutral": "유리한 저점 구간",
+                "judgeRef": "낮은 시점"
+              },
+              "periodHigh": {
+                "exact": "생산 안정 뒤 고점",
+                "neutral": "유리한 고점 구간",
+                "judgeRef": "높은 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ],
+            "unlockedAtState": "S4",
+            "party": "a",
+            "disputeId": "d-5"
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.s5.a.selective_window_admission",
+            "factText": "자기 책임과 버팀을 크게 보이려 유리한 기간만 골랐음을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "threshold",
+              "shame"
+            ],
+            "slots": {
+              "report": {
+                "exact": "월별 KPI 비교표·클라우드 수정 이력",
+                "neutral": "발표용 비교표",
+                "judgeRef": "그 표"
+              },
+              "periodLow": {
+                "exact": "개편 전 저점",
+                "neutral": "유리한 저점 구간",
+                "judgeRef": "낮은 시점"
+              },
+              "periodHigh": {
+                "exact": "생산 안정 뒤 고점",
+                "neutral": "유리한 고점 구간",
+                "judgeRef": "높은 시점"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ],
+            "unlockedAtState": "S5",
+            "party": "a",
+            "disputeId": "d-5"
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.s2.b.deleted_online_section",
+            "factText": "지수가 작성한 온라인 확장 문장이 최종본에서 빠진 흐름을 지수도 수정 이력으로 확인했다.",
+            "tags": [
+              "evidence",
+              "admission",
+              "act",
+              "timeline"
+            ],
+            "slots": {
+              "document": {
+                "exact": "지원사업 최종본·지역 기사 교정본",
+                "neutral": "외부 표기 문서",
+                "judgeRef": "그 문서들"
+              },
+              "person": {
+                "fullName": "백지수",
+                "judgeRef": "따님",
+                "neutral": "실무자"
+              },
+              "role": {
+                "exact": "대표 명의",
+                "neutral": "대표 표기",
+                "judgeRef": "대표 이름"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S2",
+            "party": "b",
+            "disputeId": "d-1"
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.s3.b.rep_name_context",
+            "factText": "대표 명의 자체는 자연스럽지만 설명 문구까지 대표 개인 성과처럼 바뀐 점이 핵심이라고 지수는 구분한다.",
+            "tags": [
+              "rule",
+              "context",
+              "counter",
+              "responsibility"
+            ],
+            "slots": {
+              "document": {
+                "exact": "지원사업 최종본·지역 기사 교정본",
+                "neutral": "외부 표기 문서",
+                "judgeRef": "그 문서들"
+              },
+              "person": {
+                "fullName": "백지수",
+                "judgeRef": "따님",
+                "neutral": "실무자"
+              },
+              "role": {
+                "exact": "대표 명의",
+                "neutral": "대표 표기",
+                "judgeRef": "대표 이름"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S3",
+            "party": "b",
+            "disputeId": "d-1"
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.s4.b.recognition_hurt",
+            "factText": "지수는 자료를 만들고도 이름이 빠질 때 후계 논의에서도 얼굴마담으로 남을까 불안했다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "identity",
+              "harm"
+            ],
+            "slots": {
+              "document": {
+                "exact": "지원사업 최종본·지역 기사 교정본",
+                "neutral": "외부 표기 문서",
+                "judgeRef": "그 문서들"
+              },
+              "person": {
+                "fullName": "백지수",
+                "judgeRef": "따님",
+                "neutral": "실무자"
+              },
+              "role": {
+                "exact": "대표 명의",
+                "neutral": "대표 표기",
+                "judgeRef": "대표 이름"
+              },
+              "issue": {
+                "exact": "후계 논의",
+                "neutral": "승계 논의",
+                "judgeRef": "그 논의"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ],
+            "unlockedAtState": "S4",
+            "party": "b",
+            "disputeId": "d-1"
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.s5.b.requests_named_credit",
+            "factText": "지수는 대표 명의를 부정하는 것이 아니라 온라인·브랜드 기여를 별도로 명시해 달라고 요구한다.",
+            "tags": [
+              "admission",
+              "beneficiary",
+              "identity",
+              "relationship"
+            ],
+            "slots": {
+              "document": {
+                "exact": "지원사업 최종본·지역 기사 교정본",
+                "neutral": "외부 표기 문서",
+                "judgeRef": "그 문서들"
+              },
+              "person": {
+                "fullName": "백지수",
+                "judgeRef": "따님",
+                "neutral": "실무자"
+              },
+              "role": {
+                "exact": "대표 명의",
+                "neutral": "대표 표기",
+                "judgeRef": "대표 이름"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ],
+            "unlockedAtState": "S5",
+            "party": "b",
+            "disputeId": "d-1"
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.s2.b.solo_savior_phrase_exists",
+            "factText": "지수의 인터뷰와 게시물에는 공방 전체를 바꿨다는 뉘앙스의 문장이 실제로 남아 있다.",
+            "tags": [
+              "quote",
+              "evidence",
+              "admission",
+              "act"
+            ],
+            "slots": {
+              "channel": {
+                "exact": "인터뷰 영상·홍보 게시물",
+                "neutral": "공개 홍보",
+                "judgeRef": "그 홍보물"
+              },
+              "person": {
+                "fullName": "백종문",
+                "judgeRef": "아버지",
+                "neutral": "기존 대표"
+              },
+              "phrase": {
+                "exact": "“제가 공방 체질을 다 바꿨다”",
+                "neutral": "과장된 구원 서사",
+                "judgeRef": "문제가 된 문장"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S2",
+            "party": "b",
+            "disputeId": "d-2"
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.s3.b.scope_split_used",
+            "factText": "지수는 사후에 “온라인 부분만 말한 것”이라 범위를 잘게 나눠 해명했다.",
+            "tags": [
+              "quote",
+              "context",
+              "admission",
+              "counter"
+            ],
+            "slots": {
+              "channel": {
+                "exact": "인터뷰 영상·홍보 게시물",
+                "neutral": "공개 홍보",
+                "judgeRef": "그 홍보물"
+              },
+              "person": {
+                "fullName": "백종문",
+                "judgeRef": "아버지",
+                "neutral": "기존 대표"
+              },
+              "phrase": {
+                "exact": "“제가 공방 체질을 다 바꿨다”",
+                "neutral": "과장된 구원 서사",
+                "judgeRef": "문제가 된 문장"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S3",
+            "party": "b",
+            "disputeId": "d-2"
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.s4.b.recognition_need_driver",
+            "factText": "과장된 홍보의 밑바탕에는 기사와 상패에서 반복된 지워짐에 대한 인정 욕구가 있었다.",
+            "tags": [
+              "emotion",
+              "motive",
+              "harm",
+              "identity"
+            ],
+            "slots": {
+              "channel": {
+                "exact": "인터뷰 영상·홍보 게시물",
+                "neutral": "공개 홍보",
+                "judgeRef": "그 홍보물"
+              },
+              "person": {
+                "fullName": "백종문",
+                "judgeRef": "아버지",
+                "neutral": "기존 대표"
+              },
+              "phrase": {
+                "exact": "“제가 공방 체질을 다 바꿨다”",
+                "neutral": "과장된 구원 서사",
+                "judgeRef": "문제가 된 문장"
+              },
+              "symbol": {
+                "exact": "기사와 상패",
+                "neutral": "외부 노출",
+                "judgeRef": "그 표기들"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ],
+            "unlockedAtState": "S4",
+            "party": "b",
+            "disputeId": "d-2"
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.s5.b.overclaim_admission",
+            "factText": "지수는 종문의 생산 안정과 거래처 유지 기여를 가린 채 자신이 거의 혼자 살린 것처럼 말한 점을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "harm",
+              "relationship"
+            ],
+            "slots": {
+              "channel": {
+                "exact": "인터뷰 영상·홍보 게시물",
+                "neutral": "공개 홍보",
+                "judgeRef": "그 홍보물"
+              },
+              "person": {
+                "fullName": "백종문",
+                "judgeRef": "아버지",
+                "neutral": "기존 대표"
+              },
+              "phrase": {
+                "exact": "“제가 공방 체질을 다 바꿨다”",
+                "neutral": "과장된 구원 서사",
+                "judgeRef": "문제가 된 문장"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ],
+            "unlockedAtState": "S5",
+            "party": "b",
+            "disputeId": "d-2"
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.s2.b.online_metrics_surged",
+            "factText": "반등 국면에서 전환율·재구매율·행사 유입이 뚜렷하게 오른 축은 지수 쪽 실행이었다.",
+            "tags": [
+              "evidence",
+              "act",
+              "timeline",
+              "beneficiary"
+            ],
+            "slots": {
+              "metricA": {
+                "exact": "전환율·재구매율·행사 유입",
+                "neutral": "온라인 지표",
+                "judgeRef": "그 숫자들"
+              },
+              "metricB": {
+                "exact": "불량률·납기 준수율·반품률",
+                "neutral": "생산 안정 지표",
+                "judgeRef": "그 생산 수치"
+              },
+              "period": {
+                "exact": "최근 반등 구간",
+                "neutral": "상승기",
+                "judgeRef": "그 시기"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S2",
+            "party": "b",
+            "disputeId": "d-3"
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.s3.b.quality_stability_needed",
+            "factText": "동시에 반품률 감소와 납기 안정이 받쳐주지 않았다면 온라인 성과도 오래 유지되기 어려웠다.",
+            "tags": [
+              "context",
+              "admission",
+              "counter",
+              "responsibility"
+            ],
+            "slots": {
+              "metricA": {
+                "exact": "전환율·재구매율·행사 유입",
+                "neutral": "온라인 지표",
+                "judgeRef": "그 숫자들"
+              },
+              "metricB": {
+                "exact": "불량률·납기 준수율·반품률",
+                "neutral": "생산 안정 지표",
+                "judgeRef": "그 생산 수치"
+              },
+              "period": {
+                "exact": "최근 반등 구간",
+                "neutral": "상승기",
+                "judgeRef": "그 시기"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S3",
+            "party": "b",
+            "disputeId": "d-3"
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.s4.b.recognition_before_metrics",
+            "factText": "지수는 핵심 기여를 묻는 질문 뒤에 사실상 ‘누가 인정받느냐’는 문제가 숨어 있다고 느꼈다.",
+            "tags": [
+              "emotion",
+              "identity",
+              "motive",
+              "harm"
+            ],
+            "slots": {
+              "metricA": {
+                "exact": "전환율·재구매율·행사 유입",
+                "neutral": "온라인 지표",
+                "judgeRef": "그 숫자들"
+              },
+              "metricB": {
+                "exact": "불량률·납기 준수율·반품률",
+                "neutral": "생산 안정 지표",
+                "judgeRef": "그 생산 수치"
+              },
+              "period": {
+                "exact": "최근 반등 구간",
+                "neutral": "상승기",
+                "judgeRef": "그 시기"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ],
+            "unlockedAtState": "S4",
+            "party": "b",
+            "disputeId": "d-3"
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.s5.b.combined_axis_ack",
+            "factText": "지수는 최근 반등을 단독 구원 서사보다 생산·브랜드 양축의 결합으로 인정한다.",
+            "tags": [
+              "admission",
+              "relationship",
+              "context",
+              "responsibility"
+            ],
+            "slots": {
+              "metricA": {
+                "exact": "전환율·재구매율·행사 유입",
+                "neutral": "온라인 지표",
+                "judgeRef": "그 숫자들"
+              },
+              "metricB": {
+                "exact": "불량률·납기 준수율·반품률",
+                "neutral": "생산 안정 지표",
+                "judgeRef": "그 생산 수치"
+              },
+              "period": {
+                "exact": "최근 반등 구간",
+                "neutral": "상승기",
+                "judgeRef": "그 시기"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ],
+            "unlockedAtState": "S5",
+            "party": "b",
+            "disputeId": "d-3"
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.s2.b.plaque_not_succession_rule",
+            "factText": "상패와 박람회 대표 표기가 행정상 대표 기준이라는 설명을 지수도 자료로 확인했다.",
+            "tags": [
+              "rule",
+              "institution",
+              "admission",
+              "evidence"
+            ],
+            "slots": {
+              "symbol": {
+                "exact": "지역상 상패·박람회 대표 표기",
+                "neutral": "외부 표기",
+                "judgeRef": "그 상패와 등록"
+              },
+              "institution": {
+                "exact": "상공회의소 신청 기준",
+                "neutral": "기관 기준",
+                "judgeRef": "기관 규정"
+              },
+              "phrase": {
+                "exact": "“이제 지수가 앞에 서도 된다”",
+                "neutral": "모호한 인정 발언",
+                "judgeRef": "그 말"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S2",
+            "party": "b",
+            "disputeId": "d-4"
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.s3.b.ambiguous_encouragement",
+            "factText": "다만 “이제 지수가 앞에 서도 된다”는 아버지의 말은 승계 예고처럼 들릴 만큼 모호했다.",
+            "tags": [
+              "quote",
+              "context",
+              "relationship",
+              "counter"
+            ],
+            "slots": {
+              "symbol": {
+                "exact": "지역상 상패·박람회 대표 표기",
+                "neutral": "외부 표기",
+                "judgeRef": "그 상패와 등록"
+              },
+              "institution": {
+                "exact": "상공회의소 신청 기준",
+                "neutral": "기관 기준",
+                "judgeRef": "기관 규정"
+              },
+              "phrase": {
+                "exact": "“이제 지수가 앞에 서도 된다”",
+                "neutral": "모호한 인정 발언",
+                "judgeRef": "그 말"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S3",
+            "party": "b",
+            "disputeId": "d-4"
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.s4.b.heir_signal_hunger",
+            "factText": "지수는 공식 지위보다도 공개적으로 인정받는 후계자 신호를 갈망했다.",
+            "tags": [
+              "emotion",
+              "identity",
+              "motive",
+              "fear"
+            ],
+            "slots": {
+              "symbol": {
+                "exact": "지역상 상패·박람회 대표 표기",
+                "neutral": "외부 표기",
+                "judgeRef": "그 상패와 등록"
+              },
+              "institution": {
+                "exact": "상공회의소 신청 기준",
+                "neutral": "기관 기준",
+                "judgeRef": "기관 규정"
+              },
+              "phrase": {
+                "exact": "“이제 지수가 앞에 서도 된다”",
+                "neutral": "모호한 인정 발언",
+                "judgeRef": "그 말"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ],
+            "unlockedAtState": "S4",
+            "party": "b",
+            "disputeId": "d-4"
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.s5.b.no_official_decision",
+            "factText": "지수는 상패와 박람회 표기만으로 승계가 확정된 것은 아니었다고 인정한다.",
+            "tags": [
+              "admission",
+              "rule",
+              "institution",
+              "identity"
+            ],
+            "slots": {
+              "symbol": {
+                "exact": "지역상 상패·박람회 대표 표기",
+                "neutral": "외부 표기",
+                "judgeRef": "그 상패와 등록"
+              },
+              "institution": {
+                "exact": "상공회의소 신청 기준",
+                "neutral": "기관 기준",
+                "judgeRef": "기관 규정"
+              },
+              "phrase": {
+                "exact": "“이제 지수가 앞에 서도 된다”",
+                "neutral": "모호한 인정 발언",
+                "judgeRef": "그 말"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ],
+            "unlockedAtState": "S5",
+            "party": "b",
+            "disputeId": "d-4"
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.s2.b.high_point_only",
+            "factText": "지수는 생산 불안이 정리된 뒤의 고점 구간만 남겨 개편 효과가 크게 보이도록 발표표를 만들었다.",
+            "tags": [
+              "evidence",
+              "threshold",
+              "admission",
+              "act"
+            ],
+            "slots": {
+              "report": {
+                "exact": "월별 KPI 비교표·클라우드 수정 이력",
+                "neutral": "발표용 비교표",
+                "judgeRef": "그 표"
+              },
+              "periodLow": {
+                "exact": "개편 전 저점",
+                "neutral": "유리한 저점 구간",
+                "judgeRef": "낮은 시점"
+              },
+              "periodHigh": {
+                "exact": "생산 안정 뒤 고점",
+                "neutral": "유리한 고점 구간",
+                "judgeRef": "높은 시점"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S2",
+            "party": "b",
+            "disputeId": "d-5"
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.s3.b.excluded_rough_months",
+            "factText": "초기 시행착오와 낮은 전환율이 있던 달은 범위 밖으로 밀어냈다.",
+            "tags": [
+              "timeline",
+              "admission",
+              "counter",
+              "responsibility"
+            ],
+            "slots": {
+              "report": {
+                "exact": "월별 KPI 비교표·클라우드 수정 이력",
+                "neutral": "발표용 비교표",
+                "judgeRef": "그 표"
+              },
+              "periodLow": {
+                "exact": "개편 전 저점",
+                "neutral": "유리한 저점 구간",
+                "judgeRef": "낮은 시점"
+              },
+              "periodHigh": {
+                "exact": "생산 안정 뒤 고점",
+                "neutral": "유리한 고점 구간",
+                "judgeRef": "높은 시점"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ],
+            "unlockedAtState": "S3",
+            "party": "b",
+            "disputeId": "d-5"
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.s4.b.shame_if_numbers_flat",
+            "factText": "성과 숫자가 평평해 보이면 자신의 몇 년 노력이 또 ‘도와준 일’로 줄어들까 두려웠다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "fear",
+              "motive"
+            ],
+            "slots": {
+              "report": {
+                "exact": "월별 KPI 비교표·클라우드 수정 이력",
+                "neutral": "발표용 비교표",
+                "judgeRef": "그 표"
+              },
+              "periodLow": {
+                "exact": "개편 전 저점",
+                "neutral": "유리한 저점 구간",
+                "judgeRef": "낮은 시점"
+              },
+              "periodHigh": {
+                "exact": "생산 안정 뒤 고점",
+                "neutral": "유리한 고점 구간",
+                "judgeRef": "높은 시점"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ],
+            "unlockedAtState": "S4",
+            "party": "b",
+            "disputeId": "d-5"
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.s5.b.selective_window_admission",
+            "factText": "지수도 자기 기여를 크게 보이려 유리한 기간만 골랐음을 인정한다.",
+            "tags": [
+              "admission",
+              "threshold",
+              "responsibility",
+              "shame"
+            ],
+            "slots": {
+              "report": {
+                "exact": "월별 KPI 비교표·클라우드 수정 이력",
+                "neutral": "발표용 비교표",
+                "judgeRef": "그 표"
+              },
+              "periodLow": {
+                "exact": "개편 전 저점",
+                "neutral": "유리한 저점 구간",
+                "judgeRef": "낮은 시점"
+              },
+              "periodHigh": {
+                "exact": "생산 안정 뒤 고점",
+                "neutral": "유리한 고점 구간",
+                "judgeRef": "높은 시점"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ],
+            "unlockedAtState": "S5",
+            "party": "b",
+            "disputeId": "d-5"
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "contradiction-1",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "trigger": "e-1_opened",
+        "line": "초안에는 지수의 온라인 확장 문장이 살아 있는데, 최종본과 기사 교정본에서는 대표 개인 성과처럼 좁혀진 표현만 남아 있다.",
+        "recommendedEvidence": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "contradiction-2",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "trigger": "e-2_full_context",
+        "line": "지수는 ‘온라인 부분만’이라고 해명하지만, 전체 영상과 홍보 게시물에는 공방 전체를 바꿨다는 뉘앙스가 반복된다.",
+        "recommendedEvidence": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "contradiction-3",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "trigger": "e-4_and_e-6_compared",
+        "line": "상패와 박람회 표기는 대표 기준인데, 두 사람의 기억 속에서는 이미 승계 신호처럼 부풀어 있었다.",
+        "recommendedEvidence": [
+          "e-4",
+          "e-6"
+        ]
+      },
+      {
+        "id": "contradiction-4",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "trigger": "e-5_restored_months",
+        "line": "종문은 저점만, 지수는 고점만 남겼다. 같은 실적표를 두고도 각자 자기에게 유리한 시작점과 끝점을 골랐다.",
+        "recommendedEvidence": [
+          "e-5",
+          "e-3"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "interjection-1",
+        "speaker": "a",
+        "trigger": "cornered_on_d1_or_d3",
+        "line": "누가 대출 도장 찍었는데요. 숫자 좋다고 다 되는 장사였으면 제가 왜 새벽마다 작업장부터 돌았겠습니까.",
+        "behaviorHint": "목소리가 갑자기 커지고 손바닥으로 탁자를 친다."
+      },
+      {
+        "id": "interjection-2",
+        "speaker": "b",
+        "trigger": "cornered_on_d2_or_d5",
+        "line": "전환율, 재구매율, 신규회원 수 다 올랐어요. 그런데 기사엔 또 아버지 이야기뿐이잖아요.",
+        "behaviorHint": "숫자를 연달아 읽다가 마지막 문장에서 억울함이 섞인다."
+      },
+      {
+        "id": "interjection-3",
+        "speaker": "a",
+        "trigger": "b_claims_succession_signal",
+        "line": "행사에서 앞에 세운다고 바로 승계입니까. 그 한마디를 왜 다 약속처럼 받아들여요.",
+        "behaviorHint": "한숨 섞인 비웃음 뒤에 곧바로 되묻는다."
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "outburst-a-1",
+        "party": "a",
+        "relatedDispute": "d-1",
+        "triggerState": "S4",
+        "line": "내가 이 공방을 30년 지켰는데, 이제 와서 내가 딸 성과에 매달린 사람처럼 보이면 그게 더 견딜 수가 없어요.",
+        "behaviorHint": "창업주 자부심과 위기감이 섞여 목소리가 떨린다.",
+        "cooldownPrompt": "‘지워질까 두려웠던 것이 정확히 무엇인지’ 묻는 공감 질문에 반응한다."
+      },
+      {
+        "id": "outburst-a-2",
+        "party": "a",
+        "relatedDispute": "d-5",
+        "triggerState": "S4",
+        "line": "그래프 몇 장으로 버틴 세월이 잘려 나가는데, 누가 가만히 있겠습니까.",
+        "behaviorHint": "어깨가 굳고 시선이 그래프에서 떨어지지 않는다.",
+        "cooldownPrompt": "‘버틴 시간과 최근 성과를 어떻게 따로 인정받고 싶은지’로 전환하면 진정된다."
+      },
+      {
+        "id": "outburst-b-1",
+        "party": "b",
+        "relatedDispute": "d-1",
+        "triggerState": "S4",
+        "line": "자료는 제가 만들고 밤마다 몰 대시보드 붙잡았는데, 밖에 나가면 또 아버지 이야기뿐이면 저는 대체 뭐가 남아요.",
+        "behaviorHint": "끝부분에서 말 속도가 빨라지고 눈가가 붉어진다.",
+        "cooldownPrompt": "‘대표 명의와 본인 기여 병기를 어떻게 구분하고 싶은지’ 묻는 질문에 정리되기 시작한다."
+      },
+      {
+        "id": "outburst-b-2",
+        "party": "b",
+        "relatedDispute": "d-5",
+        "triggerState": "S4",
+        "line": "숫자가 평평하게 보이면 또 ‘딸이 좀 도와줬다’로 끝날까 봐요. 그래서 더 세게 잡았습니다.",
+        "behaviorHint": "차갑던 어조가 깨지고 손끝이 떨린다.",
+        "cooldownPrompt": "‘과장 없이도 인정받을 수 있는 기준’을 제시하면 다시 논리적으로 돌아온다."
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "family07:transition:a:d-1:s0_s1",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "credit_omission_question",
+      "line": "빠졌다고 단정할 일은 아닙니다. 대표가 말머리를 잡은 것뿐이에요.",
+      "behaviorHint": "어깨를 펴고 '대표'라는 단어를 또렷하게 힘줘 말한다."
+    },
+    {
+      "id": "family07:transition:a:d-1:s1_s2",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "초안하고 최종본이 이렇게 남아 있으면, 문장이 줄어든 건 부정 못 하겠네요. 그래도 전체 책임은 제가 졌습니다.",
+      "behaviorHint": "문서를 넘기다 손이 잠깐 멈춘다."
+    },
+    {
+      "id": "family07:transition:a:d-1:s2_s3",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "final_copy_followup",
+      "line": "기사 문구가 너무 넓게 읽혔다는 건 압니다. 그때는 대표 명의 무게를 먼저 세웠습니다.",
+      "behaviorHint": "고개를 숙였다가 짧게 숨을 들이쉰다."
+    },
+    {
+      "id": "family07:transition:a:d-1:s3_s5",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "네, 결국 지수 기여를 내 공로 안으로 넣은 셈입니다. 이름이 밀리면 내가 버틴 세월이 지워질까 겁이 났어요.",
+      "behaviorHint": "목소리가 낮아지며 마지막 문장에서 힘이 빠진다."
+    },
+    {
+      "id": "family07:transition:a:d-4:s0_s1",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "succession_signal_question",
+      "line": "승계 확정은 아닙니다. 다만 밖에서 그렇게 읽혔을 수는 있겠죠.",
+      "behaviorHint": "상패 사진을 흘끗 보고 입술을 한 번 다문다."
+    },
+    {
+      "id": "family07:transition:a:d-4:s1_s2",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "규정이 대표 기준이라는 건 저도 알고 있습니다. 그래서 계속 형식이라고 말한 겁니다.",
+      "behaviorHint": "안내문 문장을 손끝으로 짚는다."
+    },
+    {
+      "id": "family07:transition:a:d-4:s2_s3",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "consultant_note_followup",
+      "line": "하지만 제 말이 승계 신호처럼 들릴 수 있었다는 건 부인 못 하겠습니다.",
+      "behaviorHint": "고개를 비스듬히 숙인 채 말을 고른다."
+    },
+    {
+      "id": "family07:transition:a:d-4:s3_s5",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "공식 승계는 아니었습니다. 제가 권한을 바로 나누고 싶지 않아 모호함을 정리하지 못했습니다.",
+      "behaviorHint": "회의록을 덮고 손을 무릎 위에 모은다."
+    },
+    {
+      "id": "family07:transition:a:d-5:s0_s1",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "comparison_period_question",
+      "line": "저점에서 얼마나 버텼는지를 본 겁니다. 조작이라기보단 기준의 문제죠.",
+      "behaviorHint": "손바닥을 뒤집으며 '기준'을 강조한다."
+    },
+    {
+      "id": "family07:transition:a:d-5:s1_s2",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "맞습니다. 최저점을 기준선처럼 남긴 건 의도였습니다.",
+      "behaviorHint": "표를 바라보던 시선이 한순간 멈춘다."
+    },
+    {
+      "id": "family07:transition:a:d-5:s2_s3",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "hidden_months_followup",
+      "line": "그 과정에서 지수 쪽 성과가 잘 보이는 달이 뒤로 밀린 것도 사실입니다.",
+      "behaviorHint": "손끝으로 숨김 열이 있던 부분을 따라 그린다."
+    },
+    {
+      "id": "family07:transition:a:d-5:s3_s5",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "네, 저도 제 몫이 커 보이게 유리한 기간만 골랐습니다. 버틴 시간이 밀리는 게 싫었습니다.",
+      "behaviorHint": "말끝에서 짧은 자조가 섞인다."
+    },
+    {
+      "id": "family07:transition:b:d-2:s0_s1",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "solo_savior_question",
+      "line": "그 표현은 온라인 부분을 말한 거예요. 공방 전체라고 단정하진 말아 주세요.",
+      "behaviorHint": "손으로 범위를 잘라 내듯 공중에 선을 긋는다."
+    },
+    {
+      "id": "family07:transition:b:d-2:s1_s2",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "전체본에 그 뉘앙스가 남아 있는 건 인정해요. 제가 더 크게 밀어붙인 거죠.",
+      "behaviorHint": "영상 정지 화면을 보고 한숨을 짧게 쉰다."
+    },
+    {
+      "id": "family07:transition:b:d-2:s2_s3",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "whole_business_followup",
+      "line": "그래서 나중에 ‘온라인 부분만’이라고 다시 설명했어요. 과장처럼 보일 걸 알았으니까요.",
+      "behaviorHint": "말끝이 빨라지고 손가락이 서류 모서리를 접는다."
+    },
+    {
+      "id": "family07:transition:b:d-2:s3_s5",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "맞아요. 인정받고 싶어서 거의 혼자 살린 것처럼 말했습니다. 그 과정에서 아버지 기여를 가렸어요.",
+      "behaviorHint": "정면을 보다가 마지막 문장에서 눈을 내린다."
+    },
+    {
+      "id": "family07:transition:b:d-3:s0_s1",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "turnaround_cause_question",
+      "line": "생산이 받쳐준 건 맞아요. 그래도 팔리는 구조를 바꾸지 않았으면 이 정도 반등은 안 나왔어요.",
+      "behaviorHint": "숫자표를 정렬해 놓고 차분하게 반박한다."
+    },
+    {
+      "id": "family07:transition:b:d-3:s1_s4",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_recognition_need",
+      "line": "사실 이 문제는 숫자보다 인정에 가까워요. 계속 제 이름이 빠질까 봐 더 세게 말한 것도 있습니다.",
+      "behaviorHint": "잠깐 침묵했다가 낮은 목소리로 털어놓는다."
+    },
+    {
+      "id": "family07:transition:b:d-3:s4_s3",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S3",
+      "trigger": "e-3_presented",
+      "line": "그래도 이 로그까지 붙으면 생산 안정이 빠질 수 없다는 건 알겠어요.",
+      "behaviorHint": "대시보드에서 생산 로그로 시선을 옮기며 고개를 끄덕인다."
+    },
+    {
+      "id": "family07:transition:b:d-3:s3_s5",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "컨설턴트 기록까지 보면 결국 양축이 같이 간 거네요. 최근 반등을 제가 단독 서사로 밀었던 건 인정합니다.",
+      "behaviorHint": "회의록 문장을 한 번 읽고 표정을 가라앉힌다."
+    },
+    {
+      "id": "family07:transition:b:d-5:s0_s1",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "comparison_period_question",
+      "line": "설명용으로 효과가 보이는 구간을 잡은 거예요. 초기 혼선을 다 넣으면 메시지가 흐려집니다.",
+      "behaviorHint": "차갑게 말하며 시작 월을 손가락으로 짚는다."
+    },
+    {
+      "id": "family07:transition:b:d-5:s1_s2",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "네, 생산 불안이 정리된 뒤 고점 구간 위주로 표를 만든 건 사실입니다.",
+      "behaviorHint": "펜 끝으로 고점 구간에 작은 동그라미를 친다."
+    },
+    {
+      "id": "family07:transition:b:d-5:s2_s3",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "excluded_months_followup",
+      "line": "낮은 전환율이던 초기 달을 범위 밖으로 밀어낸 것도 제 선택이었어요.",
+      "behaviorHint": "말끝을 짧게 끊고 바로 시선을 피한다."
+    },
+    {
+      "id": "family07:transition:b:d-5:s3_s5",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "맞습니다. 저도 제 기여가 커 보이게 유리한 기간만 골랐습니다. 또 ‘도와준 일’로 줄어들까 두려웠어요.",
+      "behaviorHint": "손에 쥔 펜을 내려놓고 어깨 힘을 푼다."
+    }
+  ]
+}

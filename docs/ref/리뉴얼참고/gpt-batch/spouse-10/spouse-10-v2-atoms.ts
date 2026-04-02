@@ -1,0 +1,2846 @@
+export const spouse10V2Atoms = {
+  "caseId": "spouse-10",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "저는 시어머니 쪽 점심이 확정됐다는 말을 듣지 못했습니다. 기현 씨가 저와 마지막 확인도 없이 먼저 말한 거예요."
+          ],
+          "privateKnowledge": [
+            "기현이 자기 어머니에게 먼저 말해 놓으면 내가 뒤늦게 약속을 어긴 사람처럼 보일 수 있다는 점을 알고 있었다."
+          ],
+          "suppressions": [
+            "내 일정도 말로 다시 확인하지 않은 채 캘린더만 믿고 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-1:denial:0",
+              "factText": "저는 시어머니 쪽 점심이 확정됐다는 말을 듣지 못했습니다. 기현 씨가 저와 마지막 확인도 없이 먼저 말한 거예요.",
+              "tags": [
+                "denial",
+                "act",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박영란",
+                  "neutral": "시어머니",
+                  "fullName": "박영란 (기현의 어머니)",
+                  "judgeRef": "시어머니"
+                },
+                "time": {
+                  "exact": "토요일 점심",
+                  "neutral": "그 시간대",
+                  "period": "점심 무렵"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "‘점심쯤 먼저 갈게요’가 가벼운 말일 수는 있어도, 배우자와 정리 안 된 상태에서 부모님 식사 준비가 들어간 건 확정에 가깝죠."
+          ],
+          "privateKnowledge": [
+            "단톡 원문을 보면 농담으로 넘기기 어렵다는 걸 짐작하고 있었다."
+          ],
+          "suppressions": [
+            "내 쪽도 표현을 명확히 하지 않아 그가 착각할 여지는 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-1:threshold:1",
+              "factText": "‘점심쯤 먼저 갈게요’가 가벼운 말일 수는 있어도, 배우자와 정리 안 된 상태에서 부모님 식사 준비가 들어간 건 확정에 가깝죠.",
+              "tags": [
+                "threshold",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "토 점심쯤 먼저 갈게요",
+                  "neutral": "그 문장"
+                },
+                "evidence": {
+                  "exact": "과일상자 픽업 예약",
+                  "neutral": "선물 예약"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "어머니께 먼저 간다고 말한 건 맞지만, 그걸 제가 알고 있었다거나 동의했다고 볼 수는 없습니다."
+          ],
+          "privateKnowledge": [
+            "자신도 공유캘린더만 적어 두고 구두 확인을 생략했지만, 최소한 자기 쪽 부모에게는 시간 확정을 말하지 않았다고 여긴다."
+          ],
+          "suppressions": [
+            "내가 기현의 오해를 바로잡을 마지막 확인 전화를 하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-1:responsibility:2",
+              "factText": "어머니께 먼저 간다고 말한 건 맞지만, 그걸 제가 알고 있었다거나 동의했다고 볼 수는 없습니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "어머니",
+                  "neutral": "그분",
+                  "judgeRef": "시어머니"
+                },
+                "action": {
+                  "exact": "먼저 간다고 전달",
+                  "neutral": "선행 전달"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "제 표현이 모호했던 건 인정하지만, 그렇다고 제 확인도 없이 시댁 점심을 준비 단계로 넘긴 책임까지 사라지진 않아요."
+          ],
+          "privateKnowledge": [
+            "문제의 절반은 자신의 ‘본가’ 표기에서 시작됐다는 점을 이미 체감하고 있다."
+          ],
+          "suppressions": [
+            "내 모호한 표현이 d-1 착각의 배경이 되었다는 연결고리"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-1:counter:3",
+              "factText": "제 표현이 모호했던 건 인정하지만, 그렇다고 제 확인도 없이 시댁 점심을 준비 단계로 넘긴 책임까지 사라지진 않아요.",
+              "tags": [
+                "counter",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "본가",
+                  "neutral": "그 표현"
+                },
+                "time": {
+                  "exact": "점심 준비",
+                  "neutral": "식사 준비"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "시어머니 입장에선 제가 약속을 어긴 며느리처럼 보였을까 봐 너무 화가 났어요. 그 감정 때문에 더 세게 몰아붙였습니다."
+          ],
+          "privateKnowledge": [
+            "명절 예의 문제로 자신이 불리해지는 공포가 분노의 원인이었다."
+          ],
+          "suppressions": [
+            "기현이 일부러 모욕하려던 건 아닐 수 있다는 생각"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-1:fear:4",
+              "factText": "시어머니 입장에선 제가 약속을 어긴 며느리처럼 보였을까 봐 너무 화가 났어요. 그 감정 때문에 더 세게 몰아붙였습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "identity": {
+                  "exact": "예의 없는 며느리",
+                  "neutral": "나쁜 배우자"
+                },
+                "family": {
+                  "exact": "양가 부모",
+                  "neutral": "양가"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "결국 기현 씨가 먼저 점심을 굳힌 것도 맞고, 저도 제 기준만 믿고 확인을 안 한 것도 맞습니다."
+          ],
+          "privateKnowledge": [
+            "이번 파행이 한 사람의 악의보다 확인 순서와 표현 문제에서 커졌다는 결론을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-1:admission:5",
+              "factText": "결국 기현 씨가 먼저 점심을 굳힌 것도 맞고, 저도 제 기준만 믿고 확인을 안 한 것도 맞습니다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "먼저 점심을 굳힘",
+                  "neutral": "선행 확정"
+                },
+                "rule": {
+                  "exact": "최종 확인 부재",
+                  "neutral": "확인 누락"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "공유캘린더에 ‘토 11시 본가’라고 적었으면 저는 친정을 뜻한 겁니다. 저는 그 표현이 틀렸다고 생각하지 않아요."
+          ],
+          "privateKnowledge": [
+            "평소 자기 친정을 ‘본가’라고 부르는 습관이 배우자에게도 통한다고 믿었다."
+          ],
+          "suppressions": [
+            "기현에게는 그 표현이 제3자 기준으로 모호할 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-2:quote:0",
+              "factText": "공유캘린더에 ‘토 11시 본가’라고 적었으면 저는 친정을 뜻한 겁니다. 저는 그 표현이 틀렸다고 생각하지 않아요.",
+              "tags": [
+                "quote",
+                "denial",
+                "identity"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "본가",
+                  "neutral": "그 표현"
+                },
+                "calendar": {
+                  "exact": "토 11시 본가",
+                  "neutral": "해당 일정"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "우리 사이에선 늘 그렇게 썼어요. 굳이 ‘친정’이라고 다시 안 붙여도 알아듣는 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "직접 확인을 안 한 이유가 습관적 언어에 대한 과신이었다."
+          ],
+          "suppressions": [
+            "공유캘린더만으로는 합의가 완료되지 않는다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-2:self_justification:1",
+              "factText": "우리 사이에선 늘 그렇게 썼어요. 굳이 ‘친정’이라고 다시 안 붙여도 알아듣는 줄 알았습니다.",
+              "tags": [
+                "self_justification",
+                "quote",
+                "relationship"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "본가",
+                  "neutral": "그 단어"
+                },
+                "relationship": {
+                  "exact": "우리 사이",
+                  "neutral": "부부 사이"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "제가 ‘친정’이라고 명시하지도 않았고, 기현 씨에게 따로 확인 문자를 보낸 것도 없었습니다."
+          ],
+          "privateKnowledge": [
+            "캘린더와 음성메시지 둘 다 구체 지칭이 빠졌다는 사실을 인정한다."
+          ],
+          "suppressions": [
+            "그럼에도 자신은 읽힐 거라고 단정했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-2:admission:2",
+              "factText": "제가 ‘친정’이라고 명시하지도 않았고, 기현 씨에게 따로 확인 문자를 보낸 것도 없었습니다.",
+              "tags": [
+                "admission",
+                "quote",
+                "evidence"
+              ],
+              "slots": {
+                "calendar": {
+                  "exact": "토 11시 본가",
+                  "neutral": "그 일정"
+                },
+                "message": {
+                  "exact": "직접 확인 문자 없음",
+                  "neutral": "추가 확인 누락"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 애매했다면 기현 씨가 한 번만 물어봤어야죠. 혼자 점심을 먼저로 굳힌 건 결국 그쪽 판단이었으니까요."
+          ],
+          "privateKnowledge": [
+            "자신의 표현이 문제였어도 남편의 확인 부재를 더 크게 본다."
+          ],
+          "suppressions": [
+            "질문이 오지 않았다는 이유로 스스로도 정정하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-2:counter:3",
+              "factText": "그래도 애매했다면 기현 씨가 한 번만 물어봤어야죠. 혼자 점심을 먼저로 굳힌 건 결국 그쪽 판단이었으니까요.",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "action": {
+                  "exact": "한 번만 물어봄",
+                  "neutral": "추가 질문"
+                },
+                "time": {
+                  "exact": "점심 먼저",
+                  "neutral": "그 순서"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "친정 일정도 제대로 못 챙기는 딸처럼 보일까 봐, 제가 쓴 표현이 애매했다는 말을 바로 못 했어요."
+          ],
+          "privateKnowledge": [
+            "체면 때문에 표현 오류를 인정하는 속도가 늦어졌다."
+          ],
+          "suppressions": [
+            "그 감정이 단어 뜻싸움을 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-2:shame:4",
+              "factText": "친정 일정도 제대로 못 챙기는 딸처럼 보일까 봐, 제가 쓴 표현이 애매했다는 말을 바로 못 했어요.",
+              "tags": [
+                "shame",
+                "fear",
+                "identity"
+              ],
+              "slots": {
+                "identity": {
+                  "exact": "일정도 못 챙기는 딸",
+                  "neutral": "정리 못 하는 사람"
+                },
+                "family": {
+                  "exact": "친정 부모",
+                  "neutral": "친정"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "제 ‘본가’ 표기와 직접 확인 누락이 오해를 키운 건 맞습니다. 제 표현을 상대도 자동으로 같은 뜻으로 읽을 거라고 믿은 게 실수였어요."
+          ],
+          "privateKnowledge": [
+            "언어 습관을 공유 규칙처럼 여긴 판단이 이번 오해의 핵심 중 하나였다고 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-2:admission:5",
+              "factText": "제 ‘본가’ 표기와 직접 확인 누락이 오해를 키운 건 맞습니다. 제 표현을 상대도 자동으로 같은 뜻으로 읽을 거라고 믿은 게 실수였어요.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "본가",
+                  "neutral": "그 표현"
+                },
+                "rule": {
+                  "exact": "직접 확인 누락",
+                  "neutral": "확인 부재"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그날 친정 연락이 계속 뒤로 밀린 걸 보면, 저는 기현 씨가 우리 집 약속을 일부러 가볍게 본 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "이모의 섭섭 메시지가 그 의심을 더 굳혔다."
+          ],
+          "suppressions": [
+            "캡처 메시지 자체로는 고의를 증명하지 못한다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-3:denial:0",
+              "factText": "그날 친정 연락이 계속 뒤로 밀린 걸 보면, 저는 기현 씨가 우리 집 약속을 일부러 가볍게 본 줄 알았습니다.",
+              "tags": [
+                "denial",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "family": {
+                  "exact": "친정",
+                  "neutral": "우리 집"
+                },
+                "message": {
+                  "exact": "점심 차려 놓고 기다렸다",
+                  "neutral": "섭섭 메시지"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 제 부모님 쪽은 덜 급하다고 여긴 건 맞다고 느꼈어요. 그래서 고의로 비쳤습니다."
+          ],
+          "privateKnowledge": [
+            "‘고의’라는 단어에 자신의 서운함이 많이 실려 있다는 것을 안다."
+          ],
+          "suppressions": [
+            "실제 이동 기록은 각자 다른 계획을 믿고 출발한 흐름이라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-3:harm:1",
+              "factText": "적어도 제 부모님 쪽은 덜 급하다고 여긴 건 맞다고 느꼈어요. 그래서 고의로 비쳤습니다.",
+              "tags": [
+                "harm",
+                "uncertainty",
+                "emotion"
+              ],
+              "slots": {
+                "family": {
+                  "exact": "제 부모님",
+                  "neutral": "친정"
+                },
+                "emotion": {
+                  "exact": "덜 급하다고 여겨짐",
+                  "neutral": "홀대감"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "지금 보면 일부러 무시했다고 단정하긴 어렵습니다. 다만 그 순간엔 그렇게 느낄 수밖에 없었습니다."
+          ],
+          "privateKnowledge": [
+            "하이패스와 통화기록을 보면 고의 외면보다 각자 다른 확정안을 믿은 흐름이 더 강하다."
+          ],
+          "suppressions": [
+            "이전 서운함이 판단에 개입했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-3:uncertainty:2",
+              "factText": "지금 보면 일부러 무시했다고 단정하긴 어렵습니다. 다만 그 순간엔 그렇게 느낄 수밖에 없었습니다.",
+              "tags": [
+                "uncertainty",
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "통화기록과 하이패스 이력",
+                  "neutral": "교통 기록"
+                },
+                "emotion": {
+                  "exact": "그렇게 느낄 수밖에 없었음",
+                  "neutral": "강한 서운함"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "예전부터 친정 쪽 일정을 대충 넘긴다는 서운함이 있어서, 이번에도 일부러 그런 줄 먼저 의심했습니다."
+          ],
+          "privateKnowledge": [
+            "과거의 감정 잔여가 이번 사건 해석을 기울게 만들었다."
+          ],
+          "suppressions": [
+            "이번 사건 자체만 보면 고의 증거가 약하다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-3:motive:3",
+              "factText": "예전부터 친정 쪽 일정을 대충 넘긴다는 서운함이 있어서, 이번에도 일부러 그런 줄 먼저 의심했습니다.",
+              "tags": [
+                "motive",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "history": {
+                  "exact": "예전부터 쌓인 서운함",
+                  "neutral": "이전 감정"
+                },
+                "family": {
+                  "exact": "친정 쪽 일정",
+                  "neutral": "우리 집 일정"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "친정에 예의 없는 딸처럼 보일까 봐 너무 부끄럽고 화가 났어요. 그래서 의도라고 단정해 버렸습니다."
+          ],
+          "privateKnowledge": [
+            "체면 손상이 분노를 증폭시켰다는 점을 스스로 인정한다."
+          ],
+          "suppressions": [
+            "기현의 실제 의도는 아직 다르다는 가능성"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-3:fear:4",
+              "factText": "친정에 예의 없는 딸처럼 보일까 봐 너무 부끄럽고 화가 났어요. 그래서 의도라고 단정해 버렸습니다.",
+              "tags": [
+                "fear",
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "identity": {
+                  "exact": "예의 없는 딸",
+                  "neutral": "가족에게 미안한 사람"
+                },
+                "family": {
+                  "exact": "친정",
+                  "neutral": "부모님"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "기현 씨가 장인댁을 일부러 무시한 건 아니었던 것 같습니다. 서로 다른 일정을 머리에 넣고 움직인 걸 제가 고의로 받아들인 거예요."
+          ],
+          "privateKnowledge": [
+            "서운함은 남아 있어도 고의 판단은 거둔다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-3:admission:5",
+              "factText": "기현 씨가 장인댁을 일부러 무시한 건 아니었던 것 같습니다. 서로 다른 일정을 머리에 넣고 움직인 걸 제가 고의로 받아들인 거예요.",
+              "tags": [
+                "admission",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "family": {
+                  "exact": "장인댁",
+                  "neutral": "친정"
+                },
+                "context": {
+                  "exact": "서로 다른 일정 해석",
+                  "neutral": "엇갈린 계획"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "저는 공유캘린더에 적어 두었으니 어느 정도는 미리 말해 둔 셈이라고 생각했습니다. 배우자 확인이 아주 없었던 건 아니라고 봤어요."
+          ],
+          "privateKnowledge": [
+            "캘린더 기입만으로 최종 확정이 되지 않는다는 것도 알고 있었다."
+          ],
+          "suppressions": [
+            "기현에게 따로 확정 문장을 보내지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-4:denial:0",
+              "factText": "저는 공유캘린더에 적어 두었으니 어느 정도는 미리 말해 둔 셈이라고 생각했습니다. 배우자 확인이 아주 없었던 건 아니라고 봤어요.",
+              "tags": [
+                "denial",
+                "quote",
+                "relationship"
+              ],
+              "slots": {
+                "calendar": {
+                  "exact": "공유캘린더 입력",
+                  "neutral": "일정 기입"
+                },
+                "rule": {
+                  "exact": "미리 말해 둔 셈",
+                  "neutral": "사전 공유"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "최종 확인 메시지가 늦었던 건 맞아도, 적어도 저는 일정 흔적을 남겼습니다."
+          ],
+          "privateKnowledge": [
+            "그 흔적이 제3자 기준으로는 모호한 표현이었다."
+          ],
+          "suppressions": [
+            "기현보다 먼저 친정 선물 준비를 하며 확정처럼 움직였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-4:threshold:1",
+              "factText": "최종 확인 메시지가 늦었던 건 맞아도, 적어도 저는 일정 흔적을 남겼습니다.",
+              "tags": [
+                "threshold",
+                "evidence",
+                "self_justification"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "일정 흔적",
+                  "neutral": "캘린더 기록"
+                },
+                "gift": {
+                  "exact": "친정 선물 준비",
+                  "neutral": "선물 준비"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "저도 친정 선물 예약을 하면서 기현 씨에게 다시 최종 확인을 보내지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "부모 쪽 준비가 배우자 확인보다 앞섰음을 인정한다."
+          ],
+          "suppressions": [
+            "그 사실을 약하게 말하며 비중을 줄이려는 마음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-4:admission:2",
+              "factText": "저도 친정 선물 예약을 하면서 기현 씨에게 다시 최종 확인을 보내지 않았습니다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "gift": {
+                  "exact": "한과세트 예약",
+                  "neutral": "친정 선물 예약"
+                },
+                "rule": {
+                  "exact": "최종 확인 누락",
+                  "neutral": "확인 지연"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "하지만 기현 씨도 부모님 쪽 과일상자를 먼저 잡고 나중에야 제게 얘기했잖아요. 늦은 건 서로였어요."
+          ],
+          "privateKnowledge": [
+            "공동 책임 구도를 강조해 자신의 비중을 낮추려 한다."
+          ],
+          "suppressions": [
+            "캘린더만 적어 둔 자신의 불충분한 공유"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-4:counter:3",
+              "factText": "하지만 기현 씨도 부모님 쪽 과일상자를 먼저 잡고 나중에야 제게 얘기했잖아요. 늦은 건 서로였어요.",
+              "tags": [
+                "counter",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "gift": {
+                  "exact": "과일상자 예약",
+                  "neutral": "부모님 선물 예약"
+                },
+                "time": {
+                  "exact": "나중에야 얘기함",
+                  "neutral": "늦은 통보"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "정작 배우자보다 양가 눈치를 먼저 본 게 부끄러웠어요. 그 부끄러움 때문에 더 따지는 식으로 말했습니다."
+          ],
+          "privateKnowledge": [
+            "양가 체면을 우선한 자신의 감정 구조를 인정한다."
+          ],
+          "suppressions": [
+            "기현도 같은 압박을 받았다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-4:shame:4",
+              "factText": "정작 배우자보다 양가 눈치를 먼저 본 게 부끄러웠어요. 그 부끄러움 때문에 더 따지는 식으로 말했습니다.",
+              "tags": [
+                "shame",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "family": {
+                  "exact": "양가",
+                  "neutral": "부모님들"
+                },
+                "identity": {
+                  "exact": "배우자보다 부모 눈치를 먼저 본 사람",
+                  "neutral": "체면을 앞세운 사람"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "결국 우리 둘 다 부모에게 움직이기 전에 서로 확정 메시지를 먼저 주지 않았습니다. 그 부분은 반반으로 책임이 있습니다."
+          ],
+          "privateKnowledge": [
+            "상호 지연이 d-4의 핵심이었다고 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-4:admission:5",
+              "factText": "결국 우리 둘 다 부모에게 움직이기 전에 서로 확정 메시지를 먼저 주지 않았습니다. 그 부분은 반반으로 책임이 있습니다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "부모 통보보다 배우자 확인 우선",
+                  "neutral": "확인 순서"
+                },
+                "family": {
+                  "exact": "양가",
+                  "neutral": "부모님들"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "처음엔 이번 파행이 거의 기현 씨의 일방 확정 때문에 벌어진 일이라고 봤습니다. 저는 악의가 없었다는 말이 잘 안 받아들여졌어요."
+          ],
+          "privateKnowledge": [
+            "실제로는 자신의 모호한 표현도 원인축이라는 걸 어렴풋이 알고 있었다."
+          ],
+          "suppressions": [
+            "‘본가’와 ‘가까운 쪽 먼저’가 오해를 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-5:denial:0",
+              "factText": "처음엔 이번 파행이 거의 기현 씨의 일방 확정 때문에 벌어진 일이라고 봤습니다. 저는 악의가 없었다는 말이 잘 안 받아들여졌어요.",
+              "tags": [
+                "denial",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "기현 씨의 일방 확정",
+                  "neutral": "상대의 선행 결정"
+                },
+                "emotion": {
+                  "exact": "악의처럼 느껴짐",
+                  "neutral": "의도 의심"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "저는 이동시간보다도 확정 순서가 더 문제라고 생각했습니다. 그래서 표현의 모호함 쪽은 덜 보려 했어요."
+          ],
+          "privateKnowledge": [
+            "원인 분석보다 상대 비난에 마음이 기울어 있었다."
+          ],
+          "suppressions": [
+            "같은 날 양가를 다 돌 수 있다고 자신도 낙관했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-5:threshold:1",
+              "factText": "저는 이동시간보다도 확정 순서가 더 문제라고 생각했습니다. 그래서 표현의 모호함 쪽은 덜 보려 했어요.",
+              "tags": [
+                "threshold",
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "확정 순서",
+                  "neutral": "우선 원인"
+                },
+                "travel": {
+                  "exact": "이동시간",
+                  "neutral": "동선 계산"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "제 ‘본가’와 ‘가까운 쪽 먼저’라는 표현이 서로 다른 동선을 허용한 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "언어의 모호함이 이번 파행의 핵심 축임을 인정한다."
+          ],
+          "suppressions": [
+            "그 모호함을 알고도 직접 확인하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-5:admission:2",
+              "factText": "제 ‘본가’와 ‘가까운 쪽 먼저’라는 표현이 서로 다른 동선을 허용한 건 맞습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "quote"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "본가",
+                  "neutral": "그 표현"
+                },
+                "message": {
+                  "exact": "가까운 쪽 먼저",
+                  "neutral": "그 말"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "거기에 저도 같은 날 양가를 다 무리 없이 돌 수 있다고 너무 쉽게 계산했습니다."
+          ],
+          "privateKnowledge": [
+            "이동시간과 식사 지연을 낙관적으로 본 자기 책임을 인정한다."
+          ],
+          "suppressions": [
+            "그래도 출발 전에 기현이 먼저 확정처럼 말한 사실을 계속 크게 본다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-5:timeline:3",
+              "factText": "거기에 저도 같은 날 양가를 다 무리 없이 돌 수 있다고 너무 쉽게 계산했습니다.",
+              "tags": [
+                "timeline",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "travel": {
+                  "exact": "같은 날 양가 방문 가능",
+                  "neutral": "무리 없는 동선"
+                },
+                "time": {
+                  "exact": "이동시간 오판",
+                  "neutral": "동선 계산 착오"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "명절 서열 문제처럼 보일까 봐 원인 설명보다 비난을 먼저 세웠어요. 친정과 시댁 사이에서 제가 무시당한 사람처럼 보이는 게 싫었습니다."
+          ],
+          "privateKnowledge": [
+            "관계의 상징성 때문에 사실 정리보다 감정 방어가 앞섰다."
+          ],
+          "suppressions": [
+            "기현도 비슷한 체면 압박을 느꼈을 가능성"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-5:fear:4",
+              "factText": "명절 서열 문제처럼 보일까 봐 원인 설명보다 비난을 먼저 세웠어요. 친정과 시댁 사이에서 제가 무시당한 사람처럼 보이는 게 싫었습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "identity": {
+                  "exact": "무시당한 사람",
+                  "neutral": "가볍게 취급된 배우자"
+                },
+                "family": {
+                  "exact": "명절 서열",
+                  "neutral": "양가 순서 문제"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "지금은 악의보다 모호한 표현과 이동시간 오판이 더 큰 원인이었다고 봅니다. 서로 자기 머릿속 계획을 사실처럼 믿고 있었어요."
+          ],
+          "privateKnowledge": [
+            "근본 원인을 공동 오해로 정리한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:a:tell:quote_readback",
+            "spouse10:a:tell:term_fixation",
+            "spouse10:a:tell:silent_assumption"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:a:d-5:admission:5",
+              "factText": "지금은 악의보다 모호한 표현과 이동시간 오판이 더 큰 원인이었다고 봅니다. 서로 자기 머릿속 계획을 사실처럼 믿고 있었어요.",
+              "tags": [
+                "admission",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "모호한 표현과 이동시간 오판",
+                  "neutral": "근본 원인"
+                },
+                "context": {
+                  "exact": "자기 머릿속 계획",
+                  "neutral": "각자 확정안"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "점심을 확정했다기보다 그냥 먼저 들를 수 있다는 분위기로 말한 겁니다. 정식으로 못 박은 건 아니에요."
+          ],
+          "privateKnowledge": [
+            "어머니 쪽에는 거의 식사 준비가 가능한 말투로 전달했다."
+          ],
+          "suppressions": [
+            "수아와 최종 확인 없이 단톡부터 보냈다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-1:denial:0",
+              "factText": "점심을 확정했다기보다 그냥 먼저 들를 수 있다는 분위기로 말한 겁니다. 정식으로 못 박은 건 아니에요.",
+              "tags": [
+                "denial",
+                "act",
+                "uncertainty"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "토 점심쯤 먼저 갈게요",
+                  "neutral": "그 말"
+                },
+                "time": {
+                  "exact": "점심쯤",
+                  "neutral": "그때쯤"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "‘점심쯤’이라고 했지 정확한 시각이나 식사 확정을 박아 둔 건 아니었습니다. 그냥 그 정도면 된 줄 알았죠."
+          ],
+          "privateKnowledge": [
+            "실제로는 어머니가 식사 준비를 시작해도 이상하지 않은 표현이었다."
+          ],
+          "suppressions": [
+            "과일상자 픽업까지 같은 흐름으로 예약했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-1:uncertainty:1",
+              "factText": "‘점심쯤’이라고 했지 정확한 시각이나 식사 확정을 박아 둔 건 아니었습니다. 그냥 그 정도면 된 줄 알았죠.",
+              "tags": [
+                "uncertainty",
+                "threshold",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "점심쯤",
+                  "neutral": "그 시간대"
+                },
+                "message": {
+                  "exact": "정확한 시각 미표기",
+                  "neutral": "모호한 시간"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "어머니께 먼저 간다고 말한 건 맞고, 선물 픽업도 잡았습니다. 다만 그땐 수아도 비슷하게 알고 있는 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "배우자 확인을 생략한 채 부모 쪽 준비를 선행한 사실을 인정한다."
+          ],
+          "suppressions": [
+            "수아에게 같은 강도로 전달하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-1:admission:2",
+              "factText": "어머니께 먼저 간다고 말한 건 맞고, 선물 픽업도 잡았습니다. 다만 그땐 수아도 비슷하게 알고 있는 줄 알았습니다.",
+              "tags": [
+                "admission",
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "과일상자 픽업 예약",
+                  "neutral": "선물 예약"
+                },
+                "person": {
+                  "exact": "어머니",
+                  "neutral": "어머니 쪽",
+                  "judgeRef": "시어머니"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "수아가 ‘본가’라고만 적고 ‘가까운 쪽 먼저’라고 하니까 저는 우리 집 점심이 먼저인 줄로 굳어졌습니다."
+          ],
+          "privateKnowledge": [
+            "착각의 출발점이 자신의 추정이었다는 것도 안다."
+          ],
+          "suppressions": [
+            "어머니께 말한 뒤에는 되돌리기 민망해 더 굳혀 버렸다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-1:context:3",
+              "factText": "수아가 ‘본가’라고만 적고 ‘가까운 쪽 먼저’라고 하니까 저는 우리 집 점심이 먼저인 줄로 굳어졌습니다.",
+              "tags": [
+                "context",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "본가",
+                  "neutral": "그 표현"
+                },
+                "message": {
+                  "exact": "가까운 쪽 먼저",
+                  "neutral": "그 말"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "어머니한테 먼저 말해 놓고 다시 아니라고 하면 제가 양가 눈치만 보는 사람처럼 보일까 봐 겁이 났습니다."
+          ],
+          "privateKnowledge": [
+            "체면 때문에 정정을 미루었다는 감정적 동기를 인정한다."
+          ],
+          "suppressions": [
+            "그 겁이 결국 파행을 키웠다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-1:fear:4",
+              "factText": "어머니한테 먼저 말해 놓고 다시 아니라고 하면 제가 양가 눈치만 보는 사람처럼 보일까 봐 겁이 났습니다.",
+              "tags": [
+                "fear",
+                "shame",
+                "relationship"
+              ],
+              "slots": {
+                "identity": {
+                  "exact": "양가 눈치만 보는 사람",
+                  "neutral": "우유부단한 사람"
+                },
+                "family": {
+                  "exact": "어머니",
+                  "neutral": "부모님"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "제가 수아와 확인도 안 하고 어머니께 토요일 점심처럼 전달한 게 맞습니다. 그게 첫 단추를 잘못 끼운 거예요."
+          ],
+          "privateKnowledge": [
+            "자기 부모와 배우자 사이의 확인 순서를 뒤집은 책임을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-1:admission:5",
+              "factText": "제가 수아와 확인도 안 하고 어머니께 토요일 점심처럼 전달한 게 맞습니다. 그게 첫 단추를 잘못 끼운 거예요.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "act"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "토요일 점심",
+                  "neutral": "그 일정"
+                },
+                "rule": {
+                  "exact": "배우자 최종 확인 전 부모 통보",
+                  "neutral": "확인 순서 위반"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "공유캘린더에 ‘토 11시 본가’만 있으면 어느 집인지 바로 확정하기 어렵습니다. 저는 그게 친정 먼저라는 뜻인지 확실하지 않았어요."
+          ],
+          "privateKnowledge": [
+            "수아가 평소 친정을 본가라고 부르는 습관을 완전히 모르는 건 아니었다."
+          ],
+          "suppressions": [
+            "애매하면 즉시 되물어야 했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-2:denial:0",
+              "factText": "공유캘린더에 ‘토 11시 본가’만 있으면 어느 집인지 바로 확정하기 어렵습니다. 저는 그게 친정 먼저라는 뜻인지 확실하지 않았어요.",
+              "tags": [
+                "denial",
+                "quote",
+                "uncertainty"
+              ],
+              "slots": {
+                "calendar": {
+                  "exact": "토 11시 본가",
+                  "neutral": "그 일정"
+                },
+                "term": {
+                  "exact": "본가",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "거기에 ‘가까운 쪽 먼저’까지 겹치니 저는 우리 집 점심 쪽으로 읽었습니다. 문구가 너무 뭉툭했어요."
+          ],
+          "privateKnowledge": [
+            "자신이 듣고 싶은 쪽으로 해석했다는 점도 안다."
+          ],
+          "suppressions": [
+            "수아의 의도를 확인하지 않고 자기식으로 정리해 버렸다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-2:context:1",
+              "factText": "거기에 ‘가까운 쪽 먼저’까지 겹치니 저는 우리 집 점심 쪽으로 읽었습니다. 문구가 너무 뭉툭했어요.",
+              "tags": [
+                "context",
+                "uncertainty",
+                "quote"
+              ],
+              "slots": {
+                "message": {
+                  "exact": "가까운 쪽 먼저",
+                  "neutral": "그 말"
+                },
+                "time": {
+                  "exact": "점심",
+                  "neutral": "식사 시간"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "애매한 표현이었다는 건 지금도 맞지만, 그래도 제가 바로 물어봤어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "자기 해석을 확정처럼 굴린 책임을 일부 인정한다."
+          ],
+          "suppressions": [
+            "이미 어머니에게 점심을 말해 둔 상태였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-2:admission:2",
+              "factText": "애매한 표현이었다는 건 지금도 맞지만, 그래도 제가 바로 물어봤어야 했습니다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "애매한 표현",
+                  "neutral": "모호한 문구"
+                },
+                "action": {
+                  "exact": "바로 물어봤어야 함",
+                  "neutral": "직접 확인 필요"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 ‘일 오후 어머님댁’이 따로 적혀 있으면 토요일 11시가 친정인지 시댁인지 더 확인해 줬어야 하는 거 아닙니까."
+          ],
+          "privateKnowledge": [
+            "자신의 잘못을 줄이려 수아의 모호함을 다시 꺼내 든다."
+          ],
+          "suppressions": [
+            "결국 질문을 안 한 채 자기 부모 쪽 준비부터 했다는 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-2:counter:3",
+              "factText": "그래도 ‘일 오후 어머님댁’이 따로 적혀 있으면 토요일 11시가 친정인지 시댁인지 더 확인해 줬어야 하는 거 아닙니까.",
+              "tags": [
+                "counter",
+                "quote",
+                "relationship"
+              ],
+              "slots": {
+                "calendar": {
+                  "exact": "일 오후 어머님댁",
+                  "neutral": "다음 일정"
+                },
+                "term": {
+                  "exact": "토 11시 본가",
+                  "neutral": "토요일 일정"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "제가 일정도 못 읽는 남편처럼 보일까 봐 애매하다는 말을 꺼내기가 귀찮고 민망했습니다."
+          ],
+          "privateKnowledge": [
+            "확인 회피 뒤에 체면과 귀찮음이 있었다."
+          ],
+          "suppressions": [
+            "그 회피가 결국 오해를 고착시켰다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-2:shame:4",
+              "factText": "제가 일정도 못 읽는 남편처럼 보일까 봐 애매하다는 말을 꺼내기가 귀찮고 민망했습니다.",
+              "tags": [
+                "shame",
+                "self_justification",
+                "identity"
+              ],
+              "slots": {
+                "identity": {
+                  "exact": "일정도 못 읽는 남편",
+                  "neutral": "대충 사는 사람"
+                },
+                "emotion": {
+                  "exact": "귀찮고 민망함",
+                  "neutral": "확인 회피 감정"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "수아 쪽 표현이 모호했던 건 맞지만, 제가 직접 확인하지 않은 탓도 컸습니다. 그 모호함을 제 편한 해석으로 굳힌 셈이죠."
+          ],
+          "privateKnowledge": [
+            "상대의 모호함과 자신의 추정 습관이 같이 문제였다고 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-2:admission:5",
+              "factText": "수아 쪽 표현이 모호했던 건 맞지만, 제가 직접 확인하지 않은 탓도 컸습니다. 그 모호함을 제 편한 해석으로 굳힌 셈이죠.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "본가",
+                  "neutral": "그 표현"
+                },
+                "rule": {
+                  "exact": "직접 확인 부재",
+                  "neutral": "확인 누락"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "장인어른 댁을 일부러 무시한 건 아닙니다. 저는 그날 우리 집 점심을 먼저로 알고 움직였을 뿐이에요."
+          ],
+          "privateKnowledge": [
+            "그 ‘알고 있었다’는 판단이 본인 추정에서 나온 것임을 안다."
+          ],
+          "suppressions": [
+            "수아와 최종 확인을 하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-3:denial:0",
+              "factText": "장인어른 댁을 일부러 무시한 건 아닙니다. 저는 그날 우리 집 점심을 먼저로 알고 움직였을 뿐이에요.",
+              "tags": [
+                "denial",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "family": {
+                  "exact": "장인어른 댁",
+                  "neutral": "그 집"
+                },
+                "time": {
+                  "exact": "우리 집 점심 먼저",
+                  "neutral": "그 순서"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "안 간다는 뜻이 아니라 순서가 그렇게 된 줄 알았던 겁니다. 일부러 친정을 빼려던 의도는 없었어요."
+          ],
+          "privateKnowledge": [
+            "결과적으로는 친정이 뒤로 밀려 그렇게 보일 수 있음을 안다."
+          ],
+          "suppressions": [
+            "자신이 먼저 자기 부모 쪽으로 차를 움직였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-3:uncertainty:1",
+              "factText": "안 간다는 뜻이 아니라 순서가 그렇게 된 줄 알았던 겁니다. 일부러 친정을 빼려던 의도는 없었어요.",
+              "tags": [
+                "uncertainty",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "order": {
+                  "exact": "순서가 그렇게 된 줄 알았음",
+                  "neutral": "그렇게 이해함"
+                },
+                "family": {
+                  "exact": "친정",
+                  "neutral": "장인댁"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "최종 통화 뒤에 제 차가 부모님 쪽 방향으로 먼저 움직인 건 맞습니다. 하지만 그건 장인댁을 버리려는 뜻이 아니라, 이미 다른 그림을 믿고 있었기 때문입니다."
+          ],
+          "privateKnowledge": [
+            "행동만 놓고 보면 상대가 고의처럼 느꼈을 수 있다는 점을 인정한다."
+          ],
+          "suppressions": [
+            "자기 추정이 만든 오해라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-3:admission:2",
+              "factText": "최종 통화 뒤에 제 차가 부모님 쪽 방향으로 먼저 움직인 건 맞습니다. 하지만 그건 장인댁을 버리려는 뜻이 아니라, 이미 다른 그림을 믿고 있었기 때문입니다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "최종 통화 후 이동 기록",
+                  "neutral": "차량 동선"
+                },
+                "family": {
+                  "exact": "부모님 쪽 방향",
+                  "neutral": "한쪽 방향"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "수아가 ‘본가’와 ‘가까운 쪽 먼저’라고만 하니까 저는 친정 약속을 무시한 게 아니라 제 쪽 일정으로 착각한 겁니다."
+          ],
+          "privateKnowledge": [
+            "자기 착각의 출발이 ‘분위기상 합의’ 습관이라는 점"
+          ],
+          "suppressions": [
+            "질문 대신 추정으로 정리해 버렸다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-3:context:3",
+              "factText": "수아가 ‘본가’와 ‘가까운 쪽 먼저’라고만 하니까 저는 친정 약속을 무시한 게 아니라 제 쪽 일정으로 착각한 겁니다.",
+              "tags": [
+                "context",
+                "self_justification",
+                "relationship"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "본가",
+                  "neutral": "그 표현"
+                },
+                "message": {
+                  "exact": "가까운 쪽 먼저",
+                  "neutral": "그 말"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "장인댁을 홀대한 사위처럼 보일까 봐 설명을 바로 못 했습니다. 그게 더 나쁘게 만들었죠."
+          ],
+          "privateKnowledge": [
+            "체면 때문에 방어적으로 굴었다는 점을 인정한다."
+          ],
+          "suppressions": [
+            "그 체면이 상처보다 앞섰다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-3:shame:4",
+              "factText": "장인댁을 홀대한 사위처럼 보일까 봐 설명을 바로 못 했습니다. 그게 더 나쁘게 만들었죠.",
+              "tags": [
+                "shame",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "identity": {
+                  "exact": "홀대한 사위",
+                  "neutral": "예의 없는 사위"
+                },
+                "emotion": {
+                  "exact": "설명 지연",
+                  "neutral": "변명 지연"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "저는 장인댁을 일부러 무시한 게 아니라 서로 다른 계획을 사실로 믿고 움직였습니다. 그래도 제 행동 순서가 그렇게 보이게 만든 책임은 있습니다."
+          ],
+          "privateKnowledge": [
+            "의도 부재와 결과 책임을 함께 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-3:admission:5",
+              "factText": "저는 장인댁을 일부러 무시한 게 아니라 서로 다른 계획을 사실로 믿고 움직였습니다. 그래도 제 행동 순서가 그렇게 보이게 만든 책임은 있습니다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "context": {
+                  "exact": "서로 다른 계획을 믿고 움직임",
+                  "neutral": "엇갈린 계획"
+                },
+                "family": {
+                  "exact": "장인댁",
+                  "neutral": "친정"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "저는 대충이라도 얘기된 줄 알고 준비한 겁니다. 배우자 확인이 그렇게까지 늦었다고는 처음엔 생각 못 했어요."
+          ],
+          "privateKnowledge": [
+            "실제로는 어머니 단톡과 선물 예약이 먼저였다."
+          ],
+          "suppressions": [
+            "수아에게도 같은 정도로 확정 공지를 하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-4:denial:0",
+              "factText": "저는 대충이라도 얘기된 줄 알고 준비한 겁니다. 배우자 확인이 그렇게까지 늦었다고는 처음엔 생각 못 했어요.",
+              "tags": [
+                "denial",
+                "self_justification",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "대충 얘기된 줄 앎",
+                  "neutral": "암묵적 합의"
+                },
+                "gift": {
+                  "exact": "준비",
+                  "neutral": "선물 준비"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "부부 확인이 늦은 건 맞지만 그건 서로 비슷했습니다. 저만 먼저였다고 보긴 어렵죠."
+          ],
+          "privateKnowledge": [
+            "증거 순서를 보면 자신이 더 먼저 부모 쪽 준비를 시작했다."
+          ],
+          "suppressions": [
+            "양가보다 배우자 확인이 뒤였다는 사실 자체"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-4:threshold:1",
+              "factText": "부부 확인이 늦은 건 맞지만 그건 서로 비슷했습니다. 저만 먼저였다고 보긴 어렵죠.",
+              "tags": [
+                "threshold",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "family": {
+                  "exact": "서로 비슷함",
+                  "neutral": "쌍방 지연"
+                },
+                "rule": {
+                  "exact": "부부 확인 지연",
+                  "neutral": "늦은 최종 확인"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "과일상자 예약부터 한 건 제가 먼저였습니다. 배우자 확인보다 부모님 준비가 앞선 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "자신이 d-4에서 선행 책임이 있음을 부분 인정한다."
+          ],
+          "suppressions": [
+            "그 행동이 d-1과 연결된다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-4:admission:2",
+              "factText": "과일상자 예약부터 한 건 제가 먼저였습니다. 배우자 확인보다 부모님 준비가 앞선 건 인정합니다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "gift": {
+                  "exact": "과일상자 예약",
+                  "neutral": "선물 예약"
+                },
+                "family": {
+                  "exact": "부모님 준비",
+                  "neutral": "한쪽 부모 준비"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 수아도 친정 선물 주문부터 해 놓고 제게 최종 확인은 안 했잖아요. 서로가 서로보다 양가를 먼저 챙긴 겁니다."
+          ],
+          "privateKnowledge": [
+            "상호 과실을 앞세워 자신의 선행 책임을 희석한다."
+          ],
+          "suppressions": [
+            "자신이 부모 쪽에 먼저 말해 파장이 더 컸다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-4:counter:3",
+              "factText": "그래도 수아도 친정 선물 주문부터 해 놓고 제게 최종 확인은 안 했잖아요. 서로가 서로보다 양가를 먼저 챙긴 겁니다.",
+              "tags": [
+                "counter",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "gift": {
+                  "exact": "친정 선물 주문",
+                  "neutral": "다른 쪽 선물 준비"
+                },
+                "family": {
+                  "exact": "양가",
+                  "neutral": "부모님들"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "양가 체면을 다 맞추려다가 정작 수아랑 확인하는 순서를 망쳤습니다. 그게 제일 창피해요."
+          ],
+          "privateKnowledge": [
+            "체면 압박을 감정적으로 인정한다."
+          ],
+          "suppressions": [
+            "그 창피함 때문에 변명을 오래 붙들었다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-4:shame:4",
+              "factText": "양가 체면을 다 맞추려다가 정작 수아랑 확인하는 순서를 망쳤습니다. 그게 제일 창피해요.",
+              "tags": [
+                "shame",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "identity": {
+                  "exact": "양가 체면을 다 맞추려는 사람",
+                  "neutral": "눈치 보는 사람"
+                },
+                "rule": {
+                  "exact": "확인 순서 망침",
+                  "neutral": "우선순위 실패"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "둘 다 부모 쪽 준비가 배우자 확인보다 빨랐습니다. 다만 제가 먼저 부모님께 점심처럼 말한 탓에 더 크게 꼬였습니다."
+          ],
+          "privateKnowledge": [
+            "d-4에서 공동 책임과 d-1에서 자신의 가중 책임을 함께 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-4:admission:5",
+              "factText": "둘 다 부모 쪽 준비가 배우자 확인보다 빨랐습니다. 다만 제가 먼저 부모님께 점심처럼 말한 탓에 더 크게 꼬였습니다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "배우자 확인보다 부모 준비 선행",
+                  "neutral": "확인 순서 위반"
+                },
+                "time": {
+                  "exact": "점심처럼 말함",
+                  "neutral": "식사 확정 전달"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "크게 누가 일부러 그런 건 아니고 그냥 길이랑 타이밍이 꼬인 정도라고 생각했습니다. 굳이 원인을 크게 만들고 싶지 않았어요."
+          ],
+          "privateKnowledge": [
+            "단순 지연으로 축소하면 자신의 선행 확정 책임도 흐려진다는 걸 안다."
+          ],
+          "suppressions": [
+            "서로 다른 확정안을 이미 굴리고 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-5:denial:0",
+              "factText": "크게 누가 일부러 그런 건 아니고 그냥 길이랑 타이밍이 꼬인 정도라고 생각했습니다. 굳이 원인을 크게 만들고 싶지 않았어요.",
+              "tags": [
+                "denial",
+                "self_justification",
+                "relationship"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "길이랑 타이밍이 꼬임",
+                  "neutral": "단순 지연"
+                },
+                "emotion": {
+                  "exact": "원인을 크게 만들고 싶지 않음",
+                  "neutral": "관계 유지 의도"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "서로 서두르다 보니 엇갈린 겁니다. 저는 그냥 그 정도면 된다고 보고 넘기려 했어요."
+          ],
+          "privateKnowledge": [
+            "문제 축소가 관계 유지용 방어라는 점을 안다."
+          ],
+          "suppressions": [
+            "모호한 표현과 자기 추정이 핵심이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-5:self_justification:1",
+              "factText": "서로 서두르다 보니 엇갈린 겁니다. 저는 그냥 그 정도면 된다고 보고 넘기려 했어요.",
+              "tags": [
+                "self_justification",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "서로 서두름",
+                  "neutral": "서두른 상황"
+                },
+                "hook": {
+                  "exact": "그 정도면 된 거 아니야",
+                  "neutral": "대충 정리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "사실은 단순 지연만은 아니었습니다. 저도 너무 급하게 이해했고, 서로 다른 확정안을 동시에 믿고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "문제 축소를 거두고 구조적 오해를 일부 인정한다."
+          ],
+          "suppressions": [
+            "자신이 특히 부모 쪽 점심을 먼저 굳혔다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-5:admission:2",
+              "factText": "사실은 단순 지연만은 아니었습니다. 저도 너무 급하게 이해했고, 서로 다른 확정안을 동시에 믿고 있었습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "서로 다른 확정안",
+                  "neutral": "엇갈린 계획"
+                },
+                "emotion": {
+                  "exact": "급하게 이해함",
+                  "neutral": "서두른 해석"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "거기에 제가 이동시간이랑 식사 준비 시간을 너무 낙관적으로 봤습니다. 같은 날 양가를 다 돌 수 있다고 쉽게 생각했어요."
+          ],
+          "privateKnowledge": [
+            "자신의 동선 계산 오판을 인정한다."
+          ],
+          "suppressions": [
+            "이 판단이 수아의 표현 모호함과 결합해 더 커졌다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-5:timeline:3",
+              "factText": "거기에 제가 이동시간이랑 식사 준비 시간을 너무 낙관적으로 봤습니다. 같은 날 양가를 다 돌 수 있다고 쉽게 생각했어요.",
+              "tags": [
+                "timeline",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "travel": {
+                  "exact": "같은 날 양가 방문 가능",
+                  "neutral": "낙관적 동선"
+                },
+                "time": {
+                  "exact": "식사 준비 시간",
+                  "neutral": "준비 시간"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "싸움을 더 키우기 싫어서 ‘별일 아니었다’는 식으로 눙쳤습니다. 사실은 제가 관계를 지키려다 원인을 숨긴 거예요."
+          ],
+          "privateKnowledge": [
+            "관계 유지 욕구가 축소 진술의 감정적 배경이었다."
+          ],
+          "suppressions": [
+            "축소가 오히려 상대 감정을 무시한 것처럼 보였다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-5:emotion:4",
+              "factText": "싸움을 더 키우기 싫어서 ‘별일 아니었다’는 식으로 눙쳤습니다. 사실은 제가 관계를 지키려다 원인을 숨긴 거예요.",
+              "tags": [
+                "emotion",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "hook": {
+                  "exact": "별일 아니었다",
+                  "neutral": "문제 축소"
+                },
+                "emotion": {
+                  "exact": "관계를 지키려다 숨김",
+                  "neutral": "관계 유지 방어"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "이번 일의 핵심은 악의보다 모호한 표현과 이동시간 오판이었습니다. 제가 그걸 단순 지연처럼 덮으려 한 것도 잘못이었어요."
+          ],
+          "privateKnowledge": [
+            "진짜 원인과 자신의 축소 책임을 함께 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse10:b:tell:mood_confirmation",
+            "spouse10:b:tell:time_blur",
+            "spouse10:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse10:b:d-5:admission:5",
+              "factText": "이번 일의 핵심은 악의보다 모호한 표현과 이동시간 오판이었습니다. 제가 그걸 단순 지연처럼 덮으려 한 것도 잘못이었어요.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "모호한 표현과 이동시간 오판",
+                  "neutral": "근본 원인"
+                },
+                "hook": {
+                  "exact": "단순 지연처럼 덮음",
+                  "neutral": "축소 설명"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+
+export default spouse10V2Atoms;

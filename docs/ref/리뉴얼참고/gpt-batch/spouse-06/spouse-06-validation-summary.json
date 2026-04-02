@@ -1,0 +1,14 @@
+{
+  "caseId": "spouse06",
+  "claimPolicyStates": 60,
+  "claimAtoms": 120,
+  "tells": 6,
+  "beatScripts": 36,
+  "dossierCards": 3,
+  "stateUnlockAtoms": 40,
+  "contradictions": 4,
+  "interjections": 3,
+  "emotionalOutbursts": 4,
+  "transitionBeats": 24,
+  "validationErrors": 0
+}

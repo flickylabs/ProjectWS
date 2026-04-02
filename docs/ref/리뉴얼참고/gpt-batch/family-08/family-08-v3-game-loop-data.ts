@@ -1,0 +1,1660 @@
+export const family08V3GameLoopData = {
+  "caseId": "family-08",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "송금보다 늦은 설명",
+      "description": "150만원의 의미와 별개로, 누가 먼저 움직였고 왜 같은 날 설명이 빠졌는지 겨눈다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "영수증과 침상 확보 문자를 먼저 봤을 때, 재판관에게는 무엇이 가장 큰 위반으로 보였습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d1.a.unlock.s2.notice_gap",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "150만원의 성격을 잠시 제쳐도, 세라 씨가 끝까지 붙드는 기준이 '같은 날 공유'입니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d1.a.unlock.s3.rule_over_meaning",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "이번 송금을 보는 순간 과거 ICU 지연 기억이 겹쳤다는 말, 그 감정이 판단보다 먼저 올라왔습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.a.unlock.s4.last_to_know",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "신청서 접수와 송금은 먼저 하면서 가족 단톡 설명은 같은 날 하지 않았죠. 그 순서를 부인하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.b.unlock.s2.sent_before_notice",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "세라 씨가 화낼까 봐 아침까지 미뤘다는 계산, 결국 있었던 겁니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d1.b.unlock.s3.fear_delay",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "150만원을 '그냥 자리만 잡아둔 돈'이라고 줄여 말한 이유가 갈등을 피하려는 마음이었습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d3.b.unlock.s3.shortened_words",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "퍼진 말과 돈의 의미",
+      "description": "친척방 확산과 환불 규정을 한 카드에 묶어, 오해와 공개 비난이 서로를 어떻게 키웠는지 본다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "친척 단톡에 올린 말이 단순 확인 요청이 아니라 공개 비난으로 읽힐 수 있었다는 점을 인정하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.a.unlock.s2.help_request_mask",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "준호 씨 미통보와 2021년 ICU 지연 기억을 하나의 패턴으로 묶어 말한 건 사실입니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.a.unlock.s3.pattern_overlay",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "환불 규정과 상담 녹취를 본 뒤에는, 처음 150만원을 가장 무겁게 읽은 책임도 세라 씨에게 일부 있습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d3.a.unlock.s5.amount_misread",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "친척방 단정적 표현 때문에 이미 불효자처럼 찍혔다고 느꼈다는 말, 그 모욕감이 사실 판단보다 먼저였습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d2.b.unlock.s2.public_humiliation",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "환불 규정과 상담 녹취 기준으로 보면 150만원은 평가입소 대기금이 맞죠. 그 점부터 분명히 하시겠습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d3.b.unlock.s2.eval_hold_admit",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "지금 보니 배신 프레임은 본인 미통보와 세라 씨 공개 비난이 같이 물린 결과라고 인정합니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.b.unlock.s2.shared_frame",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "잘린 노트와 원본 합의",
+      "description": "부분 사진과 기관 원본을 대조해 사전합의의 범위와 통보 조항을 복원한다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "잘린 노트 사진만으로 합의 전부를 단정할 수는 없더라도, '은솔 대기' 문구 자체까지 부인하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d4.a.unlock.s2.note_partial",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "센터 원본 기록에 같은 날 공유 조항이 있다면, 세라 씨가 지키고 싶었던 핵심은 입소 반대가 아니라 통보 원칙이었습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.a.unlock.s3.same_day_clause",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "결국 세라 씨도 작년 가을의 사전합의 자체는 있었던 것으로 정리하십니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.a.unlock.s5.agreement_restored",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "이 노트 사진이 잘려 있다는 점, 본인에게 유리한 문장만 먼저 내민 건 맞습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d4.b.unlock.s2.cropped_photo",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "센터 기록까지 보면 합의엔 '같은 날 공유' 조항도 있습니다. 왜 그 조항은 빼고 말했습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.b.unlock.s3.omitted_notice_clause",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "'이미 다 합의됐다'는 말로 본인 미통보 책임을 덮으려 한 것까지 인정합니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.b.unlock.s5.half_memory_confession",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.a.unlock.s2.notice_gap",
+            "factText": "150만원의 성격과 별개로 준호가 먼저 송금하고 그날 안에 공유하지 않았다는 점이 세라에게 분리된 쟁점으로 정리된다.",
+            "tags": [
+              "timeline",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "1,500,000원",
+                "rounded": "150만원",
+                "neutral": "해당 금액"
+              },
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              },
+              "delay": {
+                "exact": "19시간",
+                "rounded": "하룻밤 가까이",
+                "neutral": "상당 시간"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "pressure"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.a.unlock.s3.rule_over_meaning",
+            "factText": "세라는 이제 돈의 의미보다 '같은 날 공유' 규칙 위반이 핵심이라고 선을 다시 긋는다.",
+            "tags": [
+              "rule",
+              "context",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "reframe"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.a.unlock.s4.last_to_know",
+            "factText": "세라가 반응한 핵심은 입소 자체보다 '또 나만 나중에 알았다'는 오래된 감각이었다.",
+            "tags": [
+              "emotion",
+              "quote",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "dateExact": "2021년 아버지 ICU 전원 때",
+                "period": "그때 ICU 때",
+                "neutral": "과거 그 사건"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.a.unlock.s5.balanced_fault",
+            "factText": "세라는 준호의 긴급 판단 사정을 일부 인정하면서도 통보 누락 책임은 그대로 남는다고 정리한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "context"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "balanced"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.a.unlock.s2.help_request_mask",
+            "factText": "세라는 친척방 발언이 사실상 공개 비난이었음을 인정하지만 여전히 '도움 요청'이라는 외피로 자신을 설명한다.",
+            "tags": [
+              "privacy",
+              "admission",
+              "self_justification"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hedge"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.a.unlock.s3.pattern_overlay",
+            "factText": "세라는 준호의 미통보와 과거 ICU 기억을 한 줄로 묶어 공개 비난의 배경 서사로 사용했음이 드러난다.",
+            "tags": [
+              "legacy_sentence",
+              "privacy",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "dateExact": "2021년 아버지 ICU 전원 때",
+                "period": "그때 ICU 때",
+                "neutral": "과거 그 사건"
+              },
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.a.unlock.s4.public_fixing",
+            "factText": "세라는 친척들 앞에서라도 먼저 누가 잘못했는지 못 박고 싶었다는 속내를 드러낸다.",
+            "tags": [
+              "motive",
+              "privacy",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.a.unlock.s5.defamation_admit",
+            "factText": "세라는 계약 확인 전 단정적 표현을 퍼뜨린 책임을 명시적으로 받아들인다.",
+            "tags": [
+              "admission",
+              "privacy",
+              "harm",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.a.unlock.s2.hold_possible",
+            "factText": "세라는 신청서를 본 뒤 150만원이 영구입소 확정금이 아닐 수 있다는 가능성을 받아들인다.",
+            "tags": [
+              "admission",
+              "uncertainty",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "1,500,000원",
+                "rounded": "150만원",
+                "neutral": "해당 금액"
+              },
+              "institution": {
+                "fullName": "은솔요양원",
+                "neutral": "해당 요양원"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.a.unlock.s3.refund_line",
+            "factText": "환불 규정과 상담 녹취가 나오자 세라는 150만원을 평가입소 홀드금으로 다시 읽기 시작한다.",
+            "tags": [
+              "rule",
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "1,500,000원",
+                "rounded": "150만원",
+                "neutral": "해당 금액"
+              },
+              "rule": {
+                "exact": "환불 가능",
+                "neutral": "환불 조항 존재"
+              },
+              "person": {
+                "fullName": "송하린",
+                "judgeRef": "상담사",
+                "neutral": "시설 담당자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "clarify"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.a.unlock.s4.heaviest_reading",
+            "factText": "세라는 통보 상처 때문에 150만원을 가장 무거운 의미로 읽어버렸다는 감정적 오독을 인정한다.",
+            "tags": [
+              "emotion",
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "1,500,000원",
+                "rounded": "150만원",
+                "neutral": "해당 금액"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.a.unlock.s5.amount_misread",
+            "factText": "세라는 150만원의 성격을 오해했고 그 오해를 너무 빨리 확신으로 바꿨다고 시인한다.",
+            "tags": [
+              "admission",
+              "uncertainty",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "1,500,000원",
+                "rounded": "150만원",
+                "neutral": "해당 금액"
+              },
+              "term": {
+                "exact": "2주 평가입소 침상 홀드",
+                "neutral": "평가입소용 자리 확보"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "reflective"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.a.unlock.s2.note_partial",
+            "factText": "세라는 잘린 노트 사진만으로는 합의 범위를 단정할 수 없지만, '은솔 대기' 문구 자체는 인정하게 된다.",
+            "tags": [
+              "admission",
+              "evidence",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "institution": {
+                "fullName": "은솔요양원",
+                "neutral": "해당 요양원"
+              },
+              "threshold": {
+                "exact": "배회 두 번 재발",
+                "neutral": "배회 재발"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.a.unlock.s3.same_day_clause",
+            "factText": "세라는 사전 합의 존재를 부분 인정하면서도 핵심 조건이 '같은 날 공유'였다고 논점을 재배치한다.",
+            "tags": [
+              "rule",
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              },
+              "time": {
+                "dateExact": "작년 가을 가족회의",
+                "period": "작년 가을",
+                "neutral": "그 회의 때"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "reframe"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.a.unlock.s4.self_protective_denial",
+            "factText": "세라는 입소 합의를 인정하는 순간 어머니를 포기한 사람이 될까 두려워 합의 자체를 줄여 기억했음을 드러낸다.",
+            "tags": [
+              "fear",
+              "beneficiary",
+              "admission"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "정옥자",
+                "judgeRef": "어머니",
+                "neutral": "가족 어르신"
+              },
+              "time": {
+                "dateExact": "작년 가을 가족회의",
+                "period": "작년 가을",
+                "neutral": "그 회의 때"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.a.unlock.s5.agreement_restored",
+            "factText": "세라는 작년 가을의 사전 합의를 인정하되 그것이 준호의 단독 진행권이 아니었다고 최종 정리한다.",
+            "tags": [
+              "admission",
+              "rule",
+              "threshold"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time": {
+                "dateExact": "작년 가을 가족회의",
+                "period": "작년 가을",
+                "neutral": "그 회의 때"
+              },
+              "threshold": {
+                "exact": "화재 위험 재발",
+                "neutral": "위험 신호 재발"
+              },
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "clarify"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.a.unlock.s2.spark_vs_spread",
+            "factText": "세라는 친척방으로 번진 책임을 일부 인정하면서도 배신 프레임의 최초 불씨는 준호의 미통보였다고 본다.",
+            "tags": [
+              "privacy",
+              "admission",
+              "counter"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              },
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.a.unlock.s3.icu_overlay",
+            "factText": "세라는 현재 사실확인 전에 2021년 ICU 기억을 먼저 덧씌워 배신 서사를 확대한 점을 인정한다.",
+            "tags": [
+              "legacy_sentence",
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "dateExact": "2021년 아버지 ICU 전원 때",
+                "period": "그때 ICU 때",
+                "neutral": "과거 그 사건"
+              },
+              "delay": {
+                "exact": "5시간",
+                "neutral": "오래 늦은 시간"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "reflective"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.a.unlock.s4.not_last_again",
+            "factText": "세라의 핵심 공포는 사건의 정확한 명칭보다 '다시 마지막 사람이 되는 것'이었다.",
+            "tags": [
+              "fear",
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "admission"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.a.unlock.s5.shared_frame_fault",
+            "factText": "세라는 자신의 공개 비난과 과거 패턴 덧씌우기가 배신 프레임의 공동 책임임을 시인한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "harm",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              },
+              "time": {
+                "dateExact": "2021년 아버지 ICU 전원 때",
+                "period": "그때 ICU 때",
+                "neutral": "과거 그 사건"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.b.unlock.s2.sent_before_notice",
+            "factText": "준호는 자신이 먼저 송금하고도 같은 날 가족 단톡 공유를 하지 못했다는 사실을 인정한다.",
+            "tags": [
+              "admission",
+              "timeline",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "1,500,000원",
+                "rounded": "150만원",
+                "neutral": "해당 금액"
+              },
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              },
+              "group": {
+                "exact": "가족 단톡방",
+                "neutral": "가족 대화방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.b.unlock.s3.fear_delay",
+            "factText": "준호는 세라가 흥분할까 봐 설명을 아침까지 미뤘다는 두려움 기반 동기를 드러낸다.",
+            "tags": [
+              "fear",
+              "motive",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "clockExact": "오전 7시 12분",
+                "period": "다음 날 아침",
+                "neutral": "첫 설명 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.b.unlock.s4.unfilial_fear",
+            "factText": "준호는 자신이 어머니를 버리는 아들처럼 보일까 봐 통보보다 선조치를 택했다고 털어놓는다.",
+            "tags": [
+              "fear",
+              "identity",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "정옥자",
+                "judgeRef": "어머니",
+                "neutral": "가족 어르신"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.b.unlock.s5.same_day_breach",
+            "factText": "준호는 평가입소용 판단과 별개로 작년 합의의 핵심이던 같은 날 공유를 어겼다고 최종 시인한다.",
+            "tags": [
+              "admission",
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              },
+              "time": {
+                "dateExact": "작년 가을 가족회의",
+                "period": "작년 가을",
+                "neutral": "그 회의 때"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.b.unlock.s2.public_humiliation",
+            "factText": "준호는 친척방의 단정적 표현이 자신을 이미 불효자로 만든 뒤였다고 느낀다.",
+            "tags": [
+              "privacy",
+              "identity",
+              "harm"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "hurt"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.b.unlock.s3.frame_fixed_first",
+            "factText": "준호는 세라가 친척들 앞에서 사건을 먼저 정의해 버렸고 자신은 그 전에 설명 공백을 만들었다고 정리한다.",
+            "tags": [
+              "privacy",
+              "timeline",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              },
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "balanced"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.b.unlock.s4.insult_before_fact",
+            "factText": "준호에게는 사실 다툼보다 친척들 앞 모욕감이 먼저 남았다는 감정 축이 드러난다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "privacy"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.b.unlock.s5.dual_damage",
+            "factText": "준호는 세라의 공개 비난과 자신의 미통보가 함께 가족 신뢰를 깎았다는 결론에 도달한다.",
+            "tags": [
+              "admission",
+              "relationship",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {},
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.b.unlock.s2.eval_hold_admit",
+            "factText": "준호는 신청서 기준 150만원이 영구입소 계약금이 아니라 평가입소용 대기금임을 인정한다.",
+            "tags": [
+              "admission",
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "1,500,000원",
+                "rounded": "150만원",
+                "neutral": "해당 금액"
+              },
+              "term": {
+                "exact": "2주 평가입소 침상 홀드",
+                "neutral": "평가입소용 자리 확보"
+              },
+              "institution": {
+                "fullName": "은솔요양원",
+                "neutral": "해당 요양원"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "clarify"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.b.unlock.s3.shortened_words",
+            "factText": "준호는 세라에게 갈등을 피하려고 '그냥 자리만' 같은 축약어로 의미를 흐렸음을 드러낸다.",
+            "tags": [
+              "quote",
+              "admission",
+              "motive"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "1,500,000원",
+                "rounded": "150만원",
+                "neutral": "해당 금액"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.b.unlock.s4.words_reduce_fight",
+            "factText": "준호는 용어를 줄이면 싸움이 줄 거라고 착각했다는 자기기만을 인정한다.",
+            "tags": [
+              "self_justification",
+              "fear",
+              "admission"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "reflective"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.b.unlock.s5.meaning_plus_duty",
+            "factText": "준호는 돈의 정확한 의미와 그 의미를 충분히 설명하지 않은 책임을 함께 받아들인다.",
+            "tags": [
+              "admission",
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "1,500,000원",
+                "rounded": "150만원",
+                "neutral": "해당 금액"
+              },
+              "rule": {
+                "exact": "환불 가능",
+                "neutral": "환불 조항 존재"
+              },
+              "term": {
+                "exact": "2주 평가입소 침상 홀드",
+                "neutral": "평가입소용 자리 확보"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.b.unlock.s2.cropped_photo",
+            "factText": "준호는 잘린 노트 사진이 자신의 기억 중 유리한 부분만 보여줬다는 점을 인정한다.",
+            "tags": [
+              "admission",
+              "evidence",
+              "privacy"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "dateExact": "작년 가을 가족회의",
+                "period": "작년 가을",
+                "neutral": "그 회의 때"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.b.unlock.s3.omitted_notice_clause",
+            "factText": "준호는 사전 합의를 말하면서도 '같은 날 공유' 조항을 의도적으로 빼고 있었다.",
+            "tags": [
+              "admission",
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              },
+              "time": {
+                "dateExact": "작년 가을 가족회의",
+                "period": "작년 가을",
+                "neutral": "그 회의 때"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.b.unlock.s4.safe_by_half_memory",
+            "factText": "준호는 합의가 있었다는 말만 내세우면 자신이 덜 나빠 보일 것이라 계산했음을 드러낸다.",
+            "tags": [
+              "motive",
+              "self_justification",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.b.unlock.s5.half_memory_confession",
+            "factText": "준호는 사전 합의는 사실이지만 통보 의무를 뺀 채 '이미 다 합의됐다'고 말하며 자신의 책임을 덮으려 했다고 시인한다.",
+            "tags": [
+              "admission",
+              "rule",
+              "responsibility",
+              "self_justification"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              },
+              "time": {
+                "dateExact": "작년 가을 가족회의",
+                "period": "작년 가을",
+                "neutral": "그 회의 때"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.b.unlock.s2.shared_frame",
+            "factText": "준호는 배신 프레임이 자신의 미통보와 세라의 공개 비난이 맞물린 결과라고 본다.",
+            "tags": [
+              "admission",
+              "relationship",
+              "harm"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              },
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "balanced"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.b.unlock.s3.blank_before_label",
+            "factText": "준호는 세라가 친척들 앞에서 결론을 내리기 전에 자신이 이미 설명 공백을 만들어 놓았다는 점을 인정한다.",
+            "tags": [
+              "timeline",
+              "privacy",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              },
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admit"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.b.unlock.s4.unfilial_and_abandoned",
+            "factText": "준호는 자신의 불효자 공포와 세라의 버려졌다는 감정이 동시에 프레임을 키웠다고 본다.",
+            "tags": [
+              "fear",
+              "relationship",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "balanced"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.b.unlock.s5.stop_both_rules",
+            "factText": "준호는 늦은 통보와 공개 비난을 동시에 멈추는 규칙 없이는 신뢰 복구가 어렵다고 결론내린다.",
+            "tags": [
+              "rule",
+              "relationship",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "그날 안에 가족 단톡 공유",
+                "neutral": "같은 날 공유 원칙"
+              },
+              "group": {
+                "exact": "친척 단톡방",
+                "neutral": "가족 외 친척 대화방"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "repair"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "contr-1",
+        "trigger": "b가 d-4에서 '이미 다 합의됐다'고 밀어붙일 때 e-6이 제시됨",
+        "text": "센터 원본에는 '같은 날 가족 단톡 공유' 조항이 함께 적혀 있어, 준호의 '합의만 있었다'는 절반 진술이 바로 흔들린다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      },
+      {
+        "id": "contr-2",
+        "trigger": "a가 d-2에서 '도움 요청이었을 뿐'이라고 버틸 때 e-3이 제시됨",
+        "text": "친척 단톡 원문과 사촌 통화 메모의 단정적 표현이 드러나면서, 세라의 말이 사실확인 요청보다 공개 비난에 가까웠음이 부각된다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-3"
+        ]
+      },
+      {
+        "id": "contr-3",
+        "trigger": "양측이 150만원을 영구입소 계약금처럼 소비할 때 e-1과 e-4가 연결됨",
+        "text": "신청서의 구분 문구와 환불 규정, 상담 녹취의 '평가부터' 표현이 맞물리며 150만원의 성격이 영구입소 확정금이 아님이 정리된다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-4"
+        ]
+      },
+      {
+        "id": "contr-4",
+        "trigger": "b가 e-5만으로 d-4를 밀어붙일 때 e-6이 추가 제시됨",
+        "text": "잘린 노트 사진에서는 보이지 않던 서명란과 통보 조항이 원본 기록에서 복원되며, 부분증거가 만든 착시가 깨진다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-5",
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "intr-1",
+        "party": "a",
+        "trigger": "b가 '일단 안전부터였다'를 반복할 때",
+        "text": "안전 이야기 하기 전에, 왜 또 내가 마지막이었는지부터 답하세요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "intr-2",
+        "party": "b",
+        "trigger": "a가 '몰래 넣었다'는 표현을 다시 사용할 때",
+        "text": "몰래가 아니라 평가 자리부터 본 거였어요. 그 말부터 바로잡고 가야죠.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      },
+      {
+        "id": "intr-3",
+        "party": "b",
+        "trigger": "a가 2021년 ICU 기억을 현재 사실보다 먼저 내세울 때",
+        "text": "그때 일까지 한꺼번에 얹으면 저는 무슨 말을 해도 또 똑같은 사람으로 끝납니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "emo-a-1",
+        "party": "a",
+        "trigger": "e-2로 19시간 공백이 확인되고 b가 여전히 '숨긴 건 아니다'라고 할 때",
+        "text": "또 나만 나중이었잖아요. 이 집에서 중요한 결정이 내려질 때마다 왜 늘 제가 마지막입니까.",
+        "cooldownHint": "재판관은 계약 의미가 아니라 '통보 공백'만 좁혀 다시 질문한다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "emo-a-2",
+        "party": "a",
+        "trigger": "e-6으로 사전합의가 확인되자 a가 방어적으로 흔들릴 때",
+        "text": "합의가 있었다고 해서 제가 괜찮았던 건 아니에요. 저는 그날도, 이번에도 결국 나중에 알았다고요.",
+        "cooldownHint": "합의 존재와 통보 조항을 분리해 주는 공감형 질문으로 완화한다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      },
+      {
+        "id": "emo-b-1",
+        "party": "b",
+        "trigger": "e-3가 제시된 뒤 a가 계속 '몰래'라는 단어를 밀어붙일 때",
+        "text": "밤마다 엄마 찾으러 뛰던 사람이 저였는데, 친척들 눈엔 그냥 버리는 아들로 끝났습니다.",
+        "cooldownHint": "재판관은 '불효자 낙인' 감정을 인정한 뒤 통보 의무로 다시 좁힌다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "emo-b-2",
+        "party": "b",
+        "trigger": "e-6로 같은 날 공유 조항이 확인되고 b가 더 버티기 어려워질 때",
+        "text": "합의가 있다는 말만 붙잡고 버텼습니다. 그 조항까지 말하면 제가 또 늦게 말한 동생인 게 너무 선명해지니까요.",
+        "cooldownHint": "재판관은 책임 인정 후 수습 규칙을 묻는 방향으로 전환한다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "family08:transition:a:d-2:s0_s1",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "relative_chat_question",
+      "line": "확인만 하려던 거였어요. 다만 그때는 설명 없는 송금밖에 안 보였으니 말이 세질 수밖에 없었습니다.",
+      "behaviorHint": "시선은 피하지 않되 턱을 굳히고, '확인'이라는 단어를 먼저 내세운다."
+    },
+    {
+      "id": "family08:transition:a:d-2:s1_s2",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "원문을 보면 제가 세게 말한 건 맞네요. 도움을 구한다면서도 이미 결론을 앞질렀습니다.",
+      "behaviorHint": "입술을 한번 깨물고 말끝을 낮춘다."
+    },
+    {
+      "id": "family08:transition:a:d-2:s2_s3",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "public_wording_followup",
+      "line": "'몰래 넣었다'는 말이 너무 앞서갔죠. 그런데 그 표현 뒤엔 또 숨겼다는 제 해석이 붙어 있었습니다.",
+      "behaviorHint": "문장을 끊어 읽다가 마지막에 '또'를 무겁게 반복한다."
+    },
+    {
+      "id": "family08:transition:a:d-2:s3_s5",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "네, 공개 비난으로 사건을 키운 책임은 제가 집니다. 미통보가 불씨였어도, 불을 퍼뜨린 건 제 말이었습니다.",
+      "behaviorHint": "자료를 내려놓고 정면을 본다."
+    },
+    {
+      "id": "family08:transition:a:d-4:s0_s1",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "prior_agreement_question",
+      "line": "시설 이야기가 나온 적은 있어도, 저는 그걸 곧바로 진행 합의로 받아들이지 않았습니다.",
+      "behaviorHint": "말을 고르며 '진행 합의' 부분만 또렷하게 강조한다."
+    },
+    {
+      "id": "family08:transition:a:d-4:s1_s2",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "잘린 사진이라 전체는 못 믿겠지만, '은솔 대기' 문구까지 부인하긴 어렵네요.",
+      "behaviorHint": "사진을 오래 보다가 고개를 아주 작게 끄덕인다."
+    },
+    {
+      "id": "family08:transition:a:d-4:s2_s3",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "full_plan_followup",
+      "line": "사전합의가 아예 없었다기보단, 범위가 문제였던 것 같습니다. 저는 같은 날 공유 조항이 더 핵심이라고 봤습니다.",
+      "behaviorHint": "손가락으로 문구를 짚으며 '같은 날 공유'를 분리해서 말한다."
+    },
+    {
+      "id": "family08:transition:a:d-4:s3_s5",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "센터 원본까지 보면 합의는 있었네요. 다만 그 합의는 준호 혼자 움직이라는 뜻이 아니라 공유까지 포함한 규칙이었습니다.",
+      "behaviorHint": "체념 섞인 숨을 내쉬고 어조를 차분히 낮춘다."
+    },
+    {
+      "id": "family08:transition:a:d-5:s0_s1",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_icu_memory_question",
+      "line": "ICU 때 다섯 시간 늦었던 기억이 있으니, 이번 일도 저는 바로 같은 패턴으로 읽었습니다.",
+      "behaviorHint": "말이 빨라지며 연도와 시간부터 먼저 꺼낸다."
+    },
+    {
+      "id": "family08:transition:a:d-5:s1_s4",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_not_being_last_again",
+      "line": "맞아요. 저는 다시 마지막 사람이 되고 싶지 않았습니다. 그래서 사실보다 배신당했다는 자리부터 붙잡으려 했습니다.",
+      "behaviorHint": "어깨가 내려가고 시선이 흔들린다."
+    },
+    {
+      "id": "family08:transition:a:d-5:s4_s3",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S3",
+      "trigger": "e-2_presented",
+      "line": "기록을 보니 제 감정만 말할 수는 없겠네요. 준호의 공백이 있었고, 저는 그 위에 과거 기억을 덧씌웠습니다.",
+      "behaviorHint": "감정적으로 올라갔다가 증거를 보고 논리 쪽으로 되돌아온다."
+    },
+    {
+      "id": "family08:transition:a:d-5:s3_s5",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "배신 프레임을 키운 건 준호만이 아닙니다. 저도 친척들 앞에서 먼저 서사를 퍼뜨렸으니 공동 책임입니다.",
+      "behaviorHint": "고개를 숙였다가 마지막 문장은 분명하게 올린다."
+    },
+    {
+      "id": "family08:transition:b:d-1:s0_s1",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "deposit_notice_question",
+      "line": "숨기려던 건 아니고, 그날 밤엔 배회 수습부터 하느라 설명이 뒤로 밀렸습니다.",
+      "behaviorHint": "손을 벌려 상황을 늘어놓고 핵심 단어는 끝으로 미룬다."
+    },
+    {
+      "id": "family08:transition:b:d-1:s1_s2",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "기록대로라면 제가 먼저 보내고 그날 안에 단톡에 못 올린 건 맞습니다.",
+      "behaviorHint": "말끝을 짧게 끊고 변명 대신 사실만 먼저 인정한다."
+    },
+    {
+      "id": "family08:transition:b:d-1:s2_s3",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "same_day_rule_followup",
+      "line": "작년 합의에 같은 날 공유가 붙어 있었는데, 저는 그 부분을 아침까지 미뤘습니다. 누나가 화낼까 겁났습니다.",
+      "behaviorHint": "숨을 들이마신 뒤 '겁났다'를 낮게 말한다."
+    },
+    {
+      "id": "family08:transition:b:d-1:s3_s5",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "네, 평가입소 자리 확보라는 판단과 별개로 통보 의무를 어긴 건 제 잘못입니다.",
+      "behaviorHint": "더 이상 주변 설명을 붙이지 않고 핵심만 말한다."
+    },
+    {
+      "id": "family08:transition:b:d-3:s0_s1",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "contract_meaning_question",
+      "line": "정식 계약은 아니고 평가 쪽에 가까웠습니다. 그냥 말이 길어질까 봐 제가 줄여 말했습니다.",
+      "behaviorHint": "숫자와 명칭 사이에서 잠깐 머뭇거리며 완곡하게 선을 긋는다."
+    },
+    {
+      "id": "family08:transition:b:d-3:s1_s2",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "신청서상으로는 맞습니다. 영구입소 확정금이 아니라 평가입소 대기금입니다.",
+      "behaviorHint": "문서의 명칭을 또박또박 읽는다."
+    },
+    {
+      "id": "family08:transition:b:d-3:s2_s3",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "refund_clause_followup",
+      "line": "환불 규정까지 보면 더 분명하죠. 저는 그 차이를 누나에게 너무 짧게 줄여 말했습니다.",
+      "behaviorHint": "목소리가 작아지며 '짧게'를 스스로 탓하듯 말한다."
+    },
+    {
+      "id": "family08:transition:b:d-3:s3_s5",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "150만원의 의미 자체는 제가 맞게 알고 있었지만, 그 의미를 제대로 설명하지 않은 책임까지 제 몫입니다.",
+      "behaviorHint": "손에 쥔 영수증을 내려놓고 말한다."
+    },
+    {
+      "id": "family08:transition:b:d-4:s0_s1",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "prior_agreement_question",
+      "line": "저는 그걸 이미 정한 조건의 실행으로 봤습니다. 그래서 새 허락을 구하는 문제라고 생각하지 않았습니다.",
+      "behaviorHint": "단정적으로 말하지만 눈은 짧게 흔들린다."
+    },
+    {
+      "id": "family08:transition:b:d-4:s1_s2",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "맞습니다, 저 사진은 저한테 유리한 문장만 먼저 보이게 잘린 겁니다. 그래도 합의 문구가 있었던 건 맞습니다.",
+      "behaviorHint": "사진을 내밀다 말고 손을 조금 거둔다."
+    },
+    {
+      "id": "family08:transition:b:d-4:s2_s3",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "notice_clause_followup",
+      "line": "합의를 말하면서도 같은 날 공유 조항은 제가 빼고 있었습니다. 그 부분까지 말하면 제 잘못이 너무 바로 보이니까요.",
+      "behaviorHint": "처음으로 말끝에 자책이 실린다."
+    },
+    {
+      "id": "family08:transition:b:d-4:s3_s5",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "센터 원본까지 보면 사전합의와 통보 의무가 같이 있었습니다. 저는 합의만 앞세워 제 책임을 덮으려 했습니다.",
+      "behaviorHint": "어깨를 떨군 채 문장을 끊어 읽는다."
+    }
+  ]
+}

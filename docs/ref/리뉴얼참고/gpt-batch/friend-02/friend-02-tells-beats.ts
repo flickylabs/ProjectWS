@@ -1,0 +1,558 @@
+export const friend02TellsBeats = {
+  "caseId": "friend-02",
+  "executableTells": {
+    "a": [
+      {
+        "id": "friend02_a_tell_receipt_split",
+        "appliesWhen": [
+          "lying",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "정리하면",
+          "첫째",
+          "확인"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "불리한 행동의 이름을 쪼개 수위를 낮추고, 확인된 사실을 번호처럼 정리하는 cold_logic형 qualification_split."
+      },
+      {
+        "id": "friend02_a_tell_quote_lock",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "'비밀'",
+          "'상의'",
+          "'그 정도'"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "상대 표현을 짧게 따옴표처럼 반복해 자신의 해석이 아니라 상대 말 자체를 문제 삼는 quote_lock."
+      },
+      {
+        "id": "friend02_a_tell_flat_breath",
+        "appliesWhen": [
+          "emotional",
+          "shame",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "나는",
+          "그건",
+          "선 넘었어"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "감정이 올라올수록 오히려 낮은 톤과 긴 호흡으로 자기 판단을 건조하게 박아 넣는 flat_breath."
+      }
+    ],
+    "b": [
+      {
+        "id": "friend02_b_tell_sacrifice_stack",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "내가",
+          "중간에서",
+          "달래고"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "every_turn",
+        "originalPattern": "자신이 감당한 수고와 중간자 역할을 길게 나열해 핵심 질문 도착을 늦추는 sacrifice_stack."
+      },
+      {
+        "id": "friend02_b_tell_wounded_pause",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "솔직히",
+          "저는",
+          "그때"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "답하기 전 긴 숨 멈춤 뒤 자신이 받은 상처를 앞세워 발화 진입점을 만드는 wounded_pause."
+      },
+      {
+        "id": "friend02_b_tell_moral_shield",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "막으려고",
+          "더 나빠질까 봐",
+          "그렇게까지"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "행위 자체보다 의도를 먼저 내세워 도덕적 방패를 만들고, 끝을 되묻는 어조로 압박을 흘리는 moral_shield."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "본 건 확인이지 열람은 아니고요. 화면이 켜져 있었고, 저는 그 순간 필요한 만큼만 본 겁니다.",
+      "behaviorHint": "시선을 곧게 두지만 손끝으로 컵 가장자리를 한 번 문지른다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend02:beat:a:d-2:deny"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "알림이 그대로 떠 있으면 누구라도 상황을 짐작해요. 일부러 뒤지려고 한 건 아닙니다.",
+      "behaviorHint": "문장 끝을 짧게 자르고 '아닙니다'를 낮은 톤으로 반복한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend02:beat:a:d-2:hedge"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "스토리요? 네, 감정이 올라와서 올렸습니다. 하지만 그때는 이미 배신당했다고 믿고 있었어요.",
+      "behaviorHint": "숨을 한 번 길게 멈춘 뒤 사실과 감정을 분리하듯 말한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-3",
+      "id": "friend02:beat:a:d-2:evidence_hit"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "채팅 목록을 잠깐 넘긴 건 맞습니다. 다만 그 전제가 된 건 민재 쪽 누설이라고 봤어요.",
+      "behaviorHint": "손바닥을 펴 보이며 인정 범위를 좁게 한정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend02:beat:a:d-2:partial"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "선은 먼저 민재가 넘겼다고 판단했어요. 제 스토리는 공격이라기보다, 그 배신을 되돌려 준 반응이었습니다.",
+      "behaviorHint": "상대가 한 표현을 짧게 인용하듯 반복한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend02:beat:a:d-2:blame"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "배신감이 경계를 대신하게 두면 안 됐습니다. 태블릿을 본 것도, 저격성 스토리를 올린 것도 제 책임입니다.",
+      "behaviorHint": "목소리를 낮추고 단어 사이를 길게 띄운다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend02:beat:a:d-2:confession"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "표현, 타이밍, 범위가 다 민재 쪽이었어요. 저는 그 사람이 직접 썼다고 볼 수밖에 없었습니다.",
+      "behaviorHint": "세 가지 근거를 번호처럼 짧게 나열한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend02:beat:a:d-3:deny"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "캡처만으로 끝까지 단정하는 건 위험하죠. 그래도 당시엔 다른 가능성이 거의 안 보였습니다.",
+      "behaviorHint": "'거의' 같은 완충어를 쓰지만 시선은 고정한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend02:beat:a:d-3:hedge"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "이 캡처 자체가 함정일 수 있다는 건 알아요. 그래도 말투가 너무 닮아 있어서 제가 거기에 매달렸던 겁니다.",
+      "behaviorHint": "캡처 화면을 보지 않고 설명만 이어 간다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-2",
+      "id": "friend02:beat:a:d-3:evidence_hit"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "직접 작성 여부와 출발점을 제가 섞어서 봤다는 건 인정합니다. 다만 오해를 만든 재료는 민재 쪽이었어요.",
+      "behaviorHint": "문장 첫머리에서 인정하고 후반부에 책임선을 다시 긋는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend02:beat:a:d-3:partial"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "누군가를 찍어야 버틸 수 있었고, 제일 마지막 전달자가 민재였으니까요. 분노가 판단을 밀었습니다.",
+      "behaviorHint": "짧게 웃듯 숨을 내쉬었다가 바로 표정을 굳힌다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend02:beat:a:d-3:blame"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "직접 작성자는 민재가 아니었습니다. 저는 배신의 출발점과 키보드를 잡은 사람을 같은 사람으로 몰아버렸습니다.",
+      "behaviorHint": "말끝을 흐리지 않고 정정하듯 또박또박 말한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend02:beat:a:d-3:confession"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "친한친구 스토리 하나를 제3자 전달과 같은 급으로 보진 않습니다. 시작점이 다르잖아요.",
+      "behaviorHint": "비중의 차이를 숫자처럼 분류하듯 설명한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend02:beat:a:d-5:deny"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "문구가 날카로웠던 건 압니다. 그래도 그때 제겐 확인되지 않은 확신이 거의 사실처럼 느껴졌어요.",
+      "behaviorHint": "'거의 사실'이라는 표현에서 잠깐 입술을 깨문다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend02:beat:a:d-5:hedge"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "아카이브까지 나오면 부정하진 않겠습니다. 이름을 쓰지 않아도 지목성은 있었다는 거죠.",
+      "behaviorHint": "고개를 아주 작게 끄덕이며 수용 범위를 명확히 한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-3",
+      "id": "friend02:beat:a:d-5:evidence_hit"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "약속 취지로만 보면 제 스토리도 벗어났습니다. 다만 먼저 밖으로 옮긴 쪽과는 책임 구조가 다릅니다.",
+      "behaviorHint": "자기 책임을 인정하면서도 손가락으로 선을 긋는 제스처를 한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend02:beat:a:d-5:partial"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "저는 이미 퍼진 뒤에 감정적으로 반응한 쪽입니다. 판을 여는 손과 뒤늦게 찌르는 손을 같게 보긴 어렵죠.",
+      "behaviorHint": "비유를 써서 단계 차이를 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend02:beat:a:d-5:blame"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "둘 다 약속을 깼습니다. 제가 체면을 지키려 그 차이를 너무 밀어붙인 것도 인정합니다.",
+      "behaviorHint": "한 박자 쉬고 마지막 문장을 낮게 눌러 말한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend02:beat:a:d-5:confession"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "그걸 '넘겼다'고 하면 제가 일부러 팔아먹은 것처럼 들리잖아요. 그냥 너무 무거워서 얘길 한 겁니다.",
+      "behaviorHint": "양손을 펼쳐 억울함을 먼저 보인다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend02:beat:b:d-1:deny"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "조언을 구한 건 맞아요. 그렇다고 가은 비밀을 퍼뜨릴 생각까지 있었던 건 아니었습니다.",
+      "behaviorHint": "숨을 길게 멈췄다가 '의도'를 강하게 찍는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend02:beat:b:d-1:hedge"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "포워드 기록은 부정 못 하겠습니다. 다만 그 뒤 익명글로 번질 줄은 진짜 몰랐어요.",
+      "behaviorHint": "목이 잠긴 소리로 사실을 좁게 인정한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-1",
+      "id": "friend02:beat:b:d-1:evidence_hit"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "음성메모와 요약을 보낸 건 맞습니다. 그때는 중간에서 막아보려는 선택이라고 스스로 포장했습니다.",
+      "behaviorHint": "자기 손가락을 모았다 펴며 변명과 사실을 함께 내놓는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend02:beat:b:d-1:partial"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "제가 문을 연 건 잘못이지만, 그 문으로 들어와 판을 키운 건 박서후였어요. 그 선은 나눠야 합니다.",
+      "behaviorHint": "상대 이름을 바로 말하지 못하고 잠깐 멈춘다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend02:beat:b:d-1:blame"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "익명글 직접 작성 여부와 별개로, 신뢰를 깨는 첫 전달을 한 사람은 저입니다. 그 책임은 피하지 않겠습니다.",
+      "behaviorHint": "시선을 피하지 않고 마지막 문장을 짧게 닫는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend02:beat:b:d-1:confession"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "그 글 내가 썼다는 건 진짜 아닙니다. 말투 좀 닮았다고 다 제 손이라고 할 순 없잖아요?",
+      "behaviorHint": "끝을 되묻는 어조로 반박한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend02:beat:b:d-3:deny"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "의심받을 상황이 있었던 건 알아요. 그래도 직접 작성자까지 저로 고정하는 건 억울합니다.",
+      "behaviorHint": "억울함을 먼저 내세우고 사실 인정을 뒤로 미룬다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend02:beat:b:d-3:hedge"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "캡처만 보면 저 같아 보였을 겁니다. 그게 더 무서워서 초반에 세게 못 끊었습니다.",
+      "behaviorHint": "어깨를 조금 움츠리고 말수를 잠깐 줄인다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-2",
+      "id": "friend02:beat:b:d-3:evidence_hit"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "제가 직접 치진 않았어요. 다만 제 쪽에서 흘러간 자료가 재료가 된 건 맞을 수 있습니다.",
+      "behaviorHint": "'직접'을 세게 강조한 뒤 인정 범위를 좁힌다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend02:beat:b:d-3:partial"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "나처럼 보이게 만든 건 박서후 쪽 편집과 흉내였어요. 하지만 그 재료를 준 게 저라서 완전히 남 탓도 못 합니다.",
+      "behaviorHint": "변명과 자책이 한 문장 안에서 섞인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "friend02:beat:b:d-3:blame"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "직접 작성자는 제가 아니었고 박서후 보조 계정이었습니다. 그래도 의심이 저로 굳게 만든 구조적 책임은 인정합니다.",
+      "behaviorHint": "고개를 숙였다가 마지막 문장에서 다시 들며 말한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend02:beat:b:d-3:confession"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "박서후가 배후라고 바로 말하긴 어렵습니다. 걔가 끼어든 건 알지만 그런 조작까지 했다고는…",
+      "behaviorHint": "말끝을 흐리며 이름을 끝까지 붙들지 못한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "friend02:beat:b:d-4:deny"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "운영진 파일이 어디서 어떻게 넘어갔는지 저도 끊겨 있었습니다. 이름을 찍어 말하면 더 커질까 봐 피했어요.",
+      "behaviorHint": "눈을 내리깔고 답을 길게 끈다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "friend02:beat:b:d-4:hedge"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "이 비교 리포트가 나오면 편집 가능성은 더 못 밀겠네요. 저도 그 음성이 이상하게 세다고 느끼긴 했습니다.",
+      "behaviorHint": "한숨처럼 숨을 내쉰 뒤 사실을 보탠다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-6",
+      "id": "friend02:beat:b:d-4:evidence_hit"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "박서후가 자료를 더 보겠다고 한 건 맞습니다. 그때 저는 단순 중재라고 믿으려 했어요.",
+      "behaviorHint": "자기합리화를 변명처럼 이어 붙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "friend02:beat:b:d-4:partial"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "처음 자료를 넘긴 사람이 저라, 박서후 이름까지 나오면 일이 전부 제 탓으로 몰릴까 겁났습니다.",
+      "behaviorHint": "목소리가 갈라지며 두려움을 의도보다 앞세운다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "id": "friend02:beat:b:d-4:blame"
+    },
+    {
+      "caseId": "friend-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "배후 편집과 확산에 박서후가 관여했습니다. 제가 그 이름을 늦게 숨기고 버틴 것도 제 잘못입니다.",
+      "behaviorHint": "이름을 또렷이 말한 뒤 바로 자기 책임을 덧붙인다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ],
+      "id": "friend02:beat:b:d-4:confession"
+    }
+  ]
+}

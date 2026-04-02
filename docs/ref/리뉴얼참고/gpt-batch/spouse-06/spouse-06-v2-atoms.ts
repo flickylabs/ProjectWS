@@ -1,0 +1,5431 @@
+export const spouse06V2Atoms = {
+  "caseId": "spouse-06",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그 스토리는 남편이나 회사를 겨냥한 폭로가 아니라, 사진 분위기에 맞춰 올린 연재 문장 한 조각이었어요."
+          ],
+          "privateKnowledge": [
+            "예약본에는 #연재문장 #fictiondraft 해시태그가 붙어 있었어요."
+          ],
+          "suppressions": [
+            "실제 컨퍼런스 소품을 그대로 썼다는 점은 바로 꺼내지 않으려 해요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-1:act:0",
+              "factText": "그 스토리는 남편이나 회사를 겨냥한 폭로가 아니라, 사진 분위기에 맞춰 올린 연재 문장 한 조각이었어요.",
+              "tags": [
+                "act",
+                "denial",
+                "quote"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "정우람",
+                  "fullName": "정우람",
+                  "judgeRef": "남편",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "컨퍼런스 직후 주말",
+                  "dateExact": "컨퍼런스 직후 주말",
+                  "period": "승진 면담 직전 주말",
+                  "neutral": "그 주말"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-1:denial:0",
+              "factText": "실제 컨퍼런스 소품을 그대로 썼다는 점은 바로 꺼내지 않으려 해요.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "실제 소품이 들어가서 누군가 그렇게 읽을 수는 있었겠지만, 적어도 저는 특정 회사 이야기를 쓴다고 생각하지 않았어요."
+          ],
+          "privateKnowledge": [
+            "최종 업로드에선 해시태그가 화면 아래로 밀려 거의 보이지 않았어요."
+          ],
+          "suppressions": [
+            "보는 사람 입장에선 남편을 바로 떠올릴 수 있다는 점을 축소하고 싶어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-1:act:1",
+              "factText": "실제 소품이 들어가서 누군가 그렇게 읽을 수는 있었겠지만, 적어도 저는 특정 회사 이야기를 쓴다고 생각하지 않았어요.",
+              "tags": [
+                "act",
+                "uncertainty",
+                "quote"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "정우람",
+                  "fullName": "정우람",
+                  "judgeRef": "남편",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "컨퍼런스 직후 주말",
+                  "dateExact": "컨퍼런스 직후 주말",
+                  "period": "승진 면담 직전 주말",
+                  "neutral": "그 주말"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-1:uncertainty:0",
+              "factText": "보는 사람 입장에선 남편을 바로 떠올릴 수 있다는 점을 축소하고 싶어요.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "셔츠랑 주차권, 배지를 같이 둔 구도 때문에 우람 씨가 떠오를 수 있다는 점은 뒤늦게 인정해요."
+          ],
+          "privateKnowledge": [
+            "전날 '배지랑 주차권 잠깐 사진에 써도 돼?'라고 물어본 문자도 남아 있어요."
+          ],
+          "suppressions": [
+            "승진 면담 직전 시기라는 걸 알면서도 그 소품 구도를 택한 건 말 아끼고 싶어요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-1:act:2",
+              "factText": "셔츠랑 주차권, 배지를 같이 둔 구도 때문에 우람 씨가 떠오를 수 있다는 점은 뒤늦게 인정해요.",
+              "tags": [
+                "act",
+                "admission",
+                "quote"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "정우람",
+                  "fullName": "정우람",
+                  "judgeRef": "남편",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "컨퍼런스 직후 주말",
+                  "dateExact": "컨퍼런스 직후 주말",
+                  "period": "승진 면담 직전 주말",
+                  "neutral": "그 주말"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-1:admission:0",
+              "factText": "전날 '배지랑 주차권 잠깐 사진에 써도 돼?'라고 물어본 문자도 남아 있어요.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "다만 크롭된 캡처만 따로 돌면 원래의 해시태그나 앞뒤 맥락이 사라져 의도가 더 날카롭게 보이기도 했어요."
+          ],
+          "privateKnowledge": [
+            "크롭 전 원본에선 행사 배지 글자가 더 선명하게 보였어요."
+          ],
+          "suppressions": [
+            "처음부터 현실 소품과 픽션 문장을 섞지 말았어야 했다는 핵심은 아직 완전히 말하고 싶지 않아요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-1:act:3",
+              "factText": "다만 크롭된 캡처만 따로 돌면 원래의 해시태그나 앞뒤 맥락이 사라져 의도가 더 날카롭게 보이기도 했어요.",
+              "tags": [
+                "act",
+                "responsibility",
+                "quote"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "정우람",
+                  "fullName": "정우람",
+                  "judgeRef": "남편",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "컨퍼런스 직후 주말",
+                  "dateExact": "컨퍼런스 직후 주말",
+                  "period": "승진 면담 직전 주말",
+                  "neutral": "그 주말"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-1:counter:0",
+              "factText": "크롭 전 원본에선 행사 배지 글자가 더 선명하게 보였어요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "사실 저는 남편을 공격하고 싶어서가 아니라, 미안하단 말로 덮이는 어떤 공기를 글로 비틀어 적고 싶었던 거예요."
+          ],
+          "privateKnowledge": [
+            "우람 씨가 승진 면담 직전이라 이런 해석에 특히 예민할 수 있다는 걸 알고 있었어요."
+          ],
+          "suppressions": [
+            "억울함과 창작 욕심이 같이 실렸다는 점은 부끄러워서 바로 인정하기 어려워요."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-1:act:4",
+              "factText": "사실 저는 남편을 공격하고 싶어서가 아니라, 미안하단 말로 덮이는 어떤 공기를 글로 비틀어 적고 싶었던 거예요.",
+              "tags": [
+                "act",
+                "emotion",
+                "quote"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "정우람",
+                  "fullName": "정우람",
+                  "judgeRef": "남편",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "컨퍼런스 직후 주말",
+                  "dateExact": "컨퍼런스 직후 주말",
+                  "period": "승진 면담 직전 주말",
+                  "neutral": "그 주말"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-1:emotion:0",
+              "factText": "우람 씨가 승진 면담 직전이라 이런 해석에 특히 예민할 수 있다는 걸 알고 있었어요.",
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "직접 폭로하려던 건 아니었지만, 남편 물건을 소품으로 쓰고 해시태그를 거의 안 보이게 둔 건 제 부주의였어요."
+          ],
+          "privateKnowledge": [
+            "현실 소품과 픽션 문장을 분리했어야 했고, 그 경계를 제가 먼저 지켰어야 했어요."
+          ],
+          "suppressions": [
+            "작년의 경계 약속을 느슨하게 넘긴 책임이 제게 있다는 점까지는 인정합니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-1:act:5",
+              "factText": "직접 폭로하려던 건 아니었지만, 남편 물건을 소품으로 쓰고 해시태그를 거의 안 보이게 둔 건 제 부주의였어요.",
+              "tags": [
+                "act",
+                "admission",
+                "quote"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "정우람",
+                  "fullName": "정우람",
+                  "judgeRef": "남편",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "컨퍼런스 직후 주말",
+                  "dateExact": "컨퍼런스 직후 주말",
+                  "period": "승진 면담 직전 주말",
+                  "neutral": "그 주말"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-1:responsibility:0",
+              "factText": "현실 소품과 픽션 문장을 분리했어야 했고, 그 경계를 제가 먼저 지켰어야 했어요.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리",
+                  "neutral": "그 게시물"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "친한 친구 목록은 책모임이랑 가까운 지인 위주라고 생각했고, 회사 사람이 남아 있을 거라고는 정말 못 봤어요."
+          ],
+          "privateKnowledge": [
+            "김태훈 씨 계정은 작년 가족행사 직후에 추가된 뒤 그대로 남아 있었어요."
+          ],
+          "suppressions": [
+            "목록을 오래 정리하지 않았다는 점은 숨기고 싶어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-2:privacy:0",
+              "factText": "친한 친구 목록은 책모임이랑 가까운 지인 위주라고 생각했고, 회사 사람이 남아 있을 거라고는 정말 못 봤어요.",
+              "tags": [
+                "privacy",
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그와 목록 export",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-2:denial:0",
+              "factText": "목록을 오래 정리하지 않았다는 점은 숨기고 싶어요.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "몇 명 안 보는 폐쇄 범위라고 여긴 건 맞지만, 오래된 추가 인원을 제가 세세히 다시 확인하진 못했어요."
+          ],
+          "privateKnowledge": [
+            "친한 친구 목록을 한 번도 전수 정리하지 않은 건 사실이에요."
+          ],
+          "suppressions": [
+            "업무 인맥이 섞여 있을 수 있다는 막연한 불안은 이미 있었어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-2:privacy:1",
+              "factText": "몇 명 안 보는 폐쇄 범위라고 여긴 건 맞지만, 오래된 추가 인원을 제가 세세히 다시 확인하진 못했어요.",
+              "tags": [
+                "privacy",
+                "uncertainty",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그와 목록 export",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-2:uncertainty:0",
+              "factText": "업무 인맥이 섞여 있을 수 있다는 막연한 불안은 이미 있었어요.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "김태훈 씨 계정이 작년 가족행사 뒤에 남아 있었다는 로그를 보니, 목록 관리가 느슨했던 건 인정해요."
+          ],
+          "privateKnowledge": [
+            "조회자 로그에 김태훈 씨가 실제로 해당 스토리를 본 기록이 남아 있어요."
+          ],
+          "suppressions": [
+            "사적 공간이라는 믿음이 사실상 근거 없는 확신이었다는 점은 아직 방어적으로 굴고 싶어요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-2:privacy:2",
+              "factText": "김태훈 씨 계정이 작년 가족행사 뒤에 남아 있었다는 로그를 보니, 목록 관리가 느슨했던 건 인정해요.",
+              "tags": [
+                "privacy",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그와 목록 export",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-2:admission:0",
+              "factText": "조회자 로그에 김태훈 씨가 실제로 해당 스토리를 본 기록이 남아 있어요.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 그 목록은 북클럽 운영과 개인 지인을 섞어 오래 써 온 거라, 한 번에 업무 인맥까지 걸러지지 않았어요."
+          ],
+          "privateKnowledge": [
+            "우람 씨 회사 인연이 섞여 있다는 사실을 둘 다 알고도 정리 얘길 미뤘어요."
+          ],
+          "suppressions": [
+            "감시처럼 보일까 봐 경계 설정 대화를 피한 제 선택은 작게 말하고 싶어요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-2:privacy:3",
+              "factText": "그래도 그 목록은 북클럽 운영과 개인 지인을 섞어 오래 써 온 거라, 한 번에 업무 인맥까지 걸러지지 않았어요.",
+              "tags": [
+                "privacy",
+                "responsibility",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그와 목록 export",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-2:counter:0",
+              "factText": "우람 씨 회사 인연이 섞여 있다는 사실을 둘 다 알고도 정리 얘길 미뤘어요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "사실 사생활을 지킨다고 믿고 있었는데, 그 믿음이 게을렀다는 걸 들키는 게 제일 부끄러워요."
+          ],
+          "privateKnowledge": [
+            "사생활 통제를 논의하면 검열받는 느낌이 날까 봐 일부러 더 손을 안 댔어요."
+          ],
+          "suppressions": [
+            "작년에도 비슷한 경계 얘기가 있었는데 재점검하지 않은 건 제 몫이에요."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-2:privacy:4",
+              "factText": "사실 사생활을 지킨다고 믿고 있었는데, 그 믿음이 게을렀다는 걸 들키는 게 제일 부끄러워요.",
+              "tags": [
+                "privacy",
+                "shame",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그와 목록 export",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-2:shame:0",
+              "factText": "사생활 통제를 논의하면 검열받는 느낌이 날까 봐 일부러 더 손을 안 댔어요.",
+              "tags": [
+                "shame",
+                "relationship"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "결국 친한 친구 범위를 제가 제대로 정리하지 않았고, 그 부주의가 첫 문을 연 건 맞아요."
+          ],
+          "privateKnowledge": [
+            "분기마다 목록을 정리했어야 했고, 배우자 직장 인맥은 기본 제외했어야 했어요."
+          ],
+          "suppressions": [
+            "주된 책임이 제 쪽에 더 크다는 점을 받아들입니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-2:privacy:5",
+              "factText": "결국 친한 친구 범위를 제가 제대로 정리하지 않았고, 그 부주의가 첫 문을 연 건 맞아요.",
+              "tags": [
+                "privacy",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그와 목록 export",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-2:responsibility:0",
+              "factText": "분기마다 목록을 정리했어야 했고, 배우자 직장 인맥은 기본 제외했어야 했어요.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 공개 범위"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 가족행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "저한텐 사적인 스토리 캡처가 바로 회사 쪽으로 넘어간 것 자체가 악의처럼 느껴졌어요."
+          ],
+          "privateKnowledge": [
+            "김태훈 씨가 저장한 캡처가 팀 선임 개인 대화창으로 전달됐어요."
+          ],
+          "suppressions": [
+            "첫 메시지 문장이 질문형이었다는 점은 바로 말하지 않으려 해요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-3:motive:0",
+              "factText": "저한텐 사적인 스토리 캡처가 바로 회사 쪽으로 넘어간 것 자체가 악의처럼 느껴졌어요.",
+              "tags": [
+                "motive",
+                "denial",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전 시점",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-3:denial:0",
+              "factText": "첫 메시지 문장이 질문형이었다는 점은 바로 말하지 않으려 해요.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "처음 메시지 문장이 질문형이었다고 해도, 제 개인 게시물을 직장 선임에게 보낸 판단은 너무 쉽게 넘긴 거 아닌가 싶어요."
+          ],
+          "privateKnowledge": [
+            "첫 전송 시각은 팀채널 공개보다 9분 빨랐어요."
+          ],
+          "suppressions": [
+            "노골적 폭로 문장은 아니었다는 점을 일부러 세게 인정하진 않으려 해요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-3:motive:1",
+              "factText": "처음 메시지 문장이 질문형이었다고 해도, 제 개인 게시물을 직장 선임에게 보낸 판단은 너무 쉽게 넘긴 거 아닌가 싶어요.",
+              "tags": [
+                "motive",
+                "uncertainty",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전 시점",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-3:uncertainty:0",
+              "factText": "노골적 폭로 문장은 아니었다는 점을 일부러 세게 인정하진 않으려 해요.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "기록을 보니 김태훈 씨 첫 행동이 공개 폭로라기보단 확인 질문에 가까웠다는 건 인정해요."
+          ],
+          "privateKnowledge": [
+            "메시지 원문은 '혹시 우람 팀장 컨퍼런스 건 얘기예요?'라는 질문형이에요."
+          ],
+          "suppressions": [
+            "그래도 사적 자료를 회사 판단에 연결했다는 불쾌감은 여전히 크게 느껴요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-3:motive:2",
+              "factText": "기록을 보니 김태훈 씨 첫 행동이 공개 폭로라기보단 확인 질문에 가까웠다는 건 인정해요.",
+              "tags": [
+                "motive",
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전 시점",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-3:admission:0",
+              "factText": "메시지 원문은 '혹시 우람 팀장 컨퍼런스 건 얘기예요?'라는 질문형이에요.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "다만 확인을 하려 했다면 최소한 우람 씨나 저희 쪽에 먼저 묻는 방식이 더 책임 있는 선택이었겠죠."
+          ],
+          "privateKnowledge": [
+            "질문형이어도 사적 캡처를 업무 맥락에 끌어온 선택 자체는 남아요."
+          ],
+          "suppressions": [
+            "악의 단정은 약해졌지만 감정적으로는 아직 가해자로 두고 싶은 마음이 있어요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-3:motive:3",
+              "factText": "다만 확인을 하려 했다면 최소한 우람 씨나 저희 쪽에 먼저 묻는 방식이 더 책임 있는 선택이었겠죠.",
+              "tags": [
+                "motive",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전 시점",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-3:counter:0",
+              "factText": "질문형이어도 사적 캡처를 업무 맥락에 끌어온 선택 자체는 남아요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제 사적인 글이 업무 대화창에 붙는 순간, 누가 먼저였든 저는 모욕감부터 들었어요."
+          ],
+          "privateKnowledge": [
+            "김태훈 씨가 남편 회사 사람이라는 점이 제 수치심을 더 키웠어요."
+          ],
+          "suppressions": [
+            "오해의 출발이 제 게시물 맥락 부족이기도 했다는 건 바로 앞세우기 어렵습니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-3:motive:4",
+              "factText": "제 사적인 글이 업무 대화창에 붙는 순간, 누가 먼저였든 저는 모욕감부터 들었어요.",
+              "tags": [
+                "motive",
+                "shame",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전 시점",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-3:shame:0",
+              "factText": "김태훈 씨가 남편 회사 사람이라는 점이 제 수치심을 더 키웠어요.",
+              "tags": [
+                "shame",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "지금 보면 김태훈 씨가 처음부터 악의를 품고 퍼뜨린 건 아니고, 오해한 채 잘못된 확인을 했다고 보는 게 맞아요."
+          ],
+          "privateKnowledge": [
+            "오해의 단초는 맥락이 빠진 제 게시물과 혼재된 친한 친구 범위에도 있었어요."
+          ],
+          "suppressions": [
+            "그래도 사적 캡처를 다룬 방식이 무책임했다는 평가는 유지합니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-3:motive:5",
+              "factText": "지금 보면 김태훈 씨가 처음부터 악의를 품고 퍼뜨린 건 아니고, 오해한 채 잘못된 확인을 했다고 보는 게 맞아요.",
+              "tags": [
+                "motive",
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전 시점",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-3:responsibility:0",
+              "factText": "오해의 단초는 맥락이 빠진 제 게시물과 혼재된 친한 친구 범위에도 있었어요.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "남편 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 개인 메시지",
+                  "neutral": "그 대화창"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "우람 씨는 저한테 한 번만 물어봐도 될 일을 팀채널이랑 HR부터 건드려 버렸어요."
+          ],
+          "privateKnowledge": [
+            "팀채널 해명문은 제게 첫 확인 문자를 보내기 6분 전에 올라갔어요."
+          ],
+          "suppressions": [
+            "그가 승진 면담 직전이었다는 압박감은 일단 제 분노 뒤로 밀어두고 싶어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-4:institution:0",
+              "factText": "우람 씨는 저한테 한 번만 물어봐도 될 일을 팀채널이랑 HR부터 건드려 버렸어요.",
+              "tags": [
+                "institution",
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "audience": {
+                  "exact": "팀 협업툴 공개 범위",
+                  "neutral": "회사 안 범위"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-4:denial:0",
+              "factText": "그가 승진 면담 직전이었다는 압박감은 일단 제 분노 뒤로 밀어두고 싶어요.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "그가 승진 면담 직전이라 예민했던 건 알지만, 확인보다 공개 해명을 먼저 택한 건 성급했어요."
+          ],
+          "privateKnowledge": [
+            "HR 문의도 팀채널 게시와 거의 같은 시각에 접수됐어요."
+          ],
+          "suppressions": [
+            "그의 불안 자체는 이해하고 있다는 점은 덜 드러내고 싶어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-4:institution:1",
+              "factText": "그가 승진 면담 직전이라 예민했던 건 알지만, 확인보다 공개 해명을 먼저 택한 건 성급했어요.",
+              "tags": [
+                "institution",
+                "uncertainty",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "audience": {
+                  "exact": "팀 협업툴 공개 범위",
+                  "neutral": "회사 안 범위"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-4:uncertainty:0",
+              "factText": "그의 불안 자체는 이해하고 있다는 점은 덜 드러내고 싶어요.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "해명문 시각을 보니 저에게 첫 문자를 보내기 6분 전에 이미 회사 안으로 사건을 넓혀 놨더라고요."
+          ],
+          "privateKnowledge": [
+            "회사 기록상 그 문서가 오히려 더 많은 사람에게 스크린샷 존재를 알렸어요."
+          ],
+          "suppressions": [
+            "제 게시물이 입구가 됐다는 점은 이 쟁점에선 뒤로 미루고 싶어요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-4:institution:2",
+              "factText": "해명문 시각을 보니 저에게 첫 문자를 보내기 6분 전에 이미 회사 안으로 사건을 넓혀 놨더라고요.",
+              "tags": [
+                "institution",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "audience": {
+                  "exact": "팀 협업툴 공개 범위",
+                  "neutral": "회사 안 범위"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-4:admission:0",
+              "factText": "회사 기록상 그 문서가 오히려 더 많은 사람에게 스크린샷 존재를 알렸어요.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "게다가 '사적 게시물 오해'라고 크게 설명하는 방식이 오히려 더 많은 사람에게 스크린샷 존재를 알렸어요."
+          ],
+          "privateKnowledge": [
+            "우람 씨는 사실 확인보다 조직 리스크 차단 문법으로 먼저 대응했어요."
+          ],
+          "suppressions": [
+            "그가 팀장 역할 압박에 사로잡혀 있었다는 맥락은 아직 공감보다 비판 쪽으로만 보고 싶어요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-4:institution:3",
+              "factText": "게다가 '사적 게시물 오해'라고 크게 설명하는 방식이 오히려 더 많은 사람에게 스크린샷 존재를 알렸어요.",
+              "tags": [
+                "institution",
+                "responsibility",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "audience": {
+                  "exact": "팀 협업툴 공개 범위",
+                  "neutral": "회사 안 범위"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-4:counter:0",
+              "factText": "우람 씨는 사실 확인보다 조직 리스크 차단 문법으로 먼저 대응했어요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "저는 남편이 저를 믿지 못한 것도 아팠지만, 제 글을 회사 리스크 문서처럼 다룬 게 더 서늘했어요."
+          ],
+          "privateKnowledge": [
+            "배우자보다 조직을 먼저 향한 선택이 관계 신뢰를 크게 깎았어요."
+          ],
+          "suppressions": [
+            "그가 망신을 두려워했다는 사실을 알면서도 저는 그 감정보다 상처를 먼저 내세웁니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-4:institution:4",
+              "factText": "저는 남편이 저를 믿지 못한 것도 아팠지만, 제 글을 회사 리스크 문서처럼 다룬 게 더 서늘했어요.",
+              "tags": [
+                "institution",
+                "emotion",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "audience": {
+                  "exact": "팀 협업툴 공개 범위",
+                  "neutral": "회사 안 범위"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-4:emotion:0",
+              "factText": "배우자보다 조직을 먼저 향한 선택이 관계 신뢰를 크게 깎았어요.",
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "우람 씨가 불안해서 급히 움직인 건 이해해도, 저보다 조직을 먼저 향한 대응은 분명 과했고 책임도 커요."
+          ],
+          "privateKnowledge": [
+            "이 쟁점에서 핵심은 사실 확인 없는 선제 해명이 소문 범위를 넓혔다는 점이에요."
+          ],
+          "suppressions": [
+            "그의 불안을 이해하더라도 확대 책임이 더 크다는 판단은 유지합니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-4:institution:5",
+              "factText": "우람 씨가 불안해서 급히 움직인 건 이해해도, 저보다 조직을 먼저 향한 대응은 분명 과했고 책임도 커요.",
+              "tags": [
+                "institution",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "audience": {
+                  "exact": "팀 협업툴 공개 범위",
+                  "neutral": "회사 안 범위"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-4:responsibility:0",
+              "factText": "이 쟁점에서 핵심은 사실 확인 없는 선제 해명이 소문 범위를 넓혔다는 점이에요.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저는 이 일이 명예훼손처럼 커진 핵심 이유가 우람 씨의 확대 해명 쪽에 더 있다고 봤어요."
+          ],
+          "privateKnowledge": [
+            "제 게시물은 입구였지만 회사 안 확산은 해명문 이후 급격히 커졌어요."
+          ],
+          "suppressions": [
+            "제 문장과 소품이 첫 오해를 만들었다는 점은 작게 두고 싶어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-5:context:0",
+              "factText": "저는 이 일이 명예훼손처럼 커진 핵심 이유가 우람 씨의 확대 해명 쪽에 더 있다고 봤어요.",
+              "tags": [
+                "context",
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                },
+                "emotion": {
+                  "exact": "창작 검열 불안과 평판 손실 공포",
+                  "neutral": "서로의 두려움"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-5:denial:0",
+              "factText": "제 문장과 소품이 첫 오해를 만들었다는 점은 작게 두고 싶어요.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "다만 제 문장과 소품이 오해의 입구를 만든 건 부인하지 못하겠어요."
+          ],
+          "privateKnowledge": [
+            "친한 친구 목록 관리 실패가 그 입구를 실제 전파로 바꿨어요."
+          ],
+          "suppressions": [
+            "처음엔 이 사건 전체를 거의 우람 씨 책임으로 보고 싶었어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-5:context:1",
+              "factText": "다만 제 문장과 소품이 오해의 입구를 만든 건 부인하지 못하겠어요.",
+              "tags": [
+                "context",
+                "uncertainty",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                },
+                "emotion": {
+                  "exact": "창작 검열 불안과 평판 손실 공포",
+                  "neutral": "서로의 두려움"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-5:uncertainty:0",
+              "factText": "처음엔 이 사건 전체를 거의 우람 씨 책임으로 보고 싶었어요.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "친한 친구 범위 관리 실패와 실제 소품 사용이 첫 오해를 낳았다는 점은 인정해요."
+          ],
+          "privateKnowledge": [
+            "e-1, e-2, e-3을 함께 보면 게시물의 모호함과 공개 범위 혼선이 동시에 드러나요."
+          ],
+          "suppressions": [
+            "우람 씨의 대응이 없었어도 상처는 없었을 거라는 식의 단정은 접고 싶지 않았어요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-5:context:2",
+              "factText": "친한 친구 범위 관리 실패와 실제 소품 사용이 첫 오해를 낳았다는 점은 인정해요.",
+              "tags": [
+                "context",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                },
+                "emotion": {
+                  "exact": "창작 검열 불안과 평판 손실 공포",
+                  "neutral": "서로의 두려움"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-5:admission:0",
+              "factText": "e-1, e-2, e-3을 함께 보면 게시물의 모호함과 공개 범위 혼선이 동시에 드러나요.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "그 뒤엔 김태훈 씨의 오해, 우람 씨의 선제 해명, 회사 분위기가 차례로 덧붙어 사건이 커졌다고 봐요."
+          ],
+          "privateKnowledge": [
+            "오해는 한 사람의 악의보다 연결된 선택들의 누적으로 커졌어요."
+          ],
+          "suppressions": [
+            "저 역시 내 게시 습관이 연쇄의 시작점이었다는 책임은 아직 조심스럽게 말해요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-5:context:3",
+              "factText": "그 뒤엔 김태훈 씨의 오해, 우람 씨의 선제 해명, 회사 분위기가 차례로 덧붙어 사건이 커졌다고 봐요.",
+              "tags": [
+                "context",
+                "responsibility",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                },
+                "emotion": {
+                  "exact": "창작 검열 불안과 평판 손실 공포",
+                  "neutral": "서로의 두려움"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-5:counter:0",
+              "factText": "오해는 한 사람의 악의보다 연결된 선택들의 누적으로 커졌어요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "누가 한 번에 망치려 한 사건이라기보다, 각자 다른 두려움으로 서로를 더 나쁜 쪽으로 읽은 거였어요."
+          ],
+          "privateKnowledge": [
+            "저는 창작이 검열당할까 두려웠고, 우람 씨는 평판 손실을 두려워했어요."
+          ],
+          "suppressions": [
+            "그 두려움이 만나 사건을 키웠다는 사실을 인정하면 제 억울함도 함께 깎인다고 느껴요."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-5:context:4",
+              "factText": "누가 한 번에 망치려 한 사건이라기보다, 각자 다른 두려움으로 서로를 더 나쁜 쪽으로 읽은 거였어요.",
+              "tags": [
+                "context",
+                "fear",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                },
+                "emotion": {
+                  "exact": "창작 검열 불안과 평판 손실 공포",
+                  "neutral": "서로의 두려움"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-5:fear:0",
+              "factText": "저는 창작이 검열당할까 두려웠고, 우람 씨는 평판 손실을 두려워했어요.",
+              "tags": [
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "결국 이번 갈등은 제 게시물 경계 실패와 남편의 과잉 대응이 이어진 공유 오해의 연쇄였어요."
+          ],
+          "privateKnowledge": [
+            "악의적 저격보다 모호한 표현, 혼재된 공개 범위, 오해성 확인, 선제 해명이 순서대로 겹친 사건이에요."
+          ],
+          "suppressions": [
+            "책임을 반씩만 계산하려는 게 아니라, 각 단계의 과실을 따로 인정해야 한다고 봅니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:a:tell:metaphor_shield",
+            "spouse06:a:tell:audience_minimization",
+            "spouse06:a:tell:tag_revision"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:a:d-5:context:5",
+              "factText": "결국 이번 갈등은 제 게시물 경계 실패와 남편의 과잉 대응이 이어진 공유 오해의 연쇄였어요.",
+              "tags": [
+                "context",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                },
+                "emotion": {
+                  "exact": "창작 검열 불안과 평판 손실 공포",
+                  "neutral": "서로의 두려움"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:a:d-5:responsibility:0",
+              "factText": "악의적 저격보다 모호한 표현, 혼재된 공개 범위, 오해성 확인, 선제 해명이 순서대로 겹친 사건이에요.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→실제 소품→오해 메시지→팀채널 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그 시기"
+                },
+                "audience": {
+                  "exact": "친한 친구 목록과 회사 채널",
+                  "neutral": "그 공개 범위들"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "이름이 없어도 그 셔츠, 주차권, 배지 조합이면 저랑 회사 얘기라고 읽힐 수밖에 없었어요."
+          ],
+          "privateKnowledge": [
+            "승진 면담 직전이라 저는 외근비나 숙박비 관련 암시에 특히 예민했어요."
+          ],
+          "suppressions": [
+            "연재 문장 초안이었다는 가능성은 처음엔 거의 보지 않았습니다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-1:act:0",
+              "factText": "이름이 없어도 그 셔츠, 주차권, 배지 조합이면 저랑 회사 얘기라고 읽힐 수밖에 없었어요.",
+              "tags": [
+                "act",
+                "denial",
+                "identity"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "전서희",
+                  "fullName": "전서희",
+                  "judgeRef": "배우자",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-1:denial:0",
+              "factText": "연재 문장 초안이었다는 가능성은 처음엔 거의 보지 않았습니다.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "직접 지목 문구는 없었다 해도, 승진 면담 직전의 제 상황을 아는 사람이 올린 게시물로는 너무 정확했어요."
+          ],
+          "privateKnowledge": [
+            "캡처에선 친한 친구 표기와 앞뒤 스토리가 잘려 있었어요."
+          ],
+          "suppressions": [
+            "제가 의도를 너무 빨리 확정했다는 점은 뒤로 미루고 싶어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-1:act:1",
+              "factText": "직접 지목 문구는 없었다 해도, 승진 면담 직전의 제 상황을 아는 사람이 올린 게시물로는 너무 정확했어요.",
+              "tags": [
+                "act",
+                "uncertainty",
+                "identity"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "전서희",
+                  "fullName": "전서희",
+                  "judgeRef": "배우자",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-1:uncertainty:0",
+              "factText": "제가 의도를 너무 빨리 확정했다는 점은 뒤로 미루고 싶어요.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "예약본 자료를 보니 처음 의도가 연재 문장이었다는 건 알겠지만, 최종 화면에선 그 맥락이 거의 사라졌더군요."
+          ],
+          "privateKnowledge": [
+            "해시태그가 아래로 밀려 실제로는 보이지 않다시피 했어요."
+          ],
+          "suppressions": [
+            "직접 폭로라고 단정한 표현은 조금 누그러뜨리고 싶지만 아직 자존심이 걸려 있어요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-1:act:2",
+              "factText": "예약본 자료를 보니 처음 의도가 연재 문장이었다는 건 알겠지만, 최종 화면에선 그 맥락이 거의 사라졌더군요.",
+              "tags": [
+                "act",
+                "admission",
+                "identity"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "전서희",
+                  "fullName": "전서희",
+                  "judgeRef": "배우자",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-1:admission:0",
+              "factText": "해시태그가 아래로 밀려 실제로는 보이지 않다시피 했어요.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "저는 그래서 의도 전체를 폭로라고 단정한 건 지나쳤더라도, 적어도 저를 연상시키게 만든 선택은 서희 씨 쪽 책임이라고 봐요."
+          ],
+          "privateKnowledge": [
+            "실제 행사 소품이 노출된 이상 오해 가능성은 구조적으로 컸어요."
+          ],
+          "suppressions": [
+            "내가 느낀 수치심이 사실판단을 앞질렀다는 점은 아직 바로 인정하기 어렵습니다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-1:act:3",
+              "factText": "저는 그래서 의도 전체를 폭로라고 단정한 건 지나쳤더라도, 적어도 저를 연상시키게 만든 선택은 서희 씨 쪽 책임이라고 봐요.",
+              "tags": [
+                "act",
+                "responsibility",
+                "identity"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "전서희",
+                  "fullName": "전서희",
+                  "judgeRef": "배우자",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-1:counter:0",
+              "factText": "실제 행사 소품이 노출된 이상 오해 가능성은 구조적으로 컸어요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "그 화면을 본 순간 저는 배우자가 내 약한 지점을 공적인 평판과 붙여 버렸다는 수치심부터 들었어요."
+          ],
+          "privateKnowledge": [
+            "저는 내용보다 먼저 '사람들이 나를 어떻게 읽을까'를 계산했습니다."
+          ],
+          "suppressions": [
+            "의도 단정이 과했다는 사실을 말하면 내 상처까지 약해질까 두려워요."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-1:act:4",
+              "factText": "그 화면을 본 순간 저는 배우자가 내 약한 지점을 공적인 평판과 붙여 버렸다는 수치심부터 들었어요.",
+              "tags": [
+                "act",
+                "shame",
+                "identity"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "전서희",
+                  "fullName": "전서희",
+                  "judgeRef": "배우자",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-1:shame:0",
+              "factText": "저는 내용보다 먼저 '사람들이 나를 어떻게 읽을까'를 계산했습니다.",
+              "tags": [
+                "shame",
+                "relationship"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "지금은 직접 폭로라고 단정한 건 과했다고 인정해요. 다만 실제 소품이 노출돼 제가 그렇게 읽은 이유도 분명 있었어요."
+          ],
+          "privateKnowledge": [
+            "의도와 파급을 구분하지 못한 채 상처를 바로 결론으로 바꿨습니다."
+          ],
+          "suppressions": [
+            "상처의 이유는 남지만, 판단의 강도는 제가 조절했어야 했어요."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-1:act:5",
+              "factText": "지금은 직접 폭로라고 단정한 건 과했다고 인정해요. 다만 실제 소품이 노출돼 제가 그렇게 읽은 이유도 분명 있었어요.",
+              "tags": [
+                "act",
+                "admission",
+                "identity"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                },
+                "person": {
+                  "exact": "전서희",
+                  "fullName": "전서희",
+                  "judgeRef": "배우자",
+                  "neutral": "그 사람"
+                },
+                "time": {
+                  "exact": "승진 면담 직전 주말",
+                  "dateExact": "승진 면담 직전 주말",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-1:responsibility:0",
+              "factText": "의도와 파급을 구분하지 못한 채 상처를 바로 결론으로 바꿨습니다.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "친한 친구 스토리 캡처",
+                  "neutral": "그 화면"
+                },
+                "props": {
+                  "exact": "구겨진 셔츠·호텔 주차권·행사 배지",
+                  "neutral": "그 소품들"
+                },
+                "quote": {
+                  "exact": "거짓말은 늘 미안하단 메시지로 온다",
+                  "neutral": "그 문장"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "친한 친구 목록에서 회사 인맥을 안 걷어낸 건 명백히 관리 실패였어요."
+          ],
+          "privateKnowledge": [
+            "김태훈은 작년 가족행사 직후 목록에 들어가 그대로 남아 있었어요."
+          ],
+          "suppressions": [
+            "저도 그 인연 몇 명이 남아 있다는 걸 어느 정도 알고 있었다는 점은 빼고 싶어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-2:privacy:0",
+              "factText": "친한 친구 목록에서 회사 인맥을 안 걷어낸 건 명백히 관리 실패였어요.",
+              "tags": [
+                "privacy",
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-2:denial:0",
+              "factText": "저도 그 인연 몇 명이 남아 있다는 걸 어느 정도 알고 있었다는 점은 빼고 싶어요.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "서희가 일부러 회사 사람에게 보여 준 건 아닐 수 있어도, 적어도 폐쇄 범위를 믿기 전에 목록 점검은 했어야 했죠."
+          ],
+          "privateKnowledge": [
+            "플랫폼 로그로 실제 조회까지 확인됐어요."
+          ],
+          "suppressions": [
+            "혼재된 목록 문제를 부부가 같이 미뤘다는 맥락은 강조하고 싶지 않습니다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-2:privacy:1",
+              "factText": "서희가 일부러 회사 사람에게 보여 준 건 아닐 수 있어도, 적어도 폐쇄 범위를 믿기 전에 목록 점검은 했어야 했죠.",
+              "tags": [
+                "privacy",
+                "uncertainty",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-2:uncertainty:0",
+              "factText": "혼재된 목록 문제를 부부가 같이 미뤘다는 맥락은 강조하고 싶지 않습니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "로그를 보니 김태훈이 예전 가족행사 뒤에 계속 남아 있었고, 그건 단순 실수로 넘길 수준이 아니었어요."
+          ],
+          "privateKnowledge": [
+            "친한 친구 범위가 북클럽용이라고 믿은 것 자체가 관리 부주의였어요."
+          ],
+          "suppressions": [
+            "제가 먼저 정리하자고 강하게 말하지 않았다는 점은 방어적으로 감춥니다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-2:privacy:2",
+              "factText": "로그를 보니 김태훈이 예전 가족행사 뒤에 계속 남아 있었고, 그건 단순 실수로 넘길 수준이 아니었어요.",
+              "tags": [
+                "privacy",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-2:admission:0",
+              "factText": "친한 친구 범위가 북클럽용이라고 믿은 것 자체가 관리 부주의였어요.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "다만 솔직히 말하면 저도 그 인연 몇 명이 남아 있다는 걸 알면서 정리 얘길 미뤘어요."
+          ],
+          "privateKnowledge": [
+            "통제나 감시처럼 보일까 봐 둘 다 대화를 피했어요."
+          ],
+          "suppressions": [
+            "그렇다고 책임 비율이 같아진다고 말하고 싶진 않습니다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-2:privacy:3",
+              "factText": "다만 솔직히 말하면 저도 그 인연 몇 명이 남아 있다는 걸 알면서 정리 얘길 미뤘어요.",
+              "tags": [
+                "privacy",
+                "responsibility",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-2:counter:0",
+              "factText": "통제나 감시처럼 보일까 봐 둘 다 대화를 피했어요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "작년에도 비슷한 경계 문제로 다퉜는데 또 같은 구멍이 열린 걸 보니, 저는 무시당한 느낌이 컸어요."
+          ],
+          "privateKnowledge": [
+            "배우자가 내 직장 경계 문제를 가볍게 본다고 느껴졌어요."
+          ],
+          "suppressions": [
+            "감정이 커질수록 사실 책임을 더 세게 몰고 갔다는 점은 숨기고 싶습니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-2:privacy:4",
+              "factText": "작년에도 비슷한 경계 문제로 다퉜는데 또 같은 구멍이 열린 걸 보니, 저는 무시당한 느낌이 컸어요.",
+              "tags": [
+                "privacy",
+                "emotion",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-2:emotion:0",
+              "factText": "배우자가 내 직장 경계 문제를 가볍게 본다고 느껴졌어요.",
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "주된 관리 책임은 서희에게 있었지만, 저도 목록 혼재를 알고도 방치한 몫이 있다는 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "이 쟁점은 서희의 부주의가 더 크지만, 제 방치도 보조 원인이었어요."
+          ],
+          "suppressions": [
+            "경계 문제를 합의된 규칙으로 만들지 못한 부부 공통 책임도 남습니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-2:privacy:5",
+              "factText": "주된 관리 책임은 서희에게 있었지만, 저도 목록 혼재를 알고도 방치한 몫이 있다는 건 인정합니다.",
+              "tags": [
+                "privacy",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                },
+                "platform": {
+                  "exact": "조회자 로그",
+                  "neutral": "그 로그"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-2:responsibility:0",
+              "factText": "이 쟁점은 서희의 부주의가 더 크지만, 제 방치도 보조 원인이었어요.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "audience": {
+                  "exact": "친한 친구 목록",
+                  "neutral": "그 목록"
+                },
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 동료"
+                },
+                "time": {
+                  "exact": "작년 가족행사 직후",
+                  "dateExact": "작년 가족행사 직후",
+                  "period": "예전 행사 뒤",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "김태훈은 그냥 걱정한 정도가 아니라, 사적인 캡처를 회사 선임에게 보내며 일을 키웠어요."
+          ],
+          "privateKnowledge": [
+            "그 캡처 전송이 제가 느낀 모욕의 직접 계기였어요."
+          ],
+          "suppressions": [
+            "첫 문장이 질문형이라는 사실은 일부러 크게 다루지 않으려 합니다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-3:motive:0",
+              "factText": "김태훈은 그냥 걱정한 정도가 아니라, 사적인 캡처를 회사 선임에게 보내며 일을 키웠어요.",
+              "tags": [
+                "motive",
+                "denial",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-3:denial:0",
+              "factText": "첫 문장이 질문형이라는 사실은 일부러 크게 다루지 않으려 합니다.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "첫 문장이 질문형이었다고 해도, 제 사생활을 직장 대화로 가져간 순간 이미 악의에 가까운 선택이었다고 봤어요."
+          ],
+          "privateKnowledge": [
+            "전송 시각은 팀채널 해명 전 9분이었어요."
+          ],
+          "suppressions": [
+            "공개 폭로보다 확인 시도였다는 해석은 인정 폭을 좁히고 싶습니다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-3:motive:1",
+              "factText": "첫 문장이 질문형이었다고 해도, 제 사생활을 직장 대화로 가져간 순간 이미 악의에 가까운 선택이었다고 봤어요.",
+              "tags": [
+                "motive",
+                "uncertainty",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-3:uncertainty:0",
+              "factText": "공개 폭로보다 확인 시도였다는 해석은 인정 폭을 좁히고 싶습니다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "대화 원본을 보면 처음부터 폭로하려 들었다기보단 정말 확인하려는 뉘앙스가 있었던 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "메시지 문장은 '혹시 우람 팀장 컨퍼런스 건 얘기예요?'라는 질문형입니다."
+          ],
+          "suppressions": [
+            "제가 그를 악의적 인물로 단순화해 말한 건 체면 방어 때문이었다는 점은 바로 말하지 않습니다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-3:motive:2",
+              "factText": "대화 원본을 보면 처음부터 폭로하려 들었다기보단 정말 확인하려는 뉘앙스가 있었던 건 맞습니다.",
+              "tags": [
+                "motive",
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-3:admission:0",
+              "factText": "메시지 문장은 '혹시 우람 팀장 컨퍼런스 건 얘기예요?'라는 질문형입니다.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 그 확인을 굳이 팀 선임에게 붙여서 한 건, 제 입장에선 체면을 깎는 방향으로 작동했어요."
+          ],
+          "privateKnowledge": [
+            "질문형이어도 사적 스토리 캡처를 조직 맥락으로 끌어온 건 무책임했어요."
+          ],
+          "suppressions": [
+            "내가 느낀 망신을 한 사람 악의로 환산하고 싶었던 마음은 여전히 숨기고 싶어요."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-3:motive:3",
+              "factText": "그래도 그 확인을 굳이 팀 선임에게 붙여서 한 건, 제 입장에선 체면을 깎는 방향으로 작동했어요.",
+              "tags": [
+                "motive",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-3:counter:0",
+              "factText": "질문형이어도 사적 스토리 캡처를 조직 맥락으로 끌어온 건 무책임했어요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 그 사람을 더 악의적으로 몰아붙인 건, 사실 제 체면이 무너진 원인을 누군가 한 명에게 걸고 싶어서였어요."
+          ],
+          "privateKnowledge": [
+            "승진 심사 전의 불안이 김태훈에 대한 해석을 더 적대적으로 만들었어요."
+          ],
+          "suppressions": [
+            "오해의 시작이 내 배우자 게시물과 내 불안의 결합이었다는 점은 아직 불편합니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-3:motive:4",
+              "factText": "제가 그 사람을 더 악의적으로 몰아붙인 건, 사실 제 체면이 무너진 원인을 누군가 한 명에게 걸고 싶어서였어요.",
+              "tags": [
+                "motive",
+                "shame",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-3:shame:0",
+              "factText": "승진 심사 전의 불안이 김태훈에 대한 해석을 더 적대적으로 만들었어요.",
+              "tags": [
+                "shame",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "지금 보면 김태훈의 첫 반응은 악의적 폭로보단 오해 기반의 확인 질문에 가까웠고, 저는 그걸 더 나쁘게 해석했습니다."
+          ],
+          "privateKnowledge": [
+            "사람 하나의 악의로 정리하면 제 수치심을 덜 보게 된다고 생각했어요."
+          ],
+          "suppressions": [
+            "확인 방식이 부주의했다는 비판은 남기지만, 악의 단정은 철회합니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-3:motive:5",
+              "factText": "지금 보면 김태훈의 첫 반응은 악의적 폭로보단 오해 기반의 확인 질문에 가까웠고, 저는 그걸 더 나쁘게 해석했습니다.",
+              "tags": [
+                "motive",
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                },
+                "time": {
+                  "exact": "팀채널 공개 9분 전",
+                  "dateExact": "팀채널 공개 9분 전",
+                  "period": "공개 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-3:responsibility:0",
+              "factText": "사람 하나의 악의로 정리하면 제 수치심을 덜 보게 된다고 생각했어요.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "김태훈",
+                  "fullName": "김태훈",
+                  "judgeRef": "회사 동료",
+                  "neutral": "그 사람"
+                },
+                "channel": {
+                  "exact": "팀 선임 메시지",
+                  "neutral": "그 대화"
+                },
+                "message": {
+                  "exact": "혹시 우람 팀장 컨퍼런스 건 얘기예요?",
+                  "neutral": "그 질문"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "팀장 입장에선 그날 바로 해명문을 올리는 게 성급한 대응이 아니라 최소한의 방어였어요."
+          ],
+          "privateKnowledge": [
+            "저는 오해가 팀 전체 리스크가 될 수 있다고 계산했어요."
+          ],
+          "suppressions": [
+            "배우자에게 먼저 묻지 않았다는 핵심은 역할론으로 가리고 싶습니다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-4:institution:0",
+              "factText": "팀장 입장에선 그날 바로 해명문을 올리는 게 성급한 대응이 아니라 최소한의 방어였어요.",
+              "tags": [
+                "institution",
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "role": {
+                  "exact": "팀장 입장",
+                  "neutral": "그 역할"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-4:denial:0",
+              "factText": "배우자에게 먼저 묻지 않았다는 핵심은 역할론으로 가리고 싶습니다.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "서희에게 먼저 묻지 못한 건 사실이지만, 팀 안에서 오해가 돌 조짐이 보여 선조치가 필요하다고 판단했습니다."
+          ],
+          "privateKnowledge": [
+            "HR에도 같은 시각 문의를 넣어 기록을 남겼어요."
+          ],
+          "suppressions": [
+            "확인보다 속도를 우선한 건 제 불안 때문이었다는 점은 작게 말하고 싶어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-4:institution:1",
+              "factText": "서희에게 먼저 묻지 못한 건 사실이지만, 팀 안에서 오해가 돌 조짐이 보여 선조치가 필요하다고 판단했습니다.",
+              "tags": [
+                "institution",
+                "uncertainty",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "role": {
+                  "exact": "팀장 입장",
+                  "neutral": "그 역할"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-4:uncertainty:0",
+              "factText": "확인보다 속도를 우선한 건 제 불안 때문이었다는 점은 작게 말하고 싶어요.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "기록상 제가 배우자에게 문자 보내기 전에 팀채널과 HR에 먼저 올린 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "기관 기록상 그 게시가 더 많은 사람에게 사건을 알리는 결과를 만들었어요."
+          ],
+          "suppressions": [
+            "내가 직접 소문 범위를 넓혔다는 표현은 아직 받아들이기 싫습니다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-4:institution:2",
+              "factText": "기록상 제가 배우자에게 문자 보내기 전에 팀채널과 HR에 먼저 올린 건 인정합니다.",
+              "tags": [
+                "institution",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "role": {
+                  "exact": "팀장 입장",
+                  "neutral": "그 역할"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-4:admission:0",
+              "factText": "기관 기록상 그 게시가 더 많은 사람에게 사건을 알리는 결과를 만들었어요.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "다만 승진 심사 직전이었고, 숙박비나 외근비 얘기로 번질 수 있어 역할상 가만있기 어렵다고 느꼈어요."
+          ],
+          "privateKnowledge": [
+            "저는 개인 상처보다 팀장 평판 손실을 먼저 계산했어요."
+          ],
+          "suppressions": [
+            "그 계산이 사실 확인을 밀어냈다는 점은 방어적으로 숨기고 싶습니다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-4:institution:3",
+              "factText": "다만 승진 심사 직전이었고, 숙박비나 외근비 얘기로 번질 수 있어 역할상 가만있기 어렵다고 느꼈어요.",
+              "tags": [
+                "institution",
+                "responsibility",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "role": {
+                  "exact": "팀장 입장",
+                  "neutral": "그 역할"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-4:counter:0",
+              "factText": "저는 개인 상처보다 팀장 평판 손실을 먼저 계산했어요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "사실 저는 사실 확인보다 '팀장인데 숨긴다'는 꼬리표를 먼저 두려워해서 서둘렀습니다."
+          ],
+          "privateKnowledge": [
+            "승진 심사 직전의 공포가 제 판단 속도를 왜곡했어요."
+          ],
+          "suppressions": [
+            "조직을 먼저 택한 순간 배우자 신뢰를 훼손했다는 점은 말하기 어렵습니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-4:institution:4",
+              "factText": "사실 저는 사실 확인보다 '팀장인데 숨긴다'는 꼬리표를 먼저 두려워해서 서둘렀습니다.",
+              "tags": [
+                "institution",
+                "fear",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "role": {
+                  "exact": "팀장 입장",
+                  "neutral": "그 역할"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-4:fear:0",
+              "factText": "승진 심사 직전의 공포가 제 판단 속도를 왜곡했어요.",
+              "tags": [
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "결과적으로 제 해명문은 성급했고, 확인 없는 선제 대응이 오히려 소문 범위를 넓혔습니다."
+          ],
+          "privateKnowledge": [
+            "팀장 역할을 방패로 삼았지만, 실제로는 제 불안을 조직 언어로 포장한 셈이었어요."
+          ],
+          "suppressions": [
+            "방어 필요성은 있었더라도 순서와 방식의 책임은 제게 있습니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-4:institution:5",
+              "factText": "결과적으로 제 해명문은 성급했고, 확인 없는 선제 대응이 오히려 소문 범위를 넓혔습니다.",
+              "tags": [
+                "institution",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                },
+                "role": {
+                  "exact": "팀장 입장",
+                  "neutral": "그 역할"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-4:responsibility:0",
+              "factText": "팀장 역할을 방패로 삼았지만, 실제로는 제 불안을 조직 언어로 포장한 셈이었어요.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "팀채널 해명문",
+                  "neutral": "그 해명문"
+                },
+                "institution": {
+                  "exact": "HR 윤리담당 문의",
+                  "neutral": "그 문의"
+                },
+                "time": {
+                  "exact": "배우자 확인 문자 6분 전",
+                  "dateExact": "문자 6분 전",
+                  "period": "확인 이전",
+                  "neutral": "그 전"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저는 처음엔 이 갈등의 원인이 거의 전부 그 스토리 하나라고 생각했어요."
+          ],
+          "privateKnowledge": [
+            "문장과 소품 조합이 제 머릿속에 바로 회사 리스크로 연결됐어요."
+          ],
+          "suppressions": [
+            "내가 해석을 너무 빨리 굳혔다는 점은 뒤로 미룹니다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-5:context:0",
+              "factText": "저는 처음엔 이 갈등의 원인이 거의 전부 그 스토리 하나라고 생각했어요.",
+              "tags": [
+                "context",
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                },
+                "emotion": {
+                  "exact": "망신 회피와 평판 방어",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-5:denial:0",
+              "factText": "내가 해석을 너무 빨리 굳혔다는 점은 뒤로 미룹니다.",
+              "tags": [
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "하지만 시간이 지나 보니, 제가 그 화면을 바로 저격으로 확정해 버린 것도 연쇄를 키운 한 부분이었죠."
+          ],
+          "privateKnowledge": [
+            "김태훈의 확인 메시지보다 제 내부 확신이 더 빨랐습니다."
+          ],
+          "suppressions": [
+            "그래도 책임의 시작을 대부분 서희 쪽에 두고 싶다는 마음이 남아 있어요."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-5:context:1",
+              "factText": "하지만 시간이 지나 보니, 제가 그 화면을 바로 저격으로 확정해 버린 것도 연쇄를 키운 한 부분이었죠.",
+              "tags": [
+                "context",
+                "uncertainty",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                },
+                "emotion": {
+                  "exact": "망신 회피와 평판 방어",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-5:uncertainty:0",
+              "factText": "그래도 책임의 시작을 대부분 서희 쪽에 두고 싶다는 마음이 남아 있어요.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "승진 면담 직전 불안이 커서 저는 모호한 게시물을 가장 불리한 의미로 읽었습니다."
+          ],
+          "privateKnowledge": [
+            "제 불안이 사실 확인보다 결론을 먼저 띄웠어요."
+          ],
+          "suppressions": [
+            "선제 해명이 실제 전파를 키웠다는 점은 아직 직접 말하고 싶지 않습니다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-5:context:2",
+              "factText": "승진 면담 직전 불안이 커서 저는 모호한 게시물을 가장 불리한 의미로 읽었습니다.",
+              "tags": [
+                "context",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                },
+                "emotion": {
+                  "exact": "망신 회피와 평판 방어",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-5:admission:0",
+              "factText": "제 불안이 사실 확인보다 결론을 먼저 띄웠어요.",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "거기에 김태훈의 확인 메시지와 제 공개 해명이 차례로 붙으면서, 개인 오해가 조직 사건처럼 부풀었습니다."
+          ],
+          "privateKnowledge": [
+            "캡처, 확인, 해명문이 순차적으로 서로를 증폭시켰어요."
+          ],
+          "suppressions": [
+            "공유 오해라는 말은 곧 제 과잉 대응을 인정하는 말이라 조심스럽습니다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-5:context:3",
+              "factText": "거기에 김태훈의 확인 메시지와 제 공개 해명이 차례로 붙으면서, 개인 오해가 조직 사건처럼 부풀었습니다.",
+              "tags": [
+                "context",
+                "responsibility",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                },
+                "emotion": {
+                  "exact": "망신 회피와 평판 방어",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-5:counter:0",
+              "factText": "캡처, 확인, 해명문이 순차적으로 서로를 증폭시켰어요.",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "돌이켜보면 저는 창피함을 숨기려고 '누가 날 공격했다'는 이야기로 정리하고 싶었던 것 같아요."
+          ],
+          "privateKnowledge": [
+            "상처를 공격 서사로 바꾸면 제 불안과 수치가 덜 드러난다고 느꼈어요."
+          ],
+          "suppressions": [
+            "서희의 창작 의도와 제 평판 공포가 동시에 충돌했다는 복합 구조는 아직 낯섭니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-5:context:4",
+              "factText": "돌이켜보면 저는 창피함을 숨기려고 '누가 날 공격했다'는 이야기로 정리하고 싶었던 것 같아요.",
+              "tags": [
+                "context",
+                "shame",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                },
+                "emotion": {
+                  "exact": "망신 회피와 평판 방어",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-5:shame:0",
+              "factText": "상처를 공격 서사로 바꾸면 제 불안과 수치가 덜 드러난다고 느꼈어요.",
+              "tags": [
+                "shame",
+                "relationship"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "이번 갈등은 서희의 모호한 게시물과 제 과잉 방어, 그리고 회사 안의 오해가 이어진 공유 오해의 연쇄였습니다."
+          ],
+          "privateKnowledge": [
+            "악의적 저격보다 모호한 표현, 혼재된 목록, 확인 메시지, 선제 해명이 순서대로 이어졌어요."
+          ],
+          "suppressions": [
+            "책임을 한쪽으로 몰지 않고 단계별로 나눠 인정해야 사건이 정리됩니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse06:b:tell:damage_tally",
+            "spouse06:b:tell:intent_lock",
+            "spouse06:b:tell:authority_frame"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse06:b:d-5:context:5",
+              "factText": "이번 갈등은 서희의 모호한 게시물과 제 과잉 방어, 그리고 회사 안의 오해가 이어진 공유 오해의 연쇄였습니다.",
+              "tags": [
+                "context",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                },
+                "emotion": {
+                  "exact": "망신 회피와 평판 방어",
+                  "neutral": "그 두려움"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "spouse06:b:d-5:responsibility:0",
+              "factText": "악의적 저격보다 모호한 표현, 혼재된 목록, 확인 메시지, 선제 해명이 순서대로 이어졌어요.",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "chain": {
+                  "exact": "모호한 문장→오해 확인→공개 해명",
+                  "neutral": "그 연쇄"
+                },
+                "time": {
+                  "exact": "승진 면담 직전",
+                  "dateExact": "승진 면담 직전",
+                  "period": "민감한 시기",
+                  "neutral": "그때"
+                },
+                "audience": {
+                  "exact": "회사 채널과 친한 친구 범위",
+                  "neutral": "그 범위들"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+
+export default spouse06V2Atoms;

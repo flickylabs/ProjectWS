@@ -1,0 +1,5102 @@
+export const friend07V2Atoms = {
+  "caseId": "friend-07",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "성호가 그 관계를 숨긴 건 맞지만, 처음부터 노골적인 알리바이였다고 단정하진 않았어요.",
+            "그때 저는 그냥 제 이름을 잠깐 빌리려는 건가 싶었습니다."
+          ],
+          "privateKnowledge": [
+            "리더 선발 사전 인터뷰 전날 밤 성호가 자신의 부재를 다른 말로 덮어 달라는 취지로 연락했다.",
+            "연애 상대가 부회장이라는 점 때문에 공개를 미룬다는 공기를 이미 읽고 있었다."
+          ],
+          "suppressions": [
+            "‘소품 정리 중이라고 말해 달라’는 문구의 정확한 표현",
+            "그 부탁이 작년 합의 위반의 시작이었다는 판단"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:a:tell:timeline_stitch"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-1:S0:act:0",
+              "factText": "박성호가 자신의 부재를 다른 설명으로 덮어 달라고 넌지시 요청한 정황",
+              "tags": [
+                "act",
+                "timeline",
+                "uncertainty"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "리더 선발 사전 인터뷰 전날 밤",
+                  "period": "선발 직전",
+                  "neutral": "그 전날"
+                },
+                "quote": {
+                  "exact": "소품 정리 중이라고 말해 달라",
+                  "neutral": "소품 정리로 둘러대 달라는 취지",
+                  "judgeRef": "소품 정리 커버 요청"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "observe"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-1:S0:relationship:1",
+              "factText": "연애 상대의 신분을 바로 말하지 않고 관계 은닉의 냄새만 언급하려는 태도",
+              "tags": [
+                "relationship",
+                "privacy",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "protect"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "전날 밤, 인터뷰 직전에 그런 부탁이 왔고 저는 그 타이밍부터 이상하다고 봤어요.",
+            "다만 그 순간에도 성호가 직접 말하겠다고 정리할 줄은 알았습니다."
+          ],
+          "privateKnowledge": [
+            "메신저 원본에는 성호가 ‘같이 있었다고만 해 달라’는 쪽으로 표현 수위를 높였다.",
+            "그 부탁이 단순 일정 혼선 수습이 아니라 비밀 연애 은닉과 연결돼 있었다."
+          ],
+          "suppressions": [
+            "정확한 알리바이 문구",
+            "제가 그 부탁을 듣고도 바로 끊지 못한 이유"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:a:tell:timeline_stitch",
+            "friend07:a:tell:term_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-1:S1:timeline:0",
+              "factText": "리더 선발 직전 시점에 알리바이성 부탁이 들어왔다는 시간 흐름",
+              "tags": [
+                "timeline",
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "리더 선발 사전 인터뷰 전날 밤",
+                  "period": "선발 직전",
+                  "neutral": "그 전날"
+                },
+                "evidence": {
+                  "exact": "e-2 메신저 export",
+                  "neutral": "메신저 원본",
+                  "judgeRef": "e-2"
+                }
+              },
+              "stanceHints": [
+                "observe",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-1:S1:counter:1",
+              "factText": "당시에는 직접 정리할 거라 믿어 더 강하게 막지 못했다는 자기 설명",
+              "tags": [
+                "counter",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_protect"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "원본 대화에는 제가 연습실에 성호랑 있었다고만 말해 달라는 표현이 그대로 남아 있습니다.",
+            "그건 일정 정리가 아니라 제 입을 빌린 커버 요청이었죠."
+          ],
+          "privateKnowledge": [
+            "연애를 당분간 숨기자는 말과 알리바이 요청이 같은 대화 흐름 안에 있었다.",
+            "작년 합의에서 정한 지정 운영진 공동 고지 대신 저를 완충재로 세웠다."
+          ],
+          "suppressions": [
+            "연애 상대의 구체 신원과 사적 대화 일부",
+            "제가 그 순간 느낀 배신감의 강도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:a:tell:term_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-1:S2:quote:0",
+              "factText": "박성호가 함께 있었다고만 말해 달라고 직접 적은 알리바이 요청 사실",
+              "tags": [
+                "quote",
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "네가 연습실에 나랑 있었다고만 해줘",
+                  "neutral": "같이 있었다고 말해 달라는 취지",
+                  "judgeRef": "알리바이 부탁 문구"
+                },
+                "time": {
+                  "dateExact": "리더 선발 사전 인터뷰 전날 밤",
+                  "period": "선발 직전",
+                  "neutral": "그 전날"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-1:S2:rule:1",
+              "factText": "비밀 연애 공개 절차 대신 친구를 가림막으로 세운 선택",
+              "tags": [
+                "rule",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                },
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "스케줄표와 영수증까지 맞춰 보면 성호가 진짜 소품 정리 중이었던 것도 아닙니다.",
+            "제가 빈자리를 메우는 동안 성호는 다른 동선으로 움직였어요."
+          ],
+          "privateKnowledge": [
+            "제 이름으로 덮어 달라고 한 직후 성호가 부회장과 따로 이동한 정황이 맞물린다.",
+            "이건 단순히 말을 돌려 달라는 수준을 넘어, 제가 실제로 대신 뒤집어쓰게 되는 구조였다."
+          ],
+          "suppressions": [
+            "그날 통화 내용의 세부 위치 정보",
+            "제가 ‘이용당했다’는 표현을 얼마나 오래 삼켰는지"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:a:tell:term_freeze",
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-1:S3:evidence:0",
+              "factText": "연습 스케줄 변경표와 택시 영수증, 통화기록이 성호의 실제 부재를 뒷받침한다는 사실",
+              "tags": [
+                "evidence",
+                "timeline",
+                "act"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연습 스케줄 변경 당일 저녁",
+                  "period": "그날 저녁",
+                  "neutral": "그 시간대"
+                },
+                "evidence": {
+                  "exact": "e-6 스케줄표·택시 영수증·통화기록",
+                  "neutral": "이동/일정 기록",
+                  "judgeRef": "e-6"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend07:a:d-1:S3:harm:1",
+              "factText": "제가 대신 소품 정리를 맡는 동안 성호의 빈자리를 떠안게 된 피해감",
+              "tags": [
+                "harm",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "beneficiary": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "제가 제일 못 견디는 건, 성호가 저를 친구가 아니라 커버용 사람처럼 썼다는 점이에요.",
+            "비밀 자체보다도 그걸 제 입으로 메우게 한 방식이 더 선을 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "성호가 공개를 미룬 이유가 선발 직전 평판 손상 공포와 연결돼 있었다고 본다.",
+            "저는 예전에도 비밀을 지켜 준 적이 있어서 더 쉽게 이용될 거라 읽혔다."
+          ],
+          "suppressions": [
+            "예전 소문 사태 때 성호에게 느낀 빚진 감정",
+            "부회장과의 관계를 언제부터 눈치챘는지"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-1:S4:emotion:0",
+              "factText": "친구로 신뢰받은 것이 아니라 알리바이 도구로 취급됐다는 상처",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "beneficiary": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:a:d-1:S4:fear:1",
+              "factText": "성호가 선발 직전 낙인을 피하려고 저를 완충재로 삼았다는 해석",
+              "tags": [
+                "fear",
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "press"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "성호는 비밀 연애를 숨긴 채 저에게 사실상 알리바이를 부탁했습니다.",
+            "저도 바로 선을 긋지 못한 책임은 조금 있지만, 핵심 책임은 제 신뢰를 도구처럼 쓴 쪽에 있습니다."
+          ],
+          "privateKnowledge": [
+            "작년 제한 공개 합의를 알면서도 성호는 지정 경로 대신 저를 먼저 사용했다.",
+            "저는 그걸 이상하게 느끼고도 한 번 더 믿어 보려다 상황을 키웠다."
+          ],
+          "suppressions": [
+            "연애 상대의 실명과 분쟁 밖 사생활",
+            "제가 이후 어떤 방식으로 폭발했는지의 다른 쟁점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-1:S5:admission:0",
+              "factText": "비밀 연애 은닉과 알리바이 요청이 동시에 있었다는 최종 정리",
+              "tags": [
+                "admission",
+                "act",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "네가 연습실에 나랑 있었다고만 해줘",
+                  "neutral": "같이 있었다고 말해 달라는 취지",
+                  "judgeRef": "알리바이 부탁 문구"
+                },
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                },
+                "time": {
+                  "dateExact": "리더 선발 사전 인터뷰 전날 밤",
+                  "period": "선발 직전",
+                  "neutral": "그 전날"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "settle"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-1:S5:legacy:1",
+              "factText": "예전에 지켜 준 비밀의 기억이 이번에도 신뢰 악용으로 돌아왔다는 결론",
+              "tags": [
+                "legacy_sentence",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "time": {
+                  "dateExact": "작년 겨울 소문 사태 직후 같은 밤",
+                  "period": "작년 겨울",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "그 이미지는 조작본이라기보다 대화 흐름을 한눈에 보이게 정리한 겁니다.",
+            "저는 그걸 무작정 퍼뜨리려던 게 아니라 먼저 확인을 구한 거였어요."
+          ],
+          "privateKnowledge": [
+            "서로 다른 날짜의 문장을 한 화면처럼 붙여 보이게 만들었다.",
+            "양소라에게 보낸 직후 다른 채널로도 돌릴 수 있다는 생각을 이미 하고 있었다."
+          ],
+          "suppressions": [
+            "편집앱 임시 폴더 흔적",
+            "17분 안에 운영진·동문 단톡·스토리로까지 이어진 확산 속도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:a:tell:timeline_stitch"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-2:S0:act:0",
+              "factText": "편집 캡처를 '정리본'으로 부르며 원문 그대로라는 인상을 남기려는 주장",
+              "tags": [
+                "denial",
+                "counter",
+                "quote"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "임원 연애는 숨겨야 이득",
+                  "neutral": "연애를 숨기면 유리하다는 취지",
+                  "judgeRef": "문제의 문장"
+                },
+                "term": {
+                  "exact": "비교",
+                  "neutral": "대조",
+                  "judgeRef": "비교"
+                },
+                "evidence": {
+                  "exact": "e-1 편집 캡처",
+                  "neutral": "편집 캡처",
+                  "judgeRef": "e-1"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-2:S0:term:1",
+              "factText": "'전달'과 '폭로'의 단어 차이로 다중 채널 확산 책임을 낮추려는 태도",
+              "tags": [
+                "self_justification",
+                "counter",
+                "quote"
+              ],
+              "slots": {
+                "termA": {
+                  "exact": "전달",
+                  "neutral": "보내기",
+                  "judgeRef": "전달"
+                },
+                "termB": {
+                  "exact": "폭로",
+                  "neutral": "공개",
+                  "judgeRef": "폭로"
+                },
+                "channel": {
+                  "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                  "neutral": "여러 채널",
+                  "judgeRef": "확산 경로"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "편집이라 해도 맥락을 끌어온 거지, 없는 말을 만든 건 아니에요.",
+            "양소라한테 먼저 보낸 건 혼자 삼키기 어려워서였고, 그게 곧바로 악의적 확산이었다고 보진 않습니다."
+          ],
+          "privateKnowledge": [
+            "문장 조각이 서로 다른 날짜에서 왔다는 걸 정확히 알고 있었다.",
+            "운영진에도 보내면 성호가 더는 빠져나가지 못할 거라고 계산했다."
+          ],
+          "suppressions": [
+            "성호의 의도가 더 악하게 보이도록 한 배열 의도",
+            "공통 친구 한 명만이 아니라 여러 방으로 보낸 순서"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:a:tell:timeline_stitch",
+            "friend07:a:tell:term_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-2:S1:timeline:0",
+              "factText": "서로 다른 시점의 메시지를 같은 흐름처럼 읽히게 재배열한 사실을 축소하는 진술",
+              "tags": [
+                "timeline",
+                "evidence",
+                "uncertainty"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "양소라 1차 전달 뒤 17분 안",
+                  "period": "같은 밤",
+                  "neutral": "짧은 시간 안"
+                },
+                "quote": {
+                  "exact": "임원 연애는 숨겨야 이득",
+                  "neutral": "연애를 숨기면 유리하다는 취지",
+                  "judgeRef": "문제의 문장"
+                },
+                "evidence": {
+                  "exact": "e-1 편집 캡처",
+                  "neutral": "편집 캡처",
+                  "judgeRef": "e-1"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "soften"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-2:S1:motive:1",
+              "factText": "양소라에게 먼저 보낸 이유를 정서적 확인 요청으로 포장하는 자기 설명",
+              "tags": [
+                "motive",
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "양소라",
+                  "judgeRef": "양소라 씨",
+                  "neutral": "공통 친구"
+                },
+                "channel": {
+                  "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                  "neutral": "여러 채널",
+                  "judgeRef": "확산 경로"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_protect"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "네, 서로 다른 시점 메시지를 붙여 한 장으로 만든 건 맞아요.",
+            "다만 그걸 붙인 이유는 성호가 저를 어떻게 썼는지 한 번에 보이게 하려던 거였습니다."
+          ],
+          "privateKnowledge": [
+            "e-1은 실제 발화 순서와 전혀 다른 배열로 저장됐다.",
+            "저는 이미 그 한 장이 성호의 의도를 더 검게 보이게 한다는 걸 알았다."
+          ],
+          "suppressions": [
+            "편집 후 바로 해시가 같은 파일로 전달했다는 점",
+            "편집 행위를 '비교'라고만 부른 언어 전략"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:a:tell:term_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-2:S2:admission:0",
+              "factText": "여러 날짜의 문장을 이어 붙여 한 장짜리 캡처를 만든 사실",
+              "tags": [
+                "admission",
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-1 편집 캡처",
+                  "neutral": "편집 캡처",
+                  "judgeRef": "e-1"
+                },
+                "quote": {
+                  "exact": "임원 연애는 숨겨야 이득",
+                  "neutral": "연애를 숨기면 유리하다는 취지",
+                  "judgeRef": "문제의 문장"
+                },
+                "term": {
+                  "exact": "편집",
+                  "neutral": "손댐",
+                  "judgeRef": "편집"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-2:S2:harm:1",
+              "factText": "알리바이로 쓰였다는 분노를 보여 주기 위해 편집 강도를 높였다는 내면 동기",
+              "tags": [
+                "motive",
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "quote": {
+                  "exact": "네가 연습실에 나랑 있었다고만 해줘",
+                  "neutral": "같이 있었다고 말해 달라는 취지",
+                  "judgeRef": "알리바이 부탁 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "맞아요, 저는 양소라만 본 게 아니라 운영진하고 동문 단톡까지 돌렸습니다.",
+            "그때는 성호가 먼저 선을 넘었다고 생각해서, 한 방에 막히지 않게 여러 군데 남겨야 한다고 봤어요."
+          ],
+          "privateKnowledge": [
+            "양소라 전달 뒤 17분 안에 운영진 전달, 동문 단톡, 스토리 게시가 연달아 이뤄졌다.",
+            "저는 사실 확인보다 성호가 도망칠 여지를 줄이는 데 더 집중했다."
+          ],
+          "suppressions": [
+            "친한친구 스토리의 암시 문구",
+            "확산 범위를 넓히면 평판 타격이 클 걸 알고도 멈추지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:a:tell:term_freeze",
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-2:S3:channel:0",
+              "factText": "공통 친구 확인 단계에 그치지 않고 여러 채널로 연속 확산한 사실",
+              "tags": [
+                "timeline",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                  "neutral": "여러 채널",
+                  "judgeRef": "확산 경로"
+                },
+                "time": {
+                  "dateExact": "양소라 1차 전달 뒤 17분 안",
+                  "period": "같은 밤",
+                  "neutral": "짧은 시간 안"
+                },
+                "evidence": {
+                  "exact": "e-5 동문 단톡·스토리 기록",
+                  "neutral": "확산 기록",
+                  "judgeRef": "e-5"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-2:S3:blame:1",
+              "factText": "성호가 먼저 자신을 이용했으니 자신도 강하게 퍼뜨릴 수밖에 없었다는 전가 논리",
+              "tags": [
+                "counter",
+                "self_justification",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "quote": {
+                  "exact": "네가 연습실에 나랑 있었다고만 해줘",
+                  "neutral": "같이 있었다고 말해 달라는 취지",
+                  "judgeRef": "알리바이 부탁 문구"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 저는 그 캡처가 성호를 더 못되게 보이게 한다는 걸 알고도 눌렀습니다.",
+            "또 제가 한 번 더 조용히 덮으면 결국 제가 또 이용당한 사람이 되는 것 같았어요."
+          ],
+          "privateKnowledge": [
+            "정확한 사실 확인만으로는 분이 안 풀려 과장된 인상을 남기려 했다.",
+            "감정적인 사람으로 보이기 싫다는 수치심 때문에 더 건조한 말투로 퍼뜨렸다."
+          ],
+          "suppressions": [
+            "편집하면서 손이 떨렸다는 감정 기억",
+            "친구 관계를 사실상 끊겠다는 마음까지 실었다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-2:S4:emotion:0",
+              "factText": "편집 캡처가 성호를 더 악하게 보이게 한다는 점을 인지한 채 전송한 감정적 선택",
+              "tags": [
+                "emotion",
+                "shame",
+                "motive",
+                "admission"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "임원 연애는 숨겨야 이득",
+                  "neutral": "연애를 숨기면 유리하다는 취지",
+                  "judgeRef": "문제의 문장"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend07:a:d-2:S4:fear:1",
+              "factText": "또다시 비밀을 지켜 준 사람으로 남을까 봐 먼저 여론을 만들어 버린 두려움",
+              "tags": [
+                "fear",
+                "legacy_sentence",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "time": {
+                  "dateExact": "작년 겨울 소문 사태 직후 같은 밤",
+                  "period": "작년 겨울",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "저는 성호의 여러 시점 메시지를 편집해서 의도가 더 악해 보이게 만들었고, 그걸 여러 채널로 퍼뜨렸습니다.",
+            "그가 먼저 저를 알리바이로 쓴 건 사실이지만, 제가 지정 경로를 버리고 확산한 책임도 분명합니다."
+          ],
+          "privateKnowledge": [
+            "e-1은 편집 흔적이 남는 파일이었고, e-2와 대조하면 순서가 뒤틀린다.",
+            "저는 사실 전달보다 처벌감에 가까운 확산을 선택했다."
+          ],
+          "suppressions": [
+            "분쟁 해결과 무관한 사생활 디테일",
+            "받는 사람마다 조금씩 다른 표현을 썼던 세부"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-2:S5:confession:0",
+              "factText": "메시지 편집과 다중 채널 확산을 함께 저지른 최종 책임 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "act",
+                "harm"
+              ],
+              "slots": {
+                "evidence1": {
+                  "exact": "e-1 편집 캡처",
+                  "neutral": "편집 캡처",
+                  "judgeRef": "e-1"
+                },
+                "evidence2": {
+                  "exact": "e-5 동문 단톡·스토리 기록",
+                  "neutral": "확산 기록",
+                  "judgeRef": "e-5"
+                },
+                "channel": {
+                  "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                  "neutral": "여러 채널",
+                  "judgeRef": "확산 경로"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "settle"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-2:S5:rule:1",
+              "factText": "지정 운영진 1명 경로를 건너뛰고 여론성 확산을 택한 선택",
+              "tags": [
+                "rule",
+                "responsibility",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                },
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "성호가 그 연애를 숨긴 시점하고 리더 선발 시점이 겹쳤다면, 누가 봐도 특혜 의심이 먼저 나오죠.",
+            "저는 그 구조 자체가 이미 공정하지 않았다고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "실제 점수표는 보지 못한 상태에서 e-1의 문장과 타이밍을 근거로 확신에 가까운 판단을 했다.",
+            "연애 은닉과 알리바이 요청 때문에 선발 결과도 모두 의심하게 됐다."
+          ],
+          "suppressions": [
+            "부회장 채점 제외 여부를 직접 확인하지 못했다는 점",
+            "특혜 판단에 감정적 보복심이 섞였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:a:tell:timeline_stitch"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-3:S0:suspicion:0",
+              "factText": "비밀 연애와 리더 선발 시점이 겹친다는 정황만으로 특혜 가능성을 강하게 단정하는 주장",
+              "tags": [
+                "context",
+                "identity",
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                },
+                "quote": {
+                  "exact": "임원 연애는 숨겨야 이득",
+                  "neutral": "연애를 숨기면 유리하다는 취지",
+                  "judgeRef": "문제의 문장"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:a:d-3:S0:institution:1",
+              "factText": "선발 구조 자체가 이미 공정성을 잃었다고 넓게 몰아가는 프레임",
+              "tags": [
+                "institution",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-1 편집 캡처",
+                  "neutral": "편집 캡처",
+                  "judgeRef": "e-1"
+                },
+                "person": {
+                  "fullName": "정선우",
+                  "judgeRef": "정선우 운영간사",
+                  "neutral": "운영간사"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "정확히 말하면 저는 '특혜가 있었다고 의심할 만하다'고 본 겁니다.",
+            "선발 직전까지 연애를 숨긴 사람에게 이해충돌 문제를 따지는 건 과한 추정은 아니라고 생각했어요."
+          ],
+          "privateKnowledge": [
+            "확정 사실 대신 '정황상'이라는 표현으로 발을 빼려 한다.",
+            "실제 선발 로그가 나오면 내가 너무 나간 걸 인정해야 할 수도 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "점수표 원본 부재",
+            "의심을 퍼뜨릴 때 이미 사실처럼 말한 표현"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:a:tell:timeline_stitch",
+            "friend07:a:tell:term_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-3:S1:hedge:0",
+              "factText": "특혜 단정을 '의심'으로 한 단계 낮추며 기존 발언 수위를 조정하는 태도",
+              "tags": [
+                "uncertainty",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "soften"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:a:d-3:S1:rule:1",
+              "factText": "이해충돌 신고를 하지 않은 은닉 자체가 선발 공정성 문제와 연결된다고 보는 논리",
+              "tags": [
+                "rule",
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                },
+                "evidence": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "적어도 그 캡처와 대화 흐름을 보면, 성호가 연애를 이득 계산과 연결해 생각한 건 맞다고 느꼈어요.",
+            "그래서 저는 선발도 당연히 의심했습니다."
+          ],
+          "privateKnowledge": [
+            "e-1의 편집된 문장이 내 특혜 의심을 더 단단하게 만들었다.",
+            "나는 선발 로그보다 성호의 태도를 처벌하는 쪽에 더 기울어 있었다."
+          ],
+          "suppressions": [
+            "특혜 입증 자료가 아니라 인상 증폭 자료를 썼다는 점",
+            "내 의심의 출발점이 배신감이었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:a:tell:term_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-3:S2:admission:0",
+              "factText": "편집 캡처가 보여 주는 태도 인상을 근거로 선발 특혜까지 추론해 버린 사실",
+              "tags": [
+                "admission",
+                "evidence",
+                "motive",
+                "uncertainty"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-1 편집 캡처",
+                  "neutral": "편집 캡처",
+                  "judgeRef": "e-1"
+                },
+                "quote": {
+                  "exact": "임원 연애는 숨겨야 이득",
+                  "neutral": "연애를 숨기면 유리하다는 취지",
+                  "judgeRef": "문제의 문장"
+                },
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-3:S2:revenge:1",
+              "factText": "비밀 은닉과 알리바이 요청에 대한 분노가 선발 의혹 해석을 밀어 올렸다는 배경",
+              "tags": [
+                "emotion",
+                "motive",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "quote": {
+                  "exact": "네가 연습실에 나랑 있었다고만 해줘",
+                  "neutral": "같이 있었다고 말해 달라는 취지",
+                  "judgeRef": "알리바이 부탁 문구"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "점수표 원본을 보고 나니 부회장이 채점에서 빠진 건 알겠습니다.",
+            "그래도 그 전까지 그렇게 숨겨 놓고 굴었다면 제가 의심한 이유 자체가 사라지는 건 아니에요."
+          ],
+          "privateKnowledge": [
+            "선발 자체를 특혜로 단정한 건 더는 유지하기 어렵다.",
+            "그러나 완전히 물러서면 내가 한 확산 전체가 무너질까 봐 숨은 분노를 붙든다."
+          ],
+          "suppressions": [
+            "특혜 단정이 틀렸다는 거의 확실한 인식",
+            "점수표를 보고도 바로 정정하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:a:tell:term_freeze",
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-3:S3:evidence:0",
+              "factText": "부회장 채점 제외 로그가 존재한다는 사실을 인정하면서도 의혹의 정당성만 남기려는 진술",
+              "tags": [
+                "evidence",
+                "institution",
+                "admission",
+                "counter"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                },
+                "scoring": {
+                  "exact": "리더 선발 점수표와 부회장 채점 제외 로그",
+                  "neutral": "선발 원본 기록",
+                  "judgeRef": "채점 제외 로그"
+                },
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend07:a:d-3:S3:blame:1",
+              "factText": "특혜 단정이 아니라 의심의 이유를 문제 삼으라며 논점을 이동시키는 태도",
+              "tags": [
+                "counter",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "redirect"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 말하면, 제가 그 선발까지 물고 늘어진 건 성호를 공정한 사람으로 남겨 두기 싫어서였어요.",
+            "저를 커버로 세운 사람이 리더 자리까지 가져갔다고 생각하니 너무 모욕적이었습니다."
+          ],
+          "privateKnowledge": [
+            "특혜 입증보다 명예 훼손에 가까운 타격을 주고 싶었다는 감정이 있었다.",
+            "감정적인 사람으로 보이기 싫어 제 분노를 '공정성' 언어로 포장했다."
+          ],
+          "suppressions": [
+            "정정 메시지를 보낼 용기를 아직 못 냈다는 점",
+            "부회장 개인에게도 상처가 갈 걸 알았다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-3:S4:emotion:0",
+              "factText": "특혜 의혹을 붙든 이유가 객관적 입증보다 모욕감과 복수심에 더 가까웠다는 고백",
+              "tags": [
+                "emotion",
+                "motive",
+                "shame",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend07:a:d-3:S4:legacy:1",
+              "factText": "분노를 공정성 언어로 바꾸어 말함으로써 자신의 상처를 숨긴 방식",
+              "tags": [
+                "legacy_sentence",
+                "emotion",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "성호의 비밀 연애와 은닉은 문제였지만, 리더 선발 자체가 연애 특혜였다고는 제가 끝내 입증하지 못했습니다.",
+            "제가 그 부분을 사실처럼 밀어붙인 건 과했고, 그 책임은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "e-4 기준으로 선발 자체는 특혜로 확정되지 않는다.",
+            "나는 성호의 실제 잘못에 내 분노를 덧씌워 더 큰 혐의를 만들어 냈다."
+          ],
+          "suppressions": [
+            "동문 단톡에서 사용한 단정적 표현 세부",
+            "선발 결과와 무관한 사생활 평가"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-3:S5:confession:0",
+              "factText": "리더 선발 특혜 주장을 사실로 확정해 퍼뜨린 것이 과장이었다는 최종 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "institution",
+                "harm"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                },
+                "person": {
+                  "fullName": "정선우",
+                  "judgeRef": "정선우 운영간사",
+                  "neutral": "운영간사"
+                },
+                "scoring": {
+                  "exact": "리더 선발 점수표와 부회장 채점 제외 로그",
+                  "neutral": "선발 원본 기록",
+                  "judgeRef": "채점 제외 로그"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "settle"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-3:S5:separation:1",
+              "factText": "은닉과 알리바이 요청의 잘못과 선발 특혜 여부를 분리해서 봐야 한다는 정리",
+              "tags": [
+                "rule",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person1": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "person2": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                },
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "작년 합의가 있었다 해도, 먼저 그걸 무력화한 건 성호 쪽이었어요.",
+            "제가 보낸 자료도 그 합의를 깨려고 한 것보다 이미 깨진 상황을 알린 쪽에 가까웠습니다."
+          ],
+          "privateKnowledge": [
+            "합의 문구에 스크린샷 확산 금지가 명시돼 있다는 걸 정확히 기억한다.",
+            "내 확산도 합의 위반이라는 점을 알고 있지만 선제 위반 책임을 성호에게만 집중시키고 싶다."
+          ],
+          "suppressions": [
+            "양소라와 동문 단톡, 스토리까지 간 내 확산 규모",
+            "합의 문서를 다시 열어보고도 멈추지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:a:tell:timeline_stitch"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-4:S0:rule:0",
+              "factText": "작년 제한 공개 합의의 선제 파기를 성호 쪽에만 돌리려는 주장",
+              "tags": [
+                "rule",
+                "denial",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "운영 충돌이 있는 비밀 연애는 지정 운영진 1명에게만 함께 알리고 스크린샷 확산은 금지한다",
+                  "neutral": "지정 운영진 1명 공동 고지와 확산 금지 규칙",
+                  "judgeRef": "합의 핵심 조항"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "evidence": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-4:S0:selfjust:1",
+              "factText": "자신의 캡처 전송을 '알림'으로 재정의해 합의 위반 강도를 낮추려는 태도",
+              "tags": [
+                "self_justification",
+                "counter",
+                "quote"
+              ],
+              "slots": {
+                "termA": {
+                  "exact": "전달",
+                  "neutral": "보내기",
+                  "judgeRef": "전달"
+                },
+                "termB": {
+                  "exact": "폭로",
+                  "neutral": "공개",
+                  "judgeRef": "폭로"
+                },
+                "channel": {
+                  "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                  "neutral": "여러 채널",
+                  "judgeRef": "확산 경로"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "합의는 '지정 운영진 1명에게 함께 알린다'는 전제가 지켜질 때 의미가 있죠.",
+            "성호가 저를 커버로 세운 순간, 저는 그 문서를 그대로 믿고 기다릴 단계가 아니라고 봤어요."
+          ],
+          "privateKnowledge": [
+            "합의 위반의 기준을 상황 변화로 느슨하게 해석하고 있다.",
+            "실은 합의 문서를 핑계로 더는 조용히 덮고 싶지 않았던 감정도 있었다."
+          ],
+          "suppressions": [
+            "합의가 여전히 유효하다는 내 인식",
+            "내가 지정 운영진 경로를 선택적으로 포기한 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:a:tell:timeline_stitch",
+            "friend07:a:tell:term_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-4:S1:hedge:0",
+              "factText": "합의 적용 조건이 먼저 무너졌다고 보며 자신의 이탈을 예외로 처리하려는 논리",
+              "tags": [
+                "rule",
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                },
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:a:d-4:S1:legacy:1",
+              "factText": "이번에는 더 이상 비밀을 대신 지켜 주지 않겠다는 누적 감정이 합의 해석에 스며든 상태",
+              "tags": [
+                "legacy_sentence",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "작년 겨울 소문 사태 직후 같은 밤",
+                  "period": "작년 겨울",
+                  "neutral": "그때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "네, 저도 그 노션 문구를 기억합니다. 지정 운영진 한 명에게만 함께 알리고 확산은 하지 말자는 거였죠.",
+            "그런데 저는 이미 성호가 그 규칙을 안 지킬 거라고 보고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "확인 이모지까지 남긴 같은 밤의 기억이 선명하다.",
+            "합의가 유효하다는 걸 인정하는 순간 내 확산 책임도 같이 열린다."
+          ],
+          "suppressions": [
+            "합의 문서를 다시 본 뒤에도 지정 경로를 밟지 않은 사실",
+            "양소라를 첫 경유지로 택한 이유"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:a:tell:term_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-4:S2:admission:0",
+              "factText": "작년 제한 공개 합의와 확인 이모지 기록을 정확히 기억하고 있다는 사실",
+              "tags": [
+                "admission",
+                "rule",
+                "legacy_sentence",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                },
+                "time": {
+                  "dateExact": "작년 겨울 소문 사태 직후 같은 밤",
+                  "period": "작년 겨울",
+                  "neutral": "그때"
+                },
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-4:S2:motive:1",
+              "factText": "성호가 먼저 규칙을 어겼다고 판단해 자신도 지정 경로를 포기했다는 내적 논리",
+              "tags": [
+                "motive",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "결국 저는 이도현 운영진에게만 제한적으로 말하는 대신 양소라, 동문 단톡, 스토리까지 택했습니다.",
+            "그 선택이 규칙 밖이었다는 건 인정하지만, 그때는 성호를 믿고 지정 경로만 밟으면 또 제가 덮게 될 거라고 봤어요."
+          ],
+          "privateKnowledge": [
+            "여론이 넓게 돌수록 성호가 나를 다시 커버로 쓰기 어려워질 거라고 계산했다.",
+            "규칙 복구보다 제 감정과 평판 방어를 우선했다."
+          ],
+          "suppressions": [
+            "사실상 처벌 의도까지 섞여 있었다는 점",
+            "운영진에게도 순차 전달이 아니라 압박성 전송을 택했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:a:tell:term_freeze",
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-4:S3:channel:0",
+              "factText": "지정 운영진 1명 공동 고지 대신 공통 친구와 여러 공개성 채널을 택한 사실",
+              "tags": [
+                "responsibility",
+                "act",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                },
+                "channel": {
+                  "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                  "neutral": "여러 채널",
+                  "judgeRef": "확산 경로"
+                },
+                "evidence": {
+                  "exact": "e-5 동문 단톡·스토리 기록",
+                  "neutral": "확산 기록",
+                  "judgeRef": "e-5"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-4:S3:fear:1",
+              "factText": "조용한 지정 경로를 택하면 또다시 자신만 비밀 보관자가 될 거라는 두려움",
+              "tags": [
+                "fear",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "person2": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 저는 그 합의를 어긴 제가 부끄러웠습니다.",
+            "그래도 그 문서를 또 들고 조용히 기다리면, 저는 다시 '비밀 지켜 주는 바보'처럼 남는다고 느꼈어요."
+          ],
+          "privateKnowledge": [
+            "감정적인 사람으로 보이기 싫다는 수치심과 이용당했다는 분노가 동시에 있었다.",
+            "그래서 더 건조하게 증거를 붙여 보내며 스스로를 정당화했다."
+          ],
+          "suppressions": [
+            "합의 문서를 다시 본 순간 손을 멈췄다가도 다시 보낸 기억",
+            "부회장과 제3자에게 갈 파장을 끝까지 계산하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-4:S4:shame:0",
+              "factText": "합의를 알고도 어긴 자기 자신에 대한 수치심",
+              "tags": [
+                "shame",
+                "emotion",
+                "admission"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                },
+                "time": {
+                  "dateExact": "작년 겨울 소문 사태 직후 같은 밤",
+                  "period": "작년 겨울",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:a:d-4:S4:legacy:1",
+              "factText": "다시 비밀 보관자 역할로 고정될까 봐 규칙보다 감정적 탈출을 택한 심리",
+              "tags": [
+                "legacy_sentence",
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "person2": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "작년 합의는 있었고, 성호가 먼저 그 합의를 어긴 것도 맞습니다.",
+            "동시에 저도 지정 경로를 버리고 편집 자료를 여러 채널로 확산시켜 그 합의를 함께 깼습니다."
+          ],
+          "privateKnowledge": [
+            "둘 다 ledger-1의 규칙을 알고 있었고 서로 다른 방식으로 배반했다.",
+            "내가 느낀 배신감이 내 위반 책임을 지워 주진 않는다."
+          ],
+          "suppressions": [
+            "분쟁과 무관한 제3자 사생활",
+            "이후 관계 단절을 상상한 독백"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-4:S5:confession:0",
+              "factText": "작년 제한 공개 합의를 양측이 각자 다른 방식으로 파기했다는 최종 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "evidence1": {
+                  "exact": "e-2 메신저 export",
+                  "neutral": "메신저 원본",
+                  "judgeRef": "e-2"
+                },
+                "evidence2": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                },
+                "evidence3": {
+                  "exact": "e-5 동문 단톡·스토리 기록",
+                  "neutral": "확산 기록",
+                  "judgeRef": "e-5"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "settle"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-4:S5:shared:1",
+              "factText": "성호의 선제 위반이 자신의 확산 책임을 없애지는 않는다는 정리",
+              "tags": [
+                "responsibility",
+                "legacy_sentence",
+                "context"
+              ],
+              "slots": {
+                "person1": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "person2": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "성호가 '이미 운영진엔 말해 놨다'고 했을 때도, 저는 실제로는 그런 기록이 없다고 봤어요.",
+            "그 말은 상황을 잠재우려는 즉석 대응처럼 들렸습니다."
+          ],
+          "privateKnowledge": [
+            "작년 합의상 지정 운영진 1명 경로가 있었는데, 그 경로를 썼다는 정황을 듣지 못했다.",
+            "내 확산 이전엔 운영진 누구도 사전 고지를 받았다는 확신을 주지 못했다."
+          ],
+          "suppressions": [
+            "이도현 계정 기준으로 확인 가능한 구체 기록 부재",
+            "그 말이 리더 선발을 지키려는 변명이라고 이미 판단하고 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:a:tell:timeline_stitch"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-5:S0:claim:0",
+              "factText": "박성호의 '이미 말했다'는 발언을 즉석 수습용 주장으로 보고 있다는 인식",
+              "tags": [
+                "denial",
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "숨기려던 게 아니라 타이밍을 못 잡은 거야",
+                  "neutral": "타이밍 문제였다는 변명",
+                  "judgeRef": "의도 부인 문구"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "observe"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:a:d-5:S0:route:1",
+              "factText": "지정 운영진 1명 고지 경로가 실제로 사용됐다는 흔적을 보지 못했다는 진술",
+              "tags": [
+                "rule",
+                "institution",
+                "uncertainty"
+              ],
+              "slots": {
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                },
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "사전 고지였다면 최소한 선발 전 기록이나 운영진 DM 흐름이 먼저 있어야죠.",
+            "그게 없는데 '이미 말했다'고 하면 저는 믿기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "고지 여부를 감정 문제가 아니라 절차·타임스탬프 문제로 몰아가려 한다.",
+            "선발 특혜 의심과는 분리해 이 거짓만은 확실히 잡고 싶다."
+          ],
+          "suppressions": [
+            "내가 이미 성호의 말을 거짓으로 확정하고 있다는 점",
+            "점수표 쟁점과 섞여 더 공격적으로 보일 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:a:tell:timeline_stitch",
+            "friend07:a:tell:term_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-5:S1:timeline:0",
+              "factText": "사전 고지라면 선발 전 기록이 먼저 남아야 한다는 절차 논리",
+              "tags": [
+                "timeline",
+                "institution",
+                "rule"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-5:S1:separate:1",
+              "factText": "특혜 의혹과 별개로 고지 시점 거짓말은 따로 판단해야 한다는 태도",
+              "tags": [
+                "context",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                }
+              },
+              "stanceHints": [
+                "observe",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "합의 노션을 보면 예외는 지정 운영진 한 명에게 함께 알리는 것뿐입니다.",
+            "그런데 성호 쪽에서 선발 전 실제 고지 기록은 나오지 않았어요."
+          ],
+          "privateKnowledge": [
+            "e-3의 규칙 문구와 e-4의 신고 로그를 묶으면 사전 고지 주장은 버티기 어렵다.",
+            "나는 이제 이 문제를 확산의 정당화가 아니라 절차 거짓말의 문제로 정리하려 한다."
+          ],
+          "suppressions": [
+            "내가 확산을 먼저 한 당사자라 이 주장도 보복처럼 보일 수 있다는 점",
+            "이도현 실명 언급이 사생활 경계를 건드릴 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:a:tell:term_freeze"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-5:S2:evidence:0",
+              "factText": "제한 공개 합의 문구상 허용 경로가 지정 운영진 1명 공동 고지뿐이라는 사실",
+              "tags": [
+                "rule",
+                "evidence",
+                "institution"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "운영 충돌이 있는 비밀 연애는 지정 운영진 1명에게만 함께 알리고 스크린샷 확산은 금지한다",
+                  "neutral": "지정 운영진 1명 공동 고지와 확산 금지 규칙",
+                  "judgeRef": "합의 핵심 조항"
+                },
+                "evidence": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                },
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-5:S2:absence:1",
+              "factText": "그 허용 경로를 선발 전에 실제 사용했다는 기록이 보이지 않는다는 판단",
+              "tags": [
+                "timeline",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                },
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                },
+                "time": {
+                  "dateExact": "진아의 캡처 확산 이후",
+                  "period": "사후 신고 시점",
+                  "neutral": "그 뒤"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "결국 타임스탬프상 신고 접수는 제 캡처가 돈 뒤에 남습니다.",
+            "그러면 '이미 말했다'는 말은 사후 정리일 뿐, 사전 고지는 아니죠."
+          ],
+          "privateKnowledge": [
+            "이 지점에서는 성호가 거짓말을 했다는 확신이 거의 굳었다.",
+            "내가 먼저 퍼뜨린 책임과 별개로 성호가 뒤늦게 절차를 맞춘 흔적이 보인다."
+          ],
+          "suppressions": [
+            "사후 보고 자체는 결국 내가 유발한 면도 있다는 복잡한 감정",
+            "상대를 완전히 몰아세우고 싶은 충동"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:a:tell:term_freeze",
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-5:S3:timestamp:0",
+              "factText": "이해충돌 신고 접수 시각이 진아의 캡처 확산 이후로 찍혀 있다는 사실",
+              "tags": [
+                "timeline",
+                "evidence",
+                "institution",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "진아의 캡처 확산 이후",
+                  "period": "사후 신고 시점",
+                  "neutral": "그 뒤"
+                },
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                },
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend07:a:d-5:S3:retrofit:1",
+              "factText": "'이미 알렸다'는 말이 실제로는 사후 수습용 문장에 가깝다는 결론",
+              "tags": [
+                "quote",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "time": {
+                  "dateExact": "진아의 캡처 확산 이후",
+                  "period": "사후 신고 시점",
+                  "neutral": "그 뒤"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "저는 제 확산 책임을 빼고 말할 생각은 없어요. 그래도 성호가 그 와중에 '이미 처리했다'고 둘러댄 건 더 비겁하게 느껴졌습니다.",
+            "잘못을 인정할 순간에도 절차를 이미 지킨 사람처럼 말한 거니까요."
+          ],
+          "privateKnowledge": [
+            "성호가 최소한 이 부분만큼은 바로 인정하길 바랐다.",
+            "거짓말이 겹칠수록 내가 퍼뜨린 선택까지 더 정당해 보인다는 위험한 안도감이 생겼다."
+          ],
+          "suppressions": [
+            "상대의 거짓말이 내 확산을 덜 미안하게 느끼게 만든다는 점",
+            "선발 특혜 문제와 함께 묶어 공격하고 싶은 욕구"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-5:S4:emotion:0",
+              "factText": "사전 고지 거짓말이 절차 위반보다 더 비겁하게 느껴졌다는 감정",
+              "tags": [
+                "emotion",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "press"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend07:a:d-5:S4:threshold:1",
+              "factText": "잘못을 인정할 마지막 선에서조차 이미 처리한 사람처럼 말한 점이 감정 폭발의 임계치를 넘겼다는 서술",
+              "tags": [
+                "threshold",
+                "emotion",
+                "quote"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "진아의 캡처 확산 이후",
+                  "period": "사후 신고 시점",
+                  "neutral": "그 뒤"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "성호의 '이미 운영진에게 제한 고지했다'는 말은 사실이 아니었습니다.",
+            "기록상 실제 신고는 제 캡처 확산 뒤에 이뤄졌고, 이 쟁점은 제 확산 책임과 별도로 거짓 주장으로 정리됩니다."
+          ],
+          "privateKnowledge": [
+            "절차상 거짓은 e-3와 e-4만으로도 충분히 정리된다.",
+            "나는 이제 선발 특혜 오해와 이 사전 고지 거짓을 분리해서 말해야 한다."
+          ],
+          "suppressions": [
+            "운영진 DM 바깥의 사생활 맥락",
+            "분쟁 해결에 불필요한 선발 뒷담화"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:a:tell:quiet_cutoff"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:a:d-5:S5:final:0",
+              "factText": "사전 제한 고지 주장이 타임스탬프와 신고 로그로 반박된다는 최종 정리",
+              "tags": [
+                "admission",
+                "institution",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence1": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                },
+                "evidence2": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                },
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                }
+              },
+              "stanceHints": [
+                "settle",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:a:d-5:S5:separate:1",
+              "factText": "자신의 확산 책임과 성호의 사전 고지 거짓을 분리해서 보아야 한다는 결론",
+              "tags": [
+                "context",
+                "responsibility",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person1": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "person2": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "correct",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그때는 다들 예민했고 일정도 꼬여 있었어요. 저는 진아한테 잠깐 상황을 정리해 달라고 한 거지, 알리바이를 짜 달라고 한 건 아닙니다.",
+            "연애를 숨기려던 것도 아니고 타이밍을 못 잡은 거였어요."
+          ],
+          "privateKnowledge": [
+            "리더 선발 전날 밤 진아에게 자신이 소품 정리 중이라고 말해 달라는 취지의 메시지를 보냈다.",
+            "부회장과의 관계를 공개하면 선발과 평판이 동시에 흔들릴까 두려웠다."
+          ],
+          "suppressions": [
+            "‘같이 있었다고만 해 달라’는 직접 문구",
+            "그 시각 실제로는 연습실 외부 동선이 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:b:tell:pressure_preface"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-1:S0:deny:0",
+              "factText": "일정 정리 요청일 뿐 알리바이 부탁은 아니었다고 낮추는 주장",
+              "tags": [
+                "denial",
+                "counter",
+                "quote"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "소품 정리 중이라고 말해 달라",
+                  "neutral": "소품 정리로 둘러대 달라는 취지",
+                  "judgeRef": "소품 정리 커버 요청"
+                },
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "time": {
+                  "dateExact": "리더 선발 사전 인터뷰 전날 밤",
+                  "period": "선발 직전",
+                  "neutral": "그 전날"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:b:d-1:S0:intent:1",
+              "factText": "관계 은닉을 의도적 숨김이 아니라 공개 타이밍 문제로 포장하는 태도",
+              "tags": [
+                "self_justification",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "숨기려던 게 아니라 타이밍을 못 잡은 거야",
+                  "neutral": "타이밍 문제였다는 변명",
+                  "judgeRef": "의도 부인 문구"
+                },
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "제가 말이 길어져서 오해가 생긴 거예요. '나 대신 설명 좀 해 줘'라는 쪽이었지, 거짓말을 부탁한 건 아니었습니다.",
+            "선발 직전이라 바로 말 못 한 건 맞지만 그걸로 진아를 이용하려던 건 아니었어요."
+          ],
+          "privateKnowledge": [
+            "정확한 문장 수위가 생각보다 강했다는 걸 안다.",
+            "진아가 불편해할 걸 알면서도 그 순간만 넘기면 된다고 생각했다."
+          ],
+          "suppressions": [
+            "메신저 원본이 나오면 버티기 어려운 표현",
+            "진아를 안전판처럼 본 계산"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:b:tell:pressure_preface",
+            "friend07:b:tell:intent_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-1:S1:hedge:0",
+              "factText": "알리바이 부탁을 '대신 설명'으로 바꿔 부르는 언어 조정",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "quote"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "네가 연습실에 나랑 있었다고만 해줘",
+                  "neutral": "같이 있었다고 말해 달라는 취지",
+                  "judgeRef": "알리바이 부탁 문구"
+                },
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "soften"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-1:S1:context:1",
+              "factText": "선발 직전 압박 때문에 관계 공개를 미뤘다는 상황 설명",
+              "tags": [
+                "context",
+                "fear",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "원본 대화에 제가 '같이 있었다고만 해 달라'고 쓴 건 맞습니다.",
+            "그때는 진짜로 그냥 그날만 넘기면 된다고 생각해서 진아한테 기대 버렸어요."
+          ],
+          "privateKnowledge": [
+            "지정 운영진 공동 고지 대신 진아를 커버로 먼저 사용했다.",
+            "부회장과의 관계를 숨긴 채 선발 직전 상황을 통제하려 했다."
+          ],
+          "suppressions": [
+            "작년 합의 위반이라는 자각",
+            "진아가 그 부탁을 싫어할 걸 알았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:b:tell:intent_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-1:S2:admission:0",
+              "factText": "진아에게 함께 있었다고 말해 달라고 직접 적은 사실",
+              "tags": [
+                "admission",
+                "quote",
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "네가 연습실에 나랑 있었다고만 해줘",
+                  "neutral": "같이 있었다고 말해 달라는 취지",
+                  "judgeRef": "알리바이 부탁 문구"
+                },
+                "evidence": {
+                  "exact": "e-2 메신저 export",
+                  "neutral": "메신저 원본",
+                  "judgeRef": "e-2"
+                },
+                "time": {
+                  "dateExact": "리더 선발 사전 인터뷰 전날 밤",
+                  "period": "선발 직전",
+                  "neutral": "그 전날"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-1:S2:cover:1",
+              "factText": "지정 운영진 경로 대신 친구를 먼저 완충재로 삼은 선택",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                },
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_protect"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "맞아요, 진아가 소품 정리로 메우는 동안 저는 다른 동선에 있었습니다.",
+            "그래도 저는 그걸 진아를 함정에 빠뜨리려던 게 아니라, 들키면 다 무너질 것 같아서 순간적으로 의지한 거예요."
+          ],
+          "privateKnowledge": [
+            "스케줄표, 택시 영수증, 통화기록이 맞물리면 내 해명이 거의 남지 않는다.",
+            "나는 진아가 실제로 내 빈자리를 떠안는다는 점까지 알면서 부탁했다."
+          ],
+          "suppressions": [
+            "부회장과 따로 이동한 정황",
+            "그 부탁이 진아 평판까지 건드릴 수 있다는 인식"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:b:tell:intent_shield",
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-1:S3:evidence:0",
+              "factText": "진아가 소품 정리를 맡는 동안 자신은 다른 이동과 통화를 하고 있었다는 사실",
+              "tags": [
+                "evidence",
+                "timeline",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-6 스케줄표·택시 영수증·통화기록",
+                  "neutral": "이동/일정 기록",
+                  "judgeRef": "e-6"
+                },
+                "time": {
+                  "dateExact": "연습 스케줄 변경 당일 저녁",
+                  "period": "그날 저녁",
+                  "neutral": "그 시간대"
+                },
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend07:b:d-1:S3:fear:1",
+              "factText": "관계와 선발이 동시에 무너질까 봐 순간적으로 친구를 커버막으로 삼았다는 변명",
+              "tags": [
+                "fear",
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "하... 솔직히 말하면, 저는 진아가 제 편에서 한 번만 막아 줄 거라고 기대했습니다.",
+            "선발 직전이었고 연애도 들키기 싫었고, 그래서 진아를 친구보다 방패처럼 쓴 거예요."
+          ],
+          "privateKnowledge": [
+            "예전에 서로 비밀을 지켜 준 기억 때문에 이번에도 부탁이 통할 거라 계산했다.",
+            "들키면 '연애로 자리 챙긴 사람'으로 낙인찍힐까 무서웠다."
+          ],
+          "suppressions": [
+            "부회장에게도 충분히 말하지 못했다는 점",
+            "진아를 잃을 수 있다는 생각은 뒤늦게 왔다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-1:S4:emotion:0",
+              "factText": "친구인 진아를 방패처럼 썼다는 자기 인식",
+              "tags": [
+                "emotion",
+                "relationship",
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "beneficiary": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:b:d-1:S4:stigma:1",
+              "factText": "연애로 자리 챙긴 사람으로 낙인찍힐까 두려워 더 비겁한 선택을 했다는 고백",
+              "tags": [
+                "fear",
+                "shame",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "저는 부회장과의 비밀 연애를 숨긴 채 진아에게 제 부재를 덮어 달라고 부탁했습니다.",
+            "그건 일정 정리가 아니라 사실상 알리바이 요청이었고, 진아를 이용한 선택이었습니다."
+          ],
+          "privateKnowledge": [
+            "작년 합의를 알면서도 지정 운영진 고지보다 친구 커버를 먼저 택했다.",
+            "내 책임은 연애 은닉과 알리바이 요청 두 축으로 분명하다."
+          ],
+          "suppressions": [
+            "분쟁 해결과 무관한 연애 세부",
+            "부회장과의 사적인 감정선"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-1:S5:confession:0",
+              "factText": "비밀 연애 은닉 상태에서 진아에게 알리바이를 부탁한 최종 사실 인정",
+              "tags": [
+                "admission",
+                "act",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "네가 연습실에 나랑 있었다고만 해줘",
+                  "neutral": "같이 있었다고 말해 달라는 취지",
+                  "judgeRef": "알리바이 부탁 문구"
+                },
+                "person1": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "person2": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "settle"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-1:S5:legacy:1",
+              "factText": "예전의 신뢰 자산을 이번엔 커버 요청에 써 버렸다는 자각",
+              "tags": [
+                "legacy_sentence",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "작년 겨울 소문 사태 직후 같은 밤",
+                  "period": "작년 겨울",
+                  "neutral": "그때"
+                },
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "그 캡처는 제 말을 있는 그대로 보여 준 자료가 아니에요. 서로 다른 대화를 이어 붙여서 제가 훨씬 계산적으로 보이게 만들었죠.",
+            "저는 그게 처음부터 너무 unfair하다고 느꼈습니다."
+          ],
+          "privateKnowledge": [
+            "e-1을 보는 순간 원문 순서가 뒤섞였다는 걸 알았다.",
+            "다만 내 은닉과 알리바이 요청이 이런 확산의 불씨가 됐다는 사실은 불편해서 바로 꺼내고 싶지 않다."
+          ],
+          "suppressions": [
+            "원문 export를 대조하면 편집이 명확해진다는 점",
+            "내가 먼저 비밀을 숨긴 책임"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:b:tell:pressure_preface"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-2:S0:edit:0",
+              "factText": "서로 다른 대화 조각이 한 흐름처럼 이어 붙여졌다는 주장",
+              "tags": [
+                "evidence",
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-1 편집 캡처",
+                  "neutral": "편집 캡처",
+                  "judgeRef": "e-1"
+                },
+                "quote": {
+                  "exact": "임원 연애는 숨겨야 이득",
+                  "neutral": "연애를 숨기면 유리하다는 취지",
+                  "judgeRef": "문제의 문장"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-2:S0:villain:1",
+              "factText": "편집 때문에 자신이 계산적으로 이득을 챙긴 사람처럼 보이게 됐다는 피해감",
+              "tags": [
+                "harm",
+                "identity",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "person2": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "hurt",
+                "defensive"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "원문을 보면 그 문제 문장은 다른 날짜 맥락에서 나온 조각이에요.",
+            "그걸 하나로 붙여서 '연애를 이용해 자리 챙긴 사람'처럼 읽히게 한 건 진아 쪽입니다."
+          ],
+          "privateKnowledge": [
+            "정확한 타임라인 대조만으로도 편집은 드러난다.",
+            "나는 진아의 행위를 비난하면서도, 왜 그런 분노가 생겼는지는 아직 최소화하고 싶다."
+          ],
+          "suppressions": [
+            "알리바이 요청과 특혜 오해의 연결 고리",
+            "양소라에게 먼저 간 뒤 운영진까지 번졌다는 속도감"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:b:tell:pressure_preface",
+            "friend07:b:tell:intent_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-2:S1:timeline:0",
+              "factText": "문제 문장이 다른 날짜 대화에서 잘려 나와 한 화면에 재배열됐다는 설명",
+              "tags": [
+                "timeline",
+                "evidence",
+                "quote"
+              ],
+              "slots": {
+                "evidence1": {
+                  "exact": "e-1 편집 캡처",
+                  "neutral": "편집 캡처",
+                  "judgeRef": "e-1"
+                },
+                "evidence2": {
+                  "exact": "e-2 메신저 export",
+                  "neutral": "메신저 원본",
+                  "judgeRef": "e-2"
+                },
+                "quote": {
+                  "exact": "임원 연애는 숨겨야 이득",
+                  "neutral": "연애를 숨기면 유리하다는 취지",
+                  "judgeRef": "문제의 문장"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend07:b:d-2:S1:identity:1",
+              "factText": "편집의 효과가 자신을 연애를 이용해 자리 챙긴 사람처럼 보이게 만든다는 주장",
+              "tags": [
+                "identity",
+                "harm",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "hurt",
+                "press"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "메신저 export하고 비교하면 그 한 장은 원문이 아니라 편집본이라는 게 분명합니다.",
+            "제가 잘못한 부분이 있어도, 그걸 저렇게 덧칠해도 된다는 뜻은 아니잖아요."
+          ],
+          "privateKnowledge": [
+            "내 잘못을 인정해야 이 말이 더 설득력 있어진다는 걸 안다.",
+            "그래도 지금은 일단 진아의 편집 책임을 분리해 세우고 싶다."
+          ],
+          "suppressions": [
+            "내 은닉이 확산을 촉발한 배경이라는 점",
+            "양소라에게서부터 동문 단톡으로 간 순차 전파"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:b:tell:intent_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-2:S2:compare:0",
+              "factText": "원본 export와 대조하면 e-1이 편집본이라는 점이 드러난다는 사실",
+              "tags": [
+                "evidence",
+                "admission",
+                "timeline"
+              ],
+              "slots": {
+                "evidence1": {
+                  "exact": "e-1 편집 캡처",
+                  "neutral": "편집 캡처",
+                  "judgeRef": "e-1"
+                },
+                "evidence2": {
+                  "exact": "e-2 메신저 export",
+                  "neutral": "메신저 원본",
+                  "judgeRef": "e-2"
+                },
+                "term": {
+                  "exact": "편집",
+                  "neutral": "손댐",
+                  "judgeRef": "편집"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend07:b:d-2:S2:separate:1",
+              "factText": "자신의 다른 잘못과 별개로 편집 행위 자체는 독립된 책임이라는 주장",
+              "tags": [
+                "context",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person1": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "person2": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "진아는 양소라한테 보낸 뒤 운영진, 동문 단톡, 스토리까지 거의 쉬지 않고 돌렸습니다.",
+            "확인 요청이라고 보기엔 너무 넓고 너무 빨랐어요."
+          ],
+          "privateKnowledge": [
+            "e-5가 나오면 확산 피해를 숫자처럼 나열하고 싶어진다.",
+            "내 입장에서는 편집보다도 '여러 군데에 퍼졌다'는 사실이 더 공포였다."
+          ],
+          "suppressions": [
+            "확산 범위를 처음 보고 멍해졌던 반응",
+            "그날 부회장과의 대화까지 흔들렸다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:b:tell:intent_shield",
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-2:S3:spread:0",
+              "factText": "양소라 전달 뒤 운영진·동문 단톡·스토리까지 빠르게 번진 확산 경로",
+              "tags": [
+                "timeline",
+                "act",
+                "harm",
+                "evidence"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                  "neutral": "여러 채널",
+                  "judgeRef": "확산 경로"
+                },
+                "time": {
+                  "dateExact": "양소라 1차 전달 뒤 17분 안",
+                  "period": "같은 밤",
+                  "neutral": "짧은 시간 안"
+                },
+                "evidence": {
+                  "exact": "e-5 동문 단톡·스토리 기록",
+                  "neutral": "확산 기록",
+                  "judgeRef": "e-5"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend07:b:d-2:S3:threshold:1",
+              "factText": "확인 요청의 선을 넘는 넓이와 속도였다는 판단",
+              "tags": [
+                "threshold",
+                "harm",
+                "counter"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                  "neutral": "여러 채널",
+                  "judgeRef": "확산 경로"
+                },
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "하... 저는 그 캡처 한 장 때문에 제가 친구를 이용해 자리 챙기는 사람으로 굳어지는 느낌이 제일 무서웠어요.",
+            "제가 잘못한 건 따로 인정해도, 그렇게까지 나를 만들어 버린 건 상처였습니다."
+          ],
+          "privateKnowledge": [
+            "억울함을 길게 말하면 또 회피처럼 보일까 봐 멈칫한다.",
+            "사실은 진아가 왜 폭발했는지 이해되는 부분도 있지만 그걸 바로 말하고 싶진 않다."
+          ],
+          "suppressions": [
+            "진아의 분노 원인을 어느 정도 이해한다는 점",
+            "부회장과의 관계가 이 일로 크게 흔들렸다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-2:S4:stigma:0",
+              "factText": "편집 캡처 때문에 자신이 친구를 이용해 자리 챙긴 사람으로 굳어질까 두려웠다는 감정",
+              "tags": [
+                "fear",
+                "identity",
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:b:d-2:S4:wound:1",
+              "factText": "잘못과 별개로 과장된 인상으로 낙인찍힌 상처",
+              "tags": [
+                "harm",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "quote": {
+                  "exact": "임원 연애는 숨겨야 이득",
+                  "neutral": "연애를 숨기면 유리하다는 취지",
+                  "judgeRef": "문제의 문장"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "press"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "진아는 제 여러 시점 메시지를 편집해 의도가 더 악하게 보이도록 만들었고, 그걸 여러 채널로 확산시켰습니다.",
+            "제 은닉과 알리바이 요청이 분노의 원인이 된 건 맞지만, 편집과 확산 책임은 진아 쪽에 따로 남습니다."
+          ],
+          "privateKnowledge": [
+            "이 쟁점을 말할 때 내 선제 잘못을 같이 인정해야 신뢰가 생긴다.",
+            "확산 피해를 강조하더라도 내 잘못을 방패로 쓰면 안 된다."
+          ],
+          "suppressions": [
+            "분쟁과 무관한 연애 사생활",
+            "추가 2차 전달 사례 세부"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-2:S5:final:0",
+              "factText": "메시지 편집과 다중 채널 확산이 진아의 독립된 책임이라는 최종 정리",
+              "tags": [
+                "admission",
+                "responsibility",
+                "harm",
+                "evidence"
+              ],
+              "slots": {
+                "evidence1": {
+                  "exact": "e-1 편집 캡처",
+                  "neutral": "편집 캡처",
+                  "judgeRef": "e-1"
+                },
+                "evidence2": {
+                  "exact": "e-5 동문 단톡·스토리 기록",
+                  "neutral": "확산 기록",
+                  "judgeRef": "e-5"
+                },
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "settle",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-2:S5:cause:1",
+              "factText": "자신의 은닉이 분노의 원인이 되었더라도 과장 편집을 정당화하진 않는다는 구분",
+              "tags": [
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person1": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "person2": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "correct",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "리더 선발은 점수로 된 거예요. 연애로 밀어 준 거라는 말은 사실이 아닙니다.",
+            "비밀 연애가 문제였던 것과 선발 결과를 섞으면 안 돼요."
+          ],
+          "privateKnowledge": [
+            "사전 고지를 하지 않은 약점 때문에 선발 공정성 의심까지 불러온 건 안다.",
+            "하지만 실제 점수표와 제외 로그는 나를 방어해 준다."
+          ],
+          "suppressions": [
+            "연애 은닉이 의심의 빌미를 줬다는 점",
+            "사전 고지 부재"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:b:tell:pressure_preface"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-3:S0:deny:0",
+              "factText": "리더 선발이 연애 특혜였다는 주장을 정면 부인하는 진술",
+              "tags": [
+                "denial",
+                "institution",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-3:S0:separate:1",
+              "factText": "비밀 연애 은닉 문제와 선발 결과 문제를 분리해야 한다는 태도",
+              "tags": [
+                "context",
+                "counter",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                },
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "press"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "제가 선발 직전까지 관계를 안 드러낸 건 맞지만, 그걸로 채점이 움직인 건 아니에요.",
+            "특혜였다면 기록이 남아야 하는데 그런 건 없습니다."
+          ],
+          "privateKnowledge": [
+            "내가 먼저 공개를 미뤄 의심을 자초했다는 자책이 있다.",
+            "그래도 특혜 프레임이 굳는 건 꼭 막고 싶다."
+          ],
+          "suppressions": [
+            "사전 고지 거짓말이 따로 있다는 점",
+            "진아의 편집 캡처가 왜 설득력을 얻었는지"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:b:tell:pressure_preface",
+            "friend07:b:tell:intent_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-3:S1:hedge:0",
+              "factText": "관계 은닉은 인정하면서도 채점 영향은 없었다고 선을 긋는 진술",
+              "tags": [
+                "uncertainty",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:b:d-3:S1:record:1",
+              "factText": "특혜였다면 원본 기록에 흔적이 있어야 한다는 절차 논리",
+              "tags": [
+                "institution",
+                "evidence",
+                "rule"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                },
+                "scoring": {
+                  "exact": "리더 선발 점수표와 부회장 채점 제외 로그",
+                  "neutral": "선발 원본 기록",
+                  "judgeRef": "채점 제외 로그"
+                }
+              },
+              "stanceHints": [
+                "press",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "제가 관계를 숨긴 탓에 의심이 커진 건 인정합니다.",
+            "그렇다고 선발 자체가 조작이었다고 갈 수는 없어요."
+          ],
+          "privateKnowledge": [
+            "선발 공정성 프레임을 막으려면 내 은닉 잘못을 일부 먼저 인정해야 한다.",
+            "진아가 왜 그 의심에 매달렸는지 이해되지만 받아들이긴 싫다."
+          ],
+          "suppressions": [
+            "알리바이 요청과 선발 의심이 심리적으로 연결됐다는 점",
+            "부회장과의 대화에서 불안이 컸다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:b:tell:intent_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-3:S2:admission:0",
+              "factText": "관계 은닉이 특혜 의심을 키운 원인이라는 부분 인정",
+              "tags": [
+                "admission",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                },
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend07:b:d-3:S2:boundary:1",
+              "factText": "의심의 원인 제공과 실제 선발 조작 여부는 다르다는 경계선 긋기",
+              "tags": [
+                "context",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "e-4를 보면 부회장은 제 평가 항목에서 자동 제외돼 있었습니다.",
+            "그래서 제 은닉은 비난받아도, 리더 선발 자체를 연애 특혜라고 말하는 건 틀려요."
+          ],
+          "privateKnowledge": [
+            "이 시점에서는 점수표가 내 가장 강한 방패다.",
+            "하지만 사전 고지 미이행 때문에 완전히 떳떳하게 말할 수는 없다."
+          ],
+          "suppressions": [
+            "진아가 편집 캡처로 특혜 인상을 만들었다는 분노",
+            "운영진 신고 시점 문제"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:b:tell:intent_shield",
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-3:S3:evidence:0",
+              "factText": "부회장이 성호 평가에서 자동 제외돼 있었다는 점수표 원본 사실",
+              "tags": [
+                "evidence",
+                "institution",
+                "admission"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                },
+                "scoring": {
+                  "exact": "리더 선발 점수표와 부회장 채점 제외 로그",
+                  "neutral": "선발 원본 기록",
+                  "judgeRef": "채점 제외 로그"
+                },
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend07:b:d-3:S3:corrective:1",
+              "factText": "은닉의 잘못과 선발 특혜 부정이 동시에 성립한다는 정정",
+              "tags": [
+                "responsibility",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "person1": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "person2": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "correct",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "하... 저는 들키는 것도 무서웠지만, 리더 자리까지 연애로 챙긴 사람처럼 찍히는 게 더 무서웠습니다.",
+            "제가 잘못한 것보다 더 큰 혐의로 굳어지는 느낌이었어요."
+          ],
+          "privateKnowledge": [
+            "억울함과 수치심이 겹쳐서 계속 '의도는 아니었다'는 말로 숨는다.",
+            "사실은 진아에게 설명할 타이밍을 잃은 내가 만든 상황이라는 자책도 있다."
+          ],
+          "suppressions": [
+            "부회장에게 미안했던 감정",
+            "특혜 프레임이 직업 평판까지 번질까 두려운 생각"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-3:S4:fear:0",
+              "factText": "비밀 연애보다도 연애로 리더 자리를 챙긴 사람으로 낙인찍힐까 두려웠다는 감정",
+              "tags": [
+                "fear",
+                "identity",
+                "institution",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:b:d-3:S4:shame:1",
+              "factText": "자신의 실제 잘못보다 더 큰 혐의로 굳어지는 수치심",
+              "tags": [
+                "shame",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "quote": {
+                  "exact": "임원 연애는 숨겨야 이득",
+                  "neutral": "연애를 숨기면 유리하다는 취지",
+                  "judgeRef": "문제의 문장"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "제 비밀 연애 은닉은 문제였지만, 리더 선발 자체는 연애 특혜로 확정되지 않습니다.",
+            "점수표와 제외 로그 기준으로 그 부분은 정정되어야 하고, 저는 은닉과 신고 미이행의 책임을 따로 지겠습니다."
+          ],
+          "privateKnowledge": [
+            "내가 인정해야 할 건 은닉과 사전 고지 미이행이지 선발 조작은 아니다.",
+            "진아의 과장 주장과 내 실제 잘못을 분리해 정리해야 한다."
+          ],
+          "suppressions": [
+            "분쟁 밖 다른 지원자 정보",
+            "불필요한 부회장 사생활"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-3:S5:final:0",
+              "factText": "리더 선발이 연애 특혜로 확정되지 않는다는 최종 정리",
+              "tags": [
+                "admission",
+                "institution",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                },
+                "scoring": {
+                  "exact": "리더 선발 점수표와 부회장 채점 제외 로그",
+                  "neutral": "선발 원본 기록",
+                  "judgeRef": "채점 제외 로그"
+                },
+                "person": {
+                  "fullName": "정선우",
+                  "judgeRef": "정선우 운영간사",
+                  "neutral": "운영간사"
+                }
+              },
+              "stanceHints": [
+                "settle",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-3:S5:ownfault:1",
+              "factText": "비밀 연애 은닉과 신고 미이행은 별도의 자신의 책임으로 남는다는 인정",
+              "tags": [
+                "responsibility",
+                "relationship",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                },
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "그 합의가 있었던 건 맞지만, 그때 문서는 아주 긴급한 경우까지 다 상정한 건 아니었어요.",
+            "저는 관계를 영영 숨기려던 게 아니라 조금만 시간을 벌고 싶었던 겁니다."
+          ],
+          "privateKnowledge": [
+            "합의 문구와 확인 이모지 기록을 또렷이 기억한다.",
+            "이미 진아를 커버로 세운 순간부터 자신도 합의에서 이탈했다는 걸 안다."
+          ],
+          "suppressions": [
+            "지정 운영진 공동 고지를 미루고 진아에게 먼저 부탁한 사실",
+            "합의를 상황 논리로 느슨하게 바꾸려는 의도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:b:tell:pressure_preface"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-4:S0:minimize:0",
+              "factText": "작년 합의를 절대 규칙이 아니라 상황형 가이드처럼 축소해 말하는 태도",
+              "tags": [
+                "denial",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "운영 충돌이 있는 비밀 연애는 지정 운영진 1명에게만 함께 알리고 스크린샷 확산은 금지한다",
+                  "neutral": "지정 운영진 1명 공동 고지와 확산 금지 규칙",
+                  "judgeRef": "합의 핵심 조항"
+                },
+                "evidence": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                },
+                "time": {
+                  "dateExact": "작년 겨울 소문 사태 직후 같은 밤",
+                  "period": "작년 겨울",
+                  "neutral": "그때"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-4:S0:intent:1",
+              "factText": "영구 은닉이 아니라 잠깐 시간만 벌려 했다는 의도 중심 변명",
+              "tags": [
+                "self_justification",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "숨기려던 게 아니라 타이밍을 못 잡은 거야",
+                  "neutral": "타이밍 문제였다는 변명",
+                  "judgeRef": "의도 부인 문구"
+                },
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "합의의 핵심도 결국 운영 충돌이 생기면 통제된 방식으로 알리자는 취지였잖아요.",
+            "저는 그 통제를 못 한 거고, 진아도 바로 밖으로 번지게 했으니 둘 다 원칙에서 벗어난 거예요."
+          ],
+          "privateKnowledge": [
+            "내 선제 위반을 진아의 확산과 동시에 놓아 균등 책임처럼 보이게 만들고 싶다.",
+            "실제로는 시작점이 내 은닉과 커버 요청이라는 걸 안다."
+          ],
+          "suppressions": [
+            "내가 먼저 지정 경로를 사용하지 않았다는 점",
+            "진아가 왜 그렇게 배신감을 느꼈는지"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:b:tell:pressure_preface",
+            "friend07:b:tell:intent_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-4:S1:hedge:0",
+              "factText": "합의 위반의 출발점을 흐리며 양측 동시 이탈처럼 보이게 하는 진술",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "rule"
+              ],
+              "slots": {
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                },
+                "person1": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "person2": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "redirect"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:b:d-4:S1:context:1",
+              "factText": "통제 실패라는 말로 자신의 선제 은닉과 타인의 확산을 같은 층위에 놓으려는 태도",
+              "tags": [
+                "context",
+                "self_justification",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "channel": {
+                  "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                  "neutral": "여러 채널",
+                  "judgeRef": "확산 경로"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "네, 그 합의는 분명히 있었고 저도 그날 확인 이모지를 남겼습니다.",
+            "그런데 저는 선발 직전이라 겁이 나서 지정 운영진에게 같이 알리는 절차를 미뤘어요."
+          ],
+          "privateKnowledge": [
+            "합의 기억이 선명해서 더 변명거리가 약하다는 걸 안다.",
+            "진아를 커버로 세운 순간, 나 스스로도 관계 유지와 자리 보전을 동시에 노린 셈이다."
+          ],
+          "suppressions": [
+            "커버 요청이 합의 파기의 실질적 첫 단계라는 점",
+            "부회장과도 공개 시점을 명확히 못 정했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:b:tell:intent_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-4:S2:admission:0",
+              "factText": "작년 제한 공개 합의를 정확히 기억하고 확인 반응까지 남겼다는 사실",
+              "tags": [
+                "admission",
+                "rule",
+                "legacy_sentence",
+                "evidence"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                },
+                "time": {
+                  "dateExact": "작년 겨울 소문 사태 직후 같은 밤",
+                  "period": "작년 겨울",
+                  "neutral": "그때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-4:S2:fear:1",
+              "factText": "선발 직전 공포 때문에 지정 운영진 공동 고지 절차를 미뤘다는 이유",
+              "tags": [
+                "fear",
+                "institution",
+                "motive"
+              ],
+              "slots": {
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                },
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "결국 저는 지정 경로 대신 진아를 먼저 커버로 썼고, 그게 합의 위반의 시작이었습니다.",
+            "다만 진아도 그 뒤 여러 채널로 퍼뜨리면서 둘 다 약속을 복구하지 못했어요."
+          ],
+          "privateKnowledge": [
+            "선제 위반이 자신에게 있다는 걸 인정하지 않으면 더 버티기 어렵다.",
+            "그래도 진아의 확산을 함께 묶어야 내 체면이 덜 무너진다."
+          ],
+          "suppressions": [
+            "진아를 이용했다는 표현을 끝까지 피하고 싶은 마음",
+            "합의를 복구할 기회가 있었는데 놓쳤다는 자각"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:b:tell:intent_shield",
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-4:S3:cover:0",
+              "factText": "지정 운영진 공동 고지 대신 진아를 먼저 커버막으로 세운 사실",
+              "tags": [
+                "responsibility",
+                "act",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                },
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "evidence": {
+                  "exact": "e-2 메신저 export",
+                  "neutral": "메신저 원본",
+                  "judgeRef": "e-2"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-4:S3:shared:1",
+              "factText": "자신의 선제 위반 뒤에 진아의 다중 채널 확산이 이어져 약속이 완전히 무너졌다는 설명",
+              "tags": [
+                "timeline",
+                "context",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "양소라 DM → 운영진 전달 → 동문 단톡 → 친한친구 스토리",
+                  "neutral": "여러 채널",
+                  "judgeRef": "확산 경로"
+                },
+                "evidence": {
+                  "exact": "e-5 동문 단톡·스토리 기록",
+                  "neutral": "확산 기록",
+                  "judgeRef": "e-5"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "redirect"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 저는 관계도 잃기 싫었고, 선발도 흔들리고 싶지 않았고, 진아까지 잃고 싶지 않았어요.",
+            "그래서 다 지키려다 아무것도 못 지킨 거고, 그 과정에서 진아를 제일 먼저 소모시켰습니다."
+          ],
+          "privateKnowledge": [
+            "victim처럼 말해도 결국 선택의 중심은 나였다는 걸 안다.",
+            "관계 유지와 자리 보전, 친구 보존을 한꺼번에 붙잡으려 한 탐욕이 있었다."
+          ],
+          "suppressions": [
+            "부회장에게도 책임을 분산시키고 싶은 충동",
+            "진아가 자신을 버릴까 봐 겁먹은 감정"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-4:S4:emotion:0",
+              "factText": "관계, 자리, 친구를 다 잃고 싶지 않아 무리한 은닉을 이어 갔다는 감정 고백",
+              "tags": [
+                "emotion",
+                "fear",
+                "relationship",
+                "institution"
+              ],
+              "slots": {
+                "person1": {
+                  "fullName": "동호회 부회장",
+                  "judgeRef": "그 부회장",
+                  "neutral": "연애 상대"
+                },
+                "person2": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend07:b:d-4:S4:harm:1",
+              "factText": "그 욕심의 대가로 진아를 가장 먼저 소모시켰다는 자각",
+              "tags": [
+                "harm",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                },
+                "beneficiary": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "작년 제한 공개 합의는 있었고, 저는 그걸 알면서도 지정 운영진 고지 대신 진아를 커버로 세워 먼저 어겼습니다.",
+            "이후 진아가 지정 경로 밖으로 확산하면서 결국 둘 다 그 합의를 파기했습니다."
+          ],
+          "privateKnowledge": [
+            "시작점과 확산점이 달랐을 뿐 둘 다 ledger-1을 배반했다.",
+            "내가 선제 위반을 인정해야만 진아의 후행 위반도 공정하게 말할 수 있다."
+          ],
+          "suppressions": [
+            "분쟁과 무관한 연애 세부",
+            "동호회 다른 구성원의 사생활"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-4:S5:confession:0",
+              "factText": "작년 비밀 유지 합의를 자신이 선제 위반했고 이후 양측이 모두 파기했다는 최종 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "evidence1": {
+                  "exact": "e-2 메신저 export",
+                  "neutral": "메신저 원본",
+                  "judgeRef": "e-2"
+                },
+                "evidence2": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                },
+                "evidence3": {
+                  "exact": "e-5 동문 단톡·스토리 기록",
+                  "neutral": "확산 기록",
+                  "judgeRef": "e-5"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "settle"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-4:S5:sequence:1",
+              "factText": "선제 은닉과 후행 확산을 분리해 보되 둘 다 책임으로 남겨야 한다는 정리",
+              "tags": [
+                "timeline",
+                "context",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "person1": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "person2": {
+                  "fullName": "서진아",
+                  "judgeRef": "서진아 씨",
+                  "neutral": "A"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "correct"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저는 운영진 쪽에 아예 아무 말도 안 한 건 아니에요. 이미 제한적으로는 얘기해 둔 상태였습니다.",
+            "기록이 바로 안 보인다고 해서 고지가 없었다고 단정하긴 어렵죠."
+          ],
+          "privateKnowledge": [
+            "선발 전 정식 신고나 지정 운영진 공동 고지 기록은 없다.",
+            "막연한 '알릴 생각이었다'를 실제 고지처럼 말하고 있다."
+          ],
+          "suppressions": [
+            "신고 접수 로그가 캡처 확산 뒤라는 점",
+            "합의 문서상 허용 경로를 선발 전엔 밟지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:b:tell:pressure_preface"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-5:S0:claim:0",
+              "factText": "실제 기록 없이도 이미 제한적으로 말했다고 주장하는 발언",
+              "tags": [
+                "denial",
+                "quote",
+                "institution"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                },
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                },
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-5:S0:blur:1",
+              "factText": "알릴 생각과 실제 고지를 의도적으로 섞어 말하는 태도",
+              "tags": [
+                "self_justification",
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "숨기려던 게 아니라 타이밍을 못 잡은 거야",
+                  "neutral": "타이밍 문제였다는 변명",
+                  "judgeRef": "의도 부인 문구"
+                },
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "정식 신고 양식까지는 안 갔더라도, 저는 운영진에게 곧 정리해 말하려는 흐름이 있었습니다.",
+            "그래서 '이미 얘기했다'는 표현이 아주 허공에서 나온 말은 아니에요."
+          ],
+          "privateKnowledge": [
+            "표현을 넓게 잡아 이미 처리한 것처럼 들리게 만들고 있다.",
+            "선발 직전 커리어성 평판을 지키려면 이 부분만큼은 계속 버텨야 한다고 생각한다."
+          ],
+          "suppressions": [
+            "실제 DM 시각과 신고 생성 시각",
+            "지정 운영진 1명 공동 고지라는 합의 조건"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend07:b:tell:pressure_preface",
+            "friend07:b:tell:intent_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-5:S1:hedge:0",
+              "factText": "정식 신고 전의 막연한 의사와 실제 고지 사이를 흐리는 진술",
+              "tags": [
+                "uncertainty",
+                "counter",
+                "institution"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                },
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "soften"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-5:S1:career:1",
+              "factText": "선발 직전 평판을 지키기 위해 사전 고지 여부를 더 크게 포장하는 동기",
+              "tags": [
+                "motive",
+                "fear",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "합의상 지정 운영진에게 알리자는 규칙이 있었던 건 맞습니다.",
+            "다만 선발 전에 제가 그 절차를 끝냈다고 말하긴 어렵고, 그냥 곧 말할 생각이라고 스스로 합리화했던 것 같아요."
+          ],
+          "privateKnowledge": [
+            "이 시점에서 이미 사전 고지 주장을 유지하기 어렵다는 걸 안다.",
+            "그래도 '전혀 안 했다'보다는 '하려고 했다' 쪽으로라도 체면을 남기고 싶다."
+          ],
+          "suppressions": [
+            "실제 기록 부재",
+            "진아 캡처 이후에야 신고가 움직였다는 핵심"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:b:tell:intent_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-5:S2:admission:0",
+              "factText": "제한 공개 합의 규칙은 알았지만 선발 전 절차를 완료했다고는 말하기 어렵다는 부분 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "evidence": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                },
+                "route": {
+                  "exact": "이도현 운영진 1명에게 공동 고지",
+                  "neutral": "지정 경로",
+                  "judgeRef": "합의된 고지 경로"
+                },
+                "person": {
+                  "fullName": "이도현",
+                  "judgeRef": "이도현 운영진",
+                  "neutral": "지정 운영진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-5:S2:selfjust:1",
+              "factText": "'곧 말할 생각'을 '이미 알린 상태'처럼 스스로 합리화한 심리",
+              "tags": [
+                "self_justification",
+                "motive",
+                "fear"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "기록상 신고가 늦게 남은 건 인정합니다.",
+            "그래도 저는 문제를 덮으려던 게 아니라, 일이 커진 뒤라도 절차를 맞추려 한 거예요."
+          ],
+          "privateKnowledge": [
+            "실제 신고 접수는 진아의 캡처 확산 뒤에 생성됐다.",
+            "이제는 '이미 알렸다'가 아니라 '뒤늦게라도 정리했다'로 프레임을 바꿔야 한다."
+          ],
+          "suppressions": [
+            "사후 정리라는 핵심 표현",
+            "거짓말로 상황을 잠재우려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend07:b:tell:intent_shield",
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-5:S3:timestamp:0",
+              "factText": "실제 이해충돌 신고 접수가 캡처 확산 이후에 이뤄졌다는 사실",
+              "tags": [
+                "timeline",
+                "evidence",
+                "institution",
+                "admission"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                },
+                "time": {
+                  "dateExact": "진아의 캡처 확산 이후",
+                  "period": "사후 신고 시점",
+                  "neutral": "그 뒤"
+                },
+                "evidence": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "friend07:b:d-5:S3:retro:1",
+              "factText": "사전 고지 주장 대신 사후 절차 정리로 말을 바꾸며 체면을 지키려는 태도",
+              "tags": [
+                "counter",
+                "self_justification",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "time": {
+                  "dateExact": "진아의 캡처 확산 이후",
+                  "period": "사후 신고 시점",
+                  "neutral": "그 뒤"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "redirect"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 저는 그때 선발도 지키고 싶었고, 운영진한테 '이미 알고 있던 일'처럼 보이게 만들고 싶었습니다.",
+            "그래서 아직 안 한 고지를 이미 된 일처럼 말해 버렸어요."
+          ],
+          "privateKnowledge": [
+            "career_preservation이 이 거짓의 핵심이었다.",
+            "진아 확산 이후에도 즉시 사과보다 절차 정리와 이미지 방어부터 떠올렸다."
+          ],
+          "suppressions": [
+            "그 말이 진아를 더 자극할 걸 알았다는 점",
+            "부회장과도 상의 없이 먼저 둘러댄 부분"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-5:S4:emotion:0",
+              "factText": "선발과 이미지 방어 욕심 때문에 아직 안 한 고지를 이미 된 일처럼 말한 고백",
+              "tags": [
+                "emotion",
+                "motive",
+                "admission",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend07:b:d-5:S4:career:1",
+              "factText": "커리어성 평판 보전을 위해 절차 거짓말까지 선택한 수치심",
+              "tags": [
+                "shame",
+                "fear",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                },
+                "time": {
+                  "dateExact": "진아의 캡처 확산 이후",
+                  "period": "사후 신고 시점",
+                  "neutral": "그 뒤"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "저는 선발 전에 운영진에게 제한 고지를 마쳤다고 말했지만, 그건 사실이 아니었습니다.",
+            "실제 신고와 정리는 진아의 캡처 확산 뒤에 이뤄졌고, 저는 상황을 덜 위태롭게 보이게 하려고 거짓으로 앞당겨 말했습니다."
+          ],
+          "privateKnowledge": [
+            "e-3의 규칙과 e-4의 타임스탬프가 내 거짓을 닫아 버린다.",
+            "이 문제는 선발 특혜 여부와 별개로 내가 절차 사실을 속인 쟁점이다."
+          ],
+          "suppressions": [
+            "분쟁 밖 다른 운영진 대화",
+            "부회장 관련 사생활 세부"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend07:b:tell:wounded_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend07:b:d-5:S5:confession:0",
+              "factText": "사전 제한 고지 주장이 거짓이었고 실제 신고는 캡처 확산 이후였다는 최종 인정",
+              "tags": [
+                "admission",
+                "institution",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "evidence1": {
+                  "exact": "e-3 제한 공개 합의 노션",
+                  "neutral": "합의 노션",
+                  "judgeRef": "e-3"
+                },
+                "evidence2": {
+                  "exact": "e-4 점수표·이해충돌 로그",
+                  "neutral": "선발/신고 원본",
+                  "judgeRef": "e-4"
+                },
+                "record": {
+                  "exact": "이해충돌 신고 접수 로그",
+                  "neutral": "신고 기록",
+                  "judgeRef": "신고 타임스탬프"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "settle"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend07:b:d-5:S5:motive:1",
+              "factText": "상황과 이미지를 덜 위태롭게 보이게 하려고 시간을 앞당겨 말한 동기",
+              "tags": [
+                "motive",
+                "fear",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "연합공연제 리더 선발 직전",
+                  "period": "선발 즈음",
+                  "neutral": "그 선발 때"
+                },
+                "person": {
+                  "fullName": "박성호",
+                  "judgeRef": "박성호 씨",
+                  "neutral": "B"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

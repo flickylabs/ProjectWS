@@ -1,0 +1,553 @@
+export const family10TellsBeats = {
+  "caseId": "family-10",
+  "executableTells": {
+    "a": [
+      {
+        "id": "family10:a:tell:labor_rollcall",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "전도",
+          "나물도",
+          "과일도",
+          "설거지까지"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "비용이나 메뉴 변경 질문이 나오면 전, 나물, 과일, 설거지를 한꺼번에 나열해 쟁점을 노동 총량으로 바꾼다."
+      },
+      {
+        "id": "family10:a:tell:hurt_hook",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "결국 또 내가 다 했지",
+          "또 나만",
+          "제가 덜 했다는 뜻이에요"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "반박 전에 '결국 또 내가 다 했지'를 반복해 사실 확인 자체가 자신의 고생을 깎는 일처럼 만든다."
+      },
+      {
+        "id": "family10:a:tell:scope_blur",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "차례상도",
+          "가족 식사도",
+          "친척 간식도"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "메뉴를 늘린 이유를 묻으면 차례상, 가족 식사, 친척 간식용을 구분하지 않고 한데 묶어 설명한다."
+      }
+    ],
+    "b": [
+      {
+        "id": "family10:b:tell:delay_buffer",
+        "appliesWhen": [
+          "avoiding",
+          "lying",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "거래처",
+          "고속도로",
+          "미팅"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "도착 약속을 묻으면 바로 시간 답을 하지 않고 거래처 미팅과 고속도로 상황부터 길게 설명한다."
+      },
+      {
+        "id": "family10:b:tell:soft_minimizing",
+        "appliesWhen": [
+          "lying",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "조금 늦어진 거지",
+          "아침에 간다고 본 거지",
+          "그 정도"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "늦은 통보는 '조금 늦어진 거지', '아침에 간다고 본 거지'처럼 규모를 줄여 표현한다."
+      },
+      {
+        "id": "family10:b:tell:partial_credit",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "20만원도 보냈고",
+          "아침엔 갔잖아",
+          "과일 한 상자"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "궁지에 몰리면 20만원 송금과 과일 한 상자를 근거로 전체 분담을 어느 정도 끝낸 것처럼 말한다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "메뉴를 무슨 크게 늘렸다는 건지 모르겠어요. 전도 하고 과일도 깎고 고기도 챙기고, 명절이면 원래 그 정도는 기본 아닙니까.",
+      "behaviorHint": "손가락으로 한 품목씩 세며 말이 길어진다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "family10:beat:a:d-3:deny"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "조금 보탠 건 있죠. 그런데 차례상, 가족 식사, 친척 간식까지 겹치면 그걸 전부 메뉴 확대라고 해야 하나요?",
+      "behaviorHint": "되묻듯 고개를 기울이고 마지막 어미를 올린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "family10:beat:a:d-3:hedge"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "네, 과일하고 고기, 전 종류를 좀 더 넣은 건 맞아요. 그래도 그때는 빈 상 만들 수 없다는 생각이 먼저였어요.",
+      "behaviorHint": "시선을 피하다가 마지막 문장에서 숨을 길게 뱉는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "family10:beat:a:d-3:partial"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "제가 더 산 건 인정해도, 민재가 시간을 늦게 끈 탓에 현장에서 제가 다 메우게 된 거예요. 그걸 빼고 저만 문제 삼으면 또 제가 덜 한 사람처럼 보이잖아요.",
+      "behaviorHint": "목소리가 높아지며 노동 항목을 다시 열거한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "family10:beat:a:d-3:blame"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "처음 계획보다 제가 규모를 키웠고, 그걸 비용 항목으로 다시 합의하지 않았어요. 그 부분은 제가 끌어안겠습니다.",
+      "behaviorHint": "어깨가 내려가고 말끝이 짧아진다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "id": "family10:beat:a:d-3:confession"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "예약표랑 영수증까지 나오면 더는 부정하기 어렵네요. 제가 저녁 6시 무렵 이미 추가 주문을 넣었습니다.",
+      "behaviorHint": "입술을 깨물고 짧게 인정한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-3",
+      "id": "family10:beat:a:d-3:evidence_hit"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "명절 직전에 20만원을 보내면 재료비 보탠다는 뜻으로 받아들이는 게 그렇게 이상한가요. 제가 다 쓰고 있었는데요.",
+      "behaviorHint": "억울한 표정으로 손바닥을 펼쳐 보인다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "family10:beat:a:d-4:deny"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "최소한 분담 의사 표시는 된다고 봤어요. 용돈만이라고 분명히 들은 적은 없었으니까요.",
+      "behaviorHint": "말끝을 흐리며 상대 반응을 살핀다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "family10:beat:a:d-4:hedge"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "어머니 계좌로 간 건 맞아요. 그래도 시점이 명절 이틀 전이라 저는 재료비가 일부라도 섞였다고 받아들였어요.",
+      "behaviorHint": "고개를 끄덕이지만 곧바로 해석을 덧붙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "family10:beat:a:d-4:partial"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "제가 오해한 건 맞아도 민재가 용돈과 재료비를 따로 말하지 않아 그렇게 된 거예요. 노동이랑 정산이 다 제 몫이 되니까 그 돈 의미도 커졌고요.",
+      "behaviorHint": "손으로 가슴을 짚으며 서운함을 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "family10:beat:a:d-4:blame"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "그 20만원은 합의된 재료비 분담금이 아니라 어머니 용돈이었어요. 제가 제 부담을 설명하려고 분담금 쪽으로 끌고 간 겁니다.",
+      "behaviorHint": "낮게 한숨 쉬고 시선을 내린다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "id": "family10:beat:a:d-4:confession"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "수신 계좌랑 어머니 답장까지 나오면 제가 계속 재료비라고 말하긴 어렵죠. 그때부터는 제 해석이 더 컸던 겁니다.",
+      "behaviorHint": "눈을 감았다 뜨며 말을 천천히 잇는다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-4",
+      "id": "family10:beat:a:d-4:evidence_hit"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "작년 원칙은 제가 거의 지키려 했고 무너진 건 민재 쪽 때문이에요. 늦은 통보만 없었어도 이렇게까지 안 꼬였습니다.",
+      "behaviorHint": "단호하게 선을 긋고 손을 책상 위에 고정한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "family10:beat:a:d-5:deny"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "완벽하진 않아도 저는 현장에서 맞추려 했어요. 문제의 시작은 민재가 시간을 못 박지 않은 데 있었다는 겁니다.",
+      "behaviorHint": "속도를 늦추며 자기 쪽 과실은 최소화한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "family10:beat:a:d-5:hedge"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "올해 역할표를 다시 적어 두진 못했어요. 그래도 저는 실제 준비를 하면서 원칙을 살리려 한 쪽입니다.",
+      "behaviorHint": "한 번 고개를 숙였다가 곧바로 정당화한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "family10:beat:a:d-5:partial"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "둘 다 놓친 부분은 있지만 저는 현장에서 메운 쪽이고 민재는 통보를 늦춘 쪽이잖아요. 책임이 완전히 반반이라는 말은 못 하겠습니다.",
+      "behaviorHint": "노동 항목을 세며 상대 책임을 더 크게 잡는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "family10:beat:a:d-5:blame"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "민재는 통보를 늦췄고 저는 메뉴랑 비용 변경을 공유하지 않았어요. 결국 올해는 작년 역할표 원칙을 둘 다 제대로 못 지켰습니다.",
+      "behaviorHint": "굳은 표정이 풀리며 문장을 짧게 끊는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "id": "family10:beat:a:d-5:confession"
+    },
+    {
+      "caseId": "family-10",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "상담 메모랑 역할표, 체크리스트를 같이 보면 제가 원칙을 다 지켰다고는 못 하겠네요. 올해는 저도 업데이트를 안 했습니다.",
+      "behaviorHint": "서류를 내려다보며 인정 폭이 갑자기 넓어진다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "afterEvidence": "e-5",
+      "id": "family10:beat:a:d-5:evidence_hit"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "확정 약속한 적 없습니다. 애초에 되면 금요일 밤, 안 되면 토요일 아침이라는 얘기였어요.",
+      "behaviorHint": "손을 내저으며 문장 구조를 또박또박 되짚는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "family10:beat:b:d-1:deny"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "금요일 밤을 우선 본 거지 단정한 건 아니었어요. 상황이 안 되면 아침이라고 붙여 놨잖아요.",
+      "behaviorHint": "말끝마다 확인받듯 되묻는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "family10:beat:b:d-1:hedge"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "잘린 캡처만 보면 제가 확정한 것처럼 보일 수는 있습니다. 그래도 원문 자체는 조건부였어요.",
+      "behaviorHint": "서류를 가리키며 표현 하나하나를 구분한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "family10:beat:b:d-1:partial"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "조건부 문장이었는데 누나가 확정 약속처럼 받아들였어요. 다만 저도 그 기대를 바로 끊지는 못했습니다.",
+      "behaviorHint": "처음엔 단호하다가 마지막 문장에서 볼륨이 떨어진다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "family10:beat:b:d-1:blame"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "무조건 금요일 밤이라고 한 건 아니지만, 그렇게 기대하게 말해 놓고 수정도 늦게 했습니다. 오해를 키운 책임이 제게도 있습니다.",
+      "behaviorHint": "어깨를 움츠리고 짧게 고개를 끄덕인다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "id": "family10:beat:b:d-1:confession"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "원본 대화가 다 나오면 제가 확정 약속은 안 했다는 말은 유지됩니다. 대신 누나가 그렇게 읽을 만한 문장을 쓴 것도 부인 못 하겠네요.",
+      "behaviorHint": "처음엔 방어적이다가 절반쯤 물러선다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-2",
+      "id": "family10:beat:b:d-1:evidence_hit"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "그때까지도 금요일 밤 가능성을 보고 있었어요. 조금 늦은 거지 일부러 숨긴 건 아닙니다.",
+      "behaviorHint": "외부 일정부터 길게 말하며 핵심 시각을 미룬다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "family10:beat:b:d-2:deny"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "상황이 정리된 뒤 바로 말한 편이에요. 교통이랑 거래처 정리까지 봐야 해서 확답이 늦었습니다.",
+      "behaviorHint": "손으로 타임라인을 그리듯 설명을 늘인다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "family10:beat:b:d-2:hedge"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "오후 늦게 아침 출발 쪽으로 기운 건 맞아요. 그래도 끝까지 밤 출발 가능성을 보느라 바로 못 보냈습니다.",
+      "behaviorHint": "마른침을 삼키고 가능성이라는 말을 반복한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "family10:beat:b:d-2:partial"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "18시 08분에 일정이 끝났다고 바로 판단이 끝나는 건 아니었습니다. 차 막힘이랑 거래처 마무리까지 있어서 제가 미룬 거예요.",
+      "behaviorHint": "숫자를 먼저 말한 뒤 사정을 길게 덧붙인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "family10:beat:b:d-2:blame"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "금요일 저녁에 이미 어렵다는 걸 알면서도 22시 41분까지 미룬 건 제 잘못입니다. 또 실망 줄까 봐 말을 끌었습니다.",
+      "behaviorHint": "입을 꾹 다물었다가 단숨에 시인한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "id": "family10:beat:b:d-2:confession"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "일정표랑 통행 기록까지 맞춰 보면 제가 더 일찍 말할 수 있었다는 건 피하기 어렵네요. 그 시각 차이가 문제였던 겁니다.",
+      "behaviorHint": "목소리가 작아지고 문장이 짧아진다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-2",
+      "id": "family10:beat:b:d-2:evidence_hit"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "서로 바빠서 조금 꼬인 거지 원칙이 무너진 건 아닙니다. 저만 실패한 것처럼 말하면 과하죠.",
+      "behaviorHint": "손바닥을 아래로 눌러 사안을 축소하려 든다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "id": "family10:beat:b:d-5:deny"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "올해 역할표를 다시 적진 못했어도 큰 틀은 알고 움직였습니다. 현장에서 맞춘 부분도 있었어요.",
+      "behaviorHint": "핵심 규칙보다 대충 굴러간 결과를 먼저 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "id": "family10:beat:b:d-5:hedge"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "도착 시간, 메뉴, 비용을 한 줄로 다시 고정하지 못한 건 맞습니다. 그 틈이 커진 거예요.",
+      "behaviorHint": "마지못해 인정하면서도 표현을 추상적으로 둔다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "id": "family10:beat:b:d-5:partial"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "저는 늦게 알렸고 누나는 메뉴를 공유하지 않았습니다. 서로 한쪽만 지킨 상태였어요.",
+      "behaviorHint": "양손을 반씩 나누는 제스처로 책임을 분산한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "id": "family10:beat:b:d-5:blame"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "작년 규칙을 이번엔 둘 다 제대로 실행하지 못했습니다. 도착 시간, 음식 규모, 비용 항목을 명확히 적지 않은 공동 실패였습니다.",
+      "behaviorHint": "한 박자 쉬고 비교적 또렷하게 책임을 인정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "id": "family10:beat:b:d-5:confession"
+    },
+    {
+      "caseId": "family-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "상담 메모랑 역할표가 나오면 제가 규칙을 기억 못 했다고 하긴 어렵죠. 알면서도 다시 못 박지 않은 쪽에 가깝습니다.",
+      "behaviorHint": "서류를 보며 입술을 굳게 다문다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-5",
+      "id": "family10:beat:b:d-5:evidence_hit"
+    }
+  ]
+}

@@ -1,0 +1,1878 @@
+export const friend10V3GameLoopData = {
+  "caseId": "friend-10",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "잘린 수락 신호와 상태 범례",
+      "description": "e-1의 강한 수락 인상과 e-2의 역할 분리 기록을 함께 대조해, 무엇이 확정으로 읽혔는지 가르는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "문다정 씨, e-1의 잘린 한 줄만으로 들러리와 축가를 모두 확정으로 보신 근거가 정확히 무엇입니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.a.unlock.s2.relied_on_cropped_chat",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "공유 체크리스트에는 들러리는 진행중, 축가는 후보로 남아 있었는데도 왜 두 역할을 같은 결론으로 묶으셨습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.a.unlock.s3.sheet_status_conflation",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "그 차이를 알고도 이름을 먼저 올리신 것이라면, 명시적 확정 문구 부재를 사실상 무시하신 것 아닙니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d1.a.unlock.s3.no_confirm_text",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "한서아 씨, 같은 자료상 들러리 칸은 녹색으로 바뀌었습니다. 그 단계까지 가고도 들러리조차 미확정이었다고 하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.b.unlock.s2.bridesmaid_was_far_along",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "카톡에서 두 역할을 분리해 말한 앞뒤 맥락이 빠진 건 맞습니다. 그렇다면 처음부터 왜 그 구분을 문자로 더 분명히 남기지 않으셨습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.b.unlock.s3.ambiguous_wording_helped_confusion",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "'그 주 비워볼게'라는 표현이 상대에게 예스로 읽힐 수 있다는 점을, 당시에도 알고 계셨습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d2.b.unlock.s2.knew_it_sounded_like_yes",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "가예약과 선공지의 시간차",
+      "description": "e-3의 가예약 메모와 e-4의 선공지 자료를 붙여, 누가 어떤 단계에서 결론을 앞질렀는지 추궁하는 카드.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "반주자 DM은 가예약과 키 확인에 그칩니다. 그런데 가족 단톡과 플래너에는 왜 이미 '축가'까지 넣으셨습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.a.unlock.s2.internal_draft",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "유상우 메모상 최종 곡명과 리허설 확정이 없는데도, 왜 두 역할을 다시 갈라 묻지 않으셨습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.a.unlock.s4.did_not_want_to_reopen",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "리허설표가 내부 초안이었다면 가족 반응은 왜 확정 라인업처럼 움직였는지 설명해 보시지요.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d1.a.unlock.s4.face_before_family",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "키를 먼저 보자고 반주자와 DM까지 이어 간 건 축가 가능성을 적극적으로 열어둔 행동 아닙니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.b.unlock.s3.voice_note_after_fitting",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "정말 불가였다면 왜 드레스 피팅 전이 아니라 뒤늦은 음성메모까지 기다리게 하셨습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.b.unlock.s4.afraid_to_be_bad_friend",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "다정이 먼저 이름을 썼더라도, 그 사이 문자로 단정적으로 끊지 않은 책임은 인정하십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.b.unlock.s2.small_admission_delay",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "옛 규칙과 실제 진행선",
+      "description": "e-5의 과거 합의와 e-6의 실제 진행 자료를 묶어, 규칙 위반과 역할별 수락 정도를 분리해 드러내는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "2년 전 '확정 후 공지' 규칙을 함께 정한 뒤에도, 왜 이번에는 그 문구 없이 이름을 먼저 쓰셨습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.a.unlock.s2.knew_rule_exactly",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "e-6상 들러리 준비는 진행됐어도 축가는 별도 유보였습니다. 두 역할을 다시 가르지 않은 이유가 무엇입니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d5.a.unlock.s3.linked_song_too",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "실은 준비가 어그러졌다는 체면 문제 때문에 수정 자체를 늦춘 것 아닙니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.a.unlock.s4.shame_about_repeating_old_mistake",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "같은 규칙을 기억했다면, 왜 '확정 아니다'라는 문자 한 줄을 바로 보내지 않으셨습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.b.unlock.s3.text_correction_avoided",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "치수표와 동선표까지 제출한 뒤에도 들러리 전부 미확정이었다고 하시는 건 자료와 어긋나지 않습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.b.unlock.s5.admit_bridesmaid_near_yes",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "결국 축가만 끝까지 붙잡고 있었던 것이라면, 다정에게 그 구분을 왜 더 빨리 선명하게 못 주셨습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d5.b.unlock.s3.held_song_back_only",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.a.unlock.s2.internal_draft",
+            "factText": "플래너 전달본과 가족 공유를 스스로는 내부 초안급으로 여기며 이름 선사용을 정당화한 사실",
+            "tags": [
+              "context",
+              "self_justification",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "institution": {
+                "exact": "오혜민 플래너 공유 라인업",
+                "judgeRef": "플래너",
+                "neutral": "준비 기관"
+              },
+              "channels": {
+                "exact": "가족 단톡",
+                "neutral": "가족 공유"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.a.unlock.s3.no_confirm_text",
+            "factText": "서아의 명시적 '확정' 문구가 없다는 걸 알면서도 이름을 빼면 더 혼란스러울까 봐 그대로 둔 사실",
+            "tags": [
+              "admission",
+              "timeline",
+              "fear"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "한서아",
+                "judgeRef": "서아 씨",
+                "neutral": "상대"
+              },
+              "quote": {
+                "exact": "확정",
+                "neutral": "그 문구"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.a.unlock.s4.face_before_family",
+            "factText": "가족 단톡까지 간 이름을 거두면 자신이 준비를 망친 사람처럼 보일까 봐 겁났던 감정",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "channels": {
+                "exact": "가족 단톡",
+                "neutral": "가족 공유"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.a.unlock.s5.own_premature_notice",
+            "factText": "서아의 약속이 아니라 자신의 성급한 결정으로 이름을 선사용했다는 인정",
+            "tags": [
+              "responsibility",
+              "admission",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "한서아",
+                "judgeRef": "서아 씨",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.a.unlock.s2.treated_as_yes",
+            "factText": "다정이 그 표현들을 사실상 수락 신호로 굳혀 읽은 사실",
+            "tags": [
+              "context",
+              "self_justification",
+              "quote"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "그 주 비워볼게 / 키 한번 보자",
+                "neutral": "그 표현들"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.a.unlock.s3.kept_preparation_running",
+            "factText": "서아가 바로 정정하지 않으니 준비를 계속 밀어도 된다고 믿은 사실",
+            "tags": [
+              "timeline",
+              "motive",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "한서아",
+                "judgeRef": "서아 씨",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.a.unlock.s4.felt_left_holding_bag",
+            "factText": "혼자 일정 복구를 떠안게 될까 봐 배신감이 커졌던 감정",
+            "tags": [
+              "emotion",
+              "harm",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "blame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.a.unlock.s5.admit_overread_signals",
+            "factText": "서아의 책임과 별개로 자신도 애매한 답을 확정으로 앞질러 읽었다는 인정",
+            "tags": [
+              "admission",
+              "responsibility",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "한서아",
+                "judgeRef": "서아 씨",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.a.unlock.s2.relied_on_cropped_chat",
+            "factText": "잘린 캡처의 강한 뉘앙스를 전체 맥락보다 더 믿은 사실",
+            "tags": [
+              "evidence",
+              "context",
+              "privacy"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "그 주 비워볼게",
+                "neutral": "잘린 문장"
+              },
+              "channels": {
+                "exact": "잘린 카카오톡 캡처",
+                "neutral": "캡처 자료"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.a.unlock.s3.sheet_status_conflation",
+            "factText": "모바일 요약뷰에서 이름만 두 칸에 보여 상태 범례를 제대로 보지 못한 사실",
+            "tags": [
+              "admission",
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "roles": {
+                "exact": "들러리 / 축가",
+                "split": "들러리 / 축가",
+                "neutral": "예식 역할"
+              },
+              "channels": {
+                "exact": "공유 체크리스트 모바일 요약뷰",
+                "neutral": "공유 시트"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.a.unlock.s4.did_not_want_to_reopen",
+            "factText": "두 역할을 다시 나누어 확인하면 이미 해 둔 공지를 모두 뒤집어야 할까 봐 피한 감정",
+            "tags": [
+              "fear",
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "roles": {
+                "exact": "들러리 / 축가",
+                "split": "들러리 / 축가",
+                "neutral": "예식 역할"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.a.unlock.s5.admit_no_explicit_double_confirm",
+            "factText": "둘 다를 명시적으로 확정한 메시지는 없었다는 점을 인정",
+            "tags": [
+              "admission",
+              "admission",
+              "threshold"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "quote": {
+                "exact": "둘 다 확정",
+                "neutral": "그 문장"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.a.unlock.s2.knew_rule_exactly",
+            "factText": "이번 일에서도 명시적 '확정' 문구가 필요하다는 걸 정확히 알고 있었다는 사실",
+            "tags": [
+              "admission",
+              "rule",
+              "quote"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "확정",
+                "neutral": "그 문구"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "shame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.a.unlock.s3.used_silence_as_cover",
+            "factText": "서아가 바로 반발하지 않는 침묵을 사실상 허락처럼 사용한 사실",
+            "tags": [
+              "admission",
+              "relationship",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "한서아",
+                "judgeRef": "서아 씨",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.a.unlock.s4.shame_about_repeating_old_mistake",
+            "factText": "2년 전 겪은 일을 또 반복했다는 사실이 부끄러웠던 감정",
+            "tags": [
+              "shame",
+              "emotion",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "dateExact": "2년 전",
+                "period": "예전 결혼식 역할 혼선 이후",
+                "neutral": "예전"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.a.unlock.s5.admit_rule_break_first",
+            "factText": "규칙을 먼저 깬 쪽은 자신이었다는 인정",
+            "tags": [
+              "admission",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {},
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.a.unlock.s2.bridesmaid_near_acceptance",
+            "factText": "적어도 들러리 쪽은 실무상 거의 확정처럼 굴러갔다는 사실",
+            "tags": [
+              "threshold",
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "roles": {
+                "exact": "거의 확정",
+                "split": "들러리",
+                "neutral": "역할 상태"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.a.unlock.s3.linked_song_too",
+            "factText": "그 흐름을 축가 수락 가능성까지 확장해서 읽은 사실",
+            "tags": [
+              "admission",
+              "identity",
+              "self_justification"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "roles": {
+                "exact": "들러리 → 축가",
+                "split": "들러리 / 축가",
+                "neutral": "역할 연결"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.a.unlock.s4.felt_revision_impossible",
+            "factText": "들러리까지 다시 미확정으로 돌리면 준비 전체가 무너질까 봐 겁났던 감정",
+            "tags": [
+              "fear",
+              "emotion",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {},
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.a.unlock.s5.admit_no_text_but_real_progress",
+            "factText": "확정 문자는 없었지만 들러리 준비가 깊게 진행된 것도 사실이고 자신이 그 진행을 더 과신한 것도 사실이라는 인정",
+            "tags": [
+              "admission",
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "quote": {
+                "exact": "확정",
+                "neutral": "그 문구"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.b.unlock.s2.no_explicit_consent",
+            "factText": "자신은 끝내 '확정' 문구를 보내지 않았다는 기억",
+            "tags": [
+              "quote",
+              "denial",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "확정",
+                "neutral": "그 문구"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.b.unlock.s3.could_not_pull_name_back",
+            "factText": "이미 여러 사람에게 이름이 퍼진 뒤라 당장 빼 달라고 하기가 늦어졌던 사실",
+            "tags": [
+              "timeline",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "channels": {
+                "exact": "가족 단톡·플래너 전달본",
+                "neutral": "주변 공유"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.b.unlock.s4.used_without_consent",
+            "factText": "가까운 친구의 호의가 동의 없는 공식 역할처럼 소비됐다고 느낀 감정",
+            "tags": [
+              "emotion",
+              "harm",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "roles": {
+                "exact": "공식 들러리·축가",
+                "split": "들러리 / 축가",
+                "neutral": "공식 역할"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.b.unlock.s5.admit_delayed_pushback",
+            "factText": "이름 선사용은 다정의 잘못이지만, 자신도 초기에 강하게 제동을 못 걸어 오해를 키웠다는 인정",
+            "tags": [
+              "responsibility",
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "문다정",
+                "judgeRef": "다정 씨",
+                "neutral": "상대"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.b.unlock.s2.knew_it_sounded_like_yes",
+            "factText": "비워볼게와 키 확인이 다정에게는 예스로 읽힐 수 있다는 걸 알고 있었던 사실",
+            "tags": [
+              "admission",
+              "quote",
+              "relationship"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "문다정",
+                "judgeRef": "다정 씨",
+                "neutral": "상대"
+              },
+              "quote": {
+                "exact": "그 주 비워볼게 / 키 한번 보자",
+                "neutral": "그 표현들"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "shame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.b.unlock.s3.voice_note_after_fitting",
+            "factText": "최종 불가 설명을 드레스 피팅 주간의 음성메모까지 끌었던 사실",
+            "tags": [
+              "timeline",
+              "evidence",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "dateExact": "드레스 피팅 주간",
+                "period": "예식 직전",
+                "neutral": "그 무렵"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.b.unlock.s4.afraid_to_be_bad_friend",
+            "factText": "거절하는 순간 결혼식을 망친 친구로 찍힐까 두려웠던 감정",
+            "tags": [
+              "fear",
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "문다정",
+                "judgeRef": "다정 씨",
+                "neutral": "친구"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.b.unlock.s5.admit_late_correction",
+            "factText": "확정은 아니었지만 기대를 키운 채 늦게 정정한 책임은 자신의 몫이라는 인정",
+            "tags": [
+              "responsibility",
+              "admission",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {},
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.b.unlock.s2.bridesmaid_vs_song_split",
+            "factText": "자신은 들러리와 축가를 마음속에서 분리해 생각하고 있었다는 사실",
+            "tags": [
+              "context",
+              "identity",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "roles": {
+                "exact": "들러리 / 축가",
+                "split": "들러리 / 축가",
+                "neutral": "예식 역할"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.b.unlock.s3.ambiguous_wording_helped_confusion",
+            "factText": "하지만 텍스트에서는 그 역할 분리가 충분히 드러나지 않았다는 인정",
+            "tags": [
+              "admission",
+              "quote",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "아마 / 일정만 되면 / 목만 괜찮으면",
+                "neutral": "그 단서들"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "shame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.b.unlock.s4.felt_obligated_by_old_jokes",
+            "factText": "예전 축가 농담과 과거 도움 때문에 더 단호하게 선을 못 그은 감정",
+            "tags": [
+              "legacy_sentence",
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time": {
+                "dateExact": "대학 졸업공연 이후",
+                "period": "오래된 농담의 연장선",
+                "neutral": "예전"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.b.unlock.s5.admit_mixed_signal_package",
+            "factText": "둘 다 확정은 아니었지만 패키지 수락처럼 들릴 신호를 보낸 책임은 인정",
+            "tags": [
+              "responsibility",
+              "admission",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "roles": {
+                "exact": "들러리·축가 패키지",
+                "split": "들러리 / 축가",
+                "neutral": "예식 역할"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.b.unlock.s2.small_admission_delay",
+            "factText": "다정을 다치게 하기 싫어서 바로 '아니야'라고 못 했다는 작은 인정",
+            "tags": [
+              "admission",
+              "relationship",
+              "fear"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "문다정",
+                "judgeRef": "다정 씨",
+                "neutral": "친구"
+              },
+              "quote": {
+                "exact": "아니야",
+                "neutral": "그 정정"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.b.unlock.s3.text_correction_avoided",
+            "factText": "음성메모로 길게 설명하면서 문자로 명확히 끊는 걸 피한 사실",
+            "tags": [
+              "admission",
+              "quote",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "channels": {
+                "exact": "음성메모",
+                "neutral": "그 형식"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "shame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.b.unlock.s4.guilt_watching_it_spread",
+            "factText": "가족과 플래너까지 이름이 퍼지는 걸 보며 죄책감이 쌓였던 감정",
+            "tags": [
+              "emotion",
+              "shame",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "channels": {
+                "exact": "가족 단톡·플래너 전달본",
+                "neutral": "주변 공유"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.b.unlock.s5.admit_rule_break_by_silence",
+            "factText": "직접 공지한 건 아니어도 바로 정정하지 않은 침묵으로 규칙을 함께 깼다는 인정",
+            "tags": [
+              "admission",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {},
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.b.unlock.s2.bridesmaid_was_far_along",
+            "factText": "들러리 준비는 검토 수준을 넘어 상당히 진행돼 있었다는 사실",
+            "tags": [
+              "admission",
+              "threshold",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "roles": {
+                "exact": "상당히 진행",
+                "split": "들러리",
+                "neutral": "역할 상태"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "shame"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.b.unlock.s3.held_song_back_only",
+            "factText": "끝까지 붙잡고 있던 건 주로 축가 확답이었다는 사실",
+            "tags": [
+              "identity",
+              "admission",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "roles": {
+                "exact": "축가 확답",
+                "split": "축가",
+                "neutral": "역할 상태"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.b.unlock.s4.did_not_want_bride_angry",
+            "factText": "들러리마저 빼겠다고 하면 다정이 완전히 무너질까 두려웠던 감정",
+            "tags": [
+              "fear",
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "문다정",
+                "judgeRef": "다정 씨",
+                "neutral": "친구"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.b.unlock.s5.admit_bridesmaid_near_yes",
+            "factText": "들러리는 사실상 수락 단계에 가까웠고, 전부 미확정이었다고 말한 건 과장이라는 인정",
+            "tags": [
+              "admission",
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "roles": {
+                "exact": "사실상 수락 단계",
+                "split": "들러리",
+                "neutral": "역할 상태"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ],
+            "usableInSubActions": [
+              "fact_pursuit",
+              "evidence_present",
+              "motive_search",
+              "empathy_approach"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "ctr-1",
+        "targetParty": "a",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "raisedByEvidence": [
+          "e-1",
+          "e-2"
+        ],
+        "trigger": "e-1만으로 둘 다 확정이라 주장한 뒤 e-2의 상태 범례가 제시될 때",
+        "text": "한 줄 캡처로는 둘 다 확정이라 하고, 원본 시트에선 축가가 끝까지 후보로 남아 있어 해석 충돌이 발생한다."
+      },
+      {
+        "id": "ctr-2",
+        "targetParty": "b",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "raisedByEvidence": [
+          "e-2",
+          "e-6"
+        ],
+        "trigger": "들러리도 전부 미확정이라고 버틴 뒤 치수표·동선표가 같이 나올 때",
+        "text": "전면 미확정 주장과 실제 들러리 준비 진행 기록이 정면으로 어긋난다."
+      },
+      {
+        "id": "ctr-3",
+        "targetParty": "a",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "raisedByEvidence": [
+          "e-4",
+          "e-5"
+        ],
+        "trigger": "내부 정리였다고 설명한 뒤 과거 '확정 후 공지' 규칙이 제시될 때",
+        "text": "내부 공유라는 변명과 명시적 확정 전 공지 금지 규칙이 서로 충돌한다."
+      },
+      {
+        "id": "ctr-4",
+        "targetParty": "b",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ],
+        "raisedByEvidence": [
+          "e-1",
+          "e-6"
+        ],
+        "trigger": "확정처럼 보이려 한 적 없다고 말한 뒤 늦은 음성메모 시점이 드러날 때",
+        "text": "의도가 없었다는 주장과 예스로 읽힐 표현을 알면서 정정을 미룬 행동 사이에 모순이 생긴다."
+      }
+    ],
+    "interjections": [
+      {
+        "id": "int-1",
+        "speaker": "a",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "trigger": "b가 들러리도 전부 미확정이었다고 반복할 때",
+        "line": "그럼 치수는 왜 보냈는데, 동선은 왜 맞췄는데. 그것도 다 검토였다는 거야?",
+        "behaviorHint": "상대 말을 끊고 준비 항목을 순서대로 던진다."
+      },
+      {
+        "id": "int-2",
+        "speaker": "b",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "trigger": "a가 내부 정리였다고만 밀어붙일 때",
+        "line": "내부 정리였으면 왜 가족 단톡까지 갔어. 내 이름이 이미 공식처럼 불렸잖아.",
+        "behaviorHint": "참다가 낮게 끊어 말하며 채널 범위를 바로 짚는다."
+      },
+      {
+        "id": "int-3",
+        "speaker": "b",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "trigger": "a가 두 역할을 묶어 말할 때",
+        "line": "나는 들러리 얘기와 축가 얘기를 같은 말로 한 적 없어. 네가 같이 묶은 거야.",
+        "behaviorHint": "처음엔 낮다가 '같이 묶은'에서만 힘이 실린다."
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "emo-a-1",
+        "party": "a",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ],
+        "triggerState": [
+          "S4",
+          "S5"
+        ],
+        "line": "내가 제일 무서웠던 건 네가 못 한다는 말보다, 다 준비해 놓고도 내가 혼자 바보처럼 남는 거였어.",
+        "behaviorHint": "숨이 짧아지고 마지막 단어를 세게 끊는다."
+      },
+      {
+        "id": "emo-a-2",
+        "party": "a",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "triggerState": [
+          "S4",
+          "S5"
+        ],
+        "line": "그 규칙 우리 둘 다 알았잖아. 내가 그걸 또 어겼다는 게 제일 창피해.",
+        "behaviorHint": "분노보다 수치가 앞서며 목소리가 잠깐 갈라진다."
+      },
+      {
+        "id": "emo-b-1",
+        "party": "b",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "triggerState": [
+          "S4",
+          "S5"
+        ],
+        "line": "내 이름이 이미 가족이랑 플래너 앞에서 굳어 버렸을 때, 나는 거절하면 더 나쁜 사람 되는 느낌이었어.",
+        "behaviorHint": "한참 멈춘 뒤 말하고, 끝부분에서 시선을 들지 못한다."
+      },
+      {
+        "id": "emo-b-2",
+        "party": "b",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "triggerState": [
+          "S4",
+          "S5"
+        ],
+        "line": "안 된다고 빨리 말했어야 하는 거 알았어. 그런데 네 결혼식을 망친 친구로 찍힐까 봐 무서워서 계속 미뤘어.",
+        "behaviorHint": "처음엔 낮게 시작하다가 '무서워서'에서만 감정이 튄다."
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "friend10:transition:a:d-1:s0_s1",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "lineup_announcement_question",
+      "line": "라인업은 먼저 적어 놨어도 최종 박제는 아니었다고 버틴다. 다만 '이름을 넣긴 넣었다'는 수준으로 한 칸 후퇴한다.",
+      "behaviorHint": "체크리스트를 세며 공식 공지와 내부 정리를 구분하려 든다.",
+      "revealAtom": "friend10:a:d-1:act:0"
+    },
+    {
+      "id": "friend10:transition:a:d-1:s1_s2",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "가족 단톡과 플래너 전달본이 뜨자 내부 정리론이 흔들리고, '예식 진행상 먼저 적은 건 맞다'로 물러선다.",
+      "behaviorHint": "문장 속도가 빨라졌다가 마지막에 한 번 멈춘다.",
+      "revealAtom": "d1.a.unlock.s2.internal_draft"
+    },
+    {
+      "id": "friend10:transition:a:d-1:s2_s3",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "explicit_confirm_message_question",
+      "line": "명시적 확정 메시지가 없었다는 질문에, '그 문장 하나는 없었지만 흐름상 그랬다'며 사실 인식의 빈틈을 드러낸다.",
+      "behaviorHint": "시선을 피하며 '흐름'이라는 말을 반복한다.",
+      "revealAtom": "d1.a.unlock.s3.no_confirm_text"
+    },
+    {
+      "id": "friend10:transition:a:d-1:s3_s5",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_presented",
+      "line": "상태 범례까지 확인되자 결국 이름 선사용이 자신의 성급한 결정이었다고 인정한다.",
+      "behaviorHint": "호흡이 짧아지고 인정 문장만 짧게 남긴다.",
+      "revealAtom": "d1.a.unlock.s5.own_premature_notice"
+    },
+    {
+      "id": "friend10:transition:a:d-3:s0_s1",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "both_roles_confirmation_question",
+      "line": "둘 다를 확정한 문장은 없다는 점을 부정하지 못하고, 대신 '그렇게 읽힐 흐름'을 강조하는 쪽으로 이동한다.",
+      "behaviorHint": "증거를 나열하며 한 줄 확정의 부재를 흐름으로 덮으려 한다.",
+      "revealAtom": "friend10:a:d-3:context:0"
+    },
+    {
+      "id": "friend10:transition:a:d-3:s1_s2",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "잘린 카톡 캡처가 제시되면, 자신이 캡처의 강한 뉘앙스에 기대어 해석했다는 층위가 열린다.",
+      "behaviorHint": "캡처 부분만 가리키며 맥락 전체를 피해 간다.",
+      "revealAtom": "d3.a.unlock.s2.relied_on_cropped_chat"
+    },
+    {
+      "id": "friend10:transition:a:d-3:s2_s3",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "shared_sheet_status_question",
+      "line": "공유 시트의 상태 범례 질문을 받자 이름만 보고 둘을 같은 칸처럼 읽었다는 실수를 일부 인정한다.",
+      "behaviorHint": "모바일 화면과 PC 화면 차이를 변명처럼 붙인다.",
+      "revealAtom": "d3.a.unlock.s3.sheet_status_conflation"
+    },
+    {
+      "id": "friend10:transition:a:d-3:s3_s5",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_or_e-3_presented",
+      "line": "체크리스트 이력과 가예약 메모가 함께 들어오면, 두 역할을 명시적으로 확정한 메시지는 없었다고 시인한다.",
+      "behaviorHint": "어조가 급격히 낮아지고 더는 항목을 열거하지 못한다.",
+      "revealAtom": "d3.a.unlock.s5.admit_no_explicit_double_confirm"
+    },
+    {
+      "id": "friend10:transition:a:d-4:s0_s1",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_rule_reminder",
+      "line": "예전 규칙이 상기되면 '알긴 알지만 이번엔 내부 공유였다'는 식으로 방어를 한 단계 바꾼다.",
+      "behaviorHint": "규칙 문구를 반복하면서도 이번 예외를 만들려 한다.",
+      "revealAtom": "friend10:a:d-4:rule:0"
+    },
+    {
+      "id": "friend10:transition:a:d-4:s1_s2",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "과거 카톡 원본이 나오자 명시적 확정 문구의 필요성을 알고 있었다는 점을 인정하게 된다.",
+      "behaviorHint": "짧게 웃음 비슷한 숨을 내쉬고 바로 방어 문장을 고친다.",
+      "revealAtom": "d4.a.unlock.s2.knew_rule_exactly"
+    },
+    {
+      "id": "friend10:transition:a:d-4:s2_s4",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_why_she_announced_early",
+      "line": "비난 없이 이유를 묻는 질문에는 준비를 망친 사람처럼 보이기 싫었다는 부끄러움이 튀어나온다.",
+      "behaviorHint": "말끝이 세다가도 중간에 한 번 무너진다.",
+      "revealAtom": "d4.a.unlock.s4.shame_about_repeating_old_mistake"
+    },
+    {
+      "id": "friend10:transition:a:d-4:s4_s5",
+      "caseId": "friend-10",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "책임을 직접 묻자 결국 규칙을 먼저 깬 건 자신이었다고 마무리한다.",
+      "behaviorHint": "고개를 작게 끄덕이며 한 문장으로 책임을 받는다.",
+      "revealAtom": "d4.a.unlock.s5.admit_rule_break_first"
+    },
+    {
+      "id": "friend10:transition:b:d-2:s0_s1",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "ambiguous_reply_question",
+      "line": "애매한 답장 자체를 지적받으면 '확정은 아니었지만 가능성은 열어둔 말'이라고 한 단계 물러난다.",
+      "behaviorHint": "조건 표현을 길게 붙이며 정답을 늦춘다.",
+      "revealAtom": "friend10:b:d-2:denial:0"
+    },
+    {
+      "id": "friend10:transition:b:d-2:s1_s2",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "잘린 캡처가 나오자 그 표현이 예스로 읽힐 수 있다는 자각이 드러난다.",
+      "behaviorHint": "캡처를 오래 보지 못하고 눈을 돌린다.",
+      "revealAtom": "d2.b.unlock.s2.knew_it_sounded_like_yes"
+    },
+    {
+      "id": "friend10:transition:b:d-2:s2_s3",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "voice_note_question",
+      "line": "왜 음성메모까지 끌었는지 묻자, 최종 불가 설명을 드레스 피팅 주간까지 미뤘다는 사실이 열린다.",
+      "behaviorHint": "말 앞에 긴 뜸을 두고 작게 인정한다.",
+      "revealAtom": "d2.b.unlock.s3.voice_note_after_fitting"
+    },
+    {
+      "id": "friend10:transition:b:d-2:s3_s5",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "치수표와 음성메모 타임라인이 합쳐지면 기대를 키운 채 늦게 정정한 책임을 인정한다.",
+      "behaviorHint": "시선이 아래로 떨어지고 마지막 문장만 또렷해진다.",
+      "revealAtom": "d2.b.unlock.s5.admit_late_correction"
+    },
+    {
+      "id": "friend10:transition:b:d-5:s0_s1",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "bridesmaid_acceptance_question",
+      "line": "들러리 수락 여부를 바로 묻는 순간, 전면 부정보다 '도와보려던 단계였다'는 쪽으로 말이 좁아진다.",
+      "behaviorHint": "역할의 의미를 세세히 나누며 시간을 번다.",
+      "revealAtom": "friend10:b:d-5:denial:0"
+    },
+    {
+      "id": "friend10:transition:b:d-5:s1_s2",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "공유 시트의 들러리 녹색 상태가 제시되면 들러리 준비가 꽤 진행됐다는 점을 부정하지 못한다.",
+      "behaviorHint": "축가 이야기로 화제를 옮기려 하지만 질문에 붙잡힌다.",
+      "revealAtom": "d5.b.unlock.s2.bridesmaid_was_far_along"
+    },
+    {
+      "id": "friend10:transition:b:d-5:s2_s3",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "dress_size_form_question",
+      "line": "치수표 질문이 들어오면 끝까지 붙잡고 있던 것이 사실상 축가 확답이었다는 층위가 열린다.",
+      "behaviorHint": "손으로 공중에 선을 긋듯 들러리와 축가를 분리한다.",
+      "revealAtom": "d5.b.unlock.s3.held_song_back_only"
+    },
+    {
+      "id": "friend10:transition:b:d-5:s3_s5",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "치수표와 동선표, 음성메모가 한 묶음으로 제시되자 들러리는 사실상 수락 단계였다고 인정한다.",
+      "behaviorHint": "한참 멈춘 뒤 짧고 정확하게 역할을 구분해 인정한다.",
+      "revealAtom": "d5.b.unlock.s5.admit_bridesmaid_near_yes"
+    },
+    {
+      "id": "friend10:transition:b:d-4:s0_s1",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_rule_reminder",
+      "line": "예전 규칙이 상기되면 '잊은 건 아니고 정정을 세게 못 했다'는 식으로 책임 표현이 바뀐다.",
+      "behaviorHint": "부드러운 어조를 유지하지만 문장 안에 사과가 섞이기 시작한다.",
+      "revealAtom": "friend10:b:d-4:rule:0"
+    },
+    {
+      "id": "friend10:transition:b:d-4:s1_s2",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_not_wanting_to_hurt_bride",
+      "line": "신부를 다치게 하기 싫었느냐는 작은 인정 질문에 바로 '그래서 못 끊었다'는 속내가 열린다.",
+      "behaviorHint": "짧게 고개를 끄덕이고 말을 줄인다.",
+      "revealAtom": "d4.b.unlock.s2.small_admission_delay"
+    },
+    {
+      "id": "friend10:transition:b:d-4:s2_s4",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_delayed_correction",
+      "line": "비난 없는 질문 앞에서는 음성메모로 돌려 말하고 문자 정정을 피한 부끄러움이 드러난다.",
+      "behaviorHint": "한숨 뒤에 문장 길이가 갑자기 짧아진다.",
+      "revealAtom": "d4.b.unlock.s4.guilt_watching_it_spread"
+    },
+    {
+      "id": "friend10:transition:b:d-4:s4_s5",
+      "caseId": "friend-10",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-5_or_responsibility_question",
+      "line": "규칙 원문이나 직접적인 책임 질문이 오면, 침묵으로 규칙 위반에 가담했다는 식으로 최종 인정한다.",
+      "behaviorHint": "눈을 들지 못한 채 마지막만 분명하게 말한다.",
+      "revealAtom": "d4.b.unlock.s5.admit_rule_break_by_silence"
+    }
+  ]
+}

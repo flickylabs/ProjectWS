@@ -1,0 +1,1781 @@
+export const family02V3GameLoopData = {
+  "caseId": "family-02",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "잘린 음성과 첫 공유",
+      "description": "42초 클립과 클라우드 공유 로그를 묶어, 승계 오해와 최초 비공유 파기 지점을 함께 찌르는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "정미옥 씨, 42초 파일만으로 아버지 발언 전체를 단독 승계 선언이라 단정한 근거가 어디까지입니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family02:a:d4.unlock.s2.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "배우자에게 파일이 넘어간 흔적을 보면서도, 선우 개인의 승계 욕심과 같은 사건으로 묶은 이유를 설명해 보십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family02:a:d1.unlock.s2.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "비공유 원칙을 말하면서도 친척 확인은 예외라고 보시는 법적·가족적 기준이 있었습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "family02:a:d5.unlock.s2.0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "강선우 씨, 민지에게 보낸 42초 파일은 '보여준 것'입니까, 아니면 전달한 것입니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family02:b:d1.unlock.s2.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "배우자를 예외로 본 판단이 사전 합의된 규칙인지, 아니면 혼자 만든 예외인지 답하십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "family02:b:d5.unlock.s2.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "강선우 씨는 왜 그 42초를 아버지의 단독 승계 의사로 받아들였는지, 욕심과 해석을 분리해서 말할 수 있습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "family02:b:d4.unlock.s2.0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "주방 화면과 바깥 문의",
+      "description": "태블릿 접속 기록과 중개업소 헤더를 결합해, 무단 열람과 실제 외부 경로의 분기점을 가르는 카드.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "태블릿 접속 뒤 6분 만에 친척 단톡이 올라갔다면, 그 행위를 확인이라고만 부를 수 있습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family02:a:d3.unlock.s2.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "문의메일 헤더가 민지 쪽을 가리키는데도, 왜 선우 단독 배후라는 프레임을 먼저 세웠습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "family02:a:d2.unlock.s3.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "친척 단톡으로 의심을 돌린 행위가 비공유 원칙 수호였는지, 오히려 확산이었는지 구분해 답해 보십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "family02:a:d5.unlock.s3.0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "중개업소 문의메일이 본인 계정이 아니더라도, 배우자 쪽 경로라는 점을 언제부터 알고 있었습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family02:b:d2.unlock.s2.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "어머니가 민지 태블릿을 열어 봤다는 점을 아직도 우연이라고 보십니까, 아니면 확인 행위로 인정하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family02:b:d3.unlock.s2.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "어머니의 단톡 확산을 탓하면서도, 본인이 먼저 비공유 원칙을 흔든 사실을 왜 바로 말하지 않았습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "family02:b:d1.unlock.s3.0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "초안의 의도와 전체 녹취",
+      "description": "민지 노트 초안과 변호사 확인서를 합쳐, 외부 유출 배후와 승계 오해의 마지막 맥락을 정리하는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "전체 녹취에 '지분과 상속은 나중'이라는 문장이 있는데도, 단독 승계라고 단정한 표현을 유지하시겠습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family02:a:d4.unlock.s3.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "민지 노트 초안과 사촌 중개사 통화기록까지 나오면, 외부 유출 배후 판단을 선우 단독에서 수정해야 하지 않습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "family02:a:d2.unlock.s4.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "결국 배우자 공유와 친척 단톡 확산이 모두 원칙 위반이었다는 점을 여기서 인정하실 수 있습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "family02:a:d5.unlock.s5.0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "사촌 중개사 통화와 노트 초안이 같은 날 이어졌다면, 그 경로를 정말 몰랐다고만 말할 수 있습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family02:b:d2.unlock.s3.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "전체 녹취를 본 뒤에도 아버지 발언을 단독 승계 확정으로 주장하실 겁니까, 아니면 과잉 해석을 인정하실 겁니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family02:b:d4.unlock.s3.0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "배우자를 지키려다 사실을 늦췄다는 점이, 최초 공유 책임까지 가볍게 만들 수는 없다는 걸 인정하십니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "family02:b:d2.unlock.s4.0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "family02:a:d1.unlock.s2.0",
+            "factText": "선우 휴대폰에서 배우자 민지에게 42초 음성 클립이 먼저 넘어간 사실이 드러난다.",
+            "tags": [
+              "act",
+              "timeline",
+              "counter"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "recipient": {
+                "fullName": "이민지",
+                "judgeRef": "배우자",
+                "neutral": "가족 외 배우자"
+              },
+              "time": {
+                "dateExact": "명절 다음 날 오전 6시 42분",
+                "period": "명절 직후",
+                "neutral": "그 다음 날 아침"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "family02:a:d1.unlock.s3.0",
+            "factText": "음성 클립뿐 아니라 창고 등기와 부채표 링크까지 같은 흐름으로 건너간 사실이 드러난다.",
+            "tags": [
+              "evidence",
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "files": {
+                "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                "neutral": "가족 자료",
+                "judgeRef": "음성·등기·부채 자료"
+              },
+              "rule": {
+                "exact": "직계 가족 바깥 비공유 원칙",
+                "neutral": "그 원칙",
+                "judgeRef": "가족 비공유 원칙"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family02:a:d1.unlock.s4.0",
+            "factText": "미옥이 며느리의 경영 관여를 대표 권한 침범처럼 느끼고 있었다는 속내가 새어 나온다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "이민지",
+                "judgeRef": "며느리",
+                "neutral": "배우자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family02:a:d1.unlock.s5.0",
+            "factText": "미옥이 선우의 최초 공유 책임과 민지의 실제 외부 유출 책임을 분리해 보기 시작한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "context"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "personA": {
+                "fullName": "강선우",
+                "judgeRef": "아들",
+                "neutral": "강선우 씨"
+              },
+              "personB": {
+                "fullName": "이민지",
+                "judgeRef": "며느리",
+                "neutral": "배우자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "family02:a:d2.unlock.s2.0",
+            "factText": "문의메일과 창고 등기 PDF가 선우 단독 행동만으로 설명되진 않는다는 균열이 생긴다.",
+            "tags": [
+              "evidence",
+              "uncertainty",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "target": {
+                "exact": "거래처와 중개업소",
+                "neutral": "외부",
+                "judgeRef": "시장 바깥"
+              },
+              "time": {
+                "period": "명절 뒤 48시간 안",
+                "neutral": "그 직후",
+                "judgeRef": "명절 직후"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "family02:a:d2.unlock.s3.0",
+            "factText": "민지 쪽 보조 이메일과 사촌 중개사 통화가 외부 유출의 실마리로 떠오른다.",
+            "tags": [
+              "beneficiary",
+              "timeline",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "intermediary": {
+                "fullName": "이민지",
+                "relation": "배우자",
+                "neutral": "배우자 쪽 사람"
+              },
+              "channel": {
+                "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                "neutral": "외부 확인 경로",
+                "judgeRef": "문의 경로"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family02:a:d2.unlock.s4.0",
+            "factText": "미옥이 선우 단독 배후 프레임을 일부 거두고 민지 쪽 역할을 보기 시작한다.",
+            "tags": [
+              "admission",
+              "context",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "이민지",
+                "judgeRef": "며느리",
+                "neutral": "배우자 쪽"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family02:a:d2.unlock.s5.0",
+            "factText": "실제 외부 유출의 직접 배후는 민지 쪽, 최초 제공의 책임은 선우 쪽이라는 식으로 판단이 정리된다.",
+            "tags": [
+              "responsibility",
+              "admission",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "personA": {
+                "fullName": "강선우",
+                "judgeRef": "선우",
+                "neutral": "파일 제공자"
+              },
+              "personB": {
+                "fullName": "이민지",
+                "judgeRef": "민지",
+                "neutral": "외부 문의자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "family02:a:d3.unlock.s2.0",
+            "factText": "태블릿 접속 시각과 친척 단톡 전송 시각 사이가 6분뿐이라는 사실이 드러난다.",
+            "tags": [
+              "timeline",
+              "privacy",
+              "counter"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "device": {
+                "exact": "민지 태블릿",
+                "neutral": "그 기기",
+                "judgeRef": "며느리 태블릿"
+              },
+              "time": {
+                "dateExact": "오전 7시 03분",
+                "period": "그 아침",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "family02:a:d3.unlock.s3.0",
+            "factText": "미옥이 본 화면에는 민지의 외부 발송 증거가 아니라 선우가 보낸 공유 링크만 떠 있었다는 사실이 드러난다.",
+            "tags": [
+              "evidence",
+              "privacy",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "audience": {
+                "exact": "친척 단톡",
+                "neutral": "가족 단체방",
+                "judgeRef": "친척들 방"
+              },
+              "content": {
+                "exact": "'선우가 밖에 흘렸다'는 취지",
+                "neutral": "확인 전 의심 문구",
+                "judgeRef": "그 의심글"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family02:a:d3.unlock.s4.0",
+            "factText": "미옥이 공장 붕괴 공포와 남편 건강 불안 때문에 사생활 경계를 넘었다는 속내가 나온다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "privacy"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "가업 붕괴와 건강 악화",
+                "neutral": "그 공포",
+                "judgeRef": "집안이 무너진다는 두려움"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family02:a:d3.unlock.s5.0",
+            "factText": "미옥이 무단 열람과 친척 공개 비난을 함께 인정한다.",
+            "tags": [
+              "admission",
+              "privacy",
+              "shame"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "device": {
+                "exact": "민지 태블릿",
+                "judgeRef": "며느리 기기",
+                "neutral": "그 기기"
+              },
+              "audience": {
+                "exact": "친척 단톡",
+                "judgeRef": "친척들",
+                "neutral": "단체방"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "family02:a:d4.unlock.s2.0",
+            "factText": "42초 파일이 잘린 추출본이라 전체 승계 문맥을 담지 못한다는 사실이 열린다.",
+            "tags": [
+              "quote",
+              "threshold",
+              "counter"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "clip": {
+                "exact": "42초 음성 클립",
+                "neutral": "짧은 클립",
+                "judgeRef": "그 음성 파일"
+              },
+              "speaker": {
+                "fullName": "강정호",
+                "judgeRef": "아버지",
+                "neutral": "그분"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "family02:a:d4.unlock.s3.0",
+            "factText": "전체 녹취에는 '지분이랑 상속은 나중에 다시 정리하자'는 보정 문장이 포함돼 있다는 사실이 드러난다.",
+            "tags": [
+              "legacy_sentence",
+              "quote",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "transcript": {
+                "exact": "18분 전체 녹취",
+                "neutral": "전체 맥락",
+                "judgeRef": "전체 녹취"
+              },
+              "quote": {
+                "clipQuote": "공장은 선우가 맡아",
+                "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                "neutral": "그 말들"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family02:a:d4.unlock.s4.0",
+            "factText": "미옥이 대표 자리 상실 공포 때문에 42초 클립을 더 강하게 붙잡았다는 속내가 나온다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "대표 권한 상실",
+                "neutral": "자리에서 밀려나는 것",
+                "judgeRef": "대표 자리 불안"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family02:a:d4.unlock.s5.0",
+            "factText": "미옥이 단독 승계 선언 프레임이 자신의 과장이었음을 인정한다.",
+            "tags": [
+              "admission",
+              "shame",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "transcript": {
+                "exact": "18분 전체 녹취",
+                "neutral": "전체 맥락",
+                "judgeRef": "전체 녹취"
+              },
+              "quote": {
+                "clipQuote": "공장은 선우가 맡아",
+                "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                "neutral": "그 말들"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "family02:a:d5.unlock.s2.0",
+            "factText": "미옥이 친척 단톡과 일부 거래처 통화로 의심을 집 밖으로 넓힌 사실이 드러난다.",
+            "tags": [
+              "rule",
+              "timeline",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "breachA": {
+                "exact": "친척 단톡·거래처 통화로 의심 확산",
+                "neutral": "의심 전파",
+                "judgeRef": "공개 확산"
+              },
+              "breachB": {
+                "exact": "배우자에게 파일과 링크 공유",
+                "neutral": "배우자 공유",
+                "judgeRef": "자료 전달"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "family02:a:d5.unlock.s3.0",
+            "factText": "미옥이 공동 위반은 인정하면서도 책임 무게를 선우 쪽에 더 두려 한다는 태도가 드러난다.",
+            "tags": [
+              "responsibility",
+              "counter",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                "neutral": "비공유 원칙",
+                "judgeRef": "그 비밀 원칙"
+              },
+              "scope": {
+                "exact": "직계 가족 바깥",
+                "neutral": "집 밖",
+                "judgeRef": "가족 밖"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family02:a:d5.unlock.s4.0",
+            "factText": "가업 붕괴 공포 때문에 확인과 확산의 경계를 스스로 흐렸다는 속내가 나온다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "rule"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "공장이 팔린다는 소문",
+                "neutral": "그 불안",
+                "judgeRef": "가업 붕괴 공포"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family02:a:d5.unlock.s5.0",
+            "factText": "미옥이 배우자 공유와 친척 단톡 확산이 모두 원칙 위반이었음을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                "neutral": "비공유 원칙",
+                "judgeRef": "그 비밀 원칙"
+              },
+              "scope": {
+                "exact": "직계 가족 바깥",
+                "neutral": "집 밖",
+                "judgeRef": "가족 밖"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "family02:b:d1.unlock.s2.0",
+            "factText": "선우가 민지에게 42초 음성 클립을 '정리만 해달라'는 뜻으로 보냈다는 사실이 열린다.",
+            "tags": [
+              "act",
+              "timeline",
+              "relationship"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "recipient": {
+                "fullName": "이민지",
+                "judgeRef": "배우자",
+                "neutral": "가족 외 배우자"
+              },
+              "time": {
+                "dateExact": "명절 다음 날 오전 6시 42분",
+                "period": "명절 직후",
+                "neutral": "그 다음 날 아침"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "family02:b:d1.unlock.s3.0",
+            "factText": "선우가 직계 가족 바깥 비공유 원칙을 알면서도 배우자를 예외로 둔 사실이 드러난다.",
+            "tags": [
+              "rule",
+              "relationship",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "files": {
+                "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                "neutral": "가족 자료",
+                "judgeRef": "음성·등기·부채 자료"
+              },
+              "rule": {
+                "exact": "직계 가족 바깥 비공유 원칙",
+                "neutral": "그 원칙",
+                "judgeRef": "가족 비공유 원칙"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family02:b:d1.unlock.s4.0",
+            "factText": "선우가 배신한 아들이자 아내도 못 지키는 남편으로 보일까 두려워 숨겼다는 감정이 나온다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "배신한 아들과 무능한 남편이라는 낙인",
+                "neutral": "그 낙인",
+                "judgeRef": "두 역할의 실패자 낙인"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family02:b:d1.unlock.s5.0",
+            "factText": "선우가 최초의 비공유 원칙 위반자가 자신이었음을 시인한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "files": {
+                "exact": "42초 음성 클립, 창고 등기 PDF, 부채표 일부 링크",
+                "neutral": "가족 자료",
+                "judgeRef": "음성·등기·부채 자료"
+              },
+              "rule": {
+                "exact": "직계 가족 바깥 비공유 원칙",
+                "neutral": "그 원칙",
+                "judgeRef": "가족 비공유 원칙"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "family02:b:d2.unlock.s2.0",
+            "factText": "문의메일 헤더가 민지 측 보조 이메일 복구 정보와 이어지는 사실이 드러난다.",
+            "tags": [
+              "evidence",
+              "beneficiary",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "intermediary": {
+                "fullName": "이민지",
+                "relation": "배우자",
+                "neutral": "배우자 쪽 사람"
+              },
+              "channel": {
+                "exact": "문의메일, 보조 이메일, 사촌 중개사 통화",
+                "neutral": "외부 확인 경로",
+                "judgeRef": "문의 경로"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "family02:b:d2.unlock.s3.0",
+            "factText": "민지 노트앱 초안과 사촌 중개사 통화가 같은 날 이어져 있었다는 사실이 드러난다.",
+            "tags": [
+              "timeline",
+              "beneficiary",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "파일 전송 뒤 28분 후 초안, 그날 오후 통화",
+                "neutral": "그날 연속 흐름",
+                "judgeRef": "그날 타임라인"
+              },
+              "person": {
+                "fullName": "사촌 중개사",
+                "judgeRef": "사촌 중개사",
+                "neutral": "그 중개사"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family02:b:d2.unlock.s4.0",
+            "factText": "선우가 아내를 지키려다 외부 유출 경로를 말하지 못했다는 두려움이 드러난다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "결혼과 집안이 함께 깨질까 봄",
+                "neutral": "그 두려움",
+                "judgeRef": "결혼 파탄 공포"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family02:b:d2.unlock.s5.0",
+            "factText": "직접 유출은 민지 쪽, 최초 제공은 선우라는 이중 책임 구조를 선우 스스로 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "personA": {
+                "fullName": "이민지",
+                "judgeRef": "민지",
+                "neutral": "직접 유출자"
+              },
+              "personB": {
+                "fullName": "강선우",
+                "judgeRef": "본인",
+                "neutral": "최초 제공자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "family02:b:d3.unlock.s2.0",
+            "factText": "어머니의 태블릿 확인과 친척 단톡 전송이 같은 아침 흐름이라는 점이 드러난다.",
+            "tags": [
+              "timeline",
+              "privacy",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "device": {
+                "exact": "민지 태블릿",
+                "neutral": "그 기기",
+                "judgeRef": "며느리 태블릿"
+              },
+              "time": {
+                "dateExact": "오전 7시 03분",
+                "period": "그 아침",
+                "neutral": "그 시점"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "family02:b:d3.unlock.s3.0",
+            "factText": "친척 단톡 문장이 질문이 아니라 선우 책임을 단정하는 공개 문구였다는 사실이 드러난다.",
+            "tags": [
+              "harm",
+              "privacy",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "audience": {
+                "exact": "친척 단톡",
+                "neutral": "가족 단체방",
+                "judgeRef": "친척들 방"
+              },
+              "content": {
+                "exact": "'선우가 밖에 흘렸다'는 취지",
+                "neutral": "확인 전 의심 문구",
+                "judgeRef": "그 의심글"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family02:b:d3.unlock.s4.0",
+            "factText": "선우가 공개 망신 경험 때문에 다른 쟁점에서도 더 숨기고 늦추게 됐다는 감정이 새어 나온다.",
+            "tags": [
+              "emotion",
+              "shame",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "feeling": {
+                "exact": "공개 망신의 기억",
+                "neutral": "그 상처",
+                "judgeRef": "친척들 앞 망신"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family02:b:d3.unlock.s5.0",
+            "factText": "선우가 자신이 피해자이면서도 원인 제공 책임을 함께 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "audience": {
+                "exact": "친척 단톡",
+                "neutral": "가족 단체방",
+                "judgeRef": "친척들 방"
+              },
+              "content": {
+                "exact": "'선우가 밖에 흘렸다'는 취지",
+                "neutral": "확인 전 의심 문구",
+                "judgeRef": "그 의심글"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "family02:b:d4.unlock.s2.0",
+            "factText": "선우 자신도 42초 클립만 보고 단독 승계 신호로 받아들였다는 사실이 열린다.",
+            "tags": [
+              "quote",
+              "uncertainty",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "clip": {
+                "exact": "42초 음성 클립",
+                "neutral": "짧은 클립",
+                "judgeRef": "그 음성 파일"
+              },
+              "speaker": {
+                "fullName": "강정호",
+                "judgeRef": "아버지",
+                "neutral": "그분"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "family02:b:d4.unlock.s3.0",
+            "factText": "전체 녹취상 법적 승계 확정은 없고 임시 운영 취지만 남는다는 사실이 드러난다.",
+            "tags": [
+              "legacy_sentence",
+              "threshold",
+              "admission"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "transcript": {
+                "exact": "18분 전체 녹취",
+                "neutral": "전체 맥락",
+                "judgeRef": "전체 녹취"
+              },
+              "quote": {
+                "clipQuote": "공장은 선우가 맡아",
+                "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                "neutral": "그 말들"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family02:b:d4.unlock.s4.0",
+            "factText": "선우가 인정 욕구 때문에 아버지 말을 확정처럼 붙잡았다는 감정이 드러난다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "인정받지 못할까 봄",
+                "neutral": "그 불안",
+                "judgeRef": "인정 욕구"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family02:b:d4.unlock.s5.0",
+            "factText": "선우가 자신의 과잉 해석이 단독 승계 선언과는 달랐음을 시인한다.",
+            "tags": [
+              "admission",
+              "shame",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "transcript": {
+                "exact": "18분 전체 녹취",
+                "neutral": "전체 맥락",
+                "judgeRef": "전체 녹취"
+              },
+              "quote": {
+                "clipQuote": "공장은 선우가 맡아",
+                "fullQuote": "지분이랑 상속은 나중에 다시 정리하자",
+                "neutral": "그 말들"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "family02:b:d5.unlock.s2.0",
+            "factText": "선우가 배우자 공유를 개인적 예외로 처리했다는 사실이 드러난다.",
+            "tags": [
+              "rule",
+              "relationship",
+              "counter"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                "neutral": "비공유 원칙",
+                "judgeRef": "그 비밀 원칙"
+              },
+              "scope": {
+                "exact": "직계 가족 바깥",
+                "neutral": "집 밖",
+                "judgeRef": "가족 밖"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "family02:b:d5.unlock.s3.0",
+            "factText": "공유 시점이 친척 단톡보다 앞서 있어 선우 위반이 먼저였다는 사실이 드러난다.",
+            "tags": [
+              "timeline",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "breachA": {
+                "exact": "친척 단톡·거래처 통화로 의심 확산",
+                "neutral": "의심 전파",
+                "judgeRef": "공개 확산"
+              },
+              "breachB": {
+                "exact": "배우자에게 파일과 링크 공유",
+                "neutral": "배우자 공유",
+                "judgeRef": "자료 전달"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family02:b:d5.unlock.s4.0",
+            "factText": "선우가 결혼을 지키려는 두려움 때문에 규칙을 다르게 읽었다는 속내가 나온다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "fear": {
+                "exact": "결혼 불신 확대",
+                "neutral": "배우자와의 균열",
+                "judgeRef": "결혼 불안"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family02:b:d5.unlock.s5.0",
+            "factText": "선우가 배우자를 예외 취급한 판단 자체가 잘못이었다고 인정한다.",
+            "tags": [
+              "admission",
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "건강기록과 공장 재산표는 집 밖으로 돌리지 않는 원칙",
+                "neutral": "비공유 원칙",
+                "judgeRef": "그 비밀 원칙"
+              },
+              "scope": {
+                "exact": "직계 가족 바깥",
+                "neutral": "집 밖",
+                "judgeRef": "가족 밖"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "family02:contradiction:1",
+        "targetParty": "a",
+        "trigger": "a가 '스쳐 본 것뿐'이라고 말한 뒤 e-3이 제시될 때",
+        "text": "접속 기록과 6분 뒤 단톡 전송이 겹치며, '확인만 했다'는 말이 무단 열람·즉시 확산과 정면충돌한다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-3"
+        ]
+      },
+      {
+        "id": "family02:contradiction:2",
+        "targetParty": "b",
+        "trigger": "b가 '정식 전달은 아니다'라고 축소한 뒤 e-2가 제시될 때",
+        "text": "클라우드 링크와 채팅 원문이 뜨면서, '그냥 보여준 것'이라는 표현이 실제 파일 공유 로그와 부딪힌다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "family02:contradiction:3",
+        "targetParty": "a",
+        "trigger": "a가 42초 클립만으로 승계를 단정한 상태에서 e-6이 제시될 때",
+        "text": "전체 녹취의 '지분이랑 상속은 나중' 문장이 나타나며, 단독 승계 선언 프레임이 잘린 인상효과였음이 드러난다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      },
+      {
+        "id": "family02:contradiction:4",
+        "targetParty": "b",
+        "trigger": "b가 외부 유출 경로를 모른다고 버틴 뒤 e-4와 e-5가 이어질 때",
+        "text": "문의메일 헤더와 노트 초안, 사촌 중개사 통화기록이 이어지며 배우자 쪽 경로를 빼고는 설명이 어려워진다.",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "family02:interjection:1",
+        "speaker": "judge",
+        "trigger": "양측이 '누가 먼저였나'만 반복할 때",
+        "text": "재판관: 최초 공유, 실제 외부 유출, 친척 확산을 한 문장으로 섞지 마십시오. 각 경로를 따로 답하십시오.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "family02:interjection:2",
+        "speaker": "judge",
+        "trigger": "a가 승계와 배신 프레임을 묶어 압박할 때",
+        "text": "재판관: 승계 해석의 과장과 자료 유출의 책임은 같은 질문이 아닙니다. 하나씩 대답하십시오.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4"
+        ]
+      },
+      {
+        "id": "family02:interjection:3",
+        "speaker": "judge",
+        "trigger": "b가 '정리해서 말하겠다'며 순서를 늦출 때",
+        "text": "재판관: 순서를 미루는 말은 답변이 아닙니다. 민지에게 무엇을, 언제, 왜 보냈는지부터 진술하십시오.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "family02:outburst:a:1",
+        "party": "a",
+        "trigger": "며느리 관여와 대표 권한 침범이 함께 추궁될 때",
+        "text": "정미옥: 내가 이 집이랑 공장 몇 년을 지켰는데, 뒤에서 파일 돌리고 권한까지 넘어가는 꼴을 가만히 보라는 겁니까.",
+        "behaviorHint": "목소리가 급격히 높아지고, 자신의 연차와 희생을 한 문장에 밀어 넣는다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "family02:outburst:a:2",
+        "party": "a",
+        "trigger": "무단 열람과 친척 단톡 확산이 동시에 제시될 때",
+        "text": "정미옥: 그래, 내가 다 잘못했다고 해도 되죠. 그런데 누가 먼저 우리 집 얘길 밖으로 넘겼는지는 왜 다들 빼고 말합니까.",
+        "behaviorHint": "울분을 삼키듯 웃었다가 곧바로 비난형 문장으로 되돌아선다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      },
+      {
+        "id": "family02:outburst:b:1",
+        "party": "b",
+        "trigger": "아내 경로와 배신한 아들 낙인이 한꺼번에 추궁될 때",
+        "text": "강선우: 그 얘기까지 여기서 다 꺼내면 저는 아들로도 남편으로도 끝나는 거예요. 그래서 바로 말을 못 한 겁니다.",
+        "behaviorHint": "문장 중간에 호흡이 끊기고, 마지막에서 시선을 완전히 피한다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "family02:outburst:b:2",
+        "party": "b",
+        "trigger": "어머니의 태블릿 열람과 친척 단톡이 반복 소환될 때",
+        "text": "강선우: 제가 잘못한 건 맞는데, 어머니가 민지 기기까지 보신 순간부터는 그냥 대화가 아니라 공개 심문이었어요.",
+        "behaviorHint": "참다가 한 번에 내뱉고, 이어지는 말은 급격히 작아진다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "tablet_access_question",
+      "line": "태블릿을 뒤졌다는 식으로 몰아가지 마세요. 주방에 떠 있던 화면을 본 것과 남의 기기를 캐는 건 다른 말이에요.",
+      "behaviorHint": "한 손을 내저으며 행위의 강도를 재정의한다.",
+      "id": "family02:transition:a:d-3:s0_s1"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "접속 기록이 그렇게 남아 있으면 화면을 본 건 부인 못 하죠. 그래도 그때는 이미 선우 쪽 정황이 보여서 확인하려던 겁니다.",
+      "behaviorHint": "기록을 보는 순간 시선이 굳고, 곧바로 정당화를 덧붙인다.",
+      "revealAtom": "family02:a:d3.unlock.s2.0",
+      "id": "family02:transition:a:d-3:s1_s2"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "relative_chat_followup",
+      "line": "친척 단톡에 올린 건 사실이에요. 하지만 며느릴 망신주려던 게 아니라, 집안 어른들부터 붙잡고 막아야겠다고 생각한 겁니다.",
+      "behaviorHint": "한 박자 쉬고 인정한 뒤 의도를 보호 논리로 돌린다.",
+      "revealAtom": "family02:a:d3.unlock.s3.0",
+      "id": "family02:transition:a:d-3:s2_s3"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "privacy_boundary_question",
+      "line": "결국 남의 기기를 본 것도, 확인 안 된 의심을 친척들한테 퍼뜨린 것도 내 잘못이죠. 그날은 불안이 먼저였다고 해도 선을 넘은 건 변하지 않아요.",
+      "behaviorHint": "목소리가 낮아지며 처음으로 잘못을 두 갈래로 분리해 인정한다.",
+      "revealAtom": "family02:a:d3.unlock.s5.0",
+      "id": "family02:transition:a:d-3:s3_s5"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_audio_question",
+      "line": "짧은 파일이라도 아버지 입에서 그 말이 나오면 무시할 수 없어요. 나는 대표 자리 있는 사람으로서 그 신호를 그냥 넘길 수 없었습니다.",
+      "behaviorHint": "클립 길이보다 발화의 무게를 강조하며 체면을 세운다.",
+      "id": "family02:transition:a:d-4:s0_s1"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "그래요, 42초만으로 전부 확정하긴 어렵죠. 그렇지만 그 파일만 들으면 단독 승계처럼 들린다는 말까지 틀렸다고는 못 하겠어요.",
+      "behaviorHint": "한 걸음 물러나면서도 해석의 정당성은 지키려 한다.",
+      "revealAtom": "family02:a:d4.unlock.s2.0",
+      "id": "family02:transition:a:d-4:s1_s2"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "full_transcript_followup",
+      "line": "전체 녹취에 다른 문장이 붙어 있는 건 압니다. 다만 그날 분위기까지 생각하면, 선우 쪽이 그 말을 크게 받아들일 만한 여지는 있었다고 봐요.",
+      "behaviorHint": "체면을 지키기 위해 '단정'을 '여지'로 바꿔 말한다.",
+      "revealAtom": "family02:a:d4.unlock.s3.0",
+      "id": "family02:transition:a:d-4:s2_s3"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "전체 녹취와 변호사 확인서까지 나오면 단독 승계라고 밀 수는 없겠네요. 내가 잘린 클립을 너무 크게 붙잡은 건 인정합니다.",
+      "behaviorHint": "자료를 끝까지 바라보다가 마지막 문장에서 시선을 거둔다.",
+      "revealAtom": "family02:a:d4.unlock.s5.0",
+      "id": "family02:transition:a:d-4:s3_s5"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "confidentiality_rule_question",
+      "line": "친척들한테 확인하려던 말까지 외부 유출이냐고 묻는다면 억울하죠. 나는 수습하려고 한 거고, 선우는 자료를 건넨 거니까요.",
+      "behaviorHint": "행위의 성격을 '수습'으로 명명하며 비교 구도를 만든다.",
+      "id": "family02:transition:a:d-5:s0_s1"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_factory_fear",
+      "line": "그때는 진짜 공장이 팔리는 줄 알았어요. 누군가 붙잡고 확인하지 않으면 내가 대표 자리에서 아무것도 못 지킨 사람이 되는 것 같았습니다.",
+      "behaviorHint": "공격적인 톤이 잠깐 풀리고 불안이 먼저 새어 나온다.",
+      "revealAtom": "family02:a:d5.unlock.s4.0",
+      "id": "family02:transition:a:d-5:s1_s4"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S3",
+      "trigger": "e-3_presented",
+      "line": "단톡 기록이 그대로 있으면 내가 선을 넘은 것도 부인 못 하죠. 그래도 시작은 선우 공유였다는 말까지 버릴 수는 없어요.",
+      "behaviorHint": "감정 고백 뒤 증거를 보며 다시 책임 비중 논리로 돌아선다.",
+      "revealAtom": "family02:a:d5.unlock.s3.0",
+      "id": "family02:transition:a:d-5:s4_s3"
+    },
+    {
+      "caseId": "family-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "좋아요, 방식은 달라도 둘 다 원칙을 깬 겁니다. 배우자 공유와 친척 단톡 확산을 따로 떼어 내기 어렵다는 건 인정해요.",
+      "behaviorHint": "끝 문장에서 처음으로 '둘 다'를 분명히 발음한다.",
+      "revealAtom": "family02:a:d5.unlock.s5.0",
+      "id": "family02:transition:a:d-5:s3_s5"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "spouse_share_question",
+      "line": "민지에게 정식 자료를 넘긴 건 아니라는 뜻이었어요. 그건 그냥 집안 상황을 같이 정리해 보자는 정도였고, 제가 말을 너무 늦춘 건 인정합니다.",
+      "behaviorHint": "해명 순서를 스스로 조정하며 표현 강도를 낮춘다.",
+      "id": "family02:transition:b:d-1:s0_s1"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "42초 클립은 보냈어요. 다만 그건 맥락 보라고 보낸 거고, 밖에 흘리라는 의미는 아니었습니다.",
+      "behaviorHint": "증거가 뜨자 사실 한 조각만 떼어 내며 한숨을 짧게 쉰다.",
+      "revealAtom": "family02:b:d1.unlock.s2.0",
+      "id": "family02:transition:b:d-1:s1_s2"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-2_presented",
+      "line": "클립뿐 아니라 링크까지 보낸 건 맞습니다. 배우자를 예외라고 생각했는데, 지금 보니 그 판단부터 이미 선을 넘은 거였네요.",
+      "behaviorHint": "로그 타임라인을 따라 읽다가 스스로 변명의 폭을 줄인다.",
+      "revealAtom": "family02:b:d1.unlock.s3.0",
+      "id": "family02:transition:b:d-1:s2_s3"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "nonjudgmental_question_about_marriage",
+      "line": "제가 바로 말 못 한 건 아내 얘기까지 나오면 집안도 결혼도 같이 깨질 것 같아서였어요. 그렇다고 해도 처음 원칙을 깬 건 제 선택이 맞습니다.",
+      "behaviorHint": "어깨가 눈에 띄게 내려가고, 마지막 문장에서 책임을 끌어안는다.",
+      "revealAtom": "family02:b:d1.unlock.s5.0",
+      "id": "family02:transition:b:d-1:s3_s5"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "rumor_source_question",
+      "line": "직접 말한 적은 없다는 건 분명합니다. 다만 소문이 어떻게 번졌는지는 제가 순서대로 정리해서 말해야 할 것 같아요.",
+      "behaviorHint": "질문에 바로 답하지 않고 경로 설명을 뒤로 미룬다.",
+      "id": "family02:transition:b:d-2:s0_s1"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "그 메일 계정이 제 건 아니라는 말은 여전히 맞아요. 그런데 배우자 쪽 정보가 연결될 여지가 보이면, 더는 제가 모른 척만 할 수는 없겠네요.",
+      "behaviorHint": "헤더 정보를 보며 부인에서 가능성 인정으로 한 걸음 물러난다.",
+      "revealAtom": "family02:b:d2.unlock.s2.0",
+      "id": "family02:transition:b:d-2:s1_s2"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "spouse_contact_question",
+      "line": "민지가 시세를 알아보려고 누군가와 접촉한 건 뒤늦게 알았습니다. 그 경로를 제 입으로 바로 말하지 못한 건, 그 순간부터 모든 화살이 결혼으로 향할 것 같아서였어요.",
+      "behaviorHint": "배우자 이름을 어렵게 꺼내며 말끝을 흐린다.",
+      "revealAtom": "family02:b:d2.unlock.s3.0",
+      "id": "family02:transition:b:d-2:s2_s3"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "노트 초안과 통화기록이 같이 나오면 직접 외부에 닿은 손이 민지 쪽이었다는 건 인정해야죠. 다만 그 재료를 준 출발점은 저였습니다.",
+      "behaviorHint": "체념 섞인 고개 끄덕임 뒤 책임을 둘로 나눠 고백한다.",
+      "revealAtom": "family02:b:d2.unlock.s5.0",
+      "id": "family02:transition:b:d-2:s3_s5"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "confidentiality_rule_question",
+      "line": "배우자에게 말한 걸 바로 외부 유출이라고 부르긴 어려웠어요. 저는 그걸 가족 안 상의 정도로 생각했고, 그래서 제 잘못을 작게 봤습니다.",
+      "behaviorHint": "비밀경계의 범위를 스스로 좁혀 해석한다.",
+      "id": "family02:transition:b:d-5:s0_s1"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "shared_folder_exception_question",
+      "line": "공유 폴더 링크를 준 건 맞습니다. 그때는 배우자는 예외라고 생각했는데, 지금 보니 그 예외를 혼자 만들었던 셈이네요.",
+      "behaviorHint": "증거 질문을 받자 방어적 웃음을 짓고 바로 지운다.",
+      "revealAtom": "family02:b:d5.unlock.s2.0",
+      "id": "family02:transition:b:d-5:s1_s2"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-2_presented",
+      "line": "공유 시점이 단톡보다 앞이면 제가 먼저 선을 넘은 거죠. 그래도 어머니 쪽 확산까지 합치면 둘 다 원칙을 흐린 건 맞다고 생각합니다.",
+      "behaviorHint": "타임라인을 인정한 뒤 곧바로 공동 책임 언어를 꺼낸다.",
+      "revealAtom": "family02:b:d5.unlock.s3.0",
+      "id": "family02:transition:b:d-5:s2_s3"
+    },
+    {
+      "caseId": "family-02",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "배우자를 예외 취급한 판단 자체가 틀렸습니다. 결혼을 지키려다 규칙을 바꿔 읽은 게 결국 더 큰 불신을 만들었다는 것도 인정해요.",
+      "behaviorHint": "말문이 막히듯 천천히 말하고 마지막에 짧게 끄덕인다.",
+      "revealAtom": "family02:b:d5.unlock.s5.0",
+      "id": "family02:transition:b:d-5:s3_s5"
+    }
+  ]
+}

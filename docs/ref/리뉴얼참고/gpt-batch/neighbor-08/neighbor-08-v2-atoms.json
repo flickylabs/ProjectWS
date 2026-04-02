@@ -1,0 +1,2861 @@
+{
+  "caseId": "neighbor-08",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "설치 자체는 일반 범위였고 따로 문제 될 각도는 아니었다고 본다."
+          ],
+          "privateKnowledge": [
+            "사전 통보를 생략했고 초기 이틀은 맞은편 문틀과 도어매트가 저장 범위에 들어갔다."
+          ],
+          "suppressions": [
+            "관리사무소 사전 통보 누락",
+            "초기 이틀간 넓었던 저장 각도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-1:denial:0",
+              "factText": "설치 자체는 일반 범위였고 따로 문제 될 각도는 아니었다고 본다.",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리실",
+                  "judgeRef": "관리실"
+                },
+                "time": {
+                  "exact": "설치 직후 이틀",
+                  "dateExact": "설치 직후 이틀",
+                  "period": "초기 이틀",
+                  "neutral": "그 초반 기간"
+                },
+                "range": {
+                  "exact": "맞은편 도어매트와 문틀 일부",
+                  "neutral": "문틀 바깥 범위"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "테스트 프리뷰가 넓어 보였을 수는 있어도 저장 영상까지 심각했다는 평가는 과장됐다고 생각했다."
+          ],
+          "privateKnowledge": [
+            "프리뷰와 저장 화면 차이를 먼저 설명하지 않아 오해를 키운 점은 알고 있었다."
+          ],
+          "suppressions": [
+            "설치 직후 항의를 기술 설명으로만 넘긴 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-1:uncertainty:0",
+              "factText": "테스트 프리뷰가 넓어 보였을 수는 있어도 저장 영상까지 심각했다는 평가는 과장됐다고 생각했다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "설치 직후 이틀",
+                  "dateExact": "설치 직후 이틀",
+                  "period": "초기 이틀",
+                  "neutral": "그 초반 기간"
+                },
+                "range": {
+                  "exact": "맞은편 도어매트와 문틀 일부",
+                  "neutral": "문틀 바깥 범위"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "관리실에 먼저 알렸어야 했고, 초기 이틀 동안은 하린 씨 현관 쪽이 불필요하게 넓게 잡혔다."
+          ],
+          "privateKnowledge": [
+            "자신도 그 범위가 오래 두면 문제 된다는 걸 알았지만 바로 줄이지 않았다."
+          ],
+          "suppressions": [
+            "이틀간 방치한 이유",
+            "당일 즉시 조정하지 않은 판단"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-1:admission:0",
+              "factText": "관리실에 먼저 알렸어야 했고, 초기 이틀 동안은 하린 씨 현관 쪽이 불필요하게 넓게 잡혔다.",
+              "tags": [
+                "admission",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리실",
+                  "judgeRef": "관리실"
+                },
+                "time": {
+                  "exact": "설치 직후 이틀",
+                  "dateExact": "설치 직후 이틀",
+                  "period": "초기 이틀",
+                  "neutral": "그 초반 기간"
+                },
+                "range": {
+                  "exact": "맞은편 도어매트와 문틀 일부",
+                  "neutral": "문틀 바깥 범위"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "내 잘못은 맞지만, 하린 씨도 그 확인을 건너뛰고 바로 공개 채널로 끌고 갔다."
+          ],
+          "privateKnowledge": [
+            "책임을 나누고 싶어 상대의 선행 잘못을 앞세운다."
+          ],
+          "suppressions": [
+            "자신의 선행 의무 위반이 더 컸다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-1:counter:0",
+              "factText": "내 잘못은 맞지만, 하린 씨도 그 확인을 건너뛰고 바로 공개 채널로 끌고 갔다.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리실",
+                  "judgeRef": "관리실"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "하린 씨가 불안하다고 했을 때 내가 기술 설명으로만 버틴 건, 스토커처럼 보일까 두려워서였다."
+          ],
+          "privateKnowledge": [
+            "직업 신뢰와 낙인 공포 때문에 감정 공감을 건너뛰었다."
+          ],
+          "suppressions": [
+            "체면과 직업 신뢰에 대한 두려움"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-1:shame:0",
+              "factText": "하린 씨가 불안하다고 했을 때 내가 기술 설명으로만 버틴 건, 스토커처럼 보일까 두려워서였다.",
+              "tags": [
+                "shame",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "party_b": {
+                  "exact": "주하린",
+                  "fullName": "주하린",
+                  "judgeRef": "주하린 씨",
+                  "neutral": "상대방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "결국 내가 먼저 관리실에 통보하고 바로 각도를 좁혔어야 했고, 초기 이틀의 범위 초과는 내 책임이다."
+          ],
+          "privateKnowledge": [
+            "절차를 지켰다면 주민방 낙인전으로 번질 가능성을 줄일 수 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-1:responsibility:0",
+              "factText": "결국 내가 먼저 관리실에 통보하고 바로 각도를 좁혔어야 했고, 초기 이틀의 범위 초과는 내 책임이다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리실",
+                  "judgeRef": "관리실"
+                },
+                "time": {
+                  "exact": "설치 직후 이틀",
+                  "dateExact": "설치 직후 이틀",
+                  "period": "초기 이틀",
+                  "neutral": "그 초반 기간"
+                },
+                "range": {
+                  "exact": "맞은편 도어매트와 문틀 일부",
+                  "neutral": "문틀 바깥 범위"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "주하린 씨는 사실 확인도 끝나기 전에 나를 현관을 노리는 사람처럼 몰아갔다."
+          ],
+          "privateKnowledge": [
+            "초기 설치 각도 문제와 별개로 공개 낙인이 먼저 퍼졌다고 느낀다."
+          ],
+          "suppressions": [
+            "자신의 초반 각도 문제가 낙인 확산의 빌미가 된 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-2:harm:0",
+              "factText": "주하린 씨는 사실 확인도 끝나기 전에 나를 현관을 노리는 사람처럼 몰아갔다.",
+              "tags": [
+                "harm",
+                "identity"
+              ],
+              "slots": {
+                "party_b": {
+                  "exact": "주하린",
+                  "fullName": "주하린",
+                  "judgeRef": "주하린 씨",
+                  "neutral": "상대방"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                },
+                "label": {
+                  "exact": "스토킹",
+                  "neutral": "강한 낙인 표현"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "관리실 판단 전 공개 채널에 강한 낙인어가 올라온 순간, 내 설명은 이미 변명처럼 들리게 됐다."
+          ],
+          "privateKnowledge": [
+            "공식 확인 전에 평판 타격이 선행됐다는 점을 억울해한다."
+          ],
+          "suppressions": [
+            "상대가 왜 그렇게 급해졌는지에 대한 맥락"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-2:timeline:0",
+              "factText": "관리실 판단 전 공개 채널에 강한 낙인어가 올라온 순간, 내 설명은 이미 변명처럼 들리게 됐다.",
+              "tags": [
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                },
+                "time": {
+                  "exact": "관리사무소 공식 접수 전",
+                  "period": "확인 전 단계",
+                  "neutral": "그 이전"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "내 설치 잘못과 별개로, 주민방에서 스토킹처럼 몰아붙인 방식은 분리해서 봐야 한다."
+          ],
+          "privateKnowledge": [
+            "자신의 과실을 인정하면서도 상대의 평판 훼손은 별도 책임이라고 본다."
+          ],
+          "suppressions": [
+            "역공 게시물로 맞대응한 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-2:rule:0",
+              "factText": "내 설치 잘못과 별개로, 주민방에서 스토킹처럼 몰아붙인 방식은 분리해서 봐야 한다.",
+              "tags": [
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "스토킹",
+                  "neutral": "강한 낙인 표현"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "그 글이 돌고 나서는 장비를 설명하는 기술자가 아니라 사람을 훔쳐보는 사람처럼 취급받았다."
+          ],
+          "privateKnowledge": [
+            "직업 신뢰와 이웃 관계가 동시에 흔들렸다고 느낀다."
+          ],
+          "suppressions": [
+            "상대 불안을 자극한 원인이 자신에게 일부 있었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-2:identity:0",
+              "factText": "그 글이 돌고 나서는 장비를 설명하는 기술자가 아니라 사람을 훔쳐보는 사람처럼 취급받았다.",
+              "tags": [
+                "identity",
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "스토킹",
+                  "neutral": "강한 낙인 표현"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "나는 그 낙인어가 붙은 뒤부터 사실관계보다도 '내가 그런 사람으로 남는가'에만 매달렸다."
+          ],
+          "privateKnowledge": [
+            "그 공포 때문에 냉정한 반박보다 공격적 방어를 택했다."
+          ],
+          "suppressions": [
+            "하린의 실제 불안까지 함께 지워버린 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-2:fear:0",
+              "factText": "나는 그 낙인어가 붙은 뒤부터 사실관계보다도 '내가 그런 사람으로 남는가'에만 매달렸다.",
+              "tags": [
+                "fear",
+                "identity",
+                "emotion"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "스토킹",
+                  "neutral": "강한 낙인 표현"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "내 잘못이 있었다고 해도, 주하린 씨가 편집 영상과 낙인어로 공개 평판을 해친 건 분명한 별도 잘못이다."
+          ],
+          "privateKnowledge": [
+            "상대의 정정과 철회가 있어야 관계 복구가 가능하다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-2:responsibility:0",
+              "factText": "내 잘못이 있었다고 해도, 주하린 씨가 편집 영상과 낙인어로 공개 평판을 해친 건 분명한 별도 잘못이다.",
+              "tags": [
+                "responsibility",
+                "harm",
+                "admission"
+              ],
+              "slots": {
+                "party_b": {
+                  "exact": "주하린",
+                  "fullName": "주하린",
+                  "judgeRef": "주하린 씨",
+                  "neutral": "상대방"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                },
+                "label": {
+                  "exact": "스토킹",
+                  "neutral": "강한 낙인 표현"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "주민방에 돈 27초 영상은 내 카메라 원본이 아니다."
+          ],
+          "privateKnowledge": [
+            "프리뷰 UI와 다른 시점 복도 영상이 섞인 듯한 느낌을 초기에 받았다."
+          ],
+          "suppressions": [
+            "포렌식 이전에는 자신도 정확한 편집 경로를 단정하지 못한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-3:evidence:0",
+              "factText": "주민방에 돈 27초 영상은 내 카메라 원본이 아니다.",
+              "tags": [
+                "evidence",
+                "denial"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                },
+                "source": {
+                  "exact": "설치 프리뷰와 다른 시점 복도 영상",
+                  "neutral": "서로 다른 원본 조각"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "그 영상은 원본 저장파일이 아니라 설치 프리뷰 같은 화면 조각이 섞여 있어 보였다."
+          ],
+          "privateKnowledge": [
+            "기기 사양상 해당 줌 변화와 타임스탬프가 설명되지 않는다는 점을 안다."
+          ],
+          "suppressions": [
+            "초기에는 설명을 기술 용어로만 밀어붙인 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-3:context:0",
+              "factText": "그 영상은 원본 저장파일이 아니라 설치 프리뷰 같은 화면 조각이 섞여 있어 보였다.",
+              "tags": [
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                },
+                "source": {
+                  "exact": "설치 프리뷰와 다른 시점 복도 영상",
+                  "neutral": "서로 다른 원본 조각"
+                },
+                "edit": {
+                  "exact": "디지털 줌·좌우 반전·가짜 타임스탬프",
+                  "neutral": "편집 흔적"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "타임스탬프 어긋남과 줌 배율만 봐도 그 27초를 원본 CCTV라고 부를 수는 없다."
+          ],
+          "privateKnowledge": [
+            "원본 해시와 기기 사양으로 반박 가능한 사안이라 확신한다."
+          ],
+          "suppressions": [
+            "상대가 왜 그런 영상을 믿고 싶었는지에 대한 감정 맥락"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-3:evidence:1",
+              "factText": "타임스탬프 어긋남과 줌 배율만 봐도 그 27초를 원본 CCTV라고 부를 수는 없다.",
+              "tags": [
+                "evidence",
+                "rule"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                },
+                "edit": {
+                  "exact": "디지털 줌·좌우 반전·가짜 타임스탬프",
+                  "neutral": "편집 흔적"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "의도 전부를 단정하진 않더라도, 적어도 원본이 아닌 걸 원본처럼 돌린 책임은 주하린 씨에게 있다."
+          ],
+          "privateKnowledge": [
+            "상대의 공포가 있었더라도 유포 판단은 별개라고 본다."
+          ],
+          "suppressions": [
+            "자신의 초기 각도 문제가 신뢰를 떨어뜨린 배경"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-3:responsibility:0",
+              "factText": "의도 전부를 단정하진 않더라도, 적어도 원본이 아닌 걸 원본처럼 돌린 책임은 주하린 씨에게 있다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "party_b": {
+                  "exact": "주하린",
+                  "fullName": "주하린",
+                  "judgeRef": "주하린 씨",
+                  "neutral": "상대방"
+                },
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "그 위조본이 퍼지자 나는 사실을 설명할 창보다 먼저 '감시하는 사람'이라는 프레임 속에 갇혔다."
+          ],
+          "privateKnowledge": [
+            "억울함 때문에 상대 공포를 전부 과장으로 치부해 버렸다."
+          ],
+          "suppressions": [
+            "자신이 감정 공감을 생략한 태도"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-3:harm:0",
+              "factText": "그 위조본이 퍼지자 나는 사실을 설명할 창보다 먼저 '감시하는 사람'이라는 프레임 속에 갇혔다.",
+              "tags": [
+                "harm",
+                "emotion",
+                "identity"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "27초 유포본은 원본 CCTV가 아니라 편집된 위조본이고, 그 점은 내 초기 설치 문제와 따로 바로잡아야 한다."
+          ],
+          "privateKnowledge": [
+            "증거 절차가 지켜졌다면 분쟁이 이 정도로 번지지 않았다고 본다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-3:admission:0",
+              "factText": "27초 유포본은 원본 CCTV가 아니라 편집된 위조본이고, 그 점은 내 초기 설치 문제와 따로 바로잡아야 한다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "rule"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                },
+                "edit": {
+                  "exact": "디지털 줌·좌우 반전·가짜 타임스탬프",
+                  "neutral": "편집 흔적"
+                },
+                "source": {
+                  "exact": "설치 프리뷰와 다른 시점 복도 영상",
+                  "neutral": "서로 다른 원본 조각"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "내 카메라가 하린 씨 집 안을 추적 촬영했다는 말은 사실이 아니다."
+          ],
+          "privateKnowledge": [
+            "기기에 팬·틸트 기능이 없다는 점은 분명하지만, 그렇게 느껴질 장면이 있었을 수는 있다고 안다."
+          ],
+          "suppressions": [
+            "설치 프리뷰와 저장 화면 차이를 미리 고지하지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-4:denial:0",
+              "factText": "내 카메라가 하린 씨 집 안을 추적 촬영했다는 말은 사실이 아니다.",
+              "tags": [
+                "denial",
+                "evidence"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "고정렌즈 모델",
+                  "neutral": "해당 기기"
+                },
+                "place": {
+                  "exact": "하린 집 내부",
+                  "neutral": "실내"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "문이 열릴 때 실내 불빛이 번지고 프리뷰가 넓어 보이면 따라오는 것처럼 오해할 수는 있다."
+          ],
+          "privateKnowledge": [
+            "그 오해 가능성을 알면서도 '기능이 없다'는 말만 앞세웠다."
+          ],
+          "suppressions": [
+            "체감 불안에 대한 공감 생략"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-4:uncertainty:0",
+              "factText": "문이 열릴 때 실내 불빛이 번지고 프리뷰가 넓어 보이면 따라오는 것처럼 오해할 수는 있다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "preview": {
+                  "exact": "설치 프리뷰",
+                  "neutral": "미리보기 화면"
+                },
+                "place": {
+                  "exact": "하린 집 내부",
+                  "neutral": "실내"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "실내를 추적한 건 아니지만, 설치 프리뷰와 저장화면 차이를 먼저 설명했어야 했다."
+          ],
+          "privateKnowledge": [
+            "원본 저장 영상만 보면 내부 추적은 없지만, 초기 설명 부족은 자신의 책임이다."
+          ],
+          "suppressions": [
+            "설명 책임을 다하지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-4:admission:0",
+              "factText": "실내를 추적한 건 아니지만, 설치 프리뷰와 저장화면 차이를 먼저 설명했어야 했다.",
+              "tags": [
+                "admission",
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "고정렌즈 모델",
+                  "neutral": "해당 기기"
+                },
+                "preview": {
+                  "exact": "설치 프리뷰",
+                  "neutral": "미리보기 화면"
+                },
+                "place": {
+                  "exact": "하린 집 내부",
+                  "neutral": "실내"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "실제 추적은 없었고, 그 체감이 더 커진 건 편집된 27초가 반복 유포됐기 때문이다."
+          ],
+          "privateKnowledge": [
+            "상대의 오해를 편집 유포 책임과 연결해 돌려세운다."
+          ],
+          "suppressions": [
+            "자신의 초기 넓은 각도가 체감 불안을 먼저 만든 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-4:counter:0",
+              "factText": "실제 추적은 없었고, 그 체감이 더 커진 건 편집된 27초가 반복 유포됐기 때문이다.",
+              "tags": [
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                },
+                "preview": {
+                  "exact": "설치 프리뷰",
+                  "neutral": "미리보기 화면"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "나는 계속 '원본 보면 아니다'만 말했고, 그 사이 하린 씨가 느낀 불안 자체는 무시했다."
+          ],
+          "privateKnowledge": [
+            "기술 사실과 체감 공포를 분리해 말하지 못했다."
+          ],
+          "suppressions": [
+            "직업적 자존심 때문에 감정 언어를 피한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-4:emotion:0",
+              "factText": "나는 계속 '원본 보면 아니다'만 말했고, 그 사이 하린 씨가 느낀 불안 자체는 무시했다.",
+              "tags": [
+                "emotion",
+                "shame",
+                "admission"
+              ],
+              "slots": {
+                "party_b": {
+                  "exact": "주하린",
+                  "fullName": "주하린",
+                  "judgeRef": "주하린 씨",
+                  "neutral": "상대방"
+                },
+                "preview": {
+                  "exact": "설치 프리뷰",
+                  "neutral": "미리보기 화면"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "실내 추적은 없었지만, 오해를 풀 책임은 기기 소유자인 내 쪽이 더 컸고 그 설명을 늦췄다."
+          ],
+          "privateKnowledge": [
+            "사양서와 원본을 더 일찍 관리실 경로로 냈어야 했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-4:responsibility:0",
+              "factText": "실내 추적은 없었지만, 오해를 풀 책임은 기기 소유자인 내 쪽이 더 컸고 그 설명을 늦췄다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "고정렌즈 모델",
+                  "neutral": "해당 기기"
+                },
+                "place": {
+                  "exact": "하린 집 내부",
+                  "neutral": "실내"
+                },
+                "preview": {
+                  "exact": "설치 프리뷰",
+                  "neutral": "미리보기 화면"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "나도 방어 차원에서 글을 올린 것이지, 절차를 완전히 무시할 생각은 아니었다."
+          ],
+          "privateKnowledge": [
+            "관리실 확인 우선 합의를 알고 있었지만 즉시 반박 욕구가 앞섰다."
+          ],
+          "suppressions": [
+            "생활패턴을 공개한 역공 게시물의 수위"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-5:self_justification:0",
+              "factText": "나도 방어 차원에서 글을 올린 것이지, 절차를 완전히 무시할 생각은 아니었다.",
+              "tags": [
+                "self_justification",
+                "denial"
+              ],
+              "slots": {
+                "principle": {
+                  "exact": "관리사무소 확인 우선",
+                  "neutral": "그 절차"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                },
+                "post": {
+                  "exact": "귀가·출근 시간표 게시물",
+                  "neutral": "그 역공 게시물"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "이미 스토킹 낙인이 퍼진 뒤라 관리실만 기다리면 내가 그대로 굳어질 것 같았다."
+          ],
+          "privateKnowledge": [
+            "억울함과 체면 손상이 절차 준수보다 앞섰다."
+          ],
+          "suppressions": [
+            "공용 규칙을 스스로 먼저 깨뜨린 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-5:fear:0",
+              "factText": "이미 스토킹 낙인이 퍼진 뒤라 관리실만 기다리면 내가 그대로 굳어질 것 같았다.",
+              "tags": [
+                "fear",
+                "self_justification",
+                "timeline"
+              ],
+              "slots": {
+                "principle": {
+                  "exact": "관리사무소 확인 우선",
+                  "neutral": "그 절차"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "원칙상 관리실 확인이 먼저였다는 건 알았고, 그걸 건너뛴 내 대응도 잘한 건 아니다."
+          ],
+          "privateKnowledge": [
+            "공개 반박을 택한 순간 자신의 절차 위반을 인식했다."
+          ],
+          "suppressions": [
+            "역공 게시물 삭제를 미룬 이유"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-5:admission:0",
+              "factText": "원칙상 관리실 확인이 먼저였다는 건 알았고, 그걸 건너뛴 내 대응도 잘한 건 아니다.",
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "principle": {
+                  "exact": "관리사무소 확인 우선",
+                  "neutral": "그 절차"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "하지만 공개 낙인 글이 먼저 올라오지 않았다면 내 쪽 역공도 그 정도까지 가진 않았을 것이다."
+          ],
+          "privateKnowledge": [
+            "상대 선행 위반을 앞세워 자신의 위반을 상대화한다."
+          ],
+          "suppressions": [
+            "시간표 공개가 원본 반박과 무관했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-5:counter:0",
+              "factText": "하지만 공개 낙인 글이 먼저 올라오지 않았다면 내 쪽 역공도 그 정도까지 가진 않았을 것이다.",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "post": {
+                  "exact": "귀가·출근 시간표 게시물",
+                  "neutral": "그 역공 게시물"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "시간표까지 올린 건 과했고, 스토커 취급을 받는 수치심 때문에 끝까지 인정하기 싫었다."
+          ],
+          "privateKnowledge": [
+            "수치심이 절차 위반 인정과 사과를 늦췄다."
+          ],
+          "suppressions": [
+            "상대의 생활패턴이라는 민감정보를 건드린 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-5:shame:0",
+              "factText": "시간표까지 올린 건 과했고, 스토커 취급을 받는 수치심 때문에 끝까지 인정하기 싫었다.",
+              "tags": [
+                "shame",
+                "privacy",
+                "emotion"
+              ],
+              "slots": {
+                "post": {
+                  "exact": "귀가·출근 시간표 게시물",
+                  "neutral": "그 역공 게시물"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "관리실 보관본으로 대응했어야 했고, 주민방에 생활패턴을 올린 반격은 내 잘못이라고 인정한다."
+          ],
+          "privateKnowledge": [
+            "공동 규칙을 지키지 않아 분쟁을 더 키웠다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:a:tell:spec_recital",
+            "neighbor08:a:tell:log_wall",
+            "neighbor08:a:tell:empathy_skip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:a:d-5:responsibility:0",
+              "factText": "관리실 보관본으로 대응했어야 했고, 주민방에 생활패턴을 올린 반격은 내 잘못이라고 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "privacy"
+              ],
+              "slots": {
+                "principle": {
+                  "exact": "관리사무소 확인 우선",
+                  "neutral": "그 절차"
+                },
+                "post": {
+                  "exact": "귀가·출근 시간표 게시물",
+                  "neutral": "그 역공 게시물"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "설치 직후 각도가 우리 현관 쪽까지 너무 넓어서 바로 불안했다."
+          ],
+          "privateKnowledge": [
+            "문틀 바깥과 도어매트가 저장 범위에 들어온 걸 직접 봤다고 믿는다."
+          ],
+          "suppressions": [
+            "뒤이어 자신이 공개 채널로 먼저 달려간 선택"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-1:act:0",
+              "factText": "설치 직후 각도가 우리 현관 쪽까지 너무 넓어서 바로 불안했다.",
+              "tags": [
+                "act",
+                "privacy"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "설치 직후 이틀",
+                  "dateExact": "설치 직후 이틀",
+                  "period": "초기 이틀",
+                  "neutral": "그 초반 기간"
+                },
+                "range": {
+                  "exact": "맞은편 도어매트와 문틀 일부",
+                  "neutral": "문틀 바깥 범위"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "관리실에도 말 없이 달린 데다, 문이 열릴 때마다 내 출입 동선이 잡힐까 싶어 더 예민해졌다."
+          ],
+          "privateKnowledge": [
+            "작년 다른 층 카메라 소문이 떠올라 체감 불안이 배가됐다."
+          ],
+          "suppressions": [
+            "그 불안이 표현을 과하게 만든 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-1:fear:0",
+              "factText": "관리실에도 말 없이 달린 데다, 문이 열릴 때마다 내 출입 동선이 잡힐까 싶어 더 예민해졌다.",
+              "tags": [
+                "fear",
+                "privacy",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리실",
+                  "judgeRef": "관리실"
+                },
+                "time": {
+                  "exact": "설치 직후 이틀",
+                  "dateExact": "설치 직후 이틀",
+                  "period": "초기 이틀",
+                  "neutral": "그 초반 기간"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "저장 영상이든 프리뷰든 처음 이틀은 선을 넘은 범위였고, 그건 민석 씨 쪽에서 먼저 바로잡았어야 한다."
+          ],
+          "privateKnowledge": [
+            "프리뷰와 저장 차이가 있더라도 초기 범위 초과는 분명하다고 본다."
+          ],
+          "suppressions": [
+            "편집 클립을 원본처럼 돌린 문제"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-1:responsibility:0",
+              "factText": "저장 영상이든 프리뷰든 처음 이틀은 선을 넘은 범위였고, 그건 민석 씨 쪽에서 먼저 바로잡았어야 한다.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "range": {
+                  "exact": "맞은편 도어매트와 문틀 일부",
+                  "neutral": "문틀 바깥 범위"
+                },
+                "time": {
+                  "exact": "설치 직후 이틀",
+                  "dateExact": "설치 직후 이틀",
+                  "period": "초기 이틀",
+                  "neutral": "그 초반 기간"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "내가 민감한 사람이어서가 아니라, 현관문 경계가 흐려졌으니 누구라도 불쾌했을 상황이었다."
+          ],
+          "privateKnowledge": [
+            "자신의 공포를 일반화해 정당성을 강화하려 한다."
+          ],
+          "suppressions": [
+            "다른 주민 의견처럼 부풀린 표현"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-1:identity:0",
+              "factText": "내가 민감한 사람이어서가 아니라, 현관문 경계가 흐려졌으니 누구라도 불쾌했을 상황이었다.",
+              "tags": [
+                "identity",
+                "context",
+                "privacy"
+              ],
+              "slots": {
+                "range": {
+                  "exact": "맞은편 도어매트와 문틀 일부",
+                  "neutral": "문틀 바깥 범위"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "작년 밤늦은 방문객 소문까지 겹쳐서, 나는 '문 앞 카메라'라는 말만 들어도 먼저 몸이 굳는다."
+          ],
+          "privateKnowledge": [
+            "과거 불안 기억이 현재 사건 판단을 더 급하게 만들었다."
+          ],
+          "suppressions": [
+            "그 공포가 증거 판단을 흐린 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-1:fear:1",
+              "factText": "작년 밤늦은 방문객 소문까지 겹쳐서, 나는 '문 앞 카메라'라는 말만 들어도 먼저 몸이 굳는다.",
+              "tags": [
+                "fear",
+                "legacy_sentence",
+                "emotion"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "민석 씨의 초기 미통보 설치와 넓은 각도는 실제 잘못이었고, 그 부분만큼은 분명히 바로잡혀야 한다."
+          ],
+          "privateKnowledge": [
+            "실내 추적이나 위조 영상 문제와는 분리해서 말해야 함을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-1:admission:0",
+              "factText": "민석 씨의 초기 미통보 설치와 넓은 각도는 실제 잘못이었고, 그 부분만큼은 분명히 바로잡혀야 한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리실",
+                  "judgeRef": "관리실"
+                },
+                "time": {
+                  "exact": "설치 직후 이틀",
+                  "dateExact": "설치 직후 이틀",
+                  "period": "초기 이틀",
+                  "neutral": "그 초반 기간"
+                },
+                "range": {
+                  "exact": "맞은편 도어매트와 문틀 일부",
+                  "neutral": "문틀 바깥 범위"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "나는 위험하다고 느낀 상황을 알린 것이지 사람 하나를 망신주려던 건 아니었다."
+          ],
+          "privateKnowledge": [
+            "낙인 효과를 알면서도 표현을 세게 써야 사람들이 반응한다고 생각했다."
+          ],
+          "suppressions": [
+            "'스토킹' 표현의 의도성"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-2:self_justification:0",
+              "factText": "나는 위험하다고 느낀 상황을 알린 것이지 사람 하나를 망신주려던 건 아니었다.",
+              "tags": [
+                "self_justification",
+                "denial"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                },
+                "label": {
+                  "exact": "스토킹",
+                  "neutral": "강한 낙인 표현"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "다른 주민들도 다 불편해하는 분위기였으니 내가 혼자 과민하게 군 건 아니라고 여겼다."
+          ],
+          "privateKnowledge": [
+            "자신의 감정을 공동체 의견처럼 키워 말한 점을 안다."
+          ],
+          "suppressions": [
+            "관리실 공식 접수보다 주민방 글이 빨랐던 시간 순서"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-2:relationship:0",
+              "factText": "다른 주민들도 다 불편해하는 분위기였으니 내가 혼자 과민하게 군 건 아니라고 여겼다.",
+              "tags": [
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                },
+                "time": {
+                  "exact": "관리사무소 공식 접수 전",
+                  "period": "확인 전 단계",
+                  "neutral": "그 이전"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "표현이 세긴 했지만, 그때는 일단 멈추게 해야 한다는 생각이 더 컸다."
+          ],
+          "privateKnowledge": [
+            "정정 없이 유포되면 평판이 무너질 수 있다는 점까지는 충분히 생각하지 못했다."
+          ],
+          "suppressions": [
+            "편집본을 원본처럼 붙인 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-2:admission:0",
+              "factText": "표현이 세긴 했지만, 그때는 일단 멈추게 해야 한다는 생각이 더 컸다.",
+              "tags": [
+                "admission",
+                "motive"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "스토킹",
+                  "neutral": "강한 낙인 표현"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "관리실보다 주민방이 먼저였던 건, 내가 불안을 사실 확인 절차보다 앞세웠기 때문이다."
+          ],
+          "privateKnowledge": [
+            "빠르게 여론을 만들면 상대 행동을 멈출 수 있다고 계산했다."
+          ],
+          "suppressions": [
+            "절차 위반을 '급함'으로 포장한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-2:responsibility:0",
+              "factText": "관리실보다 주민방이 먼저였던 건, 내가 불안을 사실 확인 절차보다 앞세웠기 때문이다.",
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "institution": {
+                  "exact": "관리사무소",
+                  "neutral": "관리실",
+                  "judgeRef": "관리실"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "작년 그 카메라 소문이 다시 떠오르면서, 나는 불안을 낙인어로 밀어붙이는 쪽을 택했다."
+          ],
+          "privateKnowledge": [
+            "공포를 설명하려다 사람 자체에 꼬리표를 붙였다."
+          ],
+          "suppressions": [
+            "낙인어 철회를 미룬 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-2:fear:0",
+              "factText": "작년 그 카메라 소문이 다시 떠오르면서, 나는 불안을 낙인어로 밀어붙이는 쪽을 택했다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "identity"
+              ],
+              "slots": {
+                "label": {
+                  "exact": "스토킹",
+                  "neutral": "강한 낙인 표현"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "결과적으로 나는 편집 영상과 '스토킹' 같은 표현으로 민석 씨 평판을 공개적으로 해쳤다."
+          ],
+          "privateKnowledge": [
+            "정정과 철회가 필요하다는 점을 받아들인다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-2:responsibility:1",
+              "factText": "결과적으로 나는 편집 영상과 '스토킹' 같은 표현으로 민석 씨 평판을 공개적으로 해쳤다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "party_a": {
+                  "exact": "황민석",
+                  "fullName": "황민석",
+                  "judgeRef": "황민석 씨",
+                  "neutral": "상대방"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                },
+                "label": {
+                  "exact": "스토킹",
+                  "neutral": "강한 낙인 표현"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 27초는 내가 본 느낌을 담은 것이지, 완전히 다른 영상을 꾸며낸 건 아니라고 여겼다."
+          ],
+          "privateKnowledge": [
+            "원본 SD 카드가 아니라 전달본 MP4라는 건 알고 있었다."
+          ],
+          "suppressions": [
+            "원본과 편집본을 구분해 설명하지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-3:denial:0",
+              "factText": "그 27초는 내가 본 느낌을 담은 것이지, 완전히 다른 영상을 꾸며낸 건 아니라고 여겼다.",
+              "tags": [
+                "denial",
+                "self_justification"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "전달 과정에서 포맷이 바뀌었을 뿐 핵심 장면 자체는 같다고 스스로 믿으려 했다."
+          ],
+          "privateKnowledge": [
+            "편집 앱을 거친 흔적이 남을 수 있다는 점을 알면서도 무시했다."
+          ],
+          "suppressions": [
+            "재인코딩과 전달본 문제"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-3:uncertainty:0",
+              "factText": "전달 과정에서 포맷이 바뀌었을 뿐 핵심 장면 자체는 같다고 스스로 믿으려 했다.",
+              "tags": [
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                },
+                "edit": {
+                  "exact": "디지털 줌·좌우 반전·가짜 타임스탬프",
+                  "neutral": "편집 흔적"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "확대하거나 잘라낸 부분은 있어도, 그 장면이 주는 공포는 원본과 다르지 않다고 주장하고 싶었다."
+          ],
+          "privateKnowledge": [
+            "'느낌의 진실'을 앞세워 원본성 판단을 흐렸다."
+          ],
+          "suppressions": [
+            "프리뷰와 다른 시점 영상을 섞은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-3:motive:0",
+              "factText": "확대하거나 잘라낸 부분은 있어도, 그 장면이 주는 공포는 원본과 다르지 않다고 주장하고 싶었다.",
+              "tags": [
+                "motive",
+                "admission"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                },
+                "edit": {
+                  "exact": "디지털 줌·좌우 반전·가짜 타임스탬프",
+                  "neutral": "편집 흔적"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "설치 프리뷰와 다른 복도 장면을 이어붙인 건 맞지만, 그때의 불안을 보여주려다 선을 넘었다."
+          ],
+          "privateKnowledge": [
+            "의도는 공포 전달이었다고 하지만 원본성 왜곡을 인정한다."
+          ],
+          "suppressions": [
+            "가짜 타임스탬프와 좌우 반전 흔적"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-3:admission:0",
+              "factText": "설치 프리뷰와 다른 복도 장면을 이어붙인 건 맞지만, 그때의 불안을 보여주려다 선을 넘었다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "privacy"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                },
+                "source": {
+                  "exact": "설치 프리뷰와 다른 시점 복도 영상",
+                  "neutral": "서로 다른 원본 조각"
+                },
+                "edit": {
+                  "exact": "디지털 줌·좌우 반전·가짜 타임스탬프",
+                  "neutral": "편집 흔적"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "원본이 아니라는 걸 인정하면 내가 과장해서 남을 망신 준 사람처럼 보일까 두려웠다."
+          ],
+          "privateKnowledge": [
+            "두려움 때문에 편집 여부를 끝까지 축소했다."
+          ],
+          "suppressions": [
+            "정정 없이 유포를 유지한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-3:fear:0",
+              "factText": "원본이 아니라는 걸 인정하면 내가 과장해서 남을 망신 준 사람처럼 보일까 두려웠다.",
+              "tags": [
+                "fear",
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "결국 그 27초는 원본 CCTV가 아니라 내가 편집해 원본처럼 돌린 위조본이었다."
+          ],
+          "privateKnowledge": [
+            "증거 절차를 어겼고, 그 결과 판단 전체를 흐렸다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-3:responsibility:0",
+              "factText": "결국 그 27초는 원본 CCTV가 아니라 내가 편집해 원본처럼 돌린 위조본이었다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                },
+                "source": {
+                  "exact": "설치 프리뷰와 다른 시점 복도 영상",
+                  "neutral": "서로 다른 원본 조각"
+                },
+                "edit": {
+                  "exact": "디지털 줌·좌우 반전·가짜 타임스탬프",
+                  "neutral": "편집 흔적"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "문을 열었을 때 안쪽 불빛까지 보이고 화면이 따라오는 것처럼 느껴져서, 나는 실제로 집 안을 찍는다고 믿었다."
+          ],
+          "privateKnowledge": [
+            "체감 공포와 기술 사실을 구분하지 못한 채 단정했다."
+          ],
+          "suppressions": [
+            "편집 클립이 그 체감을 더 키운 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-4:fear:0",
+              "factText": "문을 열었을 때 안쪽 불빛까지 보이고 화면이 따라오는 것처럼 느껴져서, 나는 실제로 집 안을 찍는다고 믿었다.",
+              "tags": [
+                "fear",
+                "privacy",
+                "act"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "하린 집 내부",
+                  "neutral": "실내"
+                },
+                "preview": {
+                  "exact": "설치 프리뷰",
+                  "neutral": "미리보기 화면"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "기능 설명보다도 그 순간 몸으로 느낀 위협감이 먼저였고, 그래서 추적이라고 해석했다."
+          ],
+          "privateKnowledge": [
+            "고정렌즈 설명을 들었어도 당시에는 신뢰하지 못했다."
+          ],
+          "suppressions": [
+            "원본 확인을 끝까지 미룬 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-4:context:0",
+              "factText": "기능 설명보다도 그 순간 몸으로 느낀 위협감이 먼저였고, 그래서 추적이라고 해석했다.",
+              "tags": [
+                "context",
+                "emotion",
+                "uncertainty"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "고정렌즈 모델",
+                  "neutral": "해당 기기"
+                },
+                "place": {
+                  "exact": "하린 집 내부",
+                  "neutral": "실내"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "원격으로 움직이는 기기는 아니라는 말은 들었지만, 당시 나는 그 차이를 받아들일 여유가 없었다."
+          ],
+          "privateKnowledge": [
+            "설치 프리뷰와 저장 화면 차이를 구분하지 못했다."
+          ],
+          "suppressions": [
+            "'따라왔다'는 단정 표현"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-4:uncertainty:0",
+              "factText": "원격으로 움직이는 기기는 아니라는 말은 들었지만, 당시 나는 그 차이를 받아들일 여유가 없었다.",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "고정렌즈 모델",
+                  "neutral": "해당 기기"
+                },
+                "preview": {
+                  "exact": "설치 프리뷰",
+                  "neutral": "미리보기 화면"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보면 줌과 편집이 그 체감을 더 강하게 만든 건 맞고, 실제 저장 영상과는 달랐을 수 있다."
+          ],
+          "privateKnowledge": [
+            "공포의 원인은 진짜였지만 설명 방식은 부정확했다."
+          ],
+          "suppressions": [
+            "유포본을 원본처럼 주장한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-4:admission:0",
+              "factText": "지금 보면 줌과 편집이 그 체감을 더 강하게 만든 건 맞고, 실제 저장 영상과는 달랐을 수 있다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "emotion"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "27초 클립",
+                  "neutral": "그 영상"
+                },
+                "preview": {
+                  "exact": "설치 프리뷰",
+                  "neutral": "미리보기 화면"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "실제 추적은 아니었을지 몰라도, 문 앞에서 느낀 불안 자체가 거짓이었다고 말하고 싶진 않다."
+          ],
+          "privateKnowledge": [
+            "사실 판단과 감정 경험을 분리해 인정하려 한다."
+          ],
+          "suppressions": [
+            "공포를 근거 삼아 타인을 단정한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-4:emotion:0",
+              "factText": "실제 추적은 아니었을지 몰라도, 문 앞에서 느낀 불안 자체가 거짓이었다고 말하고 싶진 않다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "admission"
+              ],
+              "slots": {
+                "place": {
+                  "exact": "하린 집 내부",
+                  "neutral": "실내"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "카메라가 집 안을 추적 촬영한 건 아니었다는 점은 받아들이지만, 초기 넓은 각도가 불안을 만든 책임은 남아 있다고 본다."
+          ],
+          "privateKnowledge": [
+            "실내 추적 주장은 철회하되 초기 범위 문제는 유지한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-4:admission:1",
+              "factText": "카메라가 집 안을 추적 촬영한 건 아니었다는 점은 받아들이지만, 초기 넓은 각도가 불안을 만든 책임은 남아 있다고 본다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "고정렌즈 모델",
+                  "neutral": "해당 기기"
+                },
+                "place": {
+                  "exact": "하린 집 내부",
+                  "neutral": "실내"
+                },
+                "range": {
+                  "exact": "복도와 도어매트 일부",
+                  "neutral": "그 저장 범위"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "관리실이 늦을 것 같아 주민들에게 먼저 알린 것이지, 규칙을 깰 생각만 있던 건 아니었다."
+          ],
+          "privateKnowledge": [
+            "관리실 확인 우선 합의를 알고 있었지만 여론을 먼저 만들려 했다."
+          ],
+          "suppressions": [
+            "공개 채널 선점 의도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-5:self_justification:0",
+              "factText": "관리실이 늦을 것 같아 주민들에게 먼저 알린 것이지, 규칙을 깰 생각만 있던 건 아니었다.",
+              "tags": [
+                "self_justification",
+                "denial"
+              ],
+              "slots": {
+                "principle": {
+                  "exact": "관리사무소 확인 우선",
+                  "neutral": "그 절차"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "급했고 혼자 참으면 또 넘어갈 것 같아서, 절차보다 공개 경고가 먼저라고 판단했다."
+          ],
+          "privateKnowledge": [
+            "불안을 멈추게 하려면 사람들 앞에서 말해야 한다고 믿었다."
+          ],
+          "suppressions": [
+            "공식 접수보다 먼저 올린 시간 순서"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-5:motive:0",
+              "factText": "급했고 혼자 참으면 또 넘어갈 것 같아서, 절차보다 공개 경고가 먼저라고 판단했다.",
+              "tags": [
+                "motive",
+                "timeline"
+              ],
+              "slots": {
+                "principle": {
+                  "exact": "관리사무소 확인 우선",
+                  "neutral": "그 절차"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                },
+                "time": {
+                  "exact": "정식 민원 접수 36분 전",
+                  "period": "공식 접수 직전",
+                  "neutral": "그 직전"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "원칙상 관리실이 먼저였다는 건 알고 있었고, 그 순서를 내가 깬 건 맞다."
+          ],
+          "privateKnowledge": [
+            "공개 글이 빠를수록 상대를 압박할 수 있다고 계산했다."
+          ],
+          "suppressions": [
+            "공포를 절차 위반의 면죄부처럼 쓴 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-5:admission:0",
+              "factText": "원칙상 관리실이 먼저였다는 건 알고 있었고, 그 순서를 내가 깬 건 맞다.",
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "principle": {
+                  "exact": "관리사무소 확인 우선",
+                  "neutral": "그 절차"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "내가 먼저 공개 글을 올려 절차를 깼고, 그 뒤 민석 씨도 역공 게시물로 선을 넘었다."
+          ],
+          "privateKnowledge": [
+            "상대의 후행 위반을 강조해 자신의 선행 위반 부담을 덜려 한다."
+          ],
+          "suppressions": [
+            "여론전을 먼저 연 장본인이 자신이라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-5:responsibility:0",
+              "factText": "내가 먼저 공개 글을 올려 절차를 깼고, 그 뒤 민석 씨도 역공 게시물로 선을 넘었다.",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                },
+                "post": {
+                  "exact": "귀가·출근 시간표 게시물",
+                  "neutral": "그 역공 게시물"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "예민한 사람처럼 보일까 두려워서도, 나는 절차 위반을 계속 '급해서'라고만 설명했다."
+          ],
+          "privateKnowledge": [
+            "체면 때문에 자신의 선택이 낙인전이었다는 표현을 피했다."
+          ],
+          "suppressions": [
+            "정정문 작성을 미룬 이유"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-5:shame:0",
+              "factText": "예민한 사람처럼 보일까 두려워서도, 나는 절차 위반을 계속 '급해서'라고만 설명했다.",
+              "tags": [
+                "shame",
+                "emotion",
+                "identity"
+              ],
+              "slots": {
+                "principle": {
+                  "exact": "관리사무소 확인 우선",
+                  "neutral": "그 절차"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "결국 나는 관리실 확인보다 공개 낙인을 앞세워 공동 규칙을 깼고, 그 책임을 인정한다."
+          ],
+          "privateKnowledge": [
+            "공개 글과 편집 영상 유포를 철회해야 절차 복원이 가능하다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor08:b:tell:fear_loop",
+            "neighbor08:b:tell:overlabel",
+            "neighbor08:b:tell:audience_check"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor08:b:d-5:responsibility:1",
+              "factText": "결국 나는 관리실 확인보다 공개 낙인을 앞세워 공동 규칙을 깼고, 그 책임을 인정한다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "principle": {
+                  "exact": "관리사무소 확인 우선",
+                  "neutral": "그 절차"
+                },
+                "channel": {
+                  "exact": "주민 채팅방",
+                  "neutral": "공개 채널"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

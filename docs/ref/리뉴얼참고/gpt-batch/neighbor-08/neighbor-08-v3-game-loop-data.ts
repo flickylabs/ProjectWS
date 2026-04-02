@@ -1,0 +1,1239 @@
+export const neighbor08V3GameLoopData = {
+  "caseId": "neighbor-08",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "초기 설치와 첫 유포",
+      "description": "설치 직후 범위 초과와 첫 공개 유포의 시작점을 동시에 겨냥한다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "관리사무소 사전 통보 없이 먼저 설치한 사실 자체는 인정합니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor08:a:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "설치 직후 각도 사진에 맞은편 도어매트와 문틀 일부가 들어온 이유를 설명해 보세요.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor08:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "프리뷰 화면과 저장 영상이 다르다는 설명을, 하린 씨가 항의하던 그 순간에 왜 바로 하지 않았습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor08:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "관리실 확인 전에 주민방에 '현관 앞을 노리는 사람'이라는 표현을 먼저 올린 건 맞습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor08:b:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "이 27초 파일이 원본 SD 추출본이 아니라 전달본 MP4라는 점을 알고도 원본처럼 말했습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor08:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "‘다른 주민도 다 불편했다’는 문장은 직접 확인한 사실입니까, 아니면 본인 불안을 묶어 표현한 겁니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor08:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "원본 대조와 기기 사양",
+      "description": "원본 SD와 포렌식 비교로 추적 촬영 주장과 클립 원본성을 동시에 무너뜨린다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "기기 사양상 팬·틸트가 없는데도, 따라오는 듯 보일 수 있다는 프리뷰 특성을 왜 미리 고지하지 않았습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor08:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "하린 씨가 실내 촬영 공포를 말할 때 왜 계속 '원본 보면 안다'는 답만 반복했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor08:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "원본 SD와 사양서를 관리실 경로로 더 일찍 냈다면 초반 오해를 줄일 수 있지 않았습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor08:a:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "포렌식 보고서상 앞 6초와 뒤 장면 출처가 다른데, 이어붙인 사실을 부인합니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "neighbor08:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "원본이 아니라는 걸 들키면 과장한 사람으로 보일까 두려웠던 겁니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor08:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "작년 다른 층 카메라 소문이 이번 표현 수위와 낙인어 선택을 끌어올린 건 아닙니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor08:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "절차 파기와 역공 게시",
+      "description": "관리실 우선 원칙이 언제 무너졌는지와 공개 반격의 수위를 드러낸다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "관리실 확인 우선 합의를 알고도 왜 주민방 반박글부터 올렸습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor08:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "하린 씨 귀가·출근 시간표를 올린 건 원본 반박이 아니라 생활패턴 노출 아닌가요?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor08:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "지금 보면 그 역공 게시물은 사과해야 할 선을 넘은 행동이라고 인정합니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor08:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "공식 민원 접수보다 주민방 공개 글이 36분 앞섰습니다. 그 순서를 왜 깼습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "neighbor08:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "절차보다 여론을 먼저 만들면 상대를 더 빨리 멈출 수 있다고 계산한 겁니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "neighbor08:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "지금은 관리실 확인보다 공개 낙인을 앞세운 선택 자체가 잘못이었다고 인정합니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "neighbor08:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "neighbor08:a:d-1:unlock:s2:0",
+            "factText": "설치 당일 관리사무소 사전 통보가 빠졌다는 점은 황민석도 알고 있었다.",
+            "tags": [
+              "rule",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "institution": {
+                "exact": "관리사무소",
+                "neutral": "관리실",
+                "judgeRef": "관리실"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor08:a:d-1:unlock:s3:0",
+            "factText": "테스트 프리뷰에서 맞은편 도어매트와 문틀 일부가 더 넓게 보였고, 그 상태가 이틀간 유지됐다.",
+            "tags": [
+              "timeline",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "exact": "설치 직후 이틀",
+                "dateExact": "설치 직후 이틀",
+                "period": "초기 이틀",
+                "neutral": "그 초반 기간"
+              },
+              "range": {
+                "exact": "맞은편 도어매트와 문틀 일부",
+                "neutral": "문틀 바깥 범위"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor08:a:d-1:unlock:s4:0",
+            "factText": "주하린이 '우리 집 안쪽까진 안 보이죠?'라고 묻던 순간을 가볍게 넘긴 게 마음에 걸린다.",
+            "tags": [
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "주하린",
+                "fullName": "주하린",
+                "judgeRef": "주하린 씨",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor08:a:d-1:unlock:s5:0",
+            "factText": "기사 방문 뒤에는 곧바로 각도를 좁힐 수 있었고, 처음부터 그렇게 했어야 한다는 점을 인정한다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "정우석 기사",
+                "fullName": "정우석 (도어벨카메라 설치 기사)",
+                "judgeRef": "설치 기사",
+                "neutral": "기사"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "neighbor08:a:d-4:unlock:s2:0",
+            "factText": "기기에는 원격 팬·틸트가 없지만 설치 프리뷰와 저장 화면 차이를 먼저 설명하지 않았다.",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "device": {
+                "exact": "고정렌즈 모델",
+                "neutral": "해당 기기"
+              },
+              "preview": {
+                "exact": "설치 프리뷰",
+                "neutral": "미리보기 화면"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor08:a:d-4:unlock:s3:0",
+            "factText": "문이 열릴 때 빛 번짐과 프리뷰 화면이 겹치면 따라오는 듯 보일 수 있다는 점을 황민석은 알고 있었다.",
+            "tags": [
+              "context",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "preview": {
+                "exact": "설치 프리뷰",
+                "neutral": "미리보기 화면"
+              },
+              "place": {
+                "exact": "하린 집 내부",
+                "neutral": "실내"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor08:a:d-4:unlock:s4:0",
+            "factText": "주하린의 불안을 들었을 때도 '원본을 보면 안 그렇다'는 말로 감정을 건너뛰었다.",
+            "tags": [
+              "emotion",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "주하린",
+                "fullName": "주하린",
+                "judgeRef": "주하린 씨",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor08:a:d-4:unlock:s5:0",
+            "factText": "실내 추적은 아니었지만 오해를 풀 책임은 장비 소유자인 자신에게 더 컸다고 인정한다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "device": {
+                "exact": "고정렌즈 모델",
+                "neutral": "해당 기기"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor08:a:d-5:unlock:s2:0",
+            "factText": "관리실 확인 우선 합의를 알고도 첫 반응을 공개 반박으로 택했다.",
+            "tags": [
+              "rule",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "principle": {
+                "exact": "관리사무소 확인 우선",
+                "neutral": "그 절차"
+              },
+              "channel": {
+                "exact": "주민 채팅방",
+                "neutral": "공개 채널"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor08:a:d-5:unlock:s3:0",
+            "factText": "황민석이 올린 시간표 게시물은 원본 반박이라기보다 주하린의 생활패턴을 노출하는 역공이었다.",
+            "tags": [
+              "privacy",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "post": {
+                "exact": "귀가·출근 시간표 게시물",
+                "neutral": "그 역공 게시물"
+              },
+              "person": {
+                "exact": "주하린",
+                "fullName": "주하린",
+                "judgeRef": "주하린 씨",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "blame",
+              "partial"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor08:a:d-5:unlock:s4:0",
+            "factText": "스토커로 보일까 두려운 수치심이 절차 인정과 사과를 계속 늦췄다.",
+            "tags": [
+              "shame",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "label": {
+                "exact": "스토킹",
+                "neutral": "강한 낙인 표현"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor08:a:d-5:unlock:s5:0",
+            "factText": "관리실 보관본으로만 대응했어야 했고 주민방 역공은 사과할 일이라고 받아들인다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "institution": {
+                "exact": "관리사무소",
+                "neutral": "관리실",
+                "judgeRef": "관리실"
+              },
+              "channel": {
+                "exact": "주민 채팅방",
+                "neutral": "공개 채널"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "neighbor08:b:d-2:unlock:s2:0",
+            "factText": "관리실 판단 전 주민방에 '현관 앞을 노리는 사람 같다'는 표현을 먼저 올렸다.",
+            "tags": [
+              "timeline",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "channel": {
+                "exact": "주민 채팅방",
+                "neutral": "공개 채널"
+              },
+              "time": {
+                "exact": "관리사무소 공식 접수 전",
+                "period": "확인 전 단계",
+                "neutral": "그 이전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor08:b:d-2:unlock:s3:0",
+            "factText": "자신의 불안을 공동체 의견처럼 보이게 하려고 '다른 주민도 다 불편했다'는 문장을 덧붙였다.",
+            "tags": [
+              "relationship",
+              "motive"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "이민지 주민",
+                "fullName": "이민지 (같은 라인 1203호 주민)",
+                "judgeRef": "같은 라인 주민",
+                "neutral": "다른 주민"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor08:b:d-2:unlock:s4:0",
+            "factText": "작년 다른 층 카메라 소문이 떠올라 공포를 낙인어로 밀어붙였다.",
+            "tags": [
+              "fear",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "label": {
+                "exact": "스토킹",
+                "neutral": "강한 낙인 표현"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor08:b:d-2:unlock:s5:0",
+            "factText": "스토킹이라는 표현과 편집 클립 유포가 민석의 평판을 해쳤음을 인정한다.",
+            "tags": [
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "label": {
+                "exact": "스토킹",
+                "neutral": "강한 낙인 표현"
+              },
+              "person": {
+                "exact": "황민석",
+                "fullName": "황민석",
+                "judgeRef": "황민석 씨",
+                "neutral": "상대방"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "neighbor08:b:d-3:unlock:s2:0",
+            "factText": "유포본이 메신저 전달본 MP4뿐이라는 점을 알고도 원본처럼 말했다.",
+            "tags": [
+              "evidence",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "clip": {
+                "exact": "27초 클립",
+                "neutral": "그 영상"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor08:b:d-3:unlock:s3:0",
+            "factText": "설치 프리뷰와 다른 시점 복도 영상을 이어붙이고 확대 효과를 얹는 과정에 주하린이 관여했다.",
+            "tags": [
+              "act",
+              "evidence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "source": {
+                "exact": "설치 프리뷰와 다른 시점 복도 영상",
+                "neutral": "서로 다른 원본 조각"
+              },
+              "edit": {
+                "exact": "디지털 줌·좌우 반전·가짜 타임스탬프",
+                "neutral": "편집 흔적"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor08:b:d-3:unlock:s4:0",
+            "factText": "원본이 아니란 걸 들키면 자신이 과장해서 남을 망신 준 사람으로 보일까 두려웠다.",
+            "tags": [
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "clip": {
+                "exact": "27초 클립",
+                "neutral": "그 영상"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor08:b:d-3:unlock:s5:0",
+            "factText": "27초는 원본 CCTV가 아니라 자신이 편집·유포한 위조본이었다.",
+            "tags": [
+              "responsibility",
+              "evidence"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "clip": {
+                "exact": "27초 클립",
+                "neutral": "그 영상"
+              },
+              "edit": {
+                "exact": "디지털 줌·좌우 반전·가짜 타임스탬프",
+                "neutral": "편집 흔적"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "neighbor08:b:d-5:unlock:s2:0",
+            "factText": "관리실 공식 접수 전에 공개 글을 올린 사실을 스스로도 알고 있었다.",
+            "tags": [
+              "rule",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "principle": {
+                "exact": "관리사무소 확인 우선",
+                "neutral": "그 절차"
+              },
+              "time": {
+                "exact": "정식 민원 접수 36분 전",
+                "period": "공식 접수 직전",
+                "neutral": "그 직전"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "neighbor08:b:d-5:unlock:s3:0",
+            "factText": "절차보다 여론을 먼저 만들면 카메라 문제를 더 빨리 막을 수 있다고 생각했다.",
+            "tags": [
+              "motive",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "channel": {
+                "exact": "주민 채팅방",
+                "neutral": "공개 채널"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "neighbor08:b:d-5:unlock:s4:0",
+            "factText": "예민한 사람으로 보일까 두려워 절차 위반을 계속 '급해서'라는 말로 포장했다.",
+            "tags": [
+              "shame",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "principle": {
+                "exact": "관리사무소 확인 우선",
+                "neutral": "그 절차"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "neighbor08:b:d-5:unlock:s5:0",
+            "factText": "관리실 확인보다 공개 낙인을 앞세운 선택이 공동 규칙을 깼음을 인정한다.",
+            "tags": [
+              "responsibility",
+              "admission"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "institution": {
+                "exact": "관리사무소",
+                "neutral": "관리실",
+                "judgeRef": "관리실"
+              },
+              "channel": {
+                "exact": "주민 채팅방",
+                "neutral": "공개 채널"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "neighbor08:contradiction:0",
+        "targetParty": "a",
+        "trigger": "황민석이 '문제 될 각도는 아니었다'고 버티는 상태에서 e-2가 제시될 때",
+        "text": "초기 각도 사진엔 맞은편 도어매트와 문틀 일부가 선명한데, '문제 될 각도는 아니었다'는 진술과 어긋납니다.",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "neighbor08:contradiction:1",
+        "targetParty": "b",
+        "trigger": "주하린이 27초를 원본이라고 주장하는 상태에서 e-4가 제시될 때",
+        "text": "유포본의 타임스탬프와 줌 흔적이 원본과 맞지 않아, '원본 그대로'라는 진술이 무너집니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-4"
+        ]
+      },
+      {
+        "id": "neighbor08:contradiction:2",
+        "targetParty": "a",
+        "trigger": "황민석이 자신의 대응을 단순 반박이었다고 축소하는 상태에서 e-5가 제시될 때",
+        "text": "원본 반박 대신 생활패턴 게시물이 올라간 정황 때문에, '절차적 방어'라는 설명이 흔들립니다.",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      },
+      {
+        "id": "neighbor08:contradiction:3",
+        "targetParty": "b",
+        "trigger": "주하린이 공동체 전체의 요구였다고 말하지만 구체 근거를 못 댈 때",
+        "text": "'다른 주민도 다 불편했다'는 말은 본인 불안을 공동 의견처럼 부풀린 진술과 충돌합니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "neighbor08:interjection:0",
+        "speaker": "b",
+        "trigger": "황민석이 프레임레이트와 저장방식 설명을 길게 늘어놓을 때",
+        "text": "그 사양 얘기 말고, 문 열릴 때 제가 어떻게 느꼈는지도 좀 들어주세요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "neighbor08:interjection:1",
+        "speaker": "a",
+        "trigger": "주하린이 포렌식 이후에도 '스토킹' 낙인을 반복할 때",
+        "text": "느낌은 존중하더라도 위조본을 원본처럼 돌린 건 다른 문제입니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      },
+      {
+        "id": "neighbor08:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 주민방 말싸움만 반복하고 관리실 절차 질문을 피할 때",
+        "text": "공개 낙인과 역공 게시를 잠시 내려놓고, 관리실 절차를 누가 언제 깼는지부터 답하십시오.",
+        "relatedDisputes": [
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "neighbor08:outburst:a:0",
+        "party": "a",
+        "trigger": "주하린이 e-4 이후에도 '스토킹' 표현을 거두지 않을 때",
+        "text": "그 단어를 또 쓰시면 저는 그냥 사람 취급을 못 받는 겁니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      },
+      {
+        "id": "neighbor08:outburst:a:1",
+        "party": "a",
+        "trigger": "시간표 게시물의 수위가 정면으로 추궁될 때",
+        "text": "네, 그 글은 과했습니다. 그렇다고 저를 훔쳐보는 사람으로 굳혀버리는 건 너무했어요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "neighbor08:outburst:b:0",
+        "party": "b",
+        "trigger": "황민석이 불안을 단순한 기술 오해로만 축소할 때",
+        "text": "문을 열던 그 순간은 제 집 경계가 무너진 것처럼 느껴졌어요. 그걸 숫자로만 자르지 마세요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "neighbor08:outburst:b:1",
+        "party": "b",
+        "trigger": "포렌식으로 위조 정황이 드러난 뒤 편집 의도가 압박될 때",
+        "text": "무서웠던 건 진짜였어요. 그런데 그 진짜 공포를 설명하려다 제가 더 크게 망쳐버렸어요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "neighbor08:transition:a:d-1:s0_s1",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "installation_notice_question",
+      "line": "설치 통보가 먼저 논점이 되는 건 이해합니다만, 저장 범위 자체부터 보셔야 합니다.",
+      "behaviorHint": "사양을 읊으며 시간을 번다."
+    },
+    {
+      "id": "neighbor08:transition:a:d-1:s1_s2",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "각도 사진과 접수 기록이 그렇게 남아 있다면 초기 범위가 넓었던 건 인정하겠습니다.",
+      "behaviorHint": "말끝이 짧아지며 인정 폭이 늘어난다."
+    },
+    {
+      "id": "neighbor08:transition:a:d-1:s2_s3",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "doorway_line_followup",
+      "line": "그래도 확인 절차도 없이 주민방으로 간 대응까지 제 쪽 책임으로만 묶긴 어렵습니다.",
+      "behaviorHint": "책임을 분산하려고 상대로 시선을 돌린다."
+    },
+    {
+      "id": "neighbor08:transition:a:d-1:s3_s5",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-3_or_e-6_presented",
+      "line": "네, 미통보와 초기 각도 문제는 제 책임입니다. 제가 먼저 바로잡았어야 했습니다.",
+      "behaviorHint": "시선을 내리고 단정적으로 인정한다."
+    },
+    {
+      "id": "neighbor08:transition:a:d-4:s0_s1",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "interior_capture_question",
+      "line": "추적은 아니지만 그렇게 느껴질 장면이 있었다면 그 부분은 따로 설명드리겠습니다.",
+      "behaviorHint": "즉답 뒤 설명을 길게 붙인다."
+    },
+    {
+      "id": "neighbor08:transition:a:d-4:s1_s2",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "원본을 보면 실내 추적은 없네요. 대신 프리뷰 설명이 부족했던 건 인정합니다.",
+      "behaviorHint": "논리적 톤에서 부분 인정으로 넘어간다."
+    },
+    {
+      "id": "neighbor08:transition:a:d-4:s2_s3",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "preview_vs_saved_clip_question",
+      "line": "그 차이를 먼저 말했어야 했는데, 편집본이 돌면서 오해가 더 굳어진 것도 사실입니다.",
+      "behaviorHint": "상대 유포 책임을 함께 끌어온다."
+    },
+    {
+      "id": "neighbor08:transition:a:d-4:s3_s5",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "실내 추적은 아니었고, 오해를 푼 책임을 제가 늦게 다했습니다.",
+      "behaviorHint": "표정이 풀리며 문장을 짧게 마무리한다."
+    },
+    {
+      "id": "neighbor08:transition:a:d-5:s0_s1",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "management_first_reminder",
+      "line": "낙인이 돈 뒤라 그냥 기다릴 수는 없었다는 겁니다.",
+      "behaviorHint": "억울함을 누르듯 말한다."
+    },
+    {
+      "id": "neighbor08:transition:a:d-5:s1_s4",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_stalker_label",
+      "line": "솔직히 그 단어가 붙은 순간 수치심 때문에 이성을 잃었습니다.",
+      "behaviorHint": "어깨가 처지고 감정이 새어 나온다."
+    },
+    {
+      "id": "neighbor08:transition:a:d-5:s4_s5",
+      "caseId": "neighbor-08",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "시간표 게시물은 사과해야 합니다. 관리실 절차를 깬 것도 맞습니다.",
+      "behaviorHint": "체념한 듯 인정한다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-2:s0_s1",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "public_label_question",
+      "line": "그 표현이 셌다는 건 알지만, 그땐 저 혼자만 그렇게 느낀 게 아니라고 생각했어요.",
+      "behaviorHint": "목이 잠긴 채 자신을 정당화한다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-2:s1_s2",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "네, 제가 먼저 공개 글을 올렸어요. 그래도 그때는 멈춰야 한다고 느꼈어요.",
+      "behaviorHint": "불안과 인정이 섞여 나온다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-2:s2_s4",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_past_camera_anxiety",
+      "line": "작년 일 이후로 문 앞 카메라만 보면 먼저 겁이 났어요. 그래서 말을 더 세게 했어요.",
+      "behaviorHint": "눈시울이 붉어지고 호흡이 빨라진다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-2:s4_s5",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "결과적으로 민석 씨 평판을 해쳤다는 건 인정해요. 정정해야 한다는 것도요.",
+      "behaviorHint": "고개를 끄덕이며 또렷하게 말한다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-3:s0_s1",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "clip_origin_question",
+      "line": "원본 그대로라고 단정한 건 아니지만, 제가 본 공포는 그 안에 있다고 생각했어요.",
+      "behaviorHint": "시선을 흔들며 단어를 고른다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-3:s1_s2",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "전달본이고 잘린 부분이 있는 건 맞아요. 그래도 그때는 그게 제 진실이라고 믿었어요.",
+      "behaviorHint": "손끝을 만지작거리며 부분 인정한다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-3:s2_s3",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "mobile_editor_log_question",
+      "line": "네, 편집이 들어갔어요. 무서웠던 장면을 더 또렷하게 보이게 하려 했습니다.",
+      "behaviorHint": "입술을 깨물고 낮게 말한다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-3:s3_s5",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "포렌식까지 나오면 더는 못 버텨요. 그건 원본이 아니라 제가 만든 위조본이었어요.",
+      "behaviorHint": "고개를 숙인 채 무너진다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-5:s0_s1",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "management_first_reminder",
+      "line": "관리실보다 먼저 알린 건 맞지만, 그때는 그게 제일 빠르다고 믿었어요.",
+      "behaviorHint": "자신을 설득하듯 반복한다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-5:s1_s2",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "why_not_file_complaint_first",
+      "line": "순서를 깬 건 인정해요. 다만 그냥 기다리면 아무도 제 불안을 진지하게 보지 않을 것 같았어요.",
+      "behaviorHint": "손을 움켜쥔 채 답한다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-5:s2_s3",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "e-6_presented",
+      "line": "공식 접수보다 주민방 글이 먼저였네요. 제가 여론을 앞세운 셈이에요.",
+      "behaviorHint": "짧게 멈춘 뒤 인정 폭이 커진다."
+    },
+    {
+      "id": "neighbor08:transition:b:d-5:s3_s5",
+      "caseId": "neighbor-08",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "민석 씨 역공이 있었더라도, 관리실 확인보다 공개 낙인을 먼저 택한 시작 책임은 제게 있어요.",
+      "behaviorHint": "울먹이지만 문장은 또렷하다."
+    }
+  ]
+}

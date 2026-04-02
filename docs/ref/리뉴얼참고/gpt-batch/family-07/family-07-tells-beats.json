@@ -1,0 +1,584 @@
+{
+  "caseId": "family-07",
+  "executableTells": {
+    "a": [
+      {
+        "id": "family07:a:tell:founder_weight",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "defensive",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "내가 이 공방을 30년 지켰다",
+          "누가 대출 도장 찍었는데",
+          "거래처 신뢰"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "밀리기 시작하면 '누가 대출 도장 찍었는데' 같은 문장을 반복해 공로 논쟁을 생존 책임 문제로 바꾼다."
+      },
+      {
+        "id": "family07:a:tell:title_shield",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "대표 이름",
+          "원래 그렇다",
+          "형식"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "불리한 단독 공로 질문에는 '대표 이름이 들어가는 건 원래 그렇다'며 형식 문제로 축소한다."
+      },
+      {
+        "id": "family07:a:tell:generation_rebuke",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "몇 달 잘된 걸로",
+          "회사를 다 바꿨다고",
+          "내가 짊어진 거"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "감정이 올라오면 '몇 달 잘된 걸로 회사를 다 바꿨다고 하냐'며 기간 차이를 들어 상대 기여를 깎는다."
+      }
+    ],
+    "b": [
+      {
+        "id": "family07:b:tell:metric_stack",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "전환율",
+          "객단가",
+          "신규회원"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "공격받으면 전환율, 객단가, 신규회원 수를 연달아 읽어 감정 질문을 숫자 싸움으로 바꾼다."
+      },
+      {
+        "id": "family07:b:tell:scope_split",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "온라인 부분",
+          "범위가 다르다",
+          "그 문장만 떼면"
+        ],
+        "sentenceShape": "conditional",
+        "cadence": "on_trigger_only",
+        "originalPattern": "불리한 과장 발언은 '그 발언은 온라인 부분만 말한 거였다'며 범위를 잘게 쪼갠다."
+      },
+      {
+        "id": "family07:b:tell:recognition_hook",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "shame",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "근데 제 이름은 없잖아요",
+          "기사엔 다 아버지 이야기뿐",
+          "제 이름"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "자료 설명 끝에 꼭 '근데 제 이름은 없잖아요'를 붙여 인정받지 못한 감정을 다시 끌어온다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "그건 대표 이름으로 나간 문서입니다. 바깥 문서는 원래 대표가 받아서 설명하는 거예요.",
+      "behaviorHint": "턱을 들고 의자 등받이에 기대며 말끝을 짧게 자른다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-1:deny"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "지수 일이 아예 없었다는 뜻은 아닙니다. 다만 최종 설명은 대표가 잡는 선에서 정리된 겁니다.",
+      "behaviorHint": "손바닥을 펴 보이며 '없었다는 건 아니다'라는 식으로 선을 긋는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-1:hedge"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "초안에서 문장이 줄어든 건 봤습니다. 그래도 그 사업 전체 책임은 제가 졌다고 생각했습니다.",
+      "behaviorHint": "시선을 잠깐 내렸다가 다시 판관 쪽으로 올린다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-1:partial"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "기사 문구가 넓어 보였을 수는 있죠. 그런데 지수도 밖에서는 자기 쪽 성과를 크게 말한 적이 많았습니다.",
+      "behaviorHint": "손가락으로 탁자를 한 번 두드리며 맞받아친다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-1:blame"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "맞습니다. 지원사업하고 기사에서 지수 기여를 내 공로 안으로 넣었습니다. 내 이름이 밀리면 내가 버틴 세월까지 지워질 것 같았습니다.",
+      "behaviorHint": "목소리가 낮아지고 마지막 문장에서 숨을 길게 내쉰다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-1:confession"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "…초안하고 최종본이 이렇게 같이 남았으면 더 버틸 말은 없네요. 내가 보고도 그냥 넘긴 건 맞습니다.",
+      "behaviorHint": "문서를 뚫어지게 보다가 턱을 한 번 쓸어내린다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-1",
+      "id": "family07:beat:a:d-1:evidence_hit"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "상패나 박람회 표기는 대표 명의일 뿐입니다. 그걸 가지고 승계 확정이라고 하면 너무 나간 거예요.",
+      "behaviorHint": "손을 내저으며 형식 문제라는 점을 반복한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-4:deny"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "밖에서 오해할 수는 있어도 공식 결정은 아니었습니다. 형식상 대표 이름이 들어간 겁니다.",
+      "behaviorHint": "입술을 눌러 다문 채 '오해'라는 단어를 천천히 강조한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-4:hedge"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "규정상 대표 기준 표기라는 건 저도 알고 있었습니다. 그래서 저는 계속 형식이라고 말한 겁니다.",
+      "behaviorHint": "종이의 특정 문장을 손끝으로 짚으며 답한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-4:partial"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "문제는 표기보다 그 뒤 해석이 커진 겁니다. 지수도 그 말을 너무 빨리 승계 신호로 받아들였습니다.",
+      "behaviorHint": "고개를 옆으로 젓고 상대를 잠깐 바라본다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-4:blame"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "공식 승계가 아니었던 건 맞습니다. 그런데 제가 그 모호함을 정리하지 않은 건 권한을 바로 나누고 싶지 않았기 때문입니다.",
+      "behaviorHint": "어깨가 조금 내려앉고 시선이 상패 사진에서 멈춘다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-4:confession"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "안내문하고 주문서를 보니 이건 대표 기준 표기네요. 그렇다고 해도, 제가 말을 더 분명히 했어야 했습니다.",
+      "behaviorHint": "상패 관련 서류를 받아든 손이 잠깐 멈춘다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-4",
+      "id": "family07:beat:a:d-4:evidence_hit"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "비교는 제일 힘들던 바닥에서 얼마나 버텼는지 봐야죠. 그래야 누가 회사를 떠받쳤는지 보입니다.",
+      "behaviorHint": "손을 아래로 내리며 '바닥'을 강조한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-5:deny"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "저점부터 끌어올린 흐름을 본 겁니다. 숫자를 꾸민 게 아니라 기준 구간을 그렇게 잡은 거예요.",
+      "behaviorHint": "눈썹을 찌푸린 채 종이 가장자리를 정리한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-5:hedge"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "맞습니다. 발표표에 개편 전 최저점을 기준선처럼 남겼습니다.",
+      "behaviorHint": "한 박자 쉬고 난 뒤 짧게 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-5:partial"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "그 대신 지수도 생산 불안이 정리된 뒤 고점만 들고 왔습니다. 저만 한 게 아닙니다.",
+      "behaviorHint": "손가락을 세워 서로의 구간 선택을 비교하듯 말한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-5:blame"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "저도 제 몫이 크게 보이게 유리한 기간을 골랐습니다. 오래 버틴 시간이 숫자에서 밀리는 게 싫었습니다.",
+      "behaviorHint": "말끝에서 목이 잠기고 웃음기 없는 자조가 스친다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:a:d-5:confession"
+    },
+    {
+      "caseId": "family-07",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "수정 이력까지 남아 있으면 부정하기 어렵네요. 저점만 남긴 건 의도였습니다.",
+      "behaviorHint": "클라우드 로그를 보다가 손을 거두고 짧게 인정한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-5",
+      "id": "family07:beat:a:d-5:evidence_hit"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "저는 온라인 전환을 말한 겁니다. 공방 전체를 제가 혼자 살렸다고 한 건 아니에요.",
+      "behaviorHint": "빠르게 부정한 뒤 표정 변화 없이 말을 끊는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-2:deny"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "표현이 세게 들렸을 수는 있어요. 그래도 그 문장은 온라인 부분 성과를 강조한 맥락이었습니다.",
+      "behaviorHint": "손가락으로 공중에 범위를 그리듯 작게 선을 긋는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-2:hedge"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "전체 영상과 게시물에 그 뉘앙스가 남아 있는 건 맞습니다. 그래서 제가 나중에 범위를 다시 설명한 거예요.",
+      "behaviorHint": "입술을 깨물었다가 다시 숫자 자료를 정렬한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-2:partial"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "그때 제가 세게 말한 건 계속 기사엔 아버지 이야기뿐이었기 때문입니다. 자료는 제가 만들었는데 이름은 없었잖아요.",
+      "behaviorHint": "마지막 문장에서 눈빛이 날카로워지고 속도가 빨라진다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-2:blame"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "네, 제가 거의 혼자 살린 것처럼 말했습니다. 인정받고 싶어서 과장했고 그 과정에서 아버지 쪽 기여를 가렸어요.",
+      "behaviorHint": "숫자를 읽던 톤이 무너지고 목소리가 낮아진다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-2:confession"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "전체본에 그 표현이 그대로 남아 있네요. ‘온라인만’이라고 잘라 말하기엔 제가 더 크게 밀어붙인 게 맞습니다.",
+      "behaviorHint": "영상 정지 화면을 보고 한숨을 짧게 내쉰다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-2",
+      "id": "family07:beat:b:d-2:evidence_hit"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "최근 반등의 결정타는 온라인몰하고 브랜드 전환이었습니다. 팔리는 구조를 바꾼 건 제 쪽이에요.",
+      "behaviorHint": "매출 추이표를 먼저 앞으로 밀어 놓고 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-3:deny"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "생산이 받쳐준 건 인정해요. 그래도 수요 구조를 바꾸지 않았으면 이 정도 반등은 안 나왔습니다.",
+      "behaviorHint": "숫자를 손가락으로 짚으면서도 감정은 누른 채 설명한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-3:hedge"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "전환율과 재구매율이 오른 건 제 실행 축이 맞지만, 반품률과 납기가 흔들렸다면 오래 못 갔겠죠.",
+      "behaviorHint": "자료 두 장을 나란히 놓고 비교한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-3:partial"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "제가 단독 공로처럼 보이게 말한 건 결국 계속 인정이 비어 있었기 때문이에요. 기사엔 늘 아버지 이야기뿐이었으니까요.",
+      "behaviorHint": "말끝에 비웃음 비슷한 숨을 섞어 건조하게 던진다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-3:blame"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "최근 반등은 제 온라인·브랜드 전환과 아버지의 생산 안정화가 같이 맞물린 결과예요. 제가 그걸 단독 서사처럼 밀었던 건 인정합니다.",
+      "behaviorHint": "표를 내려놓고 시선을 정면으로 고정한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-3:confession"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "대시보드만으론 설명이 안 되네요. 반품률하고 납기 로그까지 붙으면 공동 축이라는 말이 맞습니다.",
+      "behaviorHint": "매출 표에서 생산 로그 쪽으로 시선을 옮기며 고개를 끄덕인다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "afterEvidence": "e-3",
+      "id": "family07:beat:b:d-3:evidence_hit"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "저는 개편 효과가 보인 구간을 본 거예요. 설명용 표를 만들 때는 그런 정리가 필요합니다.",
+      "behaviorHint": "차갑게 말하고 바로 다음 자료를 넘기려 한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-5:deny"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "초기 혼선이 큰 달까지 넣으면 개선 폭이 흐려져요. 그래서 설명용 범위를 정리한 겁니다.",
+      "behaviorHint": "손으로 표의 시작점을 표시하며 범위를 좁힌다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-5:hedge"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "맞아요. 생산 불안이 정리된 뒤 고점 구간을 중심으로 표를 만든 건 사실입니다.",
+      "behaviorHint": "입꼬리를 굳힌 채 짧고 정확하게 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-5:partial"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "하지만 아버지도 저점만 남겼잖아요. 서로 자기한테 유리한 창을 골랐던 겁니다.",
+      "behaviorHint": "고개를 돌려 아버지 쪽을 한 번 보고 다시 판관을 본다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-5:blame"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "저도 제 기여가 크게 보이게 유리한 기간만 골랐습니다. 숫자가 평평해 보이면 제 몇 년 노력이 또 지워질까 두려웠어요.",
+      "behaviorHint": "말을 마친 뒤 손에 쥔 펜을 천천히 내려놓는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null,
+      "id": "family07:beat:b:d-5:confession"
+    },
+    {
+      "caseId": "family-07",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "숨김 열하고 버전 기록이 다 남아 있네요. 초기 달을 의도적으로 뺀 건 맞습니다.",
+      "behaviorHint": "클라우드 이력 화면을 본 뒤 바로 시선을 피한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-5",
+      "id": "family07:beat:b:d-5:evidence_hit"
+    }
+  ]
+}

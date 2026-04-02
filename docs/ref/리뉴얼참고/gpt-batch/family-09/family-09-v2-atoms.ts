@@ -1,0 +1,7211 @@
+export const family09V2Atoms = {
+  "caseId": "family-09",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그 6,600만원은 도윤과 중개사가 따로 굴린 얘기였고 저는 잘린 말만 보고 뒤늦게 이상한 줄 알았습니다.",
+            "저는 부모 치료비 때문에 공식 계약서에 적힌 금액만 믿고 따라간 쪽입니다."
+          ],
+          "privateKnowledge": [
+            "중개사 원본 스레드에서 제가 먼저 제 몫 입금 시점을 재촉한 사실을 알고 있다.",
+            "계약서 밖 보전금을 3,300만원씩 나누자는 합의가 계약 전부터 있었다."
+          ],
+          "suppressions": [
+            "제가 '내 건 왜 아직이냐'고 보낸 메시지",
+            "부모 앞에서는 순매매가만 말하자고 맞춘 대화",
+            "공식 계약가 6억4천만원과 별도 보전금 6,600만원의 이중 구조"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-1:s0:act:0",
+              "factText": "그 6,600만원은 도윤과 중개사가 따로 굴린 얘기였고 저는 잘린 말만 보고 뒤늦게 이상한 줄 알았습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "person_broker": {
+                  "fullName": "김태범",
+                  "judgeRef": "중개사",
+                  "neutral": "거래 실무자"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s0:act:1",
+              "factText": "저는 부모 치료비 때문에 공식 계약서에 적힌 금액만 믿고 따라간 쪽입니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "보전금 비슷한 얘기가 오간 건 들었지만 저는 명도비나 수리 정산 정도로만 이해했습니다.",
+            "분배 약속까지 구체화한 건 도윤 쪽이 더 많이 움직였다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "제가 금액 총액과 각자 몫을 이미 알고 있었다.",
+            "부모는 이 구조를 듣지 못한 채 순매매가 설명만 들었다."
+          ],
+          "suppressions": [
+            "제가 분배 순서를 재촉한 정황",
+            "중개사에게 계약서 밖으로 처리하자는 표현을 쓴 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-1:s1:act:0",
+              "factText": "보전금 비슷한 얘기가 오간 건 들었지만 저는 명도비나 수리 정산 정도로만 이해했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "relationship",
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s1:act:1",
+              "factText": "분배 약속까지 구체화한 건 도윤 쪽이 더 많이 움직였다고 봅니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "중개사가 계약서 밖 금액을 꺼냈을 때 제가 강하게 막지 못한 건 맞습니다.",
+            "다만 부모 앞 설명을 줄여 잡자고 더 세게 밀어붙인 건 도윤과 중개사였습니다."
+          ],
+          "privateKnowledge": [
+            "저도 별도 보전금 구조를 받아들이고 대화에 참여했다.",
+            "숨긴 돈이 부모 재활비와 별개로 형제 몫이 된다는 점을 알고 있었다."
+          ],
+          "suppressions": [
+            "동등 분배에 먼저 동의한 점",
+            "제 몫도 실제로 기대하고 있었던 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-1:s2:act:0",
+              "factText": "중개사가 계약서 밖 금액을 꺼냈을 때 제가 강하게 막지 못한 건 맞습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                },
+                "person_broker": {
+                  "fullName": "김태범",
+                  "judgeRef": "중개사",
+                  "neutral": "거래 실무자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s2:act:1",
+              "factText": "다만 부모 앞 설명을 줄여 잡자고 더 세게 밀어붙인 건 도윤과 중개사였습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person_broker": {
+                  "fullName": "김태범",
+                  "judgeRef": "중개사",
+                  "neutral": "거래 실무자"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s2:act:2",
+              "factText": "저도 별도 보전금 구조를 받아들이고 대화에 참여했다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "relationship",
+                "counter",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "저도 3,300만원 기준 정산 얘기까지 들었고 부모 앞에서는 순매매가만 말하자는 흐름에 탔습니다.",
+            "그래도 이체 순서와 표현을 더 노골적으로 정리한 건 도윤과 중개사였습니다."
+          ],
+          "privateKnowledge": [
+            "공식 계약 이전부터 형제 각 3,300만원 분배가 메모와 통화로 정리돼 있었다.",
+            "부모가 들은 설명에는 별도 보전금 문구가 전혀 없었다."
+          ],
+          "suppressions": [
+            "제 스스로도 부모가 알면 안 된다고 생각한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:a:tell:partial_scope",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-1:s3:act:0",
+              "factText": "저도 3,300만원 기준 정산 얘기까지 들었고 부모 앞에서는 순매매가만 말하자는 흐름에 탔습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s3:act:1",
+              "factText": "그래도 이체 순서와 표현을 더 노골적으로 정리한 건 도윤과 중개사였습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "person_broker": {
+                  "fullName": "김태범",
+                  "judgeRef": "중개사",
+                  "neutral": "거래 실무자"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s3:act:2",
+              "factText": "공식 계약 이전부터 형제 각 3,300만원 분배가 메모와 통화로 정리돼 있었다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "아버지 재활비 얘기만 나오면 뭐라도 붙잡아야 한다는 생각에 그 구조를 합리화했습니다.",
+            "제가 제 몫을 따진 순간부터 이미 피해자처럼만 말할 수 없다는 건 압니다."
+          ],
+          "privateKnowledge": [
+            "제가 돌봄 부담을 핑계로 공모의 무게를 줄여 말해 왔다.",
+            "도윤을 단독 은닉범처럼 몰아세우면 제 역할이 덜 드러난다고 계산했다."
+          ],
+          "suppressions": [
+            "부모에게 설명을 미루자고 동의한 순간의 책임"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-1:s4:act:0",
+              "factText": "아버지 재활비 얘기만 나오면 뭐라도 붙잡아야 한다는 생각에 그 구조를 합리화했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s4:act:1",
+              "factText": "제가 제 몫을 따진 순간부터 이미 피해자처럼만 말할 수 없다는 건 압니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s4:act:2",
+              "factText": "제가 돌봄 부담을 핑계로 공모의 무게를 줄여 말해 왔다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "emotion",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s4:act:3",
+              "factText": "도윤을 단독 은닉범처럼 몰아세우면 제 역할이 덜 드러난다고 계산했다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "저도 도윤과 함께 6,600만원을 계약서 밖으로 빼고 3,300만원씩 나누기로 합의했습니다.",
+            "부모님께 숨긴 채 진행한 것과 뒤늦게 도윤 단독 문제처럼 몰아간 것은 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "공모의 시작도, 부모 비공개의 유지도 저의 선택이 섞여 있었다.",
+            "돌봄 기여는 이 돈을 숨긴 행위를 정당화하지 못한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-1:s5:act:0",
+              "factText": "저도 도윤과 함께 6,600만원을 계약서 밖으로 빼고 3,300만원씩 나누기로 합의했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s5:act:1",
+              "factText": "부모님께 숨긴 채 진행한 것과 뒤늦게 도윤 단독 문제처럼 몰아간 것은 제 책임입니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s5:act:2",
+              "factText": "공모의 시작도, 부모 비공개의 유지도 저의 선택이 섞여 있었다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-1:s5:act:3",
+              "factText": "돌봄 기여는 이 돈을 숨긴 행위를 정당화하지 못한다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "emotion",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "그날은 시세랑 절차만 물어보려고 어머니를 모시고 간 거였지 정식 위임을 시키려던 건 아니었습니다.",
+            "매매를 바로 밀어붙이려고 서명을 받아 둔 것처럼 보는 건 과합니다."
+          ],
+          "privateKnowledge": [
+            "공식 시세 브리핑 하루 전 오후 2시 16분에 법무사 사무실을 방문해 일부 서명을 먼저 받았다.",
+            "초안에는 이미 인감 사용과 매매 관련 문구가 포함돼 있었다."
+          ],
+          "suppressions": [
+            "어머니에게 '시세만 보는 서류'라고 좁혀 설명한 점",
+            "동생에게 알리기 전 선서명이 진행된 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-2:s0:act:0",
+              "factText": "그날은 시세랑 절차만 물어보려고 어머니를 모시고 간 거였지 정식 위임을 시키려던 건 아니었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s0:act:1",
+              "factText": "매매를 바로 밀어붙이려고 서명을 받아 둔 것처럼 보는 건 과합니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "인감이랑 위임장 문구를 미리 본 건 맞지만 급한 상황 대비용 초안이라고 생각했습니다.",
+            "어머니도 대강은 어떤 서류인지 아신다고 믿었습니다."
+          ],
+          "privateKnowledge": [
+            "설명 수준이 실제 문구보다 훨씬 좁았다는 걸 알고 있다.",
+            "브리핑 전 미리 판을 잡아야 거래 실무를 선점할 수 있다고 생각했다."
+          ],
+          "suppressions": [
+            "매매 관련 문구가 이미 들어간 초안이었음",
+            "어머니 의사를 넓게 확인하지 않은 채 서명을 일부 받은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-2:s1:act:0",
+              "factText": "인감이랑 위임장 문구를 미리 본 건 맞지만 급한 상황 대비용 초안이라고 생각했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s1:act:1",
+              "factText": "어머니도 대강은 어떤 서류인지 아신다고 믿었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "제가 '시세만 알아보는 서류'라고 범위를 줄여 말한 건 맞습니다.",
+            "다만 바로 팔겠다는 최종 동의를 받은 것처럼 쓰려던 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "실제 초안은 가격 문의를 넘어 매매 위임 기능을 일부 갖고 있었다.",
+            "도윤이 다시 빚이나 실무 명분으로 끌고 갈까 봐 제가 먼저 움직였다."
+          ],
+          "suppressions": [
+            "어머니가 매매 문구를 자세히 듣지 못한 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-2:s2:act:0",
+              "factText": "제가 '시세만 알아보는 서류'라고 범위를 줄여 말한 건 맞습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s2:act:1",
+              "factText": "다만 바로 팔겠다는 최종 동의를 받은 것처럼 쓰려던 건 아니었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s2:act:2",
+              "factText": "실제 초안은 가격 문의를 넘어 매매 위임 기능을 일부 갖고 있었다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "매매 관련 문구가 들어간 부분 위임장과 인감 사용 동의를 어머니에게 먼저 받아 둔 건 사실입니다.",
+            "부모가 불안해할까 봐 설명을 줄여 말했고, 제 쪽에서 속도를 낸 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "저는 동생보다 먼저 의사결정 실무를 잡고 싶었다.",
+            "설명을 줄이면 나중에 되돌리기 어려운 상태가 된다는 점도 알고 있었다."
+          ],
+          "suppressions": [
+            "실무권 경쟁 심리"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:a:tell:partial_scope",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-2:s3:act:0",
+              "factText": "매매 관련 문구가 들어간 부분 위임장과 인감 사용 동의를 어머니에게 먼저 받아 둔 건 사실입니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s3:act:1",
+              "factText": "부모가 불안해할까 봐 설명을 줄여 말했고, 제 쪽에서 속도를 낸 건 맞습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s3:act:2",
+              "factText": "저는 동생보다 먼저 의사결정 실무를 잡고 싶었다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "도윤이 또 자기 방식으로 끌고 가면 부모 집까지 빚 구멍에 들어갈까 봐 제가 먼저 판을 잡으려 했습니다.",
+            "그 조급함 때문에 어머니 설명을 잘라낸 건 변명하기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "제가 보호자 역할과 통제 욕구를 섞어서 행동했다.",
+            "서명을 먼저 받아 두면 되돌리기 어려워진다는 점을 이용했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-2:s4:act:0",
+              "factText": "도윤이 또 자기 방식으로 끌고 가면 부모 집까지 빚 구멍에 들어갈까 봐 제가 먼저 판을 잡으려 했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s4:act:1",
+              "factText": "그 조급함 때문에 어머니 설명을 잘라낸 건 변명하기 어렵습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s4:act:2",
+              "factText": "제가 보호자 역할과 통제 욕구를 섞어서 행동했다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s4:act:3",
+              "factText": "서명을 먼저 받아 두면 되돌리기 어려워진다는 점을 이용했다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "저는 어머니에게 '시세만 보는 서류'라고 말하며 부분 위임장과 인감 사용 동의를 먼저 받아 뒀습니다.",
+            "그 행동은 부모의 설명받을 권리와 공동 의사결정을 무너뜨린 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "선의만으로 포장했지만 실질적으로는 선서명 유도였다.",
+            "부모를 지킨다는 명분이 절차 위반을 덮어주지 못한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-2:s5:act:0",
+              "factText": "저는 어머니에게 '시세만 보는 서류'라고 말하며 부분 위임장과 인감 사용 동의를 먼저 받아 뒀습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s5:act:1",
+              "factText": "그 행동은 부모의 설명받을 권리와 공동 의사결정을 무너뜨린 제 잘못입니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s5:act:2",
+              "factText": "선의만으로 포장했지만 실질적으로는 선서명 유도였다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-2:s5:act:3",
+              "factText": "부모를 지킨다는 명분이 절차 위반을 덮어주지 못한다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "도윤이 중개사를 통해 자기 몫을 먼저 챙겼다고만 들었고, 그 돈이 개인빚으로 간 건 나중에 보고 알았습니다.",
+            "저는 그 부분만큼은 도윤 단독 행동이라고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "원본 메시지 앞부분에는 제가 제 몫 입금을 재촉한 문장이 있었다.",
+            "도윤의 선수령은 형제 분배 약속이라는 전체 맥락 위에서 벌어진 일이다."
+          ],
+          "suppressions": [
+            "제가 잘린 캡처만 먼저 부모에게 보여준 점",
+            "분배 약속의 선행 존재"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-3:s0:act:0",
+              "factText": "도윤이 중개사를 통해 자기 몫을 먼저 챙겼다고만 들었고, 그 돈이 개인빚으로 간 건 나중에 보고 알았습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                },
+                "person_broker": {
+                  "fullName": "김태범",
+                  "judgeRef": "중개사",
+                  "neutral": "거래 실무자"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s0:act:1",
+              "factText": "저는 그 부분만큼은 도윤 단독 행동이라고 봤습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "제가 본 캡처상으로는 도윤 단독 선수령처럼 보였고 그래서 더 세게 받아들였습니다.",
+            "원본 전후 맥락까지 바로 꺼내지는 못했습니다."
+          ],
+          "privateKnowledge": [
+            "캡처를 보여줄 때 이미 잘린 상태라는 점을 알고 있었다.",
+            "도윤이 자기 채무에 썼다는 사실이 공모 맥락을 지워주지는 않는다는 점도 안다."
+          ],
+          "suppressions": [
+            "캡처를 의도적으로 잘라 저장한 시점",
+            "제 감정이 판단을 키운 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-3:s1:act:0",
+              "factText": "제가 본 캡처상으로는 도윤 단독 선수령처럼 보였고 그래서 더 세게 받아들였습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s1:act:1",
+              "factText": "원본 전후 맥락까지 바로 꺼내지는 못했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "harm",
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "도윤이 자기 몫을 먼저 받은 건 맞지만 형제 분배 얘기 자체는 그전부터 있었습니다.",
+            "제가 잘린 캡처만 먼저 보여준 건 감정적으로 몰아붙인 면이 있습니다."
+          ],
+          "privateKnowledge": [
+            "공동 설계가 있다는 걸 밝히면 제 책임도 드러난다는 걸 알고 있었다.",
+            "예전 도윤 채무 기억 때문에 단독 횡령 프레임이 더 유리하다고 느꼈다."
+          ],
+          "suppressions": [
+            "저 역시 분배를 기대했던 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-3:s2:act:0",
+              "factText": "도윤이 자기 몫을 먼저 받은 건 맞지만 형제 분배 얘기 자체는 그전부터 있었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s2:act:1",
+              "factText": "제가 잘린 캡처만 먼저 보여준 건 감정적으로 몰아붙인 면이 있습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "counter",
+                "harm",
+                "beneficiary"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                },
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s2:act:2",
+              "factText": "공동 설계가 있다는 걸 밝히면 제 책임도 드러난다는 걸 알고 있었다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "responsibility",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "원본 스레드에는 제가 '내 건 왜 아직이냐'고 물은 문장도 있었습니다.",
+            "그래도 도윤이 1,300만원을 자기 채무 상환에 먼저 쓴 건 별개로 무겁습니다."
+          ],
+          "privateKnowledge": [
+            "저는 도윤의 개인 사용 사실과 공동 공모 사실을 일부러 한 문맥에서 분리했다.",
+            "부모가 저를 피해자로 봐주길 바랐다."
+          ],
+          "suppressions": [
+            "선택적 제시 의도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:a:tell:partial_scope",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-3:s3:act:0",
+              "factText": "원본 스레드에는 제가 '내 건 왜 아직이냐'고 물은 문장도 있었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "counter",
+                "harm",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s3:act:1",
+              "factText": "그래도 도윤이 1,300만원을 자기 채무 상환에 먼저 쓴 건 별개로 무겁습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s3:act:2",
+              "factText": "저는 도윤의 개인 사용 사실과 공동 공모 사실을 일부러 한 문맥에서 분리했다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "2021년 3,000만원 일 기억 때문에 이번에도 도윤을 더 나쁘게 보이게 하고 싶었습니다.",
+            "그래서 원본보다 잘린 장면을 먼저 들이민 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "분노와 공포가 섞여 사실 배열까지 왜곡했다.",
+            "돌봄 명분을 잃지 않으려는 계산이 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-3:s4:act:0",
+              "factText": "2021년 3,000만원 일 기억 때문에 이번에도 도윤을 더 나쁘게 보이게 하고 싶었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s4:act:1",
+              "factText": "그래서 원본보다 잘린 장면을 먼저 들이민 건 맞습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                },
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s4:act:2",
+              "factText": "분노와 공포가 섞여 사실 배열까지 왜곡했다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s4:act:3",
+              "factText": "돌봄 명분을 잃지 않으려는 계산이 있었다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "emotion",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "공동 설계를 숨긴 채 도윤이 혼자 횡령한 것처럼 몰아간 건 제 잘못입니다.",
+            "다만 도윤이 실제로 2,400만원 중 1,300만원을 자기 채무에 쓴 사실 자체는 그대로입니다."
+          ],
+          "privateKnowledge": [
+            "공모와 개인 사용은 동시에 참인데 저는 전자만 감췄다.",
+            "잘린 캡처는 제 책임 회피용 무기였다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-3:s5:act:0",
+              "factText": "공동 설계를 숨긴 채 도윤이 혼자 횡령한 것처럼 몰아간 건 제 잘못입니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s5:act:1",
+              "factText": "다만 도윤이 실제로 2,400만원 중 1,300만원을 자기 채무에 쓴 사실 자체는 그대로입니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s5:act:2",
+              "factText": "공모와 개인 사용은 동시에 참인데 저는 전자만 감췄다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-3:s5:act:3",
+              "factText": "잘린 캡처는 제 책임 회피용 무기였다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "부모님도 세금이랑 수리비 때문에 실제 남는 돈이 달라질 수 있다는 큰 틀은 들으셨습니다.",
+            "완전히 모른 채 진행된 것처럼 말하는 건 과하다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "부모는 공식 매매가와 통상 비용만 들었고 별도 6,600만원 구조는 듣지 못했다.",
+            "법무사 설명 체크리스트와 녹취에도 형제 분배 문구는 없다."
+          ],
+          "suppressions": [
+            "보전금 6,600만원과 형제 분배 약속",
+            "부모에게 순매매가 중심으로만 들리게 만든 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-4:s0:rule:0",
+              "factText": "부모님도 세금이랑 수리비 때문에 실제 남는 돈이 달라질 수 있다는 큰 틀은 들으셨습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:a:d-4:s0:rule:1",
+              "factText": "완전히 모른 채 진행된 것처럼 말하는 건 과하다고 봅니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "denial"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "보전금이라는 말을 그대로 쓰진 않았어도 추가 조정이 있다는 정도는 전달했다고 생각했습니다.",
+            "부모님이 완전히 백지 상태는 아니었다고 믿었습니다."
+          ],
+          "privateKnowledge": [
+            "제가 '대략은 아시겠지'라고 제 쪽에서 의미를 과장했다.",
+            "공식 설명 자리에 빠진 핵심이 무엇인지 정확히 알고 있었다."
+          ],
+          "suppressions": [
+            "공식 설명 과정의 누락 범위"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-4:s1:rule:0",
+              "factText": "보전금이라는 말을 그대로 쓰진 않았어도 추가 조정이 있다는 정도는 전달했다고 생각했습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "denial"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:a:d-4:s1:rule:1",
+              "factText": "부모님이 완전히 백지 상태는 아니었다고 믿었습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "공식 설명 자리에서 계약서 밖 6,600만원 분배 문구가 안 나온 건 맞습니다.",
+            "다만 저는 나중에 정산 단계에서 다시 말하면 된다고 넘겼습니다."
+          ],
+          "privateKnowledge": [
+            "부모가 들은 것만으로는 판단할 수 없다는 사실을 알았다.",
+            "그 공백을 채우지 않은 채 진행하면 동의가 불완전하다는 점도 알고 있었다."
+          ],
+          "suppressions": [
+            "부모가 반대할 가능성을 우려한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-4:s2:rule:0",
+              "factText": "공식 설명 자리에서 계약서 밖 6,600만원 분배 문구가 안 나온 건 맞습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-4:s2:rule:1",
+              "factText": "다만 저는 나중에 정산 단계에서 다시 말하면 된다고 넘겼습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-4:s2:rule:2",
+              "factText": "부모가 들은 것만으로는 판단할 수 없다는 사실을 알았다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "부모님은 순매매가와 통상 비용만 들으셨고 별도 보전금 구조는 못 들으셨습니다.",
+            "제가 '대략 아셨다'고 말한 건 제 합리화였습니다."
+          ],
+          "privateKnowledge": [
+            "부모가 알면 받지 않을 가능성이 높다고 생각했다.",
+            "그래서 설명 누락을 일부러 방치했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:a:tell:partial_scope",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-4:s3:rule:0",
+              "factText": "부모님은 순매매가와 통상 비용만 들으셨고 별도 보전금 구조는 못 들으셨습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-4:s3:rule:1",
+              "factText": "제가 '대략 아셨다'고 말한 건 제 합리화였습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-4:s3:rule:2",
+              "factText": "부모가 알면 받지 않을 가능성이 높다고 생각했다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "엄마가 그 구조를 정확히 알면 절대 받지 않으실까 봐, 알고도 '대충은 아실 거야'라고 밀어붙였습니다.",
+            "그건 동의가 아니라 제 편의였습니다."
+          ],
+          "privateKnowledge": [
+            "저는 부모의 반대 가능성을 두려워해 설명 수준을 스스로 낮췄다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-4:s4:rule:0",
+              "factText": "엄마가 그 구조를 정확히 알면 절대 받지 않으실까 봐, 알고도 '대충은 아실 거야'라고 밀어붙였습니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-4:s4:rule:1",
+              "factText": "그건 동의가 아니라 제 편의였습니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-4:s4:rule:2",
+              "factText": "저는 부모의 반대 가능성을 두려워해 설명 수준을 스스로 낮췄다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "부모님은 계약 밖 보전금과 형제 분배 약속을 듣지 못했습니다.",
+            "그런데도 제가 알고 동의한 것처럼 말한 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "부모 동의가 불완전하다는 사실을 알면서도 거래 진행을 우선했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-4:s5:rule:0",
+              "factText": "부모님은 계약 밖 보전금과 형제 분배 약속을 듣지 못했습니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-4:s5:rule:1",
+              "factText": "그런데도 제가 알고 동의한 것처럼 말한 건 제 잘못입니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-4:s5:rule:2",
+              "factText": "부모 동의가 불완전하다는 사실을 알면서도 거래 진행을 우선했다",
+              "tags": [
+                "motive",
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "세금, 수수료, 명도비 얘기를 한 건 실제로 들어갈 수 있는 비용을 설명한 것이지 일부러 축소하려던 건 아니었습니다.",
+            "부모님을 안심시키려다 표현이 단순해진 정도였습니다."
+          ],
+          "privateKnowledge": [
+            "부모 앞에서는 순매매가만 먼저 말하자는 형제 합의가 있었다.",
+            "계약 밖 보전금은 비용이 아니라 형제 분배 대상으로도 잡혀 있었다."
+          ],
+          "suppressions": [
+            "비용 항목을 방패로 보전금을 가린 점",
+            "중개사와 같이 맞춘 설명 톤"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-5:s0:rule:0",
+              "factText": "세금, 수수료, 명도비 얘기를 한 건 실제로 들어갈 수 있는 비용을 설명한 것이지 일부러 축소하려던 건 아니었습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:a:d-5:s0:rule:1",
+              "factText": "부모님을 안심시키려다 표현이 단순해진 정도였습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "남는 돈이 적어 보인다는 표현이 과했을 수는 있어도 치료비 생각에 보수적으로 말한 겁니다.",
+            "완전히 숨기자는 의도로만 보기는 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "보수 추정이 아니라 순수 매매대금만 남는 것처럼 들리게 만들었다.",
+            "도윤과 제가 같은 설명 문구를 반복했다."
+          ],
+          "suppressions": [
+            "부모 판단을 흐릴 정도로 표현을 맞춘 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-5:s1:rule:0",
+              "factText": "남는 돈이 적어 보인다는 표현이 과했을 수는 있어도 치료비 생각에 보수적으로 말한 겁니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:a:d-5:s1:rule:1",
+              "factText": "완전히 숨기자는 의도로만 보기는 어렵습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "부모님 앞에서 순매매가 기준으로 먼저 말하자고 저도 동의했습니다.",
+            "그래도 그걸 영영 숨기자는 뜻으로까지 생각하지는 않았습니다."
+          ],
+          "privateKnowledge": [
+            "말을 줄이는 순간 부모가 실제 남는 구조를 알 수 없게 된다는 걸 알았다.",
+            "돌봄 부담을 앞세워 제가 설명 빈칸을 덮었다."
+          ],
+          "suppressions": [
+            "공동 축소 설명의 의도성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:partial_scope",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-5:s2:rule:0",
+              "factText": "부모님 앞에서 순매매가 기준으로 먼저 말하자고 저도 동의했습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-5:s2:rule:1",
+              "factText": "그래도 그걸 영영 숨기자는 뜻으로까지 생각하지는 않았습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-5:s2:rule:2",
+              "factText": "말을 줄이는 순간 부모가 실제 남는 구조를 알 수 없게 된다는 걸 알았다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "세금과 명도비를 앞세워 계약 밖 보전금을 가린 건 사실입니다.",
+            "부모가 불안해할까 봐 둘이 같은 톤으로 말한 것도 인정합니다."
+          ],
+          "privateKnowledge": [
+            "부모가 즉석에서 반대하거나 재확인 요구를 할까 봐 설명을 짧게 맞췄다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:a:tell:partial_scope",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-5:s3:rule:0",
+              "factText": "세금과 명도비를 앞세워 계약 밖 보전금을 가린 건 사실입니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-5:s3:rule:1",
+              "factText": "부모가 불안해할까 봐 둘이 같은 톤으로 말한 것도 인정합니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:a:d-5:s3:rule:2",
+              "factText": "부모가 즉석에서 반대하거나 재확인 요구를 할까 봐 설명을 짧게 맞췄다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "제가 병원비와 돌봄 얘기를 먼저 꺼내면서 실제 돈 구조를 흐린 건 맞습니다.",
+            "희생을 말하면 설명 책임이 가벼워질 거라고 스스로 기대했습니다."
+          ],
+          "privateKnowledge": [
+            "돌봄 서사를 방패로 쓴 점이 제일 부끄럽다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:a:tell:care_rollcall",
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-5:s4:rule:0",
+              "factText": "제가 병원비와 돌봄 얘기를 먼저 꺼내면서 실제 돈 구조를 흐린 건 맞습니다",
+              "tags": [
+                "motive",
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-5:s4:rule:1",
+              "factText": "희생을 말하면 설명 책임이 가벼워질 거라고 스스로 기대했습니다",
+              "tags": [
+                "motive",
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-5:s4:rule:2",
+              "factText": "돌봄 서사를 방패로 쓴 점이 제일 부끄럽다",
+              "tags": [
+                "motive",
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "저와 도윤은 부모에게 세금, 수수료, 명도비만 강조하며 실제 계약 밖 보전금을 숨겼습니다.",
+            "남는 돈 구조를 공동으로 축소 설명한 책임을 인정합니다."
+          ],
+          "privateKnowledge": [
+            "가족 신뢰를 깨뜨린 건 돈 자체보다 설명을 같이 줄여 버린 선택이었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:a:tell:betrayed_sigh"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:a:d-5:s5:rule:0",
+              "factText": "저와 도윤은 부모에게 세금, 수수료, 명도비만 강조하며 실제 계약 밖 보전금을 숨겼습니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "person_sibling": {
+                  "fullName": "최민아·최도윤",
+                  "judgeRef": "남매",
+                  "neutral": "형제"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-5:s5:rule:1",
+              "factText": "남는 돈 구조를 공동으로 축소 설명한 책임을 인정합니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:a:d-5:s5:rule:2",
+              "factText": "가족 신뢰를 깨뜨린 건 돈 자체보다 설명을 같이 줄여 버린 선택이었다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그건 매수인 명도 조정금 비슷한 얘기였지 처음부터 형제 공모로 굳은 돈은 아니었습니다.",
+            "누나까지 묶어 공모라고 부를 만큼 정리된 단계는 아니었다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "계약서 밖 6,600만원을 형제 각 3,300만원으로 나누는 메모와 통화가 있었다.",
+            "부모 앞에서는 순매매가만 말하자는 데 저도 동의했다."
+          ],
+          "suppressions": [
+            "중개사와 별도 이체 순서를 맞춘 점",
+            "누나도 자기 몫을 재촉한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-1:s0:act:0",
+              "factText": "그건 매수인 명도 조정금 비슷한 얘기였지 처음부터 형제 공모로 굳은 돈은 아니었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "relationship",
+                "denial",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:b:d-1:s0:act:1",
+              "factText": "누나까지 묶어 공모라고 부를 만큼 정리된 단계는 아니었다고 봅니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "중개사가 별도 조정금 얘길 한 건 맞지만 매수인이 빠질 판이라 현장에서 들어본 수준이었습니다.",
+            "누나도 흐름은 알고 있었고 저만 따로 꾸민 일은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "현장 변수라는 표현으로 사전 합의를 흐리고 있다.",
+            "형제 분배가 이미 숫자로 정리돼 있었다."
+          ],
+          "suppressions": [
+            "공식 계약 이전의 사전 설계"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-1:s1:act:0",
+              "factText": "중개사가 별도 조정금 얘길 한 건 맞지만 매수인이 빠질 판이라 현장에서 들어본 수준이었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "person_broker": {
+                  "fullName": "김태범",
+                  "judgeRef": "중개사",
+                  "neutral": "거래 실무자"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:b:d-1:s1:act:1",
+              "factText": "누나도 흐름은 알고 있었고 저만 따로 꾸민 일은 아닙니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "부모 앞에서 순매매가 위주로 말하자는 공감대는 있었습니다.",
+            "다만 거래를 안 깨려다 보니 중개사 제안을 받아 적은 측면도 컸습니다."
+          ],
+          "privateKnowledge": [
+            "제가 현장 진행 명분으로 불법적 구조를 스스로 축소했다.",
+            "누나와 함께 차액을 형제 몫으로 취급했다."
+          ],
+          "suppressions": [
+            "각 3,300만원 분배의 명시성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing",
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-1:s2:act:0",
+              "factText": "부모 앞에서 순매매가 위주로 말하자는 공감대는 있었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-1:s2:act:1",
+              "factText": "다만 거래를 안 깨려다 보니 중개사 제안을 받아 적은 측면도 컸습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person_broker": {
+                  "fullName": "김태범",
+                  "judgeRef": "중개사",
+                  "neutral": "거래 실무자"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-1:s2:act:2",
+              "factText": "제가 현장 진행 명분으로 불법적 구조를 스스로 축소했다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "relationship",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "계약서 밖 6,600만원을 형제 분배 항목으로 두는 데 동의했습니다.",
+            "누나도 자기 몫을 묻는 메시지를 보냈고, 저는 그 흐름을 실무처럼 밀었습니다."
+          ],
+          "privateKnowledge": [
+            "제가 이체 메모 작성까지 사실상 주도했다.",
+            "부모가 알면 반대할 걸 알면서도 거래 속도를 우선했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:b:tell:soft_minimizing",
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-1:s3:act:0",
+              "factText": "계약서 밖 6,600만원을 형제 분배 항목으로 두는 데 동의했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-1:s3:act:1",
+              "factText": "누나도 자기 몫을 묻는 메시지를 보냈고, 저는 그 흐름을 실무처럼 밀었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-1:s3:act:2",
+              "factText": "제가 이체 메모 작성까지 사실상 주도했다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "relationship",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "현장 처리라고 줄여 말했지만 결국 부모 돈 구조를 비튼 겁니다.",
+            "빚 많은 아들로 다시 찍힐까 봐 더 노골적으로 숨겼습니다."
+          ],
+          "privateKnowledge": [
+            "제 체면과 실무권을 지키려는 마음이 공모 유지에 크게 작용했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:b:tell:fieldwork_shield",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-1:s4:act:0",
+              "factText": "현장 처리라고 줄여 말했지만 결국 부모 돈 구조를 비튼 겁니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-1:s4:act:1",
+              "factText": "빚 많은 아들로 다시 찍힐까 봐 더 노골적으로 숨겼습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-1:s4:act:2",
+              "factText": "제 체면과 실무권을 지키려는 마음이 공모 유지에 크게 작용했다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "emotion",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "저도 민아와 함께 계약서 밖 6,600만원을 숨기고 각 3,300만원씩 나누기로 합의했습니다.",
+            "그 구조를 부모에게 숨긴 채 진행한 것은 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "매수인 급박함은 공모의 변명이 될 수 없었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-1:s5:act:0",
+              "factText": "저도 민아와 함께 계약서 밖 6,600만원을 숨기고 각 3,300만원씩 나누기로 합의했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "amount_split": {
+                  "exact": "3,300만원",
+                  "rounded": "3천3백만원",
+                  "neutral": "각자 몫"
+                },
+                "contract_price": {
+                  "exact": "6억4천만원",
+                  "rounded": "6억대 중반",
+                  "neutral": "공식 매매가"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-1:s5:act:1",
+              "factText": "그 구조를 부모에게 숨긴 채 진행한 것은 제 책임입니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-1:s5:act:2",
+              "factText": "매수인 급박함은 공모의 변명이 될 수 없었다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "계약 밖 보전금"
+                },
+                "time": {
+                  "dateExact": "공식 계약서 작성 전날 밤부터 당일 연속 연락",
+                  "period": "계약 직전",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "누나가 어머니 모시고 법무사 사무실 간 건 나중에 알았고 저는 그게 정식 위임장인 줄 몰랐습니다.",
+            "제가 먼저 선서명을 시켰다는 식으로 묶는 건 맞지 않습니다."
+          ],
+          "privateKnowledge": [
+            "나중에 받은 서류가 매매 실무에 곧바로 활용될 수 있다는 걸 알았다.",
+            "누나가 설명 범위를 줄였을 가능성을 눈치챘다."
+          ],
+          "suppressions": [
+            "문제가 있는 서류라는 걸 알고도 편하게 이용한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-2:s0:act:0",
+              "factText": "누나가 어머니 모시고 법무사 사무실 간 건 나중에 알았고 저는 그게 정식 위임장인 줄 몰랐습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "person_notary": {
+                  "fullName": "윤하나",
+                  "judgeRef": "법무사 사무장",
+                  "neutral": "사무실 담당자"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:b:d-2:s0:act:1",
+              "factText": "제가 먼저 선서명을 시켰다는 식으로 묶는 건 맞지 않습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "어떤 서류가 먼저 받아진 건 알았지만 저도 그냥 시세 문의용에 가까운 줄 알았습니다.",
+            "실무 편의를 위해 넘겨짚은 면은 있어도 제가 직접 끌고 간 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "매매 관련 문구가 들어 있다는 걸 비교적 빨리 알았다.",
+            "그럼에도 거래 실무상 유리하다고 보고 문제 제기를 미뤘다."
+          ],
+          "suppressions": [
+            "서류 활용의 묵인"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-2:s1:act:0",
+              "factText": "어떤 서류가 먼저 받아진 건 알았지만 저도 그냥 시세 문의용에 가까운 줄 알았습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:b:d-2:s1:act:1",
+              "factText": "실무 편의를 위해 넘겨짚은 면은 있어도 제가 직접 끌고 간 건 아닙니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "self_justification"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "매매 관련 문구가 일부 들어간 서류였다는 건 곧 알았습니다.",
+            "그때도 거래가 편해지겠다 싶어 크게 문제 삼지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "부모 설명이 충분하지 않았다는 걸 알면서도 멈추지 않았다."
+          ],
+          "suppressions": [
+            "실무권 유지 욕심"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing",
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-2:s2:act:0",
+              "factText": "매매 관련 문구가 일부 들어간 서류였다는 건 곧 알았습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-2:s2:act:1",
+              "factText": "그때도 거래가 편해지겠다 싶어 크게 문제 삼지 않았습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "rule",
+                "evidence",
+                "relationship"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-2:s2:act:2",
+              "factText": "부모 설명이 충분하지 않았다는 걸 알면서도 멈추지 않았다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "누나가 먼저 받아 둔 위임장 초안을 제가 실무 진행에 이용한 건 사실입니다.",
+            "제가 직접 서명을 유도하진 않았지만 편하게 탔다고 보는 게 맞습니다."
+          ],
+          "privateKnowledge": [
+            "절차상 하자를 이용하면 제 실무권이 강해진다고 느꼈다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:b:tell:soft_minimizing",
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-2:s3:act:0",
+              "factText": "누나가 먼저 받아 둔 위임장 초안을 제가 실무 진행에 이용한 건 사실입니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-2:s3:act:1",
+              "factText": "제가 직접 서명을 유도하진 않았지만 편하게 탔다고 보는 게 맞습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-2:s3:act:2",
+              "factText": "절차상 하자를 이용하면 제 실무권이 강해진다고 느꼈다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "rule",
+                "evidence",
+                "relationship"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "그 서류가 문제 있다는 걸 알면서도 거래를 밀 수단으로 본 건 부끄럽습니다.",
+            "누나 탓만 하며 빠져 있을 일은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "제가 묵인한 순간 공동책임이 생겼다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:b:tell:fieldwork_shield",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-2:s4:act:0",
+              "factText": "그 서류가 문제 있다는 걸 알면서도 거래를 밀 수단으로 본 건 부끄럽습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "emotion",
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-2:s4:act:1",
+              "factText": "누나 탓만 하며 빠져 있을 일은 아니었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-2:s4:act:2",
+              "factText": "제가 묵인한 순간 공동책임이 생겼다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "민아가 선서명 성격의 위임장 초안을 먼저 받아 둔 건 사실이고 저도 그 서류를 묵인하고 이용했습니다.",
+            "직접 유도한 건 아니어도 절차 위반을 편의로 삼은 책임이 있습니다."
+          ],
+          "privateKnowledge": [
+            "실무 편의가 부모 설명권보다 앞섰다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-2:s5:act:0",
+              "factText": "민아가 선서명 성격의 위임장 초안을 먼저 받아 둔 건 사실이고 저도 그 서류를 묵인하고 이용했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-2:s5:act:1",
+              "factText": "직접 유도한 건 아니어도 절차 위반을 편의로 삼은 책임이 있습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-2:s5:act:2",
+              "factText": "실무 편의가 부모 설명권보다 앞섰다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "rule",
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "person_mother": {
+                  "fullName": "최정자",
+                  "judgeRef": "어머니",
+                  "neutral": "부모"
+                },
+                "document": {
+                  "exact": "부분 위임장·인감 사용 동의",
+                  "neutral": "그 서류"
+                },
+                "time": {
+                  "dateExact": "공식 시세 브리핑 하루 전 오후 2시 16분",
+                  "period": "브리핑 전날",
+                  "neutral": "그날 오후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 2,400만원은 제 몫을 잠깐 묶어 둔 성격이었고 아직 최종 정산 전이었습니다.",
+            "개인적으로 써버렸다고 보기엔 당시 현장 비용과 자금 흐름이 너무 급했습니다."
+          ],
+          "privateKnowledge": [
+            "입금 뒤 2시간 안에 1,300만원을 장비리스 연체와 카드대금에 썼다.",
+            "부모나 공동보관계좌가 아니라 제 개인 채무를 먼저 막았다."
+          ],
+          "suppressions": [
+            "생체인증으로 직접 상환 처리한 점",
+            "정산 전이라는 표현 뒤에 숨은 개인 용도"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-3:s0:act:0",
+              "factText": "그 2,400만원은 제 몫을 잠깐 묶어 둔 성격이었고 아직 최종 정산 전이었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "harm",
+                "denial",
+                "beneficiary"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:b:d-3:s0:act:1",
+              "factText": "개인적으로 써버렸다고 보기엔 당시 현장 비용과 자금 흐름이 너무 급했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "self_justification",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "제 몫을 먼저 자리 잡아 둔 건 맞습니다. 매수인이 흔들려서 급하게 묶어둘 필요가 있었습니다.",
+            "카드나 장비 쪽 결제가 그날 겹친 건 사실이지만 떼먹으려던 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "현장 자금이 아니라 오래 눌린 개인 채무도 섞여 있었다.",
+            "정산 의사보다 당장 숨 돌리는 마음이 먼저였다."
+          ],
+          "suppressions": [
+            "채무 상환의 비중과 고의성"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-3:s1:act:0",
+              "factText": "제 몫을 먼저 자리 잡아 둔 건 맞습니다. 매수인이 흔들려서 급하게 묶어둘 필요가 있었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "harm",
+                "admission",
+                "denial"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:b:d-3:s1:act:1",
+              "factText": "카드나 장비 쪽 결제가 그날 겹친 건 사실이지만 떼먹으려던 건 아니었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "harm",
+                "admission",
+                "denial"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                },
+                "institution_lease": {
+                  "fullName": "장비리스사",
+                  "judgeRef": "리스사",
+                  "neutral": "금융기관"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "2,400만원이 제 계좌로 먼저 들어온 건 맞습니다.",
+            "다만 전부 떼먹으려는 뜻은 아니었고 잠깐 돌려막다가 다시 맞추려 했습니다."
+          ],
+          "privateKnowledge": [
+            "부모나 누나 동의 없이 제 판단으로 채무 상환에 쓴 건 명백하다.",
+            "예전 채무 기억 때문에 더 숨기고 싶었다."
+          ],
+          "suppressions": [
+            "1,300만원의 정확한 사용처"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing",
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-3:s2:act:0",
+              "factText": "2,400만원이 제 계좌로 먼저 들어온 건 맞습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "counter",
+                "harm",
+                "admission"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-3:s2:act:1",
+              "factText": "다만 전부 떼먹으려는 뜻은 아니었고 잠깐 돌려막다가 다시 맞추려 했습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "counter",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-3:s2:act:2",
+              "factText": "부모나 누나 동의 없이 제 판단으로 채무 상환에 쓴 건 명백하다",
+              "tags": [
+                "act",
+                "timeline",
+                "rule",
+                "evidence",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "그중 1,300만원을 장비리스 연체와 카드대금 상환에 먼저 썼습니다.",
+            "현장 자금 스트레스와 제 빚 부담이 겹쳐 선을 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "가족이 알면 실무에서 배제될까 봐 늦게 털어놓으려 했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:b:tell:soft_minimizing",
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-3:s3:act:0",
+              "factText": "그중 1,300만원을 장비리스 연체와 카드대금 상환에 먼저 썼습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "counter",
+                "harm",
+                "admission"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                },
+                "institution_lease": {
+                  "fullName": "장비리스사",
+                  "judgeRef": "리스사",
+                  "neutral": "금융기관"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-3:s3:act:1",
+              "factText": "현장 자금 스트레스와 제 빚 부담이 겹쳐 선을 넘었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "counter",
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-3:s3:act:2",
+              "factText": "가족이 알면 실무에서 배제될까 봐 늦게 털어놓으려 했다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "evidence",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "2021년 일 이후 또 빚 많은 아들이라고 찍힐까 봐 숨겼습니다.",
+            "그래서 '잠깐 보관' 같은 말로 제 행동을 작게 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "체면과 두려움이 돈 사용 판단을 덮었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:b:tell:fieldwork_shield",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-3:s4:act:0",
+              "factText": "2021년 일 이후 또 빚 많은 아들이라고 찍힐까 봐 숨겼습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-3:s4:act:1",
+              "factText": "그래서 '잠깐 보관' 같은 말로 제 행동을 작게 만들었습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-3:s4:act:2",
+              "factText": "체면과 두려움이 돈 사용 판단을 덮었다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "emotion",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "저는 계약 밖 보전금 중 2,400만원을 먼저 받았고 그중 1,300만원을 제 장비리스 연체와 카드대금 상환에 썼습니다.",
+            "공동 정산 자금이어야 할 돈을 개인 채무에 돌린 것은 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "급박한 거래 사정은 개인 사용의 면책이 되지 않는다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-3:s5:act:0",
+              "factText": "저는 계약 밖 보전금 중 2,400만원을 먼저 받았고 그중 1,300만원을 제 장비리스 연체와 카드대금 상환에 썼습니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                },
+                "institution_lease": {
+                  "fullName": "장비리스사",
+                  "judgeRef": "리스사",
+                  "neutral": "금융기관"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-3:s5:act:1",
+              "factText": "공동 정산 자금이어야 할 돈을 개인 채무에 돌린 것은 제 잘못입니다",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "evidence",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "amount_debt": {
+                  "exact": "1,300만원",
+                  "rounded": "1천3백만원",
+                  "neutral": "채무 상환액"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-3:s5:act:2",
+              "factText": "급박한 거래 사정은 개인 사용의 면책이 되지 않는다",
+              "tags": [
+                "act",
+                "timeline",
+                "motive",
+                "emotion",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_received": {
+                  "exact": "2,400만원",
+                  "rounded": "2천4백만원",
+                  "neutral": "먼저 받은 몫"
+                },
+                "time": {
+                  "dateExact": "입금 뒤 2시간 이내",
+                  "period": "같은 날 오후",
+                  "neutral": "그 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "어머니가 명도비나 추가 정산이 생길 수 있다는 말은 들으셨으니 완전히 모른 채는 아니었습니다.",
+            "큰 틀 동의는 있었다고 저는 받아들였습니다."
+          ],
+          "privateKnowledge": [
+            "법무사 브리핑에는 공식 매매가와 통상 비용만 있고 6,600만원 별도 보전금 구조는 없다.",
+            "부모는 형제 분배 약속을 전혀 듣지 못했다."
+          ],
+          "suppressions": [
+            "제가 '대충 아신다'는 식으로 의미를 부풀린 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-4:s0:rule:0",
+              "factText": "어머니가 명도비나 추가 정산이 생길 수 있다는 말은 들으셨으니 완전히 모른 채는 아니었습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:b:d-4:s0:rule:1",
+              "factText": "큰 틀 동의는 있었다고 저는 받아들였습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "현장에선 다 적나라하게 설명 못 해도 큰 틀 동의는 받은 줄 알았습니다.",
+            "별도 보전금까지 하나하나 설명하지 못한 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "설명 누락이 단순 요약이 아니라 핵심 구조 삭제라는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "부모가 알면 거래를 보류할 가능성"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-4:s1:rule:0",
+              "factText": "현장에선 다 적나라하게 설명 못 해도 큰 틀 동의는 받은 줄 알았습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:b:d-4:s1:rule:1",
+              "factText": "별도 보전금까지 하나하나 설명하지 못한 건 맞습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "법무사 설명에는 보전금 구조가 빠져 있었습니다.",
+            "그래도 저는 나중에 정산표만 보여 드리면 된다고 가볍게 넘겼습니다."
+          ],
+          "privateKnowledge": [
+            "그 시점 동의는 완전한 동의가 아니었다.",
+            "제가 실무권을 유지하려고 누락을 방치했다."
+          ],
+          "suppressions": [
+            "누락의 고의성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing",
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-4:s2:rule:0",
+              "factText": "법무사 설명에는 보전금 구조가 빠져 있었습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "person_notary": {
+                  "fullName": "윤하나",
+                  "judgeRef": "법무사 사무장",
+                  "neutral": "사무실 담당자"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-4:s2:rule:1",
+              "factText": "그래도 저는 나중에 정산표만 보여 드리면 된다고 가볍게 넘겼습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-4:s2:rule:2",
+              "factText": "그 시점 동의는 완전한 동의가 아니었다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "부모님은 공식 매매가와 통상 비용만 들었고 6,600만원 별도 분배 구조는 못 들었습니다.",
+            "제가 알고도 '그 정도면 아신다'고 밀어붙인 겁니다."
+          ],
+          "privateKnowledge": [
+            "체면과 거래 속도 때문에 설명 부족을 방치했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:b:tell:soft_minimizing",
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-4:s3:rule:0",
+              "factText": "부모님은 공식 매매가와 통상 비용만 들었고 6,600만원 별도 분배 구조는 못 들었습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-4:s3:rule:1",
+              "factText": "제가 알고도 '그 정도면 아신다'고 밀어붙인 겁니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "uncertainty"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-4:s3:rule:2",
+              "factText": "체면과 거래 속도 때문에 설명 부족을 방치했다",
+              "tags": [
+                "motive",
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "그걸 정확히 말하면 거래도 깨지고 저는 또 가족 판단에서 빠질까 봐 숨겼습니다.",
+            "부모 동의를 제가 편의대로 넓게 해석했습니다."
+          ],
+          "privateKnowledge": [
+            "제가 두려움 때문에 부모의 판단권을 빼앗았다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:b:tell:fieldwork_shield",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-4:s4:rule:0",
+              "factText": "그걸 정확히 말하면 거래도 깨지고 저는 또 가족 판단에서 빠질까 봐 숨겼습니다",
+              "tags": [
+                "motive",
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-4:s4:rule:1",
+              "factText": "부모 동의를 제가 편의대로 넓게 해석했습니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-4:s4:rule:2",
+              "factText": "제가 두려움 때문에 부모의 판단권을 빼앗았다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "부모님은 계약 밖 보전금 구조와 형제 분배 약속을 듣지 못했습니다.",
+            "그런데도 제가 부모가 안다고 주장한 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "부모 동의가 불완전하다는 걸 알고도 실무 진행을 택했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-4:s5:rule:0",
+              "factText": "부모님은 계약 밖 보전금 구조와 형제 분배 약속을 듣지 못했습니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-4:s5:rule:1",
+              "factText": "그런데도 제가 부모가 안다고 주장한 건 제 잘못입니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-4:s5:rule:2",
+              "factText": "부모 동의가 불완전하다는 걸 알고도 실무 진행을 택했다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "별도 보전금"
+                },
+                "time": {
+                  "dateExact": "위임장 방문 이틀 뒤 잔금 조건 확정 직전 브리핑",
+                  "period": "공식 설명 시점",
+                  "neutral": "그 설명 자리"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "수수료랑 명도비 얘기를 한 건 거래상 필수 설명이었고 축소 설명이라기보단 보수 추정이었습니다.",
+            "부모님을 불안하게 하지 않으려다 숫자를 둥글게 말한 정도입니다."
+          ],
+          "privateKnowledge": [
+            "추가 보전금은 비용이 아니라 형제 분배 대상으로도 잡혀 있었다.",
+            "부모 앞에서는 순매매가 중심으로만 설명하자고 형제끼리 맞췄다."
+          ],
+          "suppressions": [
+            "비용 설명을 방패로 쓴 점",
+            "같은 문구를 반복하며 부모 판단을 유도한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-5:s0:rule:0",
+              "factText": "수수료랑 명도비 얘기를 한 건 거래상 필수 설명이었고 축소 설명이라기보단 보수 추정이었습니다",
+              "tags": [
+                "motive",
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:b:d-5:s0:rule:1",
+              "factText": "부모님을 불안하게 하지 않으려다 숫자를 둥글게 말한 정도입니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "숫자를 좀 세게 잡아 말한 건 맞지만 매수인을 안 놓치려면 불확실성을 크게 볼 수밖에 없었습니다.",
+            "숨기려 했다기보다 현장 변수 중심으로 말한 겁니다."
+          ],
+          "privateKnowledge": [
+            "불확실성 설명이 아니라 형제 몫을 가리는 언어였다는 걸 안다.",
+            "누나와 제가 같은 설명 구조를 공유했다."
+          ],
+          "suppressions": [
+            "부모가 실제 남는 돈을 계산할 수 없도록 만든 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-5:s1:rule:0",
+              "factText": "숫자를 좀 세게 잡아 말한 건 맞지만 매수인을 안 놓치려면 불확실성을 크게 볼 수밖에 없었습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family09:b:d-5:s1:rule:1",
+              "factText": "숨기려 했다기보다 현장 변수 중심으로 말한 겁니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "부모 앞에서 순매매가 중심으로만 말한 건 사실입니다.",
+            "추가 보전금은 뒤에서 정리하면 된다고 가볍게 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "뒤에서 정리한다는 말이 사실상 비공개 유지였다.",
+            "부모가 즉석에서 반대할 가능성을 피하고 싶었다."
+          ],
+          "suppressions": [
+            "공동 축소 설명의 의도성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:b:tell:urgency_buffer",
+            "family09:b:tell:soft_minimizing",
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-5:s2:rule:0",
+              "factText": "부모 앞에서 순매매가 중심으로만 말한 건 사실입니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-5:s2:rule:1",
+              "factText": "추가 보전금은 뒤에서 정리하면 된다고 가볍게 생각했습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-5:s2:rule:2",
+              "factText": "뒤에서 정리한다는 말이 사실상 비공개 유지였다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "세금과 명도비 핑계를 앞세워 형제 분배 몫을 가린 건 맞습니다.",
+            "누나도 같은 설명으로 맞춰 갔고 저도 그걸 실무처럼 밀었습니다."
+          ],
+          "privateKnowledge": [
+            "제가 숫자와 일정 얘기로 핵심 돈 흐름 답변을 뒤로 미루는 버릇을 이용했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family09:b:tell:soft_minimizing",
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-5:s3:rule:0",
+              "factText": "세금과 명도비 핑계를 앞세워 형제 분배 몫을 가린 건 맞습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-5:s3:rule:1",
+              "factText": "누나도 같은 설명으로 맞춰 갔고 저도 그걸 실무처럼 밀었습니다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "person_sibling": {
+                  "fullName": "최민아·최도윤",
+                  "judgeRef": "남매",
+                  "neutral": "형제"
+                },
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family09:b:d-5:s3:rule:2",
+              "factText": "제가 숫자와 일정 얘기로 핵심 돈 흐름 답변을 뒤로 미루는 버릇을 이용했다",
+              "tags": [
+                "rule",
+                "evidence",
+                "context",
+                "relationship",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "현장 처리라고 줄여 말했지만 결국 부모 판단을 흐린 겁니다.",
+            "제가 실무자처럼 보이고 싶어서 더 정당화했습니다."
+          ],
+          "privateKnowledge": [
+            "실무 노고를 방패로 삼아 설명책임을 피했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:b:tell:fieldwork_shield",
+            "family09:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-5:s4:rule:0",
+              "factText": "현장 처리라고 줄여 말했지만 결국 부모 판단을 흐린 겁니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-5:s4:rule:1",
+              "factText": "제가 실무자처럼 보이고 싶어서 더 정당화했습니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-5:s4:rule:2",
+              "factText": "실무 노고를 방패로 삼아 설명책임을 피했다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "저와 민아는 부모에게 세금, 수수료, 명도비만 강조하며 계약 밖 보전금을 숨겼습니다.",
+            "남는 돈 구조를 공동으로 축소 설명한 책임을 인정합니다."
+          ],
+          "privateKnowledge": [
+            "가족 신뢰를 무너뜨린 건 설명 축소를 합의했다는 사실 자체였다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family09:b:tell:fieldwork_shield"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family09:b:d-5:s5:rule:0",
+              "factText": "저와 민아는 부모에게 세금, 수수료, 명도비만 강조하며 계약 밖 보전금을 숨겼습니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "identity",
+                "responsibility"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                },
+                "person_parents": {
+                  "fullName": "최정자 외 1",
+                  "judgeRef": "부모님",
+                  "neutral": "부모"
+                },
+                "person_sibling": {
+                  "fullName": "최민아·최도윤",
+                  "judgeRef": "남매",
+                  "neutral": "형제"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-5:s5:rule:1",
+              "factText": "남는 돈 구조를 공동으로 축소 설명한 책임을 인정합니다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "amount_total": {
+                  "exact": "6,600만원",
+                  "rounded": "6천6백만원",
+                  "neutral": "숨긴 보전금"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family09:b:d-5:s5:rule:2",
+              "factText": "가족 신뢰를 무너뜨린 건 설명 축소를 합의했다는 사실 자체였다",
+              "tags": [
+                "emotion",
+                "rule",
+                "evidence",
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "cost_labels": {
+                  "exact": "세금·수수료·명도비",
+                  "neutral": "비용 항목"
+                },
+                "time": {
+                  "dateExact": "부모 설명 브리핑 당일",
+                  "period": "잔금 조건 확정 직전",
+                  "neutral": "그 자리"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+
+export default family09V2Atoms;

@@ -1,0 +1,2094 @@
+export const spouse09V3GameLoopData = {
+  "caseId": "spouse-09",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "예약금의 실체",
+      "description": "390만원 송금과 병동 대기 문서를 함께 보면 송금의 용도와 비밀 처리 책임이 동시에 드러난다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "유선아 씨, 최서정 이름만 보고 사적 송금으로 판단한 근거가 실제 문맥보다 강했다고 볼 여지는 없습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse09:a:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "대기확약서와 선수금 영수증이 이어지는데도, 지금도 390만원 송금을 전적으로 사적 유용처럼 보십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse09:a:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "간병 예약 목적과 공유 위반 책임을 분리해서 보면, 병원비 공황의 원인을 한 사람에게만 둘 수 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse09:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "강도현 씨, 21시 42분 이체 뒤 18분 만에 병원 주차정산이 찍힌 상황을 부인하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse09:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "최서정이 개인 지인이 아니라 원무주임이었다면, 왜 그 신원을 먼저 밝히지 않았습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse09:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "간병 대기 문서가 있는데도 배우자 공유를 미룬 이유는 급박함입니까, 아니면 낙인에 대한 두려움입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse09:b:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "잘린 대화와 숨은 보험금",
+      "description": "오해를 만든 캡처와 이미 들어와 있던 보험금을 나란히 보면 두 사람의 해석 공백이 선명해진다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "보험금 지급결정서와 개인계좌 입금내역이 있는데도 '쓴 돈은 아니다'라고만 답하는 이유가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse09:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "보험금이 도현 송금 이틀 전에 이미 들어와 있었다면, 병원비 공황 설명도 수정돼야 하지 않습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse09:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "배우자 휴대폰 캡처를 근거로 의심하면서 정작 본인 보험금 흐름은 숨긴 이유를 설명해 보십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse09:a:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "잘린 캡처만으로는 관계를 단정할 수 없는데, 왜 원무주임 직함이 빠진 대화를 즉시 정정하지 않았습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse09:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "보험금 930만원이 이미 존재했다는 사실을 알았다면, 병원비 공황 원인을 지금처럼 말할 수 있었습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse09:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "유선아 씨가 캡처를 본 뒤에도 최서정의 역할을 설명하지 않은 건 오해를 사실상 방치한 것 아닙니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse09:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "오빠 계좌와 2022년 메모",
+      "description": "남매 계좌 흐름과 과거 공개원칙을 함께 대조하면 정당화와 실제 책임의 경계가 드러난다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "보험금 입금 43분 뒤 오빠 계좌로 전액 이체한 사실을 부인하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse09:a:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "공개원칙 메모를 알고도 이번만 예외라고 정한 기준이 실제로 있었습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse09:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "도현 책임을 묻는 것과 별개로, 숨긴 보험금이 유동성을 막아 병원비 공황을 키운 점은 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse09:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "2022년 이후 같은 날 공유 원칙을 적어 두고도, 이번 390만원 송금을 먼저 알리지 않은 이유는 무엇입니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse09:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "유성민 계좌까지 동원된 사실이 확인된 뒤에도 병원비 공황 원인을 자신 쪽이 아니라고만 말할 수 있습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse09:b:d-5:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "선아 씨의 불안 배경에 2022년 사건이 남아 있다는 점을 지금 이 자리에서 인정합니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse09:b:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "spouse09:a:d-1:unlock:s2:0",
+            "factText": "주차기록과 대기확약서가 연결되면 선아도 송금의 병원 맥락을 일부 인정하게 된다.",
+            "tags": [
+              "admission",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 금액"
+              },
+              "time": {
+                "exact": "21시 42분",
+                "dateExact": "21시 42분",
+                "period": "같은 날 밤",
+                "neutral": "그 시점"
+              },
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 수취인"
+              },
+              "account": {
+                "exact": "공동생활비 계좌",
+                "neutral": "공동계좌"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse09:a:d-1:unlock:s3:0",
+            "factText": "선아는 목적이 간병이라 해도 부부 공유 원칙을 깨고 공동생활비를 단독 사용한 책임을 도현에게 묻는다.",
+            "tags": [
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 금액"
+              },
+              "time": {
+                "exact": "21시 42분",
+                "dateExact": "21시 42분",
+                "period": "같은 날 밤",
+                "neutral": "그 시점"
+              },
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 수취인"
+              },
+              "account": {
+                "exact": "공동생활비 계좌",
+                "neutral": "공동계좌"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse09:a:d-1:unlock:s4:0",
+            "factText": "선아는 여성 이름 수취인과 늦은 설명이 2022년 부채 기억을 되살렸다는 감정을 드러낸다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 금액"
+              },
+              "time": {
+                "exact": "21시 42분",
+                "dateExact": "21시 42분",
+                "period": "같은 날 밤",
+                "neutral": "그 시점"
+              },
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 수취인"
+              },
+              "account": {
+                "exact": "공동생활비 계좌",
+                "neutral": "공동계좌"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse09:a:d-1:unlock:s5:0",
+            "factText": "선아는 송금 목적이 선수금이었다고 인정하면서도 설명 지연이 공황을 키웠다고 정리한다.",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 금액"
+              },
+              "time": {
+                "exact": "21시 42분",
+                "dateExact": "21시 42분",
+                "period": "같은 날 밤",
+                "neutral": "그 시점"
+              },
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 수취인"
+              },
+              "account": {
+                "exact": "공동생활비 계좌",
+                "neutral": "공동계좌"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse09:a:d-2:unlock:s2:0",
+            "factText": "보험금 930만원이 선아 개인계좌로 들어온 뒤 같은 날 오빠 계좌로 이동한 사실이 확인된다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "입금 후 43분 뒤",
+                "dateExact": "입금 후 43분 뒤",
+                "period": "같은 날 오전",
+                "neutral": "그 직후"
+              },
+              "person": {
+                "exact": "유성민",
+                "fullName": "유성민",
+                "judgeRef": "오빠",
+                "neutral": "가족 계좌 명의자"
+              },
+              "account": {
+                "exact": "선아 개인계좌",
+                "neutral": "개인계좌"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse09:a:d-2:unlock:s3:0",
+            "factText": "선아는 남매 대화에서 '도현한텐 퇴원 일정 정해지면 말할게'라며 비공개 의도를 남겼다.",
+            "tags": [
+              "self_justification",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "입금 후 43분 뒤",
+                "dateExact": "입금 후 43분 뒤",
+                "period": "같은 날 오전",
+                "neutral": "그 직후"
+              },
+              "person": {
+                "exact": "유성민",
+                "fullName": "유성민",
+                "judgeRef": "오빠",
+                "neutral": "가족 계좌 명의자"
+              },
+              "account": {
+                "exact": "선아 개인계좌",
+                "neutral": "개인계좌"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse09:a:d-2:unlock:s4:0",
+            "factText": "선아는 돈을 쓴 게 아니라 묶어 둔 것이라고 범위를 잘게 쪼개 책임을 줄이려 했다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "입금 후 43분 뒤",
+                "dateExact": "입금 후 43분 뒤",
+                "period": "같은 날 오전",
+                "neutral": "그 직후"
+              },
+              "person": {
+                "exact": "유성민",
+                "fullName": "유성민",
+                "judgeRef": "오빠",
+                "neutral": "가족 계좌 명의자"
+              },
+              "account": {
+                "exact": "선아 개인계좌",
+                "neutral": "개인계좌"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse09:a:d-2:unlock:s5:0",
+            "factText": "선아는 공개원칙을 알면서도 불안 때문에 배우자를 배제한 채 보험금을 숨겼다고 인정한다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "입금 후 43분 뒤",
+                "dateExact": "입금 후 43분 뒤",
+                "period": "같은 날 오전",
+                "neutral": "그 직후"
+              },
+              "person": {
+                "exact": "유성민",
+                "fullName": "유성민",
+                "judgeRef": "오빠",
+                "neutral": "가족 계좌 명의자"
+              },
+              "account": {
+                "exact": "선아 개인계좌",
+                "neutral": "개인계좌"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse09:a:d-3:unlock:s2:0",
+            "factText": "선아는 최서정이 원무주임이라는 정보가 확인되면 사적 관계 단정이 흔들린다.",
+            "tags": [
+              "admission",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 담당자"
+              },
+              "quote": {
+                "exact": "\"밤 10시 전에 다시 봐요\"",
+                "neutral": "그 메시지 문구"
+              },
+              "time": {
+                "exact": "밤 10시 전",
+                "dateExact": "밤 10시 전",
+                "period": "늦은 밤",
+                "neutral": "그 시간대"
+              },
+              "evidence": {
+                "exact": "잘린 메신저 캡처",
+                "neutral": "일부 캡처"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse09:a:d-3:unlock:s3:0",
+            "factText": "선아는 잘린 캡처만으로 외도성 지출을 단정한 판단이 약해졌음을 드러낸다.",
+            "tags": [
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 담당자"
+              },
+              "quote": {
+                "exact": "\"밤 10시 전에 다시 봐요\"",
+                "neutral": "그 메시지 문구"
+              },
+              "time": {
+                "exact": "밤 10시 전",
+                "dateExact": "밤 10시 전",
+                "period": "늦은 밤",
+                "neutral": "그 시간대"
+              },
+              "evidence": {
+                "exact": "잘린 메신저 캡처",
+                "neutral": "일부 캡처"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse09:a:d-3:unlock:s4:0",
+            "factText": "선아는 이름·야간 대화·주차기록이 겹치자 과거 은닉 기억 때문에 의심을 키웠다고 털어놓는다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 담당자"
+              },
+              "quote": {
+                "exact": "\"밤 10시 전에 다시 봐요\"",
+                "neutral": "그 메시지 문구"
+              },
+              "time": {
+                "exact": "밤 10시 전",
+                "dateExact": "밤 10시 전",
+                "period": "늦은 밤",
+                "neutral": "그 시간대"
+              },
+              "evidence": {
+                "exact": "잘린 메신저 캡처",
+                "neutral": "일부 캡처"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse09:a:d-3:unlock:s5:0",
+            "factText": "선아는 외도성 지출이 아니었다고 인정하면서도 설명 부재가 오해를 만들었다고 정리한다.",
+            "tags": [
+              "admission",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 담당자"
+              },
+              "quote": {
+                "exact": "\"밤 10시 전에 다시 봐요\"",
+                "neutral": "그 메시지 문구"
+              },
+              "time": {
+                "exact": "밤 10시 전",
+                "dateExact": "밤 10시 전",
+                "period": "늦은 밤",
+                "neutral": "그 시간대"
+              },
+              "evidence": {
+                "exact": "잘린 메신저 캡처",
+                "neutral": "일부 캡처"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse09:a:d-4:unlock:s2:0",
+            "factText": "2022년 사건 뒤 작성된 '보험금·대출은 같은 날 공유' 메모가 현재도 남아 있다.",
+            "tags": [
+              "rule",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "year": {
+                "exact": "2022년",
+                "neutral": "그때"
+              },
+              "rule": {
+                "exact": "보험금·대출은 같은 날 공유",
+                "neutral": "당시 공개원칙"
+              },
+              "document": {
+                "exact": "채무상환 합의서와 공개원칙 메모",
+                "neutral": "그 합의 문서"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse09:a:d-4:unlock:s3:0",
+            "factText": "선아는 규칙을 알면서도 이번만 예외라고 스스로 정해 행동했다는 점이 드러난다.",
+            "tags": [
+              "self_justification",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "year": {
+                "exact": "2022년",
+                "neutral": "그때"
+              },
+              "rule": {
+                "exact": "보험금·대출은 같은 날 공유",
+                "neutral": "당시 공개원칙"
+              },
+              "document": {
+                "exact": "채무상환 합의서와 공개원칙 메모",
+                "neutral": "그 합의 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse09:a:d-4:unlock:s4:0",
+            "factText": "선아는 과거처럼 돈 문제가 다시 무너지면 통제권을 잃는다는 공포를 꺼내 놓는다.",
+            "tags": [
+              "shame",
+              "rule"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "year": {
+                "exact": "2022년",
+                "neutral": "그때"
+              },
+              "rule": {
+                "exact": "보험금·대출은 같은 날 공유",
+                "neutral": "당시 공개원칙"
+              },
+              "document": {
+                "exact": "채무상환 합의서와 공개원칙 메모",
+                "neutral": "그 합의 문서"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse09:a:d-4:unlock:s5:0",
+            "factText": "선아는 과거 부채 사건이 현재 은닉의 면책 사유가 될 수 없음을 인정한다.",
+            "tags": [
+              "admission",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "year": {
+                "exact": "2022년",
+                "neutral": "그때"
+              },
+              "rule": {
+                "exact": "보험금·대출은 같은 날 공유",
+                "neutral": "당시 공개원칙"
+              },
+              "document": {
+                "exact": "채무상환 합의서와 공개원칙 메모",
+                "neutral": "그 합의 문서"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse09:a:d-5:unlock:s2:0",
+            "factText": "병원비 공황 직전에도 보험금 완충자금이 공개되지 않아 실제 유동성 판단이 비어 있었다.",
+            "tags": [
+              "admission",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amountA": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 예약금"
+              },
+              "amountB": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "퇴원 일정 변동 직전",
+                "period": "퇴원 일정 변동 직전",
+                "neutral": "그 시기"
+              },
+              "context": {
+                "exact": "통합간병 병동 대기 순번",
+                "neutral": "간병 일정"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse09:a:d-5:unlock:s3:0",
+            "factText": "선아는 자신의 우회 보관이 병원비 대응 가능 자금을 보이지 않게 만들었다는 점을 인정하게 된다.",
+            "tags": [
+              "self_justification",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amountA": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 예약금"
+              },
+              "amountB": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "퇴원 일정 변동 직전",
+                "period": "퇴원 일정 변동 직전",
+                "neutral": "그 시기"
+              },
+              "context": {
+                "exact": "통합간병 병동 대기 순번",
+                "neutral": "간병 일정"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse09:a:d-5:unlock:s4:0",
+            "factText": "선아는 '누가 먼저 숨겼나'보다 '둘 다 숨겼다'는 사실이 더 무겁게 느껴진다고 토로한다.",
+            "tags": [
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amountA": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 예약금"
+              },
+              "amountB": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "퇴원 일정 변동 직전",
+                "period": "퇴원 일정 변동 직전",
+                "neutral": "그 시기"
+              },
+              "context": {
+                "exact": "통합간병 병동 대기 순번",
+                "neutral": "간병 일정"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse09:a:d-5:unlock:s5:0",
+            "factText": "선아는 현재 공황이 도현의 비밀 송금만이 아니라 숨긴 보험금과 일정 압박이 함께 만든 결과라고 인정한다.",
+            "tags": [
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amountA": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 예약금"
+              },
+              "amountB": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "퇴원 일정 변동 직전",
+                "period": "퇴원 일정 변동 직전",
+                "neutral": "그 시기"
+              },
+              "context": {
+                "exact": "통합간병 병동 대기 순번",
+                "neutral": "간병 일정"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "spouse09:b:d-1:unlock:s2:0",
+            "factText": "390만원 송금 직후 병원 주차정산이 이어졌고, 송금 대상은 통합간병 대기 건과 연결된다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 금액"
+              },
+              "time": {
+                "exact": "21시 42분",
+                "dateExact": "21시 42분",
+                "period": "같은 날 밤",
+                "neutral": "그 시점"
+              },
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 수취인"
+              },
+              "account": {
+                "exact": "공동생활비 계좌",
+                "neutral": "공동계좌"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse09:b:d-1:unlock:s3:0",
+            "factText": "대기확약서 보호자 연락처에 도현 번호가 등록돼 있어 그가 직접 예약 절차를 밟았음이 드러난다.",
+            "tags": [
+              "self_justification",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 금액"
+              },
+              "time": {
+                "exact": "21시 42분",
+                "dateExact": "21시 42분",
+                "period": "같은 날 밤",
+                "neutral": "그 시점"
+              },
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 수취인"
+              },
+              "account": {
+                "exact": "공동생활비 계좌",
+                "neutral": "공동계좌"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse09:b:d-1:unlock:s4:0",
+            "factText": "도현은 또 돈을 숨긴 남편으로 보일까 봐 목적 설명을 늦췄다는 두려움을 인정한다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 금액"
+              },
+              "time": {
+                "exact": "21시 42분",
+                "dateExact": "21시 42분",
+                "period": "같은 날 밤",
+                "neutral": "그 시점"
+              },
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 수취인"
+              },
+              "account": {
+                "exact": "공동생활비 계좌",
+                "neutral": "공동계좌"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse09:b:d-1:unlock:s5:0",
+            "factText": "도현은 공동생활비 390만원을 상의 없이 선수금으로 보낸 사실과 그 책임을 시인한다.",
+            "tags": [
+              "admission",
+              "act"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 금액"
+              },
+              "time": {
+                "exact": "21시 42분",
+                "dateExact": "21시 42분",
+                "period": "같은 날 밤",
+                "neutral": "그 시점"
+              },
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 수취인"
+              },
+              "account": {
+                "exact": "공동생활비 계좌",
+                "neutral": "공동계좌"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse09:b:d-2:unlock:s2:0",
+            "factText": "도현은 보험금 자체보다 배우자 공유 없이 제3자 계좌로 옮겨진 점을 핵심 문제로 본다.",
+            "tags": [
+              "admission",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "입금 후 43분 뒤",
+                "dateExact": "입금 후 43분 뒤",
+                "period": "같은 날 오전",
+                "neutral": "그 직후"
+              },
+              "person": {
+                "exact": "유성민",
+                "fullName": "유성민",
+                "judgeRef": "오빠",
+                "neutral": "가족 계좌 명의자"
+              },
+              "account": {
+                "exact": "선아 개인계좌",
+                "neutral": "개인계좌"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse09:b:d-2:unlock:s3:0",
+            "factText": "도현은 자신의 과거 전력이 선아의 우회 보관을 자극했을 수 있음을 일부 인정한다.",
+            "tags": [
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "입금 후 43분 뒤",
+                "dateExact": "입금 후 43분 뒤",
+                "period": "같은 날 오전",
+                "neutral": "그 직후"
+              },
+              "person": {
+                "exact": "유성민",
+                "fullName": "유성민",
+                "judgeRef": "오빠",
+                "neutral": "가족 계좌 명의자"
+              },
+              "account": {
+                "exact": "선아 개인계좌",
+                "neutral": "개인계좌"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse09:b:d-2:unlock:s4:0",
+            "factText": "도현은 '간병비 보관' 명분과 '배우자 배제' 결과를 분리해 듣기 시작한다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "입금 후 43분 뒤",
+                "dateExact": "입금 후 43분 뒤",
+                "period": "같은 날 오전",
+                "neutral": "그 직후"
+              },
+              "person": {
+                "exact": "유성민",
+                "fullName": "유성민",
+                "judgeRef": "오빠",
+                "neutral": "가족 계좌 명의자"
+              },
+              "account": {
+                "exact": "선아 개인계좌",
+                "neutral": "개인계좌"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse09:b:d-2:unlock:s5:0",
+            "factText": "도현은 선아의 은닉 책임을 인정하면서도 그 불안의 배경 일부가 자신에게 있음을 시인한다.",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "입금 후 43분 뒤",
+                "dateExact": "입금 후 43분 뒤",
+                "period": "같은 날 오전",
+                "neutral": "그 직후"
+              },
+              "person": {
+                "exact": "유성민",
+                "fullName": "유성민",
+                "judgeRef": "오빠",
+                "neutral": "가족 계좌 명의자"
+              },
+              "account": {
+                "exact": "선아 개인계좌",
+                "neutral": "개인계좌"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse09:b:d-3:unlock:s2:0",
+            "factText": "최서정은 병동 원무주임이고 '다시 봐요'는 병동 설명 재조율 문맥이었다는 점이 드러난다.",
+            "tags": [
+              "admission",
+              "institution"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 담당자"
+              },
+              "quote": {
+                "exact": "\"밤 10시 전에 다시 봐요\"",
+                "neutral": "그 메시지 문구"
+              },
+              "time": {
+                "exact": "밤 10시 전",
+                "dateExact": "밤 10시 전",
+                "period": "늦은 밤",
+                "neutral": "그 시간대"
+              },
+              "evidence": {
+                "exact": "잘린 메신저 캡처",
+                "neutral": "일부 캡처"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse09:b:d-3:unlock:s3:0",
+            "factText": "잘린 캡처에는 직함과 상단 안내 문구가 빠져 있어 오해가 커질 여지가 있었다.",
+            "tags": [
+              "self_justification",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 담당자"
+              },
+              "quote": {
+                "exact": "\"밤 10시 전에 다시 봐요\"",
+                "neutral": "그 메시지 문구"
+              },
+              "time": {
+                "exact": "밤 10시 전",
+                "dateExact": "밤 10시 전",
+                "period": "늦은 밤",
+                "neutral": "그 시간대"
+              },
+              "evidence": {
+                "exact": "잘린 메신저 캡처",
+                "neutral": "일부 캡처"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse09:b:d-3:unlock:s4:0",
+            "factText": "도현은 외도로 오해받을까 두려워 오히려 맥락 설명을 더 미뤘다고 인정한다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 담당자"
+              },
+              "quote": {
+                "exact": "\"밤 10시 전에 다시 봐요\"",
+                "neutral": "그 메시지 문구"
+              },
+              "time": {
+                "exact": "밤 10시 전",
+                "dateExact": "밤 10시 전",
+                "period": "늦은 밤",
+                "neutral": "그 시간대"
+              },
+              "evidence": {
+                "exact": "잘린 메신저 캡처",
+                "neutral": "일부 캡처"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse09:b:d-3:unlock:s5:0",
+            "factText": "도현은 사적 관계가 아니었음을 분명히 하면서도, 오해를 방치한 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "institution"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "최서정",
+                "fullName": "최서정",
+                "judgeRef": "원무주임",
+                "neutral": "그 담당자"
+              },
+              "quote": {
+                "exact": "\"밤 10시 전에 다시 봐요\"",
+                "neutral": "그 메시지 문구"
+              },
+              "time": {
+                "exact": "밤 10시 전",
+                "dateExact": "밤 10시 전",
+                "period": "늦은 밤",
+                "neutral": "그 시간대"
+              },
+              "evidence": {
+                "exact": "잘린 메신저 캡처",
+                "neutral": "일부 캡처"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse09:b:d-4:unlock:s2:0",
+            "factText": "도현은 현재 면책 여부 판단에서 공개원칙 메모를 근거로 든다.",
+            "tags": [
+              "rule",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "year": {
+                "exact": "2022년",
+                "neutral": "그때"
+              },
+              "rule": {
+                "exact": "보험금·대출은 같은 날 공유",
+                "neutral": "당시 공개원칙"
+              },
+              "document": {
+                "exact": "채무상환 합의서와 공개원칙 메모",
+                "neutral": "그 합의 문서"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse09:b:d-4:unlock:s3:0",
+            "factText": "도현은 그 메모가 생긴 원인이 자신의 2022년 은닉이었다는 점을 인정하게 된다.",
+            "tags": [
+              "admission",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "year": {
+                "exact": "2022년",
+                "neutral": "그때"
+              },
+              "rule": {
+                "exact": "보험금·대출은 같은 날 공유",
+                "neutral": "당시 공개원칙"
+              },
+              "document": {
+                "exact": "채무상환 합의서와 공개원칙 메모",
+                "neutral": "그 합의 문서"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse09:b:d-4:unlock:s4:0",
+            "factText": "도현은 과거 사건의 상처가 선아의 현재 판단을 왜곡할 정도로 남아 있음을 본다.",
+            "tags": [
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "year": {
+                "exact": "2022년",
+                "neutral": "그때"
+              },
+              "rule": {
+                "exact": "보험금·대출은 같은 날 공유",
+                "neutral": "당시 공개원칙"
+              },
+              "document": {
+                "exact": "채무상환 합의서와 공개원칙 메모",
+                "neutral": "그 합의 문서"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse09:b:d-4:unlock:s5:0",
+            "factText": "도현은 과거 잘못이 현재 은닉을 정당화하진 못하지만 그 배경 책임 일부는 자신에게 있다고 시인한다.",
+            "tags": [
+              "admission",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "year": {
+                "exact": "2022년",
+                "neutral": "그때"
+              },
+              "rule": {
+                "exact": "보험금·대출은 같은 날 공유",
+                "neutral": "당시 공개원칙"
+              },
+              "document": {
+                "exact": "채무상환 합의서와 공개원칙 메모",
+                "neutral": "그 합의 문서"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse09:b:d-5:unlock:s2:0",
+            "factText": "도현은 보험금 930만원의 비공개 보관이 현금 압박 판단을 흐렸다는 사실을 붙잡는다.",
+            "tags": [
+              "admission",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amountA": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 예약금"
+              },
+              "amountB": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "퇴원 일정 변동 직전",
+                "period": "퇴원 일정 변동 직전",
+                "neutral": "그 시기"
+              },
+              "context": {
+                "exact": "통합간병 병동 대기 순번",
+                "neutral": "간병 일정"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse09:b:d-5:unlock:s3:0",
+            "factText": "도현은 자신의 비밀 송금이 불씨였고 선아의 은닉이 연료가 됐다는 구조를 인정하기 시작한다.",
+            "tags": [
+              "self_justification",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amountA": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 예약금"
+              },
+              "amountB": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "퇴원 일정 변동 직전",
+                "period": "퇴원 일정 변동 직전",
+                "neutral": "그 시기"
+              },
+              "context": {
+                "exact": "통합간병 병동 대기 순번",
+                "neutral": "간병 일정"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse09:b:d-5:unlock:s4:0",
+            "factText": "도현은 '내 탓만은 아니다'에서 한 걸음 물러나 서로 숨긴 돈길이 겹쳤다는 점을 말한다.",
+            "tags": [
+              "emotion",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amountA": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 예약금"
+              },
+              "amountB": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "퇴원 일정 변동 직전",
+                "period": "퇴원 일정 변동 직전",
+                "neutral": "그 시기"
+              },
+              "context": {
+                "exact": "통합간병 병동 대기 순번",
+                "neutral": "간병 일정"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse09:b:d-5:unlock:s5:0",
+            "factText": "도현은 병원비 공황의 원인이 단독 행위가 아니라 상호 은닉과 일정 압박의 결합이었다고 시인한다.",
+            "tags": [
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amountA": {
+                "exact": "3,900,000원",
+                "rounded": "390만원",
+                "neutral": "그 예약금"
+              },
+              "amountB": {
+                "exact": "9,300,000원",
+                "rounded": "930만원",
+                "neutral": "그 보험금"
+              },
+              "time": {
+                "exact": "퇴원 일정 변동 직전",
+                "period": "퇴원 일정 변동 직전",
+                "neutral": "그 시기"
+              },
+              "context": {
+                "exact": "통합간병 병동 대기 순번",
+                "neutral": "간병 일정"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "spouse09:contradiction:0",
+        "targetParty": "b",
+        "trigger": "도현이 최서정을 개인 지인처럼 흐리거나 송금 목적을 개인 용도로 축소할 때",
+        "text": "개인 송금이라던 설명과 달리, 같은 예약번호의 대기확약서와 선수금 영수증이 존재합니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-2"
+        ]
+      },
+      {
+        "id": "spouse09:contradiction:1",
+        "targetParty": "a",
+        "trigger": "선아가 보험금은 아직 손대지 않은 범주의 일이라며 자금 흐름 자체를 흐릴 때",
+        "text": "보험금 930만원은 이미 선아 계좌에 입금됐고, 43분 뒤 유성민 계좌로 전액 이동했습니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-5"
+        ]
+      },
+      {
+        "id": "spouse09:contradiction:2",
+        "targetParty": "a",
+        "trigger": "선아가 2022년 사건을 현재 은닉의 면책 근거처럼 사용할 때",
+        "text": "과거 채무 합의 직후 두 사람은 보험금·대출을 같은 날 공유하기로 메모했습니다.",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      },
+      {
+        "id": "spouse09:contradiction:3",
+        "targetParty": "b",
+        "trigger": "도현이 병원비 공황을 선아 은닉 탓으로만 돌리거나 자신의 비밀 송금을 배경으로 밀어낼 때",
+        "text": "공황은 도현의 비밀 송금과 선아의 비공개 보험금 보관이 함께 겹친 결과입니다.",
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-4",
+          "e-5"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "spouse09:interjection:0",
+        "speaker": "a",
+        "trigger": "d-3에서 잘린 메신저 캡처의 해석을 두고 공방이 길어질 때",
+        "text": "이름 가린 채로 그 캡처를 본 사람이 왜 그렇게 생각했는지부터 보셔야죠.",
+        "relatedDisputes": [
+          "d-3"
+        ]
+      },
+      {
+        "id": "spouse09:interjection:1",
+        "speaker": "b",
+        "trigger": "선아가 d-1만 강하게 몰아붙이면서 d-2를 계속 비켜 갈 때",
+        "text": "그 얘기만 할 거면 보험금은 왜 말 안 했는지도 같이 물어야 하는 거 아닙니까?",
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ]
+      },
+      {
+        "id": "spouse09:interjection:2",
+        "speaker": "judge",
+        "trigger": "두 사람이 계속 상대 의도만 말하고 실제 돈의 흐름을 분리해 답하지 않을 때",
+        "text": "두 사람 모두 '숨긴 이유'와 '실제 자금 이동'을 분리해서 답하십시오.",
+        "relatedDisputes": [
+          "d-1",
+          "d-2",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "spouse09:outburst:a:0",
+        "party": "a",
+        "trigger": "d-4에서 2022년 사건이 반복해서 거론되고 선아의 정당화가 흔들릴 때",
+        "text": "그때 한 번 무너진 뒤로 저는 같은 계좌에 돈 두는 게 아직도 무서워요.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse09:outburst:a:1",
+        "party": "a",
+        "trigger": "d-5에서 병원비 공황 책임이 공동 원인으로 정리되기 시작할 때",
+        "text": "제가 악의로 숨긴 것처럼만 말하면, 밤마다 간병비 계산한 시간은 다 뭐였습니까.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "spouse09:outburst:b:0",
+        "party": "b",
+        "trigger": "d-1에서 도현이 선수금 송금 사실을 더는 부인할 수 없게 될 때",
+        "text": "장모님 병동 자리가 끊길까 봐 뛰어다닌 사람도 저였습니다.",
+        "relatedDisputes": [
+          "d-1"
+        ]
+      },
+      {
+        "id": "spouse09:outburst:b:1",
+        "party": "b",
+        "trigger": "d-2와 d-5가 연결되어 처가 오빠 계좌 개입까지 확인될 때",
+        "text": "처가 오빠 계좌까지 다 돌아간 뒤에야 제가 마지막으로 알았다는 게 제일 서러웠어요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "spouse09:transition:a:d-2:s0_s1",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "insurance_payment_question",
+      "line": "받긴 했어도 확정 보관만 한 거지, 공동자금처럼 바로 풀어 쓴 건 아니었습니다.",
+      "behaviorHint": "말의 단정을 늦추고, 보관과 사용 같은 범주를 잘게 나눠 설명한다."
+    },
+    {
+      "id": "spouse09:transition:a:d-2:s1_s2",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "제 계좌로 들어온 뒤 오빠 계좌로 옮긴 건 맞습니다. 그래도 그때 판단은 병원비를 묶어 두려는 쪽에 가까웠어요.",
+      "behaviorHint": "핵심 사실 하나를 인정한 뒤 곧바로 대비책이나 목적 설명을 붙인다."
+    },
+    {
+      "id": "spouse09:transition:a:d-2:s2_s3",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "brother_account_followup",
+      "line": "왜 그렇게까지 했는지 묻는다면, 2022년 일 이후 같은 계좌에 두는 게 더 무서웠기 때문입니다.",
+      "behaviorHint": "서류나 과거 사건을 끌어오며 책임의 방향을 상대 쪽으로 돌린다."
+    },
+    {
+      "id": "spouse09:transition:a:d-2:s3_s5",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_or_responsibility_question",
+      "line": "네, 결국 제가 보험금을 숨긴 겁니다. 불안이 이유였어도 공유 원칙을 깬 책임은 제 몫이에요.",
+      "behaviorHint": "변명 문장을 줄이고 사실과 책임을 한 호흡으로 정리한다."
+    },
+    {
+      "id": "spouse09:transition:a:d-4:s0_s1",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "past_debt_reference",
+      "line": "정당화라는 말은 과하지만, 적어도 제가 왜 그렇게 경계했는지는 봐주셔야 합니다.",
+      "behaviorHint": "말의 단정을 늦추고, 보관과 사용 같은 범주를 잘게 나눠 설명한다."
+    },
+    {
+      "id": "spouse09:transition:a:d-4:s1_s2",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "공개원칙 메모가 있는 건 압니다. 그래도 그 규칙이 제 불안을 완전히 지워주진 못했어요.",
+      "behaviorHint": "핵심 사실 하나를 인정한 뒤 곧바로 대비책이나 목적 설명을 붙인다."
+    },
+    {
+      "id": "spouse09:transition:a:d-4:s2_s3",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "same_day_disclosure_question",
+      "line": "원칙을 깨게 만든 첫 출발점은 도현 씨의 2022년 은닉이었습니다.",
+      "behaviorHint": "서류나 과거 사건을 끌어오며 책임의 방향을 상대 쪽으로 돌린다."
+    },
+    {
+      "id": "spouse09:transition:a:d-4:s3_s5",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_boundary_question",
+      "line": "2022년 일을 이유로 든다고 해서 이번 행동이 정당해지진 않는다는 건 압니다.",
+      "behaviorHint": "변명 문장을 줄이고 사실과 책임을 한 호흡으로 정리한다."
+    },
+    {
+      "id": "spouse09:transition:a:d-5:s0_s1",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "cash_crisis_question",
+      "line": "전부라고까진 안 해도, 적어도 그 송금이 공황을 터뜨린 직접 계기였다고 봅니다.",
+      "behaviorHint": "말의 단정을 늦추고, 보관과 사용 같은 범주를 잘게 나눠 설명한다."
+    },
+    {
+      "id": "spouse09:transition:a:d-5:s1_s2",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_fear",
+      "line": "그 송금이 계기였던 건 맞지만, 제 쪽 자금도 바로 공개되지 않아 대응이 늦어진 건 사실입니다.",
+      "behaviorHint": "핵심 사실 하나를 인정한 뒤 곧바로 대비책이나 목적 설명을 붙인다."
+    },
+    {
+      "id": "spouse09:transition:a:d-5:s2_s3",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "who_held_the_money_followup",
+      "line": "서로 숨긴 돈이 있었다 해도, 먼저 공동생활비를 건드린 쪽은 도현 씨였습니다.",
+      "behaviorHint": "서류나 과거 사건을 끌어오며 책임의 방향을 상대 쪽으로 돌린다."
+    },
+    {
+      "id": "spouse09:transition:a:d-5:s3_s5",
+      "caseId": "spouse-09",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_budget_question",
+      "line": "병원비 공황을 도현 씨 한 사람 탓으로만 돌리면 안 됩니다. 제 은닉도 같이 작동했습니다.",
+      "behaviorHint": "변명 문장을 줄이고 사실과 책임을 한 호흡으로 정리한다."
+    },
+    {
+      "id": "spouse09:transition:b:d-1:s0_s1",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "reservation_transfer_question",
+      "line": "정식 지출이라기보다 자리를 먼저 막아 둔 돈이었어요. 하루 이틀 안에 설명하려던 겁니다.",
+      "behaviorHint": "시간 표현을 앞세우며 결정의 크기를 축소해 말한다."
+    },
+    {
+      "id": "spouse09:transition:b:d-1:s1_s2",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "공동생활비에서 390만원을 먼저 보낸 건 맞습니다. 다만 용도는 간병 병동 대기 확보였습니다.",
+      "behaviorHint": "업무 동선이나 목적어를 먼저 내세워 일부 사실 인정을 밀어 넣는다."
+    },
+    {
+      "id": "spouse09:transition:b:d-1:s2_s3",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "coordinator_identity_followup",
+      "line": "말을 못 한 건 또 돈 숨긴 남편으로 찍힐 게 뻔해서였어요.",
+      "behaviorHint": "억울함을 숨기지 못한 채 상대 반응이나 맥락 부족 탓을 섞어 말한다."
+    },
+    {
+      "id": "spouse09:transition:b:d-1:s3_s5",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_or_responsibility_question",
+      "line": "선아 씨와 상의 없이 선수금을 보낸 건 사실입니다. 간병 목적이어도 숨긴 방식은 제 잘못이에요.",
+      "behaviorHint": "짧게 인정한 뒤 마지막에 책임 문장을 붙이며 고개를 숙인다."
+    },
+    {
+      "id": "spouse09:transition:b:d-3:s1_s2",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "최서정은 원무주임이고 연락도 병동 대기 때문이었습니다. 다만 제가 맥락을 제대로 말하지 않아 오해를 키웠어요.",
+      "behaviorHint": "업무 동선이나 목적어를 먼저 내세워 일부 사실 인정을 밀어 넣는다."
+    },
+    {
+      "id": "spouse09:transition:b:d-3:s2_s3",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "message_context_followup",
+      "line": "잘린 대화만 보면 그렇게 의심할 수도 있지만, 설명할 틈 없이 몰아붙여지니 더 닫혔습니다.",
+      "behaviorHint": "억울함을 숨기지 못한 채 상대 반응이나 맥락 부족 탓을 섞어 말한다."
+    },
+    {
+      "id": "spouse09:transition:b:d-3:s3_s4",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_discharge_panic",
+      "line": "외도로 의심받을까 봐 오히려 더 숨기고 말수를 줄였습니다.",
+      "behaviorHint": "목소리가 낮아지고, 체면보다 두려움이 앞선다."
+    },
+    {
+      "id": "spouse09:transition:b:d-3:s4_s5",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-2_presented",
+      "line": "최서정 씨와의 연락은 병동 대기 때문이었습니다. 외도는 아니었지만 제가 맥락을 숨겼습니다.",
+      "behaviorHint": "짧게 인정한 뒤 마지막에 책임 문장을 붙이며 고개를 숙인다."
+    },
+    {
+      "id": "spouse09:transition:b:d-5:s0_s1",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "who_caused_shortage_question",
+      "line": "제가 먼저 말 안 한 건 잘못인데, 실제 자금막힘은 그것만으로 설명 안 됩니다.",
+      "behaviorHint": "시간 표현을 앞세우며 결정의 크기를 축소해 말한다."
+    },
+    {
+      "id": "spouse09:transition:b:d-5:s1_s2",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "보험금 930만원이 빠져 있었다면 현금 압박 원인은 둘 이상이었던 셈입니다.",
+      "behaviorHint": "업무 동선이나 목적어를 먼저 내세워 일부 사실 인정을 밀어 넣는다."
+    },
+    {
+      "id": "spouse09:transition:b:d-5:s2_s3",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "did_you_know_about_insurance_followup",
+      "line": "저만 몰아세우기엔 선아 씨도 쥐고 있던 돈길을 끝까지 안 열었잖아요.",
+      "behaviorHint": "억울함을 숨기지 못한 채 상대 반응이나 맥락 부족 탓을 섞어 말한다."
+    },
+    {
+      "id": "spouse09:transition:b:d-5:s3_s5",
+      "caseId": "spouse-09",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "맞아요, 제 송금이 불씨였습니다. 그런데 공황은 서로 숨긴 돈과 일정 압박이 겹쳐 커졌어요.",
+      "behaviorHint": "짧게 인정한 뒤 마지막에 책임 문장을 붙이며 고개를 숙인다."
+    }
+  ]
+} as const;
+
+export default spouse09V3GameLoopData;

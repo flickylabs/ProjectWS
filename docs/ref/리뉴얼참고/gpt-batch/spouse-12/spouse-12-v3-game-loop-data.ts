@@ -1,0 +1,1311 @@
+export const spouse12V3GameLoopData = {
+  "caseId": "spouse-12",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "초기 유포와 누락 파일",
+      "description": "전달 로그와 복원 로그를 나란히 대조해 누가 먼저 무엇을 숨기고 퍼뜨렸는지 가르는 카드",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "문세아 씨, 복원 로그상 별도 폴더로 옮긴 메시지 1건은 왜 재우 씨에게 보낸 압축파일에서 빠졌습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse12:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "2006년 원자료를 전부 누명으로만 설명하실 겁니까, 아니면 한유진 씨에게 직접 상처 준 대목은 구분해서 인정하실 겁니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse12:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "'정리 순서'였다는 설명이 사실이라면, 왜 문제 메시지는 익명 게시물 확산 직후에만 따로 이동됐는지 답해 주십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse12:a:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "최재우 씨, 배우자에게 확인 문자를 보내기 전 9분 동안 무엇이 그렇게 급해 운영진 단톡으로 먼저 보냈습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse12:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "운영진 확인이라고 하셨는데, 가족 단톡과 직장 인맥까지 같은 캡처를 보낸 이유는 무엇입니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse12:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "메시지에 '아마 세아가 맞는 것 같다'는 표현이 반복되는데도, 아직도 단정이 아니었다고 보십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse12:b:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "그럴듯한 위조의 외피",
+      "description": "함정 캡처와 포렌식 보고서를 맞물려 오래돼 보이는 것과 실제 오래된 것을 분리하는 카드",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "문세아 씨, 포렌식 보고서가 나오기 전에도 이 캡처가 이상하다고 느낀 대목이 있었다면 구체적으로 말씀해 주십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse12:a:d-4:unlock:s2:0",
+                "lieAdvance": false
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "이 자료가 위조라고 해도, 왜 사람들에게는 그렇게 그럴듯하게 먹혔는지 본인 스스로 설명해 보시겠습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse12:a:d-4:unlock:s3:0",
+                "lieAdvance": false
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "결정적 증거가 위조라면, 재판부는 무엇을 기준으로 과거 상처와 현재 허위 유포를 나눠 봐야 합니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse12:a:d-4:unlock:s4:0",
+                "lieAdvance": false
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "최재우 씨, 원본 계정도 없고 댓글 흐름도 잘린 캡처를 왜 한유진 씨 지목의 근거로 삼았습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse12:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "포렌식 보고서가 '2026년 합성'이라고 짚은 뒤에도 바로 정정하지 못한 이유는 무엇입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse12:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "조작 가능성을 본 뒤에도 보낸 메시지를 거두지 못한 건, 틀렸다는 사실보다 체면 손상이 더 두려웠기 때문 아닙니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse12:b:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "실제 접속 흔적과 2006년 원문",
+      "description": "버너계정 복구 흔적과 학교 시절 원문을 함께 대조해 실제 운영자와 실제 상처를 동시에 밝히는 카드",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "문세아 씨, 지금 와서 보면 본인이 가장 끝까지 숨기고 싶었던 건 익명 계정 의혹입니까, 아니면 실제로 보낸 그 문장입니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse12:a:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "한유진 씨에게 직접 상처를 준 사람이었다는 사실과 익명 소문 작성자가 아니었다는 사실을 한 문장으로 정리해 보십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse12:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "결정적 증거의 위조가 확인된 뒤에도, 본인에게 남는 별도 책임은 무엇이라고 보십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse12:a:d-2:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "최재우 씨, 버너계정 복구 메일과 와이파이 기록이 박하린 씨를 가리키는데도 왜 한유진 씨를 붙들고 있었습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse12:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "피해자였던 한유진 씨를 다시 가해자로 상정한 판단이 2차 상처가 될 수 있다는 점을 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse12:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "결국 이 사건에서 가장 먼저 지키고 싶었던 건 배우자입니까, 본인 공적 신뢰입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse12:b:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse12:a:d-2:unlock:s2:0",
+            "factText": "복원 로그상 문세아는 익명 게시물 확산 2시간 뒤 한유진에게 보낸 메시지 1건을 별도 폴더로 옮겼다.",
+            "tags": [
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "log": {
+                "exact": "옛 백업 복원 로그",
+                "neutral": "복원 로그"
+              },
+              "message": {
+                "exact": "한유진에게 보낸 모진 메시지 1건",
+                "neutral": "그 메시지"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse12:a:d-2:unlock:s3:0",
+            "factText": "재우에게 공유된 압축파일에서는 숨긴 메시지 1건이 빠져 있었고, 노출 범위 조정은 의도적이었다.",
+            "tags": [
+              "responsibility",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "file": {
+                "exact": "재우에게 공유된 압축파일",
+                "neutral": "공유 파일"
+              },
+              "message": {
+                "exact": "한유진에게 보낸 모진 메시지 1건",
+                "neutral": "그 메시지"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse12:a:d-2:unlock:s4:0",
+            "factText": "문세아는 그 메시지가 드러나면 '익명 계정 운영자'로 굳어질까 두려워 과거의 잔인한 문장을 먼저 가렸다.",
+            "tags": [
+              "fear",
+              "identity",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "account": {
+                "exact": "익명 SNS 계정",
+                "neutral": "그 계정"
+              },
+              "message": {
+                "exact": "한유진에게 보낸 모진 메시지 1건",
+                "neutral": "그 메시지"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse12:a:d-2:unlock:s5:0",
+            "factText": "선택 삭제는 익명 글의 허위를 바꾸지 않지만, 문세아가 가장 불리한 기록을 감춘 행위 자체는 별도 책임으로 남는다.",
+            "tags": [
+              "counter",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "message": {
+                "exact": "한유진에게 보낸 모진 메시지 1건",
+                "neutral": "그 메시지"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "partial"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse12:a:d-5:unlock:s2:0",
+            "factText": "2006년 원본 메일에는 문세아가 한유진과 공개 충돌 직후 모진 표현을 직접 보낸 기록이 남아 있다.",
+            "tags": [
+              "evidence",
+              "harm",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "mail": {
+                "exact": "2006년 원본 메일 묶음과 생활지도실 메모",
+                "neutral": "학교 기록 묶음"
+              },
+              "person": {
+                "exact": "한유진",
+                "neutral": "그 사람",
+                "fullName": "한유진",
+                "judgeRef": "한유진 씨"
+              },
+              "year": {
+                "exact": "2006년",
+                "neutral": "그때",
+                "dateExact": "2006년",
+                "period": "학창시절"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse12:a:d-5:unlock:s3:0",
+            "factText": "생활지도실 메모는 당시 익명 소문 발신자를 특정하지 못했고, 직접 상처와 익명 유포 책임은 문서상 분리되어 있다.",
+            "tags": [
+              "institution",
+              "counter",
+              "identity"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "school": {
+                "exact": "생활지도실 메모",
+                "neutral": "학교 기록"
+              },
+              "year": {
+                "exact": "2006년",
+                "neutral": "그때",
+                "dateExact": "2006년",
+                "period": "학창시절"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse12:a:d-5:unlock:s4:0",
+            "factText": "문세아가 끝까지 숨기려 한 핵심은 '누명'이 아니라 자신이 실제로 한 잔인한 말의 수위였다.",
+            "tags": [
+              "shame",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "message": {
+                "exact": "한유진에게 보낸 모진 메시지 1건",
+                "neutral": "그 메시지"
+              },
+              "year": {
+                "exact": "2006년",
+                "neutral": "그때",
+                "dateExact": "2006년",
+                "period": "학창시절"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse12:a:d-5:unlock:s5:0",
+            "factText": "문세아는 한유진에게 직접 상처를 준 사람이었지만 장학금 특혜 소문을 익명으로 퍼뜨린 장본인은 아니었다.",
+            "tags": [
+              "admission",
+              "identity",
+              "counter"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "한유진",
+                "neutral": "그 사람",
+                "fullName": "한유진",
+                "judgeRef": "한유진 씨"
+              },
+              "account": {
+                "exact": "장학금 특혜 소문 작성자",
+                "neutral": "그 작성자"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse12:a:d-4:unlock:s2:0",
+            "factText": "포렌식 보고서 전에는 캡처의 폰트·해상도 불일치가 '이상하다'는 느낌 수준이었지만, 보고서 이후 그것이 실제 조합 흔적임이 확인됐다.",
+            "tags": [
+              "evidence",
+              "uncertainty",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "forensic": {
+                "exact": "플랫폼 포렌식 보고서",
+                "neutral": "포렌식 자료"
+              },
+              "capture": {
+                "exact": "미니홈피 방명록 캡처와 문자 이미지",
+                "neutral": "그 캡처 묶음"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse12:a:d-4:unlock:s3:0",
+            "factText": "문세아가 받은 공포는 '거짓이라도 내 과거 일부가 섞여 있으면 사람들은 더 쉽게 믿는다'는 구조에서 나왔다.",
+            "tags": [
+              "fear",
+              "legacy_sentence",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "year": {
+                "exact": "2006년",
+                "neutral": "그때",
+                "dateExact": "2006년",
+                "period": "학창시절"
+              },
+              "capture": {
+                "exact": "미니홈피 방명록 캡처와 문자 이미지",
+                "neutral": "그 캡처 묶음"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse12:a:d-4:unlock:s4:0",
+            "factText": "겉보기의 오래됨과 실제 원본성은 다르며, 이 사건에서 위조는 문세아의 과거 상처를 현재의 가해 증거처럼 재조립한 방식이었다.",
+            "tags": [
+              "counter",
+              "rule",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "year1": {
+                "exact": "2006년",
+                "neutral": "그때",
+                "dateExact": "2006년",
+                "period": "학창시절"
+              },
+              "year2": {
+                "exact": "2026년",
+                "neutral": "이번",
+                "dateExact": "2026년",
+                "period": "동창회 직후"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse12:a:d-4:unlock:s5:0",
+            "factText": "문세아는 위조 증거 정정과 과거 행동 책임 인정을 함께 해야만 허위 낙인과 실제 상처를 분리할 수 있다고 본다.",
+            "tags": [
+              "admission",
+              "counter",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "forensic": {
+                "exact": "플랫폼 포렌식 보고서",
+                "neutral": "포렌식 자료"
+              },
+              "person": {
+                "exact": "한유진",
+                "neutral": "그 사람",
+                "fullName": "한유진",
+                "judgeRef": "한유진 씨"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "spouse12:b:d-1:unlock:s2:0",
+            "factText": "최재우의 첫 외부 전달은 세아에게 직접 확인 문자를 보내기 9분 전에 이루어졌다.",
+            "tags": [
+              "timeline",
+              "evidence",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time": {
+                "exact": "세아에게 확인 문자 보내기 9분 전",
+                "neutral": "확인 전",
+                "period": "확인 직전"
+              },
+              "person": {
+                "exact": "최재우",
+                "neutral": "상대방",
+                "fullName": "최재우",
+                "judgeRef": "최재우 씨"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse12:b:d-1:unlock:s3:0",
+            "factText": "재우는 운영진 단톡뿐 아니라 가족 단톡과 가까운 직장 인맥으로도 같은 캡처를 연속 전송했다.",
+            "tags": [
+              "act",
+              "harm",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "channel1": {
+                "exact": "동창회 운영진 단톡",
+                "neutral": "그 채널"
+              },
+              "channel2": {
+                "exact": "가족 단톡",
+                "neutral": "가족 채널"
+              },
+              "channel3": {
+                "exact": "가까운 직장 인맥",
+                "neutral": "직장 쪽"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse12:b:d-1:unlock:s4:0",
+            "factText": "전달 원문에는 '아마 세아가 맞는 것 같다'는 문장이 반복되어, 확인 차원을 넘는 사실상 단정이 드러난다.",
+            "tags": [
+              "quote",
+              "responsibility",
+              "evidence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "문세아",
+                "neutral": "상대방",
+                "fullName": "문세아",
+                "judgeRef": "문세아 씨"
+              },
+              "channel": {
+                "exact": "동창회 운영진 단톡",
+                "neutral": "그 채널"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse12:b:d-1:unlock:s5:0",
+            "factText": "최재우의 확대 전달은 배우자 보호보다 자신의 공적 신뢰와 가족 체면을 먼저 방어하려는 판단에서 나왔다.",
+            "tags": [
+              "motive",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "role": {
+                "exact": "구청 홍보팀 주무관",
+                "neutral": "공적 자리"
+              },
+              "person": {
+                "exact": "문세아",
+                "neutral": "상대방",
+                "fullName": "문세아",
+                "judgeRef": "문세아 씨"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "emotional"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse12:b:d-3:unlock:s2:0",
+            "factText": "익명 게시물 캡처는 계정 생성 정보와 댓글 흐름이 잘린 저장본뿐이라, 한유진 지목 근거로는 약했다.",
+            "tags": [
+              "evidence",
+              "uncertainty"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "capture": {
+                "exact": "미니홈피 방명록 캡처와 문자 이미지",
+                "neutral": "그 캡처 묶음"
+              },
+              "person": {
+                "exact": "한유진",
+                "neutral": "그 사람",
+                "fullName": "한유진",
+                "judgeRef": "한유진 씨"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse12:b:d-3:unlock:s3:0",
+            "factText": "최재우는 한유진을 의심하는 편이 자신의 외부 전달을 덜 잔인하게 보이게 만든다는 심리를 따라갔다.",
+            "tags": [
+              "self_justification",
+              "motive",
+              "shame"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "한유진",
+                "neutral": "그 사람",
+                "fullName": "한유진",
+                "judgeRef": "한유진 씨"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse12:b:d-3:unlock:s4:0",
+            "factText": "피해자였던 한유진을 다시 가해자로 상정한 판단은, 현재 사건 설명을 위해 과거 상처를 재소환한 2차 가해가 됐다.",
+            "tags": [
+              "harm",
+              "relationship",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "한유진",
+                "neutral": "그 사람",
+                "fullName": "한유진",
+                "judgeRef": "한유진 씨"
+              },
+              "year": {
+                "exact": "2006년",
+                "neutral": "그때",
+                "dateExact": "2006년",
+                "period": "학창시절"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse12:b:d-3:unlock:s5:0",
+            "factText": "버너계정 복구 메일과 동창회장 와이파이 접속기록은 실제 운영 흔적이 박하린 쪽에 있음을 보여 준다.",
+            "tags": [
+              "institution",
+              "evidence",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "박하린",
+                "neutral": "그 사람",
+                "fullName": "박하린",
+                "judgeRef": "박하린 씨"
+              },
+              "mail": {
+                "exact": "버너계정 복구 메일",
+                "neutral": "계정 복구 기록"
+              },
+              "wifi": {
+                "exact": "동창회장 와이파이 접속기록",
+                "neutral": "행사장 접속 기록"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse12:b:d-4:unlock:s2:0",
+            "factText": "포렌식 보고서는 방명록 배경 레이어와 문자 말풍선이 서로 다른 출처에서 왔고 2026년에 합성됐음을 지적한다.",
+            "tags": [
+              "institution",
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "forensic": {
+                "exact": "플랫폼 포렌식 보고서",
+                "neutral": "포렌식 자료"
+              },
+              "capture": {
+                "exact": "미니홈피 방명록 캡처와 문자 이미지",
+                "neutral": "그 캡처 묶음"
+              },
+              "year": {
+                "exact": "2026년",
+                "neutral": "이번",
+                "dateExact": "2026년",
+                "period": "동창회 직후"
+              }
+            },
+            "stanceHints": [
+              "partial"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse12:b:d-4:unlock:s3:0",
+            "factText": "최재우는 조작 가능성을 본 뒤에도 이미 퍼진 메시지를 즉시 거두지 못했고, 자신의 오판 노출을 더 두려워했다.",
+            "tags": [
+              "responsibility",
+              "fear",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "forensic": {
+                "exact": "플랫폼 포렌식 보고서",
+                "neutral": "포렌식 자료"
+              },
+              "person": {
+                "exact": "최재우",
+                "neutral": "상대방",
+                "fullName": "최재우",
+                "judgeRef": "최재우 씨"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse12:b:d-4:unlock:s4:0",
+            "factText": "최재우의 핵심 공포는 위조 여부 자체보다 '혹시 진짜면 내 공적 신뢰가 같이 무너진다'는 자기 체면 붕괴였다.",
+            "tags": [
+              "fear",
+              "institution",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "role": {
+                "exact": "구청 홍보팀 주무관",
+                "neutral": "공적 자리"
+              }
+            },
+            "stanceHints": [
+              "emotional"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse12:b:d-4:unlock:s5:0",
+            "factText": "결정적 2006년 증거처럼 돌던 자료는 실제로는 2026년 위조본이었고, 그 허위성을 늦게 인정한 사이 유포 피해가 커졌다.",
+            "tags": [
+              "institution",
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "forensic": {
+                "exact": "플랫폼 포렌식 보고서",
+                "neutral": "포렌식 자료"
+              },
+              "year": {
+                "exact": "2026년",
+                "neutral": "이번",
+                "dateExact": "2026년",
+                "period": "동창회 직후"
+              }
+            },
+            "stanceHints": [
+              "confess"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "spouse12:contradiction:0",
+        "targetParty": "b",
+        "trigger": "최재우가 '확인 차원 공유'만 했다고 주장할 때",
+        "text": "확인용이었다면 왜 배우자에게 묻기 9분 전에 운영진 단톡으로 먼저 갔고, 이후 가족과 직장 인맥으로까지 확대됐습니까?",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "spouse12:contradiction:1",
+        "targetParty": "a",
+        "trigger": "문세아가 '거의 전부 보여 줬다'고 말할 때",
+        "text": "거의 전부였다면 왜 한유진에게 보낸 문제 메시지 1건만 별도 폴더로 이동해 공유 압축파일에서 빠졌습니까?",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "spouse12:contradiction:2",
+        "targetParty": "b",
+        "trigger": "최재우가 익명 계정을 계속 한유진으로 몰아갈 때",
+        "text": "원본 계정도 없는 캡처 추측을 왜 버너계정 복구 메일과 와이파이 접속기록보다 더 믿으셨습니까?",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-3",
+          "e-5"
+        ]
+      },
+      {
+        "id": "spouse12:contradiction:3",
+        "targetParty": "b",
+        "trigger": "최재우가 '당시엔 진짜처럼 보였다'는 말만 반복할 때",
+        "text": "진짜처럼 보였다는 인상과 실제 원본성은 다릅니다. 포렌식이 합성을 지적한 뒤에도 왜 즉시 정정하지 않았습니까?",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-1"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "spouse12:interjection:0",
+        "speaker": "a",
+        "trigger": "최재우가 '제 자리에서는 선조치가 필요했다'고 말할 때",
+        "text": "그 선조치라는 말 속에 제가 사람으로서 설명할 시간은 어디 있었는데요?",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse12:interjection:1",
+        "speaker": "b",
+        "trigger": "문세아가 '이번 글과는 다른 이야기'만 반복할 때",
+        "text": "다른 이야기라도, 그 다른 이야기를 저한테 일부러 덜 보여 준 건 맞잖아요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "spouse12:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 2006년 상처와 2026년 위조를 한 문장에 섞어 말할 때",
+        "text": "과거의 직접 상처와 현재의 허위 유포는 따로 답하십시오. 지금 재판부는 그 경계를 확인하고 있습니다.",
+        "relatedDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "spouse12:outburst:a:0",
+        "party": "a",
+        "trigger": "최재우가 외부 유포를 직업 습관으로만 포장할 때",
+        "text": "직업 습관이요? 제 인생이랑 가게가 걸린 일을 그렇게 관성처럼 던졌다는 게 더 끔찍해요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse12:outburst:a:1",
+        "party": "a",
+        "trigger": "2006년 일을 '전부 누명' 또는 '전부 가해'로만 몰아갈 때",
+        "text": "저도 알아요, 제가 상처 준 장면이 있었던 거. 그런데 그걸로 지금의 거짓까지 다 제 얼굴로 덮어버리진 마세요.",
+        "relatedDisputes": [
+          "d-5",
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse12:outburst:b:0",
+        "party": "b",
+        "trigger": "최재우에게 즉시 사과와 전면 정정을 요구할 때",
+        "text": "저도 겁났습니다. 배우자 과거 하나가 제 직장 신뢰랑 가족 체면까지 다 무너뜨릴까 봐 정말 무서웠어요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse12:outburst:b:1",
+        "party": "b",
+        "trigger": "한유진 오인 지목이 2차 가해였다고 직면할 때",
+        "text": "알고 있습니다. 그래서 더 창피합니다. 지키겠다고 움직였는데 결국 또 다른 사람한테 상처를 돌렸으니까요.",
+        "relatedDisputes": [
+          "d-3",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "spouse12:transition:a:d-2:s0_s1",
+      "caseId": "spouse-12",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_archive_question",
+      "line": "옛 자료 전부를 당장 꺼내라는 말이 나오면, 저는 먼저 이번 글과 직접 닿는 부분만 말하게 됩니다.",
+      "behaviorHint": "서류를 정리하는 손동작이 빨라지고 시선이 분절된다."
+    },
+    {
+      "id": "spouse12:transition:a:d-2:s1_s2",
+      "caseId": "spouse-12",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "복원 로그까지 나오면 더는 '정리 중이었다'는 말만으론 못 버팁니다. 뺀 메시지가 있었다는 건 인정해야겠네요.",
+      "behaviorHint": "입술을 깨물고 화면을 오래 본다."
+    },
+    {
+      "id": "spouse12:transition:a:d-2:s2_s3",
+      "caseId": "spouse-12",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_hide_that_message",
+      "line": "그 문장 하나가 붙는 순간 저는 설명할 기회도 없이 익명 계정처럼 굳어질까 무서웠어요.",
+      "behaviorHint": "숨이 짧아지고 말 속도가 빨라진다."
+    },
+    {
+      "id": "spouse12:transition:a:d-2:s3_s5",
+      "caseId": "spouse-12",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_or_responsibility_question",
+      "line": "그래도 숨긴 건 숨긴 겁니다. 그 선택 삭제는 제가 떠안아야 할 책임이에요.",
+      "behaviorHint": "어깨를 내리고 정면을 바라본다."
+    },
+    {
+      "id": "spouse12:transition:a:d-5:s0_s1",
+      "caseId": "spouse-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "what_happened_in_2006_question",
+      "line": "전부 누명이라고만 하긴 어렵죠. 다툼은 있었으니까요.",
+      "behaviorHint": "턱이 조금 내려가며 톤이 낮아진다."
+    },
+    {
+      "id": "spouse12:transition:a:d-5:s1_s2",
+      "caseId": "spouse-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "기록이 그렇게 남아 있다면, 제가 심하게 말한 건 부정하지 않겠습니다.",
+      "behaviorHint": "시선을 서류로 떨군다."
+    },
+    {
+      "id": "spouse12:transition:a:d-5:s2_s3",
+      "caseId": "spouse-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "did_you_apologize_followup",
+      "line": "사과는 제대로 못 했습니다. 그게 더 부끄러워서 자꾸 '누명' 쪽만 붙잡았어요.",
+      "behaviorHint": "목소리가 잠기고 손을 꽉 쥔다."
+    },
+    {
+      "id": "spouse12:transition:a:d-5:s3_s4",
+      "caseId": "spouse-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_guilt",
+      "line": "판단보다 사실만 묻는다면… 제가 그때 정말 못되게 굴었다는 건 압니다.",
+      "behaviorHint": "눈가가 젖고 문장을 천천히 끊는다."
+    },
+    {
+      "id": "spouse12:transition:a:d-5:s4_s5",
+      "caseId": "spouse-12",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "shared_past_question",
+      "line": "네, 저는 한유진 씨를 상처 입힌 사람이었습니다. 하지만 익명 소문 작성자는 아니었습니다.",
+      "behaviorHint": "한 문장을 둘로 나눠 단단하게 말한다."
+    },
+    {
+      "id": "spouse12:transition:b:d-1:s0_s1",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "did_you_forward_it_question",
+      "line": "보낸 건 맞습니다. 다만 제 판단으로는 선조치가 필요했습니다.",
+      "behaviorHint": "가슴 쪽으로 손을 모으며 방어적으로 설명한다."
+    },
+    {
+      "id": "spouse12:transition:b:d-1:s1_s2",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "로그가 저렇게 남아 있으면, 제가 먼저 전달한 사실 자체는 인정해야겠네요.",
+      "behaviorHint": "짧게 한숨을 내쉰다."
+    },
+    {
+      "id": "spouse12:transition:b:d-1:s2_s3",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_before_asking_spouse",
+      "line": "그땐 가족 체면이랑 직장 신뢰가 같이 무너질까 봐 너무 급했습니다.",
+      "behaviorHint": "시선이 흔들리고 목소리가 거칠어진다."
+    },
+    {
+      "id": "spouse12:transition:b:d-1:s3_s5",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "결국 제가 배우자보다 여론을 먼저 택한 겁니다. 그 책임은 피할 수 없습니다.",
+      "behaviorHint": "눈을 감았다 뜨며 낮게 인정한다."
+    },
+    {
+      "id": "spouse12:transition:b:d-3:s0_s1",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "who_did_you_think_ran_the_account",
+      "line": "확정은 아니었지만, 저는 한유진 씨가 가장 먼저 떠올랐습니다.",
+      "behaviorHint": "손끝으로 책상 모서리를 두드린다."
+    },
+    {
+      "id": "spouse12:transition:b:d-3:s1_s2",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "캡처만 놓고 너무 빨리 방향을 정했네요. 근거가 약했다는 건 인정합니다.",
+      "behaviorHint": "입술을 다문 채 짧게 고개를 끄덕인다."
+    },
+    {
+      "id": "spouse12:transition:b:d-3:s2_s3",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "why_blame_yujin_followup",
+      "line": "솔직히 그쪽을 의심하는 편이 제 판단을 덜 잔인하게 만들어 줬습니다.",
+      "behaviorHint": "쓴웃음을 짓고 시선을 피한다."
+    },
+    {
+      "id": "spouse12:transition:b:d-3:s3_s5",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "접속 기록이 박하린 씨를 가리키면, 제가 한유진 씨를 잘못 본 겁니다.",
+      "behaviorHint": "이름을 말할 때 잠시 멈칫한다."
+    },
+    {
+      "id": "spouse12:transition:b:d-4:s0_s1",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "forgery_question",
+      "line": "처음엔 위조라고까지는 생각 못 했습니다. 다만 원본이 없다는 건 걸렸습니다.",
+      "behaviorHint": "문서 가장자리를 만지작거린다."
+    },
+    {
+      "id": "spouse12:transition:b:d-4:s1_s2",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "포렌식이 이렇게 나오면 조작 가능성을 더는 외면할 수 없네요.",
+      "behaviorHint": "어깨가 한번 내려앉는다."
+    },
+    {
+      "id": "spouse12:transition:b:d-4:s2_s3",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "did_you_still_keep_forwarding",
+      "line": "의심이 생긴 뒤에도 이미 보낸 걸 바로 거두지 못했습니다. 제가 틀렸을까 봐 겁났습니다.",
+      "behaviorHint": "손가락 마디를 꺾으며 불안하게 말한다."
+    },
+    {
+      "id": "spouse12:transition:b:d-4:s3_s4",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_public_fear",
+      "line": "네, 솔직히 말하면 위조 여부보다 제 공적 신뢰가 무너질까 더 무서웠습니다.",
+      "behaviorHint": "시선을 바닥에 두고 목소리를 낮춘다."
+    },
+    {
+      "id": "spouse12:transition:b:d-4:s4_s5",
+      "caseId": "spouse-12",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-1_or_emotion_threshold",
+      "line": "결국 그 공포 때문에 위조 가능성까지 늦게 인정했고, 유포 피해를 키웠습니다.",
+      "behaviorHint": "깊게 숨을 내쉬고 체념한 표정으로 마무리한다."
+    }
+  ]
+} as const;
+
+export default spouse12V3GameLoopData;

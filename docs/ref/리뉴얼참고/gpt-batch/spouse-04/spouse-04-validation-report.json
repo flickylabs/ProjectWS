@@ -1,0 +1,17 @@
+{
+  "caseId": "spouse04",
+  "checks": {
+    "caseIdNormalized": true,
+    "tellCount": {
+      "a": 3,
+      "b": 3
+    },
+    "beatScriptCount": 36,
+    "dossierCardCount": 3,
+    "transitionBeatCount": 24,
+    "revealAtomReferenceIntegrity": true,
+    "tellPoolIntegrity": true,
+    "slotKeyIntegrity": true,
+    "eventFieldIntegrity": true
+  }
+}

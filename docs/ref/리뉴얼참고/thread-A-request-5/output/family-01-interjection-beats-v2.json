@@ -1,0 +1,596 @@
+{
+  "caseId": "family-01",
+  "schemaVersion": "beat_v2",
+  "coverageSummary": {
+    "totalBeats": 12,
+    "baseBeatsCarriedOver": 4,
+    "newBeatsAdded": 8,
+    "infoLevelCounts": {
+      "emotional_only": 4,
+      "detail_rebuttal": 4,
+      "misbelief_escalation": 4
+    }
+  },
+  "beats": [
+    {
+      "id": "family01.a.d2.surface.mid.interjection.allow.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "잠깐만요, 60만원 12일만 남기면 제가 밤마다 병원 뛰고 어머니 챙긴 시간은 다 빠집니다. 그 표는 빈칸만 아니라 누가 메웠는지도 같이 보셔야 합니다.",
+      "behaviorHint": "말을 끊어 세우듯 끼어들고 '누가 메웠는지'에서 손바닥을 편다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "evidence_present"
+      ],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a.d2.surface.mid.interjection.allow",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.allow.a"
+      ],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "family01.b.d3.surface.mid.interjection.allow.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "누나, 잘린 수첩 사진 한 장으로 상속 얘기까지 가실 겁니까. 전체 스캔부터 보게 해 주세요, 그 한 줄만 들고 가면 또 결론부터 납니다.",
+      "behaviorHint": "차갑게 말을 끊고 '전체 스캔'에서 문서를 들어 보이듯 턱을 든다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "red_herring",
+      "responseIntent": "pressure_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "evidence_present"
+      ],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ],
+        "misconceptionStates": [
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "trapStates": [
+          "suspected",
+          "active"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b.d3.surface.mid.interjection.allow",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.allow.b"
+      ],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "red_herring",
+        "misbelief_escalation"
+      ],
+      "beliefMode": "suspects"
+    },
+    {
+      "id": "family01.a.d1.surface.mid.interjection.block.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "좋습니다, 지금은 끼어들지 않겠습니다. 다만 1,800만원 숫자만 남기고 그때 제가 메우던 자리를 지워 버리진 말아 주십시오.",
+      "behaviorHint": "억지로 한발 물러서며 마지막 문장에서만 시선을 든다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "responsibility",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "evidence_present"
+      ],
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "weight": 5,
+      "priority": 24,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a.d1.surface.mid.interjection.block",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.block.a"
+      ],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "family01.b.d5.surface.mid.interjection.block.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "알겠습니다. 지금은 제 차례가 아니면 닫겠습니다. 그래도 늦은 기록과 1,800만원 선이체를 같은 무게로 접진 말아 주십시오.",
+      "behaviorHint": "입술을 굳게 다문 채 물러나고 마지막만 작게 덧붙인다.",
+      "applicableStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "responsibility",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "motive_search"
+      ],
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "weight": 5,
+      "priority": 24,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b.d5.surface.mid.interjection.block",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.block.b"
+      ],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "family01.b.d1.surface.mid.interjection.allow.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "잠깐만요. 1,800만원을 그냥 “먼저 메운 돈”처럼만 두면 제 쪽에 남은 병원비와 기록 공백은 다 가벼워집니다. 누가 얼마나 먼저, 어떤 명목으로 움직였는지도 같이 올리셔야 합니다.",
+      "behaviorHint": "말을 끊어 세우듯 끼어들고 “같이 올리셔야”에서 서류를 들어 보이듯 손을 든다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "evidence_present"
+      ],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b.d1.surface.mid.interjection.emotional.allow",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.allow.b"
+      ],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "family01.b.d2.surface.mid.interjection.block.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "알겠습니다. 지금은 제 차례가 아니면 닫겠습니다. 다만 60만원 12일 지연이 왜 그렇게 컸는지는, 나중에라도 기록만으로 덮지 말고 꼭 물어 주십시오.",
+      "behaviorHint": "한 박자 물러서며 고개를 끄덕이고 마지막 부탁에서만 눈을 든다.",
+      "applicableStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "layer": "surface",
+      "issueRole": "core_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "motive_search"
+      ],
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "weight": 5,
+      "priority": 24,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b.d2.surface.mid.interjection.emotional.block",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.block.b"
+      ],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "emotional_only"
+      ]
+    },
+    {
+      "id": "family01.a.d5.surface.mid.interjection.allow.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "잠깐만요. 공동 기록 원칙을 다루실 거면 제 선이체만 세워 두고 끝내선 안 됩니다. 도현의 늦은 기록까지 같은 줄에 올려야 지금 기준이 맞습니다.",
+      "behaviorHint": "급히 말을 끊고 “같은 줄”에서 손가락으로 표의 한 줄을 긋는 시늉을 한다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "evidence_present"
+      ],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a.d5.surface.mid.interjection.detail.allow",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.allow.a"
+      ],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "family01.b.d5.surface.mid.interjection.allow.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "저도 말씀드리겠습니다. 기록을 늦게 적은 제 책임이 사라진다는 뜻은 아닙니다. 그래도 1,800만원 선이체를 같은 무게로 접으려면 누가 먼저 표 밖에서 움직였는지까지 같이 보셔야 합니다.",
+      "behaviorHint": "차분히 끼어들다가 “같이 보셔야”에서만 목소리를 단단히 세운다.",
+      "applicableStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "pressure_response",
+      "angleTag": "responsibility",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "motive_search"
+      ],
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.b",
+      "coverageKey": "b.d5.surface.mid.interjection.detail.allow",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.allow.b"
+      ],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "family01.a.d5.surface.mid.interjection.block.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "좋습니다. 지금은 끼어들지 않겠습니다. 다만 누가 더 통제했는지만 남기지 말고, 누가 공유표 밖에서 먼저 움직였는지도 꼭 같이 봐주십시오.",
+      "behaviorHint": "억지로 한 걸음 물러서며 끝에서만 시선을 좁힌다.",
+      "applicableStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "layer": "surface",
+      "issueRole": "sub_truth",
+      "responseIntent": "fatigue_response",
+      "angleTag": "responsibility",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "motive_search"
+      ],
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ]
+      },
+      "weight": 5,
+      "priority": 24,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a.d5.surface.mid.interjection.detail.block",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.block.a"
+      ],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "detail_rebuttal"
+      ]
+    },
+    {
+      "id": "family01.a.d3.surface.mid.interjection.allow.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "그 한 줄이 왜 제 손에 남았는지 보지도 않고 상속 욕심이라고만 하시면 저는 가만히 못 있습니다. 아버지가 제게 맡긴 자리와 권한을 통째로 잘라 버리지 마십시오.",
+      "behaviorHint": "문장을 세게 끊고 “자리와 권한”에서 가슴 쪽으로 손을 모은다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "red_herring",
+      "responseIntent": "trap_confusion_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "evidence_present"
+      ],
+      "beliefMode": "weaponizes",
+      "conditions": {
+        "interjectionStates": [
+          "allow_last_turn"
+        ],
+        "misconceptionStates": [
+          "M1",
+          "M2"
+        ],
+        "trapStates": [
+          "suspected",
+          "active"
+        ]
+      },
+      "weight": 5,
+      "priority": 29,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.allow.a",
+      "coverageKey": "a.d3.surface.mid.interjection.misbelief.allow",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.allow.a"
+      ],
+      "tags": [
+        "interjection",
+        "allow",
+        "event_lane",
+        "red_herring",
+        "misbelief_escalation"
+      ]
+    },
+    {
+      "id": "family01.a.d3.surface.mid.interjection.block.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "…좋습니다. 지금은 물러서겠습니다. 하지만 그 문장이 왜 제 자리를 붙드는 근거처럼 들렸는지는, 뒤로 미루지 말고 꼭 남겨 두십시오.",
+      "behaviorHint": "입술을 단단히 다문 채 고개를 젖혔다가 마지막 부탁만 낮게 남긴다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "layer": "surface",
+      "issueRole": "red_herring",
+      "responseIntent": "fatigue_response",
+      "angleTag": "emotion",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "motive_search"
+      ],
+      "beliefMode": "weaponizes",
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ],
+        "misconceptionStates": [
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "trapStates": [
+          "suspected",
+          "active"
+        ]
+      },
+      "weight": 5,
+      "priority": 24,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.a",
+      "coverageKey": "a.d3.surface.mid.interjection.misbelief.block",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.block.a"
+      ],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "red_herring",
+        "misbelief_escalation"
+      ]
+    },
+    {
+      "id": "family01.b.d3.surface.mid.interjection.block.01",
+      "caseId": "family-01",
+      "schemaVersion": "beat_v2",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "알겠습니다. 지금은 누나 말부터 듣겠습니다. 그래도 그 잘린 한 줄이 왜 그렇게 상속처럼 보였는지는, 그냥 탐욕으로 접지 말고 한 번은 같이 짚어 주십시오.",
+      "behaviorHint": "차갑게 물러나지만 마지막 문장에서만 숨을 길게 내쉰다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "layer": "surface",
+      "issueRole": "red_herring",
+      "responseIntent": "fatigue_response",
+      "angleTag": "context",
+      "actionFamily": "interjection",
+      "questionTypes": [
+        "fact_pursuit",
+        "evidence_present"
+      ],
+      "beliefMode": "suspects",
+      "conditions": {
+        "interjectionStates": [
+          "block_last_turn"
+        ],
+        "misconceptionStates": [
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "trapStates": [
+          "suspected",
+          "active"
+        ]
+      },
+      "weight": 5,
+      "priority": 24,
+      "cooldownTurns": 3,
+      "maxUsesPerCase": 1,
+      "antiRepeatGroup": "interjection.block.b",
+      "coverageKey": "b.d3.surface.mid.interjection.misbelief.block",
+      "variantTarget": 2,
+      "setFlags": [
+        "interjection.block.b"
+      ],
+      "tags": [
+        "interjection",
+        "block",
+        "event_lane",
+        "red_herring",
+        "misbelief_escalation"
+      ]
+    }
+  ]
+}

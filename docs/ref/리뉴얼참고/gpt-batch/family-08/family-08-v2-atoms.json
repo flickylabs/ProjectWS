@@ -1,0 +1,5297 @@
+{
+  "caseId": "family-08",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "영수증과 '이번 주 침상 확보' 문자만 먼저 보였고, 그날 안에 준호 설명은 없었습니다.",
+            "그 상태에선 어머니를 거의 몰래 보내는 쪽으로 읽힐 수밖에 없었습니다."
+          ],
+          "privateKnowledge": [
+            "작년 가을 합의에 '같은 날 가족 단톡 공유' 문구가 있었던 기억이 즉각 떠올랐다.",
+            "2021년 ICU 연락 지연 기억 때문에 설명 누락이 더 크게 느껴졌다."
+          ],
+          "suppressions": [
+            "150만원의 법적 성격을 아직 확인하지 못한 채 최악의 해석부터 했다는 점",
+            "친척들에게 바로 말이 번질 수 있다는 자신의 충동"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-1:s0:act:0",
+              "factText": "설명보다 송금 영수증과 침상 확보 문자가 먼저 보였다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "time": {
+                  "dateExact": "두 번째 야간 배회 신고 다음 날 오전",
+                  "period": "그 다음 날 오전",
+                  "neutral": "그 시점"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s0:timeline:1",
+              "factText": "같은 날 설명이 없어서 몰래 진행처럼 읽혔다는 인식",
+              "tags": [
+                "timeline",
+                "emotion",
+                "uncertainty",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                },
+                "group": {
+                  "exact": "가족 단톡방",
+                  "neutral": "가족 대화방"
+                }
+              },
+              "stanceHints": [
+                "insist",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s0:legacy_sentence:2",
+              "factText": "과거 늦은 통보 기억이 현재 해석을 더 날카롭게 만들었다는 점",
+              "tags": [
+                "legacy_sentence",
+                "emotion",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                },
+                "delay": {
+                  "exact": "5시간",
+                  "neutral": "오래 늦은 시간"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "준호가 자리를 먼저 잡을 수는 있어도, 최소한 그날 안에는 말했어야 했습니다.",
+            "제가 화낼까 봐 미뤘다는 설명은 통보 누락을 없애주지 못합니다."
+          ],
+          "privateKnowledge": [
+            "송금 자체보다 '내가 또 마지막이었다'는 감정이 더 크게 움직이고 있다.",
+            "자신이 들으면 막을 거라고 준호가 미리 계산했을 가능성을 의심한다."
+          ],
+          "suppressions": [
+            "정확한 계약 종류보다 배신감이 먼저 앞섰다는 점",
+            "자신도 설명을 끊어먹는 식으로 몰아붙일 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-1:s1:rule:0",
+              "factText": "송금과 별개로 같은 날 통보 의무가 있었다는 주장",
+              "tags": [
+                "rule",
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                },
+                "group": {
+                  "exact": "가족 단톡방",
+                  "neutral": "가족 대화방"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "judge_rule"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s1:counter:1",
+              "factText": "상대 반응을 두려워해 미뤘다는 사정은 절차 위반의 면책이 아니라는 시각",
+              "tags": [
+                "counter",
+                "responsibility",
+                "fear"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "counter",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s1:emotion:2",
+              "factText": "자신이 또 마지막 통보자가 되었다는 감정적 체감",
+              "tags": [
+                "emotion",
+                "quote",
+                "relationship"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "150만원이 평가입소 대기금일 수는 있겠습니다.",
+            "그래도 준호가 먼저 보내고 19시간 가까이 가족 단톡을 비운 건 별개 문제입니다."
+          ],
+          "privateKnowledge": [
+            "문제의 초점이 '영구입소냐 아니냐'에서 '왜 같은 날 공유를 안 했나'로 옮겨가고 있음을 안다.",
+            "증거가 쌓이면 자신의 초반 표현이 과했다는 점도 드러날 수 있음을 안다."
+          ],
+          "suppressions": [
+            "처음엔 영구입소라고 거의 단정하고 있었다는 점",
+            "친척방에 준호를 비난한 메시지가 이미 올라갔다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-1:s2:timeline:0",
+              "factText": "금액의 성격과 무관하게 통보 공백이 19시간 가까이 있었다는 사실",
+              "tags": [
+                "timeline",
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "19시간",
+                  "rounded": "하룻밤 가까이",
+                  "neutral": "상당 시간"
+                },
+                "time": {
+                  "clockExact": "오전 7시 12분",
+                  "period": "다음 날 아침",
+                  "neutral": "첫 설명 시점"
+                },
+                "group": {
+                  "exact": "가족 단톡방",
+                  "neutral": "가족 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s2:uncertainty:1",
+              "factText": "대기금일 수 있다는 가능성을 일부 받아들이는 태도",
+              "tags": [
+                "uncertainty",
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s2:rule:2",
+              "factText": "쟁점의 중심을 계약 의미보다 공유 의무 위반으로 옮기는 프레임",
+              "tags": [
+                "rule",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "reframe",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "저는 이제 송금 자체보다도, 합의해 둔 공유 원칙을 왜 건너뛰었는지를 묻고 있습니다.",
+            "준호가 현장 부담을 이유로 설명을 늦춘 건 알겠지만, 그 선택은 본인이 한 겁니다."
+          ],
+          "privateKnowledge": [
+            "작년 합의 존재를 완전히 부정하기는 어려워졌다는 것을 안다.",
+            "자신의 공개 비난이 사건을 더 키웠다는 반론이 곧 따라올 수 있음을 안다."
+          ],
+          "suppressions": [
+            "준호의 실제 돌봄 부담을 자신이 과소평가했던 장면들",
+            "친척방 공개 비난으로 준호를 몰아세운 부분"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-1:s3:responsibility:0",
+              "factText": "공유 원칙을 어긴 주체가 준호라는 점",
+              "tags": [
+                "responsibility",
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s3:context:1",
+              "factText": "현장 부담은 이해해도 설명 지연은 선택이었다는 판단",
+              "tags": [
+                "context",
+                "self_justification",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "counter",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s3:rule:2",
+              "factText": "사전 합의와 별개로 단독 결정권은 없었다는 문제제기",
+              "tags": [
+                "rule",
+                "threshold",
+                "counter"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "제가 과하게 반응한 건 인정합니다.",
+            "하지만 ICU 때도 그랬고 이번에도 또 나만 나중에 안다는 감각이 겹치니, 서류보다 배신이 먼저 보였습니다."
+          ],
+          "privateKnowledge": [
+            "준호가 악의만으로 움직인 것은 아니라는 점을 이제는 안다.",
+            "자신이 현재 사실 위에 과거 상처를 덧씌웠다는 자각이 올라오고 있다."
+          ],
+          "suppressions": [
+            "친척들 앞에서 먼저 단정적으로 말한 책임",
+            "150만원의 성격을 확인하지 않은 채 확정적으로 받아들였던 장면"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:past_overlay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-1:s4:legacy_sentence:0",
+              "factText": "ICU 지연 연락 기억이 이번 사건에 겹쳐졌다는 고백",
+              "tags": [
+                "legacy_sentence",
+                "emotion",
+                "quote",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                },
+                "delay": {
+                  "exact": "5시간",
+                  "neutral": "오래 늦은 시간"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s4:emotion:1",
+              "factText": "'또 나만 나중에 안다'는 감각이 배신 프레임을 키웠다는 사실",
+              "tags": [
+                "emotion",
+                "quote",
+                "harm",
+                "relationship"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s4:admission:2",
+              "factText": "상대의 악의보다 자신의 상처가 먼저 반응했다는 자각",
+              "tags": [
+                "admission",
+                "fear",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "준호가 긴급하게 자리를 잡으려 한 사정 자체는 이해합니다.",
+            "그래도 작년 합의의 핵심이던 '같은 날 공유'를 어긴 건 준호 책임이고, 저는 그 공백을 영구입소로 오해해 상황을 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "문제의 핵심은 악의 여부보다 절차와 신뢰 복구라는 점을 받아들인다.",
+            "자신도 공개 비난에 대해 사과해야 사건이 접힌다는 것을 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:past_overlay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-1:s5:admission:0",
+              "factText": "긴급 판단 자체와 통보 누락 책임을 분리해 인정하는 태도",
+              "tags": [
+                "admission",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s5:admission:1",
+              "factText": "통보 공백이 자신의 영구입소 오해를 촉발했다는 정리",
+              "tags": [
+                "admission",
+                "uncertainty",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "delay": {
+                  "exact": "19시간",
+                  "rounded": "하룻밤 가까이",
+                  "neutral": "상당 시간"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-1:s5:relationship:2",
+              "factText": "이후 신뢰 복구의 초점이 절차 복원과 사과라는 판단",
+              "tags": [
+                "relationship",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "가족 단톡방",
+                  "neutral": "가족 대화방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "repair"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "저는 친척들한테 사실 확인을 부탁한 거지, 준호를 공개적으로 매도한 건 아닙니다.",
+            "그때 상황에선 도움을 구할 데가 거기밖에 없었습니다."
+          ],
+          "privateKnowledge": [
+            "친척 단톡에 '몰래 넣었다'는 식의 단정적 표현을 썼다는 걸 안다.",
+            "준호의 정식 설명보다 먼저 메시지를 올렸다는 점도 안다."
+          ],
+          "suppressions": [
+            "사촌들과 통화에서도 비슷한 취지로 반복했다는 점",
+            "배신감 때문에 표현 수위를 낮추지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:timeline_press"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-2:s0:denial:0",
+              "factText": "친척방 발언을 '도움 요청'으로 규정해 공개 비난성을 부인하는 태도",
+              "tags": [
+                "denial",
+                "privacy",
+                "context"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "reframe"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s0:denial:1",
+              "factText": "준호를 매도한 것이 아니라 상황 공유였다고 주장",
+              "tags": [
+                "denial",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s0:self_justification:2",
+              "factText": "당시 지지와 확인이 필요했다는 자기정당화",
+              "tags": [
+                "self_justification",
+                "emotion",
+                "fear"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "표현이 좀 셌을 수는 있어도, 그 전까지 제가 들은 건 설명 없는 송금뿐이었습니다.",
+            "답답하니까 친척들에게 상황을 묻고 하소연한 겁니다."
+          ],
+          "privateKnowledge": [
+            "메시지가 사실 확인 요청보다 단정적 비난에 가까웠다는 점을 느낀다.",
+            "준호보다 친척들에게 먼저 말을 퍼뜨린 구조가 불리하다는 것을 안다."
+          ],
+          "suppressions": [
+            "준호가 정식 설명하기 2시간 전에 첫 공개 메시지를 올린 점",
+            "'엄마를 몰래 넣었다'는 표현의 단정성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:timeline_press"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-2:s1:uncertainty:0",
+              "factText": "자신의 표현 수위를 '좀 셌다' 정도로 낮춰 말하는 완곡화",
+              "tags": [
+                "uncertainty",
+                "shame",
+                "privacy"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s1:counter:1",
+              "factText": "설명 없는 송금이 있었기에 하소연한 것이라고 원인 전가",
+              "tags": [
+                "counter",
+                "motive",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s1:timeline:2",
+              "factText": "친척들에게 먼저 말이 간 시점을 감추는 태도",
+              "tags": [
+                "timeline",
+                "denial",
+                "evidence"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "제가 '몰래 넣었다'는 식으로 받아들여지게 말한 건 맞습니다.",
+            "다만 그때는 준호가 또 중요한 걸 숨긴다고 느껴서, 확인보다 반응이 먼저 나갔습니다."
+          ],
+          "privateKnowledge": [
+            "정확한 계약 성격을 확인하지 않은 채 공개 해석을 퍼뜨렸다는 점을 안다.",
+            "친척들에게 먼저 말하면 되돌리기 어렵다는 것도 알고 있었다."
+          ],
+          "suppressions": [
+            "표현을 의도적으로 강하게 쓴 부분",
+            "과거 ICU 기억을 현재 사실처럼 끼워 넣은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:timeline_press"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-2:s2:admission:0",
+              "factText": "'몰래 넣었다'는 식으로 받아들여질 발언을 했다는 부분 인정",
+              "tags": [
+                "admission",
+                "quote",
+                "privacy",
+                "harm"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s2:admission:1",
+              "factText": "확인보다 반응이 먼저 나갔다는 자기 진단",
+              "tags": [
+                "admission",
+                "emotion",
+                "motive"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s2:counter:2",
+              "factText": "준호의 숨김 패턴이라고 느껴 원인을 돌리는 프레임",
+              "tags": [
+                "counter",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "친척방 공개 비난은 제 책임이 있습니다.",
+            "그래도 그 말이 나온 바탕엔 준호의 미통보와 과거 ICU 지연 기억이 겹쳐 있었고, 저는 그걸 배신 패턴으로 읽었습니다."
+          ],
+          "privateKnowledge": [
+            "공개 비난이 준호에게 '불효자' 프레임을 씌웠다는 걸 안다.",
+            "친척들 사이에서 사건을 먼저 정의해 버렸다는 점이 부끄럽다."
+          ],
+          "suppressions": [
+            "사과를 미루고 있다는 점",
+            "도움 요청보다 분노 표출이 더 컸다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:timeline_press"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-2:s3:admission:0",
+              "factText": "친척방 공개 비난 책임을 인정하면서도 배경 원인을 제시",
+              "tags": [
+                "admission",
+                "privacy",
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                },
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s3:legacy_sentence:1",
+              "factText": "과거 ICU 기억이 현재 사건을 배신 패턴으로 묶었다는 설명",
+              "tags": [
+                "legacy_sentence",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "5시간",
+                  "neutral": "오래 늦은 시간"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s3:harm:2",
+              "factText": "사건의 첫 정의를 친척들 앞에서 선점해 버린 효과",
+              "tags": [
+                "harm",
+                "privacy",
+                "identity"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 저는 사실보다 먼저 '또 나만 나중이다'라는 감각에 휩쓸렸습니다.",
+            "그래서 친척들 앞에서라도 누가 잘못했는지 먼저 못 박고 싶었습니다."
+          ],
+          "privateKnowledge": [
+            "그 욕구가 준호를 공개적으로 망신주려는 마음과 겹쳤음을 안다.",
+            "도움을 구한다는 말은 절반만 সত্য였음을 안다."
+          ],
+          "suppressions": [
+            "없음에 가까움"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:past_overlay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-2:s4:quote:0",
+              "factText": "'또 나만 나중이다'라는 감각이 공개 비난 욕구로 이어졌다는 고백",
+              "tags": [
+                "quote",
+                "emotion",
+                "relationship",
+                "harm"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s4:shame:1",
+              "factText": "친척들 앞에서 먼저 잘잘못을 고정하고 싶었다는 속내",
+              "tags": [
+                "shame",
+                "motive",
+                "privacy"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s4:admission:2",
+              "factText": "도움 요청이라는 명분이 분노 표출과 섞여 있었다는 인정",
+              "tags": [
+                "admission",
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "계약의 성격을 확인하기도 전에 친척 단톡과 사촌 통화에서 준호가 어머니를 몰래 넣었다는 식으로 단정해 퍼뜨린 건 제 잘못입니다.",
+            "준호의 미통보가 불씨였더라도, 공개 비난으로 사건을 더 키운 책임은 제가 져야 합니다."
+          ],
+          "privateKnowledge": [
+            "사과와 정정 없이는 가족 신뢰 복구가 안 된다는 점을 받아들인다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:past_overlay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-2:s5:admission:0",
+              "factText": "계약 확인 전 친척방과 사촌 통화로 단정적 비난을 퍼뜨린 사실 시인",
+              "tags": [
+                "admission",
+                "privacy",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s5:admission:1",
+              "factText": "준호의 미통보와 별개로 공개 비난 책임을 자신에게 돌리는 정리",
+              "tags": [
+                "admission",
+                "counter",
+                "relationship"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "repair"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-2:s5:relationship:2",
+              "factText": "정정과 사과가 신뢰 회복의 전제라는 인식",
+              "tags": [
+                "relationship",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "repair"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "계좌 이체랑 '침상 확보' 문자만 보면 누구라도 영구입소 계약금처럼 읽습니다.",
+            "당시 제가 그렇게 받아들인 건 무리한 해석만은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "정식 계약서와 환불 규정을 보지 못한 상태였다는 점을 안다.",
+            "자신의 불안이 문구를 더 확정적으로 읽게 했음을 안다."
+          ],
+          "suppressions": [
+            "서류를 보기 전부터 거의 영구입소로 단정한 마음"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-3:s0:uncertainty:0",
+              "factText": "150만원 이체와 침상 확보 문구가 영구입소처럼 보였다는 초기 인식",
+              "tags": [
+                "uncertainty",
+                "context",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "misread"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s0:emotion:1",
+              "factText": "문서 부재 상태에서 최악 해석으로 기운 심리",
+              "tags": [
+                "emotion",
+                "fear",
+                "uncertainty"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s0:self_justification:2",
+              "factText": "누구라도 그렇게 읽을 수 있었다고 일반화하는 방어",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 제 눈엔 영구입소 쪽으로 무게가 실려 보였습니다.",
+            "준호가 정확한 용어를 안 줬으니 그렇게 읽힌 겁니다."
+          ],
+          "privateKnowledge": [
+            "자신이 환불 가능성이나 평가입소 구분을 아직 모른다는 점",
+            "용어를 모른 채 결론부터 냈다는 점"
+          ],
+          "suppressions": [
+            "기관 문서를 확인하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-3:s1:counter:0",
+              "factText": "정확한 용어 부재가 영구입소 해석을 불렀다는 주장",
+              "tags": [
+                "counter",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s1:uncertainty:1",
+              "factText": "자신의 시야에선 영구입소 쪽으로 무게가 실렸다고 말함",
+              "tags": [
+                "uncertainty",
+                "emotion"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s1:evidence:2",
+              "factText": "기관 문서 미확인 상태를 숨기는 방어",
+              "tags": [
+                "evidence",
+                "denial",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "신청서와 영수증을 보니 영구입소 확정금이라고 단정하긴 어렵겠습니다.",
+            "평가입소용 대기금 쪽 설명이 더 맞아 보입니다."
+          ],
+          "privateKnowledge": [
+            "자신의 초반 단정이 흔들렸다는 것을 인정한다.",
+            "준호의 용어 흐림도 오해를 키웠다고 본다."
+          ],
+          "suppressions": [
+            "친척들에게 이미 영구입소처럼 퍼뜨린 사실"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-3:s2:admission:0",
+              "factText": "신청서상 영구입소 확정금 단정이 어려워졌다는 인정",
+              "tags": [
+                "admission",
+                "evidence",
+                "uncertainty"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s2:admission:1",
+              "factText": "평가입소용 대기금이라는 해석 쪽으로 이동",
+              "tags": [
+                "admission",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s2:counter:2",
+              "factText": "용어 흐림이 오해를 키웠다고 보는 시각",
+              "tags": [
+                "counter",
+                "harm",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "환불 규정과 상담 녹취를 보면, 150만원은 영구입소 계약금이 아니라 환불 가능한 평가입소 홀드금입니다.",
+            "제가 본 건 계약이 아니라 불안의 그림자에 더 가까웠던 것 같습니다."
+          ],
+          "privateKnowledge": [
+            "자신이 초반에 증거보다 감정을 앞세웠다는 점을 받아들인다."
+          ],
+          "suppressions": [
+            "없음에 가까움"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-3:s3:rule:0",
+              "factText": "환불 규정상 150만원이 환불 가능한 평가입소 홀드금이라는 사실",
+              "tags": [
+                "rule",
+                "evidence",
+                "institution",
+                "admission"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "환불 가능",
+                  "neutral": "환불 조항 존재"
+                },
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                },
+                "person": {
+                  "fullName": "송하린",
+                  "judgeRef": "상담사",
+                  "neutral": "시설 담당자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s3:admission:1",
+              "factText": "초기 해석이 계약 자체보다 불안의 투사였다는 자기 진단",
+              "tags": [
+                "admission",
+                "emotion",
+                "fear"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s3:quote:2",
+              "factText": "상담 녹취의 '평가부터' 표현이 의미 구분을 뒷받침한다는 점",
+              "tags": [
+                "quote",
+                "evidence",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송하린",
+                  "judgeRef": "상담사",
+                  "neutral": "시설 담당자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "저는 돈의 명칭보다 '이번에도 중요한 걸 끝까지 안 알려줬다'는 감정에 먼저 꽂혀 있었습니다.",
+            "그래서 150만원을 가장 무거운 의미로 읽어버렸습니다."
+          ],
+          "privateKnowledge": [
+            "계약 성격 오해가 자신의 배신감과 결합했다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:past_overlay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-3:s4:emotion:0",
+              "factText": "통보 감정이 금액 의미 해석을 가장 무겁게 만들었다는 고백",
+              "tags": [
+                "emotion",
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s4:legacy_sentence:1",
+              "factText": "돈의 명칭보다 늦은 통보 기억이 먼저 작동했다는 설명",
+              "tags": [
+                "legacy_sentence",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s4:admission:2",
+              "factText": "최악 의미를 스스로 덧씌웠다는 인정",
+              "tags": [
+                "admission",
+                "uncertainty",
+                "fear"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "150만원은 영구입소 계약금이 아니라 2주 평가입소 침상 홀드와 대기등록을 위한 환불 가능 금액이었습니다.",
+            "저는 설명 없는 이체를 보고 영구입소로 오해했고, 그 오해를 너무 빨리 확신으로 바꿨습니다."
+          ],
+          "privateKnowledge": [
+            "계약 의미 정리가 이 분쟁의 절반을 푼다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:past_overlay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-3:s5:admission:0",
+              "factText": "150만원의 정확한 성격을 평가입소 홀드금으로 정정",
+              "tags": [
+                "admission",
+                "institution",
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                },
+                "rule": {
+                  "exact": "환불 가능",
+                  "neutral": "환불 조항 존재"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s5:admission:1",
+              "factText": "설명 없는 이체가 영구입소 오해를 낳았으나 자신이 그 오해를 확신으로 키웠다는 인정",
+              "tags": [
+                "admission",
+                "harm",
+                "uncertainty"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-3:s5:rule:2",
+              "factText": "향후엔 계약 의미를 문서 원본으로만 확인해야 한다는 인식",
+              "tags": [
+                "rule",
+                "institution",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송하린",
+                  "judgeRef": "상담사",
+                  "neutral": "시설 담당자"
+                }
+              },
+              "stanceHints": [
+                "repair"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "작년 가을에 요양원 입소 조건까지 확정한 합의가 있었다고는 볼 수 없습니다.",
+            "그때는 상담이 필요하면 알아보자는 정도였지, 바로 진행하자는 말은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "가족회의 때 '배회가 더 심해지면 은솔 대기'라는 문구를 들은 기억이 희미하게 남아 있다.",
+            "하지만 자신은 통보 조항보다 '아직 버텨보자'는 감정 쪽을 더 오래 붙들고 있었다."
+          ],
+          "suppressions": [
+            "배회·화재 위험 재발 시 평가입소를 검토하자는 문구를 기억하는 점",
+            "센터 기록이 남아 있을 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-4:s0:denial:0",
+              "factText": "작년 가을 합의를 단순 상담 수준으로 축소하는 주장",
+              "tags": [
+                "denial",
+                "context",
+                "threshold"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s0:denial:1",
+              "factText": "입소 조건 확정까지는 아니었다고 선을 긋는 태도",
+              "tags": [
+                "denial",
+                "rule",
+                "uncertainty"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s0:legacy_sentence:2",
+              "factText": "자신이 기억의 일부만 붙잡고 있다는 사실을 감춘다",
+              "tags": [
+                "legacy_sentence",
+                "denial",
+                "relationship"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "설령 은솔요양원 이야기가 나왔어도, 그건 상담이나 대기 문의 수준이었습니다.",
+            "준호가 지금 말하듯 '조건 오면 바로 진행'까지 서로 동의한 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "잘린 사진이 나오면 자신의 부정이 버티기 어려워질 수 있음을 안다.",
+            "통보 조항이 붙어 있었다면 자신이 강조할 포인트가 달라진다는 것도 안다."
+          ],
+          "suppressions": [
+            "노트 일부 문구가 준호 기억을 부분적으로 지지할 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-4:s1:uncertainty:0",
+              "factText": "은솔요양원 언급을 상담·문의 수준으로 낮춰 말함",
+              "tags": [
+                "uncertainty",
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                },
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s1:denial:1",
+              "factText": "'바로 진행' 합의는 아니었다고 선별 부정",
+              "tags": [
+                "denial",
+                "rule",
+                "threshold"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s1:denial:2",
+              "factText": "잘린 사진 이전까지는 기억 자체를 축소해 버티는 태도",
+              "tags": [
+                "denial",
+                "evidence",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "잘린 노트 사진에 '배회 두 번 더면 은솔 대기' 문장은 보입니다.",
+            "그래도 그 사진만으로 준호 단독 진행까지 합의됐다고 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "사전 합의 존재 자체를 더는 완전히 부정하기 어렵다.",
+            "문제의 핵심을 '단독 진행권은 아니었다'로 옮겨야 한다는 판단이 선다."
+          ],
+          "suppressions": [
+            "센터 원본 기록이 나오면 자신이 합의 존재를 축소한 점이 드러난다는 것"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-4:s2:admission:0",
+              "factText": "잘린 노트에서 '배회 두 번 더면 은솔 대기' 문구를 인정",
+              "tags": [
+                "admission",
+                "threshold",
+                "evidence",
+                "institution"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "배회 두 번 재발",
+                  "neutral": "배회 재발"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s2:counter:1",
+              "factText": "노트만으론 단독 진행권까지 읽기 어렵다고 선을 긋는 주장",
+              "tags": [
+                "counter",
+                "rule",
+                "uncertainty"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "reframe"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s2:context:2",
+              "factText": "합의 존재 부정에서 범위 다툼으로 쟁점을 옮기는 태도",
+              "tags": [
+                "context",
+                "rule",
+                "admission"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "작년 가을에 위험 신호가 다시 나오면 은솔요양원 대기·평가입소를 검토할 수 있다는 합의는 있었던 것 같습니다.",
+            "다만 그 합의에는 같은 날 공유 조건이 붙어 있었고, 저는 그 부분이 더 중요하다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "자신이 합의 존재를 현재에 와서 지나치게 축소해 왔다는 점을 안다.",
+            "합의와 통보 조항을 함께 말해야 스스로도 모순이 줄어든다."
+          ],
+          "suppressions": [
+            "합의 자체를 거의 없던 일처럼 몰고 간 초기 태도"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-4:s3:admission:0",
+              "factText": "위험 신호 재발 시 대기·평가입소 합의를 인정",
+              "tags": [
+                "admission",
+                "threshold",
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                },
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s3:rule:1",
+              "factText": "합의의 핵심 조건으로 같은 날 공유를 다시 세움",
+              "tags": [
+                "rule",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s3:admission:2",
+              "factText": "자신이 합의 존재를 축소해 왔다는 자각",
+              "tags": [
+                "admission",
+                "legacy_sentence",
+                "shame"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "저는 그 회의에서조차 끝까지 버텨보자는 마음이 너무 강해서, 합의된 문장을 지금까지도 제 머릿속에서 줄여 버렸던 것 같습니다.",
+            "합의가 없었다고 말한 건 사실상 제 방어였습니다."
+          ],
+          "privateKnowledge": [
+            "입소 논의를 인정하면 어머니를 포기한 사람처럼 느껴질까 두려웠다.",
+            "그래서 합의 존재 자체를 밀어냈다."
+          ],
+          "suppressions": [
+            "없음에 가까움"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:past_overlay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-4:s4:admission:0",
+              "factText": "합의 문장을 자기 머릿속에서 줄여 버렸다는 고백",
+              "tags": [
+                "admission",
+                "fear",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s4:fear:1",
+              "factText": "입소 논의를 인정하는 것 자체가 어머니를 포기하는 느낌이었다는 두려움",
+              "tags": [
+                "fear",
+                "emotion",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정옥자",
+                  "judgeRef": "어머니",
+                  "neutral": "가족 어르신"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s4:self_justification:2",
+              "factText": "합의 부정이 자기방어였다는 인정",
+              "tags": [
+                "self_justification",
+                "admission",
+                "shame"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "작년 가을 가족회의와 센터 기록 기준으로, 배회 재발이나 화재 위험 재발 시 은솔요양원 대기·평가입소를 진행할 수 있다는 사전 합의는 있었습니다.",
+            "다만 그 합의는 준호의 단독 진행권이 아니라 같은 날 공유를 전제로 한 것이었고, 저는 합의 존재를 축소해 스스로를 지키려 했습니다."
+          ],
+          "privateKnowledge": [
+            "사전합의 복원이 이후 돌봄 기준을 다시 세우는 출발점임을 받아들인다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:past_overlay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-4:s5:admission:0",
+              "factText": "작년 가을 사전 합의의 존재를 명시적으로 인정",
+              "tags": [
+                "admission",
+                "threshold",
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                },
+                "institution": {
+                  "fullName": "치매안심센터",
+                  "neutral": "센터"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s5:rule:1",
+              "factText": "합의가 단독 진행권이 아니라 같은 날 공유를 전제로 했다는 정리",
+              "tags": [
+                "rule",
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-4:s5:self_justification:2",
+              "factText": "자신이 합의 존재를 축소해 자기보호를 했다는 고백",
+              "tags": [
+                "self_justification",
+                "admission",
+                "shame"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "배신 프레임을 키운 건 기본적으로 준호의 늦은 통보입니다.",
+            "저는 그에 반응했을 뿐이지, 사건의 본질을 바꾼 사람이 아닙니다."
+          ],
+          "privateKnowledge": [
+            "친척방 공개 비난과 과거 기억 덧씌우기가 프레임을 더 키웠다는 점을 안다.",
+            "하지만 그걸 인정하면 자신의 분노 정당성이 약해질까 두렵다."
+          ],
+          "suppressions": [
+            "친척들에게 먼저 서사를 퍼뜨린 점",
+            "ICU 기억을 현재 사실보다 앞세운 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family08:a:tell:past_overlay",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-5:s0:denial:0",
+              "factText": "배신 프레임의 원인을 준호의 늦은 통보에만 두는 태도",
+              "tags": [
+                "denial",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s0:denial:1",
+              "factText": "자신은 단지 반응했을 뿐이라고 책임 비중을 낮추는 주장",
+              "tags": [
+                "denial",
+                "self_justification",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "deny",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s0:privacy:2",
+              "factText": "공개 비난 확산을 의도적으로 계산 밖으로 밀어내는 태도",
+              "tags": [
+                "privacy",
+                "denial",
+                "harm"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "ICU 때도 다섯 시간 늦었고 이번에도 그랬습니다.",
+            "그런데 제가 어떻게 그걸 배신으로 안 읽습니까."
+          ],
+          "privateKnowledge": [
+            "과거 사건을 현재 사실확인 전에 먼저 호출하고 있음을 안다.",
+            "자신이 '패턴'이라는 말로 현재 책임을 단순화하고 있음을 안다."
+          ],
+          "suppressions": [
+            "이번 사건의 계약 성격은 아직 확인 전이었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:past_overlay",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-5:s1:legacy_sentence:0",
+              "factText": "2021년 ICU 지연과 현재 통보 누락을 하나의 패턴으로 묶는 주장",
+              "tags": [
+                "legacy_sentence",
+                "relationship",
+                "quote",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                },
+                "delay": {
+                  "exact": "5시간",
+                  "neutral": "오래 늦은 시간"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s1:self_justification:1",
+              "factText": "배신 해석이 불가피했다고 말하며 자신의 책임을 희석",
+              "tags": [
+                "self_justification",
+                "emotion",
+                "denial"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s1:legacy_sentence:2",
+              "factText": "현재 사실확인보다 패턴 인식이 앞섰다는 점",
+              "tags": [
+                "legacy_sentence",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "친척방으로 말이 커진 건 맞지만, 그 불씨는 준호가 또 중요한 결정을 늦게 알린 데서 시작됐습니다.",
+            "저는 배신으로 느꼈고, 그 감정이 제 행동을 앞질렀습니다."
+          ],
+          "privateKnowledge": [
+            "친척방에 퍼뜨린 순간 사건을 되돌리기 어려운 프레임으로 고정했다는 점을 안다."
+          ],
+          "suppressions": [
+            "자신이 사실확인보다 확산을 먼저 선택한 책임"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:a:tell:past_overlay",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-5:s2:admission:0",
+              "factText": "친척방 확산 사실을 인정하면서도 불씨를 준호에게 두는 태도",
+              "tags": [
+                "admission",
+                "privacy",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s2:admission:1",
+              "factText": "배신감이 행동을 앞질렀다는 자기 진단",
+              "tags": [
+                "admission",
+                "emotion",
+                "harm"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s2:counter:2",
+              "factText": "프레임 고정의 출발점이 늦은 통보였다는 주장",
+              "tags": [
+                "counter",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "지금 돌이켜보면, 저는 현재 사실을 끝까지 확인하기 전에 과거 ICU 기억을 먼저 덧씌웠습니다.",
+            "그래서 준호의 미통보 문제를 따지는 것과 별개로, 제가 배신 서사를 더 크게 키운 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "자신이 친척들 앞에서 사건 정의를 먼저 끝내 버렸다는 수치심이 있다."
+          ],
+          "suppressions": [
+            "사과가 늦었다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:past_overlay",
+            "family08:a:tell:betrayal_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-5:s3:admission:0",
+              "factText": "과거 ICU 기억을 현재 사실 위에 먼저 덧씌웠다는 인정",
+              "tags": [
+                "admission",
+                "legacy_sentence",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s3:admission:1",
+              "factText": "미통보 추궁과 별개로 자신이 배신 서사를 확대한 책임 인정",
+              "tags": [
+                "admission",
+                "relationship",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s3:privacy:2",
+              "factText": "친척들 앞에서 사건 정의를 먼저 끝낸 수치심",
+              "tags": [
+                "privacy",
+                "shame",
+                "identity"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "저는 다시는 마지막 사람이 되고 싶지 않았습니다.",
+            "그래서 사실을 확인하는 사람보다, 먼저 배신당한 사람으로 자리 잡으려 했던 것 같습니다."
+          ],
+          "privateKnowledge": [
+            "그 욕구가 친척방 공개 비난과 결합해 판을 키웠다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:past_overlay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-5:s4:fear:0",
+              "factText": "다시는 마지막 사람이 되고 싶지 않았다는 핵심 공포",
+              "tags": [
+                "fear",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s4:identity:1",
+              "factText": "배신당한 사람의 자리를 먼저 확보하려 했다는 고백",
+              "tags": [
+                "identity",
+                "motive",
+                "admission"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s4:privacy:2",
+              "factText": "그 욕구가 공개 비난과 결합해 판을 키웠다는 인식",
+              "tags": [
+                "privacy",
+                "harm",
+                "admission"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "배신 프레임은 준호의 미통보만으로 커진 게 아닙니다.",
+            "저도 과거 ICU 기억을 현재에 덧씌우고 친척들 앞에서 먼저 서사를 퍼뜨리면서, 배신 프레임을 키운 공동 책임을 져야 합니다."
+          ],
+          "privateKnowledge": [
+            "신뢰 회복은 과거 사건과 현재 사건을 분리해서 다루는 것부터 시작된다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:a:tell:timeline_press",
+            "family08:a:tell:betrayal_echo",
+            "family08:a:tell:past_overlay"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:a:d-5:s5:admission:0",
+              "factText": "배신 프레임 확대에 자신의 공동 책임을 명시적으로 인정",
+              "tags": [
+                "admission",
+                "relationship",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "repair"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s5:legacy_sentence:1",
+              "factText": "과거 ICU 기억과 친척방 확산이 현재 프레임을 키웠다는 정리",
+              "tags": [
+                "legacy_sentence",
+                "privacy",
+                "harm",
+                "admission"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                },
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:a:d-5:s5:rule:2",
+              "factText": "과거 사건과 현재 사건을 분리해 다뤄야 한다는 인식",
+              "tags": [
+                "rule",
+                "relationship",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "repair"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그건 정식 입소를 박은 돈이 아니라, 일단 자리만 잡아둔 겁니다.",
+            "배회가 겹쳐서 급한 불부터 끈 거지 누나를 빼놓으려던 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "그날 안에 가족 단톡에 공유하지 못했다는 사실을 안다.",
+            "세라가 화낼 것을 예상하고 설명을 미룬 면이 있다."
+          ],
+          "suppressions": [
+            "송금 뒤 가족 단톡을 19시간 가까이 비워 둔 점",
+            "같은 밤 시설 상담사에게는 추가 문자를 보냈다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-1:s0:denial:0",
+              "factText": "150만원을 정식 입소 확정금이 아니라 자리 확보 성격으로 축소해 말하는 태도",
+              "tags": [
+                "denial",
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s0:context:1",
+              "factText": "배회 상황을 먼저 길게 내세워 절차 문제를 뒤로 미루는 방식",
+              "tags": [
+                "context",
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "두 번째 야간 배회 신고 다음 날 오전",
+                  "period": "그 다음 날 오전",
+                  "neutral": "그 시점"
+                },
+                "person": {
+                  "fullName": "정옥자",
+                  "judgeRef": "어머니",
+                  "neutral": "가족 어르신"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s0:denial:2",
+              "factText": "세라를 배제하려 한 의도는 없었다고 부인하는 주장",
+              "tags": [
+                "denial",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "그날 밤엔 어머니 찾고 시설이랑 통화하느라 정리가 안 됐습니다.",
+            "아침에 설명하려고 했지, 아예 숨기려던 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "정리할 틈이 전혀 없었다고 말하긴 어렵다.",
+            "세라가 전화를 여러 번 했는데 받지 못하고 넘긴 기록이 남아 있다."
+          ],
+          "suppressions": [
+            "부재중 전화가 세 차례 있었다는 점",
+            "첫 설명 메시지가 다음 날 오전 7시 12분이라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-1:s1:uncertainty:0",
+              "factText": "그날 밤이 너무 급박해 설명이 밀렸다고 주장하는 완곡화",
+              "tags": [
+                "uncertainty",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "두 번째 야간 배회 신고 다음 날 오전",
+                  "period": "그 다음 날 오전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s1:denial:1",
+              "factText": "숨김이 아니라 '설명 시점 지연'이었다고 표현을 누그러뜨리는 방식",
+              "tags": [
+                "denial",
+                "uncertainty",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "clockExact": "오전 7시 12분",
+                  "period": "다음 날 아침",
+                  "neutral": "첫 설명 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s1:timeline:2",
+              "factText": "전화를 받지 못한 사실을 '정리 안 됨'으로 감추는 태도",
+              "tags": [
+                "timeline",
+                "denial",
+                "evidence"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "19시간",
+                  "rounded": "하룻밤 가까이",
+                  "neutral": "상당 시간"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "맞습니다, 제가 먼저 보냈고 그날 안에 단톡에 못 올렸습니다.",
+            "다만 그때는 침상부터 잡아야 한다는 생각이 앞섰습니다."
+          ],
+          "privateKnowledge": [
+            "사전 합의에 같은 날 공유 조항이 붙어 있었다는 점을 기억한다.",
+            "세라가 반대할까 봐 확인을 미룬 것도 사실이다."
+          ],
+          "suppressions": [
+            "공유 조항을 일부러 자기 쪽에서만 빼놓고 기억했다는 점",
+            "세라의 반응을 피하려고 메시지를 늦춘 계산"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-1:s2:admission:0",
+              "factText": "준호가 먼저 송금했고 같은 날 공유에 실패했다는 부분 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s2:self_justification:1",
+              "factText": "침상 확보 우선 판단을 이유로 드는 자기정당화",
+              "tags": [
+                "self_justification",
+                "motive",
+                "beneficiary"
+              ],
+              "slots": {
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                },
+                "person": {
+                  "fullName": "정옥자",
+                  "judgeRef": "어머니",
+                  "neutral": "가족 어르신"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s2:fear:2",
+              "factText": "반대를 예상하고 설명 시점을 밀었다는 숨은 계산",
+              "tags": [
+                "fear",
+                "relationship",
+                "motive"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "avoidant"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "작년 합의에 기대어 먼저 움직였지만, 같은 날 공유 조항까지 지킨 건 아니었습니다.",
+            "세라가 흥분할까 봐 아침까지 미룬 건 제 판단이었습니다."
+          ],
+          "privateKnowledge": [
+            "자신이 '일단 안전부터'라는 말로 절차 문제를 축소해 왔다는 걸 안다.",
+            "공개 비난이 두려워 선제 설명을 피했다."
+          ],
+          "suppressions": [
+            "불효자처럼 보일까 봐 조용히 처리하고 싶었다는 마음",
+            "상담사와의 추가 메시지를 세라보다 먼저 챙긴 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-1:s3:admission:0",
+              "factText": "사전 합의는 있었으나 공유 조항을 지키지 못했다는 인정",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s3:fear:1",
+              "factText": "세라의 격한 반응을 예상해 설명을 미뤘다는 고백",
+              "tags": [
+                "fear",
+                "relationship",
+                "motive"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "blame",
+                "self_protect"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s3:quote:2",
+              "factText": "'일단 안전부터'라는 말로 절차 위반을 눌러온 패턴",
+              "tags": [
+                "quote",
+                "self_justification",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "저도 그날 어머니를 버리는 사람처럼 보일까 봐 겁이 났습니다.",
+            "합의가 있다는 말만 붙잡고, 누나가 가장 민감해하는 통보 문제를 일부러 뒤로 민 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "과거 ICU 연락 지연이 세라에게 어떤 상처였는지 알고 있었다.",
+            "그 기억을 알면서도 또 늦게 말하면 더 큰 배신으로 읽힐 걸 예상했다."
+          ],
+          "suppressions": [
+            "없음에 가까움"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:care_burden_shield",
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-1:s4:fear:0",
+              "factText": "불효자 낙인 공포가 통보 지연을 부른 면",
+              "tags": [
+                "fear",
+                "shame",
+                "motive"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s4:admission:1",
+              "factText": "세라가 통보 문제에 민감하다는 걸 알면서도 피했다는 고백",
+              "tags": [
+                "admission",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s4:self_justification:2",
+              "factText": "합의 존재를 방패로 삼아 절차를 뒤로 민 사실",
+              "tags": [
+                "self_justification",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "제가 은솔요양원에 150만원을 먼저 보내고도 그날 안에 공유하지 않은 건 잘못입니다.",
+            "평가입소용 자리 확보라는 판단은 있었지만, 합의의 핵심이던 같은 날 공유를 어기면서 세라에게 또 배신으로 느끼게 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "세라의 공개 비난에도 불구하고 자신의 미통보 책임이 더 무겁다는 점을 받아들인다.",
+            "신뢰 회복에는 먼저 통보 규칙을 복원해야 한다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:care_burden_shield",
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-1:s5:admission:0",
+              "factText": "150만원 선송금과 같은 날 미공유를 명시적으로 시인",
+              "tags": [
+                "admission",
+                "act",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s5:admission:1",
+              "factText": "평가입소용 판단과 통보 위반을 분리해 인정",
+              "tags": [
+                "admission",
+                "context",
+                "rule"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-1:s5:harm:2",
+              "factText": "세라에게 '또 배신'처럼 읽히게 만든 결과 책임",
+              "tags": [
+                "harm",
+                "relationship",
+                "admission"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "repair"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "누나가 친척방에 먼저 올리면서 저는 설명도 하기 전에 불효자처럼 찍혔습니다.",
+            "확인도 안 된 말을 그렇게 퍼뜨리는 건 너무했습니다."
+          ],
+          "privateKnowledge": [
+            "세라가 그렇게 반응한 배경에 자신의 미통보가 있다는 점을 안다.",
+            "계약 성격이 헷갈릴 만한 정황을 자신이 만들었다."
+          ],
+          "suppressions": [
+            "자신의 설명 지연이 공개 비난의 불씨였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-2:s0:identity:0",
+              "factText": "친척방 발언으로 자신이 불효자처럼 낙인찍혔다고 느끼는 반응",
+              "tags": [
+                "identity",
+                "harm",
+                "privacy",
+                "emotion"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s0:counter:1",
+              "factText": "확인 없는 확산이라고 세라를 비판하는 주장",
+              "tags": [
+                "counter",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "pressure",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s0:emotion:2",
+              "factText": "설명 기회를 빼앗겼다고 느끼는 억울함",
+              "tags": [
+                "emotion",
+                "relationship",
+                "harm"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "최소한 시설 서류 한 번만 봤어도 영구입소라고까지는 안 갔을 겁니다.",
+            "제 설명보다 친척들 말이 먼저 돈 건 너무 아팠습니다."
+          ],
+          "privateKnowledge": [
+            "세라가 서류를 보기 전에 영수증만 볼 수밖에 없던 것도 사실이다.",
+            "자신이 먼저 설명했다면 이 정도로 번지지 않았을 수 있다."
+          ],
+          "suppressions": [
+            "자신도 세라 전화를 놓친 채 다음 날까지 기다리게 한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-2:s1:evidence:0",
+              "factText": "서류가 있었다면 오해가 덜했을 것이라는 반론",
+              "tags": [
+                "evidence",
+                "counter",
+                "uncertainty"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s1:privacy:1",
+              "factText": "친척들의 말이 자신의 설명보다 먼저 돈 점을 상처로 느낀다",
+              "tags": [
+                "privacy",
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s1:admission:2",
+              "factText": "오해의 일부 조건을 자신도 제공했다는 숨은 인식",
+              "tags": [
+                "admission",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "누나가 도움을 구하려고 했다 해도, 표현은 사실상 공개 비난이었습니다.",
+            "제 정식 설명보다 두 시간 먼저 '몰래 넣었다'는 말이 퍼졌으니까요."
+          ],
+          "privateKnowledge": [
+            "자신이 더 일찍 설명했더라면 그 두 시간이 생기지 않았을 것이라는 점",
+            "공개 비난을 바로잡으려면 자신도 미통보를 인정해야 한다는 점"
+          ],
+          "suppressions": [
+            "미통보 책임"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-2:s2:privacy:0",
+              "factText": "도움 요청과 공개 비난을 구분하며 세라 발언의 비난성을 지적",
+              "tags": [
+                "privacy",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s2:timeline:1",
+              "factText": "자신의 정식 설명보다 두 시간 먼저 단정이 퍼졌다는 사실",
+              "tags": [
+                "timeline",
+                "evidence",
+                "harm"
+              ],
+              "slots": {
+                "time": {
+                  "clockExact": "오전 7시 12분",
+                  "period": "다음 날 아침",
+                  "neutral": "첫 설명 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s2:quote:2",
+              "factText": "'몰래 넣었다'는 표현이 불효자 프레임을 만들었다는 인식",
+              "tags": [
+                "quote",
+                "identity",
+                "harm"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "누나가 친척들에게 먼저 정의해 버리면서 저는 바로 배신자, 불효자처럼 됐습니다.",
+            "다만 그 말이 그렇게 먹힌 건 제가 그날 설명을 비워 둔 탓도 있습니다."
+          ],
+          "privateKnowledge": [
+            "양쪽 책임을 같이 말하지 않으면 자신의 주장도 설득력이 떨어진다는 걸 안다."
+          ],
+          "suppressions": [
+            "없음에 가까움"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-2:s3:identity:0",
+              "factText": "친척들 앞에서 사건이 먼저 정의되며 자신이 낙인화됐다는 체감",
+              "tags": [
+                "identity",
+                "privacy",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s3:admission:1",
+              "factText": "그 효과가 먹힌 배경에 자신의 미통보도 있었다는 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s3:relationship:2",
+              "factText": "양쪽의 행동이 합쳐져 배신 프레임이 커졌다는 인식",
+              "tags": [
+                "relationship",
+                "harm",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "제가 밤마다 어머니 찾으러 뛰었던 사람인데, 친척들 눈엔 한순간에 버리는 아들처럼 됐습니다.",
+            "그래서 누나 메시지를 보면 사실보다 모욕감이 먼저 올라왔습니다."
+          ],
+          "privateKnowledge": [
+            "모욕감 때문에 세라의 상처를 보지 못하고 방어적으로만 굴었다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:care_burden_shield",
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-2:s4:identity:0",
+              "factText": "돌봄 부담을 감당해 온 자신이 버리는 아들처럼 비쳤다는 상처",
+              "tags": [
+                "identity",
+                "emotion",
+                "harm",
+                "beneficiary"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정옥자",
+                  "judgeRef": "어머니",
+                  "neutral": "가족 어르신"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s4:admission:1",
+              "factText": "사실보다 모욕감이 먼저 올라와 방어적으로 굴었다는 고백",
+              "tags": [
+                "admission",
+                "emotion",
+                "shame"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s4:privacy:2",
+              "factText": "친척 시선이 갈등을 더 키웠다는 점",
+              "tags": [
+                "privacy",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "세라가 확인 전에 친척들에게 저를 공개적으로 비난한 건 분명 잘못입니다.",
+            "하지만 그 반응을 부른 미통보는 제 책임이었고, 둘 다 가족 신뢰를 크게 깎았습니다."
+          ],
+          "privateKnowledge": [
+            "상대 비난만으로는 끝나지 않고 함께 수습해야 한다는 점을 받아들인다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:care_burden_shield",
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-2:s5:admission:0",
+              "factText": "세라의 공개 비난 잘못을 분명히 하되 미통보 책임도 함께 인정",
+              "tags": [
+                "admission",
+                "counter",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s5:relationship:1",
+              "factText": "양쪽 행동이 모두 가족 신뢰를 깎았다는 정리",
+              "tags": [
+                "relationship",
+                "harm",
+                "admission"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "repair"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-2:s5:rule:2",
+              "factText": "공개 비난과 미통보를 함께 수습해야 한다는 인식",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "repair"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그건 영구입소 계약금이 아니라 그냥 자리만 잡아두는 돈입니다.",
+            "정식으로 엄마를 시설에 넣어버린 것처럼 말하는 건 과합니다."
+          ],
+          "privateKnowledge": [
+            "영구입소가 아니라는 건 사실이지만, 자신이 용어를 세밀하게 설명하지 않았다는 점을 안다.",
+            "세라가 오해하기 쉬운 상태로 금액만 먼저 보게 했다는 점을 안다."
+          ],
+          "suppressions": [
+            "환불 규정과 평가입소 표현을 초반에 구체적으로 말하지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family08:b:tell:soft_minimizing",
+            "family08:b:tell:urgency_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-3:s0:denial:0",
+              "factText": "150만원을 '그냥 자리만 잡아두는 돈'으로 축약해 말하는 태도",
+              "tags": [
+                "denial",
+                "quote",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s0:denial:1",
+              "factText": "영구입소라고 부르는 건 과장이라고 반발",
+              "tags": [
+                "denial",
+                "counter",
+                "uncertainty"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "deny",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s0:institution:2",
+              "factText": "정확한 용어 설명을 생략한 사실을 숨김",
+              "tags": [
+                "institution",
+                "denial",
+                "evidence"
+              ],
+              "slots": {
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "정식 계약은 아니고, 평가부터 보려는 쪽에 가까웠습니다.",
+            "말이 길어질까 봐 세세한 규정은 뒤로 미뤘습니다."
+          ],
+          "privateKnowledge": [
+            "세세한 규정을 뒤로 미룬 것이 사실상 의미 축소였다는 점을 안다.",
+            "환불 가능성을 말했으면 오해가 줄었을 것을 안다."
+          ],
+          "suppressions": [
+            "환불 가능 조항",
+            "상담 녹취에 '평가부터'가 분명히 남아 있는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:soft_minimizing",
+            "family08:b:tell:urgency_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-3:s1:uncertainty:0",
+              "factText": "정식 계약이 아니라 평가 단계라고 완곡하게 선을 긋는 말",
+              "tags": [
+                "uncertainty",
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s1:self_justification:1",
+              "factText": "규정을 뒤로 미뤘다고 말하며 의미 축소를 정당화",
+              "tags": [
+                "self_justification",
+                "uncertainty",
+                "motive"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "환불 가능",
+                  "neutral": "환불 조항 존재"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s1:denial:2",
+              "factText": "오해를 줄일 수 있는 정보가 있었음을 감추는 태도",
+              "tags": [
+                "denial",
+                "evidence",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "환불 가능",
+                  "neutral": "환불 조항 존재"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "신청서 기준으로는 맞습니다. 영구입소 확정금이 아니라 평가입소용 대기금입니다.",
+            "제가 그 차이를 충분히 설명하지 않은 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "금액의 법적 성격은 맞게 말하면서도, 설명 책임까지는 아직 덜 말하고 싶다."
+          ],
+          "suppressions": [
+            "세라가 오해하기 쉬울 걸 알면서도 용어를 줄여 말한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:soft_minimizing",
+            "family08:b:tell:urgency_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-3:s2:admission:0",
+              "factText": "신청서상 150만원이 평가입소용 대기금이라는 인정",
+              "tags": [
+                "admission",
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s2:admission:1",
+              "factText": "차이를 충분히 설명하지 않았다는 부분 인정",
+              "tags": [
+                "admission",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s2:rule:2",
+              "factText": "법적 성격은 맞지만 설명 책임이 남아 있다는 구조",
+              "tags": [
+                "rule",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "환불 가능",
+                  "neutral": "환불 조항 존재"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "환불 규정까지 보면 더 분명합니다. 150만원은 환불 가능한 홀드금이고, 상담 때도 제가 '평가부터'라고 말했습니다.",
+            "다만 누나에겐 그 핵심 단어들을 일부러 짧게 줄여 말했습니다."
+          ],
+          "privateKnowledge": [
+            "짧게 줄여 말한 건 갈등 회피용이었다.",
+            "세라가 흥분할까 봐 명칭을 흐린 면이 있다."
+          ],
+          "suppressions": [
+            "없음에 가까움"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:soft_minimizing",
+            "family08:b:tell:urgency_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-3:s3:rule:0",
+              "factText": "환불 규정과 녹취가 영구입소 계약금이 아님을 뒷받침한다는 점",
+              "tags": [
+                "rule",
+                "evidence",
+                "institution",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "환불 가능",
+                  "neutral": "환불 조항 존재"
+                },
+                "person": {
+                  "fullName": "송하린",
+                  "judgeRef": "상담사",
+                  "neutral": "시설 담당자"
+                },
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s3:quote:1",
+              "factText": "'평가부터'라는 핵심 단어를 세라 앞에서 짧게 줄였다는 고백",
+              "tags": [
+                "quote",
+                "admission",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송하린",
+                  "judgeRef": "상담사",
+                  "neutral": "시설 담당자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s3:fear:2",
+              "factText": "갈등 회피 때문에 명칭을 흐렸다는 자기진단",
+              "tags": [
+                "fear",
+                "self_justification",
+                "relationship"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "avoidant"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "영구입소가 아니라는 사실만 붙잡고, 누나가 왜 그렇게 겁먹는지는 제대로 안 봤습니다.",
+            "저는 용어를 줄이면 싸움도 줄어들 거라고 착각했습니다."
+          ],
+          "privateKnowledge": [
+            "용어 축소가 오히려 최악의 오해를 불렀다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:care_burden_shield",
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-3:s4:admission:0",
+              "factText": "사실 관계 하나만 붙잡고 상대 감정을 외면했다는 고백",
+              "tags": [
+                "admission",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s4:self_justification:1",
+              "factText": "용어 축소가 싸움을 줄일 거라는 착각",
+              "tags": [
+                "self_justification",
+                "fear",
+                "admission"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s4:harm:2",
+              "factText": "명칭 흐림이 최악의 오해를 불렀다는 깨달음",
+              "tags": [
+                "harm",
+                "admission",
+                "uncertainty"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "150만원은 영구입소 계약금이 아니라 환불 가능한 평가입소 대기금이 맞습니다.",
+            "그런데 저는 그 차이를 세라에게 충분히 설명하지 않고 '그냥 자리만 잡아둔 거'라고 줄여 말해 오해를 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "계약 의미와 설명 책임을 같이 인정해야 사건이 정리된다는 점을 받아들인다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:care_burden_shield",
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-3:s5:admission:0",
+              "factText": "150만원의 정확한 성격을 환불 가능한 평가입소 대기금으로 시인",
+              "tags": [
+                "admission",
+                "institution",
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "1,500,000원",
+                  "rounded": "150만원",
+                  "neutral": "해당 금액"
+                },
+                "rule": {
+                  "exact": "환불 가능",
+                  "neutral": "환불 조항 존재"
+                },
+                "term": {
+                  "exact": "2주 평가입소 침상 홀드",
+                  "neutral": "평가입소용 자리 확보"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s5:quote:1",
+              "factText": "'그냥 자리만 잡아둔 거'라는 축약이 오해를 키웠다는 인정",
+              "tags": [
+                "quote",
+                "admission",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-3:s5:responsibility:2",
+              "factText": "계약 의미와 설명 책임을 함께 받아들이는 태도",
+              "tags": [
+                "responsibility",
+                "relationship",
+                "admission"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "repair"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "작년 가을에 이미 다 얘기됐던 일입니다.",
+            "배회나 화재 위험이 다시 나오면 은솔요양원 쪽으로 움직이기로 했습니다."
+          ],
+          "privateKnowledge": [
+            "그 합의에 '같은 날 공유' 조항이 붙어 있었다는 점을 안다.",
+            "자신이 지금 말하는 건 합의의 절반만 꺼낸 형태라는 점을 안다."
+          ],
+          "suppressions": [
+            "같은 날 공유 조항",
+            "세라와 어머니 서명이 함께 들어간 기록의 세부 문구"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-4:s0:denial:0",
+              "factText": "사전 합의를 '이미 다 얘기됐다'는 식으로 넓게 단정",
+              "tags": [
+                "denial",
+                "rule",
+                "threshold"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "overstate"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s0:threshold:1",
+              "factText": "배회·화재 위험 재발 시 움직이기로 했다고 핵심만 끄집어냄",
+              "tags": [
+                "threshold",
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s0:denial:2",
+              "factText": "공유 조항을 뺀 반쪽 기억을 전면화하는 태도",
+              "tags": [
+                "denial",
+                "rule",
+                "evidence"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "노트에도 은솔 대기라고 적혀 있습니다.",
+            "그래서 저는 새로 허락을 받는 문제가 아니라 이미 정한 조건을 실행한 거라고 본 겁니다."
+          ],
+          "privateKnowledge": [
+            "노트가 잘린 사진이라 전체 문맥을 말해주지 못한다는 걸 안다.",
+            "자신에게 유리한 부분만 먼저 내세우고 있다."
+          ],
+          "suppressions": [
+            "서명란과 통보 조건이 잘린 사진에 없다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-4:s1:evidence:0",
+              "factText": "잘린 노트 사진을 근거로 '은솔 대기' 문구를 전면에 내세움",
+              "tags": [
+                "evidence",
+                "institution",
+                "threshold",
+                "uncertainty"
+              ],
+              "slots": {
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                },
+                "threshold": {
+                  "exact": "배회 두 번 재발",
+                  "neutral": "배회 재발"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s1:rule:1",
+              "factText": "새 허락이 아니라 조건 실행이었다고 보는 프레임",
+              "tags": [
+                "rule",
+                "self_justification",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s1:evidence:2",
+              "factText": "사진이 잘려 있다는 불리한 맥락을 숨김",
+              "tags": [
+                "evidence",
+                "denial",
+                "privacy"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "맞습니다, 합의는 있었습니다. 하지만 제가 내민 노트 사진은 제 쪽에 유리한 부분만 보여줬습니다.",
+            "그래도 배회 재발 시 대기·평가입소 가능성 자체는 분명히 적혀 있었습니다."
+          ],
+          "privateKnowledge": [
+            "합의 전체를 말하면 자신의 미통보가 더 분명해진다는 걸 안다."
+          ],
+          "suppressions": [
+            "같은 날 공유 조항을 아직 전면으로 말하지 않는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-4:s2:admission:0",
+              "factText": "잘린 노트가 자기에게 유리한 부분만 보여줬다는 인정",
+              "tags": [
+                "admission",
+                "evidence",
+                "privacy"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s2:admission:1",
+              "factText": "배회 재발 시 대기·평가입소 가능성 문구는 분명했다는 주장",
+              "tags": [
+                "admission",
+                "threshold",
+                "institution",
+                "rule"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "배회 두 번 재발",
+                  "neutral": "배회 재발"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s2:fear:2",
+              "factText": "합의 전체 공개를 미루는 이유가 자신의 책임 확대 때문이라는 점",
+              "tags": [
+                "fear",
+                "responsibility",
+                "motive"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "센터 기록까지 보면 사전 합의가 있었다는 건 맞습니다.",
+            "다만 저는 그 합의에서 '같은 날 공유' 조항을 제 편한 대로 빼고 말해 왔습니다."
+          ],
+          "privateKnowledge": [
+            "세라가 합의 존재를 부정한 만큼 자신도 공유 조항을 축소했다는 점에서 비슷한 왜곡을 했음을 안다."
+          ],
+          "suppressions": [
+            "없음에 가까움"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-4:s3:admission:0",
+              "factText": "센터 기록이 사전 합의를 뒷받침한다는 인정",
+              "tags": [
+                "admission",
+                "institution",
+                "evidence",
+                "rule"
+              ],
+              "slots": {
+                "institution": {
+                  "fullName": "치매안심센터",
+                  "neutral": "센터"
+                },
+                "person": {
+                  "fullName": "배수진",
+                  "judgeRef": "사례관리사",
+                  "neutral": "센터 담당자"
+                },
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s3:admission:1",
+              "factText": "'같은 날 공유' 조항을 자기 편한 대로 뺐다는 고백",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s3:admission:2",
+              "factText": "자신도 기억을 유리하게 왜곡했다는 자각",
+              "tags": [
+                "admission",
+                "shame",
+                "legacy_sentence"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "합의가 있다는 말만 내세우면 제가 덜 나빠 보일 줄 알았습니다.",
+            "실은 누나가 제일 민감해하는 통보 조항을 빼버리면, 제가 또 늦게 말한 사람이라는 사실도 흐려질 거라 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "불효자 낙인과 동시에 무책임한 동생 낙인도 피하고 싶었다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:care_burden_shield",
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-4:s4:motive:0",
+              "factText": "합의 존재만 강조하면 자신이 덜 나빠 보일 것이라 계산했다는 고백",
+              "tags": [
+                "motive",
+                "self_justification",
+                "shame"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s4:rule:1",
+              "factText": "통보 조항을 빼면 자신의 미통보 책임이 흐려질 거라 생각했다는 속내",
+              "tags": [
+                "rule",
+                "responsibility",
+                "fear",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s4:identity:2",
+              "factText": "낙인을 피하려 기억을 편의적으로 사용했다는 점",
+              "tags": [
+                "identity",
+                "fear",
+                "admission"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "작년 가을에 배회 재발이나 화재 위험 재발 시 은솔요양원 대기·평가입소를 진행할 수 있다는 합의는 분명히 있었습니다.",
+            "하지만 그 합의는 같은 날 가족 단톡 공유를 전제로 한 것이었고, 저는 그 핵심 조항을 빼고 '이미 다 합의됐다'고 말해 제 잘못을 덮으려 했습니다."
+          ],
+          "privateKnowledge": [
+            "사전합의와 통보의무를 함께 복원해야 이후 절차가 선다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:care_burden_shield",
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-4:s5:admission:0",
+              "factText": "사전 합의의 정확한 범위를 인정",
+              "tags": [
+                "admission",
+                "threshold",
+                "rule",
+                "institution"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "작년 가을 가족회의",
+                  "period": "작년 가을",
+                  "neutral": "그 회의 때"
+                },
+                "threshold": {
+                  "exact": "화재 위험 재발",
+                  "neutral": "위험 신호 재발"
+                },
+                "institution": {
+                  "fullName": "은솔요양원",
+                  "neutral": "해당 요양원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "clarify"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s5:admission:1",
+              "factText": "같은 날 공유 조항을 뺀 채 합의만 내세워 자신을 방어했다는 고백",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                },
+                "group": {
+                  "exact": "가족 단톡방",
+                  "neutral": "가족 대화방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-4:s5:relationship:2",
+              "factText": "사전합의와 통보의무를 함께 복원해야 한다는 인식",
+              "tags": [
+                "relationship",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "repair"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "배신 프레임은 누나가 친척들한테 먼저 퍼뜨리면서 커졌습니다.",
+            "저는 어머니 안전 때문에 움직였는데, 그게 바로 배신으로 번졌습니다."
+          ],
+          "privateKnowledge": [
+            "세라가 그렇게 읽을 단서를 자신이 만든 것도 안다.",
+            "같은 날 공유 원칙을 어긴 사실이 프레임을 키우는 핵심 재료였다는 점을 안다."
+          ],
+          "suppressions": [
+            "미통보 책임",
+            "ICU 지연 기억을 다시 건드렸다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-5:s0:privacy:0",
+              "factText": "배신 프레임 확산을 세라의 친척방 공개로 먼저 설명하는 태도",
+              "tags": [
+                "privacy",
+                "relationship",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s0:self_justification:1",
+              "factText": "자신은 안전 때문에 움직였을 뿐이라고 말하며 프레임 책임을 줄임",
+              "tags": [
+                "self_justification",
+                "beneficiary",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정옥자",
+                  "judgeRef": "어머니",
+                  "neutral": "가족 어르신"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "justify"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s0:denial:2",
+              "factText": "미통보 책임을 뒤로 미루는 구조",
+              "tags": [
+                "denial",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "그래도 제가 그날 바로 알리지 않은 건 사실이라, 누나가 또 패턴으로 읽은 건 이해는 갑니다.",
+            "다만 그걸 친척들 앞 배신극으로 키운 건 누나 쪽이 더 컸습니다."
+          ],
+          "privateKnowledge": [
+            "과거 ICU 기억이 세라에게 매우 큰 상처였음을 안다."
+          ],
+          "suppressions": [
+            "자신도 그 기억을 알고 있었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-5:s1:admission:0",
+              "factText": "그날 바로 알리지 않은 사실을 인정",
+              "tags": [
+                "admission",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s1:relationship:1",
+              "factText": "세라가 패턴으로 읽은 배경을 부분 이해한다는 태도",
+              "tags": [
+                "relationship",
+                "legacy_sentence",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "empathy"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s1:privacy:2",
+              "factText": "그러나 친척들 앞 확산 책임은 세라 쪽이 더 크다고 보는 주장",
+              "tags": [
+                "privacy",
+                "counter",
+                "harm"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "배신 프레임은 제 미통보와 누나의 공개 비난이 같이 물린 결과입니다.",
+            "제가 같은 날 설명만 했어도 과거 ICU 기억까지 이렇게 바로 붙지는 않았을 겁니다."
+          ],
+          "privateKnowledge": [
+            "자신이 과거 상처를 알고도 비슷한 행동을 반복했다는 점에서 더 미안함이 생긴다."
+          ],
+          "suppressions": [
+            "불효자 낙인을 피하려 설명을 늦춘 동기"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-5:s2:admission:0",
+              "factText": "미통보와 공개 비난이 같이 물려 배신 프레임이 형성됐다는 진단",
+              "tags": [
+                "admission",
+                "relationship",
+                "harm",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s2:rule:1",
+              "factText": "같은 날 설명만 했어도 ICU 기억이 즉시 붙지 않았을 거라는 인식",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "admission"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                },
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s2:harm:2",
+              "factText": "자신의 반복 행동이 과거 상처를 다시 건드렸다는 사실",
+              "tags": [
+                "harm",
+                "relationship",
+                "admission"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "저는 현장 부담만 내세우고, 누나가 왜 이걸 배신으로 읽는지 진지하게 보지 않았습니다.",
+            "누나는 친척들 앞에서 서둘러 결론을 냈고, 저는 그 이전에 설명을 비워 두었습니다."
+          ],
+          "privateKnowledge": [
+            "양쪽이 서로의 취약점을 정확히 찔렀다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음에 가까움"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-5:s3:admission:0",
+              "factText": "현장 부담만 내세워 상대 해석을 보지 못했다는 인정",
+              "tags": [
+                "admission",
+                "context",
+                "emotion"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s3:privacy:1",
+              "factText": "세라는 친척들 앞 결론을, 자신은 설명 공백을 만들었다는 병렬 정리",
+              "tags": [
+                "privacy",
+                "timeline",
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "group": {
+                  "exact": "친척 단톡방",
+                  "neutral": "가족 외 친척 대화방"
+                },
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s3:relationship:2",
+              "factText": "서로의 취약점이 맞물려 프레임이 커졌다는 인식",
+              "tags": [
+                "relationship",
+                "harm",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "저는 불효자 소리 듣는 게 무서워서 먼저 설명을 못 했고, 누나는 또 버려졌다는 감정으로 먼저 퍼뜨렸던 것 같습니다.",
+            "둘 다 어머니 문제를 형제 신뢰 문제로 바꿔버렸습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 공포와 세라의 상처를 한 문장 안에 같이 볼 수 있게 되었다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:care_burden_shield",
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-5:s4:fear:0",
+              "factText": "불효자 낙인 공포 때문에 설명을 늦췄다는 고백",
+              "tags": [
+                "fear",
+                "identity",
+                "admission"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s4:relationship:1",
+              "factText": "세라의 버려졌다는 감정과 자신의 공포가 동시에 작동했다는 인식",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "emotional",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s4:beneficiary:2",
+              "factText": "어머니 문제를 형제 신뢰 문제로 바꿔버렸다는 정리",
+              "tags": [
+                "beneficiary",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "정옥자",
+                  "judgeRef": "어머니",
+                  "neutral": "가족 어르신"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "reflective"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "배신 프레임을 키운 책임은 누나에게만 있지 않습니다.",
+            "제가 같은 날 설명하지 않아 과거 상처를 다시 건드렸고, 누나는 친척들 앞에서 먼저 배신 서사를 퍼뜨렸습니다. 둘 다 공동 책임이 있습니다."
+          ],
+          "privateKnowledge": [
+            "신뢰 복구는 먼저 늦은 통보와 공개 비난을 각각 멈추는 규칙에서 시작된다는 점을 받아들인다."
+          ],
+          "suppressions": [
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family08:b:tell:care_burden_shield",
+            "family08:b:tell:urgency_buffer",
+            "family08:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family08:b:d-5:s5:admission:0",
+              "factText": "배신 프레임 확대에 양측 공동 책임을 분명히 인정",
+              "tags": [
+                "admission",
+                "relationship",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "confess",
+                "repair"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s5:legacy_sentence:1",
+              "factText": "자신의 미통보가 과거 상처를 재점화했다는 시인",
+              "tags": [
+                "legacy_sentence",
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "그날 안에 가족 단톡 공유",
+                  "neutral": "같은 날 공유 원칙"
+                },
+                "time": {
+                  "dateExact": "2021년 아버지 ICU 전원 때",
+                  "period": "그때 ICU 때",
+                  "neutral": "과거 그 사건"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family08:b:d-5:s5:rule:2",
+              "factText": "공개 비난 중단과 늦은 통보 중단이 신뢰 복구 규칙이라는 인식",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {},
+              "stanceHints": [
+                "repair"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

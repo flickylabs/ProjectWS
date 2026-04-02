@@ -1,0 +1,1513 @@
+export const friend06V3GameLoopData = {
+  "caseId": "friend-06",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "바뀐 화면과 공개 파장",
+      "description": "변경 로그와 단톡 캡처를 맞물려 직접 수정과 공개 비난의 순서를 압박하는 카드다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "윤해온 씨, 실제 역할 권한을 확인하기도 전에 왜 비교 캡처를 업계 단톡에 먼저 올리셨습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.a.unlock.s2.public_callout_before_check",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "그 조치는 문제 게시물 한 건만 잠근 것입니까, 아니면 블로그와 채널 전체 접근권을 끊은 것입니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d2.a.unlock.s3.total_access_revocation",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "핀댓글이 사라진 화면을 본 순간, 당신에게 그 장면이 단순 오류였습니까 아니면 통제권 침범이었습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d2.a.unlock.s4.identity_panic",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "최다솔 씨, 로그상 같은 세션에서 본문과 설명란을 직접 수정한 사실부터 인정하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.b.unlock.s2.direct_edit_same_session",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "그 세션에서 핀댓글이 사라진 책임도 결국 본인 작업 흐름 안에 있었다고 보십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d1.b.unlock.s3.pin_comment_removed",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "광고 표기 정정과 제목·썸네일·핀댓글 변경을 같은 정리 작업으로 묶은 근거가 정확히 무엇입니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.b.unlock.s3.extra_surface_edit",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "권한 초대와 요청 범위",
+      "description": "초대 로그와 브랜드 원문 요청을 대조해 무단 침입 프레임과 범위 초과 편집을 동시에 흔드는 카드다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "윤해온 씨, 블로그 편집자와 유튜브 매니저 권한이 실제로 이미 수락돼 있었다는 점은 부인하실 수 없지요.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.a.unlock.s2.granted_roles_exist",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "그렇다면 모바일의 '함께 수정' 같은 표시를 어떤 범위로 이해했기에 공개 수정 권한을 부정하신 겁니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.a.unlock.s3.mobile_label_misread",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "과거 라이브 링크 수정 때 감사만 하고 경계를 분명히 정리하지 않은 전례도 이번 판단에 영향을 준 것 아닙니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d3.a.unlock.s4.unspoken_boundary_past_fix",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "최다솔 씨, 임세진 코디네이터의 원문 요청이 광고 표기와 가격 날짜 정정으로 한정돼 있었다는 점은 인정하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d4.b.unlock.s2.request_scope_was_limited",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "해온 씨가 여섯 시간째 답을 주지 않자, 그 압박이 직접 수정으로 넘어가게 만든 결정적 이유였습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d1.b.unlock.s4.sponsor_pressure_after_silence",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "결과를 살려야 한다는 이유로 제목과 썸네일까지 손본 판단, 그게 결국 범위를 넓혀 잡은 자기 합리화였던 것 아닙니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.b.unlock.s4.result_first_justification",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "공동 규칙과 전면 차단",
+      "description": "공동 스레드 원칙과 접근권 회수 기록을 엮어 쌍방의 절차 위반을 동시에 드러내는 카드다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "윤해온 씨, 협업 노션에 적힌 공동 스레드 원칙과 최종 확인 규칙을 본인도 알고 있었고 확인 표시도 남겼지요.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.a.unlock.s2.rule_was_known",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "그 규칙을 알면서도 당사자 확인보다 단톡 공개와 전체 권한 회수를 먼저 택한 이유를 명확히 말씀하십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.a.unlock.s3.skipped_private_check",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "당시 업계방에서 어떤 사람으로 보일까 두려웠기에 절차보다 체면과 통제권 회복이 앞선 것 아닙니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d5.a.unlock.s4.face_over_rule",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "최다솔 씨도 같은 노션 문서에서 협찬 수정 요청은 공동 스레드에 먼저 공유하기로 확인했지요.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.b.unlock.s2.rule_was_known",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "그렇다면 왜 요청 원문을 공동 스레드에 붙이지도 않은 채 라이브 게시물 수정부터 시작했습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.b.unlock.s3.edited_before_shared_thread",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "과거 라이브 링크 수정 전례와 관계를 지키고 싶다는 마음이 이번에도 예외를 허용해 준 것 아닙니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d5.b.unlock.s4.past_live_fix_gray_zone",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.a.unlock.s2.public_callout_before_check",
+            "factText": "해온은 실제 역할 권한을 확인하기 전에 창작자 단톡에 비교 캡처를 먼저 올렸다.",
+            "tags": [
+              "act",
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "counterparty": {
+                "fullName": "최다솔",
+                "judgeRef": "다솔 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "audience": {
+                "exact": "창작자 단톡",
+                "judgeRef": "단톡",
+                "neutral": "업계 단체대화방"
+              },
+              "time": {
+                "relativeExact": "수정 직후 14분 안",
+                "period": "수정 직후",
+                "neutral": "그때"
+              },
+              "evidence": {
+                "primary": "e-2",
+                "supporting": "e-6",
+                "neutral": "단톡 캡처와 회수 로그"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "defensive"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.a.unlock.s3.total_access_revocation",
+            "factText": "해온의 조치는 문제 게시물 잠금이 아니라 블로그와 채널 전체 접근권 회수로 이어졌다.",
+            "tags": [
+              "act",
+              "harm",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "counterparty": {
+                "fullName": "최다솔",
+                "judgeRef": "다솔 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "revocation": {
+                "relativeExact": "단톡 전송 후 9분 안",
+                "period": "곧바로",
+                "neutral": "바로"
+              },
+              "evidence": {
+                "primary": "e-2",
+                "supporting": "e-6",
+                "neutral": "단톡 캡처와 회수 로그"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.a.unlock.s4.identity_panic",
+            "factText": "해온은 업계방에서 통제권을 잃은 창작자로 보일까 봐 체면 공포를 크게 느꼈다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "counterparty": {
+                "fullName": "최다솔",
+                "judgeRef": "다솔 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "audience": {
+                "exact": "창작자 단톡",
+                "judgeRef": "단톡",
+                "neutral": "업계 단체대화방"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "hurt"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.a.unlock.s5.public_shaming_admission",
+            "factText": "해온은 사적 확인보다 공개 비난과 전면 차단을 앞세운 자신의 선택이 잘못이었다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "counterparty": {
+                "fullName": "최다솔",
+                "judgeRef": "다솔 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "audience": {
+                "exact": "창작자 단톡",
+                "judgeRef": "단톡",
+                "neutral": "업계 단체대화방"
+              },
+              "revocation": {
+                "relativeExact": "단톡 전송 후 9분 안",
+                "period": "곧바로",
+                "neutral": "바로"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.a.unlock.s2.granted_roles_exist",
+            "factText": "다솔에게는 블로그 편집자와 유튜브 브랜드계정 매니저 권한이 실제로 부여되어 있었다.",
+            "tags": [
+              "identity",
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "counterparty": {
+                "fullName": "최다솔",
+                "judgeRef": "다솔 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "roleBlog": {
+                "exact": "블로그 편집자",
+                "judgeRef": "편집자 권한",
+                "neutral": "블로그 권한"
+              },
+              "roleYoutube": {
+                "exact": "유튜브 브랜드계정 매니저",
+                "judgeRef": "매니저 역할",
+                "neutral": "채널 역할"
+              },
+              "time": {
+                "relativeExact": "지난달 / 그 전주",
+                "period": "이전부터",
+                "neutral": "이미"
+              },
+              "evidence": {
+                "primary": "e-3",
+                "supporting": "e-4",
+                "neutral": "초대 로그와 요청 스레드"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "defensive"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.a.unlock.s3.mobile_label_misread",
+            "factText": "해온은 모바일의 '함께 수정' 같은 표시를 제안권에 가까운 범위로 좁게 읽고 있었다.",
+            "tags": [
+              "context",
+              "uncertainty",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "roleBlog": {
+                "exact": "블로그 편집자",
+                "judgeRef": "편집자 권한",
+                "neutral": "블로그 권한"
+              },
+              "roleYoutube": {
+                "exact": "유튜브 브랜드계정 매니저",
+                "judgeRef": "매니저 역할",
+                "neutral": "채널 역할"
+              },
+              "time": {
+                "relativeExact": "지난달 / 그 전주",
+                "period": "이전부터",
+                "neutral": "이미"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "explain"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.a.unlock.s4.unspoken_boundary_past_fix",
+            "factText": "예전 라이브 링크 수정 때 감사만 하고 권한 경계를 말로 못 박지 않은 기억이 이번 판단을 더 흔들었다.",
+            "tags": [
+              "relationship",
+              "legacy_sentence",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "counterparty": {
+                "fullName": "최다솔",
+                "judgeRef": "다솔 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "time": {
+                "relativeExact": "지난달 / 그 전주",
+                "period": "이전부터",
+                "neutral": "이미"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.a.unlock.s5.false_intrusion_label",
+            "factText": "해온은 무단 침입이라는 규정을 철회하고 자신이 더 넓은 권한을 주고도 설명하지 않았다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "identity"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "counterparty": {
+                "fullName": "최다솔",
+                "judgeRef": "다솔 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "roleBlog": {
+                "exact": "블로그 편집자",
+                "judgeRef": "편집자 권한",
+                "neutral": "블로그 권한"
+              },
+              "roleYoutube": {
+                "exact": "유튜브 브랜드계정 매니저",
+                "judgeRef": "매니저 역할",
+                "neutral": "채널 역할"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.a.unlock.s2.rule_was_known",
+            "factText": "해온은 협업 노션의 공동 스레드 원칙과 최종 확인 규칙을 알고 있었고 직접 확인 표시도 남겼다.",
+            "tags": [
+              "rule",
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "ruleDoc": {
+                "exact": "협업 노션 운영 규칙",
+                "judgeRef": "노션 규칙",
+                "neutral": "공동 규칙 문서"
+              },
+              "rule": {
+                "exact": "최종 공개 전 상호 확인 / 협찬 수정 요청은 공동 스레드 공유",
+                "judgeRef": "공동 원칙",
+                "neutral": "공동 스레드 원칙"
+              },
+              "time": {
+                "relativeExact": "지난가을 합의 이후",
+                "period": "기존 협업 절차",
+                "neutral": "평소"
+              },
+              "evidence": {
+                "primary": "e-5",
+                "supporting": "e-6",
+                "neutral": "노션 규칙과 회수 로그"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.a.unlock.s3.skipped_private_check",
+            "factText": "해온은 규칙을 아는 상태에서도 당사자 확인보다 단톡 공개와 전체 권한 회수를 먼저 택했다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "counterparty": {
+                "fullName": "최다솔",
+                "judgeRef": "다솔 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "rule": {
+                "exact": "최종 공개 전 상호 확인 / 협찬 수정 요청은 공동 스레드 공유",
+                "judgeRef": "공동 원칙",
+                "neutral": "공동 스레드 원칙"
+              },
+              "evidence": {
+                "primary": "e-5",
+                "supporting": "e-6",
+                "neutral": "노션 규칙과 회수 로그"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.a.unlock.s4.face_over_rule",
+            "factText": "해온은 관계를 지키고 싶다고 생각했지만 실제로는 업계방 체면과 통제권 회복 욕구가 규칙보다 앞섰다.",
+            "tags": [
+              "emotion",
+              "fear",
+              "relationship"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "counterparty": {
+                "fullName": "최다솔",
+                "judgeRef": "다솔 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "ruleDoc": {
+                "exact": "협업 노션 운영 규칙",
+                "judgeRef": "노션 규칙",
+                "neutral": "공동 규칙 문서"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.a.unlock.s5.same_rule_broken",
+            "factText": "해온은 다솔의 위반을 비난하면서도 자신도 같은 공동 확인 원칙을 깨뜨렸다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "counterparty": {
+                "fullName": "최다솔",
+                "judgeRef": "다솔 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "rule": {
+                "exact": "최종 공개 전 상호 확인 / 협찬 수정 요청은 공동 스레드 공유",
+                "judgeRef": "공동 원칙",
+                "neutral": "공동 스레드 원칙"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.b.unlock.s2.direct_edit_same_session",
+            "factText": "다솔은 브랜드 연락 직후 같은 세션에서 블로그 본문과 유튜브 설명란을 직접 수정했다.",
+            "tags": [
+              "act",
+              "timeline",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "counterparty": {
+                "fullName": "윤해온",
+                "judgeRef": "해온 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "time": {
+                "relativeExact": "브랜드 연락 직후 11분 안",
+                "period": "같은 수정 세션",
+                "neutral": "그때"
+              },
+              "platform": {
+                "exact": "블로그 본문·유튜브 설명란·핀댓글",
+                "judgeRef": "해당 게시물",
+                "neutral": "게시물 주요 요소"
+              },
+              "evidence": {
+                "primary": "e-1",
+                "supporting": "e-4",
+                "neutral": "변경 로그와 브랜드 요청"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.b.unlock.s3.pin_comment_removed",
+            "factText": "핀댓글 삭제도 같은 수정 세션 안에서 발생했고 다솔은 그 결과 책임을 피하기 어렵다.",
+            "tags": [
+              "act",
+              "harm",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time": {
+                "relativeExact": "브랜드 연락 직후 11분 안",
+                "period": "같은 수정 세션",
+                "neutral": "그때"
+              },
+              "platform": {
+                "exact": "블로그 본문·유튜브 설명란·핀댓글",
+                "judgeRef": "해당 게시물",
+                "neutral": "게시물 주요 요소"
+              },
+              "evidence": {
+                "primary": "e-1",
+                "supporting": "e-4",
+                "neutral": "변경 로그와 브랜드 요청"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.b.unlock.s4.sponsor_pressure_after_silence",
+            "factText": "해온이 여섯 시간째 답을 주지 않는 사이 광고가 내려갈 수 있다는 압박이 다솔에게 구조자 강박처럼 작용했다.",
+            "tags": [
+              "motive",
+              "threshold",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "counterparty": {
+                "fullName": "윤해온",
+                "judgeRef": "해온 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "time": {
+                "relativeExact": "브랜드 연락 직후 11분 안",
+                "period": "같은 수정 세션",
+                "neutral": "그때"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "self_justify"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.b.unlock.s5.direct_edit_admission",
+            "factText": "다솔은 직접 수정과 핀댓글 삭제를 먼저 알리지 않은 선택이 자신의 책임이었다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "counterparty": {
+                "fullName": "윤해온",
+                "judgeRef": "해온 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "platform": {
+                "exact": "블로그 본문·유튜브 설명란·핀댓글",
+                "judgeRef": "해당 게시물",
+                "neutral": "게시물 주요 요소"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.b.unlock.s2.request_scope_was_limited",
+            "factText": "임세진 코디네이터의 원문 요청 범위는 광고 표기 문장과 가격 날짜 업데이트에 한정돼 있었다.",
+            "tags": [
+              "context",
+              "institution",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "coordinator": {
+                "fullName": "임세진",
+                "judgeRef": "코디네이터",
+                "neutral": "브랜드 담당자",
+                "relation": "제3자"
+              },
+              "scope": {
+                "exact": "광고 표기 문장과 가격 날짜 업데이트",
+                "judgeRef": "요청 범위",
+                "neutral": "요청된 정정 범위"
+              },
+              "evidence": {
+                "primary": "e-4",
+                "supporting": "e-1",
+                "neutral": "브랜드 요청 원문과 로그"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.b.unlock.s3.extra_surface_edit",
+            "factText": "다솔은 그 범위를 넘어 제목과 썸네일 문구, 핀댓글까지 추가로 손댔다.",
+            "tags": [
+              "act",
+              "threshold",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "scope": {
+                "exact": "광고 표기 문장과 가격 날짜 업데이트",
+                "judgeRef": "요청 범위",
+                "neutral": "요청된 정정 범위"
+              },
+              "platform": {
+                "exact": "제목·썸네일 문구·핀댓글",
+                "judgeRef": "추가 편집",
+                "neutral": "추가로 손댄 요소"
+              },
+              "evidence": {
+                "primary": "e-4",
+                "supporting": "e-1",
+                "neutral": "브랜드 요청 원문과 로그"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.b.unlock.s4.result_first_justification",
+            "factText": "다솔은 광고를 살려야 한다는 결과 논리를 앞세우며 창작 수정과 정정 작업의 경계를 흐렸다.",
+            "tags": [
+              "motive",
+              "self_justification",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "counterparty": {
+                "fullName": "윤해온",
+                "judgeRef": "해온 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "coordinator": {
+                "fullName": "임세진",
+                "judgeRef": "코디네이터",
+                "neutral": "브랜드 담당자",
+                "relation": "제3자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "self_justify"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.b.unlock.s5.scope_overrun_admission",
+            "factText": "다솔은 살리려던 의도와 별개로 브랜드 요청 범위를 넘긴 편집이 절차 위반이었다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "counterparty": {
+                "fullName": "윤해온",
+                "judgeRef": "해온 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "scope": {
+                "exact": "광고 표기 문장과 가격 날짜 업데이트",
+                "judgeRef": "요청 범위",
+                "neutral": "요청된 정정 범위"
+              },
+              "platform": {
+                "exact": "제목·썸네일 문구·핀댓글",
+                "judgeRef": "추가 편집",
+                "neutral": "추가로 손댄 요소"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.b.unlock.s2.rule_was_known",
+            "factText": "다솔도 협업 노션의 공동 스레드 원칙과 최종 확인 규칙을 알고 있었고 확인 표시를 남긴 상태였다.",
+            "tags": [
+              "rule",
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "ruleDoc": {
+                "exact": "협업 노션 운영 규칙",
+                "judgeRef": "노션 규칙",
+                "neutral": "공동 규칙 문서"
+              },
+              "rule": {
+                "exact": "최종 공개 전 상호 확인 / 협찬 수정 요청은 공동 스레드 공유",
+                "judgeRef": "공동 원칙",
+                "neutral": "공동 스레드 원칙"
+              },
+              "time": {
+                "relativeExact": "지난가을 합의 이후",
+                "period": "기존 협업 절차",
+                "neutral": "평소"
+              },
+              "evidence": {
+                "primary": "e-5",
+                "supporting": "e-6",
+                "neutral": "노션 규칙과 회수 로그"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.b.unlock.s3.edited_before_shared_thread",
+            "factText": "다솔은 규칙을 알고도 공동 스레드에 요청 원문을 올리기 전에 직접 수정부터 시작했다.",
+            "tags": [
+              "act",
+              "responsibility",
+              "rule"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "counterparty": {
+                "fullName": "윤해온",
+                "judgeRef": "해온 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "rule": {
+                "exact": "최종 공개 전 상호 확인 / 협찬 수정 요청은 공동 스레드 공유",
+                "judgeRef": "공동 원칙",
+                "neutral": "공동 스레드 원칙"
+              },
+              "evidence": {
+                "primary": "e-5",
+                "supporting": "e-6",
+                "neutral": "노션 규칙과 회수 로그"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.b.unlock.s4.past_live_fix_gray_zone",
+            "factText": "예전 라이브 링크 수정 전례와 관계를 지키고 싶다는 마음이 다솔에게 응급 예외를 스스로 허용하게 만들었다.",
+            "tags": [
+              "legacy_sentence",
+              "relationship",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "counterparty": {
+                "fullName": "윤해온",
+                "judgeRef": "해온 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "ruleDoc": {
+                "exact": "협업 노션 운영 규칙",
+                "judgeRef": "노션 규칙",
+                "neutral": "공동 규칙 문서"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.b.unlock.s5.urgency_not_excuse",
+            "factText": "다솔은 급박함이 공동 확인 규칙 위반을 지워 주지 못한다는 점을 받아들인다.",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "counterparty": {
+                "fullName": "윤해온",
+                "judgeRef": "해온 씨",
+                "neutral": "상대방",
+                "relation": "협업 파트너"
+              },
+              "rule": {
+                "exact": "최종 공개 전 상호 확인 / 협찬 수정 요청은 공동 스레드 공유",
+                "judgeRef": "공동 원칙",
+                "neutral": "공동 스레드 원칙"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "contr-1",
+        "speaker": "a",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "trigger": "e-3_presented_after_intrusion_claim",
+        "text": "해온이 '공개 수정 권한은 준 적 없다'고 버티다가 초대메일과 역할 수락 화면이 나오면 '형식상 권한은 있었지만 그렇게까지로는 생각 안 했다'로 진술을 좁힌다.",
+        "behaviorHint": "버전 탭을 가리키던 손이 멈추고 범위 표현을 급히 다시 정의한다.",
+        "effect": "a_credibility_down"
+      },
+      {
+        "id": "contr-2",
+        "speaker": "b",
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "trigger": "e-1_presented_after_minor_fix_claim",
+        "text": "다솔이 '광고 표기만 정리했다'고 말한 뒤 같은 세션의 핀댓글 삭제 로그가 나오면 설명란 수정과 핀댓글 삭제를 분리해 말하던 서사가 무너진다.",
+        "behaviorHint": "손가락으로 세던 수습 목록이 끊기고 문장 끝이 짧아진다.",
+        "effect": "b_credibility_down"
+      },
+      {
+        "id": "contr-3",
+        "speaker": "b",
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "trigger": "e-4_presented_after_scope_justification",
+        "text": "다솔이 '브랜드가 급하다고 해서 전부 맞췄다'고 말하지만 메일 원문에는 광고 표기와 가격 날짜만 적혀 있어 제목·썸네일·핀댓글 수정이 별개였음이 드러난다.",
+        "behaviorHint": "의도를 먼저 말하려다 원문 문구를 보고 잠깐 웃음을 삼킨다.",
+        "effect": "scope_overrun_revealed"
+      },
+      {
+        "id": "contr-4",
+        "speaker": "a",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "trigger": "e-6_presented_after_protective_lock_claim",
+        "text": "해온이 '일단 멈춰 세운 것뿐'이라고 말하지만 회수 로그에는 전체 채널 접근권 차단과 예약 수정 지연까지 남아 있어 임시 조치라는 표현이 흔들린다.",
+        "behaviorHint": "시선을 화면에서 떼지 못한 채 짧은 부정을 두 번 반복한다.",
+        "effect": "total_lock_confirmed"
+      }
+    ],
+    "interjections": [
+      {
+        "id": "interj-1",
+        "fromParty": "b",
+        "toParty": "a",
+        "when": "a_uses_scope_freeze_on_d3",
+        "line": "아니, 지금 와서 또 범위를 줄여 말하잖아. 그때는 같이 수정하라고 열어 둔 거면서.",
+        "behaviorHint": "짧게 웃었다가 바로 목이 잠긴 채 반문한다.",
+        "effect": "pressure_a_to_explain_scope"
+      },
+      {
+        "id": "interj-2",
+        "fromParty": "a",
+        "toParty": "b",
+        "when": "b_stacks_rescue_list_on_d1_or_d4",
+        "line": "수습한 목록 말고, 누가 제목이랑 핀댓글까지 바꾸라고 했는지만 답해.",
+        "behaviorHint": "말을 끊기보다 더 낮은 톤으로 한 줄만 찔러 넣는다.",
+        "effect": "cut_off_rescue_stack"
+      },
+      {
+        "id": "interj-3",
+        "fromParty": "b",
+        "toParty": "a",
+        "when": "a_frames_d5_as_one_sided_violation",
+        "line": "규칙 얘기할 거면 단톡부터 올린 당신 얘기도 같이 해야죠. 나만 절차를 깬 것처럼 말하지 말아요.",
+        "behaviorHint": "의자에서 몸을 반쯤 앞으로 숙이며 문장 끝을 올린다.",
+        "effect": "mutual_rule_focus"
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "emo-a-1",
+        "party": "a",
+        "relatedDisputes": [
+          "d-1",
+          "d-4"
+        ],
+        "trigger": "pin_comment_deleted_and_surface_edit_repeated",
+        "line": "제목이랑 썸네일까지 바뀌고 핀댓글이 없어지면 그건 그냥 수정이 아니에요. 제 채널 얼굴을 통째로 빼앗긴 것처럼 보여요.",
+        "behaviorHint": "말속도는 느려지는데 턱이 굳고 화면에서 눈을 떼지 못한다."
+      },
+      {
+        "id": "emo-a-2",
+        "party": "a",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "trigger": "asked_why_public_callout_came_first",
+        "line": "그 장면이 단톡에 돌면 저는 채널도 못 지키는 사람이 됩니다. 그래서 설명보다 차단이 먼저 나간 거예요.",
+        "behaviorHint": "한 문장씩 짧게 끊어 말하고 마지막에 시선을 아래로 내린다."
+      },
+      {
+        "id": "emo-b-1",
+        "party": "b",
+        "relatedDisputes": [
+          "d-2",
+          "d-3"
+        ],
+        "trigger": "called_intruder_in_public_chat",
+        "line": "권한 받아서 들어간 사람이 순식간에 남의 채널에 기어든 사람처럼 돌려 말해지면, 해명할 틈도 없이 그냥 낙인이 찍혀요.",
+        "behaviorHint": "짧게 웃어넘기려다 실패하고 목이 잠긴 채 되묻듯 말한다."
+      },
+      {
+        "id": "emo-b-2",
+        "party": "b",
+        "relatedDisputes": [
+          "d-1",
+          "d-4",
+          "d-5"
+        ],
+        "trigger": "asked_why_she_did_not_wait",
+        "line": "안 그러면 광고가 내려갈 것 같았어요. 내가 밤에 다 맞추고 살리고 막아 보던 그 시간이 다 침범 하나로만 남는 게 제일 억울해요.",
+        "behaviorHint": "수습 목록을 길게 늘어놓다가 마지막 문장에서 목소리가 확 낮아진다."
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "friend06:transition:a:d-2:s0_s1",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "public_callout_question",
+      "line": "정리하면, 비교 캡처를 올린 건 맞지만 다솔을 확정적으로 매도하려던 의도는 아니었다. 접근권 회수도 감정 폭발이 아니라 손상 확산을 막는 임시 조치라고 여겼다.",
+      "behaviorHint": "로그 항목을 먼저 세고 결론어를 피하면서 범위 문장을 더 좁게 만든다.",
+      "unlockAtoms": []
+    },
+    {
+      "id": "friend06:transition:a:d-2:s1_s2",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "그 자료가 나오면 부인만 할 수는 없죠. 권한 범위를 확인하기 전에 비교 캡처부터 단톡에 올린 건 맞다. 바뀐 썸네일과 사라진 핀댓글을 본 순간 채널 통제권이 무너졌다는 감각이 먼저 올라왔다.",
+      "behaviorHint": "증거가 나오자 시선을 고정한 채 사실과 판단을 분리해 말한다.",
+      "unlockAtoms": [
+        "d2.a.unlock.s2.public_callout_before_check"
+      ]
+    },
+    {
+      "id": "friend06:transition:a:d-2:s2_s3",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "access_revocation_question",
+      "line": "좋습니다, 거기서부터는 숨기지 않겠습니다. 다만 다솔이 공동 스레드만 지켰다면 내가 업계 단톡까지 끌고 갈 일도 줄었을 거다. 그리고 회수는 문제 게시물 하나가 아니라 블로그와 채널 전체에 걸렸다.",
+      "behaviorHint": "어깨가 굳은 상태로 상대의 절차 위반을 끼워 넣으며 자신의 조치 범위를 조금 더 연다.",
+      "unlockAtoms": [
+        "d2.a.unlock.s3.total_access_revocation"
+      ]
+    },
+    {
+      "id": "friend06:transition:a:d-2:s3_s5",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "업계방에서 내가 채널도 못 지키는 창작자로 보일까 봐 겁이 났다. 그래서 더 인정합니다. 공개 비난부터 하고 채널 전체 접근권을 끊은 건 내 잘못이다. 사실 확인보다 체면과 통제권 회복을 앞세웠다.",
+      "behaviorHint": "길게 숨을 내쉰 뒤 단문으로 잘못과 책임을 분리 없이 인정한다.",
+      "unlockAtoms": [
+        "d2.a.unlock.s4.identity_panic",
+        "d2.a.unlock.s5.public_shaming_admission"
+      ]
+    },
+    {
+      "id": "friend06:transition:a:d-3:s0_s1",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "permission_scope_question",
+      "line": "정리하면, 형식상 편집자나 매니저로 보일 수는 있어도 실제 운용 범위는 훨씬 좁게 이해했다. 모바일의 '함께 수정' 같은 라벨이 제안권처럼 읽혀서 그렇게 받아들였다.",
+      "behaviorHint": "로그 항목을 먼저 세고 결론어를 피하면서 범위 문장을 더 좁게 만든다.",
+      "unlockAtoms": []
+    },
+    {
+      "id": "friend06:transition:a:d-3:s1_s2",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "그 자료가 나오면 부인만 할 수는 없죠. 블로그 편집자 초대와 유튜브 매니저 권한이 실제로 부여된 건 맞다. 문제는 그 범위를 둘 다 제대로 확인하지 않았다는 점이다.",
+      "behaviorHint": "증거가 나오자 시선을 고정한 채 사실과 판단을 분리해 말한다.",
+      "unlockAtoms": [
+        "d3.a.unlock.s2.granted_roles_exist"
+      ]
+    },
+    {
+      "id": "friend06:transition:a:d-3:s2_s3",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "sponsor_thread_question",
+      "line": "좋습니다, 거기서부터는 숨기지 않겠습니다. 그래도 브랜드 요청이 오면 공동 스레드부터 열어서 범위를 맞췄어야 했다. 그리고 예전에 다솔이 라이브 상태에서 깨진 링크를 고쳤을 때도 나는 경계를 분명히 말로 정리하지 못했다.",
+      "behaviorHint": "어깨가 굳은 상태로 상대의 절차 위반을 끼워 넣으며 자신의 조치 범위를 조금 더 연다.",
+      "unlockAtoms": [
+        "d3.a.unlock.s3.mobile_label_misread"
+      ]
+    },
+    {
+      "id": "friend06:transition:a:d-3:s3_s5",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "내가 준 권한도 정확히 모른 채 무단 침입이라고 몰아간 모양새가 제일 창피하다. 그래서 더 인정합니다. 무단 침입이라고 단정한 내 말은 틀렸다. 더 넓은 권한을 주고도 범위를 명확히 설명하지 않은 책임이 내게 있다.",
+      "behaviorHint": "길게 숨을 내쉰 뒤 단문으로 잘못과 책임을 분리 없이 인정한다.",
+      "unlockAtoms": [
+        "d3.a.unlock.s4.unspoken_boundary_past_fix",
+        "d3.a.unlock.s5.false_intrusion_label"
+      ]
+    },
+    {
+      "id": "friend06:transition:a:d-5:s0_s1",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_workflow_reminder",
+      "line": "정리하면, 공동 스레드를 밟지 않은 건 맞지만 그 상황을 평시 절차 위반과 똑같이 보긴 어렵다. 문제가 공개 상태였기 때문에 일단 멈추는 선택이 우선이라고 스스로 정리했다.",
+      "behaviorHint": "로그 항목을 먼저 세고 결론어를 피하면서 범위 문장을 더 좁게 만든다.",
+      "unlockAtoms": []
+    },
+    {
+      "id": "friend06:transition:a:d-5:s1_s2",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-5_presented",
+      "line": "그 자료가 나오면 부인만 할 수는 없죠. 노션에 적힌 상호 확인과 공동 스레드 규칙을 알고도 단톡 공개와 즉시 차단으로 건너뛴 건 맞다. 통제권을 다시 잡아야 한다는 생각이 규칙 기억보다 빨랐다.",
+      "behaviorHint": "증거가 나오자 시선을 고정한 채 사실과 판단을 분리해 말한다.",
+      "unlockAtoms": [
+        "d5.a.unlock.s2.rule_was_known"
+      ]
+    },
+    {
+      "id": "friend06:transition:a:d-5:s2_s4",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_deadline_pressure",
+      "line": "그 질문 방식이면 말할 수 있습니다. 업계방에서 무능한 운영자로 보일까 봐 겁이 나서 절차보다 체면을 붙잡았다. 관계를 지키고 싶다면서도 실제론 가장 공개적인 방식으로 선을 넘었다.",
+      "behaviorHint": "말속도를 늦추고 체면과 통제권 상실에 대한 두려움을 처음으로 직접 말한다.",
+      "unlockAtoms": [
+        "d5.a.unlock.s3.skipped_private_check",
+        "d5.a.unlock.s4.face_over_rule"
+      ]
+    },
+    {
+      "id": "friend06:transition:a:d-5:s4_s5",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "업계방에서 무능한 운영자로 보일까 봐 겁이 나서 절차보다 체면을 붙잡았다. 그래서 더 인정합니다. 공동 확인 원칙을 저도 깼다. 다솔의 위반을 탓하면서 같은 규칙을 제 손으로 무너뜨렸다.",
+      "behaviorHint": "길게 숨을 내쉰 뒤 단문으로 잘못과 책임을 분리 없이 인정한다.",
+      "unlockAtoms": [
+        "d5.a.unlock.s5.same_rule_broken"
+      ]
+    },
+    {
+      "id": "friend06:transition:b:d-1:s0_s1",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "direct_edit_question",
+      "line": "내가 밤새 수습한 건 맞는데, 직접 들어가 손본 건 맞지만 그걸 무단 점령처럼 부르는 건 과하다고 느꼈다. 그러니까 그때는 브랜드 요청이 급해서 공개 상태를 먼저 살려야 한다고 봤다.",
+      "behaviorHint": "수습 목록을 늘어놓다가도 문장 끝을 올려 책임을 흐리려 한다.",
+      "unlockAtoms": []
+    },
+    {
+      "id": "friend06:transition:b:d-1:s1_s2",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "그 자료까지 나오면 저도 못 빼요. 본문과 설명란을 직접 수정한 건 맞다. 해온이 여섯 시간째 답이 없으니 내가 처리하지 않으면 광고가 내려갈 것처럼 느껴졌다.",
+      "behaviorHint": "원문이 제시되자 의도 설명을 줄이고 직접 수정 사실을 반쯤 인정한다.",
+      "unlockAtoms": [
+        "d1.b.unlock.s2.direct_edit_same_session"
+      ]
+    },
+    {
+      "id": "friend06:transition:b:d-1:s2_s3",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "pin_comment_delete_question",
+      "line": "그래도 그날 상황을 빼면 안 돼요. 다만 해온이 바로 답을 줬다면 나는 거기까지 안 갔을 거다. 그래서 핀댓글 삭제까지 같은 세션에서 일어난 건 내 쪽 작업 책임으로 봐야 한다도 그때는 크게 안 보였어요.",
+      "behaviorHint": "상대의 침묵을 끌어오며 자신이 넘긴 선을 조금 더 구체적으로 드러낸다.",
+      "unlockAtoms": [
+        "d1.b.unlock.s3.pin_comment_removed"
+      ]
+    },
+    {
+      "id": "friend06:transition:b:d-1:s3_s5",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_or_boundary_question",
+      "line": "더는 의도로 덮지 않겠습니다. 직접 수정하고 핀댓글까지 없앤 건 내 판단 미스다. 급했다는 이유로 먼저 묻지 않은 책임은 피할 수 없다.",
+      "behaviorHint": "웃음기를 걷어 내고 구조자 서사를 접은 채 책임 문장으로 끝낸다.",
+      "unlockAtoms": [
+        "d1.b.unlock.s4.sponsor_pressure_after_silence",
+        "d1.b.unlock.s5.direct_edit_admission"
+      ]
+    },
+    {
+      "id": "friend06:transition:b:d-4:s0_s1",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "sponsor_scope_question",
+      "line": "내가 밤새 수습한 건 맞는데, 요청서에 그 항목이 직접 적히진 않았지만 결과를 살리려면 연결해서 보정해야 한다고 느꼈다. 그러니까 나는 그걸 새 창작이라기보다 게시물 정리라고 스스로 불렀다.",
+      "behaviorHint": "수습 목록을 늘어놓다가도 문장 끝을 올려 책임을 흐리려 한다.",
+      "unlockAtoms": []
+    },
+    {
+      "id": "friend06:transition:b:d-4:s1_s2",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "그 자료까지 나오면 저도 못 빼요. 코디네이터 요청 범위에 제목, 썸네일, 핀댓글은 없었다. 그런데도 광고를 살려야 한다는 생각으로 범위를 넓혀 잡았다.",
+      "behaviorHint": "원문이 제시되자 의도 설명을 줄이고 직접 수정 사실을 반쯤 인정한다.",
+      "unlockAtoms": [
+        "d4.b.unlock.s2.request_scope_was_limited"
+      ]
+    },
+    {
+      "id": "friend06:transition:b:d-4:s2_s3",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "title_thumbnail_change_question",
+      "line": "그래도 그날 상황을 빼면 안 돼요. 해온이 바로 답했더라면 내가 그 선까지 넘을 일은 적었을 것이다. 그래서 결과적으로 광고 표기 정정을 넘어 채널의 표면 문구 전체를 건드렸다도 그때는 크게 안 보였어요.",
+      "behaviorHint": "상대의 침묵을 끌어오며 자신이 넘긴 선을 조금 더 구체적으로 드러낸다.",
+      "unlockAtoms": [
+        "d4.b.unlock.s3.extra_surface_edit"
+      ]
+    },
+    {
+      "id": "friend06:transition:b:d-4:s3_s5",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-1_presented",
+      "line": "더는 의도로 덮지 않겠습니다. 브랜드 요청 범위를 넘겨 편집한 건 맞다. 결과를 살리겠다는 명분으로 절차 위반을 희석했다.",
+      "behaviorHint": "웃음기를 걷어 내고 구조자 서사를 접은 채 책임 문장으로 끝낸다.",
+      "unlockAtoms": [
+        "d4.b.unlock.s4.result_first_justification",
+        "d4.b.unlock.s5.scope_overrun_admission"
+      ]
+    },
+    {
+      "id": "friend06:transition:b:d-5:s0_s1",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_rule_reminder",
+      "line": "내가 밤새 수습한 건 맞는데, 공동 스레드에 먼저 올렸어야 했다는 건 안다. 그러니까 그래도 예전처럼 라이브 상태에서 바로 고친 전례가 머리에 남아 있었다.",
+      "behaviorHint": "수습 목록을 늘어놓다가도 문장 끝을 올려 책임을 흐리려 한다.",
+      "unlockAtoms": []
+    },
+    {
+      "id": "friend06:transition:b:d-5:s1_s2",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_urgency",
+      "line": "그 자료까지 나오면 저도 못 빼요. 상호 확인과 공동 스레드 규칙을 알고도 내가 직접 수정부터 한 건 맞다. 광고가 끊길 수 있다는 압박에 그 규칙이 예외 없이 적용된다고 끝까지 붙들지 못했다.",
+      "behaviorHint": "원문이 제시되자 의도 설명을 줄이고 직접 수정 사실을 반쯤 인정한다.",
+      "unlockAtoms": [
+        "d5.b.unlock.s2.rule_was_known"
+      ]
+    },
+    {
+      "id": "friend06:transition:b:d-5:s2_s4",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_why_she_did_not_call_first",
+      "line": "비난하려는 질문이 아니라면 말하겠습니다. 나는 관계를 지키려 수습한다고 믿었는데 오히려 그 관계를 가장 먼저 깬 사람이 됐다. 선의를 말할수록 변명처럼 들릴까 봐 더 장황해졌다.",
+      "behaviorHint": "선의를 강조하던 흐름이 무너지고 관계 불안과 낙인 공포가 먼저 튀어나온다.",
+      "unlockAtoms": [
+        "d5.b.unlock.s3.edited_before_shared_thread",
+        "d5.b.unlock.s4.past_live_fix_gray_zone"
+      ]
+    },
+    {
+      "id": "friend06:transition:b:d-5:s4_s5",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-5_or_responsibility_question",
+      "line": "더는 의도로 덮지 않겠습니다. 급했다는 이유로 공동 확인 규칙을 건너뛴 건 내 잘못이다. 관계를 지키고 싶었다면 절차부터 지켰어야 했다.",
+      "behaviorHint": "웃음기를 걷어 내고 구조자 서사를 접은 채 책임 문장으로 끝낸다.",
+      "unlockAtoms": [
+        "d5.b.unlock.s5.urgency_not_excuse"
+      ]
+    }
+  ]
+}

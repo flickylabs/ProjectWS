@@ -1,0 +1,5961 @@
+export const friend04V2Atoms = {
+  "caseId": "friend-04",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "내가 혼자 멋대로 예약금을 꽂은 것처럼 말하면 안 돼.",
+            "현우가 잡아두라는 식으로 말했고 판매자도 바로 입금하라고 몰았어."
+          ],
+          "privateKnowledge": [
+            "현우가 '확정'이라고 직접 쓰지 않았다는 점을 본인도 알고 있다.",
+            "비환불 고지를 송금 전에 이미 읽었다.",
+            "작년 티켓 취소 싸움 뒤 비환불 예약금은 명시적 확정 뒤에만 넣기로 했던 합의를 기억한다.",
+            "주말 캠핑 일정과 손해 회피 욕심 때문에 먼저 결제하면 흐름이 굴러간다고 판단했다."
+          ],
+          "suppressions": [
+            "현우가 '확정'이라고 직접 쓰지 않았다는 점을 본인도 알고 있다.",
+            "비환불 고지를 송금 전에 이미 읽었다.",
+            "작년 티켓 취소 싸움 뒤 비환불 예약금은 명시적 확정 뒤에만 넣기로 했던 합의를 기억한다.",
+            "주말 캠핑 일정과 손해 회피 욕심 때문에 먼저 결제하면 흐름이 굴러간다고 판단했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:a:tell:deadline_push",
+            "friend04:a:tell:yes_no_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-1:s0:hyunwoo_signal_as_consent:0",
+              "factText": "류현우의 '일단 잡아줘'와 반반 가능 표현을 사실상 동의 신호로 받아들인 해석",
+              "tags": [
+                "quote",
+                "context",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-1:s0:seller_pressure:1",
+              "factText": "판매자가 문의가 많다며 빠른 입금을 재촉해 거래를 놓칠까 압박받은 상황",
+              "tags": [
+                "context",
+                "timeline",
+                "institution",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "확정이라는 단어까지는 없었지만, 그 흐름이면 거래를 묶자는 뜻으로 들렸어.",
+            "나는 괜히 질러본 게 아니라 놓치지 않으려고 움직인 거야."
+          ],
+          "privateKnowledge": [
+            "현우가 '확정'이라고 직접 쓰지 않았다는 점을 본인도 알고 있다.",
+            "비환불 고지를 송금 전에 이미 읽었다.",
+            "작년 티켓 취소 싸움 뒤 비환불 예약금은 명시적 확정 뒤에만 넣기로 했던 합의를 기억한다.",
+            "주말 캠핑 일정과 손해 회피 욕심 때문에 먼저 결제하면 흐름이 굴러간다고 판단했다."
+          ],
+          "suppressions": [
+            "현우가 '확정'이라고 직접 쓰지 않았다는 점을 본인도 알고 있다.",
+            "비환불 고지를 송금 전에 이미 읽었다.",
+            "작년 티켓 취소 싸움 뒤 비환불 예약금은 명시적 확정 뒤에만 넣기로 했던 합의를 기억한다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:a:tell:yes_no_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-1:s1:hyunwoo_signal_as_consent:0",
+              "factText": "류현우의 '일단 잡아줘'와 반반 가능 표현을 사실상 동의 신호로 받아들인 해석",
+              "tags": [
+                "quote",
+                "context",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-1:s1:seller_pressure:1",
+              "factText": "판매자가 문의가 많다며 빠른 입금을 재촉해 거래를 놓칠까 압박받은 상황",
+              "tags": [
+                "context",
+                "timeline",
+                "institution",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-1:s1:deposit_sent:2",
+              "factText": "명시적 확정 문구 없이 판매자에게 예약금 3만원을 먼저 송금한 행동",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "minimize"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "예약금 3만원을 먼저 보낸 건 맞아.",
+            "그래도 그 전에 현우가 반반 가능하다고 계속 읽히게 말한 건 부정 못 해."
+          ],
+          "privateKnowledge": [
+            "현우가 '확정'이라고 직접 쓰지 않았다는 점을 본인도 알고 있다.",
+            "비환불 고지를 송금 전에 이미 읽었다.",
+            "작년 티켓 취소 싸움 뒤 비환불 예약금은 명시적 확정 뒤에만 넣기로 했던 합의를 기억한다.",
+            "주말 캠핑 일정과 손해 회피 욕심 때문에 먼저 결제하면 흐름이 굴러간다고 판단했다."
+          ],
+          "suppressions": [
+            "비환불 고지를 송금 전에 이미 읽었다.",
+            "작년 티켓 취소 싸움 뒤 비환불 예약금은 명시적 확정 뒤에만 넣기로 했던 합의를 기억한다.",
+            "주말 캠핑 일정과 손해 회피 욕심 때문에 먼저 결제하면 흐름이 굴러간다고 판단했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:a:tell:yes_no_loop",
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-1:s2:deposit_sent:0",
+              "factText": "명시적 확정 문구 없이 판매자에게 예약금 3만원을 먼저 송금한 행동",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-1:s2:hyunwoo_signal_as_consent:1",
+              "factText": "류현우의 '일단 잡아줘'와 반반 가능 표현을 사실상 동의 신호로 받아들인 해석",
+              "tags": [
+                "quote",
+                "context",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "비환불 고지를 보고도 내가 서둘러 송금한 건 인정해.",
+            "다만 현우가 뒤에서 빠질 수 있게 말을 남겨둔 채 긍정 신호를 준 것도 같이 봐야 해."
+          ],
+          "privateKnowledge": [
+            "현우가 '확정'이라고 직접 쓰지 않았다는 점을 본인도 알고 있다.",
+            "비환불 고지를 송금 전에 이미 읽었다.",
+            "작년 티켓 취소 싸움 뒤 비환불 예약금은 명시적 확정 뒤에만 넣기로 했던 합의를 기억한다.",
+            "주말 캠핑 일정과 손해 회피 욕심 때문에 먼저 결제하면 흐름이 굴러간다고 판단했다."
+          ],
+          "suppressions": [
+            "현우가 '확정'이라고 직접 쓰지 않았다는 점을 본인도 알고 있다.",
+            "주말 캠핑 일정과 손해 회피 욕심 때문에 먼저 결제하면 흐름이 굴러간다고 판단했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-1:s3:deposit_sent:0",
+              "factText": "명시적 확정 문구 없이 판매자에게 예약금 3만원을 먼저 송금한 행동",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-1:s3:rule_break_admission:1",
+              "factText": "작년 합의한 '확정 뒤 비환불 예약금' 규칙을 스스로 먼저 어겼다는 점",
+              "tags": [
+                "rule",
+                "admission",
+                "legacy_sentence",
+                "shame"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend04:a:d-1:s3:hyunwoo_signal_as_consent:2",
+              "factText": "류현우의 '일단 잡아줘'와 반반 가능 표현을 사실상 동의 신호로 받아들인 해석",
+              "tags": [
+                "quote",
+                "context",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 이번엔 또 내가 먼저 결제해 놓고 나중에 정리하게 될까 봐 조급했어.",
+            "그래서 확정 문구를 끝까지 확인하지 못하고 앞질러 버렸어."
+          ],
+          "privateKnowledge": [
+            "현우가 '확정'이라고 직접 쓰지 않았다는 점을 본인도 알고 있다.",
+            "비환불 고지를 송금 전에 이미 읽었다.",
+            "작년 티켓 취소 싸움 뒤 비환불 예약금은 명시적 확정 뒤에만 넣기로 했던 합의를 기억한다.",
+            "주말 캠핑 일정과 손해 회피 욕심 때문에 먼저 결제하면 흐름이 굴러간다고 판단했다."
+          ],
+          "suppressions": [
+            "현우가 '확정'이라고 직접 쓰지 않았다는 점을 본인도 알고 있다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-1:s4:rule_break_admission:0",
+              "factText": "작년 합의한 '확정 뒤 비환불 예약금' 규칙을 스스로 먼저 어겼다는 점",
+              "tags": [
+                "rule",
+                "admission",
+                "legacy_sentence",
+                "shame"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend04:a:d-1:s4:seller_pressure:1",
+              "factText": "판매자가 문의가 많다며 빠른 입금을 재촉해 거래를 놓칠까 압박받은 상황",
+              "tags": [
+                "context",
+                "timeline",
+                "institution",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-1:s4:deposit_sent:2",
+              "factText": "명시적 확정 문구 없이 판매자에게 예약금 3만원을 먼저 송금한 행동",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "맞아, 명시적 확정 없이 비환불 예약금을 보낸 건 내 실수야.",
+            "판매자 압박과 현우 말에 기대서 내가 확정으로 번역해 버렸어."
+          ],
+          "privateKnowledge": [
+            "현우가 '확정'이라고 직접 쓰지 않았다는 점을 본인도 알고 있다.",
+            "비환불 고지를 송금 전에 이미 읽었다.",
+            "작년 티켓 취소 싸움 뒤 비환불 예약금은 명시적 확정 뒤에만 넣기로 했던 합의를 기억한다.",
+            "주말 캠핑 일정과 손해 회피 욕심 때문에 먼저 결제하면 흐름이 굴러간다고 판단했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-1:s5:deposit_sent:0",
+              "factText": "명시적 확정 문구 없이 판매자에게 예약금 3만원을 먼저 송금한 행동",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-1:s5:rule_break_admission:1",
+              "factText": "작년 합의한 '확정 뒤 비환불 예약금' 규칙을 스스로 먼저 어겼다는 점",
+              "tags": [
+                "rule",
+                "admission",
+                "legacy_sentence",
+                "shame"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend04:a:d-1:s5:hyunwoo_signal_as_consent:2",
+              "factText": "류현우의 '일단 잡아줘'와 반반 가능 표현을 사실상 동의 신호로 받아들인 해석",
+              "tags": [
+                "quote",
+                "context",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "현우는 산다는 쪽으로 말 다 해놓고 픽업 끝나자마자 빠졌어.",
+            "그건 검토가 아니라 철회지."
+          ],
+          "privateKnowledge": [
+            "현우가 냄새와 누락 부속품을 불편하게 느낄 수 있다는 점 자체는 이해한다.",
+            "다혜 본인도 판매자 압박 때문에 판단을 앞당겼다.",
+            "그래도 현우가 판매자에게 직접 문의하면서 거래를 더 굳혔다고 본다.",
+            "재판매를 스스로 진행했지만 그 과정에서 억울함이 더 커졌다."
+          ],
+          "suppressions": [
+            "현우가 냄새와 누락 부속품을 불편하게 느낄 수 있다는 점 자체는 이해한다.",
+            "다혜 본인도 판매자 압박 때문에 판단을 앞당겼다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:a:tell:deadline_push",
+            "friend04:a:tell:yes_no_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-2:s0:hyunwoo_intent_signal:0",
+              "factText": "류현우가 공동구매 참여 의사가 있는 듯한 메시지를 반복해 보낸 흐름",
+              "tags": [
+                "quote",
+                "timeline",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-2:s0:withdrawal_after_pickup:1",
+              "factText": "픽업 후 상태를 이유로 절반 부담에서 빠지겠다고 한 철회",
+              "tags": [
+                "act",
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "조건부였다 해도 참여 의사처럼 보이게 만든 건 현우야.",
+            "상태 얘기를 핑계 삼은 건 픽업 뒤였고 이미 판은 다 돌아갔어."
+          ],
+          "privateKnowledge": [
+            "현우가 냄새와 누락 부속품을 불편하게 느낄 수 있다는 점 자체는 이해한다.",
+            "다혜 본인도 판매자 압박 때문에 판단을 앞당겼다.",
+            "그래도 현우가 판매자에게 직접 문의하면서 거래를 더 굳혔다고 본다.",
+            "재판매를 스스로 진행했지만 그 과정에서 억울함이 더 커졌다."
+          ],
+          "suppressions": [
+            "현우가 냄새와 누락 부속품을 불편하게 느낄 수 있다는 점 자체는 이해한다.",
+            "다혜 본인도 판매자 압박 때문에 판단을 앞당겼다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:a:tell:yes_no_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-2:s1:hyunwoo_intent_signal:0",
+              "factText": "류현우가 공동구매 참여 의사가 있는 듯한 메시지를 반복해 보낸 흐름",
+              "tags": [
+                "quote",
+                "timeline",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-2:s1:late_condition_reason:1",
+              "factText": "냄새와 누락 부속품 문제를 픽업 뒤에야 본격 이유로 꺼낸 시점",
+              "tags": [
+                "context",
+                "timeline",
+                "counter"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                },
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "냄새랑 누락 구성품이 거슬릴 수 있다는 건 알아.",
+            "그래도 그 판단을 예약금 들어가고 픽업까지 끝난 뒤에 꺼낸 건 너무 늦었어."
+          ],
+          "privateKnowledge": [
+            "현우가 냄새와 누락 부속품을 불편하게 느낄 수 있다는 점 자체는 이해한다.",
+            "다혜 본인도 판매자 압박 때문에 판단을 앞당겼다.",
+            "그래도 현우가 판매자에게 직접 문의하면서 거래를 더 굳혔다고 본다.",
+            "재판매를 스스로 진행했지만 그 과정에서 억울함이 더 커졌다."
+          ],
+          "suppressions": [
+            "다혜 본인도 판매자 압박 때문에 판단을 앞당겼다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:a:tell:yes_no_loop",
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-2:s2:late_condition_reason:0",
+              "factText": "냄새와 누락 부속품 문제를 픽업 뒤에야 본격 이유로 꺼낸 시점",
+              "tags": [
+                "context",
+                "timeline",
+                "counter"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                },
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-2:s2:withdrawal_after_pickup:1",
+              "factText": "픽업 후 상태를 이유로 절반 부담에서 빠지겠다고 한 철회",
+              "tags": [
+                "act",
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "현우가 처음부터 안 산다고 했으면 내가 재판매 손실까지 보진 않았어.",
+            "뒤로 물러날 여지를 남긴 채 계속 긍정 신호를 보낸 게 핵심이야."
+          ],
+          "privateKnowledge": [
+            "현우가 냄새와 누락 부속품을 불편하게 느낄 수 있다는 점 자체는 이해한다.",
+            "다혜 본인도 판매자 압박 때문에 판단을 앞당겼다.",
+            "그래도 현우가 판매자에게 직접 문의하면서 거래를 더 굳혔다고 본다.",
+            "재판매를 스스로 진행했지만 그 과정에서 억울함이 더 커졌다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-2:s3:resale_harm:0",
+              "factText": "다음 날 재판매와 손실 정리 부담이 송다혜에게 몰린 결과",
+              "tags": [
+                "harm",
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "dateExact": "다음 날 오후",
+                  "period": "재판매 완료 시점",
+                  "neutral": "이후 시점"
+                },
+                "amount": {
+                  "exact": "4만원",
+                  "rounded": "4만 원",
+                  "neutral": "재판매 손실"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-2:s3:hyunwoo_intent_signal:1",
+              "factText": "류현우가 공동구매 참여 의사가 있는 듯한 메시지를 반복해 보낸 흐름",
+              "tags": [
+                "quote",
+                "timeline",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "내가 제일 화난 건 돈보다도, 또 내가 마무리 담당이 된 느낌이야.",
+            "현우는 마지막 순간까지 가능성만 열어두고 책임은 안 졌어."
+          ],
+          "privateKnowledge": [
+            "현우가 냄새와 누락 부속품을 불편하게 느낄 수 있다는 점 자체는 이해한다.",
+            "다혜 본인도 판매자 압박 때문에 판단을 앞당겼다.",
+            "그래도 현우가 판매자에게 직접 문의하면서 거래를 더 굳혔다고 본다.",
+            "재판매를 스스로 진행했지만 그 과정에서 억울함이 더 커졌다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-2:s4:resale_harm:0",
+              "factText": "다음 날 재판매와 손실 정리 부담이 송다혜에게 몰린 결과",
+              "tags": [
+                "harm",
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "dateExact": "다음 날 오후",
+                  "period": "재판매 완료 시점",
+                  "neutral": "이후 시점"
+                },
+                "amount": {
+                  "exact": "4만원",
+                  "rounded": "4만 원",
+                  "neutral": "재판매 손실"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-2:s4:withdrawal_after_pickup:1",
+              "factText": "픽업 후 상태를 이유로 절반 부담에서 빠지겠다고 한 철회",
+              "tags": [
+                "act",
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "현우가 하자 기준 때문에 망설인 사정은 있어도, 이미 참여 의사를 준 뒤 철회한 책임은 피하기 어려워.",
+            "그래서 이건 단순 취향 변경이 아니라 뒤늦은 이탈이야."
+          ],
+          "privateKnowledge": [
+            "현우가 냄새와 누락 부속품을 불편하게 느낄 수 있다는 점 자체는 이해한다.",
+            "다혜 본인도 판매자 압박 때문에 판단을 앞당겼다.",
+            "그래도 현우가 판매자에게 직접 문의하면서 거래를 더 굳혔다고 본다.",
+            "재판매를 스스로 진행했지만 그 과정에서 억울함이 더 커졌다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-2:s5:withdrawal_after_pickup:0",
+              "factText": "픽업 후 상태를 이유로 절반 부담에서 빠지겠다고 한 철회",
+              "tags": [
+                "act",
+                "timeline",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-2:s5:late_condition_reason:1",
+              "factText": "냄새와 누락 부속품 문제를 픽업 뒤에야 본격 이유로 꺼낸 시점",
+              "tags": [
+                "context",
+                "timeline",
+                "counter"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                },
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-2:s5:resale_harm:2",
+              "factText": "다음 날 재판매와 손실 정리 부담이 송다혜에게 몰린 결과",
+              "tags": [
+                "harm",
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "dateExact": "다음 날 오후",
+                  "period": "재판매 완료 시점",
+                  "neutral": "이후 시점"
+                },
+                "amount": {
+                  "exact": "4만원",
+                  "rounded": "4만 원",
+                  "neutral": "재판매 손실"
+                }
+              },
+              "stanceHints": [
+                "hurt",
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "나는 구조적으로 멀쩡하냐를 본 거지, 없는 기준을 마음대로 줄인 게 아니야.",
+            "현우도 그때는 텐트만 괜찮으면 된다고 읽히게 말했어."
+          ],
+          "privateKnowledge": [
+            "다혜는 전체 판매글보다 외관 사진과 가격 부분을 먼저 저장해 현우에게 보냈다.",
+            "냄새나 방수 상태를 별도 질문으로 다시 확인하지 않았다.",
+            "현우가 자기 기준을 길게 말하지 않았지만, 본인도 그 기준이 같다고 단정할 근거는 없었다.",
+            "구조만 멀쩡하면 괜찮다는 자신의 습관적 기준을 공동 기준처럼 밀어넣었다."
+          ],
+          "suppressions": [
+            "다혜는 전체 판매글보다 외관 사진과 가격 부분을 먼저 저장해 현우에게 보냈다.",
+            "냄새나 방수 상태를 별도 질문으로 다시 확인하지 않았다.",
+            "현우가 자기 기준을 길게 말하지 않았지만, 본인도 그 기준이 같다고 단정할 근거는 없었다.",
+            "구조만 멀쩡하면 괜찮다는 자신의 습관적 기준을 공동 기준처럼 밀어넣었다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:a:tell:deadline_push",
+            "friend04:a:tell:yes_no_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-3:s0:dahye_standard_structure_only:0",
+              "factText": "송다혜는 찢김과 폴대 파손이 없으면 상태가 괜찮다고 본 기준",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-3:s0:hyunwoo_unstated_broader_standard:1",
+              "factText": "류현우의 더 넓은 기준이 대화 안에 명시되지 않았다는 점",
+              "tags": [
+                "threshold",
+                "quote",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "'상태 괜찮음'이라는 말에 냄새나 구성품까지 다 들어간다는 얘긴 못 들었어.",
+            "적어도 그 순간 대화 기준은 외관이랑 사용 가능 여부 쪽이었어."
+          ],
+          "privateKnowledge": [
+            "다혜는 전체 판매글보다 외관 사진과 가격 부분을 먼저 저장해 현우에게 보냈다.",
+            "냄새나 방수 상태를 별도 질문으로 다시 확인하지 않았다.",
+            "현우가 자기 기준을 길게 말하지 않았지만, 본인도 그 기준이 같다고 단정할 근거는 없었다.",
+            "구조만 멀쩡하면 괜찮다는 자신의 습관적 기준을 공동 기준처럼 밀어넣었다."
+          ],
+          "suppressions": [
+            "다혜는 전체 판매글보다 외관 사진과 가격 부분을 먼저 저장해 현우에게 보냈다.",
+            "냄새나 방수 상태를 별도 질문으로 다시 확인하지 않았다.",
+            "현우가 자기 기준을 길게 말하지 않았지만, 본인도 그 기준이 같다고 단정할 근거는 없었다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:a:tell:yes_no_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-3:s1:hyunwoo_unstated_broader_standard:0",
+              "factText": "류현우의 더 넓은 기준이 대화 안에 명시되지 않았다는 점",
+              "tags": [
+                "threshold",
+                "quote",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-3:s1:no_shared_definition:1",
+              "factText": "예약금과 픽업 전 '상태 괜찮음'의 항목을 서로 맞춰보지 않았다는 공백",
+              "tags": [
+                "context",
+                "responsibility",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-3:s1:dahye_standard_structure_only:2",
+              "factText": "송다혜는 찢김과 폴대 파손이 없으면 상태가 괜찮다고 본 기준",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "내가 외관 위주로 이해한 건 맞아.",
+            "그래도 현우도 자기 기준을 구체적으로 적어 보내진 않았잖아."
+          ],
+          "privateKnowledge": [
+            "다혜는 전체 판매글보다 외관 사진과 가격 부분을 먼저 저장해 현우에게 보냈다.",
+            "냄새나 방수 상태를 별도 질문으로 다시 확인하지 않았다.",
+            "현우가 자기 기준을 길게 말하지 않았지만, 본인도 그 기준이 같다고 단정할 근거는 없었다.",
+            "구조만 멀쩡하면 괜찮다는 자신의 습관적 기준을 공동 기준처럼 밀어넣었다."
+          ],
+          "suppressions": [
+            "다혜는 전체 판매글보다 외관 사진과 가격 부분을 먼저 저장해 현우에게 보냈다.",
+            "냄새나 방수 상태를 별도 질문으로 다시 확인하지 않았다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:a:tell:yes_no_loop",
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-3:s2:dahye_standard_structure_only:0",
+              "factText": "송다혜는 찢김과 폴대 파손이 없으면 상태가 괜찮다고 본 기준",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-3:s2:no_shared_definition:1",
+              "factText": "예약금과 픽업 전 '상태 괜찮음'의 항목을 서로 맞춰보지 않았다는 공백",
+              "tags": [
+                "context",
+                "responsibility",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-3:s2:hyunwoo_unstated_broader_standard:2",
+              "factText": "류현우의 더 넓은 기준이 대화 안에 명시되지 않았다는 점",
+              "tags": [
+                "threshold",
+                "quote",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "판매글 캡처가 아래 설명을 다 담지 못한 건 인정해.",
+            "하지만 그 전제 자체를 정확히 맞춰 본 적이 없어서 결국 서로 다른 말을 한 거야."
+          ],
+          "privateKnowledge": [
+            "다혜는 전체 판매글보다 외관 사진과 가격 부분을 먼저 저장해 현우에게 보냈다.",
+            "냄새나 방수 상태를 별도 질문으로 다시 확인하지 않았다.",
+            "현우가 자기 기준을 길게 말하지 않았지만, 본인도 그 기준이 같다고 단정할 근거는 없었다.",
+            "구조만 멀쩡하면 괜찮다는 자신의 습관적 기준을 공동 기준처럼 밀어넣었다."
+          ],
+          "suppressions": [
+            "냄새나 방수 상태를 별도 질문으로 다시 확인하지 않았다.",
+            "현우가 자기 기준을 길게 말하지 않았지만, 본인도 그 기준이 같다고 단정할 근거는 없었다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-3:s3:cropped_listing:0",
+              "factText": "전달된 판매글 캡처에 냄새와 누락 부속품 문구가 빠져 있었던 사실",
+              "tags": [
+                "evidence",
+                "context",
+                "privacy"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-3:s3:no_shared_definition:1",
+              "factText": "예약금과 픽업 전 '상태 괜찮음'의 항목을 서로 맞춰보지 않았다는 공백",
+              "tags": [
+                "context",
+                "responsibility",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-3:s3:hyunwoo_unstated_broader_standard:2",
+              "factText": "류현우의 더 넓은 기준이 대화 안에 명시되지 않았다는 점",
+              "tags": [
+                "threshold",
+                "quote",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 냄새나 누락 부속품을 크게 안 봤던 내 습관이 있었어.",
+            "그래서 현우도 나랑 비슷하게 볼 거라고 너무 빨리 정리해버렸어."
+          ],
+          "privateKnowledge": [
+            "다혜는 전체 판매글보다 외관 사진과 가격 부분을 먼저 저장해 현우에게 보냈다.",
+            "냄새나 방수 상태를 별도 질문으로 다시 확인하지 않았다.",
+            "현우가 자기 기준을 길게 말하지 않았지만, 본인도 그 기준이 같다고 단정할 근거는 없었다.",
+            "구조만 멀쩡하면 괜찮다는 자신의 습관적 기준을 공동 기준처럼 밀어넣었다."
+          ],
+          "suppressions": [
+            "현우가 자기 기준을 길게 말하지 않았지만, 본인도 그 기준이 같다고 단정할 근거는 없었다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-3:s4:dahye_standard_structure_only:0",
+              "factText": "송다혜는 찢김과 폴대 파손이 없으면 상태가 괜찮다고 본 기준",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_reflection"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-3:s4:cropped_listing:1",
+              "factText": "전달된 판매글 캡처에 냄새와 누락 부속품 문구가 빠져 있었던 사실",
+              "tags": [
+                "evidence",
+                "context",
+                "privacy"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "맞아, '상태 괜찮음'의 기준은 처음부터 같지 않았어.",
+            "나는 구조만 봤고, 현우는 냄새와 구성품까지 봤는데 그걸 명확히 맞추지 않았어."
+          ],
+          "privateKnowledge": [
+            "다혜는 전체 판매글보다 외관 사진과 가격 부분을 먼저 저장해 현우에게 보냈다.",
+            "냄새나 방수 상태를 별도 질문으로 다시 확인하지 않았다.",
+            "현우가 자기 기준을 길게 말하지 않았지만, 본인도 그 기준이 같다고 단정할 근거는 없었다.",
+            "구조만 멀쩡하면 괜찮다는 자신의 습관적 기준을 공동 기준처럼 밀어넣었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-3:s5:no_shared_definition:0",
+              "factText": "예약금과 픽업 전 '상태 괜찮음'의 항목을 서로 맞춰보지 않았다는 공백",
+              "tags": [
+                "context",
+                "responsibility",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-3:s5:dahye_standard_structure_only:1",
+              "factText": "송다혜는 찢김과 폴대 파손이 없으면 상태가 괜찮다고 본 기준",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-3:s5:hyunwoo_unstated_broader_standard:2",
+              "factText": "류현우의 더 넓은 기준이 대화 안에 명시되지 않았다는 점",
+              "tags": [
+                "threshold",
+                "quote",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "나는 판매자한테 공동구매 상황을 정리해서 말한 거야.",
+            "혼선을 만든 건 현우가 따로 확정 비슷한 메시지를 보낸 뒤 말을 흐린 쪽이지."
+          ],
+          "privateKnowledge": [
+            "현우가 판매자와도 대화 중이라는 걸 어렴풋이 알고 있었다.",
+            "본인 문장이 거래를 확정처럼 굳힐 수 있다는 점을 충분히 계산하지 못했다.",
+            "판매자 압박 속에서 빠르게 정리하려는 마음이 컸다.",
+            "혼선의 절반은 자신의 단정적 표현에도 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "본인 문장이 거래를 확정처럼 굳힐 수 있다는 점을 충분히 계산하지 못했다.",
+            "혼선의 절반은 자신의 단정적 표현에도 있다는 걸 안다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:a:tell:deadline_push",
+            "friend04:a:tell:yes_no_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-4:s0:dahye_told_half_half:0",
+              "factText": "송다혜가 판매자에게 '둘이 반반으로 가져간다'고 단정적으로 말한 신호",
+              "tags": [
+                "quote",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "둘이 반반으로 가져간다",
+                  "neutral": "그 문장",
+                  "judgeRef": "다혜의 문장"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-4:s0:hyunwoo_sent_photo_if:1",
+              "factText": "류현우도 별도로 '사진대로면 갈게요'라고 보내 거래 가능성을 직접 연 신호",
+              "tags": [
+                "quote",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "내 문장이 단정적으로 들렸을 수는 있어.",
+            "그래도 현우가 별도로 '사진대로면 갈게요'라고 안 했으면 판매자도 저렇게 확정으로 읽진 않았을 거야."
+          ],
+          "privateKnowledge": [
+            "현우가 판매자와도 대화 중이라는 걸 어렴풋이 알고 있었다.",
+            "본인 문장이 거래를 확정처럼 굳힐 수 있다는 점을 충분히 계산하지 못했다.",
+            "판매자 압박 속에서 빠르게 정리하려는 마음이 컸다.",
+            "혼선의 절반은 자신의 단정적 표현에도 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "본인 문장이 거래를 확정처럼 굳힐 수 있다는 점을 충분히 계산하지 못했다.",
+            "혼선의 절반은 자신의 단정적 표현에도 있다는 걸 안다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:a:tell:yes_no_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-4:s1:dahye_told_half_half:0",
+              "factText": "송다혜가 판매자에게 '둘이 반반으로 가져간다'고 단정적으로 말한 신호",
+              "tags": [
+                "quote",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "둘이 반반으로 가져간다",
+                  "neutral": "그 문장",
+                  "judgeRef": "다혜의 문장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-4:s1:hyunwoo_sent_photo_if:1",
+              "factText": "류현우도 별도로 '사진대로면 갈게요'라고 보내 거래 가능성을 직접 연 신호",
+              "tags": [
+                "quote",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-4:s1:seller_read_as_confirmed:2",
+              "factText": "판매자가 두 메시지를 종합해 사실상 확정 거래로 이해한 결과",
+              "tags": [
+                "institution",
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "둘 다 판매자한테 신호를 보낸 건 맞아.",
+            "다만 나는 같이 사는 흐름이라고 믿고 말했고, 현우는 빠질 여지를 남긴 채 보낸 게 달라."
+          ],
+          "privateKnowledge": [
+            "현우가 판매자와도 대화 중이라는 걸 어렴풋이 알고 있었다.",
+            "본인 문장이 거래를 확정처럼 굳힐 수 있다는 점을 충분히 계산하지 못했다.",
+            "판매자 압박 속에서 빠르게 정리하려는 마음이 컸다.",
+            "혼선의 절반은 자신의 단정적 표현에도 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "혼선의 절반은 자신의 단정적 표현에도 있다는 걸 안다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:a:tell:yes_no_loop",
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-4:s2:dahye_told_half_half:0",
+              "factText": "송다혜가 판매자에게 '둘이 반반으로 가져간다'고 단정적으로 말한 신호",
+              "tags": [
+                "quote",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "둘이 반반으로 가져간다",
+                  "neutral": "그 문장",
+                  "judgeRef": "다혜의 문장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-4:s2:hyunwoo_sent_photo_if:1",
+              "factText": "류현우도 별도로 '사진대로면 갈게요'라고 보내 거래 가능성을 직접 연 신호",
+              "tags": [
+                "quote",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-4:s2:seller_read_as_confirmed:2",
+              "factText": "판매자가 두 메시지를 종합해 사실상 확정 거래로 이해한 결과",
+              "tags": [
+                "institution",
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "대표 한 명만 말했어야 했다는 건 인정해.",
+            "그걸 안 맞춘 상태에서 각자 메시지를 보내니 판매자는 당연히 거래가 잡힌 줄 알았겠지."
+          ],
+          "privateKnowledge": [
+            "현우가 판매자와도 대화 중이라는 걸 어렴풋이 알고 있었다.",
+            "본인 문장이 거래를 확정처럼 굳힐 수 있다는 점을 충분히 계산하지 못했다.",
+            "판매자 압박 속에서 빠르게 정리하려는 마음이 컸다.",
+            "혼선의 절반은 자신의 단정적 표현에도 있다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-4:s3:no_single_spokesperson:0",
+              "factText": "대표 한 명을 정하지 않고 각자 판매자와 대화한 운영 문제",
+              "tags": [
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-4:s3:seller_read_as_confirmed:1",
+              "factText": "판매자가 두 메시지를 종합해 사실상 확정 거래로 이해한 결과",
+              "tags": [
+                "institution",
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-4:s3:dahye_told_half_half:2",
+              "factText": "송다혜가 판매자에게 '둘이 반반으로 가져간다'고 단정적으로 말한 신호",
+              "tags": [
+                "quote",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "둘이 반반으로 가져간다",
+                  "neutral": "그 문장",
+                  "judgeRef": "다혜의 문장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "지금 생각하면 내가 먼저 '둘이 반반'이라고 못 박은 것도 판을 굳혔어.",
+            "그때는 빨리 정리해야 한다는 생각밖에 없었어."
+          ],
+          "privateKnowledge": [
+            "현우가 판매자와도 대화 중이라는 걸 어렴풋이 알고 있었다.",
+            "본인 문장이 거래를 확정처럼 굳힐 수 있다는 점을 충분히 계산하지 못했다.",
+            "판매자 압박 속에서 빠르게 정리하려는 마음이 컸다.",
+            "혼선의 절반은 자신의 단정적 표현에도 있다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-4:s4:dahye_told_half_half:0",
+              "factText": "송다혜가 판매자에게 '둘이 반반으로 가져간다'고 단정적으로 말한 신호",
+              "tags": [
+                "quote",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "둘이 반반으로 가져간다",
+                  "neutral": "그 문장",
+                  "judgeRef": "다혜의 문장"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-4:s4:no_single_spokesperson:1",
+              "factText": "대표 한 명을 정하지 않고 각자 판매자와 대화한 운영 문제",
+              "tags": [
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "맞아, 판매자에게는 우리가 사실상 확정처럼 보이게 말했다.",
+            "내 단정과 현우의 조건부 긍정이 같이 섞이면서 혼선이 커졌어."
+          ],
+          "privateKnowledge": [
+            "현우가 판매자와도 대화 중이라는 걸 어렴풋이 알고 있었다.",
+            "본인 문장이 거래를 확정처럼 굳힐 수 있다는 점을 충분히 계산하지 못했다.",
+            "판매자 압박 속에서 빠르게 정리하려는 마음이 컸다.",
+            "혼선의 절반은 자신의 단정적 표현에도 있다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-4:s5:seller_read_as_confirmed:0",
+              "factText": "판매자가 두 메시지를 종합해 사실상 확정 거래로 이해한 결과",
+              "tags": [
+                "institution",
+                "context",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                }
+              },
+              "stanceHints": [
+                "resolve",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-4:s5:no_single_spokesperson:1",
+              "factText": "대표 한 명을 정하지 않고 각자 판매자와 대화한 운영 문제",
+              "tags": [
+                "context",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-4:s5:dahye_told_half_half:2",
+              "factText": "송다혜가 판매자에게 '둘이 반반으로 가져간다'고 단정적으로 말한 신호",
+              "tags": [
+                "quote",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "둘이 반반으로 가져간다",
+                  "neutral": "그 문장",
+                  "judgeRef": "다혜의 문장"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "작년 규칙이 있었다고 해서 이번까지 똑같이 볼 수는 없어.",
+            "현우가 또 애매하게 산다는 쪽으로 말해 놓고 빠질 가능성을 안 보였던 게 더 컸어."
+          ],
+          "privateKnowledge": [
+            "규칙 문구를 정확히 기억하고도 이번엔 예외를 만들었다.",
+            "주말 캠핑 일정과 손해 회피 욕심이 규칙보다 앞섰다.",
+            "현우가 또 애매하게 굴 거라는 오래된 불신이 있었다.",
+            "이전 숙소 취소수수료 때처럼 다시 혼자 정리하게 될까 두려웠다."
+          ],
+          "suppressions": [
+            "규칙 문구를 정확히 기억하고도 이번엔 예외를 만들었다.",
+            "주말 캠핑 일정과 손해 회피 욕심이 규칙보다 앞섰다.",
+            "현우가 또 애매하게 굴 거라는 오래된 불신이 있었다.",
+            "이전 숙소 취소수수료 때처럼 다시 혼자 정리하게 될까 두려웠다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:a:tell:deadline_push",
+            "friend04:a:tell:yes_no_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-5:s0:old_explicit_rule:0",
+              "factText": "작년부터 비환불 예약금은 명시적 '확정' 뒤에만 넣기로 했던 합의",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-5:s0:hyunwoo_left_escape:1",
+              "factText": "류현우가 구매 신호를 주면서도 빠질 수 있는 해석 여지를 남긴 위반",
+              "tags": [
+                "quote",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "확정 뒤에만 예약금 넣자는 원칙은 기억해.",
+            "다만 이번엔 현우 답과 판매자 압박이 겹쳐서 그 선이 무너진 거야."
+          ],
+          "privateKnowledge": [
+            "규칙 문구를 정확히 기억하고도 이번엔 예외를 만들었다.",
+            "주말 캠핑 일정과 손해 회피 욕심이 규칙보다 앞섰다.",
+            "현우가 또 애매하게 굴 거라는 오래된 불신이 있었다.",
+            "이전 숙소 취소수수료 때처럼 다시 혼자 정리하게 될까 두려웠다."
+          ],
+          "suppressions": [
+            "규칙 문구를 정확히 기억하고도 이번엔 예외를 만들었다.",
+            "주말 캠핑 일정과 손해 회피 욕심이 규칙보다 앞섰다.",
+            "이전 숙소 취소수수료 때처럼 다시 혼자 정리하게 될까 두려웠다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:a:tell:yes_no_loop"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-5:s1:old_explicit_rule:0",
+              "factText": "작년부터 비환불 예약금은 명시적 '확정' 뒤에만 넣기로 했던 합의",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-5:s1:hyunwoo_left_escape:1",
+              "factText": "류현우가 구매 신호를 주면서도 빠질 수 있는 해석 여지를 남긴 위반",
+              "tags": [
+                "quote",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-5:s1:dahye_broke_rule:2",
+              "factText": "송다혜가 모호한 답을 확정처럼 해석해 먼저 송금한 위반",
+              "tags": [
+                "act",
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "내가 그 규칙을 먼저 지키지 못한 건 맞아.",
+            "그래도 현우도 사실상 구매 신호를 주면서 해석 여지를 남겼잖아."
+          ],
+          "privateKnowledge": [
+            "규칙 문구를 정확히 기억하고도 이번엔 예외를 만들었다.",
+            "주말 캠핑 일정과 손해 회피 욕심이 규칙보다 앞섰다.",
+            "현우가 또 애매하게 굴 거라는 오래된 불신이 있었다.",
+            "이전 숙소 취소수수료 때처럼 다시 혼자 정리하게 될까 두려웠다."
+          ],
+          "suppressions": [
+            "주말 캠핑 일정과 손해 회피 욕심이 규칙보다 앞섰다.",
+            "이전 숙소 취소수수료 때처럼 다시 혼자 정리하게 될까 두려웠다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:a:tell:yes_no_loop",
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-5:s2:dahye_broke_rule:0",
+              "factText": "송다혜가 모호한 답을 확정처럼 해석해 먼저 송금한 위반",
+              "tags": [
+                "act",
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-5:s2:hyunwoo_left_escape:1",
+              "factText": "류현우가 구매 신호를 주면서도 빠질 수 있는 해석 여지를 남긴 위반",
+              "tags": [
+                "quote",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-5:s2:old_explicit_rule:2",
+              "factText": "작년부터 비환불 예약금은 명시적 '확정' 뒤에만 넣기로 했던 합의",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "규칙 자체를 몰랐던 건 아니야.",
+            "알고도 '이번은 다르다'고 넘긴 건 내 책임이고, 동시에 현우가 그 틈을 만들었다고 생각해."
+          ],
+          "privateKnowledge": [
+            "규칙 문구를 정확히 기억하고도 이번엔 예외를 만들었다.",
+            "주말 캠핑 일정과 손해 회피 욕심이 규칙보다 앞섰다.",
+            "현우가 또 애매하게 굴 거라는 오래된 불신이 있었다.",
+            "이전 숙소 취소수수료 때처럼 다시 혼자 정리하게 될까 두려웠다."
+          ],
+          "suppressions": [
+            "주말 캠핑 일정과 손해 회피 욕심이 규칙보다 앞섰다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-5:s3:old_explicit_rule:0",
+              "factText": "작년부터 비환불 예약금은 명시적 '확정' 뒤에만 넣기로 했던 합의",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-5:s3:repeated_pattern:1",
+              "factText": "이전 티켓·숙소 문제처럼 한쪽이 먼저 비용을 떠안는 패턴이 다시 반복된 상황",
+              "tags": [
+                "legacy_sentence",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend04:a:d-5:s3:hyunwoo_left_escape:2",
+              "factText": "류현우가 구매 신호를 주면서도 빠질 수 있는 해석 여지를 남긴 위반",
+              "tags": [
+                "quote",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 예전처럼 또 내가 먼저 돈 넣고 정리 담당이 될까 봐 조급했어.",
+            "그 불안 때문에 규칙을 알면서도 스스로 예외를 만들었어."
+          ],
+          "privateKnowledge": [
+            "규칙 문구를 정확히 기억하고도 이번엔 예외를 만들었다.",
+            "주말 캠핑 일정과 손해 회피 욕심이 규칙보다 앞섰다.",
+            "현우가 또 애매하게 굴 거라는 오래된 불신이 있었다.",
+            "이전 숙소 취소수수료 때처럼 다시 혼자 정리하게 될까 두려웠다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-5:s4:repeated_pattern:0",
+              "factText": "이전 티켓·숙소 문제처럼 한쪽이 먼저 비용을 떠안는 패턴이 다시 반복된 상황",
+              "tags": [
+                "legacy_sentence",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend04:a:d-5:s4:dahye_broke_rule:1",
+              "factText": "송다혜가 모호한 답을 확정처럼 해석해 먼저 송금한 위반",
+              "tags": [
+                "act",
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "맞아, 이번엔 우리 둘 다 작년 규칙을 어겼어.",
+            "나는 모호한 답에 송금했고, 현우는 산다는 신호를 주고도 빠질 길을 남겼어."
+          ],
+          "privateKnowledge": [
+            "규칙 문구를 정확히 기억하고도 이번엔 예외를 만들었다.",
+            "주말 캠핑 일정과 손해 회피 욕심이 규칙보다 앞섰다.",
+            "현우가 또 애매하게 굴 거라는 오래된 불신이 있었다.",
+            "이전 숙소 취소수수료 때처럼 다시 혼자 정리하게 될까 두려웠다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:a:tell:receipt_tap"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:a:d-5:s5:dahye_broke_rule:0",
+              "factText": "송다혜가 모호한 답을 확정처럼 해석해 먼저 송금한 위반",
+              "tags": [
+                "act",
+                "rule",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-5:s5:hyunwoo_left_escape:1",
+              "factText": "류현우가 구매 신호를 주면서도 빠질 수 있는 해석 여지를 남긴 위반",
+              "tags": [
+                "quote",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:a:d-5:s5:old_explicit_rule:2",
+              "factText": "작년부터 비환불 예약금은 명시적 '확정' 뒤에만 넣기로 했던 합의",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그 예약금은 다혜가 먼저 결정해서 보낸 거야.",
+            "나는 아직 확인할 게 남아 있었다고."
+          ],
+          "privateKnowledge": [
+            "자신의 '일단 잡아줘'가 사실상 진행 신호처럼 들릴 수 있다는 걸 알고 있었다.",
+            "판매자에게도 별도로 관심 메시지를 보냈다.",
+            "다혜가 빠르게 결제해 자리를 잡아두길 은근히 기대했다.",
+            "하지만 확정 책임은 지고 싶지 않아 문장을 흐리게 남겨뒀다."
+          ],
+          "suppressions": [
+            "자신의 '일단 잡아줘'가 사실상 진행 신호처럼 들릴 수 있다는 걸 알고 있었다.",
+            "판매자에게도 별도로 관심 메시지를 보냈다.",
+            "다혜가 빠르게 결제해 자리를 잡아두길 은근히 기대했다.",
+            "하지만 확정 책임은 지고 싶지 않아 문장을 흐리게 남겨뒀다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:b:tell:qualification_stack",
+            "friend04:b:tell:long_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-1:s0:dahye_sent_deposit:0",
+              "factText": "송다혜가 최종 확정 없이 예약금 3만원을 송금했다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-1:s0:no_explicit_confirm:1",
+              "factText": "류현우가 명시적 확정 문구는 끝내 보내지 않았다는 점",
+              "tags": [
+                "quote",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "내 말이 긍정적으로 들렸을 수는 있어도, 확정하겠다고 끝까지 찍은 건 아니야.",
+            "비환불 돈을 넣을 단계는 아니었다고 봤어."
+          ],
+          "privateKnowledge": [
+            "자신의 '일단 잡아줘'가 사실상 진행 신호처럼 들릴 수 있다는 걸 알고 있었다.",
+            "판매자에게도 별도로 관심 메시지를 보냈다.",
+            "다혜가 빠르게 결제해 자리를 잡아두길 은근히 기대했다.",
+            "하지만 확정 책임은 지고 싶지 않아 문장을 흐리게 남겨뒀다."
+          ],
+          "suppressions": [
+            "판매자에게도 별도로 관심 메시지를 보냈다.",
+            "다혜가 빠르게 결제해 자리를 잡아두길 은근히 기대했다.",
+            "하지만 확정 책임은 지고 싶지 않아 문장을 흐리게 남겨뒀다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:b:tell:qualification_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-1:s1:no_explicit_confirm:0",
+              "factText": "류현우가 명시적 확정 문구는 끝내 보내지 않았다는 점",
+              "tags": [
+                "quote",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-1:s1:dahye_sent_deposit:1",
+              "factText": "송다혜가 최종 확정 없이 예약금 3만원을 송금했다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-1:s1:his_positive_signal:2",
+              "factText": "자신의 표현이 긍정 신호처럼 읽힐 수 있었다는 사정",
+              "tags": [
+                "context",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "내 표현이 다혜를 급하게 만들었을 가능성은 인정해.",
+            "그래도 송금 버튼을 누른 건 다혜였고 그 전 최종 확인도 없었어."
+          ],
+          "privateKnowledge": [
+            "자신의 '일단 잡아줘'가 사실상 진행 신호처럼 들릴 수 있다는 걸 알고 있었다.",
+            "판매자에게도 별도로 관심 메시지를 보냈다.",
+            "다혜가 빠르게 결제해 자리를 잡아두길 은근히 기대했다.",
+            "하지만 확정 책임은 지고 싶지 않아 문장을 흐리게 남겨뒀다."
+          ],
+          "suppressions": [
+            "판매자에게도 별도로 관심 메시지를 보냈다.",
+            "다혜가 빠르게 결제해 자리를 잡아두길 은근히 기대했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing",
+            "friend04:b:tell:long_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-1:s2:his_positive_signal:0",
+              "factText": "자신의 표현이 긍정 신호처럼 읽힐 수 있었다는 사정",
+              "tags": [
+                "context",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-1:s2:dahye_sent_deposit:1",
+              "factText": "송다혜가 최종 확정 없이 예약금 3만원을 송금했다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-1:s2:old_rule_known:2",
+              "factText": "둘 다 작년 합의로 비환불 예약금 규칙을 알고 있었다는 전제",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "판매자 쪽에서 내가 관심 있는 것처럼 읽었을 수는 있어.",
+            "다만 명시적 확정 없이 예약금을 넣지 말자는 규칙은 둘 다 알던 거였어."
+          ],
+          "privateKnowledge": [
+            "자신의 '일단 잡아줘'가 사실상 진행 신호처럼 들릴 수 있다는 걸 알고 있었다.",
+            "판매자에게도 별도로 관심 메시지를 보냈다.",
+            "다혜가 빠르게 결제해 자리를 잡아두길 은근히 기대했다.",
+            "하지만 확정 책임은 지고 싶지 않아 문장을 흐리게 남겨뒀다."
+          ],
+          "suppressions": [
+            "다혜가 빠르게 결제해 자리를 잡아두길 은근히 기대했다.",
+            "하지만 확정 책임은 지고 싶지 않아 문장을 흐리게 남겨뒀다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-1:s3:his_positive_signal:0",
+              "factText": "자신의 표현이 긍정 신호처럼 읽힐 수 있었다는 사정",
+              "tags": [
+                "context",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-1:s3:old_rule_known:1",
+              "factText": "둘 다 작년 합의로 비환불 예약금 규칙을 알고 있었다는 전제",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend04:b:d-1:s3:no_explicit_confirm:2",
+              "factText": "류현우가 명시적 확정 문구는 끝내 보내지 않았다는 점",
+              "tags": [
+                "quote",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 내가 말을 분명히 끊었으면 다혜가 그렇게까지 앞서가진 않았을 거야.",
+            "그런데 그 순간엔 일단 자리만 잡아두고 싶었던 것도 맞아."
+          ],
+          "privateKnowledge": [
+            "자신의 '일단 잡아줘'가 사실상 진행 신호처럼 들릴 수 있다는 걸 알고 있었다.",
+            "판매자에게도 별도로 관심 메시지를 보냈다.",
+            "다혜가 빠르게 결제해 자리를 잡아두길 은근히 기대했다.",
+            "하지만 확정 책임은 지고 싶지 않아 문장을 흐리게 남겨뒀다."
+          ],
+          "suppressions": [
+            "하지만 확정 책임은 지고 싶지 않아 문장을 흐리게 남겨뒀다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-1:s4:his_positive_signal:0",
+              "factText": "자신의 표현이 긍정 신호처럼 읽힐 수 있었다는 사정",
+              "tags": [
+                "context",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-1:s4:no_explicit_confirm:1",
+              "factText": "류현우가 명시적 확정 문구는 끝내 보내지 않았다는 점",
+              "tags": [
+                "quote",
+                "rule",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-1:s4:dahye_sent_deposit:2",
+              "factText": "송다혜가 최종 확정 없이 예약금 3만원을 송금했다는 사실",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "결정권은 송금한 쪽에 있었지만, 내 말이 확정처럼 들리게 만든 책임도 있어.",
+            "다혜가 먼저 보낸 행동만 따로 떼서 볼 수는 없어."
+          ],
+          "privateKnowledge": [
+            "자신의 '일단 잡아줘'가 사실상 진행 신호처럼 들릴 수 있다는 걸 알고 있었다.",
+            "판매자에게도 별도로 관심 메시지를 보냈다.",
+            "다혜가 빠르게 결제해 자리를 잡아두길 은근히 기대했다.",
+            "하지만 확정 책임은 지고 싶지 않아 문장을 흐리게 남겨뒀다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-1:s5:his_positive_signal:0",
+              "factText": "자신의 표현이 긍정 신호처럼 읽힐 수 있었다는 사정",
+              "tags": [
+                "context",
+                "relationship",
+                "uncertainty"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-1:s5:old_rule_known:1",
+              "factText": "둘 다 작년 합의로 비환불 예약금 규칙을 알고 있었다는 전제",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "나는 산다고 확정한 적 없어.",
+            "상태가 괜찮으면 보자는 정도였지, 픽업 뒤에 빠진 게 아니야."
+          ],
+          "privateKnowledge": [
+            "판매자에게 '사진대로면 갈게요'라고 보내 사실상 거래 기대를 키웠다.",
+            "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다.",
+            "픽업 직후 냄새와 누락 부속품에 당황했지만, 이미 진행된 거래를 뒤집는 모양새가 될 걸 알았다.",
+            "철회가 늦을수록 다혜 손해가 커진다는 것도 알고 있었다."
+          ],
+          "suppressions": [
+            "판매자에게 '사진대로면 갈게요'라고 보내 사실상 거래 기대를 키웠다.",
+            "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다.",
+            "픽업 직후 냄새와 누락 부속품에 당황했지만, 이미 진행된 거래를 뒤집는 모양새가 될 걸 알았다.",
+            "철회가 늦을수록 다혜 손해가 커진다는 것도 알고 있었다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:b:tell:qualification_stack",
+            "friend04:b:tell:long_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-2:s0:not_explicit_purchase:0",
+              "factText": "구매를 명시적으로 확정하지 않은 채 가능성만 열어둔 표현",
+              "tags": [
+                "quote",
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-2:s0:private_quality_standard:1",
+              "factText": "류현우는 냄새·구성품·방수 상태까지 포함해 판단했다는 개인 기준",
+              "tags": [
+                "threshold",
+                "context",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "참여 가능성은 열어뒀지만 끝까지 보류였어.",
+            "냄새랑 구성품이 애초에 내 기준에 들어가 있었거든."
+          ],
+          "privateKnowledge": [
+            "판매자에게 '사진대로면 갈게요'라고 보내 사실상 거래 기대를 키웠다.",
+            "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다.",
+            "픽업 직후 냄새와 누락 부속품에 당황했지만, 이미 진행된 거래를 뒤집는 모양새가 될 걸 알았다.",
+            "철회가 늦을수록 다혜 손해가 커진다는 것도 알고 있었다."
+          ],
+          "suppressions": [
+            "판매자에게 '사진대로면 갈게요'라고 보내 사실상 거래 기대를 키웠다.",
+            "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다.",
+            "철회가 늦을수록 다혜 손해가 커진다는 것도 알고 있었다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:b:tell:qualification_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-2:s1:not_explicit_purchase:0",
+              "factText": "구매를 명시적으로 확정하지 않은 채 가능성만 열어둔 표현",
+              "tags": [
+                "quote",
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-2:s1:private_quality_standard:1",
+              "factText": "류현우는 냄새·구성품·방수 상태까지 포함해 판단했다는 개인 기준",
+              "tags": [
+                "threshold",
+                "context",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-2:s1:withdrawal_timing:2",
+              "factText": "픽업 후 40분 안쪽에 절반 부담에서 빠지겠다고 알린 시점",
+              "tags": [
+                "act",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "내가 의사 있는 것처럼 보이게 말한 건 인정해.",
+            "그래도 실제 물건 보니까 사진에서 안 보이던 부분이 있어서 바로 부담하기 어려웠어."
+          ],
+          "privateKnowledge": [
+            "판매자에게 '사진대로면 갈게요'라고 보내 사실상 거래 기대를 키웠다.",
+            "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다.",
+            "픽업 직후 냄새와 누락 부속품에 당황했지만, 이미 진행된 거래를 뒤집는 모양새가 될 걸 알았다.",
+            "철회가 늦을수록 다혜 손해가 커진다는 것도 알고 있었다."
+          ],
+          "suppressions": [
+            "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다.",
+            "철회가 늦을수록 다혜 손해가 커진다는 것도 알고 있었다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing",
+            "friend04:b:tell:long_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-2:s2:not_explicit_purchase:0",
+              "factText": "구매를 명시적으로 확정하지 않은 채 가능성만 열어둔 표현",
+              "tags": [
+                "quote",
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-2:s2:private_quality_standard:1",
+              "factText": "류현우는 냄새·구성품·방수 상태까지 포함해 판단했다는 개인 기준",
+              "tags": [
+                "threshold",
+                "context",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-2:s2:withdrawal_timing:2",
+              "factText": "픽업 후 40분 안쪽에 절반 부담에서 빠지겠다고 알린 시점",
+              "tags": [
+                "act",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "철회 시점이 늦었다는 건 알아.",
+            "하지만 하자 판단 기준이 달랐고, 그걸 다혜가 너무 확정처럼 밀어붙였다고 봤어."
+          ],
+          "privateKnowledge": [
+            "판매자에게 '사진대로면 갈게요'라고 보내 사실상 거래 기대를 키웠다.",
+            "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다.",
+            "픽업 직후 냄새와 누락 부속품에 당황했지만, 이미 진행된 거래를 뒤집는 모양새가 될 걸 알았다.",
+            "철회가 늦을수록 다혜 손해가 커진다는 것도 알고 있었다."
+          ],
+          "suppressions": [
+            "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-2:s3:withdrawal_timing:0",
+              "factText": "픽업 후 40분 안쪽에 절반 부담에서 빠지겠다고 알린 시점",
+              "tags": [
+                "act",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-2:s3:burden_left_to_dahye:1",
+              "factText": "거래 진행 뒤 철회하면서 정리 부담을 다혜에게 남긴 결과",
+              "tags": [
+                "harm",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "4만원",
+                  "rounded": "4만 원",
+                  "neutral": "재판매 손실"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "pressure"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-2:s3:private_quality_standard:2",
+              "factText": "류현우는 냄새·구성품·방수 상태까지 포함해 판단했다는 개인 기준",
+              "tags": [
+                "threshold",
+                "context",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 예약금까지 들어간 뒤라 더 말 꺼내기 어려워서 뜸 들였어.",
+            "그래도 끝까지 내가 책임질 생각이 굳은 건 아니었어."
+          ],
+          "privateKnowledge": [
+            "판매자에게 '사진대로면 갈게요'라고 보내 사실상 거래 기대를 키웠다.",
+            "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다.",
+            "픽업 직후 냄새와 누락 부속품에 당황했지만, 이미 진행된 거래를 뒤집는 모양새가 될 걸 알았다.",
+            "철회가 늦을수록 다혜 손해가 커진다는 것도 알고 있었다."
+          ],
+          "suppressions": [
+            "철회가 늦을수록 다혜 손해가 커진다는 것도 알고 있었다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-2:s4:burden_left_to_dahye:0",
+              "factText": "거래 진행 뒤 철회하면서 정리 부담을 다혜에게 남긴 결과",
+              "tags": [
+                "harm",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "4만원",
+                  "rounded": "4만 원",
+                  "neutral": "재판매 손실"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-2:s4:not_explicit_purchase:1",
+              "factText": "구매를 명시적으로 확정하지 않은 채 가능성만 열어둔 표현",
+              "tags": [
+                "quote",
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "맞아, 내가 참여 의사처럼 말해놓고 픽업 뒤에 빠진 건 사실이야.",
+            "상태 문제가 있더라도 그 판단을 더 빨리, 더 분명하게 말했어야 했어."
+          ],
+          "privateKnowledge": [
+            "판매자에게 '사진대로면 갈게요'라고 보내 사실상 거래 기대를 키웠다.",
+            "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다.",
+            "픽업 직후 냄새와 누락 부속품에 당황했지만, 이미 진행된 거래를 뒤집는 모양새가 될 걸 알았다.",
+            "철회가 늦을수록 다혜 손해가 커진다는 것도 알고 있었다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-2:s5:withdrawal_timing:0",
+              "factText": "픽업 후 40분 안쪽에 절반 부담에서 빠지겠다고 알린 시점",
+              "tags": [
+                "act",
+                "timeline",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "dateExact": "픽업 후 40분 안쪽",
+                  "period": "픽업 직후",
+                  "neutral": "그 무렵"
+                },
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-2:s5:burden_left_to_dahye:1",
+              "factText": "거래 진행 뒤 철회하면서 정리 부담을 다혜에게 남긴 결과",
+              "tags": [
+                "harm",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "4만원",
+                  "rounded": "4만 원",
+                  "neutral": "재판매 손실"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-2:s5:private_quality_standard:2",
+              "factText": "류현우는 냄새·구성품·방수 상태까지 포함해 판단했다는 개인 기준",
+              "tags": [
+                "threshold",
+                "context",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "나는 처음부터 상태를 넓게 본 거야.",
+            "다혜가 자기 기준으로만 '괜찮음'을 정리한 거지, 내가 말을 바꾼 게 아니야."
+          ],
+          "privateKnowledge": [
+            "자신도 '텐트만 멀쩡하면'이라는 표현이 구조 쪽으로 읽힐 수 있다는 걸 안다.",
+            "냄새나 누락 부속품을 구체 항목으로 적어 보내지 않았다.",
+            "픽업 전에는 거래를 놓치지 않으려 모호한 표현을 유지했다.",
+            "픽업 뒤에야 자기 기준을 꺼내며 결과적으로 의미를 뒤로 덧칠했다."
+          ],
+          "suppressions": [
+            "자신도 '텐트만 멀쩡하면'이라는 표현이 구조 쪽으로 읽힐 수 있다는 걸 안다.",
+            "냄새나 누락 부속품을 구체 항목으로 적어 보내지 않았다.",
+            "픽업 전에는 거래를 놓치지 않으려 모호한 표현을 유지했다.",
+            "픽업 뒤에야 자기 기준을 꺼내며 결과적으로 의미를 뒤로 덧칠했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:b:tell:qualification_stack",
+            "friend04:b:tell:long_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-3:s0:private_checklist:0",
+              "factText": "류현우가 냄새·구성품·방수 상태까지 포함한 개인 체크리스트를 마음속에 두고 있었다는 점",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-3:s0:not_explicit_in_chat:1",
+              "factText": "그 기준을 예약금과 픽업 전에 채팅으로 명시하지 않았다는 사실",
+              "tags": [
+                "quote",
+                "admission",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 내 쪽에선 냄새랑 구성품도 포함이었어.",
+            "그걸 한 줄 한 줄 다 적진 않았어도, 텐트만 멀쩡하면 된다는 뜻은 아니었어."
+          ],
+          "privateKnowledge": [
+            "자신도 '텐트만 멀쩡하면'이라는 표현이 구조 쪽으로 읽힐 수 있다는 걸 안다.",
+            "냄새나 누락 부속품을 구체 항목으로 적어 보내지 않았다.",
+            "픽업 전에는 거래를 놓치지 않으려 모호한 표현을 유지했다.",
+            "픽업 뒤에야 자기 기준을 꺼내며 결과적으로 의미를 뒤로 덧칠했다."
+          ],
+          "suppressions": [
+            "자신도 '텐트만 멀쩡하면'이라는 표현이 구조 쪽으로 읽힐 수 있다는 걸 안다.",
+            "냄새나 누락 부속품을 구체 항목으로 적어 보내지 않았다.",
+            "픽업 전에는 거래를 놓치지 않으려 모호한 표현을 유지했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:b:tell:qualification_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-3:s1:private_checklist:0",
+              "factText": "류현우가 냄새·구성품·방수 상태까지 포함한 개인 체크리스트를 마음속에 두고 있었다는 점",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-3:s1:photos_not_enough:1",
+              "factText": "사진과 크롭된 캡처만으로는 냄새와 누락 부속품을 완전히 판단하기 어려운 한계",
+              "tags": [
+                "evidence",
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-3:s1:not_explicit_in_chat:2",
+              "factText": "그 기준을 예약금과 픽업 전에 채팅으로 명시하지 않았다는 사실",
+              "tags": [
+                "quote",
+                "admission",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "내 기준을 더 분명히 적지 않은 건 맞아.",
+            "그래도 사진이랑 캡처만으로는 실제 상태를 확정할 수 없다는 경계는 계속 두고 있었어."
+          ],
+          "privateKnowledge": [
+            "자신도 '텐트만 멀쩡하면'이라는 표현이 구조 쪽으로 읽힐 수 있다는 걸 안다.",
+            "냄새나 누락 부속품을 구체 항목으로 적어 보내지 않았다.",
+            "픽업 전에는 거래를 놓치지 않으려 모호한 표현을 유지했다.",
+            "픽업 뒤에야 자기 기준을 꺼내며 결과적으로 의미를 뒤로 덧칠했다."
+          ],
+          "suppressions": [
+            "자신도 '텐트만 멀쩡하면'이라는 표현이 구조 쪽으로 읽힐 수 있다는 걸 안다.",
+            "픽업 전에는 거래를 놓치지 않으려 모호한 표현을 유지했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing",
+            "friend04:b:tell:long_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-3:s2:not_explicit_in_chat:0",
+              "factText": "그 기준을 예약금과 픽업 전에 채팅으로 명시하지 않았다는 사실",
+              "tags": [
+                "quote",
+                "admission",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-3:s2:photos_not_enough:1",
+              "factText": "사진과 크롭된 캡처만으로는 냄새와 누락 부속품을 완전히 판단하기 어려운 한계",
+              "tags": [
+                "evidence",
+                "threshold",
+                "context"
+              ],
+              "slots": {
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-3:s2:private_checklist:2",
+              "factText": "류현우가 냄새·구성품·방수 상태까지 포함한 개인 체크리스트를 마음속에 두고 있었다는 점",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "픽업 뒤에야 냄새와 누락 부속품을 강하게 말해서 늦어 보였을 거야.",
+            "하지만 그건 새로 만든 기준이 아니라 내가 미리 속으로 들고 있던 기준이었어."
+          ],
+          "privateKnowledge": [
+            "자신도 '텐트만 멀쩡하면'이라는 표현이 구조 쪽으로 읽힐 수 있다는 걸 안다.",
+            "냄새나 누락 부속품을 구체 항목으로 적어 보내지 않았다.",
+            "픽업 전에는 거래를 놓치지 않으려 모호한 표현을 유지했다.",
+            "픽업 뒤에야 자기 기준을 꺼내며 결과적으로 의미를 뒤로 덧칠했다."
+          ],
+          "suppressions": [
+            "픽업 전에는 거래를 놓치지 않으려 모호한 표현을 유지했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-3:s3:late_scope_narrowing:0",
+              "factText": "불리해진 뒤 '나는 그 뜻이었다'며 말의 범위를 뒤늦게 좁혀 설명한 모습",
+              "tags": [
+                "self_justification",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-3:s3:not_explicit_in_chat:1",
+              "factText": "그 기준을 예약금과 픽업 전에 채팅으로 명시하지 않았다는 사실",
+              "tags": [
+                "quote",
+                "admission",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-3:s3:private_checklist:2",
+              "factText": "류현우가 냄새·구성품·방수 상태까지 포함한 개인 체크리스트를 마음속에 두고 있었다는 점",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 나는 내 기준을 머릿속에만 두고 다혜도 당연히 알 거라고 생각했어.",
+            "그게 제일 큰 착각이었지."
+          ],
+          "privateKnowledge": [
+            "자신도 '텐트만 멀쩡하면'이라는 표현이 구조 쪽으로 읽힐 수 있다는 걸 안다.",
+            "냄새나 누락 부속품을 구체 항목으로 적어 보내지 않았다.",
+            "픽업 전에는 거래를 놓치지 않으려 모호한 표현을 유지했다.",
+            "픽업 뒤에야 자기 기준을 꺼내며 결과적으로 의미를 뒤로 덧칠했다."
+          ],
+          "suppressions": [
+            "자신도 '텐트만 멀쩡하면'이라는 표현이 구조 쪽으로 읽힐 수 있다는 걸 안다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-3:s4:late_scope_narrowing:0",
+              "factText": "불리해진 뒤 '나는 그 뜻이었다'며 말의 범위를 뒤늦게 좁혀 설명한 모습",
+              "tags": [
+                "self_justification",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-3:s4:private_checklist:1",
+              "factText": "류현우가 냄새·구성품·방수 상태까지 포함한 개인 체크리스트를 마음속에 두고 있었다는 점",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "맞아, 내 '상태 괜찮음'은 다혜가 이해한 말이 아니었어.",
+            "내가 기준을 명확히 적지 않은 채 뒤늦게 좁혀 설명한 책임이 있어."
+          ],
+          "privateKnowledge": [
+            "자신도 '텐트만 멀쩡하면'이라는 표현이 구조 쪽으로 읽힐 수 있다는 걸 안다.",
+            "냄새나 누락 부속품을 구체 항목으로 적어 보내지 않았다.",
+            "픽업 전에는 거래를 놓치지 않으려 모호한 표현을 유지했다.",
+            "픽업 뒤에야 자기 기준을 꺼내며 결과적으로 의미를 뒤로 덧칠했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-3:s5:not_explicit_in_chat:0",
+              "factText": "그 기준을 예약금과 픽업 전에 채팅으로 명시하지 않았다는 사실",
+              "tags": [
+                "quote",
+                "admission",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-3:s5:late_scope_narrowing:1",
+              "factText": "불리해진 뒤 '나는 그 뜻이었다'며 말의 범위를 뒤늦게 좁혀 설명한 모습",
+              "tags": [
+                "self_justification",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "상태 괜찮음",
+                  "neutral": "그 표현",
+                  "judgeRef": "상태 기준 표현"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-3:s5:private_checklist:2",
+              "factText": "류현우가 냄새·구성품·방수 상태까지 포함한 개인 체크리스트를 마음속에 두고 있었다는 점",
+              "tags": [
+                "threshold",
+                "identity",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "threshold": {
+                  "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                  "neutral": "상태 판단 기준",
+                  "judgeRef": "괜찮음의 기준"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "내 메시지는 확인 의사였지 확정 신호가 아니었어.",
+            "판매자가 그렇게 읽은 건 다혜가 먼저 단정적으로 말했기 때문이야."
+          ],
+          "privateKnowledge": [
+            "자신의 메시지가 판매자에게 강한 기대를 줄 수 있다는 걸 알고 있었다.",
+            "다혜가 이미 확정 쪽으로 정리하고 있다는 사실도 눈치챘다.",
+            "자리만 잡아두고 상태를 실제로 보고 결정하고 싶었다.",
+            "정정하면 거래를 놓칠까 봐 일부러 모호함을 유지했다."
+          ],
+          "suppressions": [
+            "자신의 메시지가 판매자에게 강한 기대를 줄 수 있다는 걸 알고 있었다.",
+            "다혜가 이미 확정 쪽으로 정리하고 있다는 사실도 눈치챘다.",
+            "자리만 잡아두고 상태를 실제로 보고 결정하고 싶었다.",
+            "정정하면 거래를 놓칠까 봐 일부러 모호함을 유지했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:b:tell:qualification_stack",
+            "friend04:b:tell:long_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-4:s0:meant_as_conditional:0",
+              "factText": "본인은 이를 조건 확인으로 이해했다는 자기 해석",
+              "tags": [
+                "self_justification",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend04:b:d-4:s0:photo_if_message:1",
+              "factText": "류현우가 판매자에게 '사진대로면 갈게요'라고 보낸 직접 메시지",
+              "tags": [
+                "quote",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "'사진대로면 갈 수 있다'고 한 건 조건 확인 차원이었어.",
+            "바로 산다고 못 박은 건 아니었고, 다혜 메시지까지 합쳐져서 커진 거지."
+          ],
+          "privateKnowledge": [
+            "자신의 메시지가 판매자에게 강한 기대를 줄 수 있다는 걸 알고 있었다.",
+            "다혜가 이미 확정 쪽으로 정리하고 있다는 사실도 눈치챘다.",
+            "자리만 잡아두고 상태를 실제로 보고 결정하고 싶었다.",
+            "정정하면 거래를 놓칠까 봐 일부러 모호함을 유지했다."
+          ],
+          "suppressions": [
+            "자신의 메시지가 판매자에게 강한 기대를 줄 수 있다는 걸 알고 있었다.",
+            "자리만 잡아두고 상태를 실제로 보고 결정하고 싶었다.",
+            "정정하면 거래를 놓칠까 봐 일부러 모호함을 유지했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:b:tell:qualification_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-4:s1:meant_as_conditional:0",
+              "factText": "본인은 이를 조건 확인으로 이해했다는 자기 해석",
+              "tags": [
+                "self_justification",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend04:b:d-4:s1:seller_confusion:1",
+              "factText": "송다혜의 반반 메시지와 합쳐져 판매자에게 확정으로 읽힌 결과",
+              "tags": [
+                "institution",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "둘이 반반으로 가져간다",
+                  "neutral": "그 문장",
+                  "judgeRef": "다혜의 문장"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-4:s1:photo_if_message:2",
+              "factText": "류현우가 판매자에게 '사진대로면 갈게요'라고 보낸 직접 메시지",
+              "tags": [
+                "quote",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "내 문장이 확정처럼 보였을 수는 있어.",
+            "그래도 그때 나는 실제로 상태만 맞으면 갈 생각도 있었고, 완전히 빈말은 아니었어."
+          ],
+          "privateKnowledge": [
+            "자신의 메시지가 판매자에게 강한 기대를 줄 수 있다는 걸 알고 있었다.",
+            "다혜가 이미 확정 쪽으로 정리하고 있다는 사실도 눈치챘다.",
+            "자리만 잡아두고 상태를 실제로 보고 결정하고 싶었다.",
+            "정정하면 거래를 놓칠까 봐 일부러 모호함을 유지했다."
+          ],
+          "suppressions": [
+            "자리만 잡아두고 상태를 실제로 보고 결정하고 싶었다.",
+            "정정하면 거래를 놓칠까 봐 일부러 모호함을 유지했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing",
+            "friend04:b:tell:long_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-4:s2:photo_if_message:0",
+              "factText": "류현우가 판매자에게 '사진대로면 갈게요'라고 보낸 직접 메시지",
+              "tags": [
+                "quote",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-4:s2:meant_as_conditional:1",
+              "factText": "본인은 이를 조건 확인으로 이해했다는 자기 해석",
+              "tags": [
+                "self_justification",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "friend04:b:d-4:s2:seller_confusion:2",
+              "factText": "송다혜의 반반 메시지와 합쳐져 판매자에게 확정으로 읽힌 결과",
+              "tags": [
+                "institution",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "둘이 반반으로 가져간다",
+                  "neutral": "그 문장",
+                  "judgeRef": "다혜의 문장"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "문제는 내가 그 가능성 표현을 정리하지 않고 놔둔 거야.",
+            "판매자가 계속 거래가 잡힌 줄 알게 둔 책임은 있어."
+          ],
+          "privateKnowledge": [
+            "자신의 메시지가 판매자에게 강한 기대를 줄 수 있다는 걸 알고 있었다.",
+            "다혜가 이미 확정 쪽으로 정리하고 있다는 사실도 눈치챘다.",
+            "자리만 잡아두고 상태를 실제로 보고 결정하고 싶었다.",
+            "정정하면 거래를 놓칠까 봐 일부러 모호함을 유지했다."
+          ],
+          "suppressions": [
+            "정정하면 거래를 놓칠까 봐 일부러 모호함을 유지했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-4:s3:did_not_correct:0",
+              "factText": "상대가 거래를 확정으로 받아들이는 동안 바로 정정하지 않았다는 점",
+              "tags": [
+                "admission",
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-4:s3:seller_confusion:1",
+              "factText": "송다혜의 반반 메시지와 합쳐져 판매자에게 확정으로 읽힌 결과",
+              "tags": [
+                "institution",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "둘이 반반으로 가져간다",
+                  "neutral": "그 문장",
+                  "judgeRef": "다혜의 문장"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-4:s3:meant_as_conditional:2",
+              "factText": "본인은 이를 조건 확인으로 이해했다는 자기 해석",
+              "tags": [
+                "self_justification",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 자리 뺏기기 싫어서 가능성은 열어두고 싶었어.",
+            "그런데 그 말이 상대에겐 거의 확정처럼 들린다는 걸 끝까지 외면했지."
+          ],
+          "privateKnowledge": [
+            "자신의 메시지가 판매자에게 강한 기대를 줄 수 있다는 걸 알고 있었다.",
+            "다혜가 이미 확정 쪽으로 정리하고 있다는 사실도 눈치챘다.",
+            "자리만 잡아두고 상태를 실제로 보고 결정하고 싶었다.",
+            "정정하면 거래를 놓칠까 봐 일부러 모호함을 유지했다."
+          ],
+          "suppressions": [
+            "자신의 메시지가 판매자에게 강한 기대를 줄 수 있다는 걸 알고 있었다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-4:s4:did_not_correct:0",
+              "factText": "상대가 거래를 확정으로 받아들이는 동안 바로 정정하지 않았다는 점",
+              "tags": [
+                "admission",
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-4:s4:meant_as_conditional:1",
+              "factText": "본인은 이를 조건 확인으로 이해했다는 자기 해석",
+              "tags": [
+                "self_justification",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "맞아, 내 '사진대로면 갈게요'는 판매자 입장에선 확정 신호처럼 읽힐 만했어.",
+            "다혜 메시지와 합쳐져 혼선을 만든 책임이 내게도 있어."
+          ],
+          "privateKnowledge": [
+            "자신의 메시지가 판매자에게 강한 기대를 줄 수 있다는 걸 알고 있었다.",
+            "다혜가 이미 확정 쪽으로 정리하고 있다는 사실도 눈치챘다.",
+            "자리만 잡아두고 상태를 실제로 보고 결정하고 싶었다.",
+            "정정하면 거래를 놓칠까 봐 일부러 모호함을 유지했다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-4:s5:photo_if_message:0",
+              "factText": "류현우가 판매자에게 '사진대로면 갈게요'라고 보낸 직접 메시지",
+              "tags": [
+                "quote",
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "사진대로면 갈게요",
+                  "neutral": "그 메시지",
+                  "judgeRef": "현우의 판매자 메시지"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-4:s5:seller_confusion:1",
+              "factText": "송다혜의 반반 메시지와 합쳐져 판매자에게 확정으로 읽힌 결과",
+              "tags": [
+                "institution",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                },
+                "quote": {
+                  "exact": "둘이 반반으로 가져간다",
+                  "neutral": "그 문장",
+                  "judgeRef": "다혜의 문장"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-4:s5:did_not_correct:2",
+              "factText": "상대가 거래를 확정으로 받아들이는 동안 바로 정정하지 않았다는 점",
+              "tags": [
+                "admission",
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "한재필",
+                  "judgeRef": "판매자",
+                  "neutral": "판매자"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "작년 규칙은 분명했어.",
+            "확정 없으면 예약금 안 넣는 거였고, 이번에 먼저 선 넘은 건 다혜야."
+          ],
+          "privateKnowledge": [
+            "본인도 규칙을 지키려면 '확정 아님'이라고 분명히 말했어야 했다.",
+            "다혜가 먼저 송금해 자리를 잡아주길 기대한 순간이 있었다.",
+            "과거 갈등 때문에 확정 책임을 지는 말을 일부러 피했다.",
+            "이번 다툼이 예전 정산 감정까지 다시 끌어올렸다는 걸 안다."
+          ],
+          "suppressions": [
+            "본인도 규칙을 지키려면 '확정 아님'이라고 분명히 말했어야 했다.",
+            "다혜가 먼저 송금해 자리를 잡아주길 기대한 순간이 있었다.",
+            "과거 갈등 때문에 확정 책임을 지는 말을 일부러 피했다.",
+            "이번 다툼이 예전 정산 감정까지 다시 끌어올렸다는 걸 안다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:b:tell:qualification_stack",
+            "friend04:b:tell:long_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-5:s0:shared_rule_memory:0",
+              "factText": "두 사람이 작년부터 명시적 확정 뒤에만 예약금을 넣기로 합의한 기억",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-5:s0:dahye_paid_early:1",
+              "factText": "송다혜가 그 합의보다 먼저 예약금을 보낸 행동",
+              "tags": [
+                "act",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "그래도 내 말이 또 애매하게 들렸다는 지적은 이해해.",
+            "확정 아니라는 선을 더 분명히 그었어야 했다는 건 있어."
+          ],
+          "privateKnowledge": [
+            "본인도 규칙을 지키려면 '확정 아님'이라고 분명히 말했어야 했다.",
+            "다혜가 먼저 송금해 자리를 잡아주길 기대한 순간이 있었다.",
+            "과거 갈등 때문에 확정 책임을 지는 말을 일부러 피했다.",
+            "이번 다툼이 예전 정산 감정까지 다시 끌어올렸다는 걸 안다."
+          ],
+          "suppressions": [
+            "다혜가 먼저 송금해 자리를 잡아주길 기대한 순간이 있었다.",
+            "과거 갈등 때문에 확정 책임을 지는 말을 일부러 피했다.",
+            "이번 다툼이 예전 정산 감정까지 다시 끌어올렸다는 걸 안다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "friend04:b:tell:qualification_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-5:s1:shared_rule_memory:0",
+              "factText": "두 사람이 작년부터 명시적 확정 뒤에만 예약금을 넣기로 합의한 기억",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-5:s1:hyunwoo_kept_escape_hatch:1",
+              "factText": "류현우가 확정처럼 보일 말을 하면서도 책임 회피 여지를 남긴 행동",
+              "tags": [
+                "quote",
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-5:s1:dahye_paid_early:2",
+              "factText": "송다혜가 그 합의보다 먼저 예약금을 보낸 행동",
+              "tags": [
+                "act",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "규칙 위반이 다혜 쪽에서 먼저 드러난 건 맞아.",
+            "하지만 나도 참여 의사처럼 읽히는 말을 던져놓고 뒤로 빠질 여지를 남겼지."
+          ],
+          "privateKnowledge": [
+            "본인도 규칙을 지키려면 '확정 아님'이라고 분명히 말했어야 했다.",
+            "다혜가 먼저 송금해 자리를 잡아주길 기대한 순간이 있었다.",
+            "과거 갈등 때문에 확정 책임을 지는 말을 일부러 피했다.",
+            "이번 다툼이 예전 정산 감정까지 다시 끌어올렸다는 걸 안다."
+          ],
+          "suppressions": [
+            "다혜가 먼저 송금해 자리를 잡아주길 기대한 순간이 있었다.",
+            "과거 갈등 때문에 확정 책임을 지는 말을 일부러 피했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing",
+            "friend04:b:tell:long_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-5:s2:hyunwoo_kept_escape_hatch:0",
+              "factText": "류현우가 확정처럼 보일 말을 하면서도 책임 회피 여지를 남긴 행동",
+              "tags": [
+                "quote",
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-5:s2:dahye_paid_early:1",
+              "factText": "송다혜가 그 합의보다 먼저 예약금을 보낸 행동",
+              "tags": [
+                "act",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-5:s2:pattern_of_ambiguity:2",
+              "factText": "과거 티켓·숙소 정산 때처럼 모호한 약속과 선결제가 반복된 패턴",
+              "tags": [
+                "legacy_sentence",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "결국 작년 합의를 둘 다 자기 편한 방식으로 쓴 셈이야.",
+            "다혜는 서둘렀고, 나는 모호함 뒤에 숨었어."
+          ],
+          "privateKnowledge": [
+            "본인도 규칙을 지키려면 '확정 아님'이라고 분명히 말했어야 했다.",
+            "다혜가 먼저 송금해 자리를 잡아주길 기대한 순간이 있었다.",
+            "과거 갈등 때문에 확정 책임을 지는 말을 일부러 피했다.",
+            "이번 다툼이 예전 정산 감정까지 다시 끌어올렸다는 걸 안다."
+          ],
+          "suppressions": [
+            "과거 갈등 때문에 확정 책임을 지는 말을 일부러 피했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-5:s3:pattern_of_ambiguity:0",
+              "factText": "과거 티켓·숙소 정산 때처럼 모호한 약속과 선결제가 반복된 패턴",
+              "tags": [
+                "legacy_sentence",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend04:b:d-5:s3:hyunwoo_kept_escape_hatch:1",
+              "factText": "류현우가 확정처럼 보일 말을 하면서도 책임 회피 여지를 남긴 행동",
+              "tags": [
+                "quote",
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-5:s3:shared_rule_memory:2",
+              "factText": "두 사람이 작년부터 명시적 확정 뒤에만 예약금을 넣기로 합의한 기억",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "예전 일들이 쌓여서 이번에도 확정 책임은 피하고 싶었어.",
+            "그 마음 때문에 규칙을 알면서도 분명히 끊지 않았지."
+          ],
+          "privateKnowledge": [
+            "본인도 규칙을 지키려면 '확정 아님'이라고 분명히 말했어야 했다.",
+            "다혜가 먼저 송금해 자리를 잡아주길 기대한 순간이 있었다.",
+            "과거 갈등 때문에 확정 책임을 지는 말을 일부러 피했다.",
+            "이번 다툼이 예전 정산 감정까지 다시 끌어올렸다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-5:s4:pattern_of_ambiguity:0",
+              "factText": "과거 티켓·숙소 정산 때처럼 모호한 약속과 선결제가 반복된 패턴",
+              "tags": [
+                "legacy_sentence",
+                "relationship",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "friend04:b:d-5:s4:hyunwoo_kept_escape_hatch:1",
+              "factText": "류현우가 확정처럼 보일 말을 하면서도 책임 회피 여지를 남긴 행동",
+              "tags": [
+                "quote",
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "맞아, 규칙은 둘 다 어겼어.",
+            "다혜는 먼저 보냈고, 나는 확정처럼 보이게 말해 놓고도 '명확히 확정한 적 없다'는 뒤로 물러날 문장을 남겼어."
+          ],
+          "privateKnowledge": [
+            "본인도 규칙을 지키려면 '확정 아님'이라고 분명히 말했어야 했다.",
+            "다혜가 먼저 송금해 자리를 잡아주길 기대한 순간이 있었다.",
+            "과거 갈등 때문에 확정 책임을 지는 말을 일부러 피했다.",
+            "이번 다툼이 예전 정산 감정까지 다시 끌어올렸다는 걸 안다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "friend04:b:tell:scope_narrowing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "friend04:b:d-5:s5:shared_rule_memory:0",
+              "factText": "두 사람이 작년부터 명시적 확정 뒤에만 예약금을 넣기로 합의한 기억",
+              "tags": [
+                "rule",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                  "neutral": "작년 예약금 규칙",
+                  "judgeRef": "작년 합의"
+                }
+              },
+              "stanceHints": [
+                "resolve"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-5:s5:dahye_paid_early:1",
+              "factText": "송다혜가 그 합의보다 먼저 예약금을 보낸 행동",
+              "tags": [
+                "act",
+                "rule",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "송다혜",
+                  "judgeRef": "다혜 씨",
+                  "neutral": "상대"
+                },
+                "amount": {
+                  "exact": "3만원",
+                  "rounded": "3만 원",
+                  "neutral": "예약금"
+                },
+                "time": {
+                  "dateExact": "예약금 송금 직후",
+                  "period": "픽업 전",
+                  "neutral": "그 시점"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "friend04:b:d-5:s5:hyunwoo_kept_escape_hatch:2",
+              "factText": "류현우가 확정처럼 보일 말을 하면서도 책임 회피 여지를 남긴 행동",
+              "tags": [
+                "quote",
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "류현우",
+                  "judgeRef": "현우 씨",
+                  "neutral": "상대"
+                },
+                "quote": {
+                  "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                  "neutral": "그 표현",
+                  "judgeRef": "현우의 메시지"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+} as const;
+
+export default friend04V2Atoms;

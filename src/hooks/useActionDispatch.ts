@@ -14,6 +14,26 @@ import { normalizeCaseKey } from '../utils/caseHelpers'
 import { detectStatementChange } from '../engine/contradictionEngine'
 import { runDiscoveryChecks, updateCascadeTargets } from './useDiscoveryIntegration'
 import { emitStateTransitionEvent } from '../engine/stateTransitionHelper'
+// ── V2 스크립트 전환 엔진 ──
+import { hasV2Data, getBeatLibrary, getBeatRuntimeState, recordBeatUsed, getActiveLayer, getDisputeRole, getDisputeV2 } from '../engine/v2DataLoader'
+import { evaluateQuestionFatigue, commitQuestionFatigue, getSessionFatigueState, setSessionFatigueState } from '../engine/questionFatigueEngine'
+import { selectTurnPresentation, deriveAngleTag, deriveResponseIntent } from '../engine/beatSelectorV2'
+import { deriveActionQuality, resolveNpcReaction, applyReactionToBlueprint } from '../engine/npcReactionV2'
+import {
+  evaluateInterjectionOpportunity, commitInterjectionFocus, commitInterjectionChoice,
+  getSessionInterjectionTracker, setSessionInterjectionTracker,
+  type InterjectionOpportunityV2, type InterjectionChoice,
+} from '../engine/interjectionV2'
+import { recordRevealedAtom, recordTurnStyle, recordInterjectionChoice as recordInterjectionStyleChoice, recordKeyMoment, recordResolvedLink } from '../engine/phase3LogCollector'
+import {
+  isMisconceptionDispute, attemptMisconceptionTransition, getMisconceptionState,
+  deriveTriggerFromQuestion, deriveTriggerFromEvidence, deriveTriggerFromInterjection,
+  deriveTriggerFromLink, applyMisconceptionTrigger, matchTrapSignal, shouldFeedLinkIntoMisconception,
+} from '../engine/misconceptionEngine'
+import { evaluateLinkEdges } from '../engine/linkEdgeEngine'
+import type { BeatScriptV2 } from '../types'
+import { toTrustWindowBand } from '../types'
+import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -34,6 +54,102 @@ export function setNextEvasionReading(target: PartyId, disputeId: string) {
 }
 
 let globalDispatchLock = false
+
+// V2 피로도 상태는 questionFatigueEngine.ts의 세션 상태에서 관리
+
+/** GameEventModal에서 V2 끼어들기 allow/block 선택 시 호출 */
+export function resolveInterjectionV2(choice: 'allow' | 'block'): void {
+  const store = useGameStore.getState()
+  const opportunity = store.pendingInterjectionV2
+  if (!opportunity) return
+
+  const { tracker: nextTracker, effects } = commitInterjectionChoice(
+    getSessionInterjectionTracker(), opportunity, choice, store.turnCount,
+  )
+  setSessionInterjectionTracker(nextTracker)
+  recordInterjectionStyleChoice(choice)
+
+  // 끼어들기 응답 출력
+  store.addDialogue({
+    speaker: opportunity.interruptor,
+    text: opportunity.line,
+    relatedDisputes: [opportunity.disputeId],
+    turn: store.turnCount,
+  })
+
+  // 효과 적용
+  const caseId = normalizeCaseKey(store.caseData?.caseId ?? '')
+  const runtimeState = getBeatRuntimeState(caseId)
+
+  for (const eff of effects) {
+    if (eff.type === 'reset_fatigue') {
+      setSessionFatigueState(commitQuestionFatigue({
+        turn: store.turnCount,
+        party: opportunity.target,
+        disputeId: opportunity.disputeId,
+        questionType: 'fact_pursuit',
+        angleTag: 'context',
+        resetReason: 'interjection_allow',
+      }, getSessionFatigueState()))
+    }
+    if (eff.type === 'authority_delta') {
+      store.changeTrust(opportunity.target, 'trustTowardJudge', eff.amount * 3)
+    }
+    if (eff.type === 'reveal_atom') {
+      recordRevealedAtom(eff.atomId)
+      store.addDialogue({
+        speaker: 'system',
+        text: `새로운 사실이 드러났습니다.`,
+        relatedDisputes: [opportunity.disputeId],
+        turn: store.turnCount,
+      })
+    }
+    if (eff.type === 'reveal_link') {
+      recordResolvedLink(eff.linkId)
+    }
+    if (eff.type === 'trap_signal') {
+      store.addDialogue({
+        speaker: 'system',
+        text: `단서 발견: ${eff.signal}`,
+        relatedDisputes: [opportunity.disputeId],
+        turn: store.turnCount,
+      })
+    }
+    if (eff.type === 'set_flag') {
+      runtimeState.flags.add(eff.flag)
+    }
+    if (eff.type === 'set_resentment') {
+      // resentment는 commitInterjectionChoice에서 이미 tracker에 반영됨
+    }
+    if (eff.type === 'readiness_nudge') {
+      // readiness nudge — 향후 readiness engine과 연결
+    }
+  }
+
+  // Misconception 트리거 (allow 시 infoLevel에 따라 전이 시도)
+  if (choice === 'allow' && isMisconceptionDispute(opportunity.disputeId)) {
+    const mcTrigger = deriveTriggerFromInterjection({
+      disputeId: opportunity.disputeId,
+      turn: store.turnCount,
+      infoLevel: opportunity.infoLevel as any,
+      trapSignal: effects.find(e => e.type === 'trap_signal')?.signal,
+    })
+    if (mcTrigger) {
+      const mcResult = applyMisconceptionTrigger(opportunity.disputeId, mcTrigger)
+      if (mcResult?.changed) {
+        console.log(`[V2 Misconception via Interjection] ${opportunity.disputeId}: ${mcResult.from}→${mcResult.to}`)
+        for (const eff of mcResult.effects) {
+          if (eff.type === 'set_flag') runtimeState.flags.add(eff.flag)
+          if (eff.type === 'clear_flag') runtimeState.flags.delete(eff.flag)
+        }
+      }
+    }
+  }
+
+  // 대기 해제
+  store.setPendingInterjectionV2(null)
+  console.log(`[V2 Interjection] resolved: ${choice}`, effects.map(e => e.type).join(', '))
+}
 
 export function useActionDispatch() {
   const dispatch = useCallback((action: PlayerAction) => {
@@ -129,6 +245,33 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     }
   }
   if (evDidTransition) state.trackMetric('evidenceEffective')
+
+  // V2: 증거 제시 → misconception 전이 시도
+  {
+    const v2CaseId = normalizeCaseKey(state.caseData?.caseId ?? '')
+    if (hasV2Data(v2CaseId)) {
+      for (const disputeId of evDef.proves) {
+        if (isMisconceptionDispute(disputeId)) {
+          const mcEvTrigger = deriveTriggerFromEvidence({
+            disputeId,
+            turn: state.turnCount,
+            evidenceId: action.evidenceId,
+          })
+          if (mcEvTrigger) {
+            const mcResult = applyMisconceptionTrigger(disputeId, mcEvTrigger)
+            if (mcResult?.changed) {
+              console.log(`[V2 Misconception via Evidence] ${disputeId}: ${mcResult.from}→${mcResult.to}`)
+              const rState = getBeatRuntimeState(v2CaseId)
+              for (const eff of mcResult.effects) {
+                if (eff.type === 'set_flag') rState.flags.add(eff.flag)
+                if (eff.type === 'clear_flag') rState.flags.delete(eff.flag)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   // V3: 증거 결과 토스트 — 전이 여부에 따라 hold/crack/collapse
   {
@@ -489,8 +632,277 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     state.changeTrust(action.target, 'trustTowardJudge', 12)
   }
 
-  // NPC 응답 — LLM 모드에서는 재판관 질문 + NPC 응답이 함께 생성됨
-  await resolveAndApply(action, action.target, isConfidential)
+  // NPC 응답 — V2 데이터 + feature flag가 모두 켜져 있으면 BeatScript V2, 아니면 기존 LLM
+  const v2CaseId = normalizeCaseKey(state.caseData?.caseId ?? '')
+  const { useBeatSelectorV2, useQuestionFatigueV2 } = useGameStore.getState().phase3Flags
+  const v2Available = useBeatSelectorV2 && hasV2Data(v2CaseId)
+  let v2BeatUsed = false
+
+  if (v2Available) {
+    const v2Agent = action.target === 'a' ? state.agentA : state.agentB
+    const v2Lie = v2Agent.lieStateMap[action.disputeId]
+    if (v2Lie) {
+      const emotionVal = v2Agent.emotionalState.internalValue
+      const emotionTier = emotionVal >= 85 ? 'shutdown' : emotionVal >= 65 ? 'explosive' : emotionVal >= 40 ? 'agitated' : 'calm'
+      const stanceGuess = ({ S0: 'deny', S1: 'hedge', S2: 'partial', S3: 'blame', S4: 'emotional', S5: 'confess' })[v2Lie.currentState] ?? 'deny'
+
+      // 1. 쟁점 층/역할 판정
+      const runtimeState = getBeatRuntimeState(v2CaseId)
+      const layer = getActiveLayer(v2CaseId, action.disputeId, v2Lie.currentState, runtimeState.flags, new Set())
+      const issueRole = getDisputeRole(v2CaseId, action.disputeId)
+      const trustValue = (action.target === 'a' ? state.agentA : state.agentB).trustState.trustTowardJudge
+
+      // 2. angleTag 파생
+      const angleTag = deriveAngleTag({
+        questionType: action.questionType,
+        layer,
+        issueRole,
+        blockedVectors: [],
+        angleTag: undefined,
+      } as any)
+
+      // 3. 피로도 선평가
+      const fatigueAssessment = evaluateQuestionFatigue({
+        turn: state.turnCount,
+        party: action.target,
+        disputeId: action.disputeId,
+        questionType: action.questionType,
+        angleTag,
+        resetReason: 'none',
+      }, getSessionFatigueState())
+
+      // 4. NPC 확률 반응 (E) — blueprint stance를 순응/저항/역공으로 흔든다
+      const actionQuality = deriveActionQuality({
+        affinityGrade: affinityGrade as any,
+        questionType: action.questionType,
+        angleTag,
+        disputeKind: issueRole,
+        fatigueLevel: fatigueAssessment.fatigueLevel,
+        trustWindowValue: trustValue,
+        blockedVectors: [],
+      })
+      const npcReaction = resolveNpcReaction({
+        turn: state.turnCount,
+        party: action.target,
+        disputeId: action.disputeId,
+        lieState: v2Lie.currentState,
+        lieMotive: v2Lie.lieMotive,
+        archetype: (action.target === 'a' ? state.caseData?.duo.partyA.archetype : state.caseData?.duo.partyB.archetype) ?? 'avoidant',
+        disputeKind: issueRole,
+        questionType: action.questionType,
+        angleTag,
+        fatigueLevel: fatigueAssessment.fatigueLevel,
+        trustWindowValue: trustValue,
+        blockedVectors: [],
+        quality: actionQuality,
+        interjectionTracker: getSessionInterjectionTracker(),
+      }, { focusDisputeId: action.disputeId, stance: stanceGuess as any, defenseMode: 'flat_denial' as any, allowedClaimAtoms: [], forbiddenClaimAtoms: [], sentenceCount: 2, shouldCounterQuestion: false })
+
+      // 적용된 stance/defenseMode를 beat selector에 전달
+      const appliedStance = npcReaction.appliedStance
+      const effectMultiplier = fatigueAssessment.finalMultiplier * npcReaction.effectMultiplier
+
+      // 5. beat 선택
+      const beatLib = getBeatLibrary(v2CaseId)
+      if (beatLib) {
+        const v3Transitions = getAllTransitionBeats(v2CaseId)
+        const mergedLib = { beats: beatLib.beats, transitionBeats: v3Transitions }
+
+        const prevLieState = _lieStateBeforeTransition[`${action.target}:${action.disputeId}`] ?? 'S0'
+        const pendingTransition = prevLieState !== v2Lie.currentState
+          ? { from: prevLieState, to: v2Lie.currentState }
+          : null
+
+        const presentation = selectTurnPresentation({
+          turn: state.turnCount,
+          caseId: v2CaseId,
+          party: action.target,
+          disputeId: action.disputeId,
+          lieState: v2Lie.currentState,
+          layer,
+          issueRole,
+          questionType: action.questionType,
+          blueprint: { stance: appliedStance, allowedClaimAtoms: [], forbiddenClaimAtoms: [] },
+          emotionTier: emotionTier as any,
+          trustWindowValue: trustValue,
+          fatigueLevel: fatigueAssessment.fatigueLevel,
+          interjectionState: 'none',
+          trapState: 'none',
+          blockedVectors: [],
+          pendingTransition,
+          pendingEvent: null,
+          flags: runtimeState.flags,
+          usedBeatIds: runtimeState.usedBeatIds,
+          usedAntiRepeatGroups: runtimeState.usedAntiRepeatGroups,
+          beatUseCounts: runtimeState.beatUseCounts,
+          cooldownUntilTurn: runtimeState.cooldownUntilTurn,
+          angleTag: npcReaction.overrideAngleTag ?? undefined,
+        }, mergedLib)
+
+        if (presentation.main) {
+          const beat = presentation.main.beat
+          const beatLine = 'line' in beat ? beat.line : ''
+          const beatHint = 'behaviorHint' in beat ? beat.behaviorHint : ''
+
+          // 재판관 질문 추가
+          state.addDialogue({
+            speaker: 'judge',
+            text: buildQuestionText(action.questionType, action.target, action.disputeId),
+            relatedDisputes: [action.disputeId],
+            turn: state.turnCount,
+          })
+
+          // NPC 응답 추가
+          state.addDialogue({
+            speaker: action.target,
+            text: beatLine,
+            relatedDisputes: [action.disputeId],
+            turn: state.turnCount,
+            behaviorHint: beatHint,
+          })
+
+          // beat 사용 기록
+          if ('id' in beat && 'schemaVersion' in beat) {
+            recordBeatUsed(v2CaseId, beat as BeatScriptV2, state.turnCount)
+            // Phase3 로그 수집: truthEnvelope의 allowAtomIds 기록
+            const v2Beat = beat as BeatScriptV2
+            if (v2Beat.truthEnvelope?.allowAtomIds) {
+              for (const atomId of v2Beat.truthEnvelope.allowAtomIds) recordRevealedAtom(atomId)
+            }
+          }
+
+          // Phase3 로그 수집: 턴별 스타일
+          recordTurnStyle(action.questionType, angleTag)
+
+          // 피로도 커밋
+          setSessionFatigueState(commitQuestionFatigue({
+            turn: state.turnCount,
+            party: action.target,
+            disputeId: action.disputeId,
+            questionType: action.questionType,
+            angleTag,
+            resetReason: 'none',
+          }, getSessionFatigueState()))
+
+          // V2 미터에 피로도 × 반응 배율 적용
+          state.applyQuestionEffect(
+            action.questionType, action.target, action.disputeId,
+            appliedStance, emotionTier,
+            { externalMultiplier: effectMultiplier, bypassLegacyDiminish: true },
+          )
+
+          // 역공 시 authority 반영
+          if (npcReaction.authorityDelta !== 0) {
+            state.changeTrust(action.target, 'trustTowardJudge', npcReaction.authorityDelta * 3)
+          }
+
+          // Misconception 전이 시도 (red_herring / shared_misconception 쟁점)
+          if (isMisconceptionDispute(action.disputeId)) {
+            // trap signal은 재판관 질문 텍스트 기반 — dialogueLog에서 마지막 재판관 발화 참조
+            const lastJudgeLine = state.dialogueLog.filter(d => d.speaker === 'judge').pop()?.text ?? ''
+            const matchedTrap = matchTrapSignal(action.disputeId, lastJudgeLine)
+            const mcTrigger = deriveTriggerFromQuestion({
+              disputeId: action.disputeId,
+              turn: state.turnCount,
+              questionType: action.questionType,
+              angleTag,
+              matchedTrapSignal: matchedTrap,
+            })
+            if (mcTrigger) {
+              const mResult = applyMisconceptionTrigger(action.disputeId, mcTrigger)
+              if (mResult?.changed) {
+                console.log(`[V2 Misconception] ${action.disputeId}: ${mResult.from}→${mResult.to} (${mResult.trigger})`)
+                // effect 중 flag 적용
+                for (const eff of mResult.effects) {
+                  if (eff.type === 'set_flag') runtimeState.flags.add(eff.flag)
+                  if (eff.type === 'clear_flag') runtimeState.flags.delete(eff.flag)
+                }
+              }
+            }
+          }
+
+          // V2 디버그 로깅
+          if (presentation.telemetry) {
+            console.log('[V2 Beat]', presentation.telemetry.lane, presentation.telemetry.selectedBeatId,
+              `score:${presentation.telemetry.selectedScore}`,
+              `intent:${presentation.telemetry.responseIntent}`,
+              `angle:${presentation.telemetry.angleTag}`,
+              `fatigue:${presentation.telemetry.fatigueLevel}`)
+          }
+          console.log('[V2 Reaction]', npcReaction.outcome,
+            `quality:${npcReaction.quality}`,
+            `effect:${npcReaction.effectMultiplier}`,
+            `stance:${appliedStance}`,
+            npcReaction.debugNotes.join(' | '))
+
+          v2BeatUsed = true
+        }
+      }
+
+      // 6. 끼어들기 V2 (D) — focus streak 갱신 + 기회 평가
+      if (v2BeatUsed) {
+        // focus streak 갱신
+        setSessionInterjectionTracker(
+          commitInterjectionFocus(getSessionInterjectionTracker(), state.turnCount, action.target),
+        )
+
+        // 끼어들기 기회 평가
+        const opponent = action.target === 'a' ? 'b' : 'a'
+        const freshState = useGameStore.getState()
+        const isSeparated = freshState.separationTarget === action.target
+        const opponentAgent = opponent === 'a' ? freshState.agentA : freshState.agentB
+        const disputeV2 = getDisputeV2(v2CaseId, action.disputeId)
+
+        if (!isSeparated && disputeV2) {
+          const prevLieState2 = _lieStateBeforeTransition[`${action.target}:${action.disputeId}`] ?? 'S0'
+          const targetLie = v2Agent.lieStateMap[action.disputeId]
+          const targetTransition = prevLieState2 !== targetLie?.currentState
+            ? { from: prevLieState2, to: targetLie?.currentState ?? prevLieState2 }
+            : null
+
+          const opportunity = evaluateInterjectionOpportunity({
+            caseId: v2CaseId,
+            turn: state.turnCount,
+            target: action.target,
+            dispute: disputeV2,
+            questionType: action.questionType,
+            currentLayer: layer,
+            interruptor: opponent,
+            interruptorEmotionValue: opponentAgent.emotionalState.internalValue,
+            interruptorEmotionPhase: opponentAgent.emotionalState.phase,
+            targetTransition,
+            isSeparated,
+            flags: runtimeState.flags,
+            tracker: getSessionInterjectionTracker(),
+          })
+
+          if (opportunity) {
+            const opponentName = opponent === 'a' ? freshState.caseData?.duo.partyA.name : freshState.caseData?.duo.partyB.name
+            const interruptMsg = opportunity.severity === 'major'
+              ? `💥 ${iga(opponentName)} 참지 못하고 강하게 끼어든다!`
+              : `💬 ${iga(opponentName)} 참지 못하고 끼어든다!`
+
+            freshState.addDialogue({
+              speaker: 'system',
+              text: interruptMsg,
+              relatedDisputes: [action.disputeId],
+              turn: freshState.turnCount,
+            })
+
+            // pendingInterjectionV2에 저장 → GameEventModal에서 allow/block 선택
+            useGameStore.getState().setPendingInterjectionV2(opportunity)
+            console.log('[V2 Interjection]', opportunity.triggerReason, opportunity.infoLevel,
+              `streak:${opportunity.focusStreak}`, `chance:${opportunity.chanceApplied}`)
+          }
+        }
+      }
+    }
+  }
+
+  if (!v2BeatUsed) {
+    // 기존 LLM 경로
+    await resolveAndApply(action, action.target, isConfidential)
+  }
 
   // 증거 발견: NPC 응답 이후 — 진술 내용에서 단서가 포착된 것처럼 연출
   if (didTransition) {
@@ -518,7 +930,8 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     }
   }
 
-  // ── 상대방 끼어들기 (구조적 반응 시스템) ──
+  // ── 상대방 끼어들기 (구조적 반응 시스템) — V2에서 이미 처리했으면 스킵 ──
+  if (!v2BeatUsed) {
   const opponent: PartyId = action.target === 'a' ? 'b' : 'a'
   const freshState = useGameStore.getState()
   const isSeparated = freshState.separationTarget === action.target
@@ -572,6 +985,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       await resolveAndApply(opponentAction, opponent)
     }
   }
+  } // end !v2BeatUsed interjection guard
 
   // ── optimalPath 추적 ──
   trackOptimalPath(action.disputeId, action.questionType)
@@ -579,12 +993,54 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   // Discovery 체크 — 질문 후
   runDiscoveryChecks(action.target, action.disputeId)
 
-  // ── V3: 질문 효과 미터 적용 ──
+  // ── V2: LinkEdge 평가 ──
+  if (v2BeatUsed) {
+    const linkState = useGameStore.getState()
+    const lieStates: Record<string, import('../types').LieState> = {}
+    const activeLayers: Record<string, import('../types').IssueLayer> = {}
+    const rState = getBeatRuntimeState(v2CaseId)
+
+    for (const [did, entry] of Object.entries(linkState.agentA.lieStateMap)) {
+      lieStates[did] = entry.currentState
+      activeLayers[did] = getActiveLayer(v2CaseId, did, entry.currentState, rState.flags, new Set())
+    }
+    for (const [did, entry] of Object.entries(linkState.agentB.lieStateMap)) {
+      if (!lieStates[did]) lieStates[did] = entry.currentState
+      if (!activeLayers[did]) activeLayers[did] = getActiveLayer(v2CaseId, did, entry.currentState, rState.flags, new Set())
+    }
+
+    const linkResults = evaluateLinkEdges({ caseId: v2CaseId, lieStates, flags: rState.flags, activeLayers })
+
+    // linkEdge → misconception 연결
+    if (linkResults) {
+      for (const activated of linkResults) {
+        if (shouldFeedLinkIntoMisconception(activated.edge.fromDisputeId, activated.edge)) {
+          const linkTrigger = deriveTriggerFromLink({
+            disputeId: activated.edge.fromDisputeId,
+            turn: linkState.turnCount,
+            linkId: activated.edge.id,
+          })
+          if (linkTrigger) {
+            const mcResult = applyMisconceptionTrigger(activated.edge.fromDisputeId, linkTrigger)
+            if (mcResult?.changed) {
+              console.log(`[V2 Misconception via Link] ${activated.edge.fromDisputeId}: ${mcResult.from}→${mcResult.to}`)
+              for (const eff of mcResult.effects) {
+                if (eff.type === 'set_flag') rState.flags.add(eff.flag)
+                if (eff.type === 'clear_flag') rState.flags.delete(eff.flag)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ── V3: 질문 효과 미터 적용 (V2에서 이미 적용했으면 스킵) ──
   {
     const v3State = useGameStore.getState()
     const v3Agent = action.target === 'a' ? v3State.agentA : v3State.agentB
     const v3Lie = v3Agent.lieStateMap[action.disputeId]
-    if (v3Lie) {
+    if (v3Lie && !v2BeatUsed) {
       const emotionVal = v3Agent.emotionalState.internalValue
       const emotionTier = emotionVal >= 85 ? 'shutdown' : emotionVal >= 65 ? 'explosive' : emotionVal >= 40 ? 'agitated' : 'calm'
       // Blueprint의 stance를 근사 — lieState로 추정

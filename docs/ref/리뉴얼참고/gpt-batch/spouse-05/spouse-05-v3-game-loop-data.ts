@@ -1,0 +1,1685 @@
+export const spouse05V3GameLoopData = {
+  "caseId": "spouse-05",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "출입 로그와 권한 변경",
+      "description": "스마트락·와이파이 로그와 권한 변경 기록을 함께 읽어 공간 충돌의 출발점을 가른다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "민재 씨, 사건 사흘 전 밤 11시 47분에 서재 잠금권한과 프린터 접근을 함께 바꾼 이유를 절차 순서대로 설명해 주십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse05:a:d-2:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "공유 공간인데도 3시간 블록을 10시간 전용 블록으로 늘린 판단이 왜 공동 사용 원칙에 부합한다고 보셨습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse05:a:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "같은 날 거실 회선 장애와 두 사람의 화상 일정 중첩을 알고도 대체 작업 공간 조정을 먼저 제안하지 않은 이유가 무엇입니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse05:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "소담 씨, 사건 당일 14시 08분에 구 관리자 코드로 서재 문을 연 사실을 인정하십니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse05:b:d-1:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "사전 고지 없이 서재에 들어가 14시 15분 화상심사를 진행한 판단을, 당시 목적과 시간 기준으로 나눠 답해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse05:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "거실 회선 장애가 있었다고 하더라도 무단 진입 선택이 나온 직접 계기가 무엇이었는지, 마감 압박과 함께 설명해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse05:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "녹취 원본성 검증",
+      "description": "문제 녹취와 원본 백업을 대조해 협박 주장과 편집 여부를 가른다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "민재 씨가 제출한 1분 12초 파일은 왜 원본 세션 전체가 아니라 export된 오디오였습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse05:a:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "7월 8일과 7월 11일의 문장을 한 흐름처럼 묶게 된 경위를, 파일 전달과 편집 지시 순서대로 말씀해 주십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse05:a:d-4:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "그 형식을 선택할 때 클라이언트 리뷰나 임대인 면담에서 어떤 불이익을 두려워했는지 솔직히 답해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse05:a:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "소담 씨, '회의 망쳐버릴까'라는 표현 자체는 했더라도 그것이 같은 대화의 연속 발언이 아니라는 점을 설명해 주십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse05:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "7월 8일 발언과 7월 11일 발언의 주제가 각각 무엇이었는지 날짜별로 나눠 진술해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse05:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "그 녹취가 상담 자리와 면담 자리에서 재생됐을 때, 소담 씨가 받은 손상과 분노가 무엇이었는지 말씀해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse05:b:d-3:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "편집 지시와 일정 파국",
+      "description": "보조편집자 지시 내역과 인터넷 장애·일정표를 함께 대조해 책임 배분의 마지막 층을 연다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "민재 씨는 왜 오한결 씨에게 '핵심만 하나로 정리'하라는 지시를 내린 뒤, 그 결과물을 원본처럼 제시했습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "spouse05:a:d-4:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "서재를 10시간 전용 블록으로 묶어 둔 결정이 그날 갈등을 구조적으로 키웠다는 점을 인정하십니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse05:a:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "결국 이번 파국을 소담 씨의 출입 하나로만 돌릴 수 없는 이유를, 본인 책임을 포함해 정리해 주십시오.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse05:a:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "소담 씨, 결과적으로는 민재 씨의 예약 블록을 침범했다는 책임을 어디까지 인정하십니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse05:b:d-1:unlock:s5:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "서재 봉쇄를 곧바로 지위 싸움으로 받아들인 감정이 그날 선택을 어떻게 더 급하게 만들었는지 설명해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse05:b:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "최종적으로 이번 재택근무 파국이 누구 한 사람의 잘못만은 아니라는 점을, 소담 씨 책임까지 포함해 말할 수 있습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "spouse05:b:d-5:unlock:s5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "spouse05:a:d-2:unlock:s2:0",
+            "factText": "민재는 사건 사흘 전 밤 11시 47분에 서재 스마트락과 프린터 계정을 혼자 바꿨다.",
+            "tags": [
+              "context",
+              "responsibility"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "강민재",
+                "neutral": "상대방",
+                "fullName": "강민재",
+                "judgeRef": "민재 씨"
+              },
+              "time": {
+                "exact": "사건 사흘 전 밤 11시 47분",
+                "neutral": "그 시점",
+                "dateExact": "사건 사흘 전 밤 11시 47분",
+                "period": "권한 변경 알림 직후"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "길어진 예약 블록"
+              },
+              "access": {
+                "exact": "읽기 전용",
+                "neutral": "제한된 권한"
+              },
+              "device": {
+                "exact": "프린터 접근 계정",
+                "neutral": "공유 장비 접근"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse05:a:d-2:unlock:s3:0",
+            "factText": "민재는 3시간 블록을 10시간 전용 블록으로 늘리고 읽기 전용 알림만 보냈다.",
+            "tags": [
+              "act",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "강민재",
+                "neutral": "상대방",
+                "fullName": "강민재",
+                "judgeRef": "민재 씨"
+              },
+              "time": {
+                "exact": "사건 사흘 전 밤 11시 47분",
+                "neutral": "그 시점",
+                "dateExact": "사건 사흘 전 밤 11시 47분",
+                "period": "권한 변경 알림 직후"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "길어진 예약 블록"
+              },
+              "access": {
+                "exact": "읽기 전용",
+                "neutral": "제한된 권한"
+              },
+              "device": {
+                "exact": "프린터 접근 계정",
+                "neutral": "공유 장비 접근"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse05:a:d-2:unlock:s4:0",
+            "factText": "민재는 보안 요구만이 아니라 서재 통제권을 잃고 싶지 않은 마음도 있었다.",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "강민재",
+                "neutral": "상대방",
+                "fullName": "강민재",
+                "judgeRef": "민재 씨"
+              },
+              "time": {
+                "exact": "사건 사흘 전 밤 11시 47분",
+                "neutral": "그 시점",
+                "dateExact": "사건 사흘 전 밤 11시 47분",
+                "period": "권한 변경 알림 직후"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "길어진 예약 블록"
+              },
+              "access": {
+                "exact": "읽기 전용",
+                "neutral": "제한된 권한"
+              },
+              "device": {
+                "exact": "프린터 접근 계정",
+                "neutral": "공유 장비 접근"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse05:a:d-2:unlock:s5:0",
+            "factText": "민재는 공동 공간을 사실상 개인 작업실처럼 운용했다는 점을 스스로 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "강민재",
+                "neutral": "상대방",
+                "fullName": "강민재",
+                "judgeRef": "민재 씨"
+              },
+              "time": {
+                "exact": "사건 사흘 전 밤 11시 47분",
+                "neutral": "그 시점",
+                "dateExact": "사건 사흘 전 밤 11시 47분",
+                "period": "권한 변경 알림 직후"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "길어진 예약 블록"
+              },
+              "access": {
+                "exact": "읽기 전용",
+                "neutral": "제한된 권한"
+              },
+              "device": {
+                "exact": "프린터 접근 계정",
+                "neutral": "공유 장비 접근"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "spouse05:a:d-4:unlock:s2:0",
+            "factText": "제출 파일은 원본 세션이 아니라 편집 앱에서 export된 1분 12초 m4a였다.",
+            "tags": [
+              "evidence",
+              "context"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "오한결",
+                "neutral": "보조편집자",
+                "fullName": "오한결",
+                "judgeRef": "오한결 씨"
+              },
+              "file": {
+                "exact": "병합 export 파일",
+                "neutral": "편집본"
+              },
+              "quote": {
+                "exact": "'핵심만 하나로 정리'",
+                "neutral": "그 지시"
+              },
+              "date1": {
+                "exact": "7월 8일",
+                "neutral": "첫 원본 날짜",
+                "dateExact": "7월 8일",
+                "period": "첫 번째 원본 녹음일"
+              },
+              "date2": {
+                "exact": "7월 11일",
+                "neutral": "두 번째 원본 날짜",
+                "dateExact": "7월 11일",
+                "period": "두 번째 원본 녹음일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse05:a:d-4:unlock:s3:0",
+            "factText": "민재는 오한결에게 두 원본 음성을 보내 '핵심만 하나로 정리'해 달라고 했다.",
+            "tags": [
+              "act",
+              "identity"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "오한결",
+                "neutral": "보조편집자",
+                "fullName": "오한결",
+                "judgeRef": "오한결 씨"
+              },
+              "file": {
+                "exact": "병합 export 파일",
+                "neutral": "편집본"
+              },
+              "quote": {
+                "exact": "'핵심만 하나로 정리'",
+                "neutral": "그 지시"
+              },
+              "date1": {
+                "exact": "7월 8일",
+                "neutral": "첫 원본 날짜",
+                "dateExact": "7월 8일",
+                "period": "첫 번째 원본 녹음일"
+              },
+              "date2": {
+                "exact": "7월 11일",
+                "neutral": "두 번째 원본 날짜",
+                "dateExact": "7월 11일",
+                "period": "두 번째 원본 녹음일"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse05:a:d-4:unlock:s4:0",
+            "factText": "민재는 클라이언트와 임대인 앞에서 불리해질까 두려워 증거의 형식을 흐렸다.",
+            "tags": [
+              "fear",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "오한결",
+                "neutral": "보조편집자",
+                "fullName": "오한결",
+                "judgeRef": "오한결 씨"
+              },
+              "file": {
+                "exact": "병합 export 파일",
+                "neutral": "편집본"
+              },
+              "quote": {
+                "exact": "'핵심만 하나로 정리'",
+                "neutral": "그 지시"
+              },
+              "date1": {
+                "exact": "7월 8일",
+                "neutral": "첫 원본 날짜",
+                "dateExact": "7월 8일",
+                "period": "첫 번째 원본 녹음일"
+              },
+              "date2": {
+                "exact": "7월 11일",
+                "neutral": "두 번째 원본 날짜",
+                "dateExact": "7월 11일",
+                "period": "두 번째 원본 녹음일"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse05:a:d-4:unlock:s5:0",
+            "factText": "민재는 편집본을 부부상담과 임대인 면담에서 원본처럼 사용했다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "오한결",
+                "neutral": "보조편집자",
+                "fullName": "오한결",
+                "judgeRef": "오한결 씨"
+              },
+              "file": {
+                "exact": "병합 export 파일",
+                "neutral": "편집본"
+              },
+              "quote": {
+                "exact": "'핵심만 하나로 정리'",
+                "neutral": "그 지시"
+              },
+              "date1": {
+                "exact": "7월 8일",
+                "neutral": "첫 원본 날짜",
+                "dateExact": "7월 8일",
+                "period": "첫 번째 원본 녹음일"
+              },
+              "date2": {
+                "exact": "7월 11일",
+                "neutral": "두 번째 원본 날짜",
+                "dateExact": "7월 11일",
+                "period": "두 번째 원본 녹음일"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse05:a:d-5:unlock:s2:0",
+            "factText": "거실 회선 장애와 14시 15분·14시 30분 화상일정 중첩이 동시에 있었다.",
+            "tags": [
+              "context",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time1": {
+                "exact": "14시 15분",
+                "neutral": "첫 화상 일정",
+                "dateExact": "사건 당일 14시 15분",
+                "period": "소담 화상심사 시간"
+              },
+              "time2": {
+                "exact": "14시 30분",
+                "neutral": "두 번째 화상 일정",
+                "dateExact": "사건 당일 14시 30분",
+                "period": "민재 클라이언트 리뷰 시간"
+              },
+              "net": {
+                "exact": "13시 41분 장애 접수",
+                "neutral": "그날 회선 장애",
+                "dateExact": "사건 당일 13시 41분",
+                "period": "거실 회선 품질 저하 접수"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "전용 예약"
+              },
+              "space": {
+                "exact": "서재와 거실",
+                "neutral": "집 안 작업 공간"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse05:a:d-5:unlock:s3:0",
+            "factText": "민재의 10시간 전용 블록과 권한 봉쇄가 충돌의 구조적 원인이 되었다.",
+            "tags": [
+              "responsibility",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time1": {
+                "exact": "14시 15분",
+                "neutral": "첫 화상 일정",
+                "dateExact": "사건 당일 14시 15분",
+                "period": "소담 화상심사 시간"
+              },
+              "time2": {
+                "exact": "14시 30분",
+                "neutral": "두 번째 화상 일정",
+                "dateExact": "사건 당일 14시 30분",
+                "period": "민재 클라이언트 리뷰 시간"
+              },
+              "net": {
+                "exact": "13시 41분 장애 접수",
+                "neutral": "그날 회선 장애",
+                "dateExact": "사건 당일 13시 41분",
+                "period": "거실 회선 품질 저하 접수"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "전용 예약"
+              },
+              "space": {
+                "exact": "서재와 거실",
+                "neutral": "집 안 작업 공간"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse05:a:d-5:unlock:s4:0",
+            "factText": "민재는 집 안에서도 일터를 지켜야 한다는 불안 때문에 과도하게 통제했다.",
+            "tags": [
+              "fear",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time1": {
+                "exact": "14시 15분",
+                "neutral": "첫 화상 일정",
+                "dateExact": "사건 당일 14시 15분",
+                "period": "소담 화상심사 시간"
+              },
+              "time2": {
+                "exact": "14시 30분",
+                "neutral": "두 번째 화상 일정",
+                "dateExact": "사건 당일 14시 30분",
+                "period": "민재 클라이언트 리뷰 시간"
+              },
+              "net": {
+                "exact": "13시 41분 장애 접수",
+                "neutral": "그날 회선 장애",
+                "dateExact": "사건 당일 13시 41분",
+                "period": "거실 회선 품질 저하 접수"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "전용 예약"
+              },
+              "space": {
+                "exact": "서재와 거실",
+                "neutral": "집 안 작업 공간"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse05:a:d-5:unlock:s5:0",
+            "factText": "민재는 파국 원인을 소담의 출입 하나로 돌릴 수 없다고 인정한다.",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time1": {
+                "exact": "14시 15분",
+                "neutral": "첫 화상 일정",
+                "dateExact": "사건 당일 14시 15분",
+                "period": "소담 화상심사 시간"
+              },
+              "time2": {
+                "exact": "14시 30분",
+                "neutral": "두 번째 화상 일정",
+                "dateExact": "사건 당일 14시 30분",
+                "period": "민재 클라이언트 리뷰 시간"
+              },
+              "net": {
+                "exact": "13시 41분 장애 접수",
+                "neutral": "그날 회선 장애",
+                "dateExact": "사건 당일 13시 41분",
+                "period": "거실 회선 품질 저하 접수"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "전용 예약"
+              },
+              "space": {
+                "exact": "서재와 거실",
+                "neutral": "집 안 작업 공간"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "spouse05:b:d-1:unlock:s2:0",
+            "factText": "소담은 구 관리자 코드로 사건 당일 14시 08분 서재 문을 열었다.",
+            "tags": [
+              "act",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "이소담",
+                "neutral": "상대방",
+                "fullName": "이소담",
+                "judgeRef": "소담 씨"
+              },
+              "time": {
+                "exact": "14시 08분",
+                "neutral": "그 시점",
+                "dateExact": "사건 당일 14시 08분",
+                "period": "14시 15분 화상심사 직전"
+              },
+              "space": {
+                "exact": "서재",
+                "neutral": "그 방"
+              },
+              "code": {
+                "exact": "구 관리자 코드",
+                "neutral": "이전 코드"
+              },
+              "duration": {
+                "exact": "약 12분",
+                "neutral": "짧은 사용 시간",
+                "rounded": "12분"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse05:b:d-1:unlock:s3:0",
+            "factText": "소담은 사전 고지 없이 14시 15분 화상심사를 위해 서재를 사용했다.",
+            "tags": [
+              "context",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "이소담",
+                "neutral": "상대방",
+                "fullName": "이소담",
+                "judgeRef": "소담 씨"
+              },
+              "time": {
+                "exact": "14시 08분",
+                "neutral": "그 시점",
+                "dateExact": "사건 당일 14시 08분",
+                "period": "14시 15분 화상심사 직전"
+              },
+              "space": {
+                "exact": "서재",
+                "neutral": "그 방"
+              },
+              "code": {
+                "exact": "구 관리자 코드",
+                "neutral": "이전 코드"
+              },
+              "duration": {
+                "exact": "약 12분",
+                "neutral": "짧은 사용 시간",
+                "rounded": "12분"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse05:b:d-1:unlock:s4:0",
+            "factText": "소담은 집에서 하는 자신의 일이 밀려난다는 수치감 속에서 행동했다.",
+            "tags": [
+              "shame",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "이소담",
+                "neutral": "상대방",
+                "fullName": "이소담",
+                "judgeRef": "소담 씨"
+              },
+              "time": {
+                "exact": "14시 08분",
+                "neutral": "그 시점",
+                "dateExact": "사건 당일 14시 08분",
+                "period": "14시 15분 화상심사 직전"
+              },
+              "space": {
+                "exact": "서재",
+                "neutral": "그 방"
+              },
+              "code": {
+                "exact": "구 관리자 코드",
+                "neutral": "이전 코드"
+              },
+              "duration": {
+                "exact": "약 12분",
+                "neutral": "짧은 사용 시간",
+                "rounded": "12분"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse05:b:d-1:unlock:s5:0",
+            "factText": "소담은 민재의 예약 블록을 침범한 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "이소담",
+                "neutral": "상대방",
+                "fullName": "이소담",
+                "judgeRef": "소담 씨"
+              },
+              "time": {
+                "exact": "14시 08분",
+                "neutral": "그 시점",
+                "dateExact": "사건 당일 14시 08분",
+                "period": "14시 15분 화상심사 직전"
+              },
+              "space": {
+                "exact": "서재",
+                "neutral": "그 방"
+              },
+              "code": {
+                "exact": "구 관리자 코드",
+                "neutral": "이전 코드"
+              },
+              "duration": {
+                "exact": "약 12분",
+                "neutral": "짧은 사용 시간",
+                "rounded": "12분"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "spouse05:b:d-3:unlock:s2:0",
+            "factText": "문제 녹취의 두 핵심 문장은 같은 날짜 녹음이 아니다.",
+            "tags": [
+              "evidence",
+              "timeline"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "exact": "이소담",
+                "neutral": "상대방",
+                "fullName": "이소담",
+                "judgeRef": "소담 씨"
+              },
+              "file": {
+                "exact": "1분 12초 m4a 파일",
+                "neutral": "해당 오디오 파일"
+              },
+              "quote": {
+                "exact": "'회의 망쳐버릴까'",
+                "neutral": "그 문장"
+              },
+              "quote2": {
+                "exact": "'파일 좀 보내면 끝나'",
+                "neutral": "다른 문장"
+              },
+              "date1": {
+                "exact": "7월 8일",
+                "neutral": "첫 녹음일",
+                "dateExact": "7월 8일",
+                "period": "거실 소음 불평이 나온 날"
+              },
+              "date2": {
+                "exact": "7월 11일",
+                "neutral": "둘째 녹음일",
+                "dateExact": "7월 11일",
+                "period": "백업 드라이브 문제를 말한 날"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse05:b:d-3:unlock:s3:0",
+            "factText": "7월 8일 발언은 거실 소음 불평, 7월 11일 발언은 백업 공유 다툼 맥락이었다.",
+            "tags": [
+              "context",
+              "timeline"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "exact": "이소담",
+                "neutral": "상대방",
+                "fullName": "이소담",
+                "judgeRef": "소담 씨"
+              },
+              "file": {
+                "exact": "1분 12초 m4a 파일",
+                "neutral": "해당 오디오 파일"
+              },
+              "quote": {
+                "exact": "'회의 망쳐버릴까'",
+                "neutral": "그 문장"
+              },
+              "quote2": {
+                "exact": "'파일 좀 보내면 끝나'",
+                "neutral": "다른 문장"
+              },
+              "date1": {
+                "exact": "7월 8일",
+                "neutral": "첫 녹음일",
+                "dateExact": "7월 8일",
+                "period": "거실 소음 불평이 나온 날"
+              },
+              "date2": {
+                "exact": "7월 11일",
+                "neutral": "둘째 녹음일",
+                "dateExact": "7월 11일",
+                "period": "백업 드라이브 문제를 말한 날"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse05:b:d-3:unlock:s4:0",
+            "factText": "소담은 고의 방해범처럼 편집돼 제시된 데 큰 상처를 받았다.",
+            "tags": [
+              "harm",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "exact": "이소담",
+                "neutral": "상대방",
+                "fullName": "이소담",
+                "judgeRef": "소담 씨"
+              },
+              "file": {
+                "exact": "1분 12초 m4a 파일",
+                "neutral": "해당 오디오 파일"
+              },
+              "quote": {
+                "exact": "'회의 망쳐버릴까'",
+                "neutral": "그 문장"
+              },
+              "quote2": {
+                "exact": "'파일 좀 보내면 끝나'",
+                "neutral": "다른 문장"
+              },
+              "date1": {
+                "exact": "7월 8일",
+                "neutral": "첫 녹음일",
+                "dateExact": "7월 8일",
+                "period": "거실 소음 불평이 나온 날"
+              },
+              "date2": {
+                "exact": "7월 11일",
+                "neutral": "둘째 녹음일",
+                "dateExact": "7월 11일",
+                "period": "백업 드라이브 문제를 말한 날"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse05:b:d-3:unlock:s5:0",
+            "factText": "소담은 거친 말은 인정하지만 녹취가 협박의 증거는 아니라고 정리한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "exact": "이소담",
+                "neutral": "상대방",
+                "fullName": "이소담",
+                "judgeRef": "소담 씨"
+              },
+              "file": {
+                "exact": "1분 12초 m4a 파일",
+                "neutral": "해당 오디오 파일"
+              },
+              "quote": {
+                "exact": "'회의 망쳐버릴까'",
+                "neutral": "그 문장"
+              },
+              "quote2": {
+                "exact": "'파일 좀 보내면 끝나'",
+                "neutral": "다른 문장"
+              },
+              "date1": {
+                "exact": "7월 8일",
+                "neutral": "첫 녹음일",
+                "dateExact": "7월 8일",
+                "period": "거실 소음 불평이 나온 날"
+              },
+              "date2": {
+                "exact": "7월 11일",
+                "neutral": "둘째 녹음일",
+                "dateExact": "7월 11일",
+                "period": "백업 드라이브 문제를 말한 날"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "spouse05:b:d-5:unlock:s2:0",
+            "factText": "소담은 마감 압박 때문에 무단 진입을 택했지만 회선 장애도 동시에 존재했다.",
+            "tags": [
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "time1": {
+                "exact": "14시 15분",
+                "neutral": "첫 화상 일정",
+                "dateExact": "사건 당일 14시 15분",
+                "period": "소담 화상심사 시간"
+              },
+              "time2": {
+                "exact": "14시 30분",
+                "neutral": "두 번째 화상 일정",
+                "dateExact": "사건 당일 14시 30분",
+                "period": "민재 클라이언트 리뷰 시간"
+              },
+              "net": {
+                "exact": "13시 41분 장애 접수",
+                "neutral": "그날 회선 장애",
+                "dateExact": "사건 당일 13시 41분",
+                "period": "거실 회선 품질 저하 접수"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "전용 예약"
+              },
+              "space": {
+                "exact": "서재와 거실",
+                "neutral": "집 안 작업 공간"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "spouse05:b:d-5:unlock:s3:0",
+            "factText": "소담은 자신의 출입이 점화점이었음을 인정하면서도 전용 블록과 일정 중첩을 원인으로 본다.",
+            "tags": [
+              "responsibility",
+              "context"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "time1": {
+                "exact": "14시 15분",
+                "neutral": "첫 화상 일정",
+                "dateExact": "사건 당일 14시 15분",
+                "period": "소담 화상심사 시간"
+              },
+              "time2": {
+                "exact": "14시 30분",
+                "neutral": "두 번째 화상 일정",
+                "dateExact": "사건 당일 14시 30분",
+                "period": "민재 클라이언트 리뷰 시간"
+              },
+              "net": {
+                "exact": "13시 41분 장애 접수",
+                "neutral": "그날 회선 장애",
+                "dateExact": "사건 당일 13시 41분",
+                "period": "거실 회선 품질 저하 접수"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "전용 예약"
+              },
+              "space": {
+                "exact": "서재와 거실",
+                "neutral": "집 안 작업 공간"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "spouse05:b:d-5:unlock:s4:0",
+            "factText": "소담은 자신의 일이 덜 중요하게 취급된다고 느껴 더 공격적으로 반응했다.",
+            "tags": [
+              "shame",
+              "motive"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "time1": {
+                "exact": "14시 15분",
+                "neutral": "첫 화상 일정",
+                "dateExact": "사건 당일 14시 15분",
+                "period": "소담 화상심사 시간"
+              },
+              "time2": {
+                "exact": "14시 30분",
+                "neutral": "두 번째 화상 일정",
+                "dateExact": "사건 당일 14시 30분",
+                "period": "민재 클라이언트 리뷰 시간"
+              },
+              "net": {
+                "exact": "13시 41분 장애 접수",
+                "neutral": "그날 회선 장애",
+                "dateExact": "사건 당일 13시 41분",
+                "period": "거실 회선 품질 저하 접수"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "전용 예약"
+              },
+              "space": {
+                "exact": "서재와 거실",
+                "neutral": "집 안 작업 공간"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "spouse05:b:d-5:unlock:s5:0",
+            "factText": "소담은 파국이 자신의 침범과 민재의 봉쇄가 겹친 결과라고 인정한다.",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "time1": {
+                "exact": "14시 15분",
+                "neutral": "첫 화상 일정",
+                "dateExact": "사건 당일 14시 15분",
+                "period": "소담 화상심사 시간"
+              },
+              "time2": {
+                "exact": "14시 30분",
+                "neutral": "두 번째 화상 일정",
+                "dateExact": "사건 당일 14시 30분",
+                "period": "민재 클라이언트 리뷰 시간"
+              },
+              "net": {
+                "exact": "13시 41분 장애 접수",
+                "neutral": "그날 회선 장애",
+                "dateExact": "사건 당일 13시 41분",
+                "period": "거실 회선 품질 저하 접수"
+              },
+              "block": {
+                "exact": "10시간 전용 블록",
+                "neutral": "전용 예약"
+              },
+              "space": {
+                "exact": "서재와 거실",
+                "neutral": "집 안 작업 공간"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "spouse05:contradiction:0",
+        "targetParty": "a",
+        "trigger": "민재가 d-4에서 '정리만 했을 뿐'이라며 원본성 질문을 피할 때",
+        "text": "편집 앱 export 흔적과 오한결 지시, 렌더 로그가 붙으면 '의미는 안 바꿨다'는 설명이 자료 형식 자체와 충돌합니다.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-4",
+          "e-5"
+        ]
+      },
+      {
+        "id": "spouse05:contradiction:1",
+        "targetParty": "b",
+        "trigger": "소담이 d-1에서 '12분만'과 '잠깐'만 반복하며 사용 목적을 축소할 때",
+        "text": "14시 08분 출입 직후 서재 AP 접속까지 이어지므로, 단순 확인이 아니라 실제 작업 사용이었다는 점과 모순이 생깁니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1"
+        ]
+      },
+      {
+        "id": "spouse05:contradiction:2",
+        "targetParty": "a",
+        "trigger": "민재가 d-2에서 '임시 보안 조정'만 강조하며 독점 의도를 부인할 때",
+        "text": "10시간 전용 블록과 읽기 전용 전환이 겹쳐 남아 있어, '잠깐 손본 설정'이라는 말이 사실상 전용화 결과와 어긋납니다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ]
+      },
+      {
+        "id": "spouse05:contradiction:3",
+        "targetParty": "b",
+        "trigger": "소담이 d-5에서 파국이 전적으로 권한 봉쇄 때문이었다고 단정할 때",
+        "text": "같은 날 본인의 무단 출입과 마감 압박을 인정하면, '내 선택은 영향이 없었다'는 진술과 스스로 충돌하게 됩니다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-1",
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "spouse05:interjection:0",
+        "speaker": "b",
+        "trigger": "민재가 '프로토콜'과 '보안'만 반복하며 소담의 일정 압박을 지워 말할 때",
+        "text": "그러니까 또 제 일은 밀려도 되는 일이라는 식으로 들리잖아요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "spouse05:interjection:1",
+        "speaker": "a",
+        "trigger": "소담이 무단 출입을 '12분'으로만 축소할 때",
+        "text": "시간이 짧았다는 게 허락 없이 들어온 사실을 지우진 않잖아요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "spouse05:interjection:2",
+        "speaker": "judge",
+        "trigger": "양측이 녹취의 감정적 의미만 다투고 원본성 확인을 건너뛸 때",
+        "text": "문장의 감정보다 먼저, 이 파일이 원본인지 편집본인지부터 분리해서 답하십시오.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "spouse05:outburst:a:0",
+        "party": "a",
+        "trigger": "편집 지시가 직업 평판 보존용이었느냐는 추궁이 이어질 때",
+        "text": "전 그 순간 제 경력 전체가 무너질까 봐 버틴 겁니다, 장난처럼 만든 게 아니에요.",
+        "relatedDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "spouse05:outburst:a:1",
+        "party": "a",
+        "trigger": "권한 봉쇄가 공간 독점이었다는 지적이 반복될 때",
+        "text": "집에서 일하는 게 다 같은 무게가 아니라고 누가 정했습니까, 하지만 그 방 장비 책임은 결국 제 몫이었어요.",
+        "relatedDisputes": [
+          "d-2",
+          "d-5"
+        ]
+      },
+      {
+        "id": "spouse05:outburst:b:0",
+        "party": "b",
+        "trigger": "무단 출입만으로 소담의 의도를 악의로 단정할 때",
+        "text": "잠깐 들어간 선택이 잘못인 건 알아요, 그렇다고 제 일을 망치려 했던 사람처럼 몰지는 마세요.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ]
+      },
+      {
+        "id": "spouse05:outburst:b:1",
+        "party": "b",
+        "trigger": "녹취를 그대로 믿고 고의 방해범처럼 다룰 때",
+        "text": "제 분노 한 조각만 떼어 붙여 놓고 저를 그런 사람으로 만든 거잖아요.",
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "spouse05:transition:a:d-2:s0_s1",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "study_access_question",
+      "line": "서재 출입 얘기가 나오면 전 일단 보안 프로토콜부터 설명하게 됩니다. 그때도 권한 조정일 뿐이라고 생각했습니다.",
+      "behaviorHint": "시선을 옆으로 빼고 일정표를 먼저 펼친다."
+    },
+    {
+      "id": "spouse05:transition:a:d-2:s1_s2",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "line": "…권한 변경 알림과 블록 기록이 같이 남아 있으면, 제가 혼자 움직인 건 숨기기 어렵군요.",
+      "behaviorHint": "짧게 숨을 들이쉬고 말끝을 삼킨다."
+    },
+    {
+      "id": "spouse05:transition:a:d-2:s2_s3",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "confidentiality_followup",
+      "line": "보안 요구가 실제였다는 건 말하고 싶습니다. 다만 그걸 이유로 공유 절차를 건너뛴 것도 사실이네요.",
+      "behaviorHint": "손가락을 맞물린 채 이유와 잘못을 나눠 말한다."
+    },
+    {
+      "id": "spouse05:transition:a:d-2:s3_s5",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "결국 통제권을 쥐려는 쪽으로 기울었습니다. 공동 공간을 제 작업실처럼 굴린 책임을 인정합니다.",
+      "behaviorHint": "어깨가 내려가고 시선이 정면으로 돌아온다."
+    },
+    {
+      "id": "spouse05:transition:a:d-4:s0_s1",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "recording_authenticity_question",
+      "line": "그 파일이 왜 그렇게 정리됐는지부터 설명하고 싶습니다. 당시엔 원본성보다 전달력이 먼저라고 여겼어요.",
+      "behaviorHint": "말의 주어를 흐리며 설명의 필요성을 앞세운다."
+    },
+    {
+      "id": "spouse05:transition:a:d-4:s1_s2",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "편집 앱 export 파일이라는 점까지 나오면, '그냥 들리게 한 것'만으론 부족하겠네요.",
+      "behaviorHint": "입술을 깨물고 문장을 짧게 줄인다."
+    },
+    {
+      "id": "spouse05:transition:a:d-4:s2_s3",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "waveform_question",
+      "line": "파형 연결부가 드러나면 서로 다른 조각을 붙였다는 건 부정하기 어렵습니다. 제가 형식을 가볍게 본 겁니다.",
+      "behaviorHint": "손바닥을 펴 보이며 이어 붙였다는 사실을 시인한다."
+    },
+    {
+      "id": "spouse05:transition:a:d-4:s3_s4",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_client_panic",
+      "line": "클라이언트와 임대인 앞에서 무너지는 장면이 너무 무서웠습니다. 그래서 증거처럼 보일 무언가를 만들려 했어요.",
+      "behaviorHint": "목소리가 낮아지고 감정이 처음으로 앞선다."
+    },
+    {
+      "id": "spouse05:transition:a:d-4:s4_s5",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "오한결 씨 지시 내역까지 붙으면 더는 변명할 수 없습니다. 제가 편집본을 원본처럼 내민 겁니다.",
+      "behaviorHint": "눈을 감았다가 뜨며 단정적으로 인정한다."
+    },
+    {
+      "id": "spouse05:transition:a:d-5:s0_s1",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "home_office_collision_question",
+      "line": "처음엔 침범만 보였는데, 집 안 작업이 정면충돌한 구조를 묻자 좀 달리 보입니다.",
+      "behaviorHint": "굳은 표정이 잠깐 풀리며 말속도가 늦어진다."
+    },
+    {
+      "id": "spouse05:transition:a:d-5:s1_s2",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-6_presented",
+      "line": "장애 접수와 일정표가 같이 나오면 단순한 규칙 위반만은 아니었네요.",
+      "behaviorHint": "문자 기록과 달력을 번갈아 본다."
+    },
+    {
+      "id": "spouse05:transition:a:d-5:s2_s3",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "schedule_overlap_question",
+      "line": "일정이 정면으로 겹쳤는데도 전용 블록을 고집한 건 제 쪽 책임입니다.",
+      "behaviorHint": "짧게 고개를 끄덕이며 인정한다."
+    },
+    {
+      "id": "spouse05:transition:a:d-5:s3_s5",
+      "caseId": "spouse-05",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_or_shared_responsibility_question",
+      "line": "이제는 소담 씨 탓만 할 수 없습니다. 봉쇄와 회선 문제까지 함께 인정해야 합니다.",
+      "behaviorHint": "문장을 끊지 않고 끝까지 책임을 말한다."
+    },
+    {
+      "id": "spouse05:transition:b:d-1:s0_s1",
+      "caseId": "spouse-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "study_entry_question",
+      "line": "처음엔 '잠깐이었다'고 줄여 말하고 싶었습니다. 허락 없이 들어갔다는 말을 바로 하기 싫었으니까요.",
+      "behaviorHint": "손가락으로 짧은 시간을 표시하며 시선을 피한다."
+    },
+    {
+      "id": "spouse05:transition:b:d-1:s1_s2",
+      "caseId": "spouse-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "출입기록이랑 와이파이 접속이 같이 뜨면, 실제로 들어가서 심사 준비를 한 건 인정해야겠네요.",
+      "behaviorHint": "입술을 깨물고 천천히 고개를 끄덕인다."
+    },
+    {
+      "id": "spouse05:transition:b:d-1:s2_s3",
+      "caseId": "spouse-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "purpose_followup",
+      "line": "네, 심사 때문에 들어간 건 맞아요. 그리고 그만큼 제가 사전 고지를 미뤘다는 것도 같이 남네요.",
+      "behaviorHint": "변명하듯 시작했다가 끝에서 책임을 받아들인다."
+    },
+    {
+      "id": "spouse05:transition:b:d-1:s3_s5",
+      "caseId": "spouse-05",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "회선 문제와 일정 압박이 있었다고 해도 무단 출입 책임이 사라지진 않아요. 그건 제가 안고 가야 합니다.",
+      "behaviorHint": "어깨를 낮추고 목소리를 단단히 잡는다."
+    },
+    {
+      "id": "spouse05:transition:b:d-5:s0_s1",
+      "caseId": "spouse-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "shared_schedule_question",
+      "line": "처음엔 불공정만 떠올랐어요. 그런데 일정표 이야기가 나오면 제 선택도 같이 보게 됩니다.",
+      "behaviorHint": "흥분이 가라앉고 계산하듯 단어를 고른다."
+    },
+    {
+      "id": "spouse05:transition:b:d-5:s1_s2",
+      "caseId": "spouse-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "small_admission_about_deadline",
+      "line": "맞아요, 마감이 급해서 더 거칠게 움직였습니다. 제 조급함이 선택을 밀었습니다.",
+      "behaviorHint": "숫자를 세듯 말하다가 마지막에 멈춘다."
+    },
+    {
+      "id": "spouse05:transition:b:d-5:s2_s3",
+      "caseId": "spouse-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "lock_change_followup",
+      "line": "그래도 그 조급함이 나온 배경엔 잠금 변경과 전용 블록이 있었어요. 둘을 떼어놓진 못하겠습니다.",
+      "behaviorHint": "손바닥을 양쪽으로 나눠 두 원인을 동시에 가리킨다."
+    },
+    {
+      "id": "spouse05:transition:b:d-5:s3_s5",
+      "caseId": "spouse-05",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "line": "이제는 제 침범도, 민재 씨의 봉쇄도 둘 다 말해야 공정합니다. 이번 파국은 한쪽만의 잘못이 아니에요.",
+      "behaviorHint": "눈을 정면으로 들고 또렷하게 정리한다."
+    }
+  ]
+} as const;
+
+export default spouse05V3GameLoopData;

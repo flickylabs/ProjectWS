@@ -1,6 +1,7 @@
 # 4. AI 에이전트 & 거짓말 시스템
 
 > **V3 업데이트 (2026-04-02)**: Blueprint 엔진, V2 atom 시스템, 스크립트 전환 방향 반영
+> **V2 스크립트 전환 (2026-04-02)**: Phase 3 LLM 제거 완료. NPC 응답은 BeatScript V2 선택기가 결정. NPC 확률 반응(순응/저항/역공)으로 결정론 파괴. Misconception 상태 머신(M0~M4) 도입. 상세는 `11-v2-script-transition-spec.md` 참조
 
 ## AI 아키텍처 개요 (V3 현재)
 

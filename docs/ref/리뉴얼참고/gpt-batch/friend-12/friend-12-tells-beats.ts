@@ -1,0 +1,564 @@
+export const friend12TellsBeats = {
+  "caseId": "friend-12",
+  "executableTells": {
+    "a": [
+      {
+        "id": "a_identity_push",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "정체성",
+          "내 목소리",
+          "내 문장"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "불리한 질문이 나오면 '노래의 정체성은 내 목소리였어'라고 작품의 핵심을 자신에게 먼저 묶는다."
+      },
+      {
+        "id": "a_caption_minimizing",
+        "appliesWhen": [
+          "cornered",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "캡션 한 줄",
+          "표현 하나",
+          "그 정도"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "문제된 단독 표현을 지적받으면 '캡션 한 줄이었어'라며 파급력을 축소한다."
+      },
+      {
+        "id": "a_tight_cutoff",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "예스냐 아니냐",
+          "잠깐",
+          "그건"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "감정이 올라오면 상대 설명을 중간에 끊고 예스·노 식의 짧은 질문으로 몰아간다."
+      }
+    ],
+    "b": [
+      {
+        "id": "b_log_drop",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "버전 기록",
+          "타임라인",
+          "파일"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "불리한 지점이 나오면 커밋과 프로젝트 타임라인을 한꺼번에 내밀어 개별 질문을 기록 더미에 묻는다."
+      },
+      {
+        "id": "b_format_split",
+        "appliesWhen": [
+          "cornered",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "표시 형식",
+          "노출 화면",
+          "메타데이터"
+        ],
+        "sentenceShape": "conditional",
+        "cadence": "on_trigger_only",
+        "originalPattern": "'표시'와 '소유'는 다르다며 공개 화면의 인상을 과소평가한다."
+      },
+      {
+        "id": "b_dry_pause",
+        "appliesWhen": [
+          "emotional",
+          "shame",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "...",
+          "사실만 말하면",
+          "기록상"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "감정이 올라오면 짧게 침묵한 뒤 더 무미건조한 톤으로 사실만 열거한다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "friend12:beat:a:d-1:deny",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "아니, 그건 단독 홍보가 아니라 제 목소리로 소개한 거예요. 첫 화면이 원래 그렇게 읽히잖아요.",
+      "behaviorHint": "턱을 살짝 치켜들고 말을 빠르게 끊는다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-1:hedge",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "표현이 셌던 건 알아요. 그래도 설명 다 못 담은 캡션이었지, 누굴 지우려던 건 아니었어요.",
+      "behaviorHint": "손끝으로 허공에 작은 따옴표를 그리며 '표현'을 강조한다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-1:partial",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "네, 제가 '내 신곡'이라고 쓴 건 맞아요. 그때 제 이름이 또 밀릴까 겁부터 났어요.",
+      "behaviorHint": "한 번 숨을 고르고 시선을 잠깐 내린다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-1:blame",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "근데 저만 그런 식으로 몰아가면 공정하지 않죠. 재윤 쪽 릴도 저를 배경처럼 만들고 있었으니까요.",
+      "behaviorHint": "상대 쪽을 짧게 가리키며 되받아친다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-1:confession",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "결국 제가 먼저 선을 넘었어요. 공동작업을 제 작품처럼 밀어 버린 건 변명하기 어렵네요.",
+      "behaviorHint": "목소리가 한 톤 낮아지고 마지막 문장에서 힘이 빠진다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-1:evidence_hit",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "…수정 이력까지 나오면 더 숨길 말은 없네요. 제가 항의 받고도 한동안 그 표현을 놔뒀어요.",
+      "behaviorHint": "입술을 다문 채 몇 초 멈췄다가 짧게 인정한다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "friend12:beat:a:d-3:deny",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "노래의 정체성은 제 목소리예요. 가사와 멜로디가 빠지면 '새벽역' 자체가 안 돼요.",
+      "behaviorHint": "가슴 쪽을 손가락으로 짚으며 단호하게 말한다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-3:hedge",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "재윤이 손을 많이 댄 건 알아요. 그래도 그건 구현이고 중심축은 제 쪽이었어요.",
+      "behaviorHint": "문장을 둘로 잘라 말하며 앞문장보다 뒷문장에 힘을 준다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-3:partial",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "초안은 제 거지만, 네, 후반 구조는 재윤이 많이 바꿨어요. 그래서 단독작이라고만 하긴 점점 어려워졌죠.",
+      "behaviorHint": "인정하는 대목에서 고개를 아주 작게 끄덕인다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-3:blame",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "근데 공개 화면이 계속 제 보컬만 먼저 세우니까 저도 그 인상에 올라탔어요. 저만 허세 부린 것처럼 말하긴 싫네요.",
+      "behaviorHint": "짧게 웃고 바로 표정을 굳힌다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-3:confession",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "단독작이라는 말은 틀렸어요. 서로의 수정이 얽혀서 완성된 작품이었어요.",
+      "behaviorHint": "말꼬리를 자르지 않고 끝까지 천천히 내놓는다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-3:evidence_hit",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "세션 파일까지 나오면 부정은 못 해요. 이건 초안 위에 수고만 얹은 정도가 아니었네요.",
+      "behaviorHint": "파일을 보는 동안 잠깐 말을 멈추고, 마지막 문장을 낮게 덧붙인다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-3"
+    },
+    {
+      "id": "friend12:beat:a:d-4:deny",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "크레딧 표가 비어 있었다고 해서 바로 배신은 아니죠. 막판엔 다들 그렇게 흘리기도 해요.",
+      "behaviorHint": "손바닥을 펴 보이며 대수롭지 않다는 듯 넘긴다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-4:hedge",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "정리 못 한 건 맞지만 서로 역할은 안다고 생각했어요. 그 빈칸이 이렇게 커질 줄은 몰랐어요.",
+      "behaviorHint": "문장 첫머리는 빠르게, 끝부분은 느리게 말한다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-4:partial",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "네, 저도 '나중에 정리하자'고 넘겼어요. 먼저 잠그자고 세게 말하지 못했죠.",
+      "behaviorHint": "손가락 끝을 맞대며 자책 섞인 표정을 짓는다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-4:blame",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "재윤도 기다렸고 저도 기다렸어요. 둘 다 상대가 먼저 꺼내길 바랐던 거예요.",
+      "behaviorHint": "시선을 상대에게 넘겼다가 다시 재판관 쪽으로 돌린다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-4:confession",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "친구 사이 괜히 계약서 들이민 사람처럼 보이기 싫어서 피했어요. 그 회피가 결국 일을 키웠죠.",
+      "behaviorHint": "웃음기 없이 담담하게 말하고 마지막에 짧게 숨을 내쉰다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "friend12:beat:a:d-4:evidence_hit",
+      "caseId": "friend-12",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "노션 빈칸하고 단톡 순서가 다 남아 있네요. 더는 '그냥 바빴다'로 덮을 수 없어요.",
+      "behaviorHint": "자료를 확인한 뒤 변명하려다 멈추고 인정 쪽으로 틀어선다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "friend12:beat:b:d-2:deny",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "릴은 포트폴리오입니다. 엔드크레딧이 아니고, 보여 줄 우선순위가 있었습니다.",
+      "behaviorHint": "손가락으로 하나, 둘 순서를 세며 건조하게 말한다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-2:hedge",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "'voice' 표기가 거칠었다는 건 인정합니다. 하지만 그게 곧 삭제 의도라는 뜻은 아닙니다.",
+      "behaviorHint": "짧게 멈춘 뒤 두 문장을 같은 톤으로 평평하게 놓는다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-2:partial",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "결과적으로 수빈이 보조처럼 보이게 한 건 맞아요. 제 연출 로그를 너무 앞에 세웠습니다.",
+      "behaviorHint": "시선은 자료에 둔 채 인정 문장만 또렷하게 읽듯 말한다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-2:blame",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "당시엔 수빈 쪽 단독형 홍보가 먼저 있었고, 저는 거기에 밀리지 않으려 균형을 거칠게 맞춘 겁니다.",
+      "behaviorHint": "설명 순서를 로그처럼 정리해 말하지만 마지막에 입꼬리가 굳는다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-2:confession",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "형식 문제라고 줄였지만 사실 인상 효과를 알고 있었어요. 수빈 크레딧을 제가 가볍게 다뤘습니다.",
+      "behaviorHint": "한 박자 쉬고 나서 핵심 문장만 낮게 꺼낸다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-2:evidence_hit",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "프로젝트 파일하고 메일 초안이 같이 나오면 설명이 단순해집니다. 수빈 기여를 알면서도 작게 보이게 둔 거죠.",
+      "behaviorHint": "자료를 넘겨 보며 항목처럼 말하다가 마지막만 인정으로 정리한다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "friend12:beat:b:d-3:deny",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "결과물을 완성한 라인은 제 쪽입니다. 세션, 구조, 영상 편집이 없으면 데모에서 멈춥니다.",
+      "behaviorHint": "명사들을 끊어 나열하고 결론을 짧게 박는다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-3:hedge",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "수빈 초안이 있었던 건 사실이지만 완성 단계의 결정은 거의 제가 했습니다. 그래서 제가 중심이라고 본 겁니다.",
+      "behaviorHint": "첫 문장은 사실 확인처럼, 둘째 문장은 판정처럼 말한다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-3:partial",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "하지만 로그를 다 펼치면 수빈 수정도 깊게 박혀 있어요. 단독작이라고 끝까지 밀 수는 없죠.",
+      "behaviorHint": "말수는 적지만 단어 사이 간격이 길어진다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-3:blame",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "공개 화면이 계속 수빈 보컬 중심으로 읽혀서 저도 반작용이 생겼습니다. 그래서 제 로그를 더 과하게 앞세웠어요.",
+      "behaviorHint": "무표정하게 시작하지만 '반작용'에서 아주 미세하게 비웃듯 숨을 뱉는다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-3:confession",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "결론은 단독작이 아니었습니다. 서로의 수정을 떼면 지금 결과물이 안 나옵니다.",
+      "behaviorHint": "짧고 단정한 문장 두 개로 정리한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-3:evidence_hit",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "세션과 편집 프로젝트가 동시에 맞물리면 단독 주장 근거는 사라집니다. 교차 수정이 너무 선명하네요.",
+      "behaviorHint": "자료를 본 뒤 한 번 침묵하고, 마치 보고서를 읽듯 결론만 말한다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-3"
+    },
+    {
+      "id": "friend12:beat:b:d-5:deny",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "one-name 화면은 첫 노출일 뿐입니다. 그걸 사용했다고 곧바로 소유를 속였다는 해석은 과합니다.",
+      "behaviorHint": "시선은 고정한 채 문장 길이를 짧게 유지한다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-5:hedge",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "포스터 크롭은 포트폴리오용 선택이었어요. 상세 메타데이터는 따로 살아 있었으니까요.",
+      "behaviorHint": "앞문장은 설명, 뒷문장은 변호처럼 건조하게 덧붙인다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-5:partial",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "그래도 제 이름이 먼저 보이는 화면만 반복 쓴 건 사실입니다. 단독처럼 읽힐 수 있다는 점을 너무 가볍게 봤죠.",
+      "behaviorHint": "어깨를 아주 조금 내리며 인정 문장을 분절해서 말한다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-5:blame",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "수빈 캡션이 먼저 단독처럼 나가면서 저도 제 대표 장면만 밀었습니다. 맞불 심리가 있었죠.",
+      "behaviorHint": "담담하게 말하다가 마지막 문장에서 입술을 잠깐 깨문다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-5:confession",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "공동 크레딧을 본 뒤에도 그 화면을 고른 건 제 선택입니다. 그건 형식 문제가 아니라 방향성이었습니다.",
+      "behaviorHint": "짧게 멈춘 뒤 스스로 정리하듯 또박또박 말한다.",
+      "applicableStates": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "friend12:beat:b:d-5:evidence_hit",
+      "caseId": "friend-12",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "메타데이터 export와 수정 기록이 같이 나오면 변명이 어렵습니다. 알고도 유리한 화면만 반복 사용했습니다.",
+      "behaviorHint": "자료를 넘긴 뒤 숨을 길게 내쉬고 결론만 남긴다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-5"
+    }
+  ]
+}

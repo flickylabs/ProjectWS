@@ -1,0 +1,3569 @@
+{
+  "caseId": "neighbor-02",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "제가 무슨 유포를 한 것처럼 말씀하시는데, 그날 택배실에서 이상한 장면을 보고 너무 불안해서 가까운 사람 둘한테 물어본 정도였어요."
+          ],
+          "privateKnowledge": [
+            "반상회 다음 날 오전, 캡처와 '남의 박스 앞에 자꾸 선다'는 말을 두 명 이상에게 보냈다."
+          ],
+          "suppressions": [
+            "받는 사람 수와 덧붙인 문구 수위를 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-1:act:0",
+              "factText": "서유나는 택배실 CCTV 한 컷을 '확인 요청'처럼 포장해 가까운 이웃에게 보내며 장민규가 남의 박스 앞에 오래 선다는 인상을 심었다.",
+              "tags": [
+                "act",
+                "denial",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날 오전"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장",
+                  "neutral": "그 캡처"
+                },
+                "channel": {
+                  "exact": "이웃 2명 이상에게 보낸 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "유포는 아니었고, 반상회 바로 다음 날 너무 찜찜해서 '이 장면 어떻게 보이세요'라고 묻기만 했어요."
+          ],
+          "privateKnowledge": [
+            "절도라고 단정하지 않았다고 말하지만, 상대를 수상하게 보는 방향으로 해석을 유도했다."
+          ],
+          "suppressions": [
+            "메신저에 붙인 설명 문장을 축소한다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-1:uncertainty:0",
+              "factText": "서유나는 메신저 질문 형식을 빌려 캡처를 돌리면서도 의심의 방향이 장민규에게 향하도록 문장을 붙였다.",
+              "tags": [
+                "uncertainty",
+                "context",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날 오전"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장",
+                  "neutral": "그 캡처"
+                },
+                "channel": {
+                  "exact": "이웃 2명 이상에게 보낸 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "캡처를 보낸 건 맞지만, 절도라고 단정한 게 아니라 이상하다고 느껴서 조심하라고 말한 거예요."
+          ],
+          "privateKnowledge": [
+            "실제로는 '남의 박스 앞에 자꾸 선다'는 표현으로 절도성 의심을 떠올리게 만들었다."
+          ],
+          "suppressions": [
+            "전달 범위와 상대 반응을 자세히 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-1:evidence:0",
+              "factText": "서유나는 캡처 전송 사실은 인정하지만, 그것이 장민규를 절도 의심 대상으로 보이게 만든 효과는 줄여 말한다.",
+              "tags": [
+                "evidence",
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날 오전"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장",
+                  "neutral": "그 캡처"
+                },
+                "channel": {
+                  "exact": "이웃 2명 이상에게 보낸 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "그때 이미 오배송 얘기나 택배실 문제로 마음이 쌓여 있었어요. 제가 과하게 말한 건 인정하지만 먼저 불안을 만든 건 그쪽 행동이었죠."
+          ],
+          "privateKnowledge": [
+            "여름 초 문 앞 오배송 박스 이동 일을 감시처럼 받아들여 의심을 키웠다."
+          ],
+          "suppressions": [
+            "경비원 요청 여부를 확인하지 않은 채 감정을 근거로 삼았다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-1:motive:0",
+              "factText": "서유나는 쌓인 불안을 근거로 삼아 캡처 유포 책임을 일부 인정하면서도, 장민규의 이전 행동을 원인으로 내세운다.",
+              "tags": [
+                "motive",
+                "self_justification",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날 오전"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장",
+                  "neutral": "그 캡처"
+                },
+                "channel": {
+                  "exact": "이웃 2명 이상에게 보낸 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 말하면, 제가 겁이 나고 억울해서 사람들한테 공감부터 구했어요. 그래서 캡처 한 장이 훨씬 크게 번질 걸 알면서도 멈추지 못했어요."
+          ],
+          "privateKnowledge": [
+            "집에서 일하고 개 키운다는 이유로 찍힌다는 두려움이 동정 확보 욕구와 섞였다."
+          ],
+          "suppressions": [
+            "캡처가 평판에 줄 타격을 계산한 순간을 바로 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-1:emotion:0",
+              "factText": "서유나는 자신의 두려움과 억울함 때문에 캡처 한 장의 인상효과를 알면서도 지지부터 얻으려 했음을 드러낸다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날 오전"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장",
+                  "neutral": "그 캡처"
+                },
+                "channel": {
+                  "exact": "이웃 2명 이상에게 보낸 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "제가 CCTV 캡처를 돌리고 민규 씨가 택배를 뒤지는 사람처럼 보이게 만든 건 맞아요. 확인보다 인상에 기대서 사람을 몰아간 제 책임이 큽니다."
+          ],
+          "privateKnowledge": [
+            "관리사무소 확인 전 비난 금지 약속도 스스로 깼다는 걸 안다."
+          ],
+          "suppressions": [
+            "숨길 핵심이 거의 남지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-1:admission:0",
+              "factText": "서유나는 CCTV 캡처 유포로 장민규를 수상한 사람처럼 보이게 만들었고, 그 책임이 자신에게 크다고 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날 오전"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장",
+                  "neutral": "그 캡처"
+                },
+                "channel": {
+                  "exact": "이웃 2명 이상에게 보낸 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "냄새 얘기는 늘 그쪽에서 먼저 흘렀고, 반상회 끝나자마자 제 반려견 탓처럼 도는 걸 들었어요."
+          ],
+          "privateKnowledge": [
+            "누가 먼저 말했는지 정확히는 모르지만 민규 쪽에서 시작했다고 믿었다."
+          ],
+          "suppressions": [
+            "직접 확인한 전달 경로는 아직 불명확하다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-2:harm:0",
+              "factText": "서유나는 반상회 직후 악취 소문이 자신의 반려견에게 연결되기 시작했고, 그 방향이 장민규 쪽에서 왔다고 느꼈다.",
+              "tags": [
+                "harm",
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 종료 뒤 14시간 안"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처",
+                  "neutral": "그 메시지들"
+                },
+                "channel": {
+                  "exact": "단체방과 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "제가 직접 본 건 아니지만 '307호 개봉투 냄새' 같은 말이 민규 씨 쪽에서 나왔다는 연락을 여러 번 받았어요."
+          ],
+          "privateKnowledge": [
+            "전달받은 내용이 반복될수록 장민규를 소문 출발점으로 확신했다."
+          ],
+          "suppressions": [
+            "직접 확인 전에는 추정에 기대고 있었다는 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-2:timeline:0",
+              "factText": "서유나는 '307호 개봉투 냄새' 같은 지목 문구가 장민규에게서 나왔다는 복수의 전언을 근거로 삼는다.",
+              "tags": [
+                "timeline",
+                "counter",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 종료 뒤 14시간 안"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처",
+                  "neutral": "그 메시지들"
+                },
+                "channel": {
+                  "exact": "단체방과 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "단체방 캡처를 보고 나서야 민규 씨가 확인도 없이 제 호수와 반려견을 엮었다는 걸 알았어요."
+          ],
+          "privateKnowledge": [
+            "메신저 자료를 본 뒤에야 전언이 아니라 실제 반복 전파였음을 확인했다."
+          ],
+          "suppressions": [
+            "자신도 그 자료를 감정적으로 재사용하고 싶어 했던 충동은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-2:evidence:0",
+              "factText": "서유나는 단체방·1:1 캡처를 통해 장민규가 확인 없이 자신의 호수와 반려견을 냄새 문제에 연결한 사실을 확인했다.",
+              "tags": [
+                "evidence",
+                "harm",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 종료 뒤 14시간 안"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처",
+                  "neutral": "그 메시지들"
+                },
+                "channel": {
+                  "exact": "단체방과 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "그분이 반상회에서 망신당했다는 감정은 이해해도, 그래서 저를 냄새의 원인처럼 말한 건 별개예요."
+          ],
+          "privateKnowledge": [
+            "민규의 보복 심리를 어렴풋이 짐작하지만 그것이 책임을 줄인다고 보지 않는다."
+          ],
+          "suppressions": [
+            "자신도 상대를 먼저 도둑처럼 본 시선이 있었단 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-2:context:0",
+              "factText": "서유나는 장민규의 모욕감이 소문 전파의 배경일 수는 있어도, 자신을 악취 원인처럼 만든 책임과는 별개라고 본다.",
+              "tags": [
+                "context",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 종료 뒤 14시간 안"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처",
+                  "neutral": "그 메시지들"
+                },
+                "channel": {
+                  "exact": "단체방과 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "집에서 일하고 개 키운다는 이유로 냄새 민원까지 제 호수 이름으로 묶이니 진짜 숨이 막혔어요."
+          ],
+          "privateKnowledge": [
+            "거래처와 이웃의 시선이 동시에 나빠질까 두려웠다."
+          ],
+          "suppressions": [
+            "자신이 그 공포 때문에 더 격하게 반응했다는 점은 아직 덜 드러낸다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-2:emotion:0",
+              "factText": "서유나는 반려견 주인과 재택 판매자라는 이미지가 겹치며 자신이 동네 블랙리스트처럼 찍힐까 두려워했다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 종료 뒤 14시간 안"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처",
+                  "neutral": "그 메시지들"
+                },
+                "channel": {
+                  "exact": "단체방과 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "민규 씨가 확인 없이 악취와 배변봉투 얘기를 퍼뜨린 건 사실이고, 그게 제 평판과 생활 동선을 망가뜨렸어요."
+          ],
+          "privateKnowledge": [
+            "최초 배후가 따로 있더라도 이 소문 전파 책임은 남는다고 본다."
+          ],
+          "suppressions": [
+            "숨길 핵심은 거의 없다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-2:responsibility:0",
+              "factText": "서유나는 장민규가 확인 없이 반려견 악취·배변봉투 소문을 퍼뜨렸고, 그것이 자신의 평판과 일상 동선에 해를 줬다고 정리한다.",
+              "tags": [
+                "responsibility",
+                "harm",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 종료 뒤 14시간 안"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처",
+                  "neutral": "그 메시지들"
+                },
+                "channel": {
+                  "exact": "단체방과 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "전단이랑 첫 말은 민규 씨 쪽이 돌린 줄 알았어요. 반상회 끝나고 너무 빨랐거든요."
+          ],
+          "privateKnowledge": [
+            "정확한 출처를 모른 채 장민규를 거의 배후처럼 생각했다."
+          ],
+          "suppressions": [
+            "실제 근거보다 타이밍 인상에 기대고 있다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-3:uncertainty:0",
+              "factText": "서유나는 반상회 직후 너무 빠르게 퍼진 문구 때문에 익명 전단과 첫 소문을 장민규 쪽에서 시작한 것으로 짐작했다.",
+              "tags": [
+                "uncertainty",
+                "identity",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부와 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "반상회 끝나고 몇 시간 안 돼 같은 문장이 돌아서, 저는 민규 씨가 정리해서 보낸 건가 생각했죠."
+          ],
+          "privateKnowledge": [
+            "반상회 자리에서 받은 모멸감 때문에 민규를 더 쉽게 의심했다."
+          ],
+          "suppressions": [
+            "제3자 개입 가능성을 거의 검토하지 않았다는 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-3:timeline:0",
+              "factText": "서유나는 같은 문장이 짧은 시간 안에 반복된 점을 근거로 장민규 또는 그 지인이 문구를 정리했다고 의심했다.",
+              "tags": [
+                "timeline",
+                "counter",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부와 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "녹음 일부를 보니 반상회에서 두 사람을 묶어 말한 표현이 먼저 있었네요. 시작점이 민규 씨 한 사람만은 아닐 수 있겠더라고요."
+          ],
+          "privateKnowledge": [
+            "반상회 발언 자체가 소문 재료였다는 점을 이제야 본다."
+          ],
+          "suppressions": [
+            "여전히 민규를 너무 빨리 특정했다는 말은 아낀다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-3:evidence:0",
+              "factText": "서유나는 회의 녹음 일부를 통해 문제 문구의 재료가 반상회 발언에서 먼저 나왔고, 출발점이 장민규 한 사람만은 아닐 수 있음을 본다.",
+              "tags": [
+                "evidence",
+                "context",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부와 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "reconsider"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "회의록 수정본까지 보면 누군가 반상회 문구를 다듬어 다시 퍼뜨린 흔적이 있어요. 제가 짐작만으로 민규 씨를 특정한 건 섣불렀어요."
+          ],
+          "privateKnowledge": [
+            "출처 단정이 틀렸을 가능성을 인정한다."
+          ],
+          "suppressions": [
+            "자신도 캡처 유포로 확산에 보탰다는 점은 아직 다 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-3:context:0",
+              "factText": "서유나는 수정 회의록 흐름을 보고 누군가가 반상회 문구를 가공해 외부로 퍼뜨렸다고 판단하며, 자신이 장민규를 섣불리 지목했음을 일부 인정한다.",
+              "tags": [
+                "context",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부와 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "최병규라는 이름이 보이니까 허탈했어요. 저는 민규 씨만 노려봤고, 그 사이 누군가는 제 감정까지 이용했더라고요."
+          ],
+          "privateKnowledge": [
+            "제3자 조작이 드러나자 자신이 이용당했다는 감정이 커졌다."
+          ],
+          "suppressions": [
+            "이용당한 감정이 자신의 유포 책임을 덜어주진 않는다는 점은 완전히 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-3:emotion:0",
+              "factText": "서유나는 최병규 정황이 드러나자 자신과 장민규의 감정 대립이 제3자에게 이용되었다는 허탈함을 드러낸다.",
+              "tags": [
+                "emotion",
+                "identity",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부와 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "reconsider"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "익명 전단과 첫 소문의 실질적 출발점은 최병규였고, 저와 민규 씨는 그 다음 확산에 휘말려 서로를 가해자로 확정해 버렸어요."
+          ],
+          "privateKnowledge": [
+            "제3자 배후와 별개로 자신도 확산 과정의 한 축이었다는 점을 안다."
+          ],
+          "suppressions": [
+            "남은 숨김이 거의 없다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-3:identity:0",
+              "factText": "서유나는 익명 전단과 첫 소문의 실질적 출발점이 최병규였고, 자신과 장민규는 그 뒤 확산을 키운 쪽이었다고 정리한다.",
+              "tags": [
+                "identity",
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부와 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "그 장면은 누가 봐도 남의 박스 앞에서 한참 서 있던 거였어요. 제가 절도라고 단정한 게 아니라 의심스러웠다고 한 거예요."
+          ],
+          "privateKnowledge": [
+            "정지 화면 하나로 절도성 의심을 유도했다는 점을 안다."
+          ],
+          "suppressions": [
+            "원본 영상 확인 없이 인상만으로 판단했다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-4:act:0",
+              "factText": "서유나는 정지 화면 속 장민규의 자세를 근거로 절도라고는 안 했다면서도 절도 의심이 떠오르도록 말한다.",
+              "tags": [
+                "act",
+                "denial",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "08시 14분 무전 직후",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "택배실 박스 이동 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "오배송 정리였다는 설명은 나중에 들었고, 그 전엔 그 정지 화면 말고는 없었어요. 제가 의심할 만한 사정은 있었죠."
+          ],
+          "privateKnowledge": [
+            "의심할 만한 사정이라고 말하지만 실제로는 전후 맥락을 확인하지 않았다."
+          ],
+          "suppressions": [
+            "경비원 확인 한 번이면 풀릴 수 있었단 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-4:context:0",
+              "factText": "서유나는 정지 화면만 가지고도 의심할 사정이 있었다고 주장하며 원본 확인 부재를 합리화한다.",
+              "tags": [
+                "context",
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "08시 14분 무전 직후",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "택배실 박스 이동 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "원본 보니까 박스를 열진 않았네요. 그렇지만 그 전까지는 저는 알 수 없었고, 그래서 걱정이 앞섰던 거예요."
+          ],
+          "privateKnowledge": [
+            "원본 영상으로 절도는 아니었다는 핵심은 이미 알게 됐다."
+          ],
+          "suppressions": [
+            "캡처를 돌리기 전에 그 확인을 하지 않은 책임은 축소한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-4:evidence:0",
+              "factText": "서유나는 원본 영상으로 박스를 열지 않았다는 점은 인정하지만, 자신의 의심 제기 자체는 당시엔 불가피했다고 축소한다.",
+              "tags": [
+                "evidence",
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "08시 14분 무전 직후",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "택배실 박스 이동 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "경비원 요청이 있었다면 제가 먼저 확인했어야 했죠. 여름부터 문 앞 박스 문제로 쌓인 감정을 절도 의심으로 이어 붙였던 건 인정해요."
+          ],
+          "privateKnowledge": [
+            "문 앞 박스 이동 기억이 감시 서사로 굳어 있었다."
+          ],
+          "suppressions": [
+            "절도 의심이 민규 평판에 줄 충격을 끝까지 체감하진 못했다고 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-4:motive:0",
+              "factText": "서유나는 경비원 요청 확인 없이 이전 감정을 끌어와 장민규를 절도 의심 대상으로 묶었다는 점을 일부 인정한다.",
+              "tags": [
+                "motive",
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "08시 14분 무전 직후",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "택배실 박스 이동 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "사실 절도라는 말이 돌면 큰일인 줄 알면서도, 저한테는 그 사람이 계속 제 공간을 보는 사람처럼 느껴졌어요. 그 두려움 때문에 사실과 의심을 섞었어요."
+          ],
+          "privateKnowledge": [
+            "공간 침범 불안이 사실 판단을 흐렸음을 안다."
+          ],
+          "suppressions": [
+            "자신이 상대 직업과 평판에 남길 상처를 완전히 계산했다고는 아직 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-4:emotion:0",
+              "factText": "서유나는 자신의 공간이 감시당한다는 두려움 때문에 사실과 의심을 섞어 말했음을 감정적으로 드러낸다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "08시 14분 무전 직후",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "택배실 박스 이동 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "민규 씨 택배 절도 의심은 사실이 아니었습니다. 경비원 요청에 따른 오배송 박스 이동을 제가 절도처럼 퍼뜨렸습니다."
+          ],
+          "privateKnowledge": [
+            "원본 6분 영상과 처리대장이 그 사실을 끝까지 뒷받침한다."
+          ],
+          "suppressions": [
+            "남은 숨김이 거의 없다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-4:admission:0",
+              "factText": "서유나는 장민규의 행동이 절도가 아니라 경비원 요청에 따른 오배송 박스 이동이었는데도 자신이 절도처럼 퍼뜨렸다고 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "08시 14분 무전 직후",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "택배실 박스 이동 장면",
+                  "neutral": "그 장면"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "예전 약속은 공개 글 올리지 말자는 거였지, 제가 그날 공개적으로 호수를 박제한 건 아니에요."
+          ],
+          "privateKnowledge": [
+            "사적 전달도 약속 취지를 어긴다는 걸 알고 있다."
+          ],
+          "suppressions": [
+            "관리사무소 확인 전 전달했다는 핵심을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-5:rule:0",
+              "factText": "서유나는 '공개 글'만 금지였다고 해석해 CCTV 캡처의 사적 유포를 약속 위반에서 빼내려 한다.",
+              "tags": [
+                "rule",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "사적 캡처 전달과 단체방 재전파",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "관리사무소 확인을 먼저 하자는 건 알았지만, 그날은 너무 불안해서 사적인 상담처럼 보낸 거예요."
+          ],
+          "privateKnowledge": [
+            "사적 상담처럼 포장했지만 실제로는 평판 판단을 유도했다."
+          ],
+          "suppressions": [
+            "상대가 다시 퍼뜨릴 수 있다는 점을 알면서도 보냈단 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-5:rule:1",
+              "factText": "서유나는 관리사무소 선확인 약속을 알면서도 CCTV 캡처 전달을 사적인 상담처럼 포장한다.",
+              "tags": [
+                "rule",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "사적 캡처 전달과 단체방 재전파",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "절차를 지키지 못한 건 맞아요. 다만 단체방에 다시 퍼뜨린 건 민규 씨였고, 저는 처음부터 공개 글을 올린 건 아니었어요."
+          ],
+          "privateKnowledge": [
+            "자신의 위반을 인정하면서도 공개 확산 주도는 상대 몫이라고 구분하고 싶어 한다."
+          ],
+          "suppressions": [
+            "사적 전달이 최초 불씨였다는 점을 축소한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-5:admission:0",
+              "factText": "서유나는 약속 취지를 지키지 못한 점은 인정하지만, 자신은 사적 전달만 했고 공개 확산은 장민규 쪽이라고 선을 긋는다.",
+              "tags": [
+                "admission",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "사적 캡처 전달과 단체방 재전파",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "저도 약속을 완전히 지킨 건 아니지만, 한 컷 캡처를 사적으로 보낸 것과 여러 대화방에 냄새 소문을 돌린 건 무게가 다르다고 생각했어요."
+          ],
+          "privateKnowledge": [
+            "책임 비율에서 자신 쪽이 더 가볍다고 믿고 있다."
+          ],
+          "suppressions": [
+            "최초 인상 조작 효과가 자신의 전달에서 시작됐단 점은 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-5:responsibility:0",
+              "factText": "서유나는 약속 파기 자체는 인정하면서도, 자신의 행위와 장민규의 소문 재전파는 무게가 다르다고 주장한다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "사적 캡처 전달과 단체방 재전파",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "결국 저는 약속의 문구보다 제 억울함을 먼저 챙겼어요. 그래서 관리사무소 확인보다 '내가 당했다'는 말부터 꺼냈죠."
+          ],
+          "privateKnowledge": [
+            "피해 서사를 먼저 세워야 안전하다고 느꼈다."
+          ],
+          "suppressions": [
+            "그 선택이 공동체 절차를 무너뜨렸다는 말은 완전히 다 못 한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-5:emotion:0",
+              "factText": "서유나는 절차보다 자신의 억울함과 피해 서사를 먼저 내세운 탓에 약속을 실질적으로 무너뜨렸음을 인정한다.",
+              "tags": [
+                "emotion",
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "사적 캡처 전달과 단체방 재전파",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "제가 CCTV 캡처를 돌린 순간 이미 '확인 전 비난 금지' 약속을 깼습니다. 민규 씨와 서로 약속을 무너뜨려 평판 훼손을 키웠어요."
+          ],
+          "privateKnowledge": [
+            "상대의 위반과 별개로 자신의 시작 책임을 안다."
+          ],
+          "suppressions": [
+            "남은 숨김이 거의 없다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:a:tell:sympathy_stack",
+            "neighbor02:a:tell:selective_victimhood",
+            "neighbor02:a:tell:accusation_echo"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:a:d-5:admission:1",
+              "factText": "서유나는 CCTV 캡처를 사적으로 돌린 순간 이미 관리사무소 확인 전 비난 금지 약속을 깼고, 그 결과 서로의 평판 훼손이 커졌다고 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "장민규",
+                  "neutral": "상대방",
+                  "fullName": "장민규",
+                  "judgeRef": "민규 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "사적 캡처 전달과 단체방 재전파",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "누가 뭘 보냈는지는 확인 안 됐습니다. 다만 반상회 다음 날부터 제 동선이 이상하게 해석된 정황은 있었습니다."
+          ],
+          "privateKnowledge": [
+            "캡처가 돌고 있다는 연락을 받았지만 즉시 출처를 특정하지 못했다."
+          ],
+          "suppressions": [
+            "자신이 이미 서유나를 거의 가해자로 확정하고 있었다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-1:uncertainty:0",
+              "factText": "장민규는 출처 확인은 보류한 채, 반상회 다음 날부터 자신의 동선이 수상하게 소비된 정황만 건조하게 언급한다.",
+              "tags": [
+                "uncertainty",
+                "harm",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장과 덧붙임 문구",
+                  "neutral": "그 캡처와 문구"
+                },
+                "channel": {
+                  "exact": "이웃 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "정지 화면 한 장과 덧붙임 말이 돌았다는 연락은 받았습니다. 사실관계보다 인상만 남는 방식이었습니다."
+          ],
+          "privateKnowledge": [
+            "캡처 자체보다 덧붙임 설명이 더 치명적이었다고 느꼈다."
+          ],
+          "suppressions": [
+            "즉시 원본 영상 확보에 나서지 않은 자신의 대응 지연은 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-1:evidence:0",
+              "factText": "장민규는 정지 화면과 덧붙임 문구가 함께 돌며 사실보다 인상만 남게 됐다고 본다.",
+              "tags": [
+                "evidence",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장과 덧붙임 문구",
+                  "neutral": "그 캡처와 문구"
+                },
+                "channel": {
+                  "exact": "이웃 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "e-1을 보면 서유나 씨가 CCTV 캡처와 설명 문구를 직접 보냈다는 건 명확합니다."
+          ],
+          "privateKnowledge": [
+            "이제는 전언이 아니라 직접 전송 정황으로 본다."
+          ],
+          "suppressions": [
+            "그 전까지 자신도 감정적으로 상대를 의심한 흐름은 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-1:evidence:1",
+              "factText": "장민규는 e-1을 근거로 서유나가 CCTV 캡처와 설명 문구를 직접 보냈다는 점을 분명히 한다.",
+              "tags": [
+                "evidence",
+                "identity",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장과 덧붙임 문구",
+                  "neutral": "그 캡처와 문구"
+                },
+                "channel": {
+                  "exact": "이웃 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "grounded"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "그 장면은 오배송 박스를 옮기던 맥락이 빠진 상태라, 캡처 하나로 제 행동을 절도성으로 읽게 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "크롭된 장면이 오배송 이동 맥락을 지워버렸다고 본다."
+          ],
+          "suppressions": [
+            "자신이 원본을 빨리 내놓지 않은 책임은 축소한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-1:context:0",
+              "factText": "장민규는 크롭된 캡처가 오배송 박스 이동이라는 맥락을 지워 자신의 행동을 절도성으로 읽히게 만들었다고 설명한다.",
+              "tags": [
+                "context",
+                "harm",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장과 덧붙임 문구",
+                  "neutral": "그 캡처와 문구"
+                },
+                "channel": {
+                  "exact": "이웃 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "contextualize"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "가장 모욕적인 건, 제가 실제로 한 행동보다 '남의 박스 앞에 서는 사람'이라는 이미지가 먼저 굳었다는 점입니다."
+          ],
+          "privateKnowledge": [
+            "절도 의심이 직업적 평판과 체면에 직접 상처를 냈다."
+          ],
+          "suppressions": [
+            "건조한 태도로 버틴 것이 상처가 덜했다는 뜻은 아니다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-1:emotion:0",
+              "factText": "장민규는 자신의 실제 행동보다 수상한 이미지가 먼저 굳어버린 점을 가장 모욕적인 피해로 느낀다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장과 덧붙임 문구",
+                  "neutral": "그 캡처와 문구"
+                },
+                "channel": {
+                  "exact": "이웃 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "서유나 씨가 택배실 CCTV 캡처를 돌려 저를 수상한 사람처럼 보이게 만든 건 사실입니다. 다만 그 출발이 전단 배후와는 별개였다는 점도 봐야 합니다."
+          ],
+          "privateKnowledge": [
+            "제3자 배후가 따로 있어도 이 캡처 유포 책임은 독립적이라고 본다."
+          ],
+          "suppressions": [
+            "숨길 핵심이 거의 없다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-1:responsibility:0",
+              "factText": "장민규는 서유나가 CCTV 캡처를 돌려 자신을 수상한 사람처럼 보이게 만들었다는 사실을 명확히 정리한다.",
+              "tags": [
+                "responsibility",
+                "harm",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 다음 날 오전",
+                  "neutral": "그 직후",
+                  "period": "반상회 다음 날"
+                },
+                "evidence": {
+                  "exact": "택배실 CCTV 캡처 1장과 덧붙임 문구",
+                  "neutral": "그 캡처와 문구"
+                },
+                "channel": {
+                  "exact": "이웃 메신저 전달",
+                  "neutral": "사적 전달"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "악취 민원 얘기는 제가 만든 게 아니라 이미 나와 있던 표현을 전달한 수준입니다. 특정 세대를 단정한 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "반상회 뒤 여러 채널에 같은 표현을 반복했다."
+          ],
+          "suppressions": [
+            "호수와 반려견을 연결한 직접 문구를 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-2:rule:0",
+              "factText": "장민규는 기존 민원 표현을 전달했을 뿐이라고 말하며, 자신이 유나를 특정한 표현은 아니었다고 축소한다.",
+              "tags": [
+                "rule",
+                "denial",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처와 민원 원문",
+                  "neutral": "그 메시지와 민원"
+                },
+                "channel": {
+                  "exact": "단체방과 주민 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "반상회 직후 주민들이 냄새 원인을 묻길래 기존 민원 문구를 인용한 겁니다. 확인 전 단정은 피하려 했습니다."
+          ],
+          "privateKnowledge": [
+            "실제 문구는 단정보다 훨씬 직접적이었다."
+          ],
+          "suppressions": [
+            "1:1 대화에서까지 같은 표현을 반복한 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-2:quote:0",
+              "factText": "장민규는 기존 민원 문구를 인용했을 뿐이라며, 확인 전 단정은 피하려 했다고 자신을 방어한다.",
+              "tags": [
+                "quote",
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처와 민원 원문",
+                  "neutral": "그 메시지와 민원"
+                },
+                "channel": {
+                  "exact": "단체방과 주민 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "제가 같은 표현을 여러 대화방에 보낸 건 맞습니다. 다만 관리사무소 민원에 기초한 말이라 완전히 허위라고만 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "관리 확인 전 단계 문구를 사실처럼 옮긴 것이 문제였다는 걸 안다."
+          ],
+          "suppressions": [
+            "민원 원문에 직접 확인이 없다는 핵심은 아직 줄여 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-2:admission:0",
+              "factText": "장민규는 같은 표현을 여러 대화방에 보낸 사실은 인정하지만, 민원에 기초했다는 이유로 책임을 일부 희석한다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처와 민원 원문",
+                  "neutral": "그 메시지와 민원"
+                },
+                "channel": {
+                  "exact": "단체방과 주민 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "그때 저는 반상회에서 공개적으로 면박을 받은 직후였고, 그래서 냄새 문제를 더 공격적으로 받아 적었습니다. 감정이 섞인 전달이었던 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "도둑 취급을 받은 직후라 보복 심리가 섞였다."
+          ],
+          "suppressions": [
+            "그 감정이 사실 확인 책임을 무너뜨렸다는 점은 끝까지 다 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-2:motive:0",
+              "factText": "장민규는 반상회 직후 받은 모욕감 때문에 냄새 문제를 더 공격적으로 전달했고, 감정이 섞였음을 인정한다.",
+              "tags": [
+                "motive",
+                "admission",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처와 민원 원문",
+                  "neutral": "그 메시지와 민원"
+                },
+                "channel": {
+                  "exact": "단체방과 주민 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "솔직히 말하면 보복 심리가 있었습니다. 도둑 취급을 받은 뒤라, 저도 상대의 약점을 먼저 꺼내 방어하려 했습니다."
+          ],
+          "privateKnowledge": [
+            "체면 회복 욕구가 냄새 소문 전파로 이어졌다."
+          ],
+          "suppressions": [
+            "상대가 입을 평판 손해를 충분히 예상했단 점은 아낀다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-2:emotion:0",
+              "factText": "장민규는 도둑 취급을 받은 뒤 보복 심리로 유나의 약점처럼 보이는 냄새 문제를 먼저 꺼냈다고 고백한다.",
+              "tags": [
+                "emotion",
+                "motive",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처와 민원 원문",
+                  "neutral": "그 메시지와 민원"
+                },
+                "channel": {
+                  "exact": "단체방과 주민 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "확인 없이 유나 씨 반려견과 악취 민원을 엮어 퍼뜨린 건 제 잘못입니다. 민원 문구를 사실처럼 재인용해 평판을 깎았습니다."
+          ],
+          "privateKnowledge": [
+            "도둑 의심을 받았다는 사정이 있어도 이 책임은 남는다고 안다."
+          ],
+          "suppressions": [
+            "숨길 핵심이 거의 없다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-2:admission:1",
+              "factText": "장민규는 확인 없이 유나의 반려견과 악취 민원을 엮어 퍼뜨리고 민원 문구를 사실처럼 재인용한 책임을 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "반상회 종료 뒤 14시간 안",
+                  "neutral": "그 직후",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "단체방·1:1 전달 캡처와 민원 원문",
+                  "neutral": "그 메시지와 민원"
+                },
+                "channel": {
+                  "exact": "단체방과 주민 1:1 대화",
+                  "neutral": "여러 대화방"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "익명 전단과 첫 문구의 출처는 서유나 씨 쪽일 가능성이 높다고 봤습니다. 반상회 직후 그쪽이 먼저 움직였습니다."
+          ],
+          "privateKnowledge": [
+            "정확한 출처를 모르면서도 유나를 거의 배후로 상정했다."
+          ],
+          "suppressions": [
+            "자신도 같은 문구를 재전달해 확산에 보탰다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-3:identity:0",
+              "factText": "장민규는 반상회 직후의 속도를 근거로 익명 전단과 첫 문구의 출처를 서유나 쪽으로 의심한다.",
+              "tags": [
+                "identity",
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부, 수정 회의록, 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "반상회 뒤 시차가 너무 짧았습니다. 당시엔 유나 씨나 그 지인 쪽에서 문구를 정리한 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "속도와 감정만으로 배후를 단정했다."
+          ],
+          "suppressions": [
+            "다른 접근권자, 특히 동대표를 거의 떠올리지 않았다는 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-3:timeline:0",
+              "factText": "장민규는 반상회 직후의 짧은 시차를 들어 유나 또는 그 주변이 문구를 정리했다고 추정했다.",
+              "tags": [
+                "timeline",
+                "uncertainty",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부, 수정 회의록, 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "accuse"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "녹음 일부를 보면 회의 중 사용된 표현이 먼저 있었고, 전단 문구가 그걸 베낀 흔적이 있습니다. 출처를 단정하긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "회의 발언이 원문 재료였다는 사실을 인식하기 시작했다."
+          ],
+          "suppressions": [
+            "여전히 자신이 유나를 과하게 지목했다는 인정은 제한적이다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-3:evidence:0",
+              "factText": "장민규는 회의 녹음 일부를 통해 전단 문구가 반상회 표현을 베낀 흔적이 있어, 출처를 단정하기 어렵다고 물러선다.",
+              "tags": [
+                "evidence",
+                "quote",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부, 수정 회의록, 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "reconsider"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "회의록 수정본까지 보면 누군가 회의 표현을 가공해 외부로 뺀 정황이 보입니다. 제가 유나 씨를 배후처럼 몰아간 건 과도했습니다."
+          ],
+          "privateKnowledge": [
+            "배후 특정이 틀렸을 수 있음을 실질적으로 인정한다."
+          ],
+          "suppressions": [
+            "자신이 재인용으로 확산을 키운 책임은 아직 전면화하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-3:admission:0",
+              "factText": "장민규는 수정 회의록 흐름을 보고 누군가 회의 표현을 가공해 외부로 뺐다고 보며, 자신이 유나를 배후처럼 몬 점은 과도했다고 인정한다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부, 수정 회의록, 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "공용프린터 얘기까지 나오니, 저도 이용당한 쪽이었다는 생각이 듭니다. 다만 그 문구를 다시 퍼뜨린 건 결국 제 손이었습니다."
+          ],
+          "privateKnowledge": [
+            "최병규 정황 앞에서 허탈함과 자기 책임이 동시에 올라온다."
+          ],
+          "suppressions": [
+            "재전달 범위를 모두 바로 말하진 않는다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-3:emotion:0",
+              "factText": "장민규는 공용프린터 정황이 드러나자 자신도 제3자에게 이용당했지만, 그 문구를 다시 퍼뜨린 손은 결국 자신이었다고 인정한다.",
+              "tags": [
+                "emotion",
+                "identity",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부, 수정 회의록, 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "익명 전단과 첫 단체방 문구의 실질적 출발점은 최병규였습니다. 저는 그걸 제 분노에 맞게 재인용하며 확산을 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "제3자 배후와 자신의 확산 책임을 함께 인정한다."
+          ],
+          "suppressions": [
+            "남은 숨김이 거의 없다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-3:identity:1",
+              "factText": "장민규는 익명 전단과 첫 단체방 문구의 실질적 출발점이 최병규였고, 자신은 그 문구를 분노에 맞게 재인용해 확산을 키웠다고 인정한다.",
+              "tags": [
+                "identity",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "최병규",
+                  "neutral": "그 사람",
+                  "fullName": "최병규",
+                  "judgeRef": "동대표"
+                },
+                "time": {
+                  "exact": "반상회 직후와 전단 부착 27분 전",
+                  "neutral": "그 시점",
+                  "period": "반상회 직후"
+                },
+                "evidence": {
+                  "exact": "반상회 녹음 일부, 수정 회의록, 공용프린터 스풀 로그",
+                  "neutral": "그 기록들"
+                },
+                "channel": {
+                  "exact": "익명 전단과 첫 단체방 문구",
+                  "neutral": "그 문구들"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "절도 의심은 사실이 아닙니다. 08시 14분 경비실 요청으로 오배송 박스를 선반 쪽으로 이동시킨 겁니다."
+          ],
+          "privateKnowledge": [
+            "정지 화면만 보면 오해가 가능하다는 점은 안다."
+          ],
+          "suppressions": [
+            "당시 그 설명을 즉시 공개하지 않은 자신의 대응은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-4:denial:0",
+              "factText": "장민규는 08시 14분 경비실 요청에 따라 오배송 박스를 선반 쪽으로 이동시켰을 뿐이며 절도는 사실이 아니라고 말한다.",
+              "tags": [
+                "denial",
+                "timeline",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박정호",
+                  "neutral": "경비원",
+                  "fullName": "박정호",
+                  "judgeRef": "경비원"
+                },
+                "time": {
+                  "exact": "08시 14분 무전과 6분 영상 구간",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "오배송 박스 이동 동선",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "정지 화면만 보면 오해할 수 있어도, 원본 동선상 박스를 열거나 들고 나간 적은 없습니다."
+          ],
+          "privateKnowledge": [
+            "캡처가 만든 인상 손상을 강하게 의식한다."
+          ],
+          "suppressions": [
+            "원본을 빨리 제시하지 않아 의심이 길어진 점은 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-4:context:0",
+              "factText": "장민규는 정지 화면만으로는 오해가 가능하지만, 원본 동선상 박스를 열거나 들고 나간 적은 없다고 선을 긋는다.",
+              "tags": [
+                "context",
+                "denial",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박정호",
+                  "neutral": "경비원",
+                  "fullName": "박정호",
+                  "judgeRef": "경비원"
+                },
+                "time": {
+                  "exact": "08시 14분 무전과 6분 영상 구간",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "오배송 박스 이동 동선",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "6분 원본 영상과 처리대장을 보면 요청 시각, 이동 경로, 퇴실 시각이 모두 맞물립니다."
+          ],
+          "privateKnowledge": [
+            "이 사안만큼은 기록이 가장 명확하다고 본다."
+          ],
+          "suppressions": [
+            "오해를 막기 위한 사전 설명 부족은 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-4:evidence:0",
+              "factText": "장민규는 6분 원본 영상과 처리대장을 근거로 요청 시각, 이동 경로, 퇴실 시각이 모두 일치한다고 제시한다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박정호",
+                  "neutral": "경비원",
+                  "fullName": "박정호",
+                  "judgeRef": "경비원"
+                },
+                "time": {
+                  "exact": "08시 14분 무전과 6분 영상 구간",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "오배송 박스 이동 동선",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "grounded"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "제가 즉시 경비원 요청 사실을 공개하지 않아 오해가 길어진 측면은 있습니다. 그러나 의심이 사실이 되는 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "설명 지연이 있었지만 절도 의심과는 별개라고 본다."
+          ],
+          "suppressions": [
+            "유나에 대한 원망이 섞여 있다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-4:responsibility:0",
+              "factText": "장민규는 경비원 요청 사실을 곧바로 밝히지 않아 오해가 길어졌을 수는 있지만, 그것이 절도 의심을 사실로 만들진 않는다고 말한다.",
+              "tags": [
+                "responsibility",
+                "context",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박정호",
+                  "neutral": "경비원",
+                  "fullName": "박정호",
+                  "judgeRef": "경비원"
+                },
+                "time": {
+                  "exact": "08시 14분 무전과 6분 영상 구간",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "오배송 박스 이동 동선",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "assert"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "도둑 의심은 제 직업과 평판에 직접 타격입니다. 그래서 더 건조하게 말했지만, 사실 꽤 모욕적이었습니다."
+          ],
+          "privateKnowledge": [
+            "감정을 드러내지 않은 건 상처가 없어서가 아니다."
+          ],
+          "suppressions": [
+            "그 상처 때문에 다른 소문 전파에 더 매달렸다는 점은 별개로 접어둔다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-4:emotion:0",
+              "factText": "장민규는 도둑 의심이 자신의 직업과 평판에 직접 타격을 주는 모욕으로 남았다고 드러낸다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박정호",
+                  "neutral": "경비원",
+                  "fullName": "박정호",
+                  "judgeRef": "경비원"
+                },
+                "time": {
+                  "exact": "08시 14분 무전과 6분 영상 구간",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "오배송 박스 이동 동선",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "제 행동은 절도가 아니라 경비원 요청에 따른 오배송 박스 이동이었습니다. 그 점이 원본 영상으로 명확히 확인됩니다."
+          ],
+          "privateKnowledge": [
+            "이 사안은 기록으로 거의 완결되었다고 본다."
+          ],
+          "suppressions": [
+            "숨길 핵심이 거의 없다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-4:evidence:1",
+              "factText": "장민규는 자신의 행동이 절도가 아니라 경비원 요청에 따른 오배송 박스 이동이었고, 그 점이 원본 영상으로 명확히 확인된다고 정리한다.",
+              "tags": [
+                "evidence",
+                "responsibility",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "박정호",
+                  "neutral": "경비원",
+                  "fullName": "박정호",
+                  "judgeRef": "경비원"
+                },
+                "time": {
+                  "exact": "08시 14분 무전과 6분 영상 구간",
+                  "neutral": "그 시각",
+                  "period": "아침 시간대"
+                },
+                "evidence": {
+                  "exact": "원본 CCTV 6분 영상과 오배송 처리대장",
+                  "neutral": "그 원본 기록"
+                },
+                "channel": {
+                  "exact": "오배송 박스 이동 동선",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "assert",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "약속은 공개 게시 자제를 뜻했지, 기존 민원 표현을 사실확인 차원에서 전달하지 말자는 취지는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "사적이든 공개든 확인 전 지목을 줄이자는 취지였음을 안다."
+          ],
+          "suppressions": [
+            "관리사무소 확인 전 반복 전달했다는 사실을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-5:rule:0",
+              "factText": "장민규는 공개 게시만 자제하자는 약속이었다고 해석해, 민원 문구 재전달을 약속 위반에서 빼내려 한다.",
+              "tags": [
+                "rule",
+                "denial",
+                "quote"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "민원 문구 재인용과 확인 전 전달",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "저는 관리사무소 민원에 있는 문구를 인용한 겁니다. 성급했을 수는 있어도 약속 자체를 파기한 건 과장입니다."
+          ],
+          "privateKnowledge": [
+            "민원 문구 인용이라는 형식이 자신의 책임을 가볍게 해준다고 믿는다."
+          ],
+          "suppressions": [
+            "실제로는 사실처럼 받아들여지길 기대한 면을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-5:quote:0",
+              "factText": "장민규는 관리사무소 민원 문구를 인용했을 뿐이라며, 성급함은 인정해도 약속 파기는 아니라고 말한다.",
+              "tags": [
+                "quote",
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "민원 문구 재인용과 확인 전 전달",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "확인 절차를 끝내기 전에 말한 건 맞습니다. 다만 먼저 CCTV 캡처를 사적으로 돌린 쪽도 있었고, 저는 대응 차원이라는 인식이 있었습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 위반을 인정하면서도 선행 행위를 상대 탓으로 돌리고 싶다."
+          ],
+          "suppressions": [
+            "대응 차원이라는 말 뒤에 보복 심리가 숨어 있다는 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-5:admission:0",
+              "factText": "장민규는 확인 전 전달을 인정하지만, 자신은 캡처 유포에 대응했을 뿐이라는 식으로 약속 파기 책임을 분산하려 한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "민원 문구 재인용과 확인 전 전달",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "결국 저도 약속 취지를 지키지 못했습니다. 규정과 절차를 말하면서도, 실제로는 감정이 앞서 문구를 옮겼습니다."
+          ],
+          "privateKnowledge": [
+            "규정 인용이 스스로를 합리화하는 방패였다는 걸 안다."
+          ],
+          "suppressions": [
+            "체면 회복 욕구를 정면으로는 아직 덜 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-5:admission:1",
+              "factText": "장민규는 규정과 절차를 내세우면서도 실제로는 감정이 앞서 약속 취지를 어긴 채 문구를 옮겼다고 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "민원 문구 재인용과 확인 전 전달",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "confess"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "도둑 취급을 받은 뒤라 공개 비난 금지 약속보다 체면 회복이 더 급했습니다. 그게 판단을 흐렸습니다."
+          ],
+          "privateKnowledge": [
+            "얼굴을 세우려는 욕구가 절차를 눌렀다."
+          ],
+          "suppressions": [
+            "상대가 먼저 했다는 비교 논리는 더 이상 버티기 어렵다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-5:emotion:0",
+              "factText": "장민규는 도둑 취급 이후 체면 회복 욕구가 커져 공개 비난 금지 약속보다 즉각 반격을 택했다고 인정한다.",
+              "tags": [
+                "emotion",
+                "shame",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "민원 문구 재인용과 확인 전 전달",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "저도 관리사무소 확인 전 유나 씨를 특정하는 말을 퍼뜨려 약속을 깼습니다. 서로 절차보다 평판 싸움을 먼저 택한 셈입니다."
+          ],
+          "privateKnowledge": [
+            "상대의 위반과 별개로 자신의 절차 위반이 남는다고 안다."
+          ],
+          "suppressions": [
+            "숨길 핵심이 거의 없다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor02:b:tell:clause_recital",
+            "neighbor02:b:tell:timestamp_wall",
+            "neighbor02:b:tell:affect_flattening"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor02:b:d-5:admission:2",
+              "factText": "장민규는 관리사무소 확인 전 유나를 특정하는 말을 퍼뜨려 약속을 깼고, 결국 서로 절차보다 평판 싸움을 먼저 택했다고 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "서유나",
+                  "neutral": "상대방",
+                  "fullName": "서유나",
+                  "judgeRef": "유나 씨"
+                },
+                "time": {
+                  "exact": "지난 봄 약속 이후 이번 반상회 직후",
+                  "neutral": "그 이후",
+                  "period": "예전 약속 뒤"
+                },
+                "rule": {
+                  "exact": "관리사무소 확인 전 공개 비난 금지 약속",
+                  "neutral": "그 약속"
+                },
+                "channel": {
+                  "exact": "민원 문구 재인용과 확인 전 전달",
+                  "neutral": "그 전달들"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

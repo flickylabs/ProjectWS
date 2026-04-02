@@ -13,13 +13,65 @@ import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
 import { snapshotForSession, clearSessionSnapshot } from '../api/agentManager'
 import { registerSpouse01Data } from '../data/claimPolicies/spouse-01'
+import { registerSpouse02Data } from '../data/claimPolicies/spouse-02'
+import { registerSpouse03Data } from '../data/claimPolicies/spouse-03'
+import { registerSpouse04Data } from '../data/claimPolicies/spouse-04'
+import { registerSpouse05Data } from '../data/claimPolicies/spouse-05'
+import { registerSpouse06Data } from '../data/claimPolicies/spouse-06'
+import { registerSpouse09Data } from '../data/claimPolicies/spouse-09'
+import { registerSpouse10Data } from '../data/claimPolicies/spouse-10'
+import { registerSpouse11Data } from '../data/claimPolicies/spouse-11'
+import { registerSpouse12Data } from '../data/claimPolicies/spouse-12'
+import { registerSpouse07Data } from '../data/claimPolicies/spouse-07'
+import { registerSpouse08Data } from '../data/claimPolicies/spouse-08'
 import { registerFamily01Data } from '../data/claimPolicies/family-01'
+import { registerFamily02Data } from '../data/claimPolicies/family-02'
+import { registerFamily03Data } from '../data/claimPolicies/family-03'
+import { registerFamily04Data } from '../data/claimPolicies/family-04'
+import { registerFamily05Data } from '../data/claimPolicies/family-05'
+import { registerFamily06Data } from '../data/claimPolicies/family-06'
+import { registerFamily07Data } from '../data/claimPolicies/family-07'
+import { registerFamily08Data } from '../data/claimPolicies/family-08'
+import { registerFamily09Data } from '../data/claimPolicies/family-09'
+import { registerFamily10Data } from '../data/claimPolicies/family-10'
+import { registerFamily11Data } from '../data/claimPolicies/family-11'
+import { registerFamily12Data } from '../data/claimPolicies/family-12'
+import { registerFriend01Data } from '../data/claimPolicies/friend-01'
+import { registerFriend02Data } from '../data/claimPolicies/friend-02'
+import { registerFriend03Data } from '../data/claimPolicies/friend-03'
+import { registerFriend04Data } from '../data/claimPolicies/friend-04'
+import { registerFriend05Data } from '../data/claimPolicies/friend-05'
+import { registerFriend06Data } from '../data/claimPolicies/friend-06'
+import { registerFriend07Data } from '../data/claimPolicies/friend-07'
+import { registerFriend08Data } from '../data/claimPolicies/friend-08'
+import { registerFriend09Data } from '../data/claimPolicies/friend-09'
+import { registerFriend10Data } from '../data/claimPolicies/friend-10'
+import { registerFriend11Data } from '../data/claimPolicies/friend-11'
+import { registerFriend12Data } from '../data/claimPolicies/friend-12'
+import { registerNeighbor01Data } from '../data/claimPolicies/neighbor-01'
+import { registerNeighbor02Data } from '../data/claimPolicies/neighbor-02'
+import { registerNeighbor03Data } from '../data/claimPolicies/neighbor-03'
+import { registerNeighbor04Data } from '../data/claimPolicies/neighbor-04'
+import { registerNeighbor05Data } from '../data/claimPolicies/neighbor-05'
+import { registerNeighbor06Data } from '../data/claimPolicies/neighbor-06'
+import { registerNeighbor07Data } from '../data/claimPolicies/neighbor-07'
+import { registerNeighbor08Data } from '../data/claimPolicies/neighbor-08'
+import { registerNeighbor09Data } from '../data/claimPolicies/neighbor-09'
+import { registerNeighbor10Data } from '../data/claimPolicies/neighbor-10'
+import { registerNeighbor11Data } from '../data/claimPolicies/neighbor-11'
+import { registerNeighbor12Data } from '../data/claimPolicies/neighbor-12'
 import { aggregateReadiness } from '../engine/readinessEngine'
 import { resetTellTracker } from '../engine/tellValidator'
 import { getReadinessSets } from '../engine/evidenceChallengeEngine'
 import { createInitialMeterState, resolveQuestionEffect, getMeterEffects, type QuestionMeterState, type QuestionEffectResult } from '../engine/questionEffectEngine'
 import { evaluateEventTriggers, resetEventTriggerState, type GameEventTrigger, type TurnSnapshot } from '../engine/gameEventTriggerEngine'
 import { resetV3State } from '../engine/v3GameLoopLoader'
+import { resetV2State } from '../engine/v2DataLoader'
+import { resetSessionFatigueState } from '../engine/questionFatigueEngine'
+import { resetSessionInterjectionTracker } from '../engine/interjectionV2'
+import { resetPhase3Log } from '../engine/phase3LogCollector'
+import { resetMisconceptionState } from '../engine/misconceptionEngine'
+import { resetActivatedLinks } from '../engine/linkEdgeEngine'
 import type { QuestionType, EmotionTier, Stance } from '../types'
 
 const EMPTY_METRICS: ProcessMetrics = {
@@ -59,9 +111,12 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
     | { type: 'contradiction'; text: string; disputeId: string; target: PartyId }
     | null
   setPendingMinigame: (mg: GameStore['pendingMinigame']) => void
-  /** 끼어들기 대기 */
+  /** 끼어들기 대기 (legacy) */
   pendingInterjection: { party: PartyId; disputeId: string; text: string; followUp: string } | null
   setPendingInterjection: (v: GameStore['pendingInterjection']) => void
+  /** V2 끼어들기 대기 — GameEventModal에서 allow/block 선택 */
+  pendingInterjectionV2: import('../engine/interjectionV2').InterjectionOpportunityV2 | null
+  setPendingInterjectionV2: (v: GameStore['pendingInterjectionV2']) => void
   /** 심문 이력: party → disputeId → 질문 기록 */
   interrogationHistory: Record<string, Record<string, { questionTypes: string[]; turns: number[]; revealed: boolean }>>
   trackInterrogation: (party: 'a' | 'b', disputeId: string, questionType: string, turn: number) => void
@@ -72,9 +127,15 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** 리뉴얼: 성과 조건 상태 */
   readinessState: import('../types').ReadinessState | null
   updateReadiness: () => void
+  /** V2: Phase 3 feature flags — 스크립트 전환 롤아웃 제어 */
+  phase3Flags: { useBeatSelectorV2: boolean; useQuestionFatigueV2: boolean }
+  setPhase3Flags: (flags: Partial<GameStore['phase3Flags']>) => void
+  /** V2: Phase 3→6 프롬프트 브릿지 캐시 */
+  phase3PromptBridge: import('../engine/phase3LogCollector').Phase3PromptBridgeV2 | null
+  setPhase3PromptBridge: (bridge: GameStore['phase3PromptBridge']) => void
   /** V3: 질문 효과 미터 (파티별) */
   questionMeters: { a: QuestionMeterState; b: QuestionMeterState }
-  applyQuestionEffect: (questionType: QuestionType, party: 'a' | 'b', disputeId: string, stance: Stance, emotionTier: EmotionTier) => QuestionEffectResult | null
+  applyQuestionEffect: (questionType: QuestionType, party: 'a' | 'b', disputeId: string, stance: Stance, emotionTier: EmotionTier, options?: import('../engine/questionEffectEngine').ResolveQuestionEffectOptions) => QuestionEffectResult | null
   getQuestionMeterEffects: (party: 'a' | 'b') => { contradictionActive: boolean; leakWarning: boolean; leakCritical: boolean; trustWindowOpen: boolean }
   /** V3: 이벤트 로그 (UI 피드백용) */
   gameEventLog: GameEvent[]
@@ -133,6 +194,8 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     setPendingMinigame: (mg) => set({ pendingMinigame: mg }),
     pendingInterjection: null,
     setPendingInterjection: (v) => set({ pendingInterjection: v }),
+    pendingInterjectionV2: null,
+    setPendingInterjectionV2: (v) => set({ pendingInterjectionV2: v }),
 
     interrogationHistory: { a: {}, b: {} },
     trackInterrogation: (party, disputeId, questionType, turn) => set((prev) => {
@@ -190,17 +253,21 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
     },
 
     readinessState: null,
+    phase3Flags: { useBeatSelectorV2: true, useQuestionFatigueV2: true },
+    setPhase3Flags: (flags) => set((s) => ({ phase3Flags: { ...s.phase3Flags, ...flags } })),
+    phase3PromptBridge: null,
+    setPhase3PromptBridge: (bridge) => set({ phase3PromptBridge: bridge }),
     questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
     gameEventLog: [],
 
-    applyQuestionEffect: (questionType, party, disputeId, stance, emotionTier) => {
+    applyQuestionEffect: (questionType, party, disputeId, stance, emotionTier, options) => {
       const state = useGameStore.getState()
       const lieState = state.getLieState(party, disputeId)
       if (!lieState) return null
 
       const meter = state.questionMeters[party]
       const { result, updatedMeter } = resolveQuestionEffect(
-        questionType, party, disputeId, lieState, stance, emotionTier, meter,
+        questionType, party, disputeId, lieState, stance, emotionTier, meter, options,
       )
 
       // 미터 업데이트
@@ -395,10 +462,65 @@ export const useGameStore = create<GameStore>()(persist((...args) => {
       resetTellTracker()
       resetEventTriggerState()
       const caseKey2 = caseData.caseId?.replace(/^case-/, '') ?? ''
-      if (caseKey2) resetV3State(caseKey2)
+      if (caseKey2) {
+        resetV3State(caseKey2)
+        resetV2State(caseKey2)
+      }
+      resetSessionFatigueState()
+      resetSessionInterjectionTracker()
+      resetPhase3Log()
+      resetMisconceptionState()
+      resetActivatedLinks()
+      set({ phase3PromptBridge: null })
       const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
       if (caseKey === 'spouse-01') registerSpouse01Data()
+      if (caseKey === 'spouse-02') registerSpouse02Data()
+      if (caseKey === 'spouse-03') registerSpouse03Data()
+      if (caseKey === 'spouse-04') registerSpouse04Data()
+      if (caseKey === 'spouse-05') registerSpouse05Data()
+      if (caseKey === 'spouse-06') registerSpouse06Data()
+      if (caseKey === 'spouse-09') registerSpouse09Data()
+      if (caseKey === 'spouse-10') registerSpouse10Data()
+      if (caseKey === 'spouse-11') registerSpouse11Data()
+      if (caseKey === 'spouse-12') registerSpouse12Data()
+      if (caseKey === 'spouse-07') registerSpouse07Data()
+      if (caseKey === 'spouse-08') registerSpouse08Data()
       if (caseKey === 'family-01') registerFamily01Data()
+      if (caseKey === 'family-02') registerFamily02Data()
+      if (caseKey === 'family-03') registerFamily03Data()
+      if (caseKey === 'family-04') registerFamily04Data()
+      if (caseKey === 'family-05') registerFamily05Data()
+      if (caseKey === 'family-06') registerFamily06Data()
+      if (caseKey === 'family-07') registerFamily07Data()
+      if (caseKey === 'family-08') registerFamily08Data()
+      if (caseKey === 'family-09') registerFamily09Data()
+      if (caseKey === 'family-10') registerFamily10Data()
+      if (caseKey === 'family-11') registerFamily11Data()
+      if (caseKey === 'family-12') registerFamily12Data()
+      if (caseKey === 'friend-01') registerFriend01Data()
+      if (caseKey === 'friend-02') registerFriend02Data()
+      if (caseKey === 'friend-03') registerFriend03Data()
+      if (caseKey === 'friend-04') registerFriend04Data()
+      if (caseKey === 'friend-05') registerFriend05Data()
+      if (caseKey === 'friend-06') registerFriend06Data()
+      if (caseKey === 'friend-07') registerFriend07Data()
+      if (caseKey === 'friend-08') registerFriend08Data()
+      if (caseKey === 'friend-09') registerFriend09Data()
+      if (caseKey === 'friend-10') registerFriend10Data()
+      if (caseKey === 'friend-11') registerFriend11Data()
+      if (caseKey === 'friend-12') registerFriend12Data()
+      if (caseKey === 'neighbor-01') registerNeighbor01Data()
+      if (caseKey === 'neighbor-02') registerNeighbor02Data()
+      if (caseKey === 'neighbor-03') registerNeighbor03Data()
+      if (caseKey === 'neighbor-04') registerNeighbor04Data()
+      if (caseKey === 'neighbor-05') registerNeighbor05Data()
+      if (caseKey === 'neighbor-06') registerNeighbor06Data()
+      if (caseKey === 'neighbor-07') registerNeighbor07Data()
+      if (caseKey === 'neighbor-08') registerNeighbor08Data()
+      if (caseKey === 'neighbor-09') registerNeighbor09Data()
+      if (caseKey === 'neighbor-10') registerNeighbor10Data()
+      if (caseKey === 'neighbor-11') registerNeighbor11Data()
+      if (caseKey === 'neighbor-12') registerNeighbor12Data()
 
       // 리소스 초기화
       store.initResources()

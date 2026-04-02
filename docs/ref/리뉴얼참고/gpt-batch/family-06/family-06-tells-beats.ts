@@ -1,0 +1,560 @@
+export const family06TellsBeats = {
+  "caseId": "family-06",
+  "executableTells": {
+    "a": [
+      {
+        "id": "family06:a:tell:family_shame_frame",
+        "appliesWhen": [
+          "lying",
+          "defensive",
+          "emotional",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "가족 망신",
+          "밖에",
+          "집안",
+          "수습"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "불리한 메시지 유포 질문이 나오면 '그게 다 가족 망신 막으려고 한 거야'라고 목적을 먼저 강조해 행위를 축소한다."
+      },
+      {
+        "id": "family06:a:tell:ranked_scolding",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "첫째",
+          "둘째",
+          "셋째",
+          "그러니까"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "목소리가 높아지며 아들의 실수와 게시물 내용을 번호 매기듯 순서대로 나열해 반박 틈을 줄인다."
+      },
+      {
+        "id": "family06:a:tell:moral_redirect",
+        "appliesWhen": [
+          "emotional",
+          "lying",
+          "defensive",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "네가 먼저",
+          "그 전에",
+          "왜 밖에",
+          "먼저 시작"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "명예훼손 지적이 나오면 '네가 먼저 시작했잖아'라며 윤리 비난으로 논점을 돌린다."
+      }
+    ],
+    "b": [
+      {
+        "id": "family06:b:tell:caption_reframe",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "은유",
+          "직접 지칭",
+          "표현",
+          "비유"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "문제가 된 게시물은 '직접 지칭이 아니라 은유'였다고 반복하며 식별 가능성을 축소한다."
+      },
+      {
+        "id": "family06:b:tell:injured_prelude",
+        "appliesWhen": [
+          "emotional",
+          "hurt",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "또 나만",
+          "과한 사람",
+          "저만",
+          "상처"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "반박 전에 '또 나만 과한 사람 만들지'라고 먼저 상처받은 위치를 선점한다."
+      },
+      {
+        "id": "family06:b:tell:engagement_shield",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "조회수",
+          "저장",
+          "응원 DM",
+          "공감"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "궁지에 몰리면 조회수와 응원 DM을 언급하며 자신의 말이 사회적으로 정당했다고 방패 삼는다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "family06:beat:a:d-2:deny",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "제가 협찬사를 흔든 게 아니라, 애 상태가 지금 위험하니까 참고만 하시라 한 거예요. 그걸 왜 악의로만 봅니까.",
+      "behaviorHint": "턱을 들고 손바닥을 펴 보이며 말끝을 단단히 끊는다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-2:hedge",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "DM 몇 줄 보낸 건 맞죠. 그런데 끊으라고 지시한 것도 아니고, 번지기 전에 조심하자는 의미였어요.",
+      "behaviorHint": "시선을 비껴가며 문장 끝을 흐리고 '그 정도'라는 표현을 반복한다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-2:partial",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "캡처를 보낸 건 인정해요. 다만 그때는 2014년 일까지 다시 들춰질까 봐 먼저 막아야겠다는 생각뿐이었습니다.",
+      "behaviorHint": "한숨을 짧게 쉬고 목소리를 낮춘다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-2:blame",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "그 애가 집안 얘기를 밖에 안 던졌으면 제가 그렇게까지 연락할 일도 없었어요. 시작은 하준이 했잖아요.",
+      "behaviorHint": "손가락으로 책상을 두 번 두드리며 책임 방향을 되돌린다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-2:confession",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "결국 제가 협찬사랑 친척방, 교회방에까지 비난성 연락을 돌린 겁니다. 수습이라는 말로 줄일 수 없어요.",
+      "behaviorHint": "어깨가 한 번 꺼지고 시선이 아래로 떨어진다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-2:evidence_hit",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "원본이 그렇게 남아 있네요. '과거에도 문제를 만들었다'는 제 말이 상담이 아니라 흠집처럼 읽혔다는 건 부인 못 하겠습니다.",
+      "behaviorHint": "입술을 다물었다가 천천히 다시 연다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "family06:beat:a:d-4:deny",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "약속을 깬 건 제가 아니라 과거를 SNS로 꺼낸 쪽이에요. 저는 뒤정리하려고 설명한 겁니다.",
+      "behaviorHint": "몸을 앞으로 숙이며 상대 발언을 끊듯 받아친다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-4:hedge",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "쉼터 서류를 돌린 것도 아니고, 왜 그 글이 위험한지만 말했어요. 그걸 곧바로 무기화라고 하긴 좀 그렇죠.",
+      "behaviorHint": "손을 젓고 '직접은 아니었다'는 점을 강조한다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-4:partial",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "휴학기랑 예전 행동을 꺼낸 순간 선을 밟은 건 맞아요. 그래도 저는 관계를 끊자고 한 게 아니라 멈추라고 한 거였습니다.",
+      "behaviorHint": "고개를 끄덕이면서도 마지막 문장에서 목소리를 세운다.",
+      "applicableStates": [
+        "S2",
+        "S4"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-4:blame",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "하준이 먼저 빚이니 쉼터니 분위기를 열어버렸잖아요. 제가 과거를 건드린 건 방어였어요.",
+      "behaviorHint": "말을 빠르게 몰아붙이며 자기 정당화를 덧댄다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-4:confession",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "훈계처럼 포장했을 뿐, 저도 2014년 일을 현재 싸움의 무기로 썼습니다. 약속을 깬 당사자예요.",
+      "behaviorHint": "말끝에서 힘이 빠지고 손을 무릎 위에 내려놓는다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-4:evidence_hit",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "백업 기록까지 나오면 더 말 못 하죠. 서류 자체를 보내진 않았어도, 그 기억을 공격 재료로 다시 꺼낸 건 사실입니다.",
+      "behaviorHint": "잠깐 눈을 감았다 뜨며 체념한 듯 인정한다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "family06:beat:a:d-5:deny",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "협찬 끊긴 건 그 게시물 때문이지 제 전화 때문이 아니에요. 브랜드가 뭘 무서워했는지 다들 알잖아요.",
+      "behaviorHint": "팔짱을 끼고 '원인' 단어를 세게 눌러 말한다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-5:hedge",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "제가 불편함을 더했을 순 있어도 직접 원인이라고 하긴 과합니다. 이미 분쟁 리스크는 게시물에서 시작됐어요.",
+      "behaviorHint": "문장 앞은 낮추고 뒤는 단정적으로 밀어붙인다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-5:partial",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "메모를 보니 제 연락이 판단에 포함된 건 맞네요. 하지만 그 전에 하준이 공개적으로 불을 붙인 것도 사실입니다.",
+      "behaviorHint": "자료를 힐끗 보고 곧바로 책임 비율을 나눈다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-5:blame",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "저는 막아보려 한 사람이고, 하준은 밖에 던진 사람이에요. 원인 비율을 같게 놓을 순 없죠.",
+      "behaviorHint": "턱을 치켜세운 채 분리를 요구한다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-5:confession",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "제 경고 연락이 익명 PDF랑 겹치면서 브랜드에 '이 집은 계속 번지겠다'는 신호를 줬습니다. 협찬 중단 원인 중 하나가 맞아요.",
+      "behaviorHint": "입술을 깨물고 난 뒤 짧게 인정한다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "family06:beat:a:d-5:evidence_hit",
+      "caseId": "family-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "결정 시각이 그 뒤라는 건 못 비트네요. 제 전화가 그냥 수습이었다면 회사 메모에 그렇게까지 남지 않았겠죠.",
+      "behaviorHint": "자료 문구를 따라 읽듯 느리게 말한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "family06:beat:b:d-1:deny",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "실명도 없었고 그냥 비유였어요. 그걸 다 저격이라고 몰아가면 숨 막히죠.",
+      "behaviorHint": "어깨를 으쓱하며 말끝에 억울함을 묻힌다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-1:hedge",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "사진 조각이랑 태그가 좀 있었다고 해서 보통 사람이 바로 누군지 알겠어요? 너무 과하게 읽는 거잖아요.",
+      "behaviorHint": "짧게 웃듯 숨을 뱉고 되묻는다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-1:partial",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "알아본 사람이 생긴 건 인정해요. 근데 그때 제 마음은 폭로보다, 좀 제 상처를 봐달라는 쪽에 가까웠어요.",
+      "behaviorHint": "손끝을 만지작거리며 후반부에서 목소리가 잠긴다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-1:blame",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "동네가 좁고 엄마가 바로 반응해서 더 커진 거예요. 제가 올린 순간부터 전부 정해졌던 것처럼 말하진 말아 주세요.",
+      "behaviorHint": "고개를 젓고 문장 끝을 길게 끈다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-1:confession",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "결국 제 게시물은 가족이 특정될 수 있는 저격이었습니다. 실명만 안 쓰면 괜찮다는 식으로 스스로를 속였어요.",
+      "behaviorHint": "한 번 숨을 멈췄다가 낮은 톤으로 털어놓는다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-1:evidence_hit",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "아카이브 원본이 그렇게 붙어 있네요. 영정사진 조각이랑 체육관 태그가 한 묶음이었으면 식별 가능성은 제가 줄여 말한 겁니다.",
+      "behaviorHint": "시선을 원본 자료에 붙인 채 짧게 인정한다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-1"
+    },
+    {
+      "id": "family06:beat:b:d-3:deny",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "그 PDF는 제가 보낸 게 아니고, 출처도 몰라요. 저한테 뒤집어씌우는 건 너무 쉽죠.",
+      "behaviorHint": "양손을 벌리며 억울함을 먼저 꺼낸다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-3:hedge",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "맘카페 캡처만 봐서는 누가 올렸는지 모르잖아요. 제 연인이나 제 쪽 사람들이 했다는 식으로 가는 건 억울해요.",
+      "behaviorHint": "단어 사이를 띄엄띄엄 끊어가며 방어선을 친다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-3:partial",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "캡처만으로 단정 못 한다는 건 맞아요. 사실 외삼촌이 옛 스캔본을 갖고 있었다는 기억이 스치긴 했는데, 바로 말하진 못했어요.",
+      "behaviorHint": "마지막 문장에서 눈을 피한다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-3:blame",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "교회 쪽 공용 계정, 오래된 백업, 그런 건 엄마 쪽이 더 가까웠잖아요. 제가 침묵한 건 집안이 더 깨질까 봐서였어요.",
+      "behaviorHint": "속도를 높였다가 마지막 문장에서 급히 눌러 담는다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-3:confession",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "실제 유출 출발점은 외삼촌 병철 쪽 접근이었습니다. 저는 그 가능성을 떠올리고도 숨겨서 다른 쪽이 의심받게 했어요.",
+      "behaviorHint": "목을 한 번 가다듬고 사실만 짧게 말한다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-3:evidence_hit",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "헤더랑 로그가 저렇게 맞으면 더는 피해자 자리만 붙들 순 없네요. 병철 삼촌 얘기를 제가 먼저 꺼냈어야 했습니다.",
+      "behaviorHint": "말을 멈췄다가 체념하듯 고개를 끄덕인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "family06:beat:b:d-4:deny",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "저는 그냥 제 경험을 은유로 적은 거예요. 그걸 바로 약속 위반이라고 하면 너무 숨통이 없어요.",
+      "behaviorHint": "입꼬리를 굳힌 채 '은유'를 또렷하게 반복한다.",
+      "applicableStates": [
+        "S0"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-4:hedge",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "빚, 쉼터, 그런 단어를 직접 박은 것도 아니잖아요. 엄마가 주변에 제 과거를 말한 쪽이 훨씬 노골적이었어요.",
+      "behaviorHint": "손가락으로 허공에 따옴표를 그리듯 말한다.",
+      "applicableStates": [
+        "S1"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-4:partial",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "그래도 그 시절을 떠올리게 만든 건 맞죠. 표현이라고 믿고 싶었지만 약속 경계에 발을 올린 건 인정해요.",
+      "behaviorHint": "작게 고개를 끄덕이며 문장을 두 갈래로 나눈다.",
+      "applicableStates": [
+        "S2"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-4:blame",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "엄마가 먼저 제 휴학기랑 문제행동을 퍼뜨리지 않았으면 저도 이렇게까지 버티지 않았을 거예요.",
+      "behaviorHint": "손을 쥐었다 펴며 억눌린 분노를 드러낸다.",
+      "applicableStates": [
+        "S3"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-4:confession",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "저도 2014년 기록 비무기화 약속을 깼습니다. 상처를 말하는 척하면서 과거를 현재 싸움 무대로 끌어왔어요.",
+      "behaviorHint": "한 단어씩 끊어 말하며 인정한다.",
+      "applicableStates": [
+        "S5"
+      ]
+    },
+    {
+      "id": "family06:beat:b:d-4:evidence_hit",
+      "caseId": "family-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "원본 흐름을 보니까 '은유'라는 말이 너무 편한 방패였네요. 직접 문서를 안 올렸다는 걸로만 버티고 있었어요.",
+      "behaviorHint": "고개를 숙이고 짧게 웃은 뒤 바로 굳는다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-1"
+    }
+  ]
+}

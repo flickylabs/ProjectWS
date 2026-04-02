@@ -1,0 +1,5633 @@
+export const family10V2Atoms = {
+  "caseId": "family-10",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "민재는 금요일 밤에 오겠다고 해 놓고 또 약속을 깼어요.",
+            "그 말 믿고 저는 밤 준비를 다 앞당겼어요."
+          ],
+          "privateKnowledge": [
+            "원문에는 '되면 금요일 밤, 안 되면 토요일 아침'이라는 조건 문장이 함께 있었다.",
+            "밤새 준비하던 부담 때문에 나는 금요일 밤 부분만 사실상 확정 약속처럼 붙잡았다."
+          ],
+          "suppressions": [
+            "메시지 자체가 완전한 확정 약속은 아니었다.",
+            "민재도 금요일 밤 기대를 만들 만큼 애매하게 말했고, 나는 그 기대를 확정으로 굳혔다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-1:S0:atom:0",
+              "factText": "민재는 금요일 밤에 오겠다고 해 놓고 또 약속을 깼어요.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family10:a:d-1:S0:atom:1",
+              "factText": "그 말 믿고 저는 밤 준비를 다 앞당겼어요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 저는 그 문장을 금요일 밤 도착으로 이해할 수밖에 없었어요.",
+            "안 되면 아침이라는 말보다 먼저 꽂힌 건 금요일 밤이었어요."
+          ],
+          "privateKnowledge": [
+            "원문에는 '되면 금요일 밤, 안 되면 토요일 아침'이라는 조건 문장이 함께 있었다.",
+            "늦은 도착보다 '또 내가 다 맡는다'는 감정이 약속 파기로 번역되었다."
+          ],
+          "suppressions": [
+            "메시지 자체가 완전한 확정 약속은 아니었다.",
+            "금요일 밤 확정 약속은 아니었지만, 애매한 문장과 내 기대가 결합해 오해가 커졌다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-1:S1:atom:0",
+              "factText": "적어도 저는 그 문장을 금요일 밤 도착으로 이해할 수밖에 없었어요.",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-1:S1:atom:1",
+              "factText": "안 되면 아침이라는 말보다 먼저 꽂힌 건 금요일 밤이었어요.",
+              "tags": [
+                "context",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "원문에 조건이 있었던 건 맞아요.",
+            "그래도 금요일 밤 쪽으로 기대하게 보낸 건 사실이었어요."
+          ],
+          "privateKnowledge": [
+            "메시지 자체가 완전한 확정 약속은 아니었다.",
+            "밤새 준비하던 부담 때문에 나는 금요일 밤 부분만 사실상 확정 약속처럼 붙잡았다."
+          ],
+          "suppressions": [
+            "민재도 금요일 밤 기대를 만들 만큼 애매하게 말했고, 나는 그 기대를 확정으로 굳혔다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-1:S2:atom:0",
+              "factText": "원문에 조건이 있었던 건 맞아요.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:a:d-1:S2:atom:1",
+              "factText": "그래도 금요일 밤 쪽으로 기대하게 보낸 건 사실이었어요.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "확정 약속이라고 단정한 제 표현은 과했을 수 있어요.",
+            "하지만 애매한 말을 해 놓고 바로잡지 않은 책임은 민재에게 있어요."
+          ],
+          "privateKnowledge": [
+            "민재도 금요일 밤 기대를 만들 만큼 애매하게 말했고, 나는 그 기대를 확정으로 굳혔다.",
+            "늦은 도착보다 '또 내가 다 맡는다'는 감정이 약속 파기로 번역되었다."
+          ],
+          "suppressions": [
+            "금요일 밤 확정 약속은 아니었지만, 애매한 문장과 내 기대가 결합해 오해가 커졌다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-1:S3:atom:0",
+              "factText": "확정 약속이라고 단정한 제 표현은 과했을 수 있어요.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-1:S3:atom:1",
+              "factText": "하지만 애매한 말을 해 놓고 바로잡지 않은 책임은 민재에게 있어요.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "밤새 전 부치고 상차림 준비하던 제 입장에선 그 문장이 그냥 약속처럼 들렸어요.",
+            "그래서 저는 약속이 깨졌다는 감정부터 올라왔어요."
+          ],
+          "privateKnowledge": [
+            "늦은 도착보다 '또 내가 다 맡는다'는 감정이 약속 파기로 번역되었다.",
+            "민재도 금요일 밤 기대를 만들 만큼 애매하게 말했고, 나는 그 기대를 확정으로 굳혔다."
+          ],
+          "suppressions": [
+            "금요일 밤 확정 약속은 아니었지만, 애매한 문장과 내 기대가 결합해 오해가 커졌다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-1:S4:atom:0",
+              "factText": "밤새 전 부치고 상차림 준비하던 제 입장에선 그 문장이 그냥 약속처럼 들렸어요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-1:S4:atom:1",
+              "factText": "그래서 저는 약속이 깨졌다는 감정부터 올라왔어요.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "민재가 무조건 금요일 밤이라고 확정한 건 아니었어요.",
+            "다만 그렇게 기대하게 보낸 말과 제 해석이 겹쳐 오해가 굳어졌어요."
+          ],
+          "privateKnowledge": [
+            "금요일 밤 확정 약속은 아니었지만, 애매한 문장과 내 기대가 결합해 오해가 커졌다.",
+            "늦은 도착보다 '또 내가 다 맡는다'는 감정이 약속 파기로 번역되었다."
+          ],
+          "suppressions": [
+            "밤새 준비하던 부담 때문에 나는 금요일 밤 부분만 사실상 확정 약속처럼 붙잡았다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-1:S5:atom:0",
+              "factText": "민재가 무조건 금요일 밤이라고 확정한 건 아니었어요.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:a:d-1:S5:atom:1",
+              "factText": "다만 그렇게 기대하게 보낸 말과 제 해석이 겹쳐 오해가 굳어졌어요.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "민재는 늦게 알렸어요.",
+            "밤 다 돼서야 아침에 온다고 하니 제가 준비를 줄일 틈이 없었죠."
+          ],
+          "privateKnowledge": [
+            "민재의 늦은 통보가 핵심이지만, 내 장보기 규모도 그 전에 이미 커지고 있었다.",
+            "나는 내 노동을 줄일 마지막 기회를 놓쳤다는 점에 특히 분노하고 있다."
+          ],
+          "suppressions": [
+            "민재에게도 일과 교통 사정은 있었다.",
+            "출발 실패보다 22시 41분 통보가 나를 더 크게 자극했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-2:S0:atom:0",
+              "factText": "민재는 늦게 알렸어요.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family10:a:d-2:S0:atom:1",
+              "factText": "밤 다 돼서야 아침에 온다고 하니 제가 준비를 줄일 틈이 없었죠.",
+              "tags": [
+                "emotion",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 장보기 끝나기 전엔 말할 수 있었어요.",
+            "연락이 몇 시간만 빨랐어도 준비 규모를 달리했을 겁니다."
+          ],
+          "privateKnowledge": [
+            "민재의 늦은 통보가 핵심이지만, 내 장보기 규모도 그 전에 이미 커지고 있었다.",
+            "새벽 준비를 혼자 떠안는다는 감각이 연락 지연을 배신처럼 키웠다."
+          ],
+          "suppressions": [
+            "민재에게도 일과 교통 사정은 있었다.",
+            "민재는 더 일찍 알릴 수 있었고, 그 지연이 내 부담을 증폭시킨 것은 사실이다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-2:S1:atom:0",
+              "factText": "적어도 장보기 끝나기 전엔 말할 수 있었어요.",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-2:S1:atom:1",
+              "factText": "연락이 몇 시간만 빨랐어도 준비 규모를 달리했을 겁니다.",
+              "tags": [
+                "context",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "교통이나 일 사정이 바뀔 수는 있어요.",
+            "그래도 늦은 통보 자체는 사실이에요."
+          ],
+          "privateKnowledge": [
+            "민재에게도 일과 교통 사정은 있었다.",
+            "나는 내 노동을 줄일 마지막 기회를 놓쳤다는 점에 특히 분노하고 있다."
+          ],
+          "suppressions": [
+            "출발 실패보다 22시 41분 통보가 나를 더 크게 자극했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-2:S2:atom:0",
+              "factText": "교통이나 일 사정이 바뀔 수는 있어요.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:a:d-2:S2:atom:1",
+              "factText": "그래도 늦은 통보 자체는 사실이에요.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "핵심은 못 온 게 아니라 22시 41분까지 미룬 거예요.",
+            "그 몇 시간이 저한텐 노동을 줄일 마지막 시간이었어요."
+          ],
+          "privateKnowledge": [
+            "출발 실패보다 22시 41분 통보가 나를 더 크게 자극했다.",
+            "새벽 준비를 혼자 떠안는다는 감각이 연락 지연을 배신처럼 키웠다."
+          ],
+          "suppressions": [
+            "민재는 더 일찍 알릴 수 있었고, 그 지연이 내 부담을 증폭시킨 것은 사실이다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-2:S3:atom:0",
+              "factText": "핵심은 못 온 게 아니라 22시 41분까지 미룬 거예요.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-2:S3:atom:1",
+              "factText": "그 몇 시간이 저한텐 노동을 줄일 마지막 시간이었어요.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "새벽 준비를 혼자 하던 사람 입장에선 그 한 통이 너무 늦었어요.",
+            "연락 지연이 버려졌다는 감정까지 만들었어요."
+          ],
+          "privateKnowledge": [
+            "새벽 준비를 혼자 떠안는다는 감각이 연락 지연을 배신처럼 키웠다.",
+            "출발 실패보다 22시 41분 통보가 나를 더 크게 자극했다."
+          ],
+          "suppressions": [
+            "민재는 더 일찍 알릴 수 있었고, 그 지연이 내 부담을 증폭시킨 것은 사실이다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-2:S4:atom:0",
+              "factText": "새벽 준비를 혼자 하던 사람 입장에선 그 한 통이 너무 늦었어요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-2:S4:atom:1",
+              "factText": "연락 지연이 버려졌다는 감정까지 만들었어요.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "민재가 금요일 저녁 출발이 어렵다는 걸 더 일찍 알고도 늦게 알린 건 맞습니다.",
+            "그게 이번 다툼의 가장 큰 폭발점이었어요."
+          ],
+          "privateKnowledge": [
+            "민재는 더 일찍 알릴 수 있었고, 그 지연이 내 부담을 증폭시킨 것은 사실이다.",
+            "새벽 준비를 혼자 떠안는다는 감각이 연락 지연을 배신처럼 키웠다."
+          ],
+          "suppressions": [
+            "나는 내 노동을 줄일 마지막 기회를 놓쳤다는 점에 특히 분노하고 있다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-2:S5:atom:0",
+              "factText": "민재가 금요일 저녁 출발이 어렵다는 걸 더 일찍 알고도 늦게 알린 건 맞습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:a:d-2:S5:atom:1",
+              "factText": "그게 이번 다툼의 가장 큰 폭발점이었어요.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "장보기를 그렇게까지 키운 건 아니에요.",
+            "명절이면 원래 전, 과일, 고기 정도는 기본으로 더 챙기게 됩니다."
+          ],
+          "privateKnowledge": [
+            "추가 주문과 메뉴 확장은 민재의 최종 통보보다 앞선 저녁 6시 무렵 이미 이루어졌다.",
+            "상차림이 허전해 보이거나 또 내가 덜 준비한 사람처럼 보일까 봐 품목을 늘렸다."
+          ],
+          "suppressions": [
+            "과일, 고기, 전 종류, 반찬가게 주문을 더한 것은 맞다.",
+            "민재의 늦은 통보가 내 불안을 키웠지만, 비용 항목을 다시 합의한 적은 없다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:a:tell:labor_rollcall",
+            "family10:a:tell:scope_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-3:S0:atom:0",
+              "factText": "장보기를 그렇게까지 키운 건 아니에요.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family10:a:d-3:S0:atom:1",
+              "factText": "명절이면 원래 전, 과일, 고기 정도는 기본으로 더 챙기게 됩니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "조금 보탠 건 있어도 따로 다시 합의할 정도는 아니었어요.",
+            "가족 먹을 걸 챙긴 걸 메뉴 확대라고까지 보긴 어렵죠."
+          ],
+          "privateKnowledge": [
+            "추가 주문과 메뉴 확장은 민재의 최종 통보보다 앞선 저녁 6시 무렵 이미 이루어졌다.",
+            "내 노동이 과소평가될까 봐 메뉴 규모로 성의를 증명하려 했다."
+          ],
+          "suppressions": [
+            "과일, 고기, 전 종류, 반찬가게 주문을 더한 것은 맞다.",
+            "나는 메뉴와 장보기를 키우고도 민재와 비용 합의를 다시 하지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:a:tell:labor_rollcall",
+            "family10:a:tell:scope_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-3:S1:atom:0",
+              "factText": "조금 보탠 건 있어도 따로 다시 합의할 정도는 아니었어요.",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-3:S1:atom:1",
+              "factText": "가족 먹을 걸 챙긴 걸 메뉴 확대라고까지 보긴 어렵죠.",
+              "tags": [
+                "context",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "과일이랑 고기, 전 종류를 조금 늘린 건 맞아요.",
+            "차례상, 가족 식사, 친척 간식이 한꺼번에 겹쳐서 그랬어요."
+          ],
+          "privateKnowledge": [
+            "과일, 고기, 전 종류, 반찬가게 주문을 더한 것은 맞다.",
+            "상차림이 허전해 보이거나 또 내가 덜 준비한 사람처럼 보일까 봐 품목을 늘렸다."
+          ],
+          "suppressions": [
+            "민재의 늦은 통보가 내 불안을 키웠지만, 비용 항목을 다시 합의한 적은 없다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:a:tell:labor_rollcall",
+            "family10:a:tell:scope_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-3:S2:atom:0",
+              "factText": "과일이랑 고기, 전 종류를 조금 늘린 건 맞아요.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:a:d-3:S2:atom:1",
+              "factText": "차례상, 가족 식사, 친척 간식이 한꺼번에 겹쳐서 그랬어요.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "제가 더 산 건 맞지만 민재가 늦게 알려 현장에서 더 챙길 수밖에 없었습니다.",
+            "혼자 비어 보이면 결국 제가 다 감당해야 했어요."
+          ],
+          "privateKnowledge": [
+            "민재의 늦은 통보가 내 불안을 키웠지만, 비용 항목을 다시 합의한 적은 없다.",
+            "내 노동이 과소평가될까 봐 메뉴 규모로 성의를 증명하려 했다."
+          ],
+          "suppressions": [
+            "나는 메뉴와 장보기를 키우고도 민재와 비용 합의를 다시 하지 않았다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:a:tell:labor_rollcall",
+            "family10:a:tell:scope_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-3:S3:atom:0",
+              "factText": "제가 더 산 건 맞지만 민재가 늦게 알려 현장에서 더 챙길 수밖에 없었습니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-3:S3:atom:1",
+              "factText": "혼자 비어 보이면 결국 제가 다 감당해야 했어요.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 안 채우면 또 허전한 상이 될까 봐 손이 커졌어요.",
+            "불안해서 범위를 넓혔고, 그걸 나중에 정산 근거처럼 붙잡았습니다."
+          ],
+          "privateKnowledge": [
+            "내 노동이 과소평가될까 봐 메뉴 규모로 성의를 증명하려 했다.",
+            "민재의 늦은 통보가 내 불안을 키웠지만, 비용 항목을 다시 합의한 적은 없다."
+          ],
+          "suppressions": [
+            "나는 메뉴와 장보기를 키우고도 민재와 비용 합의를 다시 하지 않았다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-3:S4:atom:0",
+              "factText": "제가 안 채우면 또 허전한 상이 될까 봐 손이 커졌어요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-3:S4:atom:1",
+              "factText": "불안해서 범위를 넓혔고, 그걸 나중에 정산 근거처럼 붙잡았습니다.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "처음 계획보다 메뉴와 장보기를 키웠고, 그걸 민재와 비용 항목별로 다시 합의하지 않았습니다.",
+            "그 부분은 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "나는 메뉴와 장보기를 키우고도 민재와 비용 합의를 다시 하지 않았다.",
+            "내 노동이 과소평가될까 봐 메뉴 규모로 성의를 증명하려 했다."
+          ],
+          "suppressions": [
+            "상차림이 허전해 보이거나 또 내가 덜 준비한 사람처럼 보일까 봐 품목을 늘렸다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-3:S5:atom:0",
+              "factText": "처음 계획보다 메뉴와 장보기를 키웠고, 그걸 민재와 비용 항목별로 다시 합의하지 않았습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:a:d-3:S5:atom:1",
+              "factText": "그 부분은 제 책임입니다.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "명절 직전에 20만원을 보내면 재료비 보탠다는 뜻으로 받아들일 수밖에 없죠.",
+            "제가 다 쓰고 있는데 그 돈마저 아니라면 더 억울해집니다."
+          ],
+          "privateKnowledge": [
+            "20만원은 어머니 계좌로 들어갔고 답장도 '용돈'이었다.",
+            "내 돈과 노동이 먼저 들어간 상황이라 그 송금을 분담의 신호로 붙잡고 싶었다."
+          ],
+          "suppressions": [
+            "사전에 재료비 분담금으로 합의된 금액은 아니었다.",
+            "민재가 용돈과 재료비를 명확히 분리해 말하지 않아 내가 오해를 굳혔다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:a:tell:scope_blur",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-4:S0:atom:0",
+              "factText": "명절 직전에 20만원을 보내면 재료비 보탠다는 뜻으로 받아들일 수밖에 없죠.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family10:a:d-4:S0:atom:1",
+              "factText": "제가 다 쓰고 있는데 그 돈마저 아니라면 더 억울해집니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 분담 의사가 있는 신호라고는 봤어요.",
+            "용돈만이라고 들은 적은 없었습니다."
+          ],
+          "privateKnowledge": [
+            "20만원은 어머니 계좌로 들어갔고 답장도 '용돈'이었다.",
+            "정산 문제를 노동 인정 문제와 한 덩어리로 만들면서 돈 의미까지 키웠다."
+          ],
+          "suppressions": [
+            "사전에 재료비 분담금으로 합의된 금액은 아니었다.",
+            "그 20만원은 용돈에 가까웠고, 내가 재료비 분담처럼 해석해 내 부담을 정당화했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:a:tell:scope_blur",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-4:S1:atom:0",
+              "factText": "적어도 분담 의사가 있는 신호라고는 봤어요.",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-4:S1:atom:1",
+              "factText": "용돈만이라고 들은 적은 없었습니다.",
+              "tags": [
+                "context",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "어머니 계좌로 간 건 맞아요.",
+            "그래도 명절 이틀 전 시점이라 저는 재료비가 일부라도 섞인다고 받아들였습니다."
+          ],
+          "privateKnowledge": [
+            "사전에 재료비 분담금으로 합의된 금액은 아니었다.",
+            "내 돈과 노동이 먼저 들어간 상황이라 그 송금을 분담의 신호로 붙잡고 싶었다."
+          ],
+          "suppressions": [
+            "민재가 용돈과 재료비를 명확히 분리해 말하지 않아 내가 오해를 굳혔다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:a:tell:scope_blur",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-4:S2:atom:0",
+              "factText": "어머니 계좌로 간 건 맞아요.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:a:d-4:S2:atom:1",
+              "factText": "그래도 명절 이틀 전 시점이라 저는 재료비가 일부라도 섞인다고 받아들였습니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "제가 오해한 건 맞아도 민재가 용돈과 재료비를 분리해 말하지 않아 그런 겁니다.",
+            "노동량과 정산이 한꺼번에 제 몫이 되니까 더 그렇게 봤어요."
+          ],
+          "privateKnowledge": [
+            "민재가 용돈과 재료비를 명확히 분리해 말하지 않아 내가 오해를 굳혔다.",
+            "정산 문제를 노동 인정 문제와 한 덩어리로 만들면서 돈 의미까지 키웠다."
+          ],
+          "suppressions": [
+            "그 20만원은 용돈에 가까웠고, 내가 재료비 분담처럼 해석해 내 부담을 정당화했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:a:tell:scope_blur",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-4:S3:atom:0",
+              "factText": "제가 오해한 건 맞아도 민재가 용돈과 재료비를 분리해 말하지 않아 그런 겁니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-4:S3:atom:1",
+              "factText": "노동량과 정산이 한꺼번에 제 몫이 되니까 더 그렇게 봤어요.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "밤새 제 돈과 몸이 다 들어간 상황에선 그 20만원이라도 분담의 표시라고 붙잡고 싶었어요.",
+            "그 마음이 돈 의미를 더 크게 만들었습니다."
+          ],
+          "privateKnowledge": [
+            "정산 문제를 노동 인정 문제와 한 덩어리로 만들면서 돈 의미까지 키웠다.",
+            "민재가 용돈과 재료비를 명확히 분리해 말하지 않아 내가 오해를 굳혔다."
+          ],
+          "suppressions": [
+            "그 20만원은 용돈에 가까웠고, 내가 재료비 분담처럼 해석해 내 부담을 정당화했다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:scope_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-4:S4:atom:0",
+              "factText": "밤새 제 돈과 몸이 다 들어간 상황에선 그 20만원이라도 분담의 표시라고 붙잡고 싶었어요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-4:S4:atom:1",
+              "factText": "그 마음이 돈 의미를 더 크게 만들었습니다.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "그 20만원은 사전에 합의된 재료비 분담금이 아니라 어머니 용돈이었습니다.",
+            "제가 제 부담을 설명하려고 그 의미를 분담금 쪽으로 끌고 간 겁니다."
+          ],
+          "privateKnowledge": [
+            "그 20만원은 용돈에 가까웠고, 내가 재료비 분담처럼 해석해 내 부담을 정당화했다.",
+            "정산 문제를 노동 인정 문제와 한 덩어리로 만들면서 돈 의미까지 키웠다."
+          ],
+          "suppressions": [
+            "내 돈과 노동이 먼저 들어간 상황이라 그 송금을 분담의 신호로 붙잡고 싶었다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:scope_blur"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-4:S5:atom:0",
+              "factText": "그 20만원은 사전에 합의된 재료비 분담금이 아니라 어머니 용돈이었습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:a:d-4:S5:atom:1",
+              "factText": "제가 제 부담을 설명하려고 그 의미를 분담금 쪽으로 끌고 간 겁니다.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "작년 원칙은 제가 거의 지키려 했고 무너진 건 민재 쪽 때문입니다.",
+            "늦은 통보만 없었어도 이렇게까지 안 꼬였어요."
+          ],
+          "privateKnowledge": [
+            "올해는 작년 역할표를 다시 업데이트하지 않았고 메뉴·비용 변경도 따로 남기지 않았다.",
+            "또 혼자 남겨졌다는 감정 때문에 내 쪽 누락보다 민재의 지연을 더 크게 잡았다."
+          ],
+          "suppressions": [
+            "나도 비용 항목과 메뉴 변경을 규칙대로 공유하지 않았다.",
+            "민재는 통보를 늦췄고 나는 준비 규모를 바꾸고도 알리지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-5:S0:atom:0",
+              "factText": "작년 원칙은 제가 거의 지키려 했고 무너진 건 민재 쪽 때문입니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family10:a:d-5:S0:atom:1",
+              "factText": "늦은 통보만 없었어도 이렇게까지 안 꼬였어요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "완벽하진 않아도 저는 현장에서 맞추려 했습니다.",
+            "문제의 시작은 민재가 시간을 못 박지 않은 데 있었어요."
+          ],
+          "privateKnowledge": [
+            "올해는 작년 역할표를 다시 업데이트하지 않았고 메뉴·비용 변경도 따로 남기지 않았다.",
+            "이번 싸움은 사실만이 아니라 반복 패턴에 대한 서운함이 폭발한 결과다."
+          ],
+          "suppressions": [
+            "나도 비용 항목과 메뉴 변경을 규칙대로 공유하지 않았다.",
+            "올해 명절 분담 원칙은 민재와 나 둘 다 제대로 지키지 못했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-5:S1:atom:0",
+              "factText": "완벽하진 않아도 저는 현장에서 맞추려 했습니다.",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-5:S1:atom:1",
+              "factText": "문제의 시작은 민재가 시간을 못 박지 않은 데 있었어요.",
+              "tags": [
+                "context",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "올해 역할표를 다시 적어 두진 못했어요.",
+            "그래도 저는 실제 준비를 하면서 원칙을 살리려 했습니다."
+          ],
+          "privateKnowledge": [
+            "나도 비용 항목과 메뉴 변경을 규칙대로 공유하지 않았다.",
+            "또 혼자 남겨졌다는 감정 때문에 내 쪽 누락보다 민재의 지연을 더 크게 잡았다."
+          ],
+          "suppressions": [
+            "민재는 통보를 늦췄고 나는 준비 규모를 바꾸고도 알리지 않았다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-5:S2:atom:0",
+              "factText": "올해 역할표를 다시 적어 두진 못했어요.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:a:d-5:S2:atom:1",
+              "factText": "그래도 저는 실제 준비를 하면서 원칙을 살리려 했습니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "둘 다 놓친 부분은 있지만 저는 메뉴와 비용을 현장에서 메운 쪽이고, 민재는 통보를 늦춘 쪽입니다.",
+            "책임이 완전히 반반은 아니라고 봅니다."
+          ],
+          "privateKnowledge": [
+            "민재는 통보를 늦췄고 나는 준비 규모를 바꾸고도 알리지 않았다.",
+            "이번 싸움은 사실만이 아니라 반복 패턴에 대한 서운함이 폭발한 결과다."
+          ],
+          "suppressions": [
+            "올해 명절 분담 원칙은 민재와 나 둘 다 제대로 지키지 못했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-5:S3:atom:0",
+              "factText": "둘 다 놓친 부분은 있지만 저는 메뉴와 비용을 현장에서 메운 쪽이고, 민재는 통보를 늦춘 쪽입니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-5:S3:atom:1",
+              "factText": "책임이 완전히 반반은 아니라고 봅니다.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "또 혼자 남겨졌다는 느낌이 올라와서 제가 어긴 부분은 뒤로 미뤘어요.",
+            "사실 관계보다 서운함을 먼저 붙들었습니다."
+          ],
+          "privateKnowledge": [
+            "이번 싸움은 사실만이 아니라 반복 패턴에 대한 서운함이 폭발한 결과다.",
+            "민재는 통보를 늦췄고 나는 준비 규모를 바꾸고도 알리지 않았다."
+          ],
+          "suppressions": [
+            "올해 명절 분담 원칙은 민재와 나 둘 다 제대로 지키지 못했다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-5:S4:atom:0",
+              "factText": "또 혼자 남겨졌다는 느낌이 올라와서 제가 어긴 부분은 뒤로 미뤘어요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:a:d-5:S4:atom:1",
+              "factText": "사실 관계보다 서운함을 먼저 붙들었습니다.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "민재는 통보를 늦췄고 저는 메뉴·비용 변경을 공유하지 않았습니다.",
+            "결국 올해는 작년 역할표 원칙을 둘 다 제대로 못 지켰습니다."
+          ],
+          "privateKnowledge": [
+            "올해 명절 분담 원칙은 민재와 나 둘 다 제대로 지키지 못했다.",
+            "이번 싸움은 사실만이 아니라 반복 패턴에 대한 서운함이 폭발한 결과다."
+          ],
+          "suppressions": [
+            "또 혼자 남겨졌다는 감정 때문에 내 쪽 누락보다 민재의 지연을 더 크게 잡았다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:a:tell:hurt_hook",
+            "family10:a:tell:labor_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:a:d-5:S5:atom:0",
+              "factText": "민재는 통보를 늦췄고 저는 메뉴·비용 변경을 공유하지 않았습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:a:d-5:S5:atom:1",
+              "factText": "결국 올해는 작년 역할표 원칙을 둘 다 제대로 못 지켰습니다.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유민재",
+                  "judgeRef": "동생",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "확정 약속한 적 없습니다.",
+            "애초에 되면 금요일 밤이고 안 되면 토요일 아침이었어요."
+          ],
+          "privateKnowledge": [
+            "내가 보낸 문장은 조건부였지만 금요일 밤 기대를 크게 남기는 표현이었다.",
+            "약속을 못 지키는 동생처럼 보이기 싫어 가능한 쪽을 더 크게 말했다."
+          ],
+          "suppressions": [
+            "잘린 캡처만 보면 내가 확정 약속한 듯 보일 수 있다.",
+            "조건부였어도 내가 기대를 정리하지 않아 누나가 확정처럼 받아들일 여지를 남겼다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-1:S0:atom:0",
+              "factText": "확정 약속한 적 없습니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family10:b:d-1:S0:atom:1",
+              "factText": "애초에 되면 금요일 밤이고 안 되면 토요일 아침이었어요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "금요일 밤을 우선 본 거지 단정한 게 아니에요.",
+            "상황이 안 되면 아침이라고 이미 붙여 놨습니다."
+          ],
+          "privateKnowledge": [
+            "내가 보낸 문장은 조건부였지만 금요일 밤 기대를 크게 남기는 표현이었다.",
+            "실망을 미리 인정하는 말이 무서워 설명을 미뤘다."
+          ],
+          "suppressions": [
+            "잘린 캡처만 보면 내가 확정 약속한 듯 보일 수 있다.",
+            "확정 약속은 아니었지만, 내가 금요일 밤처럼 기대하게 말해 놓고 수정도 늦게 했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-1:S1:atom:0",
+              "factText": "금요일 밤을 우선 본 거지 단정한 게 아니에요.",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-1:S1:atom:1",
+              "factText": "상황이 안 되면 아침이라고 이미 붙여 놨습니다.",
+              "tags": [
+                "context",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "잘린 캡처만 보면 제가 확정한 것처럼 보일 수는 있어요.",
+            "원문은 조건부였습니다."
+          ],
+          "privateKnowledge": [
+            "잘린 캡처만 보면 내가 확정 약속한 듯 보일 수 있다.",
+            "약속을 못 지키는 동생처럼 보이기 싫어 가능한 쪽을 더 크게 말했다."
+          ],
+          "suppressions": [
+            "조건부였어도 내가 기대를 정리하지 않아 누나가 확정처럼 받아들일 여지를 남겼다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-1:S2:atom:0",
+              "factText": "잘린 캡처만 보면 제가 확정한 것처럼 보일 수는 있어요.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:b:d-1:S2:atom:1",
+              "factText": "원문은 조건부였습니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "조건부 문장이었는데 누나가 확정 약속처럼 받아들였어요.",
+            "저도 그 기대를 바로 끊지는 못했습니다."
+          ],
+          "privateKnowledge": [
+            "조건부였어도 내가 기대를 정리하지 않아 누나가 확정처럼 받아들일 여지를 남겼다.",
+            "실망을 미리 인정하는 말이 무서워 설명을 미뤘다."
+          ],
+          "suppressions": [
+            "확정 약속은 아니었지만, 내가 금요일 밤처럼 기대하게 말해 놓고 수정도 늦게 했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-1:S3:atom:0",
+              "factText": "조건부 문장이었는데 누나가 확정 약속처럼 받아들였어요.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-1:S3:atom:1",
+              "factText": "저도 그 기대를 바로 끊지는 못했습니다.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "또 못 지키는 동생처럼 보일까 봐 가능성 있는 쪽을 더 크게 말했습니다.",
+            "그게 결국 약속처럼 남은 건 제 잘못도 있어요."
+          ],
+          "privateKnowledge": [
+            "실망을 미리 인정하는 말이 무서워 설명을 미뤘다.",
+            "조건부였어도 내가 기대를 정리하지 않아 누나가 확정처럼 받아들일 여지를 남겼다."
+          ],
+          "suppressions": [
+            "확정 약속은 아니었지만, 내가 금요일 밤처럼 기대하게 말해 놓고 수정도 늦게 했다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-1:S4:atom:0",
+              "factText": "또 못 지키는 동생처럼 보일까 봐 가능성 있는 쪽을 더 크게 말했습니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-1:S4:atom:1",
+              "factText": "그게 결국 약속처럼 남은 건 제 잘못도 있어요.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "무조건 금요일 밤이라고 한 건 아니었습니다.",
+            "하지만 금요일 밤처럼 기대하게 말해 놓고 수정도 늦게 해서 오해를 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "확정 약속은 아니었지만, 내가 금요일 밤처럼 기대하게 말해 놓고 수정도 늦게 했다.",
+            "실망을 미리 인정하는 말이 무서워 설명을 미뤘다."
+          ],
+          "suppressions": [
+            "약속을 못 지키는 동생처럼 보이기 싫어 가능한 쪽을 더 크게 말했다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-1:S5:atom:0",
+              "factText": "무조건 금요일 밤이라고 한 건 아니었습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:b:d-1:S5:atom:1",
+              "factText": "하지만 금요일 밤처럼 기대하게 말해 놓고 수정도 늦게 해서 오해를 키웠습니다.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "fallback": "토요일 아침",
+                  "neutral": "그 시점",
+                  "exact": "금요일 밤"
+                },
+                "evidence": {
+                  "original": "가족 단톡 원본",
+                  "neutral": "그 메시지",
+                  "exact": "잘린 가족 단톡 캡처"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "그때까지도 금요일 밤 가능성을 보고 있었어요.",
+            "조금 늦은 거지 일부러 숨긴 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "18시 08분 무렵에는 금요일 밤 출발이 어렵다는 걸 사실상 알고 있었다.",
+            "또 실망을 준다는 말을 바로 보내기 싫어서 판단을 끌었다."
+          ],
+          "suppressions": [
+            "늦은 저녁까지 연락을 미룬 점은 부인하기 어렵다.",
+            "교통과 거래처 핑계를 먼저 대며 통보 시각 문제를 뒤로 뺐다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-2:S0:atom:0",
+              "factText": "그때까지도 금요일 밤 가능성을 보고 있었어요.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family10:b:d-2:S0:atom:1",
+              "factText": "조금 늦은 거지 일부러 숨긴 건 아닙니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "상황이 정리된 뒤 바로 말한 편이에요.",
+            "교통까지 봐야 해서 확답이 늦었습니다."
+          ],
+          "privateKnowledge": [
+            "18시 08분 무렵에는 금요일 밤 출발이 어렵다는 걸 사실상 알고 있었다.",
+            "무책임한 동생 이미지가 겁나서 확정 문장을 늦췄다."
+          ],
+          "suppressions": [
+            "늦은 저녁까지 연락을 미룬 점은 부인하기 어렵다.",
+            "나는 아침 출발 가능성이 커진 걸 알고도 22시 41분까지 알리지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-2:S1:atom:0",
+              "factText": "상황이 정리된 뒤 바로 말한 편이에요.",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-2:S1:atom:1",
+              "factText": "교통까지 봐야 해서 확답이 늦었습니다.",
+              "tags": [
+                "context",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "오후 늦게 아침 출발 쪽으로 기운 건 맞아요.",
+            "그래도 끝까지 밤 출발 가능성을 보느라 바로 못 보냈습니다."
+          ],
+          "privateKnowledge": [
+            "늦은 저녁까지 연락을 미룬 점은 부인하기 어렵다.",
+            "또 실망을 준다는 말을 바로 보내기 싫어서 판단을 끌었다."
+          ],
+          "suppressions": [
+            "교통과 거래처 핑계를 먼저 대며 통보 시각 문제를 뒤로 뺐다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-2:S2:atom:0",
+              "factText": "오후 늦게 아침 출발 쪽으로 기운 건 맞아요.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:b:d-2:S2:atom:1",
+              "factText": "그래도 끝까지 밤 출발 가능성을 보느라 바로 못 보냈습니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "18시 08분에 일정이 끝났다고 바로 판단이 끝나는 건 아니었습니다.",
+            "차 막힘이랑 거래처 정리가 남아 있어 미룬 겁니다."
+          ],
+          "privateKnowledge": [
+            "교통과 거래처 핑계를 먼저 대며 통보 시각 문제를 뒤로 뺐다.",
+            "무책임한 동생 이미지가 겁나서 확정 문장을 늦췄다."
+          ],
+          "suppressions": [
+            "나는 아침 출발 가능성이 커진 걸 알고도 22시 41분까지 알리지 않았다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-2:S3:atom:0",
+              "factText": "18시 08분에 일정이 끝났다고 바로 판단이 끝나는 건 아니었습니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-2:S3:atom:1",
+              "factText": "차 막힘이랑 거래처 정리가 남아 있어 미룬 겁니다.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "또 약속 못 지키는 동생으로 찍힐까 봐 말을 미적거렸습니다.",
+            "실망시키는 문장을 보내는 게 겁났어요."
+          ],
+          "privateKnowledge": [
+            "무책임한 동생 이미지가 겁나서 확정 문장을 늦췄다.",
+            "교통과 거래처 핑계를 먼저 대며 통보 시각 문제를 뒤로 뺐다."
+          ],
+          "suppressions": [
+            "나는 아침 출발 가능성이 커진 걸 알고도 22시 41분까지 알리지 않았다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-2:S4:atom:0",
+              "factText": "또 약속 못 지키는 동생으로 찍힐까 봐 말을 미적거렸습니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-2:S4:atom:1",
+              "factText": "실망시키는 문장을 보내는 게 겁났어요.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "금요일 저녁에 이미 어렵다는 걸 알면서도 22시 41분까지 미룬 건 제 잘못입니다.",
+            "그 지연 때문에 누나 부담이 커졌습니다."
+          ],
+          "privateKnowledge": [
+            "나는 아침 출발 가능성이 커진 걸 알고도 22시 41분까지 알리지 않았다.",
+            "무책임한 동생 이미지가 겁나서 확정 문장을 늦췄다."
+          ],
+          "suppressions": [
+            "또 실망을 준다는 말을 바로 보내기 싫어서 판단을 끌었다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-2:S5:atom:0",
+              "factText": "금요일 저녁에 이미 어렵다는 걸 알면서도 22시 41분까지 미룬 건 제 잘못입니다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:b:d-2:S5:atom:1",
+              "factText": "그 지연 때문에 누나 부담이 커졌습니다.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "workEnd": "18시 08분",
+                  "notice": "22시 41분",
+                  "neutral": "그날 저녁"
+                },
+                "evidence": {
+                  "id": "e-2",
+                  "name": "가족 단톡 원본과 민재의 일정표·통행 기록"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "누나가 메뉴랑 장보기 규모를 키우고도 말 안 했습니다.",
+            "추가 주문까지 했는데 저는 나중에 비용 얘기만 들었어요."
+          ],
+          "privateKnowledge": [
+            "누나가 추가 주문을 넣은 시점은 내 최종 연락보다도 빨랐다.",
+            "늘어난 비용이 전부 내 무책임의 증거처럼 돌아오는 게 억울하다."
+          ],
+          "suppressions": [
+            "내 늦은 통보가 누나의 불안을 키운 것은 사실이다.",
+            "그래도 메뉴 확대 자체는 누나가 먼저 결정했고 공유하지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-3:S0:atom:0",
+              "factText": "누나가 메뉴랑 장보기 규모를 키우고도 말 안 했습니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family10:b:d-3:S0:atom:1",
+              "factText": "추가 주문까지 했는데 저는 나중에 비용 얘기만 들었어요.",
+              "tags": [
+                "emotion",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 추가 주문 전에는 한 번 물어봤어야 했어요.",
+            "늘어난 비용을 당연한 분담처럼 들고 오면 곤란합니다."
+          ],
+          "privateKnowledge": [
+            "누나가 추가 주문을 넣은 시점은 내 최종 연락보다도 빨랐다.",
+            "비용 질문이 나오면 내가 가족 준비를 외면한 사람처럼 보일까 방어적으로 된다."
+          ],
+          "suppressions": [
+            "내 늦은 통보가 누나의 불안을 키운 것은 사실이다.",
+            "누나는 메뉴를 확대했고, 나는 그 배경이 된 늦은 통보로 갈등을 키웠다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-3:S1:atom:0",
+              "factText": "적어도 추가 주문 전에는 한 번 물어봤어야 했어요.",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-3:S1:atom:1",
+              "factText": "늘어난 비용을 당연한 분담처럼 들고 오면 곤란합니다.",
+              "tags": [
+                "context",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "제가 늦게 알린 탓에 누나가 더 챙기려 한 마음은 이해합니다.",
+            "그래도 18시 무렵 추가 주문이면 제 늦은 통보 전부터 이미 커진 겁니다."
+          ],
+          "privateKnowledge": [
+            "내 늦은 통보가 누나의 불안을 키운 것은 사실이다.",
+            "늘어난 비용이 전부 내 무책임의 증거처럼 돌아오는 게 억울하다."
+          ],
+          "suppressions": [
+            "그래도 메뉴 확대 자체는 누나가 먼저 결정했고 공유하지 않았다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-3:S2:atom:0",
+              "factText": "제가 늦게 알린 탓에 누나가 더 챙기려 한 마음은 이해합니다.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:b:d-3:S2:atom:1",
+              "factText": "그래도 18시 무렵 추가 주문이면 제 늦은 통보 전부터 이미 커진 겁니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "도착 문제와 별개로 메뉴 확대는 누나가 먼저 결정한 겁니다.",
+            "나중에 노동 총량으로 묶여 제 몫처럼 굳어진 게 억울했어요."
+          ],
+          "privateKnowledge": [
+            "그래도 메뉴 확대 자체는 누나가 먼저 결정했고 공유하지 않았다.",
+            "비용 질문이 나오면 내가 가족 준비를 외면한 사람처럼 보일까 방어적으로 된다."
+          ],
+          "suppressions": [
+            "누나는 메뉴를 확대했고, 나는 그 배경이 된 늦은 통보로 갈등을 키웠다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-3:S3:atom:0",
+              "factText": "도착 문제와 별개로 메뉴 확대는 누나가 먼저 결정한 겁니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-3:S3:atom:1",
+              "factText": "나중에 노동 총량으로 묶여 제 몫처럼 굳어진 게 억울했어요.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "제가 안 간 것도 아닌데 늘어난 장보기까지 전부 제 무책임의 증거처럼 되는 게 답답했습니다.",
+            "그래서 비용 질문만 나오면 제가 방어적으로 굴었습니다."
+          ],
+          "privateKnowledge": [
+            "비용 질문이 나오면 내가 가족 준비를 외면한 사람처럼 보일까 방어적으로 된다.",
+            "그래도 메뉴 확대 자체는 누나가 먼저 결정했고 공유하지 않았다."
+          ],
+          "suppressions": [
+            "누나는 메뉴를 확대했고, 나는 그 배경이 된 늦은 통보로 갈등을 키웠다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-3:S4:atom:0",
+              "factText": "제가 안 간 것도 아닌데 늘어난 장보기까지 전부 제 무책임의 증거처럼 되는 게 답답했습니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-3:S4:atom:1",
+              "factText": "그래서 비용 질문만 나오면 제가 방어적으로 굴었습니다.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "누나는 메뉴를 확대했고 공유하지 않았습니다.",
+            "다만 제 늦은 통보가 그런 확장을 부추긴 배경이 된 것도 사실입니다."
+          ],
+          "privateKnowledge": [
+            "누나는 메뉴를 확대했고, 나는 그 배경이 된 늦은 통보로 갈등을 키웠다.",
+            "비용 질문이 나오면 내가 가족 준비를 외면한 사람처럼 보일까 방어적으로 된다."
+          ],
+          "suppressions": [
+            "늘어난 비용이 전부 내 무책임의 증거처럼 돌아오는 게 억울하다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-3:S5:atom:0",
+              "factText": "누나는 메뉴를 확대했고 공유하지 않았습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:b:d-3:S5:atom:1",
+              "factText": "다만 제 늦은 통보가 그런 확장을 부추긴 배경이 된 것도 사실입니다.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "time": {
+                  "additionalOrder": "저녁 6시 무렵",
+                  "neutral": "추가 주문 시점"
+                },
+                "items": {
+                  "exact": "과일·고기·전 종류·반찬가게 주문",
+                  "neutral": "늘어난 메뉴"
+                },
+                "evidence": {
+                  "id": "e-3",
+                  "name": "정육점 예약표와 반찬가게 추가 주문 영수증"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "그 20만원은 어머니 용돈입니다.",
+            "재료비로 약속한 돈이 아닙니다."
+          ],
+          "privateKnowledge": [
+            "나는 20만원이 용돈이라는 걸 알면서도 누나가 어떻게 받아들일지는 굳이 정리하지 않았다.",
+            "돈도 보냈고 아침에도 갔다는 말을 방패로 쓰고 싶었다."
+          ],
+          "suppressions": [
+            "재료비로 약속한 돈은 아니지만 명절 직전 송금이라 오해 여지는 있었다.",
+            "누나는 그 돈을 정산 문제에 끌어왔고, 나는 그 애매함을 즉시 풀지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-4:S0:atom:0",
+              "factText": "그 20만원은 어머니 용돈입니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family10:b:d-4:S0:atom:1",
+              "factText": "재료비로 약속한 돈이 아닙니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "재료비라고 말한 적은 없어요.",
+            "송금 대상도 답장도 어머니 쪽이었습니다."
+          ],
+          "privateKnowledge": [
+            "나는 20만원이 용돈이라는 걸 알면서도 누나가 어떻게 받아들일지는 굳이 정리하지 않았다.",
+            "무책임한 동생으로 몰리는 게 싫어 부분 이행을 전체 면제처럼 내세웠다."
+          ],
+          "suppressions": [
+            "재료비로 약속한 돈은 아니지만 명절 직전 송금이라 오해 여지는 있었다.",
+            "20만원은 용돈이었고, 내가 항목을 선명하게 구분하지 않아 오해를 키웠다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-4:S1:atom:0",
+              "factText": "재료비라고 말한 적은 없어요.",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-4:S1:atom:1",
+              "factText": "송금 대상도 답장도 어머니 쪽이었습니다.",
+              "tags": [
+                "context",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "명절 직전에 보내서 누나가 분담 신호처럼 본 건 이해는 갑니다.",
+            "하지만 수신 계좌도 어머니고 답장도 용돈이었습니다."
+          ],
+          "privateKnowledge": [
+            "재료비로 약속한 돈은 아니지만 명절 직전 송금이라 오해 여지는 있었다.",
+            "돈도 보냈고 아침에도 갔다는 말을 방패로 쓰고 싶었다."
+          ],
+          "suppressions": [
+            "누나는 그 돈을 정산 문제에 끌어왔고, 나는 그 애매함을 즉시 풀지 않았다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-4:S2:atom:0",
+              "factText": "명절 직전에 보내서 누나가 분담 신호처럼 본 건 이해는 갑니다.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:b:d-4:S2:atom:1",
+              "factText": "하지만 수신 계좌도 어머니고 답장도 용돈이었습니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "누나가 정산 문제와 고생 문제를 섞어 20만원 의미까지 키운 겁니다.",
+            "저도 그걸 바로 끊어 설명하진 못했습니다."
+          ],
+          "privateKnowledge": [
+            "누나는 그 돈을 정산 문제에 끌어왔고, 나는 그 애매함을 즉시 풀지 않았다.",
+            "무책임한 동생으로 몰리는 게 싫어 부분 이행을 전체 면제처럼 내세웠다."
+          ],
+          "suppressions": [
+            "20만원은 용돈이었고, 내가 항목을 선명하게 구분하지 않아 오해를 키웠다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-4:S3:atom:0",
+              "factText": "누나가 정산 문제와 고생 문제를 섞어 20만원 의미까지 키운 겁니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-4:S3:atom:1",
+              "factText": "저도 그걸 바로 끊어 설명하진 못했습니다.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "돈도 보냈고 아침에도 갔는데 전부 안 한 사람처럼 보일까 봐 그 20만원을 더 내세웠습니다.",
+            "그게 제 방어였습니다."
+          ],
+          "privateKnowledge": [
+            "무책임한 동생으로 몰리는 게 싫어 부분 이행을 전체 면제처럼 내세웠다.",
+            "누나는 그 돈을 정산 문제에 끌어왔고, 나는 그 애매함을 즉시 풀지 않았다."
+          ],
+          "suppressions": [
+            "20만원은 용돈이었고, 내가 항목을 선명하게 구분하지 않아 오해를 키웠다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-4:S4:atom:0",
+              "factText": "돈도 보냈고 아침에도 갔는데 전부 안 한 사람처럼 보일까 봐 그 20만원을 더 내세웠습니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-4:S4:atom:1",
+              "factText": "그게 제 방어였습니다.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "20만원은 용돈이었고 재료비 합의는 없었습니다.",
+            "다만 제가 항목을 분명히 적지 않아 그 애매함을 제 방패처럼 쓴 것도 맞습니다."
+          ],
+          "privateKnowledge": [
+            "20만원은 용돈이었고, 내가 항목을 선명하게 구분하지 않아 오해를 키웠다.",
+            "무책임한 동생으로 몰리는 게 싫어 부분 이행을 전체 면제처럼 내세웠다."
+          ],
+          "suppressions": [
+            "돈도 보냈고 아침에도 갔다는 말을 방패로 쓰고 싶었다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-4:S5:atom:0",
+              "factText": "20만원은 용돈이었고 재료비 합의는 없었습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:b:d-4:S5:atom:1",
+              "factText": "다만 제가 항목을 분명히 적지 않아 그 애매함을 제 방패처럼 쓴 것도 맞습니다.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "beneficiary": {
+                  "fullName": "유옥희",
+                  "judgeRef": "어머니",
+                  "neutral": "어머니"
+                },
+                "amount": {
+                  "exact": "20만원",
+                  "neutral": "그 돈"
+                },
+                "time": {
+                  "transfer": "명절 이틀 전 아침",
+                  "replyGap": "4분 뒤",
+                  "neutral": "그 무렵"
+                },
+                "evidence": {
+                  "id": "e-4",
+                  "name": "20만원 송금 내역과 어머니 답장 문자"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "서로 바빠서 조금 꼬인 거지 원칙이 무너진 건 아닙니다.",
+            "저만 실패한 것처럼 말하면 과합니다."
+          ],
+          "privateKnowledge": [
+            "올해는 도착 시간, 메뉴, 비용 항목을 한 줄로 다시 못 박지 않은 채 넘어갔다.",
+            "실망시키는 말을 미루다가 규칙 확인 자체를 늦췄다."
+          ],
+          "suppressions": [
+            "나도 작년 역할표 원칙을 실제로 복원하지 못했다.",
+            "누나는 메뉴를 공유하지 않았고 나는 연락을 늦춰 둘 다 구멍을 만들었다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-5:S0:atom:0",
+              "factText": "서로 바빠서 조금 꼬인 거지 원칙이 무너진 건 아닙니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family10:b:d-5:S0:atom:1",
+              "factText": "저만 실패한 것처럼 말하면 과합니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "올해 역할표를 다시 적진 못했어도 큰 틀은 알고 움직였습니다.",
+            "서로 현장에서 맞춘 부분도 있었어요."
+          ],
+          "privateKnowledge": [
+            "올해는 도착 시간, 메뉴, 비용 항목을 한 줄로 다시 못 박지 않은 채 넘어갔다.",
+            "가족을 실망시키기 싫다는 마음이 오히려 확인 절차를 피하게 했다."
+          ],
+          "suppressions": [
+            "나도 작년 역할표 원칙을 실제로 복원하지 못했다.",
+            "도착 시간, 음식 규모, 비용 항목을 명확히 적지 않아 둘 다 올해 규칙을 실패했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-5:S1:atom:0",
+              "factText": "올해 역할표를 다시 적진 못했어도 큰 틀은 알고 움직였습니다.",
+              "tags": [
+                "uncertainty",
+                "timeline",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-5:S1:atom:1",
+              "factText": "서로 현장에서 맞춘 부분도 있었어요.",
+              "tags": [
+                "context",
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "도착 시간, 메뉴, 비용을 한 줄로 다시 고정하지 못한 건 맞습니다.",
+            "그 틈이 커진 겁니다."
+          ],
+          "privateKnowledge": [
+            "나도 작년 역할표 원칙을 실제로 복원하지 못했다.",
+            "실망시키는 말을 미루다가 규칙 확인 자체를 늦췄다."
+          ],
+          "suppressions": [
+            "누나는 메뉴를 공유하지 않았고 나는 연락을 늦춰 둘 다 구멍을 만들었다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-5:S2:atom:0",
+              "factText": "도착 시간, 메뉴, 비용을 한 줄로 다시 고정하지 못한 건 맞습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:b:d-5:S2:atom:1",
+              "factText": "그 틈이 커진 겁니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "저는 늦게 알렸고 누나는 메뉴를 공유하지 않았습니다.",
+            "서로 한쪽만 지킨 상태였어요."
+          ],
+          "privateKnowledge": [
+            "누나는 메뉴를 공유하지 않았고 나는 연락을 늦춰 둘 다 구멍을 만들었다.",
+            "가족을 실망시키기 싫다는 마음이 오히려 확인 절차를 피하게 했다."
+          ],
+          "suppressions": [
+            "도착 시간, 음식 규모, 비용 항목을 명확히 적지 않아 둘 다 올해 규칙을 실패했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family10:b:tell:delay_buffer",
+            "family10:b:tell:partial_credit"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-5:S3:atom:0",
+              "factText": "저는 늦게 알렸고 누나는 메뉴를 공유하지 않았습니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-5:S3:atom:1",
+              "factText": "서로 한쪽만 지킨 상태였어요.",
+              "tags": [
+                "self_justification",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "실망시키기 싫어서 미루다 보니 규칙 자체를 다시 확인할 타이밍을 놓쳤습니다.",
+            "그래서 사소한 애매함이 다 크게 번졌어요."
+          ],
+          "privateKnowledge": [
+            "가족을 실망시키기 싫다는 마음이 오히려 확인 절차를 피하게 했다.",
+            "누나는 메뉴를 공유하지 않았고 나는 연락을 늦춰 둘 다 구멍을 만들었다."
+          ],
+          "suppressions": [
+            "도착 시간, 음식 규모, 비용 항목을 명확히 적지 않아 둘 다 올해 규칙을 실패했다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-5:S4:atom:0",
+              "factText": "실망시키기 싫어서 미루다 보니 규칙 자체를 다시 확인할 타이밍을 놓쳤습니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family10:b:d-5:S4:atom:1",
+              "factText": "그래서 사소한 애매함이 다 크게 번졌어요.",
+              "tags": [
+                "motive",
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "작년 규칙을 이번엔 둘 다 제대로 실행하지 못했습니다.",
+            "도착 시간, 음식 규모, 비용 항목을 명확히 적지 않은 공동 실패였습니다."
+          ],
+          "privateKnowledge": [
+            "도착 시간, 음식 규모, 비용 항목을 명확히 적지 않아 둘 다 올해 규칙을 실패했다.",
+            "가족을 실망시키기 싫다는 마음이 오히려 확인 절차를 피하게 했다."
+          ],
+          "suppressions": [
+            "실망시키는 말을 미루다가 규칙 확인 자체를 늦췄다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family10:b:tell:partial_credit",
+            "family10:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family10:b:d-5:S5:atom:0",
+              "factText": "작년 규칙을 이번엔 둘 다 제대로 실행하지 못했습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family10:b:d-5:S5:atom:1",
+              "factText": "도착 시간, 음식 규모, 비용 항목을 명확히 적지 않은 공동 실패였습니다.",
+              "tags": [
+                "relationship",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "fullName": "유다은",
+                  "judgeRef": "누나",
+                  "neutral": "상대"
+                },
+                "rule": {
+                  "exact": "도착 시간·음식 종류·비용 항목",
+                  "neutral": "작년 역할표 원칙"
+                },
+                "reference": {
+                  "exact": "작년 추석 직후",
+                  "neutral": "그때"
+                },
+                "evidence": {
+                  "id": "e-5/e-6",
+                  "name": "가족상담센터 권고 메모·작년 역할표·당일 체크리스트·주방 사진"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

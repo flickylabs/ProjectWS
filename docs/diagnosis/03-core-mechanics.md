@@ -1,6 +1,7 @@
 # 3. 핵심 메커닉 상세
 
 > **V3 업데이트 (2026-04-02)**: V3 엔진 구조, 미터 시스템, 이벤트 시스템, 사건카드 반영
+> **V2 스크립트 전환 (2026-04-02)**: 9종 신규 엔진 추가 (beatSelector/fatigue/npcReaction/interjection/meterStaging/v2DataLoader/phase3LogCollector/misconception/linkEdge). 미터 단계화(4단계 텍스트), 사건카드 조건 해금, 쟁점 층위 UI. 상세는 `11-v2-script-transition-spec.md` 참조
 
 ## V3 엔진 구조 (5대 + 3대 추가)
 

@@ -1,0 +1,1914 @@
+export const friend04V3GameLoopData = {
+  "caseId": "friend-04",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "애매한 답장과 잘린 설명",
+      "description": "공동구매 대화 원본과 크롭된 판매글을 묶어, '괜찮음' 기준과 예약금 해석이 어디서 어긋났는지 따진다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "송다혜 씨, 현우에게 보낸 판매글 캡처에서 냄새와 누락 부속품 문구를 빼고 전달한 이유가 무엇입니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.a.s2",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "공동구매 대화에서 '일단 잡아줘'를 왜 명시적 확정처럼 받아들였습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.unlock.a.s2",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "작년 예약금 규칙을 기억하면서도 이번 표현을 예외로 본 판단 기준이 있었습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.unlock.a.s3",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "류현우 씨, '텐트만 멀쩡하면 반반 가능, 일단 잡아줘'라는 문장이 참여 의사로 읽혀도 괜찮다고 본 겁니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.unlock.b.s2",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "'상태 괜찮음'에 냄새와 구성품까지 포함된다면, 왜 그 항목을 채팅에 적지 않았습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.unlock.b.s2",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "작년 예약금 규칙을 알면서도 '확정 아님'을 따로 남기지 않은 이유가 있습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.unlock.b.s2",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "송금 시각과 판매자 확정 인식",
+      "description": "이체 내역과 판매자 전체 대화를 나란히 놓고, 누가 어떤 시점에 거래를 확정처럼 굳혔는지 파고든다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "송다혜 씨, 비환불 고지를 읽은 뒤에도 바로 3만원을 송금한 것은 사실입니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d1.unlock.a.s2",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "판매자에게 '둘이 반반으로 가져간다'고 말할 때 아직 현우의 최종 확정은 없었다는 점을 의식했습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.unlock.a.s2",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "판매자 압박 때문에 선을 넘었다면, 그 순간 작년 규칙보다 거래 보전을 우선한 겁니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d5.unlock.a.s4",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "류현우 씨, 판매자에게 '사진대로면 갈게요'라고 따로 보낸 메시지를 왜 바로 정정하지 않았습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d4.unlock.b.s3",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "다혜가 이미 예약금까지 보낸 걸 알았을 때도, 그 상황을 여전히 단순 보류라고만 생각하셨습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d1.unlock.b.s4",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "작년 규칙상이라면 본인도 '확정 아님'을 분명히 남겼어야 하지 않습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d5.unlock.b.s4",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "픽업 직후 상태와 철회 결과",
+      "description": "현장 사진·영상과 재판매 로그를 묶어, 상태 기준 차이와 뒤늦은 철회가 남긴 손해를 확인한다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "송다혜 씨, 픽업 영상과 메모를 본 뒤에도 구조만 멀쩡하면 충분하다고 보셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.a.s4",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "현우가 냄새와 누락 부속품을 문제 삼은 직후에도, 재판매보다 공동부담을 먼저 요구한 이유가 있습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d2.unlock.a.s4",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "결국 상태 기준이 처음부터 달랐다는 점을 지금은 인정하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.unlock.a.s5",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "류현우 씨, 픽업 후 40분 안쪽 철회가 다혜에게 재판매 부담을 남긴다는 걸 알고도 그렇게 결정하신 겁니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.unlock.b.s3",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "현장 사진과 메모를 보고도 '처음부터 같은 기준이었다'고 말하기 어렵지 않습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.b.s3",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "결과적으로 늦은 철회 책임을 인정하십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d2.unlock.b.s5",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.a.s2",
+            "factText": "비환불 고지를 송금 전에 읽고도 판매자 압박 때문에 일단 자리를 묶어야 한다고 스스로 결론냈다.",
+            "tags": [
+              "context",
+              "rule"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.a.s3",
+            "factText": "현우가 '확정'이라고 쓰지 않았다는 걸 알면서도 본인 머릿속에서 확정으로 번역했다.",
+            "tags": [
+              "admission",
+              "quote"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.a.s4",
+            "factText": "예전에도 자신이 먼저 돈을 넣고 정리했던 기억 때문에 이번에도 조급하게 선결제했다.",
+            "tags": [
+              "fear",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.a.s5",
+            "factText": "명시적 확정 없이 예약금을 보낸 행동이 작년 합의까지 어긴 자신의 실수였다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.a.s2",
+            "factText": "냄새와 누락 부속품이 현우에게는 실제 문제일 수 있다는 점은 다혜도 속으로는 이해하고 있다.",
+            "tags": [
+              "context",
+              "quote"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "time": {
+                "dateExact": "픽업 후 40분 안쪽",
+                "period": "픽업 직후",
+                "neutral": "그 무렵"
+              },
+              "amount": {
+                "exact": "4만원",
+                "rounded": "4만 원",
+                "neutral": "재판매 손실"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.a.s3",
+            "factText": "그래도 현우가 판매자와 직접 메시지를 주고받아 거래를 더 굳혔다고 판단한다.",
+            "tags": [
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "time": {
+                "dateExact": "픽업 후 40분 안쪽",
+                "period": "픽업 직후",
+                "neutral": "그 무렵"
+              },
+              "amount": {
+                "exact": "4만원",
+                "rounded": "4만 원",
+                "neutral": "재판매 손실"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.a.s4",
+            "factText": "재판매까지 결국 자신이 처리하면서 돈보다 '또 내가 뒷정리한다'는 감정이 더 커졌다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "time": {
+                "dateExact": "픽업 후 40분 안쪽",
+                "period": "픽업 직후",
+                "neutral": "그 무렵"
+              },
+              "amount": {
+                "exact": "4만원",
+                "rounded": "4만 원",
+                "neutral": "재판매 손실"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.a.s5",
+            "factText": "상태 기준 차이는 인정하지만, 참여 의사를 남긴 뒤 뒤늦게 빠진 책임은 별개라고 본다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "time": {
+                "dateExact": "픽업 후 40분 안쪽",
+                "period": "픽업 직후",
+                "neutral": "그 무렵"
+              },
+              "amount": {
+                "exact": "4만원",
+                "rounded": "4만 원",
+                "neutral": "재판매 손실"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.a.s2",
+            "factText": "외관 사진과 가격 중심으로 판매글을 골라 보내며 상태 기준을 구조 쪽으로 자연스럽게 좁혔다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "상태 괜찮음",
+                "neutral": "그 표현",
+                "judgeRef": "상태 기준 표현"
+              },
+              "threshold": {
+                "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                "neutral": "상태 판단 기준",
+                "judgeRef": "괜찮음의 기준"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.a.s3",
+            "factText": "냄새나 방수 상태를 별도로 다시 묻지 않은 채 자기 기준을 공동 기준처럼 밀어붙였다.",
+            "tags": [
+              "admission",
+              "threshold"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "상태 괜찮음",
+                "neutral": "그 표현",
+                "judgeRef": "상태 기준 표현"
+              },
+              "threshold": {
+                "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                "neutral": "상태 판단 기준",
+                "judgeRef": "괜찮음의 기준"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.a.s4",
+            "factText": "구조만 멀쩡하면 괜찮다는 자신의 습관이 현우에게도 그대로 통할 거라고 넘겨짚었다.",
+            "tags": [
+              "emotion",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "quote": {
+                "exact": "상태 괜찮음",
+                "neutral": "그 표현",
+                "judgeRef": "상태 기준 표현"
+              },
+              "threshold": {
+                "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                "neutral": "상태 판단 기준",
+                "judgeRef": "괜찮음의 기준"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.a.s5",
+            "factText": "상태 기준이 애초에 달랐고, 자신도 그 차이를 확인하지 않은 책임이 있다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "quote": {
+                "exact": "상태 괜찮음",
+                "neutral": "그 표현",
+                "judgeRef": "상태 기준 표현"
+              },
+              "threshold": {
+                "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                "neutral": "상태 판단 기준",
+                "judgeRef": "괜찮음의 기준"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.a.s2",
+            "factText": "자신도 '둘이 반반'이라는 문장이 판매자에게는 이미 확정처럼 들릴 수 있었다는 점을 인식한다.",
+            "tags": [
+              "context",
+              "quote"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "사진대로면 갈게요",
+                "neutral": "그 메시지",
+                "judgeRef": "현우의 판매자 메시지"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.a.s3",
+            "factText": "현우가 판매자와도 대화 중이라는 걸 알면서도 대표 한 명으로 창구를 정리하지 않았다.",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "사진대로면 갈게요",
+                "neutral": "그 메시지",
+                "judgeRef": "현우의 판매자 메시지"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.a.s4",
+            "factText": "판매자 압박 속에서 빨리 정리하고 싶은 마음이 단정적인 문장을 밀어냈다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "quote": {
+                "exact": "사진대로면 갈게요",
+                "neutral": "그 메시지",
+                "judgeRef": "현우의 판매자 메시지"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.a.s5",
+            "factText": "혼선은 현우의 조건부 메시지뿐 아니라 자신의 단정적 선언도 같이 만든 결과라고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "quote": {
+                "exact": "사진대로면 갈게요",
+                "neutral": "그 메시지",
+                "judgeRef": "현우의 판매자 메시지"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.a.s2",
+            "factText": "작년 예약금 규칙을 분명히 기억하고도 이번만은 예외로 돌려 세웠다.",
+            "tags": [
+              "rule",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              },
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.a.s3",
+            "factText": "현우의 애매함이 싫었지만, 그 오래된 불신 때문에 오히려 스스로 먼저 규칙을 깨버렸다.",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              },
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.a.s4",
+            "factText": "예전 숙소 취소수수료처럼 또 혼자 정리할까 봐 두려워 조급하게 선결제했다.",
+            "tags": [
+              "fear",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              },
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.a.s5",
+            "factText": "자신의 송금과 현우의 모호한 구매 신호가 함께 작년 규칙을 무너뜨렸다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              },
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.b.s2",
+            "factText": "자신의 표현이 다혜에게는 이미 진행 신호처럼 읽힐 수 있었다는 점을 스스로 인정하기 시작한다.",
+            "tags": [
+              "context",
+              "rule"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.b.s3",
+            "factText": "판매자와도 별도로 대화해 다혜가 더 확정으로 받아들이게 된 배경이 있었다.",
+            "tags": [
+              "admission",
+              "quote"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.b.s4",
+            "factText": "자리를 놓치고 싶지 않아 다혜가 먼저 잡아주길 은근히 바랐다는 속내가 드러난다.",
+            "tags": [
+              "fear",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.b.s5",
+            "factText": "다혜의 독단만이 아니라 자신이 남긴 모호한 문장이 예약금 판단을 밀어줬다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.b.s2",
+            "factText": "판매자에게도 긍정적으로 읽히는 메시지를 보내며 거래 기대를 키웠다는 사실이 드러난다.",
+            "tags": [
+              "context",
+              "quote"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "time": {
+                "dateExact": "픽업 후 40분 안쪽",
+                "period": "픽업 직후",
+                "neutral": "그 무렵"
+              },
+              "amount": {
+                "exact": "4만원",
+                "rounded": "4만 원",
+                "neutral": "재판매 손실"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.b.s3",
+            "factText": "픽업 뒤 문제를 본 즉시 빠질지 말지 고민했지만, 이미 진행된 거래를 뒤집는 모양새가 될 걸 알고 머뭇거렸다.",
+            "tags": [
+              "admission",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "time": {
+                "dateExact": "픽업 후 40분 안쪽",
+                "period": "픽업 직후",
+                "neutral": "그 무렵"
+              },
+              "amount": {
+                "exact": "4만원",
+                "rounded": "4만 원",
+                "neutral": "재판매 손실"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.b.s4",
+            "factText": "자리를 놓치기 싫어 다혜가 먼저 잡아주길 바랐고, 그 때문에 철회 시점을 더 늦췄다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "time": {
+                "dateExact": "픽업 후 40분 안쪽",
+                "period": "픽업 직후",
+                "neutral": "그 무렵"
+              },
+              "amount": {
+                "exact": "4만원",
+                "rounded": "4만 원",
+                "neutral": "재판매 손실"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.b.s5",
+            "factText": "상태 문제가 있었더라도 참여 의사처럼 말해놓고 늦게 철회한 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              },
+              "time": {
+                "dateExact": "픽업 후 40분 안쪽",
+                "period": "픽업 직후",
+                "neutral": "그 무렵"
+              },
+              "amount": {
+                "exact": "4만원",
+                "rounded": "4만 원",
+                "neutral": "재판매 손실"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.b.s2",
+            "factText": "냄새와 누락 부속품 기준을 실제로는 채팅에 적어두지 않았고, 그 공백 위에 자신의 해석만 올려뒀다.",
+            "tags": [
+              "context",
+              "evidence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "상태 괜찮음",
+                "neutral": "그 표현",
+                "judgeRef": "상태 기준 표현"
+              },
+              "threshold": {
+                "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                "neutral": "상태 판단 기준",
+                "judgeRef": "괜찮음의 기준"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.b.s3",
+            "factText": "픽업 뒤에야 숨겨둔 기준을 꺼내며 결과적으로 의미를 뒤늦게 좁혀 설명했다.",
+            "tags": [
+              "admission",
+              "threshold"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "상태 괜찮음",
+                "neutral": "그 표현",
+                "judgeRef": "상태 기준 표현"
+              },
+              "threshold": {
+                "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                "neutral": "상태 판단 기준",
+                "judgeRef": "괜찮음의 기준"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.b.s4",
+            "factText": "거래를 놓치기 싫어 기준을 명확히 쓰지 않은 채 다혜가 알아서 이해하길 기대했다.",
+            "tags": [
+              "emotion",
+              "identity"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "quote": {
+                "exact": "상태 괜찮음",
+                "neutral": "그 표현",
+                "judgeRef": "상태 기준 표현"
+              },
+              "threshold": {
+                "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                "neutral": "상태 판단 기준",
+                "judgeRef": "괜찮음의 기준"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.b.s5",
+            "factText": "자기 머릿속 체크리스트를 공통 기준처럼 취급한 실수와 뒤늦은 의미 축소를 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "quote": {
+                "exact": "상태 괜찮음",
+                "neutral": "그 표현",
+                "judgeRef": "상태 기준 표현"
+              },
+              "threshold": {
+                "exact": "찢김·폴대 파손 / 냄새·구성품·방수 상태",
+                "neutral": "상태 판단 기준",
+                "judgeRef": "괜찮음의 기준"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.b.s2",
+            "factText": "자신의 '사진대로면 갈게요'가 판매자 입장에선 강한 거래 신호로 읽힐 수 있었다는 걸 알기 시작한다.",
+            "tags": [
+              "context",
+              "quote"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "quote": {
+                "exact": "사진대로면 갈게요",
+                "neutral": "그 메시지",
+                "judgeRef": "현우의 판매자 메시지"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.b.s3",
+            "factText": "다혜가 이미 확정 쪽으로 정리하고 있다는 걸 눈치채고도 바로 정정하지 않았다.",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "quote": {
+                "exact": "사진대로면 갈게요",
+                "neutral": "그 메시지",
+                "judgeRef": "현우의 판매자 메시지"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.b.s4",
+            "factText": "자리를 놓치고 싶지 않아 상태를 직접 볼 때까지 모호함을 전략처럼 유지했다.",
+            "tags": [
+              "emotion",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "quote": {
+                "exact": "사진대로면 갈게요",
+                "neutral": "그 메시지",
+                "judgeRef": "현우의 판매자 메시지"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.b.s5",
+            "factText": "조건부 해석을 주장해도, 결과적으로 판매자에게 확정 기대를 심어 준 책임을 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "quote": {
+                "exact": "사진대로면 갈게요",
+                "neutral": "그 메시지",
+                "judgeRef": "현우의 판매자 메시지"
+              },
+              "person": {
+                "fullName": "한재필",
+                "judgeRef": "판매자",
+                "neutral": "판매자"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.b.s2",
+            "factText": "규칙을 지키려면 '확정 아님'이라고 분명히 써야 했다는 점을 스스로 인정하기 시작한다.",
+            "tags": [
+              "rule",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              },
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "admission"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.b.s3",
+            "factText": "다혜가 먼저 자리를 잡아주길 바라며 자신은 모호함 뒤에 숨었다는 패턴이 드러난다.",
+            "tags": [
+              "admission",
+              "relationship"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              },
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.b.s4",
+            "factText": "과거 갈등 때문에 이번에도 확정 책임을 지는 문장을 일부러 피했다.",
+            "tags": [
+              "fear",
+              "legacy_sentence"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              },
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "shame"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.b.s5",
+            "factText": "작년 규칙 위반이 다혜의 선송금과 자신의 책임 회피 문장이 동시에 만든 결과였다고 인정한다.",
+            "tags": [
+              "admission",
+              "responsibility"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "rule": {
+                "exact": "비환불 예약금은 명시적 '확정' 뒤에만 넣기",
+                "neutral": "작년 예약금 규칙",
+                "judgeRef": "작년 합의"
+              },
+              "amount": {
+                "exact": "3만원",
+                "rounded": "3만 원",
+                "neutral": "예약금"
+              },
+              "quote": {
+                "exact": "텐트만 멀쩡하면 반반 가능, 일단 잡아줘",
+                "neutral": "그 표현",
+                "judgeRef": "현우의 메시지"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "admission"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "contr-1",
+        "trigger": "송다혜가 예약금 선지급을 단순한 대기 행동이라고 주장할 때",
+        "text": "은행 원본 이체 내역의 메모란 '텐트 예약금'과 송금 시각이, 다혜가 거래를 실제로 묶으려 했다는 사실을 즉시 드러낸다.",
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-3"
+        ]
+      },
+      {
+        "id": "contr-2",
+        "trigger": "류현우가 판매자에게 확정 신호를 준 적 없다고 버틸 때",
+        "text": "판매자 전체 대화에 남은 '사진대로면 갈게요' 문장이, 현우의 보류 주장과 직접 충돌한다.",
+        "relatedDisputes": [
+          "d-2",
+          "d-4",
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-4"
+        ]
+      },
+      {
+        "id": "contr-3",
+        "trigger": "두 사람이 같은 상태 기준을 공유했다고 말할 때",
+        "text": "크롭된 판매글과 현장 메모를 나란히 놓으면, 외관 중심 전달과 실제 누락 부속품 문제가 서로 다른 기준을 만들었음이 드러난다.",
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-2",
+          "e-5"
+        ]
+      },
+      {
+        "id": "contr-4",
+        "trigger": "류현우가 철회가 늦지 않았다고 주장할 때",
+        "text": "철회 메시지 시각과 다음 날 재판매 완료 로그가 붙으면서, 늦은 철회가 다혜에게 손실 정리 부담을 넘겼다는 점이 선명해진다.",
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ]
+      }
+    ],
+    "interjections": [
+      {
+        "id": "intr-1",
+        "speaker": "a",
+        "trigger": "류현우가 '원래 그 뜻이었다'며 상태 기준을 뒤늦게 좁힐 때",
+        "line": "아니, 그 기준을 왜 픽업 끝나고 말하냐고요. 그때 채팅에 한 줄도 없었잖아요.",
+        "behaviorHint": "다혜가 상대 말을 자르고 몸을 앞으로 기울인다."
+      },
+      {
+        "id": "intr-2",
+        "speaker": "b",
+        "trigger": "송다혜가 '이미 확정이었다'고 단정하며 몰아붙일 때",
+        "line": "잠깐만요, 확정이라고 쓴 적은 없잖아요. 그건 다혜 씨가 먼저 결론 낸 거예요.",
+        "behaviorHint": "현우가 말끝을 낮추지만 문장 사이에 짧은 멈춤을 넣는다."
+      },
+      {
+        "id": "intr-3",
+        "speaker": "a",
+        "trigger": "작년 규칙 이야기가 나오며 서로 상대 탓만 할 때",
+        "line": "규칙 기억난다면서 또 모호하게 말하면 뭐가 달라요. 결국 또 내가 돈부터 넣게 됐잖아.",
+        "behaviorHint": "다혜가 폰 화면을 손바닥으로 덮듯 내려놓는다."
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "out-a-1",
+        "party": "a",
+        "trigger": "류현우가 예약금 선지급을 다혜의 독단으로만 몰아갈 때",
+        "line": "또 내가 먼저 움직였다는 이유로 전부 내 탓으로 넘기지 마. 이번에도 정리 담당은 결국 나였잖아.",
+        "behaviorHint": "다혜가 숨을 크게 내쉬고 말을 거의 끊어치듯 던진다."
+      },
+      {
+        "id": "out-a-2",
+        "party": "a",
+        "trigger": "크롭된 캡처 문제로 신뢰 자체가 의심받을 때",
+        "line": "나는 속이려고 자른 게 아니라 빨리 보여주려고 저장한 거야. 근데 지금은 내가 일부러 판 짠 사람처럼 들리네.",
+        "behaviorHint": "목소리가 높아졌다가 마지막 문장에서 갑자기 가라앉는다."
+      },
+      {
+        "id": "out-b-1",
+        "party": "b",
+        "trigger": "충동구매하려다 빠진 사람처럼 몰릴 때",
+        "line": "나도 하자 있는 물건 떠안기 싫어서 본 거야. 그냥 덥석 사는 사람처럼 보이는 게 제일 싫다고.",
+        "behaviorHint": "현우가 시선을 피하다가 마지막 단어에서만 눈을 들어 올린다."
+      },
+      {
+        "id": "out-b-2",
+        "party": "b",
+        "trigger": "작년 규칙을 알면서도 모호함 뒤에 숨었다는 지적이 이어질 때",
+        "line": "알았어, 내가 분명히 끊지 못한 건 맞아. 근데 다혜 씨도 내가 정리할 틈 없이 항상 결론부터 밀어붙였잖아.",
+        "behaviorHint": "현우가 긴 침묵 뒤 한 번에 말을 쏟아낸다."
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "friend04:transition:a:d-1:s0_s1",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "deposit_question",
+      "line": "예약금 질문이 바로 들어오면 다혜는 '독단' 표현부터 잘라내며 현우와 판매자 흐름을 먼저 꺼낸다.",
+      "behaviorHint": "다혜가 반박을 빠르게 쏟아내고 마지막 문장을 짧게 끊는다.",
+      "nextRevealAtom": null
+    },
+    {
+      "id": "friend04:transition:a:d-1:s1_s2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "line": "이체 내역이 제시되면 선송금 사실 자체는 인정하되, 곧바로 현우의 긍정 신호를 같이 묶어 방어선이 S2로 밀린다.",
+      "behaviorHint": "폰 화면을 힐끗 본 뒤 인정 문장을 짧게 내놓고 바로 상대 책임을 덧붙인다.",
+      "nextRevealAtom": "d1.unlock.a.s2"
+    },
+    {
+      "id": "friend04:transition:a:d-1:s2_s3",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "refund_notice_question",
+      "line": "환불 고지 시점을 묻는 순간 다혜는 고지를 봤다는 쪽으로 더 물러나면서도, 현우의 모호함을 동시에 끌어와 S3로 이동한다.",
+      "behaviorHint": "입술을 한 번 깨문 뒤 '그래도'로 문장을 다시 세운다.",
+      "nextRevealAtom": "d1.unlock.a.s3"
+    },
+    {
+      "id": "friend04:transition:a:d-1:s3_s5",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-4_presented",
+      "line": "판매자 전체 대화가 펼쳐지면 다혜는 자신이 확정 문구를 스스로 번역해 넣었다는 사실까지 인정하며 바로 S5로 무너진다.",
+      "behaviorHint": "손가락이 화면 위에서 멈추고 시선이 아래로 떨어진다.",
+      "nextRevealAtom": "d1.unlock.a.s5"
+    },
+    {
+      "id": "friend04:transition:a:d-3:s0_s1",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "condition_meaning_question",
+      "line": "'괜찮음'이 정확히 무엇이냐는 질문이 들어오면 다혜는 구조 중심 기준을 밀어붙이되, 아직 상대 기준 부재만 강조하는 S1에 머문다.",
+      "behaviorHint": "손으로 찢김과 폴대 모양을 그리며 말한다.",
+      "nextRevealAtom": null
+    },
+    {
+      "id": "friend04:transition:a:d-3:s1_s2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "공동구매 대화 원본이 나오면 다혜는 외관 위주 해석을 인정하면서도 현우가 기준을 적지 않았다고 돌리며 S2가 된다.",
+      "behaviorHint": "빠른 말투가 유지되지만 한 문장 정도는 짧게 인정한다.",
+      "nextRevealAtom": "d3.unlock.a.s2"
+    },
+    {
+      "id": "friend04:transition:a:d-3:s2_s3",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "listing_crop_question",
+      "line": "캡처가 잘렸다는 점을 찌르면 다혜는 전달 방식의 공백을 받아들이며 S3로 이동한다.",
+      "behaviorHint": "휴대폰을 뒤집어 놓듯 내려놓고 설명을 덧붙인다.",
+      "nextRevealAtom": "d3.unlock.a.s3"
+    },
+    {
+      "id": "friend04:transition:a:d-3:s3_s5",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_or_e-5_presented",
+      "line": "원본 판매글과 현장 자료가 함께 제시되면 다혜는 기준 자체가 달랐음을 더는 부정하지 못하고 S5로 직행한다.",
+      "behaviorHint": "목소리가 한 톤 낮아지고 문장 사이 간격이 길어진다.",
+      "nextRevealAtom": "d3.unlock.a.s5"
+    },
+    {
+      "id": "friend04:transition:a:d-5:s0_s1",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_rule_reminder",
+      "line": "작년 예약금 규칙을 상기시키면 다혜는 규칙 기억은 인정하되 이번 예외성을 주장하며 S1로 한 걸음 물러난다.",
+      "behaviorHint": "잠깐 멈춘 뒤 '근데 이번은'으로 문장을 다시 시작한다.",
+      "nextRevealAtom": null
+    },
+    {
+      "id": "friend04:transition:a:d-5:s1_s2",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "공동구매 대화가 깔리면 다혜는 본인 위반을 일부 인정하면서도 현우의 빠질 여지를 세게 물고 늘어지며 S2가 된다.",
+      "behaviorHint": "짧게 수긍한 직후 손짓이 다시 커진다.",
+      "nextRevealAtom": "d5.unlock.a.s2"
+    },
+    {
+      "id": "friend04:transition:a:d-5:s2_s4",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_seller_pressure",
+      "line": "비난 없이 판매자 압박과 과거 패턴을 묻는 질문은 다혜의 방어를 낮춰 곧바로 감정이 새는 S4를 연다.",
+      "behaviorHint": "어깨가 조금 처지고 말속도가 눈에 띄게 느려진다.",
+      "nextRevealAtom": "d5.unlock.a.s4"
+    },
+    {
+      "id": "friend04:transition:a:d-5:s4_s5",
+      "caseId": "friend-04",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-3_or_responsibility_question",
+      "line": "이체 기록과 책임 질문이 겹치면 다혜는 결국 자신의 선송금과 예외 만들기를 모두 인정하며 S5에 도달한다.",
+      "behaviorHint": "한숨 뒤에 인정 문장이 길게 이어진다.",
+      "nextRevealAtom": "d5.unlock.a.s5"
+    },
+    {
+      "id": "friend04:transition:b:d-2:s0_s1",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "withdrawal_question",
+      "line": "철회 시점을 바로 묻는 질문이 나오면 현우는 '확정한 적 없다'는 말로 선을 긋고 S1로 물러난다.",
+      "behaviorHint": "시선을 피한 채 문장 앞에 단서를 여러 개 붙인다.",
+      "nextRevealAtom": null
+    },
+    {
+      "id": "friend04:transition:b:d-2:s1_s2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "공동구매 대화 원본이 제시되면 현우는 참여 의사처럼 보였다는 점을 일부 인정하며 S2가 된다.",
+      "behaviorHint": "짧게 인정한 뒤 곧바로 냄새와 구성품 기준을 붙인다.",
+      "nextRevealAtom": "d2.unlock.b.s2"
+    },
+    {
+      "id": "friend04:transition:b:d-2:s2_s3",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "resale_loss_question",
+      "line": "재판매 손실과 남은 부담을 묻는 순간 현우는 늦은 철회 시점을 의식하며 S3로 이동한다.",
+      "behaviorHint": "문장 사이에 긴 멈춤이 들어가고 목소리가 작아진다.",
+      "nextRevealAtom": "d2.unlock.b.s3"
+    },
+    {
+      "id": "friend04:transition:b:d-2:s3_s5",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "line": "철회 메시지와 재판매 완료 로그가 함께 나오면 현우는 늦은 이탈 책임을 더는 피하지 못하고 S5로 넘어간다.",
+      "behaviorHint": "숨을 들이마신 뒤 낮은 톤으로 인정한다.",
+      "nextRevealAtom": "d2.unlock.b.s5"
+    },
+    {
+      "id": "friend04:transition:b:d-3:s0_s1",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "condition_definition_question",
+      "line": "상태 기준 정의를 요구받으면 현우는 자기 머릿속 체크리스트를 꺼내지만, 아직 채팅 공백은 부정하는 S1에 머문다.",
+      "behaviorHint": "손가락으로 기준 항목을 하나씩 세며 말한다.",
+      "nextRevealAtom": null
+    },
+    {
+      "id": "friend04:transition:b:d-3:s1_s2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "line": "공동구매 대화가 제시되면 현우는 기준을 명확히 쓰지 않았다는 점을 일부 인정하며 S2가 된다.",
+      "behaviorHint": "말끝을 흐리다가 '다만'으로 다시 이어 간다.",
+      "nextRevealAtom": "d3.unlock.b.s2"
+    },
+    {
+      "id": "friend04:transition:b:d-3:s2_s3",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "pickup_photo_question",
+      "line": "픽업 사진과 메모를 근거로 기준의 후행성을 찌르면 현우는 뒤늦은 범위 축소를 자각하며 S3로 이동한다.",
+      "behaviorHint": "짧은 침묵 뒤에 설명 범위를 스스로 좁힌다.",
+      "nextRevealAtom": "d3.unlock.b.s3"
+    },
+    {
+      "id": "friend04:transition:b:d-3:s3_s5",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "line": "현장 자료가 본격 제시되면 현우는 자기 기준을 뒤늦게 덧칠했다는 점을 인정하며 S5에 도달한다.",
+      "behaviorHint": "시선을 내리고 말의 강도가 뚜렷하게 줄어든다.",
+      "nextRevealAtom": "d3.unlock.b.s5"
+    },
+    {
+      "id": "friend04:transition:b:d-4:s0_s1",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "seller_message_question",
+      "line": "판매자 메시지 자체를 묻는 질문이 나오면 현우는 조건부였다는 해석을 내세운 채 S1로 물러선다.",
+      "behaviorHint": "양손을 작게 펴며 말의 의미를 축소하려 한다.",
+      "nextRevealAtom": null
+    },
+    {
+      "id": "friend04:transition:b:d-4:s1_s2",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "line": "판매자 전체 대화가 제시되면 현우는 자신의 문장이 확정처럼 읽힐 수 있었음을 인정하며 S2로 이동한다.",
+      "behaviorHint": "짧게 고개를 끄덕인 뒤 '그래도'를 붙인다.",
+      "nextRevealAtom": "d4.unlock.b.s2"
+    },
+    {
+      "id": "friend04:transition:b:d-4:s2_s5",
+      "caseId": "friend-04",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S5",
+      "trigger": "shared_responsibility_question",
+      "line": "공유 책임을 직접 묻는 질문은 현우가 정정하지 않은 책임까지 끌어내며 곧장 S5로 넘어가게 만든다.",
+      "behaviorHint": "낮은 톤으로 다혜 메시지와 자신의 문장을 함께 언급한다.",
+      "nextRevealAtom": "d4.unlock.b.s5"
+    }
+  ]
+}

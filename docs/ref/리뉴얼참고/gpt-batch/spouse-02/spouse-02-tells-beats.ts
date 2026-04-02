@@ -1,0 +1,583 @@
+export const spouse02TellsBeats = {
+  "caseId": "spouse-02",
+  "executableTells": {
+    "a": [
+      {
+        "id": "spouse02:a:tell:self_editing",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "avoiding",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "아니, 정확히는",
+          "정확히 말하면",
+          "그 표현은 아니고"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "말을 시작한 뒤 '아니, 정확히는'이라고 스스로 정정하며 표현 수위를 낮춘다."
+      },
+      {
+        "id": "spouse02:a:tell:legalistic_framing",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "확인한 겁니다",
+          "열람과는 다릅니다",
+          "절차상으로는"
+        ],
+        "sentenceShape": "conditional",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "'확인한 것'과 '열람한 것'을 구분하며 행위의 명칭을 축소한다."
+      },
+      {
+        "id": "spouse02:a:tell:breath_counting",
+        "appliesWhen": [
+          "shame",
+          "hurt",
+          "emotional",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "하나만 말하겠습니다",
+          "숨 좀 고르고",
+          "짧게 말씀드리면"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "대답 전 숨을 세 번 고르고 짧게 끊어 답한다."
+      }
+    ],
+    "b": [
+      {
+        "id": "spouse02:b:tell:sacrifice_stack",
+        "appliesWhen": [
+          "lying",
+          "defensive",
+          "cornered",
+          "emotional"
+        ],
+        "lexicalHooks": [
+          "내가 설명회도 갔고",
+          "내가 다 챙겼고",
+          "내가 참고 버틴 게"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "every_turn",
+        "originalPattern": "'내가 병원도 다니고 설명회도 갔고'처럼 희생 목록을 길게 쌓아 의심을 눌러버린다."
+      },
+      {
+        "id": "spouse02:b:tell:victim_preload",
+        "appliesWhen": [
+          "defensive",
+          "hurt",
+          "avoiding",
+          "cornered"
+        ],
+        "lexicalHooks": [
+          "이런 말 또 해야 하네",
+          "또 내가 나쁜 사람 되네",
+          "상처받는 건 늘 나야"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "본론 전에 '이런 말 또 해야 하네'라고 미리 상처받은 표정을 만든다."
+      },
+      {
+        "id": "spouse02:b:tell:moral_reframe",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "defensive",
+          "emotional"
+        ],
+        "lexicalHooks": [
+          "그건 보호였지",
+          "공격하려던 게 아니고",
+          "난 아이 생각만 했다"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "배신을 추궁받으면 '그건 보호였지 공격이 아니야'라고 도덕 프레임을 바꾼다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "spouse02:beat:a:d-2:deny",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "보낸 적 없습니다. 아니, 정확히는 실행한 적이 없습니다.",
+      "behaviorHint": "숨을 짧게 세 번 고른 뒤 시선을 고정하고 핵심 문장부터 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-2:hedge",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "초안 비슷한 건 있었어도 감정 정리였습니다. 확인과 열람은 구분해야 합니다.",
+      "behaviorHint": "손끝으로 책상 모서리를 맞추며 단어를 스스로 정정한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-2:partial",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "출력은 제가 했습니다. 다만 발송은 하지 않았습니다.",
+      "behaviorHint": "입술을 한 번 깨물고 짧게 끊어 답한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-2:blame",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "계정을 본 건 맞습니다. 그런데 그 전에 누가 제 기록을 밖에 꺼냈는지 확인해야 했습니다.",
+      "behaviorHint": "말속도가 갑자기 빨라지고 마지막 문장만 더 또렷해진다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-2:confession",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "무단 열람했고 초안도 썼습니다. 불안이 절차를 앞질렀습니다.",
+      "behaviorHint": "고개를 한 번 숙였다가 다시 들며 힘을 빼고 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-2:evidence_hit",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "로그까지 나오면 더 숨길 말이 없습니다. 그날 밤 제가 들어간 게 맞습니다.",
+      "behaviorHint": "어깨가 내려앉고 종이를 접으려다 멈춘다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "spouse02:beat:a:d-4:deny",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "저는 과거를 공식 문제로 올린 적 없습니다. 먼저 그 선을 넘은 건 도윤입니다.",
+      "behaviorHint": "턱을 굳힌 채 문장을 둘로 잘라 또박또박 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-4:hedge",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "초안에 감정은 있었습니다. 그래도 보낸 말과 머릿속에서 적어 본 말은 다릅니다.",
+      "behaviorHint": "숨을 고르며 '정확히는'을 넣어 수위를 낮춘다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-4:partial",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "예전 별거 위기 말을 적은 건 맞습니다. 보내지 않았지만 문턱까지 간 건 사실입니다.",
+      "behaviorHint": "시선이 잠깐 흔들린 뒤 다시 재판관 쪽으로 돌아온다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-4:blame",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "도윤이 상담기록을 꺼내지만 않았어도 저도 거기까지는 안 갔습니다. 방어였다고 해도 잘한 일은 아닙니다.",
+      "behaviorHint": "말끝이 빨라졌다가 마지막 문장에서 스스로 브레이크를 건다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-4:confession",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "저도 약속을 건드렸습니다. 실행은 안 했어도 칼자루를 잡은 건 맞습니다.",
+      "behaviorHint": "양손을 모은 채 자책을 억누르는 표정으로 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-4:evidence_hit",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "버전기록이 남아 있으면 부인 못하겠습니다. 초안 안에 과거 문장을 넣은 건 사실입니다.",
+      "behaviorHint": "짧게 숨을 세고 입술 안쪽을 누른다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "spouse02:beat:a:d-5:deny",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "파일 보류는 배우자 신고 때문에 꼬인 줄 알았습니다. 학교가 그렇게 읽는다고 생각했습니다.",
+      "behaviorHint": "메모를 보는 듯 허공을 한번 짚고 단정적으로 시작한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-5:hedge",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "학교가 설명을 안 하니 그렇게 볼 수밖에 없었습니다. 적어도 그때 제겐 그렇게 보였습니다.",
+      "behaviorHint": "문장을 반복하며 스스로 확신을 보강하려 든다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-5:partial",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "보류 시점이 먼저라면 제가 원인을 잘못 짚은 겁니다. 직접 원인은 다른 쪽일 수 있습니다.",
+      "behaviorHint": "목소리가 낮아지고 문장 사이가 길게 비어진다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-5:blame",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "행정 오류가 직접 원인이어도 우리 싸움이 학교를 더 경직되게 만든 건 사실입니다. 그래서 저는 더 빨리 최악으로 해석했습니다.",
+      "behaviorHint": "손을 모았다가 펴며 책임을 반쯤 끌어안는 자세를 보인다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-5:confession",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "직접 원인은 주소 오류였습니다. 저는 그걸 확인도 없이 도윤 탓으로 묶었습니다.",
+      "behaviorHint": "고개를 숙인 채 첫 문장을 짧게 끊고 두 번째 문장을 힘겹게 잇는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:a:d-5:evidence_hit",
+      "caseId": "spouse-02",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "정정서와 보류 메모가 같이 나오면 인과를 뒤집어야 합니다. 제가 틀렸습니다.",
+      "behaviorHint": "입가 힘이 풀리고 손에 쥔 펜을 내려놓는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "spouse02:beat:b:d-1:deny",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "이런 말 또 해야 하네요. 저는 학교에 그 기록 보낸 적 없어요.",
+      "behaviorHint": "미리 상처받은 표정을 만들고 손바닥을 한 번 펼친다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-1:hedge",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "걱정은 했죠. 하지만 실행했다고까지 몰아가진 말아 주세요. 제가 어디까지 버텼는지도 봐야죠.",
+      "behaviorHint": "손가락으로 희생 목록을 세듯 하나씩 접으며 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-1:partial",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "스캔은 했어요. 그건 맞아요. 그런데 바로 넘기려던 건 아니었어요.",
+      "behaviorHint": "시선을 비켜두고 문장을 짧게 끊으며 인정 범위를 최소화한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-1:blame",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "학교가 미리 알아야 할 상황이라고 판단했어요. 전 아이 생각만 했지, 공격하려던 게 아니에요.",
+      "behaviorHint": "어깨를 앞으로 숙이고 자기 가슴을 가리키며 도덕적 명분을 강조한다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-1:confession",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "보조 계정으로 보냈어요. 명분을 붙였지만 결국 배신이었죠.",
+      "behaviorHint": "긴 숨을 내쉰 뒤 마지막 단어에서 눈을 피한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-1:evidence_hit",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "헤더까지 나오면 끝이죠. 그 메일 흐름, 제 쪽 맞아요.",
+      "behaviorHint": "표정이 굳었다가 체념하듯 어깨를 떨군다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "spouse02:beat:b:d-3:deny",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "학부모방 글은 소문이죠. 저랑 엮을 건 없어요.",
+      "behaviorHint": "입꼬리를 억지로 올리며 가볍게 넘기려 한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-3:hedge",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "캡처는 잘려 있고 출처도 불분명해요. 외부 사람이 과장했을 수도 있어요.",
+      "behaviorHint": "손을 옆으로 저으며 불확실성을 크게 부풀린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-3:partial",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "그 글 본 건 맞아요. 하지만 누가 올렸는지까지 제가 안다고 볼 순 없어요.",
+      "behaviorHint": "시선을 내리고 말끝을 흐리다가 마지막만 또렷하게 잡는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-3:blame",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "스캔한 건 아이 문제 때문이었어요. 공격하려고 뿌린 게 아니라 미리 막아보려던 거였어요.",
+      "behaviorHint": "한 손으로 관자놀이를 짚고 '아이 생각' 대목에서 고개를 든다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-3:confession",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "익명성 뒤에 숨은 출발점이 제 보조 계정이었어요. 외부 오해처럼 보이게 만든 것도 저고요.",
+      "behaviorHint": "두 문장 사이에 긴 침묵을 두고 겨우 이어 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-3:evidence_hit",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "헤더와 스캔 기록이 같이 맞물리면 더는 외부 탓 못 해요. 제가 만든 흐름이에요.",
+      "behaviorHint": "눈썹을 찡그린 채 짧게 인정하고 다음 말을 못 잇는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "spouse02:beat:b:d-4:deny",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "그 약속이랑 이번 건 달라요. 전 현재 문제를 말한 거예요.",
+      "behaviorHint": "말을 먼저 던지고 바로 손으로 선을 긋는 시늉을 한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-4:hedge",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "걱정이었지 공격은 아니었어요. 그렇게 보지 말아 주세요.",
+      "behaviorHint": "상처받은 표정을 앞세우고 목소리를 낮춘다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-4:partial",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "상담 기록을 꺼낸 건 맞아요. 그때는 아이 문제라 예외라고 생각했어요.",
+      "behaviorHint": "자기 가슴을 가리키며 스스로의 사정을 길게 덧붙인다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-4:blame",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "희주 씨도 초안에 예전 일을 적었잖아요. 저만 약속 깬 것처럼 말하진 말아 주세요.",
+      "behaviorHint": "손바닥을 뒤집으며 책임을 나눠 들게 하려는 자세를 취한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-4:confession",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "먼저 크게 깬 쪽은 저예요. 희주 씨가 뒤따라 선을 넘게 만든 것도 저고요.",
+      "behaviorHint": "고개를 끄덕이며 자책을 인정하는 듯하지만 눈은 맞추지 못한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse02:beat:b:d-4:evidence_hit",
+      "caseId": "spouse-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "학교 회신까지 나오면 변명 못 해요. 제가 약속을 현실에서 깨버린 거예요.",
+      "behaviorHint": "턱을 문지르다 멈추고 체념한 듯 문장을 마무리한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": "e-4"
+    }
+  ]
+} as const;
+
+export default spouse02TellsBeats;

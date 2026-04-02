@@ -1,0 +1,1649 @@
+export const friend09V3GameLoopData = {
+  "caseId": "friend-09",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "콜라주 제작과 문구 조율",
+      "description": "게시 직전 이미지 제작 흔적과 메신저 조율 대화를 묶어, 편집본의 제작자와 공모 설계를 겨냥하는 카드.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "한유리 씨, 게시 40분 전에 같은 이미지 구조가 이미 편집앱 프로젝트에 잡혀 있습니다. '받은 걸 정리했을 뿐'이라는 말과 어떻게 양립합니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d2.unlock.s2.a_collage_origin",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "이 콜라주에서 환불 완료와 정상 응대 구간만 빠졌습니다. 어떤 문장을 남기고 뺄지 직접 고른 사람은 누구입니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.unlock.s3.a_selective_crop",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "메신저 원본에는 부스 발표 직전 타이밍을 먼저 맞추는 대화가 보입니다. 자료를 모은 시점 자체가 시즌마켓 심사를 겨냥한 것 아닙니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.s2.a_timing_calc",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "윤도건 씨, 메신저 export에서 문구와 업로드 시점을 맞추는 대목이 확인됩니다. 정말 계정만 만든 사람이라면 왜 사전 설계 대화에 들어가 있었습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d3.unlock.s2.b_shared_design",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "유리 씨가 이미지를 맡고 도건 씨가 게시를 맡는 식으로 역할이 갈려 보입니다. 재판관 앞에서는 왜 그 분담을 끝까지 흐렸습니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d3.unlock.s3.b_role_split",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "도구만 잡았다는 말로는 부족합니다. 실제로는 어떤 결정 장면을 일부러 유리 씨 뒤로 숨겼습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.unlock.s4.b_hide_behind_yuri",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "계정 로그와 오래된 앙금",
+      "description": "익명 계정의 생성·삭제 로그와 8개월 전 공개 분쟁 자료를 묶어, 실행자와 동기의 연결을 드러내는 카드.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "조가람 씨와의 8개월 전 공개 분쟁 뒤 주문 취소가 이어졌습니다. 그 기억이 이번 판단에 남아 있지 않았다면 왜 심사 직전까지 끌고 왔습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.unlock.s3.a_old_grudge",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "재판관이 묻는 것은 방어였는지 복수였는지입니다. 시즌마켓 직전 파장을 계산했다면 이미 상대 신뢰를 흔들 생각을 한 것 아닙니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d4.unlock.s4.a_revenge_intent",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "운영자와 친구들에게 설명할 때 왜 하필 8개월 전 분쟁만 빠졌습니까. 그 누락이 우연이라고 보긴 어렵습니다.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.unlock.s2.a_old_conflict_hidden",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "윤도건 씨의 보조 메일과 기기에서 문제 계정이 생성됐고 같은 기기에서 로그인됐습니다. 여기서도 계정 주인을 부정하실 겁니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.unlock.s2.b_account_creation",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "첫 댓글과 삭제 시도까지 같은 흐름으로 이어집니다. 계정만 만들었다면 왜 삭제 버튼까지 손댔습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d1.unlock.s3.b_first_comment_delete",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "8개월 전 손실 기억을 빼고 이번 일을 설명하면, 마치 즉흥 반응처럼 보입니다. 그 생략은 체면을 위한 설계였습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.unlock.s2.b_old_conflict_hidden",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "프로젝트 파일과 사후 변명",
+      "description": "편집앱 프로젝트 파일과 운영자 소명 DM을 함께 대조해, 제작 이후 재유포와 책임전가 과정을 파고드는 카드.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "프로젝트 파일엔 유리 씨 손이 남아 있고, 그 뒤 동일 이미지가 외부 채널로 재전달됩니다. 제작 뒤 유포까지 직접 이어진 것 아닙니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d2.unlock.s5.a_redistribution_confess",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "운영자에게는 단순 전달처럼 설명하고, 친구에게는 도건 씨가 밀어붙였다고 말했습니다. 왜 설명을 둘로 갈랐습니까.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "d5.unlock.s3.a_split_story",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "비난보다 이유를 묻겠습니다. 8개월 전 앙금이 드러나는 것이 왜 그렇게까지 두려웠습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.unlock.s4.a_shame_admit",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "운영자 문의 18분 뒤 바로 삭제와 표현 수정 여부를 상의했습니다. 무고한 도구 사용자라면 왜 사후 수습 문장부터 맞췄습니까.",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "d1.unlock.s4.b_panic_cleanup",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "재판관 앞에서 지금 남는 질문은 하나입니다. 최종 게시 버튼과 첫 댓글의 실행 책임을 스스로 어디까지 인정합니까.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "d1.unlock.s5.b_upload_confess",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "체면을 세우려는 마음이 먼저였습니까, 사실을 바로 말하는 일이 먼저였습니까. 왜 끝까지 끌려간 사람의 자리에 서려 했습니까.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.unlock.s4.b_shame_admit",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-2": {
+        "S2": [
+          {
+            "id": "d2.unlock.s2.a_collage_origin",
+            "factText": "유리가 e-1과 일치하는 후기·DM 콜라주를 자기 휴대폰 편집앱 프로젝트에서 직접 생성했다는 사실",
+            "tags": [
+              "act",
+              "evidence",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "actor": {
+                "fullName": "한유리",
+                "judgeRef": "유리 씨",
+                "neutral": "그 사람"
+              },
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "evidence": {
+                "exact": "후기·구매자 DM 비교 콜라주 이미지",
+                "judgeRef": "문제 콜라주",
+                "neutral": "그 편집본"
+              },
+              "time": {
+                "dateExact": "폭로글 게시 40분 전",
+                "period": "게시 직전",
+                "neutral": "그 전에"
+              },
+              "channel": {
+                "exact": "오픈채팅과 공통 지인 재전달",
+                "judgeRef": "외부 재유포",
+                "neutral": "다른 채널 유포"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d2.unlock.s3.a_selective_crop",
+            "factText": "유리가 정상 응대와 환불 완료 문장을 빼고 말풍선과 여백을 조정해 조가람이 상습 문제 셀러처럼 보이게 잘랐다는 사실",
+            "tags": [
+              "evidence",
+              "harm",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "actor": {
+                "fullName": "한유리",
+                "judgeRef": "유리 씨",
+                "neutral": "그 사람"
+              },
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "evidence": {
+                "exact": "후기·구매자 DM 비교 콜라주 이미지",
+                "judgeRef": "문제 콜라주",
+                "neutral": "그 편집본"
+              },
+              "time": {
+                "dateExact": "폭로글 게시 40분 전",
+                "period": "게시 직전",
+                "neutral": "그 전에"
+              },
+              "channel": {
+                "exact": "오픈채팅과 공통 지인 재전달",
+                "judgeRef": "외부 재유포",
+                "neutral": "다른 채널 유포"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d2.unlock.s4.a_grudge_filter",
+            "factText": "8개월 전 공개 지적의 앙금 때문에 유리가 불리한 문맥을 의도적으로 남기지 않았다는 감정 동기",
+            "tags": [
+              "motive",
+              "emotion",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "actor": {
+                "fullName": "한유리",
+                "judgeRef": "유리 씨",
+                "neutral": "그 사람"
+              },
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "evidence": {
+                "exact": "후기·구매자 DM 비교 콜라주 이미지",
+                "judgeRef": "문제 콜라주",
+                "neutral": "그 편집본"
+              },
+              "time": {
+                "dateExact": "폭로글 게시 40분 전",
+                "period": "게시 직전",
+                "neutral": "그 전에"
+              },
+              "channel": {
+                "exact": "오픈채팅과 공통 지인 재전달",
+                "judgeRef": "외부 재유포",
+                "neutral": "다른 채널 유포"
+              },
+              "legacy": {
+                "exact": "8개월 전 조가람의 공개 지적",
+                "judgeRef": "예전 공개 지적",
+                "neutral": "그 이전 일"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d2.unlock.s5.a_redistribution_confess",
+            "factText": "유리가 오픈채팅과 공통 지인에게 편집본을 다시 퍼뜨리며 조가람 해석을 의도적으로 유도했다는 완전 시인",
+            "tags": [
+              "admission",
+              "harm",
+              "privacy"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "actor": {
+                "fullName": "한유리",
+                "judgeRef": "유리 씨",
+                "neutral": "그 사람"
+              },
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "evidence": {
+                "exact": "후기·구매자 DM 비교 콜라주 이미지",
+                "judgeRef": "문제 콜라주",
+                "neutral": "그 편집본"
+              },
+              "time": {
+                "dateExact": "폭로글 게시 40분 전",
+                "period": "게시 직전",
+                "neutral": "그 전에"
+              },
+              "channel": {
+                "exact": "오픈채팅과 공통 지인 재전달",
+                "judgeRef": "외부 재유포",
+                "neutral": "다른 채널 유포"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "d4.unlock.s2.a_timing_calc",
+            "factText": "유리가 시즌마켓 부스 심사 직전에 타격이 커질 시점을 계산해 자료를 모았다는 사실",
+            "tags": [
+              "timeline",
+              "context",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "경쟁 셀러"
+              },
+              "time": {
+                "dateExact": "가을 시즌마켓 부스 심사 직전",
+                "period": "심사 직전",
+                "neutral": "그 시기"
+              },
+              "institution": {
+                "exact": "시즌마켓 셀러존 부스 심사",
+                "judgeRef": "부스 심사",
+                "neutral": "심사 일정"
+              },
+              "motive": {
+                "exact": "8개월 전 공개 지적과 사업 손실의 앙금",
+                "judgeRef": "예전 앙금",
+                "neutral": "이전 감정"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d4.unlock.s3.a_old_grudge",
+            "factText": "8개월 전 조가람 공개 지적과 주문 취소 기억이 현재 공모의 직접 동기로 이어졌다는 사실",
+            "tags": [
+              "motive",
+              "legacy_sentence",
+              "harm"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "경쟁 셀러"
+              },
+              "time": {
+                "dateExact": "가을 시즌마켓 부스 심사 직전",
+                "period": "심사 직전",
+                "neutral": "그 시기"
+              },
+              "institution": {
+                "exact": "시즌마켓 셀러존 부스 심사",
+                "judgeRef": "부스 심사",
+                "neutral": "심사 일정"
+              },
+              "motive": {
+                "exact": "8개월 전 공개 지적과 사업 손실의 앙금",
+                "judgeRef": "예전 앙금",
+                "neutral": "이전 감정"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d4.unlock.s4.a_revenge_intent",
+            "factText": "유리가 단순 경고가 아니라 조가람의 신뢰도 자체를 흔들려 했다는 복수 의도를 드러낸 감정 누설",
+            "tags": [
+              "motive",
+              "emotion",
+              "harm"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "경쟁 셀러"
+              },
+              "time": {
+                "dateExact": "가을 시즌마켓 부스 심사 직전",
+                "period": "심사 직전",
+                "neutral": "그 시기"
+              },
+              "institution": {
+                "exact": "시즌마켓 셀러존 부스 심사",
+                "judgeRef": "부스 심사",
+                "neutral": "심사 일정"
+              },
+              "motive": {
+                "exact": "8개월 전 공개 지적과 사업 손실의 앙금",
+                "judgeRef": "예전 앙금",
+                "neutral": "이전 감정"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d4.unlock.s5.a_joint_plot_confess",
+            "factText": "유리가 이미지 제작과 외부 확산 역할을 맡고 도건과 함께 경쟁자 제거형 공모를 실행했다고 시인하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "beneficiary"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "경쟁 셀러"
+              },
+              "time": {
+                "dateExact": "가을 시즌마켓 부스 심사 직전",
+                "period": "심사 직전",
+                "neutral": "그 시기"
+              },
+              "institution": {
+                "exact": "시즌마켓 셀러존 부스 심사",
+                "judgeRef": "부스 심사",
+                "neutral": "심사 일정"
+              },
+              "motive": {
+                "exact": "8개월 전 공개 지적과 사업 손실의 앙금",
+                "judgeRef": "예전 앙금",
+                "neutral": "이전 감정"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.s2.a_old_conflict_hidden",
+            "factText": "유리가 운영자 소명과 친구 설명에서 8개월 전 가람 분쟁을 의도적으로 뺐다는 사실",
+            "tags": [
+              "legacy_sentence",
+              "institution",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "그 사람"
+              },
+              "time": {
+                "dateExact": "8개월 전 분쟁 이후~운영자 조사 직후",
+                "period": "사후 소명 단계",
+                "neutral": "그 뒤"
+              },
+              "institution": {
+                "exact": "운영자 소명 DM과 공통 친구 설명",
+                "judgeRef": "소명과 설명",
+                "neutral": "사후 해명"
+              },
+              "legacy": {
+                "exact": "과거 가람 분쟁과 공동 준비 사실",
+                "judgeRef": "이전 얘기",
+                "neutral": "숨긴 전사"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.s3.a_split_story",
+            "factText": "유리가 공통 친구와 운영자에게 서로 다른 설명을 보내 도건 쪽 책임이 더 커 보이게 만든 사실",
+            "tags": [
+              "responsibility",
+              "institution",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "그 사람"
+              },
+              "time": {
+                "dateExact": "8개월 전 분쟁 이후~운영자 조사 직후",
+                "period": "사후 소명 단계",
+                "neutral": "그 뒤"
+              },
+              "institution": {
+                "exact": "운영자 소명 DM과 공통 친구 설명",
+                "judgeRef": "소명과 설명",
+                "neutral": "사후 해명"
+              },
+              "legacy": {
+                "exact": "과거 가람 분쟁과 공동 준비 사실",
+                "judgeRef": "이전 얘기",
+                "neutral": "숨긴 전사"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.s4.a_shame_admit",
+            "factText": "사적인 앙금이 드러나면 장사보다 인성 문제로 회자될까 두려워 유리가 예전 분쟁을 숨겼다는 감정 누설",
+            "tags": [
+              "emotion",
+              "shame",
+              "fear"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "그 사람"
+              },
+              "time": {
+                "dateExact": "8개월 전 분쟁 이후~운영자 조사 직후",
+                "period": "사후 소명 단계",
+                "neutral": "그 뒤"
+              },
+              "institution": {
+                "exact": "운영자 소명 DM과 공통 친구 설명",
+                "judgeRef": "소명과 설명",
+                "neutral": "사후 해명"
+              },
+              "legacy": {
+                "exact": "과거 가람 분쟁과 공동 준비 사실",
+                "judgeRef": "이전 얘기",
+                "neutral": "숨긴 전사"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.s5.a_blame_shift_confess",
+            "factText": "유리가 공동 준비 사실을 숨긴 채 도건을 단독 주범처럼 세워 책임을 넘겼다고 최종 시인하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "그 사람"
+              },
+              "time": {
+                "dateExact": "8개월 전 분쟁 이후~운영자 조사 직후",
+                "period": "사후 소명 단계",
+                "neutral": "그 뒤"
+              },
+              "institution": {
+                "exact": "운영자 소명 DM과 공통 친구 설명",
+                "judgeRef": "소명과 설명",
+                "neutral": "사후 해명"
+              },
+              "legacy": {
+                "exact": "과거 가람 분쟁과 공동 준비 사실",
+                "judgeRef": "이전 얘기",
+                "neutral": "숨긴 전사"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "d1.unlock.s2.b_account_creation",
+            "factText": "도건이 자신의 보조 메일과 기기로 문제 익명계정을 만들고 로그인했다는 사실",
+            "tags": [
+              "act",
+              "identity",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "actor": {
+                "fullName": "윤도건",
+                "judgeRef": "도건 씨",
+                "neutral": "그 사람"
+              },
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "account": {
+                "exact": "도건의 보조 메일과 기기로 만든 익명 커뮤니티 계정",
+                "judgeRef": "문제 익명 계정",
+                "neutral": "그 계정"
+              },
+              "time": {
+                "dateExact": "폭로글 게시 당일",
+                "period": "게시 두 시간 전~운영자 문의 직후",
+                "neutral": "그 시점"
+              },
+              "institution": {
+                "exact": "커뮤니티 운영 로그",
+                "judgeRef": "운영자 로그",
+                "neutral": "플랫폼 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d1.unlock.s3.b_first_comment_delete",
+            "factText": "도건이 첫 댓글 작성과 삭제 시도까지 직접 했다는 실행 책임 사실",
+            "tags": [
+              "act",
+              "timeline",
+              "responsibility"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "actor": {
+                "fullName": "윤도건",
+                "judgeRef": "도건 씨",
+                "neutral": "그 사람"
+              },
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "account": {
+                "exact": "도건의 보조 메일과 기기로 만든 익명 커뮤니티 계정",
+                "judgeRef": "문제 익명 계정",
+                "neutral": "그 계정"
+              },
+              "time": {
+                "dateExact": "폭로글 게시 당일",
+                "period": "게시 두 시간 전~운영자 문의 직후",
+                "neutral": "그 시점"
+              },
+              "institution": {
+                "exact": "커뮤니티 운영 로그",
+                "judgeRef": "운영자 로그",
+                "neutral": "플랫폼 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d1.unlock.s4.b_panic_cleanup",
+            "factText": "운영자 문의 18분 뒤 도건이 유리와 삭제·표현 수정 여부를 상의한 사실",
+            "tags": [
+              "timeline",
+              "institution",
+              "emotion"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "actor": {
+                "fullName": "윤도건",
+                "judgeRef": "도건 씨",
+                "neutral": "그 사람"
+              },
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "account": {
+                "exact": "도건의 보조 메일과 기기로 만든 익명 커뮤니티 계정",
+                "judgeRef": "문제 익명 계정",
+                "neutral": "그 계정"
+              },
+              "time": {
+                "dateExact": "폭로글 게시 당일",
+                "period": "게시 두 시간 전~운영자 문의 직후",
+                "neutral": "그 시점"
+              },
+              "institution": {
+                "exact": "커뮤니티 운영 로그",
+                "judgeRef": "운영자 로그",
+                "neutral": "플랫폼 기록"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d1.unlock.s5.b_upload_confess",
+            "factText": "도건이 최종 폭로글 업로드와 첫 댓글 실행을 자기 책임으로 인정하는 완전 시인",
+            "tags": [
+              "admission",
+              "responsibility",
+              "act"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "actor": {
+                "fullName": "윤도건",
+                "judgeRef": "도건 씨",
+                "neutral": "그 사람"
+              },
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "account": {
+                "exact": "도건의 보조 메일과 기기로 만든 익명 커뮤니티 계정",
+                "judgeRef": "문제 익명 계정",
+                "neutral": "그 계정"
+              },
+              "time": {
+                "dateExact": "폭로글 게시 당일",
+                "period": "게시 두 시간 전~운영자 문의 직후",
+                "neutral": "그 시점"
+              },
+              "institution": {
+                "exact": "커뮤니티 운영 로그",
+                "judgeRef": "운영자 로그",
+                "neutral": "플랫폼 기록"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "d3.unlock.s2.b_shared_design",
+            "factText": "도건이 유리와 함께 폭로 문구 설계와 확산 타이밍을 맞췄다는 사실",
+            "tags": [
+              "context",
+              "institution",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "roles": {
+                "exact": "유리=이미지·확산 / 도건=계정·업로드",
+                "judgeRef": "역할 분담",
+                "neutral": "각자 맡은 부분"
+              },
+              "time": {
+                "dateExact": "부스 발표 전날 밤~당일 오전",
+                "period": "사전 조율 구간",
+                "neutral": "그 준비 단계"
+              },
+              "institution": {
+                "exact": "메신저 export와 플랫폼 로그",
+                "judgeRef": "대화 원본",
+                "neutral": "원본 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d3.unlock.s3.b_role_split",
+            "factText": "유리=이미지·확산, 도건=계정·업로드라는 역할 분담이 실제로 존재했다는 사실",
+            "tags": [
+              "responsibility",
+              "context",
+              "act"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "roles": {
+                "exact": "유리=이미지·확산 / 도건=계정·업로드",
+                "judgeRef": "역할 분담",
+                "neutral": "각자 맡은 부분"
+              },
+              "time": {
+                "dateExact": "부스 발표 전날 밤~당일 오전",
+                "period": "사전 조율 구간",
+                "neutral": "그 준비 단계"
+              },
+              "institution": {
+                "exact": "메신저 export와 플랫폼 로그",
+                "judgeRef": "대화 원본",
+                "neutral": "원본 기록"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d3.unlock.s4.b_hide_behind_yuri",
+            "factText": "도건이 유리를 앞세워 자신의 결정권과 주도 장면을 축소하려 했다는 감정·책임 누설",
+            "tags": [
+              "emotion",
+              "fear",
+              "responsibility"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "roles": {
+                "exact": "유리=이미지·확산 / 도건=계정·업로드",
+                "judgeRef": "역할 분담",
+                "neutral": "각자 맡은 부분"
+              },
+              "time": {
+                "dateExact": "부스 발표 전날 밤~당일 오전",
+                "period": "사전 조율 구간",
+                "neutral": "그 준비 단계"
+              },
+              "institution": {
+                "exact": "메신저 export와 플랫폼 로그",
+                "judgeRef": "대화 원본",
+                "neutral": "원본 기록"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d3.unlock.s5.b_collusion_confess",
+            "factText": "문제의 명예훼손이 둘의 공동 공모였음을 도건이 완전 시인하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "harm"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "상대 셀러"
+              },
+              "roles": {
+                "exact": "유리=이미지·확산 / 도건=계정·업로드",
+                "judgeRef": "역할 분담",
+                "neutral": "각자 맡은 부분"
+              },
+              "time": {
+                "dateExact": "부스 발표 전날 밤~당일 오전",
+                "period": "사전 조율 구간",
+                "neutral": "그 준비 단계"
+              },
+              "institution": {
+                "exact": "메신저 export와 플랫폼 로그",
+                "judgeRef": "대화 원본",
+                "neutral": "원본 기록"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      },
+      "d-5": {
+        "S2": [
+          {
+            "id": "d5.unlock.s2.b_old_conflict_hidden",
+            "factText": "도건도 소명에서 8개월 전 가람 분쟁과 촬영 손실 기억을 의도적으로 빼고 설명했다는 사실",
+            "tags": [
+              "legacy_sentence",
+              "institution",
+              "admission"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "그 사람"
+              },
+              "time": {
+                "dateExact": "8개월 전 분쟁 이후~운영자 조사 직후",
+                "period": "사후 소명 단계",
+                "neutral": "그 뒤"
+              },
+              "institution": {
+                "exact": "운영자 소명 DM과 공통 친구 설명",
+                "judgeRef": "소명과 설명",
+                "neutral": "사후 해명"
+              },
+              "legacy": {
+                "exact": "과거 가람 분쟁과 공동 준비 사실",
+                "judgeRef": "이전 얘기",
+                "neutral": "숨긴 전사"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "counter"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "d5.unlock.s3.b_face_saving_story",
+            "factText": "도건이 자신을 끌려간 사람처럼 서사를 짜 체면을 지키려 했다는 사실",
+            "tags": [
+              "relationship",
+              "responsibility",
+              "counter"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "그 사람"
+              },
+              "time": {
+                "dateExact": "8개월 전 분쟁 이후~운영자 조사 직후",
+                "period": "사후 소명 단계",
+                "neutral": "그 뒤"
+              },
+              "institution": {
+                "exact": "운영자 소명 DM과 공통 친구 설명",
+                "judgeRef": "소명과 설명",
+                "neutral": "사후 해명"
+              },
+              "legacy": {
+                "exact": "과거 가람 분쟁과 공동 준비 사실",
+                "judgeRef": "이전 얘기",
+                "neutral": "숨긴 전사"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "d5.unlock.s4.b_shame_admit",
+            "factText": "예전 촬영 손실과 옹졸해 보일 두려움 때문에 도건이 공동 준비 사실을 숨겼다는 감정 누설",
+            "tags": [
+              "emotion",
+              "fear",
+              "shame"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "그 사람"
+              },
+              "time": {
+                "dateExact": "8개월 전 분쟁 이후~운영자 조사 직후",
+                "period": "사후 소명 단계",
+                "neutral": "그 뒤"
+              },
+              "institution": {
+                "exact": "운영자 소명 DM과 공통 친구 설명",
+                "judgeRef": "소명과 설명",
+                "neutral": "사후 해명"
+              },
+              "legacy": {
+                "exact": "과거 가람 분쟁과 공동 준비 사실",
+                "judgeRef": "이전 얘기",
+                "neutral": "숨긴 전사"
+              }
+            },
+            "stanceHints": [
+              "emotional",
+              "partial"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "d5.unlock.s5.b_blame_shift_confess",
+            "factText": "도건이 유리와 함께 서로 다른 소명을 보내 책임전가를 했다고 시인하는 사실",
+            "tags": [
+              "admission",
+              "responsibility",
+              "relationship"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "person": {
+                "fullName": "조가람",
+                "judgeRef": "가람 씨",
+                "neutral": "그 사람"
+              },
+              "time": {
+                "dateExact": "8개월 전 분쟁 이후~운영자 조사 직후",
+                "period": "사후 소명 단계",
+                "neutral": "그 뒤"
+              },
+              "institution": {
+                "exact": "운영자 소명 DM과 공통 친구 설명",
+                "judgeRef": "소명과 설명",
+                "neutral": "사후 해명"
+              },
+              "legacy": {
+                "exact": "과거 가람 분쟁과 공동 준비 사실",
+                "judgeRef": "이전 얘기",
+                "neutral": "숨긴 전사"
+              }
+            },
+            "stanceHints": [
+              "confess",
+              "responsibility"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "contr-1",
+        "trigger": "a_d2_term_downgrade_vs_e5",
+        "sourceEvidenceIds": [
+          "e-1",
+          "e-5"
+        ],
+        "line": "한유리는 '정리'였다고 하지만, 프로젝트 파일에는 자르기·그림자·배치 레이어가 남아 있어 제작 단계 개입이 부정되지 않는다.",
+        "effect": {
+          "party": "a",
+          "disputeId": "d-2",
+          "pressureVector": "authenticity",
+          "suggestedStatePush": "S2"
+        }
+      },
+      {
+        "id": "contr-2",
+        "trigger": "b_d1_tool_minimizing_vs_e4",
+        "sourceEvidenceIds": [
+          "e-4"
+        ],
+        "line": "윤도건은 '계정만 판 것'처럼 말하지만, 가입·로그인·첫 댓글·삭제 시도 로그가 한 흐름으로 이어져 실행 책임이 확대된다.",
+        "effect": {
+          "party": "b",
+          "disputeId": "d-1",
+          "pressureVector": "identity",
+          "suggestedStatePush": "S3"
+        }
+      },
+      {
+        "id": "contr-3",
+        "trigger": "both_impulsive_claim_vs_e2_e3",
+        "sourceEvidenceIds": [
+          "e-2",
+          "e-3"
+        ],
+        "line": "두 사람은 즉흥 반응이었다고 하지만, 8개월 전 분쟁의 잔감정과 게시 직전 문구 조율이 연결되어 계획성이 드러난다.",
+        "effect": {
+          "party": "both",
+          "disputeId": "d-4",
+          "pressureVector": "context",
+          "suggestedStatePush": "S3"
+        }
+      },
+      {
+        "id": "contr-4",
+        "trigger": "mutual_blame_vs_e6",
+        "sourceEvidenceIds": [
+          "e-6"
+        ],
+        "line": "서로를 단독 주범처럼 설명하면서도 동시에 '이전 얘기는 빼자'고 맞춘 대화가 확인돼 사후 책임전가 서사가 충돌한다.",
+        "effect": {
+          "party": "both",
+          "disputeId": "d-5",
+          "pressureVector": "authenticity",
+          "suggestedStatePush": "S4"
+        }
+      }
+    ],
+    "interjections": [
+      {
+        "id": "inter-1",
+        "party": "a",
+        "trigger": "b_pressure_preface_on_d3",
+        "line": "그 분위기 얘기 또 하실 거면, 그 전에 누가 파일명 확인하고 올릴 문구 먼저 본 건지도 같이 말하세요.",
+        "behaviorHint": "짧게 끊어 끼어들고 곧바로 파일명이나 날짜를 지목한다.",
+        "applicableDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "inter-2",
+        "party": "b",
+        "trigger": "a_quote_reassembly_on_d2",
+        "line": "원문만 읽으면 뭐합니까. 정작 빠진 줄이 있어서 그렇게 보인 건데요.",
+        "behaviorHint": "억울한 표정으로 말을 끊고, '빠진 줄'이라는 표현을 반복한다.",
+        "applicableDisputes": [
+          "d-2",
+          "d-3"
+        ]
+      },
+      {
+        "id": "inter-3",
+        "party": "b",
+        "trigger": "a_old_grudge_denial",
+        "line": "가람 얘기 나오면 유리 씨가 먼저 시즌마켓 타이밍 얘기한 거, 그건 왜 항상 빼죠.",
+        "behaviorHint": "숨을 들이쉰 뒤 되묻듯 말끝을 올린다.",
+        "applicableDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "outburst-a-1",
+        "party": "a",
+        "trigger": "ledger-3_direct_reference",
+        "line": "그 공개 지적 뒤에 주문이 얼마나 빠졌는지 아무도 안 물었잖아요. 전 그냥 넘어간 척만 했어요.",
+        "behaviorHint": "낮은 톤을 유지하다가 마지막 문장에서만 세게 끊는다.",
+        "applicableDisputes": [
+          "d-4"
+        ]
+      },
+      {
+        "id": "outburst-a-2",
+        "party": "a",
+        "trigger": "character_attack_on_shame",
+        "line": "네, 숨겼어요. 장사보다 인성 문제로 돌려 말하는 사람처럼 찍힐까 봐 무서웠으니까요.",
+        "behaviorHint": "시선을 피하지 않고 짧게 인정한 뒤 입술을 굳게 다문다.",
+        "applicableDisputes": [
+          "d-5"
+        ]
+      },
+      {
+        "id": "outburst-b-1",
+        "party": "b",
+        "trigger": "e4_and_e6_stacked",
+        "line": "계정이 제 기기에서 나온 건 맞는데, 그걸로 제가 혼자 다 짰다는 식으로 몰리면 진짜 숨 막힙니다.",
+        "behaviorHint": "숨을 길게 쉬고 목이 잠긴 소리로 자기 억울함을 먼저 깐다.",
+        "applicableDisputes": [
+          "d-1",
+          "d-3"
+        ]
+      },
+      {
+        "id": "outburst-b-2",
+        "party": "b",
+        "trigger": "old_loss_named",
+        "line": "그때 촬영 계약 하나 날아간 뒤로 저도 못 놨어요. 그걸 인정하면 제가 너무 찌질해 보일까 봐 더 숨겼습니다.",
+        "behaviorHint": "어깨가 처진 채 시선을 아래로 떨군다.",
+        "applicableDisputes": [
+          "d-4",
+          "d-5"
+        ]
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "friend09:transition:a:d-2:s0_s1",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "collage_origin_question",
+      "triggerLabel": "콜라주 출처 추궁",
+      "line": "그 표현은 너무 커요. 여러 캡처를 한 폴더에 정리한 건 맞지만, 편집이라기보다 참고용 정리였어요. 밖으로 더 퍼질 줄은 몰랐습니다.",
+      "behaviorHint": "차분하게 용어를 낮추며 말끝을 짧게 접는다."
+    },
+    {
+      "id": "friend09:transition:a:d-2:s1_s2",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-1_presented",
+      "triggerLabel": "e-1 제시",
+      "line": "자료가 거기까지 나오면 부정만 하긴 어렵습니다. 후기와 DM을 한 장에 붙여 보기 쉽게 만든 건 맞습니다. 다만 상습 문제 셀러처럼 보이게 하려던 건 아니라 비교하려던 거였어요.",
+      "behaviorHint": "자료를 직접 보지 않고 가장 불리한 부분만 건조하게 인정한다."
+    },
+    {
+      "id": "friend09:transition:a:d-2:s2_s3",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "project_file_question",
+      "triggerLabel": "프로젝트 파일 추궁",
+      "line": "프로젝트나 대화 흐름까지 보면 일부는 인정해야죠. 말풍선 일부와 환불 뒤 문장을 뺀 건 제 선택이었습니다. 그래도 커뮤니티에서 더 세게 소비되게 만든 건 도건 쪽 확산 방식이 컸어요.",
+      "behaviorHint": "시선이 흔들리지만 끝 문장에서 상대 책임을 붙인다."
+    },
+    {
+      "id": "friend09:transition:a:d-2:s3_s5",
+      "party": "a",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-5_presented",
+      "triggerLabel": "e-5 제시",
+      "line": "이제는 정리해서 말하겠습니다. 콜라주 이미지는 제가 직접 만들었고, 어떤 후기와 DM을 남기고 뺄지 제가 골랐습니다. 오픈채팅과 지인 쪽 재유포까지 제가 했고 조가람이 상습 문제 셀러처럼 읽히길 의도했습니다.",
+      "behaviorHint": "파일명과 시점을 먼저 읊고, 마지막에 의도와 책임을 분명히 말한다."
+    },
+    {
+      "id": "friend09:transition:a:d-4:s0_s1",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "joint_plot_question",
+      "triggerLabel": "공모 의도 질문",
+      "line": "그 표현은 너무 커요. 조가람 얘기를 서로 한 건 맞지만 경쟁자 매장을 떨어뜨리자는 식의 계획은 아니었습니다. 감정 섞인 푸념이 과장돼 보이는 겁니다.",
+      "behaviorHint": "차분하게 용어를 낮추며 말끝을 짧게 접는다."
+    },
+    {
+      "id": "friend09:transition:a:d-4:s1_s2",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-2_presented",
+      "triggerLabel": "e-2 제시",
+      "line": "자료가 거기까지 나오면 부정만 하긴 어렵습니다. 부스 심사 전 타이밍을 의식하고 자료를 모은 건 맞아요. 그래도 처음부터 제거용 공모라고 부를 정도로 냉정하게 짠 건 아니었습니다.",
+      "behaviorHint": "자료를 직접 보지 않고 가장 불리한 부분만 건조하게 인정한다."
+    },
+    {
+      "id": "friend09:transition:a:d-4:s2_s3",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "old_grudge_question",
+      "triggerLabel": "오래된 앙금 질문",
+      "line": "프로젝트나 대화 흐름까지 보면 일부는 인정해야죠. 예전 라벨 공개 지적 건이 머리에 남아 있어서 시즌마켓 전에 가람 신뢰를 흔들고 싶었던 마음은 있었습니다. 도건도 그 감정을 알고 같이 움직였고 저 혼자 복수극을 만든 건 아닙니다.",
+      "behaviorHint": "시선이 흔들리지만 끝 문장에서 상대 책임을 붙인다."
+    },
+    {
+      "id": "friend09:transition:a:d-4:s3_s5",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-3_or_e-5_presented",
+      "triggerLabel": "e-3 또는 e-5 제시",
+      "line": "이제는 정리해서 말하겠습니다. 우리는 시즌마켓 심사 직전에 조가람 신뢰를 떨어뜨리기 위해 역할을 나눠 공모했습니다. 제 오래된 앙금과 도건의 손실 기억을 동력으로 삼아 판을 흔들려 했습니다.",
+      "behaviorHint": "파일명과 시점을 먼저 읊고, 마지막에 의도와 책임을 분명히 말한다."
+    },
+    {
+      "id": "friend09:transition:a:d-5:s0_s1",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_conflict_reminder",
+      "triggerLabel": "과거 분쟁 상기",
+      "line": "그 표현은 너무 커요. 가람과 예전에 마찰이 있었던 건 사실이지만 이번 소명에서 굳이 꺼낼 필요는 없다고 본 거예요. 책임을 넘기려 한 건 아니라 상황을 단순하게 설명한 겁니다.",
+      "behaviorHint": "차분하게 용어를 낮추며 말끝을 짧게 접는다."
+    },
+    {
+      "id": "friend09:transition:a:d-5:s1_s2",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "triggerLabel": "e-3 제시",
+      "line": "자료가 거기까지 나오면 부정만 하긴 어렵습니다. 운영자와 친구들에게 예전 분쟁을 뺀 건 맞아요. 그 얘기까지 나오면 제가 사적인 앙금으로 움직인 사람처럼 보일까 봐 겁났습니다.",
+      "behaviorHint": "자료를 직접 보지 않고 가장 불리한 부분만 건조하게 인정한다."
+    },
+    {
+      "id": "friend09:transition:a:d-5:s2_s4",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_why_she_hid_old_grudge",
+      "triggerLabel": "비판 없는 숨김 이유 질문",
+      "line": "그 질문은 피한다고 없어질 게 아니네요. 사실 제일 부끄러웠던 건 8개월 전 일을 아직도 못 놓고 있었다는 점입니다. 그래서 들통난 뒤에도 사실표 대신 변명부터 만들었습니다.",
+      "behaviorHint": "잠깐 멈춘 뒤 날짜와 감정을 함께 꺼내며 목소리가 낮아진다."
+    },
+    {
+      "id": "friend09:transition:a:d-5:s4_s5",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "responsibility_question",
+      "triggerLabel": "책임 질문",
+      "line": "이제는 정리해서 말하겠습니다. 우리는 과거 가람 분쟁과 공동 준비 사실을 숨긴 채 서로를 단독 주범처럼 말했습니다. 그건 사후 방어가 아니라 책임전가였고 친구 사이 신뢰를 마지막까지 망가뜨린 행동이었습니다.",
+      "behaviorHint": "파일명과 시점을 먼저 읊고, 마지막에 의도와 책임을 분명히 말한다."
+    },
+    {
+      "id": "friend09:transition:b:d-1:s0_s1",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "anonymous_account_question",
+      "triggerLabel": "익명 계정 질문",
+      "line": "그때 분위기가 이미 이상했고요. 보조 메일로 새 계정을 판 건 맞아도 그걸 실사용까지 한 건 별개입니다. 글까지 제가 올렸다고 보기엔 그때 커뮤니티 분위기가 이미 끓고 있었어요.",
+      "behaviorHint": "숨을 길게 들이쉬고 분위기 설명부터 늘어놓는다."
+    },
+    {
+      "id": "friend09:transition:b:d-1:s1_s2",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "triggerLabel": "e-4 제시",
+      "line": "로그가 그렇게 나오면 부정만 할 순 없죠. 계정 생성과 로그인은 제가 했습니다. 하지만 최종 글 방향은 이미 유리가 넘긴 자료와 분위기 때문에 정해져 있었어요.",
+      "behaviorHint": "행동 일부를 인정하면서도 곧바로 상대 자료를 끌어온다."
+    },
+    {
+      "id": "friend09:transition:b:d-1:s2_s3",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "deletion_log_question",
+      "triggerLabel": "삭제 로그 질문",
+      "line": "삭제 흔적까지 보이면 제가 잘라 말한 부분이 드러납니다. 첫 댓글이랑 삭제 시도까지 제 손에서 나간 건 맞습니다. 그래도 저는 도구를 잡은 쪽이었고 어떤 내용을 얹을지는 유리와 같이 맞췄습니다.",
+      "behaviorHint": "억울한 표정을 유지하지만 삭제 흔적과 실행 장면을 더는 부정하지 못한다."
+    },
+    {
+      "id": "friend09:transition:b:d-1:s3_s5",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-6_presented",
+      "triggerLabel": "e-6 제시",
+      "line": "더는 도구 얘기로 숨을 자리가 없네요. 익명 계정은 제가 보조 메일과 기기로 만들었고 최종 폭로글과 첫 댓글도 제가 올렸습니다. 다만 그 게시가 혼자 튀어나온 건 아니고 유리와 맞춘 문구와 자료를 들고 제가 실행했습니다.",
+      "behaviorHint": "시선을 떨군 뒤 자신이 맡은 실행 책임과 공모 구조를 분명히 말한다."
+    },
+    {
+      "id": "friend09:transition:b:d-3:s0_s1",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "sole_actor_question",
+      "triggerLabel": "단독 범행 질문",
+      "line": "그때 분위기가 이미 이상했고요. 최종 버튼은 제가 눌렀어도 내용은 거의 유리 쪽 준비물이었다고 보시면 됩니다. 저 혼자 누군가를 박살내려 했던 건 아니에요.",
+      "behaviorHint": "숨을 길게 들이쉬고 분위기 설명부터 늘어놓는다."
+    },
+    {
+      "id": "friend09:transition:b:d-3:s1_s2",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-4_presented",
+      "triggerLabel": "e-4 제시",
+      "line": "로그가 그렇게 나오면 부정만 할 순 없죠. 단독은 아니지만 제가 더 눈에 띄는 자리를 잡은 건 맞습니다. 유리가 문구와 이미지의 골격을 제공했고 저는 게시 실행을 맡았습니다.",
+      "behaviorHint": "행동 일부를 인정하면서도 곧바로 상대 자료를 끌어온다."
+    },
+    {
+      "id": "friend09:transition:b:d-3:s2_s3",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "trigger": "yuri_materials_question",
+      "triggerLabel": "유리 자료 개입 질문",
+      "line": "삭제 흔적까지 보이면 제가 잘라 말한 부분이 드러납니다. 공모였는데도 저는 계속 도구만 잡은 사람처럼 잘라 말했습니다. 실제로는 첫 댓글 톤과 삭제 타이밍까지 제가 조절했어요.",
+      "behaviorHint": "억울한 표정을 유지하지만 삭제 흔적과 실행 장면을 더는 부정하지 못한다."
+    },
+    {
+      "id": "friend09:transition:b:d-3:s3_s5",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S5",
+      "trigger": "e-2_or_e-5_presented",
+      "triggerLabel": "e-2 또는 e-5 제시",
+      "line": "더는 도구 얘기로 숨을 자리가 없네요. 문제의 명예훼손은 제 단독 범행이 아니라 유리와 제가 역할을 나눠 벌인 공모였습니다. 유리는 설계와 자료를, 저는 계정과 업로드를 맡았고 둘 다 결과를 원했습니다.",
+      "behaviorHint": "시선을 떨군 뒤 자신이 맡은 실행 책임과 공모 구조를 분명히 말한다."
+    },
+    {
+      "id": "friend09:transition:b:d-5:s0_s1",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "trigger": "old_grudge_reminder",
+      "triggerLabel": "오래된 앙금 상기",
+      "line": "그때 분위기가 이미 이상했고요. 과거 분쟁까지 소명에 넣지 않은 건 맞지만 일단 급해서 핵심만 말한 겁니다. 유리가 저를 먼저 잘라낼 줄은 몰랐어요.",
+      "behaviorHint": "숨을 길게 들이쉬고 분위기 설명부터 늘어놓는다."
+    },
+    {
+      "id": "friend09:transition:b:d-5:s1_s2",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "trigger": "e-3_presented",
+      "triggerLabel": "e-3 제시",
+      "line": "로그가 그렇게 나오면 부정만 할 순 없죠. 예전 앙금과 공동 준비 사실을 뺀 채 제가 끌려갔다고 말한 건 사실입니다. 그렇게 해야 제가 최소한 덜 악질처럼 보일 거라 생각했어요.",
+      "behaviorHint": "행동 일부를 인정하면서도 곧바로 상대 자료를 끌어온다."
+    },
+    {
+      "id": "friend09:transition:b:d-5:s2_s4",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S4",
+      "trigger": "nonjudgmental_question_about_why_he_helped_blame_shift",
+      "triggerLabel": "비판 없는 책임전가 이유 질문",
+      "line": "그렇게까지 비난하지 않고 묻는다면, 8개월 전 손실을 아직 품고 있었다는 걸 인정하면 제가 너무 옹졸해 보일까 봐 무서웠습니다. 그래서 들통난 뒤에도 유리 뒤에 숨어 면피할 문장부터 찾았습니다.",
+      "behaviorHint": "목이 잠긴 채 체면과 두려움을 먼저 인정한다."
+    },
+    {
+      "id": "friend09:transition:b:d-5:s4_s5",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "trigger": "e-6_or_responsibility_question",
+      "triggerLabel": "e-6 또는 책임 질문",
+      "line": "더는 도구 얘기로 숨을 자리가 없네요. 폭로가 드러난 뒤 우리는 8개월 전 가람 분쟁과 공동 준비 사실을 숨긴 채 서로를 단독 주범처럼 설명했습니다. 저도 체면을 지키려고 그 틀을 이용했고 그게 책임전가였다는 걸 인정합니다.",
+      "behaviorHint": "시선을 떨군 뒤 자신이 맡은 실행 책임과 공모 구조를 분명히 말한다."
+    }
+  ]
+}

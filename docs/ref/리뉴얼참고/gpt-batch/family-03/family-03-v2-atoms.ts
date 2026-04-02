@@ -1,0 +1,7057 @@
+export const family03V2Atoms = {
+  "caseId": "family-03",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "정우가 매달 60만원 보내겠다고 해 놓고 이제 와 발뺌하는 겁니다."
+          ],
+          "privateKnowledge": [
+            "복자는 원본 대화에 '6개월만 먼저 해보자'는 앞 문장이 있었다는 사실을 알고 있었다."
+          ],
+          "suppressions": [
+            "복자는 원본 대화에 '6개월만 먼저 해보자'는 앞 문장이 있었다는 사실을 알고 있었다.",
+            "복자는 '장남은 다르다'는 옛 말을 덧씌워 6개월 약속을 사실상 계속되는 의무처럼 받아들였다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall",
+            "family03:a:tell:borrowed_authority"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-1:s0:surface:0",
+              "factText": "정우가 매달 60만원 보내겠다고 해 놓고 이제 와 발뺌하는 겁니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family03:a:d-1:s0:support:1",
+              "factText": "복자는 약속의 기간보다 '장남이 생활비를 챙긴다'는 인상만 앞세운다.",
+              "tags": [
+                "relationship",
+                "legacy_sentence",
+                "denial"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "legacy": {
+                  "exact": "장남",
+                  "neutral": "가족 역할"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "처음에 6개월 이야기가 스쳤어도, 제 처지 알면서 그냥 잠깐 돕겠다는 말로 들리진 않았어요."
+          ],
+          "privateKnowledge": [
+            "복자는 원본 대화에 '6개월만 먼저 해보자'는 앞 문장이 있었다는 사실을 알고 있었다.",
+            "복자는 '장남은 다르다'는 옛 말을 덧씌워 6개월 약속을 사실상 계속되는 의무처럼 받아들였다."
+          ],
+          "suppressions": [
+            "복자는 '장남은 다르다'는 옛 말을 덧씌워 6개월 약속을 사실상 계속되는 의무처럼 받아들였다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall",
+            "family03:a:tell:borrowed_authority"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-1:s1:surface:0",
+              "factText": "처음에 6개월 이야기가 스쳤어도, 제 처지 알면서 그냥 잠깐 돕겠다는 말로 들리진 않았어요.",
+              "tags": [
+                "rule",
+                "timeline",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:a:d-1:s1:support:1",
+              "factText": "복자는 6개월 문구를 들었어도 자신의 형편상 더 오래 도와줄 뜻으로 받아들였다고 말한다.",
+              "tags": [
+                "uncertainty",
+                "context",
+                "relationship"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "독립할 때 6개월 동안 월 60만원 보내겠다고 한 약속 자체는 분명했습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 원본 대화에 '6개월만 먼저 해보자'는 앞 문장이 있었다는 사실을 알고 있었다.",
+            "복자는 '장남은 다르다'는 옛 말을 덧씌워 6개월 약속을 사실상 계속되는 의무처럼 받아들였다."
+          ],
+          "suppressions": [
+            "복자는 '장남은 다르다'는 옛 말을 덧씌워 6개월 약속을 사실상 계속되는 의무처럼 받아들였다.",
+            "손목 통증과 줄어든 근무시간 때문에 복자는 그 약속이 흔들릴 때마다 생계와 버림받음의 공포를 함께 느꼈다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-1:s2:surface:0",
+              "factText": "독립할 때 6개월 동안 월 60만원 보내겠다고 한 약속 자체는 분명했습니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family03:a:d-1:s2:support:1",
+              "factText": "복자는 원본 대화에 '6개월만 먼저 해보자'는 앞 문장이 있었다는 사실을 알고 있었다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "quote"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "context"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "제가 그 약속을 장남 책임까지 얹어 오래 갈 말처럼 붙든 건 있습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 원본 대화에 '6개월만 먼저 해보자'는 앞 문장이 있었다는 사실을 알고 있었다.",
+            "복자는 '장남은 다르다'는 옛 말을 덧씌워 6개월 약속을 사실상 계속되는 의무처럼 받아들였다.",
+            "손목 통증과 줄어든 근무시간 때문에 복자는 그 약속이 흔들릴 때마다 생계와 버림받음의 공포를 함께 느꼈다."
+          ],
+          "suppressions": [
+            "손목 통증과 줄어든 근무시간 때문에 복자는 그 약속이 흔들릴 때마다 생계와 버림받음의 공포를 함께 느꼈다.",
+            "복자는 정우의 약속이 실제로는 6개월 한정이었다는 점을 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:a:tell:borrowed_authority",
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-1:s3:surface:0",
+              "factText": "제가 그 약속을 장남 책임까지 얹어 오래 갈 말처럼 붙든 건 있습니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:a:d-1:s3:support:1",
+              "factText": "복자는 '장남은 다르다'는 옛 말을 덧씌워 6개월 약속을 사실상 계속되는 의무처럼 받아들였다.",
+              "tags": [
+                "motive",
+                "legacy_sentence",
+                "relationship"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "legacy": {
+                  "exact": "'장남은 다르다'",
+                  "neutral": "옛 가족 말"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "손목이 아파 근무를 줄이던 때라 그 말이 흔들리면 버려지는 기분이 컸습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 원본 대화에 '6개월만 먼저 해보자'는 앞 문장이 있었다는 사실을 알고 있었다.",
+            "복자는 '장남은 다르다'는 옛 말을 덧씌워 6개월 약속을 사실상 계속되는 의무처럼 받아들였다.",
+            "손목 통증과 줄어든 근무시간 때문에 복자는 그 약속이 흔들릴 때마다 생계와 버림받음의 공포를 함께 느꼈다."
+          ],
+          "suppressions": [
+            "복자는 정우의 약속이 실제로는 6개월 한정이었다는 점을 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-1:s4:surface:0",
+              "factText": "손목이 아파 근무를 줄이던 때라 그 말이 흔들리면 버려지는 기분이 컸습니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:a:d-1:s4:support:1",
+              "factText": "손목 통증과 줄어든 근무시간 때문에 복자는 그 약속이 흔들릴 때마다 생계와 버림받음의 공포를 함께 느꼈다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "health": {
+                  "exact": "손목 통증",
+                  "neutral": "건강 문제"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "정우 약속은 6개월 한정이었고, 저는 그걸 더 길게 받아들이며 몰아붙였습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 원본 대화에 '6개월만 먼저 해보자'는 앞 문장이 있었다는 사실을 알고 있었다.",
+            "복자는 '장남은 다르다'는 옛 말을 덧씌워 6개월 약속을 사실상 계속되는 의무처럼 받아들였다.",
+            "손목 통증과 줄어든 근무시간 때문에 복자는 그 약속이 흔들릴 때마다 생계와 버림받음의 공포를 함께 느꼈다.",
+            "복자는 정우의 약속이 실제로는 6개월 한정이었다는 점을 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-1:s5:surface:0",
+              "factText": "정우 약속은 6개월 한정이었고, 저는 그걸 더 길게 받아들이며 몰아붙였습니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:a:d-1:s5:support:1",
+              "factText": "복자는 정우의 약속이 실제로는 6개월 한정이었다는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "정우가 돈을 끊다시피 흔들어 놔서 제가 매달 벼랑 끝이었습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 셋째 달부터 자동이체가 빠지고 35만원, 40만원이 늦게 들어왔다는 흐름을 알고 있었다."
+          ],
+          "suppressions": [
+            "복자는 셋째 달부터 자동이체가 빠지고 35만원, 40만원이 늦게 들어왔다는 흐름을 알고 있었다.",
+            "복자가 크게 문제 삼은 핵심은 감액 자체만이 아니라 사전 통보가 전혀 없었다는 점이었다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall",
+            "family03:a:tell:borrowed_authority"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-2:s0:surface:0",
+              "factText": "정우가 돈을 끊다시피 흔들어 놔서 제가 매달 벼랑 끝이었습니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family03:a:d-2:s0:support:1",
+              "factText": "복자는 감액과 지연을 사실상 '끊김'으로 묶어 표현한다.",
+              "tags": [
+                "threshold",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "quote": {
+                  "exact": "'끊다시피'",
+                  "neutral": "끊김 표현"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "아예 안 보낸 달은 아니어도, 날짜랑 액수가 제멋대로면 받는 쪽은 끊긴 거랑 비슷합니다."
+          ],
+          "privateKnowledge": [
+            "복자는 셋째 달부터 자동이체가 빠지고 35만원, 40만원이 늦게 들어왔다는 흐름을 알고 있었다.",
+            "복자가 크게 문제 삼은 핵심은 감액 자체만이 아니라 사전 통보가 전혀 없었다는 점이었다."
+          ],
+          "suppressions": [
+            "복자가 크게 문제 삼은 핵심은 감액 자체만이 아니라 사전 통보가 전혀 없었다는 점이었다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall",
+            "family03:a:tell:borrowed_authority"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-2:s1:surface:0",
+              "factText": "아예 안 보낸 달은 아니어도, 날짜랑 액수가 제멋대로면 받는 쪽은 끊긴 거랑 비슷합니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:a:d-2:s1:support:1",
+              "factText": "복자는 액수보다 날짜 불안이 더 컸다고 둘러대며 총액 판단을 흐린다.",
+              "tags": [
+                "uncertainty",
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "date": {
+                  "exact": "날짜",
+                  "neutral": "입금 시점"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "셋째 달부터 자동이체가 빠지고 뒤늦게 적은 돈이 들어온 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 셋째 달부터 자동이체가 빠지고 35만원, 40만원이 늦게 들어왔다는 흐름을 알고 있었다.",
+            "복자가 크게 문제 삼은 핵심은 감액 자체만이 아니라 사전 통보가 전혀 없었다는 점이었다."
+          ],
+          "suppressions": [
+            "복자가 크게 문제 삼은 핵심은 감액 자체만이 아니라 사전 통보가 전혀 없었다는 점이었다.",
+            "복자는 같은 날짜에 돈이 들어오지 않는 상황을 생활고보다 먼저 버림의 신호처럼 받아들였다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-2:s2:surface:0",
+              "factText": "셋째 달부터 자동이체가 빠지고 뒤늦게 적은 돈이 들어온 건 맞습니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family03:a:d-2:s2:support:1",
+              "factText": "복자는 셋째 달부터 자동이체가 빠지고 35만원, 40만원이 늦게 들어왔다는 흐름을 알고 있었다.",
+              "tags": [
+                "act",
+                "timeline",
+                "threshold"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "핵심은 액수만이 아니라 사전에 한마디도 없었다는 점입니다."
+          ],
+          "privateKnowledge": [
+            "복자는 셋째 달부터 자동이체가 빠지고 35만원, 40만원이 늦게 들어왔다는 흐름을 알고 있었다.",
+            "복자가 크게 문제 삼은 핵심은 감액 자체만이 아니라 사전 통보가 전혀 없었다는 점이었다.",
+            "복자는 같은 날짜에 돈이 들어오지 않는 상황을 생활고보다 먼저 버림의 신호처럼 받아들였다."
+          ],
+          "suppressions": [
+            "복자는 같은 날짜에 돈이 들어오지 않는 상황을 생활고보다 먼저 버림의 신호처럼 받아들였다.",
+            "복자는 정우가 전혀 보내지 않은 것은 아니고, 늦고 적게 보냈다는 점을 구분해 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:a:tell:borrowed_authority",
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-2:s3:surface:0",
+              "factText": "핵심은 액수만이 아니라 사전에 한마디도 없었다는 점입니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:a:d-2:s3:support:1",
+              "factText": "복자가 크게 문제 삼은 핵심은 감액 자체만이 아니라 사전 통보가 전혀 없었다는 점이었다.",
+              "tags": [
+                "harm",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "같은 날짜만 기다리던 사람에겐 하루 이틀 미뤄지는 것도 버림처럼 느껴졌습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 셋째 달부터 자동이체가 빠지고 35만원, 40만원이 늦게 들어왔다는 흐름을 알고 있었다.",
+            "복자가 크게 문제 삼은 핵심은 감액 자체만이 아니라 사전 통보가 전혀 없었다는 점이었다.",
+            "복자는 같은 날짜에 돈이 들어오지 않는 상황을 생활고보다 먼저 버림의 신호처럼 받아들였다."
+          ],
+          "suppressions": [
+            "복자는 정우가 전혀 보내지 않은 것은 아니고, 늦고 적게 보냈다는 점을 구분해 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-2:s4:surface:0",
+              "factText": "같은 날짜만 기다리던 사람에겐 하루 이틀 미뤄지는 것도 버림처럼 느껴졌습니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:a:d-2:s4:support:1",
+              "factText": "복자는 같은 날짜에 돈이 들어오지 않는 상황을 생활고보다 먼저 버림의 신호처럼 받아들였다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "context"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "date": {
+                  "exact": "매달 같은 날짜",
+                  "neutral": "정해진 날짜"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "정우가 전혀 안 보낸 건 아니지만, 통보 없이 늦고 줄인 건 큰 잘못이었습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 셋째 달부터 자동이체가 빠지고 35만원, 40만원이 늦게 들어왔다는 흐름을 알고 있었다.",
+            "복자가 크게 문제 삼은 핵심은 감액 자체만이 아니라 사전 통보가 전혀 없었다는 점이었다.",
+            "복자는 같은 날짜에 돈이 들어오지 않는 상황을 생활고보다 먼저 버림의 신호처럼 받아들였다.",
+            "복자는 정우가 전혀 보내지 않은 것은 아니고, 늦고 적게 보냈다는 점을 구분해 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-2:s5:surface:0",
+              "factText": "정우가 전혀 안 보낸 건 아니지만, 통보 없이 늦고 줄인 건 큰 잘못이었습니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:a:d-2:s5:support:1",
+              "factText": "복자는 정우가 전혀 보내지 않은 것은 아니고, 늦고 적게 보냈다는 점을 구분해 인정한다.",
+              "tags": [
+                "admission",
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 돈은 다 제 약값하고 공과금으로 나갔어요. 다른 데 돌린 적 없습니다."
+          ],
+          "privateKnowledge": [
+            "정우의 용돈이 들어온 같은 날 오후, 복자 계좌에서 수빈 계좌로 20만원과 25만원이 2시간 안에 빠져나갔다."
+          ],
+          "suppressions": [
+            "정우의 용돈이 들어온 같은 날 오후, 복자 계좌에서 수빈 계좌로 20만원과 25만원이 2시간 안에 빠져나갔다.",
+            "그 송금의 실제 용도는 식료품 대납이 아니라 수빈의 자격증 학원비와 교통비 보조에 가까웠다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall",
+            "family03:a:tell:borrowed_authority"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-3:s0:surface:0",
+              "factText": "그 돈은 다 제 약값하고 공과금으로 나갔어요. 다른 데 돌린 적 없습니다.",
+              "tags": [
+                "beneficiary",
+                "context",
+                "denial"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family03:a:d-3:s0:support:1",
+              "factText": "복자는 사용처 전부가 자신의 생활비 범주였다고 단정한다.",
+              "tags": [
+                "context",
+                "denial",
+                "beneficiary"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "가족 안에서 잠깐 돈이 섞여 보였을 수는 있어도 결국 다 집 살림 때문이었습니다."
+          ],
+          "privateKnowledge": [
+            "정우의 용돈이 들어온 같은 날 오후, 복자 계좌에서 수빈 계좌로 20만원과 25만원이 2시간 안에 빠져나갔다.",
+            "그 송금의 실제 용도는 식료품 대납이 아니라 수빈의 자격증 학원비와 교통비 보조에 가까웠다."
+          ],
+          "suppressions": [
+            "그 송금의 실제 용도는 식료품 대납이 아니라 수빈의 자격증 학원비와 교통비 보조에 가까웠다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall",
+            "family03:a:tell:borrowed_authority"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-3:s1:surface:0",
+              "factText": "가족 안에서 잠깐 돈이 섞여 보였을 수는 있어도 결국 다 집 살림 때문이었습니다.",
+              "tags": [
+                "beneficiary",
+                "context",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:a:d-3:s1:support:1",
+              "factText": "복자는 가족 안에서 잠깐 돈이 섞였어도 결국 집 살림이었다고 말하며 전용 여부를 흐린다.",
+              "tags": [
+                "uncertainty",
+                "self_justification",
+                "beneficiary"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "수빈이한테 조금 보낸 건 맞지만, 그때도 집안 급한 숨통을 막으려던 수준이었습니다."
+          ],
+          "privateKnowledge": [
+            "정우의 용돈이 들어온 같은 날 오후, 복자 계좌에서 수빈 계좌로 20만원과 25만원이 2시간 안에 빠져나갔다.",
+            "그 송금의 실제 용도는 식료품 대납이 아니라 수빈의 자격증 학원비와 교통비 보조에 가까웠다."
+          ],
+          "suppressions": [
+            "그 송금의 실제 용도는 식료품 대납이 아니라 수빈의 자격증 학원비와 교통비 보조에 가까웠다.",
+            "복자는 한 자식에게 받은 돈을 다른 자식에게 돌린 엄마처럼 보일까 두려워 사용처를 숨겼다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-3:s2:surface:0",
+              "factText": "수빈이한테 조금 보낸 건 맞지만, 그때도 집안 급한 숨통을 막으려던 수준이었습니다.",
+              "tags": [
+                "beneficiary",
+                "context"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family03:a:d-3:s2:support:1",
+              "factText": "정우의 용돈이 들어온 같은 날 오후, 복자 계좌에서 수빈 계좌로 20만원과 25만원이 2시간 안에 빠져나갔다.",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence",
+                "beneficiary"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "학원비랑 교통비가 섞였는데 정우한테 말하면 또 장남 돈으로 딸 챙긴다고 할까 봐 숨겼습니다."
+          ],
+          "privateKnowledge": [
+            "정우의 용돈이 들어온 같은 날 오후, 복자 계좌에서 수빈 계좌로 20만원과 25만원이 2시간 안에 빠져나갔다.",
+            "그 송금의 실제 용도는 식료품 대납이 아니라 수빈의 자격증 학원비와 교통비 보조에 가까웠다.",
+            "복자는 한 자식에게 받은 돈을 다른 자식에게 돌린 엄마처럼 보일까 두려워 사용처를 숨겼다."
+          ],
+          "suppressions": [
+            "복자는 한 자식에게 받은 돈을 다른 자식에게 돌린 엄마처럼 보일까 두려워 사용처를 숨겼다.",
+            "복자는 정우에게 '전부 약값과 공과금에 썼다'고 말했지만, 실제로는 일부를 수빈 지원에 돌려썼음을 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:a:tell:borrowed_authority",
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-3:s3:surface:0",
+              "factText": "학원비랑 교통비가 섞였는데 정우한테 말하면 또 장남 돈으로 딸 챙긴다고 할까 봐 숨겼습니다.",
+              "tags": [
+                "beneficiary",
+                "context",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:a:d-3:s3:support:1",
+              "factText": "그 송금의 실제 용도는 식료품 대납이 아니라 수빈의 자격증 학원비와 교통비 보조에 가까웠다.",
+              "tags": [
+                "motive",
+                "context",
+                "beneficiary"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "한 자식 돈 받아 다른 자식까지 돌본 엄마처럼 보일까 너무 창피했습니다."
+          ],
+          "privateKnowledge": [
+            "정우의 용돈이 들어온 같은 날 오후, 복자 계좌에서 수빈 계좌로 20만원과 25만원이 2시간 안에 빠져나갔다.",
+            "그 송금의 실제 용도는 식료품 대납이 아니라 수빈의 자격증 학원비와 교통비 보조에 가까웠다.",
+            "복자는 한 자식에게 받은 돈을 다른 자식에게 돌린 엄마처럼 보일까 두려워 사용처를 숨겼다."
+          ],
+          "suppressions": [
+            "복자는 정우에게 '전부 약값과 공과금에 썼다'고 말했지만, 실제로는 일부를 수빈 지원에 돌려썼음을 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-3:s4:surface:0",
+              "factText": "한 자식 돈 받아 다른 자식까지 돌본 엄마처럼 보일까 너무 창피했습니다.",
+              "tags": [
+                "beneficiary",
+                "context",
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:a:d-3:s4:support:1",
+              "factText": "복자는 한 자식에게 받은 돈을 다른 자식에게 돌린 엄마처럼 보일까 두려워 사용처를 숨겼다.",
+              "tags": [
+                "shame",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "정우가 보낸 돈 일부를 수빈 지원에 돌려썼고, 전부 약값과 공과금이라고 말한 건 거짓이었습니다."
+          ],
+          "privateKnowledge": [
+            "정우의 용돈이 들어온 같은 날 오후, 복자 계좌에서 수빈 계좌로 20만원과 25만원이 2시간 안에 빠져나갔다.",
+            "그 송금의 실제 용도는 식료품 대납이 아니라 수빈의 자격증 학원비와 교통비 보조에 가까웠다.",
+            "복자는 한 자식에게 받은 돈을 다른 자식에게 돌린 엄마처럼 보일까 두려워 사용처를 숨겼다.",
+            "복자는 정우에게 '전부 약값과 공과금에 썼다'고 말했지만, 실제로는 일부를 수빈 지원에 돌려썼음을 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-3:s5:surface:0",
+              "factText": "정우가 보낸 돈 일부를 수빈 지원에 돌려썼고, 전부 약값과 공과금이라고 말한 건 거짓이었습니다.",
+              "tags": [
+                "beneficiary",
+                "context",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:a:d-3:s5:support:1",
+              "factText": "복자는 정우에게 '전부 약값과 공과금에 썼다'고 말했지만, 실제로는 일부를 수빈 지원에 돌려썼음을 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "quote"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "단톡에 올린 건 망신 주려는 게 아니라 답답해서 상의하려던 거였습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 정우에게 직접 다시 항의하기 전에 친척 단톡과 교회 소모임에 약속 캡처를 먼저 올렸다."
+          ],
+          "suppressions": [
+            "복자는 정우에게 직접 다시 항의하기 전에 친척 단톡과 교회 소모임에 약속 캡처를 먼저 올렸다.",
+            "복자가 올린 문장은 중재 요청보다 '장남이 생활비를 끊었다'는 공개 압박 효과가 더 강했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall",
+            "family03:a:tell:borrowed_authority"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-4:s0:surface:0",
+              "factText": "단톡에 올린 건 망신 주려는 게 아니라 답답해서 상의하려던 거였습니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family03:a:d-4:s0:support:1",
+              "factText": "복자는 단톡 게시를 '상의'라고 부르며 공개 압박 성격을 지운다.",
+              "tags": [
+                "privacy",
+                "denial",
+                "quote"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "quote": {
+                  "exact": "'상의하려고 올린 것'",
+                  "neutral": "상의라는 표현"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "친척이든 교회든 저 혼자 못 버티니 하소연한 거지, 공개재판을 연 건 아니에요."
+          ],
+          "privateKnowledge": [
+            "복자는 정우에게 직접 다시 항의하기 전에 친척 단톡과 교회 소모임에 약속 캡처를 먼저 올렸다.",
+            "복자가 올린 문장은 중재 요청보다 '장남이 생활비를 끊었다'는 공개 압박 효과가 더 강했다."
+          ],
+          "suppressions": [
+            "복자가 올린 문장은 중재 요청보다 '장남이 생활비를 끊었다'는 공개 압박 효과가 더 강했다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall",
+            "family03:a:tell:borrowed_authority"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-4:s1:surface:0",
+              "factText": "친척이든 교회든 저 혼자 못 버티니 하소연한 거지, 공개재판을 연 건 아니에요.",
+              "tags": [
+                "privacy",
+                "harm",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:a:d-4:s1:support:1",
+              "factText": "복자는 하소연과 중재 요청이었다고 하며 실제 파급력을 축소한다.",
+              "tags": [
+                "uncertainty",
+                "self_justification",
+                "harm"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "정우한테 다시 따지기 전에 단톡에 약속 캡처를 올린 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 정우에게 직접 다시 항의하기 전에 친척 단톡과 교회 소모임에 약속 캡처를 먼저 올렸다.",
+            "복자가 올린 문장은 중재 요청보다 '장남이 생활비를 끊었다'는 공개 압박 효과가 더 강했다."
+          ],
+          "suppressions": [
+            "복자가 올린 문장은 중재 요청보다 '장남이 생활비를 끊었다'는 공개 압박 효과가 더 강했다.",
+            "복자는 장남에게 외면당한 어머니로 보일까 두려워 사람들이 보는 자리에서 먼저 증인을 만들려 했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-4:s2:surface:0",
+              "factText": "정우한테 다시 따지기 전에 단톡에 약속 캡처를 올린 건 맞습니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family03:a:d-4:s2:support:1",
+              "factText": "복자는 정우에게 직접 다시 항의하기 전에 친척 단톡과 교회 소모임에 약속 캡처를 먼저 올렸다.",
+              "tags": [
+                "timeline",
+                "privacy",
+                "evidence"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "표현이 세서 결과적으로 압박처럼 보였고, 그 점은 제가 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 정우에게 직접 다시 항의하기 전에 친척 단톡과 교회 소모임에 약속 캡처를 먼저 올렸다.",
+            "복자가 올린 문장은 중재 요청보다 '장남이 생활비를 끊었다'는 공개 압박 효과가 더 강했다.",
+            "복자는 장남에게 외면당한 어머니로 보일까 두려워 사람들이 보는 자리에서 먼저 증인을 만들려 했다."
+          ],
+          "suppressions": [
+            "복자는 장남에게 외면당한 어머니로 보일까 두려워 사람들이 보는 자리에서 먼저 증인을 만들려 했다.",
+            "복자는 단톡 공유가 하소연을 넘어 공개 압박이자 공개 망신으로 작동했다는 점을 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:a:tell:borrowed_authority",
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-4:s3:surface:0",
+              "factText": "표현이 세서 결과적으로 압박처럼 보였고, 그 점은 제가 넘었습니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:a:d-4:s3:support:1",
+              "factText": "복자가 올린 문장은 중재 요청보다 '장남이 생활비를 끊었다'는 공개 압박 효과가 더 강했다.",
+              "tags": [
+                "motive",
+                "harm",
+                "privacy"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "장남한테까지 외면당한 엄마로 보일까 겁나서 사람들 앞에 먼저 손을 벌렸습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 정우에게 직접 다시 항의하기 전에 친척 단톡과 교회 소모임에 약속 캡처를 먼저 올렸다.",
+            "복자가 올린 문장은 중재 요청보다 '장남이 생활비를 끊었다'는 공개 압박 효과가 더 강했다.",
+            "복자는 장남에게 외면당한 어머니로 보일까 두려워 사람들이 보는 자리에서 먼저 증인을 만들려 했다."
+          ],
+          "suppressions": [
+            "복자는 단톡 공유가 하소연을 넘어 공개 압박이자 공개 망신으로 작동했다는 점을 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-4:s4:surface:0",
+              "factText": "장남한테까지 외면당한 엄마로 보일까 겁나서 사람들 앞에 먼저 손을 벌렸습니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:a:d-4:s4:support:1",
+              "factText": "복자는 장남에게 외면당한 어머니로 보일까 두려워 사람들이 보는 자리에서 먼저 증인을 만들려 했다.",
+              "tags": [
+                "shame",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "제가 단톡으로 공개 압박을 했고, 그건 가족 경계를 넘은 행동이었습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 정우에게 직접 다시 항의하기 전에 친척 단톡과 교회 소모임에 약속 캡처를 먼저 올렸다.",
+            "복자가 올린 문장은 중재 요청보다 '장남이 생활비를 끊었다'는 공개 압박 효과가 더 강했다.",
+            "복자는 장남에게 외면당한 어머니로 보일까 두려워 사람들이 보는 자리에서 먼저 증인을 만들려 했다.",
+            "복자는 단톡 공유가 하소연을 넘어 공개 압박이자 공개 망신으로 작동했다는 점을 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-4:s5:surface:0",
+              "factText": "제가 단톡으로 공개 압박을 했고, 그건 가족 경계를 넘은 행동이었습니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:a:d-4:s5:support:1",
+              "factText": "복자는 단톡 공유가 하소연을 넘어 공개 압박이자 공개 망신으로 작동했다는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "privacy"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "공과금을 직접 내겠다는 말은 있었어도 제대로 굴러간 적이 없어서 믿을 수가 없었습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 직접 납부 합의 뒤 다시 현금 지원을 요구했고, 영수증 공유도 중단했다."
+          ],
+          "suppressions": [
+            "복자는 직접 납부 합의 뒤 다시 현금 지원을 요구했고, 영수증 공유도 중단했다.",
+            "복자에게 영수증 공유는 투명성 약속이라기보다 아들에게 검사받는 통제처럼 느껴졌다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall",
+            "family03:a:tell:borrowed_authority"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-5:s0:surface:0",
+              "factText": "공과금을 직접 내겠다는 말은 있었어도 제대로 굴러간 적이 없어서 믿을 수가 없었습니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family03:a:d-5:s0:support:1",
+              "factText": "복자는 직접 납부 방식이 애초에 제대로 합의되지 않은 것처럼 말한다.",
+              "tags": [
+                "rule",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "그 방식은 시험삼아 해보자는 정도였지, 제가 완전히 현금 요구를 접겠다는 뜻은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 직접 납부 합의 뒤 다시 현금 지원을 요구했고, 영수증 공유도 중단했다.",
+            "복자에게 영수증 공유는 투명성 약속이라기보다 아들에게 검사받는 통제처럼 느껴졌다."
+          ],
+          "suppressions": [
+            "복자에게 영수증 공유는 투명성 약속이라기보다 아들에게 검사받는 통제처럼 느껴졌다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall",
+            "family03:a:tell:borrowed_authority"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-5:s1:surface:0",
+              "factText": "그 방식은 시험삼아 해보자는 정도였지, 제가 완전히 현금 요구를 접겠다는 뜻은 아니었습니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:a:d-5:s1:support:1",
+              "factText": "복자는 시험 운영이었다며 자신의 현금 요구 복귀를 예외 처리한다.",
+              "tags": [
+                "uncertainty",
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "직접 납부로 바꾸자고 합의한 뒤에도 제가 다시 현금을 요구하고 영수증 공유를 끊은 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 직접 납부 합의 뒤 다시 현금 지원을 요구했고, 영수증 공유도 중단했다.",
+            "복자에게 영수증 공유는 투명성 약속이라기보다 아들에게 검사받는 통제처럼 느껴졌다."
+          ],
+          "suppressions": [
+            "복자에게 영수증 공유는 투명성 약속이라기보다 아들에게 검사받는 통제처럼 느껴졌다.",
+            "복자는 지출 내역이 드러나면 자신의 궁색함과 다른 자녀 지원까지 함께 드러날까 두려워했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:a:tell:hardship_rollcall"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-5:s2:surface:0",
+              "factText": "직접 납부로 바꾸자고 합의한 뒤에도 제가 다시 현금을 요구하고 영수증 공유를 끊은 건 맞습니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family03:a:d-5:s2:support:1",
+              "factText": "복자는 직접 납부 합의 뒤 다시 현금 지원을 요구했고, 영수증 공유도 중단했다.",
+              "tags": [
+                "act",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "고지서랑 영수증을 매번 내밀면 제가 검사받는 사람처럼 느껴져 오래 못 버텼습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 직접 납부 합의 뒤 다시 현금 지원을 요구했고, 영수증 공유도 중단했다.",
+            "복자에게 영수증 공유는 투명성 약속이라기보다 아들에게 검사받는 통제처럼 느껴졌다.",
+            "복자는 지출 내역이 드러나면 자신의 궁색함과 다른 자녀 지원까지 함께 드러날까 두려워했다."
+          ],
+          "suppressions": [
+            "복자는 지출 내역이 드러나면 자신의 궁색함과 다른 자녀 지원까지 함께 드러날까 두려워했다.",
+            "복자는 직접 납부 합의가 깨진 데에 자신이 현금 요구로 돌아선 책임도 있다는 점을 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:a:tell:borrowed_authority",
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-5:s3:surface:0",
+              "factText": "고지서랑 영수증을 매번 내밀면 제가 검사받는 사람처럼 느껴져 오래 못 버텼습니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:a:d-5:s3:support:1",
+              "factText": "복자에게 영수증 공유는 투명성 약속이라기보다 아들에게 검사받는 통제처럼 느껴졌다.",
+              "tags": [
+                "emotion",
+                "motive",
+                "shame"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "정우 돈이 어디로 새는지 다 드러나면 더 초라해질까 겁이 났습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 직접 납부 합의 뒤 다시 현금 지원을 요구했고, 영수증 공유도 중단했다.",
+            "복자에게 영수증 공유는 투명성 약속이라기보다 아들에게 검사받는 통제처럼 느껴졌다.",
+            "복자는 지출 내역이 드러나면 자신의 궁색함과 다른 자녀 지원까지 함께 드러날까 두려워했다."
+          ],
+          "suppressions": [
+            "복자는 직접 납부 합의가 깨진 데에 자신이 현금 요구로 돌아선 책임도 있다는 점을 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-5:s4:surface:0",
+              "factText": "정우 돈이 어디로 새는지 다 드러나면 더 초라해질까 겁이 났습니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:a:d-5:s4:support:1",
+              "factText": "복자는 지출 내역이 드러나면 자신의 궁색함과 다른 자녀 지원까지 함께 드러날까 두려워했다.",
+              "tags": [
+                "fear",
+                "privacy",
+                "context"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "fear"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "그 합의가 깨진 데는 정우만이 아니라 저도 다시 현금으로 돌아선 책임이 있습니다."
+          ],
+          "privateKnowledge": [
+            "복자는 직접 납부 합의 뒤 다시 현금 지원을 요구했고, 영수증 공유도 중단했다.",
+            "복자에게 영수증 공유는 투명성 약속이라기보다 아들에게 검사받는 통제처럼 느껴졌다.",
+            "복자는 지출 내역이 드러나면 자신의 궁색함과 다른 자녀 지원까지 함께 드러날까 두려워했다.",
+            "복자는 직접 납부 합의가 깨진 데에 자신이 현금 요구로 돌아선 책임도 있다는 점을 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:a:tell:tear_pause"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:a:d-5:s5:surface:0",
+              "factText": "그 합의가 깨진 데는 정우만이 아니라 저도 다시 현금으로 돌아선 책임이 있습니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:a:d-5:s5:support:1",
+              "factText": "복자는 직접 납부 합의가 깨진 데에 자신이 현금 요구로 돌아선 책임도 있다는 점을 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "제가 평생 60만원씩 책임진다고 한 적은 없습니다. 그건 부풀려진 말입니다."
+          ],
+          "privateKnowledge": [
+            "원본 대화에는 '6개월만 먼저 해보자' 다음에 '매달 60은 내가 보낼게'가 이어져, 약속의 기간과 금액이 함께 드러난다."
+          ],
+          "suppressions": [
+            "원본 대화에는 '6개월만 먼저 해보자' 다음에 '매달 60은 내가 보낼게'가 이어져, 약속의 기간과 금액이 함께 드러난다.",
+            "정우는 어머니가 그 약속을 더 긴 의무로 받아들이는 기색을 알면서도 바로 정정하지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:b:tell:delay_buffer",
+            "family03:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-1:s0:surface:0",
+              "factText": "제가 평생 60만원씩 책임진다고 한 적은 없습니다. 그건 부풀려진 말입니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family03:b:d-1:s0:support:1",
+              "factText": "정우는 약속의 기간과 금액보다 '평생 책임은 아니다'라는 방어선만 강조한다.",
+              "tags": [
+                "rule",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "도와주자는 말은 했지만, 이사 직후 몇 달 정리하자는 취지였지 끝이 없는 약속은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "원본 대화에는 '6개월만 먼저 해보자' 다음에 '매달 60은 내가 보낼게'가 이어져, 약속의 기간과 금액이 함께 드러난다.",
+            "정우는 어머니가 그 약속을 더 긴 의무로 받아들이는 기색을 알면서도 바로 정정하지 않았다."
+          ],
+          "suppressions": [
+            "정우는 어머니가 그 약속을 더 긴 의무로 받아들이는 기색을 알면서도 바로 정정하지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:b:tell:delay_buffer",
+            "family03:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-1:s1:surface:0",
+              "factText": "도와주자는 말은 했지만, 이사 직후 몇 달 정리하자는 취지였지 끝이 없는 약속은 아니었습니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:b:d-1:s1:support:1",
+              "factText": "정우는 몇 달 돕자는 취지였다고 말하며 6개월 약속의 명확성을 낮춘다.",
+              "tags": [
+                "uncertainty",
+                "self_justification",
+                "timeline"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "원본 대화 기준으로는 독립 당시 6개월 동안 월 60만원 보내기로 한 건 맞습니다."
+          ],
+          "privateKnowledge": [
+            "원본 대화에는 '6개월만 먼저 해보자' 다음에 '매달 60은 내가 보낼게'가 이어져, 약속의 기간과 금액이 함께 드러난다.",
+            "정우는 어머니가 그 약속을 더 긴 의무로 받아들이는 기색을 알면서도 바로 정정하지 않았다."
+          ],
+          "suppressions": [
+            "정우는 어머니가 그 약속을 더 긴 의무로 받아들이는 기색을 알면서도 바로 정정하지 않았다.",
+            "정우는 장남 책임 이야기가 겹치자 '여기까지다'라는 기간 제한을 분명히 말하는 일을 부끄럽고 잔인하게 느꼈다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-1:s2:surface:0",
+              "factText": "원본 대화 기준으로는 독립 당시 6개월 동안 월 60만원 보내기로 한 건 맞습니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family03:b:d-1:s2:support:1",
+              "factText": "원본 대화에는 '6개월만 먼저 해보자' 다음에 '매달 60은 내가 보낼게'가 이어져, 약속의 기간과 금액이 함께 드러난다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "quote"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "제가 어머니가 그걸 더 길게 받아들이는 걸 알면서도 바로 선을 긋지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "원본 대화에는 '6개월만 먼저 해보자' 다음에 '매달 60은 내가 보낼게'가 이어져, 약속의 기간과 금액이 함께 드러난다.",
+            "정우는 어머니가 그 약속을 더 긴 의무로 받아들이는 기색을 알면서도 바로 정정하지 않았다.",
+            "정우는 장남 책임 이야기가 겹치자 '여기까지다'라는 기간 제한을 분명히 말하는 일을 부끄럽고 잔인하게 느꼈다."
+          ],
+          "suppressions": [
+            "정우는 장남 책임 이야기가 겹치자 '여기까지다'라는 기간 제한을 분명히 말하는 일을 부끄럽고 잔인하게 느꼈다.",
+            "정우는 독립 당시 6개월 동안 월 60만원을 보내겠다고 분명히 약속한 사실을 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:b:tell:clipped_apology",
+            "family03:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-1:s3:surface:0",
+              "factText": "제가 어머니가 그걸 더 길게 받아들이는 걸 알면서도 바로 선을 긋지 못했습니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:b:d-1:s3:support:1",
+              "factText": "정우는 어머니가 그 약속을 더 긴 의무로 받아들이는 기색을 알면서도 바로 정정하지 않았다.",
+              "tags": [
+                "motive",
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "장남이니까 당연히 더 해야 한다는 말을 또 듣기 싫어서 기간 얘기를 분명히 못 박지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "원본 대화에는 '6개월만 먼저 해보자' 다음에 '매달 60은 내가 보낼게'가 이어져, 약속의 기간과 금액이 함께 드러난다.",
+            "정우는 어머니가 그 약속을 더 긴 의무로 받아들이는 기색을 알면서도 바로 정정하지 않았다.",
+            "정우는 장남 책임 이야기가 겹치자 '여기까지다'라는 기간 제한을 분명히 말하는 일을 부끄럽고 잔인하게 느꼈다."
+          ],
+          "suppressions": [
+            "정우는 독립 당시 6개월 동안 월 60만원을 보내겠다고 분명히 약속한 사실을 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:b:tell:clipped_apology"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-1:s4:surface:0",
+              "factText": "장남이니까 당연히 더 해야 한다는 말을 또 듣기 싫어서 기간 얘기를 분명히 못 박지 못했습니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:b:d-1:s4:support:1",
+              "factText": "정우는 장남 책임 이야기가 겹치자 '여기까지다'라는 기간 제한을 분명히 말하는 일을 부끄럽고 잔인하게 느꼈다.",
+              "tags": [
+                "shame",
+                "emotion",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "legacy": {
+                  "exact": "장남 책임",
+                  "neutral": "가족 역할 압박"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "shame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "저는 6개월간 월 60만원을 보내겠다고 분명히 약속했고, 그 약속을 흐리게 다룬 책임이 있습니다."
+          ],
+          "privateKnowledge": [
+            "원본 대화에는 '6개월만 먼저 해보자' 다음에 '매달 60은 내가 보낼게'가 이어져, 약속의 기간과 금액이 함께 드러난다.",
+            "정우는 어머니가 그 약속을 더 긴 의무로 받아들이는 기색을 알면서도 바로 정정하지 않았다.",
+            "정우는 장남 책임 이야기가 겹치자 '여기까지다'라는 기간 제한을 분명히 말하는 일을 부끄럽고 잔인하게 느꼈다.",
+            "정우는 독립 당시 6개월 동안 월 60만원을 보내겠다고 분명히 약속한 사실을 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:b:tell:clipped_apology"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-1:s5:surface:0",
+              "factText": "저는 6개월간 월 60만원을 보내겠다고 분명히 약속했고, 그 약속을 흐리게 다룬 책임이 있습니다.",
+              "tags": [
+                "rule",
+                "timeline",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:b:d-1:s5:support:1",
+              "factText": "정우는 독립 당시 6개월 동안 월 60만원을 보내겠다고 분명히 약속한 사실을 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "60만원",
+                  "neutral": "해당 금액"
+                },
+                "duration": {
+                  "exact": "6개월",
+                  "neutral": "그 기간"
+                },
+                "time": {
+                  "period": "독립 직후",
+                  "neutral": "그때"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "자동이체를 끊었다기보다 이번 달 사정 때문에 제가 직접 맞춰 보낸 겁니다."
+          ],
+          "privateKnowledge": [
+            "은행 로그상 정우는 셋째 달에 본인 인증으로 자동이체를 직접 해지했다."
+          ],
+          "suppressions": [
+            "은행 로그상 정우는 셋째 달에 본인 인증으로 자동이체를 직접 해지했다.",
+            "정우는 이후 35만원과 40만원을 각각 늦게 송금했고, 그 전에 복자에게 미리 설명하지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:b:tell:delay_buffer",
+            "family03:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-2:s0:surface:0",
+              "factText": "자동이체를 끊었다기보다 이번 달 사정 때문에 제가 직접 맞춰 보낸 겁니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "denial"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family03:b:d-2:s0:support:1",
+              "factText": "정우는 자동이체 해지를 스스로의 선택이 아니라 그달 사정 조정처럼 말한다.",
+              "tags": [
+                "act",
+                "denial",
+                "self_justification"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "조금 밀리고 조금 줄어든 거지, 생활비를 모른 척한 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "은행 로그상 정우는 셋째 달에 본인 인증으로 자동이체를 직접 해지했다.",
+            "정우는 이후 35만원과 40만원을 각각 늦게 송금했고, 그 전에 복자에게 미리 설명하지 않았다."
+          ],
+          "suppressions": [
+            "정우는 이후 35만원과 40만원을 각각 늦게 송금했고, 그 전에 복자에게 미리 설명하지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:b:tell:delay_buffer",
+            "family03:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-2:s1:surface:0",
+              "factText": "조금 밀리고 조금 줄어든 거지, 생활비를 모른 척한 건 아닙니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:b:d-2:s1:support:1",
+              "factText": "정우는 감액과 지연 규모를 '조금'으로 줄여 말해 약속 위반의 무게를 깎는다.",
+              "tags": [
+                "threshold",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "quote": {
+                  "exact": "'조금 밀린 거지'",
+                  "neutral": "축소 표현"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "셋째 달에 자동이체를 해지한 건 사실이고, 그 뒤엔 제가 직접 송금했습니다."
+          ],
+          "privateKnowledge": [
+            "은행 로그상 정우는 셋째 달에 본인 인증으로 자동이체를 직접 해지했다.",
+            "정우는 이후 35만원과 40만원을 각각 늦게 송금했고, 그 전에 복자에게 미리 설명하지 않았다."
+          ],
+          "suppressions": [
+            "정우는 이후 35만원과 40만원을 각각 늦게 송금했고, 그 전에 복자에게 미리 설명하지 않았다.",
+            "정우는 자신이 무책임한 장남처럼 보일까 두려워 감액과 지연을 '조금 밀린 것'처럼 축소해 말했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-2:s2:surface:0",
+              "factText": "셋째 달에 자동이체를 해지한 건 사실이고, 그 뒤엔 제가 직접 송금했습니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family03:b:d-2:s2:support:1",
+              "factText": "은행 로그상 정우는 셋째 달에 본인 인증으로 자동이체를 직접 해지했다.",
+              "tags": [
+                "act",
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "35만원, 40만원으로 줄여 늦게 보냈으면서도 미리 말하지 않은 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "은행 로그상 정우는 셋째 달에 본인 인증으로 자동이체를 직접 해지했다.",
+            "정우는 이후 35만원과 40만원을 각각 늦게 송금했고, 그 전에 복자에게 미리 설명하지 않았다.",
+            "정우는 자신이 무책임한 장남처럼 보일까 두려워 감액과 지연을 '조금 밀린 것'처럼 축소해 말했다."
+          ],
+          "suppressions": [
+            "정우는 자신이 무책임한 장남처럼 보일까 두려워 감액과 지연을 '조금 밀린 것'처럼 축소해 말했다.",
+            "정우는 자동이체 해지와 감액 송금을 사전에 알리지 않은 책임이 자신에게 있음을 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:b:tell:clipped_apology",
+            "family03:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-2:s3:surface:0",
+              "factText": "35만원, 40만원으로 줄여 늦게 보냈으면서도 미리 말하지 않은 건 제 잘못입니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:b:d-2:s3:support:1",
+              "factText": "정우는 이후 35만원과 40만원을 각각 늦게 송금했고, 그 전에 복자에게 미리 설명하지 않았다.",
+              "tags": [
+                "act",
+                "timeline",
+                "responsibility",
+                "threshold"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "그걸 큰 약속 파기처럼 인정하면 제가 너무 무책임한 사람처럼 보일까 축소해서 말했습니다."
+          ],
+          "privateKnowledge": [
+            "은행 로그상 정우는 셋째 달에 본인 인증으로 자동이체를 직접 해지했다.",
+            "정우는 이후 35만원과 40만원을 각각 늦게 송금했고, 그 전에 복자에게 미리 설명하지 않았다.",
+            "정우는 자신이 무책임한 장남처럼 보일까 두려워 감액과 지연을 '조금 밀린 것'처럼 축소해 말했다."
+          ],
+          "suppressions": [
+            "정우는 자동이체 해지와 감액 송금을 사전에 알리지 않은 책임이 자신에게 있음을 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:b:tell:clipped_apology"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-2:s4:surface:0",
+              "factText": "그걸 큰 약속 파기처럼 인정하면 제가 너무 무책임한 사람처럼 보일까 축소해서 말했습니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "emotion",
+                "shame"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:b:d-2:s4:support:1",
+              "factText": "정우는 자신이 무책임한 장남처럼 보일까 두려워 감액과 지연을 '조금 밀린 것'처럼 축소해 말했다.",
+              "tags": [
+                "self_justification",
+                "shame",
+                "fear"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "quote": {
+                  "exact": "'조금 밀린 거지'",
+                  "neutral": "축소 표현"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "자동이체를 끊고 감액 송금을 통보 없이 반복한 건 변명하기 어려운 제 책임입니다."
+          ],
+          "privateKnowledge": [
+            "은행 로그상 정우는 셋째 달에 본인 인증으로 자동이체를 직접 해지했다.",
+            "정우는 이후 35만원과 40만원을 각각 늦게 송금했고, 그 전에 복자에게 미리 설명하지 않았다.",
+            "정우는 자신이 무책임한 장남처럼 보일까 두려워 감액과 지연을 '조금 밀린 것'처럼 축소해 말했다.",
+            "정우는 자동이체 해지와 감액 송금을 사전에 알리지 않은 책임이 자신에게 있음을 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:b:tell:clipped_apology"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-2:s5:surface:0",
+              "factText": "자동이체를 끊고 감액 송금을 통보 없이 반복한 건 변명하기 어려운 제 책임입니다.",
+              "tags": [
+                "act",
+                "timeline",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:b:d-2:s5:support:1",
+              "factText": "정우는 자동이체 해지와 감액 송금을 사전에 알리지 않은 책임이 자신에게 있음을 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "autoTransfer": {
+                  "exact": "자동이체",
+                  "neutral": "정기 송금"
+                },
+                "monthRef": {
+                  "exact": "3개월째",
+                  "neutral": "그 시점"
+                },
+                "amount1": {
+                  "exact": "35만원",
+                  "neutral": "감액 송금 1"
+                },
+                "amount2": {
+                  "exact": "40만원",
+                  "neutral": "감액 송금 2"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "어머니는 약값이랑 공과금에 쓴다고 했으니 저는 그렇게 믿을 수밖에 없었습니다."
+          ],
+          "privateKnowledge": [
+            "정우는 통장과 문자 대조를 통해 자신의 용돈 일부가 같은 날 수빈 쪽으로 이동했다는 점을 확인하게 된다."
+          ],
+          "suppressions": [
+            "정우는 통장과 문자 대조를 통해 자신의 용돈 일부가 같은 날 수빈 쪽으로 이동했다는 점을 확인하게 된다.",
+            "정우에게 더 큰 상처였던 부분은 수빈 지원 자체보다, 복자가 그 사실을 숨기고 전부 약값과 공과금이라고 말한 점이다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:b:tell:delay_buffer",
+            "family03:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-3:s0:surface:0",
+              "factText": "어머니는 약값이랑 공과금에 쓴다고 했으니 저는 그렇게 믿을 수밖에 없었습니다.",
+              "tags": [
+                "beneficiary",
+                "context",
+                "denial"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family03:b:d-3:s0:support:1",
+              "factText": "정우는 어머니 설명을 그대로 믿었기 때문에 자신에게 확인 책임이 없었다고 본다.",
+              "tags": [
+                "relationship",
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "누나 쪽으로 조금 갔을지 몰라도, 그때는 정확히 확인할 근거가 없었습니다."
+          ],
+          "privateKnowledge": [
+            "정우는 통장과 문자 대조를 통해 자신의 용돈 일부가 같은 날 수빈 쪽으로 이동했다는 점을 확인하게 된다.",
+            "정우에게 더 큰 상처였던 부분은 수빈 지원 자체보다, 복자가 그 사실을 숨기고 전부 약값과 공과금이라고 말한 점이다."
+          ],
+          "suppressions": [
+            "정우에게 더 큰 상처였던 부분은 수빈 지원 자체보다, 복자가 그 사실을 숨기고 전부 약값과 공과금이라고 말한 점이다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:b:tell:delay_buffer",
+            "family03:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-3:s1:surface:0",
+              "factText": "누나 쪽으로 조금 갔을지 몰라도, 그때는 정확히 확인할 근거가 없었습니다.",
+              "tags": [
+                "beneficiary",
+                "context",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:b:d-3:s1:support:1",
+              "factText": "정우는 누나 지원을 눈치챘더라도 증거가 없었다며 판단을 미룬다.",
+              "tags": [
+                "uncertainty",
+                "beneficiary",
+                "self_justification"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "통장과 문자 보니 제가 보낸 돈 일부가 같은 날 수빈 누나 쪽으로 간 건 분명했습니다."
+          ],
+          "privateKnowledge": [
+            "정우는 통장과 문자 대조를 통해 자신의 용돈 일부가 같은 날 수빈 쪽으로 이동했다는 점을 확인하게 된다.",
+            "정우에게 더 큰 상처였던 부분은 수빈 지원 자체보다, 복자가 그 사실을 숨기고 전부 약값과 공과금이라고 말한 점이다."
+          ],
+          "suppressions": [
+            "정우에게 더 큰 상처였던 부분은 수빈 지원 자체보다, 복자가 그 사실을 숨기고 전부 약값과 공과금이라고 말한 점이다.",
+            "정우는 장남 몫이라며 보낸 돈이 상의 없이 형제 지원으로 섞였다는 사실에 오래 눌러둔 불공평함을 느낀다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-3:s2:surface:0",
+              "factText": "통장과 문자 보니 제가 보낸 돈 일부가 같은 날 수빈 누나 쪽으로 간 건 분명했습니다.",
+              "tags": [
+                "beneficiary",
+                "context"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family03:b:d-3:s2:support:1",
+              "factText": "정우는 통장과 문자 대조를 통해 자신의 용돈 일부가 같은 날 수빈 쪽으로 이동했다는 점을 확인하게 된다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "beneficiary"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "누나를 돕는 것보다도 그걸 숨기고 제게 전부 본인 생활비라 말한 게 더 컸습니다."
+          ],
+          "privateKnowledge": [
+            "정우는 통장과 문자 대조를 통해 자신의 용돈 일부가 같은 날 수빈 쪽으로 이동했다는 점을 확인하게 된다.",
+            "정우에게 더 큰 상처였던 부분은 수빈 지원 자체보다, 복자가 그 사실을 숨기고 전부 약값과 공과금이라고 말한 점이다.",
+            "정우는 장남 몫이라며 보낸 돈이 상의 없이 형제 지원으로 섞였다는 사실에 오래 눌러둔 불공평함을 느낀다."
+          ],
+          "suppressions": [
+            "정우는 장남 몫이라며 보낸 돈이 상의 없이 형제 지원으로 섞였다는 사실에 오래 눌러둔 불공평함을 느낀다.",
+            "정우는 수빈 지원이 필요할 수는 있어도, 그것이 자신의 생활비 약속과 섞였다면 미리 분리해 말했어야 한다고 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:b:tell:clipped_apology",
+            "family03:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-3:s3:surface:0",
+              "factText": "누나를 돕는 것보다도 그걸 숨기고 제게 전부 본인 생활비라 말한 게 더 컸습니다.",
+              "tags": [
+                "beneficiary",
+                "context",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:b:d-3:s3:support:1",
+              "factText": "정우에게 더 큰 상처였던 부분은 수빈 지원 자체보다, 복자가 그 사실을 숨기고 전부 약값과 공과금이라고 말한 점이다.",
+              "tags": [
+                "relationship",
+                "responsibility",
+                "quote"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "장남 몫이라고 낸 돈이 상의 없이 다른 자식 지원에 섞인 걸 알고 많이 씁쓸했습니다."
+          ],
+          "privateKnowledge": [
+            "정우는 통장과 문자 대조를 통해 자신의 용돈 일부가 같은 날 수빈 쪽으로 이동했다는 점을 확인하게 된다.",
+            "정우에게 더 큰 상처였던 부분은 수빈 지원 자체보다, 복자가 그 사실을 숨기고 전부 약값과 공과금이라고 말한 점이다.",
+            "정우는 장남 몫이라며 보낸 돈이 상의 없이 형제 지원으로 섞였다는 사실에 오래 눌러둔 불공평함을 느낀다."
+          ],
+          "suppressions": [
+            "정우는 수빈 지원이 필요할 수는 있어도, 그것이 자신의 생활비 약속과 섞였다면 미리 분리해 말했어야 한다고 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:b:tell:clipped_apology"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-3:s4:surface:0",
+              "factText": "장남 몫이라고 낸 돈이 상의 없이 다른 자식 지원에 섞인 걸 알고 많이 씁쓸했습니다.",
+              "tags": [
+                "beneficiary",
+                "context",
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:b:d-3:s4:support:1",
+              "factText": "정우는 장남 몫이라며 보낸 돈이 상의 없이 형제 지원으로 섞였다는 사실에 오래 눌러둔 불공평함을 느낀다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "relationship",
+                "legacy_sentence"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                },
+                "legacy": {
+                  "exact": "장남 몫",
+                  "neutral": "가족 역할 부담"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "수빈 누나 지원 자체를 다 막자는 건 아니지만, 제 돈을 그렇게 돌렸다면 미리 분리해 말했어야 했습니다."
+          ],
+          "privateKnowledge": [
+            "정우는 통장과 문자 대조를 통해 자신의 용돈 일부가 같은 날 수빈 쪽으로 이동했다는 점을 확인하게 된다.",
+            "정우에게 더 큰 상처였던 부분은 수빈 지원 자체보다, 복자가 그 사실을 숨기고 전부 약값과 공과금이라고 말한 점이다.",
+            "정우는 장남 몫이라며 보낸 돈이 상의 없이 형제 지원으로 섞였다는 사실에 오래 눌러둔 불공평함을 느낀다.",
+            "정우는 수빈 지원이 필요할 수는 있어도, 그것이 자신의 생활비 약속과 섞였다면 미리 분리해 말했어야 한다고 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:b:tell:clipped_apology"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-3:s5:surface:0",
+              "factText": "수빈 누나 지원 자체를 다 막자는 건 아니지만, 제 돈을 그렇게 돌렸다면 미리 분리해 말했어야 했습니다.",
+              "tags": [
+                "beneficiary",
+                "context",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:b:d-3:s5:support:1",
+              "factText": "정우는 수빈 지원이 필요할 수는 있어도, 그것이 자신의 생활비 약속과 섞였다면 미리 분리해 말했어야 한다고 인정한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "beneficiary": {
+                  "fullName": "박수빈",
+                  "judgeRef": "수빈 씨",
+                  "neutral": "누나"
+                },
+                "amount1": {
+                  "exact": "20만원",
+                  "neutral": "소액 송금 1"
+                },
+                "amount2": {
+                  "exact": "25만원",
+                  "neutral": "소액 송금 2"
+                },
+                "time": {
+                  "period": "용돈 입금 후 2시간 안",
+                  "neutral": "같은 날 오후"
+                },
+                "purpose1": {
+                  "exact": "자격증 학원비",
+                  "neutral": "학원비"
+                },
+                "purpose2": {
+                  "exact": "교통카드 충전",
+                  "neutral": "교통비"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "어머니가 친척 단톡에 올린 건 그냥 하소연 수준이 아니라 저를 몰아세운 겁니다."
+          ],
+          "privateKnowledge": [
+            "단톡 내보내기 원본상 복자의 공개 글은 정우에게 직접 다시 항의하기보다 먼저 올라갔다."
+          ],
+          "suppressions": [
+            "단톡 내보내기 원본상 복자의 공개 글은 정우에게 직접 다시 항의하기보다 먼저 올라갔다.",
+            "정우는 그 글로 인해 생활비 다툼보다 먼저 친척과 교회 사람들 앞에서 체면이 무너졌다고 느꼈다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:b:tell:delay_buffer",
+            "family03:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-4:s0:surface:0",
+              "factText": "어머니가 친척 단톡에 올린 건 그냥 하소연 수준이 아니라 저를 몰아세운 겁니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "denial"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family03:b:d-4:s0:support:1",
+              "factText": "정우는 단톡 게시를 곧바로 공격 행위로 규정해 자신의 연락 회피 맥락을 뺀다.",
+              "tags": [
+                "harm",
+                "denial",
+                "privacy"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "제가 연락을 빨리 못 받은 적은 있어도, 단톡 공개까지 갈 일은 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "단톡 내보내기 원본상 복자의 공개 글은 정우에게 직접 다시 항의하기보다 먼저 올라갔다.",
+            "정우는 그 글로 인해 생활비 다툼보다 먼저 친척과 교회 사람들 앞에서 체면이 무너졌다고 느꼈다."
+          ],
+          "suppressions": [
+            "정우는 그 글로 인해 생활비 다툼보다 먼저 친척과 교회 사람들 앞에서 체면이 무너졌다고 느꼈다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:b:tell:delay_buffer",
+            "family03:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-4:s1:surface:0",
+              "factText": "제가 연락을 빨리 못 받은 적은 있어도, 단톡 공개까지 갈 일은 아니었습니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:b:d-4:s1:support:1",
+              "factText": "정우는 연락 지연은 있어도 공개까지는 과했다며 원인 일부만 인정한다.",
+              "tags": [
+                "uncertainty",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "친척과 교회 방에 비슷한 문장이 올라간 시점이 제게 직접 항의하기 전이었던 건 확인됐습니다."
+          ],
+          "privateKnowledge": [
+            "단톡 내보내기 원본상 복자의 공개 글은 정우에게 직접 다시 항의하기보다 먼저 올라갔다.",
+            "정우는 그 글로 인해 생활비 다툼보다 먼저 친척과 교회 사람들 앞에서 체면이 무너졌다고 느꼈다."
+          ],
+          "suppressions": [
+            "정우는 그 글로 인해 생활비 다툼보다 먼저 친척과 교회 사람들 앞에서 체면이 무너졌다고 느꼈다.",
+            "정우는 자신의 지연된 답변과 회피가 복자의 불안을 키웠다는 맥락도 알고 있다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-4:s2:surface:0",
+              "factText": "친척과 교회 방에 비슷한 문장이 올라간 시점이 제게 직접 항의하기 전이었던 건 확인됐습니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "context"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family03:b:d-4:s2:support:1",
+              "factText": "단톡 내보내기 원본상 복자의 공개 글은 정우에게 직접 다시 항의하기보다 먼저 올라갔다.",
+              "tags": [
+                "evidence",
+                "timeline",
+                "privacy"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "그 일로 저는 가족 문제보다 체면부터 무너지는 기분을 받았습니다."
+          ],
+          "privateKnowledge": [
+            "단톡 내보내기 원본상 복자의 공개 글은 정우에게 직접 다시 항의하기보다 먼저 올라갔다.",
+            "정우는 그 글로 인해 생활비 다툼보다 먼저 친척과 교회 사람들 앞에서 체면이 무너졌다고 느꼈다.",
+            "정우는 자신의 지연된 답변과 회피가 복자의 불안을 키웠다는 맥락도 알고 있다."
+          ],
+          "suppressions": [
+            "정우는 자신의 지연된 답변과 회피가 복자의 불안을 키웠다는 맥락도 알고 있다.",
+            "정우는 자신이 빨리 설명하지 못한 잘못과 별개로, 가족 문제를 단톡으로 퍼뜨린 행위는 경계를 넘었다고 정리한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:b:tell:clipped_apology",
+            "family03:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-4:s3:surface:0",
+              "factText": "그 일로 저는 가족 문제보다 체면부터 무너지는 기분을 받았습니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:b:d-4:s3:support:1",
+              "factText": "정우는 그 글로 인해 생활비 다툼보다 먼저 친척과 교회 사람들 앞에서 체면이 무너졌다고 느꼈다.",
+              "tags": [
+                "harm",
+                "relationship",
+                "privacy"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hurt"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "제가 답을 늦게 하고 피한 태도가 어머니 불안을 키운 건 인정합니다."
+          ],
+          "privateKnowledge": [
+            "단톡 내보내기 원본상 복자의 공개 글은 정우에게 직접 다시 항의하기보다 먼저 올라갔다.",
+            "정우는 그 글로 인해 생활비 다툼보다 먼저 친척과 교회 사람들 앞에서 체면이 무너졌다고 느꼈다.",
+            "정우는 자신의 지연된 답변과 회피가 복자의 불안을 키웠다는 맥락도 알고 있다."
+          ],
+          "suppressions": [
+            "정우는 자신이 빨리 설명하지 못한 잘못과 별개로, 가족 문제를 단톡으로 퍼뜨린 행위는 경계를 넘었다고 정리한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:b:tell:clipped_apology"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-4:s4:surface:0",
+              "factText": "제가 답을 늦게 하고 피한 태도가 어머니 불안을 키운 건 인정합니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "emotion"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:b:d-4:s4:support:1",
+              "factText": "정우는 자신의 지연된 답변과 회피가 복자의 불안을 키웠다는 맥락도 알고 있다.",
+              "tags": [
+                "context",
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "제가 빨리 설명하지 못한 잘못은 있어도, 어머니의 공개 압박은 선을 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "단톡 내보내기 원본상 복자의 공개 글은 정우에게 직접 다시 항의하기보다 먼저 올라갔다.",
+            "정우는 그 글로 인해 생활비 다툼보다 먼저 친척과 교회 사람들 앞에서 체면이 무너졌다고 느꼈다.",
+            "정우는 자신의 지연된 답변과 회피가 복자의 불안을 키웠다는 맥락도 알고 있다.",
+            "정우는 자신이 빨리 설명하지 못한 잘못과 별개로, 가족 문제를 단톡으로 퍼뜨린 행위는 경계를 넘었다고 정리한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:b:tell:clipped_apology"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-4:s5:surface:0",
+              "factText": "제가 빨리 설명하지 못한 잘못은 있어도, 어머니의 공개 압박은 선을 넘었습니다.",
+              "tags": [
+                "privacy",
+                "harm",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:b:d-4:s5:support:1",
+              "factText": "정우는 자신이 빨리 설명하지 못한 잘못과 별개로, 가족 문제를 단톡으로 퍼뜨린 행위는 경계를 넘었다고 정리한다.",
+              "tags": [
+                "admission",
+                "rule",
+                "privacy"
+              ],
+              "slots": {
+                "group1": {
+                  "exact": "친척 단톡",
+                  "neutral": "가족 단체방"
+                },
+                "group2": {
+                  "exact": "교회 소모임",
+                  "neutral": "외부 소모임 방"
+                },
+                "message": {
+                  "exact": "'장남이 생활비를 끊었다'",
+                  "neutral": "공개 압박 문구"
+                },
+                "timing": {
+                  "exact": "정우에게 직접 항의하기 전",
+                  "neutral": "먼저"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "공과금 직접 납부는 얘기만 했지 제대로 합의까지 된 건 아니라고 봤습니다."
+          ],
+          "privateKnowledge": [
+            "정우는 직접 납부 방식으로 바꾸자고 한 뒤 실제로는 한 차례만 공과금을 직접 냈다."
+          ],
+          "suppressions": [
+            "정우는 직접 납부 방식으로 바꾸자고 한 뒤 실제로는 한 차례만 공과금을 직접 냈다.",
+            "정우는 납부 루틴을 계속 관리하지 않았고, 영수증 공유가 끊겼을 때도 다시 제안하거나 확인하지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:b:tell:delay_buffer",
+            "family03:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-5:s0:surface:0",
+              "factText": "공과금 직접 납부는 얘기만 했지 제대로 합의까지 된 건 아니라고 봤습니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "denial"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            },
+            {
+              "id": "family03:b:d-5:s0:support:1",
+              "factText": "정우는 직접 납부 합의를 단순 대화 수준으로 낮춰 말한다.",
+              "tags": [
+                "rule",
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "한 번 낸 뒤 흐트러진 건 맞지만, 계속 사진이 안 오고 현금 얘기가 다시 나오니까 저도 손을 놨습니다."
+          ],
+          "privateKnowledge": [
+            "정우는 직접 납부 방식으로 바꾸자고 한 뒤 실제로는 한 차례만 공과금을 직접 냈다.",
+            "정우는 납부 루틴을 계속 관리하지 않았고, 영수증 공유가 끊겼을 때도 다시 제안하거나 확인하지 않았다."
+          ],
+          "suppressions": [
+            "정우는 납부 루틴을 계속 관리하지 않았고, 영수증 공유가 끊겼을 때도 다시 제안하거나 확인하지 않았다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "family03:b:tell:delay_buffer",
+            "family03:b:tell:soft_minimizing"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-5:s1:surface:0",
+              "factText": "한 번 낸 뒤 흐트러진 건 맞지만, 계속 사진이 안 오고 현금 얘기가 다시 나오니까 저도 손을 놨습니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:b:d-5:s1:support:1",
+              "factText": "정우는 사진 공유 중단과 현금 요구를 이유로 자신의 후속 이행 부재를 덮는다.",
+              "tags": [
+                "uncertainty",
+                "self_justification",
+                "responsibility"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "직접 납부로 바꾸자고 하고 실제로 한 차례만 낸 건 사실입니다."
+          ],
+          "privateKnowledge": [
+            "정우는 직접 납부 방식으로 바꾸자고 한 뒤 실제로는 한 차례만 공과금을 직접 냈다.",
+            "정우는 납부 루틴을 계속 관리하지 않았고, 영수증 공유가 끊겼을 때도 다시 제안하거나 확인하지 않았다."
+          ],
+          "suppressions": [
+            "정우는 납부 루틴을 계속 관리하지 않았고, 영수증 공유가 끊겼을 때도 다시 제안하거나 확인하지 않았다.",
+            "정우는 고지서 날짜를 볼 때마다 앞선 약속 실패가 떠올라 확인과 납부를 미루는 회피를 반복했다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-5:s2:surface:0",
+              "factText": "직접 납부로 바꾸자고 하고 실제로 한 차례만 낸 건 사실입니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "family03:b:d-5:s2:support:1",
+              "factText": "정우는 직접 납부 방식으로 바꾸자고 한 뒤 실제로는 한 차례만 공과금을 직접 냈다.",
+              "tags": [
+                "act",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "fact"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "제가 납부 일정 관리도 못 했고, 영수증 공유가 끊겼을 때 다시 정리하려고도 안 했습니다."
+          ],
+          "privateKnowledge": [
+            "정우는 직접 납부 방식으로 바꾸자고 한 뒤 실제로는 한 차례만 공과금을 직접 냈다.",
+            "정우는 납부 루틴을 계속 관리하지 않았고, 영수증 공유가 끊겼을 때도 다시 제안하거나 확인하지 않았다.",
+            "정우는 고지서 날짜를 볼 때마다 앞선 약속 실패가 떠올라 확인과 납부를 미루는 회피를 반복했다."
+          ],
+          "suppressions": [
+            "정우는 고지서 날짜를 볼 때마다 앞선 약속 실패가 떠올라 확인과 납부를 미루는 회피를 반복했다.",
+            "정우는 직접 납부 합의 실패를 복자의 현금 요구만으로 돌릴 수 없고, 자신의 실행 실패도 컸음을 인정한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "family03:b:tell:clipped_apology",
+            "family03:b:tell:delay_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-5:s3:surface:0",
+              "factText": "제가 납부 일정 관리도 못 했고, 영수증 공유가 끊겼을 때 다시 정리하려고도 안 했습니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "family03:b:d-5:s3:support:1",
+              "factText": "정우는 납부 루틴을 계속 관리하지 않았고, 영수증 공유가 끊겼을 때도 다시 제안하거나 확인하지 않았다.",
+              "tags": [
+                "responsibility",
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "responsibility"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "고지서 날짜 볼 때마다 앞선 약속을 못 지킨 생각이 나서 확인 자체를 미뤘습니다."
+          ],
+          "privateKnowledge": [
+            "정우는 직접 납부 방식으로 바꾸자고 한 뒤 실제로는 한 차례만 공과금을 직접 냈다.",
+            "정우는 납부 루틴을 계속 관리하지 않았고, 영수증 공유가 끊겼을 때도 다시 제안하거나 확인하지 않았다.",
+            "정우는 고지서 날짜를 볼 때마다 앞선 약속 실패가 떠올라 확인과 납부를 미루는 회피를 반복했다."
+          ],
+          "suppressions": [
+            "정우는 직접 납부 합의 실패를 복자의 현금 요구만으로 돌릴 수 없고, 자신의 실행 실패도 컸음을 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:b:tell:clipped_apology"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-5:s4:surface:0",
+              "factText": "고지서 날짜 볼 때마다 앞선 약속을 못 지킨 생각이 나서 확인 자체를 미뤘습니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:b:d-5:s4:support:1",
+              "factText": "정우는 고지서 날짜를 볼 때마다 앞선 약속 실패가 떠올라 확인과 납부를 미루는 회피를 반복했다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "avoidance"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "직접 납부 합의가 깨진 건 어머니의 현금 요구만이 아니라, 저도 루틴을 지키지 못한 탓입니다."
+          ],
+          "privateKnowledge": [
+            "정우는 직접 납부 방식으로 바꾸자고 한 뒤 실제로는 한 차례만 공과금을 직접 냈다.",
+            "정우는 납부 루틴을 계속 관리하지 않았고, 영수증 공유가 끊겼을 때도 다시 제안하거나 확인하지 않았다.",
+            "정우는 고지서 날짜를 볼 때마다 앞선 약속 실패가 떠올라 확인과 납부를 미루는 회피를 반복했다.",
+            "정우는 직접 납부 합의 실패를 복자의 현금 요구만으로 돌릴 수 없고, 자신의 실행 실패도 컸음을 인정한다."
+          ],
+          "suppressions": [],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "family03:b:tell:clipped_apology"
+          ],
+          "claimAtoms": [
+            {
+              "id": "family03:b:d-5:s5:surface:0",
+              "factText": "직접 납부 합의가 깨진 건 어머니의 현금 요구만이 아니라, 저도 루틴을 지키지 못한 탓입니다.",
+              "tags": [
+                "rule",
+                "relationship",
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "family03:b:d-5:s5:support:1",
+              "factText": "정우는 직접 납부 합의 실패를 복자의 현금 요구만으로 돌릴 수 없고, 자신의 실행 실패도 컸음을 인정한다.",
+              "tags": [
+                "admission",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "bill1": {
+                  "exact": "전기료",
+                  "neutral": "공과금 1"
+                },
+                "bill2": {
+                  "exact": "관리비",
+                  "neutral": "공과금 2"
+                },
+                "time": {
+                  "period": "두 번째 감액 송금 다음 날 밤",
+                  "neutral": "그 무렵"
+                },
+                "consultationTime": {
+                  "exact": "통화 이틀 뒤 오후 3시 11분",
+                  "neutral": "상담 시점"
+                },
+                "institution": {
+                  "fullName": "주민센터",
+                  "judgeRef": "주민센터",
+                  "neutral": "기관"
+                },
+                "manager": {
+                  "fullName": "장민석",
+                  "judgeRef": "관리소장",
+                  "neutral": "관리소장"
+                },
+                "counselor": {
+                  "fullName": "서주연",
+                  "judgeRef": "상담사",
+                  "neutral": "상담사"
+                },
+                "partyA": {
+                  "fullName": "최복자",
+                  "judgeRef": "복자 씨",
+                  "neutral": "어머니"
+                },
+                "partyB": {
+                  "fullName": "박정우",
+                  "judgeRef": "정우 씨",
+                  "neutral": "아들"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "balanced"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -4,6 +4,11 @@ import { useGameStore } from '../../store/useGameStore'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import { processFreeQuestion } from '../../engine/llmFreeQuestion'
 import type { FreeQuestionResult } from '../../engine/llmFreeQuestion'
+import { canUseFreeQuestionV2, processFreeQuestionV2, buildDisputeAliasMap } from '../../engine/freeQuestionV2'
+import { hasV2Data, getStructureV2, getBeatRuntimeState } from '../../engine/v2DataLoader'
+import { getMisconceptionState } from '../../engine/misconceptionEngine'
+import { recordRevealedAtom, recordTurnStyle } from '../../engine/phase3LogCollector'
+import { normalizeCaseKey } from '../../utils/caseHelpers'
 import Emoji from '../common/Emoji'
 
 interface Props {
@@ -26,6 +31,68 @@ export default function FreeQuestionInput({ target, onResult }: Props) {
     setLoading(true)
 
     const state = useGameStore.getState()
+    const v2CaseId = normalizeCaseKey(caseData.caseId ?? '')
+    const v2Active = hasV2Data(v2CaseId) && state.phase3Flags.useBeatSelectorV2
+    const agent = target === 'a' ? state.agentA : state.agentB
+    const focusDisputeId = state.disputeBoardAction?.disputeId ?? Object.keys(agent.lieStateMap)[0] ?? ''
+    const currentLieState = agent.lieStateMap[focusDisputeId]?.currentState
+
+    // V2 자유 질문 시도
+    if (v2Active) {
+      const rState = getBeatRuntimeState(v2CaseId)
+      const structure = getStructureV2(v2CaseId)
+      const hooks = structure?.freeQuestionHooks ?? []
+
+      const gateOpen = canUseFreeQuestionV2({
+        isV2Case: true,
+        turn: state.turnCount,
+        activeDisputeId: focusDisputeId,
+        currentLieState,
+        flags: rState.flags,
+      })
+
+      if (gateOpen && hooks.length > 0) {
+        const mcState = getMisconceptionState(focusDisputeId) ?? undefined
+        // structure-v2의 disputeAliases에서 alias map 구축
+        const aliasMap = buildDisputeAliasMap(structure.disputes as Array<{ id: string; name?: string; disputeAliases?: string[] }>)
+
+        const v2Result = processFreeQuestionV2({
+          question: text.trim(),
+          activeDisputeId: focusDisputeId,
+          currentLieState,
+          currentMisconceptionState: mcState,
+          hooks,
+          atomIndex: {}, // atom index는 향후 V2 데이터에서 구축
+          runtime: { usedHookIds: [], readinessAwardedHookIds: [], refusalHistoryByHook: {} },
+          disputeAliasMap: aliasMap,
+        })
+
+        // effect 적용
+        for (const eff of v2Result.effects) {
+          if (eff.type === 'record_atom') recordRevealedAtom(eff.atomId)
+          if (eff.type === 'set_flag') rState.flags.add(eff.flag)
+          if (eff.type === 'trust_delta') state.changeTrust(target, 'trustTowardJudge', eff.amount * 3)
+        }
+        if (v2Result.allowed) {
+          recordTurnStyle(v2Result.inferredQuestionType, v2Result.inferredAngleTag)
+        }
+
+        // FreeQuestionResult 형태로 변환하여 기존 콜백 호환
+        const compatResult: FreeQuestionResult = {
+          response: v2Result.response,
+          behaviorHint: v2Result.behaviorHint,
+          questionType: v2Result.allowed ? v2Result.inferredQuestionType : 'irrelevant',
+          disputeId: v2Result.disputeId ?? focusDisputeId,
+        }
+        const asked = text.trim()
+        setText('')
+        setLoading(false)
+        onResult(compatResult, target, asked)
+        return
+      }
+    }
+
+    // 기존 LLM 경로
     const result = await processFreeQuestion(
       text.trim(), target, state.agentA, state.agentB, caseData,
     )

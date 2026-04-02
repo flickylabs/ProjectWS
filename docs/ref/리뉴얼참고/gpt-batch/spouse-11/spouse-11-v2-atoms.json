@@ -1,0 +1,4437 @@
+{
+  "caseId": "spouse-11",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "나는 현장 정리 때문에 자료를 본 거지, 남의 권한을 털어 공사를 흔든 사람은 아니야.",
+            "캡처를 저장한 것하고 실제로 요청을 돌린 건 구분해서 봐야 해."
+          ],
+          "privateKnowledge": [
+            "유림은 유림 태블릿 브라우저 지문으로 승호 명의 포털에 접속했다.",
+            "공사중지 요청과 CCTV 내보내기가 하나의 세션에서 연속 처리됐다."
+          ],
+          "suppressions": [
+            "단순 열람이 아니라 요청 실행까지 했다는 점",
+            "도어락 관리자 접근까지 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-1:act:0",
+              "factText": "승호 명의 포털 세션에 접속한 사실을 단순 열람처럼 말하는 축소 진술",
+              "tags": [
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "account": {
+                  "exact": "백승호 명의 현장관리 포털 계정",
+                  "neutral": "배우자 계정"
+                },
+                "device": {
+                  "exact": "유림 태블릿 브라우저 지문",
+                  "neutral": "해당 기기 흔적"
+                },
+                "time": {
+                  "exact": "공사중지 요청 직후 연속 세션",
+                  "neutral": "그 시점",
+                  "period": "누수 확인 직후 밤"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-1:denial:0",
+              "factText": "캡처 저장과 요청 실행을 분리해 책임 범위를 줄이려는 설명",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "공사중지 요청과 CCTV 내보내기",
+                  "neutral": "문제된 실행"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "승호 계정에 들어간 건 맞아도 어디까지나 상황 확인용이었어.",
+            "보내기나 변경까지 한 것처럼 말하면 너무 크게 묶는 거야."
+          ],
+          "privateKnowledge": [
+            "유림은 유림 태블릿 브라우저 지문으로 승호 명의 포털에 접속했다.",
+            "공사중지 요청과 CCTV 내보내기가 하나의 세션에서 연속 처리됐다."
+          ],
+          "suppressions": [
+            "단순 열람이 아니라 요청 실행까지 했다는 점",
+            "도어락 관리자 접근까지 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-1:evidence:0",
+              "factText": "유림 태블릿 흔적이 남은 접속 정황",
+              "tags": [
+                "evidence",
+                "act"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "유림 태블릿 브라우저 지문",
+                  "neutral": "해당 기기 흔적"
+                },
+                "account": {
+                  "exact": "백승호 명의 현장관리 포털 계정",
+                  "neutral": "배우자 계정"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-1:uncertainty:0",
+              "factText": "변경까지 한 것은 아니라며 실행 범위를 흐리는 선 긋기",
+              "tags": [
+                "uncertainty",
+                "responsibility"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "공사중지 요청과 CCTV 내보내기",
+                  "neutral": "문제된 실행"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "로그인한 건 인정해. 그런데 그때 나는 이미 꼬인 현장을 기록으로 붙잡으려 했어.",
+            "자료를 챙긴 것과 손상을 키우려 한 건 다른 문제라고 생각했어."
+          ],
+          "privateKnowledge": [
+            "공사중지 요청과 CCTV 내보내기가 하나의 세션에서 연속 처리됐다.",
+            "도어락 관리자 메뉴까지 접근해 심야 재출입 흐름을 확인했다."
+          ],
+          "suppressions": [
+            "도어락 관리자 접근까지 있었다는 점",
+            "로그와 반출이 하나의 세션으로 연결된 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-1:act:1",
+              "factText": "공사중지 요청과 CCTV 내보내기가 연속 처리된 세션 정황",
+              "tags": [
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "공사중지 요청과 CCTV 내보내기",
+                  "neutral": "문제된 실행"
+                },
+                "time": {
+                  "exact": "공사중지 요청 직후 연속 세션",
+                  "neutral": "그 시점",
+                  "period": "누수 확인 직후 밤"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-1:motive:0",
+              "factText": "기록을 붙잡으려 했을 뿐이라는 자기합리화",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "유림 태블릿 브라우저 지문",
+                  "neutral": "해당 기기 흔적"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "공사중지 요청이 나간 건 내 손에서 시작됐을 수 있어도, 이미 현장은 서로 숨기는 상태였어.",
+            "승호가 권한을 쥐고 설명을 미루니까 나도 자료부터 확보하려 했어."
+          ],
+          "privateKnowledge": [
+            "공사중지 요청과 CCTV 내보내기가 하나의 세션에서 연속 처리됐다.",
+            "도어락 관리자 메뉴까지 접근해 심야 재출입 흐름을 확인했다."
+          ],
+          "suppressions": [
+            "도어락 관리자 접근까지 있었다는 점",
+            "로그와 반출이 하나의 세션으로 연결된 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-1:counter:0",
+              "factText": "승호가 권한을 쥐고 있었다는 이유로 자료 선점이 필요했다고 되받아치는 설명",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "백승호",
+                  "neutral": "상대",
+                  "fullName": "백승호",
+                  "judgeRef": "배우자"
+                },
+                "account": {
+                  "exact": "백승호 명의 현장관리 포털 계정",
+                  "neutral": "배우자 계정"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-1:responsibility:0",
+              "factText": "요청 실행을 현장 불신에 대한 대응으로 포장하는 책임 축소",
+              "tags": [
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "공사중지 요청과 CCTV 내보내기",
+                  "neutral": "문제된 실행"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "완공 일정이 무너지고 예산이 새는 걸 보면서, 내가 통제권을 잃는다는 공포가 있었어.",
+            "그래서 저장과 실행을 나눠 말하며 내 책임을 작게 만들려고 했어."
+          ],
+          "privateKnowledge": [
+            "도어락 관리자 메뉴까지 접근해 심야 재출입 흐름을 확인했다.",
+            "예산 압박 속에서 자료를 먼저 쥐어야 유리하다고 계산했다."
+          ],
+          "suppressions": [
+            "로그와 반출이 하나의 세션으로 연결된 점",
+            "보험과 예산 문제 때문에 자료를 무기처럼 쥐려 했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-1:fear:0",
+              "factText": "완공 파탄과 통제권 상실을 동시에 두려워한 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "공사중지 요청 직후 연속 세션",
+                  "neutral": "그 시점",
+                  "period": "누수 확인 직후 밤"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-1:admission:0",
+              "factText": "저장과 실행을 나눠 말하며 회피해 온 사실",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "공사중지 요청과 CCTV 내보내기",
+                  "neutral": "문제된 실행"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "나는 승호 계정과 도어락 관리자 권한을 무단으로 써서 공사중지 요청과 CCTV 반출을 이어서 처리했어.",
+            "자료를 모은 게 아니라 판을 먼저 잡으려 한 행동이었고, 그 책임은 내가 져야 해."
+          ],
+          "privateKnowledge": [
+            "도어락 관리자 메뉴까지 접근해 심야 재출입 흐름을 확인했다.",
+            "예산 압박 속에서 자료를 먼저 쥐어야 유리하다고 계산했다."
+          ],
+          "suppressions": [
+            "로그와 반출이 하나의 세션으로 연결된 점",
+            "보험과 예산 문제 때문에 자료를 무기처럼 쥐려 했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-1:admission:1",
+              "factText": "승호 계정과 도어락 관리자 권한을 무단 사용했다는 인정",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "account": {
+                  "exact": "백승호 명의 현장관리 포털 계정",
+                  "neutral": "배우자 계정"
+                },
+                "lock": {
+                  "exact": "일회용 도어락 관리자 메뉴",
+                  "neutral": "출입 권한"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-1:responsibility:1",
+              "factText": "자료를 무기처럼 먼저 쥐려 했다는 자백",
+              "tags": [
+                "responsibility",
+                "motive"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "공사중지 요청과 CCTV 내보내기",
+                  "neutral": "문제된 실행"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "제습이랑 건조를 늦춘 건 승호야. 그건 내가 자료를 본 문제랑 섞을 일이 아니야.",
+            "현장을 붙들어 놓은 사람은 승호였어."
+          ],
+          "privateKnowledge": [
+            "승호가 제습기 스마트플러그를 꺼 두고 방문을 미룬 걸 뒤늦게 확인했다.",
+            "권한 재설정과 건조 연기가 같은 흐름에서 처리된 점을 알고 있다."
+          ],
+          "suppressions": [
+            "승호의 지연을 초기에 강하게 제지하지 않았다는 점",
+            "손상 확대가 자신에게도 유리할 수 있다고 느낀 순간"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-2:act:0",
+              "factText": "승호의 건조 지연과 권한 묶음을 핵심 원인으로 지목하는 주장",
+              "tags": [
+                "act",
+                "harm"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "긴급건조 방문 다음 날 연기",
+                  "neutral": "방문 연기"
+                },
+                "permission": {
+                  "exact": "도어락·현장 알림 권한 재설정",
+                  "neutral": "권한 변경"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-2:denial:0",
+              "factText": "자신은 실행권이 없었다며 거리를 두는 말",
+              "tags": [
+                "denial",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "차유림",
+                  "neutral": "상대",
+                  "fullName": "차유림",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "승호가 반나절쯤 미룬 건 맞지만, 그때는 나도 현장 알림이 뒤엉켜 정확한 설명을 못 들었어.",
+            "내가 승인한 것처럼 말하는 건 과해."
+          ],
+          "privateKnowledge": [
+            "승호가 제습기 스마트플러그를 꺼 두고 방문을 미룬 걸 뒤늦게 확인했다.",
+            "권한 재설정과 건조 연기가 같은 흐름에서 처리된 점을 알고 있다."
+          ],
+          "suppressions": [
+            "승호의 지연을 초기에 강하게 제지하지 않았다는 점",
+            "손상 확대가 자신에게도 유리할 수 있다고 느낀 순간"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-2:timeline:0",
+              "factText": "반나절 지연과 알림 혼선 때문에 자세한 상황을 몰랐다는 설명",
+              "tags": [
+                "timeline",
+                "uncertainty"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "누수 확인 직후 6시간 이상",
+                  "neutral": "그 공백 시간",
+                  "period": "누수 확인 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-2:counter:0",
+              "factText": "자신이 승인한 것은 아니라며 책임 연결을 차단하는 주장",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "차유림",
+                  "neutral": "상대",
+                  "fullName": "차유림",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "건조가 늦어진 걸 알고도 바로 막지 못한 건 있어. 그래도 전원을 끄고 권한을 묶은 결정은 승호 쪽이었어.",
+            "나는 결과를 보고 불안해했지, 실행권은 없었어."
+          ],
+          "privateKnowledge": [
+            "권한 재설정과 건조 연기가 같은 흐름에서 처리된 점을 알고 있다.",
+            "손상이 더 커지면 보험 논리가 커질 수 있다는 계산을 잠깐 공유했다."
+          ],
+          "suppressions": [
+            "손상 확대가 자신에게도 유리할 수 있다고 느낀 순간",
+            "권한 봉쇄와 보험 계산이 이어져 보인다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-2:evidence:0",
+              "factText": "전원 중단과 권한 재설정이 함께 있었던 정황",
+              "tags": [
+                "evidence",
+                "act"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "제습기 스마트플러그",
+                  "neutral": "제습 장치"
+                },
+                "permission": {
+                  "exact": "도어락·현장 알림 권한 재설정",
+                  "neutral": "권한 변경"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-2:admission:0",
+              "factText": "늦어진 걸 알고도 바로 막지 못한 책임 인정",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "누수 확인 직후 6시간 이상",
+                  "neutral": "그 공백 시간",
+                  "period": "누수 확인 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "솔직히 말하면 손상이 커지는 동안 나도 '지금 바로 원상복구를 막진 말자'는 쪽에 기울었어.",
+            "그래도 제습기를 끄고 방문을 미룬 직접 판단은 승호가 했어."
+          ],
+          "privateKnowledge": [
+            "권한 재설정과 건조 연기가 같은 흐름에서 처리된 점을 알고 있다.",
+            "손상이 더 커지면 보험 논리가 커질 수 있다는 계산을 잠깐 공유했다."
+          ],
+          "suppressions": [
+            "손상 확대가 자신에게도 유리할 수 있다고 느낀 순간",
+            "권한 봉쇄와 보험 계산이 이어져 보인다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-2:motive:0",
+              "factText": "손상이 더 커지는 쪽을 완전히 막지 않으려 했던 내심",
+              "tags": [
+                "motive",
+                "admission"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "긴급건조 방문 다음 날 연기",
+                  "neutral": "방문 연기"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-2:responsibility:0",
+              "factText": "직접 제습기를 끄고 방문을 미룬 판단은 승호가 했다는 구분",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "제습기 스마트플러그",
+                  "neutral": "제습 장치"
+                },
+                "person": {
+                  "exact": "차유림",
+                  "neutral": "상대",
+                  "fullName": "차유림",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "입주가 밀리고 돈이 새는 상황에서 누가 먼저 멈추자고 말하느냐가 너무 무서웠어.",
+            "그래서 승호 결정을 제때 끊지 못하고 뒤늦게 항의했어."
+          ],
+          "privateKnowledge": [
+            "손상이 더 커지면 보험 논리가 커질 수 있다는 계산을 잠깐 공유했다.",
+            "자신도 즉시 복구를 밀어붙이지 않은 책임이 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "권한 봉쇄와 보험 계산이 이어져 보인다는 점",
+            "피해 확대를 보면서도 즉시 원상복구를 요구하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-2:fear:0",
+              "factText": "입주 지연과 예산 붕괴 속에서 먼저 멈추자고 말하기 두려웠던 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "누수 확인 직후 6시간 이상",
+                  "neutral": "그 공백 시간",
+                  "period": "누수 확인 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-2:admission:1",
+              "factText": "뒤늦게 항의하며 초기 개입을 놓친 사실",
+              "tags": [
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "차유림",
+                  "neutral": "상대",
+                  "fullName": "차유림",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "승호가 긴급건조를 늦추고 권한을 자기 쪽으로 다시 묶은 건 사실이야.",
+            "나도 그 선택이 보험 계산과 얽힌다는 걸 알면서 초기에 강하게 막지 못했어."
+          ],
+          "privateKnowledge": [
+            "손상이 더 커지면 보험 논리가 커질 수 있다는 계산을 잠깐 공유했다.",
+            "자신도 즉시 복구를 밀어붙이지 않은 책임이 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "권한 봉쇄와 보험 계산이 이어져 보인다는 점",
+            "피해 확대를 보면서도 즉시 원상복구를 요구하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-2:admission:2",
+              "factText": "승호가 긴급건조를 늦추고 권한을 자기 쪽으로 다시 묶었다는 사실",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "긴급건조 방문 다음 날 연기",
+                  "neutral": "방문 연기"
+                },
+                "permission": {
+                  "exact": "도어락·현장 알림 권한 재설정",
+                  "neutral": "권한 변경"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-2:responsibility:1",
+              "factText": "보험 계산과 얽힌 줄 알면서도 초기에 강하게 막지 못한 책임",
+              "tags": [
+                "responsibility",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "차유림",
+                  "neutral": "상대",
+                  "fullName": "차유림",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "큰 손상은 기본적으로 시공사 하자에서 시작된 거야.",
+            "내가 저장한 캡처만으로 우리가 판을 키웠다고 단정할 수는 없어."
+          ],
+          "privateKnowledge": [
+            "심야 CCTV 캡처는 앞뒤 11초가 잘린 선택적 자료라는 점을 알고 있다.",
+            "수분센서 흐름이 점진적 확대를 보여 준다는 점을 알고 있다."
+          ],
+          "suppressions": [
+            "심야 캡처가 함정 증거에 가깝다는 점",
+            "센서 곡선이 점진적 확대를 보여 준다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-3:rule:0",
+              "factText": "초기 누수가 시공사 하자에서 시작됐다는 출발점 주장",
+              "tags": [
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-3:denial:0",
+              "factText": "저장한 캡처만으로 부부가 손상을 키웠다고 볼 수 없다는 반박",
+              "tags": [
+                "denial",
+                "counter"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "심야 CCTV 캡처와 잘린 클립",
+                  "neutral": "그 캡처"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "홍대성의 심야 재출입이 석연치 않았고, 그래서 자료를 남긴 거야.",
+            "시공사 쪽 과실을 먼저 따지는 게 순서라고 봤어."
+          ],
+          "privateKnowledge": [
+            "심야 CCTV 캡처는 앞뒤 11초가 잘린 선택적 자료라는 점을 알고 있다.",
+            "수분센서 흐름이 점진적 확대를 보여 준다는 점을 알고 있다."
+          ],
+          "suppressions": [
+            "심야 캡처가 함정 증거에 가깝다는 점",
+            "센서 곡선이 점진적 확대를 보여 준다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-3:evidence:0",
+              "factText": "홍대성 심야 재출입 캡처를 의심 근거로 세우는 시선",
+              "tags": [
+                "evidence",
+                "identity"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "심야 CCTV 캡처와 잘린 클립",
+                  "neutral": "그 캡처"
+                },
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                },
+                "time": {
+                  "exact": "심야 재출입 직후",
+                  "neutral": "그 시점",
+                  "period": "공사중지 요청 직후 밤"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-3:counter:0",
+              "factText": "시공사 과실을 먼저 묶어야 한다는 자기정당화",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "초기 누수가 하자였던 건 맞지만, 이후 손상 흐름을 우리가 완전히 통제하지 못한 것도 맞아.",
+            "그래도 그때는 시공사 책임을 먼저 잡아야 한다고 생각했어."
+          ],
+          "privateKnowledge": [
+            "수분센서 흐름이 점진적 확대를 보여 준다는 점을 알고 있다.",
+            "시공사 단독 과실 서사가 자신에게 유리하다고 계산했다."
+          ],
+          "suppressions": [
+            "센서 곡선이 점진적 확대를 보여 준다는 점",
+            "자신이 자료 배열로 책임 방향을 설계했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-3:context:0",
+              "factText": "하자 이후 손상 흐름을 부부가 완전히 통제하지 못했다는 인식",
+              "tags": [
+                "context",
+                "admission"
+              ],
+              "slots": {
+                "sensor": {
+                  "exact": "수분센서 계단형 상승 곡선",
+                  "neutral": "센서 흐름"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-3:motive:0",
+              "factText": "그래도 시공사 책임을 먼저 확정해야 한다고 본 계산",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "캡처를 유리한 장면 위주로 본 건 인정해. 손상 서사를 시공사 쪽으로 밀어두면 우리가 버틸 틈이 생길 거라 계산했어.",
+            "그 과정에서 제습 지연과 사진 순서 문제를 일부러 세게 보지 않았어."
+          ],
+          "privateKnowledge": [
+            "수분센서 흐름이 점진적 확대를 보여 준다는 점을 알고 있다.",
+            "시공사 단독 과실 서사가 자신에게 유리하다고 계산했다."
+          ],
+          "suppressions": [
+            "센서 곡선이 점진적 확대를 보여 준다는 점",
+            "자신이 자료 배열로 책임 방향을 설계했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-3:evidence:1",
+              "factText": "잘린 캡처와 사진 배열로 시공사 서사를 강하게 만든 선택",
+              "tags": [
+                "evidence",
+                "counter"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "심야 CCTV 캡처와 잘린 클립",
+                  "neutral": "그 캡처"
+                },
+                "photo": {
+                  "exact": "청구서 사진 순서 재배열",
+                  "neutral": "사진 배열"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-3:responsibility:0",
+              "factText": "제습 지연과 사진 순서 문제를 일부러 약하게 본 책임",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "sensor": {
+                  "exact": "수분센서 계단형 상승 곡선",
+                  "neutral": "센서 흐름"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "기획한 집이 망가졌다는 말을 듣는 게 너무 수치스러웠어.",
+            "그래서 하자라는 말 뒤에 숨어 우리가 늦춘 대응을 덜 보이게 만들었어."
+          ],
+          "privateKnowledge": [
+            "시공사 단독 과실 서사가 자신에게 유리하다고 계산했다.",
+            "제습 지연과 사진 배열이 손상 확대 책임을 부부 쪽으로 돌릴 수 있음을 안다."
+          ],
+          "suppressions": [
+            "자신이 자료 배열로 책임 방향을 설계했다는 점",
+            "시공사 탓만 하면 자신들의 지연 대응이 가려진다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-3:shame:0",
+              "factText": "기획한 집이 망가졌다는 평가를 견디기 어려워한 수치심",
+              "tags": [
+                "shame",
+                "emotion"
+              ],
+              "slots": {
+                "photo": {
+                  "exact": "청구서 사진 순서 재배열",
+                  "neutral": "사진 배열"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-3:admission:0",
+              "factText": "하자라는 말 뒤에 숨어 늦춘 대응을 덜 보이게 했다는 인정",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "sensor": {
+                  "exact": "수분센서 계단형 상승 곡선",
+                  "neutral": "센서 흐름"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "초기 누수는 시공사 하자와 맞닿아 있었지만, 천장과 마루 손상이 크게 번진 건 우리 지연 대응과 선택적 자료 제시 때문이야.",
+            "나는 심야 캡처와 사진 배열을 이용해 시공사 단독 책임처럼 보이게 하려 했어."
+          ],
+          "privateKnowledge": [
+            "시공사 단독 과실 서사가 자신에게 유리하다고 계산했다.",
+            "제습 지연과 사진 배열이 손상 확대 책임을 부부 쪽으로 돌릴 수 있음을 안다."
+          ],
+          "suppressions": [
+            "자신이 자료 배열로 책임 방향을 설계했다는 점",
+            "시공사 탓만 하면 자신들의 지연 대응이 가려진다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-3:admission:1",
+              "factText": "큰 손상이 지연 대응과 선택적 자료 제시 때문에 커졌다는 인정",
+              "tags": [
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "sensor": {
+                  "exact": "수분센서 계단형 상승 곡선",
+                  "neutral": "센서 흐름"
+                },
+                "clip": {
+                  "exact": "심야 CCTV 캡처와 잘린 클립",
+                  "neutral": "그 캡처"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-3:responsibility:1",
+              "factText": "심야 캡처와 사진 배열을 시공사 단독 책임처럼 보이게 활용한 사실",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "clip": {
+                  "exact": "심야 CCTV 캡처와 잘린 클립",
+                  "neutral": "그 캡처"
+                },
+                "photo": {
+                  "exact": "청구서 사진 순서 재배열",
+                  "neutral": "사진 배열"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "보험금 얘기는 막막하니까 한숨처럼 꺼낸 거지, 공모라고 부를 일은 아니야.",
+            "손상을 키우자고 작정했다는 식의 말은 받아들일 수 없어."
+          ],
+          "privateKnowledge": [
+            "삭제 복원된 메신저와 예산 메모에 지급금 사용처 계산이 남아 있다.",
+            "긴급건조 취소 직전과 보험 상담 직후 같은 취지의 대화가 반복됐다."
+          ],
+          "suppressions": [
+            "보험금 사용처를 구체적으로 계산했다는 점",
+            "대화를 삭제해 흔적을 줄이려 했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-4:motive:0",
+              "factText": "보험금 얘기를 단순한 한숨처럼 축소하는 말",
+              "tags": [
+                "motive",
+                "uncertainty"
+              ],
+              "slots": {
+                "money": {
+                  "exact": "보험금으로 천장·마루·붙박이장 비용 메우기",
+                  "neutral": "그 계산"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-4:denial:0",
+              "factText": "손상 확대 공모는 아니었다는 전면 부인",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "천장이나 마루 비용을 보험으로 돌릴 수 있는지 물어본 적은 있어.",
+            "하지만 그게 곧 손상을 일부러 키우자는 합의는 아니었어."
+          ],
+          "privateKnowledge": [
+            "삭제 복원된 메신저와 예산 메모에 지급금 사용처 계산이 남아 있다.",
+            "긴급건조 취소 직전과 보험 상담 직후 같은 취지의 대화가 반복됐다."
+          ],
+          "suppressions": [
+            "보험금 사용처를 구체적으로 계산했다는 점",
+            "대화를 삭제해 흔적을 줄이려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-4:threshold:0",
+              "factText": "보험으로 천장과 마루 비용을 돌릴 수 있는지 타진한 사실",
+              "tags": [
+                "threshold",
+                "beneficiary"
+              ],
+              "slots": {
+                "money": {
+                  "exact": "보험금으로 천장·마루·붙박이장 비용 메우기",
+                  "neutral": "그 계산"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-4:denial:1",
+              "factText": "문의와 합의를 다르게 보려는 선 긋기",
+              "tags": [
+                "denial",
+                "self_justification"
+              ],
+              "slots": {
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "메신저에서 계산을 주고받은 건 인정해. 그때는 예산 구멍을 어떻게든 메워야 한다는 생각뿐이었어.",
+            "다만 나는 바로 사기라고 느끼지 않으려고 말을 흐렸어."
+          ],
+          "privateKnowledge": [
+            "긴급건조 취소 직전과 보험 상담 직후 같은 취지의 대화가 반복됐다.",
+            "보험금으로 맞춤가구 잔금과 카드대금을 버틸 생각을 했다."
+          ],
+          "suppressions": [
+            "대화를 삭제해 흔적을 줄이려 했다는 점",
+            "손상 확대를 묵인한 합의가 있었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-4:evidence:0",
+              "factText": "메신저와 예산 메모에 남은 비용 계산 흔적",
+              "tags": [
+                "evidence",
+                "motive"
+              ],
+              "slots": {
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                },
+                "time": {
+                  "exact": "긴급건조 취소 직전과 보험 상담 직후",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-4:self_justification:0",
+              "factText": "예산 구멍만 메우려 했다는 자기합리화",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "pressure": {
+                  "exact": "예산 초과와 입주 지연",
+                  "neutral": "그 압박"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "손상이 더 커 보이면 보험 범위가 넓어질 수 있다는 계산을 우리 둘 다 했어.",
+            "나는 그걸 '버티는 방법'처럼 포장했지만 실제로는 손상 확대를 방치한 협의였어."
+          ],
+          "privateKnowledge": [
+            "긴급건조 취소 직전과 보험 상담 직후 같은 취지의 대화가 반복됐다.",
+            "보험금으로 맞춤가구 잔금과 카드대금을 버틸 생각을 했다."
+          ],
+          "suppressions": [
+            "대화를 삭제해 흔적을 줄이려 했다는 점",
+            "손상 확대를 묵인한 합의가 있었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-4:admission:0",
+              "factText": "손상이 커 보이면 보험 범위가 넓어질 수 있다는 공동 계산",
+              "tags": [
+                "admission",
+                "beneficiary"
+              ],
+              "slots": {
+                "money": {
+                  "exact": "보험금으로 천장·마루·붙박이장 비용 메우기",
+                  "neutral": "그 계산"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-4:responsibility:0",
+              "factText": "그 계산을 버티는 방법처럼 포장한 책임",
+              "tags": [
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "입주가 밀리고 카드대금이 쌓인 상황에서 내가 기획한 공간까지 잃는다고 생각하니 너무 다급했어.",
+            "그래서 승호와 한 계산을 현실 대책인 척 합리화했어."
+          ],
+          "privateKnowledge": [
+            "보험금으로 맞춤가구 잔금과 카드대금을 버틸 생각을 했다.",
+            "대화를 지운 뒤에도 공모가 아니라 상담이었다고 프레임을 짰다."
+          ],
+          "suppressions": [
+            "손상 확대를 묵인한 합의가 있었다는 점",
+            "사기라는 표현을 피하려고 말을 바꿔 왔다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-4:fear:0",
+              "factText": "입주 지연과 카드대금 압박 속에서 공간까지 잃을까 두려워한 감정",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "pressure": {
+                  "exact": "예산 초과와 입주 지연",
+                  "neutral": "그 압박"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-4:admission:1",
+              "factText": "공동 계산을 현실 대책처럼 합리화한 사실",
+              "tags": [
+                "admission",
+                "self_justification"
+              ],
+              "slots": {
+                "money": {
+                  "exact": "보험금으로 천장·마루·붙박이장 비용 메우기",
+                  "neutral": "그 계산"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "우리는 보험금으로 천장, 마루, 일부 가구비까지 메울 수 있는지 계산하며 손상 확대를 사실상 공동 기획했어.",
+            "나는 그 대화를 지우고도 계속 '그냥 가능성 얘기였다'고 버텼어."
+          ],
+          "privateKnowledge": [
+            "보험금으로 맞춤가구 잔금과 카드대금을 버틸 생각을 했다.",
+            "대화를 지운 뒤에도 공모가 아니라 상담이었다고 프레임을 짰다."
+          ],
+          "suppressions": [
+            "손상 확대를 묵인한 합의가 있었다는 점",
+            "사기라는 표현을 피하려고 말을 바꿔 왔다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-4:admission:2",
+              "factText": "보험금으로 천장·마루·일부 가구비까지 메우려 공동 기획한 사실",
+              "tags": [
+                "admission",
+                "beneficiary"
+              ],
+              "slots": {
+                "money": {
+                  "exact": "보험금으로 천장·마루·붙박이장 비용 메우기",
+                  "neutral": "그 계산"
+                },
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-4:responsibility:1",
+              "factText": "대화를 지운 뒤에도 상담이었을 뿐이라고 버틴 책임",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "보험금이 멈춘 건 홍대성이 우리를 찍어서 그런 거라고 봤어.",
+            "시공사 쪽에서 먼저 판을 틀지 않았다면 이렇게까지 꼬이지 않았을 거야."
+          ],
+          "privateKnowledge": [
+            "보험사 자료를 끝까지 보지 않은 채 시공사 보복 가능성에 매달렸다.",
+            "제습 지연과 사진 순서 문제가 보험사에 더 크게 보일 수 있음을 어렴풋이 알았다."
+          ],
+          "suppressions": [
+            "보류 사유 원문을 충분히 읽지 않았다는 점",
+            "자신들의 지연 흔적이 더 치명적일 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-5:counter:0",
+              "factText": "보험금 보류를 시공사 보복 신고 탓으로 읽는 프레임",
+              "tags": [
+                "counter",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                },
+                "notice": {
+                  "exact": "보험사 조사유예 통지와 복구업체 진술서",
+                  "neutral": "보험사 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-5:denial:0",
+              "factText": "자기 자료와 지연 흔적이 핵심 원인일 수 있다는 가능성 부인",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "제습 지연·이상 데이터·사진 순서 불일치",
+                  "neutral": "손상 확대 정황"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "보류 통지 전부터 현장 분위기가 이상했던 건 맞아도, 그때는 시공사 쪽 보복 신고를 의심할 수밖에 없었어.",
+            "우리 자료가 문제였다는 건 나중에 들은 얘기야."
+          ],
+          "privateKnowledge": [
+            "보험사 자료를 끝까지 보지 않은 채 시공사 보복 가능성에 매달렸다.",
+            "제습 지연과 사진 순서 문제가 보험사에 더 크게 보일 수 있음을 어렴풋이 알았다."
+          ],
+          "suppressions": [
+            "보류 사유 원문을 충분히 읽지 않았다는 점",
+            "자신들의 지연 흔적이 더 치명적일 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-5:uncertainty:0",
+              "factText": "현장 분위기와 분쟁 흐름 때문에 보복을 의심하게 된 과정",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "시공사 분쟁 제기보다 이른 보류 결정",
+                  "neutral": "그 결정 시점"
+                },
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-5:counter:1",
+              "factText": "자료 문제가 나중 해석처럼 들렸다는 주장",
+              "tags": [
+                "counter",
+                "institution"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "보험사 조사유예 통지와 복구업체 진술서",
+                  "neutral": "보험사 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "조사유예 통지를 보고 나서야 이상 데이터가 먼저 걸렸을 수 있다는 생각을 했어.",
+            "그래도 그전까지는 홍대성 쪽 움직임을 더 의심했어."
+          ],
+          "privateKnowledge": [
+            "제습 지연과 사진 순서 문제가 보험사에 더 크게 보일 수 있음을 어렴풋이 알았다.",
+            "보복 신고 서사가 자신과 승호의 흔적을 가려 준다고 느꼈다."
+          ],
+          "suppressions": [
+            "자신들의 지연 흔적이 더 치명적일 수 있다는 점",
+            "보복 신고 서사를 방패처럼 썼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-5:institution:0",
+              "factText": "조사유예 통지를 보고 이상 데이터 가능성을 처음 의식한 지점",
+              "tags": [
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "보험사 조사유예 통지와 복구업체 진술서",
+                  "neutral": "보험사 자료"
+                },
+                "sensor": {
+                  "exact": "수분센서 이상 곡선",
+                  "neutral": "이상 곡선"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-5:uncertainty:1",
+              "factText": "그래도 홍대성 움직임을 더 의심했던 마음",
+              "tags": [
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보면 우리는 시공사 보복이라는 설명에 기대서 우리 지연 흔적을 덜 보이게 하려 했어.",
+            "보류 사유를 제대로 확인하기보다 외부 탓부터 붙잡았지."
+          ],
+          "privateKnowledge": [
+            "제습 지연과 사진 순서 문제가 보험사에 더 크게 보일 수 있음을 어렴풋이 알았다.",
+            "보복 신고 서사가 자신과 승호의 흔적을 가려 준다고 느꼈다."
+          ],
+          "suppressions": [
+            "자신들의 지연 흔적이 더 치명적일 수 있다는 점",
+            "보복 신고 서사를 방패처럼 썼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-5:counter:2",
+              "factText": "보복 신고 서사를 붙잡아 지연 흔적을 덜 보이게 하려는 계산",
+              "tags": [
+                "counter",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                },
+                "cause": {
+                  "exact": "제습 지연·이상 데이터·사진 순서 불일치",
+                  "neutral": "손상 확대 정황"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-5:responsibility:0",
+              "factText": "보류 사유 원문을 차분히 확인하지 않은 태도",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "보험사 조사유예 통지와 복구업체 진술서",
+                  "neutral": "보험사 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "내가 먼저 자료를 모으고 서사를 만든 탓에, 보험사 판단도 결국 우리가 만든 흐름으로 돌아올까 두려웠어.",
+            "그래서 보복 신고라는 말에 더 매달렸어."
+          ],
+          "privateKnowledge": [
+            "보복 신고 서사가 자신과 승호의 흔적을 가려 준다고 느꼈다.",
+            "조사유예 통지를 보고 나서야 내부 이상징후가 먼저였을 수 있음을 받아들였다."
+          ],
+          "suppressions": [
+            "보복 신고 서사를 방패처럼 썼다는 점",
+            "외부 탓이 틀릴 수 있다는 불안"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-5:fear:0",
+              "factText": "자신이 만든 서사가 보험사 판단으로 되돌아올까 두려워한 감정",
+              "tags": [
+                "fear",
+                "emotion"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "제습 지연·이상 데이터·사진 순서 불일치",
+                  "neutral": "손상 확대 정황"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-5:admission:0",
+              "factText": "보복 신고라는 말에 매달리며 외부 탓을 붙든 사실",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "보험금 지급 보류의 직접 원인은 홍대성의 보복 신고가 아니라 제습 지연, 수분센서 이상 곡선, 사진 순서 불일치 같은 손상 확대 정황이었어.",
+            "나는 그 사실을 늦게 받아들이면서도 한동안 외부 보복 탓으로 돌렸어."
+          ],
+          "privateKnowledge": [
+            "보복 신고 서사가 자신과 승호의 흔적을 가려 준다고 느꼈다.",
+            "조사유예 통지를 보고 나서야 내부 이상징후가 먼저였을 수 있음을 받아들였다."
+          ],
+          "suppressions": [
+            "보복 신고 서사를 방패처럼 썼다는 점",
+            "외부 탓이 틀릴 수 있다는 불안"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:a:tell:scope_split",
+            "spouse11:a:tell:visual_overload",
+            "spouse11:a:tell:result_reframe"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:a:d-5:institution:1",
+              "factText": "직접 보류 원인이 손상 확대 정황이었다는 인정",
+              "tags": [
+                "institution",
+                "admission"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "보험사 조사유예 통지와 복구업체 진술서",
+                  "neutral": "보험사 자료"
+                },
+                "cause": {
+                  "exact": "제습 지연·이상 데이터·사진 순서 불일치",
+                  "neutral": "손상 확대 정황"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:a:d-5:responsibility:1",
+              "factText": "뒤늦게 받아들이고도 한동안 외부 보복 탓부터 한 책임",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "유림이 내 계정으로 들어간 건 선 넘은 행동이야.",
+            "그 일 때문에 내가 한 현장 판단까지 같은 무게로 묶는 건 말이 안 돼."
+          ],
+          "privateKnowledge": [
+            "공동 관리 합의 아래 계정과 도어락 권한이 느슨하게 공유돼 있었다.",
+            "유림이 접속한 뒤 곧바로 CCTV 내보내기와 공사중지 요청이 이어졌다는 점을 알고 있다."
+          ],
+          "suppressions": [
+            "공동 관리 관행이 있었다는 점",
+            "자신도 권한 경계를 방치했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-1:act:0",
+              "factText": "유림이 자신의 계정으로 들어와 실행까지 건드렸다는 주장",
+              "tags": [
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "account": {
+                  "exact": "백승호 명의 현장관리 포털 계정",
+                  "neutral": "배우자 계정"
+                },
+                "record": {
+                  "exact": "공사중지 요청과 CCTV 내보내기",
+                  "neutral": "문제된 실행"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-1:denial:0",
+              "factText": "그 일과 자신의 현장 판단은 분리해야 한다는 선 긋기",
+              "tags": [
+                "denial",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "백승호",
+                  "neutral": "상대",
+                  "fullName": "백승호",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "공동 관리라고 해도 내 아이디로 공사중지 요청까지 돌린 건 다르지.",
+            "다만 예전부터 서로 확인용으로 드나든 관행이 있었던 건 부인 못 해."
+          ],
+          "privateKnowledge": [
+            "공동 관리 합의 아래 계정과 도어락 권한이 느슨하게 공유돼 있었다.",
+            "유림이 접속한 뒤 곧바로 CCTV 내보내기와 공사중지 요청이 이어졌다는 점을 알고 있다."
+          ],
+          "suppressions": [
+            "공동 관리 관행이 있었다는 점",
+            "자신도 권한 경계를 방치했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-1:relationship:0",
+              "factText": "확인용으로 서로 드나든 공동 관리 관행",
+              "tags": [
+                "relationship",
+                "context"
+              ],
+              "slots": {
+                "account": {
+                  "exact": "백승호 명의 현장관리 포털 계정",
+                  "neutral": "배우자 계정"
+                },
+                "lock": {
+                  "exact": "일회용 도어락 관리자 메뉴",
+                  "neutral": "출입 권한"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-1:counter:0",
+              "factText": "그래도 공사중지 요청 실행은 선을 넘었다는 주장",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "공사중지 요청과 CCTV 내보내기",
+                  "neutral": "문제된 실행"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "유림의 무단 접속은 사실이지만, 계정과 도어락 권한을 느슨하게 공유한 채 둔 책임은 나한테도 있어.",
+            "그 틈을 내가 필요할 때만 선 긋는 식으로 써 왔지."
+          ],
+          "privateKnowledge": [
+            "유림이 접속한 뒤 곧바로 CCTV 내보내기와 공사중지 요청이 이어졌다는 점을 알고 있다.",
+            "상대 침범을 키워 말하면 자신의 제습 지연이 가려질 수 있다고 봤다."
+          ],
+          "suppressions": [
+            "자신도 권한 경계를 방치했다는 점",
+            "유림의 침범을 방패로 삼았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-1:admission:0",
+              "factText": "계정과 도어락 권한을 느슨하게 공유한 책임",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "account": {
+                  "exact": "백승호 명의 현장관리 포털 계정",
+                  "neutral": "배우자 계정"
+                },
+                "lock": {
+                  "exact": "일회용 도어락 관리자 메뉴",
+                  "neutral": "출입 권한"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-1:relationship:1",
+              "factText": "필요할 때만 선을 그어 온 방식",
+              "tags": [
+                "relationship",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "백승호",
+                  "neutral": "상대",
+                  "fullName": "백승호",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "솔직히 나는 유림의 침범을 크게 부각하면 내 제습 지연과 권한 봉쇄가 덜 보일 거라고 생각했어.",
+            "그래서 공동 관리 약속은 숨기고 '내 계정이 털렸다'는 말만 세게 했지."
+          ],
+          "privateKnowledge": [
+            "유림이 접속한 뒤 곧바로 CCTV 내보내기와 공사중지 요청이 이어졌다는 점을 알고 있다.",
+            "상대 침범을 키워 말하면 자신의 제습 지연이 가려질 수 있다고 봤다."
+          ],
+          "suppressions": [
+            "자신도 권한 경계를 방치했다는 점",
+            "유림의 침범을 방패로 삼았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-1:counter:1",
+              "factText": "상대 침범을 크게 만들어 자기 지연과 봉쇄를 덜 보이게 하려는 계산",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "record": {
+                  "exact": "공사중지 요청과 CCTV 내보내기",
+                  "neutral": "문제된 실행"
+                },
+                "person": {
+                  "exact": "백승호",
+                  "neutral": "상대",
+                  "fullName": "백승호",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-1:denial:1",
+              "factText": "공동 관리 약속을 숨기고 피해만 강조한 태도",
+              "tags": [
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "account": {
+                  "exact": "백승호 명의 현장관리 포털 계정",
+                  "neutral": "배우자 계정"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "집도 못 지키고 권한도 못 지켰다는 말을 듣는 게 너무 싫었어.",
+            "그래서 내가 만든 느슨한 구조는 빼고 유림만 배신자로 만들려 했어."
+          ],
+          "privateKnowledge": [
+            "상대 침범을 키워 말하면 자신의 제습 지연이 가려질 수 있다고 봤다.",
+            "문제 전까지는 서로 권한 경계를 명확히 나누지 않았다."
+          ],
+          "suppressions": [
+            "유림의 침범을 방패로 삼았다는 점",
+            "피해자 프레임이 자기 책임을 덜어 준다는 계산"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-1:shame:0",
+              "factText": "집도 권한도 지키지 못했다는 말을 두려워한 감정",
+              "tags": [
+                "shame",
+                "fear"
+              ],
+              "slots": {
+                "lock": {
+                  "exact": "일회용 도어락 관리자 메뉴",
+                  "neutral": "출입 권한"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-1:admission:1",
+              "factText": "유림만 배신자로 만들려 했다는 인정",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "백승호",
+                  "neutral": "상대",
+                  "fullName": "백승호",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "유림이 내 계정과 도어락 관리자 권한을 무단 사용한 건 맞아.",
+            "하지만 그 권한을 둘 다 쓰게 풀어두고 문제 생긴 뒤에야 피해자처럼 선 긋던 책임도 나한테 있어."
+          ],
+          "privateKnowledge": [
+            "상대 침범을 키워 말하면 자신의 제습 지연이 가려질 수 있다고 봤다.",
+            "문제 전까지는 서로 권한 경계를 명확히 나누지 않았다."
+          ],
+          "suppressions": [
+            "유림의 침범을 방패로 삼았다는 점",
+            "피해자 프레임이 자기 책임을 덜어 준다는 계산"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-1:admission:2",
+              "factText": "유림의 무단 사용과 자신이 만든 느슨한 공유 구조를 함께 인정하는 진술",
+              "tags": [
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "account": {
+                  "exact": "백승호 명의 현장관리 포털 계정",
+                  "neutral": "배우자 계정"
+                },
+                "lock": {
+                  "exact": "일회용 도어락 관리자 메뉴",
+                  "neutral": "출입 권한"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-1:responsibility:0",
+              "factText": "문제 뒤에야 피해자처럼 선을 그은 책임",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "백승호",
+                  "neutral": "상대",
+                  "fullName": "백승호",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "그때는 현장이 급했어. 일부러 피해를 키우려고 건조를 늦춘 건 아니야.",
+            "임시조치부터 해 놓고 순서를 맞추려던 거지."
+          ],
+          "privateKnowledge": [
+            "누수 확인 직후 6시간 이상 제습기가 꺼져 있었다.",
+            "건조업체 방문 연기와 권한 재설정이 같은 세션에서 처리됐다."
+          ],
+          "suppressions": [
+            "제습기 중단이 장시간이었다는 점",
+            "방문 연기와 권한 봉쇄가 연결된 결정이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-2:act:0",
+              "factText": "'그때는 현장이 급했다'며 지연을 임시조치로 포장하는 말",
+              "tags": [
+                "act",
+                "self_justification"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "긴급건조 방문 다음 날 연기",
+                  "neutral": "방문 연기"
+                },
+                "time": {
+                  "exact": "누수 확인 직후 6시간 이상",
+                  "neutral": "그 공백 시간",
+                  "period": "누수 확인 직후"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-2:denial:0",
+              "factText": "피해를 키우려 한 건 아니라는 부인",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "제습기 스마트플러그",
+                  "neutral": "제습 장치"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "제습기 전원이 잠깐 끊긴 건 인정해도, 반나절만 정리하려던 수준이었어.",
+            "권한 재설정도 혼선 막으려는 임시조치였지."
+          ],
+          "privateKnowledge": [
+            "누수 확인 직후 6시간 이상 제습기가 꺼져 있었다.",
+            "건조업체 방문 연기와 권한 재설정이 같은 세션에서 처리됐다."
+          ],
+          "suppressions": [
+            "제습기 중단이 장시간이었다는 점",
+            "방문 연기와 권한 봉쇄가 연결된 결정이었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-2:threshold:0",
+              "factText": "반나절만 벌려 했다는 시간 단위 축소",
+              "tags": [
+                "threshold",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "누수 확인 직후 6시간 이상",
+                  "neutral": "그 공백 시간",
+                  "period": "누수 확인 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-2:context:0",
+              "factText": "권한 재설정을 혼선 방지라고 설명하는 태도",
+              "tags": [
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "permission": {
+                  "exact": "도어락·현장 알림 권한 재설정",
+                  "neutral": "권한 변경"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "방문을 다음 날로 미루고 권한을 내 쪽으로 묶은 건 맞아.",
+            "그래도 그때는 현장을 통제해야 추가 사고가 안 난다고 생각했어."
+          ],
+          "privateKnowledge": [
+            "건조업체 방문 연기와 권한 재설정이 같은 세션에서 처리됐다.",
+            "시간을 조금만 벌면 손상 규모와 보험 대화가 달라질 수 있다고 봤다."
+          ],
+          "suppressions": [
+            "방문 연기와 권한 봉쇄가 연결된 결정이었다는 점",
+            "시간을 의도적으로 흥정했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-2:admission:0",
+              "factText": "건조 방문을 미루고 권한을 내 쪽으로 묶은 사실",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "긴급건조 방문 다음 날 연기",
+                  "neutral": "방문 연기"
+                },
+                "permission": {
+                  "exact": "도어락·현장 알림 권한 재설정",
+                  "neutral": "권한 변경"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-2:self_justification:0",
+              "factText": "현장 통제를 위한 필요 조치였다고 믿은 설명",
+              "tags": [
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "제습기 스마트플러그",
+                  "neutral": "제습 장치"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "사실은 손상 범위가 조금 더 보이면 보험 협상도 달라질 수 있다는 생각을 완전히 버리진 못했어.",
+            "그래서 건조를 서두르지 않고 시간을 값처럼 다뤘지."
+          ],
+          "privateKnowledge": [
+            "건조업체 방문 연기와 권한 재설정이 같은 세션에서 처리됐다.",
+            "시간을 조금만 벌면 손상 규모와 보험 대화가 달라질 수 있다고 봤다."
+          ],
+          "suppressions": [
+            "방문 연기와 권한 봉쇄가 연결된 결정이었다는 점",
+            "시간을 의도적으로 흥정했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-2:motive:0",
+              "factText": "손상 범위가 커지면 보험 협상도 달라질 수 있다고 계산한 마음",
+              "tags": [
+                "motive",
+                "beneficiary"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "긴급건조 방문 다음 날 연기",
+                  "neutral": "방문 연기"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-2:responsibility:0",
+              "factText": "시간을 값처럼 흥정하며 건조를 서두르지 않은 책임",
+              "tags": [
+                "responsibility",
+                "threshold"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "누수 확인 직후 6시간 이상",
+                  "neutral": "그 공백 시간",
+                  "period": "누수 확인 직후"
+                },
+                "device": {
+                  "exact": "제습기 스마트플러그",
+                  "neutral": "제습 장치"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "가장 노릇도 못 하고 집까지 망친 사람처럼 보일까 봐 무서웠어.",
+            "그래서 절차 위반을 다 '그때는 급했다'는 말로 눌러 버렸어."
+          ],
+          "privateKnowledge": [
+            "시간을 조금만 벌면 손상 규모와 보험 대화가 달라질 수 있다고 봤다.",
+            "'현장이 급했다'는 말을 절차 위반을 덮는 문장으로 써 왔다."
+          ],
+          "suppressions": [
+            "시간을 의도적으로 흥정했다는 점",
+            "임시조치라는 말로 의도를 숨긴다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-2:fear:0",
+              "factText": "가장 역할을 못 했다는 평가를 두려워한 감정",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "차유림",
+                  "neutral": "상대",
+                  "fullName": "차유림",
+                  "judgeRef": "배우자"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-2:quote:0",
+              "factText": "'그때는 급했다'는 문장 뒤에 절차 위반을 숨긴 태도",
+              "tags": [
+                "quote",
+                "self_justification"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "긴급건조 방문 다음 날 연기",
+                  "neutral": "방문 연기"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "나는 제습기 스마트플러그를 꺼 두고 긴급건조 방문을 다음 날로 미뤘고, 도어락과 현장 알림 권한도 내 쪽으로 다시 묶었어.",
+            "그건 단순 임시조치가 아니라 손상 흐름을 내가 쥐려 한 결정이었어."
+          ],
+          "privateKnowledge": [
+            "시간을 조금만 벌면 손상 규모와 보험 대화가 달라질 수 있다고 봤다.",
+            "'현장이 급했다'는 말을 절차 위반을 덮는 문장으로 써 왔다."
+          ],
+          "suppressions": [
+            "시간을 의도적으로 흥정했다는 점",
+            "임시조치라는 말로 의도를 숨긴다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-2:admission:1",
+              "factText": "스마트플러그 전원 차단과 방문 연기, 권한 재설정을 직접 했다는 자백",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "device": {
+                  "exact": "제습기 스마트플러그",
+                  "neutral": "제습 장치"
+                },
+                "delay": {
+                  "exact": "긴급건조 방문 다음 날 연기",
+                  "neutral": "방문 연기"
+                },
+                "permission": {
+                  "exact": "도어락·현장 알림 권한 재설정",
+                  "neutral": "권한 변경"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-2:responsibility:1",
+              "factText": "손상 흐름을 자신이 쥐려 했다는 인정",
+              "tags": [
+                "responsibility",
+                "motive"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "누수 확인 직후 6시간 이상",
+                  "neutral": "그 공백 시간",
+                  "period": "누수 확인 직후"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "큰 손상은 시공사 하자에서 시작된 거지, 우리가 키운 건 아니야.",
+            "초기 대응이 완벽하진 않아도 전적으로 우리 책임은 아니지."
+          ],
+          "privateKnowledge": [
+            "수분센서 곡선이 점진적 손상 확대를 보여 준다는 점을 알고 있다.",
+            "청구서 사진 순서가 실제 촬영 순서와 바뀌어 있다는 점을 안다."
+          ],
+          "suppressions": [
+            "센서 데이터가 자신에게 불리하다는 점",
+            "사진 배열이 서사를 만든다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-3:rule:0",
+              "factText": "초기 누수의 출발점은 시공사 하자였다는 주장",
+              "tags": [
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-3:denial:0",
+              "factText": "전적으로 우리 책임은 아니라는 방어",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "sensor": {
+                  "exact": "수분센서 계단형 상승 곡선",
+                  "neutral": "센서 흐름"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "하자가 먼저였고, 나는 현장을 막아 보려다 순서가 꼬인 거야.",
+            "시공사 쪽 재출입과 부실 설명이 더 컸다고 봤어."
+          ],
+          "privateKnowledge": [
+            "수분센서 곡선이 점진적 손상 확대를 보여 준다는 점을 알고 있다.",
+            "청구서 사진 순서가 실제 촬영 순서와 바뀌어 있다는 점을 안다."
+          ],
+          "suppressions": [
+            "센서 데이터가 자신에게 불리하다는 점",
+            "사진 배열이 서사를 만든다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-3:context:0",
+              "factText": "현장을 막다 순서가 꼬였다는 자기설명",
+              "tags": [
+                "context",
+                "self_justification"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "심야 재출입 직후",
+                  "neutral": "그 시점",
+                  "period": "공사중지 요청 직후 밤"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-3:counter:0",
+              "factText": "시공사 재출입과 부실 설명을 더 큰 원인으로 보는 주장",
+              "tags": [
+                "counter",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                },
+                "clip": {
+                  "exact": "심야 CCTV 캡처와 잘린 클립",
+                  "neutral": "그 캡처"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "하자에서 시작된 건 맞지만, 우리가 긴급조치를 제때 못 한 탓이 손상을 더 키웠다는 점도 부인 못 해.",
+            "그래도 나는 그때 현장을 수습한다고 생각했어."
+          ],
+          "privateKnowledge": [
+            "청구서 사진 순서가 실제 촬영 순서와 바뀌어 있다는 점을 안다.",
+            "시공사 단독 과실 프레임이 자신의 지연 책임을 가려 준다고 봤다."
+          ],
+          "suppressions": [
+            "사진 배열이 서사를 만든다는 점",
+            "시공사 탓을 체면 방패로 썼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-3:admission:0",
+              "factText": "긴급조치를 제때 못 한 탓이 손상을 키웠다는 인정",
+              "tags": [
+                "admission",
+                "context"
+              ],
+              "slots": {
+                "sensor": {
+                  "exact": "수분센서 계단형 상승 곡선",
+                  "neutral": "센서 흐름"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-3:self_justification:0",
+              "factText": "그래도 당시엔 수습한다고 믿었다는 설명",
+              "tags": [
+                "self_justification",
+                "identity"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "솔직히 말하면 나는 시공사 하자를 앞세우면 내 지연 결정이 덜 보일 거라고 생각했어.",
+            "그래서 센서 곡선과 사진 순서 문제를 알면서도 시공사 탓만 반복했지."
+          ],
+          "privateKnowledge": [
+            "청구서 사진 순서가 실제 촬영 순서와 바뀌어 있다는 점을 안다.",
+            "시공사 단독 과실 프레임이 자신의 지연 책임을 가려 준다고 봤다."
+          ],
+          "suppressions": [
+            "사진 배열이 서사를 만든다는 점",
+            "시공사 탓을 체면 방패로 썼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-3:counter:1",
+              "factText": "시공사 하자를 방패로 내 지연을 가리려 했다는 계산",
+              "tags": [
+                "counter",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-3:evidence:0",
+              "factText": "센서 곡선과 사진 순서를 알면서도 반복한 주장",
+              "tags": [
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "sensor": {
+                  "exact": "수분센서 계단형 상승 곡선",
+                  "neutral": "센서 흐름"
+                },
+                "photo": {
+                  "exact": "청구서 사진 순서 재배열",
+                  "neutral": "사진 배열"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "내가 먼저 막고 설명은 나중에 붙이는 버릇이 이번엔 집까지 망치는 쪽으로 갔어.",
+            "잘못을 인정하면 가장 역할까지 무너진다고 느껴 더 버텼어."
+          ],
+          "privateKnowledge": [
+            "시공사 단독 과실 프레임이 자신의 지연 책임을 가려 준다고 봤다.",
+            "유림과 함께 선택적 자료 제시를 묵인했다."
+          ],
+          "suppressions": [
+            "시공사 탓을 체면 방패로 썼다는 점",
+            "부부가 함께 손상 흐름을 방치했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-3:shame:0",
+              "factText": "먼저 막고 설명을 나중에 붙이는 버릇이 집까지 망쳤다는 수치감",
+              "tags": [
+                "shame",
+                "fear"
+              ],
+              "slots": {
+                "delay": {
+                  "exact": "긴급건조 방문 다음 날 연기",
+                  "neutral": "방문 연기"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-3:identity:0",
+              "factText": "가장 역할이 무너질까 봐 더 버틴 감정",
+              "tags": [
+                "identity",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "백승호",
+                  "neutral": "자기 자신",
+                  "fullName": "백승호",
+                  "judgeRef": "본인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "초기 누수는 시공사 하자와 연결됐지만, 큰 손상은 내가 건조를 늦추고 우리가 자료를 유리하게 배열하면서 커졌어.",
+            "시공사 단독 과실이라고 밀어붙인 건 내 체면을 지키려는 거짓말이었어."
+          ],
+          "privateKnowledge": [
+            "시공사 단독 과실 프레임이 자신의 지연 책임을 가려 준다고 봤다.",
+            "유림과 함께 선택적 자료 제시를 묵인했다."
+          ],
+          "suppressions": [
+            "시공사 탓을 체면 방패로 썼다는 점",
+            "부부가 함께 손상 흐름을 방치했다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-3:admission:1",
+              "factText": "건조 지연과 자료 배열이 큰 손상을 키웠다는 인정",
+              "tags": [
+                "admission",
+                "harm"
+              ],
+              "slots": {
+                "sensor": {
+                  "exact": "수분센서 계단형 상승 곡선",
+                  "neutral": "센서 흐름"
+                },
+                "photo": {
+                  "exact": "청구서 사진 순서 재배열",
+                  "neutral": "사진 배열"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-3:responsibility:0",
+              "factText": "시공사 단독 과실을 밀어붙여 체면을 지키려 했다는 자백",
+              "tags": [
+                "responsibility",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "보험 얘긴 막힌 돈줄 때문에 한 소리지, 둘이 짜고 판을 만든 건 아니야.",
+            "살 길을 찾은 것까지 공모라고 하면 너무 멀리 간 거지."
+          ],
+          "privateKnowledge": [
+            "삭제 복원된 메신저와 예산 메모에 구체적 사용처 계산이 남아 있다.",
+            "긴급건조 취소 직전과 보험 상담 직후 같은 계산이 반복됐다."
+          ],
+          "suppressions": [
+            "사용처를 세부적으로 계산했다는 점",
+            "손상 확대를 멈추지 않기로 사실상 뜻을 맞춘 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-4:motive:0",
+              "factText": "막힌 돈줄 때문에 보험 얘기를 했을 뿐이라는 축소 진술",
+              "tags": [
+                "motive",
+                "uncertainty"
+              ],
+              "slots": {
+                "money": {
+                  "exact": "보험금으로 천장·마루·붙박이장 비용 메우기",
+                  "neutral": "그 계산"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-4:denial:0",
+              "factText": "둘이 짜고 판을 만들진 않았다는 부인",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "지급금으로 뭐를 메울 수 있는지 따져본 건 있어.",
+            "그래도 그걸 손상을 키우자는 합의로 바로 묶는 건 억울해."
+          ],
+          "privateKnowledge": [
+            "삭제 복원된 메신저와 예산 메모에 구체적 사용처 계산이 남아 있다.",
+            "긴급건조 취소 직전과 보험 상담 직후 같은 계산이 반복됐다."
+          ],
+          "suppressions": [
+            "사용처를 세부적으로 계산했다는 점",
+            "손상 확대를 멈추지 않기로 사실상 뜻을 맞춘 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-4:threshold:0",
+              "factText": "지급금으로 무엇을 메울지 따져본 사실",
+              "tags": [
+                "threshold",
+                "beneficiary"
+              ],
+              "slots": {
+                "money": {
+                  "exact": "보험금으로 천장·마루·붙박이장 비용 메우기",
+                  "neutral": "그 계산"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-4:denial:1",
+              "factText": "그 계산을 합의와 분리하려는 선 긋기",
+              "tags": [
+                "denial",
+                "self_justification"
+              ],
+              "slots": {
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "예산 메모랑 메신저 대화가 남아 있는 건 인정해.",
+            "그때는 잔금이랑 가구비를 어떻게 버틸지만 보였고, 선을 넘는 말은 아닌 척했어."
+          ],
+          "privateKnowledge": [
+            "긴급건조 취소 직전과 보험 상담 직후 같은 계산이 반복됐다.",
+            "보험금으로 잔금과 카드대금을 버틸 생각을 했다."
+          ],
+          "suppressions": [
+            "손상 확대를 멈추지 않기로 사실상 뜻을 맞춘 점",
+            "생활비와 가구비까지 보험으로 메우려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-4:evidence:0",
+              "factText": "예산 메모와 메신저에 남은 잔금·가구비 계산 흔적",
+              "tags": [
+                "evidence",
+                "motive"
+              ],
+              "slots": {
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                },
+                "time": {
+                  "exact": "긴급건조 취소 직전과 보험 상담 직후",
+                  "neutral": "그 무렵"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-4:self_justification:0",
+              "factText": "가족 집을 버티기 위한 계산이었다는 자기정당화",
+              "tags": [
+                "self_justification",
+                "beneficiary"
+              ],
+              "slots": {
+                "pressure": {
+                  "exact": "예산 초과와 입주 지연",
+                  "neutral": "그 압박"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "실은 손상이 커 보이면 보험 범위가 넓어질 수 있다는 계산을 우리 둘 다 했어.",
+            "나는 그걸 '가족 집부터 살려야 한다'는 말로 포장했지만 결국 손상 확대를 묵인한 거였어."
+          ],
+          "privateKnowledge": [
+            "긴급건조 취소 직전과 보험 상담 직후 같은 계산이 반복됐다.",
+            "보험금으로 잔금과 카드대금을 버틸 생각을 했다."
+          ],
+          "suppressions": [
+            "손상 확대를 멈추지 않기로 사실상 뜻을 맞춘 점",
+            "생활비와 가구비까지 보험으로 메우려 했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-4:admission:0",
+              "factText": "손상이 커 보이면 보험 범위가 넓어질 수 있다는 공동 계산",
+              "tags": [
+                "admission",
+                "beneficiary"
+              ],
+              "slots": {
+                "money": {
+                  "exact": "보험금으로 천장·마루·붙박이장 비용 메우기",
+                  "neutral": "그 계산"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-4:self_justification:1",
+              "factText": "'가족 집부터 살리자'는 말로 포장한 책임",
+              "tags": [
+                "self_justification",
+                "responsibility"
+              ],
+              "slots": {
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "돈 때문에 집을 지키려다 사기 가까운 계산까지 했다는 걸 인정하기가 너무 수치스러웠어.",
+            "그래서 생활 압박을 이유로 계속 말을 눌러 왔지."
+          ],
+          "privateKnowledge": [
+            "보험금으로 잔금과 카드대금을 버틸 생각을 했다.",
+            "생활 압박을 이유로 공모를 정당화했다."
+          ],
+          "suppressions": [
+            "생활비와 가구비까지 보험으로 메우려 했다는 점",
+            "가족을 지킨다는 말을 방패로 썼다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-4:shame:0",
+              "factText": "돈 때문에 집을 지키려다 사기 가까운 계산까지 했다는 수치감",
+              "tags": [
+                "shame",
+                "fear"
+              ],
+              "slots": {
+                "pressure": {
+                  "exact": "예산 초과와 입주 지연",
+                  "neutral": "그 압박"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-4:admission:1",
+              "factText": "생활 압박을 방패로 계속 말을 눌러 온 태도",
+              "tags": [
+                "admission",
+                "self_justification"
+              ],
+              "slots": {
+                "money": {
+                  "exact": "보험금으로 천장·마루·붙박이장 비용 메우기",
+                  "neutral": "그 계산"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "우리는 보험금으로 천장, 마루, 붙박이장 비용까지 메울 수 있는지 함께 계산했고, 손상 확대를 멈추지 않는 쪽으로 사실상 뜻을 맞췄어.",
+            "나는 그걸 가족을 지키려는 선택인 것처럼 꾸며 버텼어."
+          ],
+          "privateKnowledge": [
+            "보험금으로 잔금과 카드대금을 버틸 생각을 했다.",
+            "생활 압박을 이유로 공모를 정당화했다."
+          ],
+          "suppressions": [
+            "생활비와 가구비까지 보험으로 메우려 했다는 점",
+            "가족을 지킨다는 말을 방패로 썼다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-4:admission:2",
+              "factText": "보험금으로 천장·마루·붙박이장 비용까지 메우려 뜻을 맞춘 사실",
+              "tags": [
+                "admission",
+                "beneficiary"
+              ],
+              "slots": {
+                "money": {
+                  "exact": "보험금으로 천장·마루·붙박이장 비용 메우기",
+                  "neutral": "그 계산"
+                },
+                "chat": {
+                  "exact": "삭제 복원된 메신저와 예산 메모",
+                  "neutral": "그 대화"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-4:responsibility:0",
+              "factText": "가족을 지킨다는 말로 공모를 포장한 자백",
+              "tags": [
+                "responsibility",
+                "self_justification"
+              ],
+              "slots": {
+                "pressure": {
+                  "exact": "예산 초과와 입주 지연",
+                  "neutral": "그 압박"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "보험금이 막힌 건 홍대성이 보복성으로 신고해서 그런 거라고 봤어.",
+            "시공사랑 틀어진 뒤부터 흐름이 이상해졌잖아."
+          ],
+          "privateKnowledge": [
+            "조사유예 통지의 날짜가 시공사 분쟁 제기보다 앞섰다는 점을 알고 있다.",
+            "제습 지연 로그가 보류 사유에 직접 적혀 있다는 점을 확인했다."
+          ],
+          "suppressions": [
+            "보류 결정 시점이 더 이르다는 점",
+            "자기 로그가 핵심 사유라는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-5:counter:0",
+              "factText": "보험금 보류를 시공사 보복 신고 탓으로 보는 프레임",
+              "tags": [
+                "counter",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                },
+                "notice": {
+                  "exact": "보험사 조사유예 통지와 복구업체 진술서",
+                  "neutral": "보험사 자료"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-5:denial:0",
+              "factText": "우리 데이터가 직접 원인일 수 있다는 가능성 부인",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "제습 지연·이상 데이터·사진 순서 불일치",
+                  "neutral": "손상 확대 정황"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "보류가 우리 쪽 데이터 때문이라는 말은 나중에 붙은 해석 같았어.",
+            "당시엔 시공사 신고가 먼저라고 믿었지."
+          ],
+          "privateKnowledge": [
+            "조사유예 통지의 날짜가 시공사 분쟁 제기보다 앞섰다는 점을 알고 있다.",
+            "제습 지연 로그가 보류 사유에 직접 적혀 있다는 점을 확인했다."
+          ],
+          "suppressions": [
+            "보류 결정 시점이 더 이르다는 점",
+            "자기 로그가 핵심 사유라는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-5:uncertainty:0",
+              "factText": "보류 사유가 나중에 덧붙은 해석처럼 느껴졌다는 설명",
+              "tags": [
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "보험사 조사유예 통지와 복구업체 진술서",
+                  "neutral": "보험사 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-5:institution:0",
+              "factText": "당시엔 시공사 신고가 먼저라고 믿은 시각",
+              "tags": [
+                "institution",
+                "context"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "시공사 분쟁 제기보다 이른 보류 결정",
+                  "neutral": "그 결정 시점"
+                },
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "조사유예 통지를 보니 제습 지연 로그가 먼저 문제 됐을 수 있다는 건 인정해.",
+            "그래도 그전까진 외부 신고가 판을 바꿨다고 생각했어."
+          ],
+          "privateKnowledge": [
+            "제습 지연 로그가 보류 사유에 직접 적혀 있다는 점을 확인했다.",
+            "보복 신고 서사가 자신의 책임을 희석해 준다고 느꼈다."
+          ],
+          "suppressions": [
+            "자기 로그가 핵심 사유라는 점",
+            "보복 신고 프레임이 책임을 덜어 준다는 계산"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-5:institution:1",
+              "factText": "조사유예 통지에서 제습 지연 로그가 먼저 문제 되었을 수 있음을 본 지점",
+              "tags": [
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "보험사 조사유예 통지와 복구업체 진술서",
+                  "neutral": "보험사 자료"
+                },
+                "cause": {
+                  "exact": "제습 지연·이상 데이터·사진 순서 불일치",
+                  "neutral": "손상 확대 정황"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-5:uncertainty:1",
+              "factText": "그래도 외부 신고가 판을 바꿨다고 믿은 마음",
+              "tags": [
+                "uncertainty",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보면 나는 보복 신고 서사를 붙잡아 두면 내 지연 판단이 덜 보일 거라고 생각했어.",
+            "보류 사유를 차분히 읽기보다 밖에서 날아온 공격처럼 말했지."
+          ],
+          "privateKnowledge": [
+            "제습 지연 로그가 보류 사유에 직접 적혀 있다는 점을 확인했다.",
+            "보복 신고 서사가 자신의 책임을 희석해 준다고 느꼈다."
+          ],
+          "suppressions": [
+            "자기 로그가 핵심 사유라는 점",
+            "보복 신고 프레임이 책임을 덜어 준다는 계산"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-5:motive:0",
+              "factText": "보복 신고 서사를 붙잡아 내 지연 판단을 덜 보이게 하려는 계산",
+              "tags": [
+                "motive",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                },
+                "cause": {
+                  "exact": "제습 지연·이상 데이터·사진 순서 불일치",
+                  "neutral": "손상 확대 정황"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-5:responsibility:0",
+              "factText": "보류 사유를 차분히 읽지 않고 공격처럼 받아들인 태도",
+              "tags": [
+                "responsibility",
+                "admission"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "보험사 조사유예 통지와 복구업체 진술서",
+                  "neutral": "보험사 자료"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "내 로그가 보험사 눈에 먼저 걸렸다는 걸 인정하는 순간 내가 집을 더 망친 사람이 되는 것 같았어.",
+            "그래서 홍대성 탓이라는 설명을 놓지 못했어."
+          ],
+          "privateKnowledge": [
+            "보복 신고 서사가 자신의 책임을 희석해 준다고 느꼈다.",
+            "외부 신고보다 내부 이상징후가 먼저였을 수 있음을 인정하게 됐다."
+          ],
+          "suppressions": [
+            "보복 신고 프레임이 책임을 덜어 준다는 계산",
+            "외부 탓이 사실과 다를 수 있다는 불안"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-5:fear:0",
+              "factText": "자기 로그가 먼저 걸렸다는 사실을 인정하기 두려운 감정",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "cause": {
+                  "exact": "제습 지연·이상 데이터·사진 순서 불일치",
+                  "neutral": "손상 확대 정황"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-5:admission:0",
+              "factText": "홍대성 탓 설명을 끝까지 놓지 못한 태도",
+              "tags": [
+                "admission",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "보험금 지급 보류의 직접 원인은 시공사 보복 신고가 아니라 제습 지연, 수분센서 이상 곡선, 사진 순서 불일치 같은 손상 확대 정황이었어.",
+            "나는 내 로그가 핵심 사유였다는 걸 늦게 받아들이고도 계속 외부 탓부터 했어."
+          ],
+          "privateKnowledge": [
+            "보복 신고 서사가 자신의 책임을 희석해 준다고 느꼈다.",
+            "외부 신고보다 내부 이상징후가 먼저였을 수 있음을 인정하게 됐다."
+          ],
+          "suppressions": [
+            "보복 신고 프레임이 책임을 덜어 준다는 계산",
+            "외부 탓이 사실과 다를 수 있다는 불안"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "spouse11:b:tell:task_listing",
+            "spouse11:b:tell:time_bargain",
+            "spouse11:b:tell:question_flip"
+          ],
+          "claimAtoms": [
+            {
+              "id": "spouse11:b:d-5:institution:2",
+              "factText": "직접 원인이 지연 로그와 이상 데이터였다는 인정",
+              "tags": [
+                "institution",
+                "admission"
+              ],
+              "slots": {
+                "notice": {
+                  "exact": "보험사 조사유예 통지와 복구업체 진술서",
+                  "neutral": "보험사 자료"
+                },
+                "cause": {
+                  "exact": "제습 지연·이상 데이터·사진 순서 불일치",
+                  "neutral": "손상 확대 정황"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "spouse11:b:d-5:responsibility:1",
+              "factText": "늦게 받아들이고도 외부 탓부터 계속한 책임",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "홍대성",
+                  "neutral": "시공사 쪽 사람",
+                  "fullName": "홍대성",
+                  "judgeRef": "현장소장"
+                }
+              },
+              "stanceHints": [
+                "confession",
+                "admission"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

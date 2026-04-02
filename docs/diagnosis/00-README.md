@@ -17,6 +17,8 @@
 | `09-tech-stack.md` | 기술 스택, 아키텍처, 상태 관리 |
 | `10-actual-data-samples.md` | **실제 데이터 날것** — 사건 JSON, 거짓말 설정, 진실 정책, 증인 예산, Phase 1 스크립트, LLM 프롬프트 구성, 현재 AI 답변 문제 |
 
+| `11-v2-script-transition-spec.md` | **V2 스크립트 전환 스펙** — Phase 3 LLM→BeatScript 전환, 11종 엔진, 파이프라인, 타입, 데이터 스키마, UI 변경 |
+
 | `PROMPT-FOR-ADVISOR.md` | **에이전트에게 보낼 프롬프트** — 문제 상황, 요청 사항, 제약 조건 |
 
 ## 이 게임은?

@@ -1,0 +1,4815 @@
+export const neighbor06V2Atoms = {
+  "caseId": "neighbor-06",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "저는 실제보다 더 받으려던 게 아니라 견적서 기준으로 반씩 말씀드린 겁니다.",
+            "급해서 먼저 90,000원만 적어 보낸 거지 숨긴 금액은 없었습니다."
+          ],
+          "privateKnowledge": [
+            "관리사무소 보전금 60,000원이 반영된 최종 정산 자료를 이미 확인했다.",
+            "주민 부담 총액이 120,000원으로 줄어든다는 점을 알면서도 견적 캡처만 보냈다."
+          ],
+          "suppressions": [
+            "90,000원이 보전 전 180,000원 견적의 절반이라는 점",
+            "최종 계산서가 송금 요청보다 먼저 정리돼 있었다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-1:act:0",
+              "factText": "보전 전 견적을 기준으로 90,000원을 먼저 요구했다는 말",
+              "tags": [
+                "act",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                },
+                "estimate": {
+                  "exact": "180,000원",
+                  "neutral": "견적 금액",
+                  "rounded": "18만원"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-1:self_justification:0",
+              "factText": "급해서 대충 반씩 잡았을 뿐이라는 자기합리화",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "최종 계산서 확인 후 분담",
+                  "neutral": "그 원칙"
+                },
+                "pressure": {
+                  "exact": "빨리 끝내야 한다는 압박",
+                  "neutral": "그 압박"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "보전금 반영 전후가 바로 정리된 줄은 알았지만, 우선 견적 기준으로 금액을 잡아 본 겁니다.",
+            "최종 계산서가 오면 다시 맞출 생각이었지 과다 청구를 확정한 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "정산 완료 시각이 자신의 송금 요청보다 앞섰다는 점을 안다.",
+            "최종 계산서를 같이 보내지 않으면 인호가 90,000원을 실제 몫으로 받아들일 수 있다는 점을 안다."
+          ],
+          "suppressions": [
+            "최종 계산서를 일부러 같이 보내지 않았다는 점",
+            "관리사무소 확인을 거치지 않고 개인 계좌를 먼저 보냈다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-1:evidence:0",
+              "factText": "최종 계산서가 있었어도 견적 금액으로 먼저 말을 꺼냈다는 사실",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "23분 후",
+                  "neutral": "그 직후",
+                  "period": "보전금 반영 직후"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-1:motive:0",
+              "factText": "수리 주도권을 잡은 사람이 먼저 정산을 밀어붙였다는 심리",
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "pressure": {
+                  "exact": "빨리 끝내야 한다는 압박",
+                  "neutral": "그 압박"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "보전금 얘기를 바로 안 한 건 맞습니다.",
+            "그래도 저는 아직 세부가 다 정리되기 전이라 생각해서 견적 절반을 먼저 말한 거였습니다."
+          ],
+          "privateKnowledge": [
+            "보전금 60,000원이 빠지면 인호 몫이 60,000원 수준이라는 계산이 가능했다.",
+            "견적 절반과 실제 주민 몫 사이에 차이가 난다는 점을 인지했다."
+          ],
+          "suppressions": [
+            "90,000원 요구가 실제 몫보다 30,000원 많다는 점",
+            "본인이 먼저 계좌번호를 보내며 결론을 기정사실화한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-1:admission:0",
+              "factText": "보전금 반영 사실을 바로 말하지 않았다는 부분 인정",
+              "tags": [
+                "admission",
+                "evidence"
+              ],
+              "slots": {
+                "subsidy": {
+                  "exact": "60,000원",
+                  "neutral": "보전금",
+                  "rounded": "6만원"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-1:self_justification:1",
+              "factText": "세부 정산 전이라 견적 절반을 먼저 꺼냈다는 축소 설명",
+              "tags": [
+                "self_justification",
+                "uncertainty"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                },
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "제가 먼저 돈 얘기를 꺼낸 건 맞지만, 인호 씨도 금액만 붙잡고 확인을 같이 안 했습니다.",
+            "혼자 다 처리한 사람 입장에선 빨리 정산하려는 마음이 있었던 겁니다."
+          ],
+          "privateKnowledge": [
+            "최종 주민 부담 총액이 120,000원이라는 근거는 관리사무소 자료로 이미 확정돼 있었다.",
+            "자신의 수고를 내세워 과다 요구를 희석하려 한다."
+          ],
+          "suppressions": [
+            "업체 연락과 입회 수고가 공식 분담액을 바꾸지 않는다는 점",
+            "인호의 확인 태도와 별개로 자신의 요구액이 과했다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-1:counter:0",
+              "factText": "인호도 확인을 안 했다는 맞받아치기로 핵심 액수 차이를 흐리는 반격",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "rule": {
+                  "exact": "최종 계산서 확인 후 분담",
+                  "neutral": "그 원칙"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-1:self_justification:2",
+              "factText": "업체 연락과 입회 수고를 금액 문제와 섞어 내세우는 태도",
+              "tags": [
+                "self_justification",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "institution": {
+                  "exact": "박영수",
+                  "neutral": "수리기사",
+                  "fullName": "박영수 (수리기사)",
+                  "judgeRef": "박 기사"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "문 소리 민원도 있었고 제가 수리까지 진행하다 보니 빨리 끝내고 싶은 마음이 컸습니다.",
+            "돈으로 보일까 싶어서 더 설명하지 못하고 숫자부터 보낸 건 솔직히 겁이 났습니다."
+          ],
+          "privateKnowledge": [
+            "자기 편의를 공용수리 비용에 섞어 보인다는 비난을 두려워했다.",
+            "설명을 생략한 채 숫자부터 보내면 오해가 커질 수 있다는 걸 알았다."
+          ],
+          "suppressions": [
+            "두려움이 있었다는 이유로 실제 액수 차이를 설명하지 않은 점",
+            "자신의 장사 동선 때문에 수리를 서둘렀다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-1:emotion:0",
+              "factText": "소음과 수리 부담 때문에 빨리 끝내고 싶었다는 감정 노출",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "pressure": {
+                  "exact": "빨리 끝내야 한다는 압박",
+                  "neutral": "그 압박"
+                },
+                "noise": {
+                  "exact": "쾅 닫히는 소음",
+                  "neutral": "그 소음"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-1:shame:0",
+              "factText": "돈 문제를 섞어 청구한 사람처럼 보일까 두려워 설명을 피했다는 수치심",
+              "tags": [
+                "shame",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "routine": {
+                  "exact": "새벽 꽃시장 동선",
+                  "neutral": "장사 동선"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "관리사무소 보전금 60,000원이 반영돼 주민 부담 총액이 120,000원이라는 걸 알고도 제가 90,000원을 요구했습니다.",
+            "인호 씨 몫은 60,000원이었는데 실제 부담액을 숨기고 더 받으려 한 건 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "공식 정산 기준으로 자신의 요구가 과다였음을 인정한다.",
+            "수리 주도 수고와 과다 청구는 별개라는 점을 받아들인다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-1:admission:1",
+              "factText": "보전금 반영 후에도 90,000원을 요구한 과다 청구를 인정",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "subsidy": {
+                  "exact": "60,000원",
+                  "neutral": "보전금",
+                  "rounded": "6만원"
+                },
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-1:beneficiary:0",
+              "factText": "공식 기준상 인호 몫이 60,000원인데 30,000원을 더 요구했다는 정산 인정",
+              "tags": [
+                "beneficiary",
+                "evidence"
+              ],
+              "slots": {
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                },
+                "resident": {
+                  "exact": "120,000원",
+                  "neutral": "주민 부담 총액",
+                  "rounded": "12만원"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "인호 씨가 접이식 카트나 박스로 문을 받친 쪽이 더 문제였다고 봅니다.",
+            "저는 그 사람 사용부터 확인해야 한다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "자신도 꽃 손수레로 문을 받쳐 쓴 적이 여러 번 있다.",
+            "문이 몇 주 전부터 세게 닫혔다는 걸 알고도 정식 신고를 늦췄다."
+          ],
+          "suppressions": [
+            "자신의 손수레 사용 빈도",
+            "서로 문을 잠깐씩 받쳐 썼다는 공동 맥락"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-2:counter:0",
+              "factText": "인호의 접이식 카트와 박스 사용을 먼저 문제 삼는 공격적 주장",
+              "tags": [
+                "counter",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                },
+                "box": {
+                  "exact": "박스",
+                  "neutral": "상자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-2:responsibility:0",
+              "factText": "책임 초점을 인호 쪽 사용 습관으로 먼저 돌리려는 태도",
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "behavior": {
+                  "exact": "방화문 문받침 사용",
+                  "neutral": "그 사용"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 인호 씨도 잠깐씩은 문을 받친 게 맞습니다.",
+            "그래서 그분 책임을 빼고 말하는 건 공정하지 않다고 본 겁니다."
+          ],
+          "privateKnowledge": [
+            "CCTV와 점검보고서가 인호 쪽 반복 사용을 보여준다는 걸 안다.",
+            "자신 역시 예외가 아니라는 점은 아직 숨기고 싶다."
+          ],
+          "suppressions": [
+            "자신의 손수레 사용도 누적 원인이라는 점",
+            "공동복도에서 둘 다 편의 사용을 했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-2:evidence:0",
+              "factText": "인호도 잠깐씩 문을 받쳤다는 최소 인정",
+              "tags": [
+                "evidence",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "quote": {
+                  "exact": "잠깐이었다",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-2:counter:1",
+              "factText": "공정한 분담을 말하며 인호 책임을 먼저 부각하는 반론",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "저도 손수레를 쓴 건 맞지만, 인호 씨 카트도 반복됐습니다.",
+            "한쪽만 빼고 말하면 실제 흐름이 달라집니다."
+          ],
+          "privateKnowledge": [
+            "3주 동안 두 사람의 문받침 장면이 함께 누적됐다는 자료를 안다.",
+            "자신의 손수레 사용이 완전히 가벼운 문제는 아니라는 점을 안다."
+          ],
+          "suppressions": [
+            "자신 쪽 사용 횟수가 더 많을 수 있다는 불리함",
+            "문 소리 이상을 알고도 신고하지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-2:admission:0",
+              "factText": "자신의 손수레 사용을 일부 인정하면서도 인호의 반복 사용을 병기",
+              "tags": [
+                "admission",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                },
+                "other": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-2:context:0",
+              "factText": "실제 흐름은 양쪽의 반복 사용이 겹친 문제라는 맥락 제시",
+              "tags": [
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "3주",
+                  "neutral": "그 기간",
+                  "period": "같은 3주 동안"
+                },
+                "behavior": {
+                  "exact": "방화문 문받침 사용",
+                  "neutral": "그 사용"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "서로 편의상 쓴 건 맞아도 인호 씨가 자기 몫을 너무 빼려고 합니다.",
+            "적어도 본인 카트 책임은 더 분명히 인정해야 합니다."
+          ],
+          "privateKnowledge": [
+            "공동 책임이라는 큰 틀은 부정하기 어렵다.",
+            "자신이 비난을 피하려고 인호의 사용 비중을 더 크게 말하고 있다."
+          ],
+          "suppressions": [
+            "공동 책임이라는 결론이 자신에게도 적용된다는 점",
+            "자신도 손수레 사용을 줄이지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-2:counter:2",
+              "factText": "공동 책임 틀 안에서도 인호가 자기 몫을 축소한다고 비난",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-2:denial:0",
+              "factText": "자신 쪽 누적 사용을 덜 강조한 채 상대 비중만 키우는 태도",
+              "tags": [
+                "denial",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "personOther": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "문이 세게 닫힐 때마다 저도 신경이 쓰였는데 결국 둘 다 편의로 넘겼습니다.",
+            "그래서 인호 씨 탓만 하기도 찔리는 건 사실입니다."
+          ],
+          "privateKnowledge": [
+            "민원과 소음을 알면서도 장사 동선을 이유로 사용을 멈추지 못했다.",
+            "상대를 몰아세울수록 자신의 숨긴 부분도 드러날 수 있다는 걸 느낀다."
+          ],
+          "suppressions": [
+            "장사 편의 때문에 손수레 사용을 계속했다는 점",
+            "초기 신고를 미룬 책임"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-2:emotion:0",
+              "factText": "문 소리와 민원을 알면서도 편의상 넘겼다는 찔림",
+              "tags": [
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "쾅 닫히는 소음",
+                  "neutral": "그 소음"
+                },
+                "time": {
+                  "exact": "몇 주 전부터",
+                  "neutral": "그전부터",
+                  "period": "수리 전 몇 주"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-2:relationship:0",
+              "factText": "상대만 탓하기 어렵다는 정서적 후퇴",
+              "tags": [
+                "relationship",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "behavior": {
+                  "exact": "방화문 문받침 사용",
+                  "neutral": "그 사용"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "인호 씨도 접이식 카트와 박스로 문을 받쳐 쓴 공동 책임이 있습니다.",
+            "다만 저 역시 손수레 사용에서 예외가 아니니 서로 책임을 인정해야 맞습니다."
+          ],
+          "privateKnowledge": [
+            "양쪽 모두 공동 책임이라는 결론을 받아들인다.",
+            "자신의 공격적 초반 프레임이 과했다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-2:responsibility:1",
+              "factText": "인호의 문받침 사용이 공동 책임에 포함된다는 확정",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                },
+                "box": {
+                  "exact": "박스",
+                  "neutral": "상자"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-2:admission:1",
+              "factText": "자신도 손수레 사용에서 예외가 아니라는 수용",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                },
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "도어클로저가 제 손수레 하나 때문에 망가졌다는 말은 과합니다.",
+            "저는 잠깐 지나가는 정도였고 문이 원래부터 세게 닫히고 있었습니다."
+          ],
+          "privateKnowledge": [
+            "자신도 손수레로 방화문을 반복해서 고정했다.",
+            "몇 주 전부터 문 상태가 나빴는데도 정식 신고를 미뤘다."
+          ],
+          "suppressions": [
+            "자신의 손수레 사용 빈도",
+            "공동복도에서 둘 다 반복 사용한 사실"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-3:denial:0",
+              "factText": "손수레가 단독 원인이라는 말을 강하게 부정",
+              "tags": [
+                "denial",
+                "responsibility"
+              ],
+              "slots": {
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                },
+                "frame": {
+                  "exact": "단독 책임",
+                  "neutral": "한쪽 책임"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-3:context:0",
+              "factText": "문 상태가 원래부터 세게 닫히고 있었다는 선행 맥락 제시",
+              "tags": [
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "몇 주 전부터",
+                  "neutral": "그전부터",
+                  "period": "수리 전 몇 주"
+                },
+                "noise": {
+                  "exact": "쾅 닫히는 소음",
+                  "neutral": "그 소음"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "문이 이미 안 좋았고 다들 잠깐씩 받쳐 쓴 건 맞습니다.",
+            "그래서 그걸 제 손수레 단독 책임으로 말하는 건 받아들이기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "인호의 카트 장면이 있어도 자신의 사용도 반복적이라는 점을 안다.",
+            "단독 책임만 벗어나면 자기 몫을 줄일 수 있다고 생각한다."
+          ],
+          "suppressions": [
+            "자신의 반복성",
+            "손수레 사용도 수리기사 보고서에 포함될 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-3:uncertainty:0",
+              "factText": "다들 잠깐씩 썼다는 식으로 반복 사용을 희석",
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "잠깐이었다",
+                  "neutral": "그 표현"
+                },
+                "behavior": {
+                  "exact": "방화문 문받침 사용",
+                  "neutral": "그 사용"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-3:counter:0",
+              "factText": "핵심은 단독 책임이 아니라는 점이라고 프레임을 돌리는 반론",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "frame": {
+                  "exact": "단독 책임",
+                  "neutral": "한쪽 책임"
+                },
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "제 손수레 사용이 전혀 없었다는 건 아닙니다.",
+            "그래도 인호 씨 카트 사용까지 같이 봐야지 한쪽 단독 원인처럼 몰 수는 없습니다."
+          ],
+          "privateKnowledge": [
+            "CCTV에 자신의 손수레 장면도 반복적으로 남아 있다는 점을 안다.",
+            "반복 사용이 누적 손상으로 이어졌다는 설명을 점점 부정하기 어려워진다."
+          ],
+          "suppressions": [
+            "자신의 사용도 손상 누적에 기여했다는 점",
+            "문 상태 이상을 알면서도 버틴 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-3:admission:0",
+              "factText": "손수레 사용 자체는 부정하지 못하는 부분 인정",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-3:counter:1",
+              "factText": "인호의 카트 사용을 함께 보지 않으면 단독 책임 프레임이 왜곡된다는 주장",
+              "tags": [
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                },
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "제 손수레보다 인호 씨 카트가 더 무겁고 문을 세게 걸어 둔 쪽이었습니다.",
+            "누적 원인을 따지면 그분 사용 비중도 작지 않습니다."
+          ],
+          "privateKnowledge": [
+            "무게나 비중을 정확히 계량한 자료는 없다.",
+            "상대 비중을 부각해 자신의 몫을 줄이려 한다."
+          ],
+          "suppressions": [
+            "자신의 손수레 사용도 3주 동안 여러 차례 있었다는 점",
+            "양쪽 모두 반복적이었다는 보고서 결론"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-3:counter:2",
+              "factText": "인호의 카트가 더 무겁고 더 문제였다고 책임 비중을 넘기는 발언",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-3:denial:1",
+              "factText": "공동 과실 결론 대신 상대 비중을 키워 자기 몫을 덜 보이게 하는 태도",
+              "tags": [
+                "denial",
+                "self_justification"
+              ],
+              "slots": {
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                },
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "문이 계속 쾅 닫히는 걸 알면서도 장사 물건 때문에 손수레를 포기하지 못했습니다.",
+            "그래서 제 잘못이 아예 없다고 말하려니 마음이 불편합니다."
+          ],
+          "privateKnowledge": [
+            "소음 민원과 문 이상을 알고도 편의를 우선했다.",
+            "자신이 먼저 수리를 주도한 이유에도 죄책감이 섞여 있다."
+          ],
+          "suppressions": [
+            "민원 직전까지 손수레 사용을 계속한 점",
+            "임시방편으로 버티며 신고를 늦춘 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-3:emotion:0",
+              "factText": "장사 동선 때문에 손수레 사용을 끊지 못했다는 불편한 고백",
+              "tags": [
+                "emotion",
+                "motive"
+              ],
+              "slots": {
+                "routine": {
+                  "exact": "새벽 꽃시장 동선",
+                  "neutral": "장사 동선"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-3:harm:0",
+              "factText": "쾅 닫히는 문 소리를 알면서도 버텨 손상을 키웠다는 죄책감",
+              "tags": [
+                "harm",
+                "shame"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "쾅 닫히는 소음",
+                  "neutral": "그 소음"
+                },
+                "time": {
+                  "exact": "몇 주 전부터",
+                  "neutral": "그전부터",
+                  "period": "수리 전 몇 주"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "도어클로저 고장은 제 손수레만의 문제가 아니라 인호 씨 카트까지 겹친 공동 과실이었습니다.",
+            "그래도 제 손수레 사용도 그 누적 원인 중 하나였다는 점은 인정합니다."
+          ],
+          "privateKnowledge": [
+            "공동 과실과 자신의 일부 책임을 함께 받아들인다.",
+            "단독 책임을 피하려다 자기 몫까지 부정했던 초반 태도를 안다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-3:responsibility:0",
+              "factText": "고장이 양쪽의 반복 문받침이 합쳐진 공동 과실이라는 인정",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                },
+                "other": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-3:admission:1",
+              "factText": "자신의 손수레 사용도 누적 원인의 한 축이었다는 시인",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "저는 견적서만 보고 반씩이면 90,000원쯤 되는 줄 알았습니다.",
+            "그때는 실제 주민 부담 총액이 어디까지 깎이는지 분명히 못 봤습니다."
+          ],
+          "privateKnowledge": [
+            "보전금 항목을 봤지만 최종 분담 기준을 명확히 설명하지 않았다.",
+            "견적과 최종 계산서를 구분하지 않고 말하면 상대가 헷갈릴 수 있다는 걸 알았다."
+          ],
+          "suppressions": [
+            "보전금 반영 내역이 이미 존재했다는 점",
+            "견적 기준 수치와 실제 주민 부담액을 섞어 말한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-4:uncertainty:0",
+              "factText": "견적서만 보고 반씩 계산했다는 초기 인식",
+              "tags": [
+                "uncertainty",
+                "evidence"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "180,000원",
+                  "neutral": "견적 금액",
+                  "rounded": "18만원"
+                },
+                "share": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-4:context:0",
+              "factText": "실제 주민 부담 총액이 얼마나 조정되는지 명확히 못 봤다는 설명",
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "slots": {
+                "resident": {
+                  "exact": "120,000원",
+                  "neutral": "주민 부담 총액",
+                  "rounded": "12만원"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "보전금이 들어간다는 말은 들었지만, 어떤 금액이 최종 주민 몫인지 바로 정리하지 못했습니다.",
+            "그래서 일단 견적 기준 숫자를 먼저 들고 나온 겁니다."
+          ],
+          "privateKnowledge": [
+            "최종 계산서를 자세히 보면 주민 부담 120,000원이 드러난다.",
+            "숫자를 먼저 던지는 화법이 자신의 화법 습관이라는 점을 안다."
+          ],
+          "suppressions": [
+            "최종 계산서를 같이 공유하지 않은 점",
+            "견적 기준 숫자가 실제 분담액처럼 들리게 만든 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-4:uncertainty:1",
+              "factText": "보전금 적용 후 어떤 수치가 최종 주민 몫인지 정리하지 못했다는 주장",
+              "tags": [
+                "uncertainty",
+                "institution"
+              ],
+              "slots": {
+                "subsidy": {
+                  "exact": "60,000원",
+                  "neutral": "보전금",
+                  "rounded": "6만원"
+                },
+                "office": {
+                  "exact": "관리사무소",
+                  "neutral": "사무소",
+                  "fullName": "관리사무소",
+                  "judgeRef": "관리사무소"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-4:self_justification:0",
+              "factText": "숫자를 먼저 들고 나온 건 습관적인 정산 압박이었다는 설명",
+              "tags": [
+                "self_justification",
+                "motive"
+              ],
+              "slots": {
+                "invoice": {
+                  "exact": "견적 캡처",
+                  "neutral": "그 캡처"
+                },
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "공식 자료를 보면 주민 부담 총액이 120,000원까지 줄어든 건 맞습니다.",
+            "다만 저는 그걸 바로 두 집이 60,000원씩이라고 정리하지 못했습니다."
+          ],
+          "privateKnowledge": [
+            "120,000원을 둘이 나누면 60,000원씩이라는 계산은 어렵지 않았다.",
+            "자신이 먼저 다른 금액을 꺼낸 탓에 설명이 꼬였다는 걸 안다."
+          ],
+          "suppressions": [
+            "60,000원씩이라는 단순 계산을 일부러 늦게 인정한 점",
+            "자신의 요구 금액이 공식 분담과 다르다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-4:evidence:0",
+              "factText": "최종 자료상 주민 부담 총액 120,000원을 인정",
+              "tags": [
+                "evidence",
+                "institution"
+              ],
+              "slots": {
+                "resident": {
+                  "exact": "120,000원",
+                  "neutral": "주민 부담 총액",
+                  "rounded": "12만원"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                },
+                "office": {
+                  "exact": "관리사무소",
+                  "neutral": "사무소",
+                  "fullName": "관리사무소",
+                  "judgeRef": "관리사무소"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-4:uncertainty:2",
+              "factText": "그 금액을 바로 세대당 60,000원으로 정리하지 못했다고 버티는 태도",
+              "tags": [
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                },
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "공식 분담만 보면 60,000원씩일 수 있어도 저는 업체 연락과 입회 부담까지 같이 떠안았다고 느꼈습니다.",
+            "그래서 금액 문제를 단순 반반으로만 보긴 어려웠습니다."
+          ],
+          "privateKnowledge": [
+            "업체 연락과 입회는 공식 주민 부담액 산정과 별개라는 점을 안다.",
+            "수고를 금액에 얹어 생각한 부분이 있었다."
+          ],
+          "suppressions": [
+            "공식 정산 기준은 이미 60,000원씩이라는 점",
+            "자신의 수고를 사후적으로 금액 논리에 섞었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-4:self_justification:1",
+              "factText": "공식 분담과 별개로 자신의 수고를 금액 논리에 끼워 넣는 태도",
+              "tags": [
+                "self_justification",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "institution": {
+                  "exact": "박영수",
+                  "neutral": "수리기사",
+                  "fullName": "박영수 (수리기사)",
+                  "judgeRef": "박 기사"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-4:counter:0",
+              "factText": "금액 문제를 단순 반반으로만 볼 수 없다고 프레임을 넓히는 반론",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "지금 보니 저는 숫자를 빨리 정리하려다 공식 분담과 제 수고를 한데 섞었습니다.",
+            "돈 계산으로 의심받을까 봐 더 차분히 설명하지 못한 것도 있습니다."
+          ],
+          "privateKnowledge": [
+            "본인의 빠른 정산 압박이 숫자 혼선을 키웠다.",
+            "의심받는 것에 대한 불안이 있었다."
+          ],
+          "suppressions": [
+            "공식 분담액 자체는 명확했다는 점",
+            "자신의 요구가 그 공식 기준과 달랐다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-4:emotion:0",
+              "factText": "숫자를 빨리 정리하려다 공식 분담과 자신의 수고를 섞었다는 자각",
+              "tags": [
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-4:fear:0",
+              "factText": "돈 계산으로 의심받을까 봐 설명을 줄였다는 불안",
+              "tags": [
+                "fear",
+                "shame"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "최종 수리비 180,000원에서 관리사무소 보전금 60,000원이 빠져 실제 주민 부담은 120,000원입니다.",
+            "공식 정산 기준으로는 두 세대가 60,000원씩 내는 게 맞습니다."
+          ],
+          "privateKnowledge": [
+            "공식 정산 기준을 받아들인다.",
+            "자신이 견적과 최종 계산서를 섞어 말한 점을 인정한다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-4:institution:0",
+              "factText": "최종 수리비와 보전금 적용 후 주민 부담 총액이 120,000원이라는 공식 정산",
+              "tags": [
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "180,000원",
+                  "neutral": "견적 금액",
+                  "rounded": "18만원"
+                },
+                "subsidy": {
+                  "exact": "60,000원",
+                  "neutral": "보전금",
+                  "rounded": "6만원"
+                },
+                "resident": {
+                  "exact": "120,000원",
+                  "neutral": "주민 부담 총액",
+                  "rounded": "12만원"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-4:beneficiary:0",
+              "factText": "공식 기준상 두 세대가 60,000원씩 분담하면 된다는 정리",
+              "tags": [
+                "beneficiary",
+                "rule"
+              ],
+              "slots": {
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                },
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "personOther": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저는 압박하려던 게 아니라 급해서 계좌와 금액을 먼저 보낸 겁니다.",
+            "최종 계산서를 보기 전에 정산 얘기를 꺼냈다고 해서 절차를 어긴 건 아니라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "작년 합의가 최종 계산서 확인 후 분담이라는 점을 기억한다.",
+            "이번에는 자신이 그 순서를 먼저 깼다는 점을 안다."
+          ],
+          "suppressions": [
+            "공식 정산 공지보다 먼저 송금 요청을 보낸 점",
+            "예전 원칙을 스스로 먼저 어긴 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-5:rule:0",
+              "factText": "최종 계산서 전에도 계좌와 금액을 먼저 보낼 수 있다고 정당화",
+              "tags": [
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "최종 계산서 확인 후 분담",
+                  "neutral": "그 원칙"
+                },
+                "request": {
+                  "exact": "계좌와 송금 요청",
+                  "neutral": "그 요구"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-5:act:0",
+              "factText": "급했다는 이유로 송금 요청을 선행시킨 행동",
+              "tags": [
+                "act",
+                "timeline"
+              ],
+              "slots": {
+                "time": {
+                  "exact": "23분 후",
+                  "neutral": "그 직후",
+                  "period": "보전금 반영 직후"
+                },
+                "request": {
+                  "exact": "계좌와 송금 요청",
+                  "neutral": "그 요구"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "순서가 조금 앞당겨진 건 맞지만, 나중에 최종 계산서가 나오면 맞출 생각이었습니다.",
+            "그걸 곧바로 압박이라고 보긴 억울합니다."
+          ],
+          "privateKnowledge": [
+            "송금 요청을 받는 쪽에선 압박으로 읽힐 수 있다는 점을 안다.",
+            "자신이 먼저 결론을 정한 듯 보였다는 점을 안다."
+          ],
+          "suppressions": [
+            "작년 약속과 어긋났다는 점",
+            "최종 계산서 없이 개인 계좌를 보냈다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-5:timeline:0",
+              "factText": "절차 순서를 조금 앞당겼다고 축소하는 설명",
+              "tags": [
+                "timeline",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "최종 계산서 확인 후 분담",
+                  "neutral": "그 원칙"
+                },
+                "time": {
+                  "exact": "23분 후",
+                  "neutral": "그 직후",
+                  "period": "보전금 반영 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-5:uncertainty:0",
+              "factText": "나중에 맞출 생각이었다며 압박성을 희석하는 태도",
+              "tags": [
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "계좌와 송금 요청",
+                  "neutral": "그 요구"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "예전 원칙보다 먼저 돈 얘기를 꺼낸 건 맞습니다.",
+            "문 소리와 수리 일정 때문에 빨리 끝내고 싶어 절차를 당겼습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 동의나 확인 없이 결제를 먼저 기정사실화했다.",
+            "급한 마음이 절차 위반을 정당화하지 못한다는 걸 안다."
+          ],
+          "suppressions": [
+            "상대에게 선택 여지를 거의 주지 않은 점",
+            "공식 계산서보다 개인 송금이 먼저였다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-5:admission:0",
+              "factText": "최종 계산서 확인 전 돈 얘기를 먼저 꺼낸 절차 위반 인정",
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "최종 계산서 확인 후 분담",
+                  "neutral": "그 원칙"
+                },
+                "request": {
+                  "exact": "계좌와 송금 요청",
+                  "neutral": "그 요구"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-5:motive:0",
+              "factText": "소음과 수리 일정 때문에 빨리 끝내고 싶었다는 동기 설명",
+              "tags": [
+                "motive",
+                "emotion"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "쾅 닫히는 소음",
+                  "neutral": "그 소음"
+                },
+                "pressure": {
+                  "exact": "빨리 끝내야 한다는 압박",
+                  "neutral": "그 압박"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "제가 먼저 송금 얘기를 꺼낸 건 맞지만, 인호 씨도 확인도 없이 전액 거부부터 했습니다.",
+            "절차를 꼬이게 만든 책임이 저 혼자만은 아닙니다."
+          ],
+          "privateKnowledge": [
+            "자신이 먼저 순서를 깬 이상 상대의 거부만으로 면책되진 않는다는 점을 안다.",
+            "상대의 거부를 끌어와 자신의 선행 위반을 희석하려 한다."
+          ],
+          "suppressions": [
+            "본인이 먼저 시작한 절차 위반",
+            "인호의 거부 이전에 이미 송금 압박이 있었던 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-5:counter:0",
+              "factText": "인호의 전액 거부를 끌어와 자신의 선행 위반을 희석하는 맞대응",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "reject": {
+                  "exact": "전액 거부",
+                  "neutral": "그 거부"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-5:rule:1",
+              "factText": "절차가 꼬인 책임이 자신만은 아니라며 공동 위반 프레임으로 옮기기",
+              "tags": [
+                "rule",
+                "counter"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "최종 계산서 확인 후 분담",
+                  "neutral": "그 원칙"
+                },
+                "personOther": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "저는 며칠째 문 소리도 듣고 수리도 챙기느라 빨리 끝내야 한다는 압박이 컸습니다.",
+            "그래서 정산 절차를 아는 사람인데도 숫자부터 먼저 보냈습니다."
+          ],
+          "privateKnowledge": [
+            "압박감과 수치심 때문에 절차 설명을 생략했다.",
+            "정산 원칙을 아는 자신이 먼저 어겨 더 부끄럽다."
+          ],
+          "suppressions": [
+            "압박이 있었어도 원칙은 원칙이었다는 점",
+            "상대에게 충분히 설명하지 않은 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-5:emotion:0",
+              "factText": "문 소리와 수리 부담이 절차를 앞당기게 한 압박이었다는 고백",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "쾅 닫히는 소음",
+                  "neutral": "그 소음"
+                },
+                "pressure": {
+                  "exact": "빨리 끝내야 한다는 압박",
+                  "neutral": "그 압박"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-5:shame:0",
+              "factText": "원칙을 아는 사람이 숫자부터 보냈다는 부끄러움",
+              "tags": [
+                "shame",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "최종 계산서 확인 후 분담",
+                  "neutral": "그 원칙"
+                },
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "작년 합의대로라면 최종 계산서를 확인한 뒤 정산했어야 하는데 제가 먼저 송금을 요구했습니다.",
+            "그건 절차를 앞당긴 압박이었고 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "자신의 선행 위반을 인정한다.",
+            "상대의 거부가 있었어도 본인의 압박이 먼저였음을 받아들인다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:a:tell:receipt_shield",
+            "neighbor06:a:tell:effort_credit",
+            "neighbor06:a:tell:round_numbering"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:a:d-5:admission:1",
+              "factText": "최종 계산서 전 송금 요구가 작년 원칙을 깬 압박이었다는 시인",
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "rule": {
+                  "exact": "최종 계산서 확인 후 분담",
+                  "neutral": "그 원칙"
+                },
+                "request": {
+                  "exact": "계좌와 송금 요청",
+                  "neutral": "그 요구"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:a:d-5:responsibility:0",
+              "factText": "절차를 앞당긴 1차 책임이 자신에게 있었다는 인정",
+              "tags": [
+                "responsibility",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "personOther": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "세영 씨가 저한테 90,000원을 보내라 한 건 아예 더 받아내려는 걸로 들렸습니다.",
+            "최종 계산서도 없이 그런 숫자를 먼저 보내면 당연히 부풀린 걸로 보입니다."
+          ],
+          "privateKnowledge": [
+            "아직 공식 최종 계산서를 직접 확인하지는 못했다.",
+            "숫자만 보고 세영의 의도를 더 악의적으로 추정하고 있다."
+          ],
+          "suppressions": [
+            "자신도 공식 문서 전에는 실제 부담액을 몰랐다는 점",
+            "상대 의도를 단정하고 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-1:counter:0",
+              "factText": "90,000원 요구를 곧바로 과다 청구 의도로 해석한 반발",
+              "tags": [
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                },
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-1:uncertainty:0",
+              "factText": "최종 계산서가 없으면 부풀린 것으로 보인다는 추정",
+              "tags": [
+                "uncertainty",
+                "rule"
+              ],
+              "slots": {
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                },
+                "estimate": {
+                  "exact": "180,000원",
+                  "neutral": "견적 금액",
+                  "rounded": "18만원"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "제가 의심한 이유는 최종 계산서가 아니라 견적 캡처만 왔기 때문입니다.",
+            "그 상황에서 90,000원을 실제 제 몫처럼 받는 건 받아들이기 어려웠습니다."
+          ],
+          "privateKnowledge": [
+            "세영이 의도적으로 숨겼는지, 급해서 그랬는지 아직 완전히 구분하지 못한다.",
+            "다만 숫자 제시 방식이 이상했다는 점은 확신한다."
+          ],
+          "suppressions": [
+            "자신이 화부터 내고 상대 설명을 끊었다는 점",
+            "공식 문서 확인 전 의심이 앞섰다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-1:evidence:0",
+              "factText": "최종 계산서 없이 견적 캡처만 왔기 때문에 의심이 커졌다는 설명",
+              "tags": [
+                "evidence",
+                "context"
+              ],
+              "slots": {
+                "invoice": {
+                  "exact": "견적 캡처",
+                  "neutral": "그 캡처"
+                },
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-1:beneficiary:0",
+              "factText": "90,000원이 자신의 실제 몫처럼 제시된 방식에 거부감이 있었다는 주장",
+              "tags": [
+                "beneficiary",
+                "emotion"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "보전 전 금액을 기준으로 보낸 건 맞고, 그래서 제가 과다 청구로 의심한 겁니다.",
+            "적어도 숫자 제시는 세영 씨 쪽이 잘못됐다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "공식 자료가 나오면 실제 액수는 달라질 수 있다는 점을 안다.",
+            "그럼에도 세영의 동기를 단정해 몰아가고 있다."
+          ],
+          "suppressions": [
+            "자신도 최종 계산 전 정확한 금액은 몰랐다는 점",
+            "전액 거부로 갈등을 키운 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-1:evidence:1",
+              "factText": "보전 전 금액 기준 송금 요청이 의심의 직접 계기였다는 인정",
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "180,000원",
+                  "neutral": "견적 금액",
+                  "rounded": "18만원"
+                },
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-1:responsibility:0",
+              "factText": "숫자 제시 방식의 잘못은 세영 쪽에 크다고 정리하는 태도",
+              "tags": [
+                "responsibility",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "invoice": {
+                  "exact": "견적 캡처",
+                  "neutral": "그 캡처"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "설명 없이 송금부터 요구한 건 세영 씨 책임이 더 큽니다.",
+            "제가 화를 냈어도 먼저 숫자를 잘못 꺼낸 쪽은 그 사람입니다."
+          ],
+          "privateKnowledge": [
+            "자신도 금액만 붙들고 대화 폭을 좁혔다.",
+            "상대의 선행 잘못을 강조해 자신의 대응 문제를 덮으려 한다."
+          ],
+          "suppressions": [
+            "자신이 공식 확인보다 거부부터 했다는 점",
+            "상대 설명 기회를 좁힌 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-1:counter:1",
+              "factText": "송금 요구를 먼저 한 세영 책임을 앞세워 자신의 반응을 정당화",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "request": {
+                  "exact": "계좌와 송금 요청",
+                  "neutral": "그 요구"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-1:denial:0",
+              "factText": "자신의 과한 반응보다 상대의 선행 잘못을 더 크게 밀어붙이는 태도",
+              "tags": [
+                "denial",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "personOther": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "저는 최종 금액도 모르는데 돈부터 내라는 말에 바로 화가 났습니다.",
+            "숫자만 붙들고 버틴 건 저도 인정하지만 그때는 억울함이 먼저였습니다."
+          ],
+          "privateKnowledge": [
+            "자신이 화가 나서 전액 거부로 반응했다.",
+            "억울함이 커질수록 세영의 숨긴 부분만 더 크게 보였다."
+          ],
+          "suppressions": [
+            "자신의 절차 위반 가능성",
+            "상대의 압박과 별개로 자신의 몫이 있을 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-1:emotion:0",
+              "factText": "최종 금액도 모르는 상태에서 돈부터 내라는 말에 화가 났다는 감정",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                },
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-1:admission:0",
+              "factText": "숫자만 붙들고 버틴 자신의 대응도 문제였다고 일부 인정",
+              "tags": [
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "personOther": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "세영 씨가 실제 주민 부담액을 숨기고 보전 전 기준으로 90,000원을 요구한 건 맞습니다.",
+            "다만 저도 그 일에 화부터 내며 전액 거부로 키운 부분은 따로 인정합니다."
+          ],
+          "privateKnowledge": [
+            "세영의 과다 청구와 자신의 대응 문제를 함께 인정한다.",
+            "처음에는 세영의 의도만 단정하려 했다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-1:evidence:2",
+              "factText": "보전 전 기준 90,000원 요구가 실제 부담액을 숨긴 과다 청구였다는 확정",
+              "tags": [
+                "evidence",
+                "responsibility"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                },
+                "subsidy": {
+                  "exact": "60,000원",
+                  "neutral": "보전금",
+                  "rounded": "6만원"
+                },
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-1:admission:1",
+              "factText": "자신도 전액 거부로 갈등을 키웠다는 수용",
+              "tags": [
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "reject": {
+                  "exact": "전액 거부",
+                  "neutral": "그 거부"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "저는 문을 거의 받쳐 둔 적이 없습니다.",
+            "있어도 짐 옮길 때 잠깐이었지 그게 고장 원인이라고 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "접이식 카트와 박스로 문을 반복해 받친 장면이 남아 있다.",
+            "자신도 몇 주 동안 편의상 같은 행동을 반복했다."
+          ],
+          "suppressions": [
+            "카트와 박스 사용 횟수",
+            "자신의 사용이 공동 책임 범위에 들어간다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-2:denial:0",
+              "factText": "문을 거의 받치지 않았다고 잘라 말하는 부정",
+              "tags": [
+                "denial",
+                "act"
+              ],
+              "slots": {
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                },
+                "box": {
+                  "exact": "박스",
+                  "neutral": "상자"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-2:uncertainty:0",
+              "factText": "있어도 잠깐이었다며 반복성을 축소하는 설명",
+              "tags": [
+                "uncertainty",
+                "self_justification"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "잠깐이었다",
+                  "neutral": "그 표현"
+                },
+                "behavior": {
+                  "exact": "방화문 문받침 사용",
+                  "neutral": "그 사용"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "짐이 있을 때 문을 세운 적은 있어도 아주 잠깐이었습니다.",
+            "그 정도 사용까지 공동 책임으로 묶는 건 과하다고 생각합니다."
+          ],
+          "privateKnowledge": [
+            "잠깐이라는 표현으로 빈도 자체를 흐리고 있다.",
+            "CCTV가 반복 장면을 보여줄 수 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "같은 3주 동안 여러 차례 있었다는 점",
+            "박스까지 사용했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-2:uncertainty:1",
+              "factText": "잠깐이었다는 표현으로 문받침 빈도를 낮춰 보이게 함",
+              "tags": [
+                "uncertainty",
+                "quote"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "잠깐이었다",
+                  "neutral": "그 표현"
+                },
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-2:counter:0",
+              "factText": "그 정도 사용을 공동 책임으로 묶는 건 과하다고 맞서는 반론",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "카트나 박스로 문을 받친 적이 아예 없진 않습니다.",
+            "그래도 세영 씨 손수레처럼 반복 원인으로 보기엔 제 쪽은 짧았다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "반복성이 부정되지는 않는다는 걸 안다.",
+            "자신의 사용 비중을 줄여 말해 공동 책임 범위를 좁히려 한다."
+          ],
+          "suppressions": [
+            "반복 횟수와 기간",
+            "수리기사 보고서가 자신의 습관도 문제로 본다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-2:admission:0",
+              "factText": "카트나 박스로 문을 받친 사실 자체는 인정",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                },
+                "box": {
+                  "exact": "박스",
+                  "neutral": "상자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-2:counter:1",
+              "factText": "세영 손수레에 비해 자신의 사용은 짧았다고 비중을 줄이는 주장",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                },
+                "quote": {
+                  "exact": "잠깐이었다",
+                  "neutral": "그 표현"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 더 자주 쓰고 더 오래 건 쪽은 세영 씨라고 봅니다.",
+            "제 사용이 있었다고 해도 전체 원인을 같게 보긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "보고서상 양쪽 사용 모두 손상을 키운다고 적혀 있다.",
+            "자신의 부분 책임을 줄이기 위해 상대 빈도를 더 크게 말한다."
+          ],
+          "suppressions": [
+            "공동 책임이라는 점검 결과",
+            "자신의 사용 습관이 누적 손상에 포함된다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-2:counter:2",
+              "factText": "세영 쪽 빈도와 비중을 더 크게 말해 책임을 넘기려는 발언",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-2:denial:1",
+              "factText": "자신의 사용이 전체 원인과 동등하지 않다며 일부 책임만 남기려는 태도",
+              "tags": [
+                "denial",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "출근길에 물건 옮기다 보면 잠깐이면 괜찮겠지 하고 넘긴 적이 있습니다.",
+            "그래서 제 쪽이 전혀 무관하다고 버티는 건 이제 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "아침 배송 동선 편의가 행동의 이유였음을 안다.",
+            "자신의 합리화가 더 이상 통하지 않는다고 느낀다."
+          ],
+          "suppressions": [
+            "민원이 쌓여도 행동을 바꾸지 않은 점",
+            "박스까지 사용해 문을 고정한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-2:emotion:0",
+              "factText": "출근 동선 때문에 잠깐이면 괜찮다고 넘긴 자기 고백",
+              "tags": [
+                "emotion",
+                "motive"
+              ],
+              "slots": {
+                "routine": {
+                  "exact": "아침 배송 동선",
+                  "neutral": "출근 동선"
+                },
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-2:admission:1",
+              "factText": "자신 쪽이 전혀 무관하다고 버티기 어렵다는 인정",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "제 접이식 카트와 박스 사용도 방화문 손상을 키운 공동 책임에 포함됩니다.",
+            "그 점에서 제 잘못도 분명히 있습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 공동 책임을 받아들인다.",
+            "초반의 '잠깐이었다'는 축소가 사실을 가렸다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-2:responsibility:0",
+              "factText": "접이식 카트와 박스 사용이 공동 책임이라는 최종 인정",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                },
+                "box": {
+                  "exact": "박스",
+                  "neutral": "상자"
+                },
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-2:admission:2",
+              "factText": "자신의 잘못이 분명히 있다는 시인",
+              "tags": [
+                "admission",
+                "emotion"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "behavior": {
+                  "exact": "방화문 문받침 사용",
+                  "neutral": "그 사용"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "도어클로저는 거의 세영 씨 손수레 때문에 망가진 거라고 봤습니다.",
+            "제 쪽 사용은 있어도 그 정도로 큰 원인이라고 생각하지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "자신도 접이식 카트와 박스로 문을 반복해 받쳤다.",
+            "민원 메모와 CCTV가 양쪽 사용을 함께 보여줄 수 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "자신의 반복 사용",
+            "공동 과실 가능성"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-3:counter:0",
+              "factText": "고장 원인을 거의 세영 손수레로 단정하는 주장",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-3:denial:0",
+              "factText": "자신 쪽 사용은 큰 원인이 아니라며 축소하는 태도",
+              "tags": [
+                "denial",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "제 쪽은 있어도 잠깐이었고, 문 상태를 망가뜨린 건 세영 씨 쪽이 더 크다고 봤습니다.",
+            "그래서 한쪽 단독 책임처럼 보인 겁니다."
+          ],
+          "privateKnowledge": [
+            "잠깐이었다는 말로 자기 사용의 반복성을 축소한다.",
+            "이미 문 상태가 나빴다는 점이 세영 단독 책임을 완전히 뒷받침하지 않는다는 걸 안다."
+          ],
+          "suppressions": [
+            "문이 몇 주 전부터 이상했다는 공통 맥락",
+            "자신도 반복 사용을 했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-3:uncertainty:0",
+              "factText": "자신 쪽은 잠깐이었다며 반복 문받침을 희석하는 설명",
+              "tags": [
+                "uncertainty",
+                "quote"
+              ],
+              "slots": {
+                "quote": {
+                  "exact": "잠깐이었다",
+                  "neutral": "그 표현"
+                },
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-3:counter:1",
+              "factText": "세영 쪽 비중이 더 크니 단독 책임처럼 보였다고 말하는 프레임",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "frame": {
+                  "exact": "단독 책임",
+                  "neutral": "한쪽 책임"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "저도 문을 받친 적은 있지만, 처음엔 그게 고장 원인으로까지 이어진다고 생각하지 않았습니다.",
+            "그래도 지금 보면 한쪽만 탓하기는 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 사용이 누적 손상에 포함된다는 정황을 부정하기 어려워진다.",
+            "세영 단독 책임 프레임이 흔들리고 있음을 안다."
+          ],
+          "suppressions": [
+            "자신의 사용 빈도",
+            "민원 시점까지 행동을 바꾸지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-3:admission:0",
+              "factText": "문을 받친 적은 있다는 최소 인정",
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "cart": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                },
+                "box": {
+                  "exact": "박스",
+                  "neutral": "상자"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-3:context:0",
+              "factText": "지금 보면 한쪽만 탓하기 어렵다는 공동 원인 쪽 인식 변화",
+              "tags": [
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                },
+                "frame": {
+                  "exact": "단독 책임",
+                  "neutral": "한쪽 책임"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 더 자주 크게 문을 건 건 세영 씨였다고 봅니다.",
+            "제 사용이 있었더라도 주된 원인까지 같다고 하긴 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "점검보고서가 '양쪽 사용 습관'을 명시한다는 점을 안다.",
+            "상대 비중을 높여 자신 쪽 부담을 줄이려 한다."
+          ],
+          "suppressions": [
+            "보고서가 단독 책임을 부정한다는 점",
+            "자신의 사용도 '반복'으로 기록된다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-3:counter:2",
+              "factText": "세영 사용 비중을 주된 원인으로 다시 키우는 주장",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-3:denial:1",
+              "factText": "자신 쪽 원인 비중을 계속 낮춰 공동 과실 결론을 늦추는 태도",
+              "tags": [
+                "denial",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "문이 세게 닫히고 민원까지 쌓였는데도 저도 편하게 쓰려 했던 건 맞습니다.",
+            "그래서 세영 씨만 탓하던 말은 지금 좀 과했다 싶습니다."
+          ],
+          "privateKnowledge": [
+            "억울함 때문에 상대 책임을 더 키워 말했다.",
+            "자신도 신고 대신 편의 사용을 택한 점이 찔린다."
+          ],
+          "suppressions": [
+            "전액 거부와 책임 축소가 겹친 점",
+            "자신이 민원 이후에도 사용을 멈추지 않은 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-3:emotion:0",
+              "factText": "민원까지 쌓인 상황에서도 편의를 우선한 자신에 대한 찔림",
+              "tags": [
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "noise": {
+                  "exact": "쾅 닫히는 소음",
+                  "neutral": "그 소음"
+                },
+                "routine": {
+                  "exact": "아침 배송 동선",
+                  "neutral": "출근 동선"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-3:admission:1",
+              "factText": "세영만 탓하던 말이 과했다는 정서적 후퇴",
+              "tags": [
+                "admission",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "frame": {
+                  "exact": "단독 책임",
+                  "neutral": "한쪽 책임"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "도어클로저 고장은 세영 씨 손수레만이 아니라 제 카트 사용까지 겹친 공동 과실이었습니다.",
+            "한쪽 단독 책임으로 몰기는 어렵고 제 몫도 인정합니다."
+          ],
+          "privateKnowledge": [
+            "공동 과실 결론을 받아들인다.",
+            "초반의 단독 책임 프레임이 사실보다 과했다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-3:responsibility:0",
+              "factText": "고장이 양쪽의 반복 문받침이 겹친 공동 과실이라는 인정",
+              "tags": [
+                "responsibility",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "cart": {
+                  "exact": "꽃 손수레",
+                  "neutral": "손수레"
+                },
+                "other": {
+                  "exact": "접이식 카트",
+                  "neutral": "카트"
+                },
+                "shared": {
+                  "exact": "공동 과실",
+                  "neutral": "공동 책임"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-3:admission:2",
+              "factText": "한쪽 단독 책임으로 몰기 어렵고 자신의 몫도 있다는 시인",
+              "tags": [
+                "admission",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "frame": {
+                  "exact": "단독 책임",
+                  "neutral": "한쪽 책임"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "저는 왜 제가 90,000원을 내야 하는지 근거부터 못 봤습니다.",
+            "최종 계산서 없이 그 금액을 실제 제 몫이라고 받아들일 수는 없었습니다."
+          ],
+          "privateKnowledge": [
+            "정확한 주민 부담 총액은 스스로도 알지 못했다.",
+            "자신이 금액 질문에만 매달리며 책임 논의를 밀어낸다."
+          ],
+          "suppressions": [
+            "공식 문서 전에는 자신도 최종 금액을 몰랐다는 점",
+            "책임 비율 논의를 뒤로 미뤘다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-4:uncertainty:0",
+              "factText": "90,000원의 근거를 못 봤다는 금액 중심 의문",
+              "tags": [
+                "uncertainty",
+                "evidence"
+              ],
+              "slots": {
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-4:rule:0",
+              "factText": "최종 계산서 없이는 실제 몫으로 받을 수 없다는 절차 강조",
+              "tags": [
+                "rule",
+                "context"
+              ],
+              "slots": {
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "제 입장에선 최종 계산서만 보면 금액은 바로 정리될 문제라고 봤습니다.",
+            "그래서 견적 기준 숫자엔 더 못 움직인 겁니다."
+          ],
+          "privateKnowledge": [
+            "최종 계산서가 나오면 자신의 몫도 일부 생길 수 있다는 점은 감지했다.",
+            "그래도 확정 전에는 한 발도 못 물러나겠다고 마음먹었다."
+          ],
+          "suppressions": [
+            "자신의 책임 가능성",
+            "공식 자료가 나오면 일정 금액은 부담해야 할 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-4:rule:1",
+              "factText": "최종 계산서만 보면 금액은 정리된다는 계산 중심 태도",
+              "tags": [
+                "rule",
+                "beneficiary"
+              ],
+              "slots": {
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-4:denial:0",
+              "factText": "견적 기준 숫자에는 아예 움직이지 않겠다고 버틴 자세",
+              "tags": [
+                "denial",
+                "emotion"
+              ],
+              "slots": {
+                "estimate": {
+                  "exact": "180,000원",
+                  "neutral": "견적 금액",
+                  "rounded": "18만원"
+                },
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "공식 자료를 보니 주민 부담 총액이 120,000원이라는 건 이해됩니다.",
+            "다만 그걸 바로 제 책임분으로 받아들이는 데는 아직 걸렸습니다."
+          ],
+          "privateKnowledge": [
+            "120,000원을 두 세대가 나누면 60,000원씩이라는 계산을 이해한다.",
+            "책임 논쟁 때문에 금액 수용을 늦춘다."
+          ],
+          "suppressions": [
+            "세대당 60,000원 계산이 단순하다는 점",
+            "자신도 일정 몫을 져야 한다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-4:evidence:0",
+              "factText": "공식 자료상 주민 부담 총액 120,000원을 인정",
+              "tags": [
+                "evidence",
+                "institution"
+              ],
+              "slots": {
+                "resident": {
+                  "exact": "120,000원",
+                  "neutral": "주민 부담 총액",
+                  "rounded": "12만원"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                },
+                "office": {
+                  "exact": "관리사무소",
+                  "neutral": "사무소",
+                  "fullName": "관리사무소",
+                  "judgeRef": "관리사무소"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-4:uncertainty:1",
+              "factText": "금액을 이해해도 자기 책임분으로 받아들이는 데 머뭇거림",
+              "tags": [
+                "uncertainty",
+                "emotion"
+              ],
+              "slots": {
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "공식 정산이 60,000원씩이라 해도 책임 비율 이야기는 따로 하고 싶었습니다.",
+            "숫자만 같다고 해서 제가 바로 납득한 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "공식 분담액과 감정적 납득을 구분하고 있다.",
+            "책임 비율 논쟁으로 공식 금액 수용을 늦추려 한다."
+          ],
+          "suppressions": [
+            "공식 분담액 자체는 명확하다는 점",
+            "자신이 돈만 따지는 인상으로 보일 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-4:counter:0",
+              "factText": "공식 정산과 책임 비율을 분리해 금액 수용을 늦추는 주장",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-4:emotion:0",
+              "factText": "숫자만 같다고 바로 납득 못 했다는 감정 고집",
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "돌이켜 보면 저는 금액부터 맞는지 붙들고 책임 이야기 자체를 늦췄습니다.",
+            "억울하다는 마음이 커서 숫자만 보려 했습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 완고한 금액 집착이 갈등을 길게 만들었다.",
+            "책임 인정보다 계산 확인을 방패처럼 썼다."
+          ],
+          "suppressions": [
+            "공식 금액은 결국 맞았다는 점",
+            "감정 때문에 대화 폭을 좁힌 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-4:emotion:1",
+              "factText": "억울함 때문에 숫자만 붙들고 책임 이야기를 늦췄다는 고백",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-4:admission:0",
+              "factText": "금액 확인을 방패처럼 썼다는 자기 인정",
+              "tags": [
+                "admission",
+                "self_justification"
+              ],
+              "slots": {
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "공식 정산 기준으로 보면 주민 부담 총액은 120,000원이고 두 세대가 60,000원씩 내는 게 맞습니다.",
+            "책임 다툼과 별개로 금액 자체는 그렇게 정리해야 합니다."
+          ],
+          "privateKnowledge": [
+            "공식 금액 기준을 받아들인다.",
+            "책임 감정과 비용 정산을 분리해야 한다는 점을 안다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-4:institution:0",
+              "factText": "공식 정산상 주민 부담 120,000원과 세대당 60,000원이라는 결론",
+              "tags": [
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "resident": {
+                  "exact": "120,000원",
+                  "neutral": "주민 부담 총액",
+                  "rounded": "12만원"
+                },
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                },
+                "office": {
+                  "exact": "관리사무소",
+                  "neutral": "사무소",
+                  "fullName": "관리사무소",
+                  "judgeRef": "관리사무소"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-4:rule:2",
+              "factText": "책임 다툼과 비용 정산을 분리해야 한다는 수용",
+              "tags": [
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "personOther": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "저는 절차를 지키려 한 거지 무작정 거부부터 한 건 아닙니다.",
+            "최종 계산서도 없는 상태에서 돈을 낼 수 없다고 한 것뿐입니다."
+          ],
+          "privateKnowledge": [
+            "실제로는 화가 나서 전액 거부처럼 말한 표현이 있었다.",
+            "자신의 책임분 확인도 하지 않은 채 버텼다."
+          ],
+          "suppressions": [
+            "전액 거부 메시지가 있었다는 점",
+            "책임분 확인 없이 거부부터 한 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-5:rule:0",
+              "factText": "절차를 지키려 했을 뿐이라고 자신의 거부를 정당화",
+              "tags": [
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-5:denial:0",
+              "factText": "돈을 못 낸다고만 했지 무작정 거부는 아니었다는 부정",
+              "tags": [
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "reject": {
+                  "exact": "전액 거부",
+                  "neutral": "그 거부"
+                },
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "최종 금액을 보기 전에는 못 낸다고 한 건 맞습니다.",
+            "그걸 전액 거부로 받아들인 건 세영 씨 쪽 해석이 더 앞선 겁니다."
+          ],
+          "privateKnowledge": [
+            "표현이 거칠어 상대가 거부로 받아들일 수 있다는 걸 안다.",
+            "자신은 책임분 계산 자체도 피하고 있었다."
+          ],
+          "suppressions": [
+            "자신의 말투가 강경했다는 점",
+            "책임분을 확인하려는 대화도 하지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-5:timeline:0",
+              "factText": "최종 금액 전에는 못 낸다고 말했다는 절차 중심 설명",
+              "tags": [
+                "timeline",
+                "rule"
+              ],
+              "slots": {
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-5:counter:0",
+              "factText": "전액 거부로 읽힌 건 세영 해석이 앞섰다고 돌리는 반론",
+              "tags": [
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "reject": {
+                  "exact": "전액 거부",
+                  "neutral": "그 거부"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "돌아보면 제가 화가 나서 전액 거부처럼 말한 부분은 있습니다.",
+            "다만 그때는 먼저 돈부터 보내라는 식이라 제 책임분도 확인하기 싫었습니다."
+          ],
+          "privateKnowledge": [
+            "감정이 앞서 절차적 대응을 망쳤다.",
+            "자신이 책임분 확인 자체를 회피했다는 점을 안다."
+          ],
+          "suppressions": [
+            "거부 표현이 갈등을 키운 점",
+            "상대의 압박과 별개로 자신의 절차 위반이 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-5:admission:0",
+              "factText": "화가 나서 전액 거부처럼 말한 부분을 인정",
+              "tags": [
+                "admission",
+                "emotion"
+              ],
+              "slots": {
+                "reject": {
+                  "exact": "전액 거부",
+                  "neutral": "그 거부"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-5:fear:0",
+              "factText": "먼저 돈부터 내라는 흐름에 책임분 확인 자체를 피하고 싶었다는 방어감",
+              "tags": [
+                "fear",
+                "motive"
+              ],
+              "slots": {
+                "request": {
+                  "exact": "계좌와 송금 요청",
+                  "neutral": "그 요구"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "그래도 먼저 송금부터 요구한 건 세영 씨였고 그게 일을 틀었습니다.",
+            "제가 강하게 나간 건 그 압박에 대한 반응이었습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 압박이 있었어도 자신의 전액 거부가 별개 문제라는 점을 안다.",
+            "상대 책임을 앞세워 자신의 대응을 정당화하려 한다."
+          ],
+          "suppressions": [
+            "자신의 전액 거부가 공식 확인보다 먼저였다는 점",
+            "책임분 확인을 위한 질문조차 충분히 하지 않은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-5:counter:1",
+              "factText": "세영의 선행 송금 요구를 들어 자신의 강경 대응을 정당화",
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "request": {
+                  "exact": "계좌와 송금 요청",
+                  "neutral": "그 요구"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-5:self_justification:0",
+              "factText": "압박에 대한 반응이었다며 전액 거부의 독자적 잘못을 희석",
+              "tags": [
+                "self_justification",
+                "emotion"
+              ],
+              "slots": {
+                "reject": {
+                  "exact": "전액 거부",
+                  "neutral": "그 거부"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "저는 억울해서 금액만 붙들고 버티는 쪽으로 갔습니다.",
+            "그 과정에서 제 책임분을 확인해 보려는 태도까지 닫아 버렸습니다."
+          ],
+          "privateKnowledge": [
+            "완고함이 대화를 막았다는 점을 안다.",
+            "절차를 지키려 했다는 말만으로는 설명이 부족하다고 느낀다."
+          ],
+          "suppressions": [
+            "전액 거부 표현의 문제성",
+            "책임분 검토를 스스로 막은 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-5:emotion:0",
+              "factText": "억울해서 금액만 붙들고 버텼다는 감정 고백",
+              "tags": [
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                },
+                "amount": {
+                  "exact": "90,000원",
+                  "neutral": "요구 금액",
+                  "rounded": "9만원"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-5:admission:1",
+              "factText": "자기 책임분 확인 태도까지 닫아 버렸다는 인정",
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "share": {
+                  "exact": "60,000원",
+                  "neutral": "각 세대 몫",
+                  "rounded": "6만원"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "최종 계산서 확인 없이 제 책임 부분도 따져 보지 않은 채 전액 거부부터 한 건 제 잘못입니다.",
+            "세영 씨가 먼저 압박한 점과 별개로 저는 제 절차를 어겼습니다."
+          ],
+          "privateKnowledge": [
+            "자신의 절차 위반을 받아들인다.",
+            "상대 잘못과 자신의 잘못을 분리해야 함을 인정한다."
+          ],
+          "suppressions": [
+            "없음",
+            "없음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor06:b:tell:final_amount_fixation",
+            "neighbor06:b:tell:short_denial",
+            "neighbor06:b:tell:counter_invoice"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor06:b:d-5:admission:2",
+              "factText": "책임 부분 확인 없이 전액 거부부터 한 절차 위반 시인",
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "reject": {
+                  "exact": "전액 거부",
+                  "neutral": "그 거부"
+                },
+                "invoice": {
+                  "exact": "최종 계산서",
+                  "neutral": "공식 정산"
+                },
+                "person": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            },
+            {
+              "id": "neighbor06:b:d-5:relationship:0",
+              "factText": "상대 압박과 별개로 자신의 잘못을 분리해 인정",
+              "tags": [
+                "relationship",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "문세영",
+                  "neutral": "세영 씨",
+                  "fullName": "문세영",
+                  "judgeRef": "세영 씨"
+                },
+                "personOther": {
+                  "exact": "조인호",
+                  "neutral": "인호 씨",
+                  "fullName": "조인호",
+                  "judgeRef": "조인호 씨"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

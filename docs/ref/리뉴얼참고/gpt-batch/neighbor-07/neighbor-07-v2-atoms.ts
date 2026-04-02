@@ -1,0 +1,4661 @@
+export const neighbor07V2Atoms = {
+  "caseId": "neighbor-07",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "죄송한데 그때는 잠금함이 비어 있는 줄 알아서 열쇠가 맞는지만 본 거고, 오래 점유하려던 건 아니었어요."
+          ],
+          "privateKnowledge": [
+            "봉투 안 열쇠와 메모만으로는 공식 허가인지 확신이 없었다.",
+            "첫 안내 문자로 관리실 확인이 먼저라는 기준도 이미 들었다."
+          ],
+          "suppressions": [
+            "유모차와 박스를 실제로 넣어 둔 사실",
+            "관리실 확인 전 사용이 먼저였다는 순서"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "act",
+                "denial"
+              ],
+              "factText": "옛 열쇠 사용을 단순 확인 행위로 축소하는 주장",
+              "slots": {
+                "key": {
+                  "exact": "전 세입자가 남긴 옛 열쇠",
+                  "neutral": "그 열쇠"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-1:act:0"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "factText": "장기 점유 의도는 없었다며 위반 책임을 낮추는 주장",
+              "slots": {
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:a:d-1:responsibility:1"
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "전 세입자가 남긴 말과 표시를 보고 잠깐 써도 되는 줄 알았을 뿐이고, 규정을 무시하겠다는 뜻은 아니었어요."
+          ],
+          "privateKnowledge": [
+            "'803' 표시가 공적인 표지가 아닐 수 있다는 생각이 스쳤다.",
+            "그래도 급해서 확인보다 사용을 앞세웠다."
+          ],
+          "suppressions": [
+            "메모에 승인 주체나 기간이 없었다는 점",
+            "성호의 문자 뒤에도 바로 멈추지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "context",
+                "relationship"
+              ],
+              "factText": "전 세입자의 말과 표시를 사용 근거로 내세우는 주장",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-1:context:10"
+            },
+            {
+              "tags": [
+                "rule",
+                "denial"
+              ],
+              "factText": "규정 위반 의도는 없었다고 선을 긋는 주장",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-1:rule:11"
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "열쇠를 써서 문을 연 건 맞아요. 다만 그 봉투와 메모를 믿고 이삿짐을 잠깐 비켜 둔 거였어요."
+          ],
+          "privateKnowledge": [
+            "메모 사진만으로도 공식성 입증이 약하다는 걸 알고 있었다.",
+            "유모차와 박스를 넣는 장면이 CCTV에 남았을 수 있다고 짐작했다."
+          ],
+          "suppressions": [
+            "관리실에 먼저 연락하지 않은 이유",
+            "아이 짐 때문에 조급했다는 감정"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "factText": "옛 열쇠로 잠금함을 연 사실을 부분 인정하는 진술",
+              "slots": {
+                "key": {
+                  "exact": "전 세입자가 남긴 옛 열쇠",
+                  "neutral": "그 열쇠"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-1:admission:20"
+            },
+            {
+              "tags": [
+                "context",
+                "beneficiary"
+              ],
+              "factText": "이삿짐을 잠시 옮길 공간이 필요했다는 사정을 내세우는 진술",
+              "slots": {
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-1:context:21"
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "관리실 확인보다 먼저 연 건 제 잘못이에요. 그래도 이사 첫날이라 유모차랑 박스를 당장 치워야 해서 판단이 짧았어요."
+          ],
+          "privateKnowledge": [
+            "성호의 문자 내용을 읽고도 먼저 사용한 책임이 자신에게 크다는 걸 안다.",
+            "경고받은 뒤 들킬까 봐 설명을 길게 늘였다."
+          ],
+          "suppressions": [
+            "문자를 받고도 바로 비우지 않은 점",
+            "메모가 사적 흔적일 뿐이라는 의심"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "factText": "관리실 확인보다 사용이 앞선 순서를 인정하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-1:admission:30"
+            },
+            {
+              "tags": [
+                "motive",
+                "emotion"
+              ],
+              "factText": "이삿날 정리 압박 때문에 판단이 짧아졌다고 설명하는 진술",
+              "slots": {
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                },
+                "time": {
+                  "exact": "이사 첫날 저녁",
+                  "neutral": "그때",
+                  "dateExact": "이사 첫날 저녁",
+                  "period": "이사 첫날"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-1:motive:31"
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "처음부터 남의 공간을 빼앗으려던 사람처럼 보일까 무서웠어요. 그래서 열쇠를 쓴 사실을 바로 또렷하게 말하지 못했어요."
+          ],
+          "privateKnowledge": [
+            "'무단침입 취급'을 가장 두려워했다.",
+            "실은 공식 확인 전 사용한 사실이 분명한 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "공식 근거가 없다는 자각",
+            "성호에게 먼저 설명하기보다 숨으려 했던 태도"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "fear",
+                "identity"
+              ],
+              "factText": "새 이웃에게 규칙 모르는 사람으로 낙인찍힐 두려움을 드러내는 진술",
+              "slots": {
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-1:fear:40"
+            },
+            {
+              "tags": [
+                "admission",
+                "shame"
+              ],
+              "factText": "열쇠 사용 사실을 즉시 말하지 못한 이유를 부끄러움으로 설명하는 진술",
+              "slots": {
+                "key": {
+                  "exact": "전 세입자가 남긴 옛 열쇠",
+                  "neutral": "그 열쇠"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:a:d-1:admission:41"
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "이사 첫날 관리실 확인 전에 전 세입자 열쇠로 8층 잠금함을 열고 유모차와 박스를 넣어 둔 건 제 판단 미스였어요."
+          ],
+          "privateKnowledge": [
+            "봉투와 메모가 공적 허가가 아니라는 점을 이제는 분명히 안다.",
+            "상대가 과민했다고 느껴도 자신의 선행 위반은 사라지지 않는다."
+          ],
+          "suppressions": [
+            "상대의 거친 대응만 앞세워 자신의 선행 위반을 덮으려는 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "factText": "관리실 확인 전 옛 열쇠로 잠금함을 열어 짐을 넣은 사실을 시인하는 진술",
+              "slots": {
+                "key": {
+                  "exact": "전 세입자가 남긴 옛 열쇠",
+                  "neutral": "그 열쇠"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                },
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-1:admission:50"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "factText": "선행 위반 책임이 자신에게 크다는 점을 받아들이는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-1:responsibility:51"
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "제가 먼저 몰아붙인 게 아니라, 권성호 씨가 관리실 답도 나오기 전에 자물쇠를 걸고 공개 경고부터 올린 거예요."
+          ],
+          "privateKnowledge": [
+            "그 공개 글을 본 뒤 겁이 나서 바로 반박하지 못했다.",
+            "상대가 과거 사례까지 끌어와 자신을 같은 사람 취급했다고 느꼈다."
+          ],
+          "suppressions": [
+            "자신도 먼저 열쇠를 쓴 사실",
+            "공개 글 뒤 더 위축돼 설명이 꼬였던 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "act",
+                "responsibility"
+              ],
+              "factText": "성호가 관리실 조치 전 자물쇠와 공개 경고를 먼저 했다고 지적하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                },
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-2:act:0"
+            },
+            {
+              "tags": [
+                "timeline",
+                "rule"
+              ],
+              "factText": "관리실 답변보다 자력조치가 먼저였다는 순서를 강조하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-2:timeline:1"
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "규정이 걱정되셨다는 건 알겠지만, 저를 특정한 글을 먼저 올리고 직접 잠근 건 절차를 건너뛴 거라고 봐요."
+          ],
+          "privateKnowledge": [
+            "성호가 '피난 통로' 같은 단어를 연속으로 던질 때 위축됐다.",
+            "그래도 자물쇠가 사적 조치라는 점은 분명하다고 생각한다."
+          ],
+          "suppressions": [
+            "자신의 사용 시작이 분쟁의 발단이었다는 점",
+            "상대가 정말 안전을 걱정한 부분"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "rule",
+                "counter"
+              ],
+              "factText": "안전 우려와 별개로 직접 잠금과 공개 글은 절차 위반이라고 보는 진술",
+              "slots": {
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-2:rule:10"
+            },
+            {
+              "tags": [
+                "identity",
+                "harm"
+              ],
+              "factText": "호수가 드러나는 공개 경고로 낙인감이 생겼다고 말하는 진술",
+              "slots": {
+                "post": {
+                  "exact": "'새로 온 803호' 취지의 단지앱 글",
+                  "neutral": "공개 경고 글"
+                },
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:a:d-2:identity:11"
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "자물쇠를 단 시점과 공개 글이 관리실보다 먼저였다는 건 분명해요. 다만 제가 먼저 물건을 넣은 뒤라서 일이 더 세게 번진 건 맞아요."
+          ],
+          "privateKnowledge": [
+            "자신의 선행 사용이 성호를 자극했다는 점을 안다.",
+            "그래도 공개 망신을 준 방식은 과했다고 느낀다."
+          ],
+          "suppressions": [
+            "상대를 완전히 악의적으로만 볼 수 없다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "factText": "자물쇠 설치와 공개 글의 선행 시점을 근거로 드는 진술",
+              "slots": {
+                "photo": {
+                  "exact": "자물쇠 설치 사진과 손글씨 경고문",
+                  "neutral": "그 사진"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:a:d-2:evidence:20"
+            },
+            {
+              "tags": [
+                "admission",
+                "context"
+              ],
+              "factText": "자신의 선행 적치가 갈등을 키운 계기였다고 인정하는 진술",
+              "slots": {
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-2:admission:21"
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "제가 먼저 잘못한 부분이 있어도, 권성호 씨가 직접 잠그고 단지앱에 올린 건 별개의 과한 대응이었어요."
+          ],
+          "privateKnowledge": [
+            "사실 첫 이웃 갈등이 공개 게시물로 번진 것이 가장 수치스러웠다.",
+            "성호가 개인적으로 판단을 앞세웠다고 확신한다."
+          ],
+          "suppressions": [
+            "자신도 관리실 확인 원칙을 어겼다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "counter",
+                "responsibility"
+              ],
+              "factText": "상대의 사적 재잠금과 공개 경고를 별개의 과잉 대응으로 구분하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                },
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "blame",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-2:counter:30"
+            },
+            {
+              "tags": [
+                "harm",
+                "emotion"
+              ],
+              "factText": "공개 게시로 느낀 망신과 위축을 드러내는 진술",
+              "slots": {
+                "post": {
+                  "exact": "'새로 온 803호' 취지의 단지앱 글",
+                  "neutral": "공개 경고 글"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-2:harm:31"
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "첫날부터 제가 문제 세대처럼 올라간 게 너무 창피했어요. 그래서 더 방어적으로 굴었고 상대 말도 곧바로 못 믿었어요."
+          ],
+          "privateKnowledge": [
+            "공개 글로 인해 '새 이웃의 무시하는 태도'라는 감정을 키웠다.",
+            "상대가 사과 없이 규정만 내세운다고 느꼈다."
+          ],
+          "suppressions": [
+            "상대도 과거 분쟁 때문에 과민했을 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "shame",
+                "identity"
+              ],
+              "factText": "공개 경고가 새 이웃으로서의 체면을 크게 건드렸다고 말하는 진술",
+              "slots": {
+                "post": {
+                  "exact": "'새로 온 803호' 취지의 단지앱 글",
+                  "neutral": "공개 경고 글"
+                },
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-2:shame:40"
+            },
+            {
+              "tags": [
+                "relationship",
+                "fear"
+              ],
+              "factText": "첫 관계가 틀어질까 두려워 더 방어적으로 굴었다는 진술",
+              "slots": {
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                },
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-2:relationship:41"
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "권성호 씨가 관리실 조치 전에 자물쇠를 추가로 걸고 공개 경고를 올린 건 맞고, 그 부분은 과한 대응이었다고 생각해요. 다만 제 선행 위반이 그 반응을 부른 면도 인정해요."
+          ],
+          "privateKnowledge": [
+            "상대의 대응이 과했지만 자신도 갈등의 시작점이었다는 걸 받아들인다.",
+            "공개 글 삭제와 사적 자물쇠 해제가 필요하다고 본다."
+          ],
+          "suppressions": [
+            "상대만 사과하면 된다는 식의 생각"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "counter"
+              ],
+              "factText": "상대의 사적 재잠금과 공개 경고를 사실로 확정하면서도 과잉 대응이라 평가하는 진술",
+              "slots": {
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-2:admission:50"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "relationship"
+              ],
+              "factText": "자신의 선행 위반이 상대 반응을 자극한 면도 함께 인정하는 진술",
+              "slots": {
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "admit",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-2:responsibility:51"
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "문 안쪽 표시도 그렇고 전 세입자도 그렇게 말해서, 저는 그 잠금함이 803호가 이어 쓰던 칸인 줄 알았어요."
+          ],
+          "privateKnowledge": [
+            "공식 장부를 본 적은 없다.",
+            "사적으로 남겨진 열쇠와 메모를 공식처럼 받아들였다."
+          ],
+          "suppressions": [
+            "관리문서 확인 없이 단정한 점",
+            "공용 비상물품함일 수 있다는 가능성"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "identity",
+                "context"
+              ],
+              "factText": "표시와 전 세입자 말을 근거로 잠금함을 803호 사용칸으로 이해한 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-3:identity:0"
+            },
+            {
+              "tags": [
+                "uncertainty",
+                "rule"
+              ],
+              "factText": "공식 문서가 아니라 외형과 전언에 의존한 판단이었다는 진술",
+              "slots": {
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                },
+                "ledger": {
+                  "exact": "임시사용 승인대장",
+                  "neutral": "관리기록"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-3:uncertainty:1"
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "관리실 기록까지 본 건 아니지만, 남겨진 열쇠와 '803' 표시 때문에 그렇게 믿을 만한 사정은 있었다고 생각했어요."
+          ],
+          "privateKnowledge": [
+            "믿을 만하다는 것과 공식 허가는 다르다는 걸 어렴풋이 안다.",
+            "성호도 비슷하게 말해 준 기억이 자신의 확신을 키웠다."
+          ],
+          "suppressions": [
+            "자신의 추정이었을 뿐이라는 점",
+            "권성호의 경고성 발언을 허락으로 바꿔 들은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "factText": "공식 확인 없이도 믿게 만든 사정이 있었다고 설명하는 진술",
+              "slots": {
+                "key": {
+                  "exact": "전 세입자가 남긴 옛 열쇠",
+                  "neutral": "그 열쇠"
+                },
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-3:context:10"
+            },
+            {
+              "tags": [
+                "relationship",
+                "identity"
+              ],
+              "factText": "상대의 말도 자신의 오해를 굳히는 재료가 됐다고 말하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-3:relationship:11"
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "공식 전용권을 확인한 건 아니에요. 다만 외형상 803호가 이어 쓰는 곳처럼 보여서 그렇게 받아들였어요."
+          ],
+          "privateKnowledge": [
+            "공식 확인을 안 했다는 약점을 분명히 인식한다.",
+            "자신의 판단 근거가 사적 흔적뿐이라는 점을 숨기고 싶다."
+          ],
+          "suppressions": [
+            "승인대장을 보지 않았다는 점",
+            "임시사용 종료 가능성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "uncertainty"
+              ],
+              "factText": "공식 전용권 확인은 하지 않았다고 인정하는 진술",
+              "slots": {
+                "ledger": {
+                  "exact": "임시사용 승인대장",
+                  "neutral": "관리기록"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-3:admission:20"
+            },
+            {
+              "tags": [
+                "context",
+                "identity"
+              ],
+              "factText": "외형과 표식 때문에 특정 호수 사용칸처럼 보였다고 설명하는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-3:context:21"
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보니 그 표시는 공식 표지가 아니라 전 세입자가 남긴 흔적이었을 수 있어요. 제가 그걸 너무 곧이곧대로 믿었네요."
+          ],
+          "privateKnowledge": [
+            "음성메시지도 윤가영의 기억 오류일 수 있다는 점을 이해한다.",
+            "자신이 공용공간 정보를 확인하지 않은 책임이 있다."
+          ],
+          "suppressions": [
+            "성호의 과장된 표현만 탓하고 싶은 마음"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "privacy"
+              ],
+              "factText": "표시와 메모가 전 세입자의 사적 흔적일 수 있음을 인정하는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "uncertainty"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-3:admission:30"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "factText": "사적 인수인계 흔적을 공식 정보처럼 받아들인 자신의 판단 실수를 말하는 진술",
+              "slots": {
+                "key": {
+                  "exact": "전 세입자가 남긴 옛 열쇠",
+                  "neutral": "그 열쇠"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:a:d-3:responsibility:31"
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "새집에서 뭘 하나 잘못 집으면 바로 무단 점유한 사람처럼 보일까 봐, 눈앞의 표시를 사실상 허가처럼 붙잡고 있었어요."
+          ],
+          "privateKnowledge": [
+            "새집 적응 불안이 판단을 흐렸다.",
+            "사람들 앞에서 틀렸다는 말을 듣는 것이 싫었다."
+          ],
+          "suppressions": [
+            "메모가 공식 허가가 아니라는 상식적 의심"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "fear",
+                "identity"
+              ],
+              "factText": "새집 적응 불안 때문에 눈앞의 표시를 허가처럼 붙잡았다고 털어놓는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-3:fear:40"
+            },
+            {
+              "tags": [
+                "shame",
+                "uncertainty"
+              ],
+              "factText": "틀렸을 수 있다는 생각을 인정하기 싫어 확신처럼 말한 감정을 드러내는 진술",
+              "slots": {
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                },
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:a:d-3:shame:41"
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "결국 그 잠금함은 803호 전용이 아니라, 전 세입자에게만 잠시 허용됐던 공용 비상물품함이었던 거죠. 제 이해가 틀렸어요."
+          ],
+          "privateKnowledge": [
+            "전 세입자 전언과 메모만 믿은 방식이 문제였다는 걸 수용한다.",
+            "공식 장부가 유일한 기준이라는 점을 받아들인다."
+          ],
+          "suppressions": [
+            "상대도 헷갈렸다는 점만으로 자신의 오해를 가볍게 만들려는 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "institution"
+              ],
+              "factText": "잠금함이 특정 세대 전용이 아니라 공용 비상물품함이었다는 결론을 받아들이는 진술",
+              "slots": {
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                },
+                "ledger": {
+                  "exact": "임시사용 승인대장",
+                  "neutral": "관리기록"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-3:admission:50"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "relationship"
+              ],
+              "factText": "전 세입자 전언을 공식 기준보다 앞세운 자신의 오해를 인정하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-3:responsibility:51"
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "메모랑 '803' 표시가 안쪽에 붙어 있었으니 저는 그게 사실상 허락 표시인 줄 알았어요."
+          ],
+          "privateKnowledge": [
+            "메모에 승인 주체와 기간이 없다는 점을 봤다.",
+            "공식 허가서가 아니라는 사실을 직접 확인하진 못했다."
+          ],
+          "suppressions": [
+            "관리사무소 문서가 없었다는 점",
+            "자신이 사적 흔적을 허가처럼 해석했다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "identity",
+                "rule"
+              ],
+              "factText": "메모와 표시를 사실상 허락 표시로 받아들였다는 주장",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-4:identity:0"
+            },
+            {
+              "tags": [
+                "uncertainty",
+                "context"
+              ],
+              "factText": "표시가 공식 허가인지 따로 확인하지 않은 채 믿었다는 주장",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-4:uncertainty:1"
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 전 세입자가 이어 쓰던 공식 절차의 일부는 되는 줄 알았어요. 그냥 낙서라고는 생각 못 했어요."
+          ],
+          "privateKnowledge": [
+            "'공식 절차의 일부'라는 표현이 스스로도 과장임을 안다.",
+            "실제론 전 세입자의 개인 메모일 가능성이 더 컸다."
+          ],
+          "suppressions": [
+            "메모를 허가서처럼 부풀린 점",
+            "집주인도 정확한 근거를 주지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "context",
+                "legacy_sentence"
+              ],
+              "factText": "전 세입자가 남긴 흔적을 공식 절차의 연장처럼 해석하는 주장",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:a:d-4:context:10"
+            },
+            {
+              "tags": [
+                "denial",
+                "privacy"
+              ],
+              "factText": "개인 메모라고는 생각하지 못했다고 선을 긋는 주장",
+              "slots": {
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                },
+                "marker": {
+                  "exact": "문 안쪽 '803' 스티커",
+                  "neutral": "그 스티커"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-4:denial:11"
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "공식 허가서를 본 건 아니에요. 그래도 메모와 스티커가 그냥 사적 흔적만은 아니라고 믿고 싶었어요."
+          ],
+          "privateKnowledge": [
+            "문서가 없다는 점 때문에 논리적으로 약하다는 걸 안다.",
+            "사실 '믿고 싶었다'는 마음이 컸다."
+          ],
+          "suppressions": [
+            "승인대장을 확인하지 않은 점",
+            "메모에 기간·주체가 없다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "uncertainty"
+              ],
+              "factText": "공식 허가서를 직접 본 적 없다고 인정하는 진술",
+              "slots": {
+                "ledger": {
+                  "exact": "임시사용 승인대장",
+                  "neutral": "관리기록"
+                },
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-4:admission:20"
+            },
+            {
+              "tags": [
+                "self_justification",
+                "emotion"
+              ],
+              "factText": "사적 흔적이 아니길 바라는 마음으로 표시를 크게 해석했다는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "문 안쪽 '803' 스티커",
+                  "neutral": "그 스티커"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-4:self_justification:21"
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "이제 보니 그 메모와 스티커만으로는 공식 허가라고 말할 수 없어요. 제가 체면 때문에 그걸 너무 세게 붙들고 있었네요."
+          ],
+          "privateKnowledge": [
+            "체면을 지키려 '허가 같았다'를 '허가였다'로 밀어붙였다.",
+            "관리문서가 나오면 무너지리라는 걸 알고 있었다."
+          ],
+          "suppressions": [
+            "집주인과 전 세입자의 말을 방패처럼 세운 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "factText": "메모와 스티커만으로는 공식 허가라 할 수 없다고 물러서는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-4:admission:30"
+            },
+            {
+              "tags": [
+                "shame",
+                "self_justification"
+              ],
+              "factText": "체면을 지키려 불확실한 근거를 더 크게 말한 심리를 드러내는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-4:shame:31"
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "처음부터 제가 규정을 멋대로 바꾼 사람처럼 보일까 봐, 그 표시가 허가처럼 보였다는 말을 끝까지 놓지 못했어요."
+          ],
+          "privateKnowledge": [
+            "'새로 이사 와서 사고 친 사람'으로 찍히는 두려움이 컸다.",
+            "그래서 메모의 빈틈을 일부러 덜 보려 했다."
+          ],
+          "suppressions": [
+            "메모의 불완전성",
+            "관리실 확인을 회피한 책임"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "fear",
+                "identity"
+              ],
+              "factText": "규정을 멋대로 바꾼 사람처럼 보일까 두려워 허가 해석을 놓지 못했다는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-4:fear:40"
+            },
+            {
+              "tags": [
+                "shame",
+                "uncertainty"
+              ],
+              "factText": "메모의 빈틈을 알면서도 인정이 늦었다는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-4:shame:41"
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "결국 그 메모와 '803' 스티커는 공식 허가가 아니라 전 세입자가 남긴 사적 흔적이었어요. 제가 그걸 허가처럼 해석한 건 체면을 지키려던 변명이었습니다."
+          ],
+          "privateKnowledge": [
+            "공식 허가가 아니었다는 점을 완전히 받아들인다.",
+            "집주인·전 세입자 말을 앞세운 것도 자신의 판단 책임을 흐리기 위한 방어였다고 안다."
+          ],
+          "suppressions": [
+            "상대의 거친 말투만 문제 삼으며 본질을 흐리고 싶은 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "privacy"
+              ],
+              "factText": "메모와 스티커가 공식 허가가 아닌 사적 흔적이었다는 점을 시인하는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-4:admission:50"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "shame"
+              ],
+              "factText": "체면과 책임 회피 때문에 표시를 허가처럼 해석했다고 인정하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-4:responsibility:51"
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "관리실에 확인할 생각은 있었어요. 이삿날이라 짐을 잠깐 옮겨 두느라 순서가 조금 엇갈린 정도라고 생각했어요."
+          ],
+          "privateKnowledge": [
+            "첫 문자로 관리실 확인이 먼저라는 기준을 분명히 들었다.",
+            "그래도 급한 마음에 사용을 먼저 했다."
+          ],
+          "suppressions": [
+            "먼저 사용부터 했다는 점",
+            "문자를 받고도 바로 멈추지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "rule",
+                "denial"
+              ],
+              "factText": "관리실 확인 의사는 있었고 순서만 조금 엇갈렸다고 축소하는 주장",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-5:rule:0"
+            },
+            {
+              "tags": [
+                "context",
+                "beneficiary"
+              ],
+              "factText": "이삿짐 정리 때문에 잠깐의 예외였다고 설명하는 주장",
+              "slots": {
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-5:context:1"
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "문자로 관리실 먼저라고 들은 건 맞지만, 그때는 정말 급해서 먼저 비워 둘 생각부터 했어요."
+          ],
+          "privateKnowledge": [
+            "'정말 급했다'는 말이 책임을 줄이지 못한다는 걸 안다.",
+            "성호의 안내를 가볍게 넘긴 셈이었다."
+          ],
+          "suppressions": [
+            "안내를 알고도 행동을 바꾸지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "factText": "관리실 먼저라는 기준을 들은 사실은 인정하는 진술",
+              "slots": {
+                "text": {
+                  "exact": "'그 잠금함은 관리실 먼저 확인해 주세요'라는 첫 문자",
+                  "neutral": "첫 문자"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-5:admission:10"
+            },
+            {
+              "tags": [
+                "motive",
+                "emotion"
+              ],
+              "factText": "급한 이삿날 정리 상황이 순서를 흐렸다고 설명하는 진술",
+              "slots": {
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-5:motive:11"
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "관리실이 먼저라는 걸 알면서도, 유모차랑 박스를 먼저 넣어 둔 건 맞아요. 그때는 곧 확인하면 된다고 안일하게 봤어요."
+          ],
+          "privateKnowledge": [
+            "'곧 확인하면 된다'는 자기합리화였다.",
+            "실제론 먼저 써 본 뒤 들키지 않길 바랐다."
+          ],
+          "suppressions": [
+            "안일함이 아니라 명확한 선행 위반이었다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "factText": "관리실 우선 원칙을 알면서도 먼저 사용한 사실을 부분 인정하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-5:admission:20"
+            },
+            {
+              "tags": [
+                "self_justification",
+                "threshold"
+              ],
+              "factText": "곧 확인하면 된다고 판단 기준을 느슨하게 잡았다는 진술",
+              "slots": {
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:a:d-5:self_justification:21"
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "결국 순서를 어긴 건 제 쪽이 먼저였어요. 다만 처음부터 크게 싸울 일로 만들 생각은 없었고, 들키면 바로 설명하려 했어요."
+          ],
+          "privateKnowledge": [
+            "'바로 설명하려 했다'는 것도 실제 행동으로 이어지지 않았다.",
+            "문제가 커질까 봐 오히려 설명을 늦췄다."
+          ],
+          "suppressions": [
+            "설명을 늦춘 점",
+            "관계 유지 욕심 때문에 진실을 흐린 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "factText": "원칙 위반의 선행 순서가 자신에게 있었다고 인정하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-5:admission:30"
+            },
+            {
+              "tags": [
+                "relationship",
+                "fear"
+              ],
+              "factText": "처음부터 크게 싸우고 싶지 않아 설명을 늦췄다고 말하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                },
+                "time": {
+                  "exact": "이사 첫날 저녁",
+                  "neutral": "그때",
+                  "dateExact": "이사 첫날 저녁",
+                  "period": "이사 첫날"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-5:relationship:31"
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "첫날부터 규칙도 모르는 이웃으로 찍히면 앞으로 더 불편해질까 봐, 제 잘못을 빨리 인정하지 못했어요."
+          ],
+          "privateKnowledge": [
+            "관계 유지를 위해 사실을 둥글게 말해 왔다.",
+            "사과만 하면 될 일을 변명으로 늘렸다."
+          ],
+          "suppressions": [
+            "순서를 어긴 사실 자체",
+            "상대도 원칙을 어겼다는 반격심"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "fear",
+                "relationship"
+              ],
+              "factText": "새 이웃 관계가 망가질까 두려워 인정이 늦었다는 진술",
+              "slots": {
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:a:d-5:fear:40"
+            },
+            {
+              "tags": [
+                "shame",
+                "admission"
+              ],
+              "factText": "자신의 잘못을 빨리 인정하지 못한 이유를 체면과 부끄러움으로 설명하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:a:d-5:shame:41"
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "관리실 확인이 먼저라는 걸 알고도 제가 먼저 잠금함을 열어 쓴 건 맞아요. 관계를 망치고 싶지 않아 그걸 작게 말했지만, 순서를 어긴 책임은 제게 있어요."
+          ],
+          "privateKnowledge": [
+            "관계 유지 명분이 잘못을 없애주지 않는다는 걸 받아들인다.",
+            "상대 역시 원칙을 어겼지만 자신의 선행 위반이 별개로 남는다고 본다."
+          ],
+          "suppressions": [
+            "상대와 동률로 만들고 싶은 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:a:tell:apology_preface",
+            "neighbor07:a:tell:borrowed_authority",
+            "neighbor07:a:tell:topic_trail"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "factText": "관리실 우선 원칙을 알면서도 먼저 사용한 사실을 시인하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:a:d-5:admission:50"
+            },
+            {
+              "tags": [
+                "relationship",
+                "responsibility"
+              ],
+              "factText": "관계 유지 욕심 때문에 잘못을 축소했음을 인정하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "권성호",
+                  "neutral": "그 사람",
+                  "fullName": "권성호",
+                  "judgeRef": "권성호 씨"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:a:d-5:relationship:51"
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "그쪽이 남의 열쇠 비슷한 걸로 문을 열고 짐을 넣었으니 문제가 시작된 겁니다. 피난 통로, 공용물품, 무단 열쇠, 이 세 개면 충분해요."
+          ],
+          "privateKnowledge": [
+            "실제 소유관계는 장부로 확인하지 않았다.",
+            "전 세입자 때 갈등 기억이 겹쳐 더 세게 단정했다."
+          ],
+          "suppressions": [
+            "자신도 공식 장부를 먼저 보지 않았다는 점",
+            "과거 분쟁 경험이 판단을 밀어붙였다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "act",
+                "rule"
+              ],
+              "factText": "나리가 옛 열쇠로 잠금함을 열고 짐을 넣은 행동을 핵심 위반으로 보는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "key": {
+                  "exact": "전 세입자가 남긴 옛 열쇠",
+                  "neutral": "그 열쇠"
+                },
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-1:act:0"
+            },
+            {
+              "tags": [
+                "rule",
+                "legacy_sentence"
+              ],
+              "factText": "규정 단어를 짧게 반복해 사안을 위험 행위로 못박는 진술",
+              "slots": {
+                "words": {
+                  "exact": "피난 통로·공용물품·무단 열쇠",
+                  "neutral": "규정 단어들"
+                },
+                "place": {
+                  "exact": "8층 비상계단과 복도",
+                  "neutral": "그 공간"
+                }
+              },
+              "stanceHints": [
+                "counter",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-1:rule:1"
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "관리실 확인 전이든 뭐든, 먼저 열고 넣은 쪽이 있었으니 저는 그걸 막아야 한다고 본 겁니다."
+          ],
+          "privateKnowledge": [
+            "'막아야 했다'는 생각이 자기 자력조치를 정당화하는 근거로 섞여 있다.",
+            "실제론 화가 많이 섞여 있었다."
+          ],
+          "suppressions": [
+            "관리실보다 먼저 막아선 점",
+            "공개 경고까지 간 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "timeline",
+                "responsibility"
+              ],
+              "factText": "먼저 열고 넣은 행동이 분쟁의 시작점이었다고 보는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-1:timeline:10"
+            },
+            {
+              "tags": [
+                "motive",
+                "self_justification"
+              ],
+              "factText": "자신이 막아야 했다고 느낀 동기를 내세우는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "place": {
+                  "exact": "8층 비상계단과 복도",
+                  "neutral": "그 공간"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-1:motive:11"
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "박나리 씨가 먼저 연 건 영상으로도 보이죠. 다만 제가 그걸 보고 과거 일까지 겹쳐 더 위험하게 본 건 있습니다."
+          ],
+          "privateKnowledge": [
+            "CCTV 전에는 정확한 적치 시점을 못 봤다.",
+            "윤가영 때의 기억이 현재 판단에 과투영됐다."
+          ],
+          "suppressions": [
+            "자신의 과장",
+            "상대를 같은 부류로 묶은 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "evidence",
+                "timeline"
+              ],
+              "factText": "영상상 나리의 선행 사용을 근거로 드는 진술",
+              "slots": {
+                "evidence": {
+                  "exact": "8층 계단실 CCTV",
+                  "neutral": "영상"
+                },
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-1:evidence:20"
+            },
+            {
+              "tags": [
+                "context",
+                "legacy_sentence"
+              ],
+              "factText": "전 세입자와의 과거 분쟁 기억이 판단을 키웠다고 인정하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-1:context:21"
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "먼저 위반한 쪽이 있었다는 판단은 유지합니다. 하지만 제가 과거 사례를 끌어와 지금 사람까지 한데 묶은 건 과했을 수 있죠."
+          ],
+          "privateKnowledge": [
+            "실제로는 '또 시작됐다'는 감정이 먼저 튀었다.",
+            "나리를 현재 사실보다 더 큰 위협으로 봤다."
+          ],
+          "suppressions": [
+            "자신의 낙인찍기",
+            "사적 자물쇠와 공개 글"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "counter",
+                "rule"
+              ],
+              "factText": "선행 위반 판단은 유지하되 과거 사례 연결은 과했을 수 있다고 말하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "place": {
+                  "exact": "8층 비상계단과 복도",
+                  "neutral": "그 공간"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-1:counter:30"
+            },
+            {
+              "tags": [
+                "emotion",
+                "identity"
+              ],
+              "factText": "상대를 과거 분쟁 상대와 같은 부류로 본 감정을 드러내는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-1:emotion:31"
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "전 세입자 때도 이랬다, 그 말이 자꾸 먼저 나왔습니다. 또 공용공간이 사유화되는 걸 못 막는 사람처럼 보일까 겁이 났어요."
+          ],
+          "privateKnowledge": [
+            "두려움이 분노처럼 표출됐다.",
+            "안전 명분 외에 자존심도 크게 작동했다."
+          ],
+          "suppressions": [
+            "자존심",
+            "상대의 입장을 들을 여지"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "fear",
+                "institution"
+              ],
+              "factText": "공용공간 사유화를 못 막는 사람처럼 보일까 두려웠다고 털어놓는 진술",
+              "slots": {
+                "place": {
+                  "exact": "8층 비상계단과 복도",
+                  "neutral": "그 공간"
+                },
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-1:fear:40"
+            },
+            {
+              "tags": [
+                "emotion",
+                "legacy_sentence"
+              ],
+              "factText": "전 세입자 사례를 반복해 현재 갈등에 겹쳐 본 감정을 드러내는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-1:emotion:41"
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "박나리 씨가 먼저 옛 열쇠로 잠금함을 열고 짐을 넣은 건 사실입니다. 다만 그 사실을 근거로 제가 과거 일까지 끌어와 몰아붙인 건 별도로 과했습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 선행 위반과 자신의 과잉 대응을 분리해서 본다.",
+            "사실 판단은 맞더라도 표현 방식이 잘못됐다고 받아들인다."
+          ],
+          "suppressions": [
+            "'내 판단이 맞았으니 방식도 정당했다'는 생각"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "counter"
+              ],
+              "factText": "나리의 선행 사용 사실을 유지하면서도 자신의 과한 몰아붙임을 인정하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "key": {
+                  "exact": "전 세입자가 남긴 옛 열쇠",
+                  "neutral": "그 열쇠"
+                },
+                "items": {
+                  "exact": "유모차와 이사 박스",
+                  "neutral": "짐"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-1:admission:50"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "emotion"
+              ],
+              "factText": "과거 갈등 감정을 현재 상대에게 덧씌운 책임을 인정하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-1:responsibility:51"
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "내가 한 건 봉쇄가 아니라 임시 안전조치입니다. 관리실이 오기 전까지 또 넘어가면 안 되니까 잠깐 막아 둔 거예요."
+          ],
+          "privateKnowledge": [
+            "관리실보다 먼저 자물쇠를 단 건 사실이다.",
+            "공개 글도 경고 이상의 압박 효과가 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "자물쇠 설치 시점",
+            "공개 글이 먼저 올라간 순서"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "act",
+                "denial"
+              ],
+              "factText": "사적 재잠금을 임시 안전조치로 축소하는 주장",
+              "slots": {
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-2:act:0"
+            },
+            {
+              "tags": [
+                "motive",
+                "rule"
+              ],
+              "factText": "또 문제가 번질 수 있다는 안전 우려를 근거로 드는 주장",
+              "slots": {
+                "place": {
+                  "exact": "8층 비상계단과 복도",
+                  "neutral": "그 공간"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-2:motive:1"
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "공개 글도 사람을 망신주려던 게 아니라 다른 세대에 상황을 알리려던 겁니다. 규정은 규정이니까요."
+          ],
+          "privateKnowledge": [
+            "호수와 상황이 드러나면 낙인처럼 읽힐 수 있음을 안다.",
+            "실제론 화가 섞여 있었다."
+          ],
+          "suppressions": [
+            "공개 글의 압박 효과",
+            "관리실 회신 전 게시"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "denial",
+                "harm"
+              ],
+              "factText": "공개 글이 망신주기 목적은 아니었다고 부인하는 주장",
+              "slots": {
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                },
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-2:denial:10"
+            },
+            {
+              "tags": [
+                "rule",
+                "quote"
+              ],
+              "factText": "규정을 앞세워 공개 경고의 정당성을 강조하는 주장",
+              "slots": {
+                "post": {
+                  "exact": "'새로 온 803호' 취지의 단지앱 글",
+                  "neutral": "공개 경고 글"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-2:rule:11"
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "자물쇠를 내가 먼저 건 건 맞습니다. 다만 그때는 관리실 답이 늦고, 내가 안 막으면 또 그대로 굳어질 거라고 봤어요."
+          ],
+          "privateKnowledge": [
+            "'내가 안 막으면'이라는 생각이 자력조치 정당화임을 안다.",
+            "과거 사례가 현재 위험을 과장하게 만들었다."
+          ],
+          "suppressions": [
+            "공개 글도 함께 먼저 올린 점",
+            "관리실 답이 아직 오지 않았다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "factText": "자신이 관리실 조치 전 자물쇠를 먼저 걸었다고 부분 인정하는 진술",
+              "slots": {
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-2:admission:20"
+            },
+            {
+              "tags": [
+                "self_justification",
+                "fear"
+              ],
+              "factText": "또 사유화가 굳어질까 봐 자기가 막아야 한다고 느꼈다는 진술",
+              "slots": {
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                },
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-2:self_justification:21"
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "사실 관리실보다 내 판단이 먼저 나간 건 인정합니다. 공개 글까지 올린 건 선을 넘은 대응으로 보일 수 있죠."
+          ],
+          "privateKnowledge": [
+            "글을 올릴 때 이미 상대가 곤란해질 걸 알았다.",
+            "그래도 스스로는 필요했다고 믿고 싶다."
+          ],
+          "suppressions": [
+            "정당화 욕구"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "factText": "관리실보다 자신의 판단과 조치가 먼저였음을 인정하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-2:admission:30"
+            },
+            {
+              "tags": [
+                "harm",
+                "responsibility"
+              ],
+              "factText": "공개 글이 상대를 곤란하게 만들 수 있었다고 인정하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "post": {
+                  "exact": "'새로 온 803호' 취지의 단지앱 글",
+                  "neutral": "공개 경고 글"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-2:harm:31"
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "전 세입자 때도 이랬다, 그 생각이 올라오면 목소리부터 커집니다. 또 넘어가면 못 막은 사람이 된다는 강박이 있었어요."
+          ],
+          "privateKnowledge": [
+            "강박과 분노가 안전보다 먼저 나선 순간이 있었다.",
+            "그래서 공개적으로 세게 밀어붙였다."
+          ],
+          "suppressions": [
+            "자존심이 작동한 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "fear",
+                "legacy_sentence"
+              ],
+              "factText": "과거 사례가 반복될까 두려워 목소리와 대응 강도가 커졌다고 털어놓는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-2:fear:40"
+            },
+            {
+              "tags": [
+                "emotion",
+                "self_justification"
+              ],
+              "factText": "강박이 사적 자물쇠와 공개 글로 이어졌다고 인정하는 진술",
+              "slots": {
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-2:emotion:41"
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "내가 관리실 조치 전에 자물쇠를 추가로 걸고 공개 경고까지 올린 건 맞습니다. 안전을 걱정한 건 사실이지만, 그걸 이유로 절차를 건너뛴 건 내 책임입니다."
+          ],
+          "privateKnowledge": [
+            "안전 우려가 사실이어도 자력조치가 정당화되지 않음을 받아들인다.",
+            "공개 글은 삭제하고 직접 사과해야 한다고 본다."
+          ],
+          "suppressions": [
+            "'결과적으로 맞았으니 괜찮다'는 생각"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "act"
+              ],
+              "factText": "사적 재잠금과 공개 경고를 자신이 먼저 했음을 시인하는 진술",
+              "slots": {
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-2:admission:50"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "rule"
+              ],
+              "factText": "안전 우려와 별개로 절차를 건너뛴 책임이 자신에게 있음을 인정하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "place": {
+                  "exact": "8층 비상계단과 복도",
+                  "neutral": "그 공간"
+                }
+              },
+              "stanceHints": [
+                "confess"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-2:responsibility:51"
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "그 잠금함은 원래 803 쪽이 쓰던 자리로 봐야 합니다. 전 세입자 때부터 그렇게 굴러왔으니까요."
+          ],
+          "privateKnowledge": [
+            "관리실 승인대장을 확인하지는 않았다.",
+            "실제론 '원래 803이 쓰던 데'라는 기억이 관행과 전용을 섞은 표현이었다."
+          ],
+          "suppressions": [
+            "임시사용 허가였다는 가능성",
+            "공용 비상물품함일 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "identity",
+                "denial"
+              ],
+              "factText": "잠금함을 사실상 803호 사용칸으로 보는 주장",
+              "slots": {
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                },
+                "marker": {
+                  "exact": "문 안쪽 '803' 스티커",
+                  "neutral": "그 스티커"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-3:identity:0"
+            },
+            {
+              "tags": [
+                "legacy_sentence",
+                "context"
+              ],
+              "factText": "전 세입자 때부터의 관행을 전용 근거처럼 내세우는 주장",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-3:legacy_sentence:1"
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "장부까지 본 건 아니어도, 전 세입자와 그 주변 사정을 아는 사람 입장에선 803 관련 자리로 이해할 수밖에 없었습니다."
+          ],
+          "privateKnowledge": [
+            "'이해할 수밖에'는 과장이다.",
+            "공식 기준보다 자신의 경험을 더 세게 앞세우고 있다."
+          ],
+          "suppressions": [
+            "공식 확인 부재",
+            "임시허가 종료 가능성"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "context",
+                "uncertainty"
+              ],
+              "factText": "공식 장부 없이도 현장 경험상 803 관련 자리로 이해했다고 설명하는 주장",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-3:context:10"
+            },
+            {
+              "tags": [
+                "self_justification",
+                "institution"
+              ],
+              "factText": "자신의 현장 경험을 공식 기준처럼 끌어올리는 주장",
+              "slots": {
+                "ledger": {
+                  "exact": "임시사용 승인대장",
+                  "neutral": "관리기록"
+                },
+                "place": {
+                  "exact": "8층 비상계단과 복도",
+                  "neutral": "그 공간"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "deny"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-3:self_justification:11"
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "공식 전용 문서를 본 건 아닙니다. 하지만 윤가영 씨 말과 남은 흔적 때문에 제가 그렇게 단정한 건 사실입니다."
+          ],
+          "privateKnowledge": [
+            "윤가영의 말도 정확하지 않을 수 있다는 걸 안다.",
+            "자신이 단정했다는 표현이 핵심이다."
+          ],
+          "suppressions": [
+            "관리실 확인 없이 단정한 점",
+            "공용 비상물품함일 수 있다는 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "uncertainty"
+              ],
+              "factText": "공식 전용 문서는 보지 않았다고 인정하는 진술",
+              "slots": {
+                "ledger": {
+                  "exact": "임시사용 승인대장",
+                  "neutral": "관리기록"
+                },
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-3:admission:20"
+            },
+            {
+              "tags": [
+                "context",
+                "legacy_sentence"
+              ],
+              "factText": "전 세입자 말과 남은 흔적 때문에 전용처럼 단정했다고 인정하는 진술",
+              "slots": {
+                "voice": {
+                  "exact": "윤가영의 음성메시지",
+                  "neutral": "그 음성"
+                },
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-3:context:21"
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "지금 보니 제가 본 건 '과거에 803이 잠깐 쓰던 흔적'이지, 현재도 803 전용이라는 근거는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "자신이 관행과 권리를 혼동했다.",
+            "그 혼동이 나리에 대한 판단을 더 공격적으로 만들었다."
+          ],
+          "suppressions": [
+            "자신의 공격성"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "identity"
+              ],
+              "factText": "과거 사용 흔적과 현재 전용권을 혼동했다는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-3:admission:30"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "context"
+              ],
+              "factText": "그 혼동이 현재 상대를 공격적으로 판단하게 만들었다는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-3:responsibility:31"
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "전 세입자 때 몇 달을 다퉜으니, 비슷한 장면만 보여도 저는 또 803 전용처럼 굳어질까 봐 먼저 단정해 버립니다."
+          ],
+          "privateKnowledge": [
+            "과거 악연이 현재 사실 확인을 밀어냈다.",
+            "자신이 두려움을 규정 확신처럼 말한다는 걸 안다."
+          ],
+          "suppressions": [
+            "관리문서 확인보다 감정이 앞선 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "fear",
+                "legacy_sentence"
+              ],
+              "factText": "과거 악연 때문에 비슷한 장면을 보면 전용처럼 굳어질까 먼저 두려워한다는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-3:fear:40"
+            },
+            {
+              "tags": [
+                "emotion",
+                "uncertainty"
+              ],
+              "factText": "두려움을 확신처럼 말해 버리는 자신의 습관을 드러내는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-3:emotion:41"
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "그 잠금함은 803호 전용이 아니었습니다. 전 세입자에게만 한시로 허용됐던 공용 비상물품함이었고, 제가 그걸 관행과 기억으로 전용처럼 밀어붙인 겁니다."
+          ],
+          "privateKnowledge": [
+            "공식 장부가 자신의 기억보다 우선이라는 점을 수용한다.",
+            "나리를 같은 부류로 몰아세운 것도 이 오판 위에 있었다."
+          ],
+          "suppressions": [
+            "상대의 무지 탓만 하고 싶은 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "institution"
+              ],
+              "factText": "잠금함이 803 전용이 아니라 한시 허용된 공용 비상물품함이었다는 점을 시인하는 진술",
+              "slots": {
+                "ledger": {
+                  "exact": "임시사용 승인대장",
+                  "neutral": "관리기록"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-3:admission:50"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "legacy_sentence"
+              ],
+              "factText": "과거 관행과 기억을 전용권처럼 밀어붙인 책임을 인정하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "voice": {
+                  "exact": "윤가영의 음성메시지",
+                  "neutral": "그 음성"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-3:responsibility:51"
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "메모 한 장하고 '803' 스티커가 무슨 공식 허가입니까. 그런 건 개인 흔적이지 관리실 승인 표시가 아니죠."
+          ],
+          "privateKnowledge": [
+            "자신도 처음엔 그 흔적을 803 관련 자리의 관행처럼 받아들였다.",
+            "상대를 몰아붙일 때는 확정적으로 말해 버린다."
+          ],
+          "suppressions": [
+            "자신도 혼동했던 부분",
+            "관리문서를 먼저 보지 않은 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "rule",
+                "counter"
+              ],
+              "factText": "메모와 스티커를 공식 허가가 아닌 개인 흔적으로 보는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-4:rule:0"
+            },
+            {
+              "tags": [
+                "privacy",
+                "institution"
+              ],
+              "factText": "개인 인수인계 흔적과 관리실 승인을 구분해야 한다고 강조하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "marker": {
+                  "exact": "문 안쪽 '803' 스티커",
+                  "neutral": "그 스티커"
+                }
+              },
+              "stanceHints": [
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-4:privacy:1"
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 승인 주체도 기간도 안 적힌 쪽지는 허가서가 아니죠. 그건 상식선 문제입니다."
+          ],
+          "privateKnowledge": [
+            "상식선이라는 말로 상대를 압박하려는 태도가 있다.",
+            "그 상식이 실제 문서 확인을 대신하진 못한다."
+          ],
+          "suppressions": [
+            "문서 확인 없이 상식만 앞세운 점"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "rule",
+                "quote"
+              ],
+              "factText": "승인 주체와 기간이 없는 쪽지는 허가서가 아니라는 논리를 세우는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-4:rule:10"
+            },
+            {
+              "tags": [
+                "institution",
+                "threshold"
+              ],
+              "factText": "공식 허가라면 갖춰야 할 최소 기준을 제시하는 진술",
+              "slots": {
+                "ledger": {
+                  "exact": "임시사용 승인대장",
+                  "neutral": "관리기록"
+                },
+                "exit": {
+                  "exact": "퇴거 반납 공지",
+                  "neutral": "그 공지"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-4:institution:11"
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "그 메모가 허가서가 아니라는 판단은 유지합니다. 다만 저도 장부를 보기 전엔 관행과 허가를 섞어서 말한 부분은 있습니다."
+          ],
+          "privateKnowledge": [
+            "'원래 803이 쓰던 데'라는 표현이 혼동을 키웠다고 안다.",
+            "상대를 향한 단정이 더 세졌다."
+          ],
+          "suppressions": [
+            "자신의 혼동 표현"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "counter",
+                "rule"
+              ],
+              "factText": "메모가 허가서가 아니라는 판단은 유지하는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "counter"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-4:counter:20"
+            },
+            {
+              "tags": [
+                "admission",
+                "relationship"
+              ],
+              "factText": "자신도 관행과 허가를 섞어 말해 오해를 키웠다고 인정하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "person2": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-4:admission:21"
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "결국 문제는 메모가 아니라 관리문서였죠. 저는 그걸 빨리 확인하기보다 상대를 몰아붙이는 쪽으로 가 버렸습니다."
+          ],
+          "privateKnowledge": [
+            "말로 이기려는 태도가 먼저였다.",
+            "관리실 확인이 가장 빠른 길이라는 걸 알고도 감정이 앞섰다."
+          ],
+          "suppressions": [
+            "공격적 태도"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "institution",
+                "admission"
+              ],
+              "factText": "결정적 기준은 메모가 아니라 관리문서였다고 인정하는 진술",
+              "slots": {
+                "ledger": {
+                  "exact": "임시사용 승인대장",
+                  "neutral": "관리기록"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-4:institution:30"
+            },
+            {
+              "tags": [
+                "emotion",
+                "responsibility"
+              ],
+              "factText": "문서 확인보다 상대를 몰아붙인 자신의 태도를 반성하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-4:emotion:31"
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "이런 흔적은 늘 문제를 부릅니다. 그래서 차분히 확인하기보다 '또 시작이네' 하고 세게 나갔습니다."
+          ],
+          "privateKnowledge": [
+            "과거 경험 때문에 침착함이 무너진다.",
+            "자신의 말투가 상대를 더 숨게 만든다는 걸 어렴풋이 안다."
+          ],
+          "suppressions": [
+            "말투의 압박감"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "fear",
+                "legacy_sentence"
+              ],
+              "factText": "비슷한 흔적만 보면 또 문제가 시작된다는 두려움이 앞선다고 털어놓는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-4:fear:40"
+            },
+            {
+              "tags": [
+                "emotion",
+                "relationship"
+              ],
+              "factText": "세게 나간 말투가 상대를 더 숨게 만들 수 있음을 느끼는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-4:emotion:41"
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "그 메모와 '803' 스티커는 공식 허가가 아니었습니다. 다만 저도 장부를 보기 전에는 관행과 전용을 섞어 말했고, 그 탓에 상대 오해를 더 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "상대의 오해와 자신의 과장된 표현이 함께 문제였다고 본다.",
+            "공식 문서 우선 원칙을 받아들인다."
+          ],
+          "suppressions": [
+            "상대만 탓하려는 마음"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "institution"
+              ],
+              "factText": "메모와 스티커가 공식 허가가 아님을 확정하는 진술",
+              "slots": {
+                "marker": {
+                  "exact": "'803 사용' 메모와 '803' 스티커",
+                  "neutral": "그 표시"
+                },
+                "ledger": {
+                  "exact": "임시사용 승인대장",
+                  "neutral": "관리기록"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-4:admission:50"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "relationship"
+              ],
+              "factText": "자신의 혼동된 표현이 상대 오해를 키운 책임도 인정하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-4:responsibility:51"
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "관리실 확인이 원칙인 건 알았지만, 그 사이 비워 두면 또 사적으로 굳을까 봐 내가 먼저 막아 둔 겁니다."
+          ],
+          "privateKnowledge": [
+            "원칙을 알면서도 먼저 잠갔다.",
+            "앱 글도 관리실 답변보다 빨랐다."
+          ],
+          "suppressions": [
+            "공개 글 선행",
+            "자력조치 선행"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "rule",
+                "denial"
+              ],
+              "factText": "관리실 우선 원칙을 알았지만 예외적 선조치가 필요했다고 주장하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                }
+              },
+              "stanceHints": [
+                "deny",
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-5:rule:0"
+            },
+            {
+              "tags": [
+                "fear",
+                "self_justification"
+              ],
+              "factText": "사적 점유가 굳을까 봐 먼저 막았다고 정당화하는 진술",
+              "slots": {
+                "place": {
+                  "exact": "8층 계단실 잠금함",
+                  "neutral": "그 잠금함"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-5:fear:1"
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "문자도 보냈고 관리실에도 갈 생각이었습니다. 다만 답이 오기 전까지는 행동으로 막아야 한다고 판단했어요."
+          ],
+          "privateKnowledge": [
+            "문자와 신고 의사가 있어도 먼저 행동한 사실은 남는다.",
+            "자신의 판단이 원칙보다 앞섰다."
+          ],
+          "suppressions": [
+            "앱 공개 글",
+            "관리실 회신 전 행동"
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "timeline",
+                "rule"
+              ],
+              "factText": "문자와 신고 의사가 있었지만 행동이 먼저 나갔다고 설명하는 진술",
+              "slots": {
+                "text": {
+                  "exact": "'그 잠금함은 관리실 먼저 확인해 주세요'라는 첫 문자",
+                  "neutral": "첫 문자"
+                },
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                }
+              },
+              "stanceHints": [
+                "hedge",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-5:timeline:10"
+            },
+            {
+              "tags": [
+                "self_justification",
+                "threshold"
+              ],
+              "factText": "답변 전까지는 행동으로 막아야 한다고 본 판단 기준을 드러내는 진술",
+              "slots": {
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-5:self_justification:11"
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "관리실 답보다 제 조치가 먼저 간 건 맞습니다. 그때는 공개 글까지 올려야 다른 세대도 경계할 거라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "공개 글이 경계 이상의 압박이라는 걸 안다.",
+            "자신의 판단 과잉을 아직 다 내려놓지 못했다."
+          ],
+          "suppressions": [
+            "상대를 특정한 점"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "timeline"
+              ],
+              "factText": "관리실 답보다 자신의 조치와 공개 글이 먼저였음을 인정하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-5:admission:20"
+            },
+            {
+              "tags": [
+                "motive",
+                "harm"
+              ],
+              "factText": "다른 세대를 경계시키려 공개 글까지 필요하다고 생각했다는 진술",
+              "slots": {
+                "post": {
+                  "exact": "'새로 온 803호' 취지의 단지앱 글",
+                  "neutral": "공개 경고 글"
+                },
+                "place": {
+                  "exact": "8층 비상계단과 복도",
+                  "neutral": "그 공간"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "self_justification"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-5:motive:21"
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "결국 관리실 확인보다 제 판단이 우선한 거죠. 안전 명분이 있었어도 원칙을 제가 먼저 깬 건 부인 못 합니다."
+          ],
+          "privateKnowledge": [
+            "상대와 공유한 첫 원칙을 스스로 어겼다.",
+            "과거 일에 눌려 공개 경고까지 간 점이 부끄럽다."
+          ],
+          "suppressions": [
+            "체면 지키기"
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "factText": "안전 명분과 별개로 관리실 우선 원칙을 자신이 먼저 깼다고 인정하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-5:admission:30"
+            },
+            {
+              "tags": [
+                "shame",
+                "legacy_sentence"
+              ],
+              "factText": "과거 일에 눌려 공개 경고까지 간 점이 부끄럽다고 말하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "윤가영",
+                  "neutral": "그 사람",
+                  "fullName": "윤가영",
+                  "judgeRef": "전 세입자"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "partial",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-5:shame:31"
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "또 방치하면 못 막은 사람이 된다는 생각이 너무 셌습니다. 그래서 관리실 답을 기다리는 평범한 순서를 제가 견디지 못했어요."
+          ],
+          "privateKnowledge": [
+            "두려움이 원칙 준수 능력을 무너뜨렸다.",
+            "자신의 자존심과 강박이 섞였다."
+          ],
+          "suppressions": [
+            "자존심",
+            "상대도 처음 이사 온 사람이라는 점"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "fear",
+                "institution"
+              ],
+              "factText": "방치하면 못 막은 사람이 된다는 두려움이 컸다고 털어놓는 진술",
+              "slots": {
+                "place": {
+                  "exact": "8층 비상계단과 복도",
+                  "neutral": "그 공간"
+                },
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach"
+              ],
+              "id": "neighbor07:b:d-5:fear:40"
+            },
+            {
+              "tags": [
+                "emotion",
+                "rule"
+              ],
+              "factText": "관리실 답을 기다리는 절차를 감정적으로 견디지 못했다고 인정하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "time": {
+                  "exact": "이사 첫날",
+                  "neutral": "그날",
+                  "dateExact": "이사 첫날",
+                  "period": "이사 직후"
+                }
+              },
+              "stanceHints": [
+                "emotional",
+                "partial"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "fact_pursuit"
+              ],
+              "id": "neighbor07:b:d-5:emotion:41"
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "관리실 확인이 먼저라는 걸 알면서도 제가 먼저 잠그고 공개 경고까지 올린 건 사실입니다. 안전을 이유로 했지만, 순서를 깨고 상대를 압박한 책임은 제 몫입니다."
+          ],
+          "privateKnowledge": [
+            "상대도 원칙을 어겼지만 자신의 위반이 별도로 크다는 걸 수용한다.",
+            "공개 경고보다 1:1 통보와 관리실 접수가 먼저였어야 했다고 인정한다."
+          ],
+          "suppressions": [
+            "동률 만들기"
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor07:b:tell:rule_punch",
+            "neighbor07:b:tell:old_case_echo",
+            "neighbor07:b:tell:volume_spike"
+          ],
+          "claimAtoms": [
+            {
+              "tags": [
+                "admission",
+                "rule"
+              ],
+              "factText": "관리실 우선 원칙을 알면서도 먼저 잠그고 공개 글을 올린 사실을 시인하는 진술",
+              "slots": {
+                "management": {
+                  "exact": "관리사무소 확인",
+                  "neutral": "관리실 확인"
+                },
+                "padlock": {
+                  "exact": "성호가 단 자물쇠",
+                  "neutral": "그 자물쇠"
+                },
+                "post": {
+                  "exact": "단지앱 공개 경고 글",
+                  "neutral": "그 글"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "admit"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ],
+              "id": "neighbor07:b:d-5:admission:50"
+            },
+            {
+              "tags": [
+                "responsibility",
+                "harm"
+              ],
+              "factText": "안전 명분으로 상대를 공개 압박한 책임을 인정하는 진술",
+              "slots": {
+                "person": {
+                  "exact": "박나리",
+                  "neutral": "그 사람",
+                  "fullName": "박나리",
+                  "judgeRef": "박나리 씨"
+                },
+                "post": {
+                  "exact": "'새로 온 803호' 취지의 단지앱 글",
+                  "neutral": "공개 경고 글"
+                }
+              },
+              "stanceHints": [
+                "confess",
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ],
+              "id": "neighbor07:b:d-5:responsibility:51"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

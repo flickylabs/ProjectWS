@@ -1,0 +1,582 @@
+export const family11TellsBeats = {
+  "caseId": "family-11",
+  "executableTells": {
+    "a": [
+      {
+        "id": "family11:a:tell:caregiver_rollcall",
+        "appliesWhen": [
+          "lying",
+          "avoiding",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "하원도",
+          "저녁도",
+          "숙제도",
+          "목욕도"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "무단 개입 질문이 나오면 하원, 저녁, 숙제, 목욕을 한꺼번에 나열해 침범을 돌봄 양으로 덮는다."
+      },
+      {
+        "id": "family11:a:tell:tearful_reframe",
+        "appliesWhen": [
+          "emotional",
+          "shame",
+          "hurt"
+        ],
+        "lexicalHooks": [
+          "내가 안 봤으면",
+          "더 큰일",
+          "아이 하나 때문에"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "'내가 안 봤으면 더 큰일'이라고 반복해 개입을 구조처럼 보이게 만든다."
+      },
+      {
+        "id": "family11:a:tell:old_authority_pull",
+        "appliesWhen": [
+          "cornered",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "예전엔",
+          "교사 할 때도",
+          "애들은"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "예전 교사 경력을 끌어와 부모보다 자신이 더 잘 안다고 말한다."
+      }
+    ],
+    "b": [
+      {
+        "id": "family11:b:tell:log_stack",
+        "appliesWhen": [
+          "cornered",
+          "lying",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "로그상",
+          "기록상",
+          "그 다음",
+          "같은 주에"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "시간표와 로그를 연속으로 읽으며 감정 공방을 기록 대조로 바꾼다."
+      },
+      {
+        "id": "family11:b:tell:scope_split",
+        "appliesWhen": [
+          "lying",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "야근 주간만",
+          "그 주에만",
+          "예외적으로"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "태블릿 허용과 늦은 픽업은 '야근 주간만'이라고 좁혀 말한다."
+      },
+      {
+        "id": "family11:b:tell:boundary_hook",
+        "appliesWhen": [
+          "emotional",
+          "cornered",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "허락받았냐",
+          "권한이 있냐",
+          "그건 누가 정하냐"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "on_trigger_only",
+        "originalPattern": "'허락받았냐 안 받았냐'를 되묻고 권한 문제로 다시 묶는다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "family11:beat:a:d-1:deny",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "하원도 하고 저녁도 보고 숙제도 봐 줬는데, 하루 먼저 데려온 걸로 제가 무슨 큰일을 꾸민 사람처럼 말씀하시네요. 클리닉은 알아만 본 거예요.",
+      "behaviorHint": "손가락을 접으며 돌봄 항목을 빠르게 나열하고 마지막 문장에서 억울한 표정을 짓는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-1:hedge",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "담임이 아이 집중 얘길 하니 제가 가만있기가 어려웠어요. 부모가 바로 못 움직일 것 같아서 임시로 챙긴 겁니다.",
+      "behaviorHint": "목소리를 낮추되 시선을 피하고, '임시로'라는 단어에 힘을 준다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-1:partial",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "조기 하원하고 상담 문의까지 한 건 맞아요. 그런데 그걸 평생 제가 결정하겠다는 뜻으로 보시면 억울합니다.",
+      "behaviorHint": "인정하는 대목에서는 짧게 고개를 끄덕이고, 곧바로 손바닥을 펼쳐 선을 긋는다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-1:blame",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "신청서에 제 이름이 들어간 건 맞습니다. 하지만 늘 제가 데려오고 먹이고 씻기니, 그 정도는 해도 되는 줄 착각하게 된 겁니다.",
+      "behaviorHint": "어깨가 내려가다가도 마지막 문장에서 스스로를 변호하듯 가슴을 짚는다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-1:confession",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "제가 먼저 선을 넘었습니다. 도움 준다는 마음을 권한처럼 써 버린 건 제 잘못이에요.",
+      "behaviorHint": "눈가가 젖고 호흡이 짧아지며 마지막 문장을 거의 속삭이듯 내뱉는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-1:evidence_hit",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "하원 로그랑 신청서 원본까지 있으면... 네, 그냥 알아본 수준이라고만 하긴 어렵겠네요.",
+      "behaviorHint": "서류를 보자마자 말을 끊고 입술을 깨문다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "family11:beat:a:d-3:deny",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "담임이 그냥 지나가는 말 한 게 아니에요. 집중이랑 한글, 병원 상담까지 생각해 보라는 뉘앙스가 분명했습니다.",
+      "behaviorHint": "예전 교사였다는 자부심이 묻어나게 턱을 들고 단정적으로 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-3:hedge",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "메시지에 걱정된다는 뜻이 있었으니 제가 서둘러 챙긴 거죠. 어른이면 그 정도는 읽히지 않겠어요?",
+      "behaviorHint": "말끝을 질문처럼 올리며 상대 판단력을 시험하듯 본다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-3:partial",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "제가 보여 드린 캡처가 잘린 건 맞아요. 그래도 담임이 아이 상태를 가볍게 본 건 아니라고 저는 들었습니다.",
+      "behaviorHint": "캡처가 잘렸다는 대목에서 시선을 내렸다가 '저는'에서 다시 힘을 준다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-3:blame",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "원문에 수면이랑 등원 리듬 얘기가 있었던 것도 압니다. 하지만 아이가 불안해 보이니 저는 더 급하게 들을 수밖에 없었어요.",
+      "behaviorHint": "손을 모았다가 펴며 자신의 해석이 과했지만 사정이 있었다는 식으로 설명한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-3:confession",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "결국 담임 말보다 제 불안을 더 믿은 거예요. 잘린 메시지로 제 개입을 정당화한 건 맞습니다.",
+      "behaviorHint": "숨을 길게 내쉰 뒤 자책 섞인 어조로 끊어 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-3:evidence_hit",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "원본 대화에 생활리듬부터 맞추라는 문장이 그대로 있네요... 제가 보여 준 캡처만 보면 뜻이 달라 보였겠어요.",
+      "behaviorHint": "원문을 확인하는 순간 손가락이 멈추고 얼굴이 굳는다.",
+      "applicableStates": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-1"
+    },
+    {
+      "id": "family11:beat:a:d-4:deny",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "그 밤은 그냥 열이 너무 올라서 다들 정신없었던 거예요. 약 때문에 응급실에 간 것처럼 몰아가진 말아 주세요.",
+      "behaviorHint": "의자에 몸을 뒤로 빼며 방어적으로 팔짱을 끼려고 한다가 멈춘다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-4:hedge",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "집에 있던 해열제를 챙긴 기억은 나는데, 위험한 걸 먹였다는 기억은 없습니다. 오래전 밤이라 저도 다 또렷하진 않아요.",
+      "behaviorHint": "문장 사이에 긴 숨을 끼워 넣고 '기억'이라는 말을 반복한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-4:partial",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "응급실 기록에 간격이 남아 있다면 제가 급해서 연달아 준 건 맞겠죠. 그땐 열부터 내려야 한다는 생각뿐이었어요.",
+      "behaviorHint": "기록을 인정하면서도 두 손을 모아 애원하듯 설명한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-4:blame",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "성인용 시럽을 산 것도 사실입니다. 아이가 너무 뜨거우니 뭐라도 해야 할 것 같아 제멋대로 판단해 버렸어요.",
+      "behaviorHint": "수치심으로 고개를 숙인 채 마지막 문장을 빠르게 흘린다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-4:confession",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "그 밤은 단순 고열이 아니었습니다. 제가 성인용 약과 해열제를 겹쳐 준 실수를, 나중에 창피해서 줄여 말한 겁니다.",
+      "behaviorHint": "입술이 떨리고 말 끝에 눈물을 참듯 잠깐 멈춘다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:a:d-4:evidence_hit",
+      "caseId": "family-11",
+      "party": "a",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "트리아지 메모에 그 내용이 남아 있군요... 그럼 제가 '그냥 고열이었다'고만 말해 온 건 버티기였네요.",
+      "behaviorHint": "의무기록을 보자마자 목이 메고 시선을 완전히 내린다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "family11:beat:b:d-2:deny",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "기록상 예외는 예외였습니다. 기본 루틴은 유지됐고, 엄마에게 구조적으로 의존했다고 보긴 어렵습니다.",
+      "behaviorHint": "마치 보고서를 읽듯 문장을 짧게 끊고 감정을 최대한 배제한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-2:hedge",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "야근 주간만, 정말 그 주간만 흔들렸습니다. 그걸 전체 양육 원칙 붕괴로 일반화하는 건 과합니다.",
+      "behaviorHint": "검지로 책상을 두 번 두드리며 '그 주간만'을 반복한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-2:partial",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "긴급 하원 요청이 여러 번 있었던 건 맞습니다. 태블릿 저녁도 있었고요. 다만 그때는 버티는 방식이 그것뿐이었습니다.",
+      "behaviorHint": "사실을 순서대로 나열하다가 마지막 문장에서 잠깐 시선이 흔들린다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-2:blame",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "제가 원칙을 말하면서도 실제론 엄마 돌봄에 기대 버린 건 맞습니다. 회사 일정이 무너지는데도 예외 기준을 다시 쓰지 않은 제 책임이죠.",
+      "behaviorHint": "스스로에게 메모하듯 낮은 톤으로 책임 항목을 정리한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-2:confession",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "좋은 엄마처럼 보이고 싶어서 '루틴은 지킨다'는 말에 매달렸습니다. 실제로는 그 공백을 엄마 돌봄으로 메웠고요.",
+      "behaviorHint": "차갑던 표정이 풀리며 자조적으로 웃고 바로 굳어진다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-2:evidence_hit",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "캘린더, 태블릿 로그, 긴급돌봄 메시지가 같은 주간에 겹치네요. 예외라고만 부르기엔 반복이 분명합니다.",
+      "behaviorHint": "자료를 넘기며 스스로 반박 불가능한 순서를 읽어 내려간다.",
+      "applicableStates": [
+        "S1",
+        "S2"
+      ],
+      "afterEvidence": "e-3"
+    },
+    {
+      "id": "family11:beat:b:d-3:deny",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "저도 그 캡처를 보고 상황이 심각하다고 이해했습니다. 엄마만 혼자 과장했다고 보긴 어렵습니다.",
+      "behaviorHint": "냉정하게 문장을 배치하되 마지막에 미세하게 이를 악문다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-3:hedge",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "교사가 루틴을 먼저 말했더라도, 발달 우려가 느껴졌던 건 사실입니다. 그래서 저는 엄마 개입을 더 위험하게 본 겁니다.",
+      "behaviorHint": "한 손으로 자료를 정리하며 논리적 연결처럼 보이게 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-3:partial",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "원문 전체를 보니 즉시 검사나 강한 학습 권고까지는 아니었습니다. 그런데도 저는 그 잘린 인상을 바로잡지 않았습니다.",
+      "behaviorHint": "첫 문장은 또박또박 읽고, 두 번째 문장에서 짧게 숨을 멈춘다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-3:blame",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "상담일지 기준 실제 방향은 수면·하원 루틴과 부모-교사 소통 정리였습니다. 저도 그 과장된 해석이 제 분노에 유리하다고 그냥 둔 거고요.",
+      "behaviorHint": "정리된 결론을 내리듯 말하지만 마지막 한 문장에서 표정이 딱딱해진다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-3:confession",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "결국 저도 아이 발달 얘기에 겁을 먹고 더 단정적으로 말했습니다. 엄마를 막아야 한다는 마음이 왜곡을 방치하게 했어요.",
+      "behaviorHint": "책상 위 손을 꼭 쥔 채 감정을 눌러 설명한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-3:evidence_hit",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "센터 기록까지 붙이면 해석이 끝납니다. 강한 학습 권고가 아니라 생활리듬 정리였네요. 저도 정정하지 않았습니다.",
+      "behaviorHint": "e-6 문구를 짚어 읽다가 스스로의 침묵을 인정하며 말속도가 느려진다.",
+      "applicableStates": [
+        "S2",
+        "S3"
+      ],
+      "afterEvidence": "e-6"
+    },
+    {
+      "id": "family11:beat:b:d-5:deny",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "동의 규칙은 명확했습니다. 저는 그 규칙을 집행하려고 엄마 개입을 막았을 뿐이고, 제 쪽이 규칙 위반이라고 보긴 어렵습니다.",
+      "behaviorHint": "판단문을 읽듯 낮고 단단한 톤으로 결론부터 제시한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-5:hedge",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "픽업권을 끊은 건 아이 안전 때문이었고 다른 선택이 없었습니다. 메시지 공유도 상황 설명 차원이었고요.",
+      "behaviorHint": "차갑게 말하지만 손끝이 종이를 계속 정렬하며 긴장을 드러낸다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-5:partial",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "상의보다 통보가 쉬워서 제가 먼저 권한을 끊었습니다. 교사 메시지를 친척에게 돌린 것도 제 편을 만들고 싶어서였고요.",
+      "behaviorHint": "각 사실을 두 항목처럼 나열한 뒤 마지막에 시선을 내린다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-5:blame",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "센터 동의서를 다시 보니 저도 절차를 지키지 않았습니다. 엄마를 막는 방식이 곧 규칙 준수라고 착각한 거죠.",
+      "behaviorHint": "문서를 근거로 자기 논리를 해체하듯 건조하게 말한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-5:confession",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "엄마의 직접 개입이 문제였던 건 맞습니다. 그런데 저도 설명 대신 통보를 택하고 메시지를 유포하면서 같은 규칙을 다른 방식으로 무너뜨렸습니다.",
+      "behaviorHint": "목소리는 낮지만 끝으로 갈수록 감정이 새어 나오며 턱이 굳는다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "family11:beat:b:d-5:evidence_hit",
+      "caseId": "family-11",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "동의서 문구가 명확하네요. '부모 동의 후'라는 규칙을 저는 보호 조치라고 부르며 절차 없이 집행했습니다.",
+      "behaviorHint": "서명란을 보는 순간 한 박자 쉬고, 자신에게 불리한 해석을 먼저 꺼낸다.",
+      "applicableStates": [
+        "S3",
+        "S4"
+      ],
+      "afterEvidence": "e-6"
+    }
+  ]
+}

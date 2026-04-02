@@ -1,0 +1,583 @@
+export const spouse06TellsBeats = {
+  "caseId": "spouse-06",
+  "executableTells": {
+    "a": [
+      {
+        "id": "spouse06:a:tell:metaphor_shield",
+        "appliesWhen": [
+          "lying",
+          "cornered",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "상징",
+          "분위기",
+          "화자",
+          "장면"
+        ],
+        "sentenceShape": "enumeration",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "구체 질문이 들어오면 '그 셔츠는 상징이었어'처럼 비유로 버티며 현실 지시 대상을 흐린다."
+      },
+      {
+        "id": "spouse06:a:tell:audience_minimization",
+        "appliesWhen": [
+          "shame",
+          "defensive",
+          "lying"
+        ],
+        "lexicalHooks": [
+          "몇 명 안",
+          "친한 사람만",
+          "좁은 범위",
+          "거의 안"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "'몇 명 안 봤어', '친한 사람만 봤어'라며 공개 범위를 실제보다 좁게 말한다."
+      },
+      {
+        "id": "spouse06:a:tell:tag_revision",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "원래",
+          "해시태그",
+          "문맥",
+          "붙어 있었"
+        ],
+        "sentenceShape": "echo_repeat",
+        "cadence": "on_trigger_only",
+        "originalPattern": "삭제 후에는 '원래 해시태그도 있었어'라며 사후 맥락을 덧붙여 의도를 순화한다."
+      }
+    ],
+    "b": [
+      {
+        "id": "spouse06:b:tell:damage_tally",
+        "appliesWhen": [
+          "lying",
+          "hurt",
+          "defensive"
+        ],
+        "lexicalHooks": [
+          "몇 명",
+          "팀 전체",
+          "승진",
+          "리스크"
+        ],
+        "sentenceShape": "number_first",
+        "cadence": "once_every_2_turns",
+        "originalPattern": "피해를 설명할 때 실제보다 본 사람 수와 전파 범위를 더 크게 혹은 들쭉날쭉하게 말한다."
+      },
+      {
+        "id": "spouse06:b:tell:intent_lock",
+        "appliesWhen": [
+          "hurt",
+          "cornered",
+          "avoiding"
+        ],
+        "lexicalHooks": [
+          "그러니까",
+          "결국",
+          "날 겨냥",
+          "회사 얘기"
+        ],
+        "sentenceShape": "question_end",
+        "cadence": "max_once_per_turn",
+        "originalPattern": "'그러니까 날 겨냥한 거잖아'라고 의도를 먼저 잠가 버린다."
+      },
+      {
+        "id": "spouse06:b:tell:authority_frame",
+        "appliesWhen": [
+          "cornered",
+          "defensive",
+          "shame"
+        ],
+        "lexicalHooks": [
+          "팀장 입장",
+          "선조치",
+          "역할상",
+          "정리해야"
+        ],
+        "sentenceShape": "self_reference",
+        "cadence": "on_trigger_only",
+        "originalPattern": "자신의 확대 대응을 지적받으면 '팀장이라 선조치가 필요했어'로 정당화한다."
+      }
+    ]
+  },
+  "beatScripts": [
+    {
+      "id": "spouse06:beat:a:d-1:deny",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "deny",
+      "line": "그 장면은 누굴 찌르려던 게 아니라 분위기를 붙잡아 둔 문장이었어요. 현실 인물로 못 박는 건 너무 빨라요.",
+      "behaviorHint": "시선을 비껴 두고 손끝으로 사진 구도를 그리듯 설명한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-1:hedge",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "hedge",
+      "line": "실제 소품이 겹쳐 보이니 그렇게 읽힐 여지는 있었겠죠. 그래도 제 머릿속에선 여전히 픽션 쪽이 더 컸어요.",
+      "behaviorHint": "말끝을 흐리며 '여지'라는 표현을 반복한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-1:partial",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "partial",
+      "line": "셔츠랑 주차권, 배지가 한 화면에 있으면 우람 씨를 떠올릴 수 있다는 건 인정해요. 그 지점을 제가 너무 안일하게 봤어요.",
+      "behaviorHint": "고개를 한번 끄덕인 뒤 빠르게 다음 문장으로 넘어간다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-1:blame",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "blame",
+      "line": "다만 크롭된 캡처만 돌면 원래 붙어 있던 맥락이 싹 사라져요. 의도보다 더 독하게 보이게 만든 건 그 유통 방식이었어요.",
+      "behaviorHint": "손바닥을 펼쳐 '잘려 나간 화면'을 강조한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-1:confession",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "confession",
+      "line": "직접 폭로하려던 건 아니었어요. 그런데 남편 물건을 가져다 쓰고 태그를 안 보이게 만든 순간, 제가 경계를 흐린 건 맞아요.",
+      "behaviorHint": "숨을 길게 내쉰 뒤 시선을 내려 책임을 받아들인다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-1:evidence_hit",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-1",
+      "beatType": "evidence_hit",
+      "line": "예약본이랑 원본 사진까지 같이 놓고 보니 더는 비유만으로 버티기 어렵네요. 창작 의도는 있었지만 현실 단서가 너무 선명했어요.",
+      "behaviorHint": "잠깐 말을 멈춘 뒤 입술을 깨문다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-2"
+    },
+    {
+      "id": "spouse06:beat:a:d-2:deny",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "deny",
+      "line": "친한 친구는 거의 북클럽 사람들이라고 믿고 있었어요. 회사 사람이 아직 남아 있을 거라고는 정말 생각 못 했어요.",
+      "behaviorHint": "두 손을 모아 좁은 범위를 가리키듯 말한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-2:hedge",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "hedge",
+      "line": "오래된 추가 인원까지 하나씩 재점검하진 못했어요. 몇 명 안 보는 범위라는 안심이 너무 컸던 것 같아요.",
+      "behaviorHint": "작게 한숨 쉬며 숫자를 작게 줄여 말한다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-2:partial",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "partial",
+      "line": "조회 로그를 보니 김태훈 씨가 실제로 남아 있었더라고요. 목록 관리가 느슨했던 건 부정 못 해요.",
+      "behaviorHint": "휴대폰 화면을 본 사람처럼 시선을 아래로 떨군다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-2:blame",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "blame",
+      "line": "그래도 그 목록은 북클럽이랑 개인 지인이 섞인 채 오래 굴러왔어요. 둘 다 알고도 정리 얘길 미룬 부분은 있었죠.",
+      "behaviorHint": "어깨를 좁게 움츠리며 책임을 분산시키려 한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-2:confession",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "confession",
+      "line": "결국 제가 친한 친구 범위를 제대로 관리하지 않았어요. 사적 공간이라는 믿음에 기대서 확인을 게을리한 건 제 책임이에요.",
+      "behaviorHint": "입술을 다문 채 고개를 끄덕인다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-2:evidence_hit",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-2",
+      "beatType": "evidence_hit",
+      "line": "목록 export랑 조회 로그가 같이 나오니 '몇 명 안 봤다'는 말은 더 못 하겠네요. 제가 범위를 믿은 만큼 실제 점검은 안 했어요.",
+      "behaviorHint": "손가락 끝으로 탁자를 두드리다 멈춘다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-3"
+    },
+    {
+      "id": "spouse06:beat:a:d-5:deny",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "처음엔 이 일이 커진 핵심이 우람 씨의 확대 해명이라고만 생각했어요. 제 글 한 장이 이렇게까지 갈 줄은 몰랐고요.",
+      "behaviorHint": "상대를 보지 않은 채 문장 끝을 단호하게 끊는다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-5:hedge",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "제 문장과 소품이 오해의 입구를 만들었다는 건 부인 못 해요. 다만 그 뒤에 붙은 해석들이 훨씬 빨랐어요.",
+      "behaviorHint": "문장 사이사이에 짧은 멈춤을 넣는다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-5:partial",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "친한 친구 범위 관리 실패와 실제 소품 사용이 첫 단추를 잘못 끼운 건 맞아요. 거기서 이미 오해가 시작됐죠.",
+      "behaviorHint": "체념한 듯 어깨를 내리며 말한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-5:blame",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "그 다음부턴 김태훈 씨의 확인, 우람 씨의 선제 해명, 회사 분위기가 차례로 붙었어요. 한 사람 악의보다 연쇄가 더 컸다고 봐요.",
+      "behaviorHint": "손가락으로 순서를 세며 원인을 나열한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-5:confession",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "지금은 알아요. 제 게시물 경계 실패와 남편의 과잉 대응이 이어지며 공유 오해가 굳어졌다는 걸요.",
+      "behaviorHint": "힘이 빠진 목소리로 문장을 천천히 마무리한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:a:d-5:evidence_hit",
+      "caseId": "spouse-06",
+      "party": "a",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "증거를 순서대로 놓고 보니 누가 한 번에 망친 사건은 아니네요. 제 게시물, 혼재된 목록, 해명문이 서로를 밀어 올렸어요.",
+      "behaviorHint": "증거 순서를 눈으로 좇다가 입술을 깨문다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "spouse06:beat:b:d-3:deny",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "deny",
+      "line": "김태훈이 사적인 캡처를 회사 선임에게 넘긴 순간 이미 선을 넘은 겁니다. 저는 그걸 악의 없는 행동으로 보기 어렵습니다.",
+      "behaviorHint": "턱을 들고 결론부터 단정한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-3:hedge",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "hedge",
+      "line": "질문형 문장이었다고 해도 결과는 같았어요. 제 사생활이 업무 대화로 이동한 이상 의도는 좋게 보기 힘들었습니다.",
+      "behaviorHint": "손가락으로 탁자를 짧게 두 번 두드린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-3:partial",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "partial",
+      "line": "원본 대화를 보니 첫 반응이 공개 폭로라기보다 확인 질문에 가까웠다는 건 인정합니다. 제가 그 부분은 너무 한쪽으로 읽었네요.",
+      "behaviorHint": "시선을 잠깐 옆으로 돌린 뒤 인정한다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-3:blame",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "blame",
+      "line": "그래도 확인을 하려면 당사자에게 물을 일이지 팀 선임에게 캡처를 붙일 일은 아니었죠. 그 선택이 제 체면을 깎았습니다.",
+      "behaviorHint": "입매를 굳힌 채 단어를 또렷하게 끊어 말한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-3:confession",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "confession",
+      "line": "지금 보면 김태훈의 첫 행동은 오해 기반 확인 질문에 더 가까웠습니다. 저는 제 망신을 한 사람 악의로 정리하고 싶어서 더 세게 몰았어요.",
+      "behaviorHint": "짧게 고개를 숙였다가 다시 들며 말한다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-3:evidence_hit",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-3",
+      "beatType": "evidence_hit",
+      "line": "이 대화 원본이면 부정은 못 하겠네요. 시작은 폭로보다 확인에 가까웠고, 제가 악의를 너무 빨리 확정했습니다.",
+      "behaviorHint": "증거를 보자마자 숨을 짧게 들이쉰다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-4"
+    },
+    {
+      "id": "spouse06:beat:b:d-4:deny",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "deny",
+      "line": "그날은 팀장으로서 손실 범위를 먼저 계산해야 했습니다. 바로 해명문을 올린 건 성급함이 아니라 방어 조치였어요.",
+      "behaviorHint": "손을 모아 숫자를 세듯 피해 범위를 가늠한다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-4:hedge",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "hedge",
+      "line": "서희에게 먼저 묻지 못한 건 아쉽지만, 팀 안에서 오해가 돌 조짐이 보였습니다. 역할상 선조치가 필요하다고 판단했습니다.",
+      "behaviorHint": "말하면서 '팀장 입장'이라는 표현에 힘을 준다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-4:partial",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "partial",
+      "line": "기록상 제가 배우자 확인보다 팀채널과 HR을 먼저 택한 건 인정합니다. 순서가 앞섰다는 점은 부인할 수 없어요.",
+      "behaviorHint": "입술을 다문 채 손을 턱 아래에 가져간다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-4:blame",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "blame",
+      "line": "다만 승진 심사 직전이었고, 숙박비나 외근비 얘기로 번지면 팀 전체 신뢰까지 건드릴 수 있었어요. 저는 그 압박 아래서 역할을 우선했습니다.",
+      "behaviorHint": "등을 곧게 세우고 조직 논리를 차분히 내세운다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-4:confession",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "confession",
+      "line": "결과적으로 제 해명문은 성급했습니다. 팀장 역할을 방패로 삼아 사실 확인보다 속도를 택했고, 그게 소문 범위를 넓혔습니다.",
+      "behaviorHint": "어깨 힘을 빼고 목소리를 낮춘다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-4:evidence_hit",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-4",
+      "beatType": "evidence_hit",
+      "line": "이 시각 기록이면 변명하기 어렵네요. 제가 문자보다 먼저 해명문을 올렸고, 그 판단이 사건을 더 크게 만들었습니다.",
+      "behaviorHint": "증거를 보는 동안 입술을 굳게 다문다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-5"
+    },
+    {
+      "id": "spouse06:beat:b:d-5:deny",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "deny",
+      "line": "처음엔 원인이 거의 전부 그 스토리라고 봤습니다. 저런 조합이면 회사 리스크로 읽히는 속도가 너무 빨라요.",
+      "behaviorHint": "결론을 먼저 던지고 손가락으로 범위를 자른다.",
+      "applicableStates": [
+        "S0"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-5:hedge",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "hedge",
+      "line": "다만 제가 그 화면을 바로 저격으로 확정한 것도 연쇄를 키웠다는 건 인정합니다. 제 해석이 너무 앞섰어요.",
+      "behaviorHint": "문장 첫머리는 단단하게, 끝은 낮게 떨어뜨린다.",
+      "applicableStates": [
+        "S1"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-5:partial",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "partial",
+      "line": "승진 면담 직전 불안이 커서 저는 가장 불리한 의미로 읽었습니다. 그 조급함이 사실 확인보다 먼저 갔습니다.",
+      "behaviorHint": "손으로 목덜미를 한번 쓸어내린다.",
+      "applicableStates": [
+        "S2"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-5:blame",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "blame",
+      "line": "거기에 김태훈의 확인 메시지와 제 공개 해명이 차례로 붙으면서 개인 오해가 조직 사건으로 부풀었죠. 한쪽 잘못만으로 설명되진 않습니다.",
+      "behaviorHint": "원인들을 순서대로 짚으며 말한다.",
+      "applicableStates": [
+        "S3"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-5:confession",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "confession",
+      "line": "이번 갈등은 서희의 모호한 게시물, 제 과잉 방어, 회사 안 오해가 이어진 공유 오해의 연쇄였습니다. 저는 그중 제 단계의 책임을 인정합니다.",
+      "behaviorHint": "시선을 정면으로 두고 짧게 숨을 고른다.",
+      "applicableStates": [
+        "S5"
+      ],
+      "afterEvidence": null
+    },
+    {
+      "id": "spouse06:beat:b:d-5:evidence_hit",
+      "caseId": "spouse-06",
+      "party": "b",
+      "disputeId": "d-5",
+      "beatType": "evidence_hit",
+      "line": "증거를 다 이어 놓고 보니 누군가의 악의 하나로 밀 수 없겠군요. 제 해석과 해명문도 연쇄의 큰 축이었습니다.",
+      "behaviorHint": "말을 멈춘 채 증거 순서를 다시 훑는다.",
+      "applicableStates": [
+        "S4"
+      ],
+      "afterEvidence": "e-2"
+    }
+  ]
+} as const;
+
+export default spouse06TellsBeats;

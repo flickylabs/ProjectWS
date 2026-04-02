@@ -1,0 +1,3468 @@
+export const neighbor01V2Atoms = {
+  "caseId": "neighbor-01",
+  "claimPolicies": {
+    "a": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "저는 상대 현관을 찍으려던 게 아니라 7월 12일 새벽에 물이 떨어지는지 잠깐 확인했을 뿐입니다."
+          ],
+          "privateKnowledge": [
+            "휴대폰 화면에 이주연 현관문과 제습기 위치가 함께 들어갔다는 걸 안다."
+          ],
+          "suppressions": [
+            "휴대폰을 두 차례 세워 둔 채 확인했다는 횟수는 감춘다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack",
+            "neighbor01:a:tell:yes_no_press"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-1:act:0",
+              "factText": "저는 상대 현관을 찍으려던 게 아니라 7월 12일 새벽에 물이 떨어지는지 잠깐 확인했을 뿐입니다.",
+              "tags": [
+                "act",
+                "denial",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 무렵",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "복도 전체를 오래 찍은 건 아니고 43초 정도 세워 둔 짧은 확인 영상이었습니다."
+          ],
+          "privateKnowledge": [
+            "촬영 전후 5분은 제출하지 않았다는 걸 안다."
+          ],
+          "suppressions": [
+            "촬영 시작점과 종료점을 임의로 골랐다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack",
+            "neighbor01:a:tell:yes_no_press"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-1:evidence:0",
+              "factText": "복도 전체를 오래 찍은 건 아니고 43초 정도 세워 둔 짧은 확인 영상이었습니다.",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "privacy"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 무렵",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "현관 쪽이 식별되게 찍힌 건 맞지만 누수와 소음 원인을 확인하려던 목적이 먼저였습니다."
+          ],
+          "privateKnowledge": [
+            "공용복도 촬영이 사생활 문제를 만들 수 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "관리사무소 입회 없이 개인 촬영부터 한 판단을 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack",
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-1:admission:0",
+              "factText": "현관 쪽이 식별되게 찍힌 건 맞지만 누수와 소음 원인을 확인하려던 목적이 먼저였습니다.",
+              "tags": [
+                "admission",
+                "privacy",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 무렵",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "복도에 제습기와 통이 놓여 있었으니 제 쪽에선 그 장면을 보고 원인을 확인할 수밖에 없다고 여겼습니다."
+          ],
+          "privateKnowledge": [
+            "장면을 보고 원인까지 단정한 건 비약일 수 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "영상만으로 원인을 특정할 수 없다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack",
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-1:responsibility:0",
+              "factText": "복도에 제습기와 통이 놓여 있었으니 제 쪽에선 그 장면을 보고 원인을 확인할 수밖에 없다고 여겼습니다.",
+              "tags": [
+                "responsibility",
+                "self_justification",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 무렵",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "딸이 깨고 천장에서 물이 떨어지던 밤이라 겁이 나서 확인 방식의 선을 넘었습니다."
+          ],
+          "privateKnowledge": [
+            "분노보다 불안이 더 컸다는 걸 스스로 안다."
+          ],
+          "suppressions": [
+            "관리실에 먼저 맡길 수 있었다는 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-1:fear:0",
+              "factText": "딸이 깨고 천장에서 물이 떨어지던 밤이라 겁이 나서 확인 방식의 선을 넘었습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 무렵",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "저는 이주연 씨 현관이 보이도록 휴대폰을 두 차례 세워 촬영했고, 그건 사생활 경계를 넘은 행동이었습니다."
+          ],
+          "privateKnowledge": [
+            "삭제 요구를 받고도 바로 인정하지 못했다는 걸 안다."
+          ],
+          "suppressions": [
+            "단체방 항의와 촬영을 함께 키운 점은 아직 덜 말한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-1:admission:1",
+              "factText": "저는 이주연 씨 현관이 보이도록 휴대폰을 두 차례 세워 촬영했고, 그건 사생활 경계를 넘은 행동이었습니다.",
+              "tags": [
+                "admission",
+                "privacy",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 무렵",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "이주연 씨는 제습기와 물받이 통을 공용복도에 둔 채 아래층 설명도 제때 하지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "이 쟁점을 더 세게 밀면 내 촬영 문제를 상대적으로 가릴 수 있다고 느낀다."
+          ],
+          "suppressions": [
+            "긴급 대응일 수 있다는 맥락은 앞에 내세우지 않는다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack",
+            "neighbor01:a:tell:yes_no_press"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-2:act:0",
+              "factText": "이주연 씨는 제습기와 물받이 통을 공용복도에 둔 채 아래층 설명도 제때 하지 않았습니다.",
+              "tags": [
+                "act",
+                "responsibility",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "잠깐이라는 말로는 안 되고, 이틀 가까이 복도에 물건이 남아 있었던 게 핵심입니다."
+          ],
+          "privateKnowledge": [
+            "정확한 철거 시각은 내가 본 범위 안에서만 안다."
+          ],
+          "suppressions": [
+            "직접 본 시간대가 끊겨 있다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-2:threshold:0",
+              "factText": "잠깐이라는 말로는 안 되고, 이틀 가까이 복도에 물건이 남아 있었던 게 핵심입니다.",
+              "tags": [
+                "threshold",
+                "timeline",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "긴급 대응 사정은 있겠지만 제습기와 통, 젖은 발판이 남아 있었던 사실 자체는 부정하기 어렵습니다."
+          ],
+          "privateKnowledge": [
+            "누수 원인과 적치 문제는 별개임을 안다."
+          ],
+          "suppressions": [
+            "복구 과정의 불가피성은 크게 말하지 않는다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-2:context:0",
+              "factText": "긴급 대응 사정은 있겠지만 제습기와 통, 젖은 발판이 남아 있었던 사실 자체는 부정하기 어렵습니다.",
+              "tags": [
+                "context",
+                "act",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "관리사무소에는 먼저 문의해 놓고 저한텐 31시간 뒤에야 문자를 보낸 점이 더 문제였습니다."
+          ],
+          "privateKnowledge": [
+            "배제감이 분노를 키웠다는 걸 안다."
+          ],
+          "suppressions": [
+            "문자 한 통만 먼저 왔어도 반응이 덜 격했을 가능성은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:yes_no_press",
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-2:timeline:0",
+              "factText": "관리사무소에는 먼저 문의해 놓고 저한텐 31시간 뒤에야 문자를 보낸 점이 더 문제였습니다.",
+              "tags": [
+                "timeline",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "문 앞 통과 젖은 발판을 보며 또 숨기는구나 싶어서 밤마다 집이 불편했습니다."
+          ],
+          "privateKnowledge": [
+            "실제 복도 폭보다 내 감정이 더 크게 기억된다는 걸 안다."
+          ],
+          "suppressions": [
+            "불안이 판단을 부풀린 부분은 아직 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-2:emotion:0",
+              "factText": "문 앞 통과 젖은 발판을 보며 또 숨기는구나 싶어서 밤마다 집이 불편했습니다.",
+              "tags": [
+                "emotion",
+                "harm",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "공용복도 적치와 늦은 공지는 사실이고, 그 부분은 이주연 씨가 분명히 책임져야 한다고 봅니다."
+          ],
+          "privateKnowledge": [
+            "그와 별개로 내가 누수 원인을 단정한 건 오류였다는 걸 안다."
+          ],
+          "suppressions": [
+            "내 잘못을 이 쟁점으로 덮고 싶은 마음은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-2:responsibility:0",
+              "factText": "공용복도 적치와 늦은 공지는 사실이고, 그 부분은 이주연 씨가 분명히 책임져야 한다고 봅니다.",
+              "tags": [
+                "responsibility",
+                "admission",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "admission"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "제 천장에서 떨어진 물과 윗집 문 앞의 물받이 통을 보면 직접 원인은 주연 세대라고 볼 수밖에 없었습니다."
+          ],
+          "privateKnowledge": [
+            "공용부 하자 가능성 공지를 예전에 본 적이 있다는 걸 기억한다."
+          ],
+          "suppressions": [
+            "외벽 실리콘 공지를 떠올렸다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack",
+            "neighbor01:a:tell:yes_no_press"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-3:evidence:0",
+              "factText": "제 천장에서 떨어진 물과 윗집 문 앞의 물받이 통을 보면 직접 원인은 주연 세대라고 볼 수밖에 없었습니다.",
+              "tags": [
+                "evidence",
+                "denial",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "적어도 당시 제 눈에는 윗집 내부 물이 넘쳐 아래로 번진 상황처럼 보였습니다."
+          ],
+          "privateKnowledge": [
+            "영상과 장면만으로 단정한 셈이었다는 걸 안다."
+          ],
+          "suppressions": [
+            "점검 전 추정이었다는 점을 흐린다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-3:uncertainty:0",
+              "factText": "적어도 당시 제 눈에는 윗집 내부 물이 넘쳐 아래로 번진 상황처럼 보였습니다.",
+              "tags": [
+                "uncertainty",
+                "counter",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "관리실 기록이 나오고 보니 주연 세대만 직접 원인이라고 단정한 근거는 약했습니다."
+          ],
+          "privateKnowledge": [
+            "내가 너무 빨리 범인을 정하고 싶어 했다는 걸 안다."
+          ],
+          "suppressions": [
+            "보고서 전에도 확신이 과했다는 점은 덜 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-3:admission:0",
+              "factText": "관리실 기록이 나오고 보니 주연 세대만 직접 원인이라고 단정한 근거는 약했습니다.",
+              "tags": [
+                "admission",
+                "evidence",
+                "uncertainty"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "다만 그날 복도에 남은 흔적들이 있었으니 제 입장에선 그렇게 연결할 수밖에 없었다고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "관리실 확인 전까진 근거가 불충분했다는 걸 안다."
+          ],
+          "suppressions": [
+            "내 화법이 상대를 몰아세웠다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack",
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-3:context:0",
+              "factText": "다만 그날 복도에 남은 흔적들이 있었으니 제 입장에선 그렇게 연결할 수밖에 없었다고 생각했습니다.",
+              "tags": [
+                "context",
+                "self_justification",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "천장 물자국을 보면서 누군가를 바로 특정하지 않으면 피해가 계속될 것 같아 더 집착했습니다."
+          ],
+          "privateKnowledge": [
+            "가족 안전 불안이 과열의 뿌리였다는 걸 안다."
+          ],
+          "suppressions": [
+            "확인보다 책임 추궁이 먼저였다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-3:fear:0",
+              "factText": "천장 물자국을 보면서 누군가를 바로 특정하지 않으면 피해가 계속될 것 같아 더 집착했습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "직접 원인은 이주연 씨 세대 배수가 아니라 장마로 막힌 공용 우수관과 외벽 실리콘 틈이었습니다."
+          ],
+          "privateKnowledge": [
+            "내가 잘못 짚은 만큼 사과와 정정이 필요하다는 걸 안다."
+          ],
+          "suppressions": [
+            "단체방 글이 오해를 확정처럼 퍼뜨린 영향은 아직 덜 인정한다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-3:admission:1",
+              "factText": "직접 원인은 이주연 씨 세대 배수가 아니라 장마로 막힌 공용 우수관과 외벽 실리콘 틈이었습니다.",
+              "tags": [
+                "admission",
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "7월 12일 새벽 그 둔탁한 소리는 제 귀엔 분명 발망치처럼 들렸습니다."
+          ],
+          "privateKnowledge": [
+            "제습기 진동만으로도 둔탁음이 날 수 있다는 건 확신 못 한다."
+          ],
+          "suppressions": [
+            "기사 출입 가능성을 그때 확인하지 않았다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack",
+            "neighbor01:a:tell:yes_no_press"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-4:context:0",
+              "factText": "7월 12일 새벽 그 둔탁한 소리는 제 귀엔 분명 발망치처럼 들렸습니다.",
+              "tags": [
+                "context",
+                "quote",
+                "denial"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 전후",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "23시 58분 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "제습기 하나 소리라기엔 반복이 커서, 저는 위에서 일부러 구르는 줄 알았습니다."
+          ],
+          "privateKnowledge": [
+            "소리와 감정이 섞여 기억이 과장됐을 수 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "객관 측정 없이 체감만으로 단정했다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-4:uncertainty:0",
+              "factText": "제습기 하나 소리라기엔 반복이 커서, 저는 위에서 일부러 구르는 줄 알았습니다.",
+              "tags": [
+                "uncertainty",
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 전후",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "23시 58분 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "나중에 기사 출입 기록이 있었다는 건 알지만, 당시엔 제 방에서 들린 충격음이 먼저였습니다."
+          ],
+          "privateKnowledge": [
+            "그 기록을 먼저 확인했어야 했다는 걸 안다."
+          ],
+          "suppressions": [
+            "오해를 사실처럼 말했다는 점을 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-4:context:1",
+              "factText": "나중에 기사 출입 기록이 있었다는 건 알지만, 당시엔 제 방에서 들린 충격음이 먼저였습니다.",
+              "tags": [
+                "context",
+                "evidence",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 전후",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "23시 58분 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "그 시각 복도 장면까지 보였으니 저는 발망치와 비슷한 행동으로 받아들일 수밖에 없었습니다."
+          ],
+          "privateKnowledge": [
+            "비슷하게 들렸다고 해서 고의를 단정할 수는 없다는 걸 안다."
+          ],
+          "suppressions": [
+            "기사 소음과 제습기 진동이 겹칠 수 있다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack",
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-4:self_justification:0",
+              "factText": "그 시각 복도 장면까지 보였으니 저는 발망치와 비슷한 행동으로 받아들일 수밖에 없었습니다.",
+              "tags": [
+                "self_justification",
+                "counter",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 전후",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "23시 58분 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "딸이 깨서 울고 집안은 축축했으니, 그 둔탁음이 보복처럼 들릴 만큼 제가 예민해져 있었습니다."
+          ],
+          "privateKnowledge": [
+            "감정이 해석을 밀어 올렸다는 걸 안다."
+          ],
+          "suppressions": [
+            "증거보다 분노가 앞섰다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-4:emotion:0",
+              "factText": "딸이 깨서 울고 집안은 축축했으니, 그 둔탁음이 보복처럼 들릴 만큼 제가 예민해져 있었습니다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 전후",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "23시 58분 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "고의적 발망치라고 단정한 건 틀렸고, 허가된 야간 점검 기사 출입과 제습기 진동이 겹친 소리였습니다."
+          ],
+          "privateKnowledge": [
+            "상대를 의도적으로 몰아간 표현을 거둬야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "체감 소음을 사실로 박제한 단체방 분위기의 영향은 덜 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-4:admission:0",
+              "factText": "고의적 발망치라고 단정한 건 틀렸고, 허가된 야간 점검 기사 출입과 제습기 진동이 겹친 소리였습니다.",
+              "tags": [
+                "admission",
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 00시 48분 전후",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "23시 58분 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "단체방 글은 공개 비난이 아니라 즉시 확인을 촉구하는 경고였고, 관리사무소에도 이미 말해 둔 상태였습니다."
+          ],
+          "privateKnowledge": [
+            "호수 지목 표현이 더 자극적이라는 걸 알았다."
+          ],
+          "suppressions": [
+            "먼저 관리실만 통하지 않았다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:a:tell:yes_no_press"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-5:rule:0",
+              "factText": "단체방 글은 공개 비난이 아니라 즉시 확인을 촉구하는 경고였고, 관리사무소에도 이미 말해 둔 상태였습니다.",
+              "tags": [
+                "rule",
+                "denial",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "post": {
+                  "exact": "'504호에서 또 내려온다'고 적은 단체방 글",
+                  "neutral": "그 공개 글"
+                },
+                "time": {
+                  "exact": "첫 민원 뒤 31시간과 야간 점검 직후",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "순서를 아주 어긴 건 아니고, 누수와 소음이 겹쳐서 메시지가 앞당겨졌을 뿐입니다."
+          ],
+          "privateKnowledge": [
+            "관리실 확인 전에 다른 주민들까지 끌어들였다는 걸 안다."
+          ],
+          "suppressions": [
+            "공개 채널을 택한 이유가 감정이었다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:a:tell:yes_no_press",
+            "neighbor01:a:tell:scene_stack"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-5:uncertainty:0",
+              "factText": "순서를 아주 어긴 건 아니고, 누수와 소음이 겹쳐서 메시지가 앞당겨졌을 뿐입니다.",
+              "tags": [
+                "uncertainty",
+                "rule",
+                "self_justification"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "post": {
+                  "exact": "'504호에서 또 내려온다'고 적은 단체방 글",
+                  "neutral": "그 공개 글"
+                },
+                "time": {
+                  "exact": "첫 민원 뒤 31시간과 야간 점검 직후",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "제가 504호를 지목해 단체방에 올린 건 맞지만, 피해를 빨리 멈추려는 생각이 컸습니다."
+          ],
+          "privateKnowledge": [
+            "이전 약속을 어겼다는 걸 안다."
+          ],
+          "suppressions": [
+            "상대 해명 기회를 빼앗았다는 점은 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-5:admission:0",
+              "factText": "제가 504호를 지목해 단체방에 올린 건 맞지만, 피해를 빨리 멈추려는 생각이 컸습니다.",
+              "tags": [
+                "admission",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "post": {
+                  "exact": "'504호에서 또 내려온다'고 적은 단체방 글",
+                  "neutral": "그 공개 글"
+                },
+                "time": {
+                  "exact": "첫 민원 뒤 31시간과 야간 점검 직후",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "아래층 입장에선 아무 연락도 없다가 복도 장면만 보였으니, 공개적으로라도 반응을 얻어야 한다고 여겼습니다."
+          ],
+          "privateKnowledge": [
+            "배제감이 과장된 응징 심리를 만들었다는 걸 안다."
+          ],
+          "suppressions": [
+            "관리실 중재를 더 기다릴 수 있었다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:a:tell:scene_stack",
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-5:self_justification:0",
+              "factText": "아래층 입장에선 아무 연락도 없다가 복도 장면만 보였으니, 공개적으로라도 반응을 얻어야 한다고 여겼습니다.",
+              "tags": [
+                "self_justification",
+                "relationship",
+                "motive"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "post": {
+                  "exact": "'504호에서 또 내려온다'고 적은 단체방 글",
+                  "neutral": "그 공개 글"
+                },
+                "time": {
+                  "exact": "첫 민원 뒤 31시간과 야간 점검 직후",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "지난번 약속까지 잊고 단체방으로 튄 건, 또 무시당한다는 느낌에 제가 먼저 흥분했기 때문입니다."
+          ],
+          "privateKnowledge": [
+            "호수와 날짜를 반복하며 목소리를 키웠다는 걸 안다."
+          ],
+          "suppressions": [
+            "사과보다 변명부터 하려는 마음은 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-5:shame:0",
+              "factText": "지난번 약속까지 잊고 단체방으로 튄 건, 또 무시당한다는 느낌에 제가 먼저 흥분했기 때문입니다.",
+              "tags": [
+                "shame",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "post": {
+                  "exact": "'504호에서 또 내려온다'고 적은 단체방 글",
+                  "neutral": "그 공개 글"
+                },
+                "time": {
+                  "exact": "첫 민원 뒤 31시간과 야간 점검 직후",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "저는 관리사무소 선통보 원칙을 지키지 못했고, 504호를 지목한 공개 글로 갈등을 키웠습니다."
+          ],
+          "privateKnowledge": [
+            "정정과 사과를 같은 채널에서 해야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "상대의 늦은 설명만 탓하고 싶은 마음은 감춘다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:a:tell:unit_date_repeat"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:a:d-5:admission:1",
+              "factText": "저는 관리사무소 선통보 원칙을 지키지 못했고, 504호를 지목한 공개 글로 갈등을 키웠습니다.",
+              "tags": [
+                "admission",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "윗집",
+                  "neutral": "상대방"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "post": {
+                  "exact": "'504호에서 또 내려온다'고 적은 단체방 글",
+                  "neutral": "그 공개 글"
+                },
+                "time": {
+                  "exact": "첫 민원 뒤 31시간과 야간 점검 직후",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "b": {
+      "d-1": {
+        "S0": {
+          "disputeId": "d-1",
+          "state": "S0",
+          "publicClaim": [
+            "정한결 씨는 제 현관문이 보이게 공용복도에 휴대폰을 세워 찍었고, 그건 사생활 침해였습니다."
+          ],
+          "privateKnowledge": [
+            "복도에 물건을 둔 내 잘못이 명분을 준 건 아닌지 마음이 걸린다."
+          ],
+          "suppressions": [
+            "촬영 동기가 완전히 허위는 아닐 수 있다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:b:tell:detour_question"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-1:privacy:0",
+              "factText": "정한결 씨는 제 현관문이 보이게 공용복도에 휴대폰을 세워 찍었고, 그건 사생활 침해였습니다.",
+              "tags": [
+                "privacy",
+                "act",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정한결",
+                  "fullName": "정한결",
+                  "judgeRef": "아래층",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 새벽",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-1",
+          "state": "S1",
+          "publicClaim": [
+            "잠깐이든 아니든 두 차례나 현관 앞을 향한 촬영은 부담스럽고 위협적이었습니다."
+          ],
+          "privateKnowledge": [
+            "영상 길이와 횟수를 정확히 모두 보진 못했다."
+          ],
+          "suppressions": [
+            "원본 43초 자체는 직접 보지 못했다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer",
+            "neighbor01:b:tell:detour_question"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-1:threshold:0",
+              "factText": "잠깐이든 아니든 두 차례나 현관 앞을 향한 촬영은 부담스럽고 위협적이었습니다.",
+              "tags": [
+                "threshold",
+                "privacy",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정한결",
+                  "fullName": "정한결",
+                  "judgeRef": "아래층",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 새벽",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-1",
+          "state": "S2",
+          "publicClaim": [
+            "누수 불안이 있었던 건 알지만, 제 현관이 식별되게 찍힌 순간부터 선은 넘은 거였습니다."
+          ],
+          "privateKnowledge": [
+            "관리실 자료로도 확인할 수 있었다는 점을 더 말하고 싶다."
+          ],
+          "suppressions": [
+            "나도 복도 적치로 불안을 키웠다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-1:context:0",
+              "factText": "누수 불안이 있었던 건 알지만, 제 현관이 식별되게 찍힌 순간부터 선은 넘은 거였습니다.",
+              "tags": [
+                "context",
+                "privacy",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정한결",
+                  "fullName": "정한결",
+                  "judgeRef": "아래층",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 새벽",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-1",
+          "state": "S3",
+          "publicClaim": [
+            "제습기와 통을 밖에 둔 제 실수와, 정한결 씨가 개인 촬영으로 대응한 일은 따로 책임져야 합니다."
+          ],
+          "privateKnowledge": [
+            "두 문제를 섞으면 내 잘못이 가려진다는 걸 안다."
+          ],
+          "suppressions": [
+            "상대의 절박함까지는 인정하기 싫은 마음을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:detour_question"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-1:responsibility:0",
+              "factText": "제습기와 통을 밖에 둔 제 실수와, 정한결 씨가 개인 촬영으로 대응한 일은 따로 책임져야 합니다.",
+              "tags": [
+                "responsibility",
+                "counter",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정한결",
+                  "fullName": "정한결",
+                  "judgeRef": "아래층",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 새벽",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-1",
+          "state": "S4",
+          "publicClaim": [
+            "그날 이후 현관문 앞을 지날 때마다 누가 보고 있을까 싶어 집이 집 같지 않았습니다."
+          ],
+          "privateKnowledge": [
+            "민폐 이웃으로 찍힌 두려움도 함께 있었다."
+          ],
+          "suppressions": [
+            "내 늦은 설명이 위협감을 더했을 가능성은 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-1:fear:0",
+              "factText": "그날 이후 현관문 앞을 지날 때마다 누가 보고 있을까 싶어 집이 집 같지 않았습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "harm"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정한결",
+                  "fullName": "정한결",
+                  "judgeRef": "아래층",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 새벽",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-1",
+          "state": "S5",
+          "publicClaim": [
+            "정한결 씨가 제 현관이 보이게 촬영한 건 사실이고, 그건 관리사무소 절차로 돌렸어야 할 문제였습니다."
+          ],
+          "privateKnowledge": [
+            "내 적치와 늦은 공지는 별도로 인정해야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "촬영 사실만으로 모든 책임을 넘기고 싶은 마음은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-1:admission:0",
+              "factText": "정한결 씨가 제 현관이 보이게 촬영한 건 사실이고, 그건 관리사무소 절차로 돌렸어야 할 문제였습니다.",
+              "tags": [
+                "admission",
+                "privacy",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "정한결",
+                  "fullName": "정한결",
+                  "judgeRef": "아래층",
+                  "neutral": "상대방"
+                },
+                "time": {
+                  "exact": "7월 12일 새벽",
+                  "neutral": "그때",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "count": {
+                  "exact": "두 차례",
+                  "neutral": "그 횟수",
+                  "rounded": "2회"
+                },
+                "place": {
+                  "exact": "공용복도와 이주연 현관 앞",
+                  "neutral": "그 복도"
+                }
+              },
+              "stanceHints": [
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-2": {
+        "S0": {
+          "disputeId": "d-2",
+          "state": "S0",
+          "publicClaim": [
+            "제습기랑 통은 잠깐 둔 거라 적치라고 할 정도는 아니었고, 아래층에도 곧 말하려 했습니다."
+          ],
+          "privateKnowledge": [
+            "실제로는 이틀 가까이 복도에 남아 있었다."
+          ],
+          "suppressions": [
+            "첫 민원 접수 뒤 31시간이 지나서야 문자 보낸 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:b:tell:thin_number_first",
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-2:act:0",
+              "factText": "제습기랑 통은 잠깐 둔 거라 적치라고 할 정도는 아니었고, 아래층에도 곧 말하려 했습니다.",
+              "tags": [
+                "act",
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-2",
+          "state": "S1",
+          "publicClaim": [
+            "죄송하긴 한데 물이 조금 보여서 잠깐 바깥에 뺀 거지, 복도를 막으려던 건 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "물건 수량과 시간대를 흐리게 말하고 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "젖은 발판까지 함께 내놨다는 점은 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer",
+            "neighbor01:b:tell:thin_number_first"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-2:self_justification:0",
+              "factText": "죄송하긴 한데 물이 조금 보여서 잠깐 바깥에 뺀 거지, 복도를 막으려던 건 아니었습니다.",
+              "tags": [
+                "self_justification",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-2",
+          "state": "S2",
+          "publicClaim": [
+            "제습기, 물받이 통, 젖은 발판을 둔 건 맞지만 긴급히 말리느라 바로 못 치웠습니다."
+          ],
+          "privateKnowledge": [
+            "아래층에 먼저 알렸어야 했다는 걸 안다."
+          ],
+          "suppressions": [
+            "복도 사용의 불편을 가볍게 본 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:thin_number_first"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-2:admission:0",
+              "factText": "제습기, 물받이 통, 젖은 발판을 둔 건 맞지만 긴급히 말리느라 바로 못 치웠습니다.",
+              "tags": [
+                "admission",
+                "context",
+                "act"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-2",
+          "state": "S3",
+          "publicClaim": [
+            "포장 작업이랑 기사 대응이 겹쳐 문자가 늦었고, 그 사이에 상황 설명이 더 꼬였습니다."
+          ],
+          "privateKnowledge": [
+            "관리사무소에 먼저 문의하고도 아래층 직접 통보를 미뤘다는 걸 안다."
+          ],
+          "suppressions": [
+            "민폐로 찍힐까 겁나 피했다는 감정은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:detour_question",
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-2:timeline:0",
+              "factText": "포장 작업이랑 기사 대응이 겹쳐 문자가 늦었고, 그 사이에 상황 설명이 더 꼬였습니다.",
+              "tags": [
+                "timeline",
+                "responsibility",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-2",
+          "state": "S4",
+          "publicClaim": [
+            "공용복도에 뭘 내놓은 순간부터 민원 들어올 걸 알아서, 더 미안하고 더 숨고 싶었습니다."
+          ],
+          "privateKnowledge": [
+            "사과를 먼저 깔고 핵심 인정은 미루는 버릇이 나왔다는 걸 안다."
+          ],
+          "suppressions": [
+            "늦은 공지가 오해를 키운 핵심이었다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-2:shame:0",
+              "factText": "공용복도에 뭘 내놓은 순간부터 민원 들어올 걸 알아서, 더 미안하고 더 숨고 싶었습니다.",
+              "tags": [
+                "shame",
+                "emotion",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-2",
+          "state": "S5",
+          "publicClaim": [
+            "저는 제습기와 물받이 통, 젖은 발판을 이틀가량 복도에 두었고 아래층 안내도 너무 늦었습니다."
+          ],
+          "privateKnowledge": [
+            "정리 기준과 알림 절차를 다시 지켜야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "누수 직접 원인과 섞어 책임을 희석하고 싶은 마음은 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-2:admission:1",
+              "factText": "저는 제습기와 물받이 통, 젖은 발판을 이틀가량 복도에 두었고 아래층 안내도 너무 늦었습니다.",
+              "tags": [
+                "admission",
+                "rule",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "duration": {
+                  "exact": "이틀가량",
+                  "neutral": "그 기간",
+                  "rounded": "2일"
+                },
+                "item": {
+                  "exact": "제습기, 물받이 통, 젖은 발판",
+                  "neutral": "그 물건들"
+                },
+                "time": {
+                  "exact": "31시간 뒤 문자",
+                  "neutral": "그 안내 시점",
+                  "period": "첫 민원 뒤"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-3": {
+        "S0": {
+          "disputeId": "d-3",
+          "state": "S0",
+          "publicClaim": [
+            "우리 집 욕실 사용이 직접 원인이라는 말은 사실이 아니고, 장마와 건물 쪽 문제가 더 컸습니다."
+          ],
+          "privateKnowledge": [
+            "그날 내 집 앞 장면이 오해를 부른다는 걸 안다."
+          ],
+          "suppressions": [
+            "미리 아래층에 설명하지 않아 의심을 키운 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:b:tell:detour_question",
+            "neighbor01:b:tell:thin_number_first"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-3:denial:0",
+              "factText": "우리 집 욕실 사용이 직접 원인이라는 말은 사실이 아니고, 장마와 건물 쪽 문제가 더 컸습니다.",
+              "tags": [
+                "denial",
+                "context",
+                "institution"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-3",
+          "state": "S1",
+          "publicClaim": [
+            "제습기와 물받이 통은 대응 흔적이었지, 우리 집 배수가 바로 아래층으로 샜다는 증거는 아니었습니다."
+          ],
+          "privateKnowledge": [
+            "원인 자체를 나도 정확히 몰랐다는 걸 안다."
+          ],
+          "suppressions": [
+            "오해를 풀 자료를 바로 내지 못했다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:b:tell:thin_number_first",
+            "neighbor01:b:tell:detour_question"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-3:evidence:0",
+              "factText": "제습기와 물받이 통은 대응 흔적이었지, 우리 집 배수가 바로 아래층으로 샜다는 증거는 아니었습니다.",
+              "tags": [
+                "evidence",
+                "uncertainty",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-3",
+          "state": "S2",
+          "publicClaim": [
+            "문 앞에 흔적이 보였으니 아래층이 저를 의심한 이유까지는 이해합니다."
+          ],
+          "privateKnowledge": [
+            "그 장면이 내 책임처럼 읽힌다는 걸 알고도 설명을 미뤘다는 걸 안다."
+          ],
+          "suppressions": [
+            "관리실 점검 전까지 나도 불안해서 회피했다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-3:context:0",
+              "factText": "문 앞에 흔적이 보였으니 아래층이 저를 의심한 이유까지는 이해합니다.",
+              "tags": [
+                "context",
+                "counter",
+                "admission"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-3",
+          "state": "S3",
+          "publicClaim": [
+            "다만 직접 원인은 세대 배수보다 공용 우수관과 외벽 틈 쪽이라, 저 혼자만의 문제로 몰리면 곤란합니다."
+          ],
+          "privateKnowledge": [
+            "건물 하자 공지를 예전에 대수롭지 않게 넘겼다는 걸 기억한다."
+          ],
+          "suppressions": [
+            "공용부 문제를 더 일찍 언급할 수 있었다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:detour_question"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-3:responsibility:0",
+              "factText": "다만 직접 원인은 세대 배수보다 공용 우수관과 외벽 틈 쪽이라, 저 혼자만의 문제로 몰리면 곤란합니다.",
+              "tags": [
+                "responsibility",
+                "institution",
+                "counter"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-3",
+          "state": "S4",
+          "publicClaim": [
+            "윗집으로 찍히는 순간 판매 일까지 타격 올까 봐 겁이 나서 말을 더 아꼈습니다."
+          ],
+          "privateKnowledge": [
+            "낙인 두려움이 회피를 만들었다는 걸 안다."
+          ],
+          "suppressions": [
+            "사실 확인보다 이미지 관리가 먼저였다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-3:fear:0",
+              "factText": "윗집으로 찍히는 순간 판매 일까지 타격 올까 봐 겁이 나서 말을 더 아꼈습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-3",
+          "state": "S5",
+          "publicClaim": [
+            "관리사무소 보고서대로 직접 원인은 우리 집 배수가 아니라 공용 우수관 막힘과 외벽 실리콘 틈이었습니다."
+          ],
+          "privateKnowledge": [
+            "그래도 내 늦은 설명과 복도 적치는 별도로 사과해야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "한결의 추정을 전부 악의로만 보려는 마음은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-3:admission:0",
+              "factText": "관리사무소 보고서대로 직접 원인은 우리 집 배수가 아니라 공용 우수관 막힘과 외벽 실리콘 틈이었습니다.",
+              "tags": [
+                "admission",
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "장마 기간",
+                  "neutral": "그 시기",
+                  "period": "장마철"
+                },
+                "cause": {
+                  "exact": "공용 우수관 막힘과 외벽 실리콘 틈",
+                  "neutral": "그 건물 원인"
+                },
+                "evidence": {
+                  "exact": "관리사무소 4라인 누수 점검 보고서와 옥상 우수관 보수 자료",
+                  "neutral": "그 점검 자료"
+                }
+              },
+              "stanceHints": [
+                "admission"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-4": {
+        "S0": {
+          "disputeId": "d-4",
+          "state": "S0",
+          "publicClaim": [
+            "발망치 같은 건 아니었고, 그 새벽 둔탁한 소리는 잠깐 겹친 기계음에 가까웠습니다."
+          ],
+          "privateKnowledge": [
+            "기사 출입과 제습기 진동이 동시에 있었다는 걸 안다."
+          ],
+          "suppressions": [
+            "미리 소음 가능성을 알리지 않았다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:b:tell:thin_number_first",
+            "neighbor01:b:tell:detour_question"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-4:denial:0",
+              "factText": "발망치 같은 건 아니었고, 그 새벽 둔탁한 소리는 잠깐 겹친 기계음에 가까웠습니다.",
+              "tags": [
+                "denial",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "7월 12일 23시 58분 기사 출입",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "허가된 야간 점검 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-4",
+          "state": "S1",
+          "publicClaim": [
+            "죄송하긴 한데 그 시간엔 기사도 있었고 제습기도 돌아서 조금 크게 들렸을 수는 있습니다."
+          ],
+          "privateKnowledge": [
+            "소음이 있었음을 돌려 말하고 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "허가된 야간 점검이었다는 핵심은 뒤로 민다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer",
+            "neighbor01:b:tell:thin_number_first"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-4:uncertainty:0",
+              "factText": "죄송하긴 한데 그 시간엔 기사도 있었고 제습기도 돌아서 조금 크게 들렸을 수는 있습니다.",
+              "tags": [
+                "uncertainty",
+                "context",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "7월 12일 23시 58분 기사 출입",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "허가된 야간 점검 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-4",
+          "state": "S2",
+          "publicClaim": [
+            "고의로 쿵쿵거린 건 아니고, 23시 58분 기사 출입과 제습기 진동이 겹쳐 그렇게 들린 겁니다."
+          ],
+          "privateKnowledge": [
+            "아래층이 체감한 불편은 실제였다는 걸 안다."
+          ],
+          "suppressions": [
+            "사전 공지를 하지 못한 책임은 흐린다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:thin_number_first",
+            "neighbor01:b:tell:detour_question"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-4:admission:0",
+              "factText": "고의로 쿵쿵거린 건 아니고, 23시 58분 기사 출입과 제습기 진동이 겹쳐 그렇게 들린 겁니다.",
+              "tags": [
+                "admission",
+                "timeline",
+                "context"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "7월 12일 23시 58분 기사 출입",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "허가된 야간 점검 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-4",
+          "state": "S3",
+          "publicClaim": [
+            "그 밤이 누수 대응이랑 겹쳤으니 소리가 날 수밖에 없었고, 저는 그걸 숨기려 한 건 아닙니다."
+          ],
+          "privateKnowledge": [
+            "숨기려는 것처럼 보일 걸 알고도 설명을 늦췄다는 걸 안다."
+          ],
+          "suppressions": [
+            "정중히 먼저 알려 줄 수 있었다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:detour_question"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-4:self_justification:0",
+              "factText": "그 밤이 누수 대응이랑 겹쳤으니 소리가 날 수밖에 없었고, 저는 그걸 숨기려 한 건 아닙니다.",
+              "tags": [
+                "self_justification",
+                "context",
+                "responsibility"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "7월 12일 23시 58분 기사 출입",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "허가된 야간 점검 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-4",
+          "state": "S4",
+          "publicClaim": [
+            "윗집이 또 나를 발망치 이웃으로 볼까 봐 무서워서, 설명보다 사과부터 꺼내게 됐습니다."
+          ],
+          "privateKnowledge": [
+            "관계가 깨질까 두려워 사실 설명을 뒤로 미뤘다는 걸 안다."
+          ],
+          "suppressions": [
+            "내 침묵이 오해를 굳혔다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-4:fear:0",
+              "factText": "윗집이 또 나를 발망치 이웃으로 볼까 봐 무서워서, 설명보다 사과부터 꺼내게 됐습니다.",
+              "tags": [
+                "fear",
+                "emotion",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "7월 12일 23시 58분 기사 출입",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "허가된 야간 점검 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-4",
+          "state": "S5",
+          "publicClaim": [
+            "그 소리는 고의적 발망치가 아니라 허가된 야간 누수 점검 기사 출입과 제습기 진동이 겹친 결과였습니다."
+          ],
+          "privateKnowledge": [
+            "야간 소음 가능성은 먼저 알려야 했다는 걸 안다."
+          ],
+          "suppressions": [
+            "오해가 생길 여지를 남긴 행동은 덜 말한다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-4:admission:1",
+              "factText": "그 소리는 고의적 발망치가 아니라 허가된 야간 누수 점검 기사 출입과 제습기 진동이 겹친 결과였습니다.",
+              "tags": [
+                "admission",
+                "institution",
+                "evidence"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "time": {
+                  "exact": "7월 12일 23시 58분 기사 출입",
+                  "neutral": "그 시각",
+                  "dateExact": "7월 12일",
+                  "period": "문제의 새벽"
+                },
+                "source": {
+                  "exact": "허가된 야간 점검 기사 출입과 제습기 진동",
+                  "neutral": "그 소리 원인"
+                },
+                "place": {
+                  "exact": "4라인 공용복도와 세대 주변",
+                  "neutral": "그 동선"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      },
+      "d-5": {
+        "S0": {
+          "disputeId": "d-5",
+          "state": "S0",
+          "publicClaim": [
+            "관리사무소에는 먼저 말했으니 원칙을 크게 어긴 건 아니고, 아래층 설명만 조금 늦어진 겁니다."
+          ],
+          "privateKnowledge": [
+            "첫 점검 시간을 넘긴 뒤에야 직접 설명했다는 걸 안다."
+          ],
+          "suppressions": [
+            "선통보 약속의 핵심이 직접 설명 포함이었다는 점을 숨긴다."
+          ],
+          "emotionalLeakRisk": "low",
+          "tellPool": [
+            "neighbor01:b:tell:thin_number_first",
+            "neighbor01:b:tell:detour_question"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-5:rule:0",
+              "factText": "관리사무소에는 먼저 말했으니 원칙을 크게 어긴 건 아니고, 아래층 설명만 조금 늦어진 겁니다.",
+              "tags": [
+                "rule",
+                "denial",
+                "timeline"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "time": {
+                  "exact": "첫 점검 시간을 넘긴 뒤와 첫 민원 뒤 31시간",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                },
+                "post": {
+                  "exact": "관리사무소 민원 접수와 늦은 안내 문자",
+                  "neutral": "그 연락 기록"
+                }
+              },
+              "stanceHints": [
+                "deny"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S1": {
+          "disputeId": "d-5",
+          "state": "S1",
+          "publicClaim": [
+            "일부러 숨긴 건 아니고 대응이 꼬여서 첫 점검 시간을 놓친 정도입니다."
+          ],
+          "privateKnowledge": [
+            "문자 발송이 31시간 뒤였다는 숫자를 피하고 있다는 걸 안다."
+          ],
+          "suppressions": [
+            "늦게 보낸 문자가 분쟁 확산 뒤였다는 점은 감춘다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer",
+            "neighbor01:b:tell:thin_number_first"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-5:timeline:0",
+              "factText": "일부러 숨긴 건 아니고 대응이 꼬여서 첫 점검 시간을 놓친 정도입니다.",
+              "tags": [
+                "timeline",
+                "uncertainty",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "time": {
+                  "exact": "첫 점검 시간을 넘긴 뒤와 첫 민원 뒤 31시간",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                },
+                "post": {
+                  "exact": "관리사무소 민원 접수와 늦은 안내 문자",
+                  "neutral": "그 연락 기록"
+                }
+              },
+              "stanceHints": [
+                "hedge"
+              ],
+              "usableInSubActions": [
+                "fact_pursuit",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "disputeId": "d-5",
+          "state": "S2",
+          "publicClaim": [
+            "아래층에 바로 설명하지 못한 건 맞지만, 그때는 기사 대응이 먼저라고 생각했습니다."
+          ],
+          "privateKnowledge": [
+            "관리실 문의만으로 충분하다고 스스로 합리화했다는 걸 안다."
+          ],
+          "suppressions": [
+            "개인적 낙인 두려움 때문에 피했다는 감정은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:detour_question",
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-5:admission:0",
+              "factText": "아래층에 바로 설명하지 못한 건 맞지만, 그때는 기사 대응이 먼저라고 생각했습니다.",
+              "tags": [
+                "admission",
+                "self_justification",
+                "rule"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "time": {
+                  "exact": "첫 점검 시간을 넘긴 뒤와 첫 민원 뒤 31시간",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                },
+                "post": {
+                  "exact": "관리사무소 민원 접수와 늦은 안내 문자",
+                  "neutral": "그 연락 기록"
+                }
+              },
+              "stanceHints": [
+                "partial"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "fact_pursuit"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "disputeId": "d-5",
+          "state": "S3",
+          "publicClaim": [
+            "먼저 민원은 넣었고도 직접 문자를 31시간 뒤에 보낸 건, 민폐 이웃으로 찍힐까 망설였기 때문입니다."
+          ],
+          "privateKnowledge": [
+            "지난 약속을 기억하고도 행동으로 지키지 못했다는 걸 안다."
+          ],
+          "suppressions": [
+            "아래층 불안이 커질 걸 알면서 미뤘다는 점은 숨긴다."
+          ],
+          "emotionalLeakRisk": "medium",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-5:shame:0",
+              "factText": "먼저 민원은 넣었고도 직접 문자를 31시간 뒤에 보낸 건, 민폐 이웃으로 찍힐까 망설였기 때문입니다.",
+              "tags": [
+                "shame",
+                "timeline",
+                "fear"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "time": {
+                  "exact": "첫 점검 시간을 넘긴 뒤와 첫 민원 뒤 31시간",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                },
+                "post": {
+                  "exact": "관리사무소 민원 접수와 늦은 안내 문자",
+                  "neutral": "그 연락 기록"
+                }
+              },
+              "stanceHints": [
+                "blame"
+              ],
+              "usableInSubActions": [
+                "motive_search",
+                "empathy_approach",
+                "evidence_present"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "disputeId": "d-5",
+          "state": "S4",
+          "publicClaim": [
+            "사람들한테 찍힐까 겁나서 설명을 미루는 동안 일이 더 커졌고, 그게 제 잘못입니다."
+          ],
+          "privateKnowledge": [
+            "관계 유지 욕구가 오히려 회피가 됐다는 걸 안다."
+          ],
+          "suppressions": [
+            "사과 전에 변명부터 붙인 습관은 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-5:emotion:0",
+              "factText": "사람들한테 찍힐까 겁나서 설명을 미루는 동안 일이 더 커졌고, 그게 제 잘못입니다.",
+              "tags": [
+                "emotion",
+                "fear",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "time": {
+                  "exact": "첫 점검 시간을 넘긴 뒤와 첫 민원 뒤 31시간",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                },
+                "post": {
+                  "exact": "관리사무소 민원 접수와 늦은 안내 문자",
+                  "neutral": "그 연락 기록"
+                }
+              },
+              "stanceHints": [
+                "emotional"
+              ],
+              "usableInSubActions": [
+                "empathy_approach",
+                "motive_search"
+              ]
+            }
+          ]
+        },
+        "S5": {
+          "disputeId": "d-5",
+          "state": "S5",
+          "publicClaim": [
+            "저도 관리사무소 선통보 원칙을 지키지 못했고, 첫 점검 시간을 넘긴 뒤에야 아래층에 상황을 설명했습니다."
+          ],
+          "privateKnowledge": [
+            "공개 비난이 무서워 숨은 태도를 정리해야 한다는 걸 안다."
+          ],
+          "suppressions": [
+            "정한결의 단체방 글만 더 탓하고 싶은 마음은 숨긴다."
+          ],
+          "emotionalLeakRisk": "high",
+          "tellPool": [
+            "neighbor01:b:tell:apology_buffer"
+          ],
+          "claimAtoms": [
+            {
+              "id": "neighbor01:b:d-5:admission:1",
+              "factText": "저도 관리사무소 선통보 원칙을 지키지 못했고, 첫 점검 시간을 넘긴 뒤에야 아래층에 상황을 설명했습니다.",
+              "tags": [
+                "admission",
+                "rule",
+                "relationship"
+              ],
+              "slots": {
+                "person": {
+                  "exact": "이주연",
+                  "fullName": "이주연",
+                  "judgeRef": "본인",
+                  "neutral": "저"
+                },
+                "rule": {
+                  "exact": "관리사무소 선통보 후 공개 비난 보류 약속",
+                  "neutral": "그 선통보 원칙"
+                },
+                "time": {
+                  "exact": "첫 점검 시간을 넘긴 뒤와 첫 민원 뒤 31시간",
+                  "neutral": "그 시점",
+                  "period": "문제의 밤과 다음 날"
+                },
+                "post": {
+                  "exact": "관리사무소 민원 접수와 늦은 안내 문자",
+                  "neutral": "그 연락 기록"
+                }
+              },
+              "stanceHints": [
+                "confession"
+              ],
+              "usableInSubActions": [
+                "evidence_present",
+                "empathy_approach"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
