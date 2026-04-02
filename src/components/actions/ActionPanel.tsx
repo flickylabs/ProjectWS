@@ -319,7 +319,7 @@ export default function ActionPanel() {
         {hasDossierCards && (
           <button onClick={() => handleTabClick('dossier')}
             className={`flex-1 text-xs rounded-xl font-semibold active:scale-95 ${activeTab === 'dossier' ? 'bg-amber-600 text-gray-950' : 'bg-gray-800/60 text-amber-500/70 hover:text-amber-400'}`}>
-            <Emoji char="📋" size={14} /> 도시에
+            <Emoji char="📋" size={14} /> 사건카드
           </button>
         )}
         <button onClick={() => handleTabClick('evidence')}

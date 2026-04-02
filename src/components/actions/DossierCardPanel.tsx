@@ -38,7 +38,7 @@ export default function DossierCardPanel({ target, onQuestionAsked, onDispatchEv
 
   return (
     <div className="space-y-2">
-      <div className="text-[10px] text-gray-500 px-1">도시에 카드 — 증거 묶음으로 핵심 질문</div>
+      <div className="text-[10px] text-gray-500 px-1">사건카드 — 증거 묶음으로 핵심 질문</div>
 
       {/* 카드 목록 */}
       <div className="flex gap-1.5">
