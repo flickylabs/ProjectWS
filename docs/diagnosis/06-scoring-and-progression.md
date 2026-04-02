@@ -80,3 +80,18 @@
 - **스킬 토큰 (⚡)**: 스킬 사용에 필요
 - **조사 토큰 (🔍)**: 자유 질문, 증인 소환에 필요
 - **법정 통제력**: 끼어들기 허용 시 감소, 0이 되면 강제 페이즈 전환
+
+## V3 업데이트: Readiness 기반 판결 조건
+
+턴 수 대신 **성과 기반**으로 판결 가능 여부를 결정합니다.
+
+```
+readinessScore = min(cracked, 2)×1 + min(resolved, 2)×2 + min(investigation, 2)×1
+               + min(collapse, 2)×1 + min(hidden, 1)×1 + min(confession, 1)×2
+
+일반 판결: 턴 8+ AND score 5+ AND 진행 쟁점 2+ AND 돌파 1+
+조기 종료: 턴 6+ AND (고백 1+ OR resolved 2+ OR ...)
+강제 판결: 턴 16 → forced_incomplete → "불충분 심리" 감점
+```
+
+강제 판결 시 ForcedVerdictBanner가 표시되며, 신뢰도 감점이 적용됩니다.
